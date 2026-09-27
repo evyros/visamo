@@ -12,7 +12,7 @@ export function FounderTeaser({ t, locale }: { t: Messages; locale: Locale }) {
         <figure className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center sm:flex-row sm:text-start">
           <FounderPhoto size="sm" alt={t.about.photoAlt} />
           <div>
-            <blockquote className="font-display text-xl leading-snug text-navy-900 sm:text-2xl">“{f.quote}”</blockquote>
+            <blockquote className="font-display text-xl leading-snug text-navy-900 sm:text-2xl">{f.quote}</blockquote>
             <figcaption className="mt-3 text-sm text-slate-500">
               {f.name}, {f.role}
             </figcaption>

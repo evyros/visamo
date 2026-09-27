@@ -1,46 +1,61 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { LOCALE_COOKIE, defaultLocale, isLocale, liveLocales, type Locale } from "./i18n/config";
+import { getSessionCookie } from "better-auth/cookies";
+import { LOCALE_COOKIE, isLocale } from "./i18n/config";
+import { asLiveLocale, localeFromHeaders } from "./i18n/negotiate";
+import { publicAppPaths } from "./lib/app-paths";
+import { site } from "./lib/site";
 
-// Redirects locale-less URLs to a locale. Precedence: the saved cookie, then
-// the browser's Accept-Language matched against live locales, then English.
+const appHost = new URL(site.appUrl).host;
+const ONE_YEAR = 60 * 60 * 24 * 365;
 
-function matchAcceptLanguage(header: string | null): Locale | undefined {
-  if (!header) return undefined;
-  const preferred = header
-    .split(",")
-    .map((part) => {
-      const [tag, ...params] = part.trim().split(";");
-      const q = params.find((p) => p.trim().startsWith("q="));
-      return { tag: tag.toLowerCase(), q: q ? Number(q.trim().slice(2)) : 1 };
-    })
-    .filter(({ tag, q }) => tag && q > 0)
-    .sort((a, b) => b.q - a.q);
-
-  for (const { tag } of preferred) {
-    // "iw" is the legacy code for Hebrew that some browsers still send.
-    const base = tag.split("-")[0] === "iw" ? "he" : tag.split("-")[0];
-    const exact = liveLocales.find((l) => l.toLowerCase() === tag);
-    if (exact) return exact;
-    const byBase = liveLocales.find((l) => l.split("-")[0].toLowerCase() === base);
-    if (byBase) return byBase;
-  }
-  return undefined;
-}
-
-function getLocale(request: NextRequest): Locale {
-  const saved = request.cookies.get(LOCALE_COOKIE)?.value;
-  if (isLocale(saved) && liveLocales.includes(saved)) return saved;
-  return matchAcceptLanguage(request.headers.get("accept-language")) ?? defaultLocale;
-}
-
+// Two hosts, one project. The website (visamo.co.il) has the language in its
+// URLs; the app (app.visamo.co.il) keeps it in a cookie.
 export function proxy(request: NextRequest) {
+  return request.headers.get("host") === appHost ? appProxy(request) : siteProxy(request);
+}
+
+// Redirects locale-less URLs to a locale: the saved cookie, then the browser's
+// Accept-Language matched against live locales, then English.
+function siteProxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const first = pathname.split("/")[1];
-  if (isLocale(first)) return;
+  if (isLocale(pathname.split("/")[1])) return;
 
   const url = request.nextUrl.clone();
-  url.pathname = `/${getLocale(request)}${pathname === "/" ? "" : pathname}`;
+  url.pathname = `/${localeFromHeaders(request.headers)}${pathname === "/" ? "" : pathname}`;
   return NextResponse.redirect(url);
+}
+
+function appProxy(request: NextRequest) {
+  const { pathname, searchParams } = request.nextUrl;
+
+  // Website pages belong on the website host.
+  if (isLocale(pathname.split("/")[1])) {
+    return NextResponse.redirect(new URL(pathname + request.nextUrl.search, site.url));
+  }
+
+  // The website links here with ?lang=he. Save it and drop it from the URL,
+  // so the language sticks for the rest of the visit.
+  const lang = searchParams.get("lang");
+  if (lang !== null) {
+    const url = request.nextUrl.clone();
+    url.searchParams.delete("lang");
+    const response = NextResponse.redirect(url);
+    const locale = asLiveLocale(lang);
+    if (locale) {
+      response.cookies.set(LOCALE_COOKIE, locale, { path: "/", maxAge: ONE_YEAR, sameSite: "lax" });
+    }
+    return response;
+  }
+
+  // An optimistic check on the cookie alone, so signed-out visitors skip a
+  // render. Pages still verify the session itself (lib/session.ts).
+  if (!publicAppPaths.includes(pathname) && !getSessionCookie(request)) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  const response = NextResponse.next();
+  response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return response;
 }
 
 export const config = {

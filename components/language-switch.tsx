@@ -17,16 +17,20 @@ function goToLocale(cookieName: string, url: string, code: string) {
 
 // Built from the locale registry: a segmented pill for two languages, a globe
 // dropdown for three or more. Each language is shown in its own name.
+// On the website the language is the first URL segment. The app has no
+// language in its URLs, so it passes `saveLocale` and the page reloads in place.
 export function LanguageSwitch({
   current,
   options,
   label,
   cookieName,
+  saveLocale,
 }: {
   current: string;
   options: Option[];
   label: string;
   cookieName: string;
+  saveLocale?: (code: string) => Promise<void>;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -41,9 +45,14 @@ export function LanguageSwitch({
     return () => document.removeEventListener("click", close);
   }, [open]);
 
-  function switchTo(code: string) {
+  async function switchTo(code: string) {
     setOpen(false);
     if (code === current) return;
+    if (saveLocale) {
+      await saveLocale(code);
+      window.location.reload();
+      return;
+    }
     const segments = pathname.split("/");
     segments[1] = code;
     // Same page, from the top. A #section left in the URL by an earlier click

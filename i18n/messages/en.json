@@ -723,5 +723,106 @@
     "title": "Page not found",
     "body": "The page you were looking for doesn't exist or has moved.",
     "cta": "Back to the home page"
+  },
+  "app": {
+    "meta": {
+      "login": "Log in",
+      "signup": "Create your account",
+      "setPassword": "Choose a password",
+      "forgotPassword": "Reset your password",
+      "resetPassword": "Choose a new password",
+      "home": "Home"
+    },
+    "shell": {
+      "backToSite": "Back to visamo.co.il",
+      "signOut": "Log out"
+    },
+    "auth": {
+      "google": "Continue with Google",
+      "or": "or",
+      "email": "Email",
+      "password": "Password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "passwordHint": "At least 8 characters.",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "login": {
+        "title": "Log in to Visamo",
+        "submit": "Log in",
+        "forgot": "Forgot your password?",
+        "noAccount": "New to Visamo?",
+        "signupLink": "Create an account",
+        "passwordUpdated": "Your password was updated. Log in with your new password."
+      },
+      "signup": {
+        "title": "Create your account",
+        "intro": "Enter your email. We'll send you a link to confirm it and choose a password.",
+        "submit": "Continue",
+        "hasAccount": "Already have an account?",
+        "loginLink": "Log in",
+        "consent": "By continuing, you agree to the [Terms of use] and the [Privacy policy]."
+      },
+      "checkEmail": {
+        "title": "Check your email",
+        "body": "We sent a link to **{email}**. Open it to confirm your email and choose a password. The link is valid for 30 minutes.",
+        "spam": "Can't find it? Check your spam or promotions folder.",
+        "resend": "Send the link again",
+        "resent": "We sent a new link.",
+        "changeEmail": "Use a different email"
+      },
+      "linkError": "This link has expired or was already used. Enter your email to get a new one.",
+      "setPassword": {
+        "title": "Choose a password",
+        "intro": "Your email **{email}** is confirmed. Choose a password to log in with next time.",
+        "submit": "Save password"
+      },
+      "forgot": {
+        "title": "Reset your password",
+        "intro": "Enter the email you signed up with. We'll send you a link to choose a new password.",
+        "submit": "Send link",
+        "sentTitle": "Check your email",
+        "sentBody": "If there's a Visamo account for **{email}**, we sent it a link to choose a new password. The link is valid for 1 hour.",
+        "back": "Back to log in"
+      },
+      "reset": {
+        "title": "Choose a new password",
+        "submit": "Save new password",
+        "invalid": "This link has expired or was already used.",
+        "requestNew": "Send me a new link"
+      },
+      "sending": "Sending…",
+      "saving": "Saving…",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Enter a valid email address.",
+        "passwordShort": "Use at least 8 characters.",
+        "passwordLong": "Use at most 128 characters.",
+        "passwordMismatch": "The passwords don't match.",
+        "invalidCredentials": "The email or password is incorrect. If you signed up with Google, use Continue with Google.",
+        "tooManyAttempts": "Too many attempts. Wait a minute and try again.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "home": {
+      "title": "Welcome to Visamo",
+      "body": "You're logged in as **{email}**. Your workspace is on its way."
+    },
+    "email": {
+      "signup": {
+        "subject": "Confirm your email for Visamo",
+        "heading": "Confirm your email",
+        "body": "Click the button below to confirm your email and choose a password for your Visamo account. The link is valid for 30 minutes and works once.",
+        "button": "Confirm email"
+      },
+      "resetPassword": {
+        "subject": "Reset your Visamo password",
+        "heading": "Choose a new password",
+        "body": "We got a request to reset the password for your Visamo account. Click the button below to choose a new one. The link is valid for 1 hour.",
+        "button": "Choose a new password"
+      },
+      "fallback": "If the button doesn't work, copy this link into your browser:",
+      "ignore": "If you didn't ask for this, you can ignore this email. Nothing will change."
+    }
   }
 }

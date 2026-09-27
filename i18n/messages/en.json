@@ -3,16 +3,16 @@
     "siteName": "Visamo",
     "titleSuffix": "Visamo — independent organization software for Israel's gradual process",
     "home": {
-      "title": "Visamo — Getting a partner visa should be simple. We make it smooth.",
-      "description": "Check every document the moment you upload it, understand what Misrad Hapnim is asking for, and build your gradual-process file in your language. Independent software, not legal advice."
+      "title": "Visamo | The Israel Partner Visa Process, Made Simple",
+      "description": "Visamo guides you through every step of Israel's partner visa: what each document is, where to get it, and a check before anything goes to Misrad Hapnim."
     },
     "pricing": {
-      "title": "Pricing",
+      "title": "Pricing, One-Time Payment, No Subscription",
       "description": "One-time prices, no subscription. Start free, or check every document in your file for ₪269, once, for the whole gradual process."
     },
     "security": {
-      "title": "Trust & security",
-      "description": "Passports, bank statements, private photos. How Visamo protects your documents."
+      "title": "How We Protect Your Documents",
+      "description": "Your passports, bank statements and private photos are encrypted with AES-256, never sold or shared, and can be deleted in one click. Here's how Visamo protects them."
     },
     "dataPrivacy": {
       "title": "How we handle your data",
@@ -33,7 +33,7 @@
       }
     },
     "contact": {
-      "title": "Contact us",
+      "title": "Contact & Support",
       "description": "Questions, technical issues or refund requests: send the Visamo team a message, or reach us on WhatsApp."
     },
     "about": {

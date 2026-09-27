@@ -42,7 +42,7 @@ export default async function PricingPage() {
         </Container>
         <Container className="mt-14">
           <div id="tiers">
-            <PricingCards t={t} locale={locale} />
+            <PricingCards t={t} locale={locale} headingLevel="h2" />
           </div>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {p.trust.map((item) => (
@@ -61,7 +61,13 @@ export default async function PricingPage() {
       <section className="bg-white py-16 sm:py-20">
         <Container>
           <SectionTitle>{p.compare.title}</SectionTitle>
-          <div className="mt-10 overflow-x-auto rounded-2xl border border-line-200">
+          {/* Scrolls sideways on phones, so it takes focus for keyboard scrolling. */}
+          <div
+            role="region"
+            aria-label={p.compare.title}
+            tabIndex={0}
+            className="mt-10 overflow-x-auto rounded-2xl border border-line-200"
+          >
             <table className="w-full min-w-[640px] border-collapse text-start text-[15px]">
               <thead className="bg-sand-50">
                 <tr>

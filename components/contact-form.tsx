@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Icon } from "./icons";
 
 // Submissions go straight from the browser to Basin (usebasin.com), which
@@ -62,6 +62,13 @@ export function ContactForm({
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [sentTo, setSentTo] = useState("");
   const fileInput = useRef<HTMLInputElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // The form is replaced by the confirmation, so focus moves there and screen
+  // readers announce it instead of losing their place.
+  useEffect(() => {
+    if (status === "sent") successRef.current?.focus();
+  }, [status]);
 
   function addFiles(list: FileList | null) {
     if (!list) return;
@@ -128,7 +135,11 @@ export function ContactForm({
 
   if (status === "sent") {
     return (
-      <div role="status" className="rounded-2xl border border-teal-600/30 bg-teal-100/50 p-8 text-center">
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        className="rounded-2xl outline-none border border-teal-600/30 bg-teal-100/50 p-8 text-center">
         <span className="mx-auto inline-flex size-12 items-center justify-center rounded-full bg-teal-600 text-white">
           <Icon name="check" className="size-6" strokeWidth={2.4} />
         </span>
@@ -140,13 +151,22 @@ export function ContactForm({
 
   const total = files.reduce((sum, f) => sum + f.size, 0);
   const inputClass =
-    "mt-1.5 w-full rounded-[10px] border border-line-200 bg-white px-3.5 py-2.5 text-[16px] text-navy-900 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 aria-invalid:border-terracotta-600";
+    "mt-1.5 w-full rounded-[10px] border border-line-200 bg-white px-3.5 py-2.5 text-[16px] text-navy-900 transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 aria-invalid:border-terracotta-600";
+
+  // Ties each field to its error (or hint) so screen readers read it with the label.
+  const describedBy = (field: Field, hasHint = false) =>
+    errors[field] ? `${field}-error` : hasHint ? `${field}-hint` : undefined;
+  const fieldProps = (field: Field, hasHint = false) => ({
+    "aria-invalid": !!errors[field],
+    "aria-required": true,
+    "aria-describedby": describedBy(field, hasHint),
+  });
 
   return (
     <form noValidate onSubmit={onSubmit} className="space-y-5" acceptCharset="UTF-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <FieldBlock id="name" label={labels.name} error={errors.name}>
-          <input id="name" name="name" autoComplete="name" className={inputClass} aria-invalid={!!errors.name} />
+          <input id="name" name="name" autoComplete="name" className={inputClass} {...fieldProps("name")} />
         </FieldBlock>
         <FieldBlock id="email" label={labels.email} error={errors.email} hint={labels.emailHint}>
           <input
@@ -156,13 +176,13 @@ export function ContactForm({
             dir="ltr"
             autoComplete="email"
             className={`${inputClass} text-start`}
-            aria-invalid={!!errors.email}
+            {...fieldProps("email", true)}
           />
         </FieldBlock>
       </div>
 
       <FieldBlock id="reason" label={labels.reason} error={errors.reason}>
-        <select id="reason" name="reason" defaultValue="" className={inputClass} aria-invalid={!!errors.reason}>
+        <select id="reason" name="reason" defaultValue="" className={inputClass} {...fieldProps("reason")}>
           <option value="" disabled>
             {labels.reasonPlaceholder}
           </option>
@@ -175,12 +195,16 @@ export function ContactForm({
       </FieldBlock>
 
       <FieldBlock id="message" label={labels.message} error={errors.message}>
-        <textarea id="message" name="message" rows={6} className={inputClass} aria-invalid={!!errors.message} />
+        <textarea id="message" name="message" rows={6} className={inputClass} {...fieldProps("message")} />
       </FieldBlock>
 
       <div>
-        <p className="text-sm font-semibold text-navy-900">{labels.attachments}</p>
-        <p className="mt-0.5 text-sm text-slate-500">{labels.attachmentsHint}</p>
+        <p id="attachments-label" className="text-sm font-semibold text-navy-900">
+          {labels.attachments}
+        </p>
+        <p id="attachments-hint" className="mt-0.5 text-sm text-slate-500">
+          {labels.attachmentsHint}
+        </p>
         {files.length > 0 && (
           <ul className="mt-3 space-y-2">
             {files.map((file, i) => (
@@ -211,6 +235,7 @@ export function ContactForm({
           <button
             type="button"
             onClick={() => fileInput.current?.click()}
+            aria-describedby="attachments-label attachments-hint"
             className="mt-3 inline-flex items-center gap-2 rounded-[10px] border border-dashed border-slate-300 px-4 py-2.5 text-sm font-semibold text-teal-700 hover:border-teal-600 hover:bg-teal-100/40"
           >
             <Icon name="file" className="size-4" />
@@ -234,7 +259,10 @@ export function ContactForm({
             </bdi>
           </p>
         )}
-        {errors.attachments && <p className="mt-2 text-sm text-terracotta-600">{errors.attachments}</p>}
+        {/* Announced as it appears: it follows a file pick, not a focus move. */}
+        <p role="alert" className="mt-2 text-sm text-terracotta-600 empty:hidden">
+          {errors.attachments}
+        </p>
       </div>
 
       {/* Honeypot: hidden from people and screen readers. */}
@@ -282,9 +310,15 @@ function FieldBlock({
       </label>
       {children}
       {error ? (
-        <p className="mt-1.5 text-sm text-terracotta-600">{error}</p>
+        <p id={`${id}-error`} className="mt-1.5 text-sm text-terracotta-600">
+          {error}
+        </p>
       ) : (
-        hint && <p className="mt-1.5 text-xs text-slate-500">{hint}</p>
+        hint && (
+          <p id={`${id}-hint`} className="mt-1.5 text-xs text-slate-500">
+            {hint}
+          </p>
+        )
       )}
     </div>
   );

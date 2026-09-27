@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "./icons";
 
@@ -26,6 +26,8 @@ export function MobileNav({
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const [lastPathname, setLastPathname] = useState(pathname);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   // Close the drawer after navigation (e.g. a language switch).
   if (pathname !== lastPathname) {
@@ -33,12 +35,28 @@ export function MobileNav({
     setOpen(false);
   }
 
+  function close() {
+    setOpen(false);
+    toggleRef.current?.focus();
+  }
+
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    if (!open) return;
+    document.body.style.overflow = "hidden";
+    // The drawer is portaled to the end of <body>. Making the page behind it
+    // inert keeps keyboard and screen-reader users inside the open menu.
+    const behind = document.querySelectorAll<HTMLElement>("#main, body > footer");
+    behind.forEach((el) => (el.inert = true));
+    navRef.current?.querySelector<HTMLElement>("a, button")?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      toggleRef.current?.focus();
+    };
     document.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      behind.forEach((el) => (el.inert = false));
       document.removeEventListener("keydown", onKey);
     };
   }, [open]);
@@ -46,6 +64,7 @@ export function MobileNav({
   return (
     <div className="lg:hidden">
       <button
+        ref={toggleRef}
         type="button"
         aria-label={open ? labels.close : labels.open}
         aria-expanded={open}
@@ -59,8 +78,9 @@ export function MobileNav({
       {/* Portaled: the header's backdrop-filter would otherwise trap `fixed`. */}
       {open &&
         createPortal(
-          <div className="fixed inset-0 top-[60px] z-40 bg-navy-900/30" onClick={() => setOpen(false)}>
+          <div className="fixed inset-0 top-[60px] z-40 bg-navy-900/30" onClick={close}>
             <nav
+              ref={navRef}
               id="mobile-nav"
               aria-label={labels.nav}
               onClick={(e) => e.stopPropagation()}

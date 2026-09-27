@@ -257,6 +257,7 @@ export const legalEn: LegalContent = {
       title: "Accessibility statement",
       intro: [
         "We want every couple to be able to use Visamo, including people with disabilities. We work to make the site accessible in line with the Equal Rights for Persons with Disabilities (Accessibility Adjustments for Service) Regulations, 2013, and Israeli Standard 5568, which is based on WCAG 2.0 at level AA. We design to the newer WCAG 2.2 AA guidelines where we can.",
+        "Accessibility level: the site meets Israeli Standard 5568 at level AA, except for the limitations listed below.",
       ],
       sections: [
         {
@@ -264,35 +265,64 @@ export const legalEn: LegalContent = {
           body: [
             {
               list: [
-                "The whole site works with a keyboard, with a visible focus outline and a \"skip to content\" link.",
-                "Pages use proper headings, landmarks and labels so screen readers can navigate them.",
+                "The whole site works with a keyboard, with a visible focus outline and a \"skip to content\" link. When the mobile menu is open, focus stays inside it and the Esc key closes it.",
+                "Pages use proper headings, landmarks and labels so screen readers can navigate them, and each page has its own descriptive title.",
                 "Images have text alternatives; decorative graphics are hidden from screen readers.",
-                "Text and controls meet contrast guidelines, and text can be enlarged up to 200% without losing content.",
-                "Every form field has a label, and errors are explained in text, not by color alone.",
-                "The site is fully available in Hebrew and English, with right-to-left layout for Hebrew.",
-                "Animations are reduced when your device asks for reduced motion.",
+                "Text and controls meet contrast guidelines (at least 4.5:1 for regular text), and text can be enlarged up to 200% without losing content.",
+                "Every form field has a label. Errors are explained in text, not by color alone, are read out together with the field they belong to, and focus moves to the first field that needs fixing.",
+                "Tables have header cells, and a table that scrolls sideways on small screens can be scrolled with the keyboard.",
+                "The site is fully available in Hebrew and English, with right-to-left layout for Hebrew and the page language marked for screen readers.",
+                "Animations are short, never loop, and are reduced when your device asks for reduced motion.",
                 "The layout adapts to phones, tablets and desktops.",
+                "We do not use an accessibility overlay or plug-in; accessibility is built into the site itself.",
               ],
             },
           ],
         },
         {
-          heading: "Known limitations",
+          heading: "Browsers and assistive technology",
           body: [
-            "Some content may not yet be fully accessible, such as documents you upload yourself or content from third-party services (for example the contact-form provider). We are working to improve these, and we're happy to help another way in the meantime.",
+            "The site is designed to work with current versions of Chrome, Safari, Firefox and Edge, on desktop and mobile. [List the screen readers and browsers the site was tested with, for example NVDA with Chrome on Windows, VoiceOver with Safari on iPhone and TalkBack with Chrome on Android.]",
           ],
         },
         {
-          heading: "Need help or found a problem?",
+          heading: "Known limitations",
           body: [
-            "If something on the site isn't accessible to you, please tell us and we'll help and fix it as quickly as we can.",
-            "You can reach our accessibility coordinator through the contact form.",
-            "Please include the page address and a short description of the problem.",
+            "Some content may not yet be fully accessible, such as documents you upload yourself or content from third-party services (for example the contact-form provider and WhatsApp). The technical details on the \"How we handle data\" page are currently available in English only. We are working to improve these, and we're happy to help another way in the meantime.",
+          ],
+        },
+        {
+          heading: "Other ways to get help",
+          body: [
+            "If any part of the site is hard for you to use, we can help you by email or WhatsApp during our support hours, and we can send information in another format on request.",
+          ],
+        },
+        {
+          heading: "Accessibility contact",
+          body: [
+            "If something on the site isn't accessible to you, or you have a suggestion, please tell us and we'll help and fix it as quickly as we can.",
+            {
+              list: [
+                "Accessibility coordinator: [full name]",
+                "Phone: [phone number]",
+                "Email: support@visamo.co.il (please write \"Accessibility\" in the subject)",
+                "Or through the contact form on the site.",
+              ],
+            },
+            "Please include the page address and a short description of the problem. We aim to reply within [number] business days.",
+          ],
+        },
+        {
+          heading: "Physical accessibility",
+          body: [
+            "Visamo provides its service online only and does not have offices or service points open to the public. [Confirm before publishing; if that changes, describe the accessibility arrangements there.]",
           ],
         },
         {
           heading: "About this statement",
-          body: ["This statement was last reviewed on the date shown above."],
+          body: [
+            "This statement was last updated on the date shown above. The site's accessibility was last reviewed on [date] by [name of reviewer or company].",
+          ],
         },
       ],
     },

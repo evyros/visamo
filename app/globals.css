@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 /* Design tokens from the Visamo spec. Status colors are amber and muted
-   terracotta, never alarm red. */
+   terracotta, never alarm red. Text colors (slate-500, teal-700,
+   terracotta-600, whatsapp) keep at least 4.5:1 contrast on every surface
+   they sit on, per IS 5568 / WCAG AA; check before changing them. */
 @theme {
   --color-navy-900: #0f2a44;
   --color-navy-800: #17385a;
   --color-slate-700: #334155;
-  --color-slate-500: #64748b;
+  --color-slate-500: #5b6b80;
   --color-slate-300: #cbd5e1;
   --color-teal-600: #2f7f76;
   --color-teal-700: #25665f;
@@ -15,10 +17,10 @@
   --color-sand-50: #f8f6f1;
   --color-amber-500: #c98a2b;
   --color-amber-100: #f7ecd9;
-  --color-terracotta-600: #b5523b;
+  --color-terracotta-600: #a84b36;
   --color-terracotta-100: #f6e5e0;
   --color-line-200: #e2e0da;
-  --color-whatsapp: #1f8a4c;
+  --color-whatsapp: #1a7d44;
 
   /* Each locale swaps these through the variables below. */
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
@@ -53,6 +55,18 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* A visible focus indicator for every keyboard-focusable element. Components
+   that draw their own (buttons, inputs) override it with utilities. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-teal-600);
+    outline-offset: 2px;
+  }
+  .bg-navy-900 :focus-visible {
+    outline-color: var(--color-sage-200);
   }
 }
 
@@ -102,6 +116,28 @@ body {
 
 .animate-rise {
   animation: rise 0.5s ease-out both;
+}
+
+/* Hero texture. The dot grid fades out from the corner where the glow sits
+   (inline-end, so it mirrors in RTL); the grain is inline SVG noise. */
+.texture-dots {
+  background-image: radial-gradient(rgb(15 42 68 / 0.13) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 60% 70% at 85% 15%, black, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 85% 15%, black, transparent 75%);
+}
+[dir="rtl"] .texture-dots {
+  mask-image: radial-gradient(ellipse 60% 70% at 15% 15%, black, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 15% 15%, black, transparent 75%);
+}
+.texture-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.16 0 0 0 0 0.27 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+  /* Fade out toward the bottom so the hero meets the next section without a seam. */
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
 }
 
 /* Tailwind v4 dropped the pointer cursor on buttons; restore it. */

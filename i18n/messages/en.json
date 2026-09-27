@@ -96,7 +96,8 @@
     "disclaimerTitle": "Visamo is not a law firm and not a government service.",
     "disclaimer": "Visamo is independent software that helps couples organize, prepare and check documents for Israel's gradual process. We do not provide legal advice or legal representation, and using Visamo does not create a lawyer–client relationship. Visamo is not affiliated with, endorsed by, or an official portal of the Ministry of Interior or the Population and Immigration Authority. All decisions on your application are made solely by the authorities. For advice about your specific situation, consult a licensed Israeli lawyer.",
     "copyright": "© {year} Visamo. All rights reserved.",
-    "madeWith": "Built with {heart} by a couple who's been through it."
+    "madeWith": "Built with {heart} by a couple who's been through it.",
+    "heartLabel": "love"
   },
   "badges": {
     "encryption": "AES-256 encryption",
@@ -717,5 +718,10 @@
       "whatsappCta": "Chat with us on WhatsApp",
       "hours": "Support hours"
     }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you were looking for doesn't exist or has moved.",
+    "cta": "Back to the home page"
   }
 }

@@ -91,15 +91,19 @@ export async function Footer() {
         <p className="mt-8 text-center text-xs text-slate-300/80 lg:text-start">
           {format(f.copyright, { year: new Date().getFullYear() })}
           <span aria-hidden="true"> · </span>
-          <MadeWith text={f.madeWith} />
+          <MadeWith text={f.madeWith} label={f.heartLabel} />
         </p>
       </Container>
     </footer>
   );
 }
 
-/** Renders the message with a small drawn heart in place of `{heart}`. */
-function MadeWith({ text }: { text: string }) {
+/**
+ * Renders the message with a small drawn heart in place of `{heart}`. An empty
+ * label hides the heart from screen readers, for languages whose sentence
+ * already says "love".
+ */
+function MadeWith({ text, label }: { text: string; label: string }) {
   const [before, after] = text.split("{heart}");
   return (
     <span>
@@ -107,8 +111,7 @@ function MadeWith({ text }: { text: string }) {
       <svg
         viewBox="0 0 24 24"
         className="inline size-3.5 -translate-y-px fill-terracotta-600 align-middle"
-        role="img"
-        aria-label="♥"
+        {...(label ? { role: "img", "aria-label": label } : { "aria-hidden": true })}
       >
         <path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2Z" />
       </svg>

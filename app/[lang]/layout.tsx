@@ -48,7 +48,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           {t.common.skipToContent}
         </a>
         <Header />
-        <main id="main" className="flex-1">
+        <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
           {children}
         </main>
         <Footer />

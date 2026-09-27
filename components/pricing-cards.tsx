@@ -8,7 +8,18 @@ import { ButtonLink } from "./ui";
 const order: TierId[] = ["free", "assistant", "filePrep"];
 const highlighted: TierId = "filePrep";
 
-export function PricingCards({ t, locale, compact = false }: { t: Messages; locale: Locale; compact?: boolean }) {
+export function PricingCards({
+  t,
+  locale,
+  compact = false,
+  headingLevel: Heading = "h3",
+}: {
+  t: Messages;
+  locale: Locale;
+  compact?: boolean;
+  /** h2 where the cards aren't under a section heading, so levels aren't skipped. */
+  headingLevel?: "h2" | "h3";
+}) {
   return (
     <div className="grid items-stretch gap-6 lg:grid-cols-3">
       {order.map((id) => {
@@ -29,7 +40,7 @@ export function PricingCards({ t, locale, compact = false }: { t: Messages; loca
                 {t.pricing.mostComplete}
               </span>
             )}
-            <h3 className="text-lg font-semibold text-navy-900">{tier.name}</h3>
+            <Heading className="text-lg font-semibold text-navy-900">{tier.name}</Heading>
             <p className="mt-1 text-[15px] text-slate-500">{tier.tagline}</p>
             <p className="mt-6 flex flex-wrap items-baseline gap-x-2">
               <span className="font-display text-4xl font-semibold text-navy-900">

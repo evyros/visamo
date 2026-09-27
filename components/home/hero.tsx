@@ -13,6 +13,9 @@ export function Hero({ t, locale }: { t: Messages; locale: Locale }) {
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 end-[-10%] size-[640px] rounded-full bg-teal-600/10 blur-3xl"
       />
+      {/* Texture over the gradient: a faint dot grid fading from the glow, and fine film grain. */}
+      <div aria-hidden="true" className="texture-dots pointer-events-none absolute inset-0" />
+      <div aria-hidden="true" className="texture-grain pointer-events-none absolute inset-0" />
       <Container className="relative grid items-center gap-12 py-16 lg:grid-cols-[1.2fr_1fr] lg:py-24">
         <div className={mobileCenter}>
           <Eyebrow>{hero.eyebrow}</Eyebrow>

@@ -1,11 +1,14 @@
 import { defineConfig } from "drizzle-kit";
 
 // `npm run db:push` syncs lib/db/schema.ts to the Neon database in DATABASE_URL.
-// Next loads .env.local on its own; drizzle-kit needs it spelled out.
-try {
-  process.loadEnvFile(".env.local");
-} catch {
-  // No .env.local: DATABASE_URL comes from the shell or CI.
+// Next loads .env.local and .env on its own; drizzle-kit needs them spelled
+// out. Like Next, .env.local wins, since loadEnvFile keeps values already set.
+for (const file of [".env.local", ".env"]) {
+  try {
+    process.loadEnvFile(file);
+  } catch {
+    // Missing file: DATABASE_URL comes from the other file, the shell or CI.
+  }
 }
 
 export default defineConfig({

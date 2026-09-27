@@ -1,9 +1,27 @@
 import type { ComponentProps, ReactNode } from "react";
+import { Icon } from "@/components/icons";
 
-// Building blocks shared by the sign-in forms.
+// Building blocks shared by the app's forms.
 
-export const inputClass =
-  "mt-1.5 w-full rounded-[10px] border border-line-200 bg-white px-3.5 py-2.5 text-[16px] text-navy-900 transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 aria-invalid:border-terracotta-600";
+const boxClass =
+  "w-full rounded-[10px] border border-line-200 bg-white px-3.5 py-2.5 text-[16px] text-navy-900 transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 aria-invalid:border-terracotta-600";
+
+export const inputClass = `mt-1.5 ${boxClass}`;
+
+/** A native select with its own chevron, inset from the edge like the text padding. */
+export function Select({ className = "", children, ...props }: ComponentProps<"select">) {
+  return (
+    <div className="relative mt-1.5">
+      <select className={`${boxClass} appearance-none pe-11 ${className}`} {...props}>
+        {children}
+      </select>
+      <Icon
+        name="chevronDown"
+        className="pointer-events-none absolute end-3.5 top-1/2 size-5 -translate-y-1/2 text-slate-500"
+      />
+    </div>
+  );
+}
 
 export function Field({
   id,

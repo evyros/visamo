@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { eq } from "drizzle-orm";
 import { auth } from "./auth";
 import { db } from "./db";
-import { account } from "./db/schema";
+import { account, caseMember } from "./db/schema";
 
 /** The signed-in session, or null. One lookup per request. */
 export const getSession = cache(async () => auth.api.getSession({ headers: await headers() }));
@@ -26,4 +26,25 @@ export async function requireUser() {
   if (!session) redirect("/login");
   if (!(await hasSignInMethod(session.user.id))) redirect("/set-password");
   return session.user;
+}
+
+/** The id of the case the user belongs to, or null before onboarding. Not cached; see getCaseId. */
+export async function findCaseId(userId: string) {
+  const rows = await db
+    .select({ caseId: caseMember.caseId })
+    .from(caseMember)
+    .where(eq(caseMember.userId, userId))
+    .limit(1);
+  return rows[0]?.caseId ?? null;
+}
+
+/** findCaseId, looked up once per request. */
+export const getCaseId = cache(findCaseId);
+
+/** For pages that work on a case: like requireUser, and sends users without a case to /onboarding. */
+export async function requireCase() {
+  const user = await requireUser();
+  const caseId = await getCaseId(user.id);
+  if (!caseId) redirect("/onboarding");
+  return { user, caseId };
 }

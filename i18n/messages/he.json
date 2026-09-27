@@ -731,7 +731,8 @@
       "setPassword": "בחירת סיסמה",
       "forgotPassword": "איפוס סיסמה",
       "resetPassword": "בחירת סיסמה חדשה",
-      "home": "ראשי"
+      "home": "ראשי",
+      "onboarding": "פתיחת תיק"
     },
     "shell": {
       "backToSite": "חזרה ל-visamo.co.il",
@@ -802,6 +803,89 @@
         "invalidCredentials": "המייל או הסיסמה שגויים. אם נרשמתם עם Google, השתמשו בכפתור המשך עם Google.",
         "tooManyAttempts": "יותר מדי ניסיונות. חכו דקה ונסו שוב.",
         "generic": "משהו השתבש. נסו שוב."
+      }
+    },
+    "onboarding": {
+      "title": "פתיחת התיק שלך",
+      "intro": "כמה שאלות קצרות, כדי שנוכל ללוות אותך מכאן.",
+      "stepOf": "שלב {current} מתוך {total}",
+      "steps": {
+        "about": "קצת עליך",
+        "branch": "לשכת משרד הפנים שלך",
+        "stage": "איפה התהליך שלכם עומד"
+      },
+      "name": "שם מלא",
+      "gender": "מגדר",
+      "genders": {
+        "male": "זכר",
+        "female": "נקבה"
+      },
+      "israeli": "יש לך אזרחות ישראלית?",
+      "yes": "כן",
+      "no": "לא",
+      "nationality": "אזרחות",
+      "nationalityPlaceholder": "בחירת מדינה",
+      "maritalStatus": "מצב משפחתי",
+      "maritalStatusIsraeli": "מצב משפחתי (בתעודת הזהות)",
+      "maritalStatusPlaceholder": "בחירת מצב משפחתי",
+      "maritalStatuses": {
+        "single": "רווק/ה",
+        "commonLaw": "ידוע/ה בציבור",
+        "married": "נשוי/אה",
+        "divorced": "גרוש/ה",
+        "widowed": "אלמן/ה"
+      },
+      "hasChildren": "יש לי ילדים",
+      "branchIntro": "לשכת משרד הפנים שמטפלת בתיק שלך, או שתטפל בו. עוד לא ידוע? אפשר לדלג.",
+      "branch": "לשכה",
+      "branchPlaceholder": "בחירת לשכה",
+      "stageIntro": "יש לבחור את האפשרות שהכי מתאימה.",
+      "stages": {
+        "notFiled": "עוד לא הגשתי כלום למשרד הפנים",
+        "filedAwaiting": "שלחנו בקשה למשרד הפנים ועוד לא קיבלנו תשובה",
+        "firstResponse": "שלחנו בקשה למשרד הפנים וכבר קיבלנו תשובה ראשונה",
+        "interviewScheduled": "כבר נקבע לנו מועד לראיון"
+      },
+      "back": "חזרה",
+      "next": "המשך",
+      "skip": "דילוג",
+      "finish": "פתיחת התיק",
+      "creating": "התיק נפתח…",
+      "branches": {
+        "telAvivCenter": "תל אביב - מרכז",
+        "jerusalemCenter": "ירושלים - מרכז",
+        "jerusalemEast": "ירושלים - מזרח",
+        "jerusalemSouth": "ירושלים - דרום",
+        "eilat": "אילת",
+        "ashdod": "אשדוד",
+        "ashkelon": "אשקלון",
+        "beersheba": "באר שבע",
+        "bneiBrak": "בני ברק",
+        "ramatGanGivatayim": "רמת גן - גבעתיים",
+        "herzliya": "הרצליה",
+        "holon": "חולון",
+        "hadera": "חדרה",
+        "haifa": "חיפה",
+        "afula": "עפולה",
+        "tiberias": "טבריה",
+        "kfarSaba": "כפר סבא",
+        "nofHagalilNazareth": "נוף הגליל / אזור נצרת",
+        "netanya": "נתניה",
+        "acre": "עכו",
+        "petahTikva": "פתח תקווה",
+        "safed": "צפת",
+        "krayot": "קריות",
+        "roshHaayin": "ראש העין",
+        "rishonLezion": "ראשון לציון",
+        "ramla": "רמלה",
+        "rehovot": "רחובות"
+      },
+      "errors": {
+        "required": "שדה חובה.",
+        "choose": "יש לבחור אחת מהאפשרויות.",
+        "nameShort": "יש להזין לפחות 2 תווים.",
+        "nameLong": "אפשר להזין עד 100 תווים.",
+        "generic": "משהו השתבש. אפשר לנסות שוב."
       }
     },
     "home": {

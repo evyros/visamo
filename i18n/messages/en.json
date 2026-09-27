@@ -731,7 +731,8 @@
       "setPassword": "Choose a password",
       "forgotPassword": "Reset your password",
       "resetPassword": "Choose a new password",
-      "home": "Home"
+      "home": "Home",
+      "onboarding": "Set up your case"
     },
     "shell": {
       "backToSite": "Back to visamo.co.il",
@@ -801,6 +802,89 @@
         "passwordMismatch": "The passwords don't match.",
         "invalidCredentials": "The email or password is incorrect. If you signed up with Google, use Continue with Google.",
         "tooManyAttempts": "Too many attempts. Wait a minute and try again.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "onboarding": {
+      "title": "Let's set up your case",
+      "intro": "A few questions so we can guide you from here.",
+      "stepOf": "Step {current} of {total}",
+      "steps": {
+        "about": "About you",
+        "branch": "Your Misrad Hapnim branch",
+        "stage": "Where you are in the process"
+      },
+      "name": "Full name",
+      "gender": "Gender",
+      "genders": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "israeli": "Are you an Israeli citizen?",
+      "yes": "Yes",
+      "no": "No",
+      "nationality": "Nationality",
+      "nationalityPlaceholder": "Choose a country",
+      "maritalStatus": "Marital status",
+      "maritalStatusIsraeli": "Marital status (in Teudat Zehut)",
+      "maritalStatusPlaceholder": "Choose a status",
+      "maritalStatuses": {
+        "single": "Single",
+        "commonLaw": "Common-law partners",
+        "married": "Married",
+        "divorced": "Divorced",
+        "widowed": "Widowed"
+      },
+      "hasChildren": "I have children",
+      "branchIntro": "The Misrad Hapnim office that handles your case, or will handle it. Not sure yet? You can skip this.",
+      "branch": "Branch",
+      "branchPlaceholder": "Choose a branch",
+      "stageIntro": "Choose the option that fits you best.",
+      "stages": {
+        "notFiled": "We haven't filed anything with Misrad Hapnim yet",
+        "filedAwaiting": "We sent our file and haven't heard back",
+        "firstResponse": "We sent our file and got a first response",
+        "interviewScheduled": "We already have an interview appointment"
+      },
+      "back": "Back",
+      "next": "Continue",
+      "skip": "Skip",
+      "finish": "Create my case",
+      "creating": "Creating your case…",
+      "branches": {
+        "telAvivCenter": "Tel Aviv – Center",
+        "jerusalemCenter": "Jerusalem – Center",
+        "jerusalemEast": "Jerusalem – East",
+        "jerusalemSouth": "Jerusalem – South",
+        "eilat": "Eilat",
+        "ashdod": "Ashdod",
+        "ashkelon": "Ashkelon",
+        "beersheba": "Beersheba",
+        "bneiBrak": "Bnei Brak",
+        "ramatGanGivatayim": "Ramat Gan – Givatayim",
+        "herzliya": "Herzliya",
+        "holon": "Holon",
+        "hadera": "Hadera",
+        "haifa": "Haifa",
+        "afula": "Afula",
+        "tiberias": "Tiberias",
+        "kfarSaba": "Kfar Saba",
+        "nofHagalilNazareth": "Nof HaGalil / Nazareth area",
+        "netanya": "Netanya",
+        "acre": "Acre (Akko)",
+        "petahTikva": "Petah Tikva",
+        "safed": "Safed (Tzfat)",
+        "krayot": "Krayot",
+        "roshHaayin": "Rosh HaAyin",
+        "rishonLezion": "Rishon LeZion",
+        "ramla": "Ramla",
+        "rehovot": "Rehovot"
+      },
+      "errors": {
+        "required": "This field is required.",
+        "choose": "Choose one of the options.",
+        "nameShort": "Use at least 2 characters.",
+        "nameLong": "Use at most 100 characters.",
         "generic": "Something went wrong. Please try again."
       }
     },

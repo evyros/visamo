@@ -806,7 +806,7 @@
       }
     },
     "onboarding": {
-      "title": "Let's set up your file",
+      "title": "Let's prepare your file",
       "intro": "A few questions so we can guide you from here.",
       "stepOf": "Step {current} of {total}",
       "steps": {
@@ -842,7 +842,7 @@
       },
       "hasChildren": "I have children",
       "partnerHasChildren": "My partner has children",
-      "branchIntro": "The Misrad Hapnim office that handles your file, or will handle it. Not sure yet? You can skip this.",
+      "branchIntro": "The Misrad Hapnim office that handles your file, or will handle it.\nNot sure yet? You can skip this.",
       "branch": "Branch",
       "branchPlaceholder": "Choose a branch",
       "stageIntro": "Choose the option that fits you best.",
@@ -855,8 +855,8 @@
       "back": "Back",
       "next": "Continue",
       "skip": "Skip",
-      "finish": "Create my file",
-      "creating": "Creating your file…",
+      "finish": "Get started",
+      "creating": "Preparing your file…",
       "branches": {
         "telAvivCenter": "Tel Aviv – Center – Derech Menachem Begin",
         "jerusalemCenter": "Jerusalem – Center – Shlomtzion HaMalka",

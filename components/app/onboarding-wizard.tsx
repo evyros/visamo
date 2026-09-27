@@ -219,7 +219,7 @@ export function OnboardingWizard({
 
         {step === BRANCH && (
           <>
-            <p className="text-[16px] text-slate-700">{t.branchIntro}</p>
+            <p className="whitespace-pre-line text-[16px] text-slate-700">{t.branchIntro}</p>
             <Field id="branch" label={t.branch} error={errors.branch}>
               <Select
                 id="branch"

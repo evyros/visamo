@@ -5,7 +5,14 @@ export function asLiveLocale(value: string | undefined | null): Locale | undefin
   return isLocale(value) && liveLocales.includes(value) ? value : undefined;
 }
 
-/** The best live locale for an Accept-Language header, if any matches. */
+// "iw" is the legacy code for Hebrew that some browsers still send.
+const baseOf = (tag: string) => (tag.split("-")[0] === "iw" ? "he" : tag.split("-")[0]);
+
+/**
+ * The best live locale for an Accept-Language header, if any matches. Hebrew
+ * wins whenever it's listed at all: many Israelis keep English as the browser's
+ * first language and Hebrew second.
+ */
 export function matchAcceptLanguage(header: string | null): Locale | undefined {
   if (!header) return undefined;
   const preferred = header
@@ -18,9 +25,11 @@ export function matchAcceptLanguage(header: string | null): Locale | undefined {
     .filter(({ tag, q }) => tag && q > 0)
     .sort((a, b) => b.q - a.q);
 
+  const hebrew = asLiveLocale("he");
+  if (hebrew && preferred.some(({ tag }) => baseOf(tag) === "he")) return hebrew;
+
   for (const { tag } of preferred) {
-    // "iw" is the legacy code for Hebrew that some browsers still send.
-    const base = tag.split("-")[0] === "iw" ? "he" : tag.split("-")[0];
+    const base = baseOf(tag);
     const exact = liveLocales.find((l) => l.toLowerCase() === tag);
     if (exact) return exact;
     const byBase = liveLocales.find((l) => l.split("-")[0].toLowerCase() === base);

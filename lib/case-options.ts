@@ -68,7 +68,8 @@ export const nationalities = [
 export const NAME_MIN = 2;
 export const NAME_MAX = 100;
 
-export type OnboardingInput = {
+/** One person in the couple: the user, or their partner. */
+export type PersonInput = {
   name: string;
   gender: Gender;
   isIsraeli: boolean;
@@ -77,6 +78,11 @@ export type OnboardingInput = {
   maritalStatus: MaritalStatus;
   /** Asked only when not Israeli, null otherwise. */
   hasChildren: boolean | null;
+};
+
+export type OnboardingInput = {
+  self: PersonInput;
+  partner: PersonInput;
   /** Null when the user skipped the branch step. */
   branch: BranchCode | null;
   stage: Stage;
@@ -85,16 +91,15 @@ export type OnboardingInput = {
 const oneOf = <T extends string>(list: readonly T[], value: unknown): value is T =>
   typeof value === "string" && (list as readonly string[]).includes(value);
 
-/** The answers as sent from the browser, checked and normalized; null if anything is off. */
-export function parseOnboarding(input: unknown): OnboardingInput | null {
-  if (typeof input !== "object" || input === null) return null;
-  const v = input as Record<string, unknown>;
+const isObject = (value: unknown): value is Record<string, unknown> => typeof value === "object" && value !== null;
+
+function parsePerson(v: unknown): PersonInput | null {
+  if (!isObject(v)) return null;
   const name = typeof v.name === "string" ? v.name.trim() : "";
   if (name.length < NAME_MIN || name.length > NAME_MAX) return null;
-  if (!oneOf(genders, v.gender) || !oneOf(maritalStatuses, v.maritalStatus) || !oneOf(stages, v.stage)) return null;
+  if (!oneOf(genders, v.gender) || !oneOf(maritalStatuses, v.maritalStatus)) return null;
   if (typeof v.isIsraeli !== "boolean") return null;
   if (!v.isIsraeli && (!oneOf(nationalities, v.nationality) || typeof v.hasChildren !== "boolean")) return null;
-  if (v.branch !== null && !oneOf(branches, v.branch)) return null;
   return {
     name,
     gender: v.gender,
@@ -102,7 +107,15 @@ export function parseOnboarding(input: unknown): OnboardingInput | null {
     nationality: v.isIsraeli ? null : (v.nationality as string),
     maritalStatus: v.maritalStatus,
     hasChildren: v.isIsraeli ? null : (v.hasChildren as boolean),
-    branch: v.branch,
-    stage: v.stage,
   };
+}
+
+/** The answers as sent from the browser, checked and normalized; null if anything is off. */
+export function parseOnboarding(input: unknown): OnboardingInput | null {
+  if (!isObject(input)) return null;
+  const self = parsePerson(input.self);
+  const partner = parsePerson(input.partner);
+  if (!self || !partner || !oneOf(stages, input.stage)) return null;
+  if (input.branch !== null && !oneOf(branches, input.branch)) return null;
+  return { self, partner, branch: input.branch, stage: input.stage };
 }

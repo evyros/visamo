@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { regionName } from "@/i18n/format";
+import { onboardingPaths } from "@/lib/app-paths";
 import { branches, nationalities } from "@/lib/case-options";
 import { getCaseId, requireUser } from "@/lib/session";
-import { AuthHeading } from "@/components/app/auth-heading";
 import { OnboardingWizard } from "@/components/app/onboarding-wizard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,8 +14,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // A signed-in user without a case lands here from every app page. Finishing
 // creates the case; a user who already has one (a partner who joined by
-// invite, or a finished onboarding) goes straight into the app.
-export default async function OnboardingPage() {
+// invite, or a finished onboarding) goes straight into the app. One page for
+// every step's URL: the wizard reads the step from the URL itself.
+export default async function OnboardingPage({ params }: { params: Promise<{ step?: string[] }> }) {
+  const { step } = await params;
+  if (!onboardingPaths.includes(["/onboarding", ...(step ?? [])].join("/"))) notFound();
   const user = await requireUser();
   if (await getCaseId(user.id)) redirect("/");
   const locale = await getAppLocale();
@@ -27,9 +30,6 @@ export default async function OnboardingPage() {
   const branchOptions = branches.map((code) => ({ value: code, label: t.branches[code] })).sort(byLabel);
 
   return (
-    <>
-      <AuthHeading title={t.title}>{t.intro}</AuthHeading>
-      <OnboardingWizard t={t} countries={countryOptions} branches={branchOptions} />
-    </>
+    <OnboardingWizard t={t} countries={countryOptions} branches={branchOptions} />
   );
 }

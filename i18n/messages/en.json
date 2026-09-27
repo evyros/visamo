@@ -1,0 +1,721 @@
+{
+  "meta": {
+    "siteName": "Visamo",
+    "titleSuffix": "Visamo — independent organization software for Israel's gradual process",
+    "home": {
+      "title": "Visamo — Getting a partner visa should be simple. We make it smooth.",
+      "description": "Check every document the moment you upload it, understand what Misrad Hapnim is asking for, and build your gradual-process file in your language. Independent software, not legal advice."
+    },
+    "pricing": {
+      "title": "Pricing",
+      "description": "One-time prices, no subscription. Start free, or check every document in your file for ₪269, once, for the whole gradual process."
+    },
+    "security": {
+      "title": "Trust & security",
+      "description": "Passports, bank statements, private photos. How Visamo protects your documents."
+    },
+    "dataPrivacy": {
+      "title": "How we handle your data",
+      "description": "Everything Visamo does with your documents, and everything you can do with them: encryption, access, deletion and your controls."
+    },
+    "legal": {
+      "privacy": {
+        "title": "Privacy policy",
+        "description": "Visamo's privacy policy."
+      },
+      "terms": {
+        "title": "Terms of use",
+        "description": "Visamo's terms of use."
+      },
+      "accessibility": {
+        "title": "Accessibility statement",
+        "description": "Visamo's accessibility statement."
+      }
+    },
+    "contact": {
+      "title": "Contact us",
+      "description": "Questions, technical issues or refund requests: send the Visamo team a message, or reach us on WhatsApp."
+    },
+    "about": {
+      "title": "Why I built Visamo",
+      "description": "The story behind Visamo: two years of forms, answers and bureaucracy on the way to my wife's visa."
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "ctaPrimary": "Start free",
+    "yes": "Yes",
+    "no": "No",
+    "included": "Included",
+    "notIncluded": "Not included",
+    "learnMore": "Learn more"
+  },
+  "nav": {
+    "label": "Main",
+    "why": "Why Visamo?",
+    "howItWorks": "How it works",
+    "features": "Features",
+    "security": "Security",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Log in",
+    "startFree": "Start free",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "whatsapp": "Support on WhatsApp"
+  },
+  "footer": {
+    "tagline": "Independent software that guides couples smoothly through Israel's gradual process to an A/5 visa.",
+    "product": {
+      "title": "Product",
+      "howItWorks": "How it works",
+      "features": "Features",
+      "pricing": "Pricing",
+      "login": "Log in"
+    },
+    "trust": {
+      "title": "Trust",
+      "security": "Security & privacy",
+      "dataPrivacy": "How we handle your data",
+      "privacy": "Privacy policy",
+      "terms": "Terms of use",
+      "accessibility": "Accessibility statement"
+    },
+    "company": {
+      "title": "Company",
+      "about": "Why I built Visamo",
+      "contact": "Contact"
+    },
+    "support": {
+      "title": "Support",
+      "whatsapp": "WhatsApp",
+      "hours": "Sun–Thu 10:00–18:00\nFri 10:00–14:30 (Israel time)",
+      "email": "Email"
+    },
+    "disclaimerTitle": "Visamo is not a law firm and not a government service.",
+    "disclaimer": "Visamo is independent software that helps couples organize, prepare and check documents for Israel's gradual process. We do not provide legal advice or legal representation, and using Visamo does not create a lawyer–client relationship. Visamo is not affiliated with, endorsed by, or an official portal of the Ministry of Interior or the Population and Immigration Authority. All decisions on your application are made solely by the authorities. For advice about your specific situation, consult a licensed Israeli lawyer.",
+    "copyright": "© {year} Visamo. All rights reserved.",
+    "madeWith": "Built with {heart} by a couple who's been through it."
+  },
+  "badges": {
+    "encryption": "AES-256 encryption",
+    "languages": "English & Hebrew",
+    "independent": "Independent, not a government site",
+    "ssl": "SSL / TLS secured",
+    "noSale": "We never sell your data",
+    "deletion": "One-click deletion",
+    "whatsapp": "Israeli support on WhatsApp"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "For couples applying for Israel's A/5 partner visa",
+      "title": "Getting a partner visa should be simple. It isn't.",
+      "titleAccent": "We make it smooth.",
+      "subtitle": "Visamo guides you through every step of your partner visa process in your language, and **checks each document** before you submit it to Misrad Hapnim, so a small mistake doesn't **cost you months**.",
+      "secondaryCta": "See how it works",
+      "microcopy": "Start free: personal document list. No credit card.",
+      "mockup": {
+        "label": "Example of an instant document check",
+        "title": "Document check",
+        "checking": "Checked against the published requirements",
+        "rows": [
+          {
+            "status": "ok",
+            "name": "Marriage certificate.pdf",
+            "text": "Matches the published requirements"
+          },
+          {
+            "status": "fix",
+            "name": "Birth certificate.pdf",
+            "text": "Name spelled differently than in the passport.",
+            "fix": "What to do"
+          },
+          {
+            "status": "fix",
+            "name": "Police certificate.pdf",
+            "text": "Issued 8 months ago, older than allowed.",
+            "fix": "How to fix"
+          },
+          {
+            "status": "fix",
+            "name": "Declaration of no children.pdf",
+            "text": "The affidavit wording isn't valid.",
+            "fix": "How to fix"
+          }
+        ],
+        "caption": "Found in 40 seconds. Not after months of waiting."
+      }
+    },
+    "problem": {
+      "title": "One small mistake can cost you months.",
+      "lead": "If the Ministry finds a problem in your file, it sends it back, and the wait starts over.",
+      "without": {
+        "label": "Without Visamo",
+        "submit": "Submit your file",
+        "wait": "Months of waiting",
+        "sentBack": "Sent back: one document isn't right",
+        "resubmit": "Fix it and submit again",
+        "waitAgain": "Months of waiting, again",
+        "answer": "Answer"
+      },
+      "with": {
+        "label": "With Visamo",
+        "check": "All documents are checked",
+        "submit": "Submit your file",
+        "wait": "Months of waiting",
+        "answer": "Answer"
+      },
+      "caption": "Illustration only. Waiting times are set by the Ministry."
+    },
+    "features": {
+      "title": "Everything you need for the process, in one place.",
+      "intro": "Answers when you're unsure, every document explained, and a check before anything goes to the Ministry.",
+      "assistant": {
+        "tag": "Information assistant",
+        "title": "An assistant that knows the process inside out",
+        "body": "Which documents do you need? Is this wait normal? Ask in your own words and get a clear answer, based on the process, its documents and the stages couples go through. Day or night, in your language.",
+        "footnote": "General information based on published sources, not legal advice. When your case needs a lawyer, the assistant will say so.",
+        "chat": {
+          "label": "Example conversation with the Visamo assistant",
+          "question": "They're asking for an Ishur Toshav, but my municipality doesn't issue it. Can I just bring an Arnona bill instead?",
+          "answer": "No. An Arnona bill doesn't replace the Ishur Toshav, and it's mandatory. This is a common issue, since some municipalities in Israel don't know what it is. In order to get it…",
+          "name": "Visamo assistant"
+        }
+      },
+      "cards": [
+        {
+          "icon": "shield",
+          "tag": "File Preparation",
+          "title": "Know on the spot, not months later",
+          "body": "Upload a document and Visamo checks it right away against the published requirements, and tells you how to fix anything that's off.",
+          "bullets": [
+            "Missing pages, signatures, apostille or translation",
+            "Issue dates that are too old",
+            "Incorrect formats, missing details"
+          ]
+        },
+        {
+          "icon": "guide",
+          "title": "“What is that document, and where do I get it?”",
+          "body": "Every document on your list, explained in plain words: what it really is, which office issues it in your country or in Israel, how long it usually takes, and what it must include.",
+          "bullets": [
+            "Official names decoded (e.g. “תעודת יושר” = police clearance certificate)",
+            "Where to order it, by country",
+            "Apostille and translation rules"
+          ]
+        },
+        {
+          "icon": "compass",
+          "title": "Is this normal? Now you'll know.",
+          "body": "A step-by-step map of the gradual process that tells you what usually happens at each stage, how long waits typically run, and when it's worth getting a professional opinion.",
+          "bullets": [
+            "What to expect at each stage",
+            "Routine vs. worth a closer look",
+            "Got a letter? Understand what it's asking for"
+          ],
+          "footnote": "General information about the published process. For advice on your own case, speak with a licensed lawyer."
+        }
+      ],
+      "secondary": [
+        {
+          "icon": "folder",
+          "title": "Your story together, organized",
+          "body": "Photos, joint bills, a lease, trips: keep the proof of your relationship in one place, sorted by date, so you always know what you have for each period."
+        },
+        {
+          "icon": "people",
+          "title": "Built for two",
+          "body": "Each partner has their own login and their own language, on the same shared file."
+        }
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "steps": [
+        {
+          "title": "Tell us about the two of you.",
+          "body": "We will ask which country each of you comes from, whether you're married or living together as partners, etc. Your answers build a document list made for you, with every item explained."
+        },
+        {
+          "title": "Upload, and get checked on the spot.",
+          "body": "Each document is checked as it arrives. Anything that needs fixing comes with clear steps.",
+          "tag": "File Preparation"
+        },
+        {
+          "title": "Submit it yourself, ready.",
+          "body": "Every document is checked and kept separate, the way the Ministry asks for them. You submit them yourself through the official channels."
+        }
+      ]
+    },
+    "security": {
+      "eyebrow": "Security & privacy",
+      "title": "Your passports and private photos deserve bank-grade protection",
+      "intro": "We built Visamo for our own documents first. Here is exactly how we protect yours.",
+      "promises": [
+        {
+          "icon": "lock",
+          "title": "Encrypted everywhere.",
+          "body": "AES-256 for stored documents, TLS for everything in transit."
+        },
+        {
+          "icon": "key",
+          "title": "Your data stays yours.",
+          "body": "You own everything you upload. Download it all, any time."
+        },
+        {
+          "icon": "eyeOff",
+          "title": "Never sold. Never shared.",
+          "body": "No data brokers, no ad networks, no exceptions."
+        },
+        {
+          "icon": "trash",
+          "title": "Delete it all in one click.",
+          "body": "Your account, your file and every document, permanently removed."
+        }
+      ],
+      "link": "How we protect your data"
+    },
+    "founder": {
+      "quote": "I built Visamo after a two-year process of getting forms, chasing answers and dealing with bureaucracy I wasn't prepared for.",
+      "name": "Evyatar",
+      "role": "founder of Visamo",
+      "link": "Read why I built Visamo"
+    },
+    "pricingTeaser": {
+      "title": "One-time prices. No subscription.",
+      "cta": "See full pricing"
+    },
+    "faq": {
+      "title": "Questions couples ask us",
+      "items": [
+        {
+          "q": "Can we do it ourselves, without Visamo?",
+          "a": "Of course, and many couples do. But if you don't know the small details and requirements of the gradual process, it's usually harder, frustrating, and it takes longer: small mistakes lead to delays and a lot of uncertainty. Visamo helps you run a smoother process, with every document checked and every step explained."
+        },
+        {
+          "q": "What can we get for free?",
+          "a": "We've been through this process ourselves, and we know how heavy it can feel. That's why we built Visamo: to give couples the smoother process we didn't have, not only the ones who pay. So for free, you get your personal document list, all the organizational features and 5 questions to the assistant."
+        },
+        {
+          "q": "Can Visamo tell me if my file will be rejected?",
+          "a": "No one outside the Ministry can predict its decision. Visamo checks each document against the published requirements and flags the issues that commonly get files sent back, so you can fix them before you submit instead of after months of waiting."
+        },
+        {
+          "q": "Is Visamo a law firm or a lawyer?",
+          "a": "No. Visamo is organization and document-preparation software. We don't give legal advice or represent you. For advice on your specific case, speak with a licensed Israeli lawyer."
+        },
+        {
+          "q": "What if our case is complicated?",
+          "a": "Then we recommend speaking with a licensed Israeli lawyer. Visamo isn't a lawyer and can't advise on your specific situation, such as a previous refusal, a hearing or an unusual status. You can still use Visamo alongside your lawyer to organize and check your documents."
+        },
+        {
+          "q": "Are you connected to Misrad Hapnim?",
+          "a": "No. Visamo is independent and isn't affiliated with or endorsed by the Ministry of Interior or the Population and Immigration Authority. You submit your application yourself, through the official channels."
+        },
+        {
+          "q": "We got a letter from the Ministry. Should we worry?",
+          "a": "Many letters are routine requests. Visamo's assistant can explain what a letter is usually asking for and what the common next step is. If it involves a refusal or a hearing, we'll tell you it's time to speak with a lawyer."
+        },
+        {
+          "q": "Who can see our documents?",
+          "a": "Only you and your partner, if you invite them. Our team can't open your documents unless you ask for support and grant access.",
+          "link": {
+            "label": "How we handle your data",
+            "path": "/data-privacy"
+          }
+        },
+        {
+          "q": "What if Visamo didn't give us any value?",
+          "a": "We have a 14-day refund policy, because we don't want anyone to pay for something that didn't help. Within 14 days of purchase, send us a request through the contact form with the email you signed up with and the reason, and you'll get a full refund within 10 business days.",
+          "link": {
+            "label": "Contact us",
+            "path": "/contact"
+          }
+        }
+      ],
+      "more": "Still have a question?",
+      "whatsapp": "Message us on WhatsApp"
+    },
+    "final": {
+      "title": "Don't wait months to find out something was missing.",
+      "microcopy": "No credit card. Independent software, not legal advice."
+    }
+  },
+  "pricing": {
+    "title": "Simple, one-time pricing",
+    "subtitle": "No subscriptions and no hidden fees. Pay only for what you need.",
+    "anchorLead": "One sent-back file can cost months.",
+    "anchor": "File Preparation costs {price}, once.",
+    "mostComplete": "Most complete",
+    "tiers": {
+      "free": {
+        "name": "Free",
+        "priceNote": "",
+        "tagline": "Know exactly what you need",
+        "includes": [
+          "Your personal document list, each item explained",
+          "File and document organization: upload and keep everything in one place",
+          "Process guide",
+          "5 questions to the assistant",
+          "One shared file for both partners"
+        ],
+        "cta": "Start free",
+        "footnote": "No credit card needed."
+      },
+      "assistant": {
+        "name": "Assistant",
+        "priceNote": "per 30 questions",
+        "tagline": "Answers in your language, whenever you're unsure",
+        "includes": [
+          "30 questions about documents, stages or letters",
+          "Top up as often as you like",
+          "Everything in Free"
+        ],
+        "cta": "Get 30 questions",
+        "footnote": "One-time payment. Questions don't expire."
+      },
+      "filePrep": {
+        "name": "File Preparation",
+        "priceNote": "once, for the whole process",
+        "tagline": "Find the problems before the Ministry does",
+        "includes": [
+          "Everything in Assistant, including 30 questions",
+          "Every document checked on the spot",
+          "What's wrong and how to fix it, for each flag",
+          "Cross-document checks (names, dates, details)",
+          "Covers every stage, all 5–7 years"
+        ],
+        "cta": "Prepare my file",
+        "footnote": "Checks published requirements; not legal review."
+      }
+    },
+    "trust": [
+      {
+        "icon": "lock",
+        "text": "Secure payment"
+      },
+      {
+        "icon": "receipt",
+        "text": "One-time price, no subscription"
+      },
+      {
+        "icon": "tag",
+        "text": "Prices include VAT"
+      },
+      {
+        "icon": "check",
+        "text": "Didn't help? Full refund within 14 days."
+      }
+    ],
+    "compare": {
+      "title": "Compare plans",
+      "feature": "Feature",
+      "rows": [
+        {
+          "feature": "Personal document list, each item explained",
+          "values": [
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "feature": "Process guide",
+          "values": [
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "feature": "Assistant questions",
+          "values": [
+            "5",
+            "30 per pack, top up any time",
+            "30 included, top up any time"
+          ]
+        },
+        {
+          "feature": "One shared file for both partners",
+          "values": [
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "feature": "File and document organization",
+          "values": [
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "feature": "Instant check on every document",
+          "values": [
+            "no",
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "feature": "How-to-fix steps for each flag",
+          "values": [
+            "no",
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "feature": "Cross-document consistency check",
+          "values": [
+            "no",
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "feature": "WhatsApp support",
+          "values": [
+            "yes",
+            "yes",
+            "yes"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Pricing questions",
+      "items": [
+        {
+          "q": "Is this a subscription?",
+          "a": "No. Every tier is a one-time payment."
+        },
+        {
+          "q": "How long does File Preparation last?",
+          "a": "For your whole gradual process, every stage. You pay once."
+        },
+        {
+          "q": "Can I upload documents on the Free plan?",
+          "a": "Yes. You can upload and organize all your documents for free. Checking them against the published requirements comes with File Preparation."
+        },
+        {
+          "q": "What counts as one question?",
+          "a": "Each message you send to the assistant counts as one question. Follow-ups count as new questions."
+        },
+        {
+          "q": "Do my questions expire?",
+          "a": "No. Unused questions stay in your file. File Preparation includes 30, and you can top up any time."
+        },
+        {
+          "q": "Does File Preparation mean our file won't be sent back?",
+          "a": "No one can promise that; decisions are made only by the authorities. File Preparation checks every document against the published requirements and flags the issues that commonly get files sent back, so you can fix them before you submit."
+        },
+        {
+          "q": "Can I get a refund?",
+          "a": "Yes. We have a 14-day refund policy, because we don't want anyone to pay for something that didn't help. Within 14 days of purchase, send us a request through the contact form with the email you signed up with and the reason, and you'll get a full refund within 10 business days.",
+          "link": {
+            "label": "Contact us",
+            "path": "/contact"
+          }
+        },
+        {
+          "q": "Do we need to pay twice as a couple?",
+          "a": "No. One purchase covers your shared file, for both partners."
+        }
+      ]
+    }
+  },
+  "security": {
+    "hero": {
+      "title": "Your documents are personal. We treat them that way.",
+      "subtitle": "Passports, bank statements, private photos. Here is exactly how Visamo protects them, in plain words."
+    },
+    "data": {
+      "title": "Your data, protected",
+      "intro": "Here's what we promise, in plain words.",
+      "tiles": [
+        {
+          "icon": "lock",
+          "title": "Encrypted everywhere.",
+          "body": "AES-256 for stored documents, secure connections for everything else."
+        },
+        {
+          "icon": "people",
+          "title": "Only the two of you.",
+          "body": "Our team can't open your file unless you ask for help and allow it."
+        },
+        {
+          "icon": "eyeOff",
+          "title": "Never sold.",
+          "body": "No ads, no data brokers, and your documents never train AI models."
+        },
+        {
+          "icon": "download",
+          "title": "Yours to take.",
+          "body": "Download your whole file whenever you want."
+        },
+        {
+          "icon": "trash",
+          "title": "Deleted in one click.",
+          "body": "Your file and every document, gone for good."
+        },
+        {
+          "icon": "scale",
+          "title": "Built for Israeli privacy law.",
+          "body": "Designed to meet the Privacy Protection Law and its data security rules."
+        }
+      ],
+      "linkLead": "Want the full details?",
+      "linkBody": "Encryption, who can access your file, backups, deletion and every control you have.",
+      "link": "Read exactly how we handle your data"
+    },
+    "policies": {
+      "title": "Policies"
+    }
+  },
+  "about": {
+    "eyebrow": "A note from the founder",
+    "title": "Why I built Visamo",
+    "paragraphs": [
+      "When my American wife and I started the gradual process, I thought the interviews would be the hard part. They weren't. The paperwork was.",
+      "Some documents we didn't even know how to get. A certificate that was valid in March had expired by our appointment in July. We waited months for a slot, only to hear “come back with the missing page,” and then waited months more for the next round. More than once, our file was sent back over something we didn't know was mandatory.",
+      "Our “system” was a folder on our computer, full of revisions. Between the rounds and the rejections, the whole process took us almost two years. I'm Israeli, I read every form in my own language, and I still felt lost. For my wife, who doesn't speak Hebrew, it was even harder.",
+      "So I built what we needed: one calm place for every document, every date and every step. Visamo can't decide anyone's case. But it makes the process smoother, with much less risk of missing something along the way. Bureaucracy shouldn't be the hardest part of building a life with the person you love."
+    ],
+    "signature": "Evyatar, founder of Visamo",
+    "caption": "",
+    "photoAlt": "Evyatar, founder of Visamo"
+  },
+  "dataPrivacy": {
+    "title": "How we handle your data",
+    "intro": "Everything we do with your documents, and everything you can do with them.",
+    "toc": "On this page",
+    "technical": "Technical detail",
+    "protect": {
+      "title": "How we protect your data",
+      "items": [
+        {
+          "area": "Encryption",
+          "plain": "Your documents are locked with the same standard banks use, whether they're stored or on the move.",
+          "technical": "AES-256 at rest with keys in a managed KMS, rotated [yearly]; TLS 1.2+ with HSTS in transit; signed, expiring download links."
+        },
+        {
+          "area": "Where data lives",
+          "plain": "Your data is stored with Vercel, in data centers in Frankfurt, Germany.",
+          "technical": "Hosted on Vercel, Frankfurt region (fra1), Germany. Vercel holds a SOC 2 Type 2 attestation and ISO 27001 certification, and offers a GDPR Data Processing Addendum."
+        },
+        {
+          "area": "Who can access it",
+          "plain": "Only you and the partner you invite. Our team cannot open your documents unless you ask for help and grant access.",
+          "technical": "Role-based access, least privilege, MFA for all staff, time-limited support access granted by the user, every access logged."
+        },
+        {
+          "area": "Document analysis",
+          "plain": "When Visamo checks a document, it's processed only to give you that result. It's never used to train AI models.",
+          "technical": "Contractual zero-retention and no-training terms with every provider involved in processing."
+        },
+        {
+          "area": "Backups",
+          "plain": "Encrypted backups protect you from loss, and they're deleted on a fixed schedule.",
+          "technical": "Encrypted daily backups, 30-day retention, then purged."
+        },
+        {
+          "area": "Payments",
+          "plain": "Card payments go through [payment provider]. We never see or store your card number.",
+          "technical": "PCI-DSS-compliant processor; Visamo stores only a payment token and the receipt."
+        },
+        {
+          "area": "If something goes wrong",
+          "plain": "We watch for threats around the clock and will tell you promptly if your data is ever affected.",
+          "technical": "Monitoring and alerting, a written incident-response plan, and notification to users and to the Privacy Protection Authority as Israeli law requires."
+        }
+      ]
+    },
+    "control": {
+      "title": "You're in control",
+      "items": [
+        {
+          "control": "Download everything",
+          "text": "Get your whole file, every document included, as a ZIP, any time."
+        },
+        {
+          "control": "Delete one document",
+          "text": "Removed from your file immediately and from backups within 30 days."
+        },
+        {
+          "control": "Delete my account",
+          "text": "One button, one confirmation. Everything goes: your file, every document, chat history."
+        },
+        {
+          "control": "Partner access",
+          "text": "Invite or remove your partner at any time."
+        },
+        {
+          "control": "Support access",
+          "text": "Off by default. Grant it for a set time when you need help."
+        },
+        {
+          "control": "Active sessions",
+          "text": "See every signed-in device and sign any of them out."
+        }
+      ]
+    },
+    "never": {
+      "title": "What we will never do",
+      "items": [
+        "Sell, rent or trade your data",
+        "Show you ads or share data with ad networks",
+        "Train AI models on your documents",
+        "Send anything to the Ministry on your behalf",
+        "Keep your documents after you delete them (beyond the 30-day backup window)"
+      ]
+    },
+    "compliance": "Visamo is designed to comply with Israel's Privacy Protection Law, 1981, including Amendment 13, and the Privacy Protection (Data Security) Regulations, 2017. If you live in the EU or UK, you also have your rights under the GDPR, including access, correction and deletion."
+  },
+  "contact": {
+    "title": "Contact us",
+    "intro": "Have a question or a technical issue? Send us a message and we'll get back to you during support hours.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "emailHint": "If you have a Visamo account, use the email you signed up with.",
+      "reason": "What is this about?",
+      "reasonPlaceholder": "Choose a topic",
+      "reasons": [
+        "Technical issue",
+        "Billing or payment",
+        "Refund request",
+        "Privacy or data request",
+        "Other"
+      ],
+      "message": "Message",
+      "attachments": "Attachments (optional)",
+      "attachmentsHint": "PDF or images, up to 3 files and 10MB in total.",
+      "addFiles": "Add files",
+      "remove": "Remove",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Thanks, we got your message.",
+      "successBody": "We'll reply to {email} as soon as we can during support hours.",
+      "error": "Something went wrong and your message wasn't sent. Please try again, or email us at {email}.",
+      "privacy": "We use your details only to answer your message.",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Enter a valid email address.",
+        "tooMany": "You can attach up to 3 files.",
+        "tooLarge": "Attachments can be up to 10MB in total.",
+        "type": "Only PDF and image files are allowed."
+      }
+    },
+    "side": {
+      "title": "Other ways to reach us",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "whatsappCta": "Chat with us on WhatsApp",
+      "hours": "Support hours"
+    }
+  }
+}

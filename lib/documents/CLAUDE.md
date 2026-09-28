@@ -4,9 +4,12 @@ This folder decides which documents a couple needs for their Misrad Hapnim
 file. It's pure TypeScript: no database, no React, no messages. Tests:
 `npm test`.
 
-The domain knowledge behind it (what each document is, the sources, every
-correction from practice) is in `lib/knowledge/`. Read it before changing the
-catalog, and record new findings or corrections there too.
+The facts behind it (what each document is, the law and the practice, the
+sources) are in `lib/knowledge/`. Read it before changing the catalog, and
+record new facts about the process there too. **`lib/knowledge/` is shown to
+users**: write it for couples, and never put the app's internals in it (see
+its CLAUDE.md). What's unverified or not modelled yet goes in
+`OPEN_QUESTIONS.md` here.
 
 ## How it fits together
 

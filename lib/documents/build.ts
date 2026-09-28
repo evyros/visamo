@@ -20,6 +20,12 @@ export type RequiredDocument = {
   country?: string;
   /** Null for documents not issued by an authority (forms, photos, evidence). */
   certification: Certification | null;
+  /**
+   * May need a certified translation (see the catalog): offer an optional
+   * translation upload next to the original. The item is done once the
+   * original is uploaded.
+   */
+  mayNeedTranslation: boolean;
   /** The facts that put it on the list; empty for documents every couple needs. */
   because: Fact[];
 };
@@ -61,6 +67,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         ...(doc.copies && { copies: doc.copies }),
         ...(country && { country }),
         certification: issuer === undefined ? null : certificationFor(issuer, doc.exemption),
+        mayNeedTranslation: doc.mayNeedTranslation,
         because,
       };
     });

@@ -21,14 +21,7 @@ export const ENGLISH_USUALLY_ACCEPTED = true;
 
 export type Certification = {
   authentication: "none" | "apostille" | "utahApostille" | "legalization" | "dependsOnCountry";
-  /**
-   * Whether the document may need a certified translation: true for anything
-   * issued abroad, which needs one unless it's in a language in
-   * LANGUAGES_WITHOUT_TRANSLATION. The translation itself never needs an
-   * apostille; only the original does.
-   */
-  translation: boolean;
-  /** No authentication needed if issued up to this year (former USSR birth certificates). */
+  /** No authentication needed if issued up to this year (former USSR birth certificates). The translation of a document never needs one. */
   exemptIfIssuedUntil?: number;
 };
 
@@ -45,10 +38,9 @@ export function certificationFor(issuer: Issuer, exemption?: Exemption): Certifi
 }
 
 function baseCertification(issuer: Issuer): Certification {
-  if (issuer === "IL") return { authentication: "none", translation: false };
+  if (issuer === "IL") return { authentication: "none" };
   // Issued in English by a Utah county; the apostille is from the Utah Lieutenant Governor.
-  // English isn't accepted by law, so it may need a translation (usually it doesn't in practice).
-  if (issuer === "utah") return { authentication: "utahApostille", translation: true };
-  if (issuer === null) return { authentication: "dependsOnCountry", translation: true };
-  return { authentication: APOSTILLE.has(issuer) ? "apostille" : "legalization", translation: true };
+  if (issuer === "utah") return { authentication: "utahApostille" };
+  if (issuer === null) return { authentication: "dependsOnCountry" };
+  return { authentication: APOSTILLE.has(issuer) ? "apostille" : "legalization" };
 }

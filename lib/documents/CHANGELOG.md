@@ -3,6 +3,72 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v8 — 2026-09-28
+
+**What changed:** `mayNeedTranslation` is false for the letters the couple
+writes for the application: `relationshipStory` and
+`foreignStayExplanation`. Confirmed false for the Israeli partner's
+documents, lease and bills (no change).
+
+**Why:** These are written for the application, in Hebrew or English.
+
+**Source:** Product decision.
+
+**Lists that changed:** No scenario gained or lost a document;
+`relationshipStory` and `foreignStayExplanation` no longer may need a
+translation.
+
+## v7 — 2026-09-28
+
+**What changed:** `mayNeedTranslation` is now set on every document in the
+catalog, instead of being worked out from the issuer. True for 23 documents:
+certificates and records that can come from anywhere, and letters and
+evidence the couple may have in another language (the relationship letter,
+recommendation letters, relationship evidence, shared finances, the foreign
+partner's income proof). False for the 18 others: forms and affidavits in the
+ministry's wording, Israeli documents and records, photos and passports.
+
+**Why:** A document's language doesn't follow from where it's issued, and
+many documents can be issued anywhere.
+
+**Source:** Product decision.
+
+**Lists that changed:** No scenario gained or lost a document.
+`mayNeedTranslation` became true for `relationshipStory`,
+`foreignStayExplanation`, `relationshipEvidence`, `recommendationLetters`,
+`jointLivingEvidence`, `sharedFinances` and `foreignIncomeProof`, which have
+no issuer and were false in v6. Every other document kept its value.
+
+## v6 — 2026-09-28
+
+**What changed:** `files` (v5) is replaced by a `mayNeedTranslation` boolean on
+each item, and `translation` moved out of `certification` into it, so the
+same fact isn't stored twice. Same meaning: true for every document not
+issued in Israel.
+
+**Why:** A clearer name for the one thing the page needs; the list of file
+slots added nothing.
+
+**Source:** Product decision.
+
+**Lists that changed:** No scenario gained or lost a document; every item's
+fields changed as above.
+
+## v5 — 2026-09-28
+
+**What changed:** Each list item now says which files it takes (`files`):
+the original, plus an optional translation on every document that may be
+issued abroad (where `certification.translation` is true).
+
+**Why:** The first version of translations is simple: no language rules or
+questions. The couple uploads a translation when their document needs one.
+Translations aren't required, since English documents are usually accepted.
+
+**Source:** Product decision.
+
+**Lists that changed:** No scenario gained or lost a document; every item
+gained `files`.
+
 ## v4 — 2026-09-28
 
 **What changed:** An online (Utah) marriage certificate is now marked as

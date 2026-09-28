@@ -1,4 +1,7 @@
-# Open questions
+# Open questions about the catalog
+
+What isn't verified or modelled yet. Internal: not part of the knowledge base
+shown to users (`lib/knowledge/`).
 
 ## Not verified in the catalog
 
@@ -11,7 +14,7 @@
 - The couple's children together: their birth certificates.
 - The Israeli partner's divorce decree and a previous spouse's death
   certificate.
-- School records: whose children (see children.md for the current reading).
+- School records: whose children (current reading in `lib/knowledge/children.md`).
 - The other parent's death certificate.
 - The Apostille Convention country list.
 - Whether the security-check country list is complete.

@@ -104,10 +104,7 @@ describe("buildDocumentList", () => {
     const list = keys("marriedInIsrael");
     expect(list).toContain("marriageCertificateIsrael");
     expect(list).not.toContain("marriageCertificateAbroad");
-    expect(find("marriedInIsrael", "marriageCertificateIsrael")?.certification).toEqual({
-      authentication: "none",
-      translation: false,
-    });
+    expect(find("marriedInIsrael", "marriageCertificateIsrael")?.certification).toEqual({ authentication: "none" });
   });
 
   it("certifies by the marriage country, or by Utah for an online marriage", () => {
@@ -115,8 +112,6 @@ describe("buildDocumentList", () => {
     expect(find("marriedInEgypt", "marriageCertificateAbroad")?.certification?.authentication).toBe("legalization");
     expect(find("marriedOnline", "marriageCertificateAbroad")?.certification).toEqual({
       authentication: "utahApostille",
-      // In English: not accepted without a translation by law, though usually accepted in practice.
-      translation: true,
     });
   });
 
@@ -158,6 +153,16 @@ describe("buildDocumentList", () => {
     expect(find("marriedInCyprus", "foreignBirthCertificate")?.certification?.exemptIfIssuedUntil).toBeUndefined();
     // Only the birth certificate: the Ukrainian police certificate has no exemption.
     expect(find("fromUkraine", "foreignPoliceCertificate:UA")?.certification?.exemptIfIssuedUntil).toBeUndefined();
+  });
+
+  it("takes whether a document may need a translation from the catalog, not from where it's issued", () => {
+    expect(find("marriedInCyprus", "foreignBirthCertificate")?.mayNeedTranslation).toBe(true);
+    expect(find("marriedInCyprus", "recommendationLetters")?.mayNeedTranslation).toBe(true);
+    // In English: not accepted without a translation by law, though usually accepted in practice.
+    expect(find("marriedOnline", "marriageCertificateAbroad")?.mayNeedTranslation).toBe(true);
+    expect(find("marriedInIsrael", "marriageCertificateIsrael")?.mayNeedTranslation).toBe(false);
+    expect(find("marriedInCyprus", "israeliId")?.mayNeedTranslation).toBe(false);
+    expect(find("marriedInCyprus", "foreignPassport")?.mayNeedTranslation).toBe(false);
   });
 
   it("gives the number of copies where more than one is needed", () => {

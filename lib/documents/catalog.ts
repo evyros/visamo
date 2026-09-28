@@ -11,19 +11,13 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 4;
+export const CATALOG_VERSION = 8;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
 
 export type Category =
-  | "forms"
-  | "identity"
-  | "relationship"
-  | "civilStatus"
-  | "criminalRecord"
-  | "centerOfLife"
-  | "children";
+  "forms" | "identity" | "relationship" | "civilStatus" | "criminalRecord" | "centerOfLife" | "children";
 
 /**
  * Which country issues the document, for its certification. "marriage" is
@@ -43,6 +37,14 @@ export type DocumentDefinition = {
   /** One item per police country instead of one item. The issuer is then that country. */
   each?: "policeCountry";
   issuedBy?: IssuedBy;
+  /**
+   * Whether the couple may bring it in a language that needs a translation
+   * (anything but Hebrew or Arabic): the page then offers an optional
+   * translation upload next to it. Decided per document, never from where
+   * it's issued: the same document can come from anywhere. False for forms in
+   * the ministry's wording, Israeli documents, photos and passports.
+   */
+  mayNeedTranslation: boolean;
   /** An exemption from authentication, by where it's from. */
   exemption?: Exemption;
   /** How many copies to bring, when more than one. Shown to the couple only. */
@@ -64,6 +66,7 @@ export const documents = [
   // ── Forms ──
   {
     id: "statusApplicationMarried",
+    mayNeedTranslation: false,
     owner: "couple",
     category: "forms",
     when: "married",
@@ -71,9 +74,18 @@ export const documents = [
     source: `${P8} §ד.2.א`,
     verified: true,
   },
-  { id: "statusApplicationCommonLaw", owner: "couple", category: "forms", when: "commonLaw", source: P9, verified: false },
+  {
+    id: "statusApplicationCommonLaw",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "forms",
+    when: "commonLaw",
+    source: P9,
+    verified: false,
+  },
   {
     id: "entryPermitApplication",
+    mayNeedTranslation: false,
     owner: "foreign",
     category: "forms",
     when: "foreignAbroad",
@@ -81,11 +93,33 @@ export const documents = [
     source: `${P8} §ד.2.א`,
     verified: true,
   },
-  { id: "israeliAffidavit", owner: "israeli", category: "forms", source: `${P8} §ד.2.ז; ${AS6}`, verified: true },
-  { id: "foreignAffidavit", owner: "foreign", category: "forms", source: `${P8} §ד.2.ז; ${AS6}`, verified: true },
-  { id: "relationshipStory", owner: "couple", category: "forms", source: `${P8} §ד.2.ו; ${AS6}`, verified: true },
+  {
+    id: "israeliAffidavit",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "forms",
+    source: `${P8} §ד.2.ז; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "foreignAffidavit",
+    mayNeedTranslation: false,
+    owner: "foreign",
+    category: "forms",
+    source: `${P8} §ד.2.ז; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "relationshipStory",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "forms",
+    source: `${P8} §ד.2.ו; ${AS6}`,
+    verified: true,
+  },
   {
     id: "securityCv",
+    mayNeedTranslation: false,
     owner: "foreign",
     category: "forms",
     when: "foreignNeedsSecurityCheck",
@@ -94,12 +128,44 @@ export const documents = [
   },
 
   // ── Identity ──
-  { id: "israeliId", owner: "israeli", category: "identity", issuedBy: "israel", source: `${P8} §ד.2.ג`, verified: true },
-  { id: "israeliPhotos", owner: "israeli", category: "identity", copies: 3, source: `${P8} §ד.2.ב; ${AS6}`, verified: true },
-  { id: "foreignPassport", owner: "foreign", category: "identity", source: `${P8} §ד.2.ד; ${AS6}`, verified: true },
-  { id: "foreignPhotos", owner: "foreign", category: "identity", copies: 3, source: `${P8} §ד.2.ב; ${AS6}`, verified: true },
+  {
+    id: "israeliId",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "identity",
+    issuedBy: "israel",
+    source: `${P8} §ד.2.ג`,
+    verified: true,
+  },
+  {
+    id: "israeliPhotos",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "identity",
+    copies: 3,
+    source: `${P8} §ד.2.ב; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "foreignPassport",
+    mayNeedTranslation: false,
+    owner: "foreign",
+    category: "identity",
+    source: `${P8} §ד.2.ד; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "foreignPhotos",
+    mayNeedTranslation: false,
+    owner: "foreign",
+    category: "identity",
+    copies: 3,
+    source: `${P8} §ד.2.ב; ${AS6}`,
+    verified: true,
+  },
   {
     id: "foreignStayExplanation",
+    mayNeedTranslation: false,
     owner: "foreign",
     category: "identity",
     when: "foreignInIsraelWithoutVisa",
@@ -108,6 +174,7 @@ export const documents = [
   },
   {
     id: "foreignBirthCertificate",
+    mayNeedTranslation: true,
     owner: "foreign",
     category: "identity",
     issuedBy: "birthCountry",
@@ -118,6 +185,7 @@ export const documents = [
   },
   {
     id: "foreignNameChange",
+    mayNeedTranslation: true,
     owner: "foreign",
     category: "identity",
     when: "foreignNameChanged",
@@ -129,6 +197,7 @@ export const documents = [
   // ── Relationship ──
   {
     id: "marriageCertificateIsrael",
+    mayNeedTranslation: false,
     owner: "couple",
     category: "relationship",
     when: "marriedInIsrael",
@@ -138,6 +207,7 @@ export const documents = [
   },
   {
     id: "marriageCertificateAbroad",
+    mayNeedTranslation: true,
     owner: "couple",
     category: "relationship",
     when: { any: ["marriedAbroad", "marriedOnline"] },
@@ -145,10 +215,25 @@ export const documents = [
     source: `${P8} §ד.2.ה; ${AS6}`,
     verified: true,
   },
-  { id: "relationshipEvidence", owner: "couple", category: "relationship", source: `${P8} §ד.2.ח`, verified: true },
-  { id: "recommendationLetters", owner: "couple", category: "relationship", source: `${P8} §ד.2.ח`, verified: true },
+  {
+    id: "relationshipEvidence",
+    mayNeedTranslation: true,
+    owner: "couple",
+    category: "relationship",
+    source: `${P8} §ד.2.ח`,
+    verified: true,
+  },
+  {
+    id: "recommendationLetters",
+    mayNeedTranslation: true,
+    owner: "couple",
+    category: "relationship",
+    source: `${P8} §ד.2.ח`,
+    verified: true,
+  },
   {
     id: "jointLivingEvidence",
+    mayNeedTranslation: true,
     owner: "couple",
     category: "relationship",
     when: { all: ["commonLaw", "livingTogether"] },
@@ -157,6 +242,7 @@ export const documents = [
   },
   {
     id: "jointChildrenBirthCertificates",
+    mayNeedTranslation: true,
     owner: "couple",
     category: "relationship",
     when: "childrenTogether",
@@ -168,6 +254,7 @@ export const documents = [
   // ── Civil status ──
   {
     id: "foreignCivilStatus",
+    mayNeedTranslation: true,
     owner: "foreign",
     category: "civilStatus",
     issuedBy: "nationality",
@@ -177,6 +264,7 @@ export const documents = [
   },
   {
     id: "foreignDivorceDecree",
+    mayNeedTranslation: true,
     owner: "foreign",
     category: "civilStatus",
     when: "foreignDivorced",
@@ -187,6 +275,7 @@ export const documents = [
   },
   {
     id: "foreignSpouseDeathCertificate",
+    mayNeedTranslation: true,
     owner: "foreign",
     category: "civilStatus",
     when: "foreignWidowed",
@@ -197,6 +286,7 @@ export const documents = [
   },
   {
     id: "israeliDivorceDecree",
+    mayNeedTranslation: true,
     owner: "israeli",
     category: "civilStatus",
     when: "israeliDivorced",
@@ -206,6 +296,7 @@ export const documents = [
   },
   {
     id: "israeliSpouseDeathCertificate",
+    mayNeedTranslation: true,
     owner: "israeli",
     category: "civilStatus",
     when: "israeliWidowed",
@@ -218,6 +309,7 @@ export const documents = [
   {
     // The sources name the country of nationality; the other countries lived in aren't confirmed yet.
     id: "foreignPoliceCertificate",
+    mayNeedTranslation: true,
     owner: "foreign",
     category: "criminalRecord",
     each: "policeCountry",
@@ -227,16 +319,66 @@ export const documents = [
   },
 
   // ── Center of life: at least the last 12 months ──
-  { id: "housingContract", owner: "israeli", category: "centerOfLife", source: `${P8} §ד.2.ח; ${AS6}`, verified: true },
-  { id: "utilityBills", owner: "couple", category: "centerOfLife", source: AS6, verified: true },
-  { id: "governmentServices", owner: "couple", category: "centerOfLife", source: `${P8} §ד.2.ח; ${AS6}`, verified: true },
-  { id: "ishurToshav", owner: "couple", category: "centerOfLife", source: `${P8} §ד.2.ח; ${AS6}`, verified: true },
-  { id: "sharedFinances", owner: "couple", category: "centerOfLife", source: `${P8} §ד.2.ח; ${AS6}`, verified: true },
-  { id: "israeliIncomeProof", owner: "israeli", category: "centerOfLife", source: AS6, verified: true },
-  { id: "foreignIncomeProof", owner: "foreign", category: "centerOfLife", source: AS6, verified: true },
+  {
+    id: "housingContract",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "centerOfLife",
+    source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "utilityBills",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "centerOfLife",
+    source: AS6,
+    verified: true,
+  },
+  {
+    id: "governmentServices",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "centerOfLife",
+    source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "ishurToshav",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "centerOfLife",
+    source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "sharedFinances",
+    mayNeedTranslation: true,
+    owner: "couple",
+    category: "centerOfLife",
+    source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    id: "israeliIncomeProof",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "centerOfLife",
+    source: AS6,
+    verified: true,
+  },
+  {
+    id: "foreignIncomeProof",
+    mayNeedTranslation: true,
+    owner: "foreign",
+    category: "centerOfLife",
+    source: AS6,
+    verified: true,
+  },
   {
     // Evidence the household lives in Israel (§ה.2(7)): any of its children in school here.
     id: "childrenSchoolRecords",
+    mayNeedTranslation: false,
     owner: "couple",
     category: "centerOfLife",
     when: { any: ["childrenTogether", "childrenMoving"] },
@@ -247,6 +389,7 @@ export const documents = [
   // ── Children moving to Israel ──
   {
     id: "childBirthCertificate",
+    mayNeedTranslation: true,
     owner: "children",
     category: "children",
     when: "childrenMoving",
@@ -257,6 +400,7 @@ export const documents = [
   },
   {
     id: "childPassport",
+    mayNeedTranslation: false,
     owner: "children",
     category: "children",
     when: "childrenMoving",
@@ -265,6 +409,7 @@ export const documents = [
   },
   {
     id: "childPoliceCertificate",
+    mayNeedTranslation: true,
     owner: "children",
     category: "children",
     when: "childrenMoving",
@@ -274,6 +419,7 @@ export const documents = [
   },
   {
     id: "otherParentConsent",
+    mayNeedTranslation: true,
     owner: "children",
     category: "children",
     when: "otherParentInvolved",
@@ -284,6 +430,7 @@ export const documents = [
   {
     // Besides the consent, the ministry writes to the other parent itself (§ה.2(9)); the couple gives their address.
     id: "otherParentAddress",
+    mayNeedTranslation: true,
     owner: "children",
     category: "children",
     when: "otherParentInvolved",
@@ -293,6 +440,7 @@ export const documents = [
   },
   {
     id: "custodyOrder",
+    mayNeedTranslation: true,
     owner: "children",
     category: "children",
     when: "otherParentCourtOrder",
@@ -302,6 +450,7 @@ export const documents = [
   },
   {
     id: "otherParentDeathCertificate",
+    mayNeedTranslation: true,
     owner: "children",
     category: "children",
     when: "otherParentDeceased",

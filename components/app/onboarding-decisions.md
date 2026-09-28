@@ -1,5 +1,8 @@
 # Onboarding: what's asked and why
 
+Internal design notes for the onboarding wizard. The facts about the process
+behind these questions are in `lib/knowledge/` (shown to users).
+
 Everything the document list needs is asked in onboarding. Nothing is left
 for the documents page, even if onboarding gets longer for some couples.
 Nothing is saved until the last step.
@@ -50,7 +53,7 @@ Israeli side only:
 
 - **Married or common-law.** These are two separate procedures.
 - **Where did you marry:** in Israel (rabbinate or another religious court) /
-  in another country (then which) / online (e.g. Utah). See certification.md
+  in another country (then which) / online (e.g. Utah). See `lib/knowledge/certification.md`
   for why.
 - **Common-law: do you live together, and since what year.**
 - **Children together?**
@@ -63,7 +66,9 @@ to miss, and it left Continue greyed out for anyone who didn't see it.
 
 ## Step 5: stage
 
-See process.md. Renewal blocks finishing with a yellow notice.
+Not filed yet, filed and waiting, got a first response, interview
+scheduled; plus renewal, which isn't supported yet (see `lib/knowledge/process.md`
+for the process). Renewal blocks finishing with a yellow notice.
 
 ## Server rules
 

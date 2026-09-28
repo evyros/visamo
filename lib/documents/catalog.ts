@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 9;
+export const CATALOG_VERSION = 10;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -34,6 +34,12 @@ export type DocumentDefinition = {
   category: Category;
   /** Left out: every couple needs it. */
   when?: Condition;
+  /**
+   * Needed only in a situation onboarding doesn't ask about (renting, say):
+   * listed for the couples in `when`, but they decide. The description says
+   * when it applies. Not counted as missing until it's uploaded.
+   */
+  optional?: boolean;
   /** One item per police country instead of one item. The issuer is then that country. */
   each?: "policeCountry";
   issuedBy?: IssuedBy;
@@ -325,6 +331,17 @@ export const documents = [
     owner: "israeli",
     category: "centerOfLife",
     source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    // Only for couples who rent; onboarding doesn't ask whether they do.
+    id: "landlordAffidavit",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "centerOfLife",
+    optional: true,
+    form: "AS/6",
+    source: "AS/6, page 6 (affidavit annexed to the lease – couples)",
     verified: true,
   },
   {

@@ -78,6 +78,18 @@ how offices work in practice.
 
 - **Lease or purchase contract** of your home, in the Israeli partner's name:
   the original, a copy, and the lease appendix.
+- **If you rent: the landlord's affidavit** (form AS/6, page 6, "affidavit
+  annexed to the lease – couples"). The landlord declares:
+  - that they own the home, and its size;
+  - that it's rented to you, and who else lives there (floor by floor, in a
+    building with several homes);
+  - who pays electricity, water, phone and arnona: the landlord or you;
+  - that since the lease was signed, you live only there;
+  - that they'll tell Misrad Hapnim if you leave.
+
+  It's signed in front of a lawyer (the form also allows a Misrad Hapnim
+  registrar), and comes **with a scan of the landlord's Teudat Zehut**. Not
+  needed if you own your home.
 - **Bills** (electricity, water, arnona, phone), **in the renter's name or the
   Israeli partner's**.
 - **Proof of government services** you receive: National Insurance (Bituach

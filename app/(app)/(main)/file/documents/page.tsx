@@ -63,6 +63,7 @@ export default async function DocumentsPage() {
               ? format(t.because, { reasons: d.because.map((f) => catalog.because[f]).join(" · ") })
               : null,
             mayNeedTranslation: d.mayNeedTranslation,
+            optional: d.optional,
             needsApostille: auth === "apostille" || auth === "utahApostille" || auth === "dependsOnCountry",
           };
         }),

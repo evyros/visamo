@@ -29,6 +29,8 @@ export type DocumentItem = {
   mayNeedTranslation: boolean;
   /** May come with an apostille, which belongs in the same file. */
   needsApostille: boolean;
+  /** Only if it applies to the couple (the description says when). */
+  optional: boolean;
 };
 
 export type DocumentGroup = { owner: Owner; title: string; items: DocumentItem[] };
@@ -204,24 +206,27 @@ export function DocumentsBoard({
     if (!result.error) setFiles((list) => list.filter((f) => f.id !== fileId));
   }
 
-  const items = groups.flatMap((g) => g.items);
-  const ready = items.filter((i) => files.some((f) => f.documentKey === i.key && f.slot === "original")).length;
+  const isUploaded = (item: DocumentItem) => files.some((f) => f.documentKey === item.key && f.slot === "original");
+  // An optional document counts once it's uploaded, never as missing.
+  const counted = groups.flatMap((g) => g.items).filter((i) => !i.optional || isUploaded(i));
+  const ready = counted.filter(isUploaded).length;
+  const total = counted.length;
 
   return (
     <>
       <section className="mt-6 rounded-card border border-line-200 bg-white p-5">
-        <p className="font-semibold text-navy-900">{format(t.progress, { done: ready, total: items.length })}</p>
+        <p className="font-semibold text-navy-900">{format(t.progress, { done: ready, total })}</p>
         <div
           role="progressbar"
           aria-valuemin={0}
-          aria-valuemax={items.length}
+          aria-valuemax={total}
           aria-valuenow={ready}
-          aria-label={format(t.progress, { done: ready, total: items.length })}
+          aria-label={format(t.progress, { done: ready, total })}
           className="mt-3 h-2 overflow-hidden rounded-full bg-line-200"
         >
           <div
             className="h-full rounded-full bg-teal-600 transition-[width]"
-            style={{ width: `${items.length ? (ready / items.length) * 100 : 0}%` }}
+            style={{ width: `${total ? (ready / total) * 100 : 0}%` }}
           />
         </div>
       </section>
@@ -303,7 +308,7 @@ function DocumentCard({
         <span className="min-w-0 flex-1">
           <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="font-semibold text-navy-900">{item.title}</span>
-            <Status t={t} uploaded={uploaded} translated={hasTranslation} />
+            <Status t={t} uploaded={uploaded} translated={hasTranslation} optional={item.optional} />
           </span>
           {item.badges.length > 0 && (
             <span className="mt-2 flex flex-wrap gap-1.5">
@@ -367,11 +372,21 @@ function DocumentCard({
   );
 }
 
-function Status({ t, uploaded, translated }: { t: Labels; uploaded: boolean; translated: boolean }) {
+function Status({
+  t,
+  uploaded,
+  translated,
+  optional,
+}: {
+  t: Labels;
+  uploaded: boolean;
+  translated: boolean;
+  optional: boolean;
+}) {
   if (!uploaded) {
     return (
       <span className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-        {t.status.todo}
+        {optional ? t.status.optional : t.status.todo}
       </span>
     );
   }

@@ -16,6 +16,8 @@ export type RequiredDocument = {
   form?: string;
   /** How many copies to bring, when more than one. */
   copies?: number;
+  /** The couple decides whether it applies to them (see the catalog). */
+  optional: boolean;
   /** The country it's for, for one item per country. */
   country?: string;
   /** Null for documents not issued by an authority (forms, photos, evidence). */
@@ -65,6 +67,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         category: doc.category,
         ...(doc.form && { form: doc.form }),
         ...(doc.copies && { copies: doc.copies }),
+        optional: !!doc.optional,
         ...(country && { country }),
         certification: issuer === undefined ? null : certificationFor(issuer, doc.exemption),
         mayNeedTranslation: doc.mayNeedTranslation,

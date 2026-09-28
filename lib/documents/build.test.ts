@@ -19,6 +19,7 @@ const everyone = [
   "recommendationLetters",
   "foreignCivilStatus",
   "housingContract",
+  "landlordAffidavit",
   "utilityBills",
   "governmentServices",
   "ishurToshav",
@@ -45,6 +46,7 @@ describe("buildDocumentList", () => {
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
       "housingContract",
+      "landlordAffidavit",
       "utilityBills",
       "governmentServices",
       "ishurToshav",
@@ -71,6 +73,7 @@ describe("buildDocumentList", () => {
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
       "housingContract",
+      "landlordAffidavit",
       "utilityBills",
       "governmentServices",
       "ishurToshav",
@@ -163,6 +166,13 @@ describe("buildDocumentList", () => {
     expect(find("marriedInIsrael", "marriageCertificateIsrael")?.mayNeedTranslation).toBe(false);
     expect(find("marriedInCyprus", "israeliId")?.mayNeedTranslation).toBe(false);
     expect(find("marriedInCyprus", "foreignPassport")?.mayNeedTranslation).toBe(false);
+  });
+
+  it("lists the landlord's affidavit for every couple, as optional", () => {
+    for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
+      expect(find(name, "landlordAffidavit")?.optional, name).toBe(true);
+    }
+    expect(find("marriedInCyprus", "housingContract")?.optional).toBe(false);
   });
 
   it("gives the number of copies where more than one is needed", () => {

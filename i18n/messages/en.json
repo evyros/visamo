@@ -1177,6 +1177,10 @@
           "title": "Lease or purchase contract",
           "description": "The lease or purchase contract of your home in the Israeli partner's name: the original, a copy and the lease appendix."
         },
+        "landlordAffidavit": {
+          "title": "Landlord's affidavit",
+          "description": "If you rent: an affidavit from your landlord in the ministry's wording (form AS/6), that they own the home and rent it to you, who else lives there, and who pays the bills. Signed in front of a lawyer, together with a scan of the landlord's Teudat Zehut."
+        },
         "utilityBills": {
           "title": "Bills for your home",
           "description": "Electricity, water, arnona and phone bills for the last 12 months, in the renter's name or the Israeli partner's."
@@ -1273,7 +1277,8 @@
       },
       "status": {
         "todo": "To do",
-        "uploaded": "Uploaded"
+        "uploaded": "Uploaded",
+        "optional": "Optional & recommended"
       },
       "withTranslation": "+ translation",
       "copies": "{count} copies",

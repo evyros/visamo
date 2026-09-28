@@ -20,8 +20,9 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   returns the facts that made it match (the "why" shown to the couple).
 - `catalog.ts`: every document, whose it is, its category, its condition
   (`when`, left out for every couple), `each` for one item per country,
-  `issuedBy` and `exemption` for its certification, and `copies` (shown to
-  the couple only).
+  `issuedBy` and `exemption` for its certification, `copies` (shown to the
+  couple only), and `optional` for a document whose need depends on
+  something onboarding doesn't ask (the description says when).
 - `certification.ts` and `countries.ts`: apostille, consular legalization or
   none, from the issuing country; whether a translation may be needed, and
   the languages accepted without one.

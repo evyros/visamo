@@ -3,6 +3,20 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v10 — 2026-09-28
+
+**What changed:** Added `landlordAffidavit` for every couple, marked with the
+new `optional` field: listed for everyone, but only needed by couples who
+rent, which onboarding doesn't ask. Optional documents don't count as missing
+on the documents page until they're uploaded.
+
+**Why:** Form AS/6 includes a landlord's affidavit for couples who rent.
+
+**Source:** Form AS/6, page 6 (affidavit annexed to the lease – couples).
+
+**Lists that changed:** Every scenario: +landlordAffidavit. Every item gained
+`optional`.
+
 ## v9 — 2026-09-28
 
 **What changed:** `relationshipEvidence` (shown as "Shared photos of you")

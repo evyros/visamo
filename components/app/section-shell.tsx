@@ -102,7 +102,9 @@ export function SectionShell({
             <span className="font-semibold text-navy-900">{title}</span>
           </div>
         )}
-        <main id="main" tabIndex={-1} className="min-h-0 flex-1 overflow-y-auto focus:outline-none">
+        {/* relative: absolutely positioned content (like sr-only inputs) stays
+            inside this scrolling area instead of stretching the window. */}
+        <main id="main" tabIndex={-1} className="relative min-h-0 flex-1 overflow-y-auto focus:outline-none">
           {children}
         </main>
       </div>

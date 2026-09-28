@@ -449,7 +449,7 @@ function UploadArea({
         }}
         onDragLeave={() => setDragging(false)}
         onDrop={onDrop}
-        className={`mt-3 flex cursor-pointer flex-col items-center justify-center gap-1 rounded-[10px] border-[1.5px] border-dashed px-4 py-5 text-center transition has-focus-visible:ring-2 has-focus-visible:ring-teal-600/40 ${
+        className={`relative mt-3 flex cursor-pointer flex-col items-center justify-center gap-1 rounded-[10px] border-[1.5px] border-dashed px-4 py-5 text-center transition has-focus-visible:ring-2 has-focus-visible:ring-teal-600/40 ${
           dragging ? "border-teal-600 bg-teal-100/50" : "border-line-200 hover:border-teal-600"
         }`}
       >
@@ -512,7 +512,7 @@ function PendingTile({
 }) {
   const failed = item.phase === "failed";
   return (
-    <div>
+    <div className="relative">
       <Thumb src={item.previewUrl} isPdf={item.file.type === "application/pdf"}>
         {!failed && (
           <span className="absolute inset-0 flex flex-col items-center justify-end gap-2 bg-white/60 p-3">

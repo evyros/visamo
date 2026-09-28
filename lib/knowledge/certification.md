@@ -6,10 +6,12 @@
   the Population Registry. The Israeli certificate needs no certification or
   translation.
 - **In another country:** the foreign certificate, certified by that country
-  (below), translated unless in Hebrew or English, and registered in Israel.
+  (below), translated unless in Hebrew or Arabic (see Translation below), and
+  registered in Israel.
   This is why onboarding asks which country.
-- **Online (e.g. Utah):** issued in English by a Utah county, so no
-  translation. The apostille comes from the **Utah Lieutenant Governor**, not
+- **Online (e.g. Utah):** issued in English by a Utah county, so by law it
+  needs a translation, though in practice it's usually accepted in English.
+  The apostille comes from the **Utah Lieutenant Governor**, not
   from the country the couple was in during the ceremony. That's why online
   is its own option without a country. Israel registers these marriages since
   the Supreme Court ruling of 2022.
@@ -29,8 +31,21 @@
 
 ## Translation
 
-Documents in Hebrew or English need no translation (practice). Others need
-a certified translation. The AS/6 checklist says notarized.
+- **By law, Misrad Hapnim accepts only Hebrew and Arabic without a
+  translation.** Every other language needs a certified (notarized)
+  translation (the AS/6 checklist says notarized).
+- **English, in practice:** most clerks read English well enough that they
+  usually accept an English document without a translation, especially a
+  short one. It depends on the clerk handling the file. If they don't accept
+  it, they tell you to translate it. So an English document is "usually fine,
+  but be ready to translate", not "never needs a translation" (practice).
+- **The translation doesn't need an apostille.** Only the original document
+  does (practice).
+- An earlier note here said Hebrew and English need no translation. That was
+  wrong: it's Hebrew and Arabic by law, with English usually accepted in
+  practice.
+- In code: `LANGUAGES_WITHOUT_TRANSLATION` and `ENGLISH_USUALLY_ACCEPTED` in
+  `lib/documents/certification.ts`.
 
 ## Exemption
 

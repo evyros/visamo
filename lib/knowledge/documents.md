@@ -11,8 +11,10 @@ checklist, and practice.
   procedure says "at least the last year"; practice confirmed 12 months).
 - **Copies** ("2X" on the AS/6 checklist means 2 copies). Copies are shown to
   the couple only. They don't change which documents are needed.
-- **Translation:** documents in Hebrew or English need none (practice). Others
-  need a certified (notarized) translation.
+- **Translation:** by law, only Hebrew and Arabic need none. English is usually
+  accepted in practice, but a clerk can ask for a translation. Others need a
+  certified (notarized) translation, which itself needs no apostille. See
+  certification.md.
 - **The fee is not a document.** It isn't on the list (practice).
 - **"Both partners must be present"** at the appointment is on the AS/6
   checklist. It's ignored: not a document (practice).

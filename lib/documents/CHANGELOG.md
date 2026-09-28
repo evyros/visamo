@@ -3,6 +3,26 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v4 — 2026-09-28
+
+**What changed:** An online (Utah) marriage certificate is now marked as
+possibly needing a translation (`translation: true`), like every other
+document from abroad. New constants in `certification.ts`: the languages
+accepted without a translation (Hebrew and Arabic), and that English is
+usually accepted in practice.
+
+**Why:** By law, Misrad Hapnim accepts only Hebrew and Arabic without a
+translation. English is usually accepted in practice, depending on the
+clerk, but isn't guaranteed. The catalog had assumed English was always
+accepted.
+
+**Source:** The law, as stated by the product owner; practice for English
+and for translations not needing an apostille.
+
+**Lists that changed:** No scenario gained or lost a document.
+`marriedOnline`: the marriage certificate's certification changed
+(translation may be needed).
+
 ## v3 — 2026-09-28
 
 **What changed:** `otherParentConsent` is back, next to `otherParentAddress`:

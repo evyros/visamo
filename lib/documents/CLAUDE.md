@@ -20,7 +20,8 @@ catalog, and record new findings or corrections there too.
   `issuedBy` and `exemption` for its certification, and `copies` (shown to
   the couple only).
 - `certification.ts` and `countries.ts`: apostille, consular legalization or
-  none, from the issuing country; translation.
+  none, from the issuing country; whether a translation may be needed, and
+  the languages accepted without one.
 - `build.ts`: `buildDocumentList(case)` → the list. The list is never stored;
   progress is saved per item `key`.
 - `scenarios.ts`: example couples. Tests check some lists exactly;

@@ -115,7 +115,8 @@ describe("buildDocumentList", () => {
     expect(find("marriedInEgypt", "marriageCertificateAbroad")?.certification?.authentication).toBe("legalization");
     expect(find("marriedOnline", "marriageCertificateAbroad")?.certification).toEqual({
       authentication: "utahApostille",
-      translation: false,
+      // In English: not accepted without a translation by law, though usually accepted in practice.
+      translation: true,
     });
   });
 

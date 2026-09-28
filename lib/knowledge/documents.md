@@ -85,7 +85,7 @@ how offices work in practice.
     building with several homes);
   - who pays electricity, water, phone and arnona: the landlord or you;
   - that since the lease was signed, you live only there;
-  - that they'll tell Misrad Hapnim if you leave.
+  - that they'll tell Misrad Hapnim (משרד הפנים) if you leave.
 
   It's signed in front of a lawyer (the form also allows a Misrad Hapnim
   registrar), and comes **with a scan of the landlord's Teudat Zehut**. Not

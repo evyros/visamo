@@ -26,7 +26,7 @@ Foreign documents follow the population authority's procedure 1.3.0001
 
 ## Translation
 
-- **By law, Misrad Hapnim accepts only Hebrew and Arabic without a
+- **By law, Misrad Hapnim (משרד הפנים) accepts only Hebrew and Arabic without a
   translation.** A document in any other language needs a certified
   (notarized) translation.
 - **English, in practice:** most clerks read English well enough to accept an

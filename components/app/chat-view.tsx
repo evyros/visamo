@@ -203,7 +203,7 @@ export function ChatView({
                     }`}
                   >
                     <span className="sr-only">{message.author ?? t.you}: </span>
-                    <p dir="auto" className="whitespace-pre-wrap break-words">
+                    <p dir={textDirection(message.content)} className="whitespace-pre-wrap break-words">
                       {message.content}
                     </p>
                   </div>
@@ -211,7 +211,10 @@ export function ChatView({
               ) : (
                 <li key={message.id} className="flex gap-3">
                   <Avatar />
-                  <div dir="auto" className="min-w-0 flex-1 break-words pt-1 text-slate-700">
+                  <div
+                    dir={textDirection(message.content)}
+                    className="min-w-0 flex-1 break-words pt-1 text-slate-700"
+                  >
                     <span className="sr-only">{t.assistant}: </span>
                     <ChatMarkdown text={message.content} />
                   </div>
@@ -318,6 +321,20 @@ export function ChatView({
       </div>
     </div>
   );
+}
+
+const RTL_LETTER = /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]/gu;
+const LTR_LETTER = /[A-Za-z\u00C0-\u024F\u0370-\u03FF\u0400-\u04FF]/gu;
+
+/**
+ * A message's direction, from most of its letters. Not dir="auto", which
+ * goes by the first letter: a Hebrew answer that starts with "A/5" or
+ * "Visamo" would come out left-to-right.
+ */
+function textDirection(text: string): "rtl" | "ltr" {
+  const rtl = text.match(RTL_LETTER)?.length ?? 0;
+  const ltr = text.match(LTR_LETTER)?.length ?? 0;
+  return rtl > ltr ? "rtl" : "ltr";
 }
 
 function Avatar() {

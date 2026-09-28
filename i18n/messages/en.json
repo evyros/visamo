@@ -1364,7 +1364,12 @@
       "retiredIntro": "Files for documents that left your list when your details changed. They're kept in case you need them."
     },
     "overview": {
-      "intro": "Where your file stands, and what changed lately.",
+      "invite": {
+        "title": "Invite your partner",
+        "body": "Share the file with {name}, so you can both upload documents and follow the process.",
+        "action": "Invite {name}",
+        "dismiss": "Dismiss"
+      },
       "stage": {
         "title": "Where you are",
         "steps": {

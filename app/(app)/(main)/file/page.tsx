@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import type { Locale } from "@/i18n/config";
 import { formatAgo, formatDay, formatDaysUntil, regionName } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import { caseOptions } from "@/i18n/options";
 import type { BranchCode, CaseDetails, Stage } from "@/lib/case-options";
+import { otherMembers, pendingInvite } from "@/lib/case";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
+import { INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
 import { ownerOrder, progressByOwner, progressOf, uploadedKeys } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { countedEdits, recentEvents, type CaseEvent } from "@/lib/events";
@@ -18,6 +21,7 @@ import {
   type ActivityItem,
   type DetailsSection,
 } from "@/components/app/overview-cards";
+import { InviteBanner } from "@/components/app/invite-banner";
 import { StageCard } from "@/components/app/stage-card";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,14 +35,15 @@ const ACTIVITY_LIMIT = 12;
 // their documents are, the details their list is built from, and what
 // either of them did lately.
 export default async function FileOverviewPage() {
-  const { caseId } = await requireCase();
-  const [{ row, details }, files, events, edits, messages, locale] = await Promise.all([
+  const { user, caseId } = await requireCase();
+  const [{ row, people, details }, files, events, edits, messages, locale, invite] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
     recentEvents(caseId, ACTIVITY_LIMIT),
     countedEdits(caseId),
     getAppDictionary(),
     getAppLocale(),
+    askToInvite(caseId, user.id),
   ]);
   const t = messages.app.overview;
   const o = messages.app.onboarding;
@@ -73,15 +78,26 @@ export default async function FileOverviewPage() {
     progress: g.progress,
   }));
 
+  // The partner the invite banner is about: the other person in the case.
+  const partnerName = people.find((p) => p.userId !== user.id)?.name ?? "";
+
   // Details.
   const editsLeft = Math.max(0, row.detailEditsAllowed - edits);
 
   return (
     <div className="mx-auto w-full max-w-[960px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <h1 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">{messages.app.file.overview}</h1>
-      <p className="mt-3 text-slate-700">{t.intro}</p>
 
-      <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
+      {invite && (
+        <InviteBanner
+          title={t.invite.title}
+          body={format(t.invite.body, { name: partnerName })}
+          action={format(t.invite.action, { name: partnerName })}
+          dismiss={t.invite.dismiss}
+        />
+      )}
+
+      <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <StageCard
           t={t.stage}
           stage={stage}
@@ -94,7 +110,7 @@ export default async function FileOverviewPage() {
           branchName={branch && o.branches[branch]}
           branches={caseOptions(locale, o).branches}
         />
-        <div className="grid gap-6">
+        <div className="grid grid-cols-1 gap-6">
           <ProgressCard
             title={t.progress.title}
             summary={summary(progress)}
@@ -120,6 +136,16 @@ export default async function FileOverviewPage() {
       </div>
     </div>
   );
+}
+
+/**
+ * Whether to show the invite banner: the partner hasn't joined, no invite is
+ * out, and it wasn't dismissed on this device.
+ */
+async function askToInvite(caseId: string, userId: string) {
+  if ((await cookies()).has(INVITE_DISMISSED_COOKIE)) return false;
+  const [members, invite] = await Promise.all([otherMembers(caseId, userId), pendingInvite(caseId)]);
+  return members.length === 0 && !invite;
 }
 
 /** The answers the document list is built from, as short rows. */

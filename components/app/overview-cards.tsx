@@ -171,7 +171,7 @@ export function ActivityCard({ title, empty, items }: { title: string; empty: st
             <li key={item.id} className="flex gap-3">
               <span aria-hidden className="mt-2 size-2 shrink-0 rounded-full bg-teal-600" />
               <span className="min-w-0">
-                <span className="block text-[15px] text-navy-900">{item.text}</span>
+                <span className="block text-[15px] wrap-anywhere text-navy-900">{item.text}</span>
                 {item.detail && <span className="block text-sm text-slate-600">{item.detail}</span>}
                 <time dateTime={item.date} className="block text-sm text-slate-500">
                   {item.when}

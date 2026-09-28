@@ -77,13 +77,20 @@ export function StageCard({
                 {done && <Icon name="check" className="size-4" />}
               </span>
               <span className="min-w-0 pt-px">
-                <span
-                  className={`block text-[15px] ${
-                    here ? "font-semibold text-navy-900" : done ? "text-navy-900" : "text-slate-500"
-                  }`}
-                >
-                  {t.steps[s]}
-                  {here && <span className="ms-2 text-sm font-semibold text-teal-700">{t.now}</span>}
+                {/* The pill wraps under a long stage name rather than squeezing it. */}
+                <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span
+                    className={`text-[15px] ${
+                      here ? "font-semibold text-navy-900" : done ? "text-navy-900" : "text-slate-500"
+                    }`}
+                  >
+                    {t.steps[s]}
+                  </span>
+                  {here && (
+                    <span className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-700">
+                      {t.now}
+                    </span>
+                  )}
                 </span>
                 {detail && <span className="mt-0.5 block text-sm text-slate-600">{detail}</span>}
               </span>

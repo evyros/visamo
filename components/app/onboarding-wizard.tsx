@@ -9,6 +9,7 @@ import { onboardingPaths } from "@/lib/app-paths";
 import {
   NAME_MAX,
   NAME_MIN,
+  RENEWAL,
   TOGETHER_SINCE_MIN,
   genders,
   israeliStatuses,
@@ -253,8 +254,10 @@ export function OnboardingWizard({
   if (ahead) return null;
 
   const last = step === STEPS.length - 1;
+  // Renewals aren't supported yet: the wizard stops there, with a notice.
+  const renewal = step === STAGE && answers.stage === RENEWAL;
   // Continue stays off until every field in the step is answered.
-  const complete = Object.keys(validate()).length === 0;
+  const complete = Object.keys(validate()).length === 0 && !renewal;
 
   // The page title and intro show on the first step only. After that the step
   // name is the page's main heading.
@@ -366,11 +369,13 @@ export function OnboardingWizard({
             id="stage"
             legend={t.stageIntro}
             error={errors.stage}
-            options={stages.map((s) => ({ value: s, label: t.stages[s] }))}
+            options={([...stages, RENEWAL] as const).map((s) => ({ value: s, label: t.stages[s] }))}
             value={answers.stage}
             onChange={(v) => set("stage", v)}
           />
         )}
+
+        {renewal && <Notice tone="warning">{t.renewalUnsupported}</Notice>}
 
         <div className="space-y-3 pt-2">
           <SubmitButton

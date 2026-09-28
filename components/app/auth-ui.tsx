@@ -82,12 +82,15 @@ export function SubmitButton({ pending, pendingLabel, className = "", children, 
   );
 }
 
-/** A form-level message: an error, or a success notice. */
-export function Notice({ tone = "error", children }: { tone?: "error" | "success"; children: ReactNode }) {
-  const styles =
-    tone === "error"
-      ? "border-terracotta-600/30 bg-terracotta-100 text-terracotta-600"
-      : "border-teal-600/30 bg-teal-100/50 text-navy-900";
+const noticeStyles = {
+  error: "border-terracotta-600/30 bg-terracotta-100 text-terracotta-600",
+  warning: "border-amber-500/40 bg-amber-100 text-navy-900",
+  success: "border-teal-600/30 bg-teal-100/50 text-navy-900",
+};
+
+/** A form-level message: an error, a warning, or a success notice. */
+export function Notice({ tone = "error", children }: { tone?: keyof typeof noticeStyles; children: ReactNode }) {
+  const styles = noticeStyles[tone];
   return (
     <p role={tone === "error" ? "alert" : "status"} className={`rounded-[10px] border px-4 py-3 text-[15px] ${styles}`}>
       {children}

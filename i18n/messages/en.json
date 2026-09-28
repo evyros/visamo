@@ -930,8 +930,10 @@
         "notFiled": "We haven't filed anything with Misrad Hapnim yet",
         "filedAwaiting": "We sent our file and haven't heard back",
         "firstResponse": "We sent our file and got a first response",
-        "interviewScheduled": "We already have an interview appointment"
+        "interviewScheduled": "We already have an interview appointment",
+        "renewal": "We already have a visa and need to renew it"
       },
+      "renewalUnsupported": "Visamo doesn't support visa renewals yet. It's planned and coming soon.",
       "back": "Back",
       "next": "Continue",
       "finish": "Get started",

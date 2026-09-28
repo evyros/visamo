@@ -38,6 +38,12 @@ export const TOGETHER_SINCE_MIN = 1950;
 export const stages = ["notFiled", "filedAwaiting", "firstResponse", "interviewScheduled"] as const;
 export type Stage = (typeof stages)[number];
 
+/**
+ * Offered in onboarding after the stages, but not supported yet: choosing it
+ * stops the wizard with a notice. It isn't a Stage, so the server rejects it.
+ */
+export const RENEWAL = "renewal";
+
 /** Misrad Hapnim (Population and Immigration Authority) branches. */
 export const branches = [
   "telAvivCenter",

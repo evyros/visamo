@@ -10,6 +10,7 @@ import type {
   OtherParent,
   PreviousMarriages,
   Relationship,
+  RENEWAL,
   Stage,
 } from "@/lib/case-options";
 
@@ -63,7 +64,8 @@ export type Answers = {
   /** Whether they know their branch; the branch list shows only if they do. */
   knowsBranch: boolean | null;
   branch: BranchCode | "";
-  stage: Stage | null;
+  /** Renewal can be chosen, but it stops the wizard: not supported yet. */
+  stage: Stage | typeof RENEWAL | null;
 };
 
 type OnboardingState = {

@@ -827,37 +827,102 @@
       "steps": {
         "about": "About you",
         "partner": "About your partner",
+        "relationship": "Your relationship",
         "branch": "Your Misrad Hapnim branch",
         "stage": "Where you are in the process"
       },
-      "name": "Your full name",
+      "questions": {
+        "self": {
+          "name": "Your full name",
+          "nationality": "Nationality",
+          "bornInNationality": "Were you born in {country}?",
+          "birthCountry": "Country of birth",
+          "countriesLived": "Besides your country of citizenship, have you lived in another country as an adult?",
+          "location": "Where are you now?",
+          "nameChanged": "Has your name ever changed?",
+          "previousMarriages": "Were you married before?",
+          "hasChildren": "Do you have children from a previous relationship?",
+          "livedAbroad": "Have you lived outside Israel in recent years?",
+          "israeliStatus": "Are you an Israeli citizen or a permanent resident?"
+        },
+        "partner": {
+          "name": "Your partner's full name",
+          "nationality": "Your partner's nationality",
+          "bornInNationality": "Was your partner born in {country}?",
+          "birthCountry": "Your partner's country of birth",
+          "countriesLived": "Besides their country of citizenship, has your partner lived in another country as an adult?",
+          "location": "Where is your partner now?",
+          "nameChanged": "Has your partner's name ever changed?",
+          "previousMarriages": "Was your partner married before?",
+          "hasChildren": "Does your partner have children from a previous relationship?",
+          "livedAbroad": "Has your partner lived outside Israel in recent years?",
+          "israeliStatus": "Is your partner an Israeli citizen or a permanent resident?"
+        }
+      },
+      "israeliStatuses": {
+        "citizen": "Citizen",
+        "permanentResident": "Permanent resident",
+        "neither": "Neither"
+      },
+      "israeliHint": "Your partner's questions on the next step depend on this.",
+      "yes": "Yes",
+      "no": "No",
+      "countryPlaceholder": "Choose a country",
+      "bornInNationalityHint": "By today's borders. For example, born in Soviet Kyiv counts as Ukraine.",
+      "countriesLivedHint": "Not counting visits and vacations. Use today's countries. For example, the USSR is now Russia, Ukraine and others.",
+      "country": "Country {number}",
+      "addCountry": "Add another country",
+      "removeCountry": "Remove",
+      "removeCountryLabel": "Remove country {number}",
+      "nameChangedHint": "For example, after a marriage.",
+      "livedAbroadHint": "Not counting trips and vacations.",
+      "locations": {
+        "israelValid": "In Israel, with a valid visa",
+        "israelInvalid": "In Israel, without a valid visa",
+        "abroad": "Outside Israel"
+      },
+      "previousMarriageOptions": {
+        "none": "No",
+        "divorced": "Yes, divorced",
+        "widowed": "Yes, widowed",
+        "divorcedAndWidowed": "Yes, both divorced and widowed"
+      },
+      "childrenMoving": "Are any of them under 18 and moving to Israel?",
+      "otherParents": "About the other parent of the children who are moving",
+      "otherParentsHint": "Choose all that apply, if it's different for each child.",
+      "otherParentOptions": {
+        "consents": "The other parent agrees to the move",
+        "courtOrder": "A court gave sole custody or approved the move",
+        "deceased": "The other parent has died",
+        "notListed": "No other parent is listed on the birth certificate"
+      },
+      "relationship": "Are you married?",
+      "relationships": {
+        "married": "Yes, we're married",
+        "commonLaw": "No, we're a couple but not married (common-law)"
+      },
+      "marriagePlace": "Where did you marry?",
+      "marriagePlaces": {
+        "israel": "In Israel, through the rabbinate or another religious court",
+        "abroad": "In another country",
+        "online": "Online (for example, through Utah)"
+      },
+      "marriageCountry": "Country of the marriage",
+      "livingTogether": "Do you live together?",
+      "togetherSince": "Since which year?",
+      "yearPlaceholder": "Choose a year",
+      "childrenTogether": "Do you have children together?",
       "gender": "Gender",
       "genders": {
         "male": "Male",
         "female": "Female"
       },
-      "israeli": "Are you an Israeli citizen?",
-      "partnerIsraeli": "Is your partner an Israeli citizen?",
-      "yes": "Yes",
-      "no": "No",
-      "nationality": "Nationality",
-      "partnerNationality": "Nationality of your partner",
-      "nationalityPlaceholder": "Choose a country",
-      "maritalStatus": "Your marital status",
-      "maritalStatusIsraeli": "Marital status (in Teudat Zehut)",
-      "partnerMaritalStatus": "Marital status of your partner",
-      "partnerMaritalStatusIsraeli": "Marital status of your partner (in Teudat Zehut)",
-      "maritalStatusPlaceholder": "Choose a status",
-      "maritalStatuses": {
-        "single": "Single",
-        "commonLaw": "Common-law partners",
-        "married": "Married",
-        "divorced": "Divorced",
-        "widowed": "Widowed"
+      "branchIntro": "The Misrad Hapnim office that handles your file, or will handle it.",
+      "knowsBranch": "Do you know your branch?",
+      "knowsBranchOptions": {
+        "yes": "I know my branch",
+        "no": "Not sure yet"
       },
-      "hasChildren": "I have children",
-      "partnerHasChildren": "My partner has children",
-      "branchIntro": "The Misrad Hapnim office that handles your file, or will handle it.\nNot sure yet? You can skip this.",
       "branch": "Branch",
       "branchPlaceholder": "Choose a branch",
       "stageIntro": "Choose the option that fits you best.",
@@ -869,7 +934,6 @@
       },
       "back": "Back",
       "next": "Continue",
-      "skip": "Skip",
       "finish": "Get started",
       "creating": "Preparing your file…",
       "branches": {

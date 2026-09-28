@@ -1,4 +1,4 @@
-import { boolean, index, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, index, integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
 // Better Auth's core tables (user, session, account, verification), plus the
 // user's app language. Field names match what Better Auth expects; change them
@@ -92,10 +92,21 @@ export const verification = pgTable(
 /** Exported as `cases` because `case` is a reserved word in JavaScript. */
 export const cases = pgTable("case", {
   id: text("id").primaryKey(),
-  /** A BranchCode from lib/case-options.ts, or null if the user skipped it. */
+  /** A BranchCode from lib/case-options.ts, or null if the user doesn't know it yet. */
   branch: text("branch"),
   /** A Stage from lib/case-options.ts. */
   stage: text("stage").notNull(),
+  /** A Relationship from lib/case-options.ts: married or common-law. */
+  relationship: text("relationship").notNull(),
+  /** A MarriagePlace from lib/case-options.ts; null for a common-law couple. */
+  marriagePlace: text("marriage_place"),
+  /** ISO 3166 region code of an abroad marriage; null otherwise. */
+  marriageCountry: text("marriage_country"),
+  /** Asked only of a common-law couple; null when married. */
+  livingTogether: boolean("living_together"),
+  /** The year a common-law couple moved in together; null unless they live together. */
+  togetherSince: integer("together_since"),
+  childrenTogether: boolean("children_together").notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -134,13 +145,30 @@ export const casePerson = pgTable(
     name: text("name").notNull(),
     /** "male" | "female" */
     gender: text("gender").notNull(),
+    /** The Israeli side of the couple: a citizen or a permanent resident. */
     isIsraeli: boolean("is_israeli").notNull(),
-    /** ISO 3166 region code; null for Israeli citizens. */
+    /** An IsraeliStatus from lib/case-options.ts; null for the foreign partner. */
+    israeliStatus: text("israeli_status"),
+    /** A PreviousMarriages from lib/case-options.ts. */
+    previousMarriages: text("previous_marriages").notNull(),
+    // Asked only of the foreign partner; null for the Israeli.
+    /** ISO 3166 region code. */
     nationality: text("nationality"),
-    /** A MaritalStatus from lib/case-options.ts. */
-    maritalStatus: text("marital_status").notNull(),
-    /** Asked only of non-Israeli citizens; null for Israelis. */
+    /** ISO 3166 region code, as the country is called today. May be Israel. */
+    birthCountry: text("birth_country"),
+    /** ISO 3166 region codes of other countries lived in as an adult; empty for none. */
+    countriesLived: text("countries_lived").array(),
+    /** A Location from lib/case-options.ts: where they are now. */
+    location: text("location"),
+    nameChanged: boolean("name_changed"),
+    /** Children from a previous relationship. */
     hasChildren: boolean("has_children"),
+    /** Any of them under 18 and moving to Israel; null without children. */
+    childrenMoving: boolean("children_moving"),
+    /** OtherParent values from lib/case-options.ts; null unless children are moving. */
+    otherParents: text("other_parents").array(),
+    /** Asked only of the Israeli: lived outside Israel in recent years. */
+    livedAbroad: boolean("lived_abroad"),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     updatedAt: timestamp("updated_at")
       .notNull()

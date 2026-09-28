@@ -5,8 +5,34 @@
 export const genders = ["male", "female"] as const;
 export type Gender = (typeof genders)[number];
 
-export const maritalStatuses = ["single", "commonLaw", "married", "divorced", "widowed"] as const;
-export type MaritalStatus = (typeof maritalStatuses)[number];
+/** How the Israeli side is Israeli. A permanent resident's partner ends with residency, not citizenship. */
+export const israeliStatuses = ["citizen", "permanentResident"] as const;
+export type IsraeliStatus = (typeof israeliStatuses)[number];
+
+/** Marriages before this relationship, and how they ended. Each ending adds its document. */
+export const previousMarriages = ["none", "divorced", "widowed", "divorcedAndWidowed"] as const;
+export type PreviousMarriages = (typeof previousMarriages)[number];
+
+/** Where the foreign partner is now. */
+export const locations = ["israelValid", "israelInvalid", "abroad"] as const;
+export type Location = (typeof locations)[number];
+
+/**
+ * The other parent of the foreign partner's children who are moving to
+ * Israel. More than one can apply when the children have different parents.
+ */
+export const otherParents = ["consents", "courtOrder", "deceased", "notListed"] as const;
+export type OtherParent = (typeof otherParents)[number];
+
+export const relationships = ["married", "commonLaw"] as const;
+export type Relationship = (typeof relationships)[number];
+
+/** Where a married couple married. Online is a civil marriage abroad (e.g. Utah) with its own paperwork. */
+export const marriagePlaces = ["israel", "abroad", "online"] as const;
+export type MarriagePlace = (typeof marriagePlaces)[number];
+
+/** The earliest year a common-law couple can say they moved in together. */
+export const TOGETHER_SINCE_MIN = 1950;
 
 /** Where the couple is with Misrad Hapnim. */
 export const stages = ["notFiled", "filedAwaiting", "firstResponse", "interviewScheduled"] as const;
@@ -72,18 +98,46 @@ export const NAME_MAX = 100;
 export type PersonInput = {
   name: string;
   gender: Gender;
+  /** The Israeli side of the couple, a citizen or a permanent resident. */
   isIsraeli: boolean;
-  /** Required when not Israeli, null otherwise. */
+  /** Null for the foreign partner. */
+  israeliStatus: IsraeliStatus | null;
+  previousMarriages: PreviousMarriages;
+  // The foreign partner only; null for the Israeli.
   nationality: string | null;
-  maritalStatus: MaritalStatus;
-  /** Asked only when not Israeli, null otherwise. */
+  birthCountry: string | null;
+  /** Other countries lived in as an adult, besides the nationality. Empty for none. */
+  countriesLived: string[] | null;
+  location: Location | null;
+  nameChanged: boolean | null;
+  /** Children from a previous relationship. */
   hasChildren: boolean | null;
+  /** Any of those children under 18 and moving to Israel; null without children. */
+  childrenMoving: boolean | null;
+  /** Null unless children are moving; otherwise at least one. */
+  otherParents: OtherParent[] | null;
+  // The Israeli only; null for the foreign partner.
+  livedAbroad: boolean | null;
+};
+
+export type RelationshipInput = {
+  relationship: Relationship;
+  /** Null for a common-law couple. */
+  marriagePlace: MarriagePlace | null;
+  /** Where an abroad marriage took place; null otherwise. */
+  marriageCountry: string | null;
+  /** Null for a married couple. */
+  livingTogether: boolean | null;
+  /** The year they moved in together; null unless living together. */
+  togetherSince: number | null;
+  childrenTogether: boolean;
 };
 
 export type OnboardingInput = {
   self: PersonInput;
   partner: PersonInput;
-  /** Null when the user skipped the branch step. */
+  relationship: RelationshipInput;
+  /** Null when the user doesn't know their branch yet. */
   branch: BranchCode | null;
   stage: Stage;
 };
@@ -93,20 +147,77 @@ const oneOf = <T extends string>(list: readonly T[], value: unknown): value is T
 
 const isObject = (value: unknown): value is Record<string, unknown> => typeof value === "object" && value !== null;
 
+/** Distinct values, each passing `valid`, and at least `min` of them. */
+function listOf<T>(value: unknown, valid: (item: unknown) => item is T, min: number): value is T[] {
+  return (
+    Array.isArray(value) && value.length >= min && value.every(valid) && new Set(value).size === value.length
+  );
+}
+
+const isNationality = (v: unknown): v is string => oneOf(nationalities, v);
+const isBirthCountry = (v: unknown): v is string => v === "IL" || isNationality(v);
+const isOtherParent = (v: unknown): v is OtherParent => oneOf(otherParents, v);
+const isBoolean = (v: unknown): v is boolean => typeof v === "boolean";
+
 function parsePerson(v: unknown): PersonInput | null {
   if (!isObject(v)) return null;
   const name = typeof v.name === "string" ? v.name.trim() : "";
   if (name.length < NAME_MIN || name.length > NAME_MAX) return null;
-  if (!oneOf(genders, v.gender) || !oneOf(maritalStatuses, v.maritalStatus)) return null;
-  if (typeof v.isIsraeli !== "boolean") return null;
-  if (!v.isIsraeli && (!oneOf(nationalities, v.nationality) || typeof v.hasChildren !== "boolean")) return null;
+  if (!oneOf(genders, v.gender) || !oneOf(previousMarriages, v.previousMarriages)) return null;
+  if (!isBoolean(v.isIsraeli)) return null;
+  const foreign = !v.isIsraeli;
+
+  // Each role's questions answered, and the other role's left empty.
+  if (foreign) {
+    if (!isNationality(v.nationality) || !isBirthCountry(v.birthCountry)) return null;
+    if (!listOf(v.countriesLived, isNationality, 0) || v.countriesLived.includes(v.nationality)) return null;
+    if (!oneOf(locations, v.location) || !isBoolean(v.nameChanged) || !isBoolean(v.hasChildren)) return null;
+    if (v.hasChildren ? !isBoolean(v.childrenMoving) : v.childrenMoving !== null) return null;
+    if (v.childrenMoving ? !listOf(v.otherParents, isOtherParent, 1) : v.otherParents !== null) return null;
+    if (v.livedAbroad !== null) return null;
+    if (v.israeliStatus !== null) return null;
+  } else {
+    if (!oneOf(israeliStatuses, v.israeliStatus)) return null;
+    const foreignOnly = [v.nationality, v.birthCountry, v.countriesLived, v.location, v.nameChanged, v.hasChildren];
+    if (foreignOnly.some((x) => x !== null) || v.childrenMoving !== null || v.otherParents !== null) return null;
+    if (!isBoolean(v.livedAbroad)) return null;
+  }
+
   return {
     name,
     gender: v.gender,
     isIsraeli: v.isIsraeli,
-    nationality: v.isIsraeli ? null : (v.nationality as string),
-    maritalStatus: v.maritalStatus,
-    hasChildren: v.isIsraeli ? null : (v.hasChildren as boolean),
+    israeliStatus: foreign ? null : (v.israeliStatus as IsraeliStatus),
+    previousMarriages: v.previousMarriages,
+    nationality: foreign ? (v.nationality as string) : null,
+    birthCountry: foreign ? (v.birthCountry as string) : null,
+    countriesLived: foreign ? (v.countriesLived as string[]) : null,
+    location: foreign ? (v.location as Location) : null,
+    nameChanged: foreign ? (v.nameChanged as boolean) : null,
+    hasChildren: foreign ? (v.hasChildren as boolean) : null,
+    childrenMoving: foreign ? (v.childrenMoving as boolean | null) : null,
+    otherParents: foreign ? (v.otherParents as OtherParent[] | null) : null,
+    livedAbroad: foreign ? null : (v.livedAbroad as boolean),
+  };
+}
+
+function parseRelationship(v: unknown): RelationshipInput | null {
+  if (!isObject(v) || !oneOf(relationships, v.relationship) || !isBoolean(v.childrenTogether)) return null;
+  const married = v.relationship === "married";
+  if (married ? !oneOf(marriagePlaces, v.marriagePlace) : v.marriagePlace !== null) return null;
+  if (v.marriagePlace === "abroad" ? !isNationality(v.marriageCountry) : v.marriageCountry !== null) return null;
+  if (married ? v.livingTogether !== null : !isBoolean(v.livingTogether)) return null;
+  const year = v.togetherSince;
+  const validYear =
+    Number.isInteger(year) && (year as number) >= TOGETHER_SINCE_MIN && (year as number) <= new Date().getFullYear();
+  if (v.livingTogether ? !validYear : year !== null) return null;
+  return {
+    relationship: v.relationship,
+    marriagePlace: v.marriagePlace as MarriagePlace | null,
+    marriageCountry: v.marriageCountry as string | null,
+    livingTogether: v.livingTogether as boolean | null,
+    togetherSince: year as number | null,
+    childrenTogether: v.childrenTogether,
   };
 }
 
@@ -115,7 +226,10 @@ export function parseOnboarding(input: unknown): OnboardingInput | null {
   if (!isObject(input)) return null;
   const self = parsePerson(input.self);
   const partner = parsePerson(input.partner);
-  if (!self || !partner || !oneOf(stages, input.stage)) return null;
+  const relationship = parseRelationship(input.relationship);
+  if (!self || !partner || !relationship || !oneOf(stages, input.stage)) return null;
+  // The process is for an Israeli side and a foreign partner: exactly one of each.
+  if (self.isIsraeli === partner.isIsraeli) return null;
   if (input.branch !== null && !oneOf(branches, input.branch)) return null;
-  return { self, partner, branch: input.branch, stage: input.stage };
+  return { self, partner, relationship, branch: input.branch, stage: input.stage };
 }

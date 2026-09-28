@@ -24,14 +24,14 @@ export async function createCase(input: unknown): Promise<CreateCaseResult> {
   if (!answers) return { error: "generic" };
 
   const caseId = crypto.randomUUID();
-  const { self, partner, branch, stage } = answers;
+  const { self, partner, relationship, branch, stage } = answers;
   try {
     // A batch runs as one transaction. The case_member primary key stops a
     // second case for the same user (a double submit, two tabs), and then
     // none of the rows are written. The partner has no user yet; an invite
     // will link one to their row later.
     await db.batch([
-      db.insert(cases).values({ id: caseId, branch, stage }),
+      db.insert(cases).values({ id: caseId, branch, stage, ...relationship }),
       db.insert(caseMember).values({ userId, caseId, role: "owner" }),
       db.insert(casePerson).values([
         { id: crypto.randomUUID(), caseId, userId, ...self },

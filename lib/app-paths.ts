@@ -2,4 +2,4 @@
 export const publicAppPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
 
 /** The onboarding steps' URLs, in order. One page serves them all: app/(app)/(onboarding)/onboarding/[[...step]]. */
-export const onboardingPaths = ["/onboarding", "/onboarding/partner", "/onboarding/branch", "/onboarding/stage"];
+export const onboardingPaths = ["/onboarding", "/onboarding/partner", "/onboarding/relationship", "/onboarding/branch", "/onboarding/stage"];

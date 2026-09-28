@@ -26,10 +26,18 @@ export default async function OnboardingPage({ params }: { params: Promise<{ ste
 
   const { compare } = new Intl.Collator(locales[locale].intlLocale);
   const byLabel = (a: { label: string }, b: { label: string }) => compare(a.label, b.label);
-  const countryOptions = nationalities.map((code) => ({ value: code, label: regionName(code, locale) })).sort(byLabel);
+  const country = (code: string) => ({ value: code, label: regionName(code, locale) });
+  const countryOptions = nationalities.map(country).sort(byLabel);
+  // A foreign partner can be born in Israel.
+  const birthCountryOptions = [...nationalities, "IL"].map(country).sort(byLabel);
   const branchOptions = branches.map((code) => ({ value: code, label: t.branches[code] })).sort(byLabel);
 
   return (
-    <OnboardingWizard t={t} countries={countryOptions} branches={branchOptions} />
+    <OnboardingWizard
+      t={t}
+      countries={countryOptions}
+      birthCountries={birthCountryOptions}
+      branches={branchOptions}
+    />
   );
 }

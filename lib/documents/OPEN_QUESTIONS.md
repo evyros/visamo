@@ -18,6 +18,15 @@ shown to users (`lib/knowledge/`).
 - The other parent's death certificate.
 - The Apostille Convention country list.
 - Whether the security-check country list is complete.
+- **Sole custody or sole guardianship?** Without the other parent's consent,
+  procedure 5.2.0008 §ה.2(9)י asks for a ruling of sole **custody**
+  (משמורת בלעדית) with proof the child lives with the parent. Form AS/6
+  (page 2) asks for sole **guardianship** (אפוטרופסות בלעדית), from a court
+  ruling or a court-approved divorce agreement. In Israeli law these differ:
+  guardianship is the legal parental rights, custody is who the child lives
+  with. Which one the office actually asks for is unknown; the knowledge
+  base and the documents page say "custody or guardianship" until it's
+  settled.
 
 - A foreign partner who is self-employed abroad: what replaces the Israeli
   accountant's confirmation, tax assessment and business-file confirmation.

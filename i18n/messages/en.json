@@ -1219,15 +1219,15 @@
         },
         "otherParentConsent": {
           "title": "The other parent's consent",
-          "description": "A letter signed by the other parent, agreeing to the children's move to Israel. The ministry also contacts them itself, and no reply within 6 months counts as an objection. To skip that wait, the other parent can sign a consent declaration at the Israeli consulate, or sign a consent in front of a local notary and have it apostilled."
+          "description": "The other parent's consent to the children moving to Israel and getting Israeli status. They can give it in person at the Misrad Hapnim office, by signing the application form, or in a signed letter. The ministry also contacts them itself, and no reply within 6 months counts as an objection. To skip that wait, the other parent can sign a consent declaration at the Israeli consulate, or sign a consent in front of a local notary and have it apostilled."
         },
         "otherParentAddress": {
           "title": "The other parent's current address",
           "description": "An official document with the other parent's current address. The ministry writes to them to ask if they object to the move. Not needed if they live in Israel."
         },
         "custodyOrder": {
-          "title": "Sole custody court ruling",
-          "description": "The original court ruling giving you sole custody, and proof the children actually live with you."
+          "title": "Court ruling on custody or guardianship",
+          "description": "The original, approved by a court: a ruling or a divorce agreement giving you sole custody or guardianship of the children, or a ruling allowing you to apply for them without the other parent's consent. With a custody ruling, also proof the children actually live with you."
         },
         "otherParentDeathCertificate": {
           "title": "Death certificate of the other parent",

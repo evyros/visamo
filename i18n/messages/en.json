@@ -1066,6 +1066,201 @@
       },
       "fallback": "If the button doesn't work, copy this link into your browser:",
       "ignore": "If you didn't ask for this, you can ignore this email. Nothing will change."
+    },
+    "documents": {
+      "items": {
+        "statusApplicationMarried": {
+          "title": "Status application for a married spouse (form AS/6)",
+          "description": "The application for status for a foreign spouse married to an Israeli. Both of you sign it."
+        },
+        "statusApplicationCommonLaw": {
+          "title": "Status application for a common-law partner",
+          "description": "The application for status for a foreign partner living as a couple with an Israeli, without being married. Both of you sign it."
+        },
+        "entryPermitApplication": {
+          "title": "Entry permit application (form AS/1)",
+          "description": "Needed while the foreign partner is outside Israel, so they can enter for the process."
+        },
+        "israeliAffidavit": {
+          "title": "Affidavit of the Israeli partner",
+          "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
+        },
+        "foreignAffidavit": {
+          "title": "Affidavit of the foreign partner",
+          "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
+        },
+        "relationshipStory": {
+          "title": "Letter about your relationship",
+          "description": "A letter signed by both of you: how and when you met, your relationship and your life together. Adding each of your life histories is recommended when relevant."
+        },
+        "securityCv": {
+          "title": "Full CV for the security check",
+          "description": "A full history of the foreign partner's employment and life, for the security check applicants from some countries go through. Not a job CV."
+        },
+        "israeliId": {
+          "title": "Teudat Zehut with its appendix",
+          "description": "The Israeli partner's ID card, with the appendix (the sefach) that lists family members."
+        },
+        "israeliPhotos": {
+          "title": "Passport photos of the Israeli partner",
+          "description": "Recent passport-format photos, all copies of the same photo."
+        },
+        "foreignPassport": {
+          "title": "Foreign passport",
+          "description": "Valid for at least 2 more years, with copies of the main page, the visa pages and the border-control stamps."
+        },
+        "foreignPhotos": {
+          "title": "Passport photos of the foreign partner",
+          "description": "Recent passport-format photos, all copies of the same photo."
+        },
+        "foreignStayExplanation": {
+          "title": "Explanation of the stay in Israel",
+          "description": "A letter explaining how the foreign partner came to stay in Israel without a valid visa."
+        },
+        "foreignBirthCertificate": {
+          "title": "Birth certificate",
+          "description": "The original, from the country of birth."
+        },
+        "foreignNameChange": {
+          "title": "Proof of the name change",
+          "description": "An official document linking the foreign partner's previous name to their current one."
+        },
+        "marriageCertificateIsrael": {
+          "title": "Marriage certificate",
+          "description": "The certificate from the rabbinate or religious court that married you."
+        },
+        "marriageCertificateAbroad": {
+          "title": "Marriage certificate",
+          "description": "The certificate from the country or authority that married you."
+        },
+        "relationshipEvidence": {
+          "title": "Evidence of the relationship",
+          "description": "Photos together, letters and anything else showing how you met and how long you've been together."
+        },
+        "recommendationLetters": {
+          "title": "Letters of recommendation",
+          "description": "Letters from family and friends about your relationship, each with a copy of the writer's ID and their contact details."
+        },
+        "jointLivingEvidence": {
+          "title": "Evidence of living together",
+          "description": "A shared lease or property, bills in both names, a joint bank account."
+        },
+        "jointChildrenBirthCertificates": {
+          "title": "Birth certificates of your children together",
+          "description": "One for each child you have together."
+        },
+        "foreignCivilStatus": {
+          "title": "Proof of civil status",
+          "description": "An official document of the foreign partner's marital status from their country, issued in the last 6 months. If the country doesn't issue one, a notarized affidavit instead. A marriage certificate from their country that shows their status before the marriage can replace it."
+        },
+        "foreignDivorceDecree": {
+          "title": "Divorce decree",
+          "description": "The final divorce decree of each of the foreign partner's previous marriages that ended in divorce."
+        },
+        "foreignSpouseDeathCertificate": {
+          "title": "Death certificate of a previous spouse",
+          "description": "For each of the foreign partner's previous marriages that ended in the spouse's death."
+        },
+        "israeliDivorceDecree": {
+          "title": "Divorce decree",
+          "description": "The final divorce decree of each of the Israeli partner's previous marriages that ended in divorce."
+        },
+        "israeliSpouseDeathCertificate": {
+          "title": "Death certificate of a previous spouse",
+          "description": "For each of the Israeli partner's previous marriages that ended in the spouse's death."
+        },
+        "foreignPoliceCertificate": {
+          "title": "Police certificate: {country}",
+          "description": "A certificate of no criminal record from {country}."
+        },
+        "housingContract": {
+          "title": "Lease or purchase contract",
+          "description": "The lease or purchase contract of your home in the Israeli partner's name: the original, a copy and the lease appendix."
+        },
+        "utilityBills": {
+          "title": "Bills for your home",
+          "description": "Electricity, water, arnona and phone bills for the last 12 months, in the renter's name or the Israeli partner's."
+        },
+        "governmentServices": {
+          "title": "Proof of government services",
+          "description": "Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi), health and education."
+        },
+        "ishurToshav": {
+          "title": "Ishur Toshav",
+          "description": "The municipality or local council's confirmation that you live there, in the ministry's wording."
+        },
+        "sharedFinances": {
+          "title": "Proof of shared finances",
+          "description": "A joint bank account confirmation. Without one, other proof of shared money: transfers to each other, card statements with household purchases or the same delivery address, receipts for large expenses."
+        },
+        "israeliIncomeProof": {
+          "title": "Employment or income proof of the Israeli partner",
+          "description": "A confirmation from work or of another income, and the last 6 payslips."
+        },
+        "foreignIncomeProof": {
+          "title": "Employment or income proof of the foreign partner",
+          "description": "A confirmation from work or of another income, and the last 6 payslips."
+        },
+        "childrenSchoolRecords": {
+          "title": "Children's school records",
+          "description": "For each child in school in Israel from age 6: a school confirmation and report cards."
+        },
+        "childBirthCertificate": {
+          "title": "Children's birth certificates",
+          "description": "The original, for each child moving to Israel, listing both parents."
+        },
+        "childPassport": {
+          "title": "Children's passports",
+          "description": "For each child moving to Israel, valid for at least 2 more years."
+        },
+        "childPoliceCertificate": {
+          "title": "Children's police certificates",
+          "description": "A certificate of no criminal record for each child moving to Israel who is 14 or older."
+        },
+        "otherParentConsent": {
+          "title": "The other parent's consent",
+          "description": "A letter signed by the other parent, agreeing to the children's move to Israel. The ministry also contacts them itself, and no reply within 6 months counts as an objection. To skip that wait, the other parent can sign a consent declaration at the Israeli consulate, or sign a consent in front of a local notary and have it apostilled."
+        },
+        "otherParentAddress": {
+          "title": "The other parent's current address",
+          "description": "An official document with the other parent's current address. The ministry writes to them to ask if they object to the move. Not needed if they live in Israel."
+        },
+        "custodyOrder": {
+          "title": "Sole custody court ruling",
+          "description": "The original court ruling giving you sole custody, and proof the children actually live with you."
+        },
+        "otherParentDeathCertificate": {
+          "title": "Death certificate of the other parent",
+          "description": "For children whose other parent has died."
+        }
+      },
+      "because": {
+        "married": "You're married",
+        "commonLaw": "You're common-law partners",
+        "marriedInIsrael": "You married in Israel",
+        "marriedAbroad": "You married abroad",
+        "marriedOnline": "You married online",
+        "livingTogether": "You live together",
+        "childrenTogether": "You have children together",
+        "israeliCitizen": "The Israeli partner is a citizen",
+        "israeliPermanentResident": "The Israeli partner is a permanent resident",
+        "israeliLivedAbroad": "The Israeli partner lived abroad in recent years",
+        "israeliDivorced": "The Israeli partner was divorced",
+        "israeliWidowed": "The Israeli partner was widowed",
+        "foreignInIsrael": "The foreign partner is in Israel",
+        "foreignInIsraelWithoutVisa": "The foreign partner is in Israel without a valid visa",
+        "foreignAbroad": "The foreign partner is outside Israel",
+        "foreignLivedElsewhere": "The foreign partner lived in other countries",
+        "foreignFromFormerUSSR": "The foreign partner is from the former USSR",
+        "foreignNeedsSecurityCheck": "The foreign partner is from a country that needs a security check",
+        "foreignNameChanged": "The foreign partner's name changed",
+        "foreignDivorced": "The foreign partner was divorced",
+        "foreignWidowed": "The foreign partner was widowed",
+        "childrenMoving": "Children are moving to Israel",
+        "otherParentInvolved": "The other parent has parental rights",
+        "otherParentCourtOrder": "A court gave custody or approved the move",
+        "otherParentDeceased": "The other parent has died"
+      }
     }
   }
 }

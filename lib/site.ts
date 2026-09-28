@@ -25,7 +25,7 @@ export const site = {
 export const prices = {
   free: 0,
   assistant: 49,
-  filePrep: 269,
+  filePrep: 369,
 } as const;
 
 export type TierId = keyof typeof prices;

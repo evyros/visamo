@@ -738,7 +738,8 @@
       "account": "Account",
       "partner": "Partner",
       "billing": "Plan & billing",
-      "support": "Support"
+      "support": "Support",
+      "details": "Your details"
     },
     "shell": {
       "backToSite": "Back to visamo.co.il",
@@ -931,7 +932,9 @@
         "filedAwaiting": "We sent our file and haven't heard back",
         "firstResponse": "We sent our file and got a first response",
         "interviewScheduled": "We already have an interview appointment",
-        "renewal": "We already have a visa and need to renew it"
+        "renewal": "We already have a visa and need to renew it",
+        "interviewDone": "We had the interview and are waiting for a decision",
+        "approved": "Our application was approved"
       },
       "renewalUnsupported": "Visamo doesn't support visa renewals yet. It's planned and coming soon.",
       "back": "Back",
@@ -1304,12 +1307,14 @@
         "couple": "From both of you",
         "israeli": "From {name}",
         "foreign": "From {name}",
-        "children": "For the children"
+        "children": "For the children",
+        "retired": "No longer needed"
       },
       "status": {
         "todo": "To do",
         "uploaded": "Uploaded",
-        "optional": "Optional & recommended"
+        "optional": "Optional & recommended",
+        "retired": "Not needed"
       },
       "withTranslation": "+ translation",
       "copies": "{count} copies",
@@ -1354,6 +1359,155 @@
         "tooMany": "Up to 10 files per document.",
         "missing": "The upload didn't finish. Upload the file again.",
         "notAllowed": "This file can't be added here.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "retiredIntro": "Files for documents that left your list when your details changed. They're kept in case you need them."
+    },
+    "overview": {
+      "intro": "Where your file stands, and what changed lately.",
+      "stage": {
+        "title": "Where you are",
+        "steps": {
+          "notFiled": "Not filed yet",
+          "filedAwaiting": "Filed, waiting for an answer",
+          "firstResponse": "Got a first response",
+          "interviewScheduled": "Interview scheduled",
+          "interviewDone": "Interview done, waiting for a decision",
+          "approved": "Approved"
+        },
+        "now": "You're here",
+        "filedOn": "Filed on {date}",
+        "interviewOn": "Interview on {date}",
+        "update": "Update stage",
+        "dialogTitle": "Where are you now?",
+        "filedDate": "When did you file?",
+        "filedDateHint": "Optional. It shows how long you've been waiting.",
+        "interviewDate": "When is the interview?",
+        "back": "This moves your file back to “{stage}”. Dates you entered stay saved.",
+        "save": "Save",
+        "saving": "Saving…",
+        "cancel": "Cancel",
+        "close": "Close",
+        "branch": "Branch",
+        "noBranch": "Not chosen yet",
+        "changeBranch": "Change",
+        "branchTitle": "Your Misrad Hapnim branch",
+        "branchUnknown": "Not sure yet",
+        "errors": {
+          "dateRequired": "Enter the interview date.",
+          "invalid": "Check the date and try again.",
+          "generic": "Something went wrong. Please try again."
+        }
+      },
+      "progress": {
+        "title": "Documents",
+        "summary": "{done} of {total} uploaded",
+        "allDone": "Every document on your list is uploaded.",
+        "open": "Go to documents"
+      },
+      "details": {
+        "title": "Your details",
+        "intro": "From what you told us when you set up the file. Your document list is built from these.",
+        "edit": "Edit details",
+        "noEditsLeft": "To change your details, contact us.",
+        "couple": "The two of you",
+        "relationship": "Relationship",
+        "married": "Married",
+        "commonLaw": "Common-law",
+        "livingSince": "Living together since {year}",
+        "notLiving": "Not living together",
+        "childrenTogether": "Children together",
+        "status": "Status",
+        "nationality": "Nationality",
+        "bornIn": "Born in",
+        "location": "Where now",
+        "countriesLived": "Other countries lived in",
+        "none": "None",
+        "previousMarriages": "Married before",
+        "livedAbroad": "Lived abroad in recent years",
+        "nameChanged": "Name ever changed",
+        "childrenMoving": "Children moving to Israel",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "activity": {
+        "title": "Activity",
+        "empty": "Nothing here yet.",
+        "someone": "Someone",
+        "translationOf": "the translation of {document}",
+        "aDocument": "a document",
+        "events": {
+          "case.created": {
+            "male": "{name} set up the file",
+            "female": "{name} set up the file"
+          },
+          "file.uploaded": {
+            "male": "{name} uploaded {document}",
+            "female": "{name} uploaded {document}"
+          },
+          "file.deleted": {
+            "male": "{name} removed a file from {document}",
+            "female": "{name} removed a file from {document}"
+          },
+          "partner.invited": {
+            "male": "{name} invited {email} to the file",
+            "female": "{name} invited {email} to the file"
+          },
+          "invite.resent": {
+            "male": "{name} sent the invite to {email} again",
+            "female": "{name} sent the invite to {email} again"
+          },
+          "invite.cancelled": {
+            "male": "{name} cancelled the invite to {email}",
+            "female": "{name} cancelled the invite to {email}"
+          },
+          "partner.joined": {
+            "male": "{name} joined the file",
+            "female": "{name} joined the file"
+          },
+          "member.left": {
+            "male": "{name} left the file",
+            "female": "{name} left the file"
+          },
+          "details.changed": {
+            "male": "{name} updated your details",
+            "female": "{name} updated your details"
+          },
+          "stage.changed": {
+            "male": "{name} updated the stage to “{stage}”",
+            "female": "{name} updated the stage to “{stage}”"
+          },
+          "interview.moved": {
+            "male": "{name} changed the interview date to {date}",
+            "female": "{name} changed the interview date to {date}"
+          },
+          "branch.changed": {
+            "male": "{name} changed the branch to {branch}",
+            "female": "{name} changed the branch to {branch}"
+          }
+        },
+        "listChanged": "Documents added: {added} · removed: {removed}"
+      }
+    },
+    "detailsPage": {
+      "title": "Edit your details",
+      "intro": "Change what's different now. Your document list updates to match.",
+      "back": "Back to the overview",
+      "locked": "These can't be changed here. If something's wrong, contact us.",
+      "couple": "The two of you",
+      "review": "Review changes",
+      "checking": "Checking…",
+      "previewTitle": "Before you save",
+      "unchanged": "Nothing changed yet.",
+      "listNote": "Your document list may change: new documents might appear, and files you uploaded for documents that are no longer needed move to the “No longer needed” section on the documents page.",
+      "save": "Save changes",
+      "saving": "Saving…",
+      "keepEditing": "Keep editing",
+      "limit": "You've used all your edits. To change your details, contact us.",
+      "contact": "Contact us",
+      "errors": {
+        "invalid": "Some answers don't fit together. Check them and try again.",
+        "limit": "You've used all your edits. To change your details, contact us.",
         "generic": "Something went wrong. Please try again."
       }
     }

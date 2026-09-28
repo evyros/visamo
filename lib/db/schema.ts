@@ -1,5 +1,6 @@
-import { boolean, index, integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, date, index, integer, jsonb, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 import { FREE_MESSAGES } from "../chat/plans";
+import type { CaseEvent } from "../events";
 
 // Better Auth's core tables (user, session, account, verification), plus the
 // user's app language. Field names match what Better Auth expects; change them
@@ -97,6 +98,12 @@ export const cases = pgTable("case", {
   branch: text("branch"),
   /** A Stage from lib/case-options.ts. */
   stage: text("stage").notNull(),
+  /** When they filed, if they said. Kept when the stage moves back, to offer again. */
+  filedOn: date("filed_on", { mode: "string" }),
+  /** The interview's date, once one is scheduled. Kept like filedOn. */
+  interviewOn: date("interview_on", { mode: "string" }),
+  /** How many details edits that change the document list the case gets. Support raises it. */
+  detailEditsAllowed: integer("detail_edits_allowed").notNull().default(3),
   /** A Relationship from lib/case-options.ts: married or common-law. */
   relationship: text("relationship").notNull(),
   /** A MarriagePlace from lib/case-options.ts; null for a common-law couple. */
@@ -236,6 +243,32 @@ export const caseInvite = pgTable(
     sentAt: timestamp("sent_at").notNull().defaultNow(),
   },
   (table) => [index("case_invite_email_idx").on(table.email)],
+);
+
+/**
+ * What happened in a case, and who did it: the case's activity feed, and the
+ * record the details-edit limit counts. Written in the same batch as the
+ * change it describes (lib/events.ts), so the two can't disagree.
+ */
+export const caseEvent = pgTable(
+  "case_event",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /**
+     * The person in the case who did it, not their user: the person's row
+     * stays when they delete their account, so the feed keeps their name.
+     */
+    actorPersonId: text("actor_person_id").references(() => casePerson.id, { onDelete: "set null" }),
+    /** A CaseEvent type from lib/events.ts. */
+    type: text("type").notNull().$type<CaseEvent["type"]>(),
+    /** The event's details, shaped by its type. */
+    data: jsonb("data").notNull().$type<CaseEvent["data"]>(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [index("case_event_case_id_idx").on(table.caseId, table.createdAt)],
 );
 
 // ── Chat ─────────────────────────────────────────────────────────────────────

@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { parseOnboarding } from "@/lib/case-options";
 import { db } from "@/lib/db";
 import { caseMember, casePerson, cases } from "@/lib/db/schema";
+import { recordEvent } from "@/lib/events";
 import { findCaseId, getCaseId, getSession, hasSignInMethod } from "@/lib/session";
 
 export type CreateCaseResult = { error: "generic" };
@@ -37,6 +38,7 @@ export async function createCase(input: unknown): Promise<CreateCaseResult> {
         { id: crypto.randomUUID(), caseId, userId, ...self },
         { id: crypto.randomUUID(), caseId, userId: null, ...partner },
       ]),
+      recordEvent(caseId, userId, { type: "case.created", data: {} }),
     ]);
   } catch (error) {
     // If the user has a case now, another submit won the race: carry on.

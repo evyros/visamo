@@ -6,6 +6,7 @@ import { deleteFile, finishUpload, startUpload, type UploadError } from "@/app/(
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
 import type { Owner } from "@/lib/documents/catalog";
+import { progressOf, uploadedKeys } from "@/lib/documents/progress";
 import { ACCEPTED_TYPES, MAX_FILE_BYTES, MAX_FILES_PER_SLOT, isAcceptedType, type FileSlot } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
 import { Icon } from "@/components/icons";
@@ -34,6 +35,9 @@ export type DocumentItem = {
 };
 
 export type DocumentGroup = { owner: Owner; title: string; items: DocumentItem[] };
+
+/** Files for a document no longer on the list: kept, shown, and only removable. */
+export type RetiredDocument = { key: string; title: string };
 
 /** A file on its way: not in the case's files until finishUpload succeeds. */
 type Pending = {
@@ -79,11 +83,13 @@ const MULTIPART_FROM = 8 * 1024 * 1024;
 export function DocumentsBoard({
   t,
   groups,
+  retired,
   files: initialFiles,
   intlLocale,
 }: {
   t: Labels;
   groups: DocumentGroup[];
+  retired: RetiredDocument[];
   files: FileView[];
   intlLocale: string;
 }) {
@@ -206,11 +212,9 @@ export function DocumentsBoard({
     if (!result.error) setFiles((list) => list.filter((f) => f.id !== fileId));
   }
 
-  const isUploaded = (item: DocumentItem) => files.some((f) => f.documentKey === item.key && f.slot === "original");
-  // An optional document counts once it's uploaded, never as missing.
-  const counted = groups.flatMap((g) => g.items).filter((i) => !i.optional || isUploaded(i));
-  const ready = counted.filter(isUploaded).length;
-  const total = counted.length;
+  const { done: ready, total } = progressOf(groups.flatMap((g) => g.items), uploadedKeys(files));
+  // A retired document's files can only be removed; once they all are, it goes.
+  const retiredLeft = retired.filter((r) => files.some((f) => f.documentKey === r.key));
 
   return (
     <>
@@ -232,7 +236,7 @@ export function DocumentsBoard({
       </section>
 
       {groups.map((group) => (
-        <section key={group.owner} className="mt-8">
+        <section key={group.owner} id={group.owner} className="mt-8 scroll-mt-24">
           <h2 className="text-lg font-semibold text-navy-900">{group.title}</h2>
           <ul className="mt-3 space-y-3">
             {group.items.map((item) => (
@@ -257,7 +261,60 @@ export function DocumentsBoard({
           </ul>
         </section>
       ))}
+
+      {retiredLeft.length > 0 && (
+        <section id="retired" className="mt-8 scroll-mt-24">
+          <h2 className="text-lg font-semibold text-navy-900">{t.groups.retired}</h2>
+          <p className="mt-1 text-[15px] text-slate-600">{t.retiredIntro}</p>
+          <ul className="mt-3 space-y-3">
+            {retiredLeft.map((r) => (
+              <li key={r.key}>
+                <RetiredCard
+                  t={t}
+                  title={r.title}
+                  intlLocale={intlLocale}
+                  files={files.filter((f) => f.documentKey === r.key)}
+                  onRemove={remove}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </>
+  );
+}
+
+/** A document that left the list, with the files it had. Nothing can be added to it. */
+function RetiredCard({
+  t,
+  title,
+  intlLocale,
+  files,
+  onRemove,
+}: {
+  t: Labels;
+  title: string;
+  intlLocale: string;
+  files: FileView[];
+  onRemove: (fileId: string) => Promise<void>;
+}) {
+  return (
+    <div className="rounded-card border border-line-200 bg-white p-4 sm:p-5">
+      <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <span className="font-semibold text-navy-900">{title}</span>
+        <span className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
+          {t.status.retired}
+        </span>
+      </span>
+      <ul className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
+        {files.map((file) => (
+          <li key={file.id}>
+            <FileTile t={t} file={file} intlLocale={intlLocale} onRemove={() => onRemove(file.id)} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -588,7 +645,8 @@ function FileTile({
   file: FileView;
   intlLocale: string;
   onRemove: () => Promise<void>;
-  onReplace: (file: File) => void;
+  /** Left out where nothing can be added. */
+  onReplace?: (file: File) => void;
 }) {
   const url = `/api/files/${file.id}`;
   const isPdf = file.contentType === "application/pdf";
@@ -685,7 +743,7 @@ function FileMenu({
   url: string;
   meta: string;
   onRemove: () => Promise<void>;
-  onReplace: (file: File) => void;
+  onReplace?: (file: File) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [confirming, setConfirming] = useState(false);
@@ -751,21 +809,25 @@ function FileMenu({
               <a href={url} target="_blank" rel="noopener" className={item} onClick={() => setOpen(false)}>
                 {t.file.open}
               </a>
-              <label htmlFor={replaceId} className={`${item} cursor-pointer`}>
-                {t.file.replace}
-              </label>
-              <input
-                id={replaceId}
-                type="file"
-                accept={accept}
-                className="sr-only"
-                onChange={(event) => {
-                  const replacement = event.target.files?.[0];
-                  if (replacement) onReplace(replacement);
-                  event.target.value = "";
-                  setOpen(false);
-                }}
-              />
+              {onReplace && (
+                <>
+                  <label htmlFor={replaceId} className={`${item} cursor-pointer`}>
+                    {t.file.replace}
+                  </label>
+                  <input
+                    id={replaceId}
+                    type="file"
+                    accept={accept}
+                    className="sr-only"
+                    onChange={(event) => {
+                      const replacement = event.target.files?.[0];
+                      if (replacement) onReplace(replacement);
+                      event.target.value = "";
+                      setOpen(false);
+                    }}
+                  />
+                </>
+              )}
               <button type="button" className={`${item} text-terracotta-600`} onClick={() => setConfirming(true)}>
                 {t.file.remove}
               </button>

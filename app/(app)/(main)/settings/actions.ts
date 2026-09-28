@@ -14,6 +14,7 @@ import { db } from "@/lib/db";
 import { deleteCaseBlobs } from "@/lib/files/storage";
 import { caseInvite, cases, user } from "@/lib/db/schema";
 import { sendInviteEmail } from "@/lib/email";
+import { recordEvent } from "@/lib/events";
 import { inviteUrl } from "@/lib/invites";
 import { requireCase } from "@/lib/session";
 import { localePath, site } from "@/lib/site";
@@ -59,7 +60,10 @@ export async function deleteAccount() {
     // The uploaded files first: deleting the case's rows doesn't delete its blobs.
     await deleteCaseBlobs(caseId);
     await db.batch([db.delete(cases).where(eq(cases.id, caseId)), deleteUser]);
-  } else await deleteUser;
+  } else {
+    // The event first: it finds their person in the case through their user.
+    await db.batch([recordEvent(caseId, me.id, { type: "member.left", data: {} }), deleteUser]);
+  }
 
   // The sessions went with the user; this clears the cookies.
   await auth.api.signOut({ headers: await headers() });
@@ -114,6 +118,8 @@ export async function invitePartner(email: string): Promise<InviteResult> {
     await db.delete(caseInvite).where(eq(caseInvite.caseId, caseId));
     return { error: "generic" };
   }
+  // Only once the email went out: until then there's no invite to speak of.
+  await recordEvent(caseId, me.id, { type: "partner.invited", data: { email: address } });
   refresh();
   return {};
 }
@@ -136,13 +142,22 @@ export async function resendInvite(): Promise<InviteResult> {
     console.error("resendInvite failed", error);
     return { error: "generic" };
   }
-  await db.update(caseInvite).set({ sentAt: new Date() }).where(eq(caseInvite.caseId, caseId));
+  await db.batch([
+    db.update(caseInvite).set({ sentAt: new Date() }).where(eq(caseInvite.caseId, caseId)),
+    recordEvent(caseId, me.id, { type: "invite.resent", data: { email: invite.email } }),
+  ]);
   refresh();
   return {};
 }
 
 export async function cancelInvite() {
-  const { caseId } = await requireCase();
-  await db.delete(caseInvite).where(eq(caseInvite.caseId, caseId));
+  const { user: me, caseId } = await requireCase();
+  const invite = await pendingInvite(caseId);
+  if (invite) {
+    await db.batch([
+      db.delete(caseInvite).where(eq(caseInvite.caseId, caseId)),
+      recordEvent(caseId, me.id, { type: "invite.cancelled", data: { email: invite.email } }),
+    ]);
+  }
   refresh();
 }

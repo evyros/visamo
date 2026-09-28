@@ -34,9 +34,39 @@ export type MarriagePlace = (typeof marriagePlaces)[number];
 /** The earliest year a common-law couple can say they moved in together. */
 export const TOGETHER_SINCE_MIN = 1950;
 
-/** Where the couple is with Misrad Hapnim. */
-export const stages = ["notFiled", "filedAwaiting", "firstResponse", "interviewScheduled"] as const;
+/** Where the couple is with Misrad Hapnim, in order. The overview's tracker moves through them. */
+export const stages = [
+  "notFiled",
+  "filedAwaiting",
+  "firstResponse",
+  "interviewScheduled",
+  "interviewDone",
+  "approved",
+] as const;
 export type Stage = (typeof stages)[number];
+
+/** The stages onboarding offers. The later ones are reached from the overview. */
+export const onboardingStages = ["notFiled", "filedAwaiting", "firstResponse", "interviewScheduled"] as const;
+
+/** The date asked for when moving to a stage, and the case column it's kept in. */
+export const stageDates = { filedAwaiting: "filedOn", interviewScheduled: "interviewOn" } as const;
+export type StageDate = (typeof stageDates)[keyof typeof stageDates];
+
+/** How far ahead an interview date can be. */
+const INTERVIEW_MAX_DAYS = 2 * 365;
+
+/** A `yyyy-mm-dd` date that fits the stage, or null: filing can't be in the future, an interview can. */
+export function parseStageDate(stage: Stage, value: unknown, today = new Date()): string | null {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) return null;
+  // Tomorrow in UTC is already today in Israel for part of the day.
+  const tomorrow = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() + 1);
+  if (date.getUTCFullYear() < 2000) return null;
+  if (stage === "filedAwaiting" && date.getTime() > tomorrow) return null;
+  if (stage === "interviewScheduled" && date.getTime() > tomorrow + INTERVIEW_MAX_DAYS * 86_400_000) return null;
+  return value;
+}
 
 /**
  * Offered in onboarding after the stages, but not supported yet: choosing it
@@ -233,9 +263,65 @@ export function parseOnboarding(input: unknown): OnboardingInput | null {
   const self = parsePerson(input.self);
   const partner = parsePerson(input.partner);
   const relationship = parseRelationship(input.relationship);
-  if (!self || !partner || !relationship || !oneOf(stages, input.stage)) return null;
+  if (!self || !partner || !relationship || !oneOf(onboardingStages, input.stage)) return null;
   // The process is for an Israeli side and a foreign partner: exactly one of each.
   if (self.isIsraeli === partner.isIsraeli) return null;
   if (input.branch !== null && !oneOf(branches, input.branch)) return null;
   return { self, partner, relationship, branch: input.branch, stage: input.stage };
+}
+
+// ── Editing the details ────────────────────────────────────────────────────
+// After onboarding, a case's answers can be changed from the overview, a few
+// times (cases.detailEditsAllowed). Who the people are can't: a different
+// name, nationality or status is a different case, and goes through support.
+
+/** The answers about a person that can change after onboarding. The rest stay as they were. */
+export const editablePersonFields = {
+  israeli: ["previousMarriages", "livedAbroad"],
+  foreign: [
+    "previousMarriages",
+    "countriesLived",
+    "location",
+    "nameChanged",
+    "hasChildren",
+    "childrenMoving",
+    "otherParents",
+  ],
+} as const satisfies Record<"israeli" | "foreign", readonly (keyof PersonInput)[]>;
+
+/** A case's answers by role, as the edit form sends and saves them. */
+export type CaseDetails = { relationship: RelationshipInput; israeli: PersonInput; foreign: PersonInput };
+
+/** The fields a details edit changed, as `relationship.marriagePlace` or `foreign.location`. */
+export function changedFields(before: CaseDetails, after: CaseDetails): string[] {
+  const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
+  const changed: string[] = [];
+  for (const key of Object.keys(before.relationship) as (keyof RelationshipInput)[]) {
+    if (!same(before.relationship[key], after.relationship[key])) changed.push(`relationship.${key}`);
+  }
+  for (const role of ["israeli", "foreign"] as const) {
+    for (const key of Object.keys(before[role]) as (keyof PersonInput)[]) {
+      if (!same(before[role][key], after[role][key])) changed.push(`${role}.${key}`);
+    }
+  }
+  return changed;
+}
+
+/**
+ * The edit form's answers laid over the case's: only the editable fields are
+ * taken from `input`, and the result is checked like onboarding's answers.
+ * Null if anything is off.
+ */
+export function parseDetails(input: unknown, current: CaseDetails): CaseDetails | null {
+  if (!isObject(input) || !isObject(input.israeli) || !isObject(input.foreign)) return null;
+  const merge = (role: "israeli" | "foreign", from: Record<string, unknown>) => {
+    const person: Record<string, unknown> = { ...current[role] };
+    for (const key of editablePersonFields[role]) person[key] = from[key];
+    return parsePerson(person);
+  };
+  const israeli = merge("israeli", input.israeli);
+  const foreign = merge("foreign", input.foreign);
+  const relationship = parseRelationship(input.relationship);
+  if (!israeli?.isIsraeli || !foreign || foreign.isIsraeli || !relationship) return null;
+  return { relationship, israeli, foreign };
 }

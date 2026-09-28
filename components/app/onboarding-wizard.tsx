@@ -18,7 +18,7 @@ import {
   otherParents,
   previousMarriages,
   relationships,
-  stages,
+  onboardingStages,
   type BranchCode,
   type IsraeliStatus,
   type OtherParent,
@@ -39,7 +39,7 @@ import {
 // nothing.
 
 type Labels = Messages["app"]["onboarding"];
-type Option<T extends string = string> = { value: T; label: string };
+export type Option<T extends string = string> = { value: T; label: string };
 
 type FieldName =
   | keyof PersonAnswers
@@ -48,7 +48,7 @@ type FieldName =
   | "branch"
   | "stage"
   | "form";
-type Errors = Partial<Record<FieldName, string>>;
+export type Errors = Partial<Record<FieldName, string>>;
 type SetErrors = (update: (errors: Errors) => Errors) => void;
 
 /** Matches onboardingPaths in lib/app-paths.ts. */
@@ -65,7 +65,7 @@ function nameError(value: string, t: Labels) {
 }
 
 /** The unanswered questions of one person's step, in the order they show. */
-function personErrors(person: PersonAnswers, t: Labels): Errors {
+export function personErrors(person: PersonAnswers, t: Labels): Errors {
   const e: Errors = {};
   const name = nameError(person.name, t);
   if (name) e.name = name;
@@ -93,7 +93,7 @@ function personErrors(person: PersonAnswers, t: Labels): Errors {
   return e;
 }
 
-function relationshipErrors(r: RelationshipAnswers, t: Labels): Errors {
+export function relationshipErrors(r: RelationshipAnswers, t: Labels): Errors {
   const e: Errors = {};
   if (!r.relationship) e.relationship = t.errors.choose;
   else if (r.relationship === "married") {
@@ -111,7 +111,7 @@ function relationshipErrors(r: RelationshipAnswers, t: Labels): Errors {
  * A person's answers as createCase expects them: only their role's
  * questions, and only the follow-ups that were asked.
  */
-function personInput(person: PersonAnswers) {
+export function personInput(person: PersonAnswers) {
   const foreign = !person.isIsraeli;
   const moving = foreign && person.hasChildren ? person.childrenMoving : null;
   return {
@@ -132,7 +132,7 @@ function personInput(person: PersonAnswers) {
   };
 }
 
-function relationshipInput(r: RelationshipAnswers) {
+export function relationshipInput(r: RelationshipAnswers) {
   const married = r.relationship === "married";
   const together = married ? null : r.livingTogether;
   return {
@@ -369,7 +369,7 @@ export function OnboardingWizard({
             id="stage"
             legend={t.stageIntro}
             error={errors.stage}
-            options={([...stages, RENEWAL] as const).map((s) => ({ value: s, label: t.stages[s] }))}
+            options={([...onboardingStages, RENEWAL] as const).map((s) => ({ value: s, label: t.stages[s] }))}
             value={answers.stage}
             onChange={(v) => set("stage", v)}
           />
@@ -405,9 +405,10 @@ export function OnboardingWizard({
 /**
  * The questions about one person: the user in the first step, their partner
  * in the second. Which ones show depends on whether the person is the
- * Israeli or the foreign partner.
+ * Israeli or the foreign partner. Editing an existing case (lockIdentity)
+ * leaves out who the person is: name, gender, status, nationality and birth.
  */
-function PersonFields({
+export function PersonFields({
   t,
   q,
   countries,
@@ -418,6 +419,7 @@ function PersonFields({
   errors,
   setErrors,
   autoComplete,
+  lockIdentity = false,
 }: {
   t: Labels;
   /** The questions worded for this person. */
@@ -431,64 +433,70 @@ function PersonFields({
   errors: Errors;
   setErrors: SetErrors;
   autoComplete: string;
+  lockIdentity?: boolean;
 }) {
   const foreign = person.isIsraeli === false;
+  const identity = !lockIdentity;
   return (
     <>
-      <Field id="name" label={q.name} error={errors.name}>
-        <input
-          id="name"
-          name="name"
-          data-field="name"
-          autoComplete={autoComplete}
-          maxLength={NAME_MAX}
-          value={person.name}
-          onChange={(e) => {
-            onChange("name", e.target.value);
-            // Clear a shown error as soon as the name is fixed.
-            if (errors.name && !nameError(e.target.value, t)) setErrors((x) => ({ ...x, name: undefined }));
-          }}
-          // Continue stays off while the name is too short; say why once the user moves on.
-          onBlur={(e) => {
-            const error = e.target.value ? nameError(e.target.value, t) : undefined;
-            setErrors((x) => ({ ...x, name: error }));
-          }}
-          className={inputClass}
-          {...describe("name", errors.name)}
-        />
-      </Field>
-      <Choices
-        id="gender"
-        legend={t.gender}
-        error={errors.gender}
-        options={genders.map((g) => ({ value: g, label: t.genders[g] }))}
-        value={person.gender}
-        onChange={(v) => onChange("gender", v)}
-        inline
-      />
-      {onOwnStatus ? (
-        <Choices
-          id="israeliStatus"
-          legend={q.israeliStatus}
-          hint={t.israeliHint}
-          error={errors.israeliStatus}
-          options={[...israeliStatuses, "neither" as const].map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
-          value={person.isIsraeli === null ? null : (person.israeliStatus ?? "neither")}
-          onChange={onOwnStatus}
-          inline
-        />
-      ) : (
-        person.isIsraeli && (
+      {identity && (
+        <>
+          <Field id="name" label={q.name} error={errors.name}>
+            <input
+              id="name"
+              name="name"
+              data-field="name"
+              autoComplete={autoComplete}
+              maxLength={NAME_MAX}
+              value={person.name}
+              onChange={(e) => {
+                onChange("name", e.target.value);
+                // Clear a shown error as soon as the name is fixed.
+                if (errors.name && !nameError(e.target.value, t)) setErrors((x) => ({ ...x, name: undefined }));
+              }}
+              // Continue stays off while the name is too short; say why once the user moves on.
+              onBlur={(e) => {
+                const error = e.target.value ? nameError(e.target.value, t) : undefined;
+                setErrors((x) => ({ ...x, name: error }));
+              }}
+              className={inputClass}
+              {...describe("name", errors.name)}
+            />
+          </Field>
           <Choices
-            id="israeliStatus"
-            legend={q.israeliStatus}
-            error={errors.israeliStatus}
-            options={israeliStatuses.map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
-            value={person.israeliStatus}
-            onChange={(v) => onChange("israeliStatus", v)}
+            id="gender"
+            legend={t.gender}
+            error={errors.gender}
+            options={genders.map((g) => ({ value: g, label: t.genders[g] }))}
+            value={person.gender}
+            onChange={(v) => onChange("gender", v)}
             inline
           />
-        )
+          {onOwnStatus ? (
+            <Choices
+              id="israeliStatus"
+              legend={q.israeliStatus}
+              hint={t.israeliHint}
+              error={errors.israeliStatus}
+              options={[...israeliStatuses, "neither" as const].map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
+              value={person.isIsraeli === null ? null : (person.israeliStatus ?? "neither")}
+              onChange={onOwnStatus}
+              inline
+            />
+          ) : (
+            person.isIsraeli && (
+              <Choices
+                id="israeliStatus"
+                legend={q.israeliStatus}
+                error={errors.israeliStatus}
+                options={israeliStatuses.map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
+                value={person.israeliStatus}
+                onChange={(v) => onChange("israeliStatus", v)}
+                inline
+              />
+            )
+          )}
+        </>
       )}
 
       {person.isIsraeli && (
@@ -503,7 +511,7 @@ function PersonFields({
         />
       )}
 
-      {foreign && (
+      {foreign && identity && (
         <>
           <CountrySelect
             id="nationality"
@@ -545,6 +553,11 @@ function PersonFields({
               onChange={(v) => onChange("birthCountry", v)}
             />
           )}
+        </>
+      )}
+
+      {foreign && (
+        <>
           <YesNo
             id="livedElsewhere"
             t={t}
@@ -636,7 +649,7 @@ function PersonFields({
 }
 
 /** The questions about the couple together. */
-function RelationshipFields({
+export function RelationshipFields({
   t,
   countries,
   answers,
@@ -921,7 +934,7 @@ function CardGroup({
 }
 
 /** A radio group drawn as selectable cards. */
-function Choices<T extends string>({
+export function Choices<T extends string>({
   id,
   legend,
   hint,

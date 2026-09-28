@@ -9,6 +9,7 @@ import { MAX_FILE_BYTES, MAX_FILES_PER_SLOT, fileSlots, sniffType, type FileSlot
 import { filePath, thumbnailPath } from "@/lib/files/storage";
 import { makeThumbnail } from "@/lib/files/thumbnail";
 import { fileView, type FileView } from "@/lib/files/view";
+import { recordEvent } from "@/lib/events";
 import { requireCase } from "@/lib/session";
 
 // Uploading a file for a document, in three steps:
@@ -101,20 +102,24 @@ export async function finishUpload(input: {
       });
     }
     const name = (typeof input.name === "string" ? input.name.trim() : "").slice(0, 200) || "file";
-    await db
-      .insert(caseFile)
-      .values({
-        id: fileId,
-        caseId,
-        documentKey,
-        slot,
-        contentType: type,
-        size: bytes.length,
-        name,
-        hasThumbnail: !!thumbnail,
-        uploadedBy: user.id,
-      })
-      .onConflictDoNothing();
+    // The event takes the file's id, so a retry racing this one doesn't log it twice.
+    await db.batch([
+      db
+        .insert(caseFile)
+        .values({
+          id: fileId,
+          caseId,
+          documentKey,
+          slot,
+          contentType: type,
+          size: bytes.length,
+          name,
+          hasThumbnail: !!thumbnail,
+          uploadedBy: user.id,
+        })
+        .onConflictDoNothing(),
+      recordEvent(caseId, user.id, { type: "file.uploaded", data: { documentKey, slot, name } }, fileId),
+    ]);
   } catch (error) {
     console.error("finishUpload failed", error);
     return { error: "generic" };
@@ -124,16 +129,26 @@ export async function finishUpload(input: {
 }
 
 export async function deleteFile(fileId: string): Promise<{ error?: "generic" }> {
-  const { caseId } = await requireCase();
+  const { user, caseId } = await requireCase();
   const [file] = await db
-    .select({ id: caseFile.id, hasThumbnail: caseFile.hasThumbnail })
+    .select({
+      id: caseFile.id,
+      documentKey: caseFile.documentKey,
+      slot: caseFile.slot,
+      name: caseFile.name,
+      hasThumbnail: caseFile.hasThumbnail,
+    })
     .from(caseFile)
     .where(and(eq(caseFile.id, fileId), eq(caseFile.caseId, caseId)))
     .limit(1);
   if (!file) return {};
   try {
     await del([filePath(caseId, fileId), ...(file.hasThumbnail ? [thumbnailPath(caseId, fileId)] : [])]);
-    await db.delete(caseFile).where(eq(caseFile.id, fileId));
+    const { documentKey, slot, name } = file;
+    await db.batch([
+      db.delete(caseFile).where(eq(caseFile.id, fileId)),
+      recordEvent(caseId, user.id, { type: "file.deleted", data: { documentKey, slot, name } }),
+    ]);
   } catch (error) {
     console.error("deleteFile failed", error);
     return { error: "generic" };

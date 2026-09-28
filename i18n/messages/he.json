@@ -738,7 +738,8 @@
       "account": "חשבון",
       "partner": "בן/בת הזוג",
       "billing": "חבילה ותשלום",
-      "support": "תמיכה"
+      "support": "תמיכה",
+      "details": "הפרטים שלכם"
     },
     "shell": {
       "backToSite": "חזרה ל-visamo.co.il",
@@ -931,7 +932,9 @@
         "filedAwaiting": "שלחנו בקשה למשרד הפנים ועוד לא קיבלנו תשובה",
         "firstResponse": "שלחנו בקשה למשרד הפנים וכבר קיבלנו תשובה ראשונה",
         "interviewScheduled": "כבר נקבע לנו מועד לראיון",
-        "renewal": "כבר יש לנו אשרה וצריך לחדש אותה"
+        "renewal": "כבר יש לנו אשרה וצריך לחדש אותה",
+        "interviewDone": "היינו בראיון ואנחנו ממתינים להחלטה",
+        "approved": "הבקשה שלנו אושרה"
       },
       "renewalUnsupported": "Visamo עדיין לא תומכת בחידוש אשרה. זה מתוכנן ויגיע בקרוב.",
       "back": "חזרה",
@@ -1304,12 +1307,14 @@
         "couple": "משניכם",
         "israeli": "מ{name}",
         "foreign": "מ{name}",
-        "children": "בשביל הילדים"
+        "children": "בשביל הילדים",
+        "retired": "כבר לא נדרשים"
       },
       "status": {
         "todo": "לביצוע",
         "uploaded": "הועלה",
-        "optional": "לא חובה, מומלץ"
+        "optional": "לא חובה, מומלץ",
+        "retired": "לא נדרש"
       },
       "withTranslation": "+ תרגום",
       "copies": "{count} עותקים",
@@ -1354,6 +1359,155 @@
         "tooMany": "עד 10 קבצים למסמך.",
         "missing": "ההעלאה לא הסתיימה. יש להעלות את הקובץ שוב.",
         "notAllowed": "אי אפשר להוסיף את הקובץ הזה כאן.",
+        "generic": "משהו השתבש. אפשר לנסות שוב."
+      },
+      "retiredIntro": "קבצים של מסמכים שירדו מהרשימה כשהפרטים שלכם השתנו. הם נשמרים למקרה שתצטרכו אותם."
+    },
+    "overview": {
+      "intro": "איפה התיק שלכם עומד, ומה השתנה לאחרונה.",
+      "stage": {
+        "title": "איפה אתם בתהליך",
+        "steps": {
+          "notFiled": "עוד לא הגשנו",
+          "filedAwaiting": "הגשנו, ממתינים לתשובה",
+          "firstResponse": "קיבלנו תשובה ראשונה",
+          "interviewScheduled": "נקבע ראיון",
+          "interviewDone": "היינו בראיון, ממתינים להחלטה",
+          "approved": "אושר"
+        },
+        "now": "אתם כאן",
+        "filedOn": "הוגש ב-{date}",
+        "interviewOn": "ראיון ב-{date}",
+        "update": "עדכון שלב",
+        "dialogTitle": "איפה אתם עכשיו?",
+        "filedDate": "מתי הגשתם?",
+        "filedDateHint": "לא חובה. כך תראו כמה זמן אתם ממתינים.",
+        "interviewDate": "מתי הראיון?",
+        "back": "התיק יחזור לשלב „{stage}”. התאריכים שהזנתם יישמרו.",
+        "save": "שמירה",
+        "saving": "שומרים…",
+        "cancel": "ביטול",
+        "close": "סגירה",
+        "branch": "לשכה",
+        "noBranch": "עוד לא נבחרה",
+        "changeBranch": "שינוי",
+        "branchTitle": "הלשכה שלכם במשרד הפנים",
+        "branchUnknown": "עוד לא ידוע",
+        "errors": {
+          "dateRequired": "יש להזין את תאריך הראיון.",
+          "invalid": "בדקו את התאריך ונסו שוב.",
+          "generic": "משהו השתבש. אפשר לנסות שוב."
+        }
+      },
+      "progress": {
+        "title": "מסמכים",
+        "summary": "{done} מתוך {total} הועלו",
+        "allDone": "כל המסמכים ברשימה שלכם הועלו.",
+        "open": "למסמכים"
+      },
+      "details": {
+        "title": "הפרטים שלכם",
+        "intro": "לפי מה שסיפרתם לנו כשפתחתם את התיק. רשימת המסמכים שלכם נבנית מהם.",
+        "edit": "עריכת הפרטים",
+        "noEditsLeft": "כדי לשנות את הפרטים, צרו איתנו קשר.",
+        "couple": "שניכם",
+        "relationship": "סוג הקשר",
+        "married": "נשואים",
+        "commonLaw": "ידועים בציבור",
+        "livingSince": "גרים יחד מאז {year}",
+        "notLiving": "לא גרים יחד",
+        "childrenTogether": "ילדים משותפים",
+        "status": "מעמד",
+        "nationality": "אזרחות",
+        "bornIn": "ארץ לידה",
+        "location": "איפה עכשיו",
+        "countriesLived": "מדינות נוספות שגר/ה בהן",
+        "none": "אין",
+        "previousMarriages": "נישואים קודמים",
+        "livedAbroad": "גר/ה בחו״ל בשנים האחרונות",
+        "nameChanged": "השם השתנה אי פעם",
+        "childrenMoving": "ילדים שעוברים לישראל",
+        "yes": "כן",
+        "no": "לא"
+      },
+      "activity": {
+        "title": "פעילות",
+        "empty": "עוד אין כאן כלום.",
+        "someone": "מישהו",
+        "translationOf": "את התרגום של {document}",
+        "aDocument": "מסמך",
+        "events": {
+          "case.created": {
+            "male": "{name} פתח את התיק",
+            "female": "{name} פתחה את התיק"
+          },
+          "file.uploaded": {
+            "male": "{name} העלה {document}",
+            "female": "{name} העלתה {document}"
+          },
+          "file.deleted": {
+            "male": "{name} הסיר קובץ מ{document}",
+            "female": "{name} הסירה קובץ מ{document}"
+          },
+          "partner.invited": {
+            "male": "{name} הזמין את {email} לתיק",
+            "female": "{name} הזמינה את {email} לתיק"
+          },
+          "invite.resent": {
+            "male": "{name} שלח שוב את ההזמנה אל {email}",
+            "female": "{name} שלחה שוב את ההזמנה אל {email}"
+          },
+          "invite.cancelled": {
+            "male": "{name} ביטל את ההזמנה של {email}",
+            "female": "{name} ביטלה את ההזמנה של {email}"
+          },
+          "partner.joined": {
+            "male": "{name} הצטרף לתיק",
+            "female": "{name} הצטרפה לתיק"
+          },
+          "member.left": {
+            "male": "{name} עזב את התיק",
+            "female": "{name} עזבה את התיק"
+          },
+          "details.changed": {
+            "male": "{name} עדכן את הפרטים",
+            "female": "{name} עדכנה את הפרטים"
+          },
+          "stage.changed": {
+            "male": "{name} עדכן את השלב ל„{stage}”",
+            "female": "{name} עדכנה את השלב ל„{stage}”"
+          },
+          "interview.moved": {
+            "male": "{name} שינה את מועד הראיון ל-{date}",
+            "female": "{name} שינתה את מועד הראיון ל-{date}"
+          },
+          "branch.changed": {
+            "male": "{name} שינה את הלשכה ל{branch}",
+            "female": "{name} שינתה את הלשכה ל{branch}"
+          }
+        },
+        "listChanged": "מסמכים שנוספו: {added} · שהוסרו: {removed}"
+      }
+    },
+    "detailsPage": {
+      "title": "עריכת הפרטים",
+      "intro": "שנו את מה שהשתנה. רשימת המסמכים תתעדכן בהתאם.",
+      "back": "חזרה לסקירה",
+      "locked": "את הפרטים האלה אי אפשר לשנות כאן. אם משהו לא נכון, צרו איתנו קשר.",
+      "couple": "שניכם",
+      "review": "בדיקת השינויים",
+      "checking": "בודקים…",
+      "previewTitle": "לפני השמירה",
+      "unchanged": "עוד לא שיניתם כלום.",
+      "listNote": "רשימת המסמכים עשויה להשתנות: ייתכן שיופיעו מסמכים חדשים, וקבצים שהעליתם למסמכים שכבר לא נדרשים יעברו לחלק „כבר לא נדרשים” בעמוד המסמכים.",
+      "save": "שמירת השינויים",
+      "saving": "שומרים…",
+      "keepEditing": "המשך עריכה",
+      "limit": "ניצלתם את כל העריכות. כדי לשנות את הפרטים, צרו איתנו קשר.",
+      "contact": "צרו איתנו קשר",
+      "errors": {
+        "invalid": "חלק מהתשובות לא מתאימות זו לזו. בדקו ונסו שוב.",
+        "limit": "ניצלתם את כל העריכות. כדי לשנות את הפרטים, צרו איתנו קשר.",
         "generic": "משהו השתבש. אפשר לנסות שוב."
       }
     }

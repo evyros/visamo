@@ -1,6 +1,6 @@
 import "server-only";
 import { asc, eq } from "drizzle-orm";
-import type { PersonInput, RelationshipInput } from "./case-options";
+import type { CaseDetails, PersonInput, RelationshipInput } from "./case-options";
 import { buildDocumentList } from "./documents/build";
 import { db } from "./db";
 import { caseFile, casePerson, cases, user } from "./db/schema";
@@ -41,17 +41,34 @@ function relationshipOf(c: typeof cases.$inferSelect): RelationshipInput {
   } satisfies Row<RelationshipInput> as RelationshipInput;
 }
 
-/** The case's people and its document list. */
-export async function caseDocuments(caseId: string) {
+/** The case's row, its two people's rows, and its answers by role. */
+export async function caseDetails(caseId: string) {
   const [[row], people] = await Promise.all([
     db.select().from(cases).where(eq(cases.id, caseId)).limit(1),
     db.select().from(casePerson).where(eq(casePerson.caseId, caseId)).orderBy(asc(casePerson.createdAt)),
   ]);
-  if (!row || people.length !== 2) throw new Error(`Case ${caseId} is incomplete`);
-  const [a, b] = people.map(personOf);
+  const israeli = people.find((p) => p.isIsraeli);
+  const foreign = people.find((p) => !p.isIsraeli);
+  if (!row || people.length !== 2 || !israeli || !foreign) throw new Error(`Case ${caseId} is incomplete`);
+  const details: CaseDetails = {
+    relationship: relationshipOf(row),
+    israeli: personOf(israeli),
+    foreign: personOf(foreign),
+  };
+  return { row, people, details };
+}
+
+/** The document list for a case's answers. */
+export function listOf(details: CaseDetails) {
+  return buildDocumentList({ relationship: details.relationship, people: [details.israeli, details.foreign] });
+}
+
+/** The case's people and its document list. */
+export async function caseDocuments(caseId: string) {
+  const { people, details } = await caseDetails(caseId);
   return {
     people: people.map((p) => ({ name: p.name, isIsraeli: p.isIsraeli, userId: p.userId })),
-    list: buildDocumentList({ relationship: relationshipOf(row), people: [a, b] }),
+    list: listOf(details),
   };
 }
 

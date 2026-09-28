@@ -3,6 +3,7 @@ import { and, asc, eq, isNull } from "drizzle-orm";
 import type { Locale } from "@/i18n/config";
 import { db } from "./db";
 import { caseInvite, caseMember, casePerson } from "./db/schema";
+import { recordEvent } from "./events";
 import { site } from "./site";
 
 // Partner invites. The invite names an email, not a token: whoever first
@@ -43,6 +44,8 @@ export async function claimInvite(user: { id: string; email: string; emailVerifi
         .set({ userId: user.id })
         .where(and(eq(casePerson.caseId, invite.caseId), isNull(casePerson.userId))),
       db.delete(caseInvite).where(eq(caseInvite.id, invite.id)),
+      // After the update, so the actor is the person they were just linked to.
+      recordEvent(invite.caseId, user.id, { type: "partner.joined", data: {} }),
     ]);
   } catch (error) {
     const [member] = await db

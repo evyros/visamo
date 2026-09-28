@@ -1,13 +1,14 @@
 import "server-only";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { eq } from "drizzle-orm";
 import { nextCookies } from "better-auth/next-js";
 import { magicLink } from "better-auth/plugins/magic-link";
 import { localeFromHeaders } from "@/i18n/negotiate";
 import { db } from "./db";
 import * as schema from "./db/schema";
 import { sendAuthEmail } from "./email";
-import { site } from "./site";
+import { loginUrl, site } from "./site";
 
 // Sign-in methods:
 // - Google.
@@ -42,7 +43,20 @@ export const auth = betterAuth({
     revokeSessionsOnPasswordReset: true,
     resetPasswordTokenExpiresIn: 60 * 60,
     sendResetPassword: async ({ user, url }, request) => {
-      await sendAuthEmail({ kind: "resetPassword", to: user.email, url, locale: localeOf({ request }) });
+      const locale = localeOf({ request });
+      // Someone who logs in with Google and has no password most likely
+      // forgot that. Remind them, rather than quietly adding a password.
+      // The screen says the same either way.
+      const providers = await db
+        .select({ id: schema.account.providerId })
+        .from(schema.account)
+        .where(eq(schema.account.userId, user.id));
+      const googleOnly = providers.some((p) => p.id === "google") && !providers.some((p) => p.id === "credential");
+      if (googleOnly) {
+        await sendAuthEmail({ kind: "googleSignIn", to: user.email, url: loginUrl(locale), locale });
+        return;
+      }
+      await sendAuthEmail({ kind: "resetPassword", to: user.email, url, locale });
     },
   },
 

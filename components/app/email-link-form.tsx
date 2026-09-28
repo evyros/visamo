@@ -30,6 +30,7 @@ export function EmailLinkForm({
   t,
   submitLabel,
   lead,
+  defaultEmail,
   children,
 }: {
   kind: Kind;
@@ -37,6 +38,7 @@ export function EmailLinkForm({
   submitLabel: string;
   /** Shown above the form and hidden once the link is sent, e.g. "Continue with Google". */
   lead?: ReactNode;
+  defaultEmail?: string;
   /** Shown under the button, e.g. the terms consent. */
   children?: ReactNode;
 }) {
@@ -126,6 +128,7 @@ export function EmailLinkForm({
           type="email"
           dir="ltr"
           autoComplete="email"
+          defaultValue={defaultEmail}
           className={`${inputClass} text-start`}
           {...describe("email", error)}
         />

@@ -149,3 +149,28 @@ export const casePerson = pgTable(
   },
   (table) => [index("case_person_case_id_idx").on(table.caseId)],
 );
+
+/**
+ * A partner invite: at most one per case. It's claimed when a user with this
+ * verified email first opens the app (lib/invites.ts), and deleted then.
+ * There's no token: the email address is what matches.
+ */
+export const caseInvite = pgTable(
+  "case_invite",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .unique()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /** Lowercased. */
+    email: text("email").notNull(),
+    /** The language the invite email was sent in. */
+    locale: text("locale").notNull(),
+    invitedBy: text("invited_by").references(() => user.id, { onDelete: "set null" }),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    /** When the email was last sent; resending moves it. */
+    sentAt: timestamp("sent_at").notNull().defaultNow(),
+  },
+  (table) => [index("case_invite_email_idx").on(table.email)],
+);

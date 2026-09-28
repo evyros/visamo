@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "./icons";
 
-type Option = { code: string; nativeName: string; dir: "ltr" | "rtl" };
+type Option = { code: string; nativeName: string; shortName: string; dir: "ltr" | "rtl" };
 
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
@@ -16,7 +16,9 @@ function goToLocale(cookieName: string, url: string, code: string) {
 }
 
 // Built from the locale registry: a segmented pill for two languages, a globe
-// dropdown for three or more. Each language is shown in its own name.
+// dropdown for three or more. `variant="menu"` always uses the dropdown, with
+// the short name on the button (the app's top bar). Each language is shown in
+// its own name.
 // On the website the language is the first URL segment. The app has no
 // language in its URLs, so it passes `saveLocale` and the page reloads in place.
 export function LanguageSwitch({
@@ -25,12 +27,14 @@ export function LanguageSwitch({
   label,
   cookieName,
   saveLocale,
+  variant = "auto",
 }: {
   current: string;
   options: Option[];
   label: string;
   cookieName: string;
   saveLocale?: (code: string) => Promise<void>;
+  variant?: "auto" | "menu";
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -41,8 +45,17 @@ export function LanguageSwitch({
     const close = (event: MouseEvent) => {
       if (!menuRef.current?.contains(event.target as Node)) setOpen(false);
     };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      menuRef.current?.querySelector("button")?.focus();
+    };
     document.addEventListener("click", close);
-    return () => document.removeEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", close);
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   async function switchTo(code: string) {
@@ -60,7 +73,7 @@ export function LanguageSwitch({
     goToLocale(cookieName, segments.join("/") + window.location.search, code);
   }
 
-  if (options.length <= 2) {
+  if (variant === "auto" && options.length <= 2) {
     return (
       <div
         role="group"
@@ -90,17 +103,21 @@ export function LanguageSwitch({
   }
 
   const active = options.find((o) => o.code === current);
+  const compact = variant === "menu";
   return (
     <div ref={menuRef} className="relative">
       <button
         type="button"
-        aria-label={label}
+        aria-label={`${label}: ${active?.nativeName}`}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex h-9 items-center gap-2 rounded-full border border-line-200 bg-white px-3 text-sm font-medium text-navy-900"
+        className={`inline-flex items-center gap-2 rounded-full text-sm font-medium text-navy-900 ${
+          compact ? "h-10 px-2.5 hover:bg-navy-900/5" : "h-9 border border-line-200 bg-white px-3"
+        }`}
       >
-        <Icon name="globe" className="size-4" />
-        {active?.nativeName}
+        <Icon name="globe" className="size-5" />
+        <span lang={active?.code}>{compact ? active?.shortName : active?.nativeName}</span>
+        {compact && <Icon name="chevronDown" className="size-4" />}
       </button>
       {open && (
         <ul className="absolute end-0 top-11 z-50 min-w-40 rounded-xl border border-line-200 bg-white p-1 shadow-soft">
@@ -110,10 +127,12 @@ export function LanguageSwitch({
                 type="button"
                 lang={option.code}
                 dir={option.dir}
+                aria-current={option.code === current ? "true" : undefined}
                 onClick={() => switchTo(option.code)}
-                className="w-full rounded-lg px-3 py-2 text-start text-sm hover:bg-sand-50"
+                className="flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-start text-sm hover:bg-sand-50"
               >
                 {option.nativeName}
+                {option.code === current && <Icon name="check" className="size-4 text-teal-700" />}
               </button>
             </li>
           ))}

@@ -6,6 +6,7 @@ import { eq } from "drizzle-orm";
 import { auth } from "./auth";
 import { db } from "./db";
 import { account, caseMember } from "./db/schema";
+import { claimInvite } from "./invites";
 
 /** The signed-in session, or null. One lookup per request. */
 export const getSession = cache(async () => auth.api.getSession({ headers: await headers() }));
@@ -41,10 +42,24 @@ export async function findCaseId(userId: string) {
 /** findCaseId, looked up once per request. */
 export const getCaseId = cache(findCaseId);
 
+/**
+ * The user's case, or else the case whose invite matches their email, which
+ * they join now. Null when neither exists: the user goes through onboarding.
+ */
+export function getOrClaimCaseId(user: { id: string; email: string; emailVerified: boolean }) {
+  return caseOrClaim(user.id, user.email, user.emailVerified);
+}
+
+// Cached on plain values: `cache` compares arguments by identity.
+const caseOrClaim = cache(
+  async (id: string, email: string, emailVerified: boolean) =>
+    (await getCaseId(id)) ?? (await claimInvite({ id, email, emailVerified })),
+);
+
 /** For pages that work on a case: like requireUser, and sends users without a case to /onboarding. */
 export async function requireCase() {
   const user = await requireUser();
-  const caseId = await getCaseId(user.id);
+  const caseId = await getOrClaimCaseId(user);
   if (!caseId) redirect("/onboarding");
   return { user, caseId };
 }

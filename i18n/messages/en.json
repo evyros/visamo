@@ -731,12 +731,27 @@
       "setPassword": "Choose a password",
       "forgotPassword": "Reset your password",
       "resetPassword": "Choose a new password",
-      "home": "Home",
-      "onboarding": "Set up your file"
+      "onboarding": "Set up your file",
+      "file": "My file",
+      "documents": "Documents",
+      "chat": "Chat",
+      "account": "Account",
+      "partner": "Partner",
+      "billing": "Plan & billing",
+      "support": "Support"
     },
     "shell": {
       "backToSite": "Back to visamo.co.il",
-      "signOut": "Log out"
+      "signOut": "Log out",
+      "sections": "Sections",
+      "file": "My file",
+      "chat": "Chat",
+      "settings": "Settings",
+      "support": "Support",
+      "accountMenu": "Account menu",
+      "sectionMenu": "Menu",
+      "closeSectionMenu": "Close menu",
+      "placeholder": "This page is on its way."
     },
     "auth": {
       "google": "Continue with Google",
@@ -894,9 +909,68 @@
         "generic": "Something went wrong. Please try again."
       }
     },
-    "home": {
-      "title": "Welcome to Visamo",
-      "body": "You're logged in as **{email}**. Your workspace is on its way."
+    "file": {
+      "nav": "My file",
+      "overview": "Overview",
+      "documents": "Documents"
+    },
+    "chat": {
+      "nav": "Chats",
+      "newChat": "New chat",
+      "history": "Your chats",
+      "noChats": "Your chats will appear here.",
+      "buyMore": "Buy more questions"
+    },
+    "settings": {
+      "nav": "Settings",
+      "account": "Account",
+      "partner": "Partner",
+      "billing": "Plan & billing",
+      "accountPage": {
+        "loginTitle": "How you log in",
+        "email": "Email",
+        "methods": "Login methods",
+        "password": "Password",
+        "google": "Google",
+        "passwordTitle": "Change password",
+        "currentPassword": "Current password",
+        "newPassword": "New password",
+        "savePassword": "Save new password",
+        "passwordChanged": "Your password was changed. Any other devices were logged out.",
+        "wrongPassword": "The current password is incorrect.",
+        "googleOnly": "You log in with Google, so there's no password to change.",
+        "languageTitle": "Language",
+        "languageBody": "The app's language, on every device you log in on.",
+        "deleteTitle": "Delete account",
+        "deleteAlone": "Deletes your account and your file, with everything in it. This can't be undone.",
+        "deleteShared": "Deletes your account. Your file stays with {name}, and you lose access to it. This can't be undone.",
+        "deleteButton": "Delete account",
+        "deleteConfirmTitle": "Delete your account?",
+        "deleteConfirm": "Yes, delete my account",
+        "deleting": "Deleting…",
+        "cancel": "Cancel"
+      },
+      "partnerPage": {
+        "intro": "Invite {name} to your file, so you can both work on it.",
+        "yourPartner": "your partner",
+        "email": "Your partner's email",
+        "send": "Send invite",
+        "sending": "Sending…",
+        "sentTitle": "Invite sent to **{email}**",
+        "sentBody": "Sent on {date}. Once they create an account with this email, {name} joins the file.",
+        "resend": "Send again",
+        "resent": "We sent the invite again.",
+        "cancel": "Cancel invite",
+        "joined": "**{name}** ({email}) has access to your file.",
+        "remove": "To remove someone from the file, contact support.",
+        "support": "Contact support",
+        "errors": {
+          "ownEmail": "That's your own email. Enter your partner's email.",
+          "hasAccount": "This email already has a Visamo account. Contact support, and we'll connect you.",
+          "tooSoon": "Wait a minute before sending again.",
+          "full": "Your partner has already joined the file."
+        }
+      }
     },
     "email": {
       "signup": {
@@ -910,6 +984,19 @@
         "heading": "Choose a new password",
         "body": "We got a request to reset the password for your Visamo account. Click the button below to choose a new one. The link is valid for 1 hour.",
         "button": "Choose a new password"
+      },
+      "googleSignIn": {
+        "subject": "How to log in to Visamo",
+        "heading": "You log in with Google",
+        "body": "We got a request to reset the password for your Visamo account. Your account doesn't have a password: you log in with Google. On the login page, choose Continue with Google.",
+        "button": "Go to login"
+      },
+      "invite": {
+        "subject": "{name} invited you to your file on Visamo",
+        "heading": "Join {name} on Visamo",
+        "body": "{name} invited you to work together on your spousal visa file on Visamo. To join the file, create an account with {email}.",
+        "button": "Join the file",
+        "ignore": "If you weren't expecting this, you can ignore this email."
       },
       "fallback": "If the button doesn't work, copy this link into your browser:",
       "ignore": "If you didn't ask for this, you can ignore this email. Nothing will change."

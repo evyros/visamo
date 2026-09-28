@@ -8,6 +8,8 @@ type LocaleConfig = {
   dir: "ltr" | "rtl";
   /** The language's own name, shown in the language switch. */
   nativeName: string;
+  /** A two-letter form of nativeName, for the compact switch in the app's top bar. */
+  shortName: string;
   /** Drives number, currency, date and country-name formatting. */
   intlLocale: string;
   /** Which font stack the locale uses (see app/[lang]/layout.tsx). */
@@ -20,6 +22,7 @@ export const locales = {
   en: {
     dir: "ltr",
     nativeName: "English",
+    shortName: "EN",
     intlLocale: "en-IL",
     script: "latin",
     status: "live",
@@ -27,6 +30,7 @@ export const locales = {
   he: {
     dir: "rtl",
     nativeName: "עברית",
+    shortName: "עב",
     intlLocale: "he-IL",
     script: "hebrew",
     status: "live",

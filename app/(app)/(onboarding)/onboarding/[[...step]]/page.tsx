@@ -5,7 +5,7 @@ import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { regionName } from "@/i18n/format";
 import { onboardingPaths } from "@/lib/app-paths";
 import { branches, nationalities } from "@/lib/case-options";
-import { getCaseId, requireUser } from "@/lib/session";
+import { getOrClaimCaseId, requireUser } from "@/lib/session";
 import { OnboardingWizard } from "@/components/app/onboarding-wizard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +20,7 @@ export default async function OnboardingPage({ params }: { params: Promise<{ ste
   const { step } = await params;
   if (!onboardingPaths.includes(["/onboarding", ...(step ?? [])].join("/"))) notFound();
   const user = await requireUser();
-  if (await getCaseId(user.id)) redirect("/");
+  if (await getOrClaimCaseId(user)) redirect("/");
   const locale = await getAppLocale();
   const t = (await getAppDictionary()).app.onboarding;
 

@@ -65,7 +65,7 @@ export function describe(id: string, error?: string, hasHint = false) {
   };
 }
 
-export function SubmitButton({ pending, pendingLabel, children, ...props }: ComponentProps<"button"> & {
+export function SubmitButton({ pending, pendingLabel, className = "", children, ...props }: ComponentProps<"button"> & {
   pending: boolean;
   pendingLabel: string;
 }) {
@@ -74,7 +74,7 @@ export function SubmitButton({ pending, pendingLabel, children, ...props }: Comp
       type="submit"
       disabled={pending}
       aria-disabled={pending}
-      className="inline-flex h-12 w-full items-center justify-center rounded-[10px] bg-teal-600 px-6 text-base font-semibold text-white shadow-soft transition-colors hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 disabled:opacity-70"
+      className={`inline-flex h-12 w-full items-center justify-center rounded-[10px] bg-teal-600 px-6 text-base font-semibold text-white shadow-soft transition-colors hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 disabled:opacity-70 ${className}`}
       {...props}
     >
       {pending ? pendingLabel : children}

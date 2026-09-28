@@ -27,6 +27,7 @@ export async function Header() {
       options={liveLocales.map((code) => ({
         code,
         nativeName: locales[code].nativeName,
+        shortName: locales[code].shortName,
         dir: locales[code].dir,
       }))}
     />

@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import type { ReactNode } from "react";
 import { authClient } from "@/lib/auth-client";
 
-export function SignOutButton({ label }: { label: string }) {
+export function SignOutButton({ className, children }: { className: string; children: ReactNode }) {
   const router = useRouter();
   return (
     <button
@@ -13,9 +14,9 @@ export function SignOutButton({ label }: { label: string }) {
         router.replace("/login");
         router.refresh();
       }}
-      className="px-2 text-[15px] font-semibold text-navy-900 hover:underline"
+      className={className}
     >
-      {label}
+      {children}
     </button>
   );
 }

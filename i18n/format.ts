@@ -18,3 +18,8 @@ export function regionName(region: string, locale: Locale) {
     region
   );
 }
+
+/** A calendar date, e.g. "27 Sept 2026". */
+export function formatDate(date: Date, locale: Locale) {
+  return new Intl.DateTimeFormat(locales[locale].intlLocale, { dateStyle: "medium" }).format(date);
+}

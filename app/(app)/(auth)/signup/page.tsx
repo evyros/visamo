@@ -26,10 +26,15 @@ function withLinks(message: string, hrefs: string[]) {
   );
 }
 
-export default async function SignupPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+export default async function SignupPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string; email?: string }>;
+}) {
   if (await getSession()) redirect("/");
-  // A sign-up link that failed (expired, used twice) comes back here with ?error=.
-  const { error } = await searchParams;
+  // A sign-up link that failed (expired, used twice) comes back here with
+  // ?error=. A partner invite links here with ?email= filled in.
+  const { error, email } = await searchParams;
   const locale = await getAppLocale();
   const t = (await getAppDictionary()).app.auth;
   const legal = (slug: string) => new URL(localePath(locale, `/legal/${slug}`), site.url).toString();
@@ -43,6 +48,7 @@ export default async function SignupPage({ searchParams }: { searchParams: Promi
           kind="signup"
           t={t}
           submitLabel={t.signup.submit}
+          defaultEmail={typeof email === "string" ? email : undefined}
           lead={
             <div className="space-y-6 pb-1">
               <GoogleButton label={t.google} errorCallbackURL="/signup" />

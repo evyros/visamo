@@ -1,38 +1,28 @@
 import "server-only";
 import { Resend } from "resend";
 import { locales, type Locale } from "@/i18n/config";
-import { loadMessages } from "@/i18n/messages";
+import { format, loadMessages } from "@/i18n/messages";
 
-// Auth emails, sent through Resend in the user's language. Without
-// RESEND_API_KEY (local development), the link is printed to the terminal.
+// Transactional emails, sent through Resend in the recipient's language. They
+// share one layout: a heading, a paragraph, a button, the link spelled out,
+// and a note for anyone who didn't expect the email. Without RESEND_API_KEY
+// (local development), the link is printed to the terminal.
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 const from = process.env.EMAIL_FROM || "Visamo <no-reply@visamo.co.il>";
 
-type Kind = "signup" | "resetPassword";
+type Copy = { subject: string; heading: string; body: string; button: string; ignore: string };
 
 const escape = (value: string) =>
   value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-export async function sendAuthEmail({
-  kind,
-  to,
-  url,
-  locale,
-}: {
-  kind: Kind;
-  to: string;
-  url: string;
-  locale: Locale;
-}) {
-  const t = (await loadMessages(locale)).app.email;
-  const copy = t[kind];
-
+async function sendEmail({ to, url, locale, copy }: { to: string; url: string; locale: Locale; copy: Copy }) {
   if (!resend) {
     console.info(`\n[email] ${copy.subject} → ${to}\n${url}\n`);
     return;
   }
 
+  const t = (await loadMessages(locale)).app.email;
   const { dir } = locales[locale];
   const align = dir === "rtl" ? "right" : "left";
   const html = `<!doctype html>
@@ -46,13 +36,46 @@ export async function sendAuthEmail({
         <a href="${escape(url)}" style="display:inline-block;padding:12px 24px;background:#2f7f76;color:#ffffff;border-radius:10px;font-weight:bold;text-decoration:none">${escape(copy.button)}</a>
         <p style="margin:24px 0 4px;font-size:13px;color:#55606e">${escape(t.fallback)}</p>
         <p style="margin:0;font-size:13px;word-break:break-all" dir="ltr"><a href="${escape(url)}" style="color:#2f7f76">${escape(url)}</a></p>
-        <p style="margin:24px 0 0;font-size:13px;color:#55606e">${escape(t.ignore)}</p>
+        <p style="margin:24px 0 0;font-size:13px;color:#55606e">${escape(copy.ignore)}</p>
       </td></tr>
     </table>
   </body>
 </html>`;
-  const text = `${copy.heading}\n\n${copy.body}\n\n${url}\n\n${t.ignore}`;
+  const text = `${copy.heading}\n\n${copy.body}\n\n${url}\n\n${copy.ignore}`;
 
   const { error } = await resend.emails.send({ from, to, subject: copy.subject, html, text });
   if (error) throw new Error(`Resend: ${error.message}`);
+}
+
+export async function sendAuthEmail({
+  kind,
+  to,
+  url,
+  locale,
+}: {
+  kind: "signup" | "resetPassword" | "googleSignIn";
+  to: string;
+  url: string;
+  locale: Locale;
+}) {
+  const t = (await loadMessages(locale)).app.email;
+  await sendEmail({ to, url, locale, copy: { ...t[kind], ignore: t.ignore } });
+}
+
+/** Invites a partner into the file. `inviter` is the inviting partner's name. */
+export async function sendInviteEmail({
+  to,
+  url,
+  locale,
+  inviter,
+}: {
+  to: string;
+  url: string;
+  locale: Locale;
+  inviter: string;
+}) {
+  const t = (await loadMessages(locale)).app.email.invite;
+  const values = { name: inviter, email: to };
+  const copy = Object.fromEntries(Object.entries(t).map(([key, value]) => [key, format(value, values)])) as Copy;
+  await sendEmail({ to, url, locale, copy });
 }

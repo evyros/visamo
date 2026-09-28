@@ -95,9 +95,37 @@ checklist, and practice.
   money: transfers to each other, credit-card statements with household
   purchases or the same delivery address, receipts for large expenses
   (practice; AS/6 lists the joint account).
-- **Employment or income proof, for each partner, with the last 6 payslips**
-  (practice. The AS/6 checklist says 3 payslips and workplace confirmations
-  only, and is wrong on both counts.)
+- **Employment or income proof, for each partner**, depending on how they
+  earn (practice. The AS/6 checklist says workplace confirmations and 3
+  payslips only, and is wrong on both counts.):
+  - **Employed (שכיר):** a confirmation from work and **the last 6 payslips**.
+  - **Self-employed (עצמאי):**
+    - an accountant's confirmation of current income (אישור רואה חשבון על
+      הכנסות נוכחיות);
+    - the latest annual tax assessment from the Tax Authority (שומה שנתית
+      אחרונה ממס הכנסה);
+    - the confirmation of opening a business file, osek murshe or patur
+      (אישור פתיחת תיק עוסק מורשה/פטור).
+  - **Not working, but with an income:** bank statements showing the
+    deposits.
+  - **Not working and no income:** a clear, signed letter explaining the
+    person's situation (for example a student, between jobs, or a homemaker),
+    stating explicitly that their partner financially supports their shared
+    life in Israel.
+  - **The Israeli partner (the sponsor) has to show they can support the
+    household:** recent payslips (tlushim) and bank statements, and the tax
+    assessment (shuma) if self-employed.
+  - **A shuma is only for the self-employed (עצמאי)**, never for employees
+    (practice).
+  - **If the sponsor's income is borderline or tight**, add alternative
+    assets or support: savings accounts and Kupat Holim (HMO) records. Utility
+    bills (already their own document) help show a stable center of life
+    together.
+  - These are Israeli documents. For a foreign partner who is self-employed
+    abroad, the equivalents aren't known yet (see open-questions.md).
+  - Onboarding doesn't ask how each partner earns, and won't: one income-proof
+    item per partner whose description lists all three cases (decided with
+    the product owner).
 - **School records** for children in school in Israel from age 6 (AS/6). See
   children.md.
 

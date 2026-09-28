@@ -16,7 +16,11 @@
 - The Apostille Convention country list.
 - Whether the security-check country list is complete.
 
+- A foreign partner who is self-employed abroad: what replaces the Israeli
+  accountant's confirmation, tax assessment and business-file confirmation.
+
 ## Not modelled yet
+
 
 - The Nativ referral for former-USSR applicants (a process step).
 - Anything extra for a permanent resident as the Israeli side (their own

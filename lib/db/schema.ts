@@ -1,4 +1,5 @@
 import { boolean, index, integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { FREE_MESSAGES } from "../chat/plans";
 
 // Better Auth's core tables (user, session, account, verification), plus the
 // user's app language. Field names match what Better Auth expects; change them
@@ -107,6 +108,10 @@ export const cases = pgTable("case", {
   /** The year a common-law couple moved in together; null unless they live together. */
   togetherSince: integer("together_since"),
   childrenTogether: boolean("children_together").notNull(),
+  /** A Plan from lib/chat/plans.ts: the highest tier bought. It sets the chat's message length. */
+  plan: text("plan").notNull().default("free"),
+  /** Messages left for the chat assistant, shared by both partners. Buying more adds to it. */
+  messagesLeft: integer("messages_left").notNull().default(FREE_MESSAGES),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -231,4 +236,44 @@ export const caseInvite = pgTable(
     sentAt: timestamp("sent_at").notNull().defaultNow(),
   },
   (table) => [index("case_invite_email_idx").on(table.email)],
+);
+
+// ── Chat ─────────────────────────────────────────────────────────────────────
+// Conversations with the Visamo assistant. They belong to the case, so both
+// partners see and continue the same chats, and spend the case's message
+// balance (cases.messagesLeft). Each user message records who wrote it.
+
+export const chat = pgTable(
+  "chat",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /** Who started it; the chat stays with the case if they delete their account. */
+    createdBy: text("created_by").references(() => user.id, { onDelete: "set null" }),
+    /** A short summary of the conversation, written by the assistant after the first message. */
+    title: text("title"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    /** Moves with every message, so the sidebar lists the latest chat first. */
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  },
+  (table) => [index("chat_case_id_idx").on(table.caseId, table.updatedAt)],
+);
+
+export const chatMessage = pgTable(
+  "chat_message",
+  {
+    id: text("id").primaryKey(),
+    chatId: text("chat_id")
+      .notNull()
+      .references(() => chat.id, { onDelete: "cascade" }),
+    /** "user" or "assistant". */
+    role: text("role").notNull(),
+    /** Which partner asked, for a "user" message; null for answers, or once they delete their account. */
+    userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
+    content: text("content").notNull(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [index("chat_message_chat_id_idx").on(table.chatId, table.createdAt)],
 );

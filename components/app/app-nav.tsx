@@ -51,11 +51,20 @@ export function BottomTabs({ items, label }: { items: NavItem[]; label: string }
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`flex h-16 flex-1 flex-col items-center justify-center gap-1 text-xs font-semibold ${
-              active ? "text-teal-700" : "text-slate-500"
+            // The active tab: a bar on its top edge and a pill behind its icon.
+            className={`relative flex h-16 flex-1 flex-col items-center justify-center gap-1 text-xs font-semibold ${
+              active
+                ? "text-teal-700 before:absolute before:inset-x-6 before:top-0 before:h-[3px] before:rounded-b-full before:bg-teal-600"
+                : "text-slate-500"
             }`}
           >
-            <Icon name={item.icon} className="size-6" />
+            <span
+              className={`inline-flex h-8 w-14 items-center justify-center rounded-full transition-colors ${
+                active ? "bg-teal-100" : ""
+              }`}
+            >
+              <Icon name={item.icon} className="size-6" />
+            </span>
             {item.label}
           </Link>
         );

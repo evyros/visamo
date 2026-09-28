@@ -296,7 +296,7 @@
         },
         {
           "q": "What can we get for free?",
-          "a": "We've been through this process ourselves, and we know how heavy it can feel. That's why we built Visamo: to give couples the smoother process we didn't have, not only the ones who pay. So for free, you get your personal document list, all the organizational features and 5 questions to the assistant."
+          "a": "We've been through this process ourselves, and we know how heavy it can feel. That's why we built Visamo: to give couples the smoother process we didn't have, not only the ones who pay. So for free, you get your personal document list, all the organizational features and 5 messages to the assistant."
         },
         {
           "q": "Can Visamo tell me if my file will be rejected?",
@@ -358,7 +358,7 @@
           "Your personal document list, each item explained",
           "File and document organization: upload and keep everything in one place",
           "Process guide",
-          "5 questions to the assistant",
+          "5 messages to the assistant",
           "One shared file for both partners"
         ],
         "cta": "Start free",
@@ -366,22 +366,22 @@
       },
       "assistant": {
         "name": "Assistant",
-        "priceNote": "per 30 questions",
+        "priceNote": "per 30 messages",
         "tagline": "Answers in your language, whenever you're unsure",
         "includes": [
-          "30 questions about documents, stages or letters",
+          "30 messages about documents, stages or letters",
           "Top up as often as you like",
           "Everything in Free"
         ],
-        "cta": "Get 30 questions",
-        "footnote": "One-time payment. Questions don't expire."
+        "cta": "Get 30 messages",
+        "footnote": "One-time payment. Messages don't expire."
       },
       "filePrep": {
         "name": "File Preparation",
         "priceNote": "once, for the whole process",
         "tagline": "Find the problems before the Ministry does",
         "includes": [
-          "Everything in Assistant, including 30 questions",
+          "Everything in Assistant, including 30 messages",
           "Every document checked on the spot",
           "What's wrong and how to fix it, for each flag",
           "Cross-document checks (names, dates, details)",
@@ -430,7 +430,7 @@
           ]
         },
         {
-          "feature": "Assistant questions",
+          "feature": "Assistant messages",
           "values": [
             "5",
             "30 per pack, top up any time",
@@ -503,12 +503,12 @@
           "a": "Yes. You can upload and organize all your documents for free. Checking them against the published requirements comes with File Preparation."
         },
         {
-          "q": "What counts as one question?",
-          "a": "Each message you send to the assistant counts as one question. Follow-ups count as new questions."
+          "q": "What counts as one message?",
+          "a": "Each message you send to the assistant counts as one. Follow-ups count as new messages."
         },
         {
-          "q": "Do my questions expire?",
-          "a": "No. Unused questions stay in your file. File Preparation includes 30, and you can top up any time."
+          "q": "Do my messages expire?",
+          "a": "No. Unused messages stay in your file. File Preparation includes 30, and you can top up any time."
         },
         {
           "q": "Does File Preparation mean our file won't be sent back?",
@@ -985,7 +985,38 @@
       "newChat": "New chat",
       "history": "Your chats",
       "noChats": "Your chats will appear here.",
-      "buyMore": "Buy more questions"
+      "buyMore": "Buy more messages",
+      "greeting": "How can I help you?",
+      "greetingIntro": "Ask about the process, your documents or what comes next. You can write in any language.",
+      "suggestions": [
+        "Which documents do we still need?",
+        "What is an apostille, and do I need one?",
+        "What happens after we file our application?"
+      ],
+      "placeholder": "Ask anything",
+      "inputLabel": "Your message",
+      "send": "Send",
+      "you": "You",
+      "assistant": "Visamo",
+      "partner": "Your partner",
+      "writing": "Visamo is writing…",
+      "characters": "{count} of {max} characters",
+      "messagesLeft": "{count} messages left",
+      "messagesLeftOne": "1 message left",
+      "noMessages": "You've used all your messages.",
+      "disclaimer": "Visamo gives general information, not legal advice. For your case, talk to a licensed lawyer. See our {terms}.",
+      "terms": "Terms of Use",
+      "newWindow": "(opens in a new window)",
+      "deleteChat": "Delete chat",
+      "deleteChatNamed": "Delete “{title}”",
+      "deleteConfirm": "Delete this chat for both of you? This can't be undone.",
+      "errors": {
+        "tooLong": "Your message is too long. Please shorten it and try again.",
+        "noMessages": "You've used all your messages. Buy more to keep asking.",
+        "failed": "Visamo couldn't answer right now. Your message wasn't counted. Please try again.",
+        "cutOff": "The answer was cut off. Please try asking again.",
+        "generic": "Something went wrong. Please try again."
+      }
     },
     "settings": {
       "nav": "Settings",

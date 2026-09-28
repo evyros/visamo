@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["@hyzyla/pdfium"],
   outputFileTracingIncludes: {
     "/file/documents": ["./node_modules/@hyzyla/pdfium/dist/pdfium.wasm"],
+    // The chat assistant reads the knowledge base at run time (lib/chat/prompt.ts).
+    "/api/chat": ["./lib/knowledge/*.md"],
   },
 };
 

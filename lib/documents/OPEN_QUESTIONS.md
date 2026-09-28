@@ -41,6 +41,25 @@ shown to users (`lib/knowledge/`).
 
 ## Not modelled yet
 
+- **Cases where the chat should advise a lawyer.** The chat prompt
+  (`lib/chat/prompt.ts`) names only some of them: a refusal, staying without
+  a valid visa, a criminal record, custody disputes. Still to add:
+  - Previous applications that were refused (דחיית בקשות קודמות).
+  - A criminal or security record (עבר פלילי או ביטחוני).
+  - A stay in Israel without legal status (שהייה בלתי חוקית בישראל).
+  - Minor children coming with the foreign partner (קטינים נלווים).
+  - Previous relationships with a partner in Israel (קשרים זוגיים קודמים
+    בישראל).
+  - A past asylum application (בקשת מקלט בעבר).
+  - A large age gap between the partners (פערי גיל משמעותיים).
+  - A relatively short relationship (קשר קצר יחסית).
+  - Significant contradictions between documents (סתירות משמעותיות
+    במסמכים).
+  - Difficulty getting documents from the country of origin (קושי בהשגת
+    מסמכים ממדינת המוצא).
+
+  Unknown: whether the chat only flags these when the user raises them, or
+  onboarding should ask about them too.
 
 - The Nativ referral for former-USSR applicants (a process step).
 - Anything extra for a permanent resident as the Israeli side (their own

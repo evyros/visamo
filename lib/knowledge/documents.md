@@ -98,31 +98,35 @@ how offices work in practice.
   (אישור עירייה/מועצה על מרכז חיים ביישוב), also called **Ishur Toshav**
   (אישור תושב): your municipality or local council's official confirmation
   that your center of life is in their locality.
-- **Shared finances:** a joint bank account confirmation. Without a joint
-  account, other proof that you share money: transfers to each other, credit
-  card statements showing household purchases or the same delivery address,
-  receipts for large expenses.
-- **Employment or income proof, for each partner**, depending on how you
-  earn:
-  - **Employed (שכיר):** a confirmation from work and **the last 12
-    payslips** (tlushim).
-    - **Why 12, if you were told 3?** The official requirement is 3 months
-      of payslips. In practice, the ministry asks for 12 months in most
-      cases, so bringing 12 from the start saves you being sent back for
-      the rest.
-  - **Self-employed (עצמאי):**
-    - an accountant's confirmation of current income (אישור רואה חשבון על
-      הכנסות נוכחיות);
-    - the latest annual tax assessment from the Tax Authority (שומה שנתית
-      אחרונה ממס הכנסה). A shuma is only for the self-employed, never for
-      employees;
-    - the confirmation of opening a business file, osek murshe or patur
-      (אישור פתיחת תיק עוסק מורשה/פטור).
-  - **Not working, but with an income:** bank statements showing the
-    deposits.
-  - **Not working and no income:** a clear, signed letter explaining your
-    situation (for example, a student, between jobs, or a homemaker), stating
-    that your partner financially supports your shared life in Israel.
+- **A joint bank account confirmation.** Misrad Hapnim asks for it to show
+  that you share your finances.
+  - **If you don't have a joint account:** you'll have to show in other ways
+    that you share your money, and make a strong case for it. For example:
+    - transfers to each other;
+    - credit card statements showing household purchases, or deliveries to
+      the same address;
+    - receipts for large shared expenses.
+- **Payslips (tlushim, תלושי שכר), for each partner:** the last 12, with a
+  confirmation from work, if you're employed (שכיר).
+  - **Why 12, if you were told 3?** The official requirement is 3 months of
+    payslips. In practice, the ministry asks for 12 months in most cases, so
+    bringing 12 from the start saves you being sent back for the rest.
+  - **If you don't get payslips**, you'll have to show your income in another
+    way, depending on your situation:
+    - **Self-employed (עצמאי):**
+      - an accountant's confirmation of current income (אישור רואה חשבון על
+        הכנסות נוכחיות);
+      - the latest annual tax assessment from the Tax Authority (שומה שנתית
+        אחרונה ממס הכנסה). A shuma is only for the self-employed, never for
+        employees;
+      - the confirmation of opening a business file, osek murshe or patur
+        (אישור פתיחת תיק עוסק מורשה/פטור).
+    - **Not working, but with an income:** bank statements showing the
+      deposits.
+    - **Not working and no income:** a clear, signed letter explaining your
+      situation (for example, a student, between jobs, or a homemaker),
+      stating that your partner financially supports your shared life in
+      Israel.
 - **The Israeli partner has to show they can support the household:** recent
   payslips and bank statements, and the shuma if self-employed. **If the
   income is borderline or tight**, add savings accounts and Kupat Holim (HMO)

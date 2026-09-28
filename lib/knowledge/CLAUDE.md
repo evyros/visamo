@@ -28,6 +28,12 @@ and the rules for children, the former USSR and the security check.
   the product owner's experience; write it as "in practice", never hide the
   law.
 - Cite the procedure section when a fact comes from one (5.2.0008 §ד.2.ה).
+- **Name each document the way Misrad Hapnim asks for it**, as the
+  documents page titles it ("A joint bank account confirmation", "Payslips"),
+  never as a general category ("Shared finances", "Income proof"). Say
+  plainly that it's asked for. Put alternatives under their own "If you
+  don't have…" point that reads as a fallback, and say what makes that
+  case strong.
 - **Go into more detail than the documents page.** The page's descriptions
   are kept short; this folder has the full picture: alternatives,
   exceptions, and why a requirement is stricter than the official one. Never

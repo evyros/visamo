@@ -179,6 +179,36 @@ export const casePerson = pgTable(
 );
 
 /**
+ * A file uploaded for a document on the case's list. The file itself is in
+ * the private Blob store (lib/files/storage.ts); this row is what the app
+ * reads, so a blob without a row is never shown.
+ */
+export const caseFile = pgTable(
+  "case_file",
+  {
+    /** Also the file's folder in the Blob store. */
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /** The list item's key from lib/documents: a document id, or `id:country`. */
+    documentKey: text("document_key").notNull(),
+    /** A FileSlot from lib/files/rules.ts: the document itself, or its translation. */
+    slot: text("slot").notNull(),
+    /** "application/pdf", "image/jpeg" or "image/png", from the file's contents. */
+    contentType: text("content_type").notNull(),
+    size: integer("size").notNull(),
+    /** The name the user's file had, for display only. */
+    name: text("name").notNull(),
+    /** Whether a thumbnail was made; it's at the same folder in the Blob store. */
+    hasThumbnail: boolean("has_thumbnail").notNull(),
+    uploadedBy: text("uploaded_by").references(() => user.id, { onDelete: "set null" }),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [index("case_file_case_id_idx").on(table.caseId)],
+);
+
+/**
  * A partner invite: at most one per case. It's claimed when a user with this
  * verified email first opens the app (lib/invites.ts), and deleted then.
  * There's no token: the email address is what matches.

@@ -63,3 +63,14 @@ export async function requireCase() {
   if (!caseId) redirect("/onboarding");
   return { user, caseId };
 }
+
+/**
+ * For route handlers, which answer with a status rather than redirecting:
+ * the signed-in user and their case, or null.
+ */
+export async function findUserCase() {
+  const session = await getSession();
+  if (!session || !(await hasSignInMethod(session.user.id))) return null;
+  const caseId = await getCaseId(session.user.id);
+  return caseId ? { user: session.user, caseId } : null;
+}

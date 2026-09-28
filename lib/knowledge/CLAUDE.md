@@ -28,6 +28,11 @@ and the rules for children, the former USSR and the security check.
   the product owner's experience; write it as "in practice", never hide the
   law.
 - Cite the procedure section when a fact comes from one (5.2.0008 §ד.2.ה).
+- **Go into more detail than the documents page.** The page's descriptions
+  are kept short; this folder has the full picture: alternatives,
+  exceptions, and why a requirement is stricter than the official one. Never
+  trim it to match the page. When the page asks for more than the official
+  rule (12 payslips instead of 3), say both and why.
 - When a correction about the process comes up in a session, update the
   relevant file here in the same session (and the catalog, if it changes a
   document).

@@ -82,16 +82,22 @@ how offices work in practice.
   Israeli partner's**.
 - **Proof of government services** you receive: National Insurance (Bituach
   Leumi), health, education.
-- **Ishur Toshav** (אישור תושב): your municipality or local council's
-  confirmation that you live there, in the ministry's wording.
+- **Municipality or local council confirmation of your center of life**
+  (אישור עירייה/מועצה על מרכז חיים ביישוב), also called **Ishur Toshav**
+  (אישור תושב): your municipality or local council's official confirmation
+  that your center of life is in their locality.
 - **Shared finances:** a joint bank account confirmation. Without a joint
   account, other proof that you share money: transfers to each other, credit
   card statements showing household purchases or the same delivery address,
   receipts for large expenses.
 - **Employment or income proof, for each partner**, depending on how you
   earn:
-  - **Employed (שכיר):** a confirmation from work and **the last 6
+  - **Employed (שכיר):** a confirmation from work and **the last 12
     payslips** (tlushim).
+    - **Why 12, if you were told 3?** The official requirement is 3 months
+      of payslips. In practice, the ministry asks for 12 months in most
+      cases, so bringing 12 from the start saves you being sent back for
+      the rest.
   - **Self-employed (עצמאי):**
     - an accountant's confirmation of current income (אישור רואה חשבון על
       הכנסות נוכחיות);

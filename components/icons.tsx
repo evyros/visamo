@@ -156,6 +156,14 @@ const paths = {
     </>
   ),
   plus: <path d="M12 5v14M5 12h14" />,
+  more: (
+    <>
+      <circle cx="5.5" cy="12" r="1" />
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="18.5" cy="12" r="1" />
+    </>
+  ),
+  upload: <path d="M12 15.5V4M7.5 8.5 12 4l4.5 4.5M4.5 15v4.5h15V15" />,
   user: (
     <>
       <circle cx="12" cy="8" r="4" />

@@ -1091,7 +1091,7 @@
         },
         "relationshipStory": {
           "title": "Letter about your relationship",
-          "description": "A letter signed by both of you: how and when you met, your relationship and your life together. Adding each of your life histories is recommended when relevant."
+          "description": "A letter signed by both of you: how and when you met, your relationship and your life together."
         },
         "securityCv": {
           "title": "Full CV for the security check",
@@ -1134,8 +1134,8 @@
           "description": "The certificate from the country or authority that married you."
         },
         "relationshipEvidence": {
-          "title": "Evidence of the relationship",
-          "description": "Photos together, letters and anything else showing how you met and how long you've been together."
+          "title": "Shared photos of you",
+          "description": "Photos of you together, showing how you met and how long you've been together. Attach at least 15 photos, arranged 9 to a page."
         },
         "recommendationLetters": {
           "title": "Letters of recommendation",
@@ -1151,7 +1151,7 @@
         },
         "foreignCivilStatus": {
           "title": "Proof of civil status",
-          "description": "An official document of the foreign partner's marital status from their country, issued in the last 6 months. If the country doesn't issue one, a notarized affidavit instead. A marriage certificate from their country that shows their status before the marriage can replace it."
+          "description": "An official document of the foreign partner's marital status from their country, issued in the last 6 months."
         },
         "foreignDivorceDecree": {
           "title": "Divorce decree",
@@ -1186,20 +1186,20 @@
           "description": "Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi), health and education."
         },
         "ishurToshav": {
-          "title": "Ishur Toshav",
-          "description": "The municipality or local council's confirmation that you live there, in the ministry's wording."
+          "title": "Municipality confirmation of your center of life",
+          "description": "Also called Ishur Toshav (אישור תושב): your municipality or local council's official confirmation that your center of life is in their locality."
         },
         "sharedFinances": {
-          "title": "Proof of shared finances",
+          "title": "Shared bank account",
           "description": "A joint bank account confirmation. Without one, other proof of shared money: transfers to each other, card statements with household purchases or the same delivery address, receipts for large expenses."
         },
         "israeliIncomeProof": {
-          "title": "Employment or income proof of the Israeli partner",
-          "description": "It has to show you can support the household. Employed: a confirmation from work, the last 6 payslips (tlushim) and bank statements. Self-employed: an accountant's confirmation of current income, the latest annual tax assessment (shuma) from the Tax Authority, and the confirmation of opening a business file (osek murshe or patur). Not working but with an income: bank statements showing the deposits. Not working and no income: a signed letter explaining your situation (for example a student, between jobs, or a homemaker) and stating that your partner supports your life together. If the income is tight, add savings accounts and Kupat Holim records."
+          "title": "Salary slips of the Israeli partner",
+          "description": "The last 12 salary slips."
         },
         "foreignIncomeProof": {
-          "title": "Employment or income proof of the foreign partner",
-          "description": "Employed: a confirmation from work and the last 6 payslips. Self-employed: an accountant's confirmation of current income, the latest annual tax assessment (shuma) from the Tax Authority, and the confirmation of opening a business file (osek murshe or patur). Not working but with an income: bank statements showing the deposits. Not working and no income: a signed letter explaining your situation (for example a student, between jobs, or a homemaker) and stating that your partner supports your life together in Israel."
+          "title": "Salary slips of the foreign partner",
+          "description": "The last 12 salary slips."
         },
         "childrenSchoolRecords": {
           "title": "Children's school records",
@@ -1260,6 +1260,64 @@
         "otherParentInvolved": "The other parent has parental rights",
         "otherParentCourtOrder": "A court gave custody or approved the move",
         "otherParentDeceased": "The other parent has died"
+      }
+    },
+    "documentsPage": {
+      "intro": "Everything to bring to Misrad Hapnim for your first application, for your situation.",
+      "progress": "{done} of {total} uploaded",
+      "groups": {
+        "couple": "From both of you",
+        "israeli": "From {name}",
+        "foreign": "From {name}",
+        "children": "For the children"
+      },
+      "status": {
+        "todo": "To do",
+        "uploaded": "Uploaded"
+      },
+      "withTranslation": "+ translation",
+      "copies": "{count} copies",
+      "authentication": {
+        "apostille": "Apostille needed",
+        "legalization": "Consular legalization needed",
+        "utahApostille": "Apostille from Utah",
+        "dependsOnCountry": "Apostille or legalization, by country"
+      },
+      "exemptUntil": "No authentication if issued up to {year}",
+      "because": "Because: {reasons}",
+      "document": "The document",
+      "choose": "Choose files",
+      "drop": "or drop them here",
+      "uploadHint": "PDF, JPG or PNG, up to 20 MB each. Include every page, and the apostille in the same file.",
+      "uploading": "Uploading… {percent}%",
+      "processing": "Processing…",
+      "retry": "Try again",
+      "dismiss": "Dismiss",
+      "translation": {
+        "add": "Not in Hebrew or Arabic? Add a certified translation",
+        "title": "Certified translation",
+        "note": "Needed unless the document is in Hebrew or Arabic. English is usually accepted, but the clerk may ask for a translation. The translation itself doesn't need an apostille."
+      },
+      "file": {
+        "menu": "Options for {name}",
+        "preview": "Open {name}",
+        "open": "Open",
+        "replace": "Replace",
+        "remove": "Remove",
+        "confirmRemove": "Remove this file?",
+        "cancel": "Cancel",
+        "uploadedBy": "Uploaded by {name} · {date}",
+        "uploadedOn": "Uploaded {date}",
+        "close": "Close",
+        "openFull": "Open the full file"
+      },
+      "errors": {
+        "type": "Only PDF, JPG or PNG files can be uploaded.",
+        "size": "Each file can be up to 20 MB.",
+        "tooMany": "Up to 10 files per document.",
+        "missing": "The upload didn't finish. Upload the file again.",
+        "notAllowed": "This file can't be added here.",
+        "generic": "Something went wrong. Please try again."
       }
     }
   }

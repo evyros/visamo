@@ -11,6 +11,7 @@ import { asLiveLocale } from "@/i18n/negotiate";
 import { auth } from "@/lib/auth";
 import { otherMembers, ownName, pendingInvite, unlinkedPerson } from "@/lib/case";
 import { db } from "@/lib/db";
+import { deleteCaseBlobs } from "@/lib/files/storage";
 import { caseInvite, cases, user } from "@/lib/db/schema";
 import { sendInviteEmail } from "@/lib/email";
 import { inviteUrl } from "@/lib/invites";
@@ -54,8 +55,11 @@ export async function deleteAccount() {
   const alone = (await otherMembers(caseId, me.id)).length === 0;
 
   const deleteUser = db.delete(user).where(eq(user.id, me.id));
-  if (alone) await db.batch([db.delete(cases).where(eq(cases.id, caseId)), deleteUser]);
-  else await deleteUser;
+  if (alone) {
+    // The uploaded files first: deleting the case's rows doesn't delete its blobs.
+    await deleteCaseBlobs(caseId);
+    await db.batch([db.delete(cases).where(eq(cases.id, caseId)), deleteUser]);
+  } else await deleteUser;
 
   // The sessions went with the user; this clears the cookies.
   await auth.api.signOut({ headers: await headers() });

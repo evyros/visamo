@@ -1288,15 +1288,16 @@
       "document": "The document",
       "choose": "Choose files",
       "drop": "or drop them here",
-      "uploadHint": "PDF, JPG or PNG, up to 20 MB each. Include every page, and the apostille in the same file.",
+      "uploadHint": "PDF, JPG or PNG, up to 20 MB each. Include every page.",
+      "uploadHintApostille": "Include the apostille in the same file.",
       "uploading": "Uploading… {percent}%",
       "processing": "Processing…",
       "retry": "Try again",
       "dismiss": "Dismiss",
       "translation": {
-        "add": "Not in Hebrew or Arabic? Add a certified translation",
-        "title": "Certified translation",
-        "note": "Needed unless the document is in Hebrew or Arabic. English is usually accepted, but the clerk may ask for a translation. The translation itself doesn't need an apostille."
+        "add": "Add a notarized translation",
+        "title": "Notarized translation",
+        "note": "Needed unless the document is in Hebrew or Arabic. English is usually accepted, but the clerk may ask for a translation."
       },
       "file": {
         "menu": "Options for {name}",

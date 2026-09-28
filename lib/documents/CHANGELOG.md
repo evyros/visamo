@@ -3,6 +3,18 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v9 — 2026-09-28
+
+**What changed:** `relationshipEvidence` (shown as "Shared photos of you")
+no longer may need a translation.
+
+**Why:** It's photos of the couple, with nothing to translate.
+
+**Source:** Product decision.
+
+**Lists that changed:** No scenario gained or lost a document;
+`relationshipEvidence` no longer offers a translation upload.
+
 ## v8 — 2026-09-28
 
 **What changed:** `mayNeedTranslation` is false for the letters the couple

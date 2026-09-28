@@ -27,6 +27,8 @@ export type DocumentItem = {
   /** Why it's on the list; null for what every couple needs. */
   because: string | null;
   mayNeedTranslation: boolean;
+  /** May come with an apostille, which belongs in the same file. */
+  needsApostille: boolean;
 };
 
 export type DocumentGroup = { owner: Owner; title: string; items: DocumentItem[] };
@@ -330,7 +332,7 @@ function DocumentCard({
           t={t}
           slot="original"
           label={t.document}
-          hint={t.uploadHint}
+          hint={item.needsApostille ? `${t.uploadHint} ${t.uploadHintApostille}` : t.uploadHint}
           intlLocale={intlLocale}
           error={errors.original}
           {...original}

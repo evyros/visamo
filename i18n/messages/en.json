@@ -1199,11 +1199,11 @@
         },
         "israeliIncomeProof": {
           "title": "Salary slips of the Israeli partner",
-          "description": "The last 12 salary slips."
+          "description": "The last 3-12 salary slips."
         },
         "foreignIncomeProof": {
           "title": "Salary slips of the foreign partner",
-          "description": "The last 12 salary slips."
+          "description": "The last 3-12 salary slips."
         },
         "childrenSchoolRecords": {
           "title": "Children's school records",

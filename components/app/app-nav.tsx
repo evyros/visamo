@@ -23,7 +23,7 @@ export function SectionTabs({ items, label }: { items: NavItem[]; label: string 
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex items-center gap-2 border-b-2 px-3 pt-0.5 text-[15px] font-semibold transition-colors ${
+            className={`inline-flex items-center gap-2 border-b-3 px-3 pt-[3px] text-[15px] font-semibold transition-colors ${
               active ? "border-teal-600 text-navy-900" : "border-transparent text-slate-500 hover:text-navy-900"
             }`}
           >

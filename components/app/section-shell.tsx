@@ -63,6 +63,7 @@ export function SectionShell({
       {sidebar && (
         <>
           {open && <div className="fixed inset-0 z-40 bg-navy-900/30 lg:hidden" onClick={close} />}
+          {/* w-64 matches the logo area in app-header.tsx. */}
           <aside
             ref={drawerRef}
             id="section-sidebar"

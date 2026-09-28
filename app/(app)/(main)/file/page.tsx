@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import type { Locale } from "@/i18n/config";
-import { formatAgo, formatDay, formatDaysUntil, regionName } from "@/i18n/format";
+import { formatDay, formatDaysUntil, regionName } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import { caseOptions } from "@/i18n/options";
 import type { BranchCode, CaseDetails, Stage } from "@/lib/case-options";
@@ -10,26 +10,25 @@ import { otherMembers, pendingInvite } from "@/lib/case";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
 import { ownerOrder, progressByOwner, progressOf, uploadedKeys } from "@/lib/documents/progress";
-import { documentTitle } from "@/lib/documents/titles";
-import { countedEdits, recentEvents, type CaseEvent } from "@/lib/events";
+import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
 import {
   ActivityCard,
   DetailsAction,
   DetailsCard,
   ProgressCard,
-  type ActivityItem,
   type DetailsSection,
 } from "@/components/app/overview-cards";
 import { InviteBanner } from "@/components/app/invite-banner";
 import { StageCard } from "@/components/app/stage-card";
+import { activityItem } from "./activity-items";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.file };
 }
 
-/** How many events the activity card shows. */
-const ACTIVITY_LIMIT = 12;
+/** How many events the activity card shows; the rest are on the activity page. */
+const ACTIVITY_LIMIT = 2;
 
 // The file at a glance: where the couple is in the process, how far along
 // their documents are, the details their list is built from, and what
@@ -39,7 +38,8 @@ export default async function FileOverviewPage() {
   const [{ row, people, details }, files, events, edits, messages, locale, invite] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
-    recentEvents(caseId, ACTIVITY_LIMIT),
+    // One more than shown, to know whether there are older ones to link to.
+    recentEvents(caseId, ACTIVITY_LIMIT + 1),
     countedEdits(caseId),
     getAppDictionary(),
     getAppLocale(),
@@ -122,7 +122,8 @@ export default async function FileOverviewPage() {
           <ActivityCard
             title={t.activity.title}
             empty={t.activity.empty}
-            items={events.map((e) => activityItem(e, messages, locale))}
+            items={events.slice(0, ACTIVITY_LIMIT).map((e) => activityItem(e, messages, locale))}
+            all={events.length > ACTIVITY_LIMIT ? t.activity.all : undefined}
           />
         </div>
         <div className="lg:col-span-2">
@@ -201,62 +202,4 @@ function detailSections({ relationship: r, israeli, foreign }: CaseDetails, mess
     },
   ];
   return sections;
-}
-
-type RecentEvent = Awaited<ReturnType<typeof recentEvents>>[number];
-
-/** One line of the activity card, in the actor's grammatical gender. */
-function activityItem(e: RecentEvent, messages: Messages, locale: Locale): ActivityItem {
-  const t = messages.app.overview.activity;
-  const name = e.actorName ?? t.someone;
-  const say = (type: keyof typeof t.events, values: Record<string, string | number> = {}) =>
-    format(t.events[type][e.actorGender === "female" ? "female" : "male"], { name, ...values });
-  const document = (key: string) => documentTitle(key, messages.app.documents.items, locale) ?? t.aDocument;
-
-  const line = (event: CaseEvent): { text: string; detail?: string } => {
-    switch (event.type) {
-      case "file.uploaded": {
-        const title = document(event.data.documentKey);
-        return {
-          text: say(event.type, {
-            document: event.data.slot === "translation" ? format(t.translationOf, { document: title }) : title,
-          }),
-        };
-      }
-      case "file.deleted":
-        return { text: say(event.type, { document: document(event.data.documentKey) }) };
-      case "partner.invited":
-      case "invite.resent":
-      case "invite.cancelled":
-        return { text: say(event.type, { email: event.data.email }) };
-      case "details.changed":
-        return {
-          text: say(event.type),
-          detail: event.data.counted
-            ? format(t.listChanged, { added: event.data.added.length, removed: event.data.removed.length })
-            : undefined,
-        };
-      case "stage.changed": {
-        const { from, to, date } = event.data;
-        if (from === to && to === "interviewScheduled" && date) {
-          return { text: say("interview.moved", { date: formatDay(date, locale) }) };
-        }
-        const steps = messages.app.overview.stage.steps;
-        return { text: say(event.type, { stage: steps[to as Stage] ?? to }) };
-      }
-      case "branch.changed": {
-        const to = event.data.to as BranchCode | null;
-        return {
-          text: say(event.type, {
-            branch: to ? messages.app.onboarding.branches[to] : messages.app.overview.stage.branchUnknown,
-          }),
-        };
-      }
-      default:
-        return { text: say(event.type) };
-    }
-  };
-
-  const { text, detail } = line(e.event);
-  return { id: e.id, text, detail: detail ?? null, when: formatAgo(e.createdAt, locale), date: e.createdAt.toISOString() };
 }

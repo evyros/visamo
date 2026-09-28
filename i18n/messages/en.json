@@ -739,7 +739,8 @@
       "partner": "Partner",
       "billing": "Plan & billing",
       "support": "Support",
-      "details": "Your details"
+      "details": "Your details",
+      "activity": "Activity"
     },
     "shell": {
       "backToSite": "Back to visamo.co.il",
@@ -1438,6 +1439,9 @@
       "activity": {
         "title": "Activity",
         "empty": "Nothing here yet.",
+        "all": "All activity",
+        "pageIntro": "The last 100 things either of you did in the file.",
+        "back": "Back to the overview",
         "someone": "Someone",
         "translationOf": "the translation of {document}",
         "aDocument": "a document",

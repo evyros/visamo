@@ -739,7 +739,8 @@
       "partner": "בן/בת הזוג",
       "billing": "חבילה ותשלום",
       "support": "תמיכה",
-      "details": "הפרטים שלכם"
+      "details": "הפרטים שלכם",
+      "activity": "פעילות"
     },
     "shell": {
       "backToSite": "חזרה ל-visamo.co.il",
@@ -1438,6 +1439,9 @@
       "activity": {
         "title": "פעילות",
         "empty": "עוד אין כאן כלום.",
+        "all": "לכל הפעילות",
+        "pageIntro": "100 הפעולות האחרונות שמישהו מכם עשה בתיק.",
+        "back": "חזרה לסקירה",
         "someone": "מישהו",
         "translationOf": "את התרגום של {document}",
         "aDocument": "מסמך",

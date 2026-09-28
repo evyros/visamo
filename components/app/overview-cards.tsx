@@ -160,27 +160,49 @@ export function DetailsAction({ canEdit, edit, noEditsLeft }: { canEdit: boolean
 
 export type ActivityItem = { id: string; text: string; detail: string | null; when: string; date: string };
 
-export function ActivityCard({ title, empty, items }: { title: string; empty: string; items: ActivityItem[] }) {
+export function ActivityCard({
+  title,
+  empty,
+  items,
+  all,
+}: {
+  title: string;
+  empty: string;
+  items: ActivityItem[];
+  /** The link to the activity page, when there's more than the card shows. */
+  all?: string;
+}) {
   return (
-    <OverviewCard title={title}>
-      {items.length === 0 ? (
-        <p className="text-[15px] text-slate-600">{empty}</p>
-      ) : (
-        <ol className="space-y-3">
-          {items.map((item) => (
-            <li key={item.id} className="flex gap-3">
-              <span aria-hidden className="mt-2 size-2 shrink-0 rounded-full bg-teal-600" />
-              <span className="min-w-0">
-                <span className="block text-[15px] wrap-anywhere text-navy-900">{item.text}</span>
-                {item.detail && <span className="block text-sm text-slate-600">{item.detail}</span>}
-                <time dateTime={item.date} className="block text-sm text-slate-500">
-                  {item.when}
-                </time>
-              </span>
-            </li>
-          ))}
-        </ol>
-      )}
+    <OverviewCard
+      title={title}
+      action={
+        all && (
+          <Link href="/file/activity" className={linkClass}>
+            {all}
+          </Link>
+        )
+      }
+    >
+      {items.length === 0 ? <p className="text-[15px] text-slate-600">{empty}</p> : <ActivityList items={items} />}
     </OverviewCard>
+  );
+}
+
+export function ActivityList({ items }: { items: ActivityItem[] }) {
+  return (
+    <ol className="space-y-3">
+      {items.map((item) => (
+        <li key={item.id} className="flex gap-3">
+          <span aria-hidden className="mt-2 size-2 shrink-0 rounded-full bg-teal-600" />
+          <span className="min-w-0">
+            <span className="block text-[15px] wrap-anywhere text-navy-900">{item.text}</span>
+            {item.detail && <span className="block text-sm text-slate-600">{item.detail}</span>}
+            <time dateTime={item.date} className="block text-sm text-slate-500">
+              {item.when}
+            </time>
+          </span>
+        </li>
+      ))}
+    </ol>
   );
 }

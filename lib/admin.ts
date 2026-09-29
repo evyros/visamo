@@ -4,16 +4,18 @@ import { cache } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { site } from "./site";
+import { decodeBase32, verifyTotp } from "./totp";
 
 // Sign-in for the admin panel (admin.visamo.co.il), separate from the app's
 // Better Auth. Only ADMIN_EMAIL can sign in, and nothing is stored in the
 // database: the login link and the session are signed tokens (HMAC-SHA256
 // with ADMIN_SECRET) that carry their own expiry.
 //
-// 1. The login form asks for an email and an "OTP", which is really a static
-//    password (ADMIN_PASSWORD). Whatever is typed, the browser gets a random
-//    nonce cookie and the same "check your email" answer, so a guesser never
-//    learns whether they got either one right.
+// 1. The login form asks for an email and an OTP: the code from an
+//    authenticator app, which shares ADMIN_TOTP_SECRET with the server (see
+//    lib/totp.ts). Whatever is typed, the browser gets a random nonce cookie
+//    and the same "check your email" answer, so a guesser never learns
+//    whether they got either one right.
 // 2. When both match, a link token goes to the admin's inbox. It is
 //    tied to the nonce, so it only works in the browser that asked for it: a
 //    forwarded or leaked link is useless.
@@ -25,7 +27,7 @@ import { site } from "./site";
 const SESSION_COOKIE = "admin_session";
 const NONCE_COOKIE = "admin_nonce";
 const LINK_TTL = 15 * 60;
-const SESSION_TTL = 7 * 24 * 60 * 60;
+const SESSION_TTL = 30 * 24 * 60 * 60;
 
 /** A link token signs in; a session token is the signed-in state. The purpose keeps one from passing as the other. */
 type Token = { purpose: "link"; email: string; nonce: string; exp: number } | { purpose: "session"; email: string; exp: number };
@@ -44,13 +46,10 @@ function adminEmail() {
   return process.env.ADMIN_EMAIL?.trim().toLowerCase() || null;
 }
 
-/** Whether `otp` is ADMIN_PASSWORD, compared in constant time. False when unset. */
-function isAdminPassword(otp: string) {
-  const password = process.env.ADMIN_PASSWORD;
-  if (!password) return false;
-  // Hashing first gives both sides the same length, as timingSafeEqual needs.
-  const digest = (value: string) => createHash("sha256").update(value).digest();
-  return timingSafeEqual(digest(otp), digest(password));
+/** The authenticator app's shared secret, or null when unset or not base32 (then nobody can sign in). */
+function totpSecret() {
+  const value = process.env.ADMIN_TOTP_SECRET;
+  return value ? decodeBase32(value) : null;
 }
 
 function sign(token: Token) {
@@ -84,7 +83,7 @@ const cookieOptions = (maxAge: number) => ({
 
 /**
  * Step 1: gives this browser a nonce, and returns the login link when `email`
- * is the admin's and `otp` is the admin password, or else null. Every caller
+ * is the admin's and `otp` is the authenticator code, or else null. Every caller
  * gets the same cookie and answer, so a correct guess looks like a wrong one.
  */
 export async function createLoginLink(email: string, otp: string) {
@@ -93,13 +92,14 @@ export async function createLoginLink(email: string, otp: string) {
 
   const admin = adminEmail();
   // The page looks the same when nothing can match, so say it in the server log.
-  if (!admin || !process.env.ADMIN_PASSWORD || !process.env.ADMIN_SECRET) {
-    console.error("Admin login is off: set ADMIN_EMAIL, ADMIN_PASSWORD and ADMIN_SECRET");
+  const totp = totpSecret();
+  if (!admin || !totp || !process.env.ADMIN_SECRET) {
+    console.error("Admin login is off: set ADMIN_EMAIL, ADMIN_TOTP_SECRET (base32) and ADMIN_SECRET");
   }
   // Both checks always run, so the timing doesn't say which one failed.
   const emailMatches = !!admin && email.trim().toLowerCase() === admin;
-  const passwordMatches = isAdminPassword(otp);
-  if (!admin || !emailMatches || !passwordMatches) return null;
+  const codeMatches = !!totp && verifyTotp(totp, otp);
+  if (!admin || !emailMatches || !codeMatches) return null;
   const token = sign({ purpose: "link", email: admin, nonce: sha256(nonce), exp: now() + LINK_TTL });
   const url = new URL("/verify", site.adminUrl);
   url.searchParams.set("token", token);

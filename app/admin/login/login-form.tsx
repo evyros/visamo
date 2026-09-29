@@ -21,8 +21,19 @@ export function AdminLoginForm({ linkFailed }: { linkFailed: boolean }) {
       <Field id="email" label="Email">
         <input id="email" name="email" type="email" required autoComplete="email" dir="ltr" className={inputClass} />
       </Field>
-      <Field id="otp" label="OTP">
-        <input id="otp" name="otp" type="password" required autoComplete="one-time-code" dir="ltr" className={inputClass} />
+      <Field id="otp" label="OTP" hint="The 6-digit code from your authenticator app">
+        <input
+          id="otp"
+          name="otp"
+          required
+          inputMode="numeric"
+          pattern="[0-9 ]*"
+          maxLength={7}
+          autoComplete="one-time-code"
+          aria-describedby="otp-hint"
+          dir="ltr"
+          className={`${inputClass} tracking-widest`}
+        />
       </Field>
       <SubmitButton pending={pending} pendingLabel="Sending…">
         Email me a login link

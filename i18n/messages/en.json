@@ -366,14 +366,14 @@
       },
       "assistant": {
         "name": "Assistant",
-        "priceNote": "per 30 messages",
+        "priceNote": "per 50 messages",
         "tagline": "Answers in your language, whenever you're unsure",
         "includes": [
-          "30 messages about documents, stages or letters",
+          "50 messages about documents, stages or letters",
           "Top up as often as you like",
           "Everything in Free"
         ],
-        "cta": "Get 30 messages",
+        "cta": "Get 50 messages",
         "footnote": "One-time payment. Messages don't expire."
       },
       "filePrep": {
@@ -381,11 +381,10 @@
         "priceNote": "once, for the whole process",
         "tagline": "Find the problems before the Ministry does",
         "includes": [
-          "Everything in Assistant, including 30 messages",
-          "Every document checked on the spot",
+          "Everything in Assistant, including 50 messages",
+          "Instant document checks, up to 300 (fair use)",
           "What's wrong and how to fix it, for each flag",
-          "Cross-document checks (names, dates, details)",
-          "Covers every stage, all 5–7 years"
+          "Cross-document checks (names, dates, details)"
         ],
         "cta": "Prepare my file",
         "footnote": "Checks published requirements; not legal review."
@@ -433,8 +432,8 @@
           "feature": "Assistant messages",
           "values": [
             "5",
-            "30 per pack, top up any time",
-            "30 included, top up any time"
+            "50 per pack, top up any time",
+            "50 included, top up any time"
           ]
         },
         {
@@ -454,11 +453,11 @@
           ]
         },
         {
-          "feature": "Instant check on every document",
+          "feature": "Instant document checks",
           "values": [
             "no",
             "no",
-            "yes"
+            "Up to 300 (fair use)"
           ]
         },
         {
@@ -503,12 +502,16 @@
           "a": "Yes. You can upload and organize all your documents for free. Checking them against the published requirements comes with File Preparation."
         },
         {
+          "q": "Is there a limit on document checks?",
+          "a": "Yes, a generous one. File Preparation includes up to 300 document checks for your shared file, under fair use. Each document you upload for checking counts as one check, including a corrected version of one you checked before. That's enough to check every document on your list several times."
+        },
+        {
           "q": "What counts as one message?",
           "a": "Each message you send to the assistant counts as one. Follow-ups count as new messages."
         },
         {
           "q": "Do my messages expire?",
-          "a": "No. Unused messages stay in your file. File Preparation includes 30, and you can top up any time."
+          "a": "No. Unused messages stay in your file. File Preparation includes 50, and you can top up any time."
         },
         {
           "q": "Does File Preparation mean our file won't be sent back?",

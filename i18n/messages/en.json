@@ -1329,8 +1329,6 @@
         "dependsOnCountry": "Apostille or legalization, by country"
       },
       "exemptUntil": "No authentication if issued up to {year}",
-      "because": "Because: {reasons}",
-      "document": "The document",
       "choose": "Choose files",
       "drop": "or drop them here",
       "uploadHint": "PDF, JPG or PNG, up to 20 MB each. Include every page.",

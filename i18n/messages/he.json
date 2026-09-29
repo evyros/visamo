@@ -1329,8 +1329,6 @@
         "dependsOnCountry": "אפוסטיל או אימות, לפי המדינה"
       },
       "exemptUntil": "לא צריך אימות אם הונפק עד {year}",
-      "because": "כי: {reasons}",
-      "document": "המסמך",
       "choose": "בחירת קבצים",
       "drop": "או לגרור לכאן",
       "uploadHint": "PDF‏, JPG או PNG, עד 20MB לקובץ. יש לכלול את כל העמודים.",

@@ -33,8 +33,6 @@ export type DocumentItem = {
   description: string;
   /** Copies, certification, exemption. */
   badges: string[];
-  /** Why it's on the list; null for what every couple needs. */
-  because: string | null;
   mayNeedTranslation: boolean;
   /** May come with an apostille, which belongs in the same file. */
   needsApostille: boolean;
@@ -467,12 +465,10 @@ function DocumentCard({
 
       <div id={bodyId} hidden={!open} className="border-t border-line-200 px-4 pt-4 pb-5 sm:px-5">
         <p className="text-[15px] text-slate-700">{item.description}</p>
-        {item.because && <p className="mt-2 text-sm text-slate-500">{item.because}</p>}
 
         <UploadArea
           t={t}
           slot="original"
-          label={t.document}
           hint={item.needsApostille ? `${t.uploadHint} ${t.uploadHintApostille}` : t.uploadHint}
           intlLocale={intlLocale}
           error={errors.original}
@@ -721,7 +717,8 @@ function UploadArea({
 }: {
   t: Labels;
   slot: FileSlot;
-  label: string;
+  /** Left out for the document itself: the card is about it. */
+  label?: string;
   hint: string;
   intlLocale: string;
   files: FileView[];
@@ -739,7 +736,7 @@ function UploadArea({
 
   return (
     <div className="mt-5">
-      <h3 className="text-[15px] font-semibold text-navy-900">{label}</h3>
+      {label && <h3 className="text-[15px] font-semibold text-navy-900">{label}</h3>}
       {(files.length > 0 || pending.length > 0) && (
         <ul className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4">
           {files.map((file) => (

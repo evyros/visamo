@@ -79,3 +79,19 @@ export async function sendInviteEmail({
   const copy = Object.fromEntries(Object.entries(t).map(([key, value]) => [key, format(value, values)])) as Copy;
   await sendEmail({ to, url, locale, copy });
 }
+
+/** The admin panel's login link (lib/admin.ts). English only: it goes to the owner. */
+export async function sendAdminLoginEmail({ to, url }: { to: string; url: string }) {
+  await sendEmail({
+    to,
+    url,
+    locale: "en",
+    copy: {
+      subject: "Your Visamo admin login link",
+      heading: "Log in to the admin panel",
+      body: "This link works for 15 minutes, in the browser where you asked for it.",
+      button: "Log in",
+      ignore: "If you didn't ask for this, someone typed your email on the admin login page. Nobody can use this link but you.",
+    },
+  });
+}

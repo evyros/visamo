@@ -6,12 +6,26 @@ import { publicAppPaths } from "./lib/app-paths";
 import { site } from "./lib/site";
 
 const appHost = new URL(site.appUrl).host;
+const adminHost = new URL(site.adminUrl).host;
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
-// Two hosts, one project. The website (visamo.co.il) has the language in its
-// URLs; the app (app.visamo.co.il) keeps it in a cookie.
+// Three hosts, one project. The website (visamo.co.il) has the language in its
+// URLs; the app (app.visamo.co.il) keeps it in a cookie; the admin panel
+// (admin.visamo.co.il) is served from app/admin.
 export function proxy(request: NextRequest) {
-  return request.headers.get("host") === appHost ? appProxy(request) : siteProxy(request);
+  const host = request.headers.get("host");
+  if (host === adminHost) return adminProxy(request);
+  return host === appHost ? appProxy(request) : siteProxy(request);
+}
+
+// admin.visamo.co.il/x shows app/admin/x. Pages check the session themselves
+// (lib/admin.ts), so there's no cookie check here.
+function adminProxy(request: NextRequest) {
+  const url = request.nextUrl.clone();
+  url.pathname = `/admin${url.pathname === "/" ? "" : url.pathname}`;
+  const response = NextResponse.rewrite(url);
+  response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return response;
 }
 
 // Redirects locale-less URLs to a locale: the saved cookie, then the browser's
@@ -27,6 +41,11 @@ function siteProxy(request: NextRequest) {
 
 function appProxy(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
+
+  // The admin panel exists only on its own host.
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return new NextResponse(null, { status: 404 });
+  }
 
   // Website pages belong on the website host.
   if (isLocale(pathname.split("/")[1])) {

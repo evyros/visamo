@@ -15,6 +15,8 @@ function urlFromEnv(value: string | undefined, fallback: string) {
 export const site = {
   url: urlFromEnv(process.env.NEXT_PUBLIC_SITE_URL, "https://visamo.co.il"),
   appUrl: urlFromEnv(process.env.NEXT_PUBLIC_APP_URL, "https://app.visamo.co.il"),
+  /** The admin panel (app/admin), for the owner only. */
+  adminUrl: urlFromEnv(process.env.NEXT_PUBLIC_ADMIN_URL, "https://admin.visamo.co.il"),
   /** International format, digits only, e.g. 972501234567. */
   whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "").replace(/\D/g, ""),
   supportEmail: "support@visamo.co.il",

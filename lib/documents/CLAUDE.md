@@ -30,6 +30,9 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   progress is saved per item `key`.
 - `scenarios.ts`: example couples. Tests check some lists exactly;
   `catalog.lock.json` records every one.
+- `checks.ts`: how the document checker (`lib/checks/`) checks each
+  document: `required` (the minimum; each one not met is an issue) and
+  `recommended` (what makes it stronger). See "Document checks" below.
 
 ## Rules
 
@@ -49,6 +52,27 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   to fit a new rule; its recorded list is how a change is reviewed.
 - **Set `verified: true`** only when a person checked the entry against its
   `source`.
+
+## Document checks
+
+`checks.ts` is Visamo's own knowledge of how documents are verified in
+practice: branch differences, requirements that only come up mid-process,
+red flags. It's what File Preparation sells, so it's kept away from
+everything else:
+
+- **Only the checker reads it.** Never put it in the chat's prompt, never
+  copy it into `lib/knowledge/` (the chat reads that, and it's shown to
+  users), and never import it from client code (`server-only` fails the
+  build).
+- **It may be stricter or more detailed than `lib/knowledge/`, never
+  contradict it.** A general fact the chat should know too goes in
+  `lib/knowledge/`; how to verify it goes here.
+- **Every document has an entry, or the build fails** (`satisfies
+  Record<DocumentId, …>`). A new document gets `"notYet"` until its check is
+  written; it has no Check button until then.
+- Written in English, for the model. Changing it doesn't change anyone's
+  list, so it needs no catalog version. Results checked against the old
+  text become stale on their own (their hash includes it).
 
 ## Changing what couples get: the version
 

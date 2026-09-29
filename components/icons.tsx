@@ -64,6 +64,13 @@ const paths = {
     </>
   ),
   x: <path d="M6 6l12 12M18 6 6 18" />,
+  /** An exclamation mark in a circle: `info`'s counterpart for something to act on. */
+  alertCircle: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7.5v5M12 16h.01" />
+    </>
+  ),
   minus: <path d="M6 12h12" />,
   file: (
     <>

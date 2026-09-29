@@ -189,7 +189,7 @@
           "icon": "shield",
           "tag": "File Preparation",
           "title": "Know on the spot, not months later",
-          "body": "Upload a document and Visamo checks it right away against the published requirements, and tells you how to fix anything that's off.",
+          "body": "Upload a document, and with one click Visamo checks it against the published requirements and tells you how to fix anything that's off.",
           "bullets": [
             "Missing pages, signatures, apostille or translation",
             "Issue dates that are too old",
@@ -240,7 +240,7 @@
         },
         {
           "title": "Upload, and get checked on the spot.",
-          "body": "Each document is checked as it arrives. Anything that needs fixing comes with clear steps.",
+          "body": "Check each document as soon as it's uploaded. Anything that needs fixing comes with clear steps.",
           "tag": "File Preparation"
         },
         {
@@ -503,7 +503,7 @@
         },
         {
           "q": "Is there a limit on document checks?",
-          "a": "Yes, a generous one. File Preparation includes up to 300 document checks for your shared file, under fair use. Each document you upload for checking counts as one check, including a corrected version of one you checked before. That's enough to check every document on your list several times."
+          "a": "Yes, a generous one. File Preparation includes up to 300 document checks for your shared file, under fair use. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. That's enough to check every document on your list several times."
         },
         {
           "q": "What counts as one message?",
@@ -1365,7 +1365,42 @@
         "notAllowed": "This file can't be added here.",
         "generic": "Something went wrong. Please try again."
       },
-      "retiredIntro": "Files for documents that left your list when your details changed. They're kept in case you need them."
+      "retiredIntro": "Files for documents that left your list when your details changed. They're kept in case you need them.",
+      "check": {
+        "ratings": {
+          "looksGood": "Looks good",
+          "canImprove": "Can be improved",
+          "needsFixing": "Needs fixing",
+          "unreadable": "Couldn't read"
+        },
+        "title": "Document check",
+        "intro": "Visamo checks every file of this document together, and tells you what to fix or improve.",
+        "check": "Check the document",
+        "again": "Check again",
+        "checking": "Checking… this can take up to a minute.",
+        "needsOriginal": "Upload the document to check it.",
+        "stale": "The files or your details changed since the last check. Check again to see where it stands now.",
+        "issues": "What needs fixing",
+        "recommendations": "How to improve",
+        "unreadableHint": "Upload a clearer scan, or a PDF without a password. This check wasn't counted.",
+        "checkedBy": "Checked {when} by {name}",
+        "checkedOn": "Checked {when}",
+        "disclaimer": "Checks published requirements; not legal review.",
+        "locked": "Document checks come with the File Preparation plan.",
+        "lockedLink": "See the plans",
+        "checksLow": "You've used {used} of your {allowed} document checks. Need more?",
+        "contactSupport": "Contact support",
+        "cantOpen": "We couldn't open \"{name}\". It may be damaged or protected by a password.",
+        "errors": {
+          "running": "This document is already being checked. The result will show here when it's ready.",
+          "tooManyPages": "Up to 20 pages can be checked at once. Remove extra pages and try again.",
+          "tooLarge": "These files are too large to check together. Try smaller scans.",
+          "noChecks": "You've used all your document checks. Contact support for more.",
+          "plan": "Document checks come with File Preparation.",
+          "failed": "The check didn't finish, and it wasn't counted. Please try again.",
+          "generic": "Something went wrong. Please try again."
+        }
+      }
     },
     "overview": {
       "invite": {
@@ -1496,6 +1531,10 @@
           "branch.changed": {
             "male": "{name} changed the branch to {branch}",
             "female": "{name} changed the branch to {branch}"
+          },
+          "document.checked": {
+            "male": "{name} checked {document}",
+            "female": "{name} checked {document}"
           }
         },
         "listChanged": "Documents added: {added} · removed: {removed}"

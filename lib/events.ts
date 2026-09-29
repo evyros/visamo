@@ -12,6 +12,8 @@ export type CaseEvent =
   | { type: "case.created"; data: Record<string, never> }
   | { type: "file.uploaded"; data: { documentKey: string; slot: string; name: string } }
   | { type: "file.deleted"; data: { documentKey: string; slot: string; name: string } }
+  /** `rating` is a CheckRating from lib/checks/result.ts. */
+  | { type: "document.checked"; data: { documentKey: string; rating: string } }
   | { type: "partner.invited"; data: { email: string } }
   | { type: "invite.resent"; data: { email: string } }
   | { type: "invite.cancelled"; data: { email: string } }

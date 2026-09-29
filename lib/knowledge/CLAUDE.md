@@ -17,6 +17,10 @@ and the rules for children, the former USSR and the security check.
 - Open questions and what isn't verified yet: `lib/documents/OPEN_QUESTIONS.md`.
 - The history of corrections ("an earlier note said…"). State what's true now.
 - Who gave a correction ("the product owner").
+- How to verify a document: what to look for on it, red flags, the details
+  offices check. That's in `lib/documents/checks.ts`, which only the
+  document checker reads. Here, say what a document is and what's asked for;
+  where offices ask for more, say so in general terms.
 
 ## How to write it
 

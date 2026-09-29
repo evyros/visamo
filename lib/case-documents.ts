@@ -1,5 +1,5 @@
 import "server-only";
-import { asc, eq } from "drizzle-orm";
+import { and, asc, eq, isNull } from "drizzle-orm";
 import type { CaseDetails, PersonInput, RelationshipInput } from "./case-options";
 import { buildDocumentList } from "./documents/build";
 import { db } from "./db";
@@ -72,14 +72,14 @@ export async function caseDocuments(caseId: string) {
   };
 }
 
-/** The case's uploaded files, oldest first, with the uploader's name. */
+/** The case's uploaded files, oldest first, with the uploader's name. Removed files aren't included. */
 export async function caseFiles(caseId: string) {
   const rows = await db
     .select({ file: caseFile, userName: user.name, personName: casePerson.name })
     .from(caseFile)
     .leftJoin(user, eq(user.id, caseFile.uploadedBy))
     .leftJoin(casePerson, eq(casePerson.userId, caseFile.uploadedBy))
-    .where(eq(caseFile.caseId, caseId))
+    .where(and(eq(caseFile.caseId, caseId), isNull(caseFile.deletedAt)))
     .orderBy(asc(caseFile.createdAt));
   return rows.map(({ file, userName, personName }) => ({ ...file, uploaderName: personName ?? userName }));
 }

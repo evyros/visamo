@@ -1,5 +1,5 @@
 import { get } from "@vercel/blob";
-import { and, eq } from "drizzle-orm";
+import { and, eq, isNull } from "drizzle-orm";
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import { caseFile } from "@/lib/db/schema";
@@ -15,9 +15,9 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   const [file] = await db
     .select()
     .from(caseFile)
-    .where(and(eq(caseFile.id, id), eq(caseFile.caseId, current.caseId)))
+    .where(and(eq(caseFile.id, id), eq(caseFile.caseId, current.caseId), isNull(caseFile.deletedAt)))
     .limit(1);
-  // Another case's file looks the same as a missing one.
+  // Another case's file, or a removed one, looks the same as a missing one.
   if (!file) return new NextResponse(null, { status: 404 });
 
   const thumbnail = request.nextUrl.searchParams.has("thumbnail");

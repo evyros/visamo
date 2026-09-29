@@ -4,10 +4,14 @@ import { locales } from "@/i18n/config";
 import { regionName } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
+import { canCheckDocuments } from "@/lib/chat/plans";
+import { caseChecks, checkBalance } from "@/lib/checks/store";
+import { checkView } from "@/lib/checks/view";
 import { ownerOrder } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
 import { requireCase } from "@/lib/session";
+import { localePath, site, whatsappUrl } from "@/lib/site";
 import { DocumentsBoard, type DocumentGroup, type RetiredDocument } from "@/components/app/documents-board";
 
 // finishUpload makes a thumbnail, which for a large scanned PDF takes a few seconds.
@@ -21,9 +25,11 @@ export async function generateMetadata(): Promise<Metadata> {
 // out here so the board gets plain strings.
 export default async function DocumentsPage() {
   const { caseId } = await requireCase();
-  const [{ people, list }, files, messages, locale] = await Promise.all([
+  const [{ people, list }, files, checks, balance, messages, locale] = await Promise.all([
     caseDocuments(caseId),
     caseFiles(caseId),
+    caseChecks(caseId),
+    checkBalance(caseId),
     getAppDictionary(),
     getAppLocale(),
   ]);
@@ -48,6 +54,7 @@ export default async function DocumentsPage() {
           const text = catalog.items[d.id];
           const country = d.country ? regionName(d.country, locale) : "";
           const auth = d.certification?.authentication;
+          const check = checks.get(d.key);
           return {
             key: d.key,
             title: format(text.title, { country }),
@@ -64,6 +71,11 @@ export default async function DocumentsPage() {
             mayNeedTranslation: d.mayNeedTranslation,
             optional: d.optional,
             needsApostille: auth === "apostille" || auth === "utahApostille" || auth === "dependsOnCountry",
+            check: {
+              checkable: check?.checkable ?? false,
+              running: check?.running ?? false,
+              last: check ? checkView(check, locale) : null,
+            },
           };
         }),
     }))
@@ -87,7 +99,18 @@ export default async function DocumentsPage() {
         groups={groups}
         retired={retired}
         files={files.map(fileView)}
+        locale={locale}
         intlLocale={locales[locale].intlLocale}
+        checks={{
+          allowed: canCheckDocuments(balance.plan),
+          // At 80% of the fair-use limit, the couple is asked to contact support.
+          notice:
+            balance.allowed > 0 && balance.used >= balance.allowed * 0.8
+              ? format(t.check.checksLow, { used: balance.used, allowed: balance.allowed })
+              : null,
+          pricingUrl: `${site.url}${localePath(locale, "/pricing")}`,
+          supportUrl: whatsappUrl(),
+        }}
       />
     </div>
   );

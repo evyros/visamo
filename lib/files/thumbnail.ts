@@ -12,9 +12,14 @@ const WIDTH = 320;
 
 let pdfium: Promise<PDFiumLibrary> | undefined;
 
-async function firstPage(pdf: Uint8Array): Promise<Sharp> {
+/** PDFium, loaded once per server instance. Also used by the document checker. */
+export function loadPdfium() {
   pdfium ??= PDFiumLibrary.init();
-  const document = await (await pdfium).loadDocument(pdf);
+  return pdfium;
+}
+
+async function firstPage(pdf: Uint8Array): Promise<Sharp> {
+  const document = await (await loadPdfium()).loadDocument(pdf);
   try {
     const page = document.getPage(0);
     // Twice the width, then downscaled by sharp, for crisper text. A scale

@@ -3,8 +3,12 @@
 import { upload } from "@vercel/blob/client";
 import { useCallback, useEffect, useId, useRef, useState, type DragEvent, type ReactNode } from "react";
 import { deleteFile, finishUpload, startUpload, type UploadError } from "@/app/(app)/(main)/file/documents/actions";
+import type { Locale } from "@/i18n/config";
+import { formatAgo } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
+import type { CheckRating } from "@/lib/checks/result";
+import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { progressOf, uploadedKeys } from "@/lib/documents/progress";
 import { ACCEPTED_TYPES, MAX_FILE_BYTES, MAX_FILES_PER_SLOT, isAcceptedType, type FileSlot } from "@/lib/files/rules";
@@ -16,6 +20,10 @@ import { Icon } from "@/components/icons";
 // uploading (straight to the Blob store, with progress) and processing
 // (finishUpload checks it, records it and makes its thumbnail). Then the
 // server's thumbnail replaces the local preview.
+//
+// A document can be checked (api/documents/check): all its files together.
+// The result shows while the files it checked are the ones there; once they
+// change, the document can be checked again.
 
 type Labels = Messages["app"]["documentsPage"];
 
@@ -32,6 +40,29 @@ export type DocumentItem = {
   needsApostille: boolean;
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;
+  check: {
+    /** Whether this document can be checked yet (its check is written). */
+    checkable: boolean;
+    running: boolean;
+    last: CheckView | null;
+  };
+};
+
+/** What the case's plan allows for document checks. */
+export type CheckSettings = {
+  /** File Preparation: the plan includes checks. */
+  allowed: boolean;
+  /** Shown near the fair-use limit. */
+  notice: string | null;
+  pricingUrl: string;
+  supportUrl: string;
+};
+
+type ItemCheck = { running: boolean; last: CheckView | null; error?: string };
+
+const sameSet = (a: readonly string[], b: readonly string[]) => {
+  const sorted = [...b].sort();
+  return a.length === b.length && [...a].sort().every((id, i) => id === sorted[i]);
 };
 
 export type DocumentGroup = { owner: Owner; title: string; items: DocumentItem[] };
@@ -85,15 +116,24 @@ export function DocumentsBoard({
   groups,
   retired,
   files: initialFiles,
+  locale,
   intlLocale,
+  checks: settings,
 }: {
   t: Labels;
   groups: DocumentGroup[];
   retired: RetiredDocument[];
   files: FileView[];
+  locale: Locale;
   intlLocale: string;
+  checks: CheckSettings;
 }) {
   const [files, setFiles] = useState(initialFiles);
+  const [checks, setChecks] = useState<Record<string, ItemCheck>>(() =>
+    Object.fromEntries(
+      groups.flatMap((g) => g.items).map((item) => [item.key, { running: item.check.running, last: item.check.last }]),
+    ),
+  );
   const [pending, setPending] = useState<Pending[]>([]);
   // Per document and slot: an error about files that weren't added.
   const [slotErrors, setSlotErrors] = useState<Record<string, string>>({});
@@ -212,6 +252,28 @@ export function DocumentsBoard({
     if (!result.error) setFiles((list) => list.filter((f) => f.id !== fileId));
   }
 
+  const setCheck = (key: string, update: Partial<ItemCheck>) =>
+    setChecks((all) => ({ ...all, [key]: { ...all[key], ...update } }));
+
+  async function check(documentKey: string) {
+    setCheck(documentKey, { running: true, error: undefined });
+    const errors = t.check.errors;
+    try {
+      const response = await fetch("/api/documents/check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ documentKey }),
+      });
+      const body = (await response.json().catch(() => ({}))) as { check?: CheckView; error?: string };
+      if (response.ok && body.check) return setCheck(documentKey, { running: false, last: body.check });
+      const error = errors[body.error as keyof typeof errors] ?? errors.generic;
+      setCheck(documentKey, { running: false, error });
+    } catch (error) {
+      console.error("check failed", error);
+      setCheck(documentKey, { running: false, error: errors.generic });
+    }
+  }
+
   const { done: ready, total } = progressOf(groups.flatMap((g) => g.items), uploadedKeys(files));
   // A retired document's files can only be removed; once they all are, it goes.
   const retiredLeft = retired.filter((r) => files.some((f) => f.documentKey === r.key));
@@ -244,7 +306,11 @@ export function DocumentsBoard({
                 <DocumentCard
                   t={t}
                   item={item}
+                  locale={locale}
                   intlLocale={intlLocale}
+                  check={checks[item.key]}
+                  settings={settings}
+                  onCheck={() => check(item.key)}
                   files={files.filter((f) => f.documentKey === item.key)}
                   pending={pending.filter((p) => p.documentKey === item.key)}
                   errors={{
@@ -328,7 +394,11 @@ type SlotHandlers = {
 function DocumentCard({
   t,
   item,
+  locale,
   intlLocale,
+  check,
+  settings,
+  onCheck,
   files,
   pending,
   errors,
@@ -336,7 +406,11 @@ function DocumentCard({
 }: {
   t: Labels;
   item: DocumentItem;
+  locale: Locale;
   intlLocale: string;
+  check: ItemCheck;
+  settings: CheckSettings;
+  onCheck: () => void;
   files: FileView[];
   pending: Pending[];
   errors: Partial<Record<FileSlot, string>>;
@@ -352,6 +426,9 @@ function DocumentCard({
   const translation = of("translation");
   const uploaded = original.files.length > 0;
   const hasTranslation = translation.files.length > 0;
+  // The result applies while it was checked against these very files and the current details.
+  const last = check.last;
+  const fresh = !!last && last.contextFresh && sameSet(last.fileIds, files.map((f) => f.id));
 
   return (
     <div className="rounded-card border border-line-200 bg-white">
@@ -360,7 +437,7 @@ function DocumentCard({
         aria-expanded={open}
         aria-controls={bodyId}
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-start gap-3 rounded-card p-4 text-start focus-visible:outline-2 focus-visible:outline-teal-600 sm:p-5"
+        className="group/card flex w-full items-start gap-3 rounded-card p-4 text-start focus-visible:outline-2 focus-visible:outline-teal-600 sm:p-5"
       >
         <span className="min-w-0 flex-1">
           <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -380,9 +457,11 @@ function DocumentCard({
             </span>
           )}
         </span>
+        {/* At the row's end, so every card's rating lines up with the others'. */}
+        {fresh && <CheckIcon rating={last.rating} label={t.check.ratings[last.rating]} tooltip />}
         <Icon
           name="chevronDown"
-          className={`mt-0.5 size-5 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`mt-0.5 size-5 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -423,9 +502,177 @@ function DocumentCard({
             </button>
           ))}
 
+        {item.check.checkable && (
+          <CheckPanel
+            t={t}
+            locale={locale}
+            check={check}
+            fresh={fresh}
+            settings={settings}
+            uploaded={uploaded}
+            uploading={pending.length > 0}
+            onCheck={onCheck}
+          />
+        )}
+
         {/* Reserved for "Ask about this document": the chat about this card. */}
       </div>
     </div>
+  );
+}
+
+const ratingStyle: Record<CheckRating, { icon: "checkCircle" | "info" | "alertCircle" | "eyeOff"; color: string }> = {
+  looksGood: { icon: "checkCircle", color: "bg-teal-600" },
+  canImprove: { icon: "info", color: "bg-amber-500" },
+  needsFixing: { icon: "alertCircle", color: "bg-crimson-600" },
+  unreadable: { icon: "eyeOff", color: "bg-slate-500" },
+};
+
+/**
+ * The check's rating as an icon alone: the shape tells them apart, not only
+ * the color. With `tooltip`, hovering it (or focusing its card) shows the
+ * label; on a phone, the open card shows it next to the icon.
+ */
+function CheckIcon({ rating, label, tooltip }: { rating: CheckRating; label: string; tooltip?: boolean }) {
+  const { icon, color } = ratingStyle[rating];
+  return (
+    <span className="group/check relative inline-flex shrink-0">
+      <span
+        role="img"
+        aria-label={label}
+        className={`inline-flex size-6 items-center justify-center rounded-full text-white ${color}`}
+      >
+        <Icon name={icon} className="size-4" />
+      </span>
+      {tooltip && (
+        // The icon's aria-label already says it: hidden from screen readers.
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 z-20 mb-2 whitespace-nowrap rounded-md bg-navy-900 px-2.5 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/check:opacity-100 group-focus-visible/card:opacity-100"
+        >
+          {label}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function CheckPanel({
+  t,
+  locale,
+  check,
+  fresh,
+  settings,
+  uploaded,
+  uploading,
+  onCheck,
+}: {
+  t: Labels;
+  locale: Locale;
+  check: ItemCheck;
+  fresh: boolean;
+  settings: CheckSettings;
+  uploaded: boolean;
+  uploading: boolean;
+  onCheck: () => void;
+}) {
+  const c = t.check;
+  const lockedId = useId();
+  const last = check.last;
+  const result = fresh && last ? last : null;
+  const findings = (title: string, list: string[]) =>
+    list.length > 0 && (
+      <div className="mt-3">
+        <h4 className="text-sm font-semibold text-navy-900">{title}</h4>
+        <ul className="mt-1 list-disc space-y-1 ps-5 text-[15px] text-slate-700">
+          {list.map((text) => (
+            <li key={text}>{text}</li>
+          ))}
+        </ul>
+      </div>
+    );
+
+  return (
+    <section className="mt-6 rounded-[10px] border border-line-200 bg-sand-50 p-4">
+      <h3 className="text-[15px] font-semibold text-navy-900">{c.title}</h3>
+
+      {!settings.allowed ? (
+        // Shown but disabled, so couples see what File Preparation adds. The reason is
+        // written out, not in a tooltip: phones have no hover, and a disabled button gets none.
+        <>
+          <p className="mt-2 text-[15px] text-slate-700">{c.intro}</p>
+          <button
+            type="button"
+            disabled
+            aria-describedby={lockedId}
+            className="mt-3 inline-flex cursor-not-allowed items-center gap-2 rounded-lg bg-line-200 px-4 py-2 text-[15px] font-semibold text-slate-500"
+          >
+            <Icon name="lock" className="size-4" />
+            {c.check}
+          </button>
+          <p id={lockedId} className="mt-2 text-sm text-slate-600">
+            {c.locked}{" "}
+            <a href={settings.pricingUrl} className="font-semibold text-teal-700 hover:underline">
+              {c.lockedLink}
+            </a>
+          </p>
+        </>
+      ) : check.running ? (
+        <p aria-live="polite" className="mt-2 flex items-center gap-2 text-[15px] text-slate-700">
+          <span className="size-4 animate-spin rounded-full border-2 border-teal-600 border-t-transparent" />
+          {c.checking}
+        </p>
+      ) : result ? (
+        <div aria-live="polite">
+          <p className="mt-2 flex items-center gap-2 font-semibold text-navy-900">
+            <CheckIcon rating={result.rating} label={c.ratings[result.rating]} />
+            {c.ratings[result.rating]}
+          </p>
+          {findings(c.issues, result.issues)}
+          {result.rating === "unreadable" && <p className="mt-2 text-[15px] text-slate-700">{c.unreadableHint}</p>}
+          {findings(c.recommendations, result.recommendations)}
+          <p className="mt-3 text-sm text-slate-500">
+            {format(result.checkedByName ? c.checkedBy : c.checkedOn, {
+              when: formatAgo(new Date(result.checkedAt), locale),
+              name: result.checkedByName ?? "",
+            })}
+          </p>
+          <p className="mt-1 text-sm text-slate-500">{c.disclaimer}</p>
+        </div>
+      ) : (
+        <>
+          <p className="mt-2 text-[15px] text-slate-700">{last ? c.stale : c.intro}</p>
+          {!uploaded ? (
+            <p className="mt-2 text-sm text-slate-500">{c.needsOriginal}</p>
+          ) : (
+            !uploading && (
+              <button
+                type="button"
+                onClick={onCheck}
+                className="mt-3 inline-flex items-center gap-2 rounded-lg bg-teal-600 px-4 py-2 text-[15px] font-semibold text-white hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+              >
+                <Icon name="checkCircle" className="size-4" />
+                {last ? c.again : c.check}
+              </button>
+            )
+          )}
+        </>
+      )}
+
+      {check.error && (
+        <p role="alert" className="mt-2 text-sm font-medium text-terracotta-600">
+          {check.error}
+        </p>
+      )}
+      {settings.allowed && settings.notice && (
+        <p className="mt-2 text-sm text-slate-600">
+          {settings.notice}{" "}
+          <a href={settings.supportUrl} className="font-semibold text-teal-700 hover:underline">
+            {c.contactSupport}
+          </a>
+        </p>
+      )}
+    </section>
   );
 }
 

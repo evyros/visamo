@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 /* Design tokens from the Visamo spec. Status colors are amber and muted
-   terracotta, never alarm red. Text colors (slate-500, teal-700,
-   terracotta-600, whatsapp) keep at least 4.5:1 contrast on every surface
-   they sit on, per IS 5568 / WCAG AA; check before changing them. */
+   terracotta, never alarm red; the one exception is crimson, a deep red
+   only for a document check's "needs fixing". Text colors (slate-500,
+   teal-700, terracotta-600, whatsapp) keep at least 4.5:1 contrast on every
+   surface they sit on, per IS 5568 / WCAG AA; check before changing them. */
 @theme {
   --color-navy-900: #0f2a44;
   --color-navy-800: #17385a;
@@ -19,6 +20,8 @@
   --color-amber-100: #f7ecd9;
   --color-terracotta-600: #a84b36;
   --color-terracotta-100: #f6e5e0;
+  /* White on it: 6.7:1. */
+  --color-crimson-600: #b42c3f;
   --color-line-200: #e2e0da;
   --color-whatsapp: #1a7d44;
 

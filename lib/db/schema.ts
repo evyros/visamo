@@ -1,5 +1,20 @@
-import { boolean, date, index, integer, jsonb, pgTable, text, timestamp } from "drizzle-orm/pg-core";
-import { FREE_MESSAGES } from "../chat/plans";
+import { sql } from "drizzle-orm";
+import {
+  boolean,
+  date,
+  doublePrecision,
+  index,
+  integer,
+  jsonb,
+  pgTable,
+  text,
+  timestamp,
+  uniqueIndex,
+} from "drizzle-orm/pg-core";
+import type { Completion } from "../chat/openrouter";
+import { DOCUMENT_CHECKS, FREE_MESSAGES } from "../chat/plans";
+import type { CheckFinding, CheckRating } from "../checks/result";
+import type { DocumentCheck } from "../documents/checks";
 import type { CaseEvent } from "../events";
 
 // Better Auth's core tables (user, session, account, verification), plus the
@@ -119,6 +134,10 @@ export const cases = pgTable("case", {
   plan: text("plan").notNull().default("free"),
   /** Messages left for the chat assistant, shared by both partners. Buying more adds to it. */
   messagesLeft: integer("messages_left").notNull().default(FREE_MESSAGES),
+  /** Document checks used, by both partners. Files the checker couldn't read aren't counted. */
+  documentChecks: integer("document_checks").notNull().default(0),
+  /** The fair-use limit on document checks. Support raises it. */
+  documentChecksAllowed: integer("document_checks_allowed").notNull().default(DOCUMENT_CHECKS),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -216,8 +235,89 @@ export const caseFile = pgTable(
     hasThumbnail: boolean("has_thumbnail").notNull(),
     uploadedBy: text("uploaded_by").references(() => user.id, { onDelete: "set null" }),
     createdAt: timestamp("created_at").notNull().defaultNow(),
+    /**
+     * When the couple removed it. Files are never deleted, from the database
+     * or the Blob store: a removed file is only hidden, and kept with the
+     * checks that saw it, for reviewing how checks work. Deleting the whole
+     * case still deletes everything.
+     */
+    deletedAt: timestamp("deleted_at"),
+    deletedBy: text("deleted_by").references(() => user.id, { onDelete: "set null" }),
   },
   (table) => [index("case_file_case_id_idx").on(table.caseId)],
+);
+
+/**
+ * Every document check that ran (lib/checks): one row per run, never deleted,
+ * and never changed once it ends, so the history shows what each check saw
+ * and said, failures included. An item's result is its latest finished
+ * check. That's fresh while the item's files and the case details it was
+ * checked against are the same (lib/checks/store.ts).
+ */
+export const documentCheck = pgTable(
+  "document_check",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /** The list item's key, as on caseFile. */
+    documentKey: text("document_key").notNull(),
+    /** "running", then "done" (it has a result) or "failed" (see `error`). At most one runs per item. */
+    state: text("state").notNull().$type<"running" | "done" | "failed">(),
+    /** The files it checked, sorted. Files never change (a replacement gets a new id), so this is what was checked. */
+    fileIds: text("file_ids").array().notNull(),
+    /** A hash of what it was checked against: the case details and the document's check guidance. */
+    contextHash: text("context_hash").notNull(),
+    model: text("model").notNull(),
+    /** The result, once done. */
+    rating: text("rating").$type<CheckRating>(),
+    issues: jsonb("issues").$type<CheckFinding[]>(),
+    recommendations: jsonb("recommendations").$type<CheckFinding[]>(),
+    /** Why it failed: an error code, or the error's message. */
+    error: text("error"),
+    /** Who ran it. */
+    checkedBy: text("checked_by").references(() => user.id, { onDelete: "set null" }),
+    startedAt: timestamp("started_at").notNull().defaultNow(),
+    finishedAt: timestamp("finished_at"),
+
+    // What it was checked against, as sent, so an old check can be reviewed
+    // after the guidance or the rules change. The knowledge base is too big
+    // to keep per check: only its hash (lib/knowledge-base.ts).
+    /** The document and the couple's details (lib/checks/prompt.ts checkContext). */
+    context: text("context").notNull(),
+    /** The document's check guidance (lib/documents/checks.ts), as it was. */
+    guidance: jsonb("guidance").$type<DocumentCheck>().notNull(),
+    rulesVersion: integer("rules_version").notNull(),
+    knowledgeHash: text("knowledge_hash").notNull(),
+
+    // What it took. Null for what a failed run didn't get to.
+    fileCount: integer("file_count"),
+    /** Pages and bytes sent, after images were downscaled. */
+    pages: integer("pages"),
+    bytesSent: integer("bytes_sent"),
+    /** Model calls: 2 when the first answer was malformed or its rating didn't fit its findings. */
+    attempts: integer("attempts"),
+    /** The rating guard changed the model's rating (lib/checks/result.ts settle). */
+    ratingCorrected: boolean("rating_corrected"),
+    /** Summed over the calls. */
+    tokensIn: integer("tokens_in"),
+    tokensOut: integer("tokens_out"),
+    cachedTokens: integer("cached_tokens"),
+    costUsd: doublePrecision("cost_usd"),
+    /** Time in model calls, and the whole run's. */
+    modelMs: integer("model_ms"),
+    durationMs: integer("duration_ms"),
+    /** Each model call: its raw answer, before parsing and the guard, and what it cost. */
+    calls: jsonb("calls").$type<Completion[]>(),
+  },
+  (table) => [
+    index("document_check_item_idx").on(table.caseId, table.documentKey, table.startedAt),
+    // One running check per item: the button can be pressed by both partners, or again after a reload.
+    uniqueIndex("document_check_running_idx")
+      .on(table.caseId, table.documentKey)
+      .where(sql`${table.state} = 'running'`),
+  ],
 );
 
 /**

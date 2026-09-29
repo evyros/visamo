@@ -17,3 +17,11 @@ export const PAID_MESSAGES = 50;
 export function maxMessageLength(plan: Plan) {
   return plan === "free" ? 300 : 600;
 }
+
+/** Document checks a case gets under fair use; support raises it per case (cases.documentChecksAllowed). */
+export const DOCUMENT_CHECKS = 300;
+
+/** Whether the plan includes document checks: File Preparation only. */
+export function canCheckDocuments(plan: Plan) {
+  return plan === "filePrep";
+}

@@ -1,7 +1,7 @@
 "use server";
 
 import { del, get, put } from "@vercel/blob";
-import { and, count, eq } from "drizzle-orm";
+import { and, count, eq, isNull } from "drizzle-orm";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
 import { db } from "@/lib/db";
 import { caseFile } from "@/lib/db/schema";
@@ -38,7 +38,14 @@ export async function startUpload(
   const [{ files }] = await db
     .select({ files: count() })
     .from(caseFile)
-    .where(and(eq(caseFile.caseId, caseId), eq(caseFile.documentKey, documentKey), eq(caseFile.slot, slot)));
+    .where(
+      and(
+        eq(caseFile.caseId, caseId),
+        eq(caseFile.documentKey, documentKey),
+        eq(caseFile.slot, slot),
+        isNull(caseFile.deletedAt),
+      ),
+    );
   if (files >= MAX_FILES_PER_SLOT) return { error: "tooMany" };
   const fileId = crypto.randomUUID();
   return { fileId, pathname: filePath(caseId, fileId) };
@@ -88,6 +95,7 @@ export async function finishUpload(input: {
     // The browser's claimed type and size aren't trusted: check the contents.
     const type = bytes && sniffType(bytes);
     if (!bytes || !type) {
+      // Rejected, so it never became a file: nothing to keep.
       await del(path);
       return { error: bytes ? "type" : "size" };
     }
@@ -136,17 +144,16 @@ export async function deleteFile(fileId: string): Promise<{ error?: "generic" }>
       documentKey: caseFile.documentKey,
       slot: caseFile.slot,
       name: caseFile.name,
-      hasThumbnail: caseFile.hasThumbnail,
     })
     .from(caseFile)
-    .where(and(eq(caseFile.id, fileId), eq(caseFile.caseId, caseId)))
+    .where(and(eq(caseFile.id, fileId), eq(caseFile.caseId, caseId), isNull(caseFile.deletedAt)))
     .limit(1);
   if (!file) return {};
   try {
-    await del([filePath(caseId, fileId), ...(file.hasThumbnail ? [thumbnailPath(caseId, fileId)] : [])]);
+    // Only hidden: the file stays in the store and the database, with the checks that saw it (see caseFile).
     const { documentKey, slot, name } = file;
     await db.batch([
-      db.delete(caseFile).where(eq(caseFile.id, fileId)),
+      db.update(caseFile).set({ deletedAt: new Date(), deletedBy: user.id }).where(eq(caseFile.id, fileId)),
       recordEvent(caseId, user.id, { type: "file.deleted", data: { documentKey, slot, name } }),
     ]);
   } catch (error) {

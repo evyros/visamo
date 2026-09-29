@@ -1,7 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { MAX_FINDINGS, MAX_FINDING_LENGTH, isConsistent, parseCheck, settle, type CheckResult } from "./result";
+import {
+  MAX_DETAIL_LENGTH,
+  MAX_FINDINGS,
+  MAX_TITLE_LENGTH,
+  findingText,
+  isConsistent,
+  parseCheck,
+  settle,
+  type CheckResult,
+} from "./result";
 
-const finding = (text: string) => ({ en: text, he: text });
+const finding = (title: string, detail = `${title}, in detail`) => ({
+  en: { title, detail },
+  he: { title, detail },
+});
 const result = (rating: CheckResult["rating"], issues = 0, recommendations = 0): CheckResult => ({
   rating,
   issues: Array.from({ length: issues }, (_, i) => finding(`issue ${i}`)),
@@ -24,19 +36,36 @@ describe("parseCheck", () => {
     expect(parseCheck("Looks fine to me")).toBeNull();
     expect(parseCheck('{"rating":"fine","issues":[],"recommendations":[]}')).toBeNull();
     expect(parseCheck('{"rating":"looksGood","issues":"none","recommendations":[]}')).toBeNull();
-    expect(parseCheck('{"rating":"looksGood","issues":[{"en":"x"}],"recommendations":[]}')).toBeNull();
+    expect(parseCheck('{"rating":"looksGood","issues":[{"en":"x","he":"x"}],"recommendations":[]}')).toBeNull();
+    expect(
+      parseCheck('{"rating":"looksGood","issues":[{"en":{"title":"x"},"he":{"title":"x"}}],"recommendations":[]}'),
+    ).toBeNull();
   });
 
   it("caps findings, and drops empty ones", () => {
-    const long = "x".repeat(MAX_FINDING_LENGTH + 50);
+    const long = "x".repeat(MAX_DETAIL_LENGTH + 50);
     const answer = {
       rating: "canImprove",
       issues: [],
-      recommendations: [finding(" "), ...Array.from({ length: MAX_FINDINGS + 3 }, () => finding(long))],
+      recommendations: [finding(" ", " "), ...Array.from({ length: MAX_FINDINGS + 3 }, () => finding(long, long))],
     };
     const parsed = parseCheck(JSON.stringify(answer))!;
     expect(parsed.recommendations).toHaveLength(MAX_FINDINGS);
-    expect(parsed.recommendations[0].en).toHaveLength(MAX_FINDING_LENGTH);
+    expect(parsed.recommendations[0].en.title).toHaveLength(MAX_TITLE_LENGTH);
+    expect(parsed.recommendations[0].en.detail).toHaveLength(MAX_DETAIL_LENGTH);
+  });
+});
+
+describe("findingText", () => {
+  it("reads a finding in one language", () => {
+    expect(findingText(finding("Missing signature", "Sign it"), "he")).toEqual({
+      title: "Missing signature",
+      detail: "Sign it",
+    });
+  });
+
+  it("shows an untitled finding from before titles as its detail", () => {
+    expect(findingText({ en: "Not signed.", he: "לא חתום." }, "he")).toEqual({ title: "", detail: "לא חתום." });
   });
 });
 

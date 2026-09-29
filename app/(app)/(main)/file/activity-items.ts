@@ -20,14 +20,7 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale)
 
   const line = (event: CaseEvent): { text: string; detail?: string } => {
     switch (event.type) {
-      case "file.uploaded": {
-        const title = document(event.data.documentKey);
-        return {
-          text: say(event.type, {
-            document: event.data.slot === "translation" ? format(t.translationOf, { document: title }) : title,
-          }),
-        };
-      }
+      case "file.uploaded":
       case "file.deleted":
       case "document.checked":
         return { text: say(event.type, { document: document(event.data.documentKey) }) };

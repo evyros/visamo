@@ -9,8 +9,11 @@
 export const checkRatings = ["looksGood", "canImprove", "needsFixing", "unreadable"] as const;
 export type CheckRating = (typeof checkRatings)[number];
 
+/** A finding in one language: a short title that names it, and what to do about it. */
+export type FindingText = { title: string; detail: string };
+
 /** One finding, written in both of the app's languages, so each partner reads their own. */
-export type CheckFinding = { en: string; he: string };
+export type CheckFinding = { en: FindingText; he: FindingText };
 
 export type CheckResult = {
   rating: CheckRating;
@@ -20,8 +23,9 @@ export type CheckResult = {
   recommendations: CheckFinding[];
 };
 
-/** Longest finding kept, in characters, and most findings of each kind. */
-export const MAX_FINDING_LENGTH = 400;
+/** Longest title and detail kept, in characters, and most findings of each kind. */
+export const MAX_TITLE_LENGTH = 80;
+export const MAX_DETAIL_LENGTH = 400;
 export const MAX_FINDINGS = 10;
 
 /** The JSON schema the model answers in (OpenRouter structured outputs). */
@@ -39,21 +43,43 @@ export const checkResultSchema = {
       type: "object",
       additionalProperties: false,
       required: ["en", "he"],
-      properties: { en: { type: "string" }, he: { type: "string" } },
+      properties: { en: { $ref: "#/$defs/text" }, he: { $ref: "#/$defs/text" } },
+    },
+    text: {
+      type: "object",
+      additionalProperties: false,
+      required: ["title", "detail"],
+      properties: { title: { type: "string" }, detail: { type: "string" } },
     },
   },
 } as const;
+
+function readText(value: unknown): FindingText | null {
+  const { title, detail } = (value ?? {}) as Record<string, unknown>;
+  if (typeof title !== "string" || typeof detail !== "string") return null;
+  return { title: title.trim().slice(0, MAX_TITLE_LENGTH), detail: detail.trim().slice(0, MAX_DETAIL_LENGTH) };
+}
 
 function findings(value: unknown): CheckFinding[] | null {
   if (!Array.isArray(value)) return null;
   const list: CheckFinding[] = [];
   for (const item of value) {
     const { en, he } = (item ?? {}) as Record<string, unknown>;
-    if (typeof en !== "string" || typeof he !== "string") return null;
-    const clip = (text: string) => text.trim().slice(0, MAX_FINDING_LENGTH);
-    if (en.trim() || he.trim()) list.push({ en: clip(en), he: clip(he) });
+    const finding = { en: readText(en), he: readText(he) };
+    if (!finding.en || !finding.he) return null;
+    const empty = (t: FindingText) => !t.title && !t.detail;
+    if (!empty(finding.en) || !empty(finding.he)) list.push({ en: finding.en, he: finding.he });
   }
   return list.slice(0, MAX_FINDINGS);
+}
+
+/**
+ * A finding's text in one language. Checks from before titles were stored
+ * hold a plain sentence per language: it's shown as the detail, untitled.
+ */
+export function findingText(finding: CheckFinding | { en: string; he: string }, locale: "en" | "he"): FindingText {
+  const value = finding[locale];
+  return typeof value === "string" ? { title: "", detail: value } : value;
 }
 
 /** The model's answer, or null when it isn't one (not JSON, or not this shape). */

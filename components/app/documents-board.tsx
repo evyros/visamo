@@ -7,11 +7,11 @@ import type { Locale } from "@/i18n/config";
 import { formatAgo } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
-import type { CheckRating } from "@/lib/checks/result";
+import type { CheckRating, FindingText } from "@/lib/checks/result";
 import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { progressOf, uploadedKeys } from "@/lib/documents/progress";
-import { ACCEPTED_TYPES, MAX_FILE_BYTES, MAX_FILES_PER_SLOT, isAcceptedType, type FileSlot } from "@/lib/files/rules";
+import { ACCEPTED_TYPES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
 import { Icon } from "@/components/icons";
 
@@ -31,11 +31,8 @@ export type DocumentItem = {
   key: string;
   title: string;
   description: string;
-  /** Copies, certification, exemption. */
-  badges: string[];
-  mayNeedTranslation: boolean;
-  /** May come with an apostille, which belongs in the same file. */
-  needsApostille: boolean;
+  /** What to prepare before uploading: certification (with its exemption), translation, copies. */
+  requirements: { icon: "shield" | "globe" | "file"; text: string }[];
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;
   check: {
@@ -72,7 +69,6 @@ export type RetiredDocument = { key: string; title: string };
 type Pending = {
   id: string;
   documentKey: string;
-  slot: FileSlot;
   file: File;
   /** A local preview of an image, shown until the server's thumbnail. */
   previewUrl: string | null;
@@ -133,8 +129,8 @@ export function DocumentsBoard({
     ),
   );
   const [pending, setPending] = useState<Pending[]>([]);
-  // Per document and slot: an error about files that weren't added.
-  const [slotErrors, setSlotErrors] = useState<Record<string, string>>({});
+  // Per document: an error about files that weren't added.
+  const [addErrors, setAddErrors] = useState<Record<string, string>>({});
   const limit = useLimiter(2);
   // Local previews still open, revoked when done or when leaving the page.
   const previewUrls = useRef(new Set<string>());
@@ -155,7 +151,7 @@ export function DocumentsBoard({
     let { target, uploaded } = item;
     try {
       if (!target) {
-        const started = await startUpload(item.documentKey, item.slot);
+        const started = await startUpload(item.documentKey);
         if ("error" in started) return change(item.id, { phase: "failed", error: started.error });
         target = started;
         change(item.id, { target });
@@ -176,7 +172,6 @@ export function DocumentsBoard({
       const result = await finishUpload({
         fileId: target.fileId,
         documentKey: item.documentKey,
-        slot: item.slot,
         name: item.file.name,
       });
       if ("error" in result) {
@@ -198,11 +193,10 @@ export function DocumentsBoard({
     }
   }
 
-  function add(documentKey: string, slot: FileSlot, chosen: File[], replaces?: string) {
-    const slotKey = `${documentKey}/${slot}`;
+  function add(documentKey: string, chosen: File[], replaces?: string) {
     const here =
-      files.filter((f) => f.documentKey === documentKey && f.slot === slot && f.id !== replaces).length +
-      pending.filter((p) => p.documentKey === documentKey && p.slot === slot).length;
+      files.filter((f) => f.documentKey === documentKey && f.id !== replaces).length +
+      pending.filter((p) => p.documentKey === documentKey).length;
     let error: string | undefined;
     const accepted = chosen.filter((file) => {
       if (!isAcceptedType(file.type)) error = t.errors.type;
@@ -210,14 +204,13 @@ export function DocumentsBoard({
       else return true;
       return false;
     });
-    const room = Math.max(0, MAX_FILES_PER_SLOT - here);
+    const room = Math.max(0, MAX_FILES_PER_DOCUMENT - here);
     if (accepted.length > room) error = t.errors.tooMany;
-    setSlotErrors((errors) => ({ ...errors, [slotKey]: error ?? "" }));
+    setAddErrors((errors) => ({ ...errors, [documentKey]: error ?? "" }));
 
     const items: Pending[] = accepted.slice(0, room).map((file) => ({
       id: crypto.randomUUID(),
       documentKey,
-      slot,
       file,
       previewUrl: file.type.startsWith("image/") ? preview(file) : null,
       phase: "uploading",
@@ -311,11 +304,8 @@ export function DocumentsBoard({
                   onCheck={() => check(item.key)}
                   files={files.filter((f) => f.documentKey === item.key)}
                   pending={pending.filter((p) => p.documentKey === item.key)}
-                  errors={{
-                    original: slotErrors[`${item.key}/original`],
-                    translation: slotErrors[`${item.key}/translation`],
-                  }}
-                  onAdd={(slot, chosen, replaces) => add(item.key, slot, chosen, replaces)}
+                  error={addErrors[item.key]}
+                  onAdd={(chosen, replaces) => add(item.key, chosen, replaces)}
                   onRemove={remove}
                   onRetry={retry}
                   onDismiss={dismiss}
@@ -382,8 +372,8 @@ function RetiredCard({
   );
 }
 
-type SlotHandlers = {
-  onAdd: (slot: FileSlot, files: File[], replaces?: string) => void;
+type FileHandlers = {
+  onAdd: (files: File[], replaces?: string) => void;
   onRemove: (fileId: string) => Promise<void>;
   onRetry: (item: Pending) => void;
   onDismiss: (item: Pending) => void;
@@ -399,7 +389,7 @@ function DocumentCard({
   onCheck,
   files,
   pending,
-  errors,
+  error,
   ...handlers
 }: {
   t: Labels;
@@ -411,19 +401,11 @@ function DocumentCard({
   onCheck: () => void;
   files: FileView[];
   pending: Pending[];
-  errors: Partial<Record<FileSlot, string>>;
-} & SlotHandlers) {
+  error?: string;
+} & FileHandlers) {
   const [open, setOpen] = useState(false);
-  const [showTranslation, setShowTranslation] = useState(false);
   const bodyId = useId();
-  const of = (slot: FileSlot) => ({
-    files: files.filter((f) => f.slot === slot),
-    pending: pending.filter((p) => p.slot === slot),
-  });
-  const original = of("original");
-  const translation = of("translation");
-  const uploaded = original.files.length > 0;
-  const hasTranslation = translation.files.length > 0;
+  const uploaded = files.length > 0;
   // The result applies while it was checked against these very files and the current details.
   const last = check.last;
   const fresh = !!last && last.contextFresh && sameSet(last.fileIds, files.map((f) => f.id));
@@ -435,71 +417,54 @@ function DocumentCard({
         aria-expanded={open}
         aria-controls={bodyId}
         onClick={() => setOpen((o) => !o)}
-        className="group/card flex w-full items-start gap-3 rounded-card p-4 text-start focus-visible:outline-2 focus-visible:outline-teal-600 sm:p-5"
+        className="flex w-full items-start gap-3 rounded-card p-4 text-start focus-visible:outline-2 focus-visible:outline-teal-600 sm:p-5"
       >
         <span className="min-w-0 flex-1">
           <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="font-semibold text-navy-900">{item.title}</span>
-            <Status t={t} uploaded={uploaded} translated={hasTranslation} optional={item.optional} />
+            <Status t={t} uploaded={uploaded} optional={item.optional} />
           </span>
-          {item.badges.length > 0 && (
-            <span className="mt-2 flex flex-wrap gap-1.5">
-              {item.badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-medium text-slate-700 ring-1 ring-line-200"
-                >
-                  {badge}
-                </span>
-              ))}
-            </span>
-          )}
         </span>
-        {/* At the row's end, so every card's rating lines up with the others'. */}
-        {fresh && <CheckIcon rating={last.rating} label={t.check.ratings[last.rating]} tooltip />}
-        <Icon
-          name="chevronDown"
-          className={`mt-0.5 size-5 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
-        />
+        {/* At the row's end, so every card's rating lines up with the others'. Each sits
+            in a box one text line tall, centered on the title's first line. */}
+        {fresh && (
+          <span className="flex h-[1lh] shrink-0 items-center">
+            <CheckPill rating={last.rating} label={t.check.ratings[last.rating]} />
+          </span>
+        )}
+        <span className="flex h-[1lh] shrink-0 items-center">
+          <Icon
+            name="chevronDown"
+            className={`size-5 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+          />
+        </span>
       </button>
 
-      <div id={bodyId} hidden={!open} className="border-t border-line-200 px-4 pt-4 pb-5 sm:px-5">
-        <p className="text-[15px] text-slate-700">{item.description}</p>
-
-        <UploadArea
-          t={t}
-          slot="original"
-          hint={item.needsApostille ? `${t.uploadHint} ${t.uploadHintApostille}` : t.uploadHint}
-          intlLocale={intlLocale}
-          error={errors.original}
-          {...original}
-          {...handlers}
-        />
-
-        {item.mayNeedTranslation &&
-          (showTranslation || hasTranslation || translation.pending.length > 0 ? (
-            <UploadArea
-              t={t}
-              slot="translation"
-              label={t.translation.title}
-              hint={t.translation.note}
-              intlLocale={intlLocale}
-              error={errors.translation}
-              {...translation}
-              {...handlers}
-            />
-          ) : (
-            <button
-              type="button"
-              onClick={() => setShowTranslation(true)}
-              className="mt-4 text-[15px] font-semibold text-teal-700 underline-offset-4 hover:underline"
-            >
-              {t.translation.add}
-            </button>
-          ))}
+      <div id={bodyId} hidden={!open}>
+        <div className="border-t border-line-200 px-4 pt-4 pb-5 sm:px-5">
+          <p className="text-[15px] text-slate-700">{item.description}</p>
+          {item.requirements.length > 0 && (
+            <ul className="mt-3 space-y-1.5">
+              {item.requirements.map(({ icon, text }) => (
+                <li key={text} className="flex items-start gap-2 text-[15px] text-slate-700">
+                  <Icon name={icon} className="mt-1 size-4 shrink-0 text-teal-700" />
+                  {text}
+                </li>
+              ))}
+            </ul>
+          )}
+          <Uploads
+            t={t}
+            intlLocale={intlLocale}
+            files={files}
+            pending={pending}
+            error={error}
+            {...handlers}
+          />
+        </div>
 
         {item.check.checkable && (
-          <CheckPanel
+          <CheckFooter
             t={t}
             locale={locale}
             check={check}
@@ -517,43 +482,55 @@ function DocumentCard({
   );
 }
 
-const ratingStyle: Record<CheckRating, { icon: "checkCircle" | "info" | "alertCircle" | "eyeOff"; color: string }> = {
-  looksGood: { icon: "checkCircle", color: "bg-teal-600" },
-  canImprove: { icon: "info", color: "bg-amber-500" },
-  needsFixing: { icon: "alertCircle", color: "bg-crimson-600" },
-  unreadable: { icon: "eyeOff", color: "bg-slate-500" },
+/** Whether a drag carries files (not text or a link from the page). */
+const dragsFiles = (event: DragEvent) => event.dataTransfer.types.includes("Files");
+
+/** Per rating: its icon, its solid color, and its pale tint with the icon's color on it. */
+const ratingStyle: Record<
+  CheckRating,
+  { icon: "checkCircle" | "info" | "alertCircle" | "eyeOff"; color: string; tint: string; text: string }
+> = {
+  looksGood: { icon: "checkCircle", color: "bg-teal-600", tint: "bg-teal-100", text: "text-teal-700" },
+  canImprove: { icon: "info", color: "bg-amber-500", tint: "bg-amber-100", text: "text-amber-500" },
+  needsFixing: { icon: "alertCircle", color: "bg-crimson-600", tint: "bg-crimson-100", text: "text-crimson-600" },
+  unreadable: { icon: "eyeOff", color: "bg-slate-500", tint: "bg-slate-300/30", text: "text-slate-500" },
 };
 
-/**
- * The check's rating as an icon alone: the shape tells them apart, not only
- * the color. With `tooltip`, hovering it (or focusing its card) shows the
- * label; on a phone, the open card shows it next to the icon.
- */
-function CheckIcon({ rating, label, tooltip }: { rating: CheckRating; label: string; tooltip?: boolean }) {
+/** The check's rating as an icon alone: the shape tells them apart, not only the color. */
+function CheckIcon({ rating, label }: { rating: CheckRating; label: string }) {
   const { icon, color } = ratingStyle[rating];
   return (
-    <span className="group/check relative inline-flex shrink-0">
-      <span
-        role="img"
-        aria-label={label}
-        className={`inline-flex size-6 items-center justify-center rounded-full text-white ${color}`}
-      >
-        <Icon name={icon} className="size-4" />
-      </span>
-      {tooltip && (
-        // The icon's aria-label already says it: hidden from screen readers.
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 z-20 mb-2 whitespace-nowrap rounded-md bg-navy-900 px-2.5 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/check:opacity-100 group-focus-visible/card:opacity-100"
-        >
-          {label}
-        </span>
-      )}
+    <span
+      role="img"
+      aria-label={label}
+      className={`inline-flex size-6 shrink-0 items-center justify-center rounded-full text-white ${color}`}
+    >
+      <Icon name={icon} className="size-4" />
     </span>
   );
 }
 
-function CheckPanel({
+/**
+ * The rating in a card's header: its icon and label on its tint. The label
+ * is dark on every tint: amber text on pale amber would be too faint to read.
+ */
+function CheckPill({ rating, label }: { rating: CheckRating; label: string }) {
+  const { icon, tint, text } = ratingStyle[rating];
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold text-navy-900 ${tint}`}
+    >
+      <Icon name={icon} className={`size-4 ${text}`} />
+      {label}
+    </span>
+  );
+}
+
+/**
+ * The card's footer: the document check. One row (the state, and the button
+ * when there's something to check), then the findings when there's a result.
+ */
+function CheckFooter({
   t,
   locale,
   check,
@@ -573,88 +550,92 @@ function CheckPanel({
   onCheck: () => void;
 }) {
   const c = t.check;
-  const lockedId = useId();
   const last = check.last;
   const result = fresh && last ? last : null;
-  const findings = (title: string, list: string[]) =>
-    list.length > 0 && (
-      <div className="mt-3">
-        <h4 className="text-sm font-semibold text-navy-900">{title}</h4>
-        <ul className="mt-1 list-disc space-y-1 ps-5 text-[15px] text-slate-700">
-          {list.map((text) => (
-            <li key={text}>{text}</li>
-          ))}
-        </ul>
-      </div>
+  const button =
+    "inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-[15px] font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600";
+  // "2 to fix, 1 tip", in the language's plural forms.
+  const plural = new Intl.PluralRules(locale);
+  const count = (forms: { one: string; other: string }, n: number) =>
+    n > 0 && format(plural.select(n) === "one" ? forms.one : forms.other, { count: n });
+  const counts = result && [count(c.counts.fix, result.issues.length), count(c.counts.tip, result.recommendations.length)];
+
+  let state: ReactNode = null;
+  let action: ReactNode = null;
+  // A current result shows whatever the plan: it was checked.
+  if (result) {
+    state = (
+      // The texts share a baseline (they're different sizes); the icon is centered on them.
+      <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+        <span className="self-center">
+          <CheckIcon rating={result.rating} label={c.ratings[result.rating]} />
+        </span>
+        <span className="font-semibold text-navy-900">{c.ratings[result.rating]}</span>
+        {counts?.some(Boolean) && (
+          <span className="text-slate-700">· {counts.filter(Boolean).join(", ")}</span>
+        )}
+        {/* At the row's end; on a phone, a line of its own. */}
+        <span className="basis-full text-sm text-slate-500 sm:ms-auto sm:basis-auto">
+          {format(result.checkedByName ? c.checkedBy : c.checkedOn, {
+            when: formatAgo(new Date(result.checkedAt), locale),
+            name: result.checkedByName ?? "",
+          })}
+        </span>
+      </span>
     );
+  } else if (check.running) {
+    state = (
+      <span aria-live="polite" className="flex items-center gap-2">
+        <span className="size-4 animate-spin rounded-full border-2 border-teal-600 border-t-transparent" />
+        {c.checking}
+      </span>
+    );
+  } else if (!settings.allowed) {
+    // Not in the plan: the button leads to the plans.
+    action = (
+      <a href={settings.pricingUrl} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
+        <Icon name="lock" className="size-4" />
+        {c.upgrade}
+      </a>
+    );
+  } else {
+    state = uploaded ? (last ? c.stale : c.notChecked) : c.needsOriginal;
+    action = (
+      <button
+        type="button"
+        onClick={onCheck}
+        disabled={!uploaded || uploading}
+        className={`${button} bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
+      >
+        <Icon name="checkCircle" className="size-4" />
+        {last ? c.again : c.check}
+      </button>
+    );
+  }
 
   return (
-    <section className="mt-6 rounded-[10px] border border-line-200 bg-sand-50 p-4">
-      <h3 className="text-[15px] font-semibold text-navy-900">{c.title}</h3>
+    <section aria-label={c.check} className="rounded-b-card border-t border-line-200 bg-white px-4 py-3 sm:px-5">
+      {/* As tall as the button in every state, so starting a check doesn't make the card jump. */}
+      <div className="flex min-h-10 flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <div className="min-w-0 flex-1 text-[15px] text-slate-700">{state}</div>
+        {action}
+      </div>
 
-      {!settings.allowed ? (
-        // Shown but disabled, so couples see what File Preparation adds. The reason is
-        // written out, not in a tooltip: phones have no hover, and a disabled button gets none.
-        <>
-          <p className="mt-2 text-[15px] text-slate-700">{c.intro}</p>
-          <button
-            type="button"
-            disabled
-            aria-describedby={lockedId}
-            className="mt-3 inline-flex cursor-not-allowed items-center gap-2 rounded-lg bg-line-200 px-4 py-2 text-[15px] font-semibold text-slate-500"
-          >
-            <Icon name="lock" className="size-4" />
-            {c.check}
-          </button>
-          <p id={lockedId} className="mt-2 text-sm text-slate-600">
-            {c.locked}{" "}
-            <a href={settings.pricingUrl} className="font-semibold text-teal-700 hover:underline">
-              {c.lockedLink}
-            </a>
-          </p>
-        </>
-      ) : check.running ? (
-        <p aria-live="polite" className="mt-2 flex items-center gap-2 text-[15px] text-slate-700">
-          <span className="size-4 animate-spin rounded-full border-2 border-teal-600 border-t-transparent" />
-          {c.checking}
-        </p>
-      ) : result ? (
+      {result && (
         <div aria-live="polite">
-          <p className="mt-2 flex items-center gap-2 font-semibold text-navy-900">
-            <CheckIcon rating={result.rating} label={c.ratings[result.rating]} />
-            {c.ratings[result.rating]}
-          </p>
-          {findings(c.issues, result.issues)}
-          {result.rating === "unreadable" && <p className="mt-2 text-[15px] text-slate-700">{c.unreadableHint}</p>}
-          {findings(c.recommendations, result.recommendations)}
-          <p className="mt-3 text-sm text-slate-500">
-            {format(result.checkedByName ? c.checkedBy : c.checkedOn, {
-              when: formatAgo(new Date(result.checkedAt), locale),
-              name: result.checkedByName ?? "",
-            })}
-          </p>
-          <p className="mt-1 text-sm text-slate-500">{c.disclaimer}</p>
+          {/* One gap between every box, across the issues and the tips. */}
+          <div className="mt-2.5 space-y-1.5">
+            <Findings
+              kind={result.rating === "unreadable" ? "unreadable" : "issue"}
+              label={c.issues}
+              list={result.issues}
+            />
+            {result.rating === "unreadable" && <p className="text-[15px] text-slate-700">{c.unreadableHint}</p>}
+            <Findings kind="tip" label={c.recommendations} list={result.recommendations} />
+          </div>
+          <p className="mt-3 text-xs text-slate-500">{c.disclaimer}</p>
         </div>
-      ) : (
-        <>
-          <p className="mt-2 text-[15px] text-slate-700">{last ? c.stale : c.intro}</p>
-          {!uploaded ? (
-            <p className="mt-2 text-sm text-slate-500">{c.needsOriginal}</p>
-          ) : (
-            !uploading && (
-              <button
-                type="button"
-                onClick={onCheck}
-                className="mt-3 inline-flex items-center gap-2 rounded-lg bg-teal-600 px-4 py-2 text-[15px] font-semibold text-white hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-              >
-                <Icon name="checkCircle" className="size-4" />
-                {last ? c.again : c.check}
-              </button>
-            )
-          )}
-        </>
       )}
-
       {check.error && (
         <p role="alert" className="mt-2 text-sm font-medium text-terracotta-600">
           {check.error}
@@ -672,17 +653,45 @@ function CheckPanel({
   );
 }
 
-function Status({
-  t,
-  uploaded,
-  translated,
-  optional,
+const findingStyle = {
+  issue: { icon: "alertCircle", box: "border-s-crimson-600 bg-crimson-100", color: "text-crimson-600" },
+  tip: { icon: "info", box: "border-s-amber-500 bg-amber-100", color: "text-amber-500" },
+  // What the checker couldn't read: the rating's grey, not an issue's red.
+  unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500" },
+} as const;
+
+/**
+ * A check's issues or recommendations, each in its own box, tinted and
+ * edged by its kind, so there are no headings. `label` names the list for
+ * screen readers.
+ */
+function Findings({
+  kind,
+  label,
+  list,
 }: {
-  t: Labels;
-  uploaded: boolean;
-  translated: boolean;
-  optional: boolean;
+  kind: keyof typeof findingStyle;
+  label: string;
+  list: FindingText[];
 }) {
+  if (list.length === 0) return null;
+  const style = findingStyle[kind];
+  return (
+    <ul aria-label={label} className="space-y-1.5">
+      {list.map(({ title, detail }) => (
+        <li key={title + detail} className={`flex gap-2 rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
+          <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
+          <div className="min-w-0">
+            {title && <p className="text-[15px] font-semibold text-navy-900">{title}</p>}
+            <p className="mt-0.5 text-sm text-slate-700">{detail}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function Status({ t, uploaded, optional }: { t: Labels; uploaded: boolean; optional: boolean }) {
   if (!uploaded) {
     return (
       <span className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
@@ -694,18 +703,19 @@ function Status({
     <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-700">
       <Icon name="checkCircle" className="size-3.5" />
       {t.status.uploaded}
-      {translated && <span className="font-medium"> {t.withTranslation}</span>}
     </span>
   );
 }
 
 const accept = ACCEPTED_TYPES.join(",");
 
-function UploadArea({
+/**
+ * The document's files, and one upload bar under them that looks the same
+ * with or without files. Everything that goes with the document is uploaded
+ * here: its pages, its apostille, its translation.
+ */
+function Uploads({
   t,
-  slot,
-  label,
-  hint,
   intlLocale,
   files,
   pending,
@@ -716,29 +726,24 @@ function UploadArea({
   onDismiss,
 }: {
   t: Labels;
-  slot: FileSlot;
-  /** Left out for the document itself: the card is about it. */
-  label?: string;
-  hint: string;
   intlLocale: string;
   files: FileView[];
   pending: Pending[];
   error?: string;
-} & SlotHandlers) {
-  const [dragging, setDragging] = useState(false);
+} & FileHandlers) {
   const inputId = useId();
-
-  function onDrop(event: DragEvent) {
-    event.preventDefault();
+  const [dragging, setDragging] = useState(false);
+  // Entering the bar's own text fires enter and leave too: count them.
+  const dragDepth = useRef(0);
+  const endDrag = () => {
+    dragDepth.current = 0;
     setDragging(false);
-    onAdd(slot, [...event.dataTransfer.files]);
-  }
+  };
 
   return (
-    <div className="mt-5">
-      {label && <h3 className="text-[15px] font-semibold text-navy-900">{label}</h3>}
+    <div className="mt-4">
       {(files.length > 0 || pending.length > 0) && (
-        <ul className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4">
+        <ul className="mb-3 grid grid-cols-3 gap-3 sm:grid-cols-4">
           {files.map((file) => (
             <li key={file.id}>
               <FileTile
@@ -746,7 +751,7 @@ function UploadArea({
                 file={file}
                 intlLocale={intlLocale}
                 onRemove={() => onRemove(file.id)}
-                onReplace={(replacement) => onAdd(slot, [replacement], file.id)}
+                onReplace={(replacement) => onAdd([replacement], file.id)}
               />
             </li>
           ))}
@@ -757,21 +762,34 @@ function UploadArea({
           ))}
         </ul>
       )}
+
       <label
         htmlFor={inputId}
-        onDragOver={(event) => {
+        onDragEnter={(event) => {
+          if (!dragsFiles(event)) return;
           event.preventDefault();
+          dragDepth.current++;
           setDragging(true);
         }}
-        onDragLeave={() => setDragging(false)}
-        onDrop={onDrop}
-        className={`relative mt-3 flex cursor-pointer flex-col items-center justify-center gap-1 rounded-[10px] border-[1.5px] border-dashed px-4 py-5 text-center transition has-focus-visible:ring-2 has-focus-visible:ring-teal-600/40 ${
-          dragging ? "border-teal-600 bg-teal-100/50" : "border-line-200 hover:border-teal-600"
+        onDragOver={(event) => dragsFiles(event) && event.preventDefault()}
+        onDragLeave={() => {
+          if (--dragDepth.current <= 0) endDrag();
+        }}
+        onDrop={(event) => {
+          if (!dragsFiles(event)) return;
+          event.preventDefault();
+          endDrag();
+          onAdd([...event.dataTransfer.files]);
+        }}
+        className={`flex cursor-pointer flex-wrap items-center gap-x-2 gap-y-1 rounded-[10px] border-[1.5px] border-dashed px-4 py-5 text-[15px] transition has-focus-visible:border-teal-600 has-focus-visible:ring-2 has-focus-visible:ring-teal-600/40 ${
+          dragging ? "border-teal-600 bg-teal-100/60" : "border-line-200 hover:border-teal-600 hover:bg-teal-100/40"
         }`}
       >
-        <Icon name="upload" className="size-6 text-teal-700" />
-        <span className="text-[15px] font-semibold text-teal-700">{t.choose}</span>
-        <span className="text-sm text-slate-500 max-sm:hidden">{t.drop}</span>
+        <Icon name="upload" className="size-5 shrink-0 text-teal-700" />
+        <span className="font-semibold text-teal-700">{t.choose}</span>
+        <span className="text-slate-500 max-sm:hidden">{t.drop}</span>
+        {/* What can be uploaded, at the bar's end; on a narrow screen it wraps under. */}
+        <span className="ms-auto text-sm text-slate-500">{t.uploadHint}</span>
         <input
           id={inputId}
           type="file"
@@ -779,17 +797,16 @@ function UploadArea({
           multiple
           className="sr-only"
           onChange={(event) => {
-            onAdd(slot, [...(event.target.files ?? [])]);
+            onAdd([...(event.target.files ?? [])]);
             event.target.value = "";
           }}
         />
       </label>
-      {error ? (
+
+      {error && (
         <p role="alert" className="mt-2 text-sm font-medium text-terracotta-600">
           {error}
         </p>
-      ) : (
-        <p className="mt-2 text-sm text-slate-600">{hint}</p>
       )}
     </div>
   );
@@ -850,7 +867,11 @@ function PendingTile({
           </span>
         )}
       </Thumb>
-      <p className="mt-1.5 truncate text-sm text-slate-700">{item.file.name}</p>
+      {/* The same row as a finished file's, the menu's place kept, so the name doesn't move when it's done. */}
+      <div className="mt-1.5 flex items-center gap-1">
+        <p className="min-w-0 flex-1 truncate text-sm text-slate-700">{item.file.name}</p>
+        <span aria-hidden="true" className="size-8 shrink-0" />
+      </div>
       <p aria-live="polite" className="sr-only">
         {item.phase === "processing" ? t.processing : ""}
       </p>
@@ -1010,7 +1031,7 @@ function FileMenu({
   const item = "flex w-full items-center px-3 py-2 text-start text-[15px] text-navy-900 hover:bg-navy-900/5";
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative flex">
       <button
         type="button"
         aria-label={format(t.file.menu, { name: file.name })}

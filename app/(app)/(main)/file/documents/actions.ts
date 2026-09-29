@@ -5,7 +5,7 @@ import { and, count, eq, isNull } from "drizzle-orm";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
 import { db } from "@/lib/db";
 import { caseFile } from "@/lib/db/schema";
-import { MAX_FILE_BYTES, MAX_FILES_PER_SLOT, fileSlots, sniffType, type FileSlot } from "@/lib/files/rules";
+import { MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, sniffType } from "@/lib/files/rules";
 import { filePath, thumbnailPath } from "@/lib/files/storage";
 import { makeThumbnail } from "@/lib/files/thumbnail";
 import { fileView, type FileView } from "@/lib/files/view";
@@ -22,31 +22,19 @@ export type UploadError = "notAllowed" | "tooMany" | "missing" | "type" | "size"
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
-/** Whether the case's list has this item, and it takes files in this slot. */
-async function allowed(caseId: string, documentKey: string, slot: unknown): Promise<boolean> {
-  if (!(fileSlots as readonly unknown[]).includes(slot)) return false;
-  const item = (await caseDocuments(caseId)).list.find((d) => d.key === documentKey);
-  return !!item && (slot === "original" || item.mayNeedTranslation);
+/** Whether the case's list has this item. */
+async function allowed(caseId: string, documentKey: string): Promise<boolean> {
+  return (await caseDocuments(caseId)).list.some((d) => d.key === documentKey);
 }
 
-export async function startUpload(
-  documentKey: string,
-  slot: FileSlot,
-): Promise<{ fileId: string; pathname: string } | { error: UploadError }> {
+export async function startUpload(documentKey: string): Promise<{ fileId: string; pathname: string } | { error: UploadError }> {
   const { caseId } = await requireCase();
-  if (!(await allowed(caseId, documentKey, slot))) return { error: "notAllowed" };
+  if (!(await allowed(caseId, documentKey))) return { error: "notAllowed" };
   const [{ files }] = await db
     .select({ files: count() })
     .from(caseFile)
-    .where(
-      and(
-        eq(caseFile.caseId, caseId),
-        eq(caseFile.documentKey, documentKey),
-        eq(caseFile.slot, slot),
-        isNull(caseFile.deletedAt),
-      ),
-    );
-  if (files >= MAX_FILES_PER_SLOT) return { error: "tooMany" };
+    .where(and(eq(caseFile.caseId, caseId), eq(caseFile.documentKey, documentKey), isNull(caseFile.deletedAt)));
+  if (files >= MAX_FILES_PER_DOCUMENT) return { error: "tooMany" };
   const fileId = crypto.randomUUID();
   return { fileId, pathname: filePath(caseId, fileId) };
 }
@@ -74,17 +62,16 @@ async function viewOf(caseId: string, fileId: string) {
 export async function finishUpload(input: {
   fileId: string;
   documentKey: string;
-  slot: FileSlot;
   name: string;
 }): Promise<{ file: FileView } | { error: UploadError }> {
   const { user, caseId } = await requireCase();
-  const { fileId, documentKey, slot } = input;
+  const { fileId, documentKey } = input;
   if (typeof fileId !== "string" || !UUID.test(fileId)) return { error: "notAllowed" };
 
   // Already finished: a retry after the answer got lost.
   const done = await viewOf(caseId, fileId);
   if (done) return { file: done };
-  if (!(await allowed(caseId, documentKey, slot))) return { error: "notAllowed" };
+  if (!(await allowed(caseId, documentKey))) return { error: "notAllowed" };
 
   const path = filePath(caseId, fileId);
   try {
@@ -118,7 +105,6 @@ export async function finishUpload(input: {
           id: fileId,
           caseId,
           documentKey,
-          slot,
           contentType: type,
           size: bytes.length,
           name,
@@ -126,7 +112,7 @@ export async function finishUpload(input: {
           uploadedBy: user.id,
         })
         .onConflictDoNothing(),
-      recordEvent(caseId, user.id, { type: "file.uploaded", data: { documentKey, slot, name } }, fileId),
+      recordEvent(caseId, user.id, { type: "file.uploaded", data: { documentKey, name } }, fileId),
     ]);
   } catch (error) {
     console.error("finishUpload failed", error);
@@ -142,7 +128,6 @@ export async function deleteFile(fileId: string): Promise<{ error?: "generic" }>
     .select({
       id: caseFile.id,
       documentKey: caseFile.documentKey,
-      slot: caseFile.slot,
       name: caseFile.name,
     })
     .from(caseFile)
@@ -151,10 +136,10 @@ export async function deleteFile(fileId: string): Promise<{ error?: "generic" }>
   if (!file) return {};
   try {
     // Only hidden: the file stays in the store and the database, with the checks that saw it (see caseFile).
-    const { documentKey, slot, name } = file;
+    const { documentKey, name } = file;
     await db.batch([
       db.update(caseFile).set({ deletedAt: new Date(), deletedBy: user.id }).where(eq(caseFile.id, fileId)),
-      recordEvent(caseId, user.id, { type: "file.deleted", data: { documentKey, slot, name } }),
+      recordEvent(caseId, user.id, { type: "file.deleted", data: { documentKey, name } }),
     ]);
   } catch (error) {
     console.error("deleteFile failed", error);

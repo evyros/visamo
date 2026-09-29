@@ -21,8 +21,8 @@ import { checkFor } from "@/lib/documents/checks";
 import { knowledgeHash } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
 
-// Checks one item of the case's list: all its files (the document and its
-// translation) go to the model together, which rates them and says what to
+// Checks one item of the case's list: all its files (the document, and its
+// apostille or translation if they're there) go to the model together, which rates them and says what to
 // fix or improve. One check counts toward the case's fair-use limit, given
 // back if it fails or the files can't be read. One check runs per item at a
 // time; the item's last result stays until the new one replaces it. Every
@@ -97,7 +97,7 @@ export async function POST(request: Request) {
   const check = checkFor(documentKey);
   if (!check) return fail("notCheckable", 400);
   const files = allFiles.filter((f) => f.documentKey === documentKey);
-  if (!files.some((f) => f.slot === "original")) return fail("noDocument", 400);
+  if (files.length === 0) return fail("noDocument", 400);
 
   const started = performance.now();
   const context = checkContext(details, item, await loadMessages("en"));
@@ -130,7 +130,10 @@ export async function POST(request: Request) {
     if (!prepared.ok) {
       // A file PDFium can't open: no need to ask the model, and not counted.
       const [en, he] = await Promise.all([loadMessages("en"), loadMessages("he")]);
-      const say = (t: typeof en) => format(t.app.documentsPage.check.cantOpen, { name: prepared.unreadable });
+      const say = (t: typeof en) => ({
+        title: t.app.documentsPage.check.cantOpenTitle,
+        detail: format(t.app.documentsPage.check.cantOpen, { name: prepared.unreadable }),
+      });
       result = { rating: "unreadable", issues: [{ en: say(en), he: say(he) }], recommendations: [] };
     } else {
       measured.pages = prepared.pages;

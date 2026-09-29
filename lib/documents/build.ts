@@ -23,9 +23,8 @@ export type RequiredDocument = {
   /** Null for documents not issued by an authority (forms, photos, evidence). */
   certification: Certification | null;
   /**
-   * May need a certified translation (see the catalog): offer an optional
-   * translation upload next to the original. The item is done once the
-   * original is uploaded.
+   * May need a certified translation (see the catalog): the page says so.
+   * The translation is uploaded with the document, as one of its files.
    */
   mayNeedTranslation: boolean;
   /** The facts that put it on the list; empty for documents every couple needs. */

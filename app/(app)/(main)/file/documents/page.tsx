@@ -12,7 +12,12 @@ import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
 import { requireCase } from "@/lib/session";
 import { localePath, site, whatsappUrl } from "@/lib/site";
-import { DocumentsBoard, type DocumentGroup, type RetiredDocument } from "@/components/app/documents-board";
+import {
+  DocumentsBoard,
+  type DocumentGroup,
+  type DocumentItem,
+  type RetiredDocument,
+} from "@/components/app/documents-board";
 
 // finishUpload makes a thumbnail, which for a large scanned PDF takes a few seconds.
 export const maxDuration = 60;
@@ -54,20 +59,25 @@ export default async function DocumentsPage() {
           const text = catalog.items[d.id];
           const country = d.country ? regionName(d.country, locale) : "";
           const auth = d.certification?.authentication;
+          const exemptUntil = d.certification?.exemptIfIssuedUntil;
           const check = checks.get(d.key);
+          // What to prepare, in the order it takes time: certification, translation, copies.
+          const requirements: DocumentItem["requirements"] = [];
+          if (auth && auth !== "none") {
+            const what = t.authentication[auth];
+            requirements.push({
+              icon: "shield",
+              text: exemptUntil ? format(t.requirements.unlessIssuedUntil, { what, year: exemptUntil }) : what,
+            });
+          }
+          if (d.mayNeedTranslation) requirements.push({ icon: "globe", text: t.requirements.translation });
+          if (d.copies) requirements.push({ icon: "file", text: format(t.requirements.copies, { count: d.copies }) });
           return {
             key: d.key,
             title: format(text.title, { country }),
             description: format(text.description, { country }),
-            badges: [
-              d.copies && format(t.copies, { count: d.copies }),
-              auth && auth !== "none" && t.authentication[auth],
-              d.certification?.exemptIfIssuedUntil &&
-                format(t.exemptUntil, { year: d.certification.exemptIfIssuedUntil }),
-            ].filter((b): b is string => !!b),
-            mayNeedTranslation: d.mayNeedTranslation,
+            requirements,
             optional: d.optional,
-            needsApostille: auth === "apostille" || auth === "utahApostille" || auth === "dependsOnCountry",
             check: {
               checkable: check?.checkable ?? false,
               running: check?.running ?? false,

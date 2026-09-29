@@ -16,7 +16,7 @@ const MAX_CHECK_BYTES = 24 * 1024 * 1024;
 /** Longest image side sent: enough to read small print on a phone photo. */
 const IMAGE_SIDE = 2000;
 
-type CheckFile = { id: string; slot: string; name: string; contentType: string };
+type CheckFile = { id: string; name: string; contentType: string };
 
 export type PreparedFiles =
   /** `pages` and `bytes` are what's sent, after images are downscaled. */
@@ -60,15 +60,14 @@ async function downscaled(bytes: Uint8Array) {
   }
 }
 
-/** The files as the model's content: each labelled (its name, and whether it's the translation), then the file. */
+/** The files as the model's content: each labelled with its name, then the file. */
 export async function prepareFiles(caseId: string, files: CheckFile[]): Promise<PreparedFiles> {
   const parts: ContentPart[] = [];
   let pages = 0;
   let bytes = 0;
   for (const [index, file] of files.entries()) {
     const content = await read(caseId, file.id);
-    const what = file.slot === "translation" ? "the translation" : "the document itself";
-    parts.push({ type: "text", text: `File ${index + 1} of ${files.length}: "${file.name}" (${what})` });
+    parts.push({ type: "text", text: `File ${index + 1} of ${files.length}: "${file.name}"` });
 
     if (file.contentType === "application/pdf") {
       const count = await pdfPages(content);

@@ -10,8 +10,8 @@ import { caseEvent, casePerson } from "./db/schema";
 /** Every kind of event, with the details it keeps. A type's data never changes shape once written. */
 export type CaseEvent =
   | { type: "case.created"; data: Record<string, never> }
-  | { type: "file.uploaded"; data: { documentKey: string; slot: string; name: string } }
-  | { type: "file.deleted"; data: { documentKey: string; slot: string; name: string } }
+  | { type: "file.uploaded"; data: { documentKey: string; name: string } }
+  | { type: "file.deleted"; data: { documentKey: string; name: string } }
   /** `rating` is a CheckRating from lib/checks/result.ts. */
   | { type: "document.checked"; data: { documentKey: string; rating: string } }
   | { type: "partner.invited"; data: { email: string } }

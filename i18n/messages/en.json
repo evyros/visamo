@@ -1320,28 +1320,18 @@
         "optional": "Optional & recommended",
         "retired": "Not needed"
       },
-      "withTranslation": "+ translation",
-      "copies": "{count} copies",
       "authentication": {
         "apostille": "Apostille needed",
         "legalization": "Consular legalization needed",
         "utahApostille": "Apostille from Utah",
         "dependsOnCountry": "Apostille or legalization, by country"
       },
-      "exemptUntil": "No authentication if issued up to {year}",
-      "choose": "Choose files",
-      "drop": "or drop them here",
-      "uploadHint": "PDF, JPG or PNG, up to 20 MB each. Include every page.",
-      "uploadHintApostille": "Include the apostille in the same file.",
+      "choose": "Upload files",
+      "uploadHint": "PDF, JPG or PNG, up to 20 MB each.",
       "uploading": "Uploading… {percent}%",
       "processing": "Processing…",
       "retry": "Try again",
       "dismiss": "Dismiss",
-      "translation": {
-        "add": "Add a notarized translation",
-        "title": "Notarized translation",
-        "note": "Needed unless the document is in Hebrew or Arabic. English is usually accepted, but the clerk may ask for a translation."
-      },
       "file": {
         "menu": "Options for {name}",
         "preview": "Open {name}",
@@ -1371,21 +1361,17 @@
           "needsFixing": "Needs fixing",
           "unreadable": "Couldn't read"
         },
-        "title": "Document check",
-        "intro": "Visamo checks every file of this document together, and tells you what to fix or improve.",
         "check": "Check the document",
         "again": "Check again",
         "checking": "Checking… this can take up to a minute.",
         "needsOriginal": "Upload the document to check it.",
-        "stale": "The files or your details changed since the last check. Check again to see where it stands now.",
+        "stale": "Documents changed since the last check",
         "issues": "What needs fixing",
         "recommendations": "How to improve",
         "unreadableHint": "Upload a clearer scan, or a PDF without a password. This check wasn't counted.",
         "checkedBy": "Checked {when} by {name}",
         "checkedOn": "Checked {when}",
-        "disclaimer": "Checks published requirements; not legal review.",
-        "locked": "Document checks come with the File Preparation plan.",
-        "lockedLink": "See the plans",
+        "disclaimer": "Not a legal review or legal advice.",
         "checksLow": "You've used {used} of your {allowed} document checks. Need more?",
         "contactSupport": "Contact support",
         "cantOpen": "We couldn't open \"{name}\". It may be damaged or protected by a password.",
@@ -1397,7 +1383,26 @@
           "plan": "Document checks come with File Preparation.",
           "failed": "The check didn't finish, and it wasn't counted. Please try again.",
           "generic": "Something went wrong. Please try again."
+        },
+        "notChecked": "Not checked yet",
+        "upgrade": "Upgrade to check the document",
+        "cantOpenTitle": "Couldn't open a file",
+        "counts": {
+          "fix": {
+            "one": "1 to fix",
+            "other": "{count} to fix"
+          },
+          "tip": {
+            "one": "1 tip",
+            "other": "{count} tips"
+          }
         }
+      },
+      "drop": "or drop them here",
+      "requirements": {
+        "copies": "Bring {count} copies to Misrad Hapnim",
+        "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
+        "translation": "Translation may be needed, unless it's in Hebrew, Arabic or English."
       }
     },
     "overview": {
@@ -1479,7 +1484,6 @@
         "pageIntro": "The last 100 things either of you did in the file.",
         "back": "Back to the overview",
         "someone": "Someone",
-        "translationOf": "the translation of {document}",
         "aDocument": "a document",
         "events": {
           "case.created": {

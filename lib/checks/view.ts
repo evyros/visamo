@@ -1,11 +1,11 @@
 import type { Locale } from "@/i18n/config";
-import type { CheckRating } from "./result";
+import { findingText, type CheckFinding, type CheckRating, type FindingText } from "./result";
 
 /** An item's latest check as the documents page shows it, in the viewer's language. */
 export type CheckView = {
   rating: CheckRating;
-  issues: string[];
-  recommendations: string[];
+  issues: FindingText[];
+  recommendations: FindingText[];
   /** ISO date. */
   checkedAt: string;
   /** Null when the account is gone. */
@@ -18,7 +18,7 @@ export type CheckView = {
 
 export function checkView(
   check: {
-    result: { rating: CheckRating; issues: { en: string; he: string }[]; recommendations: { en: string; he: string }[] } | null;
+    result: { rating: CheckRating; issues: CheckFinding[]; recommendations: CheckFinding[] } | null;
     checkedAt: Date | null;
     checkedByName: string | null;
     fileIds: string[];
@@ -29,8 +29,8 @@ export function checkView(
   if (!check.result || !check.checkedAt) return null;
   return {
     rating: check.result.rating,
-    issues: check.result.issues.map((f) => f[locale]),
-    recommendations: check.result.recommendations.map((f) => f[locale]),
+    issues: check.result.issues.map((f) => findingText(f, locale)),
+    recommendations: check.result.recommendations.map((f) => findingText(f, locale)),
     checkedAt: check.checkedAt.toISOString(),
     checkedByName: check.checkedByName,
     fileIds: check.fileIds,

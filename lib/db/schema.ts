@@ -224,8 +224,6 @@ export const caseFile = pgTable(
       .references(() => cases.id, { onDelete: "cascade" }),
     /** The list item's key from lib/documents: a document id, or `id:country`. */
     documentKey: text("document_key").notNull(),
-    /** A FileSlot from lib/files/rules.ts: the document itself, or its translation. */
-    slot: text("slot").notNull(),
     /** "application/pdf", "image/jpeg" or "image/png", from the file's contents. */
     contentType: text("content_type").notNull(),
     size: integer("size").notNull(),

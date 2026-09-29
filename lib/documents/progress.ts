@@ -1,7 +1,7 @@
 import type { Owner } from "./catalog";
 
-// How far along a case's list is. A document is done once its original is
-// uploaded: the translation is optional. An optional document counts only
+// How far along a case's list is. A document is done once it has a file
+// uploaded. An optional document counts only
 // once it's uploaded, never as missing. The documents page and the overview
 // both count this way.
 
@@ -28,7 +28,7 @@ export function progressByOwner(
     .filter((g) => g.progress.total > 0);
 }
 
-/** The keys with an original uploaded, from a case's files. */
-export function uploadedKeys(files: readonly { documentKey: string; slot: string }[]): Set<string> {
-  return new Set(files.filter((f) => f.slot === "original").map((f) => f.documentKey));
+/** The keys with a file uploaded, from a case's files. */
+export function uploadedKeys(files: readonly { documentKey: string }[]): Set<string> {
+  return new Set(files.map((f) => f.documentKey));
 }

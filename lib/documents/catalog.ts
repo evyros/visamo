@@ -45,10 +45,11 @@ export type DocumentDefinition = {
   issuedBy?: IssuedBy;
   /**
    * Whether the couple may bring it in a language that needs a translation
-   * (anything but Hebrew or Arabic): the page then offers an optional
-   * translation upload next to it. Decided per document, never from where
-   * it's issued: the same document can come from anywhere. False for forms in
-   * the ministry's wording, Israeli documents, photos and passports.
+   * (anything but Hebrew or Arabic): the page then marks it "Translation may
+   * be needed", and the translation is uploaded with it. Decided per
+   * document, never from where it's issued: the same document can come from
+   * anywhere. False for forms in the ministry's wording, Israeli documents,
+   * photos and passports.
    */
   mayNeedTranslation: boolean;
   /** An exemption from authentication, by where it's from. */

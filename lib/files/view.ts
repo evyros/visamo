@@ -1,10 +1,7 @@
-import type { FileSlot } from "./rules";
-
 /** An uploaded file as the documents page shows it. */
 export type FileView = {
   id: string;
   documentKey: string;
-  slot: FileSlot;
   contentType: string;
   name: string;
   hasThumbnail: boolean;
@@ -17,12 +14,19 @@ export type FileView = {
 export function fileView(row: {
   id: string;
   documentKey: string;
-  slot: string;
   contentType: string;
   name: string;
   hasThumbnail: boolean;
   uploaderName: string | null;
   createdAt: Date;
 }): FileView {
-  return { ...row, slot: row.slot as FileSlot, createdAt: row.createdAt.toISOString() };
+  return {
+    id: row.id,
+    documentKey: row.documentKey,
+    contentType: row.contentType,
+    name: row.name,
+    hasThumbnail: row.hasThumbnail,
+    uploaderName: row.uploaderName,
+    createdAt: row.createdAt.toISOString(),
+  };
 }

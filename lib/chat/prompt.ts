@@ -3,6 +3,7 @@ import { asc, eq } from "drizzle-orm";
 import { loadMessages } from "@/i18n/messages";
 import { regionName } from "@/i18n/format";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
+import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
 import { db } from "@/lib/db";
 import { casePerson, cases } from "@/lib/db/schema";
@@ -97,7 +98,7 @@ export async function casePrompt(caseId: string, userId: string) {
       ])
     : "";
 
-  const uploaded = new Set(files.filter((f) => f.slot === "original").map((f) => f.documentKey));
+  const uploaded = new Set(files.map((f) => f.documentKey));
   // Only the check's findings, never how documents are checked: the chat doesn't know that.
   const checked = (key: string) => {
     const check = checks.get(key);
@@ -105,8 +106,13 @@ export async function casePrompt(caseId: string, userId: string) {
     if (!check.result) return "not checked yet";
     if (!check.fresh) return "its files or the couple's details changed since the last check";
     const { rating, issues, recommendations } = check.result;
-    const say = (label: string, list: { en: string }[]) =>
-      list.length ? `${label}: ${list.map((f) => f.en).join(" / ")}` : null;
+    const say = (label: string, list: CheckFinding[]) =>
+      list.length
+        ? `${label}: ${list
+            .map((f) => findingText(f, "en"))
+            .map(({ title, detail }) => (title ? `${title}: ${detail}` : detail))
+            .join(" / ")}`
+        : null;
     return [
       `checked: ${t.app.documentsPage.check.ratings[rating].toLowerCase()}`,
       say("issues", issues),

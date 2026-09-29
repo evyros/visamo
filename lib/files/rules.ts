@@ -7,12 +7,8 @@ export type AcceptedType = (typeof ACCEPTED_TYPES)[number];
 /** Per file. Scanned PDFs and phone photos are rarely bigger. */
 export const MAX_FILE_BYTES = 20 * 1024 * 1024;
 
-/** Per document and slot: a passport's pages, the sides of a certificate. */
-export const MAX_FILES_PER_SLOT = 10;
-
-/** The document itself, or its certified translation. */
-export const fileSlots = ["original", "translation"] as const;
-export type FileSlot = (typeof fileSlots)[number];
+/** Per document, everything that goes with it: a passport's pages, a certificate and its apostille and translation. */
+export const MAX_FILES_PER_DOCUMENT = 10;
 
 export const isAcceptedType = (type: string): type is AcceptedType =>
   (ACCEPTED_TYPES as readonly string[]).includes(type);

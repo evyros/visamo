@@ -26,11 +26,8 @@ describe("progressByOwner", () => {
 });
 
 describe("uploadedKeys", () => {
-  it("takes originals only: a translation alone doesn't make a document done", () => {
-    const keys = uploadedKeys([
-      { documentKey: "a", slot: "translation" },
-      { documentKey: "b", slot: "original" },
-    ]);
-    expect([...keys]).toEqual(["b"]);
+  it("takes each document with a file, once", () => {
+    const keys = uploadedKeys([{ documentKey: "a" }, { documentKey: "b" }, { documentKey: "a" }]);
+    expect([...keys]).toEqual(["a", "b"]);
   });
 });

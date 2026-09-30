@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
-import { localePath, whatsappUrl } from "@/lib/site";
+import { localePath } from "@/lib/site";
 import { FaqList } from "@/components/faq-list";
 import { FinalCta } from "@/components/final-cta";
 import { Features } from "@/components/home/features";
@@ -59,8 +59,8 @@ export default async function HomePage() {
           </div>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <p className="font-medium text-navy-900">{t.home.faq.more}</p>
-            <ButtonLink href={whatsappUrl()} variant="whatsapp" size="sm" icon="whatsapp">
-              {t.home.faq.whatsapp}
+            <ButtonLink href={localePath(locale, "/contact")} variant="secondary" size="sm">
+              {t.home.faq.contact}
             </ButtonLink>
           </div>
         </Container>

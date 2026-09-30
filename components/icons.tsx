@@ -144,12 +144,6 @@ const paths = {
   send: <path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z" />,
   arrowDown: <path d="M12 5v14m0 0-5-5m5 5 5-5" />,
   chevronDown: <path d="m6 9 6 6 6-6" />,
-  whatsapp: (
-    <>
-      <path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.2 3.1L3.5 20.5Z" />
-      <path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1c-1-.4-2.1-1.5-2.5-2.5l1-1-1-2-2 .5Z" />
-    </>
-  ),
   info: (
     <>
       <circle cx="12" cy="12" r="9" />

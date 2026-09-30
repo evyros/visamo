@@ -31,7 +31,7 @@ export const legalEn: LegalContent = {
                 "Your file: the documents you upload (for example passports, certificates, affidavits, bank statements, photos and other relationship evidence) and the information in them.",
                 "Assistant conversations: the messages you send the information assistant and its answers.",
                 "Payment details: handled by our payment provider, [payment provider]. We never see or store your full card number; we keep only a payment token, what you bought and the receipt.",
-                "Messages you send us: the content of contact-form messages, WhatsApp chats and emails, including any attachments.",
+                "Messages you send us: the content of contact-form messages and emails, including any attachments.",
                 "Technical information: IP address, browser and device type, pages visited, and logs needed to keep the service secure and working.",
               ],
             },
@@ -288,13 +288,13 @@ export const legalEn: LegalContent = {
         {
           heading: "Known limitations",
           body: [
-            "Some content may not yet be fully accessible, such as documents you upload yourself or content from third-party services (for example the contact-form provider and WhatsApp). The technical details on the \"How we handle data\" page are currently available in English only. We are working to improve these, and we're happy to help another way in the meantime.",
+            "Some content may not yet be fully accessible, such as documents you upload yourself or content from third-party services (for example Cloudflare's bot check on the contact form). The technical details on the \"How we handle data\" page are currently available in English only. We are working to improve these, and we're happy to help another way in the meantime.",
           ],
         },
         {
           heading: "Other ways to get help",
           body: [
-            "If any part of the site is hard for you to use, we can help you by email or WhatsApp during our support hours, and we can send information in another format on request.",
+            "If any part of the site is hard for you to use, we can help you by email during our support hours, and we can send information in another format on request.",
           ],
         },
         {

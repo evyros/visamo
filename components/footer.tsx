@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { format, getDictionary, getLocale } from "@/i18n/dictionaries";
-import { localePath, loginUrl, site, whatsappUrl } from "@/lib/site";
+import { localePath, loginUrl, site } from "@/lib/site";
 import { Icon } from "./icons";
 import { Logo } from "./logo";
 import { Container } from "./ui";
@@ -67,16 +67,10 @@ export async function Footer() {
             <h2 className="text-sm font-semibold text-white">{f.support.title}</h2>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href={whatsappUrl()} className="inline-flex items-center gap-2 hover:text-white hover:underline">
-                  <Icon name="whatsapp" className="size-4" />
-                  {f.support.whatsapp}
-                </a>
-                <p className="mt-1 whitespace-pre-line text-xs text-slate-300/80">{f.support.hours}</p>
-              </li>
-              <li>
                 <a href={`mailto:${site.supportEmail}`} className="hover:text-white hover:underline">
                   <bdi>{site.supportEmail}</bdi>
                 </a>
+                <p className="mt-1 whitespace-pre-line text-xs text-slate-300/80">{f.support.hours}</p>
               </li>
             </ul>
           </div>

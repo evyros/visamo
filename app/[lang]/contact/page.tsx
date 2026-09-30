@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { locales } from "@/i18n/config";
 import { pageMetadata } from "@/lib/metadata";
-import { site, whatsappUrl } from "@/lib/site";
+import { site } from "@/lib/site";
 import { ContactForm } from "@/components/contact-form";
 import { Icon } from "@/components/icons";
-import { ButtonLink, Container, SectionTitle, mobileCenter } from "@/components/ui";
+import { Container, SectionTitle, mobileCenter } from "@/components/ui";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getDictionary();
@@ -39,17 +39,6 @@ export default async function ContactPage() {
           <aside className="rounded-2xl bg-navy-900 p-6 text-slate-300 sm:p-8">
             <h2 className="text-lg font-semibold text-white">{c.side.title}</h2>
             <dl className="mt-6 space-y-6">
-              <div>
-                <dt className="flex items-center gap-2 text-sm font-semibold text-sage-200">
-                  <Icon name="whatsapp" className="size-4" />
-                  {c.side.whatsapp}
-                </dt>
-                <dd className="mt-2">
-                  <ButtonLink href={whatsappUrl()} variant="inverse" size="sm">
-                    {c.side.whatsappCta}
-                  </ButtonLink>
-                </dd>
-              </div>
               <div>
                 <dt className="flex items-center gap-2 text-sm font-semibold text-sage-200">
                   <Icon name="mail" className="size-4" />

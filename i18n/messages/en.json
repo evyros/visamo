@@ -38,7 +38,7 @@
     },
     "contact": {
       "title": "Contact & Support",
-      "description": "Questions, technical issues or refund requests: send the Visamo team a message, or reach us on WhatsApp."
+      "description": "Questions, technical issues or refund requests: send the Visamo team a message."
     },
     "about": {
       "title": "Why I built Visamo",
@@ -66,8 +66,7 @@
     "startFree": "Start free",
     "language": "Language",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "whatsapp": "Support on WhatsApp"
+    "closeMenu": "Close menu"
   },
   "footer": {
     "tagline": "Independent software that guides couples smoothly through Israel's gradual process to an A/5 visa.",
@@ -94,7 +93,6 @@
     },
     "support": {
       "title": "Support",
-      "whatsapp": "WhatsApp",
       "hours": "Sun–Thu 10:00–18:00\nFri 10:00–14:30 (Israel time)",
       "email": "Email"
     },
@@ -110,8 +108,7 @@
     "independent": "Independent, not a government site",
     "ssl": "SSL / TLS secured",
     "noSale": "We never sell your data",
-    "deletion": "One-click deletion",
-    "whatsapp": "Israeli support on WhatsApp"
+    "deletion": "One-click deletion"
   },
   "home": {
     "hero": {
@@ -359,7 +356,7 @@
         }
       ],
       "more": "Still have a question?",
-      "whatsapp": "Message us on WhatsApp"
+      "contact": "Contact us"
     },
     "final": {
       "title": "Don't wait months to find out something was missing.",
@@ -480,13 +477,6 @@
           "feature": "Cross-document consistency check",
           "values": [
             "no",
-            "yes"
-          ]
-        },
-        {
-          "feature": "WhatsApp support",
-          "values": [
-            "yes",
             "yes"
           ]
         }
@@ -812,8 +802,6 @@
     "side": {
       "title": "Other ways to reach us",
       "email": "Email",
-      "whatsapp": "WhatsApp",
-      "whatsappCta": "Chat with us on WhatsApp",
       "hours": "Support hours"
     }
   },

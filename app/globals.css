@@ -3,7 +3,7 @@
 /* Design tokens from the Visamo spec. Status colors are amber and muted
    terracotta, never alarm red; the one exception is crimson, a deep red
    only for a document check's "needs fixing". Text colors (slate-500,
-   teal-700, terracotta-600, whatsapp) keep at least 4.5:1 contrast on every
+   teal-700, terracotta-600) keep at least 4.5:1 contrast on every
    surface they sit on, per IS 5568 / WCAG AA; check before changing them. */
 @theme {
   --color-navy-900: #0f2a44;
@@ -24,7 +24,6 @@
   --color-crimson-600: #b42c3f;
   --color-crimson-100: #f8e4e7;
   --color-line-200: #e2e0da;
-  --color-whatsapp: #1a7d44;
 
   /* Each locale swaps these through the variables below. */
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;

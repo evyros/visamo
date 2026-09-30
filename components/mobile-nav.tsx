@@ -12,14 +12,12 @@ export function MobileNav({
   links,
   cta,
   login,
-  whatsapp,
   labels,
   languageSwitch,
 }: {
   links: NavLink[];
   cta: NavLink;
   login: NavLink;
-  whatsapp: NavLink;
   labels: { open: string; close: string; nav: string };
   languageSwitch: ReactNode;
 }) {
@@ -109,13 +107,6 @@ export function MobileNav({
               >
                 {login.label}
               </Link>
-              <a
-                href={whatsapp.href}
-                className="mt-auto inline-flex items-center gap-2 px-3 py-3 text-sm font-medium text-whatsapp"
-              >
-                <Icon name="whatsapp" className="size-5" />
-                {whatsapp.label}
-              </a>
             </nav>
           </div>,
           document.body,

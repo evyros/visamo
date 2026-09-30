@@ -22,8 +22,6 @@ const buttonStyles = {
   secondary:
     "border-[1.5px] border-navy-900 text-navy-900 hover:bg-navy-900/5 focus-visible:outline-navy-900",
   inverse: "bg-white text-navy-900 hover:bg-sand-50 focus-visible:outline-white",
-  whatsapp:
-    "border-[1.5px] border-whatsapp text-whatsapp hover:bg-whatsapp/5 focus-visible:outline-whatsapp",
 } as const;
 
 type ButtonLinkProps = Omit<ComponentProps<typeof Link>, "className"> & {

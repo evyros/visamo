@@ -18,8 +18,6 @@ export const site = {
   appUrl: urlFromEnv(process.env.NEXT_PUBLIC_APP_URL, "https://app.visamo.co.il"),
   /** The admin panel (app/admin), for the owner only. */
   adminUrl: urlFromEnv(process.env.NEXT_PUBLIC_ADMIN_URL, "https://admin.visamo.co.il"),
-  /** International format, digits only, e.g. 972501234567. */
-  whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "").replace(/\D/g, ""),
   supportEmail: "support@visamo.co.il",
   securityEmail: "support@visamo.co.il",
 };
@@ -42,10 +40,6 @@ export function loginUrl(locale: Locale) {
   const url = new URL("/login", site.appUrl);
   url.searchParams.set("lang", locale);
   return url.toString();
-}
-
-export function whatsappUrl() {
-  return site.whatsappNumber ? `https://wa.me/${site.whatsappNumber}` : `mailto:${site.supportEmail}`;
 }
 
 /** The website's contact page, where all support requests go. */

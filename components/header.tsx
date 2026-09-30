@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { LOCALE_COOKIE, liveLocales, locales } from "@/i18n/config";
-import { localePath, loginUrl, signupUrl, whatsappUrl } from "@/lib/site";
+import { localePath, loginUrl, signupUrl } from "@/lib/site";
 import { LanguageSwitch } from "./language-switch";
 import { MobileNav } from "./mobile-nav";
 import { ButtonLink, Container } from "./ui";
@@ -69,7 +69,6 @@ export async function Header() {
             links={links}
             cta={{ href: signupUrl(locale), label: t.common.ctaPrimary }}
             login={{ href: loginUrl(locale), label: t.nav.login }}
-            whatsapp={{ href: whatsappUrl(), label: t.nav.whatsapp }}
             labels={{ open: t.nav.openMenu, close: t.nav.closeMenu, nav: t.nav.label }}
             languageSwitch={<div className="sm:hidden">{languageSwitch}</div>}
           />

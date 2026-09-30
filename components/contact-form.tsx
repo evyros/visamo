@@ -193,31 +193,33 @@ export function ContactForm({
         </FieldBlock>
       </div>
 
-      <FieldBlock id="phone" label={labels.phone} error={errors.phone}>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          dir="ltr"
-          autoComplete="tel"
-          className={`${inputClass} text-start`}
-          aria-invalid={!!errors.phone}
-          aria-describedby={describedBy("phone")}
-        />
-      </FieldBlock>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <FieldBlock id="phone" label={labels.phone} error={errors.phone}>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            dir="ltr"
+            autoComplete="tel"
+            className={`${inputClass} text-start`}
+            aria-invalid={!!errors.phone}
+            aria-describedby={describedBy("phone")}
+          />
+        </FieldBlock>
 
-      <FieldBlock id="reason" label={labels.reason} error={errors.reason}>
-        <select id="reason" name="reason" defaultValue="" className={inputClass} {...fieldProps("reason")}>
-          <option value="" disabled>
-            {labels.reasonPlaceholder}
-          </option>
-          {labels.reasons.map((reason) => (
-            <option key={reason} value={reason}>
-              {reason}
+        <FieldBlock id="reason" label={labels.reason} error={errors.reason}>
+          <select id="reason" name="reason" defaultValue="" className={inputClass} {...fieldProps("reason")}>
+            <option value="" disabled>
+              {labels.reasonPlaceholder}
             </option>
-          ))}
-        </select>
-      </FieldBlock>
+            {labels.reasons.map((reason) => (
+              <option key={reason} value={reason}>
+                {reason}
+              </option>
+            ))}
+          </select>
+        </FieldBlock>
+      </div>
 
       <FieldBlock id="message" label={labels.message} error={errors.message}>
         <textarea id="message" name="message" rows={6} className={inputClass} {...fieldProps("message")} />

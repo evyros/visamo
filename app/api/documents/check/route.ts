@@ -6,17 +6,9 @@ import { canCheckDocuments } from "@/lib/chat/plans";
 import { prepareFiles } from "@/lib/checks/files";
 import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
 import { checkResultSchema, isConsistent, parseCheck, settle, type CheckResult } from "@/lib/checks/result";
-import {
-  caseChecks,
-  checkBalance,
-  claimCheck,
-  failCheck,
-  refundCheck,
-  saveCheck,
-  spendCheck,
-  type CheckMetrics,
-} from "@/lib/checks/store";
+import { caseChecks, checkBalance, claimCheck, failCheck, saveCheck, type CheckMetrics } from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
+import { refund, spend } from "@/lib/credits";
 import { checkFor } from "@/lib/documents/checks";
 import { knowledgeHash } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
@@ -138,7 +130,7 @@ export async function POST(request: Request) {
     } else {
       measured.pages = prepared.pages;
       measured.bytesSent = prepared.bytes;
-      if (!(await spendCheck(caseId))) {
+      if ((await spend(caseId, "checks", user.id, runId)) === null) {
         await failCheck(runId, "noChecks", metrics());
         return fail("noChecks", 402);
       }
@@ -150,14 +142,14 @@ export async function POST(request: Request) {
       result = answer.result;
       measured.ratingCorrected = answer.corrected;
       if (result.rating === "unreadable") {
-        await refundCheck(caseId);
+        await refund(caseId, "checks", user.id, runId);
         spent = false;
       }
     }
     await saveCheck(runId, run, result, metrics());
   } catch (error) {
     console.error("document check failed", error);
-    if (spent) await refundCheck(caseId);
+    if (spent) await refund(caseId, "checks", user.id, runId);
     await failCheck(runId, error instanceof Error ? error.message : String(error), metrics());
     return fail("failed", 502);
   }
@@ -166,6 +158,6 @@ export async function POST(request: Request) {
   const itemCheck = checks.get(documentKey);
   return Response.json({
     check: itemCheck && checkView(itemCheck, locale),
-    checksLeft: Math.max(0, balance.allowed - balance.used),
+    checksLeft: balance.left,
   });
 }

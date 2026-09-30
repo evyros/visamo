@@ -5,7 +5,8 @@ import { chat, chatMessage } from "@/lib/db/schema";
 import { complete, streamCompletion, type ModelMessage } from "@/lib/chat/openrouter";
 import { maxMessageLength } from "@/lib/chat/plans";
 import { casePrompt, staticPrompt } from "@/lib/chat/prompt";
-import { chatBalance, chatMessages, inCase, refundMessage, spendMessage } from "@/lib/chat/store";
+import { chatBalance, chatMessages, inCase } from "@/lib/chat/store";
+import { refundQueries, spendOnMessage } from "@/lib/credits";
 import { findUserCase } from "@/lib/session";
 
 // Sends the assistant one message in one of the case's chats (either partner
@@ -40,24 +41,25 @@ export async function POST(request: Request) {
   if (message.length > maxMessageLength(plan)) return fail("tooLong", 400);
   if (existing && !(await inCase(existing, caseId))) return fail("notFound", 404);
 
-  const messagesLeft = await spendMessage(caseId);
-  if (messagesLeft === null) return fail("noMessages", 402);
-
+  // Spent and saved together: the message, its chat if it's new, and the
+  // spend's ledger entry, which points to the message it paid for.
   const chatId = existing ?? crypto.randomUUID();
   const messageId = crypto.randomUUID();
-  const insert = db
-    .insert(chatMessage)
-    .values({ id: messageId, chatId, role: "user", userId: user.id, content: message });
-  if (existing) await insert;
-  else await db.batch([db.insert(chat).values({ id: chatId, caseId, createdBy: user.id }), insert]);
+  const messagesLeft = await spendOnMessage(caseId, user.id, {
+    id: messageId,
+    chatId,
+    newChat: !existing,
+    content: message,
+  });
+  if (messagesLeft === null) return fail("noMessages", 402);
 
-  // Nothing came of the message: as if it was never sent.
-  const undo = async () => {
-    await (existing
-      ? db.delete(chatMessage).where(eq(chatMessage.id, messageId))
-      : db.delete(chat).where(eq(chat.id, chatId)));
-    await refundMessage(caseId);
-  };
+  // Nothing came of the message: as if it was never sent. Removed and
+  // refunded together, so it can't be one without the other.
+  const undo = () =>
+    db.batch([
+      existing ? db.delete(chatMessage).where(eq(chatMessage.id, messageId)) : db.delete(chat).where(eq(chat.id, chatId)),
+      ...refundQueries(caseId, "messages", user.id, messageId),
+    ]);
 
   // A new chat's title is written alongside the answer, from the message alone.
   const title = existing ? null : summarize(message);

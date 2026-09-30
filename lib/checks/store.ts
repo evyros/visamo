@@ -7,12 +7,14 @@ import type { Plan } from "@/lib/chat/plans";
 import { db } from "@/lib/db";
 import { casePerson, cases, documentCheck, user } from "@/lib/db/schema";
 import { checkFor, type DocumentCheck } from "@/lib/documents/checks";
+import { caseCreditTotals } from "@/lib/credits";
 import { recordEvent } from "@/lib/events";
 import { checkContext, contextHash } from "./prompt";
 import type { CheckResult } from "./result";
 
-// Document checks in the database: the case's fair-use balance, and every
-// run of every item's check (the latest finished one is the item's result).
+// Document checks in the database: every run of every item's check (the
+// latest finished one is the item's result), and the case's balance, which
+// lib/credits.ts spends and refunds.
 
 /**
  * A check running longer than this was cut off (the route's maxDuration is
@@ -21,31 +23,13 @@ import type { CheckResult } from "./result";
  */
 const RUNNING_EXPIRES_SECONDS = 150;
 
+/** The case's plan, the checks it has left, and how many it was granted and used (lib/credits.ts). */
 export async function checkBalance(caseId: string) {
-  const [row] = await db
-    .select({ plan: cases.plan, used: cases.documentChecks, allowed: cases.documentChecksAllowed })
-    .from(cases)
-    .where(eq(cases.id, caseId))
-    .limit(1);
-  return { plan: (row?.plan ?? "free") as Plan, used: row?.used ?? 0, allowed: row?.allowed ?? 0 };
-}
-
-/** Counts one check, in one statement so two can't both spend the last one. False when none are left. */
-export async function spendCheck(caseId: string) {
-  const [row] = await db
-    .update(cases)
-    .set({ documentChecks: sql`${cases.documentChecks} + 1` })
-    .where(and(eq(cases.id, caseId), lt(cases.documentChecks, cases.documentChecksAllowed)))
-    .returning({ used: cases.documentChecks });
-  return !!row;
-}
-
-/** Gives back a check that failed, or whose files couldn't be read. */
-export async function refundCheck(caseId: string) {
-  await db
-    .update(cases)
-    .set({ documentChecks: sql`greatest(${cases.documentChecks} - 1, 0)` })
-    .where(eq(cases.id, caseId));
+  const [[row], totals] = await Promise.all([
+    db.select({ plan: cases.plan, left: cases.checksLeft }).from(cases).where(eq(cases.id, caseId)).limit(1),
+    caseCreditTotals(caseId),
+  ]);
+  return { plan: (row?.plan ?? "free") as Plan, left: row?.left ?? 0, ...totals.checks };
 }
 
 /** What a run is checked against, recorded when it starts. */

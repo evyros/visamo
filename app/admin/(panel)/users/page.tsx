@@ -4,7 +4,7 @@ import { requireAdmin } from "@/lib/admin";
 import { listUsers, USERS_PAGE_SIZE, type AdminUserRow } from "@/lib/admin-users";
 import { secondaryButton } from "@/components/app/settings-ui";
 import { inputClass } from "@/components/app/auth-ui";
-import { formatDateTime, PageHeading, Pill, planLabel } from "@/components/admin/admin-ui";
+import { BalanceFigure, formatDateTime, PageHeading, Pill, planLabel } from "@/components/admin/admin-ui";
 
 export const metadata: Metadata = { title: "Users" };
 
@@ -34,7 +34,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
     <main id="main" tabIndex={-1} className="relative min-h-0 flex-1 overflow-y-auto focus:outline-none">
       <div className="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
         <PageHeading title="Users">
-          {total} {filtered ? "matching" : "in all"}, newest first. Quotas are the case’s, shared by both partners.
+          {total} {filtered ? "matching" : "in all"}, newest first. Balances are the case’s, shared by both partners.
         </PageHeading>
 
         <form method="get" action="/users" className="mt-6 flex flex-wrap items-end gap-3">
@@ -63,8 +63,8 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
                 <th className="px-4 py-3 text-start">User</th>
                 <th className="px-4 py-3 text-start">Created</th>
                 <th className="px-4 py-3 text-start">Case</th>
-                <th className="px-4 py-3 text-end">Messages left</th>
-                <th className="px-4 py-3 text-end">Checks used</th>
+                <th className="px-4 py-3 text-end">Messages</th>
+                <th className="px-4 py-3 text-end">Checks</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line-200">
@@ -99,7 +99,6 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
 }
 
 function UserRow({ row }: { row: AdminUserRow }) {
-  const checksLow = row.checksAllowed != null && row.checksAllowed > 0 && row.checksUsed! >= row.checksAllowed * 0.8;
   return (
     // The name's link covers the row, so anywhere on it opens the user.
     <tr className="relative hover:bg-sand-50">
@@ -126,9 +125,11 @@ function UserRow({ row }: { row: AdminUserRow }) {
           <Pill tone="slate">No case yet</Pill>
         )}
       </td>
-      <td className="px-4 py-3 text-end tabular-nums text-slate-700">{row.caseId ? row.messagesLeft : "—"}</td>
-      <td className={`px-4 py-3 text-end tabular-nums ${checksLow ? "font-semibold text-amber-500" : "text-slate-700"}`}>
-        {row.caseId ? `${row.checksUsed} / ${row.checksAllowed}` : "—"}
+      <td className="px-4 py-3 text-end text-slate-500">
+        {row.totals ? <BalanceFigure left={row.messagesLeft!} totals={row.totals.messages} /> : "—"}
+      </td>
+      <td className="px-4 py-3 text-end text-slate-500">
+        {row.totals ? <BalanceFigure left={row.checksLeft!} totals={row.totals.checks} /> : "—"}
       </td>
     </tr>
   );

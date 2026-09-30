@@ -1,11 +1,13 @@
 import "server-only";
 import { cache } from "react";
 import { and, count, desc, eq, ilike, type SQL } from "drizzle-orm";
+import { creditTotals } from "./credits";
 import { db } from "./db";
 import { caseMember, cases, user } from "./db/schema";
 
-// Users as the admin panel lists them. Quotas belong to the case (both
-// partners share them), so a user without a case, still in onboarding, has none.
+// Users as the admin panel lists them. Balances belong to the case (both
+// partners share them), so a user without a case, still in onboarding, has
+// none. What was granted and used comes from the case's ledger (lib/credits.ts).
 
 export const USERS_PAGE_SIZE = 50;
 
@@ -22,9 +24,14 @@ const columns = {
   caseId: cases.id,
   plan: cases.plan,
   messagesLeft: cases.messagesLeft,
-  checksUsed: cases.documentChecks,
-  checksAllowed: cases.documentChecksAllowed,
+  checksLeft: cases.checksLeft,
 };
+
+/** The rows with their case's granted and used totals; null without a case. */
+async function withTotals<T extends { caseId: string | null }>(rows: T[]) {
+  const totals = await creditTotals([...new Set(rows.flatMap((r) => (r.caseId ? [r.caseId] : [])))]);
+  return rows.map((row) => ({ ...row, totals: row.caseId ? totals.get(row.caseId)! : null }));
+}
 
 /** A page of users, newest first, whose name and email contain the filters (case-insensitive). */
 export async function listUsers(filters: { name?: string; email?: string }, page: number) {
@@ -45,7 +52,7 @@ export async function listUsers(filters: { name?: string; email?: string }, page
       .offset((page - 1) * USERS_PAGE_SIZE),
     db.select({ value: count() }).from(user).where(where),
   ]);
-  return { rows, total: total?.value ?? 0 };
+  return { rows: await withTotals(rows), total: total?.value ?? 0 };
 }
 
 export type AdminUserRow = Awaited<ReturnType<typeof listUsers>>["rows"][number];
@@ -59,7 +66,7 @@ export const findUser = cache(async (id: string) => {
     .leftJoin(cases, eq(cases.id, caseMember.caseId))
     .where(eq(user.id, id))
     .limit(1);
-  return row ?? null;
+  return row ? (await withTotals([row]))[0] : null;
 });
 
 /** The users who can open a case: the couple, as far as they've signed up. */

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { CreditTotals } from "@/lib/credits";
 
 // Building blocks shared by the admin pages. The panel is in English, and
 // times are Israel's: the server runs in UTC.
@@ -61,6 +62,29 @@ export function Stat({ label, value, note }: { label: string; value: ReactNode; 
       <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</div>
       <div className="mt-1 text-xl font-semibold text-navy-900 tabular-nums">{value}</div>
       {note && <div className="mt-0.5 text-[13px] text-slate-500">{note}</div>}
+    </div>
+  );
+}
+
+/** At this share of what was granted, the balance is running low (the app's checks notice). */
+const LOW_SHARE = 0.8;
+
+export const isLow = (totals: CreditTotals) => totals.granted > 0 && totals.used >= totals.granted * LOW_SHARE;
+
+/**
+ * A balance: what's left, and under it what was used of what was granted.
+ * Amber when it's running low, and flagged when the balance and the ledger
+ * disagree, which only a bug (or a hand edit) can cause.
+ */
+export function BalanceFigure({ left, totals }: { left: number; totals: CreditTotals }) {
+  const drift = totals.granted - totals.used !== left;
+  return (
+    <div className="tabular-nums">
+      <div className={`font-semibold ${isLow(totals) ? "text-amber-500" : "text-navy-900"}`}>{left} left</div>
+      <div className="text-[13px] text-slate-500">
+        {totals.used} used of {totals.granted}
+      </div>
+      {drift && <div className="text-[13px] font-semibold text-terracotta-600">Ledger says {totals.granted - totals.used}</div>}
     </div>
   );
 }

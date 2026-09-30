@@ -110,10 +110,10 @@ export default async function DocumentsPage() {
         intlLocale={locales[locale].intlLocale}
         checks={{
           allowed: canCheckDocuments(balance.plan),
-          // At 80% of the fair-use limit, the couple is asked to contact support.
+          // At 80% of the checks granted, the couple is asked to contact support.
           notice:
-            balance.allowed > 0 && balance.used >= balance.allowed * 0.8
-              ? format(t.check.checksLow, { used: balance.used, allowed: balance.allowed })
+            balance.granted > 0 && balance.used >= balance.granted * 0.8
+              ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
               : null,
           pricingUrl: `${site.url}${localePath(locale, "/pricing")}`,
           supportUrl: whatsappUrl(),

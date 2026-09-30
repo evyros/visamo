@@ -1,12 +1,12 @@
 import "server-only";
-import { and, asc, desc, eq, gt, sql } from "drizzle-orm";
+import { and, asc, desc, eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { casePerson, cases, chat, chatMessage } from "@/lib/db/schema";
 import type { Plan } from "./plans";
 
-// Chats and the message balance. Chats belong to the case: both partners
-// see them all. A chat is only ever read with the case's id, so no one can
-// open a chat from another case.
+// Chats, and the message balance (lib/credits.ts spends it). Chats belong to
+// the case: both partners see them all. A chat is only ever read with the
+// case's id, so no one can open a chat from another case.
 
 export type ChatRole = "user" | "assistant";
 
@@ -18,27 +18,6 @@ export async function chatBalance(caseId: string) {
     .where(eq(cases.id, caseId))
     .limit(1);
   return { plan: (row?.plan ?? "free") as Plan, messagesLeft: row?.messagesLeft ?? 0 };
-}
-
-/**
- * Takes one message off the balance, in one statement so two tabs can't
- * both spend the last one. The balance left, or null if there was none.
- */
-export async function spendMessage(caseId: string) {
-  const [row] = await db
-    .update(cases)
-    .set({ messagesLeft: sql`${cases.messagesLeft} - 1` })
-    .where(and(eq(cases.id, caseId), gt(cases.messagesLeft, 0)))
-    .returning({ messagesLeft: cases.messagesLeft });
-  return row ? row.messagesLeft : null;
-}
-
-/** Gives back a message whose answer failed. */
-export async function refundMessage(caseId: string) {
-  await db
-    .update(cases)
-    .set({ messagesLeft: sql`${cases.messagesLeft} + 1` })
-    .where(eq(cases.id, caseId));
 }
 
 /** The case's chats, latest first, for the sidebar. */

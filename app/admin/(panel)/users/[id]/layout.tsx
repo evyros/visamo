@@ -33,7 +33,10 @@ export default async function AdminUserLayout({ children, params }: LayoutProps<
           </div>
           <SidebarNav
             label="User"
-            items={[{ href: `${base}/documents`, label: "Documents", icon: "file", includeSubpages: true }]}
+            items={[
+              { href: `${base}/documents`, label: "Documents", icon: "file", includeSubpages: true },
+              { href: `${base}/balance`, label: "Balance", icon: "receipt" },
+            ]}
           />
         </>
       }

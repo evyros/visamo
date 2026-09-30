@@ -12,9 +12,9 @@ import {
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 import type { Completion } from "../chat/openrouter";
-import { DOCUMENT_CHECKS, FREE_MESSAGES } from "../chat/plans";
 import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
+import type { CreditKind, CreditReason } from "../credits";
 import type { CaseEvent } from "../events";
 
 // Better Auth's core tables (user, session, account, verification), plus the
@@ -132,12 +132,13 @@ export const cases = pgTable("case", {
   childrenTogether: boolean("children_together").notNull(),
   /** A Plan from lib/chat/plans.ts: the highest tier bought. It sets the chat's message length. */
   plan: text("plan").notNull().default("free"),
-  /** Messages left for the chat assistant, shared by both partners. Buying more adds to it. */
-  messagesLeft: integer("messages_left").notNull().default(FREE_MESSAGES),
-  /** Document checks used, by both partners. Files the checker couldn't read aren't counted. */
-  documentChecks: integer("document_checks").notNull().default(0),
-  /** The fair-use limit on document checks. Support raises it. */
-  documentChecksAllowed: integer("document_checks_allowed").notNull().default(DOCUMENT_CHECKS),
+  // The case's balances, shared by both partners. Each change is also a row
+  // in credit_entry, written with it (lib/credits.ts), so the balance is the
+  // sum of the case's entries, and the entries say what was granted and used.
+  /** Messages left for the chat assistant. */
+  messagesLeft: integer("messages_left").notNull().default(0),
+  /** Document checks left. File Preparation grants them; files the checker couldn't read aren't counted. */
+  checksLeft: integer("checks_left").notNull().default(0),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -316,6 +317,36 @@ export const documentCheck = pgTable(
       .on(table.caseId, table.documentKey)
       .where(sql`${table.state} = 'running'`),
   ],
+);
+
+/**
+ * Every change to a case's balances (cases.messagesLeft, cases.checksLeft):
+ * a grant, a spend or a refund. Written in the same statement or batch as
+ * the change (lib/credits.ts), and never changed or deleted, so a balance is
+ * always the sum of its entries, and they're its audit trail.
+ */
+export const creditEntry = pgTable(
+  "credit_entry",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    kind: text("kind").notNull().$type<CreditKind>(),
+    /** What it added to the balance: +50 for a purchase's messages, -1 for a spend, +1 for its refund. */
+    delta: integer("delta").notNull(),
+    reason: text("reason").notNull().$type<CreditReason>(),
+    /** What it's for: the chat message or document check spent on, or the purchase. Not a foreign key: a failed chat message is deleted. */
+    refId: text("ref_id"),
+    /** The partner who spent it, or bought it. */
+    userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
+    /** Who gave a support top-up: the admin panel's signed-in email, since the admin isn't a user. */
+    adminEmail: text("admin_email"),
+    /** Why, for a support top-up. */
+    note: text("note"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [index("credit_entry_case_id_idx").on(table.caseId, table.kind, table.createdAt)],
 );
 
 /**

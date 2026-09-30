@@ -2,6 +2,8 @@
 
 import { redirect } from "next/navigation";
 import { parseOnboarding } from "@/lib/case-options";
+import { FREE_MESSAGES } from "@/lib/chat/plans";
+import { grantQueries } from "@/lib/credits";
 import { db } from "@/lib/db";
 import { caseMember, casePerson, cases } from "@/lib/db/schema";
 import { recordEvent } from "@/lib/events";
@@ -30,7 +32,8 @@ export async function createCase(input: unknown): Promise<CreateCaseResult> {
     // A batch runs as one transaction. The case_member primary key stops a
     // second case for the same user (a double submit, two tabs), and then
     // none of the rows are written. The partner has no user yet; an invite
-    // will link one to their row later.
+    // will link one to their row later. The case starts with the free
+    // messages, and its checks come with File Preparation.
     await db.batch([
       db.insert(cases).values({ id: caseId, branch, stage, ...relationship }),
       db.insert(caseMember).values({ userId, caseId, role: "owner" }),
@@ -39,6 +42,7 @@ export async function createCase(input: unknown): Promise<CreateCaseResult> {
         { id: crypto.randomUUID(), caseId, userId: null, ...partner },
       ]),
       recordEvent(caseId, userId, { type: "case.created", data: {} }),
+      ...grantQueries(caseId, "messages", FREE_MESSAGES, "free", { userId }),
     ]);
   } catch (error) {
     // If the user has a case now, another submit won the race: carry on.

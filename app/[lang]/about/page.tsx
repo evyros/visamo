@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
+import { rich } from "@/i18n/rich";
 import { pageMetadata } from "@/lib/metadata";
 import { FinalCta } from "@/components/final-cta";
 import { FounderPhoto } from "@/components/founder-photo";
@@ -36,7 +37,7 @@ export default async function AboutPage() {
             </SectionTitle>
             <div className="mt-6 space-y-5 text-lg leading-8">
               {a.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph}>{rich(paragraph)}</p>
               ))}
             </div>
             <p className="mt-6 font-semibold text-navy-900">{a.signature}</p>

@@ -10,6 +10,8 @@ export type NavItem = {
   icon: IconName;
   /** In a sidebar: also active on the pages under it. Tabs always are. */
   includeSubpages?: boolean;
+  /** An outside page (the website's contact page): opens in a new tab. */
+  newTab?: boolean;
 };
 
 /** A section tab is active on its own page and every page under it. */

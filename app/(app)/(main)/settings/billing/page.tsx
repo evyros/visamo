@@ -11,7 +11,7 @@ import { checkBalance } from "@/lib/checks/store";
 import { casePurchases } from "@/lib/purchases";
 import { requireCase } from "@/lib/session";
 import { checksRunningLow } from "@/lib/products";
-import { prices } from "@/lib/site";
+import { contactUrl, newTab, prices } from "@/lib/site";
 import { SettingsCard, SettingsPage } from "@/components/app/settings-ui";
 import { Icon } from "@/components/icons";
 
@@ -129,9 +129,9 @@ export default async function BillingPage() {
         )}
         <p className="mt-5 text-sm text-slate-700">
           {t.needHelp}{" "}
-          <Link href="/support" className="font-semibold text-teal-700 underline-offset-4 hover:underline">
+          <a href={contactUrl(locale)} {...newTab} className="font-semibold text-teal-700 underline-offset-4 hover:underline">
             {t.contactSupport}
-          </Link>
+          </a>
         </p>
       </SettingsCard>
     </SettingsPage>

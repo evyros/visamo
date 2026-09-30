@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Icon } from "@/components/icons";
+import { newTab } from "@/lib/site";
 import type { NavItem } from "./app-nav";
 import { SignOutButton } from "./sign-out-button";
 
@@ -82,10 +83,17 @@ export function AccountMenu({
             <ul className="border-b border-line-200 py-2">
               {links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className={itemStyles}>
-                    <Icon name={link.icon} className="size-5 text-slate-500" />
-                    {link.label}
-                  </Link>
+                  {link.newTab ? (
+                    <a href={link.href} {...newTab} onClick={() => setOpen(false)} className={itemStyles}>
+                      <Icon name={link.icon} className="size-5 text-slate-500" />
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className={itemStyles}>
+                      <Icon name={link.icon} className="size-5 text-slate-500" />
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

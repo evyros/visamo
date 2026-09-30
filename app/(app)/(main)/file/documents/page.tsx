@@ -11,7 +11,7 @@ import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
 import { checksRunningLow } from "@/lib/products";
 import { requireCase } from "@/lib/session";
-import { whatsappUrl } from "@/lib/site";
+import { contactUrl } from "@/lib/site";
 import {
   DocumentsBoard,
   type DocumentGroup,
@@ -113,7 +113,7 @@ export default async function DocumentsPage() {
           notice: checksRunningLow(balance)
             ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
             : null,
-          supportUrl: whatsappUrl(),
+          supportUrl: contactUrl(locale),
         }}
       />
     </div>

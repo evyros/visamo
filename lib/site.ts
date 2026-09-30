@@ -21,7 +21,7 @@ export const site = {
   /** International format, digits only, e.g. 972501234567. */
   whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "").replace(/\D/g, ""),
   supportEmail: "support@visamo.co.il",
-  securityEmail: "security@visamo.co.il",
+  securityEmail: "support@visamo.co.il",
 };
 
 /** One-time prices in ILS, VAT included. */
@@ -47,6 +47,14 @@ export function loginUrl(locale: Locale) {
 export function whatsappUrl() {
   return site.whatsappNumber ? `https://wa.me/${site.whatsappNumber}` : `mailto:${site.supportEmail}`;
 }
+
+/** The website's contact page, where all support requests go. */
+export function contactUrl(locale: Locale) {
+  return site.url + localePath(locale, "/contact");
+}
+
+/** Link props that open the page in a new tab, so people don't leave the app. */
+export const newTab = { target: "_blank", rel: "noopener" } as const;
 
 /** A locale-prefixed path, e.g. localePath("he", "/pricing") -> "/he/pricing". */
 export function localePath(locale: Locale, path = "") {

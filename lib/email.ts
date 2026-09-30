@@ -2,23 +2,36 @@ import "server-only";
 import { Resend } from "resend";
 import { locales, type Locale } from "@/i18n/config";
 import { format, loadMessages } from "@/i18n/messages";
+import { site } from "@/lib/site";
 
 // Transactional emails, sent through Resend in the recipient's language. They
-// share one layout: a heading, a paragraph, a button, the link spelled out,
-// and a note for anyone who didn't expect the email. Without RESEND_API_KEY
-// (local development), the link is printed to the terminal.
+// share one layout: a heading, a paragraph, a button with the link spelled out
+// (when there's a link), and a note for anyone who didn't expect the email.
+// Without RESEND_API_KEY (local development), they're printed to the terminal.
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 const from = process.env.EMAIL_FROM || "Visamo <no-reply@visamo.co.il>";
 
-type Copy = { subject: string; heading: string; body: string; button: string; ignore: string };
+type Copy = { subject: string; heading: string; body: string; button?: string; ignore: string };
 
 const escape = (value: string) =>
   value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-async function sendEmail({ to, url, locale, copy }: { to: string; url: string; locale: Locale; copy: Copy }) {
+async function sendEmail({
+  to,
+  url,
+  locale,
+  copy,
+  replyTo,
+}: {
+  to: string;
+  url?: string;
+  locale: Locale;
+  copy: Copy;
+  replyTo?: string;
+}) {
   if (!resend) {
-    console.info(`\n[email] ${copy.subject} → ${to}\n${url}\n`);
+    console.info(`\n[email] ${copy.subject} → ${to}\n${url ?? copy.body}\n`);
     return;
   }
 
@@ -32,18 +45,22 @@ async function sendEmail({ to, url, locale, copy }: { to: string; url: string; l
       <tr><td style="padding:32px;text-align:${align}" dir="${dir}">
         <p style="margin:0 0 24px;font-size:22px;font-weight:bold">Visamo</p>
         <h1 style="margin:0 0 12px;font-size:20px">${escape(copy.heading)}</h1>
-        <p style="margin:0 0 24px;font-size:16px;line-height:1.6">${escape(copy.body)}</p>
-        <a href="${escape(url)}" style="display:inline-block;padding:12px 24px;background:#2f7f76;color:#ffffff;border-radius:10px;font-weight:bold;text-decoration:none">${escape(copy.button)}</a>
+        <p style="margin:0 0 24px;font-size:16px;line-height:1.6">${escape(copy.body)}</p>${
+          url
+            ? `
+        <a href="${escape(url)}" style="display:inline-block;padding:12px 24px;background:#2f7f76;color:#ffffff;border-radius:10px;font-weight:bold;text-decoration:none">${escape(copy.button ?? "")}</a>
         <p style="margin:24px 0 4px;font-size:13px;color:#55606e">${escape(t.fallback)}</p>
-        <p style="margin:0;font-size:13px;word-break:break-all" dir="ltr"><a href="${escape(url)}" style="color:#2f7f76">${escape(url)}</a></p>
-        <p style="margin:24px 0 0;font-size:13px;color:#55606e">${escape(copy.ignore)}</p>
+        <p style="margin:0 0 24px;font-size:13px;word-break:break-all" dir="ltr"><a href="${escape(url)}" style="color:#2f7f76">${escape(url)}</a></p>`
+            : ""
+        }
+        <p style="margin:0;font-size:13px;color:#55606e">${escape(copy.ignore)}</p>
       </td></tr>
     </table>
   </body>
 </html>`;
-  const text = `${copy.heading}\n\n${copy.body}\n\n${url}\n\n${copy.ignore}`;
+  const text = [copy.heading, copy.body, url, copy.ignore].filter(Boolean).join("\n\n");
 
-  const { error } = await resend.emails.send({ from, to, subject: copy.subject, html, text });
+  const { error } = await resend.emails.send({ from, to, replyTo, subject: copy.subject, html, text });
   if (error) throw new Error(`Resend: ${error.message}`);
 }
 
@@ -100,4 +117,67 @@ export async function sendAdminLoginEmail({ to, url }: { to: string; url: string
       ignore: "If you didn't ask for this, someone typed your email on the admin login page. Nobody can use this link but you.",
     },
   });
+}
+
+/**
+ * A contact-form message (app/[lang]/contact/actions.ts), to the support
+ * inbox. Replying goes to the sender. English only: it goes to the team. Not
+ * stored anywhere else, so this email is the ticket.
+ */
+export async function sendSupportTicket({
+  ticket,
+  fields,
+  message,
+  replyTo,
+  attachments,
+}: {
+  ticket: string;
+  /** Label and value, shown as a table above the message. */
+  fields: [string, string][];
+  message: string;
+  replyTo: string;
+  attachments: { filename: string; content: Buffer; contentType: string }[];
+}) {
+  const subject = `[${ticket}] ${fields.find(([label]) => label === "Topic")?.[1] ?? "Contact form"}`;
+  if (!resend) {
+    console.info(`\n[email] ${subject} → ${site.supportEmail}\n${fields.map(([l, v]) => `${l}: ${v}`).join("\n")}\n\n${message}\n`);
+    return;
+  }
+
+  const rows = fields
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:4px 16px 4px 0;color:#55606e;white-space:nowrap">${escape(label)}</td><td style="padding:4px 0" dir="auto">${escape(value)}</td></tr>`,
+    )
+    .join("");
+  const html = `<!doctype html>
+<html>
+  <body style="margin:0;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#0f2a44">
+    <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:14px">${rows}</table>
+    <div dir="auto" style="margin-top:20px;padding:16px;background:#f8f6f1;border-radius:8px;font-size:15px;line-height:1.6;white-space:pre-wrap">${escape(message)}</div>
+  </body>
+</html>`;
+  const text = `${fields.map(([l, v]) => `${l}: ${v}`).join("\n")}\n\n${message}`;
+
+  const { error } = await resend.emails.send({
+    from,
+    to: site.supportEmail,
+    replyTo,
+    subject,
+    html,
+    text,
+    attachments,
+  });
+  if (error) throw new Error(`Resend: ${error.message}`);
+}
+
+/**
+ * Tells the sender we got their contact-form message, with its ticket number.
+ * It carries nothing they typed: anyone can enter any address in the form, so
+ * this email must not be usable to send someone else a message.
+ */
+export async function sendTicketConfirmation({ to, ticket, locale }: { to: string; ticket: string; locale: Locale }) {
+  const t = (await loadMessages(locale)).app.email.ticket;
+  const copy = Object.fromEntries(Object.entries(t).map(([key, value]) => [key, format(value, { ticket })])) as Copy;
+  await sendEmail({ to, locale, copy, replyTo: site.supportEmail });
 }

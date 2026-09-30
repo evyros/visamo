@@ -32,7 +32,7 @@ export default async function ContactPage() {
 
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="rounded-2xl border border-line-200 bg-white p-6 shadow-soft sm:p-10">
-            <ContactForm labels={c.form} locale={locales[locale].intlLocale} supportEmail={site.supportEmail} />
+            <ContactForm labels={c.form} lang={locale} locale={locales[locale].intlLocale} supportEmail={site.supportEmail} />
             <p className="mt-6 text-xs text-slate-500">{c.form.privacy}</p>
           </div>
 

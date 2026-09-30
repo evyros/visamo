@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { getAppDictionary } from "@/i18n/app-locale";
+import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import type { Messages } from "@/i18n/messages";
+import { contactUrl } from "@/lib/site";
 import { requireUser } from "@/lib/session";
 import { Logo } from "@/components/logo";
 import { AccountMenu } from "./account-menu";
@@ -21,11 +22,11 @@ export function mainSections(t: Messages): NavItem[] {
  */
 export async function AppHeader({ sections = true }: { sections?: boolean }) {
   const user = await requireUser();
-  const t = await getAppDictionary();
+  const [t, locale] = await Promise.all([getAppDictionary(), getAppLocale()]);
   const menuLinks: NavItem[] = sections
     ? [
         { href: "/settings", label: t.app.shell.settings, icon: "gear" },
-        { href: "/support", label: t.app.shell.support, icon: "help" },
+        { href: contactUrl(locale), label: t.app.shell.support, icon: "help", newTab: true },
       ]
     : [];
 

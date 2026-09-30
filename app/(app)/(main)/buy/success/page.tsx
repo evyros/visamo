@@ -9,6 +9,7 @@ import { chatBalance } from "@/lib/chat/store";
 import { checkBalance } from "@/lib/checks/store";
 import type { ProductId } from "@/lib/products";
 import { purchaseOfLicense, recordPurchase } from "@/lib/purchases";
+import { contactUrl, newTab } from "@/lib/site";
 import { requireCase } from "@/lib/session";
 import { primaryButton } from "@/components/app/settings-ui";
 import { Icon } from "@/components/icons";
@@ -91,9 +92,9 @@ export default async function PurchasedPage({ searchParams }: PageProps<"/buy/su
 
       <p className="mt-12 text-sm text-slate-500">
         {t.support}{" "}
-        <Link href="/support" className="font-semibold text-teal-700 underline-offset-4 hover:underline">
+        <a href={contactUrl(locale)} {...newTab} className="font-semibold text-teal-700 underline-offset-4 hover:underline">
           {t.supportLink}
-        </Link>
+        </a>
       </p>
     </div>
   );

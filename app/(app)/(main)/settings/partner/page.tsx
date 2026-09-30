@@ -4,6 +4,7 @@ import { formatDate } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import { rich } from "@/i18n/rich";
 import { otherMembers, pendingInvite, unlinkedPerson } from "@/lib/case";
+import { contactUrl, newTab } from "@/lib/site";
 import { requireCase } from "@/lib/session";
 import { InviteForm, PendingInvite } from "@/components/app/invite-partner";
 import { SettingsCard, SettingsPage } from "@/components/app/settings-ui";
@@ -29,7 +30,7 @@ export default async function PartnerPage() {
         <SettingsCard title={title}>
           <p>{rich(format(t.joined, { name: partner.name ?? partner.email, email: partner.email }))}</p>
           <p className="mt-4 text-slate-700">{t.remove}</p>
-          <TextLink href="/support" className="mt-2">
+          <TextLink href={contactUrl(locale)} {...newTab} className="mt-2">
             {t.support}
           </TextLink>
         </SettingsCard>

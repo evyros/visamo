@@ -69,7 +69,7 @@ export const legalEn: LegalContent = {
                 "Hosting: Vercel, with data centers in Frankfurt, Germany.",
                 "Document processing and the information assistant: AI and document-processing providers, bound by contractual terms that prohibit keeping your data or using it to train their models.",
                 "Payments: [payment provider].",
-                "Contact form: Basin (usebasin.com), which receives the messages and attachments sent through our contact form.",
+                "Contact form: Cloudflare Turnstile, which checks that the form is sent by a person and not a bot. Messages and attachments sent through the form are emailed to our support inbox (Google Workspace) and are not stored in our systems.",
                 "Email delivery: [email provider].",
               ],
             },
@@ -90,7 +90,7 @@ export const legalEn: LegalContent = {
               list: [
                 "Your file and account: for as long as your account is active. You can delete any document or your whole account at any time.",
                 "After deletion: removed from our systems immediately and from backups within 30 days.",
-                "Contact-form messages: kept by Basin according to its retention period, and by us only as long as needed to handle your request.",
+                "Contact-form messages: kept in our support inbox only as long as needed to handle your request.",
                 "Payment and tax records: for the period required by law.",
               ],
             },

@@ -778,6 +778,7 @@
       "name": "Full name",
       "email": "Email",
       "emailHint": "If you have a Visamo account, use the email you signed up with.",
+      "phone": "Phone (optional)",
       "reason": "What is this about?",
       "reasonPlaceholder": "Choose a topic",
       "reasons": [
@@ -789,21 +790,23 @@
       ],
       "message": "Message",
       "attachments": "Attachments (optional)",
-      "attachmentsHint": "PDF or images, up to 3 files and 10MB in total.",
-      "addFiles": "Add files",
+      "attachmentsHint": "Images only (JPG, PNG, WebP or HEIC), up to 3 files and 4MB in total.",
+      "addFiles": "Add images",
       "remove": "Remove",
       "submit": "Send message",
       "sending": "Sending…",
       "successTitle": "Thanks, we got your message.",
-      "successBody": "We'll reply to {email} as soon as we can during support hours.",
+      "successBody": "Your ticket number is {ticket}. We sent a confirmation to {email}, and we'll reply there during support hours.",
       "error": "Something went wrong and your message wasn't sent. Please try again, or email us at {email}.",
       "privacy": "We use your details only to answer your message.",
       "errors": {
         "required": "This field is required.",
         "email": "Enter a valid email address.",
         "tooMany": "You can attach up to 3 files.",
-        "tooLarge": "Attachments can be up to 10MB in total.",
-        "type": "Only PDF and image files are allowed."
+        "tooLarge": "Attachments can be up to 4MB in total.",
+        "type": "Only images (JPG, PNG, WebP or HEIC) can be attached.",
+        "phone": "Enter a valid phone number, or leave it empty.",
+        "verify": "We couldn't confirm you're not a bot. Please try again."
       }
     },
     "side": {
@@ -835,7 +838,6 @@
       "billing": "Purchases & billing",
       "buy": "Add to your file",
       "purchased": "Payment successful",
-      "support": "Support",
       "details": "Your details",
       "activity": "Activity",
       "access": "Support access"
@@ -850,8 +852,7 @@
       "support": "Support",
       "accountMenu": "Account menu",
       "sectionMenu": "Menu",
-      "closeSectionMenu": "Close menu",
-      "placeholder": "This page is on its way."
+      "closeSectionMenu": "Close menu"
     },
     "auth": {
       "google": "Continue with Google",
@@ -1272,6 +1273,12 @@
         "body": "You asked us for help. To sort it out, we’d like your OK to see your documents. The link works for 72 hours, and either of you can answer.",
         "button": "Review the request",
         "ignore": "If you didn’t ask Visamo for help, you can ignore this email."
+      },
+      "ticket": {
+        "subject": "We got your message [{ticket}]",
+        "heading": "We got your message",
+        "body": "Your ticket number is {ticket}. We'll reply to this email address during support hours. To add details, reply to this email.",
+        "ignore": "If you didn't contact Visamo, someone may have typed your email address by mistake. You can ignore this email."
       }
     },
     "documents": {

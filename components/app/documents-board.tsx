@@ -9,6 +9,7 @@ import { formatAgo } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
 import { buyUrl } from "@/lib/buy-paths";
+import { newTab } from "@/lib/site";
 import type { CheckRating, FindingText } from "@/lib/checks/result";
 import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
@@ -649,7 +650,7 @@ function CheckFooter({
       {settings.allowed && settings.notice && (
         <p className="mt-2 text-sm text-slate-600">
           {settings.notice}{" "}
-          <a href={settings.supportUrl} className="font-semibold text-teal-700 hover:underline">
+          <a href={settings.supportUrl} {...newTab} className="font-semibold text-teal-700 hover:underline">
             {c.contactSupport}
           </a>
         </p>

@@ -5,6 +5,7 @@ import { regionName } from "@/i18n/format";
 import { caseOptions } from "@/i18n/options";
 import { caseDetails } from "@/lib/case-documents";
 import { countedEdits } from "@/lib/events";
+import { contactUrl, newTab } from "@/lib/site";
 import { requireCase } from "@/lib/session";
 import { DetailsForm } from "@/components/app/details-form";
 import { TextLink } from "@/components/ui";
@@ -58,7 +59,7 @@ export default async function DetailsPage() {
       ) : (
         <div className="mt-6 rounded-card border border-line-200 bg-white p-5 sm:p-6">
           <p className="text-slate-700">{t.limit}</p>
-          <TextLink href="/support" className="mt-3">
+          <TextLink href={contactUrl(locale)} {...newTab} className="mt-3">
             {t.contact}
           </TextLink>
         </div>

@@ -1,29 +1,26 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { sendContactMessage } from "@/app/[lang]/contact/actions";
+import type { Locale } from "@/i18n/config";
+import {
+  CONTACT_ACCEPT,
+  CONTACT_MAX_FILES as MAX_FILES,
+  CONTACT_MAX_TOTAL_BYTES as MAX_TOTAL_BYTES,
+  isContactAttachment,
+  isPhone,
+} from "@/lib/contact";
 import { Icon } from "./icons";
+import { Turnstile } from "./turnstile";
 
-// Submissions go straight from the browser to Basin (usebasin.com), which
-// stores the message and files and emails them to the team. No server of ours
-// touches the data.
-const BASIN_FORM_ID = process.env.NEXT_PUBLIC_BASIN_FORM_ID ?? "";
-
-const MAX_FILES = 3;
-const MAX_TOTAL_BYTES = 10 * 1024 * 1024;
-// PDFs and images. iPhone photos sometimes report no MIME type, so the
-// extension is checked too.
-function isAccepted(file: File) {
-  return (
-    file.type === "application/pdf" ||
-    file.type.startsWith("image/") ||
-    /\.(pdf|jpe?g|png|webp|heic|heif)$/i.test(file.name)
-  );
-}
+// Submissions go to a server action, which checks them again and emails them
+// to the support inbox. The checks here are for quick feedback.
 
 type Labels = {
   name: string;
   email: string;
   emailHint: string;
+  phone: string;
   reason: string;
   reasonPlaceholder: string;
   reasons: string[];
@@ -37,10 +34,18 @@ type Labels = {
   successTitle: string;
   successBody: string;
   error: string;
-  errors: { required: string; email: string; tooMany: string; tooLarge: string; type: string };
+  errors: {
+    required: string;
+    email: string;
+    phone: string;
+    tooMany: string;
+    tooLarge: string;
+    type: string;
+    verify: string;
+  };
 };
 
-type Field = "name" | "email" | "reason" | "message" | "attachments";
+type Field = "name" | "email" | "phone" | "reason" | "message" | "attachments";
 
 function formatSize(bytes: number, locale: string) {
   const mb = bytes / (1024 * 1024);
@@ -50,17 +55,22 @@ function formatSize(bytes: number, locale: string) {
 
 export function ContactForm({
   labels,
+  lang,
   locale,
   supportEmail,
 }: {
   labels: Labels;
+  lang: Locale;
+  /** For number formatting, e.g. "he-IL". */
   locale: string;
   supportEmail: string;
 }) {
   const [files, setFiles] = useState<File[]>([]);
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
-  const [sentTo, setSentTo] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed" | "unverified">("idle");
+  const [sent, setSent] = useState({ email: "", ticket: "" });
+  // Bumped after each send: a Turnstile token works only once.
+  const [turnstileReset, setTurnstileReset] = useState(0);
   const fileInput = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
 
@@ -74,7 +84,7 @@ export function ContactForm({
     if (!list) return;
     const next = [...files, ...Array.from(list)];
     let error: string | undefined;
-    if (next.some((f) => !isAccepted(f))) error = labels.errors.type;
+    if (next.some((f) => !isContactAttachment(f))) error = labels.errors.type;
     else if (next.length > MAX_FILES) error = labels.errors.tooMany;
     else if (next.reduce((sum, f) => sum + f.size, 0) > MAX_TOTAL_BYTES) error = labels.errors.tooLarge;
 
@@ -102,6 +112,7 @@ export function ContactForm({
       if (!value(key)) nextErrors[key] = labels.errors.required;
     }
     if (value("email") && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value("email"))) nextErrors.email = labels.errors.email;
+    if (value("phone") && !isPhone(value("phone"))) nextErrors.phone = labels.errors.phone;
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length) {
       form.querySelector<HTMLElement>(`[name="${Object.keys(nextErrors)[0]}"]`)?.focus();
@@ -111,26 +122,27 @@ export function ContactForm({
     const body = new FormData();
     body.set("name", value("name"));
     body.set("email", value("email"));
+    body.set("phone", value("phone"));
     body.set("reason", value("reason"));
     body.set("message", value("message"));
-    body.set("language", locale);
-    for (const file of files) body.append("attachments[]", file);
+    body.set("language", lang);
+    body.set("cf-turnstile-response", value("cf-turnstile-response"));
+    for (const file of files) body.append("attachments", file);
 
     setStatus("sending");
     try {
-      if (!BASIN_FORM_ID) throw new Error("NEXT_PUBLIC_BASIN_FORM_ID is not set");
-      const response = await fetch(`https://usebasin.com/f/${BASIN_FORM_ID}`, {
-        method: "POST",
-        body,
-        headers: { Accept: "application/json" },
-      });
-      if (!response.ok) throw new Error(`Basin responded ${response.status}`);
-      setSentTo(value("email"));
-      setStatus("sent");
+      const result = await sendContactMessage(body);
+      if (result.ok) {
+        setSent({ email: value("email"), ticket: result.ticket });
+        setStatus("sent");
+        return;
+      }
+      setStatus(result.error === "verify" ? "unverified" : "failed");
     } catch (error) {
       console.error(error);
       setStatus("failed");
     }
+    setTurnstileReset((n) => n + 1);
   }
 
   if (status === "sent") {
@@ -144,7 +156,7 @@ export function ContactForm({
           <Icon name="check" className="size-6" strokeWidth={2.4} />
         </span>
         <p className="mt-4 text-xl font-semibold text-navy-900">{labels.successTitle}</p>
-        <p className="mt-2">{labels.successBody.replace("{email}", sentTo)}</p>
+        <p className="mt-2">{labels.successBody.replace("{ticket}", sent.ticket).replace("{email}", sent.email)}</p>
       </div>
     );
   }
@@ -180,6 +192,19 @@ export function ContactForm({
           />
         </FieldBlock>
       </div>
+
+      <FieldBlock id="phone" label={labels.phone} error={errors.phone}>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          dir="ltr"
+          autoComplete="tel"
+          className={`${inputClass} text-start`}
+          aria-invalid={!!errors.phone}
+          aria-describedby={describedBy("phone")}
+        />
+      </FieldBlock>
 
       <FieldBlock id="reason" label={labels.reason} error={errors.reason}>
         <select id="reason" name="reason" defaultValue="" className={inputClass} {...fieldProps("reason")}>
@@ -246,7 +271,7 @@ export function ContactForm({
           ref={fileInput}
           type="file"
           multiple
-          accept="application/pdf,image/*"
+          accept={CONTACT_ACCEPT}
           className="sr-only"
           tabIndex={-1}
           aria-hidden="true"
@@ -273,9 +298,11 @@ export function ContactForm({
         </label>
       </div>
 
-      {status === "failed" && (
+      <Turnstile resetKey={turnstileReset} />
+
+      {(status === "failed" || status === "unverified") && (
         <p role="alert" className="rounded-[10px] bg-terracotta-100 px-4 py-3 text-sm text-terracotta-600">
-          {labels.error.replace("{email}", supportEmail)}
+          {status === "unverified" ? labels.errors.verify : labels.error.replace("{email}", supportEmail)}
         </p>
       )}
 

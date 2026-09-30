@@ -38,19 +38,27 @@ function isDuplicate(error: unknown): boolean {
   return false;
 }
 
+/** A payment in the currency the buyer paid in; the amounts come as strings. */
+type Presentment = { gross: string; vat: string; currency: string };
+
 /** The license's payment in Freemius, or null when it isn't there (yet). */
 async function paymentOfLicense(freemiusUserId: string, licenseId: string) {
   const payments = await freemius().api.user.retrievePayments(freemiusUserId);
-  const payment = payments.find((p) => String(p.license_id) === licenseId && (p.type ?? "payment") === "payment");
+  const listed = payments.find((p) => String(p.license_id) === licenseId && (p.type ?? "payment") === "payment");
+  // Freemius settles in dollars: gross and currency are in USD. What the buyer
+  // paid, in shekels, is its presentment, which only the payment on its own
+  // has, and the SDK's types leave out.
+  const payment = listed?.id ? await freemius().api.payment.retrieve(listed.id) : null;
   if (!payment?.id) return null;
-  const vat = payment.vat ?? 0;
+  const paid = (payment as { presentment?: Presentment }).presentment ?? payment;
+  const vat = Number(paid.vat ?? 0);
   const method: PaymentMethod | null = !payment.gateway ? null : payment.gateway === "paypal" ? "paypal" : "card";
   return {
     freemiusPaymentId: String(payment.id),
     // Freemius's gross is before VAT.
-    amount: (payment.gross ?? 0) + vat,
+    amount: Number(paid.gross ?? 0) + vat,
     vat,
-    currency: payment.currency ?? null,
+    currency: paid.currency ?? null,
     paymentMethod: method,
   };
 }

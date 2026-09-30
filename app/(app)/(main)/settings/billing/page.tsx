@@ -13,6 +13,7 @@ import { requireCase } from "@/lib/session";
 import { checksRunningLow } from "@/lib/products";
 import { prices } from "@/lib/site";
 import { SettingsCard, SettingsPage } from "@/components/app/settings-ui";
+import { Icon } from "@/components/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.billing };
@@ -99,7 +100,7 @@ export default async function BillingPage() {
                 </div>
                 <div className="text-end">
                   {p.amount !== null && (
-                    <p className="font-semibold text-navy-900 tabular-nums">
+                    <p className="text-[15px] font-semibold text-navy-900 tabular-nums">
                       <bdi>{formatAmount(p.amount, p.currency, locale)}</bdi>
                     </p>
                   )}
@@ -113,8 +114,9 @@ export default async function BillingPage() {
                       href={`/api/purchases/${p.id}/invoice`}
                       target="_blank"
                       rel="noopener"
-                      className="text-sm font-semibold text-teal-700 underline-offset-4 hover:underline"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-teal-700 underline-offset-4 hover:underline"
                     >
+                      <Icon name="receipt" className="size-4" />
                       {t.invoice}
                     </a>
                   )}

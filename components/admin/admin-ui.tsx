@@ -16,6 +16,27 @@ export const formatDateTime = (date: Date) => dateTime.format(date);
 /** A case's plan (lib/chat/plans.ts), by its tier's name on the pricing page. */
 export const planLabel: Record<string, string> = { free: "Free", assistant: "Assistant", filePrep: "File Preparation" };
 
+const numbers = new Intl.NumberFormat("en-US");
+
+/** A count with thousands separators, e.g. "6,416". */
+export const formatNumber = (value: number) => numbers.format(value);
+
+/** US dollars: cents from a cent up, and four places below it, so a single call doesn't read as $0.00. */
+export function formatUsd(usd: number) {
+  if (usd === 0) return "$0";
+  return `$${usd.toFixed(usd >= 0.01 ? 2 : 4)}`;
+}
+
+/** A case's model cost, and how many runs or answers it leaves out for having no reported cost. */
+export function CostFigure({ cost }: { cost: { usd: number; unknown: number } }) {
+  return (
+    <div className="tabular-nums">
+      <div className="font-semibold text-navy-900">{formatUsd(cost.usd)}</div>
+      {cost.unknown > 0 && <div className="text-[13px] text-amber-500">+{cost.unknown} unpriced</div>}
+    </div>
+  );
+}
+
 export function formatBytes(bytes: number) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;

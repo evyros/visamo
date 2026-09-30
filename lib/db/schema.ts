@@ -11,7 +11,7 @@ import {
   timestamp,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
-import type { Completion } from "../chat/openrouter";
+import type { ChatCall, Completion } from "../chat/openrouter";
 import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
@@ -282,13 +282,13 @@ export const documentCheck = pgTable(
 
     // What it was checked against, as sent, so an old check can be reviewed
     // after the guidance or the rules change. The knowledge base is too big
-    // to keep per check: only its hash (lib/knowledge-base.ts).
+    // to keep per check: only its version (lib/knowledge-base.ts).
     /** The document and the couple's details (lib/checks/prompt.ts checkContext). */
     context: text("context").notNull(),
     /** The document's check guidance (lib/documents/checks.ts), as it was. */
     guidance: jsonb("guidance").$type<DocumentCheck>().notNull(),
     rulesVersion: integer("rules_version").notNull(),
-    knowledgeHash: text("knowledge_hash").notNull(),
+    knowledgeVersion: integer("knowledge_version").notNull(),
 
     // What it took. Null for what a failed run didn't get to.
     fileCount: integer("file_count"),
@@ -444,6 +444,34 @@ export const chatMessage = pgTable(
     userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
     content: text("content").notNull(),
     createdAt: timestamp("created_at").notNull().defaultNow(),
+
+    // On an answer: what it took and what it was given, for the admin panel,
+    // like a document check's. Null on the user's messages. A failed answer
+    // isn't kept (its question is deleted and refunded), so it has none.
+    /** The model that answered, as OpenRouter reported it. */
+    model: text("model"),
+    /** Summed over the calls: the answer, and for a new chat's first answer its title. */
+    tokensIn: integer("tokens_in"),
+    tokensOut: integer("tokens_out"),
+    cachedTokens: integer("cached_tokens"),
+    /** Null when OpenRouter didn't report any call's cost, like on a check. */
+    costUsd: doublePrecision("cost_usd"),
+    /** From asking the model to the answer's first text: how long the couple waited. */
+    firstTokenMs: integer("first_token_ms"),
+    /** The answer's whole time. */
+    answerMs: integer("answer_ms"),
+    /** "stop" when the answer ended on its own; "length" when it hit the token cap; null when it was cut off. */
+    finishReason: text("finish_reason"),
+    /** Each model call, as OpenRouter reported it. */
+    calls: jsonb("calls").$type<ChatCall[]>(),
+    /** The couple's file as it was sent (lib/chat/prompt.ts casePrompt). */
+    caseContext: text("case_context"),
+    /** How many earlier messages were sent with the question. */
+    historyCount: integer("history_count"),
+    /** The assistant's rules, the knowledge base and the document catalog it was given. */
+    chatRulesVersion: integer("chat_rules_version"),
+    knowledgeVersion: integer("knowledge_version"),
+    catalogVersion: integer("catalog_version"),
   },
   (table) => [index("chat_message_chat_id_idx").on(table.chatId, table.createdAt)],
 );

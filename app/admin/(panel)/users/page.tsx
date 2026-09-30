@@ -4,7 +4,7 @@ import { requireAdmin } from "@/lib/admin";
 import { listUsers, USERS_PAGE_SIZE, type AdminUserRow } from "@/lib/admin-users";
 import { secondaryButton } from "@/components/app/settings-ui";
 import { inputClass } from "@/components/app/auth-ui";
-import { BalanceFigure, formatDateTime, PageHeading, Pill, planLabel } from "@/components/admin/admin-ui";
+import { BalanceFigure, CostFigure, formatDateTime, PageHeading, Pill, planLabel } from "@/components/admin/admin-ui";
 
 export const metadata: Metadata = { title: "Users" };
 
@@ -34,7 +34,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
     <main id="main" tabIndex={-1} className="relative min-h-0 flex-1 overflow-y-auto focus:outline-none">
       <div className="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
         <PageHeading title="Users">
-          {total} {filtered ? "matching" : "in all"}, newest first. Balances are the case’s, shared by both partners.
+          {total} {filtered ? "matching" : "in all"}, newest first. Balances and cost are the case’s, shared by both partners. Cost is every model call: document checks and chat answers.
         </PageHeading>
 
         <form method="get" action="/users" className="mt-6 flex flex-wrap items-end gap-3">
@@ -57,7 +57,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
         </form>
 
         <div className="mt-6 overflow-x-auto rounded-card border border-line-200 bg-white">
-          <table className="w-full min-w-[820px] text-start text-[15px]">
+          <table className="w-full min-w-[920px] text-start text-[15px]">
             <thead className="border-b border-line-200 bg-sand-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
               <tr>
                 <th className="px-4 py-3 text-start">User</th>
@@ -65,6 +65,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
                 <th className="px-4 py-3 text-start">Case</th>
                 <th className="px-4 py-3 text-end">Messages</th>
                 <th className="px-4 py-3 text-end">Checks</th>
+                <th className="px-4 py-3 text-end">Case cost</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line-200">
@@ -73,7 +74,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
               ))}
               {rows.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="px-4 py-10 text-center text-slate-500">
+                  <td colSpan={6} className="px-4 py-10 text-center text-slate-500">
                     {filtered ? "No users match these filters." : "No users yet."}
                   </td>
                 </tr>
@@ -131,6 +132,7 @@ function UserRow({ row }: { row: AdminUserRow }) {
       <td className="px-4 py-3 text-end text-slate-500">
         {row.totals ? <BalanceFigure left={row.checksLeft!} totals={row.totals.checks} /> : "—"}
       </td>
+      <td className="px-4 py-3 text-end text-slate-500">{row.cost ? <CostFigure cost={row.cost} /> : "—"}</td>
     </tr>
   );
 }

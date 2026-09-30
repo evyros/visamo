@@ -13,6 +13,7 @@ import { ownerOrder } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { BalanceFigure, PageHeading, planLabel, Stat } from "@/components/admin/admin-ui";
 import { DocumentCard, historyHref } from "@/components/admin/document-card";
+import { OpenLinkedCard } from "@/components/admin/open-linked-card";
 import { historyEntries } from "@/components/admin/document-history";
 
 export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/documents">): Promise<Metadata> {
@@ -91,6 +92,7 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
         )}
       </PageHeading>
 
+      <OpenLinkedCard />
       <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
         <Stat
           label="Uploaded"
@@ -109,11 +111,8 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
           note={`${failed} failed · $${cost.toFixed(2)} spent`}
         />
         <Stat label="Checks" value={<BalanceFigure left={user.checksLeft!} totals={user.totals!.checks} />} />
-        <Stat
-          label="Messages"
-          value={<BalanceFigure left={user.messagesLeft!} totals={user.totals!.messages} />}
-          note={`Plan: ${planLabel[user.plan!] ?? user.plan}`}
-        />
+        <Stat label="Messages" value={<BalanceFigure left={user.messagesLeft!} totals={user.totals!.messages} />} />
+        <Stat label="Plan" value={planLabel[user.plan!] ?? user.plan} />
       </div>
 
       {ownerOrder.map((owner) => {

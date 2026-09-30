@@ -2,7 +2,7 @@ import "server-only";
 import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
 import { loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
-import type { Completion } from "@/lib/chat/openrouter";
+import { callTotals, type Completion } from "@/lib/chat/openrouter";
 import type { Plan } from "@/lib/chat/plans";
 import { db } from "@/lib/db";
 import { casePerson, cases, documentCheck, user } from "@/lib/db/schema";
@@ -43,7 +43,7 @@ export type CheckRun = {
   context: string;
   guidance: DocumentCheck;
   rulesVersion: number;
-  knowledgeHash: string;
+  knowledgeVersion: number;
 };
 
 /** What a run took, recorded when it ends; a failed run has what it got to. */
@@ -58,19 +58,7 @@ export type CheckMetrics = {
 
 /** The columns for a run's metrics, the calls summed. */
 function metricColumns({ calls, ...metrics }: CheckMetrics) {
-  const sum = (pick: (call: Completion) => number) => calls.reduce((total, call) => total + pick(call), 0);
-  const costs = calls.map((call) => call.costUsd);
-  return {
-    ...metrics,
-    calls,
-    attempts: calls.length,
-    tokensIn: sum((c) => c.tokensIn),
-    tokensOut: sum((c) => c.tokensOut),
-    cachedTokens: sum((c) => c.cachedTokens),
-    // Unknown if any call's cost is: a partial sum would read as the whole.
-    costUsd: costs.every((cost) => cost !== null) ? costs.reduce((a, b) => a + b, 0) : null,
-    modelMs: sum((c) => c.ms),
-  };
+  return { ...metrics, calls, attempts: calls.length, ...callTotals(calls) };
 }
 
 /**
@@ -108,7 +96,7 @@ export async function claimCheck(run: CheckRun) {
         context: run.context,
         guidance: run.guidance,
         rulesVersion: run.rulesVersion,
-        knowledgeHash: run.knowledgeHash,
+        knowledgeVersion: run.knowledgeVersion,
       })
       .onConflictDoNothing()
       .returning({ id: documentCheck.id }),

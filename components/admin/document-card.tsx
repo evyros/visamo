@@ -61,14 +61,22 @@ export function DocumentCard({
   const uploaded = files.filter((f) => !f.deletedAt);
 
   return (
-    <section id={cardId(docKey)} className="scroll-mt-4 rounded-card border border-line-200 bg-white">
-      <header className="flex flex-wrap items-start justify-between gap-3 border-b border-line-200 px-4 py-3 sm:px-5">
-        <div className="min-w-0">
-          <h3 className="font-semibold text-navy-900">{title}</h3>
-          <DocumentMeta docKey={docKey} optional={optional} check={check} />
+    // Collapsed by default: the header is enough to scan the list. The card a
+    // link points to (#doc-…) is opened by OpenLinkedCard.
+    <details id={cardId(docKey)} className="group scroll-mt-4 rounded-card border border-line-200 bg-white">
+      <summary className="flex cursor-pointer list-none flex-wrap items-start justify-between gap-3 px-4 py-3 group-open:border-b group-open:border-line-200 sm:px-5 [&::-webkit-details-marker]:hidden">
+        <div className="flex min-w-0 items-start gap-2">
+          <Icon
+            name="chevron"
+            className="mt-1 size-4 shrink-0 text-slate-500 transition-transform group-open:rotate-90"
+          />
+          <div className="min-w-0">
+            <h3 className="font-semibold text-navy-900">{title}</h3>
+            <DocumentMeta docKey={docKey} optional={optional} check={check} />
+          </div>
         </div>
         <CheckStatus check={check} files={files} ratings={ratings} />
-      </header>
+      </summary>
 
       <div className="space-y-4 px-4 py-4 sm:px-5">
         {uploaded.length > 0 ? (
@@ -107,7 +115,7 @@ export function DocumentCard({
           </Link>
         )}
       </div>
-    </section>
+    </details>
   );
 }
 

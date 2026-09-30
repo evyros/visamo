@@ -1,5 +1,5 @@
 import "server-only";
-import { and, asc, count, desc, eq, type SQL } from "drizzle-orm";
+import { and, asc, count, desc, eq, sql, type SQL } from "drizzle-orm";
 import { alias } from "drizzle-orm/pg-core";
 import { db } from "./db";
 import { chat, chatMessage, user } from "./db/schema";
@@ -21,10 +21,17 @@ export const chatHref = (userId: string, chatId: string, message?: string) =>
 /** A chat's title, or what stands in for one before it's written. */
 export const chatTitle = (chat: { title: string | null }) => chat.title ?? "Untitled chat";
 
-/** Chats with who started and who deleted them, and how many messages they have, latest first. */
+/** Chats with who started and who deleted them, how many messages they have and what their answers cost, latest first. */
 async function chats(where: SQL | undefined) {
+  const answer = sql`${chatMessage.role} = 'assistant'`;
   const messages = db
-    .select({ chatId: chatMessage.chatId, count: count().as("count") })
+    .select({
+      chatId: chatMessage.chatId,
+      count: count().as("count"),
+      usd: sql<number>`coalesce(sum(${chatMessage.costUsd}) filter (where ${answer}), 0)`.as("usd"),
+      /** Answers whose cost wasn't reported: the sum leaves them out. */
+      unknown: sql<number>`count(*) filter (where ${answer} and ${chatMessage.costUsd} is null)`.as("unknown"),
+    })
     .from(chatMessage)
     .innerJoin(chat, eq(chat.id, chatMessage.chatId))
     .where(where)
@@ -36,6 +43,8 @@ async function chats(where: SQL | undefined) {
       createdByName: starter.name,
       deletedByName: remover.name,
       messages: messages.count,
+      usd: messages.usd,
+      unknown: messages.unknown,
     })
     .from(chat)
     .leftJoin(starter, eq(starter.id, chat.createdBy))
@@ -43,11 +52,13 @@ async function chats(where: SQL | undefined) {
     .leftJoin(messages, eq(messages.chatId, chat.id))
     .where(where)
     .orderBy(desc(chat.updatedAt));
-  return rows.map(({ chat, createdByName, deletedByName, messages }) => ({
+  return rows.map(({ chat, createdByName, deletedByName, messages, usd, unknown }) => ({
     ...chat,
     createdByName,
     deletedByName,
     messages: messages ?? 0,
+    // A subquery's aggregates come back as strings.
+    cost: { usd: Number(usd ?? 0), unknown: Number(unknown ?? 0) },
   }));
 }
 
@@ -67,6 +78,21 @@ export async function caseChat(caseId: string, chatId: string) {
       content: chatMessage.content,
       createdAt: chatMessage.createdAt,
       authorName: author.name,
+      // What an answer took and was given; null on questions.
+      model: chatMessage.model,
+      tokensIn: chatMessage.tokensIn,
+      tokensOut: chatMessage.tokensOut,
+      cachedTokens: chatMessage.cachedTokens,
+      costUsd: chatMessage.costUsd,
+      firstTokenMs: chatMessage.firstTokenMs,
+      answerMs: chatMessage.answerMs,
+      finishReason: chatMessage.finishReason,
+      calls: chatMessage.calls,
+      caseContext: chatMessage.caseContext,
+      historyCount: chatMessage.historyCount,
+      chatRulesVersion: chatMessage.chatRulesVersion,
+      knowledgeVersion: chatMessage.knowledgeVersion,
+      catalogVersion: chatMessage.catalogVersion,
     })
     .from(chatMessage)
     .leftJoin(author, eq(author.id, chatMessage.userId))
@@ -74,3 +100,5 @@ export async function caseChat(caseId: string, chatId: string) {
     .orderBy(asc(chatMessage.createdAt));
   return { chat: found, messages };
 }
+
+export type AdminChatMessage = NonNullable<Awaited<ReturnType<typeof caseChat>>>["messages"][number];

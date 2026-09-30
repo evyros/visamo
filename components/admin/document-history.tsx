@@ -214,6 +214,7 @@ function RunCard({
     run.costUsd != null && `$${run.costUsd.toFixed(4)}`,
     run.durationMs != null && `${(run.durationMs / 1000).toFixed(1)}s`,
     run.model,
+    `rules v${run.rulesVersion} · knowledge v${run.knowledgeVersion}`,
   ].filter(Boolean);
 
   return (

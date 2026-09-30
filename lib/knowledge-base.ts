@@ -1,10 +1,17 @@
 import "server-only";
-import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 // The knowledge base (lib/knowledge), as the models read it: the chat, and
 // the document checker, so both know the process the same way.
+
+/**
+ * The knowledge base's version, recorded on every answer and check: the text
+ * is too big to store with each. Any change to the files below needs a new
+ * version: lib/prompts.test.ts fails until it's raised and recorded
+ * (npm run prompts:lock).
+ */
+export const KNOWLEDGE_VERSION = 1;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [
@@ -27,7 +34,3 @@ export function loadKnowledge() {
   return knowledge;
 }
 
-/** Identifies the knowledge base's version, for a check's record: the text itself is too big to store per check. */
-export async function knowledgeHash() {
-  return createHash("sha256").update(await loadKnowledge()).digest("hex").slice(0, 16);
-}

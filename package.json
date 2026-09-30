@@ -10,7 +10,8 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "test": "vitest run",
-    "catalog:lock": "UPDATE_CATALOG_LOCK=1 vitest run lib/documents/catalog.test.ts"
+    "catalog:lock": "UPDATE_CATALOG_LOCK=1 vitest run lib/documents/catalog.test.ts",
+    "prompts:lock": "UPDATE_PROMPTS_LOCK=1 vitest run lib/prompts.test.ts"
   },
   "dependencies": {
     "@hyzyla/pdfium": "^2.1.13",

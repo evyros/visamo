@@ -2,11 +2,13 @@ import { after } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { chat, chatMessage } from "@/lib/db/schema";
-import { complete, streamCompletion, type ModelMessage } from "@/lib/chat/openrouter";
+import { callTotals, complete, streamCompletion, type ChatCall, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
 import { maxMessageLength } from "@/lib/chat/plans";
-import { casePrompt, staticPrompt } from "@/lib/chat/prompt";
+import { CHAT_RULES_VERSION, casePrompt, staticPrompt } from "@/lib/chat/prompt";
 import { chatBalance, chatMessages, inCase } from "@/lib/chat/store";
 import { refundQueries, spendOnMessage } from "@/lib/credits";
+import { CATALOG_VERSION } from "@/lib/documents/catalog";
+import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
 
 // Sends the assistant one message in one of the case's chats (either partner
@@ -64,14 +66,19 @@ export async function POST(request: Request) {
   // A new chat's title is written alongside the answer, from the message alone.
   const title = existing ? null : summarize(message);
 
-  let answer: AsyncIterator<string>;
-  let first: IteratorResult<string>;
+  let answer: ReturnType<typeof streamCompletion>;
+  let first: IteratorResult<string, Completion>;
+  // What the answer was given, for its record.
+  let given: { caseContext: string; historyCount: number };
   try {
     const [system, file, history] = await Promise.all([
       staticPrompt(),
       casePrompt(caseId, user.id),
       chatMessages(chatId, caseId),
     ]);
+    // The latest message, the question, is the last of them.
+    const sent = (history ?? []).slice(-HISTORY);
+    given = { caseContext: file, historyCount: Math.max(0, sent.length - 1) };
     const messages: ModelMessage[] = [
       {
         role: "system",
@@ -81,12 +88,12 @@ export async function POST(request: Request) {
         ],
       },
       // Both partners can write in a chat: mark the messages the other one wrote.
-      ...(history ?? []).slice(-HISTORY).map(({ role, content, userId, name }) => ({
+      ...sent.map(({ role, content, userId, name }) => ({
         role,
         content: role === "user" && userId !== user.id ? `[Asked by ${name ?? "the other partner"}]\n${content}` : content,
       })),
     ];
-    answer = streamCompletion(messages, MAX_ANSWER_TOKENS)[Symbol.asyncIterator]();
+    answer = streamCompletion(messages, MAX_ANSWER_TOKENS);
     first = await answer.next();
     if (first.done) throw new Error("The model's answer was empty");
   } catch (error) {
@@ -97,7 +104,7 @@ export async function POST(request: Request) {
 
   // Saved as soon as it's ready, not with the answer, so the sidebar can show
   // it early (the other partner's, or after a reload). summarize never throws.
-  const titleSaved = title?.then(async (text) => {
+  const titleSaved = title?.then(async ({ text }) => {
     try {
       await db.update(chat).set({ title: text }).where(eq(chat.id, chatId));
     } catch (error) {
@@ -125,11 +132,17 @@ export async function POST(request: Request) {
   });
 
   const finished = (async () => {
-    let text = first.value;
+    let text = first.value as string;
     let broken = false;
+    // The answer's call, once the stream ends; none when it was cut off.
+    let answerCall: ChatCall | null = null;
     send(text);
     try {
-      for (let next = await answer.next(); !next.done; next = await answer.next()) {
+      for (let next = await answer.next(); ; next = await answer.next()) {
+        if (next.done) {
+          answerCall = { ...next.value, purpose: "answer" };
+          break;
+        }
         text += next.value;
         send(next.value);
       }
@@ -137,9 +150,31 @@ export async function POST(request: Request) {
       console.error("chat: answer cut off", error);
       broken = true;
     }
+    const titleCall = (await title)?.call;
+    const calls = [answerCall, titleCall && { ...titleCall, purpose: "title" as const }].filter((c) => !!c);
+    const totals = callTotals(calls);
     try {
       await db.batch([
-        db.insert(chatMessage).values({ id: crypto.randomUUID(), chatId, role: "assistant", content: text }),
+        db.insert(chatMessage).values({
+          id: crypto.randomUUID(),
+          chatId,
+          role: "assistant",
+          content: text,
+          model: answerCall?.model ?? null,
+          tokensIn: totals.tokensIn,
+          tokensOut: totals.tokensOut,
+          cachedTokens: totals.cachedTokens,
+          // A cut-off answer's usage never came: its cost is unknown, not the title's alone.
+          costUsd: answerCall ? totals.costUsd : null,
+          firstTokenMs: answerCall?.firstTokenMs ?? null,
+          answerMs: answerCall?.ms ?? null,
+          finishReason: answerCall?.finishReason ?? null,
+          calls,
+          ...given,
+          chatRulesVersion: CHAT_RULES_VERSION,
+          knowledgeVersion: KNOWLEDGE_VERSION,
+          catalogVersion: CATALOG_VERSION,
+        }),
         db.update(chat).set({ updatedAt: new Date() }).where(eq(chat.id, chatId)),
       ]);
     } catch (error) {
@@ -167,11 +202,11 @@ export async function POST(request: Request) {
   });
 }
 
-/** A few words that sum up the first message, in its language, for the sidebar. */
-async function summarize(message: string) {
+/** A few words that sum up the first message, in its language, for the sidebar, and the call that wrote them. */
+async function summarize(message: string): Promise<{ text: string; call: Completion | null }> {
   const fallback = message.length > 60 ? `${message.slice(0, 57).trimEnd()}…` : message;
   try {
-    const title = await complete(
+    const call = await complete(
       [
         {
           role: "system",
@@ -182,9 +217,9 @@ async function summarize(message: string) {
       ],
       30,
     );
-    return title.replace(/^["'«“]+|["'»”.]+$/g, "").slice(0, 80) || fallback;
+    return { text: call.answer.replace(/^["'«“]+|["'»”.]+$/g, "").slice(0, 80) || fallback, call };
   } catch (error) {
     console.error("chat: no title", error);
-    return fallback;
+    return { text: fallback, call: null };
   }
 }

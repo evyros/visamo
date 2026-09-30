@@ -5,6 +5,7 @@ import { requireAdmin } from "@/lib/admin";
 import { caseChat, chatTitle, messageId } from "@/lib/admin-chats";
 import { findUser } from "@/lib/admin-users";
 import { formatDateTime, PageHeading, Pill } from "@/components/admin/admin-ui";
+import { AnswerDetails } from "@/components/admin/answer-details";
 import { ChatMarkdown, textDirection } from "@/components/app/chat-markdown";
 import { Icon } from "@/components/icons";
 import { LogoMark } from "@/components/logo";
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/
 }
 
 // One of the case's chats, deleted or not, message by message: who asked
-// what, and when.
+// what, and when, and under each answer what it took and was given.
 export default async function AdminUserChatPage({ params }: PageProps<"/admin/users/[id]/chats/[chatId]">) {
   await requireAdmin();
   const { id, chatId } = await params;
@@ -72,6 +73,7 @@ export default async function AdminUserChatPage({ params }: PageProps<"/admin/us
                   <div dir={textDirection(message.content)} className="mt-1 break-words text-slate-700">
                     <ChatMarkdown text={message.content} />
                   </div>
+                  <AnswerDetails message={message} />
                 </div>
               </li>
             ),

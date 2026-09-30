@@ -44,6 +44,8 @@ export async function allCaseChecks(caseId: string, documentKey?: string) {
       /** Differs between two runs when the case details or the check guidance changed. */
       contextHash: documentCheck.contextHash,
       model: documentCheck.model,
+      rulesVersion: documentCheck.rulesVersion,
+      knowledgeVersion: documentCheck.knowledgeVersion,
       attempts: documentCheck.attempts,
       ratingCorrected: documentCheck.ratingCorrected,
       pages: documentCheck.pages,

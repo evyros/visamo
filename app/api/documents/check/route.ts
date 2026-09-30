@@ -10,7 +10,7 @@ import { caseChecks, checkBalance, claimCheck, failCheck, saveCheck, type CheckM
 import { checkView } from "@/lib/checks/view";
 import { refund, spend } from "@/lib/credits";
 import { checkFor } from "@/lib/documents/checks";
-import { knowledgeHash } from "@/lib/knowledge-base";
+import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
 
 // Checks one item of the case's list: all its files (the document, and its
@@ -103,7 +103,7 @@ export async function POST(request: Request) {
     context,
     guidance: check,
     rulesVersion: RULES_VERSION,
-    knowledgeHash: await knowledgeHash(),
+    knowledgeVersion: KNOWLEDGE_VERSION,
   };
   const runId = await claimCheck(run);
   if (!runId) return fail("running", 409);

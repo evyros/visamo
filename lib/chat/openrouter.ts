@@ -40,12 +40,31 @@ function request(body: Record<string, unknown>) {
   });
 }
 
-/** The answer's text as it's written. Throws if the request fails before any text. */
-export async function* streamCompletion(messages: ModelMessage[], maxTokens: number) {
-  const response = await request({ messages, max_tokens: maxTokens, stream: true });
+/**
+ * The answer's text as it's written, then, as the generator's return value,
+ * the call's usage (OpenRouter sends it in the last event). Throws if the
+ * request fails before any text.
+ */
+export async function* streamCompletion(
+  messages: ModelMessage[],
+  maxTokens: number,
+): AsyncGenerator<string, Completion & { firstTokenMs: number | null }> {
+  const started = performance.now();
+  const response = await request({ messages, max_tokens: maxTokens, stream: true, usage: { include: true } });
   if (!response.ok || !response.body) {
     throw new Error(`OpenRouter answered ${response.status}: ${await response.text()}`);
   }
+
+  let answer = "";
+  let firstTokenMs: number | null = null;
+  // Filled in from the events as they come; every event repeats id, provider and model.
+  let last: Record<string, any> = {}; // eslint-disable-line @typescript-eslint/no-explicit-any
+  let finishReason: string | null = null;
+  let usage: Record<string, any> = {}; // eslint-disable-line @typescript-eslint/no-explicit-any
+  const result = () => ({
+    ...fromResponse({ ...last, usage, choices: [{ finish_reason: finishReason }] }, answer, started),
+    firstTokenMs,
+  });
 
   // Server-sent events: `data: {json}` lines, `: comment` keep-alives, and `data: [DONE]`.
   const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
@@ -57,21 +76,30 @@ export async function* streamCompletion(messages: ModelMessage[], maxTokens: num
     for (const line of lines) {
       if (!line.startsWith("data: ")) continue;
       const data = line.slice(6).trim();
-      if (data === "[DONE]") return;
+      if (data === "[DONE]") return result();
       const event = JSON.parse(data);
       if (event.error) throw new Error(`OpenRouter stream error: ${JSON.stringify(event.error)}`);
+      last = event;
+      if (event.usage) usage = event.usage;
+      finishReason = event.choices?.[0]?.finish_reason ?? finishReason;
       const text = event.choices?.[0]?.delta?.content;
-      if (text) yield text as string;
+      if (text) {
+        firstTokenMs ??= Math.round(performance.now() - started);
+        answer += text;
+        yield text as string;
+      }
     }
   }
+  return result();
 }
 
-/** A whole short answer at once. */
-export async function complete(messages: ModelMessage[], maxTokens: number) {
-  const response = await request({ messages, max_tokens: maxTokens });
+/** A whole short answer at once, with its usage. */
+export async function complete(messages: ModelMessage[], maxTokens: number): Promise<Completion> {
+  const started = performance.now();
+  const response = await request({ messages, max_tokens: maxTokens, usage: { include: true } });
   if (!response.ok) throw new Error(`OpenRouter answered ${response.status}: ${await response.text()}`);
   const json = await response.json();
-  return (json.choices?.[0]?.message?.content as string | undefined)?.trim() ?? "";
+  return fromResponse(json, ((json.choices?.[0]?.message?.content as string | undefined) ?? "").trim(), started);
 }
 
 /** One model call, with what it cost, as OpenRouter reports it. */
@@ -117,9 +145,15 @@ export async function completeJson(
   });
   if (!response.ok) throw new Error(`OpenRouter answered ${response.status}: ${await response.text()}`);
   const json = await response.json();
+  return fromResponse(json, (json.choices?.[0]?.message?.content as string | undefined) ?? "", started);
+}
+
+/** A call's Completion, from OpenRouter's response (or a stream's events, gathered into one). */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function fromResponse(json: Record<string, any>, answer: string, started: number): Completion {
   const usage = json.usage ?? {};
   return {
-    answer: (json.choices?.[0]?.message?.content as string | undefined) ?? "",
+    answer,
     generationId: json.id ?? null,
     provider: json.provider ?? null,
     model: json.model ?? null,
@@ -129,5 +163,22 @@ export async function completeJson(
     cachedTokens: usage.prompt_tokens_details?.cached_tokens ?? 0,
     costUsd: typeof usage.cost === "number" ? usage.cost : null,
     ms: Math.round(performance.now() - started),
+  };
+}
+
+/** One of a chat answer's model calls: the answer itself, or a new chat's title. */
+export type ChatCall = Completion & { purpose: "answer" | "title"; firstTokenMs?: number | null };
+
+/** A run's calls summed: what a check or an answer took. */
+export function callTotals(calls: Completion[]) {
+  const sum = (pick: (call: Completion) => number) => calls.reduce((total, call) => total + pick(call), 0);
+  const costs = calls.map((call) => call.costUsd);
+  return {
+    tokensIn: sum((c) => c.tokensIn),
+    tokensOut: sum((c) => c.tokensOut),
+    cachedTokens: sum((c) => c.cachedTokens),
+    // Unknown if any call's cost is: a partial sum would read as the whole.
+    costUsd: costs.every((cost) => cost !== null) ? costs.reduce((a, b) => a + b, 0) : null,
+    modelMs: sum((c) => c.ms),
   };
 }

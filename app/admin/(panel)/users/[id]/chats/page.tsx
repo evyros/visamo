@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { requireAdmin } from "@/lib/admin";
 import { allCaseChats, chatHref, chatTitle, type AdminChat } from "@/lib/admin-chats";
 import { findUser } from "@/lib/admin-users";
-import { formatDateTime, PageHeading, Pill, Stat } from "@/components/admin/admin-ui";
+import { CostFigure, formatDateTime, formatUsd, PageHeading, Pill, Stat } from "@/components/admin/admin-ui";
 
 export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/chats">): Promise<Metadata> {
   const user = await findUser((await params).id);
@@ -31,15 +31,17 @@ export default async function AdminUserChatsPage({ params }: PageProps<"/admin/u
   const chats = await allCaseChats(user.caseId);
   const deleted = chats.filter((c) => c.deletedAt).length;
   const messages = chats.reduce((total, c) => total + c.messages, 0);
+  const cost = chats.reduce((total, c) => total + c.cost.usd, 0);
 
   return (
     <div className="mx-auto w-full max-w-[1000px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <PageHeading title="Chats">The case’s, shared by both partners. Latest first.</PageHeading>
 
-      <div className="mt-6 grid grid-cols-3 gap-3 md:max-w-[640px]">
+      <div className="mt-6 grid grid-cols-2 gap-3 md:max-w-[800px] md:grid-cols-4">
         <Stat label="Chats" value={chats.length} />
         <Stat label="Deleted" value={deleted} />
         <Stat label="Messages" value={messages} note="Questions and answers" />
+        <Stat label="Cost" value={formatUsd(cost)} note="The answers, deleted chats too" />
       </div>
 
       <div className="mt-8 overflow-x-auto rounded-card border border-line-200 bg-white">
@@ -48,6 +50,7 @@ export default async function AdminUserChatsPage({ params }: PageProps<"/admin/u
             <tr>
               <th className="px-4 py-3 text-start">Chat</th>
               <th className="px-4 py-3 text-end">Messages</th>
+              <th className="px-4 py-3 text-end">Cost</th>
               <th className="px-4 py-3 text-start">Started</th>
               <th className="px-4 py-3 text-start">Last message</th>
             </tr>
@@ -58,7 +61,7 @@ export default async function AdminUserChatsPage({ params }: PageProps<"/admin/u
             ))}
             {chats.length === 0 && (
               <tr>
-                <td colSpan={4} className="px-4 py-10 text-center text-slate-500">
+                <td colSpan={5} className="px-4 py-10 text-center text-slate-500">
                   No chats yet.
                 </td>
               </tr>
@@ -86,6 +89,9 @@ function ChatRow({ chat, userId }: { chat: AdminChat; userId: string }) {
         )}
       </td>
       <td className="px-4 py-2.5 text-end tabular-nums">{chat.messages}</td>
+      <td className="px-4 py-2.5 text-end text-sm">
+        <CostFigure cost={chat.cost} />
+      </td>
       <td className="px-4 py-2.5 text-sm">
         <div className="whitespace-nowrap">{formatDateTime(chat.createdAt)}</div>
         <div className="text-slate-500">{chat.createdByName ?? "—"}</div>

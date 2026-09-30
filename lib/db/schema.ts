@@ -404,6 +404,7 @@ export const caseEvent = pgTable(
 // Conversations with the Visamo assistant. They belong to the case, so both
 // partners see and continue the same chats, and spend the case's message
 // balance (cases.messagesLeft). Each user message records who wrote it.
+// A deleted chat is only hidden (chat.deletedAt).
 
 export const chat = pgTable(
   "chat",
@@ -419,6 +420,13 @@ export const chat = pgTable(
     createdAt: timestamp("created_at").notNull().defaultNow(),
     /** Moves with every message, so the sidebar lists the latest chat first. */
     updatedAt: timestamp("updated_at").notNull().defaultNow(),
+    /**
+     * When a partner deleted it. Chats are never deleted from the database,
+     * only hidden from both partners, and kept for the admin panel. Deleting
+     * the whole case still deletes everything.
+     */
+    deletedAt: timestamp("deleted_at"),
+    deletedBy: text("deleted_by").references(() => user.id, { onDelete: "set null" }),
   },
   (table) => [index("chat_case_id_idx").on(table.caseId, table.updatedAt)],
 );

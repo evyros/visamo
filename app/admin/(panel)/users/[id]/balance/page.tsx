@@ -3,10 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireAdmin } from "@/lib/admin";
 import { findUser } from "@/lib/admin-users";
+import { chatHref, chatTitle } from "@/lib/admin-chats";
 import { creditEntries, type CreditEntryRow, type CreditReason } from "@/lib/credits";
 import { BalanceFigure, formatDateTime, PageHeading, Pill, planLabel, Stat, type PillTone } from "@/components/admin/admin-ui";
 import { historyHref } from "@/components/admin/document-card";
 import { TopUpForm } from "@/components/admin/top-up-form";
+import { Icon } from "@/components/icons";
 
 export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/balance">): Promise<Metadata> {
   const user = await findUser((await params).id);
@@ -92,6 +94,10 @@ export default async function AdminUserBalancePage({ params }: PageProps<"/admin
   );
 }
 
+/** The "For" column: what a spend or refund paid for, with an icon for a check or a chat message. */
+const forLink = "inline-flex items-start gap-1.5 text-teal-700 hover:underline";
+const forIcon = "mt-0.5 size-4 shrink-0";
+
 function EntryRow({ row, userId }: { row: CreditEntryRow; userId: string }) {
   const { entry } = row;
   const reason = reasons[entry.reason];
@@ -111,11 +117,20 @@ function EntryRow({ row, userId }: { row: CreditEntryRow; userId: string }) {
       <td className="px-4 py-2.5 text-sm">{entry.adminEmail ?? row.userName ?? "—"}</td>
       <td className="px-4 py-2.5 text-sm">
         {row.documentKey ? (
-          <Link href={historyHref(userId, row.documentKey)} className="text-teal-700 hover:underline">
+          <Link href={historyHref(userId, row.documentKey, entry.refId!)} className={forLink}>
+            <Icon name="checkCircle" className={forIcon} />
             <code>{row.documentKey}</code>
           </Link>
+        ) : row.chatId ? (
+          <Link href={chatHref(userId, row.chatId, entry.refId!)} className={forLink}>
+            <Icon name="chat" className={forIcon} />
+            <span dir="auto">{chatTitle({ title: row.chatTitle })}</span>
+          </Link>
         ) : entry.kind === "messages" && (entry.reason === "spend" || entry.reason === "refund") ? (
-          "A chat message"
+          <span className="inline-flex items-start gap-1.5">
+            <Icon name="chat" className={forIcon} />
+            A message that got no answer
+          </span>
         ) : (
           "—"
         )}

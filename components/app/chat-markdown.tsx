@@ -72,3 +72,17 @@ export function ChatMarkdown({ text }: { text: string }) {
     </div>
   );
 }
+
+const RTL_LETTER = /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]/gu;
+const LTR_LETTER = /[A-Za-z\u00C0-\u024F\u0370-\u03FF\u0400-\u04FF]/gu;
+
+/**
+ * A message's direction, from most of its letters. Not dir="auto", which
+ * goes by the first letter: a Hebrew answer that starts with "A/5" or
+ * "Visamo" would come out left-to-right.
+ */
+export function textDirection(text: string): "rtl" | "ltr" {
+  const rtl = text.match(RTL_LETTER)?.length ?? 0;
+  const ltr = text.match(LTR_LETTER)?.length ?? 0;
+  return rtl > ltr ? "rtl" : "ltr";
+}

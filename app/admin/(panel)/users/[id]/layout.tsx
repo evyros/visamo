@@ -35,6 +35,7 @@ export default async function AdminUserLayout({ children, params }: LayoutProps<
             label="User"
             items={[
               { href: `${base}/documents`, label: "Documents", icon: "file", includeSubpages: true },
+              { href: `${base}/chats`, label: "Chats", icon: "chat", includeSubpages: true },
               { href: `${base}/balance`, label: "Balance", icon: "receipt" },
             ]}
           />

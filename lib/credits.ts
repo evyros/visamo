@@ -147,13 +147,25 @@ export async function caseCreditTotals(caseId: string) {
   return (await creditTotals([caseId])).get(caseId)!;
 }
 
-/** A case's entries, newest first, with the partner's name, and for a check's spend or refund, the document it checked. */
+/**
+ * A case's entries, newest first, with the partner's name, and what a spend
+ * or refund was for: the check run and its document, or the chat message and
+ * its chat. A message that got no answer was deleted, so it has no chat.
+ */
 export async function creditEntries(caseId: string) {
   return db
-    .select({ entry: creditEntry, userName: user.name, documentKey: documentCheck.documentKey })
+    .select({
+      entry: creditEntry,
+      userName: user.name,
+      documentKey: documentCheck.documentKey,
+      chatId: chatMessage.chatId,
+      chatTitle: chat.title,
+    })
     .from(creditEntry)
     .leftJoin(user, eq(user.id, creditEntry.userId))
     .leftJoin(documentCheck, and(eq(creditEntry.kind, "checks"), eq(documentCheck.id, creditEntry.refId)))
+    .leftJoin(chatMessage, and(eq(creditEntry.kind, "messages"), eq(chatMessage.id, creditEntry.refId)))
+    .leftJoin(chat, eq(chat.id, chatMessage.chatId))
     .where(eq(creditEntry.caseId, caseId))
     .orderBy(desc(creditEntry.createdAt), desc(creditEntry.id));
 }

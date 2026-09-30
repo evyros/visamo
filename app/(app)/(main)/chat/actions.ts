@@ -6,8 +6,8 @@ import { requireCase } from "@/lib/session";
 
 /** Deletes one of the case's chats, with its messages, for both partners. */
 export async function deleteChat(chatId: string) {
-  const { caseId } = await requireCase();
+  const { user, caseId } = await requireCase();
   if (typeof chatId !== "string") return;
-  await removeChat(chatId, caseId);
+  await removeChat(chatId, caseId, user.id);
   refresh();
 }

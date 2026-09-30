@@ -3,7 +3,7 @@ import type { AdminCheckRun, AdminFile, ListChange } from "@/lib/admin-documents
 import type { CheckRating } from "@/lib/checks/result";
 import { Icon, type IconName } from "@/components/icons";
 import { formatDateTime, Pill } from "./admin-ui";
-import { Findings, ratingTone } from "./document-card";
+import { Findings, ratingTone, runId } from "./document-card";
 
 // A document's history as a timeline, newest first: files uploaded and
 // removed, every check with the files it saw and what it said, and the
@@ -217,7 +217,10 @@ function RunCard({
   ].filter(Boolean);
 
   return (
-    <article className={`rounded-card border bg-white ${current ? "border-teal-600" : "border-line-200"}`}>
+    <article
+      id={runId(run.id)}
+      className={`scroll-mt-4 rounded-card border bg-white target:ring-2 target:ring-amber-500 ${current ? "border-teal-600" : "border-line-200"}`}
+    >
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 border-b border-line-200 px-4 py-3 sm:px-5">
         <div className="flex flex-wrap items-center gap-2">
           <span className="font-semibold text-navy-900">{formatDateTime(run.startedAt)}</span>

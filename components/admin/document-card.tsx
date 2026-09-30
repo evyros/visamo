@@ -25,9 +25,12 @@ export const cardId = (key: string) => `doc-${key}`;
 export const documentsHref = (userId: string, key?: string) =>
   `/users/${userId}/documents${key ? `#${cardId(key)}` : ""}`;
 
-/** A document's history page. Keys can hold a colon (`id:country`), so it's encoded. */
-export const historyHref = (userId: string, key: string) =>
-  `/users/${userId}/documents/${encodeURIComponent(key)}/history`;
+/** A check run's id on its document's history page. */
+export const runId = (id: string) => `check-${id}`;
+
+/** A document's history page, and a check run on it. Keys can hold a colon (`id:country`), so it's encoded. */
+export const historyHref = (userId: string, key: string, run?: string) =>
+  `/users/${userId}/documents/${encodeURIComponent(key)}/history${run ? `#${runId(run)}` : ""}`;
 
 export function DocumentCard({
   title,

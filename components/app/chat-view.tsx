@@ -6,7 +6,7 @@ import { format, type Messages } from "@/i18n/messages";
 import { Icon } from "@/components/icons";
 import { LogoMark } from "@/components/logo";
 import { TextLink } from "@/components/ui";
-import { ChatMarkdown } from "./chat-markdown";
+import { ChatMarkdown, textDirection } from "./chat-markdown";
 import { usePendingChat } from "./chat-pending";
 
 type Message = {
@@ -267,7 +267,9 @@ export function ChatView({
               <textarea
                 id="chat-input"
                 ref={inputRef}
-                dir="auto"
+                // An empty box resolves "auto" to left-to-right, so the
+                // placeholder takes the page's direction until something is typed.
+                dir={input ? "auto" : undefined}
                 rows={1}
                 value={input}
                 maxLength={maxLength}
@@ -321,20 +323,6 @@ export function ChatView({
       </div>
     </div>
   );
-}
-
-const RTL_LETTER = /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF]/gu;
-const LTR_LETTER = /[A-Za-z\u00C0-\u024F\u0370-\u03FF\u0400-\u04FF]/gu;
-
-/**
- * A message's direction, from most of its letters. Not dir="auto", which
- * goes by the first letter: a Hebrew answer that starts with "A/5" or
- * "Visamo" would come out left-to-right.
- */
-function textDirection(text: string): "rtl" | "ltr" {
-  const rtl = text.match(RTL_LETTER)?.length ?? 0;
-  const ltr = text.match(LTR_LETTER)?.length ?? 0;
-  return rtl > ltr ? "rtl" : "ltr";
 }
 
 function Avatar() {

@@ -35,6 +35,7 @@ export async function Footer() {
       title: f.company.title,
       links: [
         { href: p("/about"), label: f.company.about },
+        { href: p("/how-we-built"), label: f.company.howBuilt },
         { href: p("/contact"), label: f.company.contact },
       ],
     },

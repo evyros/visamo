@@ -3,7 +3,8 @@ import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
 import { FinalCta } from "@/components/final-cta";
 import { FounderPhoto } from "@/components/founder-photo";
-import { Container, Eyebrow, SectionTitle, mobileCenter } from "@/components/ui";
+import { localePath } from "@/lib/site";
+import { Container, Eyebrow, SectionTitle, TextLink, mobileCenter } from "@/components/ui";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getDictionary();
@@ -39,6 +40,9 @@ export default async function AboutPage() {
               ))}
             </div>
             <p className="mt-6 font-semibold text-navy-900">{a.signature}</p>
+            <TextLink href={localePath(locale, "/how-we-built")} className="mt-6">
+              {a.howBuiltLink}
+            </TextLink>
           </div>
         </Container>
       </section>

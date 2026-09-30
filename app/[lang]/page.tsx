@@ -8,6 +8,7 @@ import { Features } from "@/components/home/features";
 import { FounderTeaser } from "@/components/home/founder-teaser";
 import { Hero } from "@/components/home/hero";
 import { HowItWorks } from "@/components/home/how-it-works";
+import { HowWeBuilt } from "@/components/home/how-we-built";
 import { Problem } from "@/components/home/problem";
 import { SecurityBand } from "@/components/home/security-band";
 import { PricingCards } from "@/components/pricing-cards";
@@ -32,6 +33,7 @@ export default async function HomePage() {
     <>
       <Hero t={t} locale={locale} />
       <Problem t={t} />
+      <HowWeBuilt t={t} locale={locale} />
       <Features t={t} />
       <HowItWorks t={t} locale={locale} />
       <SecurityBand t={t} locale={locale} />

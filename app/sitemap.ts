@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { defaultLocale, liveLocales } from "@/i18n/config";
 import { localePath, site } from "@/lib/site";
 
-const paths = ["/", "/pricing", "/security", "/about", "/data-privacy", "/contact", "/legal/privacy", "/legal/terms", "/legal/accessibility"];
+const paths = ["/", "/pricing", "/security", "/about", "/how-we-built", "/data-privacy", "/contact", "/legal/privacy", "/legal/terms", "/legal/accessibility"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const absolute = (locale: (typeof liveLocales)[number], path: string) =>

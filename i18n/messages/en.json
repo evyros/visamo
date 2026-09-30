@@ -14,6 +14,10 @@
       "title": "How We Protect Your Documents",
       "description": "Your passports, bank statements and private photos are encrypted with AES-256, never sold or shared, and can be deleted in one click. Here's how Visamo protects them."
     },
+    "howBuilt": {
+      "title": "How We Built Visamo: Couples' Experience, Powered by AI",
+      "description": "Visamo's AI is built on the experience of many couples who went through Israel's gradual process. How we built it, what the AI does, and what it doesn't."
+    },
     "dataPrivacy": {
       "title": "How we handle your data",
       "description": "Everything Visamo does with your documents, and everything you can do with them: encryption, access, deletion and your controls."
@@ -85,6 +89,7 @@
     "company": {
       "title": "Company",
       "about": "Why I built Visamo",
+      "howBuilt": "How we built Visamo",
       "contact": "Contact"
     },
     "support": {
@@ -119,12 +124,12 @@
       "mockup": {
         "label": "Example of an instant document check",
         "title": "Document check",
-        "checking": "Checked against the published requirements",
+        "checking": "Checked by AI, based on real couples' experience",
         "rows": [
           {
             "status": "ok",
             "name": "Marriage certificate.pdf",
-            "text": "Matches the published requirements"
+            "text": "Matches the requirements"
           },
           {
             "status": "fix",
@@ -169,14 +174,24 @@
       },
       "caption": "Illustration only. Waiting times are set by the Ministry."
     },
+    "howBuilt": {
+      "eyebrow": "How we built Visamo",
+      "title": "Built on couples' real experience. Powered by AI.",
+      "body": "The published requirements are vague, and what's asked in practice can change from one office to the next. So we gathered what couples actually went through and built it into Visamo's AI.",
+      "ai": {
+        "title": "Checked by AI, not by a person",
+        "body": "Answers and document checks arrive in seconds, day or night. No one on our team reviews your documents, and it isn't legal advice."
+      },
+      "link": "How we built Visamo"
+    },
     "features": {
       "title": "Everything you need for the process, in one place.",
       "intro": "Answers when you're unsure, every document explained, and a check before anything goes to the Ministry.",
       "assistant": {
-        "tag": "Information assistant",
-        "title": "An assistant that knows the process inside out",
+        "tag": "AI assistant",
+        "title": "An AI assistant that knows the process inside out",
         "body": "Which documents do you need? Is this wait normal? Ask in your own words and get a clear answer, based on the process, its documents and the stages couples go through. Day or night, in your language.",
-        "footnote": "General information based on published sources, not legal advice. When your case needs a lawyer, the assistant will say so.",
+        "footnote": "AI-generated general information, based on published sources and couples' experience. Not legal advice. When your case needs a lawyer, the assistant will say so.",
         "chat": {
           "label": "Example conversation with the Visamo assistant",
           "question": "They're asking for an Ishur Toshav, but my municipality doesn't issue it. Can I just bring an Arnona bill instead?",
@@ -189,7 +204,7 @@
           "icon": "shield",
           "tag": "Full file check",
           "title": "Know on the spot, not months later",
-          "body": "Upload a document, and with one click Visamo checks it against the published requirements and tells you how to fix anything that's off.",
+          "body": "Upload a document, and with one click Visamo's AI checks it against the requirements, including what couples learned the hard way, and tells you how to fix anything that's off.",
           "bullets": [
             "Missing pages, signatures, apostille or translation",
             "Issue dates that are too old",
@@ -300,7 +315,15 @@
         },
         {
           "q": "Can Visamo tell me if my file will be rejected?",
-          "a": "No one outside the Ministry can predict its decision. Visamo checks each document against the published requirements and flags the issues that commonly get files sent back, so you can fix them before you submit instead of after months of waiting."
+          "a": "No one outside the Ministry can predict its decision. Visamo's AI checks each document against the published requirements and couples' real experience, and flags the issues that commonly get files sent back, so you can fix them before you submit instead of after months of waiting."
+        },
+        {
+          "q": "Does a person review our documents?",
+          "a": "No. Visamo's checks and answers are made by AI, built on the published requirements and on the experience of many couples who went through the process. That's what makes them instant, but it isn't a human or legal review. For advice on your own case, speak with a licensed Israeli lawyer.",
+          "link": {
+            "label": "How we built Visamo",
+            "path": "/how-we-built"
+          }
         },
         {
           "q": "Is Visamo a law firm or a lawyer?",
@@ -571,6 +594,83 @@
       "title": "Policies"
     }
   },
+  "howBuilt": {
+    "hero": {
+      "eyebrow": "How we built Visamo",
+      "title": "Built on what couples went through, not only on what's written.",
+      "subtitle": "Visamo's AI answers your questions and checks your documents using the experience of many couples who went through Israel's gradual process. Here's how we built it, and what to expect from it."
+    },
+    "gap": {
+      "title": "Why the rules on paper aren't enough",
+      "intro": "The Ministry publishes its requirements, but anyone who's been through the process knows they're only part of the story.",
+      "items": [
+        {
+          "icon": "file",
+          "title": "Vague on paper",
+          "body": "Many requirements leave room for interpretation: which version of a document, how recent it must be, what exactly it should say."
+        },
+        {
+          "icon": "refresh",
+          "title": "Different at the counter",
+          "body": "What clerks ask for can change over time, sometimes between one appointment and the next."
+        },
+        {
+          "icon": "building",
+          "title": "Different from branch to branch",
+          "body": "One office may accept a document that another sends back, and some local authorities don't even know the documents they're asked to issue."
+        }
+      ],
+      "footnote": "Couples usually discover these gaps only after their file is sent back, and each time it can cost months."
+    },
+    "steps": {
+      "title": "How we built it",
+      "items": [
+        {
+          "icon": "people",
+          "title": "We gathered what couples went through",
+          "body": "Many couples who went through the process shared their experience: what they were asked for, what got their file sent back, and what finally worked."
+        },
+        {
+          "icon": "guide",
+          "title": "We organized it into knowledge",
+          "body": "We sorted every detail by document, stage and office, set it alongside the published requirements, and marked where practice differs from what's written."
+        },
+        {
+          "icon": "sparkle",
+          "title": "We built it into Visamo's AI",
+          "body": "The assistant and the document check both work from this knowledge, so every answer and every check reflects what couples learned, not only what's published."
+        }
+      ]
+    },
+    "ai": {
+      "title": "What the AI does, and what it doesn't",
+      "intro": "Every answer and every document check in Visamo is made by AI. That's what makes them instant, and it's worth knowing what that means.",
+      "does": {
+        "title": "What it does",
+        "items": [
+          "Answers your questions in seconds, day or night, in your language",
+          "Checks each document against the requirements and couples' experience",
+          "Explains what's wrong and how to fix it",
+          "Checks that names, dates and details match across your documents"
+        ]
+      },
+      "doesnt": {
+        "title": "What it doesn't do",
+        "items": [
+          "No one on our team reviews your documents or your answers",
+          "It isn't legal advice, and it can't predict the Ministry's decision",
+          "It can miss things or get something wrong, so read its notes carefully",
+          "It doesn't submit anything for you: you submit through the official channels"
+        ]
+      },
+      "lawyer": "If your case involves a previous refusal, a hearing or an unusual status, speak with a licensed Israeli lawyer. The assistant will tell you when it's time."
+    },
+    "privacy": {
+      "title": "Your documents stay yours",
+      "body": "The knowledge behind Visamo comes from couples' accounts of the process, never from the documents you upload. When the AI checks a document, it's processed only to give you that result, and it's never used to train AI models.",
+      "link": "How we protect your documents"
+    }
+  },
   "about": {
     "eyebrow": "A note from the founder",
     "title": "Why I built Visamo",
@@ -581,6 +681,7 @@
       "So I built what we needed: one calm place for every document, every date and every step. Visamo can't decide anyone's case. But it makes the process smoother, with much less risk of missing something along the way. Bureaucracy shouldn't be the hardest part of building a life with the person you love."
     ],
     "signature": "Evyatar, founder of Visamo",
+    "howBuiltLink": "How we built Visamo",
     "caption": "",
     "photoAlt": "Evyatar, founder of Visamo"
   },

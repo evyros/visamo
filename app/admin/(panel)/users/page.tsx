@@ -4,7 +4,7 @@ import { requireAdmin } from "@/lib/admin";
 import { listUsers, USERS_PAGE_SIZE, type AdminUserRow } from "@/lib/admin-users";
 import { secondaryButton } from "@/components/app/settings-ui";
 import { inputClass } from "@/components/app/auth-ui";
-import { BalanceFigure, CostFigure, formatDateTime, PageHeading, Pill, planLabel } from "@/components/admin/admin-ui";
+import { BalanceFigure, CostFigure, formatDateTime, PageHeading, Pill, purchasesLabel } from "@/components/admin/admin-ui";
 
 export const metadata: Metadata = { title: "Users" };
 
@@ -119,7 +119,7 @@ function UserRow({ row }: { row: AdminUserRow }) {
       <td className="px-4 py-3">
         {row.caseId ? (
           <div className="flex flex-wrap gap-1.5">
-            <Pill tone={row.plan === "free" ? "neutral" : "teal"}>{planLabel[row.plan!] ?? row.plan}</Pill>
+            <Pill tone={row.paid ? "teal" : "neutral"}>{purchasesLabel(row)}</Pill>
             {row.role === "partner" && <Pill>Partner</Pill>}
           </div>
         ) : (

@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { chat, chatMessage } from "@/lib/db/schema";
 import { callTotals, complete, streamCompletion, type ChatCall, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
-import { maxMessageLength } from "@/lib/chat/plans";
+import { maxMessageLength } from "@/lib/products";
 import { CHAT_RULES_VERSION, casePrompt, staticPrompt } from "@/lib/chat/prompt";
 import { chatBalance, chatMessages, inCase } from "@/lib/chat/store";
 import { refundQueries, spendOnMessage } from "@/lib/credits";
@@ -39,8 +39,8 @@ export async function POST(request: Request) {
   const existing = typeof body?.chatId === "string" ? body.chatId : null;
   if (!message || (existing !== null && !UUID.test(existing))) return fail("invalid", 400);
 
-  const { plan } = await chatBalance(caseId);
-  if (message.length > maxMessageLength(plan)) return fail("tooLong", 400);
+  const { paid } = await chatBalance(caseId);
+  if (message.length > maxMessageLength({ paid })) return fail("tooLong", 400);
   if (existing && !(await inCase(existing, caseId))) return fail("notFound", 404);
 
   // Spent and saved together: the message, its chat if it's new, and the

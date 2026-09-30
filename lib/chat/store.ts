@@ -2,7 +2,6 @@ import "server-only";
 import { and, asc, desc, eq, isNull } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { casePerson, cases, chat, chatMessage } from "@/lib/db/schema";
-import type { Plan } from "./plans";
 
 // Chats, and the message balance (lib/credits.ts spends it). Chats belong to
 // the case: both partners see them all. A chat is only ever read with the
@@ -12,14 +11,14 @@ import type { Plan } from "./plans";
 
 export type ChatRole = "user" | "assistant";
 
-/** The case's plan and the messages it has left. */
+/** Whether the case has bought anything, and the messages it has left. */
 export async function chatBalance(caseId: string) {
   const [row] = await db
-    .select({ plan: cases.plan, messagesLeft: cases.messagesLeft })
+    .select({ paid: cases.paid, messagesLeft: cases.messagesLeft })
     .from(cases)
     .where(eq(cases.id, caseId))
     .limit(1);
-  return { plan: (row?.plan ?? "free") as Plan, messagesLeft: row?.messagesLeft ?? 0 };
+  return { paid: row?.paid ?? false, messagesLeft: row?.messagesLeft ?? 0 };
 }
 
 /** The case's chats, latest first, for the sidebar. */

@@ -13,8 +13,10 @@ const dateTime = new Intl.DateTimeFormat("en-GB", {
 /** e.g. "30 Sept 2026, 01:15", in Israel time. */
 export const formatDateTime = (date: Date) => dateTime.format(date);
 
-/** A case's plan (lib/chat/plans.ts), by its tier's name on the pricing page. */
-export const planLabel: Record<string, string> = { free: "Free", assistant: "Assistant", filePrep: "File Preparation" };
+/** What a case has bought (lib/products.ts), by the names on the pricing page. */
+export function purchasesLabel(access: { paid: boolean | null; fileCheck: boolean | null }) {
+  return access.fileCheck ? "Full file check" : access.paid ? "Message pack" : "Free";
+}
 
 const numbers = new Intl.NumberFormat("en-US");
 

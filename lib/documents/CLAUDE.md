@@ -57,7 +57,7 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
 
 `checks.ts` is Visamo's own knowledge of how documents are verified in
 practice: branch differences, requirements that only come up mid-process,
-red flags. It's what File Preparation sells, so it's kept away from
+red flags. It's what Full file check sells, so it's kept away from
 everything else:
 
 - **Only the checker reads it.** Never put it in the chat's prompt, never

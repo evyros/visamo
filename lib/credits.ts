@@ -1,6 +1,6 @@
 import "server-only";
 import { and, desc, eq, inArray, sql, type SQL } from "drizzle-orm";
-import { PURCHASE_GRANTS, type Plan } from "./chat/plans";
+import { PRODUCT_GRANTS, type ProductId } from "./products";
 import { db } from "./db";
 import { cases, chat, chatMessage, creditEntry, documentCheck, user } from "./db/schema";
 
@@ -101,11 +101,18 @@ export function grantQueries(caseId: string, kind: CreditKind, amount: number, r
   ] as const;
 }
 
-/** What a purchase adds: 50 messages, and with File Preparation 300 checks (lib/chat/plans.ts). For the purchase flow. */
-export async function grantPurchase(caseId: string, plan: Exclude<Plan, "free">, userId: string, purchaseId: string) {
-  const grants = PURCHASE_GRANTS[plan];
+/**
+ * What a purchase adds: 50 messages, and with Full file check 300 checks
+ * (lib/products.ts), and what it unlocks on the case. For the purchase flow.
+ */
+export async function grantPurchase(caseId: string, product: ProductId, userId: string, purchaseId: string) {
+  const grants = PRODUCT_GRANTS[product];
   const details = { userId, refId: purchaseId };
   await db.batch([
+    db
+      .update(cases)
+      .set({ paid: true, ...(product === "fileCheck" && { fileCheck: true }) })
+      .where(eq(cases.id, caseId)),
     ...grantQueries(caseId, "messages", grants.messages, "purchase", details),
     ...(grants.checks ? grantQueries(caseId, "checks", grants.checks, "purchase", details) : []),
   ]);

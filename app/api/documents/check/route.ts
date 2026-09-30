@@ -2,7 +2,6 @@ import { getAppLocale } from "@/i18n/app-locale";
 import { format, loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { CHECK_MODEL, completeJson, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
-import { canCheckDocuments } from "@/lib/chat/plans";
 import { prepareFiles } from "@/lib/checks/files";
 import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
 import { checkResultSchema, isConsistent, parseCheck, settle, type CheckResult } from "@/lib/checks/result";
@@ -27,7 +26,7 @@ const MAX_ANSWER_TOKENS = 4000;
 type ErrorCode =
   | "unauthorized"
   | "invalid"
-  | "plan"
+  | "notIncluded"
   | "notFound"
   | "notCheckable"
   | "noDocument"
@@ -78,12 +77,12 @@ export async function POST(request: Request) {
   const documentKey = typeof body?.documentKey === "string" ? body.documentKey : "";
   if (!documentKey) return fail("invalid", 400);
 
-  const [{ plan }, { details }, allFiles] = await Promise.all([
+  const [{ fileCheck }, { details }, allFiles] = await Promise.all([
     checkBalance(caseId),
     caseDetails(caseId),
     caseFiles(caseId),
   ]);
-  if (!canCheckDocuments(plan)) return fail("plan", 402);
+  if (!fileCheck) return fail("notIncluded", 402);
   const item = listOf(details).find((d) => d.key === documentKey);
   if (!item) return fail("notFound", 404);
   const check = checkFor(documentKey);

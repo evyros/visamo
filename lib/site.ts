@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/config";
+import type { ProductId } from "@/lib/products";
 
 /**
  * An absolute URL from an environment variable. Empty values fall back to the
@@ -24,18 +25,16 @@ export const site = {
 };
 
 /** One-time prices in ILS, VAT included. */
-export const prices = {
-  free: 0,
-  assistant: 49,
-  filePrep: 369,
-} as const;
+export const prices: Record<ProductId, number> = {
+  messagePack: 49,
+  fileCheck: 369,
+};
 
-export type TierId = keyof typeof prices;
-
-export function signupUrl(locale: Locale, plan?: TierId) {
+/** Signup, and with `product`, what the person chose to buy on the pricing page. */
+export function signupUrl(locale: Locale, product?: ProductId) {
   const url = new URL("/signup", site.appUrl);
   url.searchParams.set("lang", locale);
-  if (plan && plan !== "free") url.searchParams.set("plan", plan);
+  if (product) url.searchParams.set("buy", product);
   return url.toString();
 }
 

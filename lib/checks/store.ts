@@ -3,7 +3,6 @@ import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
 import { loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { callTotals, type Completion } from "@/lib/chat/openrouter";
-import type { Plan } from "@/lib/chat/plans";
 import { db } from "@/lib/db";
 import { casePerson, cases, documentCheck, user } from "@/lib/db/schema";
 import { checkFor, type DocumentCheck } from "@/lib/documents/checks";
@@ -23,13 +22,13 @@ import type { CheckResult } from "./result";
  */
 const RUNNING_EXPIRES_SECONDS = 150;
 
-/** The case's plan, the checks it has left, and how many it was granted and used (lib/credits.ts). */
+/** Whether the case bought Full file check, the checks it has left, and how many it was granted and used (lib/credits.ts). */
 export async function checkBalance(caseId: string) {
   const [[row], totals] = await Promise.all([
-    db.select({ plan: cases.plan, left: cases.checksLeft }).from(cases).where(eq(cases.id, caseId)).limit(1),
+    db.select({ fileCheck: cases.fileCheck, left: cases.checksLeft }).from(cases).where(eq(cases.id, caseId)).limit(1),
     caseCreditTotals(caseId),
   ]);
-  return { plan: (row?.plan ?? "free") as Plan, left: row?.left ?? 0, ...totals.checks };
+  return { fileCheck: row?.fileCheck ?? false, left: row?.left ?? 0, ...totals.checks };
 }
 
 /** What a run is checked against, recorded when it starts. */

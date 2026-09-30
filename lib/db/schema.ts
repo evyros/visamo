@@ -130,14 +130,18 @@ export const cases = pgTable("case", {
   /** The year a common-law couple moved in together; null unless they live together. */
   togetherSince: integer("together_since"),
   childrenTogether: boolean("children_together").notNull(),
-  /** A Plan from lib/chat/plans.ts: the highest tier bought. It sets the chat's message length. */
-  plan: text("plan").notNull().default("free"),
+  // What the case has bought (lib/products.ts). Only a purchase sets them
+  // (grantPurchase in lib/credits.ts).
+  /** Bought anything: the chat allows longer messages. */
+  paid: boolean("paid").notNull().default(false),
+  /** Bought Full file check: the case can check documents. */
+  fileCheck: boolean("file_check").notNull().default(false),
   // The case's balances, shared by both partners. Each change is also a row
   // in credit_entry, written with it (lib/credits.ts), so the balance is the
   // sum of the case's entries, and the entries say what was granted and used.
   /** Messages left for the chat assistant. */
   messagesLeft: integer("messages_left").notNull().default(0),
-  /** Document checks left. File Preparation grants them; files the checker couldn't read aren't counted. */
+  /** Document checks left. Full file check grants them; files the checker couldn't read aren't counted. */
   checksLeft: integer("checks_left").notNull().default(0),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")

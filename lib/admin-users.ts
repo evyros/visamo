@@ -22,7 +22,8 @@ const columns = {
   createdAt: user.createdAt,
   role: caseMember.role,
   caseId: cases.id,
-  plan: cases.plan,
+  paid: cases.paid,
+  fileCheck: cases.fileCheck,
   messagesLeft: cases.messagesLeft,
   checksLeft: cases.checksLeft,
 };

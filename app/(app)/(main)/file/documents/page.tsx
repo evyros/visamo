@@ -4,7 +4,6 @@ import { locales } from "@/i18n/config";
 import { regionName } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
-import { canCheckDocuments } from "@/lib/chat/plans";
 import { caseChecks, checkBalance } from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
 import { ownerOrder } from "@/lib/documents/progress";
@@ -109,7 +108,7 @@ export default async function DocumentsPage() {
         locale={locale}
         intlLocale={locales[locale].intlLocale}
         checks={{
-          allowed: canCheckDocuments(balance.plan),
+          allowed: balance.fileCheck,
           // At 80% of the checks granted, the couple is asked to contact support.
           notice:
             balance.granted > 0 && balance.used >= balance.granted * 0.8

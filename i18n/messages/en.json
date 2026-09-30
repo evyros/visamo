@@ -187,7 +187,7 @@
       "cards": [
         {
           "icon": "shield",
-          "tag": "File Preparation",
+          "tag": "Full file check",
           "title": "Know on the spot, not months later",
           "body": "Upload a document, and with one click Visamo checks it against the published requirements and tells you how to fix anything that's off.",
           "bullets": [
@@ -241,7 +241,7 @@
         {
           "title": "Upload, and get checked on the spot.",
           "body": "Check each document as soon as it's uploaded. Anything that needs fixing comes with clear steps.",
-          "tag": "File Preparation"
+          "tag": "Full file check"
         },
         {
           "title": "Submit it yourself, ready.",
@@ -347,48 +347,33 @@
     "title": "Simple, one-time pricing",
     "subtitle": "No subscriptions and no hidden fees. Pay only for what you need.",
     "anchorLead": "One sent-back file can cost months.",
-    "anchor": "File Preparation costs {price}, once.",
-    "mostComplete": "Most complete",
-    "tiers": {
-      "free": {
-        "name": "Free",
-        "priceNote": "",
-        "tagline": "Know exactly what you need",
-        "includes": [
-          "Your personal document list, each item explained",
-          "File and document organization: upload and keep everything in one place",
-          "Process guide",
-          "5 messages to the assistant",
-          "One shared file for both partners"
-        ],
-        "cta": "Start free",
-        "footnote": "No credit card needed."
-      },
-      "assistant": {
-        "name": "Assistant",
-        "priceNote": "per 50 messages",
-        "tagline": "Answers in your language, whenever you're unsure",
-        "includes": [
-          "50 messages about documents, stages or letters",
-          "Top up as often as you like",
-          "Everything in Free"
-        ],
-        "cta": "Get 50 messages",
-        "footnote": "One-time payment. Messages don't expire."
-      },
-      "filePrep": {
-        "name": "File Preparation",
-        "priceNote": "once, for the whole process",
-        "tagline": "Find the problems before the Ministry does",
-        "includes": [
-          "Everything in Assistant, including 50 messages",
-          "Instant document checks, up to 300 (fair use)",
-          "What's wrong and how to fix it, for each flag",
-          "Cross-document checks (names, dates, details)"
-        ],
-        "cta": "Prepare my file",
-        "footnote": "Checks published requirements; not legal review."
-      }
+    "anchor": "Full file check costs {price}, once.",
+    "free": {
+      "name": "Free",
+      "priceNote": "",
+      "tagline": "Know what Misrad Hapnim needs for your case, and keep your file organized",
+      "includes": [
+        "Your personal document list, each item explained",
+        "File and document organization: upload and keep everything in one place",
+        "Process guide",
+        "5 chat messages",
+        "One shared file for both partners"
+      ],
+      "cta": "Start free",
+      "footnote": "No credit card needed."
+    },
+    "fileCheck": {
+      "name": "Full file check",
+      "priceNote": "once, for the whole process",
+      "tagline": "Check your documents instantly, for your whole process",
+      "includes": [
+        "Everything in Free, plus a message pack (50 messages)",
+        "Instant document checks, up to 300 (fair use)",
+        "What's wrong and how to fix it, for each flag",
+        "Cross-document checks (names, dates, details)"
+      ],
+      "cta": "Check my file",
+      "footnote": "Not a legal review."
     },
     "trust": [
       {
@@ -405,17 +390,16 @@
       },
       {
         "icon": "check",
-        "text": "Didn't help? Full refund within 14 days."
+        "text": "Full refund within 14 days"
       }
     ],
     "compare": {
-      "title": "Compare plans",
+      "title": "Compare",
       "feature": "Feature",
       "rows": [
         {
           "feature": "Personal document list, each item explained",
           "values": [
-            "yes",
             "yes",
             "yes"
           ]
@@ -424,22 +408,26 @@
           "feature": "Process guide",
           "values": [
             "yes",
+            "yes"
+          ]
+        },
+        {
+          "feature": "Chat messages",
+          "values": [
+            "5",
+            "50 included"
+          ]
+        },
+        {
+          "feature": "Message packs, 50 messages each",
+          "values": [
             "yes",
             "yes"
           ]
         },
         {
-          "feature": "Assistant messages",
-          "values": [
-            "5",
-            "50 per pack, top up any time",
-            "50 included, top up any time"
-          ]
-        },
-        {
           "feature": "One shared file for both partners",
           "values": [
-            "yes",
             "yes",
             "yes"
           ]
@@ -448,14 +436,12 @@
           "feature": "File and document organization",
           "values": [
             "yes",
-            "yes",
             "yes"
           ]
         },
         {
           "feature": "Instant document checks",
           "values": [
-            "no",
             "no",
             "Up to 300 (fair use)"
           ]
@@ -464,7 +450,6 @@
           "feature": "How-to-fix steps for each flag",
           "values": [
             "no",
-            "no",
             "yes"
           ]
         },
@@ -472,14 +457,12 @@
           "feature": "Cross-document consistency check",
           "values": [
             "no",
-            "no",
             "yes"
           ]
         },
         {
           "feature": "WhatsApp support",
           "values": [
-            "yes",
             "yes",
             "yes"
           ]
@@ -491,31 +474,31 @@
       "items": [
         {
           "q": "Is this a subscription?",
-          "a": "No. Every tier is a one-time payment."
+          "a": "No. Everything is a one-time payment."
         },
         {
-          "q": "How long does File Preparation last?",
+          "q": "How long does Full file check last?",
           "a": "For your whole gradual process, every stage. You pay once."
         },
         {
-          "q": "Can I upload documents on the Free plan?",
-          "a": "Yes. You can upload and organize all your documents for free. Checking them against the published requirements comes with File Preparation."
+          "q": "Can I upload documents for free?",
+          "a": "Yes. You can upload and organize all your documents for free. Checking them against the published requirements comes with Full file check."
         },
         {
           "q": "Is there a limit on document checks?",
-          "a": "Yes, a generous one. File Preparation includes up to 300 document checks for your shared file, under fair use. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. That's enough to check every document on your list several times."
+          "a": "Yes, a generous one. Full file check includes up to 300 document checks for your shared file, under fair use. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. That's enough to check every document on your list several times."
         },
         {
           "q": "What counts as one message?",
-          "a": "Each message you send to the assistant counts as one. Follow-ups count as new messages."
+          "a": "Each message you send in the chat counts as one. Follow-ups count as new messages."
         },
         {
           "q": "Do my messages expire?",
-          "a": "No. Unused messages stay in your file. File Preparation includes 50, and you can top up any time."
+          "a": "No. Unused messages stay in your file. Full file check includes a message pack of 50, and you can buy more packs any time."
         },
         {
-          "q": "Does File Preparation mean our file won't be sent back?",
-          "a": "No one can promise that; decisions are made only by the authorities. File Preparation checks every document against the published requirements and flags the issues that commonly get files sent back, so you can fix them before you submit."
+          "q": "Does Full file check mean our file won't be sent back?",
+          "a": "No one can promise that; decisions are made only by the authorities. Full file check checks every document against the published requirements and flags the issues that commonly get files sent back, so you can fix them before you submit."
         },
         {
           "q": "Can I get a refund?",
@@ -530,7 +513,15 @@
           "a": "No. One purchase covers your shared file, for both partners."
         }
       ]
-    }
+    },
+    "messagePack": {
+      "name": "Message pack",
+      "priceNote": "per 50 messages",
+      "body": "More questions in the chat, whenever you need them: 50 messages about documents, stages or letters. Top up as often as you like.",
+      "cta": "Get 50 messages",
+      "footnote": "One-time payment. Messages don't expire."
+    },
+    "recommended": "Recommended"
   },
   "security": {
     "hero": {
@@ -740,7 +731,7 @@
       "chat": "Chat",
       "account": "Account",
       "partner": "Partner",
-      "billing": "Plan & billing",
+      "billing": "Purchases & billing",
       "support": "Support",
       "details": "Your details",
       "activity": "Activity"
@@ -1029,7 +1020,7 @@
       "nav": "Settings",
       "account": "Account",
       "partner": "Partner",
-      "billing": "Plan & billing",
+      "billing": "Purchases & billing",
       "accountPage": {
         "loginTitle": "How you log in",
         "email": "Email",
@@ -1380,12 +1371,12 @@
           "tooManyPages": "Up to 20 pages can be checked at once. Remove extra pages and try again.",
           "tooLarge": "These files are too large to check together. Try smaller scans.",
           "noChecks": "You've used all your document checks. Contact support for more.",
-          "plan": "Document checks come with File Preparation.",
+          "notIncluded": "Document checks come with Full file check.",
           "failed": "The check didn't finish, and it wasn't counted. Please try again.",
           "generic": "Something went wrong. Please try again."
         },
         "notChecked": "Not checked yet",
-        "upgrade": "Upgrade to check the documents",
+        "upgrade": "Get Full file check",
         "upgradeHint": "Don't let a wrong detail delay your case.",
         "cantOpenTitle": "Couldn't open a file",
         "counts": {

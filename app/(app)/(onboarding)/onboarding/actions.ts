@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { parseOnboarding } from "@/lib/case-options";
-import { FREE_MESSAGES } from "@/lib/chat/plans";
+import { FREE_MESSAGES } from "@/lib/products";
 import { grantQueries } from "@/lib/credits";
 import { db } from "@/lib/db";
 import { caseMember, casePerson, cases } from "@/lib/db/schema";

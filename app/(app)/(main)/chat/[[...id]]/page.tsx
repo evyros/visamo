@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
-import { maxMessageLength } from "@/lib/chat/plans";
+import { maxMessageLength } from "@/lib/products";
 import { chatBalance, chatMessages } from "@/lib/chat/store";
 import { requireCase } from "@/lib/session";
 import { localePath, site } from "@/lib/site";
@@ -18,7 +18,7 @@ export default async function ChatPage({ params }: PageProps<"/chat/[[...id]]">)
   const chatId = segments?.[0] ?? null;
 
   const { user, caseId } = await requireCase();
-  const [t, locale, { plan, messagesLeft }, messages] = await Promise.all([
+  const [t, locale, { paid, messagesLeft }, messages] = await Promise.all([
     getAppDictionary(),
     getAppLocale(),
     chatBalance(caseId),
@@ -37,7 +37,7 @@ export default async function ChatPage({ params }: PageProps<"/chat/[[...id]]">)
         author: role === "user" && userId !== user.id ? (name ?? t.app.chat.partner) : null,
       }))}
       messagesLeft={messagesLeft}
-      maxLength={maxMessageLength(plan)}
+      maxLength={maxMessageLength({ paid })}
       termsUrl={new URL(localePath(locale, "/legal/terms"), site.url).toString()}
       t={t.app.chat}
     />

@@ -5,7 +5,7 @@ import { requireAdmin } from "@/lib/admin";
 import { findUser } from "@/lib/admin-users";
 import { chatHref, chatTitle } from "@/lib/admin-chats";
 import { creditEntries, type CreditEntryRow, type CreditReason } from "@/lib/credits";
-import { BalanceFigure, formatDateTime, PageHeading, Pill, planLabel, Stat, type PillTone } from "@/components/admin/admin-ui";
+import { BalanceFigure, formatDateTime, PageHeading, Pill, purchasesLabel, Stat, type PillTone } from "@/components/admin/admin-ui";
 import { historyHref } from "@/components/admin/document-card";
 import { TopUpForm } from "@/components/admin/top-up-form";
 import { Icon } from "@/components/icons";
@@ -45,7 +45,7 @@ export default async function AdminUserBalancePage({ params }: PageProps<"/admin
   return (
     <div className="mx-auto w-full max-w-[1000px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
       <PageHeading title="Balance">
-        The case’s, shared by both partners. Plan: {planLabel[user.plan!] ?? user.plan}.
+        The case’s, shared by both partners. Bought: {purchasesLabel(user)}.
       </PageHeading>
 
       <div className="mt-6 grid grid-cols-2 gap-3 md:max-w-[480px]">

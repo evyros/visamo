@@ -1,12 +1,15 @@
 import type { Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/dictionaries";
 import { formatPrice } from "@/i18n/format";
-import { prices, signupUrl, type TierId } from "@/lib/site";
+import { prices, signupUrl } from "@/lib/site";
 import { Icon } from "./icons";
 import { ButtonLink } from "./ui";
 
-const order: TierId[] = ["free", "assistant", "filePrep"];
-const highlighted: TierId = "filePrep";
+// Free and Full file check side by side, and the message pack under them: a
+// top-up bought as often as needed, on either, so it isn't a third card.
+
+const order = ["free", "fileCheck"] as const;
+const highlighted = "fileCheck";
 
 export function PricingCards({
   t,
@@ -20,55 +23,79 @@ export function PricingCards({
   /** h2 where the cards aren't under a section heading, so levels aren't skipped. */
   headingLevel?: "h2" | "h3";
 }) {
+  const pack = t.pricing.messagePack;
   return (
-    <div className="grid items-stretch gap-6 lg:grid-cols-3">
-      {order.map((id) => {
-        const tier = t.pricing.tiers[id];
-        const featured = id === highlighted;
-        return (
-          <article
-            key={id}
-            // The featured card's 2px border is offset by 1px less padding, so text lines up.
-            className={`relative flex flex-col rounded-2xl bg-white ${
-              featured
-                ? "order-first border-2 border-navy-900 p-[31px] shadow-soft lg:order-none"
-                : "border border-line-200 p-8"
-            }`}
-          >
-            {featured && (
-              <span className="absolute -top-3 start-8 rounded-full bg-sage-200 px-3 py-1 text-xs font-semibold text-navy-900">
-                {t.pricing.mostComplete}
-              </span>
-            )}
-            <Heading className="text-lg font-semibold text-navy-900">{tier.name}</Heading>
-            <p className="mt-1 text-[15px] text-slate-500">{tier.tagline}</p>
-            <p className="mt-6 flex flex-wrap items-baseline gap-x-2">
-              <span className="font-display text-4xl font-semibold text-navy-900">
-                <bdi>{formatPrice(prices[id], locale)}</bdi>
-              </span>
-              {tier.priceNote && <span className="text-sm text-slate-500">{tier.priceNote}</span>}
-            </p>
+    <div className="mx-auto max-w-4xl">
+      <div className="grid items-stretch gap-6 md:grid-cols-2">
+        {order.map((id) => {
+          const option = t.pricing[id];
+          const featured = id === highlighted;
+          return (
+            <article
+              key={id}
+              // The featured card's 2px border is offset by 1px less padding, so text lines up.
+              className={`relative flex flex-col rounded-2xl bg-white ${
+                featured
+                  ? "order-first border-2 border-navy-900 p-[31px] shadow-soft md:order-none"
+                  : "border border-line-200 p-8"
+              }`}
+            >
+              {featured && (
+                <span className="absolute -top-3 start-8 rounded-full bg-sage-200 px-3 py-1 text-xs font-semibold text-navy-900">
+                  {t.pricing.recommended}
+                </span>
+              )}
+              <Heading className="text-lg font-semibold text-navy-900">{option.name}</Heading>
+              <p className="mt-1 text-[15px] text-slate-500">{option.tagline}</p>
+              <p className="mt-6 flex flex-wrap items-baseline gap-x-2">
+                <span className="font-display text-4xl font-semibold text-navy-900">
+                  <bdi>{formatPrice(id === "free" ? 0 : prices[id], locale)}</bdi>
+                </span>
+                {option.priceNote && <span className="text-sm text-slate-500">{option.priceNote}</span>}
+              </p>
 
-            {!compact && (
-              <ul className="mt-6 space-y-3 text-[15px]">
-                {tier.includes.map((item) => (
-                  <li key={item} className="flex gap-2.5">
-                    <Icon name="check" className="mt-1 size-4 text-teal-600" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            )}
+              {!compact && (
+                <ul className="mt-6 space-y-3 text-[15px]">
+                  {option.includes.map((item) => (
+                    <li key={item} className="flex gap-2.5">
+                      <Icon name="check" className="mt-1 size-4 text-teal-600" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
-            <div className="mt-auto pt-8">
-              <ButtonLink href={signupUrl(locale, id)} variant={featured ? "primary" : "secondary"} className="w-full">
-                {tier.cta}
-              </ButtonLink>
-              <p className="mt-3 text-center text-xs text-slate-500">{tier.footnote}</p>
-            </div>
-          </article>
-        );
-      })}
+              <div className="mt-auto pt-8">
+                <ButtonLink
+                  href={signupUrl(locale, id === "free" ? undefined : id)}
+                  variant={featured ? "primary" : "secondary"}
+                  className="w-full"
+                >
+                  {option.cta}
+                </ButtonLink>
+                <p className="mt-3 text-center text-xs text-slate-500">{option.footnote}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <article className="mt-6 flex flex-col gap-4 rounded-2xl border border-line-200 bg-white p-6 sm:flex-row sm:items-center sm:gap-8">
+        <div className="flex-1">
+          <div className="flex flex-wrap items-baseline gap-x-3">
+            <Heading className="text-lg font-semibold text-navy-900">{pack.name}</Heading>
+            <span className="font-display text-xl font-semibold text-navy-900">
+              <bdi>{formatPrice(prices.messagePack, locale)}</bdi>
+            </span>
+            <span className="text-sm text-slate-500">{pack.priceNote}</span>
+          </div>
+          {!compact && <p className="mt-1 text-[15px] text-slate-700">{pack.body}</p>}
+          <p className="mt-1 text-xs text-slate-500">{pack.footnote}</p>
+        </div>
+        <ButtonLink href={signupUrl(locale, "messagePack")} variant="secondary" className="shrink-0">
+          {pack.cta}
+        </ButtonLink>
+      </article>
     </div>
   );
 }

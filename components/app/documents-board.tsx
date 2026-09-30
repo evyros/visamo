@@ -43,9 +43,9 @@ export type DocumentItem = {
   };
 };
 
-/** What the case's plan allows for document checks. */
+/** What the case's purchases allow for document checks. */
 export type CheckSettings = {
-  /** File Preparation: the plan includes checks. */
+  /** The case bought Full file check. */
   allowed: boolean;
   /** Shown near the fair-use limit. */
   notice: string | null;
@@ -562,7 +562,7 @@ function CheckFooter({
 
   let state: ReactNode = null;
   let action: ReactNode = null;
-  // A current result shows whatever the plan: it was checked.
+  // A current result shows whether or not checks are included now: it was checked.
   if (result) {
     state = (
       // The texts share a baseline (they're different sizes); the icon is centered on them.
@@ -591,7 +591,7 @@ function CheckFooter({
       </span>
     );
   } else if (!settings.allowed) {
-    // Not in the plan: the button leads to the plans.
+    // Not bought: the button leads to the pricing page.
     state = c.upgradeHint;
     action = (
       <a href={settings.pricingUrl} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>

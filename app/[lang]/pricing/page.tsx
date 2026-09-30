@@ -23,7 +23,7 @@ export default async function PricingPage() {
   const locale = await getLocale();
   const t = await getDictionary();
   const p = t.pricing;
-  const tierNames = [p.tiers.free.name, p.tiers.assistant.name, p.tiers.filePrep.name];
+  const columnNames = [p.free.name, p.fileCheck.name];
 
   return (
     <>
@@ -37,20 +37,18 @@ export default async function PricingPage() {
           <div aria-hidden="true" className="mx-auto mt-10 h-0.5 w-10 rounded-full bg-teal-600" />
           <p className="mt-6 text-slate-500">{p.anchorLead}</p>
           <p className="mx-auto mt-2 max-w-2xl font-display text-2xl font-semibold leading-snug text-balance text-navy-900 sm:text-[28px]">
-            <PriceSentence text={p.anchor} price={formatPrice(prices.filePrep, locale)} />
+            <PriceSentence text={p.anchor} price={formatPrice(prices.fileCheck, locale)} />
           </p>
         </Container>
         <Container className="mt-14">
-          <div id="tiers">
+          <div id="options">
             <PricingCards t={t} locale={locale} headingLevel="h2" />
           </div>
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Reassurances, not something to compare: a quiet line under the cards, 2×2 on a phone. */}
+          <ul className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-x-4 gap-y-3 text-sm text-slate-500 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-8">
             {p.trust.map((item) => (
-              <li
-                key={item.text}
-                className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-[15px] text-navy-900"
-              >
-                {isIconName(item.icon) && <Icon name={item.icon} className="size-5 text-teal-600" />}
+              <li key={item.text} className="flex items-center gap-2">
+                {isIconName(item.icon) && <Icon name={item.icon} className="size-4 shrink-0 text-teal-600" />}
                 {item.text}
               </li>
             ))}
@@ -68,13 +66,13 @@ export default async function PricingPage() {
             tabIndex={0}
             className="mt-10 overflow-x-auto rounded-2xl border border-line-200"
           >
-            <table className="w-full min-w-[640px] border-collapse text-start text-[15px]">
+            <table className="w-full min-w-[480px] border-collapse text-start text-[15px]">
               <thead className="bg-sand-50">
                 <tr>
                   <th scope="col" className="p-4 text-start font-semibold text-navy-900">
                     {p.compare.feature}
                   </th>
-                  {tierNames.map((name) => (
+                  {columnNames.map((name) => (
                     <th key={name} scope="col" className="p-4 text-start font-semibold text-navy-900">
                       {name}
                     </th>

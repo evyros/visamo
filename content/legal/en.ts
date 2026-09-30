@@ -30,7 +30,7 @@ export const legalEn: LegalContent = {
                 "Onboarding details: the countries you and your partner come from, your relationship status and your stage in the process, which we use to build your document list.",
                 "Your file: the documents you upload (for example passports, certificates, affidavits, bank statements, photos and other relationship evidence) and the information in them.",
                 "Assistant conversations: the messages you send the information assistant and its answers.",
-                "Payment details: handled by our payment provider, [payment provider]. We never see or store your full card number; we keep only a payment token, the plan you bought and the receipt.",
+                "Payment details: handled by our payment provider, [payment provider]. We never see or store your full card number; we keep only a payment token, what you bought and the receipt.",
                 "Messages you send us: the content of contact-form messages, WhatsApp chats and emails, including any attachments.",
                 "Technical information: IP address, browser and device type, pages visited, and logs needed to keep the service secure and working.",
               ],
@@ -193,9 +193,9 @@ export const legalEn: LegalContent = {
           ],
         },
         {
-          heading: "6. Plans and payments",
+          heading: "6. Purchases and payments",
           body: [
-            "Visamo offers a free plan and paid plans, each for a one-time payment, as described on the pricing page. Prices are in Israeli shekels and include VAT. Assistant messages don't expire. File Preparation covers every stage of the gradual process. We may change prices for future purchases; changes never affect a plan you already bought.",
+            "Visamo is free to start, and offers one-time purchases as described on the pricing page: message packs and Full file check. Prices are in Israeli shekels and include VAT. Assistant messages don't expire. Full file check covers every stage of the gradual process. We may change prices for future purchases; changes never affect something you already bought.",
           ],
         },
         {

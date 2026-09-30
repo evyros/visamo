@@ -16,7 +16,7 @@ import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
 import type { CaseEvent } from "../events";
-import type { ProductId } from "../products";
+import type { PaymentMethod, ProductId } from "../products";
 import type { AccessDuration, AccessReason } from "../support-access-options";
 
 // Better Auth's core tables (user, session, account, verification), plus the
@@ -375,9 +375,17 @@ export const purchase = pgTable(
     /** Each one-off purchase is its own license in Freemius. */
     freemiusLicenseId: text("freemius_license_id").notNull().unique(),
     freemiusUserId: text("freemius_user_id").notNull(),
-    /** What was paid, as Freemius reports it. */
+    /** The license's payment in Freemius: its invoice is served from there (app/api/purchases). */
+    freemiusPaymentId: text("freemius_payment_id"),
+    // The payment, as Freemius reports it. Null when Freemius didn't have it
+    // yet, or for a free (100% coupon) purchase.
+    /** What was charged, with VAT. */
     amount: doublePrecision("amount"),
+    /** The VAT in `amount`. */
+    vat: doublePrecision("vat"),
     currency: text("currency"),
+    /** How it was paid. Freemius doesn't give out the card's digits. */
+    paymentMethod: text("payment_method").$type<PaymentMethod>(),
     createdAt: timestamp("created_at").notNull().defaultNow(),
   },
   (table) => [index("purchase_case_id_idx").on(table.caseId, table.createdAt)],

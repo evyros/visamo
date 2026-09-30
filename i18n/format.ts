@@ -11,6 +11,15 @@ export function formatPrice(amount: number, locale: Locale) {
   }).format(amount);
 }
 
+/** An amount that was paid, to the agora, in its currency (ILS when unknown). */
+export function formatAmount(amount: number, currency: string | null, locale: Locale) {
+  return new Intl.NumberFormat(locales[locale].intlLocale, {
+    style: "currency",
+    currency: (currency ?? "ILS").toUpperCase(),
+    minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
+  }).format(amount);
+}
+
 /** Country name in the given language, from an ISO 3166 region code. */
 export function regionName(region: string, locale: Locale) {
   return (

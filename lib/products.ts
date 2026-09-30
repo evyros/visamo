@@ -9,6 +9,9 @@ export type ProductId = "messagePack" | "fileCheck";
 
 export const productIds: readonly ProductId[] = ["messagePack", "fileCheck"];
 
+/** How a purchase was paid, from the Freemius payment's gateway. */
+export type PaymentMethod = "card" | "paypal";
+
 export function isProductId(value: unknown): value is ProductId {
   return productIds.includes(value as ProductId);
 }
@@ -28,6 +31,11 @@ export const PACK_MESSAGES = 50;
 
 /** Document checks Full file check grants: the fair-use amount. Support tops up from the admin panel. */
 export const DOCUMENT_CHECKS = 300;
+
+/** At 80% of the checks granted, the couple sees how many are left and is asked to contact support. */
+export function checksRunningLow(totals: { granted: number; used: number }) {
+  return totals.granted > 0 && totals.used >= totals.granted * 0.8;
+}
 
 /** What each purchase adds to the case's balances. */
 export const PRODUCT_GRANTS: Record<ProductId, { messages: number; checks: number }> = {

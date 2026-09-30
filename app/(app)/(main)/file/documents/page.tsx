@@ -9,6 +9,7 @@ import { checkView } from "@/lib/checks/view";
 import { ownerOrder } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
+import { checksRunningLow } from "@/lib/products";
 import { requireCase } from "@/lib/session";
 import { whatsappUrl } from "@/lib/site";
 import {
@@ -109,11 +110,9 @@ export default async function DocumentsPage() {
         intlLocale={locales[locale].intlLocale}
         checks={{
           allowed: balance.fileCheck,
-          // At 80% of the checks granted, the couple is asked to contact support.
-          notice:
-            balance.granted > 0 && balance.used >= balance.granted * 0.8
-              ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
-              : null,
+          notice: checksRunningLow(balance)
+            ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
+            : null,
           supportUrl: whatsappUrl(),
         }}
       />

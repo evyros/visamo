@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
-import { formatDate, formatPrice } from "@/i18n/format";
+import { formatAmount, formatDate, formatPrice } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import { buyUrl } from "@/lib/buy-paths";
 import { chatBalance } from "@/lib/chat/store";
 import { checkBalance } from "@/lib/checks/store";
 import { casePurchases } from "@/lib/purchases";
 import { requireCase } from "@/lib/session";
+import { checksRunningLow } from "@/lib/products";
 import { prices } from "@/lib/site";
-import { primaryButton, secondaryButton, SettingsCard, SettingsPage } from "@/components/app/settings-ui";
+import { primaryButton, SettingsCard, SettingsPage } from "@/components/app/settings-ui";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.billing };
@@ -34,23 +36,39 @@ export default async function BillingPage() {
   return (
     <SettingsPage title={messages.app.settings.billing} intro={t.intro}>
       <SettingsCard title={t.fileTitle}>
-        <p className="text-slate-700">{checks.fileCheck ? t.fileCheckOn : t.fileCheckOff}</p>
-        <dl className="mt-5 grid gap-3 sm:grid-cols-2">
-          <Balance label={t.messagesLeft} value={count(chat.messagesLeft)} />
-          {checks.fileCheck && <Balance label={t.checksLeft} value={count(checks.left)} />}
-        </dl>
-        <div className="mt-6 flex flex-wrap gap-3">
-          {!checks.fileCheck && (
-            <Link href={buyUrl("/settings/billing")} className={primaryButton}>
-              {format(t.buyFileCheck, { price: formatPrice(prices.fileCheck, locale) })}
+        {/* Each balance with the purchase that adds to it. */}
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Balance label={t.messagesLeft} value={count(chat.messagesLeft)}>
+            <Link href={buyUrl("/settings/billing")} className={tileLink}>
+              + {format(t.addPack, { price: formatPrice(prices.messagePack, locale) })}
             </Link>
+          </Balance>
+          {checks.fileCheck ? (
+            // The count shows only once it runs low.
+            checksRunningLow(checks) ? (
+              <Balance label={t.checksLeft} value={count(checks.left)}>
+                <Link href="/file/documents" className={tileLink}>
+                  {t.checksHint}
+                </Link>
+              </Balance>
+            ) : (
+              <div className="flex flex-col rounded-[10px] bg-sand-50 px-4 py-3">
+                <p className="text-sm text-slate-500">{t.checksTitle}</p>
+                <p className="mt-1 text-slate-700">{t.checksIncluded}</p>
+                <Link href="/file/documents" className={tileLink}>
+                  {t.checksHint}
+                </Link>
+              </div>
+            )
+          ) : (
+            <div className="flex flex-col rounded-[10px] border-[1.5px] border-dashed border-line-200 px-4 py-3">
+              <p className="text-sm text-slate-500">{t.checksTitle}</p>
+              <p className="mt-1 text-sm text-slate-700">{t.checksLockedBody}</p>
+              <Link href={buyUrl("/settings/billing")} className={`${primaryButton} mt-4 self-start`}>
+                {format(t.buyFileCheck, { price: formatPrice(prices.fileCheck, locale) })}
+              </Link>
+            </div>
           )}
-          <Link
-            href={buyUrl("/settings/billing")}
-            className={checks.fileCheck ? primaryButton : secondaryButton}
-          >
-            {format(t.buyPack, { price: formatPrice(prices.messagePack, locale) })}
-          </Link>
         </div>
         <p className="mt-4 text-sm text-slate-500">{t.secure}</p>
       </SettingsCard>
@@ -59,19 +77,41 @@ export default async function BillingPage() {
         {purchases.length ? (
           <ul className="divide-y divide-line-200">
             {purchases.map((p) => (
-              <li key={p.id} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3 first:pt-0 last:pb-0">
+              <li key={p.id} className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 py-3 first:pt-0 last:pb-0">
                 <div>
                   <p className="font-semibold text-navy-900">{products[p.product].name}</p>
                   <p className="text-sm text-slate-500">
-                    {formatDate(p.createdAt, locale)}
-                    {p.buyerId !== user.id && p.buyerName && ` · ${format(t.boughtBy, { name: p.buyerName })}`}
+                    {[
+                      formatDate(p.createdAt, locale),
+                      p.paymentMethod && (p.paymentMethod === "paypal" ? t.paidPaypal : t.paidCard),
+                      p.buyerId !== user.id && p.buyerName && format(t.boughtBy, { name: p.buyerName }),
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </p>
                 </div>
-                {p.amount !== null && (
-                  <bdi className="font-semibold text-navy-900 tabular-nums">
-                    {formatPrice(p.amount, locale)}
-                  </bdi>
-                )}
+                <div className="text-end">
+                  {p.amount !== null && (
+                    <p className="font-semibold text-navy-900 tabular-nums">
+                      <bdi>{formatAmount(p.amount, p.currency, locale)}</bdi>
+                    </p>
+                  )}
+                  {!!p.vat && (
+                    <p className="text-sm text-slate-500">
+                      {format(t.vatIncluded, { vat: formatAmount(p.vat, p.currency, locale) })}
+                    </p>
+                  )}
+                  {p.hasInvoice && (
+                    <a
+                      href={`/api/purchases/${p.id}/invoice`}
+                      target="_blank"
+                      rel="noopener"
+                      className="text-sm font-semibold text-teal-700 underline-offset-4 hover:underline"
+                    >
+                      {t.invoice}
+                    </a>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
@@ -89,11 +129,14 @@ export default async function BillingPage() {
   );
 }
 
-function Balance({ label, value }: { label: string; value: string }) {
+const tileLink = "mt-3 self-start text-sm font-semibold text-teal-700 underline-offset-4 hover:underline";
+
+function Balance({ label, value, children }: { label: string; value: string; children?: ReactNode }) {
   return (
-    <div className="rounded-[10px] bg-sand-50 px-4 py-3">
-      <dt className="text-sm text-slate-500">{label}</dt>
-      <dd className="font-display text-2xl font-semibold text-navy-900 tabular-nums">{value}</dd>
+    <div className="flex flex-col rounded-[10px] bg-sand-50 px-4 py-3">
+      <p className="text-sm text-slate-500">{label}</p>
+      <p className="font-display text-2xl font-semibold text-navy-900 tabular-nums">{value}</p>
+      {children}
     </div>
   );
 }

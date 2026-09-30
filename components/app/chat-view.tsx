@@ -5,9 +5,9 @@ import { useEffect, useLayoutEffect, useRef, useState, type FormEvent, type Keyb
 import { format, type Messages } from "@/i18n/messages";
 import { Icon } from "@/components/icons";
 import { LogoMark } from "@/components/logo";
-import { TextLink } from "@/components/ui";
 import { ChatMarkdown, textDirection } from "./chat-markdown";
 import { usePendingChat } from "./chat-pending";
+import { BuyLink } from "./purchase";
 
 type Message = {
   id: string;
@@ -45,6 +45,12 @@ export function ChatView({
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<ErrorKey | null>(null);
   const [messagesLeft, setMessagesLeft] = useState(initialMessagesLeft);
+  // A purchase refreshes the page with the new balance.
+  const [lastInitial, setLastInitial] = useState(initialMessagesLeft);
+  if (initialMessagesLeft !== lastInitial) {
+    setLastInitial(initialMessagesLeft);
+    setMessagesLeft(initialMessagesLeft);
+  }
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   // Follow the answer as it streams, unless the user scrolled up to read.
@@ -252,9 +258,9 @@ export function ChatView({
           {outOfMessages ? (
             <div className="rounded-2xl border border-line-200 bg-white px-4 py-4 text-[15px] shadow-soft">
               <p className="text-navy-900">{t.noMessages}</p>
-              <TextLink href="/settings/billing" className="mt-1">
+              <BuyLink className="mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-[10px] bg-teal-600 px-4 text-[15px] font-semibold text-white transition-colors hover:bg-teal-700">
                 {t.buyMore}
-              </TextLink>
+              </BuyLink>
             </div>
           ) : (
             <form

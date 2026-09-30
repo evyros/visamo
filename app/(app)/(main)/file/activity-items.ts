@@ -3,6 +3,7 @@ import { formatAgo, formatDay } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import type { BranchCode, Stage } from "@/lib/case-options";
 import { documentTitle } from "@/lib/documents/titles";
+import type { ProductId } from "@/lib/products";
 import type { CaseEvent, recentEvents } from "@/lib/events";
 import type { ActivityItem } from "@/components/app/overview-cards";
 
@@ -42,6 +43,10 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale)
         }
         const steps = messages.app.overview.stage.steps;
         return { text: say(event.type, { stage: steps[to as Stage] ?? to }) };
+      }
+      case "purchase.made": {
+        const product = event.data.product as ProductId;
+        return { text: say(event.type, { product: messages.pricing[product]?.name ?? product }) };
       }
       case "branch.changed": {
         const to = event.data.to as BranchCode | null;

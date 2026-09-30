@@ -35,6 +35,8 @@ export function SettingsCard({
 const buttonBase =
   "inline-flex h-11 items-center justify-center gap-2 rounded-[10px] px-5 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-70";
 
+export const primaryButton = `${buttonBase} bg-teal-600 text-white hover:bg-teal-700 focus-visible:outline-teal-600`;
+
 export const secondaryButton = `${buttonBase} border-[1.5px] border-navy-900 text-navy-900 hover:bg-navy-900/5 focus-visible:outline-navy-900`;
 
 export const dangerButton = `${buttonBase} bg-terracotta-600 text-white hover:bg-terracotta-600/90 focus-visible:outline-terracotta-600`;

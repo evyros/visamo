@@ -10,7 +10,7 @@ import { ownerOrder } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
 import { requireCase } from "@/lib/session";
-import { localePath, site, whatsappUrl } from "@/lib/site";
+import { whatsappUrl } from "@/lib/site";
 import {
   DocumentsBoard,
   type DocumentGroup,
@@ -114,7 +114,6 @@ export default async function DocumentsPage() {
             balance.granted > 0 && balance.used >= balance.granted * 0.8
               ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
               : null,
-          pricingUrl: `${site.url}${localePath(locale, "/pricing")}`,
           supportUrl: whatsappUrl(),
         }}
       />

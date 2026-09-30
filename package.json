@@ -14,6 +14,8 @@
     "prompts:lock": "UPDATE_PROMPTS_LOCK=1 vitest run lib/prompts.test.ts"
   },
   "dependencies": {
+    "@freemius/checkout": "^1.5.1",
+    "@freemius/sdk": "^0.5.0",
     "@hyzyla/pdfium": "^2.1.13",
     "@neondatabase/serverless": "^1.1.0",
     "@vercel/analytics": "^2.0.1",
@@ -25,7 +27,8 @@
     "react-dom": "19.2.8",
     "resend": "^6.30.0",
     "server-only": "^0.0.1",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

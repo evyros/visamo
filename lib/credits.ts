@@ -1,8 +1,9 @@
 import "server-only";
 import { and, desc, eq, inArray, sql, type SQL } from "drizzle-orm";
-import { PRODUCT_GRANTS, type ProductId } from "./products";
+import { PRODUCT_GRANTS } from "./products";
 import { db } from "./db";
-import { cases, chat, chatMessage, creditEntry, documentCheck, user } from "./db/schema";
+import { cases, chat, chatMessage, creditEntry, documentCheck, purchase, user } from "./db/schema";
+import { recordEvent } from "./events";
 
 // A case's balances: chat messages and document checks, shared by both
 // partners. The balance on the case is what spending checks against; every
@@ -102,19 +103,25 @@ export function grantQueries(caseId: string, kind: CreditKind, amount: number, r
 }
 
 /**
- * What a purchase adds: 50 messages, and with Full file check 300 checks
- * (lib/products.ts), and what it unlocks on the case. For the purchase flow.
+ * Records a purchase with what it adds: 50 messages, and with Full file check
+ * 300 checks (lib/products.ts), and what it unlocks on the case. One batch is
+ * one transaction, and the purchase's Freemius license is unique, so a
+ * purchase reported twice throws on the second time and grants nothing more.
+ * For the purchase flow (lib/purchases.ts).
  */
-export async function grantPurchase(caseId: string, product: ProductId, userId: string, purchaseId: string) {
+export async function grantPurchase(row: typeof purchase.$inferInsert & { userId: string }) {
+  const { caseId, product, userId } = row;
   const grants = PRODUCT_GRANTS[product];
-  const details = { userId, refId: purchaseId };
+  const details = { userId, refId: row.id };
   await db.batch([
+    db.insert(purchase).values(row),
     db
       .update(cases)
       .set({ paid: true, ...(product === "fileCheck" && { fileCheck: true }) })
       .where(eq(cases.id, caseId)),
     ...grantQueries(caseId, "messages", grants.messages, "purchase", details),
     ...(grants.checks ? grantQueries(caseId, "checks", grants.checks, "purchase", details) : []),
+    recordEvent(caseId, userId, { type: "purchase.made", data: { product } }),
   ]);
 }
 

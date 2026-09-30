@@ -833,6 +833,8 @@
       "account": "Account",
       "partner": "Partner",
       "billing": "Purchases & billing",
+      "buy": "Add to your file",
+      "purchased": "Payment successful",
       "support": "Support",
       "details": "Your details",
       "activity": "Activity",
@@ -1118,6 +1120,50 @@
         "generic": "Something went wrong. Please try again."
       }
     },
+    "purchase": {
+      "confirming": "Confirming your payment…",
+      "unavailable": "Purchases aren't available right now. Please try again later.",
+      "close": "Close"
+    },
+    "buy": {
+      "title": "Add to your file",
+      "intro": "One-time purchases. No subscription.",
+      "back": "Back",
+      "active": "On your file",
+      "activeNote": "Already on your file",
+      "packTagline": "More questions for the chat, whenever you need them",
+      "packVsFileCheck": "Need document checks too? Full file check includes 50 messages.",
+      "buy": "Continue to payment · {price}"
+    },
+    "purchased": {
+      "eyebrow": "Payment successful",
+      "messagePack": {
+        "title": "50 more messages are yours",
+        "body": "Keep asking the chat about your documents, the stages or letters from Misrad Hapnim, whenever you need to."
+      },
+      "fileCheck": {
+        "title": "Full file check is on!",
+        "body": "Now you can check every document you upload, save time and avoid rejections, for a smoother process with Misrad Hapnim.",
+        "messages": "You also got 50 more messages for the chat."
+      },
+      "unknown": {
+        "title": "Your payment went through",
+        "body": "Thank you! If you don't see it in your file, contact support."
+      },
+      "hasMessages": "Your file now has {messages} chat messages",
+      "hasFileCheck": "Your file now has {messages} chat messages and {checks} document checks",
+      "use": {
+        "messagePack": "Go to the chat",
+        "fileCheck": "Check your documents"
+      },
+      "back": {
+        "chat": "Back to your chat",
+        "documents": "Back to your documents",
+        "other": "Back to your file"
+      },
+      "support": "Need support?",
+      "supportLink": "Talk to us"
+    },
     "settings": {
       "nav": "Settings",
       "account": "Account",
@@ -1167,6 +1213,22 @@
           "tooSoon": "Wait a minute before sending again.",
           "full": "Your partner has already joined the file."
         }
+      },
+      "billingPage": {
+        "intro": "What your file has, and what you've bought. Purchases are for the whole file, shared by both of you.",
+        "fileTitle": "Your file",
+        "fileCheckOn": "Full file check is on. Check any document from the documents page.",
+        "fileCheckOff": "Document checks come with Full file check, a one-time purchase for your whole process.",
+        "messagesLeft": "Chat messages left",
+        "checksLeft": "Document checks left",
+        "buyFileCheck": "Get Full file check · {price}",
+        "buyPack": "Get 50 messages · {price}",
+        "historyTitle": "Purchases",
+        "historyEmpty": "No purchases yet.",
+        "boughtBy": "By {name}",
+        "secure": "Payment is handled by Freemius, our payment provider, who emails the receipt to whoever paid. We never see your card details.",
+        "needHelp": "Need help?",
+        "contactSupport": "Contact support"
       }
     },
     "email": {
@@ -1638,6 +1700,10 @@
           "document.checked": {
             "male": "{name} checked {document}",
             "female": "{name} checked {document}"
+          },
+          "purchase.made": {
+            "male": "{name} bought {product}",
+            "female": "{name} bought {product}"
           }
         },
         "listChanged": "Documents added: {added} · removed: {removed}"

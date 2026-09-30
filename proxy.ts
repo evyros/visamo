@@ -3,11 +3,13 @@ import { getSessionCookie } from "better-auth/cookies";
 import { LOCALE_COOKIE, isLocale } from "./i18n/config";
 import { asLiveLocale, localeFromHeaders } from "./i18n/negotiate";
 import { accessPathPattern, publicAppPaths } from "./lib/app-paths";
+import { BUY_COOKIE, isProductId } from "./lib/products";
 import { site } from "./lib/site";
 
 const appHost = new URL(site.appUrl).host;
 const adminHost = new URL(site.adminUrl).host;
-const ONE_YEAR = 60 * 60 * 24 * 365;
+const ONE_DAY = 60 * 60 * 24;
+const ONE_YEAR = ONE_DAY * 365;
 /** Where to go after logging in: a support-access link opened while logged out. */
 const RETURN_COOKIE = "return_to";
 
@@ -54,16 +56,24 @@ function appProxy(request: NextRequest) {
     return NextResponse.redirect(new URL(pathname + request.nextUrl.search, site.url));
   }
 
-  // The website links here with ?lang=he. Save it and drop it from the URL,
-  // so the language sticks for the rest of the visit.
+  // The website links here with ?lang=he, and from the pricing page with
+  // ?buy=fileCheck. Save them and drop them from the URL: the language sticks
+  // for the rest of the visit, and what to buy waits for signup and onboarding
+  // (the buy page opens once they're in the app:
+  // app/(app)/(main)/layout.tsx).
   const lang = searchParams.get("lang");
-  if (lang !== null) {
+  const buy = searchParams.get("buy");
+  if (lang !== null || buy !== null) {
     const url = request.nextUrl.clone();
     url.searchParams.delete("lang");
+    url.searchParams.delete("buy");
     const response = NextResponse.redirect(url);
-    const locale = asLiveLocale(lang);
+    const locale = lang !== null && asLiveLocale(lang);
     if (locale) {
       response.cookies.set(LOCALE_COOKIE, locale, { path: "/", maxAge: ONE_YEAR, sameSite: "lax" });
+    }
+    if (isProductId(buy)) {
+      response.cookies.set(BUY_COOKIE, buy, { path: "/", maxAge: ONE_DAY, httpOnly: true, sameSite: "lax" });
     }
     return response;
   }

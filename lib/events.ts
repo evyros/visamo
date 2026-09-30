@@ -19,6 +19,8 @@ export type CaseEvent =
   | { type: "invite.cancelled"; data: { email: string } }
   | { type: "partner.joined"; data: Record<string, never> }
   | { type: "member.left"; data: Record<string, never> }
+  /** `product` is a ProductId from lib/products.ts. */
+  | { type: "purchase.made"; data: { product: string } }
   | {
       type: "details.changed";
       data: {

@@ -7,6 +7,19 @@
 /** A one-time purchase. */
 export type ProductId = "messagePack" | "fileCheck";
 
+export const productIds: readonly ProductId[] = ["messagePack", "fileCheck"];
+
+export function isProductId(value: unknown): value is ProductId {
+  return productIds.includes(value as ProductId);
+}
+
+/**
+ * What the person chose to buy on the pricing page (?buy= on the app's
+ * links), kept through signup and onboarding (proxy.ts). The app opens the
+ * buy page once they reach it.
+ */
+export const BUY_COOKIE = "buy";
+
 /** The messages a new case is granted. */
 export const FREE_MESSAGES = 5;
 

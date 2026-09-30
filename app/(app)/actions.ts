@@ -9,6 +9,7 @@ import { asLiveLocale } from "@/i18n/negotiate";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { user } from "@/lib/db/schema";
+import { BUY_COOKIE } from "@/lib/products";
 import { getSession, hasSignInMethod } from "@/lib/session";
 
 /** Saves the app language on this device and, when signed in, on the user. */
@@ -39,4 +40,9 @@ export async function setPassword(password: string): Promise<SetPasswordResult> 
     return { error: "generic" };
   }
   redirect("/");
+}
+
+/** Forgets what the person chose to buy on the pricing page, once the buy page for it has opened. */
+export async function clearBuyIntent() {
+  (await cookies()).delete(BUY_COOKIE);
 }

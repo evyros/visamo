@@ -16,6 +16,7 @@ import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
 import type { CaseEvent } from "../events";
+import type { ProductId } from "../products";
 import type { AccessDuration, AccessReason } from "../support-access-options";
 
 // Better Auth's core tables (user, session, account, verification), plus the
@@ -352,6 +353,34 @@ export const creditEntry = pgTable(
     createdAt: timestamp("created_at").notNull().defaultNow(),
   },
   (table) => [index("credit_entry_case_id_idx").on(table.caseId, table.kind, table.createdAt)],
+);
+
+/**
+ * A purchase made in Freemius Checkout (lib/purchases.ts). Written in the same
+ * batch as what it grants (grantPurchase in lib/credits.ts), and the Freemius
+ * license is unique, so the checkout's callback and the webhook, which both
+ * report the same purchase, can't grant it twice.
+ */
+export const purchase = pgTable(
+  "purchase",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /** The partner who bought it. */
+    userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
+    /** A ProductId from lib/products.ts. */
+    product: text("product").notNull().$type<ProductId>(),
+    /** Each one-off purchase is its own license in Freemius. */
+    freemiusLicenseId: text("freemius_license_id").notNull().unique(),
+    freemiusUserId: text("freemius_user_id").notNull(),
+    /** What was paid, as Freemius reports it. */
+    amount: doublePrecision("amount"),
+    currency: text("currency"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [index("purchase_case_id_idx").on(table.caseId, table.createdAt)],
 );
 
 /**

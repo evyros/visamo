@@ -122,6 +122,24 @@ body {
   animation: rise 0.5s ease-out both;
 }
 
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
 /* Hero texture. The dot grid fades out from the corner where the glow sits
    (inline-end, so it mirrors in RTL); the grain is inline SVG noise. */
 .texture-dots {

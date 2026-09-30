@@ -6,7 +6,9 @@ import { requireCase } from "@/lib/session";
 import { ChatHistory } from "@/components/app/chat-history";
 import { PendingChatProvider } from "@/components/app/chat-pending";
 import { SectionShell } from "@/components/app/section-shell";
-import { ButtonLink, TextLink } from "@/components/ui";
+import { BuyLink } from "@/components/app/purchase";
+import { Icon } from "@/components/icons";
+import { ButtonLink } from "@/components/ui";
 
 // The sidebar: new chat, the case's chats (both partners see them all), and
 // the messages left with a way to buy more. The chat page refreshes it after
@@ -44,7 +46,10 @@ export default async function ChatLayout({ children }: { children: ReactNode }) 
               <p className="mb-1 text-sm text-slate-500">
                 {messagesLeft === 1 ? c.messagesLeftOne : format(c.messagesLeft, { count: messagesLeft })}
               </p>
-              <TextLink href="/settings/billing">{c.buyMore}</TextLink>
+              <BuyLink className="inline-flex items-center gap-1.5 font-semibold text-teal-700 underline-offset-4 hover:underline">
+                {c.buyMore}
+                <Icon name="arrow" className="size-4" />
+              </BuyLink>
             </div>
           </div>
         }

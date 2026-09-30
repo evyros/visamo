@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { upload } from "@vercel/blob/client";
 import { useCallback, useEffect, useId, useRef, useState, type DragEvent, type ReactNode } from "react";
 import { deleteFile, finishUpload, startUpload, type UploadError } from "@/app/(app)/(main)/file/documents/actions";
@@ -7,6 +8,7 @@ import type { Locale } from "@/i18n/config";
 import { formatAgo } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
+import { buyUrl } from "@/lib/buy-paths";
 import type { CheckRating, FindingText } from "@/lib/checks/result";
 import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
@@ -49,7 +51,6 @@ export type CheckSettings = {
   allowed: boolean;
   /** Shown near the fair-use limit. */
   notice: string | null;
-  pricingUrl: string;
   supportUrl: string;
 };
 
@@ -591,13 +592,13 @@ function CheckFooter({
       </span>
     );
   } else if (!settings.allowed) {
-    // Not bought: the button leads to the pricing page.
+    // Not bought: the button leads to the buy page.
     state = c.upgradeHint;
     action = (
-      <a href={settings.pricingUrl} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
+      <Link href={buyUrl("/file/documents")} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
         <Icon name="checkCircle" className="size-4" />
         {c.upgrade}
-      </a>
+      </Link>
     );
   } else {
     state = uploaded ? (last ? c.stale : c.notChecked) : c.needsOriginal;

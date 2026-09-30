@@ -1,6 +1,7 @@
 import { defineConfig } from "drizzle-kit";
 
-// `npm run db:push` syncs lib/db/schema.ts to the Neon database in DATABASE_URL.
+// `npm run db:generate` writes a migration to drizzle/ from changes to
+// lib/db/schema.ts; scripts/migrate.mjs applies them. Studio connects directly.
 // Next loads .env.local and .env on its own; drizzle-kit needs them spelled
 // out. Like Next, .env.local wins, since loadEnvFile keeps values already set.
 for (const file of [".env.local", ".env"]) {
@@ -15,5 +16,7 @@ export default defineConfig({
   schema: "./lib/db/schema.ts",
   out: "./drizzle",
   dialect: "postgresql",
-  dbCredentials: { url: process.env.DATABASE_URL! },
+  dbCredentials: {
+    url: (process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL)!,
+  },
 });

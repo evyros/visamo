@@ -41,7 +41,7 @@
       "description": "Questions, technical issues or refund requests: send the Visamo team a message."
     },
     "about": {
-      "title": "Why I built Visamo",
+      "title": "The story behind Visamo",
       "description": "The story behind Visamo: two years of forms, answers and bureaucracy on the way to my wife's visa."
     }
   },
@@ -87,13 +87,13 @@
     },
     "company": {
       "title": "Company",
-      "about": "Why I built Visamo",
+      "about": "The story behind Visamo",
       "howBuilt": "How we built Visamo",
       "contact": "Contact"
     },
     "support": {
       "title": "Support",
-      "hours": "Sun–Thu 10:00–18:00\nFri 10:00–14:30 (Israel time)",
+      "hours": "Sun–Thu 10:00–19:00\nFri 10:00–15:00 (Israel time)",
       "email": "Email"
     },
     "disclaimerTitle": "Visamo is not a law firm and not a government service.",
@@ -293,7 +293,7 @@
       "quote": "I built Visamo after a two-year process of getting forms, chasing answers and dealing with bureaucracy I wasn't prepared for.",
       "name": "Evyatar",
       "role": "founder of Visamo",
-      "link": "Read why I built Visamo"
+      "link": "The story behind Visamo"
     },
     "pricingTeaser": {
       "title": "One-time prices. No subscription.",
@@ -602,7 +602,7 @@
         {
           "icon": "refresh",
           "title": "Different at the counter",
-          "body": "What clerks ask for can change over time, sometimes between one appointment and the next."
+          "body": "Clerks often ask for documents that aren't on any published list, and what they ask for can change over time, sometimes between one appointment and the next."
         },
         {
           "icon": "building",
@@ -663,7 +663,7 @@
   },
   "about": {
     "eyebrow": "A note from the founder",
-    "title": "Why I built Visamo",
+    "title": "The story behind Visamo",
     "paragraphs": [
       "When my American wife and I started the gradual process, I thought the interviews would be the hard part. They weren't. The paperwork was.",
       "Some documents we didn't even know how to get. A certificate that was valid in March had expired by our appointment in July. We waited months for a slot, only to hear “come back with the missing page,” and then waited months more for the next round. More than once, our file was sent back over something we didn't know was mandatory.",
@@ -783,7 +783,7 @@
       "attachmentsHint": "Images only (JPG, PNG, WebP or HEIC), up to 3 files and 4MB in total.",
       "addFiles": "Add images",
       "remove": "Remove",
-      "submit": "Send message",
+      "submit": "Send",
       "sending": "Sending…",
       "successTitle": "Thanks, we got your message.",
       "successBody": "Your ticket number is {ticket}. We sent a confirmation to {email}, and we'll reply there during support hours.",

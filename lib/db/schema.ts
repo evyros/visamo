@@ -358,8 +358,8 @@ export const creditEntry = pgTable(
 /**
  * A purchase made in Freemius Checkout (lib/purchases.ts). Written in the same
  * batch as what it grants (grantPurchase in lib/credits.ts), and the Freemius
- * license is unique, so the checkout's callback and the webhook, which both
- * report the same purchase, can't grant it twice.
+ * license is unique, so the success page and the webhook, which both report
+ * the same purchase, can't grant it twice. A refunded purchase stays, marked.
  */
 export const purchase = pgTable(
   "purchase",
@@ -387,6 +387,11 @@ export const purchase = pgTable(
     /** How it was paid. Freemius doesn't give out the card's digits. */
     paymentMethod: text("payment_method").$type<PaymentMethod>(),
     createdAt: timestamp("created_at").notNull().defaultNow(),
+    /**
+     * When it was refunded in full, or lost a chargeback: what it granted and
+     * wasn't used yet was taken back (revokePurchase in lib/credits.ts).
+     */
+    refundedAt: timestamp("refunded_at"),
   },
   (table) => [index("purchase_case_id_idx").on(table.caseId, table.createdAt)],
 );

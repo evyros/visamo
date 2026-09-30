@@ -1228,6 +1228,7 @@
         "historyTitle": "Purchases",
         "historyEmpty": "No purchases yet.",
         "boughtBy": "By {name}",
+        "refunded": "Refunded",
         "paidCard": "Card",
         "paidPaypal": "PayPal",
         "vatIncluded": "incl. {vat} VAT",
@@ -1710,6 +1711,10 @@
           "purchase.made": {
             "male": "{name} bought {product}",
             "female": "{name} bought {product}"
+          },
+          "purchase.refunded": {
+            "male": "The {product} purchase was refunded",
+            "female": "The {product} purchase was refunded"
           }
         },
         "listChanged": "Documents added: {added} · removed: {removed}"

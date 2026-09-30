@@ -21,6 +21,8 @@ export type CaseEvent =
   | { type: "member.left"; data: Record<string, never> }
   /** `product` is a ProductId from lib/products.ts. */
   | { type: "purchase.made"; data: { product: string } }
+  /** Refunded in Freemius, or lost a chargeback, with no actor: written by lib/credits.ts's revokePurchase. */
+  | { type: "purchase.refunded"; data: { product: string } }
   | {
       type: "details.changed";
       data: {

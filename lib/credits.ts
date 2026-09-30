@@ -2,7 +2,7 @@ import "server-only";
 import { and, desc, eq, inArray, sql, type SQL } from "drizzle-orm";
 import { PRODUCT_GRANTS } from "./products";
 import { db } from "./db";
-import { cases, chat, chatMessage, creditEntry, documentCheck, purchase, user } from "./db/schema";
+import { caseEvent, cases, chat, chatMessage, creditEntry, documentCheck, purchase, user } from "./db/schema";
 import { recordEvent } from "./events";
 
 // A case's balances: chat messages and document checks, shared by both
@@ -18,9 +18,10 @@ export type CreditKind = (typeof creditKinds)[number];
 
 /**
  * Why a balance changed. `spend` and `refund` are it being used (a refund
- * gives back a spend that got nothing); the rest grant credit.
+ * gives back a spend that got nothing). `revoked` takes back what a purchase
+ * granted, when it was refunded in Freemius. The rest grant credit.
  */
-export type CreditReason = "free" | "purchase" | "support" | "spend" | "refund";
+export type CreditReason = "free" | "purchase" | "support" | "spend" | "refund" | "revoked";
 
 /** The balance column's name, for the one statement drizzle can't build (spend). Never user input. */
 const columnName = { messages: "messages_left", checks: "checks_left" } as const;
@@ -123,6 +124,71 @@ export async function grantPurchase(row: typeof purchase.$inferInsert & { userId
     ...(grants.checks ? grantQueries(caseId, "checks", grants.checks, "purchase", details) : []),
     recordEvent(caseId, userId, { type: "purchase.made", data: { product } }),
   ]);
+}
+
+/**
+ * Takes back what a refunded purchase granted, once: marks the purchase
+ * refunded, and takes its messages and checks out of the balances, but only
+ * what's left of them, since what was used can't be taken back: a balance
+ * never goes below zero. What the case has bought is then what its other
+ * purchases bought. It's one statement, so it all happens or none of it, and
+ * a purchase already marked refunded changes nothing: the webhook can be
+ * sent again. `note` says why, on the entries. The purchase's product, or
+ * null when there was nothing to take back.
+ */
+export async function revokePurchase(freemiusLicenseId: string, note: string) {
+  const [row] = await db
+    .select({ product: purchase.product })
+    .from(purchase)
+    .where(eq(purchase.freemiusLicenseId, freemiusLicenseId))
+    .limit(1);
+  if (!row) return null;
+  const grants = PRODUCT_GRANTS[row.product];
+
+  // Each part is a CTE of one statement: they all see the tables as they were
+  // before it, so `kept` leaves out the refunded purchase by its id. `locked`
+  // waits for, and then reads, the case as it is after any spend in progress.
+  const { rows } = await db.execute<{ product: string }>(sql`
+    with refunded as (
+      update ${purchase} set refunded_at = now()
+      where freemius_license_id = ${freemiusLicenseId} and refunded_at is null
+      returning id, case_id, product
+    ), locked as (
+      select c.id, c.messages_left, c.checks_left
+      from ${cases} c join refunded r on r.case_id = c.id
+      for update of c
+    ), taken as (
+      select id as case_id,
+        least(messages_left, ${grants.messages}) as messages,
+        least(checks_left, ${grants.checks}) as checks
+      from locked
+    ), kept as (
+      select coalesce(bool_or(true), false) as paid, coalesce(bool_or(p.product = 'fileCheck'), false) as file_check
+      from ${purchase} p join refunded r on p.case_id = r.case_id
+      where p.id <> r.id and p.refunded_at is null
+    ), updated as (
+      update ${cases} c set
+        messages_left = c.messages_left - t.messages,
+        checks_left = c.checks_left - t.checks,
+        paid = k.paid,
+        file_check = k.file_check,
+        updated_at = now()
+      from taken t, kept k
+      where c.id = t.case_id
+    ), entries as (
+      insert into ${creditEntry} (id, case_id, kind, delta, reason, ref_id, note)
+      select gen_random_uuid()::text, t.case_id, e.kind, -e.amount, 'revoked', r.id, ${note}
+      from taken t
+      cross join refunded r
+      cross join lateral (values ('messages', t.messages), ('checks', t.checks)) as e(kind, amount)
+      where e.amount > 0
+    ), event as (
+      insert into ${caseEvent} (id, case_id, type, data)
+      select gen_random_uuid()::text, r.case_id, 'purchase.refunded', jsonb_build_object('product', r.product)
+      from refunded r
+    )
+    select product from refunded`);
+  return rows[0] ? row.product : null;
 }
 
 /** A support top-up from the admin panel, with who gave it and why. */

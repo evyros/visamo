@@ -79,7 +79,14 @@ export default async function BillingPage() {
             {purchases.map((p) => (
               <li key={p.id} className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 py-3 first:pt-0 last:pb-0">
                 <div>
-                  <p className="font-semibold text-navy-900">{products[p.product].name}</p>
+                  <p className="flex flex-wrap items-center gap-x-2 font-semibold text-navy-900">
+                    {products[p.product].name}
+                    {p.refundedAt && (
+                      <span className="rounded-full bg-sand-50 px-2 py-0.5 text-xs font-semibold text-slate-500 ring-1 ring-line-200">
+                        {t.refunded}
+                      </span>
+                    )}
+                  </p>
                   <p className="text-sm text-slate-500">
                     {[
                       formatDate(p.createdAt, locale),

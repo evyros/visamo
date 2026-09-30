@@ -1228,6 +1228,7 @@
         "historyTitle": "רכישות",
         "historyEmpty": "עדיין אין רכישות.",
         "boughtBy": "על ידי {name}",
+        "refunded": "הוחזר",
         "paidCard": "כרטיס אשראי",
         "paidPaypal": "PayPal",
         "vatIncluded": "כולל מע״מ {vat}",
@@ -1710,6 +1711,10 @@
           "purchase.made": {
             "male": "{name} רכש {product}",
             "female": "{name} רכשה {product}"
+          },
+          "purchase.refunded": {
+            "male": "בוצע החזר על הרכישה של {product}",
+            "female": "בוצע החזר על הרכישה של {product}"
           }
         },
         "listChanged": "מסמכים שנוספו: {added} · שהוסרו: {removed}"

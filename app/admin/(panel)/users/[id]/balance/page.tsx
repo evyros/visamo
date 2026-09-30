@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/
 const reasons: Record<CreditReason, { label: string; tone: PillTone }> = {
   free: { label: "Free", tone: "neutral" },
   purchase: { label: "Purchase", tone: "teal" },
+  revoked: { label: "Purchase refunded", tone: "terracotta" },
   support: { label: "Support top-up", tone: "navy" },
   spend: { label: "Spent", tone: "slate" },
   refund: { label: "Refunded", tone: "amber" },

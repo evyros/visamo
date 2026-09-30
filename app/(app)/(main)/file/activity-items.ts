@@ -44,7 +44,8 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale)
         const steps = messages.app.overview.stage.steps;
         return { text: say(event.type, { stage: steps[to as Stage] ?? to }) };
       }
-      case "purchase.made": {
+      case "purchase.made":
+      case "purchase.refunded": {
         const product = event.data.product as ProductId;
         return { text: say(event.type, { product: messages.pricing[product]?.name ?? product }) };
       }

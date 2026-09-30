@@ -1,6 +1,6 @@
 import "server-only";
 import { and, desc, eq, sql } from "drizzle-orm";
-import { grantPurchase } from "./credits";
+import { grantPurchase, revokePurchase } from "./credits";
 import { db } from "./db";
 import { caseMember, casePerson, purchase, user } from "./db/schema";
 import { freemius, productOfPlan } from "./freemius";
@@ -14,6 +14,8 @@ import type { PaymentMethod, ProductId } from "./products";
 // the license id: the purchase itself is read from the Freemius API, never
 // taken from the request. Its payment too: a one-off purchase has no
 // subscription, which is where the SDK's purchase info takes the amount from.
+// A full refund, or a chargeback lost, takes back what it granted
+// (refundPurchase).
 
 type Buyer = { id: string; email: string; caseId: string };
 
@@ -101,6 +103,7 @@ export async function casePurchases(caseId: string) {
       paymentMethod: purchase.paymentMethod,
       hasInvoice: sql<boolean>`${purchase.freemiusPaymentId} is not null`,
       createdAt: purchase.createdAt,
+      refundedAt: purchase.refundedAt,
       buyerId: purchase.userId,
       buyerName: casePerson.name,
     })
@@ -129,4 +132,34 @@ export async function invoiceOfPurchase(caseId: string, purchaseId: string) {
     .limit(1);
   if (!row?.freemiusPaymentId) return null;
   return freemius().api.user.retrieveInvoice(row.freemiusUserId, row.freemiusPaymentId);
+}
+
+/** A Freemius payment, as the payment webhooks carry it: a refund is a payment of its own, bound to the one it refunds. */
+export type WebhookPayment = { license_id?: string | number; gross?: number; bound_payment_id?: string | number };
+
+/**
+ * A refund, or a chargeback lost, from the webhook: takes back what the
+ * purchase granted and wasn't used yet (revokePurchase in lib/credits.ts).
+ * Only in full: a partial refund, like a goodwill one, is left to support.
+ * The product taken back, or null when there was none to take back.
+ */
+export async function refundPurchase(payment: WebhookPayment, kind: "refund" | "chargeback") {
+  const licenseId = payment.license_id ? String(payment.license_id) : null;
+  if (!licenseId) {
+    console.error("refundPurchase: no license on the payment", payment);
+    return null;
+  }
+  if (kind === "refund" && (await isPartial(payment))) {
+    console.warn("refundPurchase: a partial refund, left to support", { licenseId, gross: payment.gross });
+    return null;
+  }
+  return revokePurchase(licenseId, kind === "refund" ? "Refunded in Freemius" : "Chargeback lost in Freemius");
+}
+
+/** Whether a refund returned less than the payment it refunds. Both amounts are before VAT. */
+async function isPartial(refund: WebhookPayment) {
+  if (!refund.bound_payment_id || refund.gross === undefined) return false;
+  const original = await freemius().api.payment.retrieve(String(refund.bound_payment_id));
+  if (original?.gross === undefined) return false;
+  return Math.abs(refund.gross) < Math.abs(original.gross) - 0.01;
 }

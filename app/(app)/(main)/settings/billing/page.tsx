@@ -12,7 +12,7 @@ import { casePurchases } from "@/lib/purchases";
 import { requireCase } from "@/lib/session";
 import { checksRunningLow } from "@/lib/products";
 import { prices } from "@/lib/site";
-import { primaryButton, SettingsCard, SettingsPage } from "@/components/app/settings-ui";
+import { SettingsCard, SettingsPage } from "@/components/app/settings-ui";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.billing };
@@ -39,8 +39,8 @@ export default async function BillingPage() {
         {/* Each balance with the purchase that adds to it. */}
         <div className="grid gap-3 sm:grid-cols-2">
           <Balance label={t.messagesLeft} value={count(chat.messagesLeft)}>
-            <Link href={buyUrl("/settings/billing")} className={tileLink}>
-              + {format(t.addPack, { price: formatPrice(prices.messagePack, locale) })}
+            <Link href={buyUrl("/settings/billing")} className={tileButton}>
+              {format(t.addPack, { price: formatPrice(prices.messagePack, locale) })}
             </Link>
           </Balance>
           {checks.fileCheck ? (
@@ -54,7 +54,7 @@ export default async function BillingPage() {
             ) : (
               <div className="flex flex-col rounded-[10px] bg-sand-50 px-4 py-3">
                 <p className="text-sm text-slate-500">{t.checksTitle}</p>
-                <p className="mt-1 text-slate-700">{t.checksIncluded}</p>
+                <p className="mt-1 mb-3 text-slate-700">{t.checksIncluded}</p>
                 <Link href="/file/documents" className={tileLink}>
                   {t.checksHint}
                 </Link>
@@ -63,8 +63,8 @@ export default async function BillingPage() {
           ) : (
             <div className="flex flex-col rounded-[10px] border-[1.5px] border-dashed border-line-200 px-4 py-3">
               <p className="text-sm text-slate-500">{t.checksTitle}</p>
-              <p className="mt-1 text-sm text-slate-700">{t.checksLockedBody}</p>
-              <Link href={buyUrl("/settings/billing")} className={`${primaryButton} mt-4 self-start`}>
+              <p className="mt-1 mb-4 text-sm text-slate-700">{t.checksLockedBody}</p>
+              <Link href={buyUrl("/settings/billing")} className={tileButton}>
                 {format(t.buyFileCheck, { price: formatPrice(prices.fileCheck, locale) })}
               </Link>
             </div>
@@ -136,13 +136,18 @@ export default async function BillingPage() {
   );
 }
 
-const tileLink = "mt-3 self-start text-sm font-semibold text-teal-700 underline-offset-4 hover:underline";
+const tileLink = "self-start text-sm font-semibold text-teal-700 underline-offset-4 hover:underline";
+
+// A tile's purchase: the same compact button in each, at the tile's foot, so
+// side by side they line up.
+const tileButton =
+  "mt-auto inline-flex h-9 items-center justify-center self-start rounded-[10px] border-[1.5px] border-navy-900 px-4 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900";
 
 function Balance({ label, value, children }: { label: string; value: string; children?: ReactNode }) {
   return (
     <div className="flex flex-col rounded-[10px] bg-sand-50 px-4 py-3">
       <p className="text-sm text-slate-500">{label}</p>
-      <p className="font-display text-2xl font-semibold text-navy-900 tabular-nums">{value}</p>
+      <p className="mb-4 font-display text-2xl font-semibold text-navy-900 tabular-nums">{value}</p>
       {children}
     </div>
   );

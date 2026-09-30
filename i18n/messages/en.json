@@ -368,7 +368,7 @@
       "tagline": "Check your documents instantly, for your whole process",
       "includes": [
         "Everything in Free, plus a message pack (50 messages)",
-        "Instant document checks, up to 300 (fair use)",
+        "Instant AI document checks, built on the experience of many couples",
         "What's wrong and how to fix it, for each flag",
         "Cross-document checks (names, dates, details)"
       ],
@@ -486,7 +486,7 @@
         },
         {
           "q": "Is there a limit on document checks?",
-          "a": "Yes, a generous one. Full file check includes up to 300 document checks for your shared file, under fair use. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. That's enough to check every document on your list several times."
+          "a": "Only a fair-use one, and you're very unlikely to reach it. Full file check includes 300 document checks for your shared file, far more than you'll need for the whole process, every stage. That's enough to check every document on your list, fix it and check it again, many times over. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. And if you ever get close, contact us."
         },
         {
           "q": "What counts as one message?",
@@ -517,7 +517,7 @@
     "messagePack": {
       "name": "Message pack",
       "priceNote": "per 50 messages",
-      "body": "More questions in the chat, whenever you need them: 50 messages about documents, stages or letters. Top up as often as you like.",
+      "body": "More questions for the AI chat, whenever you need them: 50 messages about documents, stages or letters. Top up as often as you like.",
       "cta": "Get 50 messages",
       "footnote": "One-time payment. Messages don't expire."
     },
@@ -734,7 +734,8 @@
       "billing": "Purchases & billing",
       "support": "Support",
       "details": "Your details",
-      "activity": "Activity"
+      "activity": "Activity",
+      "access": "Support access"
     },
     "shell": {
       "backToSite": "Back to visamo.co.il",
@@ -1094,7 +1095,14 @@
         "ignore": "If you weren't expecting this, you can ignore this email."
       },
       "fallback": "If the button doesn't work, copy this link into your browser:",
-      "ignore": "If you didn't ask for this, you can ignore this email. Nothing will change."
+      "ignore": "If you didn't ask for this, you can ignore this email. Nothing will change.",
+      "supportAccess": {
+        "subject": "Can our team look at your Visamo file?",
+        "heading": "Can our team look at your file?",
+        "body": "You asked us for help. To sort it out, we’d like your OK to see your documents. The link works for 72 hours, and either of you can answer.",
+        "button": "Review the request",
+        "ignore": "If you didn’t ask Visamo for help, you can ignore this email."
+      }
     },
     "documents": {
       "items": {
@@ -1554,6 +1562,69 @@
         "invalid": "Some answers don't fit together. Check them and try again.",
         "limit": "You've used all your edits. To change your details, contact us.",
         "generic": "Something went wrong. Please try again."
+      }
+    },
+    "access": {
+      "title": "Can our team look at your file?",
+      "intro": "You asked us for help. To sort it out, the Visamo support team needs to see what you’ve uploaded.",
+      "reasonLabel": "What we’re looking into",
+      "reasons": {
+        "supportRequest": "Your request to our support team",
+        "checkResult": "A document check result",
+        "fileProblem": "A problem uploading or opening a file",
+        "documentList": "Which documents you need",
+        "chat": "An answer from the assistant",
+        "account": "Your account or your partner’s access",
+        "billing": "A payment or your balance"
+      },
+      "see": {
+        "label": "What we’ll see",
+        "body": "Your uploaded documents and their check results."
+      },
+      "time": {
+        "label": "For how long",
+        "body": "{duration}, starting when you agree."
+      },
+      "stays": {
+        "label": "Nothing changes",
+        "body": "We only look. Your documents, checks and chats stay exactly as they are."
+      },
+      "agree": "I agree to let the Visamo support team see my file for {duration}.",
+      "allow": "Allow access",
+      "allowing": "Saving…",
+      "notNow": "Not now",
+      "declined": {
+        "title": "No problem",
+        "body": "We’ll help as much as we can without it. If you change your mind, this link works until {date}.",
+        "back": "I changed my mind"
+      },
+      "done": {
+        "title": "Thanks, we’re on it",
+        "body": "Our team can look at your file until {date}. We’ll get back to you soon."
+      },
+      "partnerDone": {
+        "title": "Already approved",
+        "body": "{name} agreed to let our team look at your file until {date}."
+      },
+      "expired": {
+        "title": "This link has expired",
+        "body": "Links work for 72 hours. If you still need help, ask us for a new one."
+      },
+      "invalid": {
+        "title": "This link doesn’t work",
+        "body": "A newer link may have replaced it. Check the latest message from us, or ask for a new link."
+      },
+      "otherAccount": {
+        "title": "This link is for another account",
+        "body": "You’re logged in as {email}. To open it, log in with the account that asked for help."
+      },
+      "backToFile": "Go to my file",
+      "durations": {
+        "1": "1 hour",
+        "4": "4 hours",
+        "24": "24 hours",
+        "72": "3 days",
+        "168": "7 days"
       }
     }
   }

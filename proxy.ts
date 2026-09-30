@@ -2,12 +2,14 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 import { LOCALE_COOKIE, isLocale } from "./i18n/config";
 import { asLiveLocale, localeFromHeaders } from "./i18n/negotiate";
-import { publicAppPaths } from "./lib/app-paths";
+import { accessPathPattern, publicAppPaths } from "./lib/app-paths";
 import { site } from "./lib/site";
 
 const appHost = new URL(site.appUrl).host;
 const adminHost = new URL(site.adminUrl).host;
 const ONE_YEAR = 60 * 60 * 24 * 365;
+/** Where to go after logging in: a support-access link opened while logged out. */
+const RETURN_COOKIE = "return_to";
 
 // Three hosts, one project. The website (visamo.co.il) has the language in its
 // URLs; the app (app.visamo.co.il) keeps it in a cookie; the admin panel
@@ -68,8 +70,21 @@ function appProxy(request: NextRequest) {
 
   // An optimistic check on the cookie alone, so signed-out visitors skip a
   // render. Pages still verify the session itself (lib/session.ts).
-  if (!publicAppPaths.includes(pathname) && !getSessionCookie(request)) {
-    return NextResponse.redirect(new URL("/login", request.url));
+  const signedIn = !!getSessionCookie(request);
+  if (!publicAppPaths.includes(pathname) && !signedIn) {
+    const response = NextResponse.redirect(new URL("/login", request.url));
+    // Every way of logging in lands on "/", which then returns to the link.
+    if (accessPathPattern.test(pathname)) {
+      response.cookies.set(RETURN_COOKIE, pathname, { path: "/", maxAge: 60 * 60, httpOnly: true, sameSite: "lax" });
+    }
+    return response;
+  }
+
+  const returnTo = request.cookies.get(RETURN_COOKIE)?.value;
+  if (pathname === "/" && signedIn && returnTo) {
+    const response = NextResponse.redirect(new URL(accessPathPattern.test(returnTo) ? returnTo : "/", request.url));
+    response.cookies.delete(RETURN_COOKIE);
+    return response;
   }
 
   const response = NextResponse.next();

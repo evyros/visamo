@@ -80,6 +80,12 @@ export async function sendInviteEmail({
   await sendEmail({ to, url, locale, copy });
 }
 
+/** A support-access request (lib/support-access.ts), to one partner of the case. */
+export async function sendSupportAccessEmail({ to, url, locale }: { to: string; url: string; locale: Locale }) {
+  const copy = (await loadMessages(locale)).app.email.supportAccess;
+  await sendEmail({ to, url, locale, copy });
+}
+
 /** The admin panel's login link (lib/admin.ts). English only: it goes to the owner. */
 export async function sendAdminLoginEmail({ to, url }: { to: string; url: string }) {
   await sendEmail({

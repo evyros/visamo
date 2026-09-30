@@ -16,6 +16,7 @@ import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
 import type { CaseEvent } from "../events";
+import type { AccessDuration, AccessReason } from "../support-access-options";
 
 // Better Auth's core tables (user, session, account, verification), plus the
 // user's app language. Field names match what Better Auth expects; change them
@@ -376,6 +377,48 @@ export const caseInvite = pgTable(
     sentAt: timestamp("sent_at").notNull().defaultNow(),
   },
   (table) => [index("case_invite_email_idx").on(table.email)],
+);
+
+/**
+ * A support-access request (lib/support-access.ts): the admin sends a case a
+ * link asking its OK to look at the file, and either partner can agree. It
+ * only records the consent: nothing in the app or the admin panel depends on
+ * it. The link works once, for 72 hours; issuing a new one cancels it.
+ */
+export const supportAccess = pgTable(
+  "support_access",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /** sha256 of the link's token. The token itself is only in the link. */
+    tokenHash: text("token_hash").notNull().unique(),
+    /** How long the team may look, from when they agree. */
+    durationHours: integer("duration_hours").notNull().$type<AccessDuration>(),
+    /** Why the team asks, if the admin said; the page names it in the couple's language. */
+    reason: text("reason").$type<AccessReason>(),
+    /** The admin panel's signed-in email, since the admin isn't a user. */
+    adminEmail: text("admin_email").notNull(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    /** 72 hours after createdAt. */
+    linkExpiresAt: timestamp("link_expires_at").notNull(),
+    /** When a newer link replaced it, or the admin cancelled it. */
+    cancelledAt: timestamp("cancelled_at"),
+    // The consent, once a partner agrees. Their name and email are copied, so
+    // the record stays whole if they delete their account.
+    consentedAt: timestamp("consented_at"),
+    /** consentedAt plus durationHours. */
+    accessEndsAt: timestamp("access_ends_at"),
+    consentedBy: text("consented_by").references(() => user.id, { onDelete: "set null" }),
+    consentedByName: text("consented_by_name"),
+    consentedByEmail: text("consented_by_email"),
+    /** The language the page was shown in. */
+    consentLocale: text("consent_locale"),
+    consentIp: text("consent_ip"),
+    consentUserAgent: text("consent_user_agent"),
+  },
+  (table) => [index("support_access_case_id_idx").on(table.caseId, table.createdAt)],
 );
 
 /**

@@ -53,3 +53,12 @@ export function formatDay(day: string, locale: Locale) {
     new Date(`${day}T00:00:00Z`),
   );
 }
+
+/** A moment, e.g. "3 Oct 2026, 14:00", in Israel time: the server runs in UTC, and the couples are in Israel. */
+export function formatDateTime(date: Date, locale: Locale) {
+  return new Intl.DateTimeFormat(locales[locale].intlLocale, {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "Asia/Jerusalem",
+  }).format(date);
+}

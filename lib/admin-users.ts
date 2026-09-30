@@ -114,7 +114,7 @@ export const findUser = cache(async (id: string) => {
 /** The users who can open a case: the couple, as far as they've signed up. */
 export async function caseMembers(caseId: string) {
   return db
-    .select({ id: user.id, name: user.name, email: user.email, role: caseMember.role })
+    .select({ id: user.id, name: user.name, email: user.email, locale: user.locale, role: caseMember.role })
     .from(caseMember)
     .innerJoin(user, eq(user.id, caseMember.userId))
     .where(eq(caseMember.caseId, caseId))

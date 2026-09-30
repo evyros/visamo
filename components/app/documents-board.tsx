@@ -592,9 +592,10 @@ function CheckFooter({
     );
   } else if (!settings.allowed) {
     // Not in the plan: the button leads to the plans.
+    state = c.upgradeHint;
     action = (
       <a href={settings.pricingUrl} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
-        <Icon name="lock" className="size-4" />
+        <Icon name="checkCircle" className="size-4" />
         {c.upgrade}
       </a>
     );
@@ -617,7 +618,10 @@ function CheckFooter({
     <section aria-label={c.check} className="rounded-b-card border-t border-line-200 bg-white px-4 py-3 sm:px-5">
       {/* As tall as the button in every state, so starting a check doesn't make the card jump. */}
       <div className="flex min-h-10 flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <div className="min-w-0 flex-1 text-[15px] text-slate-700">{state}</div>
+        {/* A text with a button sits by it; on a phone, it's a line of its own above it. */}
+        <div className={`min-w-0 text-[15px] text-slate-700 ${action ? "basis-full sm:flex-1 sm:text-end" : "flex-1"}`}>
+          {state}
+        </div>
         {action}
       </div>
 

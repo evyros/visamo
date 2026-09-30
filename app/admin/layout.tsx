@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AdminRootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" dir="ltr" data-script="latin" className={fontVariables}>
+    <html lang="en" dir="ltr" data-script="latin" data-scroll-behavior="smooth" className={fontVariables}>
       <body className="flex min-h-screen flex-col bg-sand-50 text-[17px] leading-relaxed">{children}</body>
     </html>
   );

@@ -1385,7 +1385,8 @@
           "generic": "Something went wrong. Please try again."
         },
         "notChecked": "Not checked yet",
-        "upgrade": "Upgrade to check the document",
+        "upgrade": "Upgrade to check the documents",
+        "upgradeHint": "Don't let a wrong detail delay your case.",
         "cantOpenTitle": "Couldn't open a file",
         "counts": {
           "fix": {

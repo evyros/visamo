@@ -22,7 +22,7 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
   const { dir, script } = locales[locale];
 
   return (
-    <html lang={locale} dir={dir} data-script={script} className={fontVariables}>
+    <html lang={locale} dir={dir} data-script={script} data-scroll-behavior="smooth" className={fontVariables}>
       <body className="flex min-h-screen flex-col bg-sand-50 text-[17px] leading-relaxed sm:text-lg">
         <a
           href="#main"

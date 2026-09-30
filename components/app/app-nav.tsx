@@ -4,7 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "@/components/icons";
 
-export type NavItem = { href: string; label: string; icon: IconName };
+export type NavItem = {
+  href: string;
+  label: string;
+  icon: IconName;
+  /** In a sidebar: also active on the pages under it. Tabs always are. */
+  includeSubpages?: boolean;
+};
 
 /** A section tab is active on its own page and every page under it. */
 function inSection(pathname: string, href: string) {
@@ -80,7 +86,7 @@ export function SidebarNav({ items, label }: { items: NavItem[]; label: string }
     <nav aria-label={label}>
       <ul className="flex flex-col gap-1">
         {items.map((item) => {
-          const active = pathname === item.href;
+          const active = item.includeSubpages ? inSection(pathname, item.href) : pathname === item.href;
           return (
             <li key={item.href}>
               <Link

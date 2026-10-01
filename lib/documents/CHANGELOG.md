@@ -3,6 +3,20 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v19 — 2026-10-02
+
+**What changed:** `governmentServices` is listed only when at least one of
+the partners lives in Israel (`{ any: [israeliInIsrael, foreignInIsrael] }`),
+no longer for every couple.
+
+**Why:** It proves services received in Israel: a couple who both live
+abroad has none to show.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** bothAbroad, neverLivedTogetherBothAbroad:
+-governmentServices.
+
 ## v18 — 2026-10-02
 
 **What changed:** Removed `foreignStayExplanation` (the letter explaining a

@@ -17,7 +17,6 @@ const everyone = [
   "recommendationLetters",
   "foreignCivilStatus",
   "utilityBills",
-  "governmentServices",
   "ishurToshav",
   "sharedFinances",
   "israeliIncomeProof",
@@ -147,6 +146,12 @@ describe("buildDocumentList", () => {
     expect(keys("marriedInCyprus")).not.toContain("entryPermitApplication");
     // Both abroad: the entry permit comes from the consulate, before the file.
     expect(keys("bothAbroad")).not.toContain("entryPermitApplication");
+  });
+
+  it("asks for proof of government services only when at least one of them lives in Israel", () => {
+    expect(keys("foreignAbroad")).toContain("governmentServices");
+    expect(find("foreignAbroad", "governmentServices")?.because).toEqual(["israeliInIsrael"]);
+    expect(keys("bothAbroad")).not.toContain("governmentServices");
   });
 
   it("asks for the security CV only from the countries that need a security check", () => {

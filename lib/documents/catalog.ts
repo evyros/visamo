@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 18;
+export const CATALOG_VERSION = 19;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -382,10 +382,12 @@ export const documents = [
     verified: true,
   },
   {
+    // Services in Israel: someone has to live here to receive them.
     id: "governmentServices",
     mayNeedTranslation: false,
     owner: "couple",
     category: "centerOfLife",
+    when: { any: ["israeliInIsrael", "foreignInIsrael"] },
     source: `${P8} §ד.2.ח; ${AS6}`,
     verified: true,
   },

@@ -203,7 +203,16 @@ export const checks = {
   israeliHousingContract: "notYet",
   landlordAffidavit: "notYet",
   utilityBills: "notYet",
-  governmentServices: "notYet",
+  governmentServices: {
+    required: [
+      "It is an official confirmation from an Israeli government institution about a service received in Israel, by either partner or both: one partner's confirmation alone is fine. For example, National Insurance's confirmation of insurance periods, a health fund membership confirmation, or a confirmation from an educational institution.",
+      "It is the full document, readable, with the institution's name and the date it was issued.",
+    ],
+    recommended: [
+      "What it confirms covers the last 12 months, the period the center of life is proven for.",
+      "It was issued recently, in the last few months.",
+    ],
+  },
   ishurToshav: "notYet",
   sharedFinances: "notYet",
   israeliIncomeProof: {

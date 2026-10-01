@@ -135,7 +135,7 @@ export const checks = {
   foreignCivilStatus: {
     required: [
       "It states the foreign partner's civil status, and the name on it matches the foreign partner's name in the file.",
-      "It is issued by the foreign partner's country, or, if that country doesn't issue one, it is a notarized affidavit of their status signed in front of an Israeli consul, a notary abroad, a notary in Israel, or their country's consul in Israel.",
+      "It is issued by an authority of the foreign partner's country: a civil-status certificate, an extract from a population or civil register, or a record search showing no marriage is registered. Or, if there's no way to get one, it is a notarized affidavit of their status signed in front of an Israeli consul, a notary in Israel, or their country's consul in Israel. An affidavit signed in front of a notary abroad doesn't count.",
       "It was issued in the last 6 months, counted from today.",
       "It carries the certification the file says it needs (an apostille or consular legalization), in the same file.",
       "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it, and the translation matches the original. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",

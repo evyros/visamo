@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "fingerprint": "c3582ec9e01a9fc1edd21fae1d6547e4a9f133d1ed3af457e3147c91e3265bc6",
+  "version": 18,
+  "fingerprint": "4da172f4118b9caf685b3a29b4156c59d6e3e6e91fe6cc3254918282c97494d4",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -279,7 +279,6 @@
       "israeliPhotos",
       "foreignPassport",
       "foreignPhotos",
-      "foreignStayExplanation",
       "foreignBirthCertificate",
       "marriageCertificateAbroad",
       "relationshipEvidence",

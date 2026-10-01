@@ -588,6 +588,7 @@ export function PersonFields({
             value={person.location}
             onChange={(v) => onChange("location", v)}
           />
+          {person.location === "israelInvalid" && <Notice tone="warning">{t.withoutVisaNotice}</Notice>}
           <YesNo
             id="nameChanged"
             t={t}

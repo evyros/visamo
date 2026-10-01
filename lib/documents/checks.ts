@@ -118,7 +118,6 @@ export const checks = {
     ],
   },
   foreignPhotos: passportPhoto,
-  foreignStayExplanation: "notYet",
   foreignBirthCertificate: {
     required: [
       "It is a birth certificate, and the person it's for is the foreign partner.",

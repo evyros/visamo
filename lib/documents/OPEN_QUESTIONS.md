@@ -10,7 +10,6 @@ shown to users (`lib/knowledge/`).
 - Police certificates from **other countries lived in**, beyond the
   nationality. And the rule for which countries count (how long, since what
   age), for the onboarding question's wording.
-- The explanation letter for a stay in Israel without a valid visa.
 - The couple's children together: their birth certificates.
 - The Israeli partner's divorce decree and a previous spouse's death
   certificate.

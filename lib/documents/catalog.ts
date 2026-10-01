@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 17;
+export const CATALOG_VERSION = 18;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -189,15 +189,6 @@ export const documents = [
     copies: 3,
     source: `${P8} §ד.2.ב; ${AS6}`,
     verified: true,
-  },
-  {
-    id: "foreignStayExplanation",
-    mayNeedTranslation: false,
-    owner: "foreign",
-    category: "identity",
-    when: "foreignInIsraelWithoutVisa",
-    source: P8,
-    verified: false,
   },
   {
     id: "foreignBirthCertificate",
@@ -534,4 +525,6 @@ export const RETIRED_DOCUMENT_IDS: readonly string[] = [
   "feeReceipt",
   // v2: split into the center-of-life documents every couple needs.
   "centerOfLifeEvidence",
+  // v18: a stay without a valid visa is a case for a lawyer, not a letter.
+  "foreignStayExplanation",
 ];

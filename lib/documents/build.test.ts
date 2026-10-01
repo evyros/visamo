@@ -142,13 +142,11 @@ describe("buildDocumentList", () => {
     );
   });
 
-  it("asks for the entry permit only from a partner abroad whose Israeli partner lives in Israel, and the explanation only without a visa", () => {
+  it("asks for the entry permit only from a partner abroad whose Israeli partner lives in Israel", () => {
     expect(keys("foreignAbroad")).toContain("entryPermitApplication");
     expect(keys("marriedInCyprus")).not.toContain("entryPermitApplication");
     // Both abroad: the entry permit comes from the consulate, before the file.
     expect(keys("bothAbroad")).not.toContain("entryPermitApplication");
-    expect(keys("foreignWithoutVisa")).toContain("foreignStayExplanation");
-    expect(keys("marriedInCyprus")).not.toContain("foreignStayExplanation");
   });
 
   it("asks for the security CV only from the countries that need a security check", () => {

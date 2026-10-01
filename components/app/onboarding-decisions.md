@@ -37,8 +37,12 @@ Foreign partner only:
   countries. For example, the USSR is now Russia, Ukraine and others." Each
   country adds a police certificate (not yet verified; see open questions).
 - **Where they are now:** in Israel with a valid visa / in Israel without one
-  / outside Israel. "With a valid visa" includes a tourist visit: visiting is
-  allowed; only coming to stay needs the entry permit first. The nationality
+  / outside Israel. "Without one" shows a yellow notice recommending a
+  lawyer, but doesn't block finishing: the documents are the same, and
+  Visamo still helps with them. It adds no document (the explanation letter
+  was dropped in catalog v18). "With a valid visa" includes a tourist
+  visit: visiting is allowed; only coming to stay needs the entry permit
+  first. The nationality
   also tells the chat whether a partner abroad enters on an ETA-IL or needs a
   B/2 from the consulate (`lib/visa-exempt.ts`); that's not a question.
 - **Name ever changed?**

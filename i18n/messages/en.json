@@ -975,6 +975,7 @@
         "israelInvalid": "In Israel, without a valid visa",
         "abroad": "Outside Israel"
       },
+      "withoutVisaNotice": "Staying in Israel without a valid visa is a complicated case. We recommend going through the process with a lawyer who handles partner visas. You can still use Visamo to prepare your documents.",
       "previousMarriageOptions": {
         "none": "No",
         "divorced": "Yes, divorced",
@@ -1323,10 +1324,6 @@
         "foreignPhotos": {
           "title": "Passport photos of the foreign partner",
           "description": "Recent passport-format photos, all copies of the same photo."
-        },
-        "foreignStayExplanation": {
-          "title": "Explanation of the stay in Israel",
-          "description": "A letter explaining how the foreign partner came to stay in Israel without a valid visa."
         },
         "foreignBirthCertificate": {
           "title": "Birth certificate",

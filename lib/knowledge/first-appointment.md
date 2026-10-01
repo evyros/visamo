@@ -90,3 +90,22 @@ the office asked for.
     documents. Ask the clerk for it, and point them to that clause.
   - In practice, many branches have long queues for interviews: at the
     busiest ones, the wait for a first visa's interview can reach a year.
+
+### Without a valid visa
+
+If the foreign partner is in Israel without a valid visa, it's a
+complicated case, and we recommend going through the process with a lawyer
+who handles partner visas. What the procedure says (5.2.0008):
+
+- **With a court ruling ordering them to leave Israel:** as a rule, the
+  application isn't handled until they leave (§ג.12). Only in very rare
+  cases can the regional manager allow it to be handled first.
+- **Without such a ruling:** the couple is interviewed (§ג.12).
+  - If the relationship seems not to be genuine, or seems to have begun
+    after their visa expired, the foreign partner is required to leave.
+  - If it seems genuine, they don't have to leave until the application is
+    decided, as long as the full application, with all its documents, was
+    filed before any enforcement steps were taken against them.
+- **Either way,** a stay in Israel without legal status sends the file to
+  the branch's visa team head, who decides on further checks, and whether
+  to refuse it (§ה.2).

@@ -3,6 +3,21 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v18 — 2026-10-02
+
+**What changed:** Removed `foreignStayExplanation` (the letter explaining a
+stay in Israel without a valid visa); its id is retired. Onboarding still
+asks whether the foreign partner is in Israel without a valid visa, and now
+shows a notice recommending a lawyer.
+
+**Why:** No procedure or form asks for the letter. A stay without a valid
+visa is a complicated case for a lawyer who handles partner visas, and a
+self-written letter about it can hurt the case (`lib/knowledge/first-appointment.md`).
+
+**Source:** Product decision; procedure 5.2.0008 §ג.12 and §ה.2.
+
+**Lists that changed:** foreignWithoutVisa: -foreignStayExplanation.
+
 ## v17 — 2026-10-02
 
 **What changed:** `israeliIncomeProof` may now need a translation

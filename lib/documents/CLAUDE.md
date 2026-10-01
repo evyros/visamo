@@ -75,11 +75,12 @@ everything else:
 - **Every document has an entry, or the build fails** (`satisfies
   Record<DocumentId, …>`). A new document gets `"notYet"` until its check is
   written; it has no Check button until then.
-- **No comparing documents.** Never write a line that checks a document
-  against another document, such as a name against the partner's passport
-  or ID. The checker sees one document at a time. Checking against the
-  couple's details in the file (the name they gave, the nationality) is
-  fine.
+- **No comparing documents, and no matching names.** Never write a line
+  that checks a document against another document (the checker sees one
+  document at a time), or a name on it against the name in the file: the
+  name in the file is what the couple typed, not necessarily the full legal
+  name. Other details from the file, like the nationality or the country of
+  birth, are fine to check against.
 - Written in English, for the model. Changing it doesn't change anyone's
   list, so it needs no catalog version. Results checked against the old
   text become stale on their own (their hash includes it).

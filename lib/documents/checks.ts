@@ -14,10 +14,11 @@ import { DOCUMENT_ALIASES, type DocumentId } from "./catalog";
 //
 // Written in English, for the model. A line can be stricter or more detailed
 // than lib/knowledge, but never contradict it. No line checks a document
-// against another one (a name against the passport or ID, say): the checker
-// sees one document at a time. Checking against the couple's details in the
-// file is fine. Changing this file doesn't
-// change anyone's list, so it needs no catalog version.
+// against another one (the checker sees one document at a time), or a name
+// on it against the name in the file: that's what the couple typed, not
+// necessarily the full legal name. Other details from the file are fine.
+// Changing this file doesn't change anyone's list, so it needs no catalog
+// version.
 //
 // Every catalog document has an entry, or the build fails. "notYet" is the
 // explicit way to put one off: the document has no Check button until its
@@ -36,14 +37,14 @@ export const checks = {
     required: [
       "It is form AS/1 (אש/1), \"Application for entry visa to Israel\", with both pages: page 1 with the inviter's and the invitee's details, and page 2 with the addresses and the two declarations.",
       "The visa category at the top (\"category of ___\", מסוג) is B/2 (ב/2): the foreign partner enters Israel on it, and gets B/1 after arriving. B/1 or anything else here is an issue.",
-      "The Israeli partner's details are filled in: first and family name, ID number, relation to the invitee, and cellphone number. The name matches the Israeli partner's name in the file.",
-      "The foreign partner's family name and given name are filled in, in English, on both pages, and match the foreign partner's name in the file.",
+      "The Israeli partner's details are filled in: first and family name, ID number, relation to the invitee, and cellphone number.",
+      "The foreign partner's family name and given name are filled in, in English, on both pages.",
       "The foreign partner's father's name, mother's name, date of birth and occupation are filled in.",
       "The nationality and citizenship fit the foreign partner's nationality in the file, and the country of birth fits their country of birth in the file.",
       "The gender fits the foreign partner's gender in the file.",
       "The family status fits the file: \"married\" for a married couple; for a common-law couple, what the foreign partner's previous marriages make them (single, divorced or widowed).",
       "The travel document is marked (passport or laissez-passer), with its number, where it was issued and until when it's valid. The passport number is the same on both pages.",
-      "If the couple is married, the spouse section names the Israeli partner, matching their name in the file.",
+      "If the couple is married, the spouse section names the Israeli partner.",
       "The purpose of entry into Israel is filled in.",
       "Both questions about earlier requests (rejected before; filed together with this one) are answered yes or no, and each \"yes\" says when and where.",
       "The permanent address abroad is filled in, in English: country, town, street and house number, and phone number.",
@@ -79,7 +80,7 @@ export const checks = {
   },
   relationshipStory: {
     required: [
-      "It is a letter about this couple's relationship, and it names both partners as they appear in the file.",
+      "It is a letter about this couple's relationship, and it names both partners.",
       "It tells how and when they met.",
       "It describes their relationship: how it developed, and the main steps in it.",
       "It describes their life together.",
@@ -98,7 +99,7 @@ export const checks = {
   israeliPhotos: "notYet",
   foreignPassport: {
     required: [
-      "It is a passport of the foreign partner, and the name on it matches the foreign partner's name in the file.",
+      "It is a passport of the foreign partner.",
       "It is valid for at least 2 more years from today.",
       "The main (photo) page is included and fully readable.",
       "The pages with visas and border-control stamps are included.",
@@ -134,7 +135,7 @@ export const checks = {
   jointChildrenBirthCertificates: "notYet",
   foreignCivilStatus: {
     required: [
-      "It states the foreign partner's civil status, and the name on it matches the foreign partner's name in the file.",
+      "It states the foreign partner's civil status.",
       "It is issued by an authority of the foreign partner's country: a civil-status certificate, an extract from a population or civil register, or a record search showing no marriage is registered. Or, if there's no way to get one, it is a notarized affidavit of their status signed in front of an Israeli consul, a notary in Israel, or their country's consul in Israel. An affidavit signed in front of a notary abroad doesn't count.",
       "It was issued in the last 6 months, counted from today.",
       "It carries the certification the file says it needs (an apostille or consular legalization), in the same file.",
@@ -142,7 +143,19 @@ export const checks = {
     ],
     recommended: ["The apostille or legalization pages are scanned together with the document, in order."],
   },
-  foreignDivorceDecree: "notYet",
+  foreignDivorceDecree: {
+    required: [
+      "It is an official proof of divorce: a court's divorce decree or judgment, or a divorce certificate from a civil registry.",
+      "It is final: the document that ends the marriage, not an interim step. A conditional order or decree nisi (UK), or a decision without the note that it's final where the country adds one (Germany's Rechtskraftvermerk, France's certificate of non-appeal), is an issue. A Philippine annulment or declaration of nullity comes with its certificate of finality.",
+      "It carries an apostille or consular legalization from the country where the divorce was granted, in the same file. That country can differ from the foreign partner's nationality.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "Every page of the decree is included, not only the first and the last.",
+      "The apostille or legalization pages are scanned together with the decree, in order.",
+      "It is scanned straight and in color, readable in full, with the court's seal or the clerk's signature visible.",
+    ],
+  },
   foreignSpouseDeathCertificate: "notYet",
   israeliDivorceDecree: "notYet",
   israeliSpouseDeathCertificate: "notYet",

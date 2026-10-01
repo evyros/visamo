@@ -1,6 +1,6 @@
 # Salary slips of the Israeli partner (תלושי שכר של בן/בת הזוג הישראלי/ת)
 
-The last 3-12 salary slips.
+The last 3-12 salary slips. If you're self-employed: a confirmation signed by your accountant of the income you reported for the last year.
 
 Payslips (tlushim, תלושי שכר), for each partner: the last 12, with a
 confirmation from work, if you're employed (שכיר).

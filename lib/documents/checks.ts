@@ -29,6 +29,15 @@ export type DocumentCheck = {
   recommended: readonly string[];
 };
 
+/** Passport photos, the same for both partners. */
+const passportPhoto: DocumentCheck = {
+  required: [
+    "It is a passport-format photo of one person: the face straight to the camera, head upright, eyes open, with nothing covering the face.",
+    "It is in color, on a light, plain background.",
+  ],
+  recommended: [],
+};
+
 export const checks = {
   statusApplicationMarried: "notYet",
   statusApplicationCommonLaw: "notYet",
@@ -96,20 +105,19 @@ export const checks = {
   },
   securityCv: "notYet",
   israeliId: "notYet",
-  israeliPhotos: "notYet",
+  israeliPhotos: passportPhoto,
   foreignPassport: {
     required: [
       "It is a passport of the foreign partner.",
-      "It is valid for at least 2 more years from today.",
+      "It is valid for at least 2 more years from today. If it's valid for less, it has to be renewed: the visa is given only once it is.",
       "The main (photo) page is included and fully readable.",
       "The pages with visas and border-control stamps are included.",
     ],
     recommended: [
-      "Every page with a stamp or visa is included, in order, not only the latest ones.",
       "Each page is scanned straight, in color, with nothing cut off at the edges.",
     ],
   },
-  foreignPhotos: "notYet",
+  foreignPhotos: passportPhoto,
   foreignStayExplanation: "notYet",
   foreignBirthCertificate: {
     required: [

@@ -65,6 +65,11 @@ grouped like the page, moving each one's headings under its group. So:
   <What has to be on it or attached to it: names, dates, signatures,
   certification, copies.>
 
+  ## After you get it
+
+  <What to do or avoid once you have it, until the file is decided: for
+  example, not traveling abroad after a police certificate.>
+
   ## If you don't have it
 
   <The alternatives, and what makes that case strong.>

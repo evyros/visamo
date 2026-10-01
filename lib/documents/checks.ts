@@ -177,7 +177,19 @@ export const checks = {
   foreignSpouseDeathCertificate: "notYet",
   israeliDivorceDecree: "notYet",
   israeliSpouseDeathCertificate: "notYet",
-  foreignPoliceCertificate: "notYet",
+  foreignPoliceCertificate: {
+    required: [
+      "It is an official criminal record certificate (a police certificate, or a certificate of no criminal record) from the national authority of the country this item is for, as in the document's details.",
+      "It was issued in the last 6 months, counted from today.",
+      "It carries an apostille or consular legalization from that country, in the same file.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "If the file says the foreign partner's name changed, it covers their former names too.",
+      "If it lists a conviction, the court's sentence is uploaded with it: the office asks for it.",
+      "It is the original document scanned in full, readable, with the issuing authority's seal or signature visible.",
+    ],
+  },
   housingContract: "notYet",
   israeliHousingContract: "notYet",
   landlordAffidavit: "notYet",

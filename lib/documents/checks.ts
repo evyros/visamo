@@ -174,7 +174,17 @@ export const checks = {
       "It is scanned straight and in color, readable in full, with the court's seal or the clerk's signature visible.",
     ],
   },
-  foreignSpouseDeathCertificate: "notYet",
+  foreignSpouseDeathCertificate: {
+    required: [
+      "It is an official death certificate, or a certified copy of the death entry, from a civil registry or vital records office.",
+      "It carries an apostille or consular legalization from the country that issued it, in the same file. That country can differ from the foreign partner's nationality.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "If the foreign partner was widowed more than once, there's a death certificate for each of those marriages.",
+      "It is the certified document scanned in full, readable, with the issuing office's seal or signature visible.",
+    ],
+  },
   israeliDivorceDecree: "notYet",
   israeliSpouseDeathCertificate: "notYet",
   foreignPoliceCertificate: {

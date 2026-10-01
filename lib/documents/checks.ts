@@ -126,7 +126,17 @@ export const checks = {
       "It is scanned straight and in color, readable in full, with nothing cut off at the edges.",
     ],
   },
-  foreignNameChange: "notYet",
+  foreignNameChange: {
+    required: [
+      "It is an official public document that shows a change of name: a marriage certificate, a divorce decree that restores a former name, a court order, a deed poll, or a civil registry's name-change certificate. It shows the name before the change and the name after it.",
+      "It carries an apostille or consular legalization from the country that issued it, in the same file.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "If the name changed more than once, there's a document for each change, so together they link the name at birth to today's name.",
+      "It is scanned straight and readable in full, with the issuing authority's seal or signature visible.",
+    ],
+  },
   marriageCertificateIsrael: "notYet",
   marriageCertificateAbroad: "notYet",
   relationshipEvidence: "notYet",

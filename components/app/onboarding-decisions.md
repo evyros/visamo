@@ -62,8 +62,9 @@ Israeli side only:
   for why.
 - **Do you live together, or have you lived together before?** Asked of
   every couple, married or common-law, then the year they moved in together.
-  A couple who never lived together still gets the lease and the landlord's
-  affidavit when the Israeli partner lives in Israel (their own home). Only
+  Living together gets the couple's lease, in both names. A couple who never
+  lived together gets the Israeli partner's own lease instead, and the
+  landlord's affidavit, when the Israeli partner lives in Israel. Only
   when the Israeli partner lives abroad too are they left out: the couple
   proves the relationship in other ways (`lib/knowledge/documents.md`).
 - **Children together?**

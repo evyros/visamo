@@ -1,6 +1,6 @@
 {
-  "version": 14,
-  "fingerprint": "ab85fa3d86da30596562542fd10029b219d96990d2276b7ceb31acf01c90cf2f",
+  "version": 15,
+  "fingerprint": "d7553cef6a67c0adb0bc234f0bef154644e08707dbcf38f47f533532e48bbc02",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -135,7 +135,7 @@
       "recommendationLetters",
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
-      "housingContract",
+      "israeliHousingContract",
       "landlordAffidavit",
       "utilityBills",
       "governmentServices",
@@ -412,7 +412,7 @@
       "recommendationLetters",
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
-      "housingContract",
+      "israeliHousingContract",
       "landlordAffidavit",
       "utilityBills",
       "governmentServices",

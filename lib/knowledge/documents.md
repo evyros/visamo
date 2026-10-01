@@ -34,3 +34,10 @@ follows what you say.
   - receipts for things you bought together;
   - letters of recommendation that say the writer saw you together;
   - flight bookings for the two of you, and hotel bookings together.
+
+### Married, but never lived together
+
+This is an exception, and in practice Misrad Hapnim will likely reject the
+file. It's approved only when you can show a strong basis: that your
+marriage is genuine, and that you do share a life together. Build that case
+with everything above, and make it as strong as you can before you file.

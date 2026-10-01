@@ -1386,7 +1386,11 @@
         },
         "housingContract": {
           "title": "Lease or purchase contract",
-          "description": "The lease or purchase contract of your home in the Israeli partner's name: the original, a copy and the lease appendix."
+          "description": "The lease or purchase contract of your home, in both your names: the original, a copy and the lease appendix."
+        },
+        "israeliHousingContract": {
+          "title": "Lease or purchase contract of the Israeli partner's home",
+          "description": "The lease or purchase contract of the Israeli partner's home, in their name: the original, a copy and the lease appendix."
         },
         "landlordAffidavit": {
           "title": "Landlord's affidavit",

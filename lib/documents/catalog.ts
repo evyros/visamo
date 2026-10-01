@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 14;
+export const CATALOG_VERSION = 15;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -346,16 +346,26 @@ export const documents = [
 
   // ── Center of life: at least the last 12 months ──
   {
-    // The shared home, or the Israeli partner's own home in Israel. Not for a couple who never
-    // lived together while the Israeli lives abroad: they prove the relationship in other ways.
+    // The home they share, or shared: in both their names.
     id: "housingContract",
     // From abroad, for a couple who lived together there.
     mayNeedTranslation: true,
-    owner: "israeli",
+    owner: "couple",
     category: "centerOfLife",
-    when: { any: ["livingTogether", "israeliInIsrael"] },
+    when: "livingTogether",
     source: `${P8} §ד.2.ח; ${AS6}`,
     verified: true,
+  },
+  {
+    // Never lived together: the Israeli partner's own home in Israel, in their name. With the
+    // Israeli abroad too, there's no home to show: they prove the relationship in other ways.
+    id: "israeliHousingContract",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "centerOfLife",
+    when: { all: ["israeliInIsrael", { not: "livingTogether" }] },
+    source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: false,
   },
   {
     // Only for couples who rent; onboarding doesn't ask whether they do.

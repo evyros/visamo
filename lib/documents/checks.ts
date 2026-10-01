@@ -135,6 +135,7 @@ export const checks = {
   israeliSpouseDeathCertificate: "notYet",
   foreignPoliceCertificate: "notYet",
   housingContract: "notYet",
+  israeliHousingContract: "notYet",
   landlordAffidavit: "notYet",
   utilityBills: "notYet",
   governmentServices: "notYet",

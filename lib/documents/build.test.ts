@@ -176,10 +176,15 @@ describe("buildDocumentList", () => {
       const { relationship, people } = scenarios[name];
       const home = relationship.livingTogether || people.some((p) => p.residence === "israel");
       expect(find(name, "landlordAffidavit")?.optional, name).toBe(home ? true : undefined);
-      expect(find(name, "housingContract")?.optional, name).toBe(home ? false : undefined);
+      const leases = keys(name).filter((k) => k === "housingContract" || k === "israeliHousingContract");
+      expect(leases, name).toHaveLength(home ? 1 : 0);
     }
-    expect(find("marriedNeverLivedTogether", "housingContract")?.because).toEqual(["israeliInIsrael"]);
-    expect(keys("neverLivedTogetherBothAbroad")).not.toContain("housingContract");
+    // In both names, from the couple; or the Israeli partner's own home, from them.
+    expect(find("marriedInCyprus", "housingContract")?.owner).toBe("couple");
+    expect(keys("marriedInCyprus")).not.toContain("israeliHousingContract");
+    expect(find("marriedNeverLivedTogether", "israeliHousingContract")?.owner).toBe("israeli");
+    expect(find("marriedNeverLivedTogether", "israeliHousingContract")?.because).toEqual(["israeliInIsrael"]);
+    expect(keys("marriedNeverLivedTogether")).not.toContain("housingContract");
   });
 
   it("gives the number of copies where more than one is needed", () => {

@@ -3,6 +3,23 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v15 — 2026-10-01
+
+**What changed:** The lease is split in two. `housingContract` is now the
+couple's, in both their names, for couples who live or lived together.
+New `israeliHousingContract`: the Israeli partner's own home, in their
+name, for couples who never lived together while the Israeli partner lives
+in Israel.
+
+**Why:** Whose names are on the contract, and so whose document it is,
+depends on whether the couple lives together.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** commonLawApart, marriedNeverLivedTogether:
+-housingContract +israeliHousingContract. In every other scenario that
+lists it, housingContract moved from the Israeli partner to the couple.
+
 ## v14 — 2026-10-01
 
 **What changed:** `housingContract` and `landlordAffidavit` are listed for

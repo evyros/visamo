@@ -22,6 +22,7 @@
   https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf
 - **AS/1** (אש/1): the entry permit application, for a foreign partner outside
   Israel.
+  https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf
 - **The common-law affidavit** (5.2.0009_a): the declaration both partners
   sign with an application under procedure 5.2.0009.
   https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf

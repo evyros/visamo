@@ -28,7 +28,37 @@ export type DocumentCheck = {
 export const checks = {
   statusApplicationMarried: "notYet",
   statusApplicationCommonLaw: "notYet",
-  entryPermitApplication: "notYet",
+  // From the form (AS/1, two pages) and lib/knowledge.
+  entryPermitApplication: {
+    required: [
+      "It is form AS/1 (אש/1), \"Application for entry visa to Israel\", with both pages: page 1 with the inviter's and the invitee's details, and page 2 with the addresses and the two declarations.",
+      "The visa category at the top (\"category of ___\", מסוג) is filled in.",
+      "The Israeli partner's details are filled in: first and family name, ID number, relation to the invitee, and cellphone number. The name matches the Israeli partner's name in the file.",
+      "The foreign partner's family name and given name are filled in, in English, on both pages, and match the foreign partner's name in the file.",
+      "The foreign partner's father's name, mother's name, date of birth and occupation are filled in.",
+      "The nationality and citizenship fit the foreign partner's nationality in the file, and the country of birth fits their country of birth in the file.",
+      "The gender fits the foreign partner's gender in the file.",
+      "The family status fits the file: \"married\" for a married couple; for a common-law couple, what the foreign partner's previous marriages make them (single, divorced or widowed).",
+      "The travel document is marked (passport or laissez-passer), with its number, where it was issued and until when it's valid. The passport number is the same on both pages.",
+      "If the couple is married, the spouse section names the Israeli partner, matching their name in the file.",
+      "The purpose of entry into Israel is filled in.",
+      "Both questions about earlier requests (rejected before; filed together with this one) are answered yes or no, and each \"yes\" says when and where.",
+      "The permanent address abroad is filled in, in English: country, town, street and house number, and phone number.",
+      "The Israeli embassy or consulate to notify when the permit is approved is filled in.",
+      "The Israeli partner's declaration on page 2 has the place, the date and their signature, and one option is marked on whether the foreign partner will receive a salary or payment.",
+      "The foreign partner's declaration on page 2 has the place, the date and their signature.",
+      "The \"For official use only\" box (לשימוש המשרד) is empty.",
+    ],
+    recommended: [
+      "The visa category is B/1 (ב/1), which lets the foreign partner stay and work in Israel, unless the purpose of entry calls for another.",
+      "The same visa category is written at the top of page 2.",
+      "The company name, company ID and the establishment's stamp are left empty: they're for employers and institutions.",
+      "The passport's \"valid until\" date leaves at least 2 more years from today, as the passport itself needs.",
+      "The previous stays section is filled in, or clearly marked as none, rather than left blank.",
+      "The foreign partner's email address is filled in.",
+      "The details are typed, or handwritten clearly enough to read without guessing.",
+    ],
+  },
   israeliAffidavitMarried: "notYet",
   foreignAffidavitMarried: "notYet",
   // From the form (5.2.0009_a) and how it's signed: at the appointment, in front of the clerk.

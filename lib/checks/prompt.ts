@@ -68,6 +68,7 @@ export function checkContext(details: CaseDetails, branch: BranchCode | null, it
     ["For the country", item.country && where],
     ["Certification", auth && auth !== "none" ? page.authentication[auth] : "none needed"],
     ["No certification if issued up to", item.certification?.exemptIfIssuedUntil],
+    ["Signing", item.signAtAppointment ? "only in front of the clerk at the appointment: it must not be signed yet" : null],
     ["May need a translation", item.mayNeedTranslation ? "yes, unless it's in Hebrew, Arabic or English (English is accepted in practice; don't ask for its translation)" : "no"],
   ]);
 

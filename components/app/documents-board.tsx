@@ -34,8 +34,8 @@ export type DocumentItem = {
   key: string;
   title: string;
   description: string;
-  /** What to prepare before uploading: certification (with its exemption), translation, copies. */
-  requirements: { icon: "shield" | "globe" | "file"; text: string }[];
+  /** What to prepare before uploading: certification (with its exemption), translation, copies, signing. */
+  requirements: { icon: "shield" | "globe" | "file" | "info"; text: string }[];
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;
   check: {

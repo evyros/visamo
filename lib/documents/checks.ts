@@ -31,6 +31,20 @@ export const checks = {
   entryPermitApplication: "notYet",
   israeliAffidavit: "notYet",
   foreignAffidavit: "notYet",
+  // From the form (5.2.0009_a) and how it's signed: at the appointment, in front of the clerk.
+  commonLawAffidavit: {
+    required: [
+      "It is the common-law affidavit form, titled \"בקשתי בהתאם לנוהל בני זוג על סמך חיים משותפים - תצהיר\", with the whole page: all 13 statements and the signature section.",
+      "The Israeli partner's full name and ID number (תעודת זהות) are filled in.",
+      "The foreign partner's full name and passport number are filled in.",
+      "It is not signed yet: both signature lines are empty. It's signed only in front of the clerk at the appointment. If it's signed, they print a new copy, fill in the details again, and leave it unsigned.",
+      "The office's confirmation section (מאשר החתימה בלשכת רשות האוכלוסין וההגירה) is empty: the clerk fills it in at the appointment.",
+      "If the lines for statements they can't declare are filled in, they say which statement and why.",
+    ],
+    recommended: [
+      "The details are typed, or handwritten clearly enough to read without guessing.",
+    ],
+  },
   // DRAFT: the requirements are from lib/knowledge (§ד.2.ו). The contradiction
   // check and the recommendations about gaps are additions to review.
   relationshipStory: {

@@ -104,6 +104,7 @@ export async function casePrompt(caseId: string, userId: string) {
         d.optional && "optional",
         d.copies && `bring ${d.copies} copies`,
         d.mayNeedTranslation && "may need a translation",
+        d.signAtAppointment && "sign it only in front of the clerk at the appointment, and don't send it with the online application",
         uploaded.has(d.key) ? "uploaded" : "not uploaded yet",
         checked(d.key),
       ]

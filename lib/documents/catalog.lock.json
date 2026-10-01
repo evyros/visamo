@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "fingerprint": "65a3cdb2c16361ddf42cc391f4ce85c784e2927d325ab5ee5efc35bba8beaab4",
+  "version": 12,
+  "fingerprint": "d2735b33b794f1047cf382ea19c3dde0112c7c3fd325b279f681fd6b8ba737d7",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -100,8 +100,7 @@
     ],
     "commonLawLivingTogether": [
       "statusApplicationCommonLaw",
-      "israeliAffidavit",
-      "foreignAffidavit",
+      "commonLawAffidavit",
       "relationshipStory",
       "israeliId",
       "israeliPhotos",
@@ -125,8 +124,7 @@
     "commonLawApart": [
       "statusApplicationCommonLaw",
       "entryPermitApplication",
-      "israeliAffidavit",
-      "foreignAffidavit",
+      "commonLawAffidavit",
       "relationshipStory",
       "israeliId",
       "israeliPhotos",

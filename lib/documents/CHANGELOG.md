@@ -3,6 +3,38 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v12 — 2026-10-01
+
+**What changed:** New `signAtAppointment` field, set on `commonLawAffidavit`:
+the page tells the couple to print it and fill in the details, but not to
+sign it before the appointment, nor send it with the online application.
+It's signed in front of the clerk at the appointment.
+
+**Why:** That's how the common-law affidavit is signed in practice: the clerk
+confirms the signatures at the office.
+
+**Source:** Practice, confirmed by the product owner; the form's office
+confirmation section (5.2.0009_a).
+
+**Lists that changed:** No scenario gained or lost a document; every item
+gained `signAtAppointment`.
+
+## v11 — 2026-10-01
+
+**What changed:** Added `commonLawAffidavit` for common-law couples: one
+declaration both partners sign together. `israeliAffidavit` and
+`foreignAffidavit` are now for married couples only (`when: "married"`).
+
+**Why:** Common-law couples don't sign the AS/6 affidavits. Procedure
+5.2.0009 has its own affidavit, signed by both partners and confirmed at a
+Misrad Hapnim office.
+
+**Source:** Procedure 5.2.0009, the affidavit form (5.2.0009_a,
+https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf).
+
+**Lists that changed:** commonLawLivingTogether, commonLawApart:
++commonLawAffidavit -israeliAffidavit -foreignAffidavit.
+
 ## v10 — 2026-09-28
 
 **What changed:** Added `landlordAffidavit` for every couple, marked with the

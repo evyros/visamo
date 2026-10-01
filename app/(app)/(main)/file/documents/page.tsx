@@ -61,7 +61,8 @@ export default async function DocumentsPage() {
           const auth = d.certification?.authentication;
           const exemptUntil = d.certification?.exemptIfIssuedUntil;
           const check = checks.get(d.key);
-          // What to prepare, in the order it takes time: certification, translation, copies.
+          // What to prepare, in the order it takes time: certification, translation, copies, then
+          // how it's signed.
           const requirements: DocumentItem["requirements"] = [];
           if (auth && auth !== "none") {
             const what = t.authentication[auth];
@@ -72,6 +73,7 @@ export default async function DocumentsPage() {
           }
           if (d.mayNeedTranslation) requirements.push({ icon: "globe", text: t.requirements.translation });
           if (d.copies) requirements.push({ icon: "file", text: format(t.requirements.copies, { count: d.copies }) });
+          if (d.signAtAppointment) requirements.push({ icon: "info", text: t.requirements.signAtAppointment });
           return {
             key: d.key,
             title: format(text.title, { country }),

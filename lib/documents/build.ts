@@ -27,6 +27,8 @@ export type RequiredDocument = {
    * The translation is uploaded with the document, as one of its files.
    */
   mayNeedTranslation: boolean;
+  /** Signed only in front of the clerk at the appointment (see the catalog). */
+  signAtAppointment: boolean;
   /** The facts that put it on the list; empty for documents every couple needs. */
   because: Fact[];
 };
@@ -70,6 +72,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         ...(country && { country }),
         certification: issuer === undefined ? null : certificationFor(issuer, doc.exemption),
         mayNeedTranslation: doc.mayNeedTranslation,
+        signAtAppointment: !!doc.signAtAppointment,
         because,
       };
     });

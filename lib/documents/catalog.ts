@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 10;
+export const CATALOG_VERSION = 12;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -56,6 +56,12 @@ export type DocumentDefinition = {
   exemption?: Exemption;
   /** How many copies to bring, when more than one. Shown to the couple only. */
   copies?: number;
+  /**
+   * Signed only in front of the clerk at the Misrad Hapnim appointment: the
+   * couple prints it and fills in the details, but doesn't sign it before
+   * the appointment, and doesn't send it with the online application.
+   */
+  signAtAppointment?: boolean;
   /** The Misrad Hapnim form, for the forms themselves. */
   form?: string;
   /** Where the requirement comes from: a procedure section, a form. */
@@ -105,6 +111,7 @@ export const documents = [
     mayNeedTranslation: false,
     owner: "israeli",
     category: "forms",
+    when: "married",
     source: `${P8} §ד.2.ז; ${AS6}`,
     verified: true,
   },
@@ -113,7 +120,19 @@ export const documents = [
     mayNeedTranslation: false,
     owner: "foreign",
     category: "forms",
+    when: "married",
     source: `${P8} §ד.2.ז; ${AS6}`,
+    verified: true,
+  },
+  {
+    // One declaration both partners sign, instead of the two AS/6 affidavits.
+    id: "commonLawAffidavit",
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "forms",
+    when: "commonLaw",
+    signAtAppointment: true,
+    source: `${P9}, the affidavit form (5.2.0009_a)`,
     verified: true,
   },
   {

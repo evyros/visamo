@@ -3,6 +3,19 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v17 — 2026-10-02
+
+**What changed:** `israeliIncomeProof` may now need a translation
+(`mayNeedTranslation: true`).
+
+**Why:** An Israeli partner who lives abroad and works for a business
+outside Israel brings payslips in another language.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** No scenario gained or lost a document; in every
+scenario, israeliIncomeProof gained `mayNeedTranslation`.
+
 ## v16 — 2026-10-01
 
 **What changed:** `entryPermitApplication` (AS/1) is listed only when the

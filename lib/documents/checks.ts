@@ -167,8 +167,36 @@ export const checks = {
   governmentServices: "notYet",
   ishurToshav: "notYet",
   sharedFinances: "notYet",
-  israeliIncomeProof: "notYet",
-  foreignIncomeProof: "notYet",
+  israeliIncomeProof: {
+    required: [
+      "It is one of these: payslips with a confirmation from work; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (shuma), or the confirmation of opening a business file (osek murshe or patur); or, for someone not working, bank statements showing the income deposited, or a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",
+      "Payslips: at least the last 3 months, and the latest is from one of the last 2 months, counted from today. Each shows the employer, the month and the pay, readably.",
+      "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
+      "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the foreign partner financially supports their shared life in Israel.",
+      "If it isn't in Hebrew, Arabic or English (an Israeli partner working for a business abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",
+      "Bank statements: they cover several recent months, and the deposits are easy to see.",
+      "A no-income letter comes with proof that one of them can support their life in Israel: a savings account, bank statements, or similar. The other partner's own income documents can show it instead.",
+      "It is scanned straight and readable in full, with nothing cut off at the edges.",
+    ],
+  },
+  foreignIncomeProof: {
+    required: [
+      "It is one of these: payslips; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (shuma), or the confirmation of opening a business file (osek murshe or patur); or, for someone not working, bank statements showing the income deposited, or a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",
+      "Payslips: at least the last 3 months, and the latest is from one of the last 2 months, counted from today. Each shows the employer, the month and the pay, readably.",
+      "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
+      "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the Israeli partner financially supports their shared life in Israel.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",
+      "Bank statements: they cover several recent months, and the deposits are easy to see.",
+      "A no-income letter comes with proof that one of them can support their life in Israel: a savings account, bank statements, or similar. The other partner's own income documents can show it instead.",
+      "It is scanned straight and readable in full, with nothing cut off at the edges.",
+    ],
+  },
   childrenSchoolRecords: "notYet",
   childBirthCertificate: "notYet",
   childPassport: "notYet",

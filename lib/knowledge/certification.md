@@ -29,6 +29,9 @@ Foreign documents follow the population authority's procedure 1.3.0001
   English document without a translation, especially a short one. It depends
   on the clerk handling your file. If they don't accept it, they'll ask you
   to translate it. So with English documents, be ready to translate.
+  The AS/6 checklist itself says public documents need a notarized
+  translation into Hebrew "except from Arabic and English" (מלבד מהשפות
+  ערבית ואנגלית), which you can point a clerk to.
 - **The translation doesn't need an apostille.** Only the original document
   does.
 

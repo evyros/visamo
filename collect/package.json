@@ -1,0 +1,13 @@
+{
+  "name": "visamo-collect",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fb:capture": "node facebook/capture.mjs",
+    "fb:parse": "node facebook/parse.mjs",
+    "fb:images": "node facebook/images.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}

@@ -3,6 +3,34 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v14 — 2026-10-01
+
+**What changed:** `housingContract` and `landlordAffidavit` are listed for
+couples who live, or lived, together (`livingTogether`), or whose Israeli
+partner lives in Israel (`israeliInIsrael`, new): only a couple who never
+lived together while the Israeli partner lives abroad goes without them.
+Every couple is now asked whether they live or lived together, married or
+not; before, only common-law couples were. The Israeli side's "lived outside
+Israel in recent years?" became "where do you live now?"
+(`israeliLivedAbroad` → `israeliInIsrael` / `israeliAbroad`).
+`housingContract` and `utilityBills` may now need a translation: a couple
+who lived together abroad brings them from the home they shared there. New
+scenarios: `bothAbroad`, `marriedNeverLivedTogether`,
+`neverLivedTogetherBothAbroad`; `israeliLivedAbroad` removed with its
+question.
+
+**Why:** An Israeli partner who lives in Israel shows their home there even
+if the couple never lived together. A couple with no home in Israel to show
+proves the relationship in other ways (`lib/knowledge/documents.md`).
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** bothAbroad, marriedNeverLivedTogether,
+neverLivedTogetherBothAbroad: new scenarios. israeliLivedAbroad: scenario
+removed. No existing scenario gained or lost a document; in every scenario
+that lists them, housingContract and utilityBills gained
+`mayNeedTranslation`.
+
 ## v13 — 2026-10-01
 
 **What changed:** Renamed the affidavits by who they're for, following

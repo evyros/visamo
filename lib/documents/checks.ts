@@ -32,7 +32,7 @@ export const checks = {
   entryPermitApplication: {
     required: [
       "It is form AS/1 (אש/1), \"Application for entry visa to Israel\", with both pages: page 1 with the inviter's and the invitee's details, and page 2 with the addresses and the two declarations.",
-      "The visa category at the top (\"category of ___\", מסוג) is filled in.",
+      "The visa category at the top (\"category of ___\", מסוג) is B/2 (ב/2): the foreign partner enters Israel on it, and gets B/1 after arriving. B/1 or anything else here is an issue.",
       "The Israeli partner's details are filled in: first and family name, ID number, relation to the invitee, and cellphone number. The name matches the Israeli partner's name in the file.",
       "The foreign partner's family name and given name are filled in, in English, on both pages, and match the foreign partner's name in the file.",
       "The foreign partner's father's name, mother's name, date of birth and occupation are filled in.",
@@ -50,7 +50,6 @@ export const checks = {
       "The \"For official use only\" box (לשימוש המשרד) is empty.",
     ],
     recommended: [
-      "The visa category is B/1 (ב/1), which lets the foreign partner stay and work in Israel, unless the purpose of entry calls for another.",
       "The same visa category is written at the top of page 2.",
       "The company name, company ID and the establishment's stamp are left empty: they're for employers and institutions.",
       "The passport's \"valid until\" date leaves at least 2 more years from today, as the passport itself needs.",

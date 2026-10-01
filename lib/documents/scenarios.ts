@@ -20,7 +20,7 @@ const israeli = (over: Partial<PersonInput> = {}): PersonInput => ({
   hasChildren: null,
   childrenMoving: null,
   otherParents: null,
-  livedAbroad: false,
+  residence: "israel",
   ...over,
 });
 
@@ -38,7 +38,7 @@ const foreign = (over: Partial<PersonInput> = {}): PersonInput => ({
   hasChildren: false,
   childrenMoving: null,
   otherParents: null,
-  livedAbroad: null,
+  residence: null,
   ...over,
 });
 
@@ -46,8 +46,8 @@ const married = (over: Partial<RelationshipInput> = {}): RelationshipInput => ({
   relationship: "married",
   marriagePlace: "abroad",
   marriageCountry: "CY",
-  livingTogether: null,
-  togetherSince: null,
+  livingTogether: true,
+  togetherSince: 2021,
   childrenTogether: false,
   ...over,
 });
@@ -105,7 +105,20 @@ export const scenarios = {
     relationship: married(),
     people: [israeli({ israeliStatus: "permanentResident" }), foreign()],
   },
-  israeliLivedAbroad: { relationship: married(), people: [israeli({ livedAbroad: true }), foreign()] },
+  // Both live abroad, together.
+  bothAbroad: {
+    relationship: married(),
+    people: [israeli({ residence: "abroad" }), foreign({ location: "abroad" })],
+  },
+  marriedNeverLivedTogether: {
+    relationship: married({ livingTogether: false, togetherSince: null }),
+    people: [israeli(), foreign({ location: "abroad" })],
+  },
+  // Never lived together, and the Israeli partner lives abroad too: no home in Israel to show.
+  neverLivedTogetherBothAbroad: {
+    relationship: married({ livingTogether: false, togetherSince: null }),
+    people: [israeli({ residence: "abroad" }), foreign({ location: "abroad" })],
+  },
   childrenStayingBehind: {
     relationship: married(),
     people: [israeli(), foreign({ hasChildren: true, childrenMoving: false })],

@@ -18,6 +18,7 @@ import {
   otherParents,
   previousMarriages,
   relationships,
+  residences,
   onboardingStages,
   type BranchCode,
   type IsraeliStatus,
@@ -73,7 +74,7 @@ export function personErrors(person: PersonAnswers, t: Labels): Errors {
   if (person.isIsraeli === null) e.israeliStatus = t.errors.choose;
   else if (person.isIsraeli) {
     if (!person.israeliStatus) e.israeliStatus = t.errors.choose;
-    if (person.livedAbroad === null) e.livedAbroad = t.errors.choose;
+    if (!person.residence) e.residence = t.errors.choose;
   } else {
     if (!person.nationality) e.nationality = t.errors.required;
     if (person.nationality && person.bornInNationality === null) e.bornInNationality = t.errors.choose;
@@ -99,10 +100,9 @@ export function relationshipErrors(r: RelationshipAnswers, t: Labels): Errors {
   else if (r.relationship === "married") {
     if (!r.marriagePlace) e.marriagePlace = t.errors.choose;
     else if (r.marriagePlace === "abroad" && !r.marriageCountry) e.marriageCountry = t.errors.required;
-  } else {
-    if (r.livingTogether === null) e.livingTogether = t.errors.choose;
-    else if (r.livingTogether && !r.togetherSince) e.togetherSince = t.errors.required;
   }
+  if (r.livingTogether === null) e.livingTogether = t.errors.choose;
+  else if (r.livingTogether && !r.togetherSince) e.togetherSince = t.errors.required;
   if (r.childrenTogether === null) e.childrenTogether = t.errors.choose;
   return e;
 }
@@ -128,19 +128,18 @@ export function personInput(person: PersonAnswers) {
     hasChildren: foreign ? person.hasChildren : null,
     childrenMoving: moving,
     otherParents: moving ? person.otherParents : null,
-    livedAbroad: foreign ? null : person.livedAbroad,
+    residence: foreign ? null : person.residence,
   };
 }
 
 export function relationshipInput(r: RelationshipAnswers) {
   const married = r.relationship === "married";
-  const together = married ? null : r.livingTogether;
   return {
     relationship: r.relationship,
     marriagePlace: married ? r.marriagePlace : null,
     marriageCountry: married && r.marriagePlace === "abroad" ? r.marriageCountry : null,
-    livingTogether: together,
-    togetherSince: together ? Number(r.togetherSince) : null,
+    livingTogether: r.livingTogether,
+    togetherSince: r.livingTogether ? Number(r.togetherSince) : null,
     childrenTogether: r.childrenTogether,
   };
 }
@@ -500,14 +499,15 @@ export function PersonFields({
       )}
 
       {person.isIsraeli && (
-        <YesNo
-          id="livedAbroad"
-          t={t}
-          legend={q.livedAbroad}
-          hint={t.livedAbroadHint}
-          error={errors.livedAbroad}
-          value={person.livedAbroad}
-          onChange={(v) => onChange("livedAbroad", v)}
+        <Choices
+          id="residence"
+          legend={q.residence}
+          hint={t.residenceHint}
+          error={errors.residence}
+          options={residences.map((r) => ({ value: r, label: t.residences[r] }))}
+          value={person.residence}
+          onChange={(v) => onChange("residence", v)}
+          inline
         />
       )}
 
@@ -696,7 +696,7 @@ export function RelationshipFields({
           onChange={(v) => onChange("marriageCountry", v)}
         />
       )}
-      {answers.relationship === "commonLaw" && (
+      {answers.relationship && (
         <YesNo
           id="livingTogether"
           t={t}
@@ -706,7 +706,7 @@ export function RelationshipFields({
           onChange={(v) => onChange("livingTogether", v)}
         />
       )}
-      {answers.relationship === "commonLaw" && answers.livingTogether && (
+      {answers.relationship && answers.livingTogether && (
         <Field id="togetherSince" label={t.togetherSince} error={errors.togetherSince}>
           <Select
             id="togetherSince"

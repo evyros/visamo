@@ -11,6 +11,7 @@ import type {
   PreviousMarriages,
   Relationship,
   RENEWAL,
+  Residence,
   Stage,
 } from "@/lib/case-options";
 
@@ -36,7 +37,7 @@ type RoleAnswers = {
   otherParents: OtherParent[];
   // The Israeli side's.
   israeliStatus: IsraeliStatus | null;
-  livedAbroad: boolean | null;
+  residence: Residence | null;
 };
 
 export type PersonAnswers = RoleAnswers & {
@@ -89,7 +90,7 @@ export const emptyRole: RoleAnswers = {
   childrenMoving: null,
   otherParents: [],
   israeliStatus: null,
-  livedAbroad: null,
+  residence: null,
 };
 
 const emptyPerson: PersonAnswers = {

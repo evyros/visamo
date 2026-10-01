@@ -127,9 +127,9 @@ export const cases = pgTable("case", {
   marriagePlace: text("marriage_place"),
   /** ISO 3166 region code of an abroad marriage; null otherwise. */
   marriageCountry: text("marriage_country"),
-  /** Asked only of a common-law couple; null when married. */
-  livingTogether: boolean("living_together"),
-  /** The year a common-law couple moved in together; null unless they live together. */
+  /** Live together now, or lived together before. */
+  livingTogether: boolean("living_together").notNull(),
+  /** The year they moved in together; null unless they live or lived together. */
   togetherSince: integer("together_since"),
   childrenTogether: boolean("children_together").notNull(),
   // What the case has bought (lib/products.ts). Only a purchase sets them
@@ -205,8 +205,8 @@ export const casePerson = pgTable(
     childrenMoving: boolean("children_moving"),
     /** OtherParent values from lib/case-options.ts; null unless children are moving. */
     otherParents: text("other_parents").array(),
-    /** Asked only of the Israeli: lived outside Israel in recent years. */
-    livedAbroad: boolean("lived_abroad"),
+    /** A Residence from lib/case-options.ts, asked only of the Israeli: where they live now. */
+    residence: text("residence"),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     updatedAt: timestamp("updated_at")
       .notNull()

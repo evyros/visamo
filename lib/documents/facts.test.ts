@@ -28,6 +28,19 @@ describe("profileOf", () => {
     expect(profileOf(scenarios.marriedOnline).countries.marriageCountry).toBeNull();
   });
 
+  it("asks every couple, married or not, whether they live or lived together", () => {
+    expect(profileOf(scenarios.marriedInCyprus).facts.livingTogether).toBe(true);
+    expect(profileOf(scenarios.marriedNeverLivedTogether).facts.livingTogether).toBe(false);
+    expect(profileOf(scenarios.commonLawApart).facts.livingTogether).toBe(false);
+  });
+
+  it("knows when the Israeli partner lives abroad too", () => {
+    const f = profileOf(scenarios.bothAbroad).facts;
+    expect([f.israeliAbroad, f.israeliInIsrael, f.foreignAbroad]).toEqual([true, false, true]);
+    const g = profileOf(scenarios.foreignAbroad).facts;
+    expect([g.israeliAbroad, g.israeliInIsrael]).toEqual([false, true]);
+  });
+
   it("finds the former USSR by birth, not only by nationality", () => {
     expect(profileOf(scenarios.bornInUSSRWithGermanNationality).facts.foreignFromFormerUSSR).toBe(true);
     expect(profileOf(scenarios.marriedInCyprus).facts.foreignFromFormerUSSR).toBe(false);

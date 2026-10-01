@@ -16,8 +16,6 @@ const everyone = [
   "relationshipEvidence",
   "recommendationLetters",
   "foreignCivilStatus",
-  "housingContract",
-  "landlordAffidavit",
   "utilityBills",
   "governmentServices",
   "ishurToshav",
@@ -173,11 +171,15 @@ describe("buildDocumentList", () => {
     expect(find("marriedInCyprus", "foreignPassport")?.mayNeedTranslation).toBe(false);
   });
 
-  it("lists the landlord's affidavit for every couple, as optional", () => {
+  it("lists the lease, and the landlord's affidavit as optional, for couples who lived together or whose Israeli partner lives in Israel", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
-      expect(find(name, "landlordAffidavit")?.optional, name).toBe(true);
+      const { relationship, people } = scenarios[name];
+      const home = relationship.livingTogether || people.some((p) => p.residence === "israel");
+      expect(find(name, "landlordAffidavit")?.optional, name).toBe(home ? true : undefined);
+      expect(find(name, "housingContract")?.optional, name).toBe(home ? false : undefined);
     }
-    expect(find("marriedInCyprus", "housingContract")?.optional).toBe(false);
+    expect(find("marriedNeverLivedTogether", "housingContract")?.because).toEqual(["israeliInIsrael"]);
+    expect(keys("neverLivedTogetherBothAbroad")).not.toContain("housingContract");
   });
 
   it("gives the number of copies where more than one is needed", () => {

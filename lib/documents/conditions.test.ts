@@ -24,7 +24,7 @@ describe("evaluate", () => {
   });
 
   it("needs one part of any, and gives only the parts that matched", () => {
-    const c = { any: ["israeliLivedAbroad", "israeliPermanentResident"] } as const;
+    const c = { any: ["israeliAbroad", "israeliPermanentResident"] } as const;
     expect(evaluate(c, only("israeliPermanentResident"))).toEqual({
       match: true,
       because: ["israeliPermanentResident"],

@@ -12,6 +12,8 @@
   - §ה.2(9): children from a previous relationship, and the other parent.
 - **5.2.0009**: common-law couples, including same-sex couples.
   https://www.gov.il/BlobFolder/policy/israelis_couples_status_procedure/he/5.2.0009.pdf
+  - Clause 10 (page 16): the interview is held, whenever possible, when the
+    couple shows the original documents.
 - **1.3.0001**: foreign documents (certification and translation).
 - **2.11.0001**: registering changes in civil status, including marriages.
 

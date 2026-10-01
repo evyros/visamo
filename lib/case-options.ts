@@ -17,6 +17,10 @@ export type PreviousMarriages = (typeof previousMarriages)[number];
 export const locations = ["israelValid", "israelInvalid", "abroad"] as const;
 export type Location = (typeof locations)[number];
 
+/** Where the Israeli side lives now. */
+export const residences = ["israel", "abroad"] as const;
+export type Residence = (typeof residences)[number];
+
 /**
  * The other parent of the foreign partner's children who are moving to
  * Israel. More than one can apply when the children have different parents.
@@ -31,7 +35,7 @@ export type Relationship = (typeof relationships)[number];
 export const marriagePlaces = ["israel", "abroad", "online"] as const;
 export type MarriagePlace = (typeof marriagePlaces)[number];
 
-/** The earliest year a common-law couple can say they moved in together. */
+/** The earliest year a couple can say they moved in together. */
 export const TOGETHER_SINCE_MIN = 1950;
 
 /** Where the couple is with Misrad Hapnim, in order. The overview's tracker moves through them. */
@@ -153,7 +157,7 @@ export type PersonInput = {
   /** Null unless children are moving; otherwise at least one. */
   otherParents: OtherParent[] | null;
   // The Israeli only; null for the foreign partner.
-  livedAbroad: boolean | null;
+  residence: Residence | null;
 };
 
 export type RelationshipInput = {
@@ -162,9 +166,9 @@ export type RelationshipInput = {
   marriagePlace: MarriagePlace | null;
   /** Where an abroad marriage took place; null otherwise. */
   marriageCountry: string | null;
-  /** Null for a married couple. */
-  livingTogether: boolean | null;
-  /** The year they moved in together; null unless living together. */
+  /** Live together now, or lived together before. */
+  livingTogether: boolean;
+  /** The year they moved in together; null unless they live or lived together. */
   togetherSince: number | null;
   childrenTogether: boolean;
 };
@@ -210,13 +214,13 @@ function parsePerson(v: unknown): PersonInput | null {
     if (!oneOf(locations, v.location) || !isBoolean(v.nameChanged) || !isBoolean(v.hasChildren)) return null;
     if (v.hasChildren ? !isBoolean(v.childrenMoving) : v.childrenMoving !== null) return null;
     if (v.childrenMoving ? !listOf(v.otherParents, isOtherParent, 1) : v.otherParents !== null) return null;
-    if (v.livedAbroad !== null) return null;
+    if (v.residence !== null) return null;
     if (v.israeliStatus !== null) return null;
   } else {
     if (!oneOf(israeliStatuses, v.israeliStatus)) return null;
     const foreignOnly = [v.nationality, v.birthCountry, v.countriesLived, v.location, v.nameChanged, v.hasChildren];
     if (foreignOnly.some((x) => x !== null) || v.childrenMoving !== null || v.otherParents !== null) return null;
-    if (!isBoolean(v.livedAbroad)) return null;
+    if (!oneOf(residences, v.residence)) return null;
   }
 
   return {
@@ -233,7 +237,7 @@ function parsePerson(v: unknown): PersonInput | null {
     hasChildren: foreign ? (v.hasChildren as boolean) : null,
     childrenMoving: foreign ? (v.childrenMoving as boolean | null) : null,
     otherParents: foreign ? (v.otherParents as OtherParent[] | null) : null,
-    livedAbroad: foreign ? null : (v.livedAbroad as boolean),
+    residence: foreign ? null : (v.residence as Residence),
   };
 }
 
@@ -242,7 +246,7 @@ function parseRelationship(v: unknown): RelationshipInput | null {
   const married = v.relationship === "married";
   if (married ? !oneOf(marriagePlaces, v.marriagePlace) : v.marriagePlace !== null) return null;
   if (v.marriagePlace === "abroad" ? !isNationality(v.marriageCountry) : v.marriageCountry !== null) return null;
-  if (married ? v.livingTogether !== null : !isBoolean(v.livingTogether)) return null;
+  if (!isBoolean(v.livingTogether)) return null;
   const year = v.togetherSince;
   const validYear =
     Number.isInteger(year) && (year as number) >= TOGETHER_SINCE_MIN && (year as number) <= new Date().getFullYear();
@@ -251,7 +255,7 @@ function parseRelationship(v: unknown): RelationshipInput | null {
     relationship: v.relationship,
     marriagePlace: v.marriagePlace as MarriagePlace | null,
     marriageCountry: v.marriageCountry as string | null,
-    livingTogether: v.livingTogether as boolean | null,
+    livingTogether: v.livingTogether,
     togetherSince: year as number | null,
     childrenTogether: v.childrenTogether,
   };
@@ -277,7 +281,7 @@ export function parseOnboarding(input: unknown): OnboardingInput | null {
 
 /** The answers about a person that can change after onboarding. The rest stay as they were. */
 export const editablePersonFields = {
-  israeli: ["previousMarriages", "livedAbroad"],
+  israeli: ["previousMarriages", "residence"],
   foreign: [
     "previousMarriages",
     "countriesLived",

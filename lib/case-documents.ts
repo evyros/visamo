@@ -26,7 +26,7 @@ function personOf(p: typeof casePerson.$inferSelect): PersonInput {
     hasChildren: p.hasChildren,
     childrenMoving: p.childrenMoving,
     otherParents: p.otherParents,
-    livedAbroad: p.livedAbroad,
+    residence: p.residence,
   } satisfies Row<PersonInput> as PersonInput;
 }
 

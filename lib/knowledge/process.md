@@ -8,6 +8,10 @@ status. The foreign partner usually moves from a B/1 visa (with a work
 permit) to A/5 (temporary resident), and at the end to citizenship or
 permanent residency. Each stage is renewed with updated documents.
 
+A foreign partner who is outside Israel first gets an entry permit, enters
+on a B/2 visa (ב/2) in the meantime, and gets B/1 after arriving. See
+[first-appointment.md](first-appointment.md).
+
 - **Married couples:** procedure 5.2.0008.
 - **Common-law couples** (ידועים בציבור), including same-sex couples:
   procedure 5.2.0009. It needs more proof that you live together, and proof

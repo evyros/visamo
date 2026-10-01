@@ -170,7 +170,7 @@ function detailSections({ relationship: r, israeli, foreign }: CaseDetails, mess
       rows: [
         {
           label: t.relationship,
-          value: r.relationship === "married" ? `${t.married} · ${place}` : `${t.commonLaw} · ${together}`,
+          value: r.relationship === "married" ? `${t.married} · ${place} · ${together}` : `${t.commonLaw} · ${together}`,
         },
         { label: t.childrenTogether, value: yesNo(r.childrenTogether) },
       ],
@@ -180,7 +180,7 @@ function detailSections({ relationship: r, israeli, foreign }: CaseDetails, mess
       rows: [
         { label: t.status, value: israeli.israeliStatus ? o.israeliStatuses[israeli.israeliStatus] : "" },
         { label: t.previousMarriages, value: o.previousMarriageOptions[israeli.previousMarriages] },
-        { label: t.livedAbroad, value: yesNo(israeli.livedAbroad) },
+        { label: t.residence, value: israeli.residence ? o.residences[israeli.residence] : "" },
       ],
     },
     {

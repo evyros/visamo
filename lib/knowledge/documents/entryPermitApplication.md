@@ -9,6 +9,11 @@ outside Israel (5.2.0008 §ד.2.א). The Israeli partner applies as the inviter
 also used by employers and institutions, so some fields (such as the company
 name) don't apply to you. It has two pages, in Hebrew and English.
 
+The Israeli partner submits it with the file. At the first appointment, the
+clerk reviews it and grants the entry permit. With it, the foreign partner
+enters Israel on a B/2 visa (ב/2) and gets B/1 after arriving: see
+[first-appointment.md](../first-appointment.md).
+
 ## How to get it
 
 The form is on the Population and Immigration Authority's site
@@ -27,9 +32,9 @@ The form is on the Population and Immigration Authority's site
 
 - **The visa you're asking for**, at the top of the form: "Application for
   entry visa to Israel category of ___" (בקשה למתן אשרת כניסה לישראל מסוג).
-  It's required. The type depends on the purpose of entry; couples usually
-  ask for **B/1 (ב/1)**, so the foreign partner can stay and work in Israel.
-  Write the same type at the top of page 2.
+  It's required. The type depends on the purpose of entry; for a partner,
+  it's **B/2 (ב/2)**: the foreign partner enters on it, and gets B/1 (ב/1)
+  after arriving. Write the same type at the top of page 2.
 - **The Israeli partner's details** (פרטי המזמין הישראלי): first and family
   name, ID number (ת.ז.), relation to the invitee, and cellphone number. The
   company name and company ID are for employers.
@@ -61,7 +66,9 @@ The form is on the Population and Immigration Authority's site
   house number, and phone number.
 - **Their address in Israel**: town, street and house number, and their
   email address.
-- **The Israeli embassy or consulate** to tell when the permit is approved.
+- **The Israeli embassy or consulate** to tell when the permit is approved:
+  the one where the foreign partner lives. If their country needs a visa to
+  Israel, that's where they get the B/2 visa in their passport.
 - **The Israeli partner's declaration**, with the place, date and their
   signature. They declare that the details are true. They also undertake:
   - not to employ the foreign partner after they enter Israel, for the
@@ -90,13 +97,23 @@ The form is on the Population and Immigration Authority's site
 ## Questions
 
 **Where do I send it, or who do I give it to?**
-You submit it together with your first application, with the rest of its
-documents. It isn't sent separately.
+The Israeli partner submits it with the file, with the rest of its
+documents. It isn't sent separately. At the first appointment, the clerk
+reviews it and grants the entry permit.
 
 **Which visa do we ask for?**
-Usually B/1 (ב/1), which lets the foreign partner stay and work in Israel.
-The type depends on the purpose of entry, and you write it at the top of the
-form. It's a required field.
+B/2 (ב/2). The foreign partner enters Israel on it, as a status in between,
+and gets the B/1 visa (ב/1), which lets them work, after arriving. You write
+the type at the top of the form. It's a required field.
+
+**Can my partner come to Israel as a tourist instead?**
+To visit, yes. To stay and live together in Israel, they need the entry
+permit first: coming as a tourist with that intention goes against Israel's
+immigration policy.
+
+**What happens when my partner lands?**
+Tell your branch as soon as they arrive, by email or in person. The office
+calls you in to get the B/1 visa, or sets a date for an interview.
 
 **Who signs the form?**
 Both of you, each on your own declaration on page 2: the Israeli partner as

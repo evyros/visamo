@@ -13,12 +13,13 @@ import { documents, type Category, type DocumentId } from "@/lib/documents/catal
  * version: lib/prompts.test.ts fails until it's raised and recorded
  * (npm run prompts:lock).
  */
-export const KNOWLEDGE_VERSION = 13;
+export const KNOWLEDGE_VERSION = 14;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [
   "README.md",
   "process.md",
+  "first-appointment.md",
   "documents.md",
   "certification.md",
   "children.md",
@@ -33,7 +34,7 @@ const CATEGORY_HEADINGS: Record<Category, string> = {
   relationship: "Your relationship",
   civilStatus: "Civil status",
   criminalRecord: "Criminal record",
-  centerOfLife: "Center of life (every couple)",
+  centerOfLife: "Center of life",
   children: "Children moving to Israel",
 };
 

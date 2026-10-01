@@ -34,6 +34,9 @@ describe("parseDetails", () => {
     // The nationality among the other countries lived in.
     expect(parseDetails({ ...current, foreign: { ...current.foreign, countriesLived: ["US"] } }, current)).toBeNull();
     expect(parseDetails({ relationship: current.relationship }, current)).toBeNull();
+    // Every couple says whether they live or lived together, and the Israeli side where they live.
+    expect(parseDetails({ ...current, relationship: { ...current.relationship, livingTogether: null } }, current)).toBeNull();
+    expect(parseDetails({ ...current, israeli: { ...current.israeli, residence: null } }, current)).toBeNull();
   });
 });
 

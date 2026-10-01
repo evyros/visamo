@@ -37,7 +37,10 @@ Foreign partner only:
   countries. For example, the USSR is now Russia, Ukraine and others." Each
   country adds a police certificate (not yet verified; see open questions).
 - **Where they are now:** in Israel with a valid visa / in Israel without one
-  / outside Israel.
+  / outside Israel. "With a valid visa" includes a tourist visit: visiting is
+  allowed; only coming to stay needs the entry permit first. The nationality
+  also tells the chat whether a partner abroad enters on an ETA-IL or needs a
+  B/2 from the consulate (`lib/visa-exempt.ts`); that's not a question.
 - **Name ever changed?**
 - **Children from a previous relationship?** If yes, **any under 18 and
   moving to Israel?** If yes, **the other parent's situation**, as a
@@ -46,8 +49,10 @@ Foreign partner only:
   on the birth certificate.
 
 Israeli side only:
-- **Lived outside Israel in recent years?** Kept, even though it no longer
-  adds a document (practice).
+- **Where do you live now?** In Israel / outside Israel. Replaced "lived
+  outside Israel in recent years?": what matters is where they are now, so
+  the chat can tell a couple who both live abroad apart. Living in Israel
+  keeps the lease on the list for a couple who never lived together.
 
 ## Step 3: your relationship (about the couple)
 
@@ -55,7 +60,12 @@ Israeli side only:
 - **Where did you marry:** in Israel (rabbinate or another religious court) /
   in another country (then which) / online (e.g. Utah). See `lib/knowledge/certification.md`
   for why.
-- **Common-law: do you live together, and since what year.**
+- **Do you live together, or have you lived together before?** Asked of
+  every couple, married or common-law, then the year they moved in together.
+  A couple who never lived together still gets the lease and the landlord's
+  affidavit when the Israeli partner lives in Israel (their own home). Only
+  when the Israeli partner lives abroad too are they left out: the couple
+  proves the relationship in other ways (`lib/knowledge/documents.md`).
 - **Children together?**
 
 ## Step 4: branch
@@ -66,7 +76,8 @@ to miss, and it left Continue greyed out for anyone who didn't see it.
 
 ## Step 5: stage
 
-Not filed yet, filed and waiting, got a first response, interview
+No separate stages for a partner abroad: they start at "not filed yet" like
+everyone. Not filed yet, filed and waiting, got a first response, interview
 scheduled; plus renewal, which isn't supported yet (see `lib/knowledge/process.md`
 for the process). Renewal blocks finishing with a yellow notice.
 

@@ -40,7 +40,7 @@ function personAnswers(p: PersonInput): PersonAnswers {
     isIsraeli: p.isIsraeli,
     previousMarriages: p.previousMarriages,
     israeliStatus: p.israeliStatus,
-    livedAbroad: p.livedAbroad,
+    residence: p.residence,
     nationality: p.nationality ?? "",
     bornInNationality: foreign ? p.birthCountry === p.nationality : null,
     birthCountry: p.birthCountry ?? "",

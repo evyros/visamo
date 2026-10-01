@@ -39,6 +39,11 @@ the Authority. In practice, most people still call it Misrad Hapnim.
 | The application | habakasha | הבקשה |
 | Your file | hatik | התיק |
 | Interview | reayon | ראיון |
+| Simultaneous interview (you in Israel, your partner at the consulate abroad) | reayon simultani | ראיון סימולטני |
+| Entry permit | heter knisa | היתר כניסה |
+| The entry permit, as people call it ("the invitation") | hazmana | הזמנה |
+| The inviter (the Israeli partner, on form AS/1) | hamazmin | המזמין |
+| The invitee (the foreign partner, on form AS/1) | hamuzman | המוזמן |
 | Center of life | merkaz chaim | מרכז חיים |
 | The fee | agra | אגרה |
 
@@ -47,11 +52,13 @@ the Authority. In practice, most people still call it Misrad Hapnim.
 | English | As people say it | Hebrew |
 | --- | --- | --- |
 | B/1 visa (with a work permit) | bet achat | ב/1 |
+| B/1 general: B/1 with no limit on the work you do | bet achat klali | ב/1 כללי |
 | B/2 visa (visitor) | bet shtayim | ב/2 |
 | A/5 visa (temporary resident) | alef chamesh | א/5 |
 | Temporary resident | toshav arai | תושב ארעי |
 | Permanent resident | toshav keva | תושב קבע |
 | Citizenship | ezrachut | אזרחות |
+| ETA-IL: the electronic travel authorization for visa-exempt visitors | ETA | אישור נסיעה אלקטרוני |
 
 ## You as a couple
 

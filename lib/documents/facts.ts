@@ -25,7 +25,8 @@ export const facts = [
   // The Israeli side.
   "israeliCitizen",
   "israeliPermanentResident",
-  "israeliLivedAbroad",
+  "israeliInIsrael",
+  "israeliAbroad",
   "israeliDivorced",
   "israeliWidowed",
   // The foreign partner.
@@ -80,12 +81,13 @@ export function profileOf({ relationship: r, people }: CaseSnapshot): CaseProfil
       marriedInIsrael: married && r.marriagePlace === "israel",
       marriedAbroad: married && r.marriagePlace === "abroad",
       marriedOnline: married && r.marriagePlace === "online",
-      livingTogether: !married && !!r.livingTogether,
+      livingTogether: r.livingTogether,
       childrenTogether: r.childrenTogether,
 
       israeliCitizen: israeli.israeliStatus === "citizen",
       israeliPermanentResident: israeli.israeliStatus === "permanentResident",
-      israeliLivedAbroad: !!israeli.livedAbroad,
+      israeliInIsrael: israeli.residence === "israel",
+      israeliAbroad: israeli.residence === "abroad",
       israeliDivorced: divorced(israeli),
       israeliWidowed: widowed(israeli),
 

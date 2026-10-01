@@ -15,3 +15,6 @@ to the lease – couples"). The landlord declares:
 It's signed in front of a lawyer (the form also allows a Misrad Hapnim
 registrar), and comes **with a scan of the landlord's Teudat Zehut**. Not
 needed if you own your home.
+
+Like the lease, it's asked for when you live together, or have lived
+together, and whenever the Israeli partner lives in Israel.

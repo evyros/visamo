@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 13;
+export const CATALOG_VERSION = 14;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -346,10 +346,14 @@ export const documents = [
 
   // ── Center of life: at least the last 12 months ──
   {
+    // The shared home, or the Israeli partner's own home in Israel. Not for a couple who never
+    // lived together while the Israeli lives abroad: they prove the relationship in other ways.
     id: "housingContract",
-    mayNeedTranslation: false,
+    // From abroad, for a couple who lived together there.
+    mayNeedTranslation: true,
     owner: "israeli",
     category: "centerOfLife",
+    when: { any: ["livingTogether", "israeliInIsrael"] },
     source: `${P8} §ד.2.ח; ${AS6}`,
     verified: true,
   },
@@ -359,6 +363,8 @@ export const documents = [
     mayNeedTranslation: false,
     owner: "couple",
     category: "centerOfLife",
+    // Annexed to the lease: wherever the lease is asked for.
+    when: { any: ["livingTogether", "israeliInIsrael"] },
     optional: true,
     form: "AS/6",
     source: "AS/6, page 6 (affidavit annexed to the lease – couples)",
@@ -366,7 +372,8 @@ export const documents = [
   },
   {
     id: "utilityBills",
-    mayNeedTranslation: false,
+    // From abroad, for a couple who lived together there.
+    mayNeedTranslation: true,
     owner: "couple",
     category: "centerOfLife",
     source: AS6,

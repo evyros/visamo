@@ -3,6 +3,23 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v16 — 2026-10-01
+
+**What changed:** `entryPermitApplication` (AS/1) is listed only when the
+foreign partner is abroad and the Israeli partner lives in Israel
+(`{ all: [foreignAbroad, israeliInIsrael] }`), no longer for every foreign
+partner abroad.
+
+**Why:** A couple who both live abroad asks for the entry permit at the
+Israeli consulate before they come, and files with Misrad Hapnim after they
+arrive (`lib/knowledge/both-abroad.md`). The app covers the Misrad Hapnim
+file only, not the consulate.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** bothAbroad, neverLivedTogetherBothAbroad:
+-entryPermitApplication.
+
 ## v15 — 2026-10-01
 
 **What changed:** The lease is split in two. `housingContract` is now the

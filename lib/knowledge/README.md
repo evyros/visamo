@@ -5,6 +5,7 @@ through the graduated procedure (ההליך המדורג).
 
 - [process.md](process.md): what the process is and who it's for.
 - [first-appointment.md](first-appointment.md): the first appointment at Misrad Hapnim, and how a partner abroad enters Israel.
+- [both-abroad.md](both-abroad.md): when you both live abroad, starting at the Israeli consulate.
 - [documents.md](documents.md): the documents for the first application, each one described in [documents/](documents/).
 - [certification.md](certification.md): apostille, legalization and translation.
 - [children.md](children.md): when the foreign partner's children move to Israel.

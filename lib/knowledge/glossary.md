@@ -42,6 +42,7 @@ the Authority. In practice, most people still call it Misrad Hapnim.
 | Simultaneous interview (you in Israel, your partner at the consulate abroad) | reayon simultani | ראיון סימולטני |
 | Entry permit | heter knisa | היתר כניסה |
 | The entry permit, as people call it ("the invitation") | hazmana | הזמנה |
+| The entry permit, as people also call it | asmachta | אסמכתא |
 | The inviter (the Israeli partner, on form AS/1) | hamazmin | המזמין |
 | The invitee (the foreign partner, on form AS/1) | hamuzman | המוזמן |
 | Center of life | merkaz chaim | מרכז חיים |

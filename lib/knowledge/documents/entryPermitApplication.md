@@ -1,6 +1,6 @@
 # Entry permit application (form AS/1) (בקשה להיתר כניסה (טופס אש/1))
 
-Needed while the foreign partner is outside Israel, so they can enter for the process.
+Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process.
 
 Form **AS/1** (אש/1), "Application for entry visa to Israel" (בקשה למתן אשרת
 כניסה לישראל), is the entry permit application, for a foreign partner who is
@@ -12,7 +12,10 @@ name) don't apply to you. It has two pages, in Hebrew and English.
 The Israeli partner submits it with the file. At the first appointment, the
 clerk reviews it and grants the entry permit. With it, the foreign partner
 enters Israel on a B/2 visa (ב/2) and gets B/1 after arriving: see
-[first-appointment.md](../first-appointment.md).
+[first-appointment.md](../first-appointment.md). If you both live abroad,
+this form isn't part of your file: you ask for the entry permit at the
+Israeli consulate in your country before you come, and file after you
+arrive. See [both-abroad.md](../both-abroad.md).
 
 ## How to get it
 

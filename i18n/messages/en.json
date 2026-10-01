@@ -1286,7 +1286,7 @@
         },
         "entryPermitApplication": {
           "title": "Entry permit application (form AS/1)",
-          "description": "Needed while the foreign partner is outside Israel, so they can enter for the process."
+          "description": "Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process."
         },
         "israeliAffidavitMarried": {
           "title": "Affidavit of the Israeli partner",

@@ -18,10 +18,6 @@ shown to users (`lib/knowledge/`).
 - The other parent's death certificate.
 - The Apostille Convention country list.
 - Whether the security-check country list is complete.
-- What a couple who both live abroad, or lived together abroad, brings
-  instead of the center-of-life documents from Israel. The list is the same
-  as for a couple in Israel for now; `lib/knowledge/documents.md` says what
-  to prove in general.
 - **Health insurance for the foreign partner: needed or not?** Not in the
   catalog. Neither procedure 5.2.0008 nor the AS/6 checklist mentions it
   (5.2.0008 mentions National Insurance only as a center-of-life check). But

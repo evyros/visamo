@@ -9,8 +9,8 @@ What comes out of it depends on where the foreign partner is.
 - **The foreign partner is in Israel:** you go together, to this
   appointment and to every one after it.
 - **The foreign partner is outside Israel:** the Israeli partner goes alone.
-  That's also the case when you both live abroad: the Israeli partner comes
-  to the appointment in Israel.
+- **You both live abroad:** you start at the Israeli consulate, not here:
+  see [both-abroad.md](both-abroad.md).
 
 ## What to bring
 
@@ -25,6 +25,9 @@ What comes out of it depends on where the foreign partner is.
   bring; if it didn't, bring copies of everything you sent online.
 
 ## If the foreign partner is outside Israel
+
+This is for an Israeli partner who lives in Israel. If you both live
+abroad, see [both-abroad.md](both-abroad.md).
 
 The Israeli partner submits the entry permit application (form AS/1) with
 the file. At the first appointment, the clerk reviews it with the rest of

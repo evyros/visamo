@@ -1,6 +1,6 @@
 {
-  "version": 15,
-  "fingerprint": "d7553cef6a67c0adb0bc234f0bef154644e08707dbcf38f47f533532e48bbc02",
+  "version": 16,
+  "fingerprint": "424c74aae75246ec31c53b5287da9b23fd1e1f47857b7a4bc4c89e15a98f89a8",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -373,7 +373,6 @@
     ],
     "bothAbroad": [
       "statusApplicationMarried",
-      "entryPermitApplication",
       "israeliAffidavitMarried",
       "foreignAffidavitMarried",
       "relationshipStory",
@@ -423,7 +422,6 @@
     ],
     "neverLivedTogetherBothAbroad": [
       "statusApplicationMarried",
-      "entryPermitApplication",
       "israeliAffidavitMarried",
       "foreignAffidavitMarried",
       "relationshipStory",

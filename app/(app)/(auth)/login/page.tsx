@@ -1,25 +1,29 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+// COMING SOON: login is closed. To reopen, restore the commented code below.
+// import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getAppDictionary } from "@/i18n/app-locale";
 import { getSession } from "@/lib/session";
 import { AuthHeading } from "@/components/app/auth-heading";
-import { Divider, Notice } from "@/components/app/auth-ui";
-import { GoogleButton } from "@/components/app/google-button";
-import { LoginForm } from "@/components/app/login-form";
+// import { Divider, Notice } from "@/components/app/auth-ui";
+// import { GoogleButton } from "@/components/app/google-button";
+// import { LoginForm } from "@/components/app/login-form";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.login };
 }
 
-export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string; reset?: string }> }) {
+// export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string; reset?: string }> }) {
+export default async function LoginPage() {
   if (await getSession()) redirect("/");
-  const { error, reset } = await searchParams;
+  // const { error, reset } = await searchParams;
   const t = (await getAppDictionary()).app.auth;
 
   return (
     <>
       <AuthHeading title={t.login.title} />
+      <p className="text-center text-[16px] text-slate-700">{t.comingSoon}</p>
+      {/*
       <div className="space-y-6">
         {reset === "done" && <Notice tone="success">{t.login.passwordUpdated}</Notice>}
         {error && <Notice>{t.errors.generic}</Notice>}
@@ -33,6 +37,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           {t.login.signupLink}
         </Link>
       </p>
+      */}
     </>
   );
 }

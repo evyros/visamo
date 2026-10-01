@@ -843,6 +843,7 @@
       "closeSectionMenu": "Close menu"
     },
     "auth": {
+      "comingSoon": "Coming soon. Access is by request only.",
       "google": "Continue with Google",
       "or": "or",
       "email": "Email",

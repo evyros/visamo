@@ -1,12 +1,11 @@
 import "server-only";
-import { asc, eq } from "drizzle-orm";
 import { loadMessages } from "@/i18n/messages";
-import { regionName } from "@/i18n/format";
-import { caseDocuments, caseFiles } from "@/lib/case-documents";
+import { regionName, todayInIsrael } from "@/i18n/format";
+import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
+import type { Stage } from "@/lib/case-options";
+import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
-import { db } from "@/lib/db";
-import { casePerson, cases } from "@/lib/db/schema";
 import { loadKnowledge } from "@/lib/knowledge-base";
 
 // What the assistant is told before the conversation: who it is and its
@@ -42,68 +41,35 @@ export async function staticPrompt() {
   return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${await loadKnowledge()}\n</knowledge>`;
 }
 
-const yesNo = (value: boolean | null) => (value === null ? null : value ? "yes" : "no");
-
 /**
  * The couple's file, in English (the assistant answers in the user's
- * language regardless), from their onboarding answers and document list.
+ * language regardless), from their onboarding answers and document list,
+ * with today's date for validity and "issued in the last…" periods.
  */
 export async function casePrompt(caseId: string, userId: string) {
-  const [[row], people, { list }, files, checks, t] = await Promise.all([
-    db.select().from(cases).where(eq(cases.id, caseId)).limit(1),
-    db.select().from(casePerson).where(eq(casePerson.caseId, caseId)).orderBy(asc(casePerson.createdAt)),
-    caseDocuments(caseId),
+  const [{ row, people, details, branch }, files, checks, t] = await Promise.all([
+    caseDetails(caseId),
     caseFiles(caseId),
     caseChecks(caseId),
     loadMessages("en"),
   ]);
   const o = t.app.onboarding;
-  const country = (code: string | null) => (code ? regionName(code, "en") : null);
+  const list = listOf(details);
   const me = people.find((p) => p.userId === userId);
-
-  const lines = (entries: [string, string | number | null | undefined][]) =>
-    entries
-      .filter(([, value]) => value !== null && value !== undefined && value !== "")
-      .map(([label, value]) => `- ${label}: ${value}`)
-      .join("\n");
 
   const person = (p: (typeof people)[number]) => {
     const heading = `${p.name} (${p.isIsraeli ? "the Israeli partner" : "the foreign partner"}${
       p.userId === userId ? ", the person you're talking with" : ""
     })`;
-    const facts = lines([
-      ["Gender", o.genders[p.gender as keyof typeof o.genders]],
-      ["Israeli status", p.israeliStatus && o.israeliStatuses[p.israeliStatus as keyof typeof o.israeliStatuses]],
-      ["Married before", o.previousMarriageOptions[p.previousMarriages as keyof typeof o.previousMarriageOptions]],
-      ["Lived outside Israel in recent years", yesNo(p.livedAbroad)],
-      ["Nationality", country(p.nationality)],
-      ["Country of birth", country(p.birthCountry)],
-      ["Other countries lived in as an adult", p.countriesLived && (p.countriesLived.map(country).join(", ") || "none")],
-      ["Where they are now", p.location && o.locations[p.location as keyof typeof o.locations]],
-      ["Name ever changed", yesNo(p.nameChanged)],
-      ["Children from a previous relationship", yesNo(p.hasChildren)],
-      ["Of those, under 18 and moving to Israel", yesNo(p.childrenMoving)],
-      [
-        "The other parent of those children",
-        p.otherParents?.map((v) => o.otherParentOptions[v as keyof typeof o.otherParentOptions]).join("; "),
-      ],
-    ]);
-    return `${heading}\n${facts}`;
+    return `${heading}\n${lines(personLines(p.isIsraeli ? details.israeli : details.foreign, t))}`;
   };
 
-  const relationship = row
-    ? lines([
-        ["Relationship", o.relationships[row.relationship as keyof typeof o.relationships]],
-        ["Where they married", row.marriagePlace && o.marriagePlaces[row.marriagePlace as keyof typeof o.marriagePlaces]],
-        ["Country of the marriage", country(row.marriageCountry)],
-        ["Live together", yesNo(row.livingTogether)],
-        ["Together since", row.togetherSince],
-        ["Children together", yesNo(row.childrenTogether)],
-        ["Misrad Hapnim branch", row.branch ? o.branches[row.branch as keyof typeof o.branches] : "not known yet"],
-        ["Stage in the process", o.stages[row.stage as keyof typeof o.stages]],
-        ["Document checks", row.fileCheck ? "included (they bought Full file check)" : "not included (they come with Full file check)"],
-      ])
-    : "";
+  const relationship = lines([
+    ...relationshipLines(details.relationship, branch, t),
+    // Checked by parseOnboarding when the case was created (see lib/case-documents.ts).
+    ["Stage in the process", o.stages[row.stage as Stage]],
+    ["Document checks", row.fileCheck ? "included (they bought Full file check)" : "not included (they come with Full file check)"],
+  ]);
 
   const uploaded = new Set(files.map((f) => f.documentKey));
   // Only the check's findings, never how documents are checked: the chat doesn't know that.
@@ -133,14 +99,23 @@ export async function casePrompt(caseId: string, userId: string) {
       const text = t.app.documents.items[d.id];
       const where = d.country ? regionName(d.country, "en") : "";
       const title = text.title.replace("{country}", where);
-      const flags = [d.optional && "optional", uploaded.has(d.key) ? "uploaded" : "not uploaded yet", checked(d.key)]
+      const description = text.description.replace("{country}", where);
+      const flags = [
+        d.optional && "optional",
+        d.copies && `bring ${d.copies} copies`,
+        d.mayNeedTranslation && "may need a translation",
+        uploaded.has(d.key) ? "uploaded" : "not uploaded yet",
+        checked(d.key),
+      ]
         .filter(Boolean)
         .join(", ");
-      return `- ${title} (${flags})`;
+      return `- ${title}: ${description} (${flags})`;
     })
     .join("\n");
 
   return `<couple_file>
+Today's date: ${todayInIsrael()}
+
 You're talking with ${me?.name ?? "one of the partners"}. This is their file in Visamo, from what they told the app when they signed up.
 
 ${people.map(person).join("\n\n")}

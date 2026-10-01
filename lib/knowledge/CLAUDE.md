@@ -22,6 +22,53 @@ and the rules for children, the former USSR and the security check.
   document checker reads. Here, say what a document is and what's asked for;
   where offices ask for more, say so in general terms.
 
+## One guide per document
+
+Each document on the documents page has a guide in `documents/<id>.md`, named
+after its catalog id: what it is, how to get it, what it should include, and
+the questions couples ask about it, with their answers. Every guide opens
+with what the messages already have: the title in English and Hebrew, and
+the page's English description:
+
+```md
+# Birth certificate (תעודת לידה)
+
+The original, from the country of birth.
+
+<the guide>
+```
+
+The loader (`lib/knowledge-base.ts`) adds the guides after `documents.md`,
+grouped like the page, moving each one's headings under its group. So:
+
+- **The opening comes from the messages.** Never edit it by hand: change the
+  title or description in `i18n/messages/`, then run `npm run guides:sync`.
+  The tests fail while an opening doesn't match. Write the guide as what
+  comes after the description: don't repeat it.
+- **Only the title is a `#` heading.** Sections start at `##`.
+- **Only what's about that document.** What applies to many documents
+  (copies, the 12 months of center of life, translation) stays in
+  `documents.md` or `certification.md`; a guide links to it.
+- **Variants by country or situation** go under their own `##` heading or
+  bold label (**If you rent:**), so the right one is easy to find.
+- **Questions go last, under `## Questions`**: each question in bold on its
+  own line, its answer below it.
+
+  ```md
+  ## Questions
+
+  **Do both of us need to be named on the lease?**
+  Yes. It isn't written in the procedure, but in practice…
+  ```
+
+  Only questions about this document. A question about many documents ("Do
+  I need to translate everything?") goes in the general file it's about,
+  once, not in each guide.
+- **No guide without facts.** A document nothing is known about yet beyond
+  its page description has only the opening: the models get its title and
+  description. A new document's file is created by `npm run guides:sync`.
+- How to verify the document still never goes here (above).
+
 ## How to write it
 
 - For couples: plain words, second person where it helps, no jargon without

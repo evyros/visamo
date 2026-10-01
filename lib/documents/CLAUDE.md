@@ -48,6 +48,11 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
 - **Every document has messages** in `i18n/messages/en.json` and `he.json`,
   under `app.documents.items.<id>` (`title`, `description`). A document with
   `each` has `{country}` in its title. The tests check this.
+- **Every document has a guide** in `lib/knowledge/documents/<id>.md`: the
+  full picture for the chat and the checker, beyond the page's short
+  description. `npm run guides:sync` creates it with its title and
+  description; a document with nothing known about it yet keeps only that.
+  Never write a guide from guesses. See `lib/knowledge/CLAUDE.md`.
 - **A new kind of case gets a new scenario.** Don't edit an existing scenario
   to fit a new rule; its recorded list is how a change is reviewed.
 - **Set `verified: true`** only when a person checked the entry against its

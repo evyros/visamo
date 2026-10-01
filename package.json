@@ -12,7 +12,8 @@
     "db:studio": "drizzle-kit studio",
     "test": "vitest run",
     "catalog:lock": "UPDATE_CATALOG_LOCK=1 vitest run lib/documents/catalog.test.ts",
-    "prompts:lock": "UPDATE_PROMPTS_LOCK=1 vitest run lib/prompts.test.ts"
+    "prompts:lock": "UPDATE_PROMPTS_LOCK=1 vitest run lib/prompts.test.ts",
+    "guides:sync": "SYNC_GUIDES=1 vitest run lib/knowledge-base.test.ts"
   },
   "dependencies": {
     "@freemius/checkout": "^1.5.1",

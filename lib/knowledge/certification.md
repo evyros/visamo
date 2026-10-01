@@ -2,15 +2,11 @@
 
 ## Where you married
 
-- **In Israel, through the rabbinate or another religious court:** the
-  marriage is already registered. The Israeli certificate needs no
-  certification or translation.
-- **In another country:** the foreign marriage certificate, certified by that
-  country (below), translated if needed (below), and registered in Israel.
-- **Online (for example, through Utah):** the certificate is issued in
-  English by a Utah county. The apostille comes from the **Utah Lieutenant
-  Governor's office**, not from the country you were in during the ceremony.
-  Israel registers these marriages since a Supreme Court ruling in 2022.
+A marriage in Israel, through the rabbinate or another religious court, is
+already registered: its certificate needs no certification or translation. A
+certificate from another country, or from an online marriage, is certified
+and, if needed, translated (below). The marriage certificate's description
+has the details.
 
 ## Apostille or consular legalization
 

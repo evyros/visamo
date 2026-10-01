@@ -2,7 +2,8 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { regionName } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
-import type { CaseDetails, PersonInput } from "@/lib/case-options";
+import type { BranchCode, CaseDetails, PersonInput } from "@/lib/case-options";
+import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import type { ContentPart, ModelMessage } from "@/lib/chat/openrouter";
 import type { RequiredDocument } from "@/lib/documents/build";
 import type { DocumentCheck } from "@/lib/documents/checks";
@@ -45,38 +46,16 @@ export async function staticCheckPrompt() {
   return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${await loadKnowledge()}\n</knowledge>`;
 }
 
-const yesNo = (value: boolean | null) => (value === null ? null : value ? "yes" : "no");
-
 /**
- * The document and the couple's details it's checked against, in English.
- * No dates in it, so its hash (contextHash) only changes when the details do.
+ * The document and the couple's details it's checked against, in English:
+ * every onboarding answer and the branch, as the chat gets them, but not the
+ * stage, which doesn't change what a document needs. No dates in it, so its
+ * hash (contextHash) only changes when the details do.
  */
-export function checkContext(details: CaseDetails, item: RequiredDocument, t: Messages) {
-  const o = t.app.onboarding;
-  const country = (code: string | null) => (code ? regionName(code, "en") : null);
-  const lines = (entries: [string, string | number | null | undefined][]) =>
-    entries
-      .filter(([, value]) => value !== null && value !== undefined && value !== "")
-      .map(([label, value]) => `- ${label}: ${value}`)
-      .join("\n");
-
+export function checkContext(details: CaseDetails, branch: BranchCode | null, item: RequiredDocument, t: Messages) {
   const person = (p: PersonInput) =>
-    `${p.name} (${p.isIsraeli ? "the Israeli partner" : "the foreign partner"})\n${lines([
-      ["Gender", o.genders[p.gender]],
-      ["Israeli status", p.israeliStatus && o.israeliStatuses[p.israeliStatus]],
-      ["Married before", o.previousMarriageOptions[p.previousMarriages]],
-      ["Nationality", country(p.nationality)],
-      ["Country of birth", country(p.birthCountry)],
-      ["Name ever changed", yesNo(p.nameChanged)],
-    ])}`;
-
-  const r = details.relationship;
-  const couple = lines([
-    ["Relationship", o.relationships[r.relationship]],
-    ["Where they married", r.marriagePlace && o.marriagePlaces[r.marriagePlace]],
-    ["Country of the marriage", country(r.marriageCountry)],
-    ["Together since", r.togetherSince],
-  ]);
+    `${p.name} (${p.isIsraeli ? "the Israeli partner" : "the foreign partner"})\n${lines(personLines(p, t))}`;
+  const couple = lines(relationshipLines(details.relationship, branch, t));
 
   const text = t.app.documents.items[item.id];
   const where = item.country ? regionName(item.country, "en") : "";

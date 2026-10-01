@@ -71,3 +71,8 @@ export function formatDateTime(date: Date, locale: Locale) {
     timeZone: "Asia/Jerusalem",
   }).format(date);
 }
+
+/** Today in Israel, `yyyy-mm-dd`, for the models: the server runs in UTC, and the couples are in Israel. */
+export function todayInIsrael(now = new Date()) {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jerusalem" }).format(now);
+}

@@ -1,6 +1,6 @@
 import "server-only";
 import { and, asc, eq, isNull } from "drizzle-orm";
-import type { CaseDetails, PersonInput, RelationshipInput } from "./case-options";
+import type { BranchCode, CaseDetails, PersonInput, RelationshipInput } from "./case-options";
 import { buildDocumentList } from "./documents/build";
 import { db } from "./db";
 import { caseFile, casePerson, cases, user } from "./db/schema";
@@ -41,7 +41,7 @@ function relationshipOf(c: typeof cases.$inferSelect): RelationshipInput {
   } satisfies Row<RelationshipInput> as RelationshipInput;
 }
 
-/** The case's row, its two people's rows, and its answers by role. */
+/** The case's row, its two people's rows, its answers by role, and its branch (null until they know it). */
 export async function caseDetails(caseId: string) {
   const [[row], people] = await Promise.all([
     db.select().from(cases).where(eq(cases.id, caseId)).limit(1),
@@ -55,7 +55,7 @@ export async function caseDetails(caseId: string) {
     israeli: personOf(israeli),
     foreign: personOf(foreign),
   };
-  return { row, people, details };
+  return { row, people, details, branch: row.branch as BranchCode | null };
 }
 
 /** The document list for a case's answers. */

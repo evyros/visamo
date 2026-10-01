@@ -1,4 +1,5 @@
 import { getAppLocale } from "@/i18n/app-locale";
+import { todayInIsrael } from "@/i18n/format";
 import { format, loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { CHECK_MODEL, completeJson, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
@@ -37,9 +38,6 @@ type ErrorCode =
   | "failed";
 const fail = (error: ErrorCode, status: number) => Response.json({ error }, { status });
 
-/** Today in Israel, yyyy-mm-dd. */
-const today = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jerusalem" }).format(new Date());
-
 /**
  * The model's answer, asked for once more if it's malformed or its rating
  * doesn't fit its findings. Each call goes into `calls` as it's made, so a
@@ -77,7 +75,7 @@ export async function POST(request: Request) {
   const documentKey = typeof body?.documentKey === "string" ? body.documentKey : "";
   if (!documentKey) return fail("invalid", 400);
 
-  const [{ fileCheck }, { details }, allFiles] = await Promise.all([
+  const [{ fileCheck }, { details, branch }, allFiles] = await Promise.all([
     checkBalance(caseId),
     caseDetails(caseId),
     caseFiles(caseId),
@@ -91,7 +89,7 @@ export async function POST(request: Request) {
   if (files.length === 0) return fail("noDocument", 400);
 
   const started = performance.now();
-  const context = checkContext(details, item, await loadMessages("en"));
+  const context = checkContext(details, branch, item, await loadMessages("en"));
   const run = {
     caseId,
     documentKey,
@@ -135,7 +133,7 @@ export async function POST(request: Request) {
       }
       spent = true;
       const answer = await ask(
-        await checkMessages({ context, check, files: prepared.parts, today: today() }),
+        await checkMessages({ context, check, files: prepared.parts, today: todayInIsrael() }),
         measured.calls,
       );
       result = answer.result;

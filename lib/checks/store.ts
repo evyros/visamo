@@ -154,7 +154,7 @@ export type ItemCheck = {
 
 /** Every list item's check, by item key. */
 export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>> {
-  const [{ details }, files, rows, t] = await Promise.all([
+  const [{ details, branch }, files, rows, t] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
     // Newest first, so an item's first finished run is its result. Failed runs are history only.
@@ -179,7 +179,7 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
       : null;
     const fileIds = row?.fileIds ?? [];
     const current = files.filter((f) => f.documentKey === item.key).map((f) => f.id);
-    const contextFresh = !!check && row?.contextHash === contextHash(checkContext(details, item, t), check);
+    const contextFresh = !!check && row?.contextHash === contextHash(checkContext(details, branch, item, t), check);
     checks.set(item.key, {
       checkable: !!check,
       running: mine.some((r) => r.check.state === "running" && r.check.startedAt.getTime() > expired),

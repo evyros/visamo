@@ -11,8 +11,10 @@ const nextConfig: NextConfig = {
   },
   outputFileTracingIncludes: {
     "/file/documents": ["./node_modules/@hyzyla/pdfium/dist/pdfium.wasm"],
-    // The chat assistant reads the knowledge base at run time (lib/chat/prompt.ts).
-    "/api/chat": ["./lib/knowledge/*.md"],
+    // The chat assistant and the document checker read the knowledge base at
+    // run time (lib/knowledge-base.ts).
+    "/api/chat": ["./lib/knowledge/**/*.md"],
+    "/api/documents/check": ["./lib/knowledge/**/*.md"],
   },
 };
 

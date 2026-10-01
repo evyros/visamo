@@ -13,7 +13,10 @@ import { DOCUMENT_ALIASES, type DocumentId } from "./catalog";
 //                good" from "can be improved".
 //
 // Written in English, for the model. A line can be stricter or more detailed
-// than lib/knowledge, but never contradict it. Changing this file doesn't
+// than lib/knowledge, but never contradict it. No line checks a document
+// against another one (a name against the passport or ID, say): the checker
+// sees one document at a time. Checking against the couple's details in the
+// file is fine. Changing this file doesn't
 // change anyone's list, so it needs no catalog version.
 //
 // Every catalog document has an entry, or the build fails. "notYet" is the
@@ -74,8 +77,6 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  // DRAFT: the requirements are from lib/knowledge (§ד.2.ו). The contradiction
-  // check and the recommendations about gaps are additions to review.
   relationshipStory: {
     required: [
       "It is a letter about this couple's relationship, and it names both partners as they appear in the file.",
@@ -95,7 +96,6 @@ export const checks = {
   securityCv: "notYet",
   israeliId: "notYet",
   israeliPhotos: "notYet",
-  // DRAFT, from lib/knowledge only: replace with how it's verified in practice.
   foreignPassport: {
     required: [
       "It is a passport of the foreign partner, and the name on it matches the foreign partner's name in the file.",
@@ -110,7 +110,21 @@ export const checks = {
   },
   foreignPhotos: "notYet",
   foreignStayExplanation: "notYet",
-  foreignBirthCertificate: "notYet",
+  foreignBirthCertificate: {
+    required: [
+      "It is a birth certificate, and the person it's for is the foreign partner.",
+      "It is issued by the foreign partner's country of birth in the file, by today's borders. A certificate from the USSR fits a birth country that was a Soviet republic (Kyiv in the Soviet Union is Ukraine).",
+      "The sex on it fits the foreign partner's gender in the file.",
+      "The date and place of birth are on it and readable.",
+      "It carries the certification the file says it needs (an apostille or consular legalization), in the same file. An original from the former USSR issued up to 1998 needs none; one issued later, including a new copy of an old record, does.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "The apostille or legalization pages are scanned together with the certificate, in order.",
+      "Every side or page with print or a stamp on it is included, not only the front.",
+      "It is scanned straight and in color, readable in full, with nothing cut off at the edges.",
+    ],
+  },
   foreignNameChange: "notYet",
   marriageCertificateIsrael: "notYet",
   marriageCertificateAbroad: "notYet",
@@ -118,7 +132,6 @@ export const checks = {
   recommendationLetters: "notYet",
   jointLivingEvidence: "notYet",
   jointChildrenBirthCertificates: "notYet",
-  // DRAFT, from lib/knowledge only: replace with how it's verified in practice.
   foreignCivilStatus: {
     required: [
       "It states the foreign partner's civil status, and the name on it matches the foreign partner's name in the file.",

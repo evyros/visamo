@@ -710,7 +710,7 @@
         },
         {
           "area": "תשלומים",
-          "plain": "התשלום מתבצע דרך [ספק סליקה]. אנחנו לא רואים ולא שומרים את מספר הכרטיס.",
+          "plain": "התשלום מתבצע דרך Freemius. אנחנו לא רואים ולא שומרים את מספר הכרטיס.",
           "technical": "PCI-DSS-compliant processor; Visamo stores only a payment token and the receipt."
         },
         {

@@ -3,6 +3,24 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v13 — 2026-10-01
+
+**What changed:** Renamed the affidavits by who they're for, following
+`statusApplicationMarried` / `statusApplicationCommonLaw`:
+`israeliAffidavit` → `israeliAffidavitMarried`, `foreignAffidavit` →
+`foreignAffidavitMarried`, `commonLawAffidavit` → `affidavitCommonLaw`. No
+aliases: there are no real users yet, so nothing saved under the old ids is
+kept.
+
+**Why:** Since v11 the AS/6 affidavits are for married couples only; the
+names didn't say so.
+
+**Source:** Product decision.
+
+**Lists that changed:** Every married scenario: +israeliAffidavitMarried
++foreignAffidavitMarried -israeliAffidavit -foreignAffidavit. commonLawLivingTogether,
+commonLawApart: +affidavitCommonLaw -commonLawAffidavit.
+
 ## v12 — 2026-10-01
 
 **What changed:** New `signAtAppointment` field, set on `commonLawAffidavit`:

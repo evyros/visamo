@@ -29,10 +29,10 @@ export const checks = {
   statusApplicationMarried: "notYet",
   statusApplicationCommonLaw: "notYet",
   entryPermitApplication: "notYet",
-  israeliAffidavit: "notYet",
-  foreignAffidavit: "notYet",
+  israeliAffidavitMarried: "notYet",
+  foreignAffidavitMarried: "notYet",
   // From the form (5.2.0009_a) and how it's signed: at the appointment, in front of the clerk.
-  commonLawAffidavit: {
+  affidavitCommonLaw: {
     required: [
       "It is the common-law affidavit form, titled \"בקשתי בהתאם לנוהל בני זוג על סמך חיים משותפים - תצהיר\", with the whole page: all 13 statements and the signature section.",
       "The Israeli partner's full name and ID number (תעודת זהות) are filled in.",

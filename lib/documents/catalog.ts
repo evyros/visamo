@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 12;
+export const CATALOG_VERSION = 13;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -107,7 +107,7 @@ export const documents = [
     verified: true,
   },
   {
-    id: "israeliAffidavit",
+    id: "israeliAffidavitMarried",
     mayNeedTranslation: false,
     owner: "israeli",
     category: "forms",
@@ -116,7 +116,7 @@ export const documents = [
     verified: true,
   },
   {
-    id: "foreignAffidavit",
+    id: "foreignAffidavitMarried",
     mayNeedTranslation: false,
     owner: "foreign",
     category: "forms",
@@ -126,7 +126,7 @@ export const documents = [
   },
   {
     // One declaration both partners sign, instead of the two AS/6 affidavits.
-    id: "commonLawAffidavit",
+    id: "affidavitCommonLaw",
     mayNeedTranslation: false,
     owner: "couple",
     category: "forms",

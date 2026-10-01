@@ -30,8 +30,8 @@ describe("buildDocumentList", () => {
   it("builds the whole list for a couple married abroad", () => {
     expect(keys("marriedInCyprus")).toEqual([
       "statusApplicationMarried",
-      "israeliAffidavit",
-      "foreignAffidavit",
+      "israeliAffidavitMarried",
+      "foreignAffidavitMarried",
       "relationshipStory",
       "israeliId",
       "israeliPhotos",
@@ -57,7 +57,7 @@ describe("buildDocumentList", () => {
   it("builds the whole list for common-law partners living together", () => {
     expect(keys("commonLawLivingTogether")).toEqual([
       "statusApplicationCommonLaw",
-      "commonLawAffidavit",
+      "affidavitCommonLaw",
       "relationshipStory",
       "israeliId",
       "israeliPhotos",
@@ -95,9 +95,9 @@ describe("buildDocumentList", () => {
 
   it("gives married couples an affidavit each, and common-law couples one together", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
-      const affidavits = keys(name).filter((k) => k.endsWith("Affidavit") && k !== "landlordAffidavit");
+      const affidavits = keys(name).filter((k) => /affidavit/i.test(k) && k !== "landlordAffidavit");
       const married = scenarios[name].relationship.relationship === "married";
-      expect(affidavits, name).toEqual(married ? ["israeliAffidavit", "foreignAffidavit"] : ["commonLawAffidavit"]);
+      expect(affidavits, name).toEqual(married ? ["israeliAffidavitMarried", "foreignAffidavitMarried"] : ["affidavitCommonLaw"]);
     }
   });
 

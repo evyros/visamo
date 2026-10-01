@@ -13,7 +13,7 @@ import { documents, type Category, type DocumentId } from "@/lib/documents/catal
  * version: lib/prompts.test.ts fails until it's raised and recorded
  * (npm run prompts:lock).
  */
-export const KNOWLEDGE_VERSION = 3;
+export const KNOWLEDGE_VERSION = 4;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [
@@ -50,12 +50,16 @@ export function guideOpening(id: DocumentId, en: Messages, he: Messages) {
   return `# ${general(text.title)} (${general(he.app.documents.items[id].title)})\n\n${general(text.description)}\n`;
 }
 
-/** The documents' guides, grouped like the documents page, each one's headings moved under its group. */
+/**
+ * The documents' guides, grouped like the documents page, each one's headings
+ * moved under its group. Their links go up a folder (`../certification.md`),
+ * so they work in an editor; the models read them as the other files'.
+ */
 async function documentGuides(dir: string) {
   const sections = new Map<Category, string[]>();
   for (const doc of documents) {
     const guide = (await readFile(path.join(dir, "documents", `${doc.id}.md`), "utf8")).trim();
-    sections.set(doc.category, [...(sections.get(doc.category) ?? []), guide.replace(/^#/gm, "###")]);
+    sections.set(doc.category, [...(sections.get(doc.category) ?? []), guide.replace(/^#/gm, "###").replaceAll("](../", "](")]);
   }
   return [...sections].map(([category, guides]) => `## ${CATEGORY_HEADINGS[category]}\n\n${guides.join("\n\n")}`);
 }

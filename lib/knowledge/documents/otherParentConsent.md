@@ -6,7 +6,7 @@ When the other parent is alive and has parental rights: their consent, both
 to the children moving to Israel and to them getting Israeli citizenship or
 permanent residency (AS/6 asks for consent to the status; the ministry asks
 the other parent about both). It comes together with an official document
-with their current address (see [children.md](children.md)).
+with their current address (see [children.md](../children.md)).
 
 The other parent can give it:
 
@@ -25,4 +25,4 @@ ways:
 - **Through a local notary:** they sign a consent in front of a notary where
   they live, and the document gets an apostille (or consular legalization,
   in a country outside the Apostille Convention; see
-  [certification.md](certification.md)).
+  [certification.md](../certification.md)).

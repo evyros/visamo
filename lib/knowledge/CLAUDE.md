@@ -45,12 +45,44 @@ grouped like the page, moving each one's headings under its group. So:
   title or description in `i18n/messages/`, then run `npm run guides:sync`.
   The tests fail while an opening doesn't match. Write the guide as what
   comes after the description: don't repeat it.
-- **Only the title is a `#` heading.** Sections start at `##`.
+- **Every guide follows the same skeleton**, in this order. Leave out a
+  section with nothing to say in it; never add an empty one, and never add
+  other `##` sections.
+
+  ```md
+  # <title> (<Hebrew title>)
+
+  <page description>
+
+  <What it is, and when it's needed: a short paragraph, no heading.>
+
+  ## How to get it
+
+  <Who issues it, where and how to apply, how long it takes.>
+
+  ## What it should include
+
+  <What has to be on it or attached to it: names, dates, signatures,
+  certification, copies.>
+
+  ## If you don't have it
+
+  <The alternatives, and what makes that case strong.>
+
+  ## Questions
+
+  <The questions couples ask about it, with their answers.>
+  ```
+
+- **Only the title is a `#` heading.** The sections are the `##` headings
+  above.
 - **Only what's about that document.** What applies to many documents
   (copies, the 12 months of center of life, translation) stays in
-  `documents.md` or `certification.md`; a guide links to it.
-- **Variants by country or situation** go under their own `##` heading or
-  bold label (**If you rent:**), so the right one is easy to find.
+  `documents.md` or `certification.md`; a guide links to it, one folder up
+  (`[certification.md](../certification.md)`). The tests check every link.
+- **Variants by country or situation** go inside the section they change,
+  under a `###` heading (`### United States`) or a bold label (**If you
+  rent:**), so the right one is easy to find.
 - **Questions go last, under `## Questions`**: each question in bold on its
   own line, its answer below it.
 

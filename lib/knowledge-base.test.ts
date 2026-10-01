@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { loadMessages } from "@/i18n/messages";
@@ -45,6 +45,8 @@ describe("the document guides", () => {
       const text = readFileSync(`${DIR}/${id}.md`, "utf8");
       expect(text.startsWith(guideOpening(id, en, he)), "Run npm run guides:sync").toBe(true);
       expect(bodyOf(text), "Only the title is a # heading: sections start at ##").not.toMatch(/^# /m);
+      const broken = [...text.matchAll(/\]\(([^)]+\.md)\)/g)].map(([, to]) => to).filter((to) => !existsSync(`${DIR}/${to}`));
+      expect(broken, "Link to another knowledge file as ../<file>.md").toEqual([]);
     });
   }
 });

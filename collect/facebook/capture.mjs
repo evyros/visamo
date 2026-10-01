@@ -1,17 +1,20 @@
 // Records the data Facebook sends the browser while you browse a group.
 //
-//   node facebook/capture.mjs feed  --group <id|slug|url> [--query "הליך מדורג"] [--scrolls 150] [--resume]
-//   node facebook/capture.mjs posts [--limit 40]
+//   node facebook/capture.mjs feed  --group <id|slug|url> [--query "הליך מדורג"] [--scrolls 150] [--resume] [--comments]
+//   node facebook/capture.mjs posts [--limit 40] [--post <id>,<id>]
 //
 // `feed` scrolls the group (or the group's search results for --query). It saves
 // where it stopped in data/facebook/cursors/; `--resume` continues from there
 // instead of scrolling from the top again.
-// `posts` opens each post found so far (run parse.mjs first) and expands its comments.
+// `--comments` also loads each new post's comments as soon as the feed shows it.
+// `posts` loads the comments of every post found so far that doesn't have them yet
+// (run parse.mjs first). Comments are loaded by comments.mjs, without opening posts.
 // Each response becomes one file in data/facebook/raw/<run>/; parse.mjs turns them into rows.
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline/promises";
 import { chromium } from "playwright";
+import { createCommentLoader } from "./comments.mjs";
 import {
   CURSORS_DIR,
   EXPANDED_FILE,
@@ -27,7 +30,9 @@ import {
 const args = parseArgs(process.argv.slice(2));
 const mode = args._[0];
 if (mode !== "feed" && mode !== "posts") {
-  console.error("usage: capture.mjs feed --group <id|url> [--query q] [--scrolls n] [--resume] | capture.mjs posts [--limit n]");
+  console.error(
+    "usage: capture.mjs feed --group <id|url> [--query q] [--scrolls n] [--resume] [--comments] | capture.mjs posts [--limit n]",
+  );
   process.exit(1);
 }
 
@@ -46,6 +51,11 @@ function record({ body, ...entry }) {
   if (!CONTENT.test(body)) {
     skipped++;
     return;
+  }
+  if (mode === "feed" && args.comments) {
+    // Links to this group's posts (JSON-escaped: groups\/<group>\/permalink\/<id>); the page
+    // also links to posts elsewhere, which aren't collected.
+    for (const m of body.matchAll(postLink)) if (!expanded.has(m[1])) waiting.add(m[1]);
   }
   captured++;
   fs.mkdirSync(runDir, { recursive: true });
@@ -109,6 +119,29 @@ const context = await chromium.launchPersistentContext(PROFILE_DIR, {
   args: ["--start-maximized"],
 });
 const page = context.pages()[0] ?? (await context.newPage());
+const comments = createCommentLoader(page);
+
+// Posts whose comments were loaded already (by `posts` or `feed --comments`).
+const expanded = new Set(fs.existsSync(EXPANDED_FILE) ? JSON.parse(fs.readFileSync(EXPANDED_FILE, "utf8")) : []);
+const waiting = new Set(); // Group posts seen in this `feed --comments` run, comments not loaded yet.
+const groupSlug = String(args.group ?? "").match(/groups\/([^/?#]+)/)?.[1] ?? String(args.group ?? "");
+const postLink = new RegExp(`groups\\\\?/${groupSlug.replace(/\W/g, "\\$&")}\\\\?/(?:permalink|posts)\\\\?/(\\d+)`, "g");
+
+async function loadComments(postId, label) {
+  const { loaded, total } = await comments.load(postId);
+  expanded.add(postId);
+  fs.writeFileSync(EXPANDED_FILE, JSON.stringify([...expanded]));
+  const short = total !== null && loaded < total ? "  (fewer than Facebook's count)" : "";
+  console.log(`${label}post ${postId}: ${loaded}/${total ?? "?"} comments${short}`);
+}
+
+async function loadWaitingComments() {
+  for (const postId of [...waiting]) {
+    waiting.delete(postId);
+    await loadComments(postId, "\n");
+    await sleep(between(3000, 8000));
+  }
+}
 
 page.on("response", async (res) => {
   if (!res.url().includes("/api/graphql")) return;
@@ -117,6 +150,7 @@ page.on("response", async (res) => {
   try {
     name = new URLSearchParams(request.postData() ?? "").get("fb_api_req_friendly_name") ?? "";
   } catch {}
+  comments.observe(request, name);
   let body;
   try {
     body = await res.text();
@@ -169,6 +203,7 @@ async function captureFeed() {
     ? `${base}/search/?q=${encodeURIComponent(args.query)}`
     : `${base}/?sorting_setting=CHRONOLOGICAL`;
   await open(url);
+  if (args.comments) await comments.ready();
 
   const maxScrolls = Number(args.scrolls ?? 150);
   if (args.resume) return resumeFeed(maxScrolls);
@@ -180,6 +215,7 @@ async function captureFeed() {
     if (i > 0 && i % 25 === 0) await sleep(between(20000, 40000)); // Read a bit, like a person.
     idle = captured === before ? idle + 1 : 0;
     process.stdout.write(`\rscroll ${i + 1}/${maxScrolls} · ${captured} responses`);
+    if (args.comments) await loadWaitingComments();
   }
   process.stdout.write("\n");
 }
@@ -221,6 +257,7 @@ async function resumeFeed(maxPages) {
     saveCursor(template.name, pageInfo, reach);
     cursor = pageInfo;
     process.stdout.write(`\rpage ${i + 1}/${maxPages} · back to ${reach?.slice(0, 10) ?? "?"} · ${captured} responses`);
+    if (args.comments) await loadWaitingComments();
     if (pageInfo.has_next_page === false) {
       process.stdout.write("\nReached the end of the feed.");
       break;
@@ -231,56 +268,25 @@ async function resumeFeed(maxPages) {
   process.stdout.write("\n");
 }
 
-// Matches "View more comments", "View 12 replies", "הצגת עוד תגובות", "הצג 3 תשובות"…
-// but not "Comment" / "Hide replies".
-const MORE = /(view|see).*(comment|repl)|(הצג|ראה|צפה).*(תגוב|תשוב)/i;
-
-async function expandComments() {
-  // Default sorting ("Most relevant") hides comments; ask for all of them.
-  try {
-    await page.getByRole("button", { name: /most relevant|newest|הרלוונטיות|החדשות/i }).first().click({ timeout: 3000 });
-    await sleep(between(800, 1500));
-    await page.getByRole("menuitem", { name: /all comments|כל התגובות/i }).first().click({ timeout: 3000 });
-    await sleep(between(2000, 3500));
-  } catch {
-    // No sorting menu on this post.
-  }
-
-  for (let round = 0; round < 80; round++) {
-    const button = page.getByRole("button", { name: MORE }).first();
-    if ((await button.count()) === 0) {
-      await page.mouse.wheel(0, between(800, 1600));
-      await sleep(between(1500, 2500));
-      if ((await page.getByRole("button", { name: MORE }).count()) === 0) break;
-      continue;
-    }
-    try {
-      await button.scrollIntoViewIfNeeded({ timeout: 3000 });
-      await button.click({ timeout: 3000 });
-    } catch {
-      await page.mouse.wheel(0, 600);
-    }
-    await sleep(between(1500, 3500));
-  }
-}
-
 async function capturePosts() {
-  // Newest first, so a limited run expands the latest discussions.
+  // Newest first, so a limited run covers the latest discussions.
   const posts = readPosts()
-    .filter((p) => p.url)
+    .filter((p) => p.group)
     .sort((a, b) => (b.posted_at ?? "").localeCompare(a.posted_at ?? ""));
   if (!posts.length) throw new Error("No posts yet: run `capture.mjs feed` and then `parse.mjs` first.");
-  const expanded = new Set(fs.existsSync(EXPANDED_FILE) ? JSON.parse(fs.readFileSync(EXPANDED_FILE, "utf8")) : []);
-  const todo = posts.filter((p) => !expanded.has(p.id)).slice(0, Number(args.limit ?? 40));
-  console.log(`${todo.length} posts to expand (${expanded.size} done before)`);
+  // --post <id>[,<id>…] (re)loads just those posts, even if they were loaded before.
+  const only = args.post ? new Set(String(args.post).split(",")) : null;
+  const todo = only
+    ? posts.filter((p) => only.has(p.id))
+    : posts.filter((p) => !expanded.has(p.id)).slice(0, Number(args.limit ?? 40));
+  console.log(`${todo.length} posts to load comments for (${expanded.size} done before)`);
+  if (!todo.length) return;
 
+  await open(`https://www.facebook.com/groups/${todo[0].group}`);
+  await comments.ready();
   for (const [i, post] of todo.entries()) {
-    console.log(`[${i + 1}/${todo.length}] ${post.url}`);
-    await open(post.url);
-    await expandComments();
-    expanded.add(post.id);
-    fs.writeFileSync(EXPANDED_FILE, JSON.stringify([...expanded]));
-    await sleep(between(15000, 35000));
+    await loadComments(post.id, `[${i + 1}/${todo.length}] `);
+    await sleep(between(3000, 8000));
   }
 }
 

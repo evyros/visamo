@@ -39,7 +39,24 @@ const passportPhoto: DocumentCheck = {
 };
 
 export const checks = {
-  statusApplicationMarried: "notYet",
+  // From the form (AS/6). It comes in two formats, with the pages in a different order: find each part by its title.
+  statusApplicationMarried: {
+    required: [
+      "It is form AS/6, \"בקשה לקבלת מעמד בישראל לבן זוג זר הנשוי לישראלי\", with the application (the sections \"פרטי המזמין/ה\" and \"פרטי המוזמן/ת\") and the applicants' declaration (\"הצהרת המבקשים\"). Find them by these titles, not by page number: the form comes in two formats.",
+      "One request is marked: permanent residency (בקשה לישיבת קבע) or naturalization (בקשה להתאזרחות).",
+      "The Israeli partner's details are filled in: status (citizen or permanent resident), ID number, family and first name, date of birth, gender, civil status, address and a phone number.",
+      "The foreign partner's details are filled in: passport number and expiry, family and first name, date of birth, gender, civil status, citizenship, address abroad and a phone number.",
+      "If the file says children are moving with the foreign partner, the accompanying minors section (קטינים נלווים) lists them, and whether the other parent's consent is attached is marked.",
+      "The applicants' declaration is signed by both partners, each with their name, ID number and the date.",
+      "The office's parts (received by, the clerk's name, the receipt, \"לשימוש משרדי\") are empty.",
+    ],
+    recommended: [
+      "The people who can give details about the couple are listed, each with their ID number, relation, address and phone.",
+      "Both partners' civil status is marked as married, and the date of marriage is filled in.",
+      "If the file says the foreign partner is in Israel, the date and place of entry and their status in Israel are filled in.",
+      "The details are typed, or handwritten clearly enough to read without guessing.",
+    ],
+  },
   statusApplicationCommonLaw: "notYet",
   // From the form (AS/1, two pages) and lib/knowledge.
   entryPermitApplication: {
@@ -71,10 +88,10 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  // From the form (AS/6, page 4) and how it's signed: in front of a lawyer or registrar.
+  // From the form (AS/6, the Israeli partner's declaration) and how it's signed: in front of a lawyer or registrar.
   israeliAffidavitMarried: {
     required: [
-      "It is the Israeli partner's declaration from form AS/6, titled \"הצהרת בן הזוג המזמין\" (נספח אש6 דף4), with the whole page: the five statements, the explanation lines, the signature line and the confirmation section.",
+      "It is the Israeli partner's declaration from form AS/6, titled \"הצהרת בן הזוג המזמין\" (find it by its title: the form comes in two formats, and the page number differs), with the whole page: the five statements, the explanation lines, the signature line and the confirmation section.",
       "Each of the five statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
       "The place, the date and the Israeli partner's signature are filled in.",
       "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
@@ -336,7 +353,7 @@ export const checks = {
       "It is scanned in full, readable, page by page in order.",
     ],
   },
-  // From the form (AS/6, page 6) and how it's signed: in front of a lawyer or registrar.
+  // From the form (AS/6, the landlord's affidavit) and how it's signed: in front of a lawyer or registrar.
   landlordAffidavit: {
     required: [
       "It is the landlord's affidavit from form AS/6 (נספח אש6), titled \"תצהיר נספח להסכם שכ\"ד - בני זוג\", with the whole page.",

@@ -371,7 +371,7 @@ export const documents = [
     when: { all: ["married", { any: ["livingTogether", "israeliInIsrael"] }] },
     optional: true,
     form: "AS/6",
-    source: "AS/6, page 6 (affidavit annexed to the lease – couples)",
+    source: "AS/6, the landlord's affidavit (affidavit annexed to the lease – couples)",
     verified: true,
   },
   {

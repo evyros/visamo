@@ -116,6 +116,10 @@ grouped like the page, moving each one's headings under its group. So:
   the product owner's experience; write it as "in practice", never hide the
   law.
 - Cite the procedure section when a fact comes from one (5.2.0008 §ד.2.ה).
+- **Point to a part of a form by its title, never its page number.** AS/6
+  comes in two formats, with the pages in a different order and different
+  numbers: name the part by the title printed on it ("הצהרת המבקשים",
+  "הצהרת בן הזוג המזמין").
 - **Name each document the way Misrad Hapnim asks for it**, as the
   documents page titles it ("A joint bank account confirmation", "Payslips"),
   never as a general category ("Shared finances", "Income proof"). Say

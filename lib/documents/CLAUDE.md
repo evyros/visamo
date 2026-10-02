@@ -81,6 +81,9 @@ everything else:
   name in the file is what the couple typed, not necessarily the full legal
   name. Other details from the file, like the nationality or the country of
   birth, are fine to check against.
+- **Name a form's parts by their titles, not page numbers.** AS/6 comes in
+  two formats with the pages in a different order, so a page number would
+  send the checker to the wrong page.
 - Written in English, for the model. Changing it doesn't change anyone's
   list, so it needs no catalog version. Results checked against the old
   text become stale on their own (their hash includes it).

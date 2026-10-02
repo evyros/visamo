@@ -2,9 +2,10 @@
 
 If you rent: an affidavit from your landlord in the ministry's wording (form AS/6), that they own the home and rent it to you, who else lives there, and who pays the bills. Signed in front of a lawyer, together with a scan of the landlord's Teudat Zehut.
 
-If you rent: the landlord's affidavit, page 6 of form AS/6 (נספח אש6 דף 6),
-titled "affidavit annexed to the lease – couples" (תצהיר נספח להסכם שכ"ד -
-בני זוג). In it, the landlord declares that they own the home, that it's
+If you rent: the landlord's affidavit, part of form AS/6, titled "affidavit
+annexed to the lease – couples" (תצהיר נספח להסכם שכ"ד - בני זוג). The form
+comes in two formats, with the pages in a different order: find it by its
+title, not its page number. In it, the landlord declares that they own the home, that it's
 rented to you, who else lives there, and who pays the bills. Not needed if
 you own your home.
 

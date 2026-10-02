@@ -4,7 +4,7 @@ This is for children under 18 from the foreign partner's previous
 relationship who move to Israel with them (5.2.0008 calls them "accompanying
 minors", קטין נלווה). Children who stay behind don't need documents.
 
-## Documents (5.2.0008 §ד.2.י, §ה.2(9); form AS/6, page 2)
+## Documents (5.2.0008 §ד.2.י, §ה.2(9); form AS/6, the application)
 
 For each child: a birth certificate, a passport, and a police certificate
 from age 14. About the other parent, depending on their situation:

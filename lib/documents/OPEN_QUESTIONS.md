@@ -27,7 +27,7 @@ shown to users (`lib/knowledge/`).
 - **Sole custody or sole guardianship?** Without the other parent's consent,
   procedure 5.2.0008 §ה.2(9)י asks for a ruling of sole **custody**
   (משמורת בלעדית) with proof the child lives with the parent. Form AS/6
-  (page 2) asks for sole **guardianship** (אפוטרופסות בלעדית), from a court
+  (in the application, under the children coming along) asks for sole **guardianship** (אפוטרופסות בלעדית), from a court
   ruling or a court-approved divorce agreement. In Israeli law these differ:
   guardianship is the legal parental rights, custody is who the child lives
   with. Which one the office actually asks for is unknown; the knowledge

@@ -5,8 +5,9 @@ A sworn statement in the ministry's wording, that the documents are true and tha
 The Israeli partner's declaration, titled **הצהרת בן הזוג המזמין**
 ("declaration of the inviting partner"), is part of form AS/6, the status
 application for a foreign partner married to an Israeli (5.2.0008 §ד.2.ז).
-It's usually page 3 or 4 of the form (נספח אש6). In it, the Israeli partner declares
-a list of statements about the marriage, and that everything they submit is
+The form comes in two formats, with the pages in a different order: find it
+by its title, not its page number. In it, the Israeli partner declares a
+list of statements about the marriage, and that everything they submit is
 true.
 
 ## How to get it

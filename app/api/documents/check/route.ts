@@ -83,7 +83,7 @@ export async function POST(request: Request) {
   if (!fileCheck) return fail("notIncluded", 402);
   const item = listOf(details).find((d) => d.key === documentKey);
   if (!item) return fail("notFound", 404);
-  const check = checkFor(documentKey);
+  const check = checkFor(documentKey, item.points);
   if (!check) return fail("notCheckable", 400);
   const files = allFiles.filter((f) => f.documentKey === documentKey);
   if (files.length === 0) return fail("noDocument", 400);

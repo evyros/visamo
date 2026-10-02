@@ -39,6 +39,7 @@ export const facts = [
   "foreignNameChanged",
   "foreignDivorced",
   "foreignWidowed",
+  "foreignHasChildren",
   // The foreign partner's children moving to Israel.
   "childrenMoving",
   "otherParentInvolved",
@@ -106,6 +107,8 @@ export function profileOf({ relationship: r, people }: CaseSnapshot): CaseProfil
       foreignNameChanged: !!foreign.nameChanged,
       foreignDivorced: divorced(foreign),
       foreignWidowed: widowed(foreign),
+      // Children from a previous relationship, moving to Israel or not.
+      foreignHasChildren: !!foreign.hasChildren,
 
       childrenMoving: moving,
       // Alive, listed and without a sole-custody order: the ministry writes to them.

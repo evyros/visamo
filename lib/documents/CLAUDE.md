@@ -26,8 +26,12 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
 - `certification.ts` and `countries.ts`: apostille, consular legalization or
   none, from the issuing country; whether a translation may be needed, and
   the languages accepted without one.
-- `build.ts`: `buildDocumentList(case)` → the list. The list is never stored;
-  progress is saved per item `key`.
+- `points.ts`: what an item has to show, by the case, for the few documents
+  whose content depends on it (the civil status: the status now, before the
+  marriage, the children). The card shows them as bullets
+  (`app.documents.points.<point>`), and the check adds a line for each.
+- `build.ts`: `buildDocumentList(case)` → the list, each item with its
+  points. The list is never stored; progress is saved per item `key`.
 - `scenarios.ts`: example couples. Tests check some lists exactly;
   `catalog.lock.json` records every one.
 - `checks.ts`: how the document checker (`lib/checks/`) checks each
@@ -74,7 +78,8 @@ everything else:
   `lib/knowledge/`; how to verify it goes here.
 - **Every document has an entry, or the build fails** (`satisfies
   Record<DocumentId, …>`). A new document gets `"notYet"` until its check is
-  written; it has no Check button until then.
+  written; it has no Check button until then. A document with points has a
+  function of its points instead: a required line for each one.
 - **No comparing documents, and no matching names.** Never write a line
   that checks a document against another document (the checker sees one
   document at a time), or a name on it against the name in the file: the
@@ -91,8 +96,8 @@ everything else:
 ## Changing what couples get: the version
 
 Any change that changes a couple's list needs a new catalog version. That
-includes the catalog, the facts, the country lists and the certification
-rules. Wording in the messages, `source` and `verified` don't.
+includes the catalog, the facts, the points, the country lists and the
+certification rules. Wording in the messages, `source` and `verified` don't.
 `catalog.test.ts` fails when the lists change without a new version, and says
 which scenarios changed. To release a change:
 

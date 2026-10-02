@@ -1,27 +1,40 @@
-# Proof of civil status (אישור מצב אישי)
+# Civil status and children (מצב אישי וילדים)
 
-An official document of the foreign partner's marital status from the country, issued in the last 6 months. Married couples: also one of their status before the marriage.
+What the foreign partner's documents have to show, for the country:
 
-Proof of the foreign partner's civil status (single, divorced, widowed or
-married), from their country (§ד.2.ה). Every couple needs it, including those
-married in Israel.
+What the foreign partner shows about their civil status (single, divorced,
+widowed or married) and their children. Every couple needs it, including
+those married in Israel. What it has to show depends on your case:
 
-- **Not married to each other:** one document of their status now, issued in
-  the last 6 months.
-- **Married to each other:** two. One of their status **before the marriage**
-  (single, divorced or widowed), which shows they were free to marry you. And
-  one of their status **now**, issued in the last 6 months, even if the
-  marriage isn't registered in their country (then it may still say single:
-  see the marriage certificate). A marriage certificate from their own
-  country that shows their status before the marriage replaces the first.
-- **Other countries:** by the procedure, it's asked for from their country.
-  In practice, offices almost always ask for one from each other country
-  they're a citizen of, and each country they lived in for 6 months or more
-  in a row, like the police certificate.
+- **Their status now,** issued in the last 6 months (§ד.2.ה). From their
+  country, and in practice also from each other country they're a citizen
+  of, and each country they lived in for 6 months or more in a row, like the
+  police certificate. Married to each other, it's needed even if the marriage
+  isn't registered in their country: then it may still say single (see the
+  marriage certificate).
+- **Married to each other: their status before the marriage** (single,
+  divorced or widowed), which shows they were free to marry you. From their
+  country. A marriage certificate from their own country that shows their
+  status before the marriage covers it.
+- **Their children from previous relationships,** and who has guardianship
+  of them, or that they have none: from every foreign partner, with children
+  or without.
+
+A divorce decree, or a previous spouse's death certificate, is a document of
+its own, for each previous marriage.
 
 ## How to get it
 
-Many countries don't issue a "civil status certificate" as such. What
+**About your children:** it's an affidavit (תצהיר), "an affidavit about
+children from before the marriage or from a previous marriage, and
+guardianship of the children" (תצהיר לגבי ילדים מרווקות או מנישואין קודמים,
+ואפוטרופסות על הילדים). A lawyer writes it, or you write it and the foreign
+partner signs it in front of a lawyer (עו"ד), who confirms it. Signed abroad,
+it's signed in front of a notary there, and needs that country's
+certification (see [certification.md](../certification.md)).
+
+**About their civil status:** many countries don't issue a "civil status
+certificate" as such. What
 counts is an official document from the foreign partner's country that
 states their status, or that no marriage is registered for them. Each
 country calls it something else, and some have no national document at
@@ -314,6 +327,13 @@ apostille. If you can't get one, use the affidavit (below).
 
 ## What it should include
 
+- **About the children:** each child from before the marriage or from a
+  previous marriage, with their date of birth and who has guardianship of
+  them; or, without children, a statement that they have none. The foreign
+  partner's full name and passport number, their signature, and the lawyer's
+  confirmation with their stamp. Children who stay behind are listed too.
+  Children who move to Israel also need their own documents (see
+  [children.md](../children.md)).
 - **Issued in the last 6 months.** Counted from the date it was issued, or
   from the date an affidavit was signed. Some countries set a shorter validity
   of their own (Bolivia, some Mexican states).
@@ -336,8 +356,8 @@ apostille. If you can't get one, use the affidavit (below).
   doesn't have to accept an affidavit if the country does issue a document:
   the office knows which countries do.
 - **One affidavit for everything:** if the foreign partner can't get one of the
-  documents, one affidavit can declare it all: their status now, and, for a
-  married couple, their status before the marriage.
+  documents, one affidavit can declare it all: their status now, for a married
+  couple their status before the marriage, and their children.
 - **If your marriage certificate is from the foreign partner's country** and
   shows their status before the marriage, it can replace the document of their
   status before the marriage.
@@ -350,10 +370,18 @@ population or civil register, or a record search showing no marriage is
 registered (see the countries above). If there's no way to get one, the
 foreign partner signs a notarized or consular affidavit about their status.
 
-**We're married. Why two documents?**
+**We're married. Why two documents about the status?**
 One shows the foreign partner was free to marry you; the other shows their
 status now. If they can't get one of them, a single affidavit can declare
-both.
+both, and their children too.
+
+**My partner has no children. Do we still need the affidavit about children?**
+Yes. Every foreign partner brings it: without children, it states that they
+have none.
+
+**My partner's children aren't moving to Israel. Do they go in the affidavit?**
+Yes. It's about all their children from before the marriage or a previous
+marriage, and who has guardianship of them.
 
 **Can the embassy of my partner's country in Israel issue it?**
 Some do, but offices have refused documents issued by a foreign embassy in

@@ -64,6 +64,7 @@ export function checkContext(details: CaseDetails, branch: BranchCode | null, it
   const document = lines([
     ["Name", format(text.title, { country: where })],
     ["What it is", format(text.description, { country: where })],
+    ["What it has to show", item.points.length ? item.points.map((p) => t.app.documents.points[p]).join(" ") : null],
     ["Whose", { israeli: "the Israeli partner", foreign: "the foreign partner", couple: "the couple", children: "the children" }[item.owner]],
     ["For the country", item.country && where],
     ["Certification", auth && auth !== "none" ? page.authentication[auth] : "none needed"],

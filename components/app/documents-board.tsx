@@ -34,6 +34,8 @@ export type DocumentItem = {
   key: string;
   title: string;
   description: string;
+  /** What it has to show, by the couple's case, right under the description; empty for most documents. */
+  points: string[];
   /** What to prepare before uploading: certification (with its exemption), translation, copies, signing. */
   requirements: { icon: "shield" | "globe" | "file" | "info"; text: string }[];
   /** Only if it applies to the couple (the description says when). */
@@ -445,6 +447,13 @@ function DocumentCard({
       <div id={bodyId} hidden={!open}>
         <div className="border-t border-line-200 px-4 pt-4 pb-5 sm:px-5">
           <p className="text-[15px] text-slate-700">{item.description}</p>
+          {item.points.length > 0 && (
+            <ul className="mt-2 list-disc space-y-1 ps-5 text-[15px] text-slate-700">
+              {item.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          )}
           {item.requirements.length > 0 && (
             <ul className="mt-3 space-y-1.5">
               {item.requirements.map(({ icon, text }) => (

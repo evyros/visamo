@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 27;
+export const CATALOG_VERSION = 28;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -128,16 +128,6 @@ export const documents = [
     category: "forms",
     when: "married",
     source: `${P8} §ד.2.ז; ${AS6}`,
-    verified: true,
-  },
-  {
-    // Every foreign partner, with children or without: without, it says so.
-    id: "foreignChildrenAffidavit",
-    // Signed in front of a lawyer, possibly abroad.
-    mayNeedTranslation: true,
-    owner: "foreign",
-    category: "forms",
-    source: "Practice, confirmed by the product owner",
     verified: true,
   },
   {
@@ -298,7 +288,8 @@ export const documents = [
 
   // ── Civil status ──
   {
-    // The procedure names the nationality; in practice offices ask every country lived in, like the police certificate.
+    // Civil status and children. The procedure names the nationality; in practice offices ask every
+    // country lived in, like the police certificate. What each item has to show: points.ts.
     id: "foreignCivilStatus",
     mayNeedTranslation: true,
     owner: "foreign",
@@ -594,4 +585,6 @@ export const RETIRED_DOCUMENT_IDS: readonly string[] = [
   "foreignStayExplanation",
   // v25: a duplicate. Common-law couples have no status application of their own: AS/3 or AS/1.
   "statusApplicationCommonLaw",
+  // v28: merged into foreignCivilStatus, the nationality's item: its children point.
+  "foreignChildrenAffidavit",
 ];

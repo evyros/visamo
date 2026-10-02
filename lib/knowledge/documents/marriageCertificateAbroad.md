@@ -43,7 +43,7 @@ To register it, you both go in person to your Misrad Hapnim branch, with:
   copies;
 - the foreign partner's proof of civil status **from before the marriage**,
   certified and, if needed, translated, with copies: it shows they were free to
-  marry (see the proof of civil status);
+  marry (see civil status and children);
 - the Israeli partner's Teudat Zehut and passport, and the foreign partner's
   passport.
 

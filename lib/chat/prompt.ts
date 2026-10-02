@@ -99,7 +99,7 @@ export async function casePrompt(caseId: string, userId: string) {
       const text = t.app.documents.items[d.id];
       const where = d.country ? regionName(d.country, "en") : "";
       const title = text.title.replace("{country}", where);
-      const description = text.description.replace("{country}", where);
+      const description = [text.description.replace("{country}", where), ...d.points.map((p) => t.app.documents.points[p])].join(" ");
       const flags = [
         d.optional && "optional",
         d.copies && `bring ${d.copies} copies`,

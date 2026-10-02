@@ -140,6 +140,11 @@ export const scenarios = {
     ],
   },
   childrenTogether: { relationship: married({ childrenTogether: true }), people: [israeli(), foreign()] },
+  // Common-law, and the foreign partner was divorced: their status now is divorced, not single.
+  commonLawForeignDivorced: {
+    relationship: commonLaw(),
+    people: [israeli(), foreign({ previousMarriages: "divorced" })],
+  },
 } satisfies Record<string, CaseSnapshot>;
 
 export type ScenarioName = keyof typeof scenarios;

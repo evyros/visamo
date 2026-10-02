@@ -1297,10 +1297,6 @@
           "title": "Affidavit of the foreign partner",
           "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
         },
-        "foreignChildrenAffidavit": {
-          "title": "Affidavit about children",
-          "description": "The foreign partner's affidavit, signed in front of a lawyer, about their children from before the marriage or from a previous marriage, and who has guardianship of them. If they have no children, it says so."
-        },
         "affidavitCommonLaw": {
           "title": "Joint affidavit of both partners",
           "description": "A declaration in the ministry's wording for couples applying on the basis of living together: that the details are true, that you'll report any change, and statements about each of you. Both of you sign it at a Misrad Hapnim office."
@@ -1366,8 +1362,8 @@
           "description": "One for each child you have together."
         },
         "foreignCivilStatus": {
-          "title": "Proof of civil status: {country}",
-          "description": "An official document of the foreign partner's marital status from {country}, issued in the last 6 months. Married couples: also one of their status before the marriage."
+          "title": "Civil status and children: {country}",
+          "description": "What the foreign partner's documents have to show, for {country}:"
         },
         "foreignDivorceDecree": {
           "title": "Divorce decree",
@@ -1493,10 +1489,24 @@
         "foreignNameChanged": "The foreign partner's name changed",
         "foreignDivorced": "The foreign partner was divorced",
         "foreignWidowed": "The foreign partner was widowed",
+        "foreignHasChildren": "The foreign partner has children from a previous relationship",
         "childrenMoving": "Children are moving to Israel",
         "otherParentInvolved": "The other parent has parental rights",
         "otherParentCourtOrder": "A court gave custody or approved the move",
         "otherParentDeceased": "The other parent has died"
+      },
+      "points": {
+        "statusNowSingle": "Proof that the foreign partner is single, issued in the last 6 months.",
+        "statusNowDivorced": "Proof that the foreign partner is divorced, issued in the last 6 months.",
+        "statusNowWidowed": "Proof that the foreign partner is widowed, issued in the last 6 months.",
+        "statusNowDivorcedOrWidowed": "Proof that the foreign partner is divorced or widowed, as their last marriage ended, issued in the last 6 months.",
+        "statusNowMarried": "Proof of the foreign partner's civil status now, issued in the last 6 months.",
+        "statusBeforeSingle": "Proof that the foreign partner was single before your marriage.",
+        "statusBeforeDivorced": "Proof that the foreign partner was divorced before your marriage.",
+        "statusBeforeWidowed": "Proof that the foreign partner was widowed before your marriage.",
+        "statusBeforeDivorcedOrWidowed": "Proof that the foreign partner was divorced or widowed before your marriage, as their last marriage ended.",
+        "noChildren": "Proof that the foreign partner has no children from a previous relationship.",
+        "children": "Proof of the foreign partner's children from previous relationships, and who has guardianship of each."
       }
     },
     "documentsPage": {

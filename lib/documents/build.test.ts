@@ -7,7 +7,6 @@ const find = (s: keyof typeof scenarios, key: string) => buildDocumentList(scena
 
 // What every couple in these scenarios needs, whatever their case.
 const everyone = [
-  "foreignChildrenAffidavit",
   "relationshipStory",
   "israeliId",
   "israeliPhotos",
@@ -30,7 +29,6 @@ describe("buildDocumentList", () => {
       "visaChangeApplication",
       "israeliAffidavitMarried",
       "foreignAffidavitMarried",
-      "foreignChildrenAffidavit",
       "relationshipStory",
       "israeliId",
       "israeliPhotos",
@@ -59,7 +57,6 @@ describe("buildDocumentList", () => {
   it("builds the whole list for common-law partners living together", () => {
     expect(keys("commonLawLivingTogether")).toEqual([
       "visaChangeApplication",
-      "foreignChildrenAffidavit",
       "affidavitCommonLaw",
       "relationshipStory",
       "israeliId",
@@ -100,7 +97,7 @@ describe("buildDocumentList", () => {
   it("gives married couples an affidavit each, and common-law couples one together", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
       const affidavits = keys(name).filter(
-        (k) => /affidavit/i.test(k) && k !== "landlordAffidavit" && k !== "foreignChildrenAffidavit",
+        (k) => /affidavit/i.test(k) && k !== "landlordAffidavit",
       );
       const married = scenarios[name].relationship.relationship === "married";
       expect(affidavits, name).toEqual(married ? ["israeliAffidavitMarried", "foreignAffidavitMarried"] : ["affidavitCommonLaw"]);

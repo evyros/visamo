@@ -78,6 +78,7 @@ export default async function DocumentsPage() {
             key: d.key,
             title: format(text.title, { country }),
             description: format(text.description, { country }),
+            points: d.points.map((point) => catalog.points[point]),
             requirements,
             optional: d.optional,
             check: {

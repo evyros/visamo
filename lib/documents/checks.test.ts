@@ -1,15 +1,24 @@
 import { describe, expect, it } from "vitest";
-import { checkFor, checks } from "./checks";
+import { checkFor, checks, type DocumentCheck } from "./checks";
+import { points } from "./points";
 
-const written = Object.entries(checks).filter(([, check]) => check !== "notYet") as [
-  string,
-  { required: readonly string[]; recommended: readonly string[] },
-][];
+// A check written as a function of the points: here with every point, so every line is tested.
+const written = Object.entries(checks)
+  .filter(([, check]) => check !== "notYet")
+  .map(([id, check]) => [id, typeof check === "function" ? check(points) : check] as [string, DocumentCheck]);
 
 describe("checkFor", () => {
   it("finds a document's check by its list key, with or without a country", () => {
     expect(checkFor("securityCv")).toBe(checks.securityCv);
     expect(checkFor("foreignPoliceCertificate:US")).toBe(checks.foreignPoliceCertificate);
+  });
+
+  it("adds a required line for each point the item has to show", () => {
+    const single = checkFor("foreignCivilStatus:US", ["statusNowSingle", "noChildren"])!;
+    const married = checkFor("foreignCivilStatus:US", ["statusNowMarried", "statusBeforeSingle", "children"])!;
+    expect(married.required.length).toBe(single.required.length + 1);
+    expect(single.required.join(" ")).toMatch(/no children/);
+    expect(married.required.join(" ")).toMatch(/before the marriage/);
   });
 
   it("has no check for a document that's put off, or for an unknown key", () => {

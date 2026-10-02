@@ -1,5 +1,6 @@
 import "server-only";
 import { DOCUMENT_ALIASES, type DocumentId } from "./catalog";
+import type { Point } from "./points";
 
 // How to check each document: what the document checker (lib/checks) looks
 // for in a couple's files. This is Visamo's own knowledge of how documents
@@ -22,7 +23,8 @@ import { DOCUMENT_ALIASES, type DocumentId } from "./catalog";
 //
 // Every catalog document has an entry, or the build fails. "notYet" is the
 // explicit way to put one off: the document has no Check button until its
-// check is written.
+// check is written. A document whose content depends on the case (points.ts)
+// has a function of its points instead.
 
 export type DocumentCheck = {
   required: readonly string[];
@@ -37,6 +39,56 @@ const passportPhoto: DocumentCheck = {
   ],
   recommended: [],
 };
+
+/** The line each point adds to a civil-status item's check (see points.ts). */
+const civilStatusPoints: Record<Point, string> = {
+  statusNowSingle:
+    "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months, that shows they're single, or that no marriage is registered for them.",
+  statusNowDivorced:
+    "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months, that shows they're divorced, or that no current marriage is registered for them.",
+  statusNowWidowed:
+    "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months, that shows they're widowed, or that no current marriage is registered for them.",
+  statusNowDivorcedOrWidowed:
+    "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months, that shows they're divorced or widowed, or that no current marriage is registered for them.",
+  statusNowMarried:
+    "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months. It may show them as married, or still as single if the marriage isn't registered in that country: both are fine.",
+  statusBeforeSingle:
+    "A document of the foreign partner's civil status before the marriage, showing they were single: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+  statusBeforeDivorced:
+    "A document of the foreign partner's civil status before the marriage, showing they were divorced: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+  statusBeforeWidowed:
+    "A document of the foreign partner's civil status before the marriage, showing they were widowed: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+  statusBeforeDivorcedOrWidowed:
+    "A document of the foreign partner's civil status before the marriage, showing they were divorced or widowed: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+  noChildren:
+    "An affidavit (תצהיר) of the foreign partner stating that they have no children from a previous relationship, signed by them and confirmed by a lawyer or notary, with the lawyer's or notary's stamp and signature.",
+  children:
+    "An affidavit (תצהיר) of the foreign partner listing their children from previous relationships, with who has guardianship of each, signed by them and confirmed by a lawyer or notary, with the lawyer's or notary's stamp and signature.",
+};
+
+/**
+ * Civil status and children: one line for each point the item has to show,
+ * whatever the files are split into. One affidavit can declare several
+ * points at once.
+ */
+function civilStatusCheck(points: readonly Point[]): DocumentCheck {
+  return {
+    required: [
+      ...points.map((point) => civilStatusPoints[point]),
+      "The civil-status documents are issued by an authority of the country this item is for, as in the document's details: a civil-status certificate, an extract from a population or civil register, a record search showing no marriage is registered, or a certificate of no impediment to marriage. Or, if there's no way to get one, a notarized or consular affidavit of their status: signed in front of a notary in Israel, an Israeli consul abroad, the country's consul in Israel, or a notary in that country.",
+      "One affidavit that declares several of the points above covers each of them: they don't need a document each.",
+      "Each document from abroad carries the certification the file says it needs (an apostille or consular legalization), in the same file. An affidavit signed abroad carries that country's apostille or legalization.",
+      "If a document isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it, and the translation matches the original. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If a translation was made abroad, by a notary there, it carries its own apostille or legalization from that country: a translation made in Israel needs none.",
+    ],
+    recommended: [
+      "The apostille or legalization pages are scanned together with each document, in order.",
+      "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service.",
+      ...(points.includes("children") ? ["Each child is named with their date of birth."] : []),
+      ...(points.some((point) => point === "children" || point === "noChildren") ? ["The affidavit is dated."] : []),
+    ],
+  };
+}
 
 export const checks = {
   // From the form (AS/6). It comes in two formats, with the pages in a different order: find each part by its title.
@@ -102,20 +154,6 @@ export const checks = {
     recommended: [
       "The permanent address abroad and the email address are filled in.",
       "The details are typed, or handwritten clearly enough to read without guessing.",
-    ],
-  },
-  foreignChildrenAffidavit: {
-    required: [
-      "It is an affidavit (תצהיר) of the foreign partner about their children from before the marriage or from a previous marriage, and their guardianship: it lists each child, with who has guardianship, or states that they have no children.",
-      "It is signed by the foreign partner, and confirmed by a lawyer (or, abroad, a notary), with the lawyer's or notary's stamp and signature.",
-      "If it was signed abroad, it carries that country's apostille or consular legalization, in the same file.",
-      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
-    ],
-    recommended: [
-      "If the file says the foreign partner has children from a previous relationship, the affidavit lists children, not a statement that there are none.",
-      "If the file says they have no children from a previous relationship, it states that they have none.",
-      "Each child is named with their date of birth.",
-      "It is dated.",
     ],
   },
   // From the form (AS/6, the Israeli partner's declaration) and how it's signed: in front of a lawyer or registrar.
@@ -304,21 +342,8 @@ export const checks = {
       "It is the full document, readable, with the issuing office's seal or signature visible.",
     ],
   },
-  foreignCivilStatus: {
-    required: [
-      "It states the foreign partner's civil status.",
-      "It is issued by an authority of the country this item is for, as in the document's details: a civil-status certificate, an extract from a population or civil register, a record search showing no marriage is registered, or a certificate of no impediment to marriage. Or, if there's no way to get one, it is a notarized or consular affidavit of their status: signed in front of a notary in Israel, an Israeli consul abroad, the country's consul in Israel, or a notary in that country (then with that country's apostille or legalization).",
-      "The document of the status now was issued in the last 6 months, counted from today.",
-      "If the file says the couple is married: there's also a document of the foreign partner's status before the marriage (single, divorced or widowed), or one affidavit that declares both, or a marriage certificate from the foreign partner's country that shows their status before the marriage.",
-      "It carries the certification the file says it needs (an apostille or consular legalization), in the same file.",
-      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it, and the translation matches the original. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
-      "If the translation was made abroad, by a notary there, it carries its own apostille or legalization from that country: a translation made in Israel needs none.",
-    ],
-    recommended: [
-      "The apostille or legalization pages are scanned together with the document, in order.",
-      "It is a paper original issued for use abroad, not a document printed at home from an online service.",
-    ],
-  },
+  // Its required lines follow the case: civilStatusCheck, below.
+  foreignCivilStatus: civilStatusCheck,
   foreignDivorceDecree: {
     required: [
       "It is an official proof of divorce: a court's divorce decree or judgment, or a divorce certificate from a civil registry.",
@@ -544,12 +569,19 @@ export const checks = {
   otherParentAddress: "notYet",
   custodyOrder: "notYet",
   otherParentDeathCertificate: "notYet",
-} satisfies Record<DocumentId, DocumentCheck | "notYet">;
+} satisfies Record<DocumentId, DocumentCheck | ((points: readonly Point[]) => DocumentCheck) | "notYet">;
 
-/** How to check a list item (`id` or `id:country`), following renames; null when there's no check for it yet. */
-export function checkFor(documentKey: string): DocumentCheck | null {
+type Entry = DocumentCheck | ((points: readonly Point[]) => DocumentCheck) | "notYet" | undefined;
+
+/**
+ * How to check a list item (`id` or `id:country`), following renames, with
+ * what it has to show by the case (its `points`); null when there's no check
+ * for it yet.
+ */
+export function checkFor(documentKey: string, points: readonly Point[] = []): DocumentCheck | null {
   const [saved] = documentKey.split(":");
   const id = DOCUMENT_ALIASES[saved] ?? saved;
-  const check = (checks as Record<string, DocumentCheck | "notYet" | undefined>)[id];
-  return check && check !== "notYet" ? check : null;
+  const check = (checks as Record<string, Entry>)[id];
+  if (!check || check === "notYet") return null;
+  return typeof check === "function" ? check(points) : check;
 }

@@ -23,6 +23,12 @@ describe("profileOf", () => {
     expect(place("commonLawLivingTogether")).toEqual({ israel: false, abroad: false, online: false });
   });
 
+  it("knows whether the foreign partner has children from a previous relationship, moving or not", () => {
+    expect(profileOf(scenarios.marriedInCyprus).facts.foreignHasChildren).toBe(false);
+    expect(profileOf(scenarios.childrenStayingBehind).facts.foreignHasChildren).toBe(true);
+    expect(profileOf(scenarios.childrenMovingWithConsent).facts.foreignHasChildren).toBe(true);
+  });
+
   it("keeps the marriage country only for a marriage abroad", () => {
     expect(profileOf(scenarios.marriedInCyprus).countries.marriageCountry).toBe("CY");
     expect(profileOf(scenarios.marriedOnline).countries.marriageCountry).toBeNull();

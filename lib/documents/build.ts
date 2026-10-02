@@ -2,6 +2,7 @@ import { documents, type Category, type DocumentDefinition, type DocumentId, typ
 import { certificationFor, type Certification, type Issuer } from "./certification";
 import { evaluate } from "./conditions";
 import { profileOf, type CaseProfile, type CaseSnapshot, type Fact } from "./facts";
+import { pointsFor, type Point } from "./points";
 
 // The list builder: a case in, its documents out. Pure: no database, no
 // messages. The list isn't stored; it's built on every read, and progress is
@@ -31,6 +32,8 @@ export type RequiredDocument = {
   signAtAppointment: boolean;
   /** The facts that put it on the list; empty for documents every couple needs. */
   because: Fact[];
+  /** What it has to show, by the case (see points.ts); empty for most documents. */
+  points: Point[];
 };
 
 function issuerOf(issuedBy: DocumentDefinition["issuedBy"], profile: CaseProfile, country?: string): Issuer | undefined {
@@ -74,6 +77,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         mayNeedTranslation: doc.mayNeedTranslation,
         signAtAppointment: !!doc.signAtAppointment,
         because,
+        points: pointsFor(doc.id as DocumentId, profile, country),
       };
     });
   });

@@ -170,7 +170,7 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
   const expired = Date.now() - RUNNING_EXPIRES_SECONDS * 1000;
   const checks = new Map<string, ItemCheck>();
   for (const item of listOf(details)) {
-    const check = checkFor(item.key);
+    const check = checkFor(item.key, item.points);
     const mine = rows.filter((r) => r.check.documentKey === item.key);
     const found = mine.find((r) => r.check.state === "done" && r.check.rating);
     const row = found?.check;

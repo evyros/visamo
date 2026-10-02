@@ -3,6 +3,29 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v28 — 2026-10-02
+
+**What changed:** `foreignChildrenAffidavit` is merged into
+`foreignCivilStatus`, now "Civil status and children", and its id is
+retired. Each item of `foreignCivilStatus` lists what it has to show, by the
+case (new `points.ts`): the status now, by what the foreign partner's
+previous marriages make them (single, divorced, widowed), or for a married
+couple their status now; for a married couple, their status before the
+marriage; and their children, or that they have none. Before the marriage and
+the children are on the nationality's item only. New fact
+`foreignHasChildren`. New scenario `commonLawForeignDivorced`.
+
+**Why:** One document can show several of these (a single affidavit can
+declare the status now, before the marriage and the children), and which
+documents a country issues varies. One item with one upload, a list of what
+it has to show, and a check of all its files together fits every way of
+splitting them.
+
+**Source:** Product decision.
+
+**Lists that changed:** Every scenario: -foreignChildrenAffidavit. New
+scenario commonLawForeignDivorced.
+
 ## v27 — 2026-10-02
 
 **What changed:** New `messageHistory`: up to 10 pages of the couple's

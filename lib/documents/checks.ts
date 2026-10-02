@@ -234,7 +234,17 @@ export const checks = {
       "It was issued recently, in the last few months.",
     ],
   },
-  ishurToshav: "notYet",
+  ishurToshav: {
+    required: [
+      "It is an official confirmation from an Israeli municipality or local council that the partner or partners live in, or have their center of life in, its locality. From a small local council or a kibbutz, a confirmation of registration in the kibbutz's books (אישור על רישום בספרי הקיבוץ) counts too.",
+      "It is on the municipality's or council's letterhead or official form, with its stamp or signature, and the date it was issued.",
+      "An arnona bill, or any other bill, is an issue: it shows payment for a property, not that they live there, and doesn't replace the confirmation.",
+    ],
+    recommended: [
+      "It was issued recently, in the last few months.",
+      "It states the address in the locality.",
+    ],
+  },
   sharedFinances: "notYet",
   israeliIncomeProof: {
     required: [

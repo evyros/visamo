@@ -1626,7 +1626,7 @@
         "unreadableHint": "Upload a clearer scan, or a PDF without a password. This check wasn't counted.",
         "checkedBy": "Checked {when} by {name}",
         "checkedOn": "Checked {when}",
-        "disclaimer": "Not a legal review or legal advice.",
+        "disclaimer": "This check does not constitute legal advice.",
         "checksLow": "You've used {used} of your {allowed} document checks. Need more?",
         "contactSupport": "Contact support",
         "cantOpen": "We couldn't open \"{name}\". It may be damaged or protected by a password.",

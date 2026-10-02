@@ -61,8 +61,8 @@ export default async function DocumentsPage() {
           const auth = d.certification?.authentication;
           const exemptUntil = d.certification?.exemptIfIssuedUntil;
           const check = checks.get(d.key);
-          // What to prepare, in the order it takes time: certification, translation, copies, then
-          // how it's signed.
+          // What to prepare, in the order it takes time: certification, translation, then how it's
+          // signed. The number of copies (d.copies) isn't shown on the list for now.
           const requirements: DocumentItem["requirements"] = [];
           if (auth && auth !== "none") {
             const what = t.authentication[auth];
@@ -72,11 +72,11 @@ export default async function DocumentsPage() {
             });
           }
           if (d.mayNeedTranslation) requirements.push({ icon: "globe", text: t.requirements.translation });
-          if (d.copies) requirements.push({ icon: "file", text: format(t.requirements.copies, { count: d.copies }) });
           if (d.signAtAppointment) requirements.push({ icon: "info", text: t.requirements.signAtAppointment });
           return {
             key: d.key,
-            title: format(text.title, { country }),
+            // The short title: the page groups the documents under each partner's name.
+            title: format(text.shortTitle, { country }),
             description: format(text.description, { country }),
             points: d.points.map((point) => catalog.points[point]),
             requirements,
@@ -97,7 +97,9 @@ export default async function DocumentsPage() {
     .filter((key) => !listed.has(key))
     .map((key) => ({
       key,
-      title: documentTitle(key, catalog.items, locale) ?? files.find((f) => f.documentKey === key)!.name,
+      // Outside the groups: the short title with the partner's name.
+      title:
+        documentTitle(key, catalog, locale, { israeli, foreign }) ?? files.find((f) => f.documentKey === key)!.name,
     }));
 
   return (

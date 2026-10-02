@@ -57,7 +57,7 @@ export type DocumentDefinition = {
   mayNeedTranslation: boolean;
   /** An exemption from authentication, by where it's from. */
   exemption?: Exemption;
-  /** How many copies to bring, when more than one. Shown to the couple only. */
+  /** How many copies to bring, when more than one. Not shown on the documents list for now; the chat knows it. */
   copies?: number;
   /**
    * Signed only in front of the clerk at the Misrad Hapnim appointment: the

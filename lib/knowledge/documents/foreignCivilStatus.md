@@ -1,6 +1,6 @@
 # Civil status and children (מצב אישי וילדים)
 
-What the foreign partner's documents have to show, for the country:
+The documents must show, for the country:
 
 What the foreign partner shows about their civil status (single, divorced,
 widowed or married) and their children. Every couple needs it, including

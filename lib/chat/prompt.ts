@@ -2,6 +2,7 @@ import "server-only";
 import { loadMessages } from "@/i18n/messages";
 import { regionName, todayInIsrael } from "@/i18n/format";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
+import type { Owner } from "@/lib/documents/catalog";
 import type { Stage } from "@/lib/case-options";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
@@ -40,6 +41,14 @@ How you answer:
 export async function staticPrompt() {
   return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${await loadKnowledge()}\n</knowledge>`;
 }
+
+/** Whose a document is, for one whose full title doesn't say it ("Divorce decree", which both partners have). */
+const WHOSE: Record<Owner, string> = {
+  couple: "the couple's",
+  israeli: "the Israeli partner's",
+  foreign: "the foreign partner's",
+  children: "for the children moving to Israel",
+};
 
 /**
  * The couple's file, in English (the assistant answers in the user's
@@ -110,7 +119,9 @@ export async function casePrompt(caseId: string, userId: string) {
       ]
         .filter(Boolean)
         .join(", ");
-      return `- ${title}: ${description} (${flags})`;
+      // The full title says whose it is when it differs from the page's short one; otherwise, say it here.
+      const whose = text.title === text.shortTitle ? `, ${WHOSE[d.owner]}` : "";
+      return `- ${title}${whose}: ${description} (${flags})`;
     })
     .join("\n");
 

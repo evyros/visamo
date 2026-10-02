@@ -36,7 +36,7 @@ export type DocumentItem = {
   description: string;
   /** What it has to show, by the couple's case, right under the description; empty for most documents. */
   points: string[];
-  /** What to prepare before uploading: certification (with its exemption), translation, copies, signing. */
+  /** What to prepare before uploading: certification (with its exemption), translation, signing. */
   requirements: { icon: "shield" | "globe" | "file" | "info"; text: string }[];
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;

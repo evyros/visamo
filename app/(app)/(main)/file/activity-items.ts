@@ -2,7 +2,7 @@ import type { Locale } from "@/i18n/config";
 import { formatAgo, formatDay } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import type { BranchCode, Stage } from "@/lib/case-options";
-import { documentTitle } from "@/lib/documents/titles";
+import { documentTitle, type PartnerNames } from "@/lib/documents/titles";
 import type { ProductId } from "@/lib/products";
 import type { CaseEvent, recentEvents } from "@/lib/events";
 import type { ActivityItem } from "@/components/app/overview-cards";
@@ -12,12 +12,13 @@ import type { ActivityItem } from "@/components/app/overview-cards";
 type RecentEvent = Awaited<ReturnType<typeof recentEvents>>[number];
 
 /** One line of the activity card, in the actor's grammatical gender. */
-export function activityItem(e: RecentEvent, messages: Messages, locale: Locale): ActivityItem {
+export function activityItem(e: RecentEvent, messages: Messages, locale: Locale, names: PartnerNames): ActivityItem {
   const t = messages.app.overview.activity;
   const name = e.actorName ?? t.someone;
   const say = (type: keyof typeof t.events, values: Record<string, string | number> = {}) =>
     format(t.events[type][e.actorGender === "female" ? "female" : "male"], { name, ...values });
-  const document = (key: string) => documentTitle(key, messages.app.documents.items, locale) ?? t.aDocument;
+  // The short title, with the partner's name for their own document: "Salary slips (John)".
+  const document = (key: string) => documentTitle(key, messages.app.documents, locale, names) ?? t.aDocument;
 
   const line = (event: CaseEvent): { text: string; detail?: string } => {
     switch (event.type) {

@@ -154,7 +154,7 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
             {retired.map((key) => (
               <DocumentCard
                 key={key}
-                title={documentTitle(key, catalog, "en") ?? key}
+                title={documentTitle(key, messages.app.documents, "en") ?? key}
                 docKey={key}
                 files={filesOf(key)}
                 historyCount={historyOf(key)}

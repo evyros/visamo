@@ -1279,193 +1279,241 @@
       "items": {
         "statusApplicationMarried": {
           "title": "Status application for a married spouse (form AS/6)",
+          "shortTitle": "Status application (form AS/6)",
           "description": "The application for status for a foreign spouse married to an Israeli. Both of you sign it."
         },
         "entryPermitApplication": {
           "title": "Entry permit application (form AS/1)",
+          "shortTitle": "Entry permit application (form AS/1)",
           "description": "Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process."
         },
         "visaChangeApplication": {
           "title": "Visa change application (form AS/3)",
+          "shortTitle": "Visa change application (form AS/3)",
           "description": "For a foreign partner already in Israel: the application to change their visa category, filled in Hebrew and English, with a recent photo."
         },
         "israeliAffidavitMarried": {
           "title": "Affidavit of the Israeli partner",
+          "shortTitle": "Affidavit (form AS/6)",
           "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
         },
         "foreignAffidavitMarried": {
           "title": "Affidavit of the foreign partner",
+          "shortTitle": "Affidavit (form AS/6)",
           "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
         },
         "affidavitCommonLaw": {
           "title": "Joint affidavit of both partners",
+          "shortTitle": "Joint affidavit",
           "description": "A declaration in the ministry's wording for couples applying on the basis of living together: that the details are true, that you'll report any change, and statements about each of you. Both of you sign it at a Misrad Hapnim office."
         },
         "relationshipStory": {
           "title": "Letter about your relationship",
+          "shortTitle": "Letter about your relationship",
           "description": "A letter signed by both of you: how and when you met, your relationship and your life together."
         },
         "securityCv": {
           "title": "CV for the security screening",
+          "shortTitle": "CV for the security screening",
           "description": "For a foreign partner who's a Palestinian resident or a citizen of an Arab country: a full history of their employment and life, on a form in Hebrew and Arabic. Not a job CV."
         },
         "israeliId": {
           "title": "Teudat Zehut with its appendix",
+          "shortTitle": "Teudat Zehut with its appendix",
           "description": "The Israeli partner's ID card, with the appendix (the sefach) that lists family members."
         },
         "israeliPhotos": {
           "title": "Passport photos of the Israeli partner",
+          "shortTitle": "Passport photos",
           "description": "Recent passport-format photos, all copies of the same photo."
         },
         "foreignPassport": {
           "title": "Foreign passport",
+          "shortTitle": "Passport",
           "description": "Valid for at least 2 more years, with copies of the main page, the visa pages and the border-control stamps."
         },
         "foreignPhotos": {
           "title": "Passport photos of the foreign partner",
+          "shortTitle": "Passport photos",
           "description": "Recent passport-format photos, all copies of the same photo."
         },
         "foreignBirthCertificate": {
           "title": "Birth certificate",
+          "shortTitle": "Birth certificate",
           "description": "The original, from the country of birth."
         },
         "foreignNameChange": {
           "title": "Proof of the name change",
+          "shortTitle": "Proof of the name change",
           "description": "An official document linking the foreign partner's previous name to their current one."
         },
         "marriageCertificateIsrael": {
           "title": "Marriage certificate",
+          "shortTitle": "Marriage certificate",
           "description": "The certificate from the rabbinate or religious court that married you."
         },
         "marriageCertificateAbroad": {
           "title": "Marriage certificate",
+          "shortTitle": "Marriage certificate",
           "description": "The certificate from the country or authority that married you."
         },
         "relationshipEvidence": {
           "title": "Shared photos of you",
+          "shortTitle": "Photos together",
           "description": "Photos of you together, from different places and times, some with family and friends. At least 10 for the online application; bring more, arranged 6, 9 or 12 to a page."
         },
         "messageHistory": {
           "title": "Message and call history",
+          "shortTitle": "Message and call history",
           "description": "Up to 10 pages of your messages (WhatsApp, email, social media) or call logs, from different times in your relationship."
         },
         "recommendationLetters": {
           "title": "Letters of recommendation",
+          "shortTitle": "Letters of recommendation",
           "description": "At least 3 letters in Hebrew from Israeli family and friends about your relationship, each with a copy of the writer's Teudat Zehut and their contact details."
         },
         "jointLivingEvidence": {
           "title": "Evidence of living together",
+          "shortTitle": "Evidence of living together",
           "description": "A shared lease or property, bills in both names, a joint bank account."
         },
         "jointChildrenBirthCertificates": {
           "title": "Birth certificates of your children together",
+          "shortTitle": "Birth certificates of your children together",
           "description": "One for each child you have together."
         },
         "foreignCivilStatus": {
           "title": "Civil status and children: {country}",
-          "description": "What the foreign partner's documents have to show, for {country}:"
+          "shortTitle": "Civil status and children: {country}",
+          "description": "The documents must show, for {country}:"
         },
         "foreignDivorceDecree": {
           "title": "Divorce decree",
+          "shortTitle": "Divorce decree",
           "description": "The final divorce decree of each of the foreign partner's previous marriages that ended in divorce."
         },
         "foreignSpouseDeathCertificate": {
           "title": "Death certificate of a previous spouse",
+          "shortTitle": "Death certificate of a previous spouse",
           "description": "For each of the foreign partner's previous marriages that ended in the spouse's death."
         },
         "israeliDivorceDecree": {
           "title": "Divorce decree",
+          "shortTitle": "Divorce decree",
           "description": "The final divorce decree of each of the Israeli partner's previous marriages that ended in divorce."
         },
         "israeliSpouseDeathCertificate": {
           "title": "Death certificate of a previous spouse",
+          "shortTitle": "Death certificate of a previous spouse",
           "description": "For each of the Israeli partner's previous marriages that ended in the spouse's death."
         },
         "foreignPoliceCertificate": {
           "title": "Police certificate: {country}",
+          "shortTitle": "Police certificate: {country}",
           "description": "A certificate of no criminal record from {country}."
         },
         "housingContract": {
           "title": "Lease or purchase contract",
+          "shortTitle": "Lease or purchase contract",
           "description": "The lease of your home in both your names, with all its appendices: the original and a copy. If one of you owns the home: its purchase contract."
         },
         "israeliHousingContract": {
           "title": "Lease or purchase contract of the Israeli partner's home",
+          "shortTitle": "Lease or purchase contract",
           "description": "The lease or purchase contract of the Israeli partner's home, in their name: the original, a copy and the lease appendix."
         },
         "landlordAffidavit": {
           "title": "Landlord's affidavit",
+          "shortTitle": "Landlord's affidavit",
           "description": "If you rent: an affidavit from your landlord in the ministry's wording (form AS/6), that they own the home and rent it to you, who else lives there, and who pays the bills. Signed in front of a lawyer, together with a scan of the landlord's Teudat Zehut."
         },
         "utilityBills": {
           "title": "Bills for your home",
+          "shortTitle": "Bills for your home",
           "description": "Electricity, water, arnona and phone bills of the home you share, for the last 12 months, in the landlord's name or the Israeli partner's."
         },
         "israeliUtilityBills": {
           "title": "Bills for the Israeli partner's home",
+          "shortTitle": "Bills for the home",
           "description": "Electricity, water, arnona and phone bills of the Israeli partner's home in Israel, for the last 12 months, in their name."
         },
         "governmentServices": {
           "title": "Proof of government services",
+          "shortTitle": "Proof of government services",
           "description": "Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi - ביטוח לאומי), health and education."
         },
         "foreignHealthInsurance": {
           "title": "Health insurance of the foreign partner",
+          "shortTitle": "Health insurance",
           "description": "Health insurance for the foreign partner in Israel: until A/5, they have no public health insurance. A private Israeli plan for non-residents, or a policy from abroad that covers Israel."
         },
         "ishurToshav": {
           "title": "Municipality confirmation of your center of life",
+          "shortTitle": "Municipality confirmation of your center of life",
           "description": "Also called Ishur Toshav (אישור תושב): your municipality or local council's official confirmation that your center of life is in their locality."
         },
         "sharedBankAccount": {
           "title": "Shared bank account",
+          "shortTitle": "Shared bank account",
           "description": "A joint bank account confirmation. Without one, other proof of shared money: transfers to each other, card statements with household purchases or the same delivery address, receipts for large expenses."
         },
         "bankStatements": {
           "title": "Bank statements",
+          "shortTitle": "Bank statements",
           "description": "Statements of a shared bank account, or of each of your personal accounts, for the last 12 months: the balance and all transactions, with proof of account ownership."
         },
         "israeliIncomeProof": {
           "title": "Salary slips of the Israeli partner",
+          "shortTitle": "Salary slips",
           "description": "The last 3-12 salary slips. If you're self-employed: a confirmation signed by your accountant of the income you reported for the last year."
         },
         "foreignIncomeProof": {
           "title": "Salary slips of the foreign partner",
+          "shortTitle": "Salary slips",
           "description": "The last 3-12 salary slips. If you're self-employed: a confirmation signed by your accountant of the income you reported for the last year."
         },
         "childrenSchoolRecords": {
           "title": "Children's school records",
+          "shortTitle": "Children's school records",
           "description": "For each child in school in Israel from age 6: a school confirmation and report cards."
         },
         "childBirthCertificate": {
           "title": "Children's birth certificates",
+          "shortTitle": "Birth certificates",
           "description": "The original, for each child moving to Israel, listing both parents."
         },
         "childPassport": {
           "title": "Children's passports",
+          "shortTitle": "Passports",
           "description": "For each child moving to Israel, valid for at least 2 more years."
         },
         "childPoliceCertificate": {
           "title": "Children's police certificates",
+          "shortTitle": "Police certificates",
           "description": "A certificate of no criminal record for each child moving to Israel who is 14 or older."
         },
         "otherParentConsent": {
           "title": "The other parent's consent",
+          "shortTitle": "The other parent's consent",
           "description": "The other parent's consent to the children moving to Israel and getting Israeli status. They can give it in person at the Misrad Hapnim office, by signing the application form, or in a signed letter. The ministry also contacts them itself, and no reply within 6 months counts as an objection. To skip that wait, the other parent can sign a consent declaration at the Israeli consulate, or sign a consent in front of a local notary and have it apostilled."
         },
         "otherParentAddress": {
           "title": "The other parent's current address",
+          "shortTitle": "The other parent's current address",
           "description": "An official document with the other parent's current address. The ministry writes to them to ask if they object to the move. Not needed if they live in Israel."
         },
         "custodyOrder": {
           "title": "Court ruling on custody or guardianship",
+          "shortTitle": "Court ruling on custody or guardianship",
           "description": "The original, approved by a court: a ruling or a divorce agreement giving you sole custody or guardianship of the children, or a ruling allowing you to apply for them without the other parent's consent. With a custody ruling, also proof the children actually live with you."
         },
         "otherParentDeathCertificate": {
           "title": "Death certificate of the other parent",
+          "shortTitle": "Death certificate of the other parent",
           "description": "For children whose other parent has died."
         }
       },
+      "whose": "{document} ({name})",
       "because": {
         "married": "You're married",
         "commonLaw": "You're common-law partners",
@@ -1496,17 +1544,17 @@
         "otherParentDeceased": "The other parent has died"
       },
       "points": {
-        "statusNowSingle": "Proof that the foreign partner is single, issued in the last 6 months.",
-        "statusNowDivorced": "Proof that the foreign partner is divorced, issued in the last 6 months.",
-        "statusNowWidowed": "Proof that the foreign partner is widowed, issued in the last 6 months.",
-        "statusNowDivorcedOrWidowed": "Proof that the foreign partner is divorced or widowed, as their last marriage ended, issued in the last 6 months.",
-        "statusNowMarried": "Proof of the foreign partner's civil status now, issued in the last 6 months.",
-        "statusBeforeSingle": "Proof that the foreign partner was single before your marriage.",
-        "statusBeforeDivorced": "Proof that the foreign partner was divorced before your marriage.",
-        "statusBeforeWidowed": "Proof that the foreign partner was widowed before your marriage.",
-        "statusBeforeDivorcedOrWidowed": "Proof that the foreign partner was divorced or widowed before your marriage, as their last marriage ended.",
-        "noChildren": "Proof that the foreign partner has no children from a previous relationship.",
-        "children": "Proof of the foreign partner's children from previous relationships, and who has guardianship of each."
+        "statusNowSingle": "Proof of marital status (single), issued in the last 6 months.",
+        "statusNowDivorced": "Proof of marital status (divorced), issued in the last 6 months.",
+        "statusNowWidowed": "Proof of marital status (widowed), issued in the last 6 months.",
+        "statusNowDivorcedOrWidowed": "Proof of marital status (divorced or widowed, as the last marriage ended), issued in the last 6 months.",
+        "statusNowMarried": "Proof of marital status now, issued in the last 6 months.",
+        "statusBeforeSingle": "Proof of marital status before the marriage (single).",
+        "statusBeforeDivorced": "Proof of marital status before the marriage (divorced).",
+        "statusBeforeWidowed": "Proof of marital status before the marriage (widowed).",
+        "statusBeforeDivorcedOrWidowed": "Proof of marital status before the marriage (divorced or widowed, as the last marriage ended).",
+        "noChildren": "Proof of no children from a previous relationship.",
+        "children": "Proof of children from previous relationships, and who has guardianship of each."
       }
     },
     "documentsPage": {

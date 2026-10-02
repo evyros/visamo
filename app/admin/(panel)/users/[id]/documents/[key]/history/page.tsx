@@ -29,7 +29,7 @@ function keyOf(param: string) {
 function titleOf(key: string, item: RequiredDocument | undefined, messages: Messages) {
   const items = messages.app.documents.items;
   if (item) return format(items[item.id].title, { country: item.country ? regionName(item.country, "en") : "" });
-  return documentTitle(key, items, "en") ?? key;
+  return documentTitle(key, messages.app.documents, "en") ?? key;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

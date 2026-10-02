@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
+import { caseDetails } from "@/lib/case-documents";
 import { recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
 import { ActivityList } from "@/components/app/overview-cards";
@@ -16,8 +17,9 @@ const ACTIVITY_LIMIT = 100;
 // Everything either partner did lately, past the few the overview shows.
 export default async function ActivityPage() {
   const { caseId } = await requireCase();
-  const [events, messages, locale] = await Promise.all([
+  const [events, { details }, messages, locale] = await Promise.all([
     recentEvents(caseId, ACTIVITY_LIMIT),
+    caseDetails(caseId),
     getAppDictionary(),
     getAppLocale(),
   ]);
@@ -34,7 +36,11 @@ export default async function ActivityPage() {
         {events.length === 0 ? (
           <p className="text-[15px] text-slate-600">{t.empty}</p>
         ) : (
-          <ActivityList items={events.map((e) => activityItem(e, messages, locale))} />
+          <ActivityList
+            items={events.map((e) =>
+              activityItem(e, messages, locale, { israeli: details.israeli.name, foreign: details.foreign.name }),
+            )}
+          />
         )}
       </div>
     </div>

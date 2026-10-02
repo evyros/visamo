@@ -50,8 +50,10 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   in `DOCUMENT_ALIASES`. A document removed without a replacement: add its id
   to `RETIRED_DOCUMENT_IDS`.
 - **Every document has messages** in `i18n/messages/en.json` and `he.json`,
-  under `app.documents.items.<id>` (`title`, `description`). A document with
-  `each` has `{country}` in its title. The tests check this.
+  under `app.documents.items.<id>` (`title`, `shortTitle`, `description`). A
+  document with `each` has `{country}` in its titles. The tests check this.
+  `title` is the full name, `shortTitle` the documents page's label, which
+  never says whose it is; the points are impersonal: see `i18n/CLAUDE.md`.
 - **Every document has a guide** in `lib/knowledge/documents/<id>.md`: the
   full picture for the chat and the checker, beyond the page's short
   description. `npm run guides:sync` creates it with its title and

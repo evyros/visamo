@@ -122,7 +122,7 @@ export default async function FileOverviewPage() {
           <ActivityCard
             title={t.activity.title}
             empty={t.activity.empty}
-            items={events.slice(0, ACTIVITY_LIMIT).map((e) => activityItem(e, messages, locale))}
+            items={events.slice(0, ACTIVITY_LIMIT).map((e) => activityItem(e, messages, locale, { israeli: details.israeli.name, foreign: details.foreign.name }))}
             all={events.length > ACTIVITY_LIMIT ? t.activity.all : undefined}
           />
         </div>

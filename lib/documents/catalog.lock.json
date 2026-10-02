@@ -1,6 +1,6 @@
 {
-  "version": 21,
-  "fingerprint": "7f0152eae22bac64a2320e7b0830622588540a233e7ed937274eeed34e205932",
+  "version": 22,
+  "fingerprint": "2d60d0d2c33a4a54641e548b6b09bbc58906d6b490d4b0e8a41e97d22632e82f",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -23,7 +23,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -48,7 +48,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -73,7 +73,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -98,7 +98,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -120,7 +120,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -142,7 +142,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -167,7 +167,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -193,7 +193,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -219,7 +219,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -247,7 +247,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -273,7 +273,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -298,7 +298,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -324,7 +324,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -352,7 +352,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -377,7 +377,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -401,7 +401,7 @@
       "landlordAffidavit",
       "utilityBills",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -426,7 +426,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -447,7 +447,7 @@
       "foreignPoliceCertificate:US",
       "utilityBills",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -472,7 +472,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof"
     ],
@@ -497,7 +497,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof",
       "childrenSchoolRecords",
@@ -528,7 +528,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof",
       "childrenSchoolRecords",
@@ -560,7 +560,7 @@
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof",
       "childrenSchoolRecords"

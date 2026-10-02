@@ -367,7 +367,30 @@ export const checks = {
       "It states the address in the locality.",
     ],
   },
-  sharedFinances: "notYet",
+  sharedBankAccount: {
+    required: [
+      "It is a bank's confirmation of a joint account, naming two account holders, or a statement of a joint account. If the couple has no joint account: other proof that they share their money, such as transfers to each other, card statements with household purchases or deliveries to the same address, or receipts for large shared expenses.",
+      "A bank confirmation or statement shows the bank's name and the account number, readably.",
+      "If it isn't in Hebrew, Arabic or English (an account abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "It was issued recently, in the last few months.",
+      "A recent statement shows the account is in use, not only that it exists.",
+      "Without a joint account, there are several kinds of proof, covering a period of time, not a single transfer.",
+    ],
+  },
+  bankStatements: {
+    required: [
+      "They are bank statements: of a shared account, or of each partner's personal account.",
+      "They show the balance and all the incoming and outgoing transactions, not a summary.",
+      "Proof of account ownership is uploaded with them: a bank confirmation of who holds each account.",
+      "If they aren't in Hebrew, Arabic or English (an account abroad), a notarized translation is uploaded with them. English documents need no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "They cover the full last 12 months, ending recently: the period differs between branches, and 12 months covers them all.",
+      "The bank's name and the account number are visible on each statement.",
+    ],
+  },
   israeliIncomeProof: {
     required: [
       "It is one of these: payslips with a confirmation from work; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (shuma), or the confirmation of opening a business file (osek murshe or patur); or, for someone not working, bank statements showing the income deposited, or a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",

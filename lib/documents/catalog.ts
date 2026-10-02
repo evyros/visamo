@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 21;
+export const CATALOG_VERSION = 22;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -402,11 +402,23 @@ export const documents = [
     verified: true,
   },
   {
-    id: "sharedFinances",
+    // Part of AS/6, so for married couples only.
+    id: "sharedBankAccount",
     mayNeedTranslation: true,
     owner: "couple",
     category: "centerOfLife",
+    when: "married",
     source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    // Common-law couples' bank evidence, instead of the AS/6 joint account confirmation.
+    id: "bankStatements",
+    mayNeedTranslation: true,
+    owner: "couple",
+    category: "centerOfLife",
+    when: "commonLaw",
+    source: "Practice, confirmed by the product owner",
     verified: true,
   },
   {

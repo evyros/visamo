@@ -3,6 +3,24 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v22 — 2026-10-02
+
+**What changed:** Renamed `sharedFinances` → `sharedBankAccount` (no alias:
+there are no real users yet), and it's listed for married couples only
+(`married`). New `bankStatements`, for common-law couples (`commonLaw`): the
+statements of a shared account, or of each partner's personal account, for
+12 months, with the balance, all transactions and proof of ownership.
+
+**Why:** The joint bank account confirmation is part of form AS/6, which
+only married couples file; the name now says what it is. Common-law couples
+prove shared finances with bank statements instead.
+
+**Source:** Practice, confirmed by the product owner; the AS/6 checklist.
+
+**Lists that changed:** Every married scenario: +sharedBankAccount
+-sharedFinances. commonLawLivingTogether, commonLawApart: +bankStatements
+-sharedFinances.
+
 ## v21 — 2026-10-02
 
 **What changed:** `recommendationLetters` no longer may need a translation

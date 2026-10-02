@@ -1405,9 +1405,13 @@
           "title": "Municipality confirmation of your center of life",
           "description": "Also called Ishur Toshav (אישור תושב): your municipality or local council's official confirmation that your center of life is in their locality."
         },
-        "sharedFinances": {
+        "sharedBankAccount": {
           "title": "Shared bank account",
           "description": "A joint bank account confirmation. Without one, other proof of shared money: transfers to each other, card statements with household purchases or the same delivery address, receipts for large expenses."
+        },
+        "bankStatements": {
+          "title": "Bank statements",
+          "description": "Statements of a shared bank account, or of each of your personal accounts, for the last 12 months: the balance and all transactions, with proof of account ownership."
         },
         "israeliIncomeProof": {
           "title": "Salary slips of the Israeli partner",

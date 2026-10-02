@@ -18,7 +18,6 @@ const everyone = [
   "foreignCivilStatus",
   "utilityBills",
   "ishurToshav",
-  "sharedFinances",
   "israeliIncomeProof",
   "foreignIncomeProof",
 ];
@@ -46,7 +45,7 @@ describe("buildDocumentList", () => {
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "sharedBankAccount",
       "israeliIncomeProof",
       "foreignIncomeProof",
     ]);
@@ -71,7 +70,7 @@ describe("buildDocumentList", () => {
       "utilityBills",
       "governmentServices",
       "ishurToshav",
-      "sharedFinances",
+      "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof",
     ]);
@@ -235,6 +234,13 @@ describe("buildDocumentList", () => {
       "custodyOrder",
       "otherParentDeathCertificate",
     ]);
+  });
+
+  it("asks married couples for the joint bank account confirmation, and common-law couples for bank statements", () => {
+    expect(keys("marriedInCyprus")).toContain("sharedBankAccount");
+    expect(keys("marriedInCyprus")).not.toContain("bankStatements");
+    expect(keys("commonLawLivingTogether")).toContain("bankStatements");
+    expect(keys("commonLawLivingTogether")).not.toContain("sharedBankAccount");
   });
 
   it("asks for living-together evidence from every couple who live or lived together, married or not", () => {

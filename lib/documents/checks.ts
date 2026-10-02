@@ -108,7 +108,9 @@ export const checks = {
       "Nothing in it contradicts the couple's details in the file, such as whether and where they married, or since when they've been together.",
     ],
     recommended: [
-      "Each partner's life history, where it helps explain the relationship.",
+      "It's written in Hebrew.",
+      "It's about 3–4 paragraphs long.",
+      "It includes anecdotes and major life events the couple shared, not only a summary.",
       "Concrete dates and places for the main steps (meeting, visits, moving in, the wedding), rather than general statements.",
       "If the relationship is relatively short, or they spent long periods apart, the letter explains it openly.",
       "It is dated, typed or clearly handwritten, with each partner's name next to their signature.",

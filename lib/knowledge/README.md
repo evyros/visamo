@@ -14,5 +14,6 @@ through the graduated procedure (ההליך המדורג).
 - [former-ussr.md](former-ussr.md): the former USSR, and the Nativ step.
 - [security-check.md](security-check.md): the security check, only for Palestinian residents and citizens of Arab countries.
 - [sources.md](sources.md): the official procedures and forms.
+- [glossary.md](glossary.md): the words you'll meet, in English and Hebrew.
 
 Where the law and how offices work in practice differ, both are given.

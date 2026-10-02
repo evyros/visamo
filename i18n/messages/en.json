@@ -1289,6 +1289,10 @@
           "title": "Entry permit application (form AS/1)",
           "description": "Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process."
         },
+        "visaChangeApplication": {
+          "title": "Visa change application (form AS/3)",
+          "description": "For a foreign partner already in Israel: the application to change their visa category, filled in Hebrew and English, with a recent photo."
+        },
         "israeliAffidavitMarried": {
           "title": "Affidavit of the Israeli partner",
           "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."

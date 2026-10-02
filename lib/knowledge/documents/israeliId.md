@@ -11,7 +11,8 @@ civil status and family members.
 - **The Teudat Zehut itself**, both sides of the card, with a copy.
 - **The appendix (ספח)**, up to date: with your current address and civil status.
   **If you married abroad or online,** it has to show you as married:
-  register the marriage at your Misrad Hapnim branch before you apply.
+  register the marriage at your Misrad Hapnim branch before you apply (you
+  sign form MR/6 there).
 - A driver's license isn't enough: bring the Teudat Zehut itself.
 
 It's an Israeli document, in Hebrew: no certification or translation.

@@ -25,6 +25,13 @@
 - **AS/1** (אש/1): the entry permit application, for a foreign partner outside
   Israel.
   https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf
+- **AS/3** (אש/3): the application to extend a permit of residence or change
+  the visa category, for a foreign partner already in Israel.
+  https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf
+- **MR/6** (מר/6): the notice of change in civil status, to register a
+  marriage abroad in the population registry. It isn't part of the partner
+  visa application: you sign it before, when you register the marriage.
+  https://www.gov.il/BlobFolder/generalpage/visas_forms/he/mr_6.pdf
 - **The common-law affidavit** (5.2.0009_a): the declaration both partners
   sign with an application under procedure 5.2.0009.
   https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf

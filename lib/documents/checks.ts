@@ -88,6 +88,25 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
+  // From the form (AS/3, two pages).
+  visaChangeApplication: {
+    required: [
+      "It is form AS/3 (אש/3), \"בקשה להארכת רשיון ישיבה / להחלפת סוג האשרה\" (Application for the extension of permit of residence / change of visa category), with both pages.",
+      "The change of visa category (בקשה להחלפת סוג האשרה) is marked, with the visa asked for written in.",
+      "The foreign partner's details are filled in, in Hebrew and English: family and first name, civil status, country and date of birth, nationality and citizenship, and father's and mother's names.",
+      "The travel document (passport or laissez-passer) is filled in, with its number, issue date and expiry.",
+      "The address in Israel and a phone number are filled in.",
+      "The spouse's details (פרטים של בן/בת הזוג) name the Israeli partner, with their ID number and status in Israel.",
+      "The declaration has the place, the date and the applicant's signature.",
+      "The office's part (לשימוש המשרד) is empty.",
+    ],
+    recommended: [
+      "A recent photo is attached in its box.",
+      "The permanent address abroad and the email address are filled in.",
+      "The educational institution section is left empty, unless the applicant is a student.",
+      "The details are typed, or handwritten clearly enough to read without guessing.",
+    ],
+  },
   // From the form (AS/6, the Israeli partner's declaration) and how it's signed: in front of a lawyer or registrar.
   israeliAffidavitMarried: {
     required: [

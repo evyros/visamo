@@ -78,7 +78,8 @@ permit, goes against Israel's immigration policy.
 ## If the foreign partner is in Israel
 
 You both come, with the original documents from abroad and anything else
-the office asked for.
+the office asked for. The foreign partner files form AS/3, the application
+to change their visa category, with the file.
 
 - **Married couples:** if all the documents are there, the B/1 visa is
   usually issued at this appointment, without an interview.

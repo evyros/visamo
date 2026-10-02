@@ -26,6 +26,7 @@ describe("buildDocumentList", () => {
   it("builds the whole list for a couple married abroad", () => {
     expect(keys("marriedInCyprus")).toEqual([
       "statusApplicationMarried",
+      "visaChangeApplication",
       "israeliAffidavitMarried",
       "foreignAffidavitMarried",
       "relationshipStory",
@@ -54,6 +55,7 @@ describe("buildDocumentList", () => {
   it("builds the whole list for common-law partners living together", () => {
     expect(keys("commonLawLivingTogether")).toEqual([
       "statusApplicationCommonLaw",
+      "visaChangeApplication",
       "affidavitCommonLaw",
       "relationshipStory",
       "israeliId",
@@ -235,6 +237,13 @@ describe("buildDocumentList", () => {
       "custodyOrder",
       "otherParentDeathCertificate",
     ]);
+  });
+
+  it("asks for AS/3 from a partner in Israel, and AS/1 from one abroad", () => {
+    expect(keys("marriedInCyprus")).toContain("visaChangeApplication");
+    expect(keys("foreignAbroad")).not.toContain("visaChangeApplication");
+    expect(keys("foreignWithoutVisa")).toContain("visaChangeApplication");
+    expect(keys("commonLawLivingTogether")).toContain("visaChangeApplication");
   });
 
   it("asks married couples for the joint bank account confirmation, and common-law couples for bank statements", () => {

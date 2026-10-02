@@ -3,6 +3,22 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v24 — 2026-10-02
+
+**What changed:** New `visaChangeApplication` (AS/3, the application to
+change the visa category), for a foreign partner already in Israel
+(`foreignInIsrael`).
+
+**Why:** Verified by the product owner: AS/1 only from abroad, AS/3 only in
+Israel, AS/6 only for married couples. AS/1 and AS/6 already matched; AS/3
+was missing. MR/6 isn't a document on the list: the office hands it to you
+when you register the marriage, and you sign it there.
+
+**Source:** Practice, confirmed by the product owner; form AS/3.
+
+**Lists that changed:** Every scenario with the foreign partner in Israel:
++visaChangeApplication.
+
 ## v23 — 2026-10-02
 
 **What changed:** The security check (`foreignNeedsSecurityCheck`, and with

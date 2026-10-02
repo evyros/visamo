@@ -30,9 +30,19 @@ registered as married in Israel before you apply (below).
 **Register the marriage in Israel before you apply for the partner visa in the graduated procedure.** The Israeli partner
 must be registered as married at Misrad Hapnim, with it written on the
 appendix (ספח) of their Teudat Zehut. Offices enforce this, and applying
-without it can delay the process significantly. To register it, go to your
-Misrad Hapnim branch with the certified (and, if needed, translated)
-marriage certificate.
+without it can delay the process significantly. If your Teudat Zehut
+already says married, you don't need to.
+
+To register it, you both go in person to your Misrad Hapnim branch, with the
+certified (and, if needed, translated) marriage certificate, the Israeli
+partner's Teudat Zehut and passport, and the foreign partner's passport.
+There, the office gives you form MR/6, "notice of change in civil status"
+(הודעה על שינוי מצב אישי), and you both sign it in front of the clerk. It
+isn't part of the partner visa application: it's done before it, when you
+register the marriage. On it, you can also choose a family name: take your
+spouse's, add it to yours, keep yours, or choose a new one together (up to
+two family names). A new name cancels your current travel documents, so
+you'll need new ones.
 
 By the procedure, the clerk checks the certificate under the procedure for
 registering changes in civil status (2.11.0001) and registers the Israeli

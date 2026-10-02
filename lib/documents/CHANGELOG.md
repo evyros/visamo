@@ -3,6 +3,32 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v27 — 2026-10-02
+
+**What changed:** New `messageHistory`: up to 10 pages of the couple's
+messages or call logs, for every couple. New `foreignHealthInsurance`: the
+foreign partner's health insurance in Israel, for every couple.
+`foreignCivilStatus` is now one item per country, like the police
+certificate (`each: "policeCountry"`, issued by that country): the
+nationality, then every other country on the police list. The onboarding
+question behind that list now asks for countries lived in for 6 months or
+more in a row from age 14, and other countries of citizenship.
+
+**Why:** Offices ask for the message history and for proof of health
+insurance (a B/1 holder has no public health insurance). In practice they ask
+for a civil-status document from every country they ask a police certificate
+from. The procedures ask for a police certificate from another country only
+after 6 months in a row there (since January 2024), and offices ask for one
+from every country of citizenship.
+
+**Source:** Practice, confirmed by the product owner; AIC's list of
+documents for the application and its guide to the official certificates;
+procedures 5.2.0008 and 5.2.0009 (January 2024 update, as AIC reports it).
+
+**Lists that changed:** Every scenario: +messageHistory
++foreignHealthInsurance, and -foreignCivilStatus +foreignCivilStatus:<country>
+for each police country (livedInThreeCountries: FR, GB, TH, IN).
+
 ## v26 — 2026-10-02
 
 **What changed:** New `foreignChildrenAffidavit`: the foreign partner's

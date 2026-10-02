@@ -37,7 +37,7 @@ export function personLines(p: PersonInput, t: Messages): Lines {
     ["Nationality", country(p.nationality)],
     ["Visa to visit Israel", visaToVisit(p.nationality)],
     ["Country of birth", country(p.birthCountry)],
-    ["Other countries lived in as an adult", p.countriesLived && (p.countriesLived.map(country).join(", ") || "none")],
+    ["Other countries lived in (6+ months in a row, from 14) or a citizen of", p.countriesLived && (p.countriesLived.map(country).join(", ") || "none")],
     ["Where they are now", p.location && o.locations[p.location]],
     ["Name ever changed", yesNo(p.nameChanged)],
     ["Children from a previous relationship", yesNo(p.hasChildren)],

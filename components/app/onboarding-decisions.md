@@ -32,10 +32,17 @@ Foreign partner only:
   birth country would be skipped without reading, so it's a question. The
   hint: "By today's borders. For example, born in Soviet Kyiv counts as
   Ukraine." The country lists only have today's countries.
-- **Other countries lived in as an adult**, besides the nationality: yes/no,
-  then a list. The hint: "Not counting visits and vacations. Use today's
-  countries. For example, the USSR is now Russia, Ukraine and others." Each
-  country adds a police certificate (not yet verified; see open questions).
+- **Other countries lived in for 6 months or more in a row, from age 14**,
+  besides the nationality: yes/no, then a list. That's the procedures' rule
+  for a police certificate from another country (since January 2024); a
+  country lived in only before 14 doesn't count. The hint also asks to add
+  any other country of citizenship, even one never lived in: offices ask for
+  a police certificate from each, so one list covers both, without a
+  separate citizenship question. The hint: "Not counting visits and
+  vacations. Also add any other country of citizenship, even one never lived
+  in. Use today's countries. For example, the USSR is now Russia, Ukraine and
+  others." Each country adds a police certificate and a proof of civil
+  status.
 - **Where they are now:** in Israel with a valid visa / in Israel without one
   / outside Israel. "Without one" shows a yellow notice recommending a
   lawyer, but doesn't block finishing: the documents are the same, and

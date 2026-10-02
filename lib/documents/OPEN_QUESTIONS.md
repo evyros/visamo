@@ -7,23 +7,24 @@ shown to users (`lib/knowledge/`).
 
 - The common-law documents: the evidence of living together (procedure
   5.2.0009 not checked).
-- Police certificates from **other countries lived in**, beyond the
-  nationality. And the rule for which countries count (how long, since what
-  age), for the onboarding question's wording.
+- Police certificates from **other countries lived in**: the rule (6 months in
+  a row, not before 14) is from AIC's reading of the January 2024 procedures,
+  not checked against the procedure text. Also from AIC, not the procedures:
+  a police certificate from every country of citizenship, and a civil-status
+  document from every country on the police list.
 - The couple's children together: their birth certificates.
 - The Israeli partner's previous spouse's death certificate.
 - School records: whose children (current reading in `lib/knowledge/children.md`).
 - The other parent's death certificate.
 - The Apostille Convention country list.
 - Whether the security-check country list is complete.
-- **Health insurance for the foreign partner: needed or not?** Not in the
-  catalog. Neither procedure 5.2.0008 nor the AS/6 checklist mentions it
-  (5.2.0008 mentions National Insurance only as a center-of-life check). But
-  in at least one real case (the product owner's), the office required the
-  foreign partner to provide health insurance. Unknown: whether it's always
-  required or up to the clerk (5.2.0008 §ד.3 lets the clerk ask for any
-  other document), at which stage, and what counts (an Israeli private
-  policy, a policy from abroad).
+- **Health insurance for the foreign partner.** In the catalog for every
+  couple (v27), as practice: the product owner's case, and AIC's list of
+  documents PIBA may ask for. Neither procedure 5.2.0008 nor the AS/6
+  checklist mentions it (5.2.0008 §ד.3 lets the clerk ask for any other
+  document). Unknown: whether it's always asked for, at which stage (a
+  partner abroad has no policy in Israel yet), and what period it has to
+  cover.
 - **Sole custody or sole guardianship?** Without the other parent's consent,
   procedure 5.2.0008 §ה.2(9)י asks for a ruling of sole **custody**
   (משמורת בלעדית) with proof the child lives with the parent. Form AS/6

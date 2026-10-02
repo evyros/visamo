@@ -10,6 +10,7 @@ the documents themselves, see [documents.md](documents.md).
 | --- | --- | --- |
 | Ministry of Interior | Misrad Hapnim | משרד הפנים |
 | Population and Immigration Authority | Rashut Haochlusin Vehahagira | רשות האוכלוסין וההגירה |
+| The Authority, by its English initials | PIBA | רשות האוכלוסין וההגירה |
 | A local office (branch) of the Authority | lishka | לשכה |
 | Clerk | pakid, pkida | פקיד, פקידה |
 | Municipality | iriya | עירייה |
@@ -27,7 +28,9 @@ the documents themselves, see [documents.md](documents.md).
 **Misrad Hapnim or the Authority?** The Population and Immigration Authority
 (רשות האוכלוסין וההגירה) is part of the Ministry of Interior (משרד הפנים),
 and it's the one that handles your file. Officially, its offices belong to
-the Authority. In practice, most people still call it Misrad Hapnim.
+the Authority. In practice, most people still call it Misrad Hapnim. In
+English, you'll often see it called PIBA, from its earlier English name, the
+Population, Immigration and Border Authority.
 
 ## The process
 
@@ -60,6 +63,7 @@ the Authority. In practice, most people still call it Misrad Hapnim.
 | Permanent resident | toshav keva | תושב קבע |
 | Citizenship | ezrachut | אזרחות |
 | ETA-IL: the electronic travel authorization for visa-exempt visitors | ETA | אישור נסיעה אלקטרוני |
+| Inter-visa: keeps the main visa valid when you travel abroad | inter viza | אינטר ויזה |
 
 ## You as a couple
 

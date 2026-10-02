@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 26;
+export const CATALOG_VERSION = 27;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -40,7 +40,10 @@ export type DocumentDefinition = {
    * when it applies. Not counted as missing until it's uploaded.
    */
   optional?: boolean;
-  /** One item per police country instead of one item. The issuer is then that country. */
+  /**
+   * One item per country instead of one item: the nationality, then every other
+   * country lived in (see facts.ts). The issuer is then that country.
+   */
   each?: "policeCountry";
   issuedBy?: IssuedBy;
   /**
@@ -254,6 +257,16 @@ export const documents = [
     verified: true,
   },
   {
+    // Up to 10 pages of their chats and calls, over the time they've been together.
+    id: "messageHistory",
+    // Their own evidence: they translate or explain it themselves, no notary.
+    mayNeedTranslation: false,
+    owner: "couple",
+    category: "relationship",
+    source: "Practice, confirmed by the product owner; AIC's list of documents for the application",
+    verified: true,
+  },
+  {
     // From Israeli family and friends, in Hebrew.
     id: "recommendationLetters",
     mayNeedTranslation: false,
@@ -285,11 +298,13 @@ export const documents = [
 
   // ── Civil status ──
   {
+    // The procedure names the nationality; in practice offices ask every country lived in, like the police certificate.
     id: "foreignCivilStatus",
     mayNeedTranslation: true,
     owner: "foreign",
     category: "civilStatus",
-    issuedBy: "nationality",
+    each: "policeCountry",
+    issuedBy: "each",
     copies: 2,
     source: `${P8} §ד.2.ה; ${AS6}`,
     verified: true,
@@ -339,7 +354,7 @@ export const documents = [
 
   // ── Criminal record ──
   {
-    // The sources name the country of nationality; the other countries lived in aren't confirmed yet.
+    // Every country of citizenship, and each other country lived in for 6 months in a row (since January 2024).
     id: "foreignPoliceCertificate",
     mayNeedTranslation: true,
     owner: "foreign",
@@ -415,6 +430,16 @@ export const documents = [
     category: "centerOfLife",
     when: { any: ["israeliInIsrael", "foreignInIsrael"] },
     source: `${P8} §ד.2.ח; ${AS6}`,
+    verified: true,
+  },
+  {
+    // A B/1 holder has no public health insurance: a private plan in Israel, or a policy from abroad.
+    id: "foreignHealthInsurance",
+    // A policy from abroad.
+    mayNeedTranslation: true,
+    owner: "foreign",
+    category: "centerOfLife",
+    source: "Practice, confirmed by the product owner; AIC's list of documents for the application",
     verified: true,
   },
   {

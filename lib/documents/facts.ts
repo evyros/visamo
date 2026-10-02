@@ -55,7 +55,11 @@ export type CaseProfile = {
     birthCountry: string;
     /** Null unless married abroad (not online). */
     marriageCountry: string | null;
-    /** Where the foreign partner needs a police certificate from: the nationality, then every other country lived in. */
+    /**
+     * Where the foreign partner needs a police certificate and a civil-status
+     * document from: the nationality, then every other country lived in for 6
+     * months in a row, or held a citizenship of (onboarding asks for both in one question).
+     */
     police: string[];
   };
 };

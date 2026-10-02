@@ -50,9 +50,10 @@ and "פרטי המוזמן/ת" (the foreign partner's details).
 
 - **What you're asking for:** permanent residency (בקשה לישיבת קבע בישראל)
   or naturalization (בקשה להתאזרחות בישראל, under section 7 of the
-  Citizenship Law). A citizen's partner ends with citizenship, a permanent
-  resident's partner with permanent residency (see
-  [process.md](../process.md)).
+  Citizenship Law). A citizen's spouse of a different sex can ask for
+  naturalization. A same-sex spouse gets permanent residency first, and can
+  apply for citizenship after it; a permanent resident's spouse gets
+  permanent residency (see [process.md](../process.md)).
 - **The warning above it:** getting Israeli citizenship this way may affect
   the foreign partner's other citizenship. Check it with the clerk and with
   their country's representative before you file. The foreign partner
@@ -110,8 +111,10 @@ each part by its title: the application ("פרטי המזמין/ה", "פרטי �
 the applicants' declaration ("הצהרת המבקשים"), and the three declarations.
 
 **Do we ask for permanent residency or naturalization?**
-It depends on the Israeli partner's status: a citizen's partner ends with
-citizenship, a permanent resident's partner with permanent residency.
+It depends on the Israeli partner's status, and on your marriage. A citizen's
+spouse of a different sex can ask for naturalization. A same-sex spouse gets
+permanent residency first, and can apply for citizenship after it. A
+permanent resident's spouse gets permanent residency.
 
 **Who are the people who can give details about us?**
 People who know you and can tell the Authority about you, your family and

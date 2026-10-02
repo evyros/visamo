@@ -10,11 +10,17 @@
   - §ה.2(1): who is rejected at the start.
   - §ה.2(7): the center-of-life check.
   - §ה.2(9): children from a previous relationship, and the other parent.
+  - Police certificates from other countries: from each country lived in for
+    at least 6 months in a row (in both procedures since January 2024).
 - **5.2.0009**: common-law couples, including same-sex couples.
   https://www.gov.il/BlobFolder/policy/israelis_couples_status_procedure/he/5.2.0009.pdf
   - Clause 10 (page 16): the interview is held, whenever possible, when the
     couple shows the original documents.
 - **1.3.0001**: foreign documents (certification and translation).
+- **5.1.0013**: how the Authority conducts interviews.
+  https://www.gov.il/BlobFolder/policy/making_interviews_procedure/he/5.1.0013.pdf
+- **5.1.0003**: exemption from the fees, in extreme cases.
+  https://www.gov.il/he/departments/policies/policy_exemption_from_pay_for_residency_permit
 - **2.11.0001**: registering changes in civil status, including marriages.
 
 ## Forms

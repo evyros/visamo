@@ -15,7 +15,11 @@ registered as married in Israel before you apply (below).
 - **Online (for example, through Utah):** the certificate is issued in
   English by a Utah county. The apostille comes from the **Utah Lieutenant
   Governor's office**, not from the country you were in during the ceremony.
-  Israel registers these marriages since a Supreme Court ruling in 2022.
+  Order it with the certificate, sent to your address in Israel. Israel
+  registers these marriages since court rulings in 2022 and 2023, and since
+  July 2023 they count for the graduated procedure like any marriage abroad.
+  Not every country recognizes them: check that the foreign partner's country
+  does.
 
 ## What it should include
 
@@ -33,9 +37,24 @@ appendix (ספח) of their Teudat Zehut. Offices enforce this, and applying
 without it can delay the process significantly. If your Teudat Zehut
 already says married, you don't need to.
 
-To register it, you both go in person to your Misrad Hapnim branch, with the
-certified (and, if needed, translated) marriage certificate, the Israeli
-partner's Teudat Zehut and passport, and the foreign partner's passport.
+To register it, you both go in person to your Misrad Hapnim branch, with:
+
+- the certified (and, if needed, translated) marriage certificate, with
+  copies;
+- the foreign partner's proof of civil status **from before the marriage**,
+  certified and, if needed, translated, with copies: it shows they were free to
+  marry (see the proof of civil status);
+- the Israeli partner's Teudat Zehut and passport, and the foreign partner's
+  passport.
+
+Without a name change, it's usually a walk-in service. With one, book an
+appointment: the Teudat Zehut and passport are replaced.
+
+By law, the marriage is registered within 30 days of the wedding. It isn't
+strictly enforced: you can register it later. If you're already in the
+graduated procedure as a common-law couple, tell your branch's visa
+department as soon as you marry: they may send you to register first, and
+then convert your file to a married couple's.
 There, the office gives you form MR/6, "notice of change in civil status"
 (הודעה על שינוי מצב אישי), and you both sign it in front of the clerk. It
 isn't part of the partner visa application: it's done before it, when you
@@ -65,9 +84,11 @@ leave Israel within 14 days (5.2.0008 §ה.2(5)). Make sure it's the official
 certificate, properly certified, before you file.
 
 **We married in El Salvador. Is it different?**
-Yes. A marriage certificate from El Salvador is handled under the rules on
-civil status of the common-law procedure (5.2.0009), not as a regular
-married couple's file (5.2.0008 §ה.2(5)).
+It depends on whether you were both there. If you were both physically at
+the ceremony, it's treated like any other marriage abroad. A marriage in El
+Salvador by proxy, with one or both of you absent, is handled under the
+rules on civil status of the common-law procedure (5.2.0009), not as a
+regular married couple's file (5.2.0008 §ה.2(5)).
 
 **Does my partner need to update their civil status in their own country?**
 Not to start the process. But by its end, they have to: otherwise they bring

@@ -3,7 +3,12 @@
 Also called Ishur Toshav (אישור תושב): your municipality or local council's official confirmation that your center of life is in their locality.
 
 The municipality or local council's confirmation that your center of life
-is in their locality (5.2.0008 §ד.2.ח; the AS/6 checklist).
+is in their locality (5.2.0008 §ד.2.ח; the AS/6 checklist). It's on the AS/6
+checklist, but many offices don't ask for it at the first application.
+
+The municipality issues it only to someone registered with it as the payer
+of arnona (municipal tax) for the home. Usually the arnona department issues
+it.
 
 ## How to get it
 
@@ -19,6 +24,13 @@ is in their locality (5.2.0008 §ד.2.ח; the AS/6 checklist).
 
 It's an Israeli document, in Hebrew: no certification or translation.
 
+## If you don't have it
+
+If neither of you is registered for arnona (the landlord pays it, say), the
+municipality can't issue it. Bring instead a short letter explaining why, and
+a confirmation from the landlord that the arnona for the home is in their
+name.
+
 ## Questions
 
 **Can I just bring an arnona (ארנונה) bill instead?**
@@ -28,4 +40,5 @@ from the municipality to support your file's claim that you live there.
 
 **The municipality says they don't issue this document. What do we do?**
 It's very common. Book an appointment, go in person, and say you need it
-for Misrad Hapnim: they'll understand what you mean.
+for Misrad Hapnim: they'll understand what you mean. If you aren't registered
+for arnona, they can't issue it: see "If you don't have it" above.

@@ -18,6 +18,10 @@ for when at least one of you lives in Israel.
   חולים), showing your health fund and the date you joined. National
   Insurance issues it too, for one person or for the whole family, from the
   same personal area.
+- **Others that count:** from the Tax Authority (רשות המסים), such as the
+  annual tax report; from the Ministry of Transport (משרד הרישוי), such as a
+  driver's license or a vehicle license; or a confirmation of unemployment
+  benefits.
 
 The municipality's confirmation of your center of life (Ishur Toshav), and
 the children's school records, are documents of their own.
@@ -34,5 +38,6 @@ They're Israeli documents, in Hebrew: no certification or translation.
 
 **Which services count?**
 The services you receive from government institutions in Israel. The AS/6
-checklist gives National Insurance, health and education as examples: bring
-the confirmations of the ones you receive.
+checklist gives National Insurance, health and education as examples. Tax
+records, a driver's license or vehicle license, and unemployment benefits
+count too: bring the confirmations of the ones you receive.

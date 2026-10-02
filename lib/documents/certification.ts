@@ -21,7 +21,7 @@ export const ENGLISH_USUALLY_ACCEPTED = true;
 
 export type Certification = {
   authentication: "none" | "apostille" | "utahApostille" | "legalization" | "dependsOnCountry";
-  /** No authentication needed if issued up to this year (former USSR birth certificates). The translation of a document never needs one. */
+  /** No authentication needed if issued up to this year (former USSR birth certificates). A translation made in Israel never needs one. */
   exemptIfIssuedUntil?: number;
 };
 

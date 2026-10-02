@@ -19,19 +19,21 @@ It needs no certification and no translation.
 
 ## If you don't have it
 
-- **Valid for less than 2 years:** you can still apply. By the procedure,
+- **Valid for less than 2 years:** by the procedure, you can still apply:
   you're told in writing to renew it, and renewing it is a condition for
-  getting the visa (5.2.0008 §ה.2(4)). Renewing it before you file saves
-  that step.
+  getting the visa (5.2.0008 §ה.2(4)). In practice, offices often won't
+  process the application until the passport is renewed. Renew it before you
+  file.
 - **No valid passport, while in Israel:** the foreign partner is referred
   to their country's embassy or consulate in Israel, to get one.
 
 ## Questions
 
 **My partner's passport expires in a year and a half. Can we still file?**
-Yes. The office tells you in writing to renew it, and the visa is given
-only once the passport is valid for at least 2 more years. Renewing it
-first saves the delay.
+By the procedure, yes: the office tells you in writing to renew it, and the
+visa is given only once the passport is valid for at least 2 more years. In
+practice, many offices won't process the application until then, so renew
+it before you file.
 
 **Which pages do we copy?**
 The main page with the photo, every page with a visa, and every page with a

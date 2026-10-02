@@ -927,7 +927,7 @@
           "nationality": "Nationality",
           "bornInNationality": "Were you born in {country}?",
           "birthCountry": "Country of birth",
-          "countriesLived": "Besides your country of citizenship, have you lived in another country as an adult?",
+          "countriesLived": "Besides your country of citizenship, have you lived in another country for 6 months or more in a row, from age 14?",
           "location": "Where are you now?",
           "nameChanged": "Has your name ever changed?",
           "previousMarriages": "Were you married to someone else before?",
@@ -940,7 +940,7 @@
           "nationality": "Your partner's nationality",
           "bornInNationality": "Was your partner born in {country}?",
           "birthCountry": "Your partner's country of birth",
-          "countriesLived": "Besides their country of citizenship, has your partner lived in another country as an adult?",
+          "countriesLived": "Besides their country of citizenship, has your partner lived in another country for 6 months or more in a row, from age 14?",
           "location": "Where is your partner now?",
           "nameChanged": "Has your partner's name ever changed?",
           "previousMarriages": "Was your partner married to someone else before?",
@@ -959,7 +959,7 @@
       "no": "No",
       "countryPlaceholder": "Choose a country",
       "bornInNationalityHint": "By today's borders. For example, born in Soviet Kyiv counts as Ukraine.",
-      "countriesLivedHint": "Not counting visits and vacations. Use today's countries. For example, the USSR is now Russia, Ukraine and others.",
+      "countriesLivedHint": "Not counting visits and vacations. Also add any other country of citizenship, even one never lived in. Use today's countries. For example, the USSR is now Russia, Ukraine and others.",
       "country": "Country {number}",
       "addCountry": "Add another country",
       "removeCountry": "Remove",
@@ -1349,6 +1349,10 @@
           "title": "Shared photos of you",
           "description": "Photos of you together, from different places and times, some with family and friends. At least 10 for the online application; bring more, arranged 6, 9 or 12 to a page."
         },
+        "messageHistory": {
+          "title": "Message and call history",
+          "description": "Up to 10 pages of your messages (WhatsApp, email, social media) or call logs, from different times in your relationship."
+        },
         "recommendationLetters": {
           "title": "Letters of recommendation",
           "description": "At least 3 letters in Hebrew from Israeli family and friends about your relationship, each with a copy of the writer's Teudat Zehut and their contact details."
@@ -1362,8 +1366,8 @@
           "description": "One for each child you have together."
         },
         "foreignCivilStatus": {
-          "title": "Proof of civil status",
-          "description": "An official document of the foreign partner's marital status from their country, issued in the last 6 months."
+          "title": "Proof of civil status: {country}",
+          "description": "An official document of the foreign partner's marital status from {country}, issued in the last 6 months. Married couples: also one of their status before the marriage."
         },
         "foreignDivorceDecree": {
           "title": "Divorce decree",
@@ -1408,6 +1412,10 @@
         "governmentServices": {
           "title": "Proof of government services",
           "description": "Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi - ביטוח לאומי), health and education."
+        },
+        "foreignHealthInsurance": {
+          "title": "Health insurance of the foreign partner",
+          "description": "Health insurance for the foreign partner in Israel: until A/5, they have no public health insurance. A private Israeli plan for non-residents, or a policy from abroad that covers Israel."
         },
         "ishurToshav": {
           "title": "Municipality confirmation of your center of life",

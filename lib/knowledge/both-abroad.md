@@ -55,3 +55,8 @@ with your local Misrad Hapnim branch, within the time you're given. That
 moves the foreign partner toward the B/1 visa (ב/1) and starts the
 graduated procedure. From there, the process is the same as for a partner
 who's already in Israel: see [first-appointment.md](first-appointment.md).
+An interview you had at the consulate was only for the entry permit: it
+doesn't replace the interview in Israel.
+
+The consulate's list of documents differs from one consulate to another:
+contact it first, and follow its list.

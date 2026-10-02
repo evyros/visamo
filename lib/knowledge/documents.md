@@ -33,11 +33,19 @@ follows what you say.
   share a life. For example:
   - receipts for things you bought together;
   - letters of recommendation that say the writer saw you together;
-  - flight bookings for the two of you, and hotel bookings together.
+  - flight bookings for the two of you, and hotel bookings together;
+  - your message and call history, over the time you've been together.
 
-### Married, but never lived together
+### A short relationship, or one where you never lived together
 
-This is an exception, and in practice Misrad Hapnim will likely reject the
-file. It's approved only when you can show a strong basis: that your
-marriage is genuine, and that you do share a life together. Build that case
-with everything above, and make it as strong as you can before you file.
+The procedures ask for proof of a shared center of life for at least the
+last year, but it isn't a condition for applying. Couples who have been
+together for less, or who have never lived together, married or not, are
+processed normally.
+
+What decides it is whether you can show that the relationship is genuine:
+visits and time spent together, meeting each other's family and friends,
+and an ongoing connection. A couple with little of that may not have the
+relationship recognized, and a couple who has never met in person is very
+unlikely to be. Build that case with everything above, and make it as strong
+as you can before you file.

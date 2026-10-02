@@ -15,8 +15,9 @@ const everyone = [
   "foreignPhotos",
   "foreignBirthCertificate",
   "relationshipEvidence",
+  "messageHistory",
   "recommendationLetters",
-  "foreignCivilStatus",
+  "foreignHealthInsurance",
   "ishurToshav",
   "israeliIncomeProof",
   "foreignIncomeProof",
@@ -38,14 +39,16 @@ describe("buildDocumentList", () => {
       "foreignBirthCertificate",
       "marriageCertificateAbroad",
       "relationshipEvidence",
+      "messageHistory",
       "recommendationLetters",
       "jointLivingEvidence",
-      "foreignCivilStatus",
+      "foreignCivilStatus:US",
       "foreignPoliceCertificate:US",
       "housingContract",
       "landlordAffidavit",
       "utilityBills",
       "governmentServices",
+      "foreignHealthInsurance",
       "ishurToshav",
       "sharedBankAccount",
       "israeliIncomeProof",
@@ -65,13 +68,15 @@ describe("buildDocumentList", () => {
       "foreignPhotos",
       "foreignBirthCertificate",
       "relationshipEvidence",
+      "messageHistory",
       "recommendationLetters",
       "jointLivingEvidence",
-      "foreignCivilStatus",
+      "foreignCivilStatus:US",
       "foreignPoliceCertificate:US",
       "housingContract",
       "utilityBills",
       "governmentServices",
+      "foreignHealthInsurance",
       "ishurToshav",
       "bankStatements",
       "israeliIncomeProof",
@@ -132,6 +137,16 @@ describe("buildDocumentList", () => {
   it("asks for one police certificate per country, each certified by its country", () => {
     const police = buildDocumentList(scenarios.livedInThreeCountries).filter((d) => d.id === "foreignPoliceCertificate");
     expect(police.map((d) => [d.country, d.certification?.authentication])).toEqual([
+      ["FR", "apostille"],
+      ["GB", "apostille"],
+      ["TH", "legalization"],
+      ["IN", "apostille"],
+    ]);
+  });
+
+  it("asks for proof of civil status from the same countries as the police certificate", () => {
+    const civil = buildDocumentList(scenarios.livedInThreeCountries).filter((d) => d.id === "foreignCivilStatus");
+    expect(civil.map((d) => [d.country, d.certification?.authentication])).toEqual([
       ["FR", "apostille"],
       ["GB", "apostille"],
       ["TH", "legalization"],
@@ -212,7 +227,7 @@ describe("buildDocumentList", () => {
   it("gives the number of copies where more than one is needed", () => {
     expect(find("marriedInCyprus", "foreignPhotos")?.copies).toBe(3);
     expect(find("marriedInCyprus", "israeliPhotos")?.copies).toBe(3);
-    expect(find("marriedInCyprus", "foreignCivilStatus")?.copies).toBe(2);
+    expect(find("marriedInCyprus", "foreignCivilStatus:US")?.copies).toBe(2);
     expect(find("marriedInCyprus", "foreignPassport")?.copies).toBeUndefined();
   });
 

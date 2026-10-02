@@ -20,6 +20,10 @@ The form is part of AS/6, on the Population and Immigration Authority's site
 2. They sign it **in front of a lawyer (עו"ד) or a Misrad Hapnim registrar
    (רשם)**, who confirms the declaration at the bottom of the page.
 
+**If the foreign partner is abroad:** the Israeli partner files the form with
+their own parts, and the foreign partner fills in and signs this declaration
+once they arrive in Israel.
+
 ## What it should include
 
 - **The foreign partner's details:** first name, last name and ID number (מ"ז).
@@ -74,6 +78,11 @@ something relevant, can lead to cancelling any status given, and to a
 removal order from Israel against the foreign partner (sections 11 and 13 of
 the Entry into Israel Law, 1952). Giving false details or a forged document
 is also a criminal offense.
+
+**My partner is still abroad. Do they sign it there?**
+No. They sign it once they're in Israel, in front of an Israeli lawyer or a
+Misrad Hapnim registrar. Until then, the Israeli partner files the form
+without it.
 
 **Does it have to be in front of a lawyer?**
 A lawyer, or a Misrad Hapnim registrar: the confirmation at the bottom of the

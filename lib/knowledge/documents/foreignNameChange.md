@@ -18,6 +18,34 @@ where it was made. Depending on how the name changed, that's usually:
 - **By choice:** a court order, or a name-change certificate from the civil
   registry.
 
+### Brazil
+
+A name changed by marriage shows on the marriage certificate (certidão de
+casamento); after a divorce, on the marriage certificate annotated with it
+(averbada).
+
+### Czech Republic
+
+There's no name-change certificate. Use an extract from the population
+register (výpis z registru obyvatel) listing the previous names, or the
+marriage certificate if the name changed by marriage.
+
+### Denmark
+
+A residence certificate (bopælsattest) with the name history
+(navnehistorik), which lists the current and previous names and the dates of
+each change.
+
+### Japan
+
+The family register (戸籍全部事項証明): both the old one, from before the
+change, and the new one.
+
+### Mexico
+
+A Mexican's legal name doesn't change by marriage, so there's usually nothing
+to bring: the name stays as on the birth certificate.
+
 ### Russia
 
 A certificate of change of name (свидетельство о перемене имени), from the
@@ -32,7 +60,9 @@ apostille on a notarized copy.
 ### United Kingdom
 
 A deed poll (change of name deed). For an apostille, it has to be certified
-by a UK solicitor or notary, unless one of them witnessed it.
+by a UK solicitor or notary, unless one of them witnessed it. An enrolled
+deed poll, recorded at the Royal Courts of Justice, is also a public record of
+the change.
 
 ### United States
 

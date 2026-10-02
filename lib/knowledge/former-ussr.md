@@ -31,3 +31,5 @@ USSR. It's the authority on Soviet and post-Soviet records and documents.
 - **The wait:** waiting times for a Nativ interview are long. If you haven't
   heard back from Nativ within a month, contact them and ask about the
   status of your application.
+- **Bring your papers to Israel:** Nativ may ask for documents beyond the
+  file, such as diplomas and the work record book (трудовая книжка).

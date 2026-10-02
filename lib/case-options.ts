@@ -146,7 +146,7 @@ export type PersonInput = {
   // The foreign partner only; null for the Israeli.
   nationality: string | null;
   birthCountry: string | null;
-  /** Other countries lived in as an adult, besides the nationality. Empty for none. */
+  /** Other countries lived in for 6 months in a row from age 14, or held a citizenship of, besides the nationality. Empty for none. */
   countriesLived: string[] | null;
   location: Location | null;
   nameChanged: boolean | null;

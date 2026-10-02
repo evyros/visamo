@@ -13,13 +13,15 @@ import { documents, type Category, type DocumentId } from "@/lib/documents/catal
  * version: lib/prompts.test.ts fails until it's raised and recorded
  * (npm run prompts:lock).
  */
-export const KNOWLEDGE_VERSION = 45;
+export const KNOWLEDGE_VERSION = 46;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [
   "README.md",
   "process.md",
+  "application.md",
   "first-appointment.md",
+  "interview.md",
   "both-abroad.md",
   "documents.md",
   "certification.md",

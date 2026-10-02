@@ -206,6 +206,7 @@ export const checks = {
       "The date and place of birth are on it and readable.",
       "It carries the certification the file says it needs (an apostille or consular legalization), in the same file. An original from the former USSR issued up to 1998 needs none; one issued later, including a new copy of an old record, does.",
       "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If the translation was made abroad, by a notary there, it carries its own apostille or legalization from that country: a translation made in Israel needs none.",
     ],
     recommended: [
       "The apostille or legalization pages are scanned together with the certificate, in order.",
@@ -236,6 +237,7 @@ export const checks = {
       "It is an official marriage certificate from the civil authority that registered the marriage abroad, or, for an online marriage, from a Utah county, naming the two spouses.",
       "It carries the certification the file says it needs, in the same file: an apostille or consular legalization from the country of the marriage, or, for a Utah marriage, an apostille from the Utah Lieutenant Governor's office.",
       "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If the translation was made abroad, by a notary there, it carries its own apostille or legalization from that country: a translation made in Israel needs none.",
     ],
     recommended: [
       "The apostille or legalization pages are scanned together with the certificate, in order.",
@@ -252,6 +254,18 @@ export const checks = {
       "They're from different places and different times, not one event.",
       "Some include family and friends with the couple.",
       "On pages, they're arranged in a grid of 6, 9 or 12 photos to a page, each photo still clear.",
+    ],
+  },
+  messageHistory: {
+    required: [
+      "It shows messages or calls between two people: screenshots or printouts of chats (WhatsApp, email, social media and the like), or a call log.",
+      "The dates of the messages or calls are visible.",
+    ],
+    recommended: [
+      "It is about 10 pages or fewer, chosen, not an entire chat history.",
+      "It spans different times in the relationship, from early on to recently, not one day or one week.",
+      "If the messages aren't in Hebrew or English, the important parts are translated or explained alongside them. A notarized translation isn't needed.",
+      "Each page is readable, with the text not cut off.",
     ],
   },
   recommendationLetters: {
@@ -293,12 +307,17 @@ export const checks = {
   foreignCivilStatus: {
     required: [
       "It states the foreign partner's civil status.",
-      "It is issued by an authority of the foreign partner's country: a civil-status certificate, an extract from a population or civil register, or a record search showing no marriage is registered. Or, if there's no way to get one, it is a notarized affidavit of their status signed in front of an Israeli consul, a notary in Israel, or their country's consul in Israel. An affidavit signed in front of a notary abroad doesn't count.",
-      "It was issued in the last 6 months, counted from today.",
+      "It is issued by an authority of the country this item is for, as in the document's details: a civil-status certificate, an extract from a population or civil register, a record search showing no marriage is registered, or a certificate of no impediment to marriage. Or, if there's no way to get one, it is a notarized or consular affidavit of their status: signed in front of a notary in Israel, an Israeli consul abroad, the country's consul in Israel, or a notary in that country (then with that country's apostille or legalization).",
+      "The document of the status now was issued in the last 6 months, counted from today.",
+      "If the file says the couple is married: there's also a document of the foreign partner's status before the marriage (single, divorced or widowed), or one affidavit that declares both, or a marriage certificate from the foreign partner's country that shows their status before the marriage.",
       "It carries the certification the file says it needs (an apostille or consular legalization), in the same file.",
       "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it, and the translation matches the original. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If the translation was made abroad, by a notary there, it carries its own apostille or legalization from that country: a translation made in Israel needs none.",
     ],
-    recommended: ["The apostille or legalization pages are scanned together with the document, in order."],
+    recommended: [
+      "The apostille or legalization pages are scanned together with the document, in order.",
+      "It is a paper original issued for use abroad, not a document printed at home from an online service.",
+    ],
   },
   foreignDivorceDecree: {
     required: [
@@ -353,8 +372,10 @@ export const checks = {
       "It was issued in the last 6 months, counted from today.",
       "It carries an apostille or consular legalization from that country, in the same file.",
       "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If the translation was made abroad, by a notary there, it carries its own apostille or legalization from that country: a translation made in Israel needs none.",
     ],
     recommended: [
+      "It is a paper original, not a certificate printed at home from an online service.",
       "If the file says the foreign partner's name changed, it covers their former names too.",
       "If it lists a conviction, the court's sentence is uploaded with it: the office asks for it.",
       "It is the original document scanned in full, readable, with the issuing authority's seal or signature visible.",
@@ -429,7 +450,7 @@ export const checks = {
   },
   governmentServices: {
     required: [
-      "It is an official confirmation from an Israeli government institution about a service received in Israel, by either partner or both: one partner's confirmation alone is fine. For example, National Insurance's confirmation of insurance periods, a health fund membership confirmation, or a confirmation from an educational institution.",
+      "It is an official confirmation from an Israeli government institution about a service received in Israel, by either partner or both: one partner's confirmation alone is fine. For example, National Insurance's confirmation of insurance periods, a health fund membership confirmation, a confirmation from an educational institution, a Tax Authority document such as the annual tax report, a driver's license or vehicle license, or a confirmation of unemployment benefits.",
       "It is the full document, readable, with the institution's name and the date it was issued.",
     ],
     recommended: [
@@ -437,11 +458,24 @@ export const checks = {
       "It was issued recently, in the last few months.",
     ],
   },
+  foreignHealthInsurance: {
+    required: [
+      "It is a health insurance policy, or an insurer's confirmation of coverage, for one person: from an Israeli health fund or insurance company (a plan for non-residents, a partner's plan, or a foreign worker's policy through an employer), or a policy from abroad.",
+      "It covers medical treatment in Israel.",
+      "It names the insurer and the coverage period, and the period hasn't ended: it's valid today, or starts in the future.",
+      "If it isn't in Hebrew, Arabic or English (a policy from abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "It's a health plan, not only emergency or accident cover.",
+      "It covers at least the coming months, not only a few weeks.",
+      "It is the full policy or confirmation, readable, with the insurer's name visible.",
+    ],
+  },
   ishurToshav: {
     required: [
-      "It is an official confirmation from an Israeli municipality or local council that the partner or partners live in, or have their center of life in, its locality. From a small local council or a kibbutz, a confirmation of registration in the kibbutz's books (אישור על רישום בספרי הקיבוץ) counts too.",
-      "It is on the municipality's or council's letterhead or official form, with its stamp or signature, and the date it was issued.",
-      "An arnona bill, or any other bill, is an issue: it shows payment for a property, not that they live there, and doesn't replace the confirmation.",
+      "It is an official confirmation from an Israeli municipality or local council that the partner or partners live in, or have their center of life in, its locality. From a small local council or a kibbutz, a confirmation of registration in the kibbutz's books (אישור על רישום בספרי הקיבוץ) counts too. Or, if neither partner is registered for arnona, so the municipality can't issue it: a short letter explaining why, with the landlord's confirmation that the arnona for the home is in their name.",
+      "A municipality's or council's confirmation is on its letterhead or official form, with its stamp or signature, and the date it was issued.",
+      "An arnona bill, or any other bill, on its own is an issue: it shows payment for a property, not that they live there, and doesn't replace the confirmation.",
     ],
     recommended: [
       "It was issued recently, in the last few months.",

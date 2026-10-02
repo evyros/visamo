@@ -194,7 +194,7 @@ export const casePerson = pgTable(
     nationality: text("nationality"),
     /** ISO 3166 region code, as the country is called today. May be Israel. */
     birthCountry: text("birth_country"),
-    /** ISO 3166 region codes of other countries lived in as an adult; empty for none. */
+    /** ISO 3166 region codes of other countries lived in (6 months in a row, from age 14) or held a citizenship of; empty for none. */
     countriesLived: text("countries_lived").array(),
     /** A Location from lib/case-options.ts: where they are now. */
     location: text("location"),

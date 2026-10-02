@@ -63,7 +63,6 @@ shown to users (`lib/knowledge/`).
   Unknown: whether the chat only flags these when the user raises them, or
   onboarding should ask about them too.
 
-- The Nativ referral for former-USSR applicants (a process step).
 - Anything extra for a permanent resident as the Israeli side (their own
   status, a longer period). Kept as it is for now (practice).
 - The renewal stages.

@@ -356,10 +356,12 @@ export const creditEntry = pgTable(
 );
 
 /**
- * A purchase made in Freemius Checkout (lib/purchases.ts). Written in the same
- * batch as what it grants (grantPurchase in lib/credits.ts), and the Freemius
- * license is unique, so the success page and the webhook, which both report
- * the same purchase, can't grant it twice. A refunded purchase stays, marked.
+ * A purchase made in Freemius Checkout (lib/purchases.ts), or given from the
+ * admin panel (grantSupportPurchase in lib/credits.ts), which has no Freemius
+ * license or payment. Written in the same batch as what it grants
+ * (grantPurchase in lib/credits.ts), and the Freemius license is unique, so
+ * the success page and the webhook, which both report the same purchase,
+ * can't grant it twice. A refunded or revoked purchase stays, marked.
  */
 export const purchase = pgTable(
   "purchase",
@@ -372,9 +374,9 @@ export const purchase = pgTable(
     userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
     /** A ProductId from lib/products.ts. */
     product: text("product").notNull().$type<ProductId>(),
-    /** Each one-off purchase is its own license in Freemius. */
-    freemiusLicenseId: text("freemius_license_id").notNull().unique(),
-    freemiusUserId: text("freemius_user_id").notNull(),
+    /** Each one-off purchase is its own license in Freemius. Null for one given from the admin panel. */
+    freemiusLicenseId: text("freemius_license_id").unique(),
+    freemiusUserId: text("freemius_user_id"),
     /** The license's payment in Freemius: its invoice is served from there (app/api/purchases). */
     freemiusPaymentId: text("freemius_payment_id"),
     // The payment, as Freemius reports it. Null when Freemius didn't have it
@@ -386,10 +388,15 @@ export const purchase = pgTable(
     currency: text("currency"),
     /** How it was paid. Freemius doesn't give out the card's digits. */
     paymentMethod: text("payment_method").$type<PaymentMethod>(),
+    /** Who gave it from the admin panel; null for one bought in Freemius. */
+    adminEmail: text("admin_email"),
+    /** Why it was given. */
+    note: text("note"),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     /**
-     * When it was refunded in full, or lost a chargeback: what it granted and
-     * wasn't used yet was taken back (revokePurchase in lib/credits.ts).
+     * When it was refunded in full, lost a chargeback, or was revoked from the
+     * admin panel: what it granted and wasn't used yet was taken back
+     * (lib/credits.ts).
      */
     refundedAt: timestamp("refunded_at"),
   },

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { CreditTotals } from "@/lib/credits";
+import type { ProductId } from "@/lib/products";
 
 // Building blocks shared by the admin pages. The panel is in English, and
 // times are Israel's: the server runs in UTC.
@@ -13,9 +14,12 @@ const dateTime = new Intl.DateTimeFormat("en-GB", {
 /** e.g. "30 Sept 2026, 01:15", in Israel time. */
 export const formatDateTime = (date: Date) => dateTime.format(date);
 
-/** What a case has bought (lib/products.ts), by the names on the pricing page. */
+/** The products (lib/products.ts), by their names on the pricing page. */
+export const productLabels: Record<ProductId, string> = { messagePack: "Message pack", fileCheck: "Full file check" };
+
+/** What a case has bought. */
 export function purchasesLabel(access: { paid: boolean | null; fileCheck: boolean | null }) {
-  return access.fileCheck ? "Full file check" : access.paid ? "Message pack" : "Free";
+  return access.fileCheck ? productLabels.fileCheck : access.paid ? productLabels.messagePack : "Free";
 }
 
 const numbers = new Intl.NumberFormat("en-US");

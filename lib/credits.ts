@@ -1,6 +1,6 @@
 import "server-only";
 import { and, desc, eq, inArray, sql, type SQL } from "drizzle-orm";
-import { PRODUCT_GRANTS } from "./products";
+import { PRODUCT_GRANTS, type ProductId } from "./products";
 import { db } from "./db";
 import { caseEvent, cases, chat, chatMessage, creditEntry, documentCheck, purchase, user } from "./db/schema";
 import { recordEvent } from "./events";
@@ -108,51 +108,98 @@ export function grantQueries(caseId: string, kind: CreditKind, amount: number, r
  * 300 checks (lib/products.ts), and what it unlocks on the case. One batch is
  * one transaction, and the purchase's Freemius license is unique, so a
  * purchase reported twice throws on the second time and grants nothing more.
- * For the purchase flow (lib/purchases.ts).
+ * For the purchase flow (lib/purchases.ts), and the admin panel's
+ * (grantSupportPurchase): one given there has the admin's email and a note,
+ * and its entries are support grants, with them.
  */
 export async function grantPurchase(row: typeof purchase.$inferInsert & { userId: string }) {
   const { caseId, product, userId } = row;
   const grants = PRODUCT_GRANTS[product];
-  const details = { userId, refId: row.id };
+  const given = !!row.adminEmail;
+  const reason: CreditReason = given ? "support" : "purchase";
+  const details: EntryDetails = given
+    ? { adminEmail: row.adminEmail!, note: row.note ?? undefined, refId: row.id }
+    : { userId, refId: row.id };
   await db.batch([
     db.insert(purchase).values(row),
     db
       .update(cases)
       .set({ paid: true, ...(product === "fileCheck" && { fileCheck: true }) })
       .where(eq(cases.id, caseId)),
-    ...grantQueries(caseId, "messages", grants.messages, "purchase", details),
-    ...(grants.checks ? grantQueries(caseId, "checks", grants.checks, "purchase", details) : []),
-    recordEvent(caseId, userId, { type: "purchase.made", data: { product } }),
+    ...grantQueries(caseId, "messages", grants.messages, reason, details),
+    ...(grants.checks ? grantQueries(caseId, "checks", grants.checks, reason, details) : []),
+    given
+      ? recordEvent(caseId, null, { type: "purchase.given", data: { product } })
+      : recordEvent(caseId, userId, { type: "purchase.made", data: { product } }),
   ]);
 }
 
 /**
- * Takes back what a refunded purchase granted, once: marks the purchase
- * refunded, and takes its messages and checks out of the balances, but only
- * what's left of them, since what was used can't be taken back: a balance
- * never goes below zero. What the case has bought is then what its other
- * purchases bought. It's one statement, so it all happens or none of it, and
- * a purchase already marked refunded changes nothing: the webhook can be
- * sent again. `note` says why, on the entries. The purchase's product, or
- * null when there was nothing to take back.
+ * A purchase given from the admin panel, as if the user had bought it: it
+ * adds what the product grants and unlocks what it unlocks. There's no
+ * Freemius license or payment; who gave it and why are kept on it.
+ */
+export async function grantSupportPurchase(
+  caseId: string,
+  userId: string,
+  product: ProductId,
+  adminEmail: string,
+  note: string,
+) {
+  await grantPurchase({ id: crypto.randomUUID(), caseId, userId, product, adminEmail, note });
+}
+
+/**
+ * Takes back what a purchase refunded in Freemius, or a chargeback lost,
+ * granted (revoke). The purchase's product, or null when there was nothing to
+ * take back.
  */
 export async function revokePurchase(freemiusLicenseId: string, note: string) {
   const [row] = await db
-    .select({ product: purchase.product })
+    .select({ id: purchase.id, product: purchase.product })
     .from(purchase)
     .where(eq(purchase.freemiusLicenseId, freemiusLicenseId))
     .limit(1);
-  if (!row) return null;
+  return row ? revoke(row, { note }) : null;
+}
+
+/**
+ * Takes back what one of the case's purchases granted, from the admin panel
+ * (revoke): one bought, like after a chargeback Freemius didn't report, or
+ * one given. It doesn't refund anything in Freemius.
+ */
+export async function revokeSupportPurchase(caseId: string, purchaseId: string, adminEmail: string, note: string) {
+  const [row] = await db
+    .select({ id: purchase.id, product: purchase.product })
+    .from(purchase)
+    .where(and(eq(purchase.caseId, caseId), eq(purchase.id, purchaseId)))
+    .limit(1);
+  return row ? revoke(row, { adminEmail, note }) : null;
+}
+
+/**
+ * Takes back what a purchase granted, once: marks it refunded, and takes its
+ * messages and checks out of the balances, but only what's left of them,
+ * since what was used can't be taken back: a balance never goes below zero.
+ * What the case has bought is then what its other purchases bought. It's one
+ * statement, so it all happens or none of it, and a purchase already marked
+ * refunded changes nothing: the webhook can be sent again. `note` says why,
+ * on the entries, with the admin who did it. The purchase's product, or null
+ * when there was nothing to take back.
+ */
+async function revoke(row: { id: string; product: ProductId }, details: { note: string; adminEmail?: string }) {
   const grants = PRODUCT_GRANTS[row.product];
 
   // Each part is a CTE of one statement: they all see the tables as they were
   // before it, so `kept` leaves out the refunded purchase by its id. `locked`
   // waits for, and then reads, the case as it is after any spend in progress.
+  // A purchase given from the admin panel is cancelled, not refunded, in the
+  // case's events.
   const { rows } = await db.execute<{ product: string }>(sql`
     with refunded as (
       update ${purchase} set refunded_at = now()
-      where freemius_license_id = ${freemiusLicenseId} and refunded_at is null
-      returning id, case_id, product
+      where id = ${row.id} and refunded_at is null
+      returning id, case_id, product, admin_email is not null as given
     ), locked as (
       select c.id, c.messages_left, c.checks_left
       from ${cases} c join refunded r on r.case_id = c.id
@@ -176,15 +223,17 @@ export async function revokePurchase(freemiusLicenseId: string, note: string) {
       from taken t, kept k
       where c.id = t.case_id
     ), entries as (
-      insert into ${creditEntry} (id, case_id, kind, delta, reason, ref_id, note)
-      select gen_random_uuid()::text, t.case_id, e.kind, -e.amount, 'revoked', r.id, ${note}
+      insert into ${creditEntry} (id, case_id, kind, delta, reason, ref_id, admin_email, note)
+      select gen_random_uuid()::text, t.case_id, e.kind, -e.amount, 'revoked', r.id, ${details.adminEmail ?? null}, ${details.note}
       from taken t
       cross join refunded r
       cross join lateral (values ('messages', t.messages), ('checks', t.checks)) as e(kind, amount)
       where e.amount > 0
     ), event as (
       insert into ${caseEvent} (id, case_id, type, data)
-      select gen_random_uuid()::text, r.case_id, 'purchase.refunded', jsonb_build_object('product', r.product)
+      select gen_random_uuid()::text, r.case_id,
+        case when r.given then 'purchase.cancelled' else 'purchase.refunded' end,
+        jsonb_build_object('product', r.product)
       from refunded r
     )
     select product from refunded`);
@@ -230,7 +279,8 @@ export async function caseCreditTotals(caseId: string) {
 /**
  * A case's entries, newest first, with the partner's name, and what a spend
  * or refund was for: the check run and its document, or the chat message and
- * its chat. A message that got no answer was deleted, so it has no chat.
+ * its chat. A message that got no answer was deleted, so it has no chat. A
+ * purchase's grants, and taking them back, have its product.
  */
 export async function creditEntries(caseId: string) {
   return db
@@ -240,12 +290,14 @@ export async function creditEntries(caseId: string) {
       documentKey: documentCheck.documentKey,
       chatId: chatMessage.chatId,
       chatTitle: chat.title,
+      product: purchase.product,
     })
     .from(creditEntry)
     .leftJoin(user, eq(user.id, creditEntry.userId))
     .leftJoin(documentCheck, and(eq(creditEntry.kind, "checks"), eq(documentCheck.id, creditEntry.refId)))
     .leftJoin(chatMessage, and(eq(creditEntry.kind, "messages"), eq(chatMessage.id, creditEntry.refId)))
     .leftJoin(chat, eq(chat.id, chatMessage.chatId))
+    .leftJoin(purchase, and(inArray(creditEntry.reason, ["purchase", "support", "revoked"]), eq(purchase.id, creditEntry.refId)))
     .where(eq(creditEntry.caseId, caseId))
     .orderBy(desc(creditEntry.createdAt), desc(creditEntry.id));
 }

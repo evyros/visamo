@@ -46,7 +46,9 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale,
         return { text: say(event.type, { stage: steps[to as Stage] ?? to }) };
       }
       case "purchase.made":
-      case "purchase.refunded": {
+      case "purchase.given":
+      case "purchase.refunded":
+      case "purchase.cancelled": {
         const product = event.data.product as ProductId;
         return { text: say(event.type, { product: messages.pricing[product]?.name ?? product }) };
       }

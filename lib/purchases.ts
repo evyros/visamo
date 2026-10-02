@@ -99,7 +99,7 @@ export async function recordPurchase(licenseId: string, buyer?: Buyer): Promise<
   return product;
 }
 
-/** The case's purchases, newest first, with the name in the case of the partner who bought each. */
+/** The case's purchases, newest first, with the name in the case of the partner who bought each, or who was given it. */
 export async function casePurchases(caseId: string) {
   return db
     .select({
@@ -112,6 +112,10 @@ export async function casePurchases(caseId: string) {
       hasInvoice: sql<boolean>`${purchase.freemiusPaymentId} is not null`,
       createdAt: purchase.createdAt,
       refundedAt: purchase.refundedAt,
+      /** Given from the admin panel, not bought. */
+      given: sql<boolean>`${purchase.adminEmail} is not null`,
+      adminEmail: purchase.adminEmail,
+      note: purchase.note,
       buyerId: purchase.userId,
       buyerName: casePerson.name,
     })
@@ -138,7 +142,7 @@ export async function invoiceOfPurchase(caseId: string, purchaseId: string) {
     .from(purchase)
     .where(and(eq(purchase.caseId, caseId), eq(purchase.id, purchaseId)))
     .limit(1);
-  if (!row?.freemiusPaymentId) return null;
+  if (!row?.freemiusUserId || !row.freemiusPaymentId) return null;
   return freemius().api.user.retrieveInvoice(row.freemiusUserId, row.freemiusPaymentId);
 }
 

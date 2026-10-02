@@ -1224,6 +1224,8 @@
         "historyEmpty": "עדיין אין רכישות.",
         "boughtBy": "על ידי {name}",
         "refunded": "הוחזר",
+        "cancelled": "בוטל",
+        "given": "מאת Visamo",
         "paidCard": "כרטיס אשראי",
         "paidPaypal": "PayPal",
         "vatIncluded": "כולל מע״מ {vat}",
@@ -1797,9 +1799,17 @@
             "male": "{name} רכש {product}",
             "female": "{name} רכשה {product}"
           },
+          "purchase.given": {
+            "male": "Visamo הוסיפה לתיק את {product}",
+            "female": "Visamo הוסיפה לתיק את {product}"
+          },
           "purchase.refunded": {
             "male": "בוצע החזר על הרכישה של {product}",
             "female": "בוצע החזר על הרכישה של {product}"
+          },
+          "purchase.cancelled": {
+            "male": "Visamo ביטלה את {product}",
+            "female": "Visamo ביטלה את {product}"
           }
         },
         "listChanged": "מסמכים שנוספו: {added} · שהוסרו: {removed}"

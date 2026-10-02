@@ -84,15 +84,16 @@ export default async function BillingPage() {
                     {products[p.product].name}
                     {p.refundedAt && (
                       <span className="rounded-full bg-sand-50 px-2 py-0.5 text-xs font-semibold text-slate-500 ring-1 ring-line-200">
-                        {t.refunded}
+                        {p.given ? t.cancelled : t.refunded}
                       </span>
                     )}
                   </p>
                   <p className="text-sm text-slate-500">
                     {[
                       formatDate(p.createdAt, locale),
+                      p.given && t.given,
                       p.paymentMethod && (p.paymentMethod === "paypal" ? t.paidPaypal : t.paidCard),
-                      p.buyerId !== user.id && p.buyerName && format(t.boughtBy, { name: p.buyerName }),
+                      !p.given && p.buyerId !== user.id && p.buyerName && format(t.boughtBy, { name: p.buyerName }),
                     ]
                       .filter(Boolean)
                       .join(" · ")}

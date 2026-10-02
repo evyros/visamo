@@ -1224,6 +1224,8 @@
         "historyEmpty": "No purchases yet.",
         "boughtBy": "By {name}",
         "refunded": "Refunded",
+        "cancelled": "Cancelled",
+        "given": "From Visamo",
         "paidCard": "Card",
         "paidPaypal": "PayPal",
         "vatIncluded": "incl. {vat} VAT",
@@ -1797,9 +1799,17 @@
             "male": "{name} bought {product}",
             "female": "{name} bought {product}"
           },
+          "purchase.given": {
+            "male": "Visamo added {product} to your file",
+            "female": "Visamo added {product} to your file"
+          },
           "purchase.refunded": {
             "male": "The {product} purchase was refunded",
             "female": "The {product} purchase was refunded"
+          },
+          "purchase.cancelled": {
+            "male": "Visamo cancelled {product}",
+            "female": "Visamo cancelled {product}"
           }
         },
         "listChanged": "Documents added: {added} · removed: {removed}"

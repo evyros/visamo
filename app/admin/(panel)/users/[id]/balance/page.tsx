@@ -5,8 +5,19 @@ import { requireAdmin } from "@/lib/admin";
 import { findUser } from "@/lib/admin-users";
 import { chatHref, chatTitle } from "@/lib/admin-chats";
 import { creditEntries, type CreditEntryRow, type CreditReason } from "@/lib/credits";
-import { BalanceFigure, formatDateTime, PageHeading, Pill, purchasesLabel, Stat, type PillTone } from "@/components/admin/admin-ui";
+import { casePurchases } from "@/lib/purchases";
+import {
+  BalanceFigure,
+  formatDateTime,
+  PageHeading,
+  Pill,
+  productLabels,
+  purchasesLabel,
+  Stat,
+  type PillTone,
+} from "@/components/admin/admin-ui";
 import { historyHref } from "@/components/admin/document-card";
+import { GivePurchaseForm, RevokePurchaseForm } from "@/components/admin/purchase-forms";
 import { TopUpForm } from "@/components/admin/top-up-form";
 import { Icon } from "@/components/icons";
 
@@ -18,14 +29,15 @@ export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/
 const reasons: Record<CreditReason, { label: string; tone: PillTone }> = {
   free: { label: "Free", tone: "neutral" },
   purchase: { label: "Purchase", tone: "teal" },
-  revoked: { label: "Purchase refunded", tone: "terracotta" },
-  support: { label: "Support top-up", tone: "navy" },
+  revoked: { label: "Purchase taken back", tone: "terracotta" },
+  support: { label: "Support", tone: "navy" },
   spend: { label: "Spent", tone: "slate" },
   refund: { label: "Refunded", tone: "amber" },
 };
 
 // The case's balances, every change to them (the ledger, lib/credits.ts),
-// and support top-ups.
+// support top-ups, and its purchases: giving one without a payment, and
+// taking back what one granted.
 export default async function AdminUserBalancePage({ params }: PageProps<"/admin/users/[id]/balance">) {
   await requireAdmin();
   const user = await findUser((await params).id);
@@ -41,7 +53,7 @@ export default async function AdminUserBalancePage({ params }: PageProps<"/admin
     );
   }
 
-  const entries = await creditEntries(user.caseId);
+  const [entries, purchases] = await Promise.all([creditEntries(user.caseId), casePurchases(user.caseId)]);
 
   return (
     <div className="mx-auto w-full max-w-[1000px] px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
@@ -59,6 +71,45 @@ export default async function AdminUserBalancePage({ params }: PageProps<"/admin
         <div className="mt-4">
           <TopUpForm userId={user.id} />
         </div>
+      </section>
+
+      <section className="mt-6 rounded-card border border-line-200 bg-white p-5 sm:p-6">
+        <h2 className="text-lg font-semibold text-navy-900">Give a purchase</h2>
+        <p className="mt-1 text-[15px] text-slate-500">
+          As if they bought it: its messages and checks, and what it unlocks (longer messages, document checks).
+        </p>
+        <div className="mt-4">
+          <GivePurchaseForm userId={user.id} hasFileCheck={!!user.fileCheck} />
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-lg font-semibold text-navy-900">Purchases</h2>
+        <p className="mt-1 text-[15px] text-slate-500">
+          Bought or given, newest first. A refund or a lost chargeback in Freemius is taken back on its own.
+        </p>
+        <ul className="mt-3 divide-y divide-line-200 rounded-card border border-line-200 bg-white">
+          {purchases.map((p) => (
+            <li key={p.id} className="px-4 py-3.5 text-[15px]">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="font-semibold text-navy-900">{productLabels[p.product]}</span>
+                <Pill tone={p.given ? "navy" : "teal"}>{p.given ? "Given" : "Bought"}</Pill>
+                {p.refundedAt && <Pill tone="terracotta">Taken back {formatDateTime(p.refundedAt)}</Pill>}
+                {p.amount !== null && (
+                  <span className="ms-auto font-semibold tabular-nums text-slate-700">
+                    {p.amount.toFixed(2)} {p.currency}
+                  </span>
+                )}
+              </div>
+              <p className="mt-1 text-sm text-slate-500">
+                {formatDateTime(p.createdAt)} · {p.given ? `by ${p.adminEmail}` : `by ${p.buyerName ?? "—"}`}
+              </p>
+              {p.note && <p className="mt-1 max-w-[560px] text-sm break-words text-slate-700">{p.note}</p>}
+              {!p.refundedAt && <RevokePurchaseForm userId={user.id} purchaseId={p.id} />}
+            </li>
+          ))}
+          {purchases.length === 0 && <li className="px-4 py-10 text-center text-slate-500">No purchases yet.</li>}
+        </ul>
       </section>
 
       <section className="mt-10">
@@ -127,6 +178,8 @@ function EntryRow({ row, userId }: { row: CreditEntryRow; userId: string }) {
             <Icon name="chat" className={forIcon} />
             <span dir="auto">{chatTitle({ title: row.chatTitle })}</span>
           </Link>
+        ) : row.product ? (
+          productLabels[row.product]
         ) : entry.kind === "messages" && (entry.reason === "spend" || entry.reason === "refund") ? (
           <span className="inline-flex items-start gap-1.5">
             <Icon name="chat" className={forIcon} />

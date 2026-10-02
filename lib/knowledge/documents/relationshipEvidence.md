@@ -1,13 +1,17 @@
 # Shared photos of you (תמונות משותפות שלכם)
 
-Photos of you together, showing how you met and how long you've been together. Attach at least 15 photos, arranged 9 to a page.
+Photos of you together, from different places and times, some with family and friends. At least 10 for the online application; bring more, arranged 6, 9 or 12 to a page.
 
-Evidence of the relationship: photos together, letters, and anything showing
-how you met and how long you've been together (§ד.2.ח).
+Photos of the two of you together. They're part of the evidence of your
+relationship: how you met and how long you've been together.
 
 ## What it should include
 
-**If you haven't lived together:** add what shows the time you spend
-together and the life you share: flight bookings for the two of you, hotel
-bookings together, and receipts for things you bought together (see
-[documents.md](../documents.md)).
+- **Photos of both of you together,** preferably in different places and
+  from different times.
+- **In color,** not black and white.
+- **Some with more people:** it's highly recommended to include photos with
+  family and friends.
+- **At least 10 photos** for the online application.
+- **More photos for the appointment:** prepare more, arranged in a grid of 6,
+  9 or 12 photos to a page, and attach them.

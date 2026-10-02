@@ -184,7 +184,18 @@ export const checks = {
       "It is readable in full, with the issuing authority's seal or signature visible.",
     ],
   },
-  relationshipEvidence: "notYet",
+  relationshipEvidence: {
+    required: [
+      "They are photos of the same two people together: the couple, in each photo.",
+      "There are at least 10 photos.",
+      "The photos are in color, not black and white.",
+    ],
+    recommended: [
+      "They're from different places and different times, not one event.",
+      "Some include family and friends with the couple.",
+      "On pages, they're arranged in a grid of 6, 9 or 12 photos to a page, each photo still clear.",
+    ],
+  },
   recommendationLetters: {
     required: [
       "There are at least 3 letters, from different writers.",

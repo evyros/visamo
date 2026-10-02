@@ -3,6 +3,22 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v23 — 2026-10-02
+
+**What changed:** The security check (`foreignNeedsSecurityCheck`, and with
+it `securityCv`) is now for Palestinian residents and citizens of Arab
+countries only, by nationality: Russia and Ukraine are out of
+`SECURITY_CHECK`, and the country of birth no longer counts. New scenario:
+`fromJordan`.
+
+**Why:** A mistake: the security screening CV isn't related to the former
+USSR, whose partners go through Nativ instead.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** fromUkraine, bornInUSSRWithGermanNationality:
+-securityCv. fromJordan: new scenario.
+
 ## v22 — 2026-10-02
 
 **What changed:** Renamed `sharedFinances` → `sharedBankAccount` (no alias:

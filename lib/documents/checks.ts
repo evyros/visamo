@@ -116,7 +116,16 @@ export const checks = {
       "It is dated, typed or clearly handwritten, with each partner's name next to their signature.",
     ],
   },
-  securityCv: "notYet",
+  securityCv: {
+    required: [
+      "It is the CV form for the security screening (קורות חיים לאבחון), the bilingual Hebrew and Arabic form, not a job CV or a free-form résumé.",
+      "It is filled in: a full history of the foreign partner's employment and life, with no section left empty.",
+    ],
+    recommended: [
+      "Every period is accounted for, with dates, so there are no unexplained gaps.",
+      "It is typed, or handwritten clearly enough to read without guessing.",
+    ],
+  },
   israeliId: {
     required: [
       "It is an Israeli Teudat Zehut (identity card), both sides of the card, readable.",

@@ -1,6 +1,4 @@
-# The former USSR, and the security check
-
-## The former USSR
+# The former USSR
 
 The 15 former Soviet republics: Armenia, Azerbaijan, Belarus, Estonia,
 Georgia, Kazakhstan, Kyrgyzstan, Latvia, Lithuania, Moldova, Russia,
@@ -33,13 +31,3 @@ USSR. It's the authority on Soviet and post-Soviet records and documents.
 - **The wait:** waiting times for a Nativ interview are long. If you haven't
   heard back from Nativ within a month, contact them and ask about the
   status of your application.
-
-## The security check
-
-- Applicants who need a security check fill in a **full CV form** (§ד.2.ט).
-  It's not a job CV: it's a history of your employment and life, for
-  security clearance.
-- The procedure refers to "risk countries" without listing them. In
-  practice, this applies to people from sensitive countries such as
-  **Russia, Ukraine and the Arab countries**, by citizenship or by country of
-  birth.

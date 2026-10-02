@@ -46,9 +46,10 @@ describe("profileOf", () => {
     expect(profileOf(scenarios.marriedInCyprus).facts.foreignFromFormerUSSR).toBe(false);
   });
 
-  it("finds the former USSR and the security check by nationality or birth, not by residence", () => {
-    expect(profileOf(scenarios.fromUkraine).facts.foreignNeedsSecurityCheck).toBe(true);
-    expect(profileOf(scenarios.bornInUSSRWithGermanNationality).facts.foreignNeedsSecurityCheck).toBe(true);
+  it("finds the security check by nationality, for Arab countries, not for the former USSR", () => {
+    expect(profileOf(scenarios.fromJordan).facts.foreignNeedsSecurityCheck).toBe(true);
+    expect(profileOf(scenarios.fromUkraine).facts.foreignNeedsSecurityCheck).toBe(false);
+    expect(profileOf(scenarios.bornInUSSRWithGermanNationality).facts.foreignNeedsSecurityCheck).toBe(false);
     expect(profileOf(scenarios.marriedInCyprus).facts.foreignNeedsSecurityCheck).toBe(false);
     // Lived in India and Thailand: neither fact comes from countries lived in.
     const lived = profileOf(scenarios.livedInThreeCountries).facts;

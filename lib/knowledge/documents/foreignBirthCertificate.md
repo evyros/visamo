@@ -23,7 +23,7 @@ certificate is from Ukraine.
   consular legalization.
   - **From the former USSR:** an original issued up to 1998 needs no
     certification (§ד.2.ה). One issued later does. See
-    [former-ussr-and-security.md](../former-ussr-and-security.md).
+    [former-ussr.md](../former-ussr.md).
 - **A certified translation**, unless it's in Hebrew or Arabic. In practice,
   an English certificate is usually accepted without one, but the clerk can
   still ask you to translate it.

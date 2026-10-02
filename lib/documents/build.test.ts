@@ -154,7 +154,8 @@ describe("buildDocumentList", () => {
   });
 
   it("asks for the security CV only from the countries that need a security check", () => {
-    expect(find("fromUkraine", "securityCv")?.because).toEqual(["foreignNeedsSecurityCheck"]);
+    expect(find("fromJordan", "securityCv")?.because).toEqual(["foreignNeedsSecurityCheck"]);
+    expect(keys("fromUkraine")).not.toContain("securityCv");
     expect(keys("marriedInCyprus")).not.toContain("securityCv");
   });
 

@@ -97,7 +97,8 @@ export function profileOf({ relationship: r, people }: CaseSnapshot): CaseProfil
       foreignLivedElsewhere: lived.length > 0,
       // By nationality or birth, as the procedure refers them to Nativ (5.2.0008 §ד.4).
       foreignFromFormerUSSR: [foreign.nationality, foreign.birthCountry].some((c) => FORMER_USSR.has(c)),
-      foreignNeedsSecurityCheck: [foreign.nationality, foreign.birthCountry].some((c) => SECURITY_CHECK.has(c)),
+      // By nationality only: Palestinian residents and citizens of Arab countries.
+      foreignNeedsSecurityCheck: SECURITY_CHECK.has(foreign.nationality),
       foreignNameChanged: !!foreign.nameChanged,
       foreignDivorced: divorced(foreign),
       foreignWidowed: widowed(foreign),

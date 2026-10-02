@@ -1306,8 +1306,8 @@
           "description": "A letter signed by both of you: how and when you met, your relationship and your life together."
         },
         "securityCv": {
-          "title": "Full CV for the security check",
-          "description": "A full history of the foreign partner's employment and life, for the security check applicants from some countries go through. Not a job CV."
+          "title": "CV for the security screening",
+          "description": "For a foreign partner who's a Palestinian resident or a citizen of an Arab country: a full history of their employment and life, on a form in Hebrew and Arabic. Not a job CV."
         },
         "israeliId": {
           "title": "Teudat Zehut with its appendix",
@@ -1473,7 +1473,7 @@
         "foreignAbroad": "The foreign partner is outside Israel",
         "foreignLivedElsewhere": "The foreign partner lived in other countries",
         "foreignFromFormerUSSR": "The foreign partner is from the former USSR",
-        "foreignNeedsSecurityCheck": "The foreign partner is from a country that needs a security check",
+        "foreignNeedsSecurityCheck": "The foreign partner is a Palestinian resident or a citizen of an Arab country",
         "foreignNameChanged": "The foreign partner's name changed",
         "foreignDivorced": "The foreign partner was divorced",
         "foreignWidowed": "The foreign partner was widowed",

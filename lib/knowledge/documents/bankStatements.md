@@ -2,7 +2,6 @@
 
 Statements of a shared bank account, or of each of your personal accounts, for the last 12 months: the balance and all transactions, with proof of account ownership.
 
-
 For common-law couples: bank statements, of a shared bank account or of
 each of your two personal accounts. They're part of the proof of your shared
 life. (Married couples bring the joint bank account confirmation from form

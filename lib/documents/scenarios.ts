@@ -85,10 +85,15 @@ export const scenarios = {
     relationship: married(),
     people: [israeli(), foreign({ nationality: "DE", birthCountry: "UA" })],
   },
-  // Needs the security check, and is from the former USSR by nationality.
+  // From the former USSR by nationality.
   fromUkraine: {
     relationship: married(),
     people: [israeli(), foreign({ nationality: "UA", birthCountry: "UA" })],
+  },
+  // A citizen of an Arab country: needs the security check.
+  fromJordan: {
+    relationship: married(),
+    people: [israeli(), foreign({ nationality: "JO", birthCountry: "JO" })],
   },
   livedInThreeCountries: {
     relationship: married(),

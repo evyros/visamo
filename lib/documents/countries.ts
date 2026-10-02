@@ -9,12 +9,12 @@ export const FORMER_USSR: ReadonlySet<string> = new Set([
 
 /**
  * Where a foreign partner needs a security check, and so the security CV
- * (procedure 5.2.0008 §ד.2.ט): Russia, Ukraine and the Arab League states.
- * The procedure calls them "risk countries" without listing them; this list
- * is from practice and may be partial.
+ * (procedure 5.2.0008 §ד.2.ט): Palestinian residents and citizens of the Arab
+ * League states. The procedure calls them "risk countries" without listing
+ * them; this list is from practice. Not the former USSR: those partners go
+ * through Nativ instead.
  */
 export const SECURITY_CHECK: ReadonlySet<string> = new Set([
-  "RU", "UA",
   "AE", "BH", "DJ", "DZ", "EG", "IQ", "JO", "KM", "KW", "LB", "LY", "MA", "MR", "OM", "PS", "QA", "SA", "SD",
   "SO", "SY", "TN", "YE",
 ]);

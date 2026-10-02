@@ -125,7 +125,7 @@ and county. Use the affidavit (below).
 
 ## If you don't have it
 
-- **If there's no way to get one from the country:** a notarized affidavit
+- **If there's no way to get one from the country:** a notarized affidavit (תצהיר)
   about their status, signed in front of an Israeli consul, a notary in
   Israel, or their country's consul in Israel.
 - **If your marriage certificate is from the foreign partner's country** and

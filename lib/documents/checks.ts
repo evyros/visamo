@@ -120,6 +120,7 @@ export const checks = {
       "It is an Israeli Teudat Zehut (identity card), both sides of the card, readable.",
       "The appendix (ספח) is included, as a paper appendix or a printed or downloaded one.",
       "A driver's license or a passport instead of the Teudat Zehut is an issue: it isn't accepted.",
+      "If the file says the couple married abroad or online, the appendix shows the Israeli partner as married. If it doesn't, that's an issue: the marriage has to be registered at Misrad Hapnim before applying.",
     ],
     recommended: [
       "The appendix is recent, so the address and civil status on it.",
@@ -165,8 +166,24 @@ export const checks = {
       "It is scanned straight and readable in full, with the issuing authority's seal or signature visible.",
     ],
   },
-  marriageCertificateIsrael: "notYet",
-  marriageCertificateAbroad: "notYet",
+  marriageCertificateIsrael: {
+    required: [
+      "It is an Israeli marriage certificate (תעודת נישואין) from the rabbinate or another religious court in Israel, naming the two spouses.",
+      "It is readable in full, with the issuing body's stamp or signature visible.",
+    ],
+    recommended: ["It is scanned straight, with nothing cut off at the edges."],
+  },
+  marriageCertificateAbroad: {
+    required: [
+      "It is an official marriage certificate from the civil authority that registered the marriage abroad, or, for an online marriage, from a Utah county, naming the two spouses.",
+      "It carries the certification the file says it needs, in the same file: an apostille or consular legalization from the country of the marriage, or, for a Utah marriage, an apostille from the Utah Lieutenant Governor's office.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "The apostille or legalization pages are scanned together with the certificate, in order.",
+      "It is readable in full, with the issuing authority's seal or signature visible.",
+    ],
+  },
   relationshipEvidence: "notYet",
   recommendationLetters: "notYet",
   jointLivingEvidence: {

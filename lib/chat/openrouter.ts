@@ -9,8 +9,12 @@ const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 /** Claude Haiku, latest. OPENROUTER_MODEL overrides it, e.g. to try another model. */
 const MODEL = process.env.OPENROUTER_MODEL || "anthropic/claude-haiku-4.5";
 
-/** The document checker's model: Claude Haiku, latest, like the chat. OPENROUTER_CHECK_MODEL overrides it. */
-export const CHECK_MODEL = process.env.OPENROUTER_CHECK_MODEL || "anthropic/claude-haiku-4.5";
+/**
+ * The document checker's model: Gemini Flash, on trial against Claude Sonnet,
+ * which reads scanned Hebrew contracts well but costs about 3x as much. Haiku
+ * misreads them (names, dates). OPENROUTER_CHECK_MODEL overrides it.
+ */
+export const CHECK_MODEL = process.env.OPENROUTER_CHECK_MODEL || "google/gemini-3.8-flash";
 
 type TextPart = { type: "text"; text: string; cache_control?: { type: "ephemeral" } };
 /** An image, as a data: URL. */

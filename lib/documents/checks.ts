@@ -213,12 +213,12 @@ export const checks = {
   },
   israeliHousingContract: {
     required: [
-      "It is a lease of a home in Israel, or a purchase contract of a home in Israel.",
-      "It is the whole contract, with all its appendices, not only the first or the signature page.",
-      "It is signed by the parties.",
+      "It is a lease of a home in Israel, or a purchase contract of a home in Israel. Or, if the Israeli partner lives in a home that isn't theirs (their family's, say): a signed letter from the owners saying they own or rent the home, support the relationship and invite both partners to live there long-term, with copies of the owners' Teudat Zehut and appendix, and proof of the home (a land registry extract, a purchase contract or the owners' lease).",
+      "A lease or purchase contract is the whole contract, with all its appendices, not only the first or the signature page, and it is signed by the parties.",
     ],
     recommended: [
       "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
+      "For a home that isn't the Israeli partner's: recent bills in the owners' names, and mail, bank statements or phone bills addressed to the Israeli partner at that address, are uploaded too.",
       "It is scanned in full, readable, page by page in order.",
     ],
   },

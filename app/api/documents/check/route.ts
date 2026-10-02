@@ -133,7 +133,7 @@ export async function POST(request: Request) {
       }
       spent = true;
       const answer = await ask(
-        await checkMessages({ context, check, files: prepared.parts, today: todayInIsrael() }),
+        await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael() }),
         measured.calls,
       );
       result = answer.result;

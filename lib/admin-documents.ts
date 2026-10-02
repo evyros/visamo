@@ -50,6 +50,8 @@ export async function allCaseChecks(caseId: string, documentKey?: string) {
       ratingCorrected: documentCheck.ratingCorrected,
       pages: documentCheck.pages,
       costUsd: documentCheck.costUsd,
+      tokensIn: documentCheck.tokensIn,
+      cachedTokens: documentCheck.cachedTokens,
       durationMs: documentCheck.durationMs,
       startedAt: documentCheck.startedAt,
       finishedAt: documentCheck.finishedAt,

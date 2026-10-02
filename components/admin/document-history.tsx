@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import type { AdminCheckRun, AdminFile, ListChange } from "@/lib/admin-documents";
 import type { CheckRating } from "@/lib/checks/result";
 import { Icon, type IconName } from "@/components/icons";
-import { formatDateTime, Pill } from "./admin-ui";
+import { formatDateTime, formatNumber, Pill } from "./admin-ui";
 import { Findings, ratingTone, runId } from "./document-card";
 
 // A document's history as a timeline, newest first: files uploaded and
@@ -208,10 +208,18 @@ function RunCard({
   ratings: Ratings;
 }) {
   const added = new Set(changes?.added);
-  const facts = [
+  // How much of the prompt the provider served from its cache (the rules and the knowledge), on hover.
+  const cache =
+    run.tokensIn != null &&
+    (run.cachedTokens ? `${formatNumber(run.cachedTokens)} of ${formatNumber(run.tokensIn)} tokens cached` : "Not cached");
+  const facts: ReactNode[] = [
     run.pages != null && `${run.pages} ${run.pages === 1 ? "page" : "pages"}`,
     run.attempts != null && `${run.attempts} ${run.attempts === 1 ? "call" : "calls"}`,
-    run.costUsd != null && `$${run.costUsd.toFixed(4)}`,
+    run.costUsd != null && (
+      <span title={cache || undefined} className={cache ? "cursor-help underline decoration-dotted underline-offset-2" : undefined}>
+        ${run.costUsd.toFixed(4)}
+      </span>
+    ),
     run.durationMs != null && `${(run.durationMs / 1000).toFixed(1)}s`,
     run.model,
     `rules v${run.rulesVersion} · knowledge v${run.knowledgeVersion}`,
@@ -229,7 +237,14 @@ function RunCard({
           {current && <Pill tone="teal">Shown to the couple</Pill>}
           {run.checkedByName && <span className="text-sm text-slate-500">run by {run.checkedByName}</span>}
         </div>
-        <div className="text-[13px] text-slate-500 tabular-nums">{facts.join(" · ")}</div>
+        <div className="text-[13px] text-slate-500 tabular-nums">
+          {facts.map((fact, i) => (
+            <span key={i}>
+              {i > 0 && " · "}
+              {fact}
+            </span>
+          ))}
+        </div>
       </header>
 
       <div className="space-y-3 px-4 py-4 sm:px-5">

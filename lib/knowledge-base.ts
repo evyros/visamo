@@ -4,8 +4,8 @@ import path from "node:path";
 import { format, type Messages } from "@/i18n/messages";
 import { documents, type Category, type DocumentId } from "@/lib/documents/catalog";
 
-// The knowledge base (lib/knowledge), as the models read it: the chat, and
-// the document checker, so both know the process the same way.
+// The knowledge base (lib/knowledge), as the models read it: the chat reads
+// all of it, the document checker the part a document needs.
 
 /**
  * The knowledge base's version, recorded on every answer and check: the text
@@ -61,9 +61,10 @@ export function guideOpening(id: DocumentId, en: Messages, he: Messages) {
  * moved under its group. Their links go up a folder (`../certification.md`),
  * so they work in an editor; the models read them as the other files'.
  */
-async function documentGuides(dir: string) {
+async function documentGuides(dir: string, only?: Category) {
   const sections = new Map<Category, string[]>();
   for (const doc of documents) {
+    if (only && doc.category !== only) continue;
     const guide = (await readFile(path.join(dir, "documents", `${doc.id}.md`), "utf8")).trim();
     sections.set(doc.category, [...(sections.get(doc.category) ?? []), guide.replace(/^#/gm, "###").replaceAll("](../", "](")]);
   }
@@ -84,4 +85,32 @@ export function loadKnowledge() {
     return files.map((file, i) => (i === at ? documentsPart : file)).join("\n\n---\n\n");
   });
   return knowledge;
+}
+
+/** What every check reads: what documents need in general, certification and translation, and the Hebrew terms. */
+const CHECK_FILES = ["documents.md", "certification.md", "glossary.md"];
+
+const checkKnowledge = new Map<string, Promise<string>>();
+
+/**
+ * The part of the knowledge base the document checker reads for a document
+ * in `category`: the shared files, then the files its case calls for, then
+ * its group's guides (the documents it's judged with). In that order, so the
+ * shared start is the same for every check and the whole is the same for
+ * every check in the group: the provider caches both. The steps, the
+ * appointment and the interview don't judge a document, so they're left out.
+ */
+export function loadCheckKnowledge(category: Category, { formerUssr }: { formerUssr: boolean }) {
+  const key = `${category}:${formerUssr}`;
+  let text = checkKnowledge.get(key);
+  if (!text) {
+    const dir = path.join(process.cwd(), "lib/knowledge");
+    const files = [...CHECK_FILES, ...(category === "children" ? ["children.md"] : []), ...(formerUssr ? ["former-ussr.md"] : [])];
+    text = Promise.all([
+      Promise.all(files.map((file) => readFile(path.join(dir, file), "utf8"))),
+      documentGuides(dir, category),
+    ]).then(([read, guides]) => [...read.map((file) => file.trim()), guides.join("\n\n")].join("\n\n---\n\n"));
+    checkKnowledge.set(key, text);
+  }
+  return text;
 }

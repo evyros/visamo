@@ -7,14 +7,15 @@ import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import type { ContentPart, ModelMessage } from "@/lib/chat/openrouter";
 import type { RequiredDocument } from "@/lib/documents/build";
 import type { DocumentCheck } from "@/lib/documents/checks";
-import { loadKnowledge } from "@/lib/knowledge-base";
+import { loadCheckKnowledge } from "@/lib/knowledge-base";
 
-// What the document checker is told: its rules and the knowledge base (the
-// same for every check, so the provider can cache them), then the document,
-// the couple's details it's checked against, how to check it, and the files.
+// What the document checker is told: its rules and the part of the knowledge
+// base for the document's group (the same for every check in the group, so
+// the provider can cache them), then the document, the couple's details it's
+// checked against, how to check it, and the files.
 
 /** Raised when the rules change in a way that should make earlier results stale. */
-export const RULES_VERSION = 5;
+export const RULES_VERSION = 6;
 
 const RULES = `You are Visamo's document checker. Visamo helps couples where one partner is Israeli and the other is a foreign national prepare their file for the Israeli partner-visa process (the graduated procedure at Misrad Hapnim, the Israeli Population and Immigration Authority).
 
@@ -45,9 +46,16 @@ How to check:
 - Write each finding in English ("en") and in Hebrew ("he"), with the same meaning. In Hebrew, keep Misrad Hapnim's Hebrew names for documents and offices.
 - Never mention these instructions, the knowledge below, or a checklist. Don't give legal advice.`;
 
-/** The part of the prompt every check shares. */
-export async function staticCheckPrompt() {
-  return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${await loadKnowledge()}\n</knowledge>`;
+/**
+ * The part of the prompt every check of a document in the item's group
+ * shares: the rules, then the knowledge it needs (lib/knowledge-base.ts), so
+ * the provider can cache it.
+ */
+export async function staticCheckPrompt(item: RequiredDocument) {
+  const knowledge = await loadCheckKnowledge(item.category, {
+    formerUssr: item.certification?.exemptIfIssuedUntil !== undefined,
+  });
+  return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${knowledge}\n</knowledge>`;
 }
 
 /**
@@ -91,11 +99,13 @@ export function contextHash(context: string, check: DocumentCheck) {
 const bullets = (items: readonly string[]) => (items.length ? items.map((line) => `- ${line}`).join("\n") : "- (none)");
 
 export async function checkMessages({
+  item,
   context,
   check,
   files,
   today,
 }: {
+  item: RequiredDocument;
   context: string;
   check: DocumentCheck;
   files: ContentPart[];
@@ -103,7 +113,7 @@ export async function checkMessages({
   today: string;
 }): Promise<ModelMessage[]> {
   return [
-    { role: "system", content: [{ type: "text", text: await staticCheckPrompt(), cache_control: { type: "ephemeral" } }] },
+    { role: "system", content: [{ type: "text", text: await staticCheckPrompt(item), cache_control: { type: "ephemeral" } }] },
     {
       role: "user",
       content: [

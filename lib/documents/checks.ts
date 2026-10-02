@@ -199,8 +199,29 @@ export const checks = {
       "It is the original document scanned in full, readable, with the issuing authority's seal or signature visible.",
     ],
   },
-  housingContract: "notYet",
-  israeliHousingContract: "notYet",
+  housingContract: {
+    required: [
+      "It is a lease of a home, or a purchase contract of a home. A lease names both partners as the tenants; a purchase contract is for a home in Israel.",
+      "It is the whole contract, with all its appendices, not only the first or the signature page.",
+      "It is signed by the parties.",
+      "If it isn't in Hebrew, Arabic or English (a lease from abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
+      "It is scanned in full, readable, page by page in order.",
+    ],
+  },
+  israeliHousingContract: {
+    required: [
+      "It is a lease of a home in Israel, or a purchase contract of a home in Israel.",
+      "It is the whole contract, with all its appendices, not only the first or the signature page.",
+      "It is signed by the parties.",
+    ],
+    recommended: [
+      "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
+      "It is scanned in full, readable, page by page in order.",
+    ],
+  },
   landlordAffidavit: "notYet",
   utilityBills: "notYet",
   governmentServices: {

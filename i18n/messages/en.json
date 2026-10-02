@@ -1383,7 +1383,7 @@
         },
         "housingContract": {
           "title": "Lease or purchase contract",
-          "description": "The lease or purchase contract of your home, in both your names: the original, a copy and the lease appendix."
+          "description": "The lease of your home in both your names, with all its appendices: the original and a copy. If one of you owns the home: its purchase contract."
         },
         "israeliHousingContract": {
           "title": "Lease or purchase contract of the Israeli partner's home",

@@ -2,7 +2,6 @@
 
 One for each child you have together.
 
-
 A birth certificate for each child you have together, listing both of you
 as the parents. It's part of the proof of your relationship: the procedure
 asks for any documentation that supports your relationship and shows how

@@ -2,7 +2,6 @@
 
 For each of the Israeli partner's previous marriages that ended in the spouse's death.
 
-
 For each of the Israeli partner's previous marriages that ended in the
 spouse's death: the previous spouse's death certificate (תעודת פטירה).
 

@@ -168,7 +168,8 @@ describe("buildDocumentList", () => {
 
   it("takes whether a document may need a translation from the catalog, not from where it's issued", () => {
     expect(find("marriedInCyprus", "foreignBirthCertificate")?.mayNeedTranslation).toBe(true);
-    expect(find("marriedInCyprus", "recommendationLetters")?.mayNeedTranslation).toBe(true);
+    expect(find("marriedInCyprus", "jointLivingEvidence")?.mayNeedTranslation).toBe(true);
+    expect(find("marriedInCyprus", "recommendationLetters")?.mayNeedTranslation).toBe(false);
     // In English: not accepted without a translation by law, though usually accepted in practice.
     expect(find("marriedOnline", "marriageCertificateAbroad")?.mayNeedTranslation).toBe(true);
     expect(find("marriedInIsrael", "marriageCertificateIsrael")?.mayNeedTranslation).toBe(false);

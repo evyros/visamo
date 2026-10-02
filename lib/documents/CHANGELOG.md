@@ -3,6 +3,18 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v21 — 2026-10-02
+
+**What changed:** `recommendationLetters` no longer may need a translation
+(`mayNeedTranslation: false`).
+
+**Why:** The letters come from Israeli family and friends, in Hebrew.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** No scenario gained or lost a document; in every
+scenario, recommendationLetters lost `mayNeedTranslation`.
+
 ## v20 — 2026-10-02
 
 **What changed:** `jointLivingEvidence` is listed for every couple who live,

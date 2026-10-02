@@ -185,7 +185,20 @@ export const checks = {
     ],
   },
   relationshipEvidence: "notYet",
-  recommendationLetters: "notYet",
+  recommendationLetters: {
+    required: [
+      "There are at least 3 letters, from different writers.",
+      "Each is a letter about the couple's relationship, written in Hebrew by an Israeli family member or friend, not by either partner.",
+      "Each is signed by its writer, and gives their contact details.",
+      "A copy of each writer's Teudat Zehut is uploaded with their letter.",
+    ],
+    recommended: [
+      "Each says how the writer knows the couple, and for how long, and describes what they've seen of the relationship, their first impression, not only general praise.",
+      "If the file says the couple never lived together, the letters say the writers saw them together.",
+      "Each is about 2-3 paragraphs long. If the file shows a short relationship (a recent year of moving in) or that the couple never lived together, the letters are longer and more detailed.",
+      "Each is dated.",
+    ],
+  },
   jointLivingEvidence: {
     required: [
       "It shows that both partners live, or lived, at the same address: for example, a lease or property in both names, bills in both names, statements of a joint bank account, or official mail addressed to each of them at that address.",

@@ -1,0 +1,4 @@
+# Research material and the scrapers that collect it: the app never uses them,
+# so they stay out of Vercel builds.
+/collect
+/data

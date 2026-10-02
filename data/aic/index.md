@@ -1,0 +1,150 @@
+# aic.org.il
+
+Captured 2026-10-02: 146 posts, 413 comments.
+
+- [10 Tips to Help You Ace Your Interview in Israel](top-9-tips-to-help-you-ace-your-interview-in-israel.md)
+- [2024: Big Updates to Partner Visa Procedures 5.2.0008 + 5.2.0009](2024-big-updates-to-partner-visa-procedures-5-2-0008-5-2-0009.md) · 4 comments
+- [2025 in Review: AIC Defending the Rights of International Couples in a Changing Israel](2025-in-review-defending-the-rights-of-international-couples-in-a-changing-israel.md)
+- [5 Ways To Teach Your Partner Hebrew (& Why You Should)](5-ways-to-teach-your-partner-hebrew-why-you-should.md)
+- [7 Tips To Integrate Into Israeli Society](7-tips-to-integrate-into-israeli-society.md)
+- [A Drafted Reservist’s Testimony to the Knesset: “The Fight For Home Is Not Only in the Tank, I Fight It Every Day, Every Hour”](a-drafted-reservists-testimony-to-the-knesset-the-fight-for-home-is-not-only-in-the-tank-i-fight-it-every-day-every-hour.md)
+- [A Night of Celebrating Love… [Gallery]](a-night-of-celebrating-love-gallery.md)
+- [Affidavits in Israel](affidavits-in-israel.md)
+- [After the War: AIC Escalates Visa Issues to Immigration Committee](after-the-war-aic-escalates-visa-issues-to-immigration-committee.md)
+- [AIC at the Knesset: Defending the Rights of International Couples Amid Heated Debates](aic-at-the-knesset-defending-the-rights-of-international-couples-amid-heated-debates.md)
+- [AIC Makes History: Knesset to Address Systemic Issues in Partner Visa Process](aic-makes-history-knesset-to-address-systemic-issues-in-partner-visa-process.md)
+- [AIC Meets Various Members of Knesset in Preparation for Parliamentary Activity in the 25th Knesset](aic-meets-various-members-of-knesset-in-preparation-for-parliamentary-activity-in-the-25th-knesset.md)
+- [AIC Requests Discussion on Identification of B Visa Holders](aic-requests-discussion-on-identification-of-b-visa-holders.md) · 1 comments
+- [AIC Submits a Petition to the High Court of Justice Against the Shutdown of Visa Departments](aic-submits-a-petition-to-the-high-court-of-justice-against-the-shutdown-of-visa-departments.md)
+- [AIC Submits Legal Opinion Opposing PIBA’s “Surveillance Law”: Read Now](aic-submits-legal-opinion-opposing-the-surveillance-bill-read-now.md)
+- [AIC Takes Visa Shutdown to Knesset, Pressures PIBA to Resume Services](aic-takes-visa-shutdown-to-knesset-pressures-piba-to-resume-services.md)
+- [AIC Wins! PIBA Exempts Couples From 1-Year Delay to Citizenship](aic-wins-piba-exempts-couples-from-1-year-delay-to-citizenship.md)
+- [AIC’s First Beach Event Becomes One of Our Biggest Events Yet! [Gallery]](aics-first-beach-event-marks-our-biggest-event-yet-gallery.md) · 1 comments
+- [AIC’s HanuChristmas Brings Together Holiday Traditions and Community [Gallery]](aics-hanuchristmas-brings-together-holiday-traditions-and-community-gallery.md)
+- [Another Round of Automatic Visa Extensions – August 2022](another-round-of-automatic-visa-extensions-august-2022.md)
+- [Apply and Issue an Israeli Registry Extract / “Tamtzit Rishum”](apply-and-issue-an-israeli-registry-extract-or-tamtzit-rishum-%D7%AA%D7%9E%D7%A6%D7%99%D7%AA-%D7%A8%D7%99%D7%A9%D7%95%D7%9D.md)
+- [Applying for Partner Visa While Having Another Visa](applying-for-partner-visa-while-having-another-visa.md) · 16 comments
+- [Be a Part of the Seder: Get Your Passover Haggadah in different languages!](be-a-part-of-the-seder-get-your-passover-haggadah-in-different-languages.md) · 1 comments
+- [Bituach Leumi confirms registration procedure after recent conflicts at certain offices](bituach-leumi-confirms-registration-procedure-after-recent-conflicts-at-certain-offices.md)
+- [Bituach Leumi Eligibility and Registration for New Residents](bituach-leumi-eligibility-and-registration-for-new-residents.md) · 44 comments
+- [Bituach Leumi Qualification After Expiry of Visa](bituach-leumi-qualification-after-expiry-of-visa.md)
+- [Breaking News: Major Policy Updates in Favor of International Couples](breaking-news-major-policy-updates-in-favor-of-international-couples.md)
+- [Bridging the Gap: How to Foster Love and Connection in Your International Relationship](bridging-the-gap-how-to-foster-love-and-connection-in-your-international-relationship.md)
+- [Certification for Philippine Nationals Returning to Israel](certification-needed-for-philippine-nationals-travelling-to-the-philippines.md)
+- [Contact Details and Information – All PIBA Offices with Visa Departments](contact-details-and-information-about-visa-departments-of-piba.md) · 2 comments
+- [Conversion of Foreign Driver’s License to Israeli Driver’s License](conversion-of-foreign-drivers-license-to-israeli-drivers-license.md) · 31 comments
+- [Conversion to Judaism in Israel: A Practical Overview for Mixed Couples](conversion-to-judaism-in-israel-a-practical-overview-for-mixed-couples.md)
+- [Countries Exempt From Visa to Israel](countries-on-a-visa-waiver-program-with-israel.md) · 6 comments
+- [Current Response Time to New Partner Visa Applications – Poll Results](current-response-time-to-new-partner-visa-applications-poll-results.md) · 3 comments
+- [Digital Visa Extension Round – June 2025](digital-visa-extension-round-june-2025.md)
+- [Digital Visa Extension Round – March 2026 [UPDATED]](digital-visa-extension-round-march-2026.md) · 4 comments
+- [Discount Bank Policy Impacts ‘Foreign Residents’: AIC Advocates for Exemption of Partners of Israelis](discount-bank-policy-impacts-foreign-residents-aic-advocates-for-exemption-of-partners-of-israelis.md)
+- [Do I Need a Lawyer to Successfully Get a Partner Visa?](do-i-need-a-lawyer-to-successfully-get-a-partner-visa.md) · 1 comments
+- [Driving In Israel With a Foreign Driver’s License](driving-in-israel-with-a-foreign-drivers-license.md) · 2 comments
+- [Entry to Israel of a Foreign Partner of an Israeli](entry-to-israel-of-a-foreign-partner-of-an-israeli.md) · 6 comments
+- [ETA IL: How to Apply and Everything You Need to Know! [Guide]](eta-il-how-to-apply-and-everything-you-need-to-know-guide.md)
+- [Found a Love Bigger Than Life? Israeli TV Wants You!](found-a-love-bigger-than-life-israeli-tv-wants-you.md)
+- [From Molletes to Lamingtons… Around the World at AIC Picnic #2 [Gallery]](from-molletes-to-lamingtons-around-the-world-at-aic-picnic-2-gallery.md)
+- [Future Mother on A5? Enough With Security Deposits at the Hospital!](future-mother-on-a5-enough-with-security-deposits-at-the-hospital.md) · 5 comments
+- [Getting Married While In the Gradual Process – Implications and Procedure](getting-married-while-in-the-gradual-process-implications-and-procedure.md)
+- [Giving Birth as an A5 Visa Holder: The Bureaucracy and Your Rights](giving-birth-on-an-a5-visa-the-bureaucracy-that-follows-a-step-by-step-guide.md) · 7 comments
+- [Government Fast-Tracks the Surveillance Law, Appoints Netanyahu to Push Bill Forward](government-fast-tracks-the-surveillance-law-appoints-netanyahu-to-push-bill-forward.md)
+- [Health Insurance in Israel for B1 Visa Holders](health-insurance-for-b1-partner-visa-holders.md) · 8 comments
+- [How Can I Help Stop Rothman’s Immigration Basic Law?](how-can-i-help-stop-rothmans-immigration-basic-law.md)
+- [How is Your Bank? Your Banking Experience Can Help Improve Access for International Couples](how-is-your-bank-your-banking-experience-can-help-improve-access-for-international-couples.md)
+- [How the Israeli Judicial Overhaul Meets Mixed Couples](how-the-israeli-judicial-overhaul-meets-mixed-couples.md)
+- [How to Book an Appointment to PIBA Visa Department](how-to-book-an-appointment-to-piba-visa-department.md) · 4 comments
+- [How To Get An Israeli Driver’s License (Step-by-Step Guide)](how-to-get-an-israeli-drivers-license-step-by-step-guide.md) · 2 comments
+- [IAIC Celebrates in a Grand Opening Event](iaic-celebrates-in-a-grand-opening-event.md)
+- [In Collaboration With Us, Multiple Knesset Members Demand Urgent Discussion About The Gradual Process](the-international-couples-community-and-the-gradual-process-brought-up-to-discussion-at-the-israeli-parliament.md)
+- [Information about the sweeping extensions of temporary visas](information-about-the-sweeping-extensions-of-temporary-visas.md)
+- [Intelligence Files and Location Tracking: PIBA Prepares for Covert Surveillance of Citizens and Foreign Nationals](intelligence-files-and-location-tracking-piba-prepares-for-covert-surveillance-of-citizens-and-foreign-nationals.md)
+- [Is This the End of Utah Zoom Weddings?](the-end-to-utah-remote-weddings-may-2026-may-be-it.md)
+- [Israel at War – Official Information About Visas [PIBA’s official answers]](israel-at-war-official-information-about-visa-status.md)
+- [Israel-Iran War: AIC Takes Action to Protect International Couples](israel-iran-war-aic-takes-action-to-protect-international-couples.md)
+- [Israel’s New Biometrics Law: Will B Visa Holders Finally Get an ID Number?](israels-new-biometrics-law-will-b-visa-holders-finally-get-an-id-number.md)
+- [Israeli Citizenship for Partners of Israelis: Eligibility and Application](israeli-citizenship-for-partners-of-israelis-application-and-procedures.md) · 6 comments
+- [Israeli District Court: “Zoom Marriages” Will Be Registered In Israel Like Any Other Valid Oversea Marriage](israeli-district-court-zoom-marriages-will-be-registered-in-israel-like-any-other-valid-oversea-marriage.md)
+- [Israeli District Court: Border Control Unauthorized to Search Phones of Incoming Visitors](israeli-district-court-border-control-unauthorized-to-search-phones-of-incoming-visitors.md)
+- [Keep Visa Departments OPEN! International Couples Say ENOUGH](keep-visa-departments-open-full-protest-campaign-launched-over-the-weekend.md) · 1 comments
+- [Knesset Forces PIBA to Exempt Visa Holders From New Pre-Flight Screening Procedure](knesset-forces-piba-to-exempt-visa-holders-from-new-pre-flight-screening-procedure.md)
+- [List of Partner Visa Interview Questions](list-of-partner-visa-interview-questions.md) · 9 comments
+- [Major Breakthrough: PIBA Commits to Unified Identification for Foreigners Within a Year](major-breakthrough-piba-commits-to-unified-identification-for-foreigners.md)
+- [Marriage of Israeli and Foreign Citizen in Cyprus](marriage-of-israeli-and-foreign-citizen-in-cyprus.md)
+- [Marriage of Israeli and foreign citizen in Georgia](marriage-of-israeli-and-foreign-citizen-in-georgia.md)
+- [Marriage of Israeli and Swedish in Sweden](marriage-of-israeli-and-swedish-in-sweden.md)
+- [Marriage of Israeli and Swiss in Switzerland](marriage-of-israeli-and-swiss-in-switzerland.md)
+- [MK Evgeny Sova Shares About Our Collaboration](mk-evgeny-sova-shares-about-his-recent-application-in-collaboration-with-our-community.md)
+- [MK Mossi Raz Addressees PIBA About Injustices in the Opening Procedure of the Gradual Process](mk-mossi-raz-addressees-piba-about-injustices-in-the-opening-procedure-of-the-gradual-process.md)
+- [Municipal Elections in Israel 2024 – Can I vote?](municipal-elections-in-israel-2023-can-i-vote.md)
+- [New Bill: PIBA Seeks Authority to Spy On, and Collect Private Information of International Couples](new-bill-piba-demands-authority-to-spy-on-and-collect-private-information-of-international-couples.md)
+- [New Mandatory eTA System for Tourists to Be Introduced This Year](new-mandatory-tourist-visa-system-to-be-introduced-this-year.md) · 1 comments
+- [No End in Sight: AIC Escalates Visa Service Crisis to Lawmakers](no-end-in-sight-aic-escalates-visa-service-crisis-to-lawmakers.md)
+- [Official Certificates to Start the Israeli Partner Visa Process](official-documentation-for-the-partner-visa.md) · 31 comments
+- [Official Documentation from Argentina](official-documentation-from-argentina.md) · 2 comments
+- [Official Documentation from Australia](official-documentation-from-australia.md) · 1 comments
+- [Official Documentation from Austria](official-documentation-from-austria.md)
+- [Official Documentation from Belgium](official-documentation-from-belgium.md)
+- [Official Documentation from Bolivia](official-documentation-from-bolivia.md)
+- [Official Documentation from Brazil](official-documentation-from-brazil.md)
+- [Official Documentation from Chile](official-documentation-from-chile.md)
+- [Official Documentation from China](official-documentation-from-china.md)
+- [Official Documentation from Croatia](official-documentation-from-croatia.md)
+- [Official Documentation from Denmark](official-documentation-from-denmark.md)
+- [Official Documentation from France](official-documentation-from-france.md)
+- [Official Documentation from Germany](official-documentation-from-germany.md)
+- [Official Documentation from Hungary](official-documentation-from-hungary.md)
+- [Official Documentation from Iceland](official-documentation-from-iceland.md)
+- [Official Documentation from Italy](official-documentation-from-italy.md) · 5 comments
+- [Official Documentation from Japan](official-documentation-from-japan.md)
+- [Official Documentation from Mexico](official-documentation-from-mexico.md)
+- [Official Documentation from Portugal](official-documentation-from-portugal.md)
+- [Official Documentation from Russia](official-documentation-from-russia.md) · 5 comments
+- [Official Documentation from Singapore](official-documentation-from-singapore.md)
+- [Official Documentation from Slovenia](official-documentation-from-slovenia.md)
+- [Official Documentation from South Africa](official-documentation-from-south-africa.md)
+- [Official Documentation from Spain](official-documentation-from-spain.md)
+- [Official Documentation from Sweden](official-documentation-from-sweden.md)
+- [Official Documentation from Switzerland](official-documentation-from-switzerland.md)
+- [Official Documentation from the Czech Republic](official-documentation-from-the-czech-republic.md)
+- [Official Documentation from the Netherlands](official-documentation-from-the-netherlands.md) · 1 comments
+- [Official Documentation from The Philippines](official-documentation-from-the-philippines.md) · 5 comments
+- [Official Documentation from the United Kingdom](official-documentation-from-the-united-kingdom.md) · 4 comments
+- [Official Documentation from the United States](official-documentation-from-the-usa.md) · 7 comments
+- [Official: Utah “Zoom Marriages” Fully Recognized for Spouse Visa Procedures](official-utah-zoom-marriages-fully-recognized-for-spouse-visa-procedures.md) · 4 comments
+- [Open Positions – Join the Team!](open-positions-join-the-team.md)
+- [Partner Visa Application Or Renewal: List of Required Documents](list-of-documents-required-for-the-partner-visa-application-renewal.md) · 52 comments
+- [Partner Visa B1 or A5 Renewal Procedures](partner-visa-b1-or-a5-renewal-procedures.md) · 10 comments
+- [Partner Visa in Israel: A Step-by-Step Guide to Your First Visa](partner-visa-in-israel-step-by-step-guide-to-your-first-visa.md) · 61 comments
+- [Partner Visa or Spouse Visa in Israel – Overview](the-gradual-process-birds-eye-view.md) · 12 comments
+- [Partner Visa Recommendation Letters Explained](partner-visa-recommendation-letters-info-tips.md) · 8 comments
+- [Passport Marathon Impact Survey: 73% of Visa Meetings Canceled, Parliament Discussion Blows Up](passport-marathon-impact-survey-73-of-visa-meetings-cancelled-parliament-discussion-blows-up.md) · 2 comments
+- [PIBA Asks Parliament to Enact a Procedure That Will Limit Arrival to Israel of Certain Foreigners](piba-asks-parliament-to-enact-a-procedure-that-will-limit-arrival-to-israel-of-certain-foreigners.md)
+- [PIBA Launches New Online Application System for Partner Visas](piba-launches-new-online-application-system-for-partner-visas.md) · 3 comments
+- [PIBA’s Proposed Law May Force International Couples Apart for Years](the-new-cooling-off-law-a-legal-blow-to-international-couples.md)
+- [Protest TONIGHT! Join the Fight for Our Rights!](protest-tonight-join-the-fight-for-our-rights.md)
+- [Protocol 5.2.0008 Update: Utah “Zoom Weddings” To Be Treated Same As Other Proxy Marriages](protocol-5-2-0008-update-utah-zoom-weddings-to-be-treated-same-as-other-proxy-marriages.md) · 1 comments
+- [Protocol Update: Permanent Residents Face One-Year Delay for Citizenship](protocol-update-permanent-residents-face-one-year-delay-for-citizenship.md)
+- [Read the Petition: AIC v. The Minister of Interior](read-the-petition-aic-v-the-minister-of-interior.md) · 2 comments
+- [Red Alert: Rothman’s Immigration Overhaul Advances in Knesset](red-alert-rothmans-immigration-overhaul-advances-in-knesset.md) · 2 comments
+- [Reports: Activity of Visa Departments in Israel – May 2023](aic-receives-reports-on-activity-of-visa-departments.md)
+- [Reports: PIBA Disregards Visa Extension Periods In Count Towards Gradual Process Completion – And PIBA’s Response](reports-piba-disregards-visa-extension-periods-in-count-towards-gradual-process-completion-and-pibas-response.md) · 1 comments
+- [Riding Electric Bikes and Scooters in Israel: Eligibility and Vehicle Registration](riding-electric-bikes-and-scooters-in-israel-eligibility-and-vehicle-registration.md)
+- [Rothman’s ‘Basic Law: Immigration’ Poses a Threat to All Foreigners in Israel](rothmans-basic-law-immigration-poses-threat-to-all-foreigners-in-israel.md) · 1 comments
+- [Supreme Judge Yechiel Kasher: “The petition is theoretical. The potential damage of the outline is limited”.](supreme-judge-yechiel-kasher-the-petition-is-theoretical-the-potential-damage-of-the-outline-is-limited.md) · 2 comments
+- [The AIC International Picnic Was Incredible [Gallery]!](the-aic-international-picnic-was-incredible-gallery.md)
+- [The Partner Visa Interview: Everything You Need To Know](the-partner-visa-interview-everything-you-need-to-know.md) · 4 comments
+- [The Political Situation in Israel and How It May Affect International Couples](the-political-situation-in-israel-and-how-it-may-affect-international-couples.md)
+- [The Ultimate Guide to Supermarkets in Israel](the-ultimate-guide-to-supermarkets-in-israel.md)
+- [Transportation of a Pet From Abroad to Israel: Step-By-Step Guide](transportation-of-a-pet-from-abroad-to-israel.md)
+- [Tribunal of Appeals: Work-Holiday Visa Holders Can Apply for Partner Visa From Within Israel](tribunal-of-appeals-work-holiday-visa-holders-can-apply-for-partner-visa-from-within-israel.md) · 3 comments
+- [Understanding The Israeli Pay Slip, Taxation, and Social Rights](understanding-the-israeli-pay-slip-taxation-and-social-rights.md) · 5 comments
+- [Utah Zoom Wedding: Step-By-Step Guide](utah-zoom-wedding-step-by-step-guide.md) · 1 comments
+- [Visa Extension Round – May 2023](visa-extension-round-may-2023.md)
+- [Voicing The Interest of International Couples at a “Pnima” Convention](voicing-the-interest-of-international-couples-at-a-pnima-convention.md)
+- [Watch Now: AIC Brings Partner Visa Procedures to the Knesset](aic-brings-partner-visa-procedures-to-the-knesset-watch-now.md)
+- [Watch Now: AIC Keeps Pushing for Fair Partner Visa Policies in Follow-Up Knesset Discussion](watch-now-aic-keeps-pushing-for-fair-partner-visa-policies-in-follow-up-knesset-discussion.md)
+- [Why Am I Paying National Insurance on a B1 visa?](why-am-i-paying-national-insurance-on-a-b1-visa.md) · 6 comments
+- [תצהיר ידועים בציבור / Affidavit for “Yeduim Batzibur” (Common-Law Partners)](%D7%AA%D7%A6%D7%94%D7%99%D7%A8-%D7%99%D7%93%D7%95%D7%A2%D7%99%D7%9D-%D7%91%D7%A6%D7%99%D7%91%D7%95%D7%A8-affidavit-for-yeduim-batzibur-common-law-partners.md)
+- [תצהיר לגבי ילדים מרווקות או מנישואין קודמים, ואפוטרופסות על הילדים / Affidavit about children from previous singleness period or previous marriage, and guardianship of children](%D7%AA%D7%A6%D7%94%D7%99%D7%A8-%D7%9C%D7%92%D7%91%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%9E%D7%A8%D7%95%D7%95%D7%A7%D7%95%D7%AA-%D7%90%D7%95-%D7%9E%D7%A0%D7%99%D7%A9%D7%95%D7%90%D7%99%D7%9F-%D7%A7.md) · 4 comments
+- [תצהיר מצב אישי (קודם ועדכני) / Affidavit of personal status (Current and Previous)](%D7%AA%D7%A6%D7%94%D7%99%D7%A8-%D7%9E%D7%A6%D7%91-%D7%90%D7%99%D7%A9%D7%99-%D7%A7%D7%95%D7%93%D7%9D-%D7%95%D7%A2%D7%93%D7%9B%D7%A0%D7%99-affidavit-of-personal-status-current-and-previous.md) · 3 comments

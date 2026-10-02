@@ -1,6 +1,6 @@
 # Data collection
 
-Local-only scripts that collect research material on the B1 → A5 partner process. Everything they write goes to `data/`, which is gitignored: it includes other people's posts and photos of their documents, so it never leaves this machine.
+Local-only scripts that collect research material on the B1 → A5 partner process. Their working files go to `collect/data/`, which is gitignored: it includes other people's posts and photos of their documents, so it never leaves this machine. The converted results the knowledge base relies on are written to the repo's `data/` instead, and committed (see `data/README.md`).
 
 ```sh
 cd collect && npm install
@@ -27,3 +27,10 @@ Every response is saved as its own file, `data/facebook/raw/<run>/<seq>-<query>.
 Comments are loaded with the same requests Facebook's post page makes (`facebook/comments.mjs`), sent from inside the logged-in page, so no post is opened and nothing is clicked. Facebook renames these requests' `doc_id` when it deploys; the script picks up the new one whenever the page makes that request itself (`data/facebook/queries.json`). If comment loading starts failing with an error anyway, the request format has changed and `comments.mjs` needs updating.
 
 Go slowly: keep to a few hundred posts a session. The scripts pause between actions, but heavy runs can still get the account rate-limited.
+
+## AIC (aic.org.il)
+
+The Israeli Association for International Couples' site: its articles (guides and news) with their comments. The events calendar and the lawyers index aren't collected. It's a small WordPress site behind Cloudflare, so it's read with a real browser, not plain HTTP requests.
+
+1. `npm run aic:capture` opens Chrome (its own profile in `data/aic/.browser-profile/`), logs in with the test account in `aic/lib.mjs`, and visits every page in the sitemap plus every on-site link it finds, except tag and author pages (`/tag/`, `/author/`), the events calendar (`/events/`, venues, organizers) and the lawyers index (`/lawyers/` and its filter pages). Each page's HTML is saved as-is to `data/aic/raw/<run>/`, listed in that run's `index.jsonl`. Documents linked from the pages (PDF, Word…) go to `data/aic/files/`. `--only <url>,<url>` re-captures specific pages, e.g. to pick up new comments.
+2. `npm run aic:parse` writes one Markdown file per article to the repo's `data/aic/<slug>.md`, from the latest capture of each page. Only articles are kept: the site's other pages (about, contact, legal, listings) hold nothing to learn from. Unlike everything under `collect/data/`, these files are committed: they're what the knowledge base is refined from. Each file has front matter (URL, author, dates, categories, tags, comment count), the article, then its comments with author and date, replies quoted under the comment they answer. `data/aic/index.md` lists every article and holds the capture date, so re-running with nothing new on the site leaves the files unchanged and a later capture's diff shows exactly what changed. The folder is rebuilt on every run; if something comes out wrong, fix `parse.mjs` and re-run it.

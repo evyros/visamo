@@ -5,9 +5,14 @@
   "scripts": {
     "fb:capture": "node facebook/capture.mjs",
     "fb:parse": "node facebook/parse.mjs",
-    "fb:images": "node facebook/images.mjs"
+    "fb:images": "node facebook/images.mjs",
+    "aic:capture": "node aic/capture.mjs",
+    "aic:parse": "node aic/parse.mjs"
   },
   "dependencies": {
-    "playwright": "^1.55.0"
+    "linkedom": "^0.18.13",
+    "playwright": "^1.55.0",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }

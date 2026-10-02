@@ -3,6 +3,27 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v25 — 2026-10-02
+
+**What changed:** Removed `statusApplicationCommonLaw`, and retired its id.
+The bills are split in two, like the lease: `utilityBills` is the couple's,
+for couples who live, or lived, together (`livingTogether`). New
+`israeliUtilityBills`: the Israeli partner's own home, in their name, for
+couples who never lived together while the Israeli partner lives in Israel.
+
+**Why:** The common-law application duplicated the forms common-law couples
+file (AS/3 in Israel, AS/1 from abroad), and named no form of its own. The
+bills of the shared home are the couple's; the Israeli partner's own home
+is theirs, in their name, in Hebrew. A couple who never lived together, with
+both abroad, has neither.
+
+**Source:** Product decision.
+
+**Lists that changed:** commonLawLivingTogether, commonLawApart:
+-statusApplicationCommonLaw. commonLawApart, marriedNeverLivedTogether:
+-utilityBills +israeliUtilityBills. neverLivedTogetherBothAbroad:
+-utilityBills.
+
 ## v24 — 2026-10-02
 
 **What changed:** New `visaChangeApplication` (AS/3, the application to

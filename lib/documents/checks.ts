@@ -57,7 +57,6 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  statusApplicationCommonLaw: "notYet",
   // From the form (AS/1, two pages) and lib/knowledge.
   entryPermitApplication: {
     required: [
@@ -101,9 +100,7 @@ export const checks = {
       "The office's part (לשימוש המשרד) is empty.",
     ],
     recommended: [
-      "A recent photo is attached in its box.",
       "The permanent address abroad and the email address are filled in.",
-      "The educational institution section is left empty, unless the applicant is a student.",
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
@@ -390,7 +387,32 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  utilityBills: "notYet",
+  utilityBills: {
+    required: [
+      "They are household bills of a home: electricity, water, arnona (municipal tax) or phone, from the provider.",
+      "Each shows the home's address and the billing period.",
+      "They're in the landlord's name or the Israeli partner's, as the AS/6 checklist asks. For a home abroad: in both partners' names, or the Israeli partner's.",
+      "If they aren't in Hebrew, Arabic or English (bills from abroad), a notarized translation is uploaded with them. English documents need no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "All four kinds are there: electricity, water, arnona and phone.",
+      "For a home abroad, they're in both partners' names.",
+      "Together they cover the last 12 months, ending recently, with no month missing.",
+      "Each bill is readable in full, with the provider's name visible.",
+    ],
+  },
+  israeliUtilityBills: {
+    required: [
+      "They are household bills of a home in Israel: electricity, water, arnona (municipal tax) or phone, from the provider.",
+      "Each shows the home's address and the billing period.",
+      "They're in one person's name: the Israeli partner's, or, for a home that isn't theirs (their family's, say), the owners'.",
+    ],
+    recommended: [
+      "All four kinds are there: electricity, water, arnona and phone.",
+      "Together they cover the last 12 months, ending recently, with no month missing.",
+      "Each bill is readable in full, with the provider's name visible.",
+    ],
+  },
   governmentServices: {
     required: [
       "It is an official confirmation from an Israeli government institution about a service received in Israel, by either partner or both: one partner's confirmation alone is fine. For example, National Insurance's confirmation of insurance periods, a health fund membership confirmation, or a confirmation from an educational institution.",

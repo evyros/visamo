@@ -1,6 +1,6 @@
 {
-  "version": 24,
-  "fingerprint": "4ec5f7cf31d5aa8e39fd56103a3c680cc3ab786ac99e3fbc0de4155f9d367c0e",
+  "version": 25,
+  "fingerprint": "f1fb5e83fbe633519bb13d6fba5c96cf10e7724e42269481efdafce9901a7d9d",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -107,7 +107,6 @@
       "foreignIncomeProof"
     ],
     "commonLawLivingTogether": [
-      "statusApplicationCommonLaw",
       "visaChangeApplication",
       "affidavitCommonLaw",
       "relationshipStory",
@@ -130,7 +129,6 @@
       "foreignIncomeProof"
     ],
     "commonLawApart": [
-      "statusApplicationCommonLaw",
       "entryPermitApplication",
       "affidavitCommonLaw",
       "relationshipStory",
@@ -144,7 +142,7 @@
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
       "israeliHousingContract",
-      "utilityBills",
+      "israeliUtilityBills",
       "governmentServices",
       "ishurToshav",
       "bankStatements",
@@ -461,7 +459,7 @@
       "foreignPoliceCertificate:US",
       "israeliHousingContract",
       "landlordAffidavit",
-      "utilityBills",
+      "israeliUtilityBills",
       "governmentServices",
       "ishurToshav",
       "sharedBankAccount",
@@ -483,7 +481,6 @@
       "recommendationLetters",
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
-      "utilityBills",
       "ishurToshav",
       "sharedBankAccount",
       "israeliIncomeProof",

@@ -5,8 +5,8 @@ shown to users (`lib/knowledge/`).
 
 ## Not verified in the catalog
 
-- The common-law documents: the application form and its number, and the
-  evidence of living together (procedure 5.2.0009 not checked).
+- The common-law documents: the evidence of living together (procedure
+  5.2.0009 not checked).
 - Police certificates from **other countries lived in**, beyond the
   nationality. And the rule for which countries count (how long, since what
   age), for the onboarding question's wording.

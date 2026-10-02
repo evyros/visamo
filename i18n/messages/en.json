@@ -1281,10 +1281,6 @@
           "title": "Status application for a married spouse (form AS/6)",
           "description": "The application for status for a foreign spouse married to an Israeli. Both of you sign it."
         },
-        "statusApplicationCommonLaw": {
-          "title": "Status application for a common-law partner",
-          "description": "The application for status for a foreign partner living as a couple with an Israeli, without being married. Both of you sign it."
-        },
         "entryPermitApplication": {
           "title": "Entry permit application (form AS/1)",
           "description": "Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process."
@@ -1399,7 +1395,11 @@
         },
         "utilityBills": {
           "title": "Bills for your home",
-          "description": "Electricity, water, arnona and phone bills for the last 12 months, in the renter's name or the Israeli partner's."
+          "description": "Electricity, water, arnona and phone bills of the home you share, for the last 12 months, in the landlord's name or the Israeli partner's."
+        },
+        "israeliUtilityBills": {
+          "title": "Bills for the Israeli partner's home",
+          "description": "Electricity, water, arnona and phone bills of the Israeli partner's home in Israel, for the last 12 months, in their name."
         },
         "governmentServices": {
           "title": "Proof of government services",

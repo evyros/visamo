@@ -16,7 +16,6 @@ const everyone = [
   "relationshipEvidence",
   "recommendationLetters",
   "foreignCivilStatus",
-  "utilityBills",
   "ishurToshav",
   "israeliIncomeProof",
   "foreignIncomeProof",
@@ -54,7 +53,6 @@ describe("buildDocumentList", () => {
 
   it("builds the whole list for common-law partners living together", () => {
     expect(keys("commonLawLivingTogether")).toEqual([
-      "statusApplicationCommonLaw",
       "visaChangeApplication",
       "affidavitCommonLaw",
       "relationshipStory",
@@ -99,10 +97,11 @@ describe("buildDocumentList", () => {
     }
   });
 
-  it("gives exactly one application form", () => {
+  it("gives married couples the AS/6 application, and common-law couples none of their own", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
+      const married = scenarios[name].relationship.relationship === "married";
       const forms = keys(name).filter((k) => k.startsWith("statusApplication"));
-      expect(forms, name).toHaveLength(1);
+      expect(forms, name).toEqual(married ? ["statusApplicationMarried"] : []);
     }
   });
 
@@ -194,6 +193,15 @@ describe("buildDocumentList", () => {
     expect(find("marriedNeverLivedTogether", "israeliHousingContract")?.owner).toBe("israeli");
     expect(find("marriedNeverLivedTogether", "israeliHousingContract")?.because).toEqual(["israeliInIsrael"]);
     expect(keys("marriedNeverLivedTogether")).not.toContain("housingContract");
+  });
+
+  it("lists the shared home's bills for couples who live together, and the Israeli partner's own otherwise", () => {
+    expect(find("marriedInCyprus", "utilityBills")?.owner).toBe("couple");
+    expect(keys("marriedInCyprus")).not.toContain("israeliUtilityBills");
+    expect(find("marriedNeverLivedTogether", "israeliUtilityBills")?.owner).toBe("israeli");
+    expect(keys("marriedNeverLivedTogether")).not.toContain("utilityBills");
+    expect(keys("neverLivedTogetherBothAbroad")).not.toContain("utilityBills");
+    expect(keys("neverLivedTogetherBothAbroad")).not.toContain("israeliUtilityBills");
   });
 
   it("gives the number of copies where more than one is needed", () => {

@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 24;
+export const CATALOG_VERSION = 25;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -86,15 +86,6 @@ export const documents = [
     form: "AS/6",
     source: `${P8} §ד.2.א`,
     verified: true,
-  },
-  {
-    id: "statusApplicationCommonLaw",
-    mayNeedTranslation: false,
-    owner: "couple",
-    category: "forms",
-    when: "commonLaw",
-    source: P9,
-    verified: false,
   },
   {
     id: "entryPermitApplication",
@@ -391,6 +382,18 @@ export const documents = [
     mayNeedTranslation: true,
     owner: "couple",
     category: "centerOfLife",
+    // The home you share, or shared, in Israel or abroad.
+    when: "livingTogether",
+    source: AS6,
+    verified: true,
+  },
+  {
+    // Never lived together: the bills of the Israeli partner's own home in Israel, in their name.
+    id: "israeliUtilityBills",
+    mayNeedTranslation: false,
+    owner: "israeli",
+    category: "centerOfLife",
+    when: { all: ["israeliInIsrael", { not: "livingTogether" }] },
     source: AS6,
     verified: true,
   },
@@ -554,4 +557,6 @@ export const RETIRED_DOCUMENT_IDS: readonly string[] = [
   "centerOfLifeEvidence",
   // v18: a stay without a valid visa is a case for a lawyer, not a letter.
   "foreignStayExplanation",
+  // v25: a duplicate. Common-law couples have no status application of their own: AS/3 or AS/1.
+  "statusApplicationCommonLaw",
 ];

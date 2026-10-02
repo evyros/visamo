@@ -3,6 +3,19 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v26 — 2026-10-02
+
+**What changed:** New `foreignChildrenAffidavit`: the foreign partner's
+affidavit about their children from before the marriage or a previous
+marriage, and their guardianship, signed in front of a lawyer. For every
+couple: without children, it states that.
+
+**Why:** Asked for in practice, of every foreign partner.
+
+**Source:** Practice, confirmed by the product owner.
+
+**Lists that changed:** Every scenario: +foreignChildrenAffidavit.
+
 ## v25 — 2026-10-02
 
 **What changed:** Removed `statusApplicationCommonLaw`, and retired its id.

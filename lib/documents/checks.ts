@@ -104,6 +104,20 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
+  foreignChildrenAffidavit: {
+    required: [
+      "It is an affidavit (תצהיר) of the foreign partner about their children from before the marriage or from a previous marriage, and their guardianship: it lists each child, with who has guardianship, or states that they have no children.",
+      "It is signed by the foreign partner, and confirmed by a lawyer (or, abroad, a notary), with the lawyer's or notary's stamp and signature.",
+      "If it was signed abroad, it carries that country's apostille or consular legalization, in the same file.",
+      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "If the file says the foreign partner has children from a previous relationship, the affidavit lists children, not a statement that there are none.",
+      "If the file says they have no children from a previous relationship, it states that they have none.",
+      "Each child is named with their date of birth.",
+      "It is dated.",
+    ],
+  },
   // From the form (AS/6, the Israeli partner's declaration) and how it's signed: in front of a lawyer or registrar.
   israeliAffidavitMarried: {
     required: [

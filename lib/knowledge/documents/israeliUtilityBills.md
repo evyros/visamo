@@ -2,7 +2,6 @@
 
 Electricity, water, arnona and phone bills of the Israeli partner's home in Israel, for the last 12 months, in their name.
 
-
 For a couple who have never lived together, when the Israeli partner lives
 in Israel: the bills of the Israeli partner's own home (electricity, water,
 arnona and phone), in their name. They come with the lease or purchase

@@ -1,6 +1,6 @@
 # Salary slips of the foreign partner (תלושי שכר של בן/בת הזוג הזר/ה)
 
-The last 3-12 salary slips. If you're self-employed: a confirmation signed by your accountant of the income you reported for the last year.
+The last 3-12 salary slips. If self-employed: an accountant's signed confirmation of the income reported for the last year.
 
 The foreign partner's payslips (tlushim, תלושי שכר), if they're employed
 (שכיר). If they don't get payslips, they show their income in another way,

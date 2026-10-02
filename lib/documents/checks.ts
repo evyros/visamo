@@ -170,7 +170,17 @@ export const checks = {
   relationshipEvidence: "notYet",
   recommendationLetters: "notYet",
   jointLivingEvidence: "notYet",
-  jointChildrenBirthCertificates: "notYet",
+  jointChildrenBirthCertificates: {
+    required: [
+      "It is an official birth certificate of a child, listing two parents: from the Israeli Population and Immigration Authority (digitally or manually signed), or from a civil registry abroad.",
+      "From abroad: it carries an apostille or consular legalization from the country of birth, in the same file. An Israeli one needs no certification.",
+      "From abroad: if it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "Each child has their own certificate: one upload can hold several, one per child.",
+      "It is the full document, readable, with the issuing office's seal or signature visible.",
+    ],
+  },
   foreignCivilStatus: {
     required: [
       "It states the foreign partner's civil status.",

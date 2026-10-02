@@ -1,14 +1,14 @@
 # Bills for your home (חשבונות של הדירה)
 
-Electricity, water, arnona and phone bills of the home you share, for the last 12 months, in the landlord's name or the Israeli partner's.
+Bills for your shared house from the last 12 months, in the landlord's name or the Israeli partner's, for example: electricity bill, water bill, arnona bill, phone bill, etc.
 
 The bills of the home you live in together, or lived in together, in Israel
-or abroad: electricity, water, arnona (municipal tax) and phone. The AS/6
-checklist asks for them in the landlord's name or the Israeli partner's, for
-a period you state, from one date to another. They're part of the proof
-that your center of life is in that home. If you've never lived together,
-the Israeli partner brings the bills of their own home instead (the bills
-for the Israeli partner's home).
+or abroad: for example electricity, water, arnona (municipal tax) and phone.
+The AS/6 checklist asks for them in the landlord's name or the Israeli
+partner's, for a period you state, from one date to another. They're part of
+the proof that your center of life is in that home. If you've never lived
+together, the Israeli partner brings the bills of their own home instead
+(the bills for the Israeli partner's home).
 
 ## How to get it
 
@@ -19,9 +19,9 @@ you download past bills from your personal area on their website or app.
 
 ## What it should include
 
-- **Every kind of bill:** electricity, water, arnona and phone. Other
-  household bills of the home, such as gas, internet, TV or vaad bayit
-  (building committee), are accepted too, on top of these.
+- **At least 3 types of household bills:** electricity, water, arnona,
+  phone, gas, internet, TV or vaad bayit (building committee). Any bill of
+  the home counts.
 - **The last 12 months,** the period your center of life is proven for.
 - **In the landlord's name or the Israeli partner's,** as the AS/6
   checklist asks. If the landlord pays the bills, that's fine: the
@@ -39,7 +39,7 @@ you download past bills from your personal area on their website or app.
 No. The AS/6 checklist accepts bills in the landlord's name or the Israeli
 partner's. The landlord's affidavit says who pays each bill.
 
-**Do we need all four kinds of bills?**
-Bring all the ones your home has: electricity, water, arnona and phone,
-for the last 12 months. Any other household bill, like gas or internet, is
-welcome too, but doesn't replace those four.
+**Which bills do we need?**
+At least 3 types of household bills, for the last 12 months. Any bill of
+the home counts: electricity, water, arnona, phone, gas, internet, TV or
+vaad bayit. Bring more if your home has them.

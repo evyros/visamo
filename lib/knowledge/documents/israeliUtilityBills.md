@@ -1,12 +1,12 @@
 # Bills for the Israeli partner's home (חשבונות של הדירה של בן/בת הזוג הישראלי/ת)
 
-Electricity, water, arnona and phone bills of the Israeli partner's home in Israel, for the last 12 months, in their name.
+Bills for the Israeli partner's house in Israel from the last 12 months, in their name, for example: electricity bill, water bill, arnona bill, phone bill, etc.
 
 For a couple who have never lived together, when the Israeli partner lives
-in Israel: the bills of the Israeli partner's own home (electricity, water,
-arnona and phone), in their name. They come with the lease or purchase
-contract of that home, as part of the proof of the Israeli partner's center
-of life in Israel.
+in Israel: the bills of the Israeli partner's own home (for example
+electricity, water, arnona and phone), in their name. They come with the
+lease or purchase contract of that home, as part of the proof of the Israeli
+partner's center of life in Israel.
 
 ## How to get it
 
@@ -17,9 +17,9 @@ you download past bills from your personal area on their website or app.
 
 ## What it should include
 
-- **Every kind of bill:** electricity, water, arnona and phone. Other
-  household bills of the home, such as gas, internet, TV or vaad bayit
-  (building committee), are accepted too, on top of these.
+- **At least 3 types of household bills:** electricity, water, arnona,
+  phone, gas, internet, TV or vaad bayit (building committee). Any bill of
+  the home counts.
 - **The last 12 months.**
 - **In the Israeli partner's name.**
 - **The home's address** on each bill, the same as on the lease.

@@ -1432,12 +1432,12 @@
         "utilityBills": {
           "title": "Bills for your home",
           "shortTitle": "Bills for your home",
-          "description": "Electricity, water, arnona and phone bills of the home you share, for the last 12 months, in the landlord's name or the Israeli partner's."
+          "description": "Bills for your shared house from the last 12 months, in the landlord's name or the Israeli partner's, for example: electricity bill, water bill, arnona bill, phone bill, etc."
         },
         "israeliUtilityBills": {
           "title": "Bills for the Israeli partner's home",
           "shortTitle": "Bills for the home",
-          "description": "Electricity, water, arnona and phone bills of the Israeli partner's home in Israel, for the last 12 months, in their name."
+          "description": "Bills for the Israeli partner's house in Israel from the last 12 months, in their name, for example: electricity bill, water bill, arnona bill, phone bill, etc."
         },
         "governmentServices": {
           "title": "Proof of government services",

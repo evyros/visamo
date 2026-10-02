@@ -11,8 +11,7 @@ shown to users (`lib/knowledge/`).
   nationality. And the rule for which countries count (how long, since what
   age), for the onboarding question's wording.
 - The couple's children together: their birth certificates.
-- The Israeli partner's divorce decree and a previous spouse's death
-  certificate.
+- The Israeli partner's previous spouse's death certificate.
 - School records: whose children (current reading in `lib/knowledge/children.md`).
 - The other parent's death certificate.
 - The Apostille Convention country list.

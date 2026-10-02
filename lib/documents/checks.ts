@@ -115,7 +115,17 @@ export const checks = {
     ],
   },
   securityCv: "notYet",
-  israeliId: "notYet",
+  israeliId: {
+    required: [
+      "It is an Israeli Teudat Zehut (identity card), both sides of the card, readable.",
+      "The appendix (ספח) is included, as a paper appendix or a printed or downloaded one.",
+      "A driver's license or a passport instead of the Teudat Zehut is an issue: it isn't accepted.",
+    ],
+    recommended: [
+      "The appendix is recent, so the address and civil status on it.",
+      "Each side is scanned straight, with nothing cut off at the edges.",
+    ],
+  },
   israeliPhotos: passportPhoto,
   foreignPassport: {
     required: [
@@ -195,7 +205,18 @@ export const checks = {
       "It is the certified document scanned in full, readable, with the issuing office's seal or signature visible.",
     ],
   },
-  israeliDivorceDecree: "notYet",
+  israeliDivorceDecree: {
+    required: [
+      "It is an official proof of divorce: a divorce certificate from an Israeli rabbinical court (תעודת גירושין), a judgment of an Israeli religious court (Sharia or ecclesiastical) or of the family court dissolving the marriage (התרת נישואין), or a divorce decree or certificate from abroad.",
+      "It is final: the document that ends the marriage, not an interim step.",
+      "From abroad: it carries an apostille or consular legalization from the country where the divorce was granted, in the same file. An Israeli one needs no certification.",
+      "From abroad: if it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "Every page is included, not only the first and the last.",
+      "It is scanned straight and readable in full, with the court's seal or signature visible.",
+    ],
+  },
   israeliSpouseDeathCertificate: "notYet",
   foreignPoliceCertificate: {
     required: [

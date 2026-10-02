@@ -309,8 +309,8 @@ export const documents = [
     category: "civilStatus",
     when: "israeliDivorced",
     issuedBy: "unknown",
-    source: P8,
-    verified: false,
+    source: "Practice: offices ask the Israeli partner for it (product owner)",
+    verified: true,
   },
   {
     id: "israeliSpouseDeathCertificate",

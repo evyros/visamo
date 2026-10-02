@@ -17,10 +17,10 @@ import type { CheckResult } from "./result";
 
 /**
  * A check running longer than this was cut off (the route's maxDuration is
- * 120s): another may start. Its spend was never refunded, which is rare
+ * 300s): another may start. Its spend was never refunded, which is rare
  * enough to leave to support.
  */
-const RUNNING_EXPIRES_SECONDS = 150;
+const RUNNING_EXPIRES_SECONDS = 330;
 
 /** Whether the case bought Full file check, the checks it has left, and how many it was granted and used (lib/credits.ts). */
 export async function checkBalance(caseId: string) {

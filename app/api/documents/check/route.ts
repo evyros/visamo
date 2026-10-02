@@ -3,7 +3,7 @@ import { todayInIsrael } from "@/i18n/format";
 import { format, loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { CHECK_MODEL, completeJson, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
-import { prepareFiles } from "@/lib/checks/files";
+import { MAX_CHECK_PAGES, prepareFiles } from "@/lib/checks/files";
 import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
 import { checkResultSchema, isConsistent, parseCheck, settle, type CheckResult } from "@/lib/checks/result";
 import { caseChecks, checkBalance, claimCheck, failCheck, saveCheck, type CheckMetrics } from "@/lib/checks/store";
@@ -18,9 +18,10 @@ import { findUserCase } from "@/lib/session";
 // fix or improve. One check counts toward the case's fair-use limit, given
 // back if it fails or the files can't be read. One check runs per item at a
 // time; the item's last result stays until the new one replaces it. Every
-// run is kept, failed ones too, for reviewing how checks work.
+// run is kept, failed ones too, for reviewing how checks work. GET gives
+// every item's state, for a page that was open while a check ran.
 
-export const maxDuration = 120;
+export const maxDuration = 300;
 
 const MAX_ANSWER_TOKENS = 4000;
 
@@ -36,7 +37,8 @@ type ErrorCode =
   | "tooLarge"
   | "noChecks"
   | "failed";
-const fail = (error: ErrorCode, status: number) => Response.json({ error }, { status });
+const fail = (error: ErrorCode, status: number, extra?: { maxPages: number }) =>
+  Response.json({ error, ...extra }, { status });
 
 /**
  * The model's answer, asked for once more if it's malformed or its rating
@@ -64,6 +66,18 @@ async function ask(messages: ModelMessage[], calls: Completion[]) {
   if (second) return settled(second);
   if (first) return settled(first);
   throw new Error("The model's answer wasn't a check result");
+}
+
+/** Every list item's check: whether one is running, and its latest result. */
+export async function GET() {
+  const current = await findUserCase();
+  if (!current) return fail("unauthorized", 401);
+  const [checks, locale] = await Promise.all([caseChecks(current.caseId), getAppLocale()]);
+  return Response.json({
+    checks: Object.fromEntries(
+      [...checks].map(([key, check]) => [key, { running: check.running, last: checkView(check, locale) }]),
+    ),
+  });
 }
 
 export async function POST(request: Request) {
@@ -110,11 +124,12 @@ export async function POST(request: Request) {
   const metrics = (): CheckMetrics => ({ ...measured, durationMs: Math.round(performance.now() - started) });
   let spent = false;
   try {
-    const prepared = await prepareFiles(caseId, files);
+    const maxPages = check.maxPages ?? MAX_CHECK_PAGES;
+    const prepared = await prepareFiles(caseId, files, maxPages);
     let result: CheckResult;
     if (!prepared.ok && "error" in prepared) {
       await failCheck(runId, prepared.error, metrics());
-      return fail(prepared.error, 400);
+      return fail(prepared.error, 400, prepared.error === "tooManyPages" ? { maxPages } : undefined);
     }
     if (!prepared.ok) {
       // A file PDFium can't open: no need to ask the model, and not counted.

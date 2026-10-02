@@ -13,13 +13,15 @@ for the Israeli partner's home).
 ## How to get it
 
 From each provider of the home: the electricity company, the water
-corporation or the municipality, the municipality for arnona, and the phone
-company. Most let you download past bills from your personal area on their
-website or app.
+corporation or the municipality, the municipality for arnona, the phone
+company, and any other provider of the home (gas, internet, TV). Most let
+you download past bills from your personal area on their website or app.
 
 ## What it should include
 
-- **Every kind of bill:** electricity, water, arnona and phone.
+- **Every kind of bill:** electricity, water, arnona and phone. Other
+  household bills of the home, such as gas, internet, TV or vaad bayit
+  (building committee), are accepted too, on top of these.
 - **The last 12 months,** the period your center of life is proven for.
 - **In the landlord's name or the Israeli partner's,** as the AS/6
   checklist asks. If the landlord pays the bills, that's fine: the
@@ -39,4 +41,5 @@ partner's. The landlord's affidavit says who pays each bill.
 
 **Do we need all four kinds of bills?**
 Bring all the ones your home has: electricity, water, arnona and phone,
-for the last 12 months.
+for the last 12 months. Any other household bill, like gas or internet, is
+welcome too, but doesn't replace those four.

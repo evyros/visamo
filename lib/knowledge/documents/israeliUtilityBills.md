@@ -11,13 +11,15 @@ of life in Israel.
 ## How to get it
 
 From each provider of the home: the electricity company, the water
-corporation or the municipality, the municipality for arnona, and the phone
-company. Most let you download past bills from your personal area on their
-website or app.
+corporation or the municipality, the municipality for arnona, the phone
+company, and any other provider of the home (gas, internet, TV). Most let
+you download past bills from your personal area on their website or app.
 
 ## What it should include
 
-- **Every kind of bill:** electricity, water, arnona and phone.
+- **Every kind of bill:** electricity, water, arnona and phone. Other
+  household bills of the home, such as gas, internet, TV or vaad bayit
+  (building committee), are accepted too, on top of these.
 - **The last 12 months.**
 - **In the Israeli partner's name.**
 - **The home's address** on each bill, the same as on the lease.

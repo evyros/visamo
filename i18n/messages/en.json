@@ -1582,7 +1582,7 @@
         "dependsOnCountry": "Apostille or legalization, by country"
       },
       "choose": "Upload files",
-      "uploadHint": "PDF, JPG or PNG, up to 20 MB each.",
+      "uploadHint": "PDF, JPG or PNG, up to 10 MB each.",
       "uploading": "Uploading… {percent}%",
       "processing": "Processing…",
       "retry": "Try again",
@@ -1602,7 +1602,8 @@
       },
       "errors": {
         "type": "Only PDF, JPG or PNG files can be uploaded.",
-        "size": "Each file can be up to 20 MB.",
+        "size": "Each file can be up to 10 MB, the most Misrad Hapnim accepts in an online application.",
+        "total": "A document's files can add up to 35 MB. Remove a file, or upload a smaller scan.",
         "tooMany": "Up to 10 files per document.",
         "missing": "The upload didn't finish. Upload the file again.",
         "notAllowed": "This file can't be added here.",
@@ -1632,7 +1633,7 @@
         "cantOpen": "We couldn't open \"{name}\". It may be damaged or protected by a password.",
         "errors": {
           "running": "This document is already being checked. The result will show here when it's ready.",
-          "tooManyPages": "Up to 20 pages can be checked at once. Remove extra pages and try again.",
+          "tooManyPages": "Up to {max} pages can be checked at once. Remove extra pages and try again.",
           "tooLarge": "These files are too large to check together. Try smaller scans.",
           "noChecks": "You've used all your document checks. Contact support for more.",
           "notIncluded": "Document checks come with Full file check.",

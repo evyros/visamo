@@ -1,11 +1,11 @@
 "use server";
 
 import { del, get, put } from "@vercel/blob";
-import { and, count, eq, isNull } from "drizzle-orm";
+import { and, count, eq, isNull, sum } from "drizzle-orm";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
 import { db } from "@/lib/db";
 import { caseFile } from "@/lib/db/schema";
-import { MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, sniffType } from "@/lib/files/rules";
+import { MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, sniffType } from "@/lib/files/rules";
 import { filePath, thumbnailPath } from "@/lib/files/storage";
 import { makeThumbnail } from "@/lib/files/thumbnail";
 import { fileView, type FileView } from "@/lib/files/view";
@@ -18,7 +18,7 @@ import { requireCase } from "@/lib/session";
 //   3. finishUpload: the server checks the file, records it and makes its
 //      thumbnail. Safe to call again for the same file (a retry).
 
-export type UploadError = "notAllowed" | "tooMany" | "missing" | "type" | "size" | "generic";
+export type UploadError = "notAllowed" | "tooMany" | "missing" | "type" | "size" | "total" | "generic";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
@@ -85,6 +85,14 @@ export async function finishUpload(input: {
       // Rejected, so it never became a file: nothing to keep.
       await del(path);
       return { error: bytes ? "type" : "size" };
+    }
+    const [{ others }] = await db
+      .select({ others: sum(caseFile.size).mapWith(Number) })
+      .from(caseFile)
+      .where(and(eq(caseFile.caseId, caseId), eq(caseFile.documentKey, documentKey), isNull(caseFile.deletedAt)));
+    if ((others ?? 0) + bytes.length > MAX_DOCUMENT_BYTES) {
+      await del(path);
+      return { error: "total" };
     }
 
     const thumbnail = await makeThumbnail(bytes, type);

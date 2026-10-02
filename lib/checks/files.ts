@@ -2,6 +2,7 @@ import "server-only";
 import { get } from "@vercel/blob";
 import sharp from "sharp";
 import type { ContentPart } from "@/lib/chat/openrouter";
+import { MAX_DOCUMENT_BYTES } from "@/lib/files/rules";
 import { filePath } from "@/lib/files/storage";
 import { loadPdfium } from "@/lib/files/thumbnail";
 
@@ -9,10 +10,10 @@ import { loadPdfium } from "@/lib/files/thumbnail";
 // PDFs opened with PDFium (a damaged or password-protected one is caught
 // here, before the model is paid for), images downscaled.
 
-/** Most pages one check sends, across the item's files; an image is one page. */
+/** Most pages one check sends, across the item's files, unless its check sets its own (lib/documents/checks.ts); an image is one page. */
 export const MAX_CHECK_PAGES = 20;
-/** Most bytes one check sends, below the model providers' request limits. */
-const MAX_CHECK_BYTES = 24 * 1024 * 1024;
+/** Most bytes one check sends: what a document's files can add up to at upload (lib/files/rules.ts). */
+const MAX_CHECK_BYTES = MAX_DOCUMENT_BYTES;
 /** Longest image side sent: enough to read small print on a phone photo. */
 const IMAGE_SIDE = 2000;
 
@@ -61,7 +62,7 @@ async function downscaled(bytes: Uint8Array) {
 }
 
 /** The files as the model's content: each labelled with its name, then the file. */
-export async function prepareFiles(caseId: string, files: CheckFile[]): Promise<PreparedFiles> {
+export async function prepareFiles(caseId: string, files: CheckFile[], maxPages: number): Promise<PreparedFiles> {
   const parts: ContentPart[] = [];
   let pages = 0;
   let bytes = 0;
@@ -82,7 +83,7 @@ export async function prepareFiles(caseId: string, files: CheckFile[]): Promise<
       bytes += image.length;
       parts.push({ type: "image_url", image_url: { url: dataUrl("image/jpeg", image) } });
     }
-    if (pages > MAX_CHECK_PAGES) return { ok: false, error: "tooManyPages" };
+    if (pages > maxPages) return { ok: false, error: "tooManyPages" };
     if (bytes > MAX_CHECK_BYTES) return { ok: false, error: "tooLarge" };
   }
   return { ok: true, parts, pages, bytes };

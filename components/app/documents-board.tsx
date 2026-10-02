@@ -14,7 +14,7 @@ import type { CheckRating, FindingText } from "@/lib/checks/result";
 import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { progressOf, uploadedKeys } from "@/lib/documents/progress";
-import { ACCEPTED_TYPES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
+import { ACCEPTED_TYPES, MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
 import { Icon } from "@/components/icons";
 
@@ -57,7 +57,8 @@ export type CheckSettings = {
   supportUrl: string;
 };
 
-type ItemCheck = { running: boolean; last: CheckView | null; error?: string };
+/** `waiting`: this page started the check and waits on its answer, which brings the result. */
+type ItemCheck = { running: boolean; last: CheckView | null; error?: string; waiting?: boolean };
 
 const sameSet = (a: readonly string[], b: readonly string[]) => {
   const sorted = [...b].sort();
@@ -108,6 +109,17 @@ function useLimiter(size: number) {
 
 /** Multipart splits a large file into parts that retry on their own. */
 const MULTIPART_FROM = 8 * 1024 * 1024;
+
+/** How often the page asks for a check that's running without it: started before a reload, or by the partner. */
+const CHECK_POLL_MS = 10_000;
+
+/** Every item's check as it is now (api/documents/check); null if it can't be had. */
+async function currentChecks() {
+  const response = await fetch("/api/documents/check").catch(() => null);
+  if (!response?.ok) return null;
+  const body = (await response.json().catch(() => null)) as { checks: Record<string, Omit<ItemCheck, "error">> } | null;
+  return body?.checks ?? null;
+}
 
 export function DocumentsBoard({
   t,
@@ -180,7 +192,7 @@ export function DocumentsBoard({
       });
       if ("error" in result) {
         // Missing, or rejected and deleted: the next try uploads again, to a new path.
-        const again = result.error === "missing" || result.error === "type" || result.error === "size";
+        const again = result.error === "missing" || result.error === "type" || result.error === "size" || result.error === "total";
         return change(item.id, {
           phase: "failed",
           error: result.error,
@@ -198,21 +210,31 @@ export function DocumentsBoard({
   }
 
   function add(documentKey: string, chosen: File[], replaces?: string) {
-    const here =
-      files.filter((f) => f.documentKey === documentKey && f.id !== replaces).length +
-      pending.filter((p) => p.documentKey === documentKey).length;
+    const kept = files.filter((f) => f.documentKey === documentKey && f.id !== replaces);
+    const queued = pending.filter((p) => p.documentKey === documentKey);
+    const here = kept.length + queued.length;
+    let bytes = kept.reduce((total, f) => total + f.size, 0) + queued.reduce((total, p) => total + p.file.size, 0);
     let error: string | undefined;
+    const room = Math.max(0, MAX_FILES_PER_DOCUMENT - here);
     const accepted = chosen.filter((file) => {
       if (!isAcceptedType(file.type)) error = t.errors.type;
       else if (file.size > MAX_FILE_BYTES) error = t.errors.size;
       else return true;
       return false;
     });
-    const room = Math.max(0, MAX_FILES_PER_DOCUMENT - here);
     if (accepted.length > room) error = t.errors.tooMany;
+    // In the order chosen, while the document's files together still fit.
+    const fitting = accepted.slice(0, room).filter((file) => {
+      if (bytes + file.size > MAX_DOCUMENT_BYTES) {
+        error = t.errors.total;
+        return false;
+      }
+      bytes += file.size;
+      return true;
+    });
     setAddErrors((errors) => ({ ...errors, [documentKey]: error ?? "" }));
 
-    const items: Pending[] = accepted.slice(0, room).map((file) => ({
+    const items: Pending[] = fitting.map((file) => ({
       id: crypto.randomUUID(),
       documentKey,
       file,
@@ -251,7 +273,7 @@ export function DocumentsBoard({
     setChecks((all) => ({ ...all, [key]: { ...all[key], ...update } }));
 
   async function check(documentKey: string) {
-    setCheck(documentKey, { running: true, error: undefined });
+    setCheck(documentKey, { running: true, waiting: true, error: undefined });
     const errors = t.check.errors;
     try {
       const response = await fetch("/api/documents/check", {
@@ -259,15 +281,42 @@ export function DocumentsBoard({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ documentKey }),
       });
-      const body = (await response.json().catch(() => ({}))) as { check?: CheckView; error?: string };
-      if (response.ok && body.check) return setCheck(documentKey, { running: false, last: body.check });
-      const error = errors[body.error as keyof typeof errors] ?? errors.generic;
-      setCheck(documentKey, { running: false, error });
+      const body = (await response.json().catch(() => ({}))) as { check?: CheckView; error?: string; maxPages?: number };
+      if (response.ok && body.check) return setCheck(documentKey, { running: false, waiting: false, last: body.check });
+      const error = format(errors[body.error as keyof typeof errors] ?? errors.generic, { max: body.maxPages ?? "" });
+      setCheck(documentKey, { running: false, waiting: false, error });
     } catch (error) {
       console.error("check failed", error);
-      setCheck(documentKey, { running: false, error: errors.generic });
+      setCheck(documentKey, { running: false, waiting: false, error: errors.generic });
     }
   }
+
+  // The checks as they are now, for items this page isn't waiting on itself.
+  const refreshChecks = useCallback(() => {
+    void currentChecks().then((now) =>
+      setChecks((all) => {
+        const next = { ...all };
+        for (const [key, state] of Object.entries(now ?? {})) {
+          if (key in next && !next[key].waiting) next[key] = { ...next[key], ...state };
+        }
+        return next;
+      }),
+    );
+  }, []);
+
+  // Once on arriving: the browser's Back button shows the page as it was first loaded.
+  // Without Full file check no check can run, so there's nothing to ask.
+  useEffect(() => {
+    if (settings.allowed) refreshChecks();
+  }, [settings.allowed, refreshChecks]);
+
+  // While a check runs that this page didn't start, until it ends.
+  const waitingOnOthers = Object.values(checks).some((c) => c.running && !c.waiting);
+  useEffect(() => {
+    if (!waitingOnOthers) return;
+    const timer = setInterval(refreshChecks, CHECK_POLL_MS);
+    return () => clearInterval(timer);
+  }, [waitingOnOthers, refreshChecks]);
 
   const { done: ready, total } = progressOf(groups.flatMap((g) => g.items), uploadedKeys(files));
   // A retired document's files can only be removed; once they all are, it goes.

@@ -4,11 +4,17 @@
 export const ACCEPTED_TYPES = ["application/pdf", "image/jpeg", "image/png"] as const;
 export type AcceptedType = (typeof ACCEPTED_TYPES)[number];
 
-/** Per file. Scanned PDFs and phone photos are rarely bigger. */
-export const MAX_FILE_BYTES = 20 * 1024 * 1024;
+/** Per file: PIBA's own limit for an uploaded file, so a file that fits here fits there. */
+export const MAX_FILE_BYTES = 10 * 1024 * 1024;
 
 /** Per document, everything that goes with it: a passport's pages, a certificate and its apostille and translation. */
 export const MAX_FILES_PER_DOCUMENT = 10;
+
+/**
+ * Per document, all its files together: the most one check sends (lib/checks/files.ts).
+ * Sent base64-encoded, that's about 47 MB, below Gemini's 50 MB for PDFs in a request.
+ */
+export const MAX_DOCUMENT_BYTES = 35 * 1024 * 1024;
 
 export const isAcceptedType = (type: string): type is AcceptedType =>
   (ACCEPTED_TYPES as readonly string[]).includes(type);

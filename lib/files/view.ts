@@ -5,6 +5,8 @@ export type FileView = {
   contentType: string;
   name: string;
   hasThumbnail: boolean;
+  /** Bytes, as uploaded. */
+  size: number;
   /** Null when the uploader's account is gone. */
   uploaderName: string | null;
   /** ISO date. */
@@ -17,6 +19,7 @@ export function fileView(row: {
   contentType: string;
   name: string;
   hasThumbnail: boolean;
+  size: number;
   uploaderName: string | null;
   createdAt: Date;
 }): FileView {
@@ -26,6 +29,7 @@ export function fileView(row: {
     contentType: row.contentType,
     name: row.name,
     hasThumbnail: row.hasThumbnail,
+    size: row.size,
     uploaderName: row.uploaderName,
     createdAt: row.createdAt.toISOString(),
   };

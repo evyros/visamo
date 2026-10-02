@@ -12,6 +12,8 @@ import type { Point } from "./points";
 //                issue, and the document needs fixing.
 //   recommended  what makes the document stronger. These separate "looks
 //                good" from "can be improved".
+//   maxPages     the most pages one check sends, when the document is
+//                usually longer than the default (lib/checks/files.ts).
 //
 // Written in English, for the model. A line can be stricter or more detailed
 // than lib/knowledge, but never contradict it. No line checks a document
@@ -29,7 +31,11 @@ import type { Point } from "./points";
 export type DocumentCheck = {
   required: readonly string[];
   recommended: readonly string[];
+  maxPages?: number;
 };
+
+/** Bills of many months, from several providers. */
+const BILLS_PAGES = 60;
 
 /** Passport photos, the same for both partners. */
 const passportPhoto: DocumentCheck = {
@@ -449,29 +455,31 @@ export const checks = {
   },
   utilityBills: {
     required: [
-      "They are household bills of a home: electricity, water, arnona (municipal tax) or phone, from the provider.",
+      "They are household bills of a home, from the provider: electricity, water, arnona (municipal tax), phone, or any other bill of the home, such as gas, internet, TV or vaad bayit (building committee).",
       "Each shows the home's address and the billing period.",
-      "They're in the landlord's name or the Israeli partner's, as the AS/6 checklist asks. For a home abroad: in both partners' names, or the Israeli partner's.",
+      "They're in the landlord's name or the Israeli partner's. For a home abroad: in both partners' names, or the Israeli partner's.",
       "If they aren't in Hebrew, Arabic or English (bills from abroad), a notarized translation is uploaded with them. English documents need no translation: offices accept English in practice, and ask for one if they don't.",
     ],
     recommended: [
-      "All four kinds are there: electricity, water, arnona and phone.",
+      "There are at least 3 types of household bills.",
       "For a home abroad, they're in both partners' names.",
       "Together they cover the last 12 months, ending recently, with no month missing.",
       "Each bill is readable in full, with the provider's name visible.",
     ],
+    maxPages: BILLS_PAGES,
   },
   israeliUtilityBills: {
     required: [
-      "They are household bills of a home in Israel: electricity, water, arnona (municipal tax) or phone, from the provider.",
+      "They are household bills of a home in Israel, from the provider: electricity, water, arnona (municipal tax), phone, or any other bill of the home, such as gas, internet, TV or vaad bayit (building committee).",
       "Each shows the home's address and the billing period.",
       "They're in one person's name: the Israeli partner's, or, for a home that isn't theirs (their family's, say), the owners'.",
     ],
     recommended: [
-      "All four kinds are there: electricity, water, arnona and phone.",
+      "There are at least 3 types of household bills.",
       "Together they cover the last 12 months, ending recently, with no month missing.",
       "Each bill is readable in full, with the provider's name visible.",
     ],
+    maxPages: BILLS_PAGES,
   },
   governmentServices: {
     required: [

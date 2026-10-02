@@ -71,7 +71,18 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  israeliAffidavitMarried: "notYet",
+  // From the form (AS/6, page 4) and how it's signed: in front of a lawyer or registrar.
+  israeliAffidavitMarried: {
+    required: [
+      "It is the Israeli partner's declaration from form AS/6, titled \"הצהרת בן הזוג המזמין\" (נספח אש6 דף4), with the whole page: the five statements, the explanation lines, the signature line and the confirmation section.",
+      "Each of the five statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
+      "The place, the date and the Israeli partner's signature are filled in.",
+      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
+    ],
+    recommended: [
+      "The ticks are clear, and the page is scanned straight and readable in full.",
+    ],
+  },
   foreignAffidavitMarried: "notYet",
   // From the form (5.2.0009_a) and how it's signed: at the appointment, in front of the clerk.
   affidavitCommonLaw: {

@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 19;
+export const CATALOG_VERSION = 20;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -250,13 +250,14 @@ export const documents = [
     verified: true,
   },
   {
+    // Every couple who says they live, or lived, together, married or not.
     id: "jointLivingEvidence",
     mayNeedTranslation: true,
     owner: "couple",
     category: "relationship",
-    when: { all: ["commonLaw", "livingTogether"] },
-    source: P9,
-    verified: false,
+    when: "livingTogether",
+    source: `${P8} §ד.2.ח; practice (product owner)`,
+    verified: true,
   },
   {
     id: "jointChildrenBirthCertificates",
@@ -365,8 +366,8 @@ export const documents = [
     mayNeedTranslation: false,
     owner: "couple",
     category: "centerOfLife",
-    // Annexed to the lease: wherever the lease is asked for.
-    when: { any: ["livingTogether", "israeliInIsrael"] },
+    // Annexed to the lease, wherever it's asked for; part of AS/6, so for married couples only.
+    when: { all: ["married", { any: ["livingTogether", "israeliInIsrael"] }] },
     optional: true,
     form: "AS/6",
     source: "AS/6, page 6 (affidavit annexed to the lease – couples)",

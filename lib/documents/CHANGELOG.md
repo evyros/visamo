@@ -3,6 +3,29 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v20 — 2026-10-02
+
+**What changed:** `jointLivingEvidence` is listed for every couple who live,
+or lived, together (`livingTogether`), married or common-law; before, only
+for common-law couples. Its source is now 5.2.0008 §ד.2.ח and practice, and
+it's verified. `landlordAffidavit` is listed for married couples only
+(`{ all: [married, { any: [livingTogether, israeliInIsrael] }] }`).
+
+**Why:** Evidence of living together is the proof of the claim that you live
+together, whoever makes it, not extra proof for common-law couples. The
+landlord's affidavit is part of form AS/6, which only married couples file.
+
+**Source:** Practice, confirmed by the product owner; 5.2.0008 §ד.2.ח.
+
+**Lists that changed:** Every married scenario that lives together
+(marriedInCyprus, marriedInIsrael, marriedOnline, marriedInEgypt,
+foreignFirst, bornInUSSRWithGermanNationality, fromUkraine,
+livedInThreeCountries, foreignAbroad, foreignWithoutVisa,
+foreignNameChanged, bothPreviouslyMarried, permanentResident, bothAbroad,
+childrenStayingBehind, childrenMovingWithConsent, childrenMovingMixed,
+childrenTogether): +jointLivingEvidence. commonLawLivingTogether,
+commonLawApart: -landlordAffidavit.
+
 ## v19 — 2026-10-02
 
 **What changed:** `governmentServices` is listed only when at least one of

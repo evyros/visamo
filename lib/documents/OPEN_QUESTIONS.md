@@ -37,6 +37,10 @@ shown to users (`lib/knowledge/`).
 - A foreign partner who is self-employed abroad: what replaces the Israeli
   accountant's confirmation, tax assessment and business-file confirmation.
 
+- **Evidence of living together (`jointLivingEvidence`) overlaps** with the
+  lease, the bills and the joint bank account, which are documents of their
+  own. Kept for now; it may be removed later because of the overlap.
+
 ## Not modelled yet
 
 - **Cases where the chat should advise a lawyer.** The chat prompt

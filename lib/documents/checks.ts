@@ -169,7 +169,17 @@ export const checks = {
   marriageCertificateAbroad: "notYet",
   relationshipEvidence: "notYet",
   recommendationLetters: "notYet",
-  jointLivingEvidence: "notYet",
+  jointLivingEvidence: {
+    required: [
+      "It shows that both partners live, or lived, at the same address: for example, a lease or property in both names, bills in both names, statements of a joint bank account, or official mail addressed to each of them at that address.",
+      "If it isn't in Hebrew, Arabic or English (from a home abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+    ],
+    recommended: [
+      "Together, the documents cover at least the last 12 months.",
+      "There are several kinds of evidence, not only one document.",
+      "Each document is readable in full, with the address and the dates visible.",
+    ],
+  },
   jointChildrenBirthCertificates: {
     required: [
       "It is an official birth certificate of a child, listing two parents: from the Israeli Population and Immigration Authority (digitally or manually signed), or from a civil registry abroad.",
@@ -274,7 +284,24 @@ export const checks = {
       "It is scanned in full, readable, page by page in order.",
     ],
   },
-  landlordAffidavit: "notYet",
+  // From the form (AS/6, page 6) and how it's signed: in front of a lawyer or registrar.
+  landlordAffidavit: {
+    required: [
+      "It is the landlord's affidavit from form AS/6 (נספח אש6), titled \"תצהיר נספח להסכם שכ\"ד - בני זוג\", with the whole page.",
+      "The landlord's first name, last name and ID number are filled in.",
+      "The tenant whose application it supports is named, with their ID number.",
+      "The home's address is filled in, with its size, and the statement that it's rented to the couple.",
+      "The bills table is filled in: for electricity, water, phone and arnona, whether the landlord or the tenant pays.",
+      "The date and the landlord's name and signature are filled in.",
+      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name, license number and date, the declarer's ID number, and their stamp and signature.",
+      "A copy of the landlord's Teudat Zehut is uploaded with it.",
+    ],
+    recommended: [
+      "The section on who else lives in the home is filled in, or clearly marked that no one else does.",
+      "The landlord's civil status, number of children under 18 and occupation are filled in.",
+      "The details are typed, or handwritten clearly enough to read without guessing.",
+    ],
+  },
   utilityBills: "notYet",
   governmentServices: {
     required: [

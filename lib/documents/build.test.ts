@@ -38,6 +38,7 @@ describe("buildDocumentList", () => {
       "marriageCertificateAbroad",
       "relationshipEvidence",
       "recommendationLetters",
+      "jointLivingEvidence",
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
       "housingContract",
@@ -67,7 +68,6 @@ describe("buildDocumentList", () => {
       "foreignCivilStatus",
       "foreignPoliceCertificate:US",
       "housingContract",
-      "landlordAffidavit",
       "utilityBills",
       "governmentServices",
       "ishurToshav",
@@ -176,11 +176,12 @@ describe("buildDocumentList", () => {
     expect(find("marriedInCyprus", "foreignPassport")?.mayNeedTranslation).toBe(false);
   });
 
-  it("lists the lease, and the landlord's affidavit as optional, for couples who lived together or whose Israeli partner lives in Israel", () => {
+  it("lists the lease for couples who lived together or whose Israeli partner lives in Israel, and with it, for married couples, the landlord's affidavit as optional", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
       const { relationship, people } = scenarios[name];
       const home = relationship.livingTogether || people.some((p) => p.residence === "israel");
-      expect(find(name, "landlordAffidavit")?.optional, name).toBe(home ? true : undefined);
+      const married = relationship.relationship === "married";
+      expect(find(name, "landlordAffidavit")?.optional, name).toBe(home && married ? true : undefined);
       const leases = keys(name).filter((k) => k === "housingContract" || k === "israeliHousingContract");
       expect(leases, name).toHaveLength(home ? 1 : 0);
     }
@@ -235,8 +236,10 @@ describe("buildDocumentList", () => {
     ]);
   });
 
-  it("asks for living-together evidence only from common-law partners who live together", () => {
+  it("asks for living-together evidence from every couple who live or lived together, married or not", () => {
+    expect(keys("marriedInCyprus")).toContain("jointLivingEvidence");
+    expect(keys("commonLawLivingTogether")).toContain("jointLivingEvidence");
     expect(keys("commonLawApart")).not.toContain("jointLivingEvidence");
-    expect(keys("marriedInCyprus")).not.toContain("jointLivingEvidence");
+    expect(keys("marriedNeverLivedTogether")).not.toContain("jointLivingEvidence");
   });
 });

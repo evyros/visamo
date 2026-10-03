@@ -523,10 +523,12 @@ function DocumentCard({
           />
         </div>
 
-        {item.check.checkable && (
+        {/* Every card ends with a way to ask about it; a checkable one, with its check. */}
+        {item.check.checkable ? (
           <CheckFooter
             t={t}
             locale={locale}
+            documentKey={item.key}
             check={check}
             fresh={fresh}
             settings={settings}
@@ -534,11 +536,49 @@ function DocumentCard({
             uploading={pending.length > 0}
             onCheck={onCheck}
           />
+        ) : (
+          <section aria-label={t.ask.label} className={footerClass}>
+            <div className="flex min-h-10 items-center">
+              <AskLink documentKey={item.key}>{t.ask.label}</AskLink>
+            </div>
+          </section>
         )}
-
-        {/* Reserved for "Ask about this document": the chat about this card. */}
       </div>
     </div>
+  );
+}
+
+const footerClass = "rounded-b-card border-t border-line-200 bg-white px-4 py-3 sm:px-5";
+
+/**
+ * A short note above what it wraps, while the pointer is on it. On the wrapper,
+ * so it shows for a disabled button too. Aligned to the end: it sits at a row's end.
+ */
+function Tooltip({ id, text, children }: { id: string; text: string; children: ReactNode }) {
+  return (
+    <span className="group relative inline-flex">
+      {children}
+      <span
+        id={id}
+        role="tooltip"
+        className="pointer-events-none invisible absolute end-0 bottom-full z-10 mb-2 w-max max-w-64 rounded-lg bg-navy-900 px-3 py-1.5 text-sm text-white opacity-0 shadow-soft transition-opacity group-hover:visible group-hover:opacity-100"
+      >
+        {text}
+      </span>
+    </span>
+  );
+}
+
+/** Into a new chat about the document, with a question about it begun in the box. */
+function AskLink({ documentKey, children }: { documentKey: string; children: ReactNode }) {
+  return (
+    <Link
+      href={`/chat?about=${encodeURIComponent(documentKey)}`}
+      className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-semibold text-teal-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+    >
+      <Icon name="chat" className="size-4" />
+      {children}
+    </Link>
   );
 }
 
@@ -593,6 +633,7 @@ function CheckPill({ rating, label }: { rating: CheckRating; label: string }) {
 function CheckFooter({
   t,
   locale,
+  documentKey,
   check,
   fresh,
   settings,
@@ -602,6 +643,7 @@ function CheckFooter({
 }: {
   t: Labels;
   locale: Locale;
+  documentKey: string;
   check: ItemCheck;
   fresh: boolean;
   settings: CheckSettings;
@@ -610,6 +652,7 @@ function CheckFooter({
   onCheck: () => void;
 }) {
   const c = t.check;
+  const tipId = useId();
   const last = check.last;
   const result = fresh && last ? last : null;
   const button =
@@ -645,7 +688,7 @@ function CheckFooter({
     );
   } else if (check.running) {
     state = (
-      <span aria-live="polite" className="flex items-center gap-2">
+      <span aria-live="polite" className="flex items-center gap-2 sm:justify-end">
         <span className="size-4 animate-spin rounded-full border-2 border-teal-600 border-t-transparent" />
         {c.checking}
       </span>
@@ -660,28 +703,46 @@ function CheckFooter({
       </Link>
     );
   } else {
-    state = uploaded ? (last ? c.stale : c.notChecked) : c.needsOriginal;
-    action = (
+    // The button alone: its label says whether it was checked before, and when
+    // nothing's uploaded, it says why it can't be pressed on hover.
+    const checkButton = (
       <button
         type="button"
         onClick={onCheck}
         disabled={!uploaded || uploading}
+        aria-describedby={uploaded ? undefined : tipId}
         className={`${button} bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
       >
         <Icon name="checkCircle" className="size-4" />
         {last ? c.again : c.check}
       </button>
     );
+    action = uploaded ? (
+      checkButton
+    ) : (
+      <Tooltip id={tipId} text={c.needsOriginal}>
+        {checkButton}
+      </Tooltip>
+    );
   }
 
   return (
-    <section aria-label={c.check} className="rounded-b-card border-t border-line-200 bg-white px-4 py-3 sm:px-5">
+    <section aria-label={c.check} className={footerClass}>
       {/* As tall as the button in every state, so starting a check doesn't make the card jump. */}
       <div className="flex min-h-10 flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        {/* A text with a button sits by it; on a phone, it's a line of its own above it. */}
-        <div className={`min-w-0 text-[15px] text-slate-700 ${action ? "basis-full sm:flex-1 sm:text-end" : "flex-1"}`}>
-          {state}
-        </div>
+        {/* Before a result, the way to ask leads the row, and the state sits by the button;
+            on a phone, the state is a line of its own above them. A result is read first:
+            the way to ask follows its findings. */}
+        {!result && <AskLink documentKey={documentKey}>{t.ask.label}</AskLink>}
+        {state && (
+          <div
+            className={`min-w-0 text-[15px] text-slate-700 ${
+              result ? "flex-1" : "order-first basis-full sm:order-none sm:flex-1 sm:text-end"
+            }`}
+          >
+            {state}
+          </div>
+        )}
         {action}
       </div>
 
@@ -696,6 +757,11 @@ function CheckFooter({
             />
             {result.rating === "unreadable" && <p className="text-[15px] text-slate-700">{c.unreadableHint}</p>}
             <Findings kind="tip" label={c.recommendations} list={result.recommendations} />
+          </div>
+          <div className="mt-3">
+            <AskLink documentKey={documentKey}>
+              {result.issues.length > 0 || result.rating === "unreadable" ? t.ask.fix : t.ask.label}
+            </AskLink>
           </div>
           <p className="mt-3 text-xs text-slate-500">{c.disclaimer}</p>
         </div>

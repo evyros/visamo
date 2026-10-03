@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
+import { format } from "@/i18n/messages";
+import { documentTitle } from "@/lib/documents/titles";
 import { maxMessageLength } from "@/lib/products";
 import { chatBalance, chatMessages } from "@/lib/chat/store";
 import { requireCase } from "@/lib/session";
@@ -11,9 +13,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.chat };
 }
 
-// /chat is a new chat; /chat/<id> is one of the case's chats.
-export default async function ChatPage({ params }: PageProps<"/chat/[[...id]]">) {
-  const { id: segments } = await params;
+// /chat is a new chat; /chat/<id> is one of the case's chats. A new chat from
+// a document's card (/chat?about=<document key>) starts with a question about
+// it in the box, in the app's language, for the user to finish and send.
+export default async function ChatPage({ params, searchParams }: PageProps<"/chat/[[...id]]">) {
+  const [{ id: segments }, { about }] = await Promise.all([params, searchParams]);
   if (segments && segments.length > 1) notFound();
   const chatId = segments?.[0] ?? null;
 
@@ -25,6 +29,7 @@ export default async function ChatPage({ params }: PageProps<"/chat/[[...id]]">)
     chatId ? chatMessages(chatId, caseId) : [],
   ]);
   if (!messages) notFound();
+  const aboutTitle = !chatId && typeof about === "string" ? documentTitle(about, t.app.documents, locale) : null;
 
   return (
     <ChatView
@@ -36,6 +41,7 @@ export default async function ChatPage({ params }: PageProps<"/chat/[[...id]]">)
         // Both partners write in the case's chats: name the other one's messages.
         author: role === "user" && userId !== user.id ? (name ?? t.app.chat.partner) : null,
       }))}
+      draft={aboutTitle ? format(t.app.chat.aboutDocument, { document: aboutTitle }) : ""}
       messagesLeft={messagesLeft}
       maxLength={maxMessageLength({ paid })}
       termsUrl={new URL(localePath(locale, "/legal/terms"), site.url).toString()}

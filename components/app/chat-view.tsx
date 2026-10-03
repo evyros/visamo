@@ -26,6 +26,7 @@ type ErrorKey = keyof Messages["app"]["chat"]["errors"];
 export function ChatView({
   chatId,
   initialMessages,
+  draft,
   messagesLeft: initialMessagesLeft,
   maxLength,
   termsUrl,
@@ -33,6 +34,8 @@ export function ChatView({
 }: {
   chatId: string | null;
   initialMessages: Message[];
+  /** What the box starts with: a question begun from a document's card, or nothing. */
+  draft: string;
   messagesLeft: number;
   maxLength: number;
   termsUrl: string;
@@ -41,7 +44,7 @@ export function ChatView({
   const router = useRouter();
   const { setPending } = usePendingChat();
   const [messages, setMessages] = useState(initialMessages);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(draft);
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<ErrorKey | null>(null);
   const [messagesLeft, setMessagesLeft] = useState(initialMessagesLeft);
@@ -61,9 +64,11 @@ export function ChatView({
   const nearLimit = input.length >= maxLength * 0.9;
   const waiting = streaming && messages.at(-1)?.role === "user";
 
-  // Open a chat at its latest message.
+  // Open a chat at its latest message, with the cursor after a draft, to go on writing.
   useLayoutEffect(() => {
     endRef.current?.scrollIntoView({ block: "end" });
+    const box = inputRef.current;
+    box?.setSelectionRange(box.value.length, box.value.length);
   }, []);
 
   useEffect(() => {

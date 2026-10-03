@@ -1113,7 +1113,8 @@
         "failed": "Visamo couldn't answer right now. Your message wasn't counted. Please try again.",
         "cutOff": "The answer was cut off. Please try asking again.",
         "generic": "Something went wrong. Please try again."
-      }
+      },
+      "aboutDocument": "I have a question about the document “{document}”: "
     },
     "purchase": {
       "confirming": "Confirming your payment…",
@@ -1621,7 +1622,6 @@
         "again": "Check again",
         "checking": "Checking… this can take up to a minute.",
         "needsOriginal": "Upload the document to check it.",
-        "stale": "Documents changed since the last check",
         "issues": "What needs fixing",
         "recommendations": "How to improve",
         "unreadableHint": "Upload a clearer scan, or a PDF without a password. This check wasn't counted.",
@@ -1640,7 +1640,6 @@
           "failed": "The check didn't finish, and it wasn't counted. Please try again.",
           "generic": "Something went wrong. Please try again."
         },
-        "notChecked": "Not checked yet",
         "upgrade": "Get Full file check",
         "upgradeHint": "Don't let a wrong detail delay your case.",
         "cantOpenTitle": "Couldn't open a file",
@@ -1661,6 +1660,10 @@
         "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
         "translation": "Translation may be needed, unless it's in Hebrew, Arabic or English.",
         "signAtAppointment": "Don't sign it before your appointment, and don't send it with the online application. Print it and fill in the details; you sign it in front of the clerk at the appointment."
+      },
+      "ask": {
+        "label": "Ask about this document",
+        "fix": "Ask how to fix this"
       }
     },
     "overview": {

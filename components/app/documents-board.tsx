@@ -725,6 +725,12 @@ function CheckFooter({
   const count = (forms: { one: string; other: string }, n: number) =>
     n > 0 && format(plural.select(n) === "one" ? forms.one : forms.other, { count: n });
   const counts = result && [count(c.counts.fix, result.issues.length), count(c.counts.tip, result.recommendations.length)];
+  // Anything to list under the result. A result without it keeps the other states' row:
+  // the result leads it, and the way to ask sits at its end.
+  const listed =
+    !!result &&
+    (result.issues.length + result.recommendations.length + result.dismissed.length > 0 || result.rating === "unreadable");
+  const inRow = !listed;
 
   let state: ReactNode = null;
   let action: ReactNode = null;
@@ -741,7 +747,7 @@ function CheckFooter({
           <span className="text-slate-700">· {counts.filter(Boolean).join(", ")}</span>
         )}
         {/* At the row's end; on a phone, a line of its own. */}
-        <span className="basis-full text-sm text-slate-500 sm:ms-auto sm:basis-auto">
+        <span className={`basis-full text-sm text-slate-500 sm:basis-auto ${inRow ? "" : "sm:ms-auto"}`}>
           {format(result.checkedByName ? c.checkedBy : c.checkedOn, {
             when: formatAgo(new Date(result.checkedAt), locale),
             name: result.checkedByName ?? "",
@@ -751,7 +757,7 @@ function CheckFooter({
     );
   } else if (check.running) {
     state = (
-      <span aria-live="polite" className="flex items-center gap-2 sm:justify-end">
+      <span aria-live="polite" className="flex items-center gap-2">
         <span className="size-4 animate-spin rounded-full border-2 border-teal-600 border-t-transparent" />
         {c.checking}
       </span>
@@ -791,25 +797,28 @@ function CheckFooter({
 
   return (
     <section aria-label={c.check} className={footerClass}>
-      {/* As tall as the button in every state, so starting a check doesn't make the card jump. */}
-      <div className="flex min-h-10 flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        {/* Before a result, the way to ask leads the row, and the state sits by the button;
-            on a phone, the state is a line of its own above them. A result is read first:
-            the way to ask follows its findings. */}
-        {!result && <AskLink documentKey={documentKey}>{t.ask.label}</AskLink>}
+      {/* As tall as the button until there's a result, so starting a check doesn't make the
+          card jump. A result has no button: its row is as tall as its text. */}
+      <div className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-2 ${result ? "" : "min-h-10"}`}>
+        {/* The check leads the row, its state by its button, and the way to ask sits at the
+            end; on a phone, all at the start, the state a line of its own above them. A
+            result's disclaimer is a line of its own under it: on a phone, before the way to
+            ask. A result with findings is read first: the way to ask follows them. */}
         {state && (
-          <div
-            className={`min-w-0 text-[15px] text-slate-700 ${
-              result ? "flex-1" : "order-first basis-full sm:order-none sm:flex-1 sm:text-end"
-            }`}
-          >
+          <div className={`min-w-0 text-[15px] text-slate-700 ${inRow ? "basis-full sm:basis-auto" : "flex-1"}`}>
             {state}
           </div>
         )}
         {action}
+        {inRow && (
+          <span className="order-last sm:order-none sm:ms-auto">
+            <AskLink documentKey={documentKey}>{t.ask.label}</AskLink>
+          </span>
+        )}
+        {inRow && result && <p className="basis-full text-xs text-slate-500 sm:mt-1">{c.disclaimer}</p>}
       </div>
 
-      {result && (
+      {result && listed && (
         <div aria-live="polite">
           {/* One gap between every box, across the issues and the tips. */}
           <div className="mt-2.5 space-y-1.5">

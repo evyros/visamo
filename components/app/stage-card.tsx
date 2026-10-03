@@ -5,7 +5,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { updateStage } from "@/app/(app)/(main)/file/actions";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
-import { isDated, stageDateKinds, type Stage, type StageDates } from "@/lib/stages";
+import { dateKind, isDated, type Stage, type StageDates } from "@/lib/stages";
 import { Icon } from "@/components/icons";
 import { Field, Notice, SubmitButton, describe, inputClass } from "./auth-ui";
 import { Dialog } from "./dialog";
@@ -15,7 +15,7 @@ import { secondaryButton } from "./settings-ui";
 // Where the couple is in the process: their track's stages in order
 // (lib/stages.ts), and a dialog to move to any of them, forward or back. The
 // couple reports it; nobody else knows. Moving to a stage with a date
-// (stageDateKinds) asks for it.
+// (stageDefinitions) asks for it.
 
 type Labels = Messages["app"]["overview"]["stage"];
 
@@ -118,7 +118,7 @@ function UpdateStage({ t, track, stage, dates }: { t: Labels; track: Stage[]; st
   const [pending, setPending] = useState(false);
 
   const dated = isDated(chosen) ? chosen : null;
-  const scheduled = !!dated && stageDateKinds[dated] === "scheduled";
+  const scheduled = !!dated && dateKind(dated) === "scheduled";
   const back = track.indexOf(chosen) < track.indexOf(stage);
   // A date saved for that stage before comes back.
   const savedDate = (s: Stage) => (isDated(s) && dates[s]) || "";

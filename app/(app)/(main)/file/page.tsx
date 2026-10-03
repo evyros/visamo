@@ -22,7 +22,7 @@ import {
 } from "@/lib/documents/progress";
 import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
-import { awaitingDecision, stageDateKinds, trackOf, type DatedStage, type Stage } from "@/lib/stages";
+import { awaitingDecision, dateKind, trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import {
   ActivityCard,
   DetailsAction,
@@ -70,7 +70,7 @@ export default async function FileOverviewPage() {
   for (const [s, day] of Object.entries(row.stageDates) as [DatedStage, string][]) {
     shown[s] = [
       format(t.stage.dates[s].shown, { date: formatDay(day, locale) }),
-      stage === s && stageDateKinds[s] === "scheduled" && (waiting ? t.stage.awaitingDecision : formatDaysUntil(day, locale)),
+      stage === s && dateKind(s) === "scheduled" && (waiting ? t.stage.awaitingDecision : formatDaysUntil(day, locale)),
     ]
       .filter(Boolean)
       .join(" · ");

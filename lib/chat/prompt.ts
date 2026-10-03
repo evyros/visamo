@@ -3,7 +3,7 @@ import { loadMessages } from "@/i18n/messages";
 import { regionName, todayInIsrael } from "@/i18n/format";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import type { Owner } from "@/lib/documents/catalog";
-import { trackOf, type DatedStage, type Stage } from "@/lib/stages";
+import { awaitingDecision, stageDefinitions, trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
@@ -63,6 +63,7 @@ export async function casePrompt(caseId: string, userId: string) {
     loadMessages("en"),
   ]);
   const steps = t.app.overview.stage.steps;
+  const stage = row.stage as Stage;
   const list = listOf(details);
   const me = people.find((p) => p.userId === userId);
 
@@ -75,8 +76,14 @@ export async function casePrompt(caseId: string, userId: string) {
 
   const relationship = lines([
     ...relationshipLines(details.relationship, branch, t),
-    // Checked by parseOnboarding when the case was created (see lib/case-documents.ts).
-    ["Stage in the process", steps[row.stage as Stage]],
+    // The stage as the couple sees it, and what it means.
+    ["Stage in the process", `${steps[stage]}: ${stageDefinitions[stage].about}`],
+    [
+      "Interview",
+      awaitingDecision(stage, row.stageDates, todayInIsrael())
+        ? "its date has passed, so they're waiting for the decision"
+        : null,
+    ],
     ["Their stages, in order", trackOf(details).map((s) => steps[s]).join(" → ")],
     ...(Object.entries(row.stageDates) as [DatedStage, string][]).map(
       ([s, day]): [string, string] => [`Date for "${steps[s]}"`, day],

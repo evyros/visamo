@@ -6,24 +6,45 @@ import { profileOf } from "./documents/facts";
 // stages: a partner abroad waits for an entry permit, a couple who both live
 // abroad starts at the consulate, a partner from the former USSR goes through
 // Nativ, and married and common-law couples are interviewed at different
-// points. The catalog lists every stage in the order they come; a case's
-// track is the ones its facts (lib/documents/facts.ts) meet, in that order.
+// points. Each stage is defined once (stageDefinitions); the catalog lists
+// them in the order they come, and a case's track is the ones its facts
+// (lib/documents/facts.ts) meet, in that order.
 // The process facts behind it are in lib/knowledge/.
 
-export const stages = [
-  "preparing",
-  "consulate",
-  "filed",
-  "firstAppointment",
-  "entryPermit",
-  "arrived",
-  "b1",
-  "nativ",
-  "interview",
-  "approvedB1",
-  "approvedA5",
-] as const;
-export type Stage = (typeof stages)[number];
+type StageDefinition = {
+  /** What the stage means, in English, for the assistant (lib/chat/prompt.ts). The labels are in the messages. */
+  about: string;
+  /**
+   * Moving to it asks for a date. A past one is optional and shows how long
+   * they've been waiting; a scheduled one is required.
+   */
+  date?: "past" | "scheduled";
+  /** False for the stages onboarding doesn't offer: they're reached from the overview. */
+  onboarding?: false;
+};
+
+/** Each stage, once, whatever track it's on. The catalog below puts them in order. */
+export const stageDefinitions = {
+  preparing: { about: "Getting the documents ready. Nothing is filed with Misrad Hapnim yet." },
+  consulate: {
+    about:
+      "Asking the Israeli consulate where they live for an entry permit, before moving to Israel. Nothing is filed with Misrad Hapnim yet.",
+  },
+  filed: { about: "Filed the application online with Misrad Hapnim, waiting for the first answer.", date: "past" },
+  firstAppointment: { about: "The first appointment at the Misrad Hapnim branch is scheduled.", date: "scheduled" },
+  entryPermit: {
+    about: "Waiting for the foreign partner's entry permit, or just got it. The foreign partner is still abroad.",
+  },
+  arrived: { about: "The foreign partner has entered Israel with the entry permit, and they're both in Israel." },
+  b1: { about: "The first B/1 visa is issued. Next is the interview, before the A/5 visa." },
+  nativ: { about: "Referred to Nativ: its online questionnaire, then an interview at its offices." },
+  interview: { about: "The interview is scheduled, or done and waiting for the decision.", date: "scheduled" },
+  approvedB1: { about: "Approved: the first B/1 visa is issued.", onboarding: false },
+  approvedA5: { about: "Approved: the A/5 visa is issued.", onboarding: false },
+} as const satisfies Record<string, StageDefinition>;
+
+type Definitions = typeof stageDefinitions;
+export type Stage = keyof Definitions;
 
 const bothAbroad: Condition = { all: ["foreignAbroad", "israeliAbroad"] };
 
@@ -61,33 +82,25 @@ export function trackOf(details: CaseDetails): Stage[] {
   return catalog.filter((entry) => evaluate(entry.when, facts).match).map((entry) => entry.stage);
 }
 
-/** The approvals, reached from the overview only. */
-const laterStages = ["approvedB1", "approvedA5"] as const;
-export type OnboardingStage = Exclude<Stage, (typeof laterStages)[number]>;
+export type OnboardingStage = { [S in Stage]: Definitions[S] extends { onboarding: false } ? never : S }[Stage];
 
 /** The stages onboarding offers. */
 export function onboardingTrack(details: CaseDetails): OnboardingStage[] {
-  return trackOf(details).filter((s): s is OnboardingStage => !(laterStages as readonly Stage[]).includes(s));
+  return trackOf(details).filter((s): s is OnboardingStage => !("onboarding" in stageDefinitions[s]));
 }
 
 export const sameTrack = (a: readonly Stage[], b: readonly Stage[]) =>
   a.length === b.length && a.every((s, i) => s === b[i]);
 
-/**
- * The stages that ask for a date when moving to them. A past one is optional
- * and shows how long they've been waiting; a scheduled one is required.
- */
-export const stageDateKinds = {
-  filed: "past",
-  firstAppointment: "scheduled",
-  interview: "scheduled",
-} as const satisfies Partial<Record<Stage, "past" | "scheduled">>;
-export type DatedStage = keyof typeof stageDateKinds;
+export type DatedStage = { [S in Stage]: Definitions[S] extends { date: string } ? S : never }[Stage];
 
 /** The dates the couple entered, by stage. Kept when the stage moves back, to offer again. */
 export type StageDates = Partial<Record<DatedStage, string>>;
 
-export const isDated = (stage: Stage): stage is DatedStage => stage in stageDateKinds;
+export const isDated = (stage: Stage): stage is DatedStage => "date" in stageDefinitions[stage];
+
+/** Whether a dated stage's date is in the past (optional) or scheduled (required). */
+export const dateKind = (stage: DatedStage) => stageDefinitions[stage].date;
 
 /** At the interview stage, after its date: waiting for the decision. `today` is `yyyy-mm-dd` in Israel. */
 export const awaitingDecision = (stage: Stage, dates: StageDates, today: string) =>
@@ -104,7 +117,7 @@ export function parseStageDate(stage: DatedStage, value: unknown, today = new Da
   // Tomorrow in UTC is already today in Israel for part of the day.
   const tomorrow = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() + 1);
   if (date.getUTCFullYear() < 2000) return null;
-  const kind = stageDateKinds[stage];
+  const kind = dateKind(stage);
   if (kind === "past" && date.getTime() > tomorrow) return null;
   if (kind === "scheduled" && date.getTime() > tomorrow + SCHEDULED_MAX_DAYS * 86_400_000) return null;
   return value;

@@ -15,7 +15,7 @@ import { db } from "@/lib/db";
 import { casePerson, cases } from "@/lib/db/schema";
 import { countedEdits, recordEvent } from "@/lib/events";
 import { requireCase } from "@/lib/session";
-import { isDated, parseStageDate, sameTrack, stageDateKinds, trackOf, type Stage, type StageDates } from "@/lib/stages";
+import { isDated, parseStageDate, sameTrack, dateKind, trackOf, type Stage, type StageDates } from "@/lib/stages";
 
 // The overview's changes: the stage, the branch, and the case's details.
 // Every change is written in one batch with its event (lib/events.ts).
@@ -29,7 +29,7 @@ export type StageResult = { error?: "invalid" | "generic" };
 
 /**
  * Moves the case to a stage on its track, forward or back. A stage with a
- * date (stageDateKinds) saves it too: an appointment's or interview's date
+ * date (stageDefinitions) saves it too: an appointment's or interview's date
  * is required, a past one isn't. Dates of other stages stay, so moving
  * forward again can offer them.
  */
@@ -39,7 +39,7 @@ export async function updateStage(stage: unknown, date: unknown): Promise<StageR
   if (!oneOf(trackOf(details), stage)) return { error: "invalid" };
   const dated = isDated(stage) ? stage : null;
   const day = dated && date !== null && date !== "" ? parseStageDate(dated, date) : null;
-  if (dated && day === null && (date || stageDateKinds[dated] === "scheduled")) return { error: "invalid" };
+  if (dated && day === null && (date || dateKind(dated) === "scheduled")) return { error: "invalid" };
 
   const dateChanged = !!dated && day !== null && day !== row.stageDates[dated];
   if (row.stage === stage && !dateChanged) return {};

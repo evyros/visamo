@@ -27,7 +27,8 @@ import { scenarios, type ScenarioName } from "@/lib/documents/scenarios";
 //
 // A case can set its own "scenario", "today" and "branch", and change the
 // couple's details with "israeli" and "foreign" (their names, say, to match
-// the files), over the scenario's. What it expects:
+// the files, or where they were born), over the scenario's: their list of
+// documents is built from the changed couple. What it expects:
 //
 //   rating        the rating, or the ratings that are all fine
 //   flagged       the checks the checker has to report
@@ -133,8 +134,11 @@ function loadSuite(folder: string): EvalCase[] {
       errors.push(`${id}: no scenario "${scenarioName}" in lib/documents/scenarios.ts`);
       continue;
     }
-    const list = buildDocumentList(snapshot);
-    // The list is the scenario's: changing names never changes what's on it.
+    // The couple as the case has them: the scenario's, with its changes. Their list is built from them,
+    // so a change that matters to it (born in another country, say) changes it too.
+    const israeli = { ...snapshot.people.find((p) => p.isIsraeli)!, ...suite.israeli, ...spec.israeli };
+    const foreign = { ...snapshot.people.find((p) => !p.isIsraeli)!, ...suite.foreign, ...spec.foreign };
+    const list = buildDocumentList({ relationship: snapshot.relationship, people: [israeli, foreign] });
     const item = list.find((d) => d.key === documentKey) ?? list.find((d) => d.id === documentKey);
     if (!item) {
       errors.push(`${id}: "${documentKey}" isn't on ${scenarioName}'s list (${list.map((d) => d.key).join(", ")})`);
@@ -165,8 +169,6 @@ function loadSuite(folder: string): EvalCase[] {
     });
     if (!files.length) errors.push(`${id}: no files`);
 
-    const israeli = { ...snapshot.people.find((p) => p.isIsraeli)!, ...suite.israeli, ...spec.israeli };
-    const foreign = { ...snapshot.people.find((p) => !p.isIsraeli)!, ...suite.foreign, ...spec.foreign };
     cases.push({
       id,
       folder,

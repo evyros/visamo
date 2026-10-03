@@ -1,0 +1,171 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-10-01",
+  "israeli": {
+    "name": "Evyatar Rozner",
+    "gender": "male"
+  },
+  "foreign": {
+    "name": "Elizabeth Anne Sieck",
+    "gender": "female"
+  },
+  "cases": [
+    {
+      "name": "real file: apostille, certificate and a Hebrew translation",
+      "files": [
+        "real.pdf"
+      ],
+      "expect": {
+        "rating": "looksGood"
+      }
+    },
+    {
+      "name": "apostille and certificate, no translation (English)",
+      "files": [
+        "apostille-and-certificate.pdf"
+      ],
+      "expect": {
+        "rating": "looksGood"
+      }
+    },
+    {
+      "name": "certificate without its apostille",
+      "files": [
+        "certificate-only.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "carries the certification"
+        ],
+        "mayFlag": [
+          "apostille or legalization pages are scanned"
+        ]
+      }
+    },
+    {
+      "name": "scanned in black and white",
+      "files": [
+        "certificate-black-and-white.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "canImprove",
+          "looksGood"
+        ],
+        "flagged": [
+          "scanned straight and in color"
+        ]
+      }
+    },
+    {
+      "name": "scanned crooked, edges and seals cut off",
+      "files": [
+        "certificate-cut-off.pdf"
+      ],
+      "expect": {
+        "flagged": [
+          "scanned straight and in color"
+        ],
+        "mayFlag": [
+          "date and place of birth",
+          "Every side or page"
+        ]
+      }
+    },
+    {
+      "name": "real file, but the partner is a man",
+      "files": [
+        "real.pdf"
+      ],
+      "foreign": {
+        "gender": "male"
+      },
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "sex on it fits"
+        ]
+      }
+    },
+    {
+      "name": "real file, but the partner was born in Ukraine",
+      "files": [
+        "real.pdf"
+      ],
+      "foreign": {
+        "birthCountry": "UA",
+        "nationality": "UA"
+      },
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "issued by the foreign partner's country of birth"
+        ],
+        "mayFlag": [
+          "carries the certification",
+          "translation was made abroad",
+          "apostille or legalization pages are scanned"
+        ]
+      }
+    },
+    {
+      "name": "Ukraine, issued 1994: no apostille needed, no translation",
+      "files": [
+        "ukraine-1994.jpg"
+      ],
+      "foreign": {
+        "name": "Yuriy Yurchenko",
+        "gender": "male",
+        "birthCountry": "UA",
+        "nationality": "UA"
+      },
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "notarized translation is uploaded"
+        ],
+        "mayFlag": [
+          "Every side or page"
+        ]
+      }
+    },
+    {
+      "name": "Ukraine, issued 1994, with a translation made in Israel",
+      "files": [
+        "ukraine-1994-with-translation.pdf"
+      ],
+      "foreign": {
+        "name": "Yuriy Yurchenko",
+        "gender": "male",
+        "birthCountry": "UA",
+        "nationality": "UA"
+      },
+      "expect": {
+        "rating": "looksGood"
+      }
+    },
+    {
+      "name": "Spain, issued 2024, no apostille",
+      "files": [
+        "spain-2024.jpg"
+      ],
+      "foreign": {
+        "name": "Ian Oliver Martin",
+        "gender": "male",
+        "birthCountry": "ES",
+        "nationality": "ES"
+      },
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "carries the certification",
+          "notarized translation is uploaded"
+        ],
+        "mayFlag": [
+          "apostille or legalization pages are scanned"
+        ]
+      }
+    }
+  ]
+}

@@ -16,9 +16,12 @@ certificate is from Ukraine.
    [certification.md](../certification.md)).
 3. Have it translated, if it needs a translation (below).
 
-Some countries issue a multilingual or international birth certificate, with
-English (Austria, Germany, the Netherlands, Sweden): it can save the
-translation. Below, the countries where getting it has a catch.
+Some countries issue a multilingual or international birth certificate. It
+can save the translation only when its fields are in English (Austria,
+Germany, the Netherlands, Sweden). A multilingual extract in other
+languages, such as Spain's, still needs a translation and an apostille:
+Israel isn't one of the countries that accept these extracts without them.
+Below, the countries where getting it has a catch.
 
 ### Brazil
 
@@ -75,6 +78,12 @@ The unabridged birth certificate, from the Department of Home Affairs, or
 through the South African embassy in Israel. It can take from 6 months to
 several years: order it first.
 
+### Spain
+
+The full birth certificate (certificación literal), from the civil registry
+(Registro Civil). The multilingual extract (certificado plurilingüe), in
+Spanish and French, still needs a translation and an apostille for Israel.
+
 ### United States
 
 A certified copy, from the vital records office of the state of birth. That
@@ -88,6 +97,9 @@ state's apostille authority adds the apostille.
   - **From the former USSR:** an original issued up to 1998 needs no
     certification (§ד.2.ה). One issued later does. See
     [former-ussr.md](../former-ussr.md).
+- **Both sides**, when the back has anything on it. Certificates from the
+  former USSR often have stamps on the back, such as a citizenship stamp,
+  and the apostille can be placed there too.
 - **A certified translation**, unless it's in Hebrew or Arabic. In practice,
   an English certificate is usually accepted without one, but the clerk can
   still ask you to translate it.
@@ -110,6 +122,12 @@ anyway, with its apostille: then it's certified like any other document.
 By law, yes: only Hebrew and Arabic are accepted without a translation. In
 practice, most clerks accept English, especially a short document like this
 one. Be ready to translate it if your clerk asks.
+
+**My partner's birth certificate is multilingual. Does it still need a translation?**
+Only if its fields aren't in English. Multilingual extracts, such as
+Spain's in Spanish and French, are accepted without translation only in the
+countries that signed the convention on them, and Israel didn't: translate
+it, and get the apostille, like any other certificate.
 
 **Does the translation also need an apostille?**
 No. Only the original certificate is certified.

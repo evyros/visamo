@@ -71,7 +71,12 @@ export default async function DocumentsPage() {
               text: exemptUntil ? format(t.requirements.unlessIssuedUntil, { what, year: exemptUntil }) : what,
             });
           }
-          if (d.mayNeedTranslation) requirements.push({ icon: "globe", text: t.requirements.translation });
+          if (d.mayNeedTranslation)
+            requirements.push({
+              icon: "globe",
+              text: t.requirements.translation,
+              details: t.requirements.translationDetails,
+            });
           if (d.signAtAppointment) requirements.push({ icon: "info", text: t.requirements.signAtAppointment });
           return {
             key: d.key,

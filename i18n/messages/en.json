@@ -1658,7 +1658,8 @@
       "requirements": {
         "copies": "Bring {count} copies to Misrad Hapnim",
         "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
-        "translation": "Translation may be needed, unless it's in Hebrew, Arabic or English.",
+        "translation": "Translation may be needed",
+        "translationDetails": "A notarized translation is needed per the requirements, unless the document is in Hebrew, Arabic or English.",
         "signAtAppointment": "Don't sign it before your appointment, and don't send it with the online application. Print it and fill in the details; you sign it in front of the clerk at the appointment."
       },
       "ask": {

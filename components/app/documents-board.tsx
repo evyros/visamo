@@ -37,7 +37,7 @@ export type DocumentItem = {
   /** What it has to show, by the couple's case, right under the description; empty for most documents. */
   points: string[];
   /** What to prepare before uploading: certification (with its exemption), translation, signing. */
-  requirements: { icon: "shield" | "globe" | "file" | "info"; text: string }[];
+  requirements: Requirement[];
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;
   check: {
@@ -47,6 +47,9 @@ export type DocumentItem = {
     last: CheckView | null;
   };
 };
+
+/** One thing to prepare; `details`, the full text, shows in a tooltip next to the short one. */
+type Requirement = { icon: "shield" | "globe" | "file" | "info"; text: string; details?: string };
 
 /** What the case's purchases allow for document checks. */
 export type CheckSettings = {
@@ -505,11 +508,8 @@ function DocumentCard({
           )}
           {item.requirements.length > 0 && (
             <ul className="mt-3 space-y-1.5">
-              {item.requirements.map(({ icon, text }) => (
-                <li key={text} className="flex items-start gap-2 text-[15px] text-slate-700">
-                  <Icon name={icon} className="mt-1 size-4 shrink-0 text-teal-700" />
-                  {text}
-                </li>
+              {item.requirements.map((requirement) => (
+                <RequirementRow key={requirement.text} requirement={requirement} />
               ))}
             </ul>
           )}
@@ -1231,5 +1231,61 @@ function FileMenu({
         </div>
       )}
     </div>
+  );
+}
+
+function RequirementRow({ requirement: { icon, text, details } }: { requirement: Requirement }) {
+  return (
+    <li className="flex items-start gap-2 text-[15px] text-slate-700">
+      <Icon name={icon} className="mt-1 size-4 shrink-0 text-teal-700" />
+      <span>
+        {text}
+        {details && <InfoTip text={details} />}
+      </span>
+    </li>
+  );
+}
+
+/**
+ * An info icon with its text in a tooltip, like Tooltip's, but one that opens on hover with a mouse
+ * and on tap on a touch screen, where there's no hover.
+ */
+function InfoTip({ text }: { text: string }) {
+  const [hovered, setHovered] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!pinned) return;
+    const onPointer = (event: PointerEvent) => !ref.current?.contains(event.target as Node) && setPinned(false);
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setPinned(false);
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [pinned]);
+
+  return (
+    <span ref={ref} className="relative ms-1 inline-flex -translate-y-px align-middle">
+      <button
+        type="button"
+        aria-label={text}
+        onClick={() => setPinned((p) => !p)}
+        onPointerEnter={(event) => event.pointerType === "mouse" && setHovered(true)}
+        onPointerLeave={(event) => event.pointerType === "mouse" && setHovered(false)}
+        className="inline-flex size-6 items-center justify-center rounded-full text-slate-500 hover:text-navy-900"
+      >
+        <Icon name="info" className="size-4" />
+      </button>
+      <span
+        aria-hidden
+        hidden={!(hovered || pinned)}
+        className="absolute end-0 bottom-full z-10 mb-1 w-max max-w-64 rounded-lg bg-navy-900 px-3 py-1.5 text-sm text-white shadow-soft"
+      >
+        {text}
+      </span>
+    </span>
   );
 }

@@ -1,3 +1,5 @@
+import { onboardingTrack, type Stage } from "./stages";
+
 // The onboarding answers: the allowed values, and the check that the server
 // runs on them. Labels live in the messages (app.onboarding), keyed by these
 // values, so a missing translation fails the build.
@@ -37,40 +39,6 @@ export type MarriagePlace = (typeof marriagePlaces)[number];
 
 /** The earliest year a couple can say they moved in together. */
 export const TOGETHER_SINCE_MIN = 1950;
-
-/** Where the couple is with Misrad Hapnim, in order. The overview's tracker moves through them. */
-export const stages = [
-  "notFiled",
-  "filedAwaiting",
-  "firstResponse",
-  "interviewScheduled",
-  "interviewDone",
-  "approved",
-] as const;
-export type Stage = (typeof stages)[number];
-
-/** The stages onboarding offers. The later ones are reached from the overview. */
-export const onboardingStages = ["notFiled", "filedAwaiting", "firstResponse", "interviewScheduled"] as const;
-
-/** The date asked for when moving to a stage, and the case column it's kept in. */
-export const stageDates = { filedAwaiting: "filedOn", interviewScheduled: "interviewOn" } as const;
-export type StageDate = (typeof stageDates)[keyof typeof stageDates];
-
-/** How far ahead an interview date can be. */
-const INTERVIEW_MAX_DAYS = 2 * 365;
-
-/** A `yyyy-mm-dd` date that fits the stage, or null: filing can't be in the future, an interview can. */
-export function parseStageDate(stage: Stage, value: unknown, today = new Date()): string | null {
-  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
-  const date = new Date(`${value}T00:00:00Z`);
-  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) return null;
-  // Tomorrow in UTC is already today in Israel for part of the day.
-  const tomorrow = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() + 1);
-  if (date.getUTCFullYear() < 2000) return null;
-  if (stage === "filedAwaiting" && date.getTime() > tomorrow) return null;
-  if (stage === "interviewScheduled" && date.getTime() > tomorrow + INTERVIEW_MAX_DAYS * 86_400_000) return null;
-  return value;
-}
 
 /**
  * Offered in onboarding after the stages, but not supported yet: choosing it
@@ -267,10 +235,13 @@ export function parseOnboarding(input: unknown): OnboardingInput | null {
   const self = parsePerson(input.self);
   const partner = parsePerson(input.partner);
   const relationship = parseRelationship(input.relationship);
-  if (!self || !partner || !relationship || !oneOf(onboardingStages, input.stage)) return null;
+  if (!self || !partner || !relationship) return null;
   // The process is for an Israeli side and a foreign partner: exactly one of each.
   if (self.isIsraeli === partner.isIsraeli) return null;
   if (input.branch !== null && !oneOf(branches, input.branch)) return null;
+  const [israeli, foreign] = self.isIsraeli ? [self, partner] : [partner, self];
+  // Only a stage on this couple's track.
+  if (!oneOf(onboardingTrack({ relationship, israeli, foreign }), input.stage)) return null;
   return { self, partner, relationship, branch: input.branch, stage: input.stage };
 }
 

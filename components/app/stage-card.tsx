@@ -1,18 +1,21 @@
 "use client";
 
-import { useRef, useState, type FormEvent, type ReactNode, type RefObject } from "react";
-import { updateBranch, updateStage } from "@/app/(app)/(main)/file/actions";
+import Link from "next/link";
+import { useRef, useState, type FormEvent } from "react";
+import { updateStage } from "@/app/(app)/(main)/file/actions";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
-import { stageDates, stages, type BranchCode, type Stage } from "@/lib/case-options";
+import { isDated, stageDateKinds, type Stage, type StageDates } from "@/lib/stages";
 import { Icon } from "@/components/icons";
-import { Field, Notice, Select, SubmitButton, describe, inputClass } from "./auth-ui";
-import { Choices, type Option } from "./onboarding-wizard";
+import { Field, Notice, SubmitButton, describe, inputClass } from "./auth-ui";
+import { Dialog } from "./dialog";
+import { Choices } from "./onboarding-wizard";
 import { secondaryButton } from "./settings-ui";
 
-// Where the couple is with Misrad Hapnim: the stages in order, and a dialog
-// to move to any of them, forward or back. The couple reports it; nobody
-// else knows. Moving to a stage with a date (stageDates) asks for it.
+// Where the couple is in the process: their track's stages in order
+// (lib/stages.ts), and a dialog to move to any of them, forward or back. The
+// couple reports it; nobody else knows. Moving to a stage with a date
+// (stageDateKinds) asks for it.
 
 type Labels = Messages["app"]["overview"]["stage"];
 
@@ -24,38 +27,31 @@ function localToday() {
 
 export function StageCard({
   t,
+  track,
   stage,
   dates,
   shown,
-  branch,
-  branchName,
-  branches,
 }: {
   t: Labels;
+  /** The case's stages, in order. */
+  track: Stage[];
   stage: Stage;
   /** As saved, for the dialog to offer again. */
-  dates: { filedOn: string | null; interviewOn: string | null };
+  dates: StageDates;
   /** The dates as shown, worked out on the server: "Filed on 3 Aug 2026", "Interview on … · in 12 days". */
-  shown: { filedOn: string | null; interviewOn: string | null };
-  branch: BranchCode | null;
-  branchName: string | null;
-  branches: Option<BranchCode>[];
+  shown: Partial<Record<Stage, string>>;
 }) {
-  const current = stages.indexOf(stage);
-  const note: Partial<Record<Stage, string | null>> = {
-    filedAwaiting: shown.filedOn,
-    interviewScheduled: shown.interviewOn,
-  };
+  const current = track.indexOf(stage);
 
   return (
     <section className="rounded-card border border-line-200 bg-white p-5 sm:p-6">
       <h2 className="text-lg font-semibold text-navy-900">{t.title}</h2>
       <ol className="mt-4">
-        {stages.map((s, i) => {
+        {track.map((s, i) => {
           const done = i < current;
           const here = i === current;
-          const last = i === stages.length - 1;
-          const detail = i <= current ? note[s] : null;
+          const last = i === track.length - 1;
+          const detail = i <= current ? shown[s] : null;
           return (
             <li key={s} aria-current={here ? "step" : undefined} className="relative flex gap-3 pb-4 last:pb-0">
               {!last && (
@@ -100,88 +96,54 @@ export function StageCard({
       </ol>
 
       <div className="mt-5 space-y-4 border-t border-line-200 pt-4">
-        <UpdateStage t={t} stage={stage} dates={dates} />
-        <BranchLine t={t} branch={branch} branchName={branchName} branches={branches} />
+        <UpdateStage t={t} track={track} stage={stage} dates={dates} />
+        <p className="text-[15px] text-slate-700">
+          {t.ask.title}{" "}
+          {/* Inline, not flex: a flex link sits on the icon's baseline, not the text's. */}
+          <Link href="/chat" className="font-semibold whitespace-nowrap text-teal-700 underline-offset-4 hover:underline">
+            <Icon name="chat" className="me-1 inline-block size-4 align-[-0.15em]" />
+            {t.ask.action}
+          </Link>
+        </p>
       </div>
     </section>
   );
 }
 
-/** A native modal dialog, closed by its button, Escape or a click outside. */
-function Dialog({
-  ref,
-  title,
-  closeLabel,
-  children,
-}: {
-  ref: RefObject<HTMLDialogElement | null>;
-  title: string;
-  closeLabel: string;
-  children: ReactNode;
-}) {
-  return (
-    <dialog
-      ref={ref}
-      aria-label={title}
-      onClick={(event) => event.target === event.currentTarget && event.currentTarget.close()}
-      className="m-auto w-[min(92vw,480px)] rounded-card bg-white p-0 shadow-soft backdrop:bg-navy-900/50"
-    >
-      <div className="flex items-center gap-3 border-b border-line-200 px-5 py-3">
-        <h3 className="min-w-0 flex-1 text-lg font-semibold text-navy-900">{title}</h3>
-        <button
-          type="button"
-          aria-label={closeLabel}
-          onClick={() => ref.current?.close()}
-          className="inline-flex size-9 items-center justify-center rounded-lg text-navy-900 hover:bg-navy-900/5"
-        >
-          <Icon name="x" className="size-5" />
-        </button>
-      </div>
-      <div className="max-h-[75vh] overflow-auto px-5 py-5">{children}</div>
-    </dialog>
-  );
-}
-
-function UpdateStage({
-  t,
-  stage,
-  dates,
-}: {
-  t: Labels;
-  stage: Stage;
-  dates: { filedOn: string | null; interviewOn: string | null };
-}) {
+function UpdateStage({ t, track, stage, dates }: { t: Labels; track: Stage[]; stage: Stage; dates: StageDates }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [chosen, setChosen] = useState<Stage>(stage);
   const [day, setDay] = useState("");
   const [error, setError] = useState<string>();
   const [pending, setPending] = useState(false);
 
-  const column = chosen in stageDates ? stageDates[chosen as keyof typeof stageDates] : null;
-  const back = stages.indexOf(chosen) < stages.indexOf(stage);
+  const dated = isDated(chosen) ? chosen : null;
+  const scheduled = !!dated && stageDateKinds[dated] === "scheduled";
+  const back = track.indexOf(chosen) < track.indexOf(stage);
+  // A date saved for that stage before comes back.
+  const savedDate = (s: Stage) => (isDated(s) && dates[s]) || "";
 
   function open() {
     setChosen(stage);
-    setDay((stage in stageDates && dates[stageDates[stage as keyof typeof stageDates]]) || "");
+    setDay(savedDate(stage));
     setError(undefined);
     dialog.current?.showModal();
   }
 
   function choose(next: Stage) {
     setChosen(next);
-    // A date saved for that stage before comes back.
-    setDay((next in stageDates && dates[stageDates[next as keyof typeof stageDates]]) || "");
+    setDay(savedDate(next));
     setError(undefined);
   }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (chosen === "interviewScheduled" && !day) {
+    if (scheduled && !day) {
       setError(t.errors.dateRequired);
       return;
     }
     setPending(true);
-    const result = await updateStage(chosen, column ? day || null : null);
+    const result = await updateStage(chosen, dated ? day || null : null);
     setPending(false);
     if (result.error) setError(t.errors[result.error]);
     else dialog.current?.close();
@@ -197,32 +159,27 @@ function UpdateStage({
           <Choices
             id="stage"
             legend={<span className="sr-only">{t.dialogTitle}</span>}
-            options={stages.map((s) => ({ value: s, label: t.steps[s] }))}
+            options={track.map((s) => ({ value: s, label: t.steps[s] }))}
             value={chosen}
             onChange={choose}
           />
-          {column && (
-            <Field
-              id="stageDate"
-              label={column === "filedOn" ? t.filedDate : t.interviewDate}
-              hint={column === "filedOn" ? t.filedDateHint : undefined}
-              error={error}
-            >
+          {dated && (
+            <Field id="stageDate" label={t.dates[dated].label} hint={scheduled ? undefined : t.pastHint} error={error}>
               <input
                 id="stageDate"
                 type="date"
                 value={day}
-                max={column === "filedOn" ? localToday() : undefined}
+                max={scheduled ? undefined : localToday()}
                 onChange={(e) => {
                   setDay(e.target.value);
                   setError(undefined);
                 }}
                 className={inputClass}
-                {...describe("stageDate", error, column === "filedOn")}
+                {...describe("stageDate", error, !scheduled)}
               />
             </Field>
           )}
-          {!column && error && <Notice>{error}</Notice>}
+          {!dated && error && <Notice>{error}</Notice>}
           {back && <Notice tone="warning">{format(t.back, { stage: t.steps[chosen] })}</Notice>}
           <div className="flex flex-wrap items-center gap-3">
             <SubmitButton pending={pending} pendingLabel={t.saving} className="sm:w-auto">
@@ -239,73 +196,5 @@ function UpdateStage({
         </form>
       </Dialog>
     </>
-  );
-}
-
-function BranchLine({
-  t,
-  branch,
-  branchName,
-  branches,
-}: {
-  t: Labels;
-  branch: BranchCode | null;
-  branchName: string | null;
-  branches: Option<BranchCode>[];
-}) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [chosen, setChosen] = useState<BranchCode | "">(branch ?? "");
-  const [error, setError] = useState<string>();
-  const [pending, setPending] = useState(false);
-
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setPending(true);
-    const result = await updateBranch(chosen || null);
-    setPending(false);
-    if (result.error) setError(t.errors.generic);
-    else dialog.current?.close();
-  }
-
-  return (
-    // One line: a long branch name is cut short, so Change stays beside it.
-    <div className="flex min-w-0 items-baseline gap-1.5 text-[15px] text-slate-700">
-      <span className="shrink-0 font-semibold text-navy-900">{t.branch}:</span>
-      <span className="min-w-0 truncate" title={branchName ?? undefined}>
-        {branchName ?? t.noBranch}
-      </span>
-      <span aria-hidden className="shrink-0">
-        ·
-      </span>
-      <button
-        type="button"
-        onClick={() => {
-          setChosen(branch ?? "");
-          setError(undefined);
-          dialog.current?.showModal();
-        }}
-        className="shrink-0 font-semibold text-teal-700 underline-offset-4 hover:underline"
-      >
-        {t.changeBranch}
-      </button>
-      <Dialog ref={dialog} title={t.branchTitle} closeLabel={t.close}>
-        <form noValidate onSubmit={onSubmit} className="space-y-5">
-          {error && <Notice>{error}</Notice>}
-          <Field id="branchChoice" label={t.branch}>
-            <Select id="branchChoice" value={chosen} onChange={(e) => setChosen(e.target.value as BranchCode | "")}>
-              <option value="">{t.branchUnknown}</option>
-              {branches.map((b) => (
-                <option key={b.value} value={b.value}>
-                  {b.label}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <SubmitButton pending={pending} pendingLabel={t.saving} className="sm:w-auto">
-            {t.save}
-          </SubmitButton>
-        </form>
-      </Dialog>
-    </div>
   );
 }

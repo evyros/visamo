@@ -1022,13 +1022,16 @@
       "branchPlaceholder": "Choose a branch",
       "stageIntro": "Choose the option that fits you best.",
       "stages": {
-        "notFiled": "We haven't filed anything with Misrad Hapnim yet",
-        "filedAwaiting": "We sent our file and haven't heard back",
-        "firstResponse": "We sent our file and got a first response",
-        "interviewScheduled": "We already have an interview appointment",
-        "renewal": "We already have a visa and need to renew it",
-        "interviewDone": "We had the interview and are waiting for a decision",
-        "approved": "Our application was approved"
+        "preparing": "We haven't started yet: we're getting the documents ready",
+        "consulate": "We're applying for an entry permit at the Israeli consulate",
+        "filed": "We sent our file and haven't heard back",
+        "firstAppointment": "We have a first appointment at the branch",
+        "entryPermit": "We got the entry permit",
+        "arrived": "We're both in Israel now",
+        "b1": "We got the first B/1 visa, and A/5 is next",
+        "nativ": "We were referred to Nativ",
+        "interview": "We have an interview appointment, or already had the interview",
+        "renewal": "We already have a visa and need to renew it"
       },
       "renewalUnsupported": "Visamo doesn't support visa renewals yet. It's planned and coming soon.",
       "back": "Back",
@@ -1100,12 +1103,18 @@
           "general": "What is an apostille, and do I need one?"
         },
         "stage": {
-          "notFiled": "What happens at the first appointment?",
-          "filedAwaiting": "What happens while we wait for an answer?",
-          "firstResponse": "What does our first response mean, and what comes next?",
-          "interviewScheduled": "How should we prepare for the interview?",
-          "interviewDone": "What happens after the interview?",
-          "approved": "What comes after the approval?"
+          "preparing": "What happens at the first appointment?",
+          "consulate": "What should we bring to the consulate appointment?",
+          "filed": "What happens while we wait for an answer?",
+          "firstAppointment": "What should we bring to the first appointment?",
+          "entryPermit": "What do we need to do before the flight to Israel?",
+          "arrived": "What do we do now that we're both in Israel?",
+          "b1": "What comes after the B/1 visa?",
+          "nativ": "What happens at the Nativ interview?",
+          "interview": "How should we prepare for the interview?",
+          "awaitingDecision": "What happens after the interview?",
+          "approvedB1": "What comes after the approval?",
+          "approvedA5": "What comes after the approval?"
         }
       },
       "placeholder": "Ask anything",
@@ -1716,33 +1725,48 @@
       "stage": {
         "title": "Where you are",
         "steps": {
-          "notFiled": "Not filed yet",
-          "filedAwaiting": "Filed, waiting for an answer",
-          "firstResponse": "Got a first response",
-          "interviewScheduled": "Interview scheduled",
-          "interviewDone": "Interview done, waiting for a decision",
-          "approved": "Approved"
+          "preparing": "Getting the documents ready",
+          "consulate": "Getting an entry permit at the consulate",
+          "filed": "Filed, waiting for an answer",
+          "firstAppointment": "First appointment scheduled",
+          "entryPermit": "Receive the entry permit",
+          "arrived": "Together in Israel",
+          "b1": "Receive the B/1 visa",
+          "nativ": "Nativ check",
+          "interview": "Interview",
+          "approvedB1": "Approved: B/1 visa",
+          "approvedA5": "Approved: A/5 visa"
         },
         "now": "You're here",
-        "filedOn": "Filed on {date}",
-        "interviewOn": "Interview on {date}",
+        "dates": {
+          "filed": {
+            "label": "When did you file?",
+            "shown": "Filed on {date}"
+          },
+          "firstAppointment": {
+            "label": "When is the appointment?",
+            "shown": "Appointment on {date}"
+          },
+          "interview": {
+            "label": "Interview date",
+            "shown": "Interview on {date}"
+          }
+        },
+        "awaitingDecision": "waiting for a decision",
         "update": "Update stage",
+        "ask": {
+          "title": "Have a question about the process?",
+          "action": "Ask the chat"
+        },
         "dialogTitle": "Where are you now?",
-        "filedDate": "When did you file?",
-        "filedDateHint": "Optional. It shows how long you've been waiting.",
-        "interviewDate": "When is the interview?",
+        "pastHint": "Optional. It shows how long you've been waiting.",
         "back": "This moves your file back to “{stage}”. Dates you entered stay saved.",
         "save": "Save",
         "saving": "Saving…",
         "cancel": "Cancel",
         "close": "Close",
-        "branch": "Branch",
-        "noBranch": "Not chosen yet",
-        "changeBranch": "Change",
-        "branchTitle": "Your Misrad Hapnim branch",
-        "branchUnknown": "Not sure yet",
         "errors": {
-          "dateRequired": "Enter the interview date.",
+          "dateRequired": "Enter the date.",
           "invalid": "Check the date and try again.",
           "generic": "Something went wrong. Please try again."
         }
@@ -1757,7 +1781,7 @@
       },
       "details": {
         "title": "Your details",
-        "intro": "From what you told us when you set up the file. Your document list is built from these.",
+        "intro": "From what you told us when you set up the file. Your document list and document checks are built from these.",
         "edit": "Edit details",
         "noEditsLeft": "To change your details, contact us.",
         "couple": "The two of you",
@@ -1779,6 +1803,17 @@
         "childrenMoving": "Children moving to Israel",
         "yes": "Yes",
         "no": "No"
+      },
+      "branch": {
+        "label": "Misrad Hapnim branch",
+        "none": "Not chosen yet",
+        "change": "Change",
+        "dialogTitle": "Your Misrad Hapnim branch",
+        "unknown": "Not sure yet",
+        "save": "Save",
+        "saving": "Saving…",
+        "close": "Close",
+        "error": "Something went wrong. Please try again."
       },
       "activity": {
         "title": "Activity",
@@ -1833,6 +1868,10 @@
             "male": "{name} changed the interview date to {date}",
             "female": "{name} changed the interview date to {date}"
           },
+          "appointment.moved": {
+            "male": "{name} changed the appointment date to {date}",
+            "female": "{name} changed the appointment date to {date}"
+          },
           "branch.changed": {
             "male": "{name} changed the branch to {branch}",
             "female": "{name} changed the branch to {branch}"
@@ -1871,6 +1910,9 @@
       "checking": "Checking…",
       "previewTitle": "Before you save",
       "unchanged": "Nothing changed yet.",
+      "stageTitle": "Where are you now?",
+      "stageNote": "These changes change the stages of your process. Choose where you are now.",
+      "startHint": "Answer for when you started the process. A move to Israel since then is part of your stage.",
       "listNote": "Your document list may change: new documents might appear, and files you uploaded for documents that are no longer needed move to the “No longer needed” section on the documents page.",
       "save": "Save changes",
       "saving": "Saving…",
@@ -1880,7 +1922,8 @@
       "errors": {
         "invalid": "Some answers don't fit together. Check them and try again.",
         "limit": "You've used all your edits. To change your details, contact us.",
-        "generic": "Something went wrong. Please try again."
+        "generic": "Something went wrong. Please try again.",
+        "stage": "Choose where you are now."
       }
     },
     "access": {

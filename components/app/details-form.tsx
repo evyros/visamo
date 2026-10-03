@@ -10,8 +10,10 @@ import {
 } from "@/app/(app)/(main)/file/actions";
 import type { Messages } from "@/i18n/messages";
 import type { CaseDetails, PersonInput, RelationshipInput } from "@/lib/case-options";
+import type { Stage } from "@/lib/stages";
 import { Notice, SubmitButton } from "./auth-ui";
 import {
+  Choices,
   PersonFields,
   RelationshipFields,
   personErrors,
@@ -27,7 +29,8 @@ import { secondaryButton } from "./settings-ui";
 // Editing a case's answers after onboarding, with onboarding's questions.
 // One section shows at a time: both people's questions share field ids.
 // Saving goes through a preview of what changes in the document list, since
-// that's what uses one of the case's edits.
+// that's what uses one of the case's edits. When the changes change the
+// couple's stages (lib/stages.ts), the preview asks where they are now.
 
 type Labels = Messages["app"]["detailsPage"];
 type Section = "couple" | "israeli" | "foreign";
@@ -74,6 +77,8 @@ export function DetailsForm({
   locked,
   countries,
   birthCountries,
+  steps,
+  started,
 }: {
   t: Labels;
   /** Onboarding's questions and options. */
@@ -87,6 +92,10 @@ export function DetailsForm({
   locked: Record<"israeli" | "foreign", string[]>;
   countries: Option[];
   birthCountries: Option[];
+  /** The stages' names. */
+  steps: Record<Stage, string>;
+  /** Past the first stage: where they are is where they were when it started. */
+  started: boolean;
 }) {
   const router = useRouter();
   const [section, setSection] = useState<Section>("couple");
@@ -98,6 +107,7 @@ export function DetailsForm({
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string>();
   const [preview, setPreview] = useState<DetailsPreview>();
+  const [stage, setStage] = useState<Stage | null>(null);
   const [pending, setPending] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -135,12 +145,19 @@ export function DetailsForm({
     const result = await previewDetails(payload());
     setPending(false);
     if ("error" in result) showError(result.error);
-    else setPreview(result);
+    else {
+      setPreview(result);
+      setStage(result.stage);
+    }
   }
 
   async function onSave() {
+    if (preview?.track && !stage) {
+      showError("stage");
+      return;
+    }
     setPending(true);
-    const result = await saveDetails(payload());
+    const result = await saveDetails(payload(), stage);
     if (result.error) {
       setPending(false);
       showError(result.error);
@@ -156,6 +173,19 @@ export function DetailsForm({
         <div className="mt-4 space-y-4 text-[15px] text-slate-700">
           {formError && <Notice>{formError}</Notice>}
           <p>{preview.unchanged ? t.unchanged : t.listNote}</p>
+          {preview.track && (
+            <Choices
+              id="stage"
+              legend={t.stageTitle}
+              hint={t.stageNote}
+              options={preview.track.map((s) => ({ value: s, label: steps[s] }))}
+              value={stage}
+              onChange={(s) => {
+                setStage(s);
+                setFormError(undefined);
+              }}
+            />
+          )}
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           {!preview.unchanged && (
@@ -228,6 +258,7 @@ export function DetailsForm({
             setErrors={setErrors}
             autoComplete="off"
             lockIdentity
+            startHint={started ? t.startHint : undefined}
           />
         ) : (
           <RelationshipFields

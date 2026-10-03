@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { changedFields, parseDetails, parseStageDate, type CaseDetails } from "./case-options";
+import { changedFields, parseDetails, type CaseDetails } from "./case-options";
 import { scenarios } from "./documents/scenarios";
 
 const { relationship, people } = scenarios.marriedInCyprus;
@@ -37,25 +37,5 @@ describe("parseDetails", () => {
     // Every couple says whether they live or lived together, and the Israeli side where they live.
     expect(parseDetails({ ...current, relationship: { ...current.relationship, livingTogether: null } }, current)).toBeNull();
     expect(parseDetails({ ...current, israeli: { ...current.israeli, residence: null } }, current)).toBeNull();
-  });
-});
-
-describe("parseStageDate", () => {
-  const today = new Date("2026-09-28T12:00:00Z");
-
-  it("takes a real calendar date", () => {
-    expect(parseStageDate("filedAwaiting", "2026-09-01", today)).toBe("2026-09-01");
-    expect(parseStageDate("filedAwaiting", "2026-02-30", today)).toBeNull();
-    expect(parseStageDate("filedAwaiting", "01/09/2026", today)).toBeNull();
-  });
-
-  it("allows filing up to today in Israel, never later", () => {
-    expect(parseStageDate("filedAwaiting", "2026-09-29", today)).toBe("2026-09-29");
-    expect(parseStageDate("filedAwaiting", "2026-10-05", today)).toBeNull();
-  });
-
-  it("allows an interview ahead, within two years", () => {
-    expect(parseStageDate("interviewScheduled", "2027-03-01", today)).toBe("2027-03-01");
-    expect(parseStageDate("interviewScheduled", "2030-01-01", today)).toBeNull();
   });
 });

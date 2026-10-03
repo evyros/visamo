@@ -7,9 +7,6 @@ import {
   changedFields,
   editablePersonFields,
   parseDetails,
-  parseStageDate,
-  stageDates,
-  stages,
   type BranchCode,
   type CaseDetails,
 } from "@/lib/case-options";
@@ -18,6 +15,7 @@ import { db } from "@/lib/db";
 import { casePerson, cases } from "@/lib/db/schema";
 import { countedEdits, recordEvent } from "@/lib/events";
 import { requireCase } from "@/lib/session";
+import { isDated, parseStageDate, sameTrack, stageDateKinds, trackOf, type Stage, type StageDates } from "@/lib/stages";
 
 // The overview's changes: the stage, the branch, and the case's details.
 // Every change is written in one batch with its event (lib/events.ts).
@@ -30,26 +28,25 @@ const oneOf = <T extends string>(list: readonly T[], value: unknown): value is T
 export type StageResult = { error?: "invalid" | "generic" };
 
 /**
- * Moves the case to a stage, forward or back. A stage with a date (stageDates)
- * saves it too: an interview's date is required, the filing date isn't.
- * Dates of other stages stay, so moving forward again can offer them.
+ * Moves the case to a stage on its track, forward or back. A stage with a
+ * date (stageDateKinds) saves it too: an appointment's or interview's date
+ * is required, a past one isn't. Dates of other stages stay, so moving
+ * forward again can offer them.
  */
 export async function updateStage(stage: unknown, date: unknown): Promise<StageResult> {
   const { user, caseId } = await requireCase();
-  if (!oneOf(stages, stage)) return { error: "invalid" };
-  const column = stage in stageDates ? stageDates[stage as keyof typeof stageDates] : null;
-  const day = column && date !== null && date !== "" ? parseStageDate(stage, date) : null;
-  if (column && day === null && (date || stage === "interviewScheduled")) return { error: "invalid" };
+  const { row, details } = await caseDetails(caseId);
+  if (!oneOf(trackOf(details), stage)) return { error: "invalid" };
+  const dated = isDated(stage) ? stage : null;
+  const day = dated && date !== null && date !== "" ? parseStageDate(dated, date) : null;
+  if (dated && day === null && (date || stageDateKinds[dated] === "scheduled")) return { error: "invalid" };
 
-  const { row } = await caseDetails(caseId);
-  const dateChanged = !!column && day !== null && day !== row[column];
+  const dateChanged = !!dated && day !== null && day !== row.stageDates[dated];
   if (row.stage === stage && !dateChanged) return {};
+  const stageDates: StageDates = dated && day ? { ...row.stageDates, [dated]: day } : row.stageDates;
   try {
     await db.batch([
-      db
-        .update(cases)
-        .set({ stage, ...(column && day && { [column]: day }) })
-        .where(eq(cases.id, caseId)),
+      db.update(cases).set({ stage, stageDates }).where(eq(cases.id, caseId)),
       recordEvent(caseId, user.id, { type: "stage.changed", data: { from: row.stage, to: stage, date: day } }),
     ]);
   } catch (error) {
@@ -95,10 +92,15 @@ async function planEdit(caseId: string, input: unknown) {
   const added = after.filter((d) => !beforeKeys.has(d.key)).map((d) => d.key);
   const removed = before.filter((d) => !afterKeys.has(d.key)).map((d) => d.key);
   const edits = await countedEdits(caseId);
+  // New answers can change the stages the couple goes through (a move to
+  // married, say). Then they choose their stage again, from the new track.
+  const track = trackOf(next);
+  const trackChanged = !sameTrack(trackOf(details), track);
   return {
     row,
     people,
     next,
+    track: trackChanged ? track : null,
     fields: changedFields(details, next),
     added,
     removed,
@@ -108,11 +110,15 @@ async function planEdit(caseId: string, input: unknown) {
   };
 }
 
-export type DetailsError = "invalid" | "limit" | "generic";
+export type DetailsError = "invalid" | "limit" | "stage" | "generic";
 
 export type DetailsPreview = {
   /** Nothing would change. */
   unchanged: boolean;
+  /** The new stages, when the changes change them; the couple chooses their stage from these. */
+  track: Stage[] | null;
+  /** The current stage, if the new stages still have it. */
+  stage: Stage | null;
 };
 
 export async function previewDetails(input: unknown): Promise<DetailsPreview | { error: DetailsError }> {
@@ -120,7 +126,12 @@ export async function previewDetails(input: unknown): Promise<DetailsPreview | {
   const plan = await planEdit(caseId, input);
   if (!plan) return { error: "invalid" };
   if (plan.editsLeft === 0) return { error: "limit" };
-  return { unchanged: plan.fields.length === 0 };
+  const stage = plan.row.stage as Stage;
+  return {
+    unchanged: plan.fields.length === 0,
+    track: plan.track,
+    stage: plan.track?.includes(stage) ? stage : null,
+  };
 }
 
 /** The editable answers of one person, for their row. */
@@ -128,21 +139,30 @@ function personUpdate(person: CaseDetails["israeli"], role: "israeli" | "foreign
   return Object.fromEntries(editablePersonFields[role].map((key) => [key, person[key]]));
 }
 
-export async function saveDetails(input: unknown): Promise<{ error?: DetailsError }> {
+/** `stage` is the one chosen in the preview, needed when the changes change the track. */
+export async function saveDetails(input: unknown, stage: unknown): Promise<{ error?: DetailsError }> {
   const { user, caseId } = await requireCase();
   const plan = await planEdit(caseId, input);
   if (!plan) return { error: "invalid" };
   if (plan.editsLeft === 0) return { error: "limit" };
   if (plan.fields.length === 0) return {};
+  if (plan.track && !oneOf(plan.track, stage)) return { error: "stage" };
 
-  const { next, people, fields, added, removed, counted } = plan;
+  const { row, next, people, fields, added, removed, counted } = plan;
+  const moved = plan.track && stage !== row.stage ? (stage as Stage) : null;
   const rowOf = (isIsraeli: boolean) => people.find((p) => p.isIsraeli === isIsraeli)!.id;
   try {
     await db.batch([
-      db.update(cases).set(next.relationship).where(eq(cases.id, caseId)),
+      db
+        .update(cases)
+        .set({ ...next.relationship, ...(moved && { stage: moved }) })
+        .where(eq(cases.id, caseId)),
       db.update(casePerson).set(personUpdate(next.israeli, "israeli")).where(eq(casePerson.id, rowOf(true))),
       db.update(casePerson).set(personUpdate(next.foreign, "foreign")).where(eq(casePerson.id, rowOf(false))),
       recordEvent(caseId, user.id, { type: "details.changed", data: { fields, added, removed, counted } }),
+      ...(moved
+        ? [recordEvent(caseId, user.id, { type: "stage.changed", data: { from: row.stage, to: moved, date: null } })]
+        : []),
     ]);
   } catch (error) {
     console.error("saveDetails failed", error);

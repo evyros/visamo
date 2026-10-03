@@ -88,14 +88,31 @@ to miss, and it left Continue greyed out for anyone who didn't see it.
 
 ## Step 5: stage
 
-No separate stages for a partner abroad: they start at "not filed yet" like
-everyone. Not filed yet, filed and waiting, got a first response, interview
-scheduled; plus renewal, which isn't supported yet (see `lib/knowledge/process.md`
-for the process). Renewal blocks finishing with a yellow notice.
+The stages offered follow from the answers before: each couple has its own
+track (`lib/stages.ts`). A partner abroad waits for an entry permit and
+arrives; a couple who both live abroad starts by getting the entry permit at
+the consulate, and files after arriving (the document list is still only the
+Misrad Hapnim file's); a partner from the former USSR goes through Nativ; a married
+couple gets the B/1 before the interview and ends at A/5, a common-law couple
+is interviewed first and ends at B/1. Onboarding offers the track up to
+the interview; the approval is reached from the overview. The interview is
+one stage with its date: once the date has passed, the overview and the chat
+treat it as waiting for the decision.
+Plus renewal, which isn't supported yet (see `lib/knowledge/process.md` for
+the process). Renewal blocks finishing with a yellow notice.
+
+Going back and changing an answer can take the chosen stage off the track;
+then the stage step has to be answered again.
+
+After the first stage, the partner's location and the Israeli's residence
+mean where they were when the process started: a move to Israel since then
+is a stage ("together in Israel"), not a details edit. The details form says
+so. A details edit that changes the track asks for the stage again before
+saving.
 
 ## Server rules
 
 The server repeats the browser's rules: exactly one Israeli side; each
 person answers only their role's questions; follow-ups only when their
 question was answered that way; no country listed twice, and not the
-nationality among "other countries".
+nationality among "other countries"; a stage on the couple's track.

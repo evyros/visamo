@@ -1,7 +1,8 @@
 import type { Locale } from "@/i18n/config";
 import { formatAgo, formatDay } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
-import type { BranchCode, Stage } from "@/lib/case-options";
+import type { BranchCode } from "@/lib/case-options";
+import type { Stage } from "@/lib/stages";
 import { documentTitle, type PartnerNames } from "@/lib/documents/titles";
 import type { ProductId } from "@/lib/products";
 import type { CaseEvent, recentEvents } from "@/lib/events";
@@ -39,8 +40,9 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale,
         };
       case "stage.changed": {
         const { from, to, date } = event.data;
-        if (from === to && to === "interviewScheduled" && date) {
-          return { text: say("interview.moved", { date: formatDay(date, locale) }) };
+        if (from === to && date) {
+          if (to === "interview") return { text: say("interview.moved", { date: formatDay(date, locale) }) };
+          if (to === "firstAppointment") return { text: say("appointment.moved", { date: formatDay(date, locale) }) };
         }
         const steps = messages.app.overview.stage.steps;
         return { text: say(event.type, { stage: steps[to as Stage] ?? to }) };
@@ -56,7 +58,7 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale,
         const to = event.data.to as BranchCode | null;
         return {
           text: say(event.type, {
-            branch: to ? messages.app.onboarding.branches[to] : messages.app.overview.stage.branchUnknown,
+            branch: to ? messages.app.onboarding.branches[to] : messages.app.overview.branch.unknown,
           }),
         };
       }

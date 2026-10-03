@@ -1,5 +1,5 @@
 import { format, type Messages } from "@/i18n/messages";
-import type { Stage } from "@/lib/case-options";
+import type { Stage } from "@/lib/stages";
 import type { Certification } from "@/lib/documents/certification";
 
 // The three questions a new chat suggests, one for each thing the chat can do
@@ -19,6 +19,8 @@ type Item = {
 
 export type SuggestionCase = {
   stage: Stage;
+  /** At the interview stage, after its date (awaitingDecision in lib/stages.ts). */
+  awaitingDecision: boolean;
   /** The document list, in its order. */
   items: readonly Item[];
   uploaded: ReadonlySet<string>;
@@ -29,8 +31,8 @@ export type SuggestionCase = {
 /** The file, a document, then the stage. `title` names a document by its list key. */
 export function suggestionsFor(c: SuggestionCase, t: Texts, title: (key: string) => string): string[] {
   const missing = c.items.filter((i) => !i.optional && !c.uploaded.has(i.key));
-  const file = missing.length ? t.file.missing : c.stage === "notFiled" ? t.file.ready : t.file.complete;
-  return [file, documentQuestion(c, missing, t, title), t.stage[c.stage]];
+  const file = missing.length ? t.file.missing : (c.stage === "preparing" || c.stage === "consulate") ? t.file.ready : t.file.complete;
+  return [file, documentQuestion(c, missing, t, title), c.awaitingDecision ? t.stage.awaitingDecision : t.stage[c.stage]];
 }
 
 function documentQuestion(c: SuggestionCase, missing: readonly Item[], t: Texts, title: (key: string) => string) {

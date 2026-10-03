@@ -84,7 +84,11 @@ export function ProgressCard({
   );
 }
 
-export type DetailsSection = { title: string; rows: { label: string; value: string }[] };
+export type DetailsSection = {
+  title: string;
+  /** `action` goes beside the value, like the branch's Change. */
+  rows: { label: string; value: string; action?: ReactNode }[];
+};
 
 export function DetailsCard({
   title,
@@ -109,7 +113,17 @@ export function DetailsCard({
               {section.rows.map((row) => (
                 <div key={row.label}>
                   <dt className="text-sm text-slate-500">{row.label}</dt>
-                  <dd className="text-[15px] text-navy-900">{row.value}</dd>
+                  <dd className="text-[15px] text-navy-900">
+                    {row.value}
+                    {row.action && (
+                      <>
+                        <span aria-hidden className="mx-1.5 text-slate-500">
+                          ·
+                        </span>
+                        {row.action}
+                      </>
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>

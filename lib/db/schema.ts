@@ -1,7 +1,6 @@
 import { sql } from "drizzle-orm";
 import {
   boolean,
-  date,
   doublePrecision,
   index,
   integer,
@@ -17,6 +16,7 @@ import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
 import type { CaseEvent } from "../events";
 import type { PaymentMethod, ProductId } from "../products";
+import type { StageDates } from "../stages";
 import type { AccessDuration, AccessReason } from "../support-access-options";
 
 // Better Auth's core tables (user, session, account, verification), plus the
@@ -113,12 +113,10 @@ export const cases = pgTable("case", {
   id: text("id").primaryKey(),
   /** A BranchCode from lib/case-options.ts, or null if the user doesn't know it yet. */
   branch: text("branch"),
-  /** A Stage from lib/case-options.ts. */
+  /** A Stage on the case's track (lib/stages.ts). */
   stage: text("stage").notNull(),
-  /** When they filed, if they said. Kept when the stage moves back, to offer again. */
-  filedOn: date("filed_on", { mode: "string" }),
-  /** The interview's date, once one is scheduled. Kept like filedOn. */
-  interviewOn: date("interview_on", { mode: "string" }),
+  /** The dates they entered, by stage: when they filed, the interview's date. */
+  stageDates: jsonb("stage_dates").$type<StageDates>().notNull().default({}),
   /** How many details edits that change the document list the case gets. Support raises it. */
   detailEditsAllowed: integer("detail_edits_allowed").notNull().default(3),
   /** A Relationship from lib/case-options.ts: married or common-law. */

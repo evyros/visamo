@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import type { Locale } from "@/i18n/config";
-import { formatDay, formatDaysUntil, regionName } from "@/i18n/format";
+import { formatDay, formatDaysUntil, regionName, todayInIsrael } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import { caseOptions } from "@/i18n/options";
-import type { BranchCode, CaseDetails, Stage } from "@/lib/case-options";
+import type { BranchCode, CaseDetails } from "@/lib/case-options";
 import { otherMembers, pendingInvite } from "@/lib/case";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
@@ -22,6 +22,7 @@ import {
 } from "@/lib/documents/progress";
 import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
+import { awaitingDecision, stageDateKinds, trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import {
   ActivityCard,
   DetailsAction,
@@ -31,6 +32,7 @@ import {
 } from "@/components/app/overview-cards";
 import { standingCounts, type ProgressValue } from "@/components/app/document-progress";
 import { InviteBanner } from "@/components/app/invite-banner";
+import { BranchChange } from "@/components/app/branch-change";
 import { StageCard } from "@/components/app/stage-card";
 import { activityItem } from "./activity-items";
 
@@ -61,15 +63,18 @@ export default async function FileOverviewPage() {
   const stage = row.stage as Stage;
   const branch = row.branch as BranchCode | null;
 
-  // Stage.
-  const interview =
-    row.interviewOn &&
-    [
-      format(t.stage.interviewOn, { date: formatDay(row.interviewOn, locale) }),
-      stage === "interviewScheduled" && formatDaysUntil(row.interviewOn, locale),
+  // Stage: each date entered, and at an appointment or interview, how far ahead it is,
+  // or once the interview has passed, that they're waiting for the decision.
+  const shown: Partial<Record<Stage, string>> = {};
+  const waiting = awaitingDecision(stage, row.stageDates, todayInIsrael());
+  for (const [s, day] of Object.entries(row.stageDates) as [DatedStage, string][]) {
+    shown[s] = [
+      format(t.stage.dates[s].shown, { date: formatDay(day, locale) }),
+      stage === s && stageDateKinds[s] === "scheduled" && (waiting ? t.stage.awaitingDecision : formatDaysUntil(day, locale)),
     ]
       .filter(Boolean)
       .join(" · ");
+  }
 
   // Documents: counted by upload, or with Full file check, by where each stands, as on the documents page.
   const list = listOf(details);
@@ -111,15 +116,10 @@ export default async function FileOverviewPage() {
       <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <StageCard
           t={t.stage}
+          track={trackOf(details)}
           stage={stage}
-          dates={{ filedOn: row.filedOn, interviewOn: row.interviewOn }}
-          shown={{
-            filedOn: row.filedOn && format(t.stage.filedOn, { date: formatDay(row.filedOn, locale) }),
-            interviewOn: interview || null,
-          }}
-          branch={branch}
-          branchName={branch && o.branches[branch]}
-          branches={caseOptions(locale, o).branches}
+          dates={row.stageDates}
+          shown={shown}
         />
         <div className="grid grid-cols-1 gap-6">
           <ProgressCard
@@ -142,7 +142,11 @@ export default async function FileOverviewPage() {
           <DetailsCard
             title={t.details.title}
             intro={t.details.intro}
-            sections={detailSections(details, messages, locale)}
+            sections={detailSections(details, messages, locale, {
+              label: t.branch.label,
+              value: branch ? o.branches[branch] : t.branch.none,
+              action: <BranchChange t={t.branch} branch={branch} branches={caseOptions(locale, o).branches} />,
+            })}
             action={<DetailsAction canEdit={editsLeft > 0} edit={t.details.edit} noEditsLeft={t.details.noEditsLeft} />}
           />
         </div>
@@ -213,7 +217,12 @@ async function askToInvite(caseId: string, userId: string) {
 }
 
 /** The answers the document list is built from, as short rows. */
-function detailSections({ relationship: r, israeli, foreign }: CaseDetails, messages: Messages, locale: Locale) {
+function detailSections(
+  { relationship: r, israeli, foreign }: CaseDetails,
+  messages: Messages,
+  locale: Locale,
+  branch: DetailsSection["rows"][number],
+) {
   const t = messages.app.overview.details;
   const o = messages.app.onboarding;
   const yesNo = (value: boolean | null) => (value ? t.yes : t.no);
@@ -236,6 +245,7 @@ function detailSections({ relationship: r, israeli, foreign }: CaseDetails, mess
           value: r.relationship === "married" ? `${t.married} · ${place} · ${together}` : `${t.commonLaw} · ${together}`,
         },
         { label: t.childrenTogether, value: yesNo(r.childrenTogether) },
+        branch,
       ],
     },
     {

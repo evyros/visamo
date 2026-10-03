@@ -7,6 +7,7 @@ import { caseDetails } from "@/lib/case-documents";
 import { countedEdits } from "@/lib/events";
 import { contactUrl, newTab } from "@/lib/site";
 import { requireCase } from "@/lib/session";
+import { trackOf } from "@/lib/stages";
 import { DetailsForm } from "@/components/app/details-form";
 import { TextLink } from "@/components/ui";
 
@@ -54,6 +55,8 @@ export default async function DetailsPage() {
               ],
             }}
             {...caseOptions(locale, o)}
+            steps={messages.app.overview.stage.steps}
+            started={row.stage !== trackOf(details)[0]}
           />
         </>
       ) : (

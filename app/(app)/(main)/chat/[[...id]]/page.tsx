@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
+import { todayInIsrael } from "@/i18n/format";
 import { format } from "@/i18n/messages";
-import type { Stage } from "@/lib/case-options";
+import { awaitingDecision, type Stage } from "@/lib/stages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { suggestionsFor } from "@/lib/chat/suggestions";
 import { caseChecks } from "@/lib/checks/store";
@@ -52,7 +53,13 @@ export default async function ChatPage({ params, searchParams }: PageProps<"/cha
         .map(([key]) => key),
     );
     suggestions = suggestionsFor(
-      { stage: row.stage as Stage, items: listOf(details), uploaded: uploadedKeys(files), toFix },
+      {
+        stage: row.stage as Stage,
+        awaitingDecision: awaitingDecision(row.stage as Stage, row.stageDates, todayInIsrael()),
+        items: listOf(details),
+        uploaded: uploadedKeys(files),
+        toFix,
+      },
       t.app.chat.suggestions,
       (key) => documentTitle(key, t.app.documents, locale, names) ?? key,
     );

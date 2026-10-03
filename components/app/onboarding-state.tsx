@@ -12,8 +12,8 @@ import type {
   Relationship,
   RENEWAL,
   Residence,
-  Stage,
 } from "@/lib/case-options";
+import type { OnboardingStage } from "@/lib/stages";
 
 // The onboarding answers, held in the onboarding layout. The layout stays
 // mounted while the steps change the URL, so browser back and forward keep the
@@ -66,7 +66,7 @@ export type Answers = {
   knowsBranch: boolean | null;
   branch: BranchCode | "";
   /** Renewal can be chosen, but it stops the wizard: not supported yet. */
-  stage: Stage | typeof RENEWAL | null;
+  stage: OnboardingStage | typeof RENEWAL | null;
 };
 
 type OnboardingState = {

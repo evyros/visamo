@@ -12,7 +12,8 @@ const letters = { key: "letters", optional: false, certification: null, mayNeedT
 const lease = { key: "lease", optional: true, certification: null, mayNeedTranslation: true };
 
 const base: SuggestionCase = {
-  stage: "notFiled",
+  stage: "preparing",
+  awaitingDecision: false,
   items: [form, letters, police, birth, lease],
   uploaded: new Set(),
   toFix: new Set(),
@@ -23,7 +24,7 @@ describe("suggestionsFor", () => {
     expect(suggestionsFor(base, t, title)).toEqual([
       t.file.missing,
       "Does “birth” need an apostille?",
-      t.stage.notFiled,
+      t.stage.preparing,
     ]);
   });
 
@@ -46,10 +47,13 @@ describe("suggestionsFor", () => {
   it("doesn't count an optional document as missing", () => {
     const c = { ...base, uploaded: new Set(["form", "letters", "police", "birth"]) };
     expect(suggestionsFor(c, t, title).slice(0, 2)).toEqual([t.file.ready, t.document.general]);
-    expect(suggestionsFor({ ...c, stage: "interviewScheduled" }, t, title)).toEqual([
+    expect(suggestionsFor({ ...c, stage: "interview" }, t, title)).toEqual([
       t.file.complete,
       t.document.general,
-      t.stage.interviewScheduled,
+      t.stage.interview,
     ]);
+    expect(suggestionsFor({ ...c, stage: "interview", awaitingDecision: true }, t, title)[2]).toBe(
+      t.stage.awaitingDecision,
+    );
   });
 });

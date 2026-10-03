@@ -3,7 +3,7 @@ import { loadMessages } from "@/i18n/messages";
 import { regionName, todayInIsrael } from "@/i18n/format";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import type { Owner } from "@/lib/documents/catalog";
-import type { Stage } from "@/lib/case-options";
+import { trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
@@ -62,7 +62,7 @@ export async function casePrompt(caseId: string, userId: string) {
     caseChecks(caseId),
     loadMessages("en"),
   ]);
-  const o = t.app.onboarding;
+  const steps = t.app.overview.stage.steps;
   const list = listOf(details);
   const me = people.find((p) => p.userId === userId);
 
@@ -76,7 +76,11 @@ export async function casePrompt(caseId: string, userId: string) {
   const relationship = lines([
     ...relationshipLines(details.relationship, branch, t),
     // Checked by parseOnboarding when the case was created (see lib/case-documents.ts).
-    ["Stage in the process", o.stages[row.stage as Stage]],
+    ["Stage in the process", steps[row.stage as Stage]],
+    ["Their stages, in order", trackOf(details).map((s) => steps[s]).join(" → ")],
+    ...(Object.entries(row.stageDates) as [DatedStage, string][]).map(
+      ([s, day]): [string, string] => [`Date for "${steps[s]}"`, day],
+    ),
     ["Document checks", row.fileCheck ? "included (they bought Full file check)" : "not included (they come with Full file check)"],
   ]);
 

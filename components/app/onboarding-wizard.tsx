@@ -19,11 +19,12 @@ import {
   previousMarriages,
   relationships,
   residences,
-  onboardingStages,
   type BranchCode,
+  type CaseDetails,
   type IsraeliStatus,
   type OtherParent,
 } from "@/lib/case-options";
+import { onboardingTrack } from "@/lib/stages";
 import { AuthHeading } from "./auth-heading";
 import { Field, Notice, Select, SubmitButton, describe, inputClass } from "./auth-ui";
 import {
@@ -144,6 +145,14 @@ export function relationshipInput(r: RelationshipAnswers) {
   };
 }
 
+/** Every step's answers by role, as the stage step reads them. Only called once they're all answered. */
+function detailsOf(answers: Answers): CaseDetails {
+  const self = personInput(answers.self) as CaseDetails["israeli"];
+  const partner = personInput(answers.partner) as CaseDetails["israeli"];
+  const [israeli, foreign] = self.isIsraeli ? [self, partner] : [partner, self];
+  return { relationship: relationshipInput(answers.relationship) as CaseDetails["relationship"], israeli, foreign };
+}
+
 export function OnboardingWizard({
   t,
   countries,
@@ -201,13 +210,19 @@ export function OnboardingWizard({
     if (swap) setReached(0);
   }
 
+  // The stages follow from the earlier steps, all answered by the stage step.
+  // A stage chosen before going back and changing them may be gone.
+  const offered = step === STAGE ? onboardingTrack(detailsOf(answers)) : [];
+
   function validate(): Errors {
     if (step === 0) return personErrors(answers.self, t);
     if (step === 1) return personErrors(answers.partner, t);
     if (step === RELATIONSHIP) return relationshipErrors(answers.relationship, t);
     if (step === BRANCH && answers.knowsBranch === null) return { knowsBranch: t.errors.choose };
     if (step === BRANCH && answers.knowsBranch && !answers.branch) return { branch: t.errors.choose };
-    if (step === STAGE && !answers.stage) return { stage: t.errors.choose };
+    if (step === STAGE && !(answers.stage === RENEWAL || offered.some((s) => s === answers.stage))) {
+      return { stage: t.errors.choose };
+    }
     return {};
   }
 
@@ -368,7 +383,7 @@ export function OnboardingWizard({
             id="stage"
             legend={t.stageIntro}
             error={errors.stage}
-            options={([...onboardingStages, RENEWAL] as const).map((s) => ({ value: s, label: t.stages[s] }))}
+            options={([...offered, RENEWAL] as const).map((s) => ({ value: s, label: t.stages[s] }))}
             value={answers.stage}
             onChange={(v) => set("stage", v)}
           />
@@ -419,6 +434,7 @@ export function PersonFields({
   setErrors,
   autoComplete,
   lockIdentity = false,
+  startHint,
 }: {
   t: Labels;
   /** The questions worded for this person. */
@@ -433,6 +449,8 @@ export function PersonFields({
   setErrors: SetErrors;
   autoComplete: string;
   lockIdentity?: boolean;
+  /** Once the process started, where they are is where they were then: the stage records a move since (lib/stages.ts). */
+  startHint?: string;
 }) {
   const foreign = person.isIsraeli === false;
   const identity = !lockIdentity;
@@ -502,7 +520,7 @@ export function PersonFields({
         <Choices
           id="residence"
           legend={q.residence}
-          hint={t.residenceHint}
+          hint={startHint ? `${t.residenceHint} ${startHint}` : t.residenceHint}
           error={errors.residence}
           options={residences.map((r) => ({ value: r, label: t.residences[r] }))}
           value={person.residence}
@@ -583,6 +601,7 @@ export function PersonFields({
           <Choices
             id="location"
             legend={q.location}
+            hint={startHint}
             error={errors.location}
             options={locations.map((l) => ({ value: l, label: t.locations[l] }))}
             value={person.location}

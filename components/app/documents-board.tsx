@@ -489,21 +489,43 @@ function RetiredCard({
   files: FileView[];
   onRemove: (fileId: string) => Promise<void>;
 }) {
+  const [open, setOpen] = useState(false);
+  const bodyId = useId();
+
   return (
-    <div className="rounded-card border border-line-200 bg-white p-4 sm:p-5">
-      <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-semibold text-navy-900">{title}</span>
-        <span className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-          {t.status.retired}
+    <div className="rounded-card border border-line-200 bg-white">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={bodyId}
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-start gap-3 rounded-card p-4 text-start focus-visible:outline-2 focus-visible:outline-teal-600 sm:p-5"
+      >
+        <span className="min-w-0 flex-1">
+          <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span className="font-semibold text-navy-900">{title}</span>
+            <span className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
+              {t.status.retired}
+            </span>
+          </span>
         </span>
-      </span>
-      <ul className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
-        {files.map((file) => (
-          <li key={file.id}>
-            <FileTile t={t} file={file} intlLocale={intlLocale} onRemove={() => onRemove(file.id)} />
-          </li>
-        ))}
-      </ul>
+        <span className="flex h-[1lh] shrink-0 items-center">
+          <Icon
+            name="chevronDown"
+            className={`size-5 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+          />
+        </span>
+      </button>
+
+      <div id={bodyId} hidden={!open}>
+        <ul className="grid grid-cols-3 gap-3 border-t border-line-200 px-4 pt-4 pb-5 sm:grid-cols-4 sm:px-5">
+          {files.map((file) => (
+            <li key={file.id}>
+              <FileTile t={t} file={file} intlLocale={intlLocale} onRemove={() => onRemove(file.id)} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

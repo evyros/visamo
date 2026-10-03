@@ -11,6 +11,8 @@ import {
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 import type { ChatCall, Completion } from "../chat/openrouter";
+import type { ReviewOutcome } from "../admin-dismissals";
+import type { DismissReason, FindingKind } from "../checks/dismissals";
 import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
@@ -320,6 +322,58 @@ export const documentCheck = pgTable(
     uniqueIndex("document_check_running_idx")
       .on(table.caseId, table.documentKey)
       .where(sql`${table.state} = 'running'`),
+  ],
+);
+
+/**
+ * A finding of a check that the couple dismissed as wrong
+ * (lib/checks/dismissals.ts): an issue or a tip of a finished run, by its
+ * place in the run's list, which never changes. The item's result leaves it
+ * out, and its rating is worked out again from what's left. Undoing keeps the
+ * row (undoneAt), so the admin sees it too. At most one is in effect per
+ * finding.
+ *
+ * The review columns are the admin's (the dismissed findings page): never
+ * read for the app.
+ */
+export const findingDismissal = pgTable(
+  "finding_dismissal",
+  {
+    id: text("id").primaryKey(),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    checkId: text("check_id")
+      .notNull()
+      .references(() => documentCheck.id, { onDelete: "cascade" }),
+    /** The list item's key, as on the check. */
+    documentKey: text("document_key").notNull(),
+    kind: text("kind").notNull().$type<FindingKind>(),
+    /** Its place in the run's issues or recommendations. */
+    index: integer("index").notNull(),
+    /** A copy of the finding, as it was shown. */
+    finding: jsonb("finding").notNull().$type<CheckFinding>(),
+    reason: text("reason").notNull().$type<DismissReason>(),
+    /** What the couple wrote, if anything. Never sent to the model. */
+    note: text("note"),
+    dismissedBy: text("dismissed_by").references(() => user.id, { onDelete: "set null" }),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    undoneAt: timestamp("undone_at"),
+    undoneBy: text("undone_by").references(() => user.id, { onDelete: "set null" }),
+
+    // The admin's review. Admin only: never in what the app reads or sends.
+    reviewedAt: timestamp("reviewed_at"),
+    /** The admin panel's signed-in email, since the admin isn't a user. */
+    reviewedBy: text("reviewed_by"),
+    reviewOutcome: text("review_outcome").$type<ReviewOutcome>(),
+    reviewNote: text("review_note"),
+  },
+  (table) => [
+    index("finding_dismissal_check_idx").on(table.checkId),
+    index("finding_dismissal_created_idx").on(table.createdAt),
+    uniqueIndex("finding_dismissal_active_idx")
+      .on(table.checkId, table.kind, table.index)
+      .where(sql`${table.undoneAt} is null`),
   ],
 );
 

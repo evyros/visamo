@@ -7,6 +7,8 @@ import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import type { ContentPart, ModelMessage } from "@/lib/chat/openrouter";
 import type { RequiredDocument } from "@/lib/documents/build";
 import type { DocumentCheck } from "@/lib/documents/checks";
+import type { DismissReason, FindingKind } from "./dismissals";
+import type { CheckFinding } from "./result";
 import { loadCheckKnowledge } from "@/lib/knowledge-base";
 
 // What the document checker is told: its rules and the part of the knowledge
@@ -110,12 +112,35 @@ function guidance(check: DocumentCheck) {
   return [...whole, ...parts].join("\n\n");
 }
 
+/** What the reasons say, for the model: the couple's own note is never sent. */
+const reasonText: Record<DismissReason, string> = {
+  alreadyThere: "it's already in the files",
+  notApplicable: "it doesn't apply to them",
+  checkMistake: "the check made a mistake",
+  other: "another reason",
+};
+
+/**
+ * The findings the couple dismissed from the last check of this document, to
+ * look at again rather than repeat or drop: each in the model's own words,
+ * with the reason they chose.
+ */
+function dismissedText(dismissed: readonly { kind: FindingKind; finding: CheckFinding; reason: DismissReason }[]) {
+  if (!dismissed.length) return "";
+  const lines = dismissed.map(({ kind, finding, reason }) => {
+    const part = finding.part ? ` (part "${finding.part}")` : "";
+    return `- ${kind === "issue" ? "Issue" : "Recommendation"}${part}: "${finding.en.title}": ${finding.en.detail} The couple says it's wrong: ${reasonText[reason]}.`;
+  });
+  return `\n\nIn the last check of this document, the couple dismissed these findings as wrong:\n${lines.join("\n")}\nLook at each one again, carefully, in these files. Report it only if the files clearly show it, and never mention that it was dismissed. Check everything else as usual.`;
+}
+
 export async function checkMessages({
   item,
   context,
   check,
   files,
   today,
+  dismissed = [],
 }: {
   item: RequiredDocument;
   context: string;
@@ -123,6 +148,8 @@ export async function checkMessages({
   files: ContentPart[];
   /** yyyy-mm-dd, in Israel. */
   today: string;
+  /** Dismissed from the item's last check (lib/checks/store.ts dismissedForNextCheck). */
+  dismissed?: readonly { kind: FindingKind; finding: CheckFinding; reason: DismissReason }[];
 }): Promise<ModelMessage[]> {
   return [
     { role: "system", content: [{ type: "text", text: await staticCheckPrompt(item), cache_control: { type: "ephemeral" } }] },
@@ -131,7 +158,7 @@ export async function checkMessages({
       content: [
         {
           type: "text",
-          text: `Today's date: ${today}\n\n${context}\n\nHow to check this document\n${guidance(check)}\n\nThe files:`,
+          text: `Today's date: ${today}\n\n${context}\n\nHow to check this document\n${guidance(check)}${dismissedText(dismissed)}\n\nThe files:`,
         },
         ...files,
       ],

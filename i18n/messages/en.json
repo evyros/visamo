@@ -1697,6 +1697,31 @@
           "israeliDeclaration": "Israeli partner's declaration",
           "foreignDeclaration": "Foreign partner's declaration",
           "landlordAffidavit": "Landlord's affidavit"
+        },
+        "dismiss": {
+          "menu": "More options",
+          "action": "Dismiss…",
+          "title": "Why is it wrong?",
+          "reasons": {
+            "alreadyThere": "It's already in the file",
+            "notApplicable": "It doesn't apply to us",
+            "checkMistake": "The check made a mistake",
+            "other": "Something else"
+          },
+          "note": "Note (optional)",
+          "noteRequired": "Note",
+          "hint": "Once marked, it won't be shown in the check's result anymore.",
+          "confirm": "Dismiss",
+          "cancel": "Cancel",
+          "count": {
+            "one": "1 dismissed finding",
+            "other": "{count} dismissed findings"
+          },
+          "show": "Show",
+          "hide": "Hide",
+          "by": "Dismissed by {name} · {reason}",
+          "undo": "Undo",
+          "error": "It couldn't be changed. Reload the page and try again."
         }
       },
       "drop": "or drop them here",
@@ -1876,6 +1901,14 @@
           "document.checked": {
             "male": "{name} checked {document}",
             "female": "{name} checked {document}"
+          },
+          "finding.dismissed": {
+            "male": "{name} dismissed a finding on {document}",
+            "female": "{name} dismissed a finding on {document}"
+          },
+          "finding.restored": {
+            "male": "{name} restored a finding on {document}",
+            "female": "{name} restored a finding on {document}"
           },
           "purchase.made": {
             "male": "{name} bought {product}",

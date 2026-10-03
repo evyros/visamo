@@ -4,7 +4,10 @@ import { SectionTabs, type NavItem } from "@/components/app/app-nav";
 import { Logo } from "@/components/logo";
 
 /** The admin panel's main screens: tabs in the top bar, a bottom tab bar on phones. */
-export const adminSections: NavItem[] = [{ href: "/users", label: "Users", icon: "people" }];
+export const adminSections: NavItem[] = [
+  { href: "/users", label: "Users", icon: "people" },
+  { href: "/dismissals", label: "Dismissed", icon: "alertCircle" },
+];
 
 /** The admin panel's top bar, laid out like the app's (components/app/app-header.tsx). */
 export function AdminHeader({ admin }: { admin: string }) {

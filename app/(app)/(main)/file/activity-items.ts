@@ -26,6 +26,8 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale,
       case "file.uploaded":
       case "file.deleted":
       case "document.checked":
+      case "finding.dismissed":
+      case "finding.restored":
         return { text: say(event.type, { document: document(event.data.documentKey) }) };
       case "partner.invited":
       case "invite.resent":

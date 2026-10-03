@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { ReviewOutcome } from "@/lib/admin-dismissals";
 import type { CreditTotals } from "@/lib/credits";
 import type { ProductId } from "@/lib/products";
 
@@ -15,6 +16,13 @@ const dateTime = new Intl.DateTimeFormat("en-GB", {
 export const formatDateTime = (date: Date) => dateTime.format(date);
 
 /** The products (lib/products.ts), by their names on the pricing page. */
+/** What the admin concluded about a dismissed finding (lib/checks/dismissals.ts). */
+export const reviewOutcomeLabels: Record<ReviewOutcome, string> = {
+  checkerWrong: "Checker was wrong",
+  checkerRight: "Checker was right",
+  unclear: "Unclear",
+};
+
 export const productLabels: Record<ProductId, string> = { messagePack: "Message pack", fileCheck: "Full file check" };
 
 /** What a case has bought. */

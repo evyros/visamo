@@ -14,6 +14,9 @@ export type CaseEvent =
   | { type: "file.deleted"; data: { documentKey: string; name: string } }
   /** `rating` is a CheckRating from lib/checks/result.ts. */
   | { type: "document.checked"; data: { documentKey: string; rating: string } }
+  /** A finding dismissed from a document's check, or the dismissal undone. `kind` is a FindingKind from lib/checks/dismissals.ts. */
+  | { type: "finding.dismissed"; data: { documentKey: string; kind: string } }
+  | { type: "finding.restored"; data: { documentKey: string; kind: string } }
   | { type: "partner.invited"; data: { email: string } }
   | { type: "invite.resent"; data: { email: string } }
   | { type: "invite.cancelled"; data: { email: string } }

@@ -1697,6 +1697,31 @@
           "israeliDeclaration": "הצהרת בן הזוג המזמין",
           "foreignDeclaration": "הצהרת בן הזוג המוזמן",
           "landlordAffidavit": "תצהיר של בעלי הדירה"
+        },
+        "dismiss": {
+          "menu": "אפשרויות נוספות",
+          "action": "סימון כשגוי",
+          "title": "למה זה שגוי?",
+          "reasons": {
+            "alreadyThere": "זה כבר מופיע בקבצים",
+            "notApplicable": "זה לא רלוונטי אלינו",
+            "checkMistake": "טעות בתוצאת הבדיקה",
+            "other": "משהו אחר"
+          },
+          "note": "הערה (לא חובה)",
+          "noteRequired": "הערה",
+          "hint": "אחרי הסימון, הממצא לא יוצג יותר בתוצאת הבדיקה.",
+          "confirm": "סימון כשגוי",
+          "cancel": "ביטול",
+          "count": {
+            "one": "ממצא אחד סומן כשגוי",
+            "other": "{count} ממצאים סומנו כשגויים"
+          },
+          "show": "הצגה",
+          "hide": "הסתרה",
+          "by": "סומן כשגוי על ידי {name} · {reason}",
+          "undo": "ביטול הסימון",
+          "error": "לא הצלחנו לשנות את זה. טענו מחדש את העמוד ונסו שוב."
         }
       },
       "drop": "או לגרור לכאן",
@@ -1876,6 +1901,14 @@
           "document.checked": {
             "male": "{name} בדק את {document}",
             "female": "{name} בדקה את {document}"
+          },
+          "finding.dismissed": {
+            "male": "{name} סימן ממצא כשגוי ב{document}",
+            "female": "{name} סימנה ממצא כשגוי ב{document}"
+          },
+          "finding.restored": {
+            "male": "{name} ביטל סימון של ממצא ב{document}",
+            "female": "{name} ביטלה סימון של ממצא ב{document}"
           },
           "purchase.made": {
             "male": "{name} רכש {product}",

@@ -4,20 +4,23 @@ import Link from "next/link";
 import { upload } from "@vercel/blob/client";
 import { useCallback, useEffect, useId, useRef, useState, type DragEvent, type ReactNode } from "react";
 import { deleteFile, finishUpload, startUpload, type UploadError } from "@/app/(app)/(main)/file/documents/actions";
+import { dismiss as dismissAction, undoDismiss, type DismissResult } from "@/app/(app)/(main)/file/documents/check-actions";
 import type { Locale } from "@/i18n/config";
 import { formatAgo } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
 import { buyUrl } from "@/lib/buy-paths";
 import { newTab } from "@/lib/site";
+import { dismissReasons, MAX_DISMISS_NOTE, type DismissReason, type FindingKind } from "@/lib/checks/dismissals";
 import type { CheckRating } from "@/lib/checks/result";
-import type { FindingView } from "@/lib/checks/view";
-import type { CheckView } from "@/lib/checks/view";
+import type { CheckView, DismissedView, FindingView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
 import { ACCEPTED_TYPES, MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
 import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/document-progress";
+import { Notice } from "@/components/app/auth-ui";
+import { Dialog } from "@/components/app/dialog";
 import { Icon } from "@/components/icons";
 
 // The documents page: the case's list, grouped by whose document it is, each
@@ -28,7 +31,9 @@ import { Icon } from "@/components/icons";
 //
 // A document can be checked (api/documents/check): all its files together.
 // The result shows while the files it checked are the ones there; once they
-// change, the document can be checked again.
+// change, the document can be checked again. A finding the couple says is
+// wrong can be dismissed, with a reason (check-actions.ts): the rating is
+// worked out again without it, and it stays folded under the others, to undo.
 //
 // Uploaded isn't done: a document is ready only once a check passed it (looks
 // good, or tips only). Without Full file check, uploaded is as far as it goes,
@@ -317,6 +322,24 @@ export function DocumentsBoard({
     }
   }
 
+  /**
+   * Dismisses a finding or undoes it; the item's check comes back with its
+   * rating worked out again. A failed dismissal says so in its dialog; a
+   * failed undo, on the card.
+   */
+  async function changeDismissal(documentKey: string, act: () => Promise<DismissResult>, { errorOnCard = true } = {}) {
+    const result = await act().catch((error) => {
+      console.error("dismissal failed", error);
+      return null;
+    });
+    if (!result || "error" in result) {
+      if (errorOnCard) setCheck(documentKey, { error: t.check.dismiss.error });
+      return false;
+    }
+    setCheck(documentKey, { last: result.check, error: undefined });
+    return true;
+  }
+
   // The checks as they are now, for items this page isn't waiting on itself.
   const refreshChecks = useCallback(() => {
     void currentChecks().then((now) =>
@@ -405,6 +428,16 @@ export function DocumentsBoard({
                   state={states[item.key]}
                   settings={settings}
                   onCheck={() => check(item.key)}
+                  dismissals={{
+                    onDismiss: (runId, kind, index, reason, note) =>
+                      changeDismissal(
+                        item.key,
+                        () => dismissAction({ documentKey: item.key, runId, kind, index, reason, note }),
+                        { errorOnCard: false },
+                      ),
+                    onUndo: (dismissalId) =>
+                      changeDismissal(item.key, () => undoDismiss({ documentKey: item.key, dismissalId })),
+                  }}
                   files={filesOf(item.key)}
                   pending={pending.filter((p) => p.documentKey === item.key)}
                   error={addErrors[item.key]}
@@ -491,6 +524,7 @@ function DocumentCard({
   state,
   settings,
   onCheck,
+  dismissals,
   files,
   pending,
   error,
@@ -504,6 +538,7 @@ function DocumentCard({
   state: DocState;
   settings: CheckSettings;
   onCheck: () => void;
+  dismissals: Dismissals;
   files: FileView[];
   pending: Pending[];
   error?: string;
@@ -576,6 +611,7 @@ function DocumentCard({
             uploaded={uploaded}
             uploading={pending.length > 0}
             onCheck={onCheck}
+            dismissals={dismissals}
           />
         ) : (
           <section aria-label={t.ask.label} className={footerClass}>
@@ -665,6 +701,7 @@ function CheckFooter({
   uploaded,
   uploading,
   onCheck,
+  dismissals,
 }: {
   t: Labels;
   locale: Locale;
@@ -675,6 +712,7 @@ function CheckFooter({
   uploaded: boolean;
   uploading: boolean;
   onCheck: () => void;
+  dismissals: Dismissals;
 }) {
   const c = t.check;
   const tipId = useId();
@@ -776,13 +814,21 @@ function CheckFooter({
           {/* One gap between every box, across the issues and the tips. */}
           <div className="mt-2.5 space-y-1.5">
             <Findings
+              t={t}
               kind={result.rating === "unreadable" ? "unreadable" : "issue"}
               label={c.issues}
-              parts={c.parts}
               list={result.issues}
+              onDismiss={(...args) => dismissals.onDismiss(result.runId, ...args)}
             />
             {result.rating === "unreadable" && <p className="text-[15px] text-slate-700">{c.unreadableHint}</p>}
-            <Findings kind="tip" label={c.recommendations} parts={c.parts} list={result.recommendations} />
+            <Findings
+              t={t}
+              kind="tip"
+              label={c.recommendations}
+              list={result.recommendations}
+              onDismiss={(...args) => dismissals.onDismiss(result.runId, ...args)}
+            />
+            <Dismissed t={t} list={result.dismissed} onUndo={dismissals.onUndo} />
           </div>
           <div className="mt-3">
             <AskLink documentKey={documentKey}>
@@ -816,38 +862,251 @@ const findingStyle = {
   unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500" },
 } as const;
 
+/** Dismissing a finding of the item's latest check, or undoing it: true once done. */
+type Dismissals = {
+  onDismiss: (runId: string, kind: FindingKind, index: number, reason: DismissReason, note: string) => Promise<boolean>;
+  onUndo: (dismissalId: string) => Promise<boolean>;
+};
+
+/** The kind of finding each list holds, for dismissing it; none for what couldn't be read. */
+const findingKindOf = { issue: "issue", tip: "recommendation", unreadable: null } as const;
+
 /**
  * A check's issues or recommendations, each in its own box, tinted and
  * edged by its kind, so there are no headings. `label` names the list for
  * screen readers. For a document made of parts, each box names its part
- * above its title.
+ * above its title. Each box has a quiet menu to dismiss it as wrong.
  */
 function Findings({
+  t,
   kind,
   label,
-  parts,
   list,
+  onDismiss,
 }: {
+  t: Labels;
   kind: keyof typeof findingStyle;
   label: string;
-  parts: Labels["check"]["parts"];
   list: FindingView[];
+  onDismiss: (kind: FindingKind, index: number, reason: DismissReason, note: string) => Promise<boolean>;
 }) {
   if (list.length === 0) return null;
   const style = findingStyle[kind];
+  const findingKind = findingKindOf[kind];
   return (
     <ul aria-label={label} className="space-y-1.5">
-      {list.map(({ title, detail, part }) => (
-        <li key={title + detail} className={`flex gap-2 rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
-          <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
-          <div className="min-w-0">
-            {part && <p className="text-xs font-semibold text-slate-600">{parts[part]}</p>}
-            {title && <p className="text-[15px] font-semibold text-navy-900">{title}</p>}
-            <p className="mt-0.5 text-sm text-slate-700">{detail}</p>
+      {list.map((finding) => (
+        <li key={finding.index} className={`rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
+          <div className="flex gap-2">
+            <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
+            <FindingText parts={t.check.parts} finding={finding} />
+            {findingKind && (
+              <FindingMenu
+                t={t}
+                finding={finding}
+                onDismiss={(reason, note) => onDismiss(findingKind, finding.index, reason, note)}
+              />
+            )}
           </div>
         </li>
       ))}
     </ul>
+  );
+}
+
+/** A finding's part (for a document made of parts), title and detail. */
+function FindingText({ parts, finding }: { parts: Labels["check"]["parts"]; finding: FindingView | DismissedView }) {
+  return (
+    <div className="min-w-0 flex-1">
+      {finding.part && <p className="text-xs font-semibold text-slate-600">{parts[finding.part]}</p>}
+      {finding.title && <p className="text-[15px] font-semibold text-navy-900">{finding.title}</p>}
+      <p className="mt-0.5 text-sm text-slate-700">{finding.detail}</p>
+    </div>
+  );
+}
+
+/**
+ * A finding's menu, at its box's end: "Dismiss…" opens a dialog asking why,
+ * from a closed list, with the finding quoted at its top. Two steps on
+ * purpose: dismissing is for the rare finding that's wrong, not a way to
+ * clear the list.
+ */
+function FindingMenu({
+  t,
+  finding,
+  onDismiss,
+}: {
+  t: Labels;
+  finding: FindingView;
+  onDismiss: (reason: DismissReason, note: string) => Promise<boolean>;
+}) {
+  const d = t.check.dismiss;
+  const [open, setOpen] = useState(false);
+  const [reason, setReason] = useState<DismissReason | null>(null);
+  const [note, setNote] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const name = useId();
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (event: PointerEvent) => !ref.current?.contains(event.target as Node) && setOpen(false);
+    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  // "Something else" says what.
+  const ready = reason !== null && (reason !== "other" || note.trim() !== "");
+
+  return (
+    <div ref={ref} className="relative -me-1.5 -mt-1 flex shrink-0 self-start">
+      <button
+        type="button"
+        aria-label={d.menu}
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        className="inline-flex size-7 items-center justify-center rounded-md text-slate-500 hover:bg-navy-900/5 hover:text-navy-900"
+      >
+        <Icon name="more" className="size-4" />
+      </button>
+      {open && (
+        <div className="absolute end-0 top-8 z-20 w-48 overflow-hidden rounded-[10px] border border-line-200 bg-white py-1 shadow-soft">
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              setReason(null);
+              setNote("");
+              setFailed(false);
+              dialog.current?.showModal();
+            }}
+            className="flex w-full items-center px-3 py-2 text-start text-[15px] text-navy-900 hover:bg-navy-900/5"
+          >
+            {d.action}
+          </button>
+        </div>
+      )}
+      <Dialog ref={dialog} title={d.title} closeLabel={d.cancel}>
+        <form
+          onSubmit={async (event) => {
+            event.preventDefault();
+            if (!ready || busy) return;
+            setBusy(true);
+            setFailed(false);
+            const done = await onDismiss(reason, note.trim());
+            setBusy(false);
+            // Kept open on a failure, so what they chose isn't lost.
+            if (done) dialog.current?.close();
+            else setFailed(true);
+          }}
+          className="space-y-4"
+        >
+          {failed && <Notice>{d.error}</Notice>}
+          <div className="rounded-lg border-s-4 border-s-line-200 bg-sand-50 px-3 py-2.5 leading-normal">
+            <FindingText parts={t.check.parts} finding={finding} />
+          </div>
+          <fieldset>
+            <legend className="sr-only">{d.title}</legend>
+            <div className="space-y-2">
+              {dismissReasons.map((r) => (
+                <label key={r} className="flex items-center gap-2.5 text-[15px] text-navy-900">
+                  <input
+                    type="radio"
+                    name={name}
+                    value={r}
+                    checked={reason === r}
+                    onChange={() => setReason(r)}
+                    className="size-4 accent-teal-600"
+                  />
+                  {d.reasons[r]}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <label className="block text-sm font-semibold text-navy-900">
+            {reason === "other" ? d.noteRequired : d.note}
+            <textarea
+              value={note}
+              onChange={(event) => setNote(event.target.value)}
+              maxLength={MAX_DISMISS_NOTE}
+              rows={3}
+              className="mt-1 block w-full rounded-lg border border-line-200 px-3 py-2 text-[15px] font-normal text-navy-900 focus-visible:outline-2 focus-visible:outline-teal-600"
+            />
+          </label>
+          <p className="text-sm text-slate-600">{d.hint}</p>
+          {/* At the end side, Dismiss outermost: bottom-left in Hebrew, bottom-right in English. */}
+          <div className="flex items-center justify-end gap-4 text-[15px] font-semibold">
+            <button type="button" onClick={() => dialog.current?.close()} className="text-slate-600 hover:underline">
+              {d.cancel}
+            </button>
+            <button
+              type="submit"
+              disabled={!ready || busy}
+              className="rounded-lg bg-navy-900 px-4 py-2 text-white hover:bg-navy-800 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500"
+            >
+              {d.confirm}
+            </button>
+          </div>
+        </form>
+      </Dialog>
+    </div>
+  );
+}
+
+/**
+ * The findings dismissed from the latest check, folded under the others:
+ * greyed, with who dismissed each and why, and a way to undo it.
+ */
+function Dismissed({ t, list, onUndo }: { t: Labels; list: DismissedView[]; onUndo: (id: string) => Promise<boolean> }) {
+  const d = t.check.dismiss;
+  const [open, setOpen] = useState(false);
+  const [undoing, setUndoing] = useState<string | null>(null);
+  const listId = useId();
+  if (list.length === 0) return null;
+  return (
+    <div>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={listId}
+        onClick={() => setOpen((o) => !o)}
+        className="text-sm text-slate-500 hover:text-navy-900"
+      >
+        {list.length === 1 ? d.count.one : format(d.count.other, { count: list.length })} ·{" "}
+        <span className="font-semibold underline-offset-2 hover:underline">{open ? d.hide : d.show}</span>
+      </button>
+      <ul id={listId} hidden={!open} className="mt-1.5 space-y-1.5">
+        {list.map((finding) => (
+          <li key={finding.id} className="rounded-lg border-s-4 border-s-line-200 bg-sand-50 px-3 py-2.5 leading-normal opacity-80">
+            <FindingText parts={t.check.parts} finding={finding} />
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
+              <span>
+                {format(d.by, { name: finding.dismissedByName ?? "", reason: d.reasons[finding.reason] })}
+              </span>
+              <button
+                type="button"
+                disabled={undoing === finding.id}
+                onClick={async () => {
+                  setUndoing(finding.id);
+                  await onUndo(finding.id);
+                  setUndoing(null);
+                }}
+                className="font-semibold text-teal-700 hover:underline"
+              >
+                {d.undo}
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

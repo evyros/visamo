@@ -6,7 +6,15 @@ import { CHECK_MODEL, completeJson, type Completion, type ModelMessage } from "@
 import { MAX_CHECK_PAGES, prepareFiles } from "@/lib/checks/files";
 import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
 import { checkResultSchema, isConsistent, parseCheck, settle, type CheckResult } from "@/lib/checks/result";
-import { caseChecks, checkBalance, claimCheck, failCheck, saveCheck, type CheckMetrics } from "@/lib/checks/store";
+import {
+  caseChecks,
+  checkBalance,
+  claimCheck,
+  dismissedForNextCheck,
+  failCheck,
+  saveCheck,
+  type CheckMetrics,
+} from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
 import { refund, spend } from "@/lib/credits";
 import { checkFor } from "@/lib/documents/checks";
@@ -16,7 +24,8 @@ import { findUserCase } from "@/lib/session";
 
 // Checks one item of the case's list: all its files (the document, and its
 // apostille or translation if they're there) go to the model together, which rates them and says what to
-// fix or improve. One check counts toward the case's fair-use limit, given
+// fix or improve. The findings the couple dismissed from the last run go with
+// them, for the model to look at again. One check counts toward the case's fair-use limit, given
 // back if it fails or the files can't be read. One check runs per item at a
 // time; the item's last result stays until the new one replaces it. Every
 // run is kept, failed ones too, for reviewing how checks work. GET gives
@@ -101,10 +110,12 @@ export async function POST(request: Request) {
   const documentKey = typeof body?.documentKey === "string" ? body.documentKey : "";
   if (!documentKey) return fail("invalid", 400);
 
-  const [{ fileCheck }, { details, branch }, allFiles] = await Promise.all([
+  const [{ fileCheck }, { details, branch }, allFiles, dismissed] = await Promise.all([
     checkBalance(caseId),
     caseDetails(caseId),
     caseFiles(caseId),
+    // Before this run is claimed: from the last finished one.
+    dismissedForNextCheck(caseId, documentKey),
   ]);
   if (!fileCheck) return fail("notIncluded", 402);
   const item = listOf(details).find((d) => d.key === documentKey);
@@ -160,7 +171,7 @@ export async function POST(request: Request) {
       }
       spent = true;
       const answer = await ask(
-        await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael() }),
+        await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael(), dismissed }),
         check.parts?.map((p) => p.part) ?? [],
         measured.calls,
       );

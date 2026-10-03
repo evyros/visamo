@@ -23,8 +23,11 @@ depending on their situation (below).
     אחרונה ממס הכנסה);
   - the confirmation of opening a business file, osek murshe or patur
     (אישור פתיחת תיק עוסק מורשה/פטור).
-- **Not working, but with an income:** bank statements showing the
-  deposits from any source of income.
+- **Other income** (a scholarship, a National Insurance (Bituach Leumi)
+  allowance such as disability, a pension, or any other regular income): a
+  confirmation from whoever pays it, for example the university or National
+  Insurance, or bank statements showing the deposits. It should show the
+  income is current, not one that ended long ago.
 - **Not working and no income:** a clear, signed letter explaining their
   situation (for example, a student, between jobs, or a homemaker), stating
   that the Israeli partner financially supports your shared life in Israel.
@@ -43,7 +46,9 @@ No. A shuma is only for the self-employed, never for employees: an employee
 brings payslips.
 
 **My partner doesn't work. What do we bring?**
-If they have an income anyway, bank statements showing the deposits. If
+If they have an income anyway, like a scholarship or an allowance, a
+confirmation from whoever pays it, or bank statements showing the
+deposits. If
 they have no income, a clear, signed letter explaining their situation,
 stating that the Israeli partner financially supports your shared life in
 Israel. With it, one of you shows you can support your life in Israel: a

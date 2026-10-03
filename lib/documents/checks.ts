@@ -614,9 +614,10 @@ export const checks = {
   },
   israeliIncomeProof: {
     required: [
-      "It is one of these: payslips; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (שומה), or the confirmation of opening a business file (עוסק מורשה או עוסק פטור); or, for someone not working, bank statements showing the income deposited, or a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",
+      "It is one of these: payslips; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (שומה), or the confirmation of opening a business file (עוסק מורשה או עוסק פטור); or, for any other income (a scholarship, a National Insurance allowance such as disability, a pension, or similar), a confirmation from whoever pays it, or bank statements showing the deposits; or, for someone with no income, a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",
       "Payslips: at least the last 3 months, and the latest is from one of the last 2 months, counted from today. Each shows the employer, the month and the pay, readably.",
       "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
+      "A confirmation of other income: it is from whoever pays it (for example a university or National Insurance), signed or stamped, and shows the amounts and the months paid. The income is current: the latest payment shown is from one of the last 3 months, counted from today, or it states the payments continue. Income that ended earlier is an issue.",
       "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the foreign partner financially supports their shared life in Israel.",
       "If it isn't in Hebrew, Arabic or English (an Israeli partner working for a business abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
     ],
@@ -629,9 +630,10 @@ export const checks = {
   },
   foreignIncomeProof: {
     required: [
-      "It is one of these: payslips; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (shuma), or the confirmation of opening a business file (עוסק מורשה או פטור); or, for someone not working, bank statements showing the income deposited, or a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",
+      "It is one of these: payslips; or, for the self-employed, an accountant's confirmation of the income reported for the last year, the latest annual tax assessment (shuma), or the confirmation of opening a business file (עוסק מורשה או פטור); or, for any other income (a scholarship, a National Insurance allowance such as disability, a pension, or similar), a confirmation from whoever pays it, or bank statements showing the deposits; or, for someone with no income, a signed letter explaining their situation. A shuma for an employee is an issue: it's only for the self-employed.",
       "Payslips: at least the last 3 months, and the latest is from one of the last 2 months, counted from today. Each shows the employer, the month and the pay, readably.",
       "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
+      "A confirmation of other income: it is from whoever pays it (for example a university or National Insurance), signed or stamped, and shows the amounts and the months paid. The income is current: the latest payment shown is from one of the last 3 months, counted from today, or it states the payments continue. Income that ended earlier is an issue.",
       "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the Israeli partner financially supports their shared life in Israel.",
       "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
     ],

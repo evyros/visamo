@@ -27,8 +27,11 @@ payslips and bank statements, and the shuma if they're self-employed.
     אחרונה ממס הכנסה);
   - the confirmation of opening a business file, osek murshe or patur
     (אישור פתיחת תיק עוסק מורשה/פטור).
-- **Not working, but with an income:** bank statements showing the
-  deposits from any source of income.
+- **Other income** (a scholarship, a National Insurance (Bituach Leumi)
+  allowance such as disability, a pension, or any other regular income): a
+  confirmation from whoever pays it, for example the university or National
+  Insurance, or bank statements showing the deposits. It should show the
+  income is current, not one that ended long ago.
 - **Not working and no income:** a clear, signed letter explaining their
   situation (for example, a student, between jobs, or a homemaker), stating
   that the foreign partner financially supports your shared life in Israel.

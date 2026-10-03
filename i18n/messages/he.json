@@ -1563,6 +1563,25 @@
     "documentsPage": {
       "intro": "כל מה שצריך להביא למשרד הפנים לבקשה הראשונה, לפי המצב שלכם.",
       "progress": "{done} מתוך {total} הועלו",
+      "progressHint": "מסמך שהועלה הוא עדיין לא מסמך תקין. בדיקת תיק מלאה בודקת כל מסמך מול מה שמשרד הפנים מבקש.",
+      "progressChecked": {
+        "ready": {
+          "one": "1 מוכן",
+          "other": "{count} מוכנים"
+        },
+        "fix": {
+          "one": "1 דורש תיקון",
+          "other": "{count} דורשים תיקון"
+        },
+        "unchecked": {
+          "one": "1 לא נבדק",
+          "other": "{count} לא נבדקו"
+        },
+        "notUploaded": {
+          "one": "1 לא הועלה",
+          "other": "{count} לא הועלו"
+        }
+      },
       "groups": {
         "couple": "משניכם",
         "israeli": "מ{name}",
@@ -1571,8 +1590,10 @@
         "retired": "כבר לא נדרשים"
       },
       "status": {
-        "todo": "לביצוע",
+        "todo": "לא הועלה",
         "uploaded": "הועלה",
+        "ready": "מוכן",
+        "readyTips": "מוכן · המלצות",
         "optional": "לא חובה, מומלץ",
         "retired": "לא נדרש"
       },
@@ -1712,6 +1733,8 @@
         "title": "מסמכים",
         "summary": "{done} מתוך {total} הועלו",
         "allDone": "כל המסמכים ברשימה שלכם הועלו.",
+        "readySummary": "{done} מתוך {total} מוכנים",
+        "allReady": "כל המסמכים ברשימה שלכם מוכנים.",
         "open": "למסמכים"
       },
       "details": {

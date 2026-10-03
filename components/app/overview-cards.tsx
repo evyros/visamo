@@ -1,6 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { Progress } from "@/lib/documents/progress";
+import {
+  ProgressBar,
+  StandingCounts,
+  type ProgressValue,
+  type StandingCount,
+} from "@/components/app/document-progress";
 
 // The overview's cards. The page works out every text; these only lay it out.
 
@@ -18,43 +23,27 @@ export function OverviewCard({ title, action, children }: { title: string; actio
 
 const linkClass = "text-[15px] font-semibold text-teal-700 underline-offset-4 hover:underline";
 
-function Bar({ progress, label, thin = false }: { progress: Progress; label: string; thin?: boolean }) {
-  const { done, total } = progress;
-  return (
-    <div
-      role="progressbar"
-      aria-valuemin={0}
-      aria-valuemax={total}
-      aria-valuenow={done}
-      aria-label={label}
-      className={`overflow-hidden rounded-full bg-line-200 ${thin ? "h-1.5" : "h-2"}`}
-    >
-      <div
-        className="h-full rounded-full bg-teal-600 transition-[width]"
-        style={{ width: `${total ? (done / total) * 100 : 0}%` }}
-      />
-    </div>
-  );
-}
-
 export function ProgressCard({
   title,
-  summary,
-  allDone,
   open,
-  progress,
+  value,
+  summary,
+  counts,
+  complete,
   groups,
 }: {
   title: string;
-  summary: string;
-  /** Shown once everything counted is uploaded. */
-  allDone: string;
   open: string;
-  progress: Progress;
+  value: ProgressValue;
+  /** The line above the bar, and its label; with counts, the label only. */
+  summary: string;
+  /** With Full file check: the counts, shown above the bar in place of the summary. */
+  counts?: StandingCount[];
+  /** Shown once every counted document is done. */
+  complete: string | null;
   /** One row per whose documents they are, linking to that group on the documents page. */
-  groups: { href: string; title: string; summary: string; progress: Progress }[];
+  groups: { href: string; title: string; summary: string; value: ProgressValue }[];
 }) {
-  const complete = progress.total > 0 && progress.done === progress.total;
   return (
     <OverviewCard
       title={title}
@@ -64,11 +53,18 @@ export function ProgressCard({
         </Link>
       }
     >
-      <p className="font-semibold text-navy-900">{summary}</p>
+      {counts ? (
+        <StandingCounts counts={counts} />
+      ) : (
+        <p className="font-semibold text-navy-900">{summary}</p>
+      )}
       <div className="mt-3">
-        <Bar progress={progress} label={summary} />
+        <ProgressBar value={value} label={summary} />
       </div>
-      {complete && <p className="mt-3 text-[15px] text-teal-700">{allDone}</p>}
+      {/* Green only once everything's ready: all uploaded isn't a pass. */}
+      {complete && (
+        <p className={`mt-3 text-[15px] ${value.kind === "checks" ? "text-teal-700" : "text-slate-700"}`}>{complete}</p>
+      )}
       <ul className="mt-5 space-y-3">
         {groups.map((g) => (
           <li key={g.href}>
@@ -78,7 +74,7 @@ export function ProgressCard({
                 <span className="shrink-0 text-sm text-slate-600">{g.summary}</span>
               </span>
               <span className="mt-1.5 block">
-                <Bar progress={g.progress} label={`${g.title}: ${g.summary}`} thin />
+                <ProgressBar value={g.value} label={`${g.title}: ${g.summary}`} thin />
               </span>
             </Link>
           </li>

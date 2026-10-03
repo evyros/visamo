@@ -1563,6 +1563,25 @@
     "documentsPage": {
       "intro": "Everything to bring to Misrad Hapnim for your first application, for your situation.",
       "progress": "{done} of {total} uploaded",
+      "progressHint": "Uploaded isn't the same as accepted. With Full file check, every document is checked against what Misrad Hapnim asks for.",
+      "progressChecked": {
+        "ready": {
+          "one": "1 ready",
+          "other": "{count} ready"
+        },
+        "fix": {
+          "one": "1 needs fixing",
+          "other": "{count} need fixing"
+        },
+        "unchecked": {
+          "one": "1 unchecked",
+          "other": "{count} unchecked"
+        },
+        "notUploaded": {
+          "one": "1 not uploaded",
+          "other": "{count} not uploaded"
+        }
+      },
       "groups": {
         "couple": "From both of you",
         "israeli": "From {name}",
@@ -1571,8 +1590,10 @@
         "retired": "No longer needed"
       },
       "status": {
-        "todo": "To do",
+        "todo": "Not uploaded",
         "uploaded": "Uploaded",
+        "ready": "Ready",
+        "readyTips": "Ready · tips",
         "optional": "Optional & recommended",
         "retired": "Not needed"
       },
@@ -1712,6 +1733,8 @@
         "title": "Documents",
         "summary": "{done} of {total} uploaded",
         "allDone": "Every document on your list is uploaded.",
+        "readySummary": "{done} of {total} ready",
+        "allReady": "Every document on your list is ready.",
         "open": "Go to documents"
       },
       "details": {

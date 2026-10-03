@@ -9,7 +9,17 @@ import type { BranchCode, CaseDetails, Stage } from "@/lib/case-options";
 import { otherMembers, pendingInvite } from "@/lib/case";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
-import { ownerOrder, progressByOwner, progressOf, uploadedKeys } from "@/lib/documents/progress";
+import { caseChecks } from "@/lib/checks/store";
+import {
+  checkedProgressByOwner,
+  checkedProgressOf,
+  ownerOrder,
+  progressByOwner,
+  progressOf,
+  standingOf,
+  uploadedKeys,
+  type CheckedProgress,
+} from "@/lib/documents/progress";
 import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
 import {
@@ -19,6 +29,7 @@ import {
   ProgressCard,
   type DetailsSection,
 } from "@/components/app/overview-cards";
+import { standingCounts, type ProgressValue } from "@/components/app/document-progress";
 import { InviteBanner } from "@/components/app/invite-banner";
 import { StageCard } from "@/components/app/stage-card";
 import { activityItem } from "./activity-items";
@@ -60,22 +71,22 @@ export default async function FileOverviewPage() {
       .filter(Boolean)
       .join(" · ");
 
-  // Documents.
+  // Documents: counted by upload, or with Full file check, by where each stands, as on the documents page.
   const list = listOf(details);
   const uploaded = uploadedKeys(files);
-  const progress = progressOf(list, uploaded);
-  const summary = (p: typeof progress) => format(t.progress.summary, p);
   const groupTitle = {
     couple: messages.app.documentsPage.groups.couple,
     israeli: format(messages.app.documentsPage.groups.israeli, { name: details.israeli.name }),
     foreign: format(messages.app.documentsPage.groups.foreign, { name: details.foreign.name }),
     children: messages.app.documentsPage.groups.children,
   };
-  const groups = progressByOwner(list, uploaded, ownerOrder).map((g) => ({
-    href: `/file/documents#${g.owner}`,
-    title: groupTitle[g.owner],
-    summary: summary(g.progress),
-    progress: g.progress,
+  const documents = row.fileCheck
+    ? checkedDocuments(list, uploaded, await caseChecks(caseId), messages, locale)
+    : uploadedDocuments(list, uploaded, messages);
+  const groups = documents.groups.map(({ owner, ...g }) => ({
+    href: `/file/documents#${owner}`,
+    title: groupTitle[owner],
+    ...g,
   }));
 
   // The partner the invite banner is about: the other person in the case.
@@ -113,10 +124,11 @@ export default async function FileOverviewPage() {
         <div className="grid grid-cols-1 gap-6">
           <ProgressCard
             title={t.progress.title}
-            summary={summary(progress)}
-            allDone={t.progress.allDone}
             open={t.progress.open}
-            progress={progress}
+            value={documents.value}
+            summary={documents.summary}
+            counts={documents.counts}
+            complete={documents.complete}
             groups={groups}
           />
           <ActivityCard
@@ -137,6 +149,57 @@ export default async function FileOverviewPage() {
       </div>
     </div>
   );
+}
+
+type DocumentList = ReturnType<typeof listOf>;
+
+/** The documents' progress, counting uploads: without Full file check. */
+function uploadedDocuments(list: DocumentList, uploaded: ReadonlySet<string>, messages: Messages) {
+  const t = messages.app.overview.progress;
+  const progress = progressOf(list, uploaded);
+  return {
+    value: { kind: "uploads", progress } satisfies ProgressValue,
+    summary: format(t.summary, progress),
+    counts: undefined,
+    complete: progress.total > 0 && progress.done === progress.total ? t.allDone : null,
+    groups: progressByOwner(list, uploaded, ownerOrder).map((g) => ({
+      owner: g.owner,
+      summary: format(t.summary, g.progress),
+      value: { kind: "uploads", progress: g.progress } satisfies ProgressValue,
+    })),
+  };
+}
+
+/** The documents' progress with Full file check: each document by where it stands, ready only once a check passed it. */
+function checkedDocuments(
+  list: DocumentList,
+  uploaded: ReadonlySet<string>,
+  checks: Awaited<ReturnType<typeof caseChecks>>,
+  messages: Messages,
+  locale: Locale,
+) {
+  const t = messages.app.overview.progress;
+  const standing = new Map(
+    list.map((d) => {
+      const check = checks.get(d.key);
+      const rating = check?.fresh && check.result ? check.result.rating : null;
+      return [d.key, standingOf(uploaded.has(d.key), check?.checkable ?? false, rating)] as const;
+    }),
+  );
+  const progress = checkedProgressOf(list, standing);
+  const counts = standingCounts(progress, messages.app.documentsPage.progressChecked, locale);
+  const readySummary = (p: CheckedProgress) => format(t.readySummary, { done: p.ready, total: p.total });
+  return {
+    value: { kind: "checks", progress } satisfies ProgressValue,
+    summary: counts.map((c) => c.text).join(", "),
+    counts,
+    complete: progress.total > 0 && progress.ready === progress.total ? t.allReady : null,
+    groups: checkedProgressByOwner(list, standing, ownerOrder).map((g) => ({
+      owner: g.owner,
+      summary: readySummary(g.progress),
+      value: { kind: "checks", progress: g.progress } satisfies ProgressValue,
+    })),
+  };
 }
 
 /**

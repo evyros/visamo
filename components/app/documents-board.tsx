@@ -13,9 +13,10 @@ import { newTab } from "@/lib/site";
 import type { CheckRating, FindingText } from "@/lib/checks/result";
 import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
-import { progressOf, uploadedKeys } from "@/lib/documents/progress";
+import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
 import { ACCEPTED_TYPES, MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
+import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/document-progress";
 import { Icon } from "@/components/icons";
 
 // The documents page: the case's list, grouped by whose document it is, each
@@ -27,6 +28,10 @@ import { Icon } from "@/components/icons";
 // A document can be checked (api/documents/check): all its files together.
 // The result shows while the files it checked are the ones there; once they
 // change, the document can be checked again.
+//
+// Uploaded isn't done: a document is ready only once a check passed it (looks
+// good, or tips only). Without Full file check, uploaded is as far as it goes,
+// and the progress counts uploads; with it, the progress counts ready documents.
 
 type Labels = Messages["app"]["documentsPage"];
 
@@ -67,6 +72,23 @@ const sameSet = (a: readonly string[], b: readonly string[]) => {
   const sorted = [...b].sort();
   return a.length === b.length && [...a].sort().every((id, i) => id === sorted[i]);
 };
+
+/** The result, while it was checked against these very files and the current details. */
+function freshResult(check: ItemCheck, files: readonly FileView[]) {
+  const last = check.last;
+  return last && last.contextFresh && sameSet(last.fileIds, files.map((f) => f.id)) ? last : null;
+}
+
+/** Where a document stands: nothing yet, uploaded, or its current check's verdict. */
+type DocState = "todo" | "uploaded" | "ready" | "readyTips" | "needsFixing" | "unreadable";
+
+function docState(uploaded: boolean, result: CheckView | null): DocState {
+  if (!uploaded) return "todo";
+  if (!result) return "uploaded";
+  if (result.rating === "looksGood") return "ready";
+  if (result.rating === "canImprove") return "readyTips";
+  return result.rating;
+}
 
 export type DocumentGroup = { owner: Owner; title: string; items: DocumentItem[] };
 
@@ -321,27 +343,50 @@ export function DocumentsBoard({
     return () => clearInterval(timer);
   }, [waitingOnOthers, refreshChecks]);
 
-  const { done: ready, total } = progressOf(groups.flatMap((g) => g.items), uploadedKeys(files));
+  const items = groups.flatMap((g) => g.items);
+  const filesOf = (key: string) => files.filter((f) => f.documentKey === key);
+  // Each card's status pill, and where it stands in the progress.
+  const states: Record<string, DocState> = {};
+  const standing = new Map<string, Standing>();
+  for (const item of items) {
+    const here = filesOf(item.key);
+    const result = freshResult(checks[item.key], here);
+    states[item.key] = docState(here.length > 0, result);
+    standing.set(item.key, standingOf(here.length > 0, item.check.checkable, result?.rating ?? null));
+  }
+  const uploads = progressOf(items, uploadedKeys(files));
+  const checked = checkedProgressOf(items, standing);
+  const counts = standingCounts(checked, t.progressChecked, locale);
   // A retired document's files can only be removed; once they all are, it goes.
   const retiredLeft = retired.filter((r) => files.some((f) => f.documentKey === r.key));
 
   return (
     <>
       <section className="mt-6 rounded-card border border-line-200 bg-white p-5">
-        <p className="font-semibold text-navy-900">{format(t.progress, { done: ready, total })}</p>
-        <div
-          role="progressbar"
-          aria-valuemin={0}
-          aria-valuemax={total}
-          aria-valuenow={ready}
-          aria-label={format(t.progress, { done: ready, total })}
-          className="mt-3 h-2 overflow-hidden rounded-full bg-line-200"
-        >
-          <div
-            className="h-full rounded-full bg-teal-600 transition-[width]"
-            style={{ width: `${total ? (ready / total) * 100 : 0}%` }}
-          />
-        </div>
+        {settings.allowed ? (
+          <>
+            <StandingCounts counts={counts} />
+            <div className="mt-3">
+              <ProgressBar
+                value={{ kind: "checks", progress: checked }}
+                label={counts.map((c) => c.text).join(", ")}
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="font-semibold text-navy-900">{format(t.progress, uploads)}</p>
+            <div className="mt-3">
+              <ProgressBar value={{ kind: "uploads", progress: uploads }} label={format(t.progress, uploads)} />
+            </div>
+            <p className="mt-3 text-sm text-slate-600">
+              {t.progressHint}{" "}
+              <Link href={buyUrl("/file/documents")} className="font-semibold text-teal-700 hover:underline">
+                {t.check.upgrade}
+              </Link>
+            </p>
+          </>
+        )}
       </section>
 
       {groups.map((group) => (
@@ -356,9 +401,10 @@ export function DocumentsBoard({
                   locale={locale}
                   intlLocale={intlLocale}
                   check={checks[item.key]}
+                  state={states[item.key]}
                   settings={settings}
                   onCheck={() => check(item.key)}
-                  files={files.filter((f) => f.documentKey === item.key)}
+                  files={filesOf(item.key)}
                   pending={pending.filter((p) => p.documentKey === item.key)}
                   error={addErrors[item.key]}
                   onAdd={(chosen, replaces) => add(item.key, chosen, replaces)}
@@ -441,6 +487,7 @@ function DocumentCard({
   locale,
   intlLocale,
   check,
+  state,
   settings,
   onCheck,
   files,
@@ -453,6 +500,7 @@ function DocumentCard({
   locale: Locale;
   intlLocale: string;
   check: ItemCheck;
+  state: DocState;
   settings: CheckSettings;
   onCheck: () => void;
   files: FileView[];
@@ -462,9 +510,7 @@ function DocumentCard({
   const [open, setOpen] = useState(false);
   const bodyId = useId();
   const uploaded = files.length > 0;
-  // The result applies while it was checked against these very files and the current details.
-  const last = check.last;
-  const fresh = !!last && last.contextFresh && sameSet(last.fileIds, files.map((f) => f.id));
+  const fresh = !!freshResult(check, files);
 
   return (
     <div className="rounded-card border border-line-200 bg-white">
@@ -478,16 +524,10 @@ function DocumentCard({
         <span className="min-w-0 flex-1">
           <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="font-semibold text-navy-900">{item.title}</span>
-            <Status t={t} uploaded={uploaded} optional={item.optional} />
+            <Status t={t} state={state} optional={item.optional} />
           </span>
         </span>
-        {/* At the row's end, so every card's rating lines up with the others'. Each sits
-            in a box one text line tall, centered on the title's first line. */}
-        {fresh && (
-          <span className="flex h-[1lh] shrink-0 items-center">
-            <CheckPill rating={last.rating} label={t.check.ratings[last.rating]} />
-          </span>
-        )}
+        {/* In a box one text line tall, centered on the title's first line. */}
         <span className="flex h-[1lh] shrink-0 items-center">
           <Icon
             name="chevronDown"
@@ -606,22 +646,6 @@ function CheckIcon({ rating, label }: { rating: CheckRating; label: string }) {
       className={`inline-flex size-6 shrink-0 items-center justify-center rounded-full text-white ${color}`}
     >
       <Icon name={icon} className="size-4" />
-    </span>
-  );
-}
-
-/**
- * The rating in a card's header: its icon and label on its tint. The label
- * is dark on every tint: amber text on pale amber would be too faint to read.
- */
-function CheckPill({ rating, label }: { rating: CheckRating; label: string }) {
-  const { icon, tint, text } = ratingStyle[rating];
-  return (
-    <span
-      className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold text-navy-900 ${tint}`}
-    >
-      <Icon name={icon} className={`size-4 ${text}`} />
-      {label}
     </span>
   );
 }
@@ -821,20 +845,43 @@ function Findings({
   );
 }
 
-function Status({ t, uploaded, optional }: { t: Labels; uploaded: boolean; optional: boolean }) {
-  if (!uploaded) {
-    return (
-      <span className="rounded-full bg-sand-50 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-        {optional ? t.status.optional : t.status.todo}
-      </span>
-    );
+/**
+ * The card's status by its title. Green is only for a document a check passed;
+ * uploaded is neutral, and stays so once its files change after a check. A
+ * failed check shows its rating, its label dark on the tint: amber or red text
+ * on a pale tint would be too faint to read.
+ */
+function Status({ t, state, optional }: { t: Labels; state: DocState; optional: boolean }) {
+  const pill = "inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold";
+  switch (state) {
+    case "todo":
+      // An outline, inset so it's the same size as the filled pills.
+      return (
+        <span className={`${pill} text-slate-600 ring-1 ring-slate-300 ring-inset`}>
+          {optional ? t.status.optional : t.status.todo}
+        </span>
+      );
+    case "uploaded":
+      return <span className={`${pill} bg-navy-900/5 text-navy-900`}>{t.status.uploaded}</span>;
+    case "ready":
+    case "readyTips":
+      return (
+        <span className={`${pill} bg-teal-100 text-teal-700`}>
+          <Icon name="checkCircle" className="size-3.5" />
+          {t.status[state]}
+          {state === "readyTips" && <span aria-hidden className="ms-0.5 size-1.5 rounded-full bg-amber-500" />}
+        </span>
+      );
+    default: {
+      const { icon, tint, text } = ratingStyle[state];
+      return (
+        <span className={`${pill} text-navy-900 ${tint}`}>
+          <Icon name={icon} className={`size-3.5 ${text}`} />
+          {t.check.ratings[state]}
+        </span>
+      );
+    }
   }
-  return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-700">
-      <Icon name="checkCircle" className="size-3.5" />
-      {t.status.uploaded}
-    </span>
-  );
 }
 
 const accept = ACCEPTED_TYPES.join(",");

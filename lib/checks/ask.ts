@@ -1,6 +1,7 @@
 import "server-only";
-import { CHECK_MODEL, completeJson, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
-import type { CheckShape } from "./lines";
+import { CHECK_MODELS, completeJson, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
+import type { DocumentCheck } from "@/lib/documents/checks";
+import { checkShape } from "./lines";
 import { checkResultSchema, isConsistent, parseCheck, settle, type CheckResult } from "./result";
 
 // One check's model call, as the app makes it and the evals (evals/checks)
@@ -21,6 +22,9 @@ const describe = (call: Completion) =>
 /** Makes one model call; the evals pass one that caches. */
 export type Complete = typeof completeJson;
 
+/** The model a document's check runs on. */
+export const checkModel = (check: DocumentCheck) => CHECK_MODELS[check.model ?? "standard"];
+
 /**
  * The model's answer, asked for once more if it's malformed or its rating
  * doesn't fit its findings. Each call goes into `calls` as it's made, so a
@@ -28,13 +32,14 @@ export type Complete = typeof completeJson;
  */
 export async function askCheck(
   messages: ModelMessage[],
-  shape: CheckShape,
+  check: DocumentCheck,
   calls: Completion[],
   complete: Complete = completeJson,
 ): Promise<{ result: CheckResult; corrected: boolean }> {
+  const shape = checkShape(check);
   const call = async () => {
     const completion = await complete(messages, {
-      model: CHECK_MODEL,
+      model: checkModel(check),
       maxTokens: MAX_ANSWER_TOKENS,
       name: "document_check",
       schema: checkResultSchema(shape),

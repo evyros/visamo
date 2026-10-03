@@ -10,11 +10,19 @@ const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-5.6-luna";
 
 /**
- * The document checker's model: Gemini Flash, on trial against Claude Sonnet,
- * which reads scanned Hebrew contracts well but costs about 3x as much. Haiku
- * misreads them (names, dates). OPENROUTER_CHECK_MODEL overrides it.
+ * The document checker's models, by what a document's check asks for
+ * (lib/documents/checks.ts). "standard" for most: Gemini Flash. "strong" for
+ * the hardest to read, such as a scanned form with handwritten ticks and
+ * signatures: Claude Sonnet, which reads scanned Hebrew well but costs about
+ * 3x as much. Haiku misreads them (names, dates). OPENROUTER_CHECK_MODEL and
+ * OPENROUTER_STRONG_CHECK_MODEL override them.
  */
-export const CHECK_MODEL = process.env.OPENROUTER_CHECK_MODEL || "google/gemini-3.8-flash";
+export const CHECK_MODELS = {
+  standard: process.env.OPENROUTER_CHECK_MODEL || "google/gemini-3.8-flash",
+  strong: process.env.OPENROUTER_STRONG_CHECK_MODEL || "anthropic/claude-sonnet-5.5",
+} as const;
+
+export type CheckModel = keyof typeof CHECK_MODELS;
 
 type TextPart = { type: "text"; text: string; cache_control?: { type: "ephemeral" } };
 /** An image, as a data: URL. */

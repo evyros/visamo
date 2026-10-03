@@ -52,6 +52,11 @@ describe("checkFor", () => {
     expect(abroad.parts?.find((p) => p.part === "foreignDeclaration")?.required).toEqual([]);
   });
 
+  it("checks form AS/6 on the strong model, and other documents on the standard one", () => {
+    expect(checkFor("statusApplicationMarried", ["as6Application"])?.model).toBe("strong");
+    expect(checkFor("relationshipStory")?.model).toBeUndefined();
+  });
+
   it("follows the AS/6 declarations, merged into the form, to its check", () => {
     for (const old of ["israeliAffidavitMarried", "foreignAffidavitMarried", "landlordAffidavit"]) {
       expect(checkFor(old, ["as6Application"])?.parts?.[0].part, old).toBe("application");

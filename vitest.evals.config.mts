@@ -26,6 +26,7 @@ export default defineConfig({
     env: { OPENROUTER_API_KEY: key },
     testTimeout: 15 * 60_000,
     hookTimeout: 60_000,
-    maxConcurrency: Number(process.env.EVAL_CONCURRENCY ?? 4),
+    // Cases at once; each sends its runs together.
+    maxConcurrency: Number(process.env.EVAL_CONCURRENCY ?? 8),
   },
 });

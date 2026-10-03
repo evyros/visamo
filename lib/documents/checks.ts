@@ -1,4 +1,5 @@
 import "server-only";
+import type { CheckModel } from "@/lib/chat/openrouter";
 import { DOCUMENT_ALIASES, type DocumentId } from "./catalog";
 import type { Part, Point } from "./points";
 
@@ -14,6 +15,9 @@ import type { Part, Point } from "./points";
 //                good" from "can be improved".
 //   maxPages     the most pages one check sends, when the document is
 //                usually longer than the default (lib/checks/files.ts).
+//   model        "strong" for a document the standard model misreads, such
+//                as a scanned form with handwritten ticks and signatures: it
+//                costs more a check (lib/chat/openrouter.ts CHECK_MODELS).
 //   parts        for a document made of parts uploaded together (form AS/6):
 //                each part's own required and recommended lines. Each
 //                finding then names its part.
@@ -35,6 +39,7 @@ export type DocumentCheck = {
   required: readonly string[];
   recommended: readonly string[];
   maxPages?: number;
+  model?: CheckModel;
   parts?: readonly CheckPart[];
 };
 
@@ -124,9 +129,14 @@ const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
     name: "The application: the sections \"פרטי המזמין/ה\" and \"פרטי המוזמן/ת\", and the applicants' declaration (\"הצהרת המבקשים\")",
     required: [
       "It is form AS/6, \"בקשה לקבלת מעמד בישראל לבן זוג זר הנשוי לישראלי\", with the application (the sections \"פרטי המזמין/ה\" and \"פרטי המוזמן/ת\") and the applicants' declaration (\"הצהרת המבקשים\").",
-      "One request is marked: permanent residency (בקשה לישיבת קבע) or naturalization (בקשה להתאזרחות).",
+      // No line for the request boxes (permanent residency or naturalization), on purpose. In the
+      // evals (October 2026), no model could tell an empty box from a marked one: they're tiny printed
+      // squares, next to a box that says "נא לסמן x". Sonnet missed an empty one in 2 of 3 checks, even
+      // told where to look; Gemini 3.1 Pro said marked ones were empty. A line that's wrong that often
+      // does more harm than good. Bring it back only with a model that passes evals/checks
+      // statusApplicationMarried with a case of an empty request box, 3 of 3.
       "The Israeli partner's details are filled in: status (citizen or permanent resident), ID number, family and first name, date of birth, gender, civil status, address and a phone number.",
-      "The foreign partner's details are filled in: passport number and expiry, family and first name, date of birth, gender, civil status, citizenship, address abroad and a phone number.",
+      "The foreign partner's details are filled in: passport number and expiry, family and first name, date of birth, gender, civil status, citizenship and a phone number. The address abroad (המען בחו\"ל: country, city, street and number) is filled in too, unless the file says the foreign partner is in Israel: then it can be empty.",
       "If the file says children are moving with the foreign partner, the accompanying minors section (קטינים נלווים) lists them, and whether the other parent's consent is attached is marked.",
       "The applicants' declaration is signed by both partners, each with their name, ID number and the date.",
       "The office's parts (received by, the clerk's name, the receipt, \"לשימוש משרדי\") are empty.",
@@ -145,7 +155,7 @@ const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
     required: [
       "It is the Israeli partner's declaration from form AS/6, titled \"הצהרת בן הזוג המזמין\", with the whole page: the five statements, the explanation lines, the signature line and the confirmation section.",
       "Each of the five statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
-      "The place, the date and the Israeli partner's signature are filled in.",
+      "The Israeli partner has signed on the signature line (חתימת המזמין/ה): there's handwriting on the line itself. A filled place or date isn't a signature. The place and the date are filled in too.",
       "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
     ],
     recommended: ["The ticks are clear, and the page is scanned straight and readable in full."],
@@ -156,7 +166,7 @@ const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
     name: "The foreign partner's declaration, titled \"הצהרת בן הזוג המוזמן\"",
     required: [
       ...foreignDeclarationLines,
-      "The place, the date and the foreign partner's signature are filled in.",
+      "The foreign partner has signed on the signature line (חתימת המוזמן/ת): there's handwriting on the line itself. A filled place or date isn't a signature. The place and the date are filled in too.",
       "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
     ],
     recommended: ["The ticks are clear, and the page is scanned straight and readable in full."],
@@ -183,7 +193,7 @@ const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
       "The tenant whose application it supports is named, with their ID number.",
       "The home's address is filled in, with its size, and the statement that it's rented to the couple.",
       "The bills table is filled in: for electricity, water, phone and arnona, whether the landlord or the tenant pays.",
-      "The date and the landlord's name and signature are filled in.",
+      "The landlord has signed (שם וחתימת המצהיר): there's a handwritten signature, not only a name. The date is filled in too.",
       "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name, license number and date, the declarer's ID number, and their stamp and signature.",
       "A copy of the landlord's Teudat Zehut is uploaded with it.",
       "The section on who else lives in the home is filled in, or clearly marked that no one else does.",
@@ -201,6 +211,8 @@ function as6Check(points: readonly Point[]): DocumentCheck {
   return {
     required: [],
     recommended: [],
+    // Scanned, with handwritten ticks and signatures: the standard model misread them in the evals.
+    model: "strong",
     parts: points.flatMap((point) => (point in as6Parts ? [as6Parts[point as keyof typeof as6Parts]] : [])),
   };
 }

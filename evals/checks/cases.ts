@@ -3,7 +3,7 @@ import path from "node:path";
 import { regionName } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import en from "@/i18n/messages/en.json";
-import type { BranchCode, CaseDetails } from "@/lib/case-options";
+import type { BranchCode, CaseDetails, PersonInput } from "@/lib/case-options";
 import { checkLines, type CheckLine } from "@/lib/checks/lines";
 import { checkRatings, type CheckRating } from "@/lib/checks/result";
 import { buildDocumentList, type RequiredDocument } from "@/lib/documents/build";
@@ -25,7 +25,9 @@ import { scenarios, type ScenarioName } from "@/lib/documents/scenarios";
 //     ]
 //   }
 //
-// A case can set its own "scenario", "today" and "branch". What it expects:
+// A case can set its own "scenario", "today" and "branch", and change the
+// couple's details with "israeli" and "foreign" (their names, say, to match
+// the files), over the scenario's. What it expects:
 //
 //   rating        the rating, or the ratings that are all fine
 //   flagged       the checks the checker has to report
@@ -37,7 +39,8 @@ import { scenarios, type ScenarioName } from "@/lib/documents/scenarios";
 // A check is named by a piece of its text (any case), unique in the
 // document, with "part: " in front for a document of parts
 // ("foreignDeclaration: stamp and signature"). Not by its id: ids move when
-// a check is added.
+// a check is added. In mayFlag, "*" names every check, and "part: *" every
+// check of a part: for files that aren't the document at all.
 
 const ROOT = path.join(process.cwd(), "evals/checks");
 
@@ -56,6 +59,8 @@ type CaseSpec = {
   scenario?: ScenarioName;
   today?: string;
   branch?: BranchCode;
+  israeli?: Partial<PersonInput>;
+  foreign?: Partial<PersonInput>;
   expect: {
     rating?: CheckRating | CheckRating[];
     flagged?: string[];
@@ -129,6 +134,7 @@ function loadSuite(folder: string): EvalCase[] {
       continue;
     }
     const list = buildDocumentList(snapshot);
+    // The list is the scenario's: changing names never changes what's on it.
     const item = list.find((d) => d.key === documentKey) ?? list.find((d) => d.id === documentKey);
     if (!item) {
       errors.push(`${id}: "${documentKey}" isn't on ${scenarioName}'s list (${list.map((d) => d.key).join(", ")})`);
@@ -142,6 +148,8 @@ function loadSuite(folder: string): EvalCase[] {
     const lines = checkLines(check);
     const resolve = (refs: string[] = []) =>
       refs.flatMap((ref) => {
+        const all = /^(?:(\w+):\s*)?\*$/.exec(ref);
+        if (all) return lines.filter((l) => !all[1] || l.part === all[1]);
         const line = resolveLine(ref, lines);
         if (typeof line === "string") errors.push(`${id}: ${line}`);
         return typeof line === "string" ? [] : [line];
@@ -157,8 +165,8 @@ function loadSuite(folder: string): EvalCase[] {
     });
     if (!files.length) errors.push(`${id}: no files`);
 
-    const israeli = snapshot.people.find((p) => p.isIsraeli)!;
-    const foreign = snapshot.people.find((p) => !p.isIsraeli)!;
+    const israeli = { ...snapshot.people.find((p) => p.isIsraeli)!, ...suite.israeli, ...spec.israeli };
+    const foreign = { ...snapshot.people.find((p) => !p.isIsraeli)!, ...suite.foreign, ...spec.foreign };
     cases.push({
       id,
       folder,

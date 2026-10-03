@@ -4,6 +4,7 @@ import {
   judged,
   pct,
   totals,
+  shortModel,
   usd,
   type CaseChange,
   type CaseRecord,
@@ -16,8 +17,8 @@ import {
 } from "./results";
 
 // The run's report as one HTML page, made from its results by this template
-// (no model writes it): open it in a browser. What needs attention is open,
-// what passed is folded. The files a case checked open in a viewer on the
+// (no model writes it): open it in a browser. Every section starts folded;
+// its heading says what needs attention. The files a case checked open in a viewer on the
 // page, or in a new tab.
 
 const esc = (text: string) =>
@@ -106,9 +107,8 @@ function caseCard(c: CaseRecord, href: (repoPath: string) => string) {
   </div>`;
 
   const review = c.runs.some((r) => r.findings.some((f) => f.status === "review"));
-  const open = !c.passing || review || c.runs.some((r) => !r.passed);
   const passed = c.runs.filter((r) => r.passed).length;
-  return `<details class="case" id="${esc(c.id)}"${open ? " open" : ""}>
+  return `<details class="case" id="${esc(c.id)}">
     <summary>
       ${c.passing ? chip("Passing", "ok") : chip("Failing", "bad")}
       <span class="case-name">${esc(c.name)}</span>${judged(c) ? ` ${JUDGE_ICON}` : ""}
@@ -196,6 +196,7 @@ export function reportHtml(results: RunResults, changed: RunChanges | null, outD
       const before = changed?.costBefore[d.folder];
       const delta = before != null && d.cost !== null && Math.abs(d.cost - before) >= 0.005 ? ` <span class="muted">(was ${usd(before)})</span>` : "";
       return `<tr><td><a href="#doc-${esc(d.folder)}">${esc(d.title)}</a> <span class="muted">(${esc(d.folder)})</span></td>
+        <td><code>${esc(shortModel(d.model))}</code></td>
         <td class="num">${d.ran}${d.skipped ? ` <span class="muted">+${d.skipped} skipped</span>` : ""}</td>
         <td class="num">${pct(d.passRate)}</td>
         <td class="num ${d.failing ? "bad-text" : ""}">${d.failing}</td>
@@ -213,13 +214,12 @@ export function reportHtml(results: RunResults, changed: RunChanges | null, outD
       const cases = results.cases
         .filter((c) => c.folder === d.folder)
         .sort((a, b) => Number(a.passing === null) - Number(b.passing === null));
-      const open = d.failing > 0 || d.toReview > 0;
-      return `<details class="doc" id="doc-${esc(d.folder)}"${open ? " open" : ""}>
+      return `<details class="doc" id="doc-${esc(d.folder)}">
         <summary><span class="doc-name">${esc(d.title)}</span> <span class="muted">(${esc(d.folder)})</span>
           ${d.ran ? (d.failing ? chip(`${d.failing} failing`, "bad") : chip("All passing", "ok")) : chip("Skipped", "muted")}
           ${d.toReview ? chip(`${d.toReview} to review`, "warn") : ""}
           ${d.judged ? `${JUDGE_ICON} <span class="muted">${d.judged} judged</span>` : ""}
-          <span class="muted">${d.ran ? `${usd(d.cost)} · ${usd(d.perRun)} a run` : ""}</span></summary>
+          <span class="muted">${shortModel(d.model)}${d.ran ? ` · ${usd(d.cost)} · ${usd(d.perRun)} a run` : ""}</span></summary>
         ${cases.map((c) => caseCard(c, href)).join("")}
         ${checkTable(cases)}
       </details>`;
@@ -302,18 +302,18 @@ dialog::backdrop { background: rgb(0 0 0 / 0.5); }
 <div class="toolbar">
   <div><h1>Document check evals</h1>
   <div class="muted">${esc(new Date(meta.startedAt).toLocaleString("en-GB"))} · commit <code>${esc(meta.commit ?? "unknown")}${meta.dirty ? "+changes" : ""}</code>
-    · checker <code>${esc(meta.checkModel)}</code> · judge <code>${esc(meta.judgeModel)}</code> · ${meta.runs} runs a case
+    · checker <code>${esc(meta.checkModels.standard)}</code>, strong <code>${esc(meta.checkModels.strong)}</code> · judge <code>${esc(meta.judgeModel)}</code> · ${meta.runs} runs a case
     · rules v${meta.rulesVersion} · knowledge v${meta.knowledgeVersion}${meta.filter ? ` · only <code>${esc(meta.filter)}</code>` : ""}</div></div>
   <button class="toggle" id="lang">Findings in עברית</button>
 </div>
 <section class="tiles">${tiles}</section>
 ${since}
 <section><h2>Documents</h2><div class="table-wrap"><table>
-  <thead><tr><th>Document</th><th class="num">Cases</th><th class="num">Runs passed</th><th class="num">Failing</th><th class="num">To review</th>
+  <thead><tr><th>Document</th><th>Model</th><th class="num">Cases</th><th class="num">Runs passed</th><th class="num">Failing</th><th class="num">To review</th>
   <th class="num" title="The document checker's calls">Checker</th><th class="num" title="The judge's calls, and how many cases it reviewed findings in">Judge</th>
   <th class="num" title="What all its calls cost without the cache">Cost without cache</th><th class="num" title="One check of the document, on average, without the judge">Per run</th></tr></thead>
   <tbody>${docRows}</tbody>
-  <tfoot><tr><th>Total</th><th class="num">${t.ran}</th><th class="num">${pct(t.passRate)}</th><th class="num">${t.failing}</th><th class="num">${t.toReview}</th>
+  <tfoot><tr><th>Total</th><th></th><th class="num">${t.ran}</th><th class="num">${pct(t.passRate)}</th><th class="num">${t.failing}</th><th class="num">${t.toReview}</th>
   <th class="num">${usd(t.checker)}</th><th class="num">${usd(t.judge)}</th><th class="num">${usd(t.cost)}</th><th></th></tr></tfoot>
 </table></div>
 </section>

@@ -5,13 +5,17 @@ person approved, so a change to a prompt, a document's checks or the knowledge
 base shows what it broke and what it fixed. They cost money and take minutes,
 so they're apart from `npm test` (vitest.evals.config.mts). Model calls are
 cached in `evals/.cache` by what was sent: running again after a change only
-pays for what the change touched (`EVAL_NO_CACHE=1` asks again).
+pays for what the change touched (`EVAL_NO_CACHE=1` asks again). 8 cases
+run at once (`EVAL_CONCURRENCY`), each sending its runs together; a call
+OpenRouter turns away for now is made again after the wait it asks for.
 
 ## The document check (`evals/checks`)
 
 ```
 npm run eval:checks                        every case
-EVAL_FILTER=foreignPhotos npm run eval:checks
+EVAL_FILTER=foreignPhotos npm run eval:checks     a document's cases
+EVAL_FILTER="statusApplicationMarried/no request marked|foreignPhotos/clean" npm run eval:checks
+                                           several cases, between "|"
 ```
 
 A folder per document, named by its catalog id, with its files in `files/`
@@ -63,7 +67,7 @@ results by a template (no model writes it), and shows:
   judge's reason;
 - each check's catch rate and wrong findings.
 
-What needs attention is open; what passed is folded.
+Every section starts folded; its heading says what needs attention.
 
 ### From a dismissal
 

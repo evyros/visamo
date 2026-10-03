@@ -2,6 +2,7 @@ import { execSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
+import { checkModel } from "@/lib/checks/ask";
 import type { CheckLine } from "@/lib/checks/lines";
 import type { CheckRating, FindingText } from "@/lib/checks/result";
 import type { Part } from "@/lib/documents/points";
@@ -86,6 +87,8 @@ export type CaseRecord = {
   /** The document's title, as the couple's list shows it in English. */
   title: string;
   documentKey: string;
+  /** The model that checked it. */
+  model: string;
   scenario: string;
   today: string;
   files: FileRecord[];
@@ -105,7 +108,8 @@ export type RunMeta = {
   /** The run's folder, from evals/.out/runs: "2026-10-03/21-35-17". */
   folder: string;
   filter: string | null;
-  checkModel: string;
+  /** The checker's models, standard and strong. */
+  checkModels: Record<string, string>;
   judgeModel: string;
   runs: number;
   rulesVersion: number;
@@ -162,6 +166,7 @@ function caseRecord(evalCase: EvalCase, outcome: CaseOutcome | null): CaseRecord
     folder: evalCase.folder,
     name: evalCase.name,
     title: evalCase.title,
+    model: checkModel(evalCase.check),
     documentKey: evalCase.documentKey,
     scenario: evalCase.scenario,
     today: evalCase.today,
@@ -258,6 +263,7 @@ export function previousRuns(folder: string): RunResults[] {
 export type DocumentSummary = {
   folder: string;
   title: string;
+  model: string;
   cases: number;
   ran: number;
   skipped: number;
@@ -291,6 +297,7 @@ export function documents(results: RunResults): DocumentSummary[] {
     return {
       folder,
       title: cases[0].title,
+      model: cases[0].model,
       cases: cases.length,
       ran: ran.length,
       skipped: cases.length - ran.length,
@@ -409,16 +416,20 @@ export function changes(current: RunResults, history: RunResults[]): RunChanges 
 /** Dollars, with enough digits for a sum of small amounts to read right. */
 export const usd = (n: number | null) =>
   n === null ? "unknown" : n === 0 ? "$0" : `$${n.toFixed(n < 0.01 ? 4 : n < 1 ? 3 : 2)}`;
+/** A model id without its provider: "gemini-3.8-flash". */
+export const shortModel = (model: string) => model.split("/").pop() ?? model;
+
 export const pct = (n: number | null) => (n === null ? "–" : `${Math.round(n * 100)}%`);
 
 /** The run in a table: a row a document, then the total. */
 export function terminalSummary(results: RunResults, changed: RunChanges | null) {
-  const header = ["Document", "Cases", "Passed", "Failing", "To review", "Checker", "Judge", "Cost without cache", "Per run", ""];
+  const header = ["Document", "Model", "Cases", "Passed", "Failing", "To review", "Checker", "Judge", "Cost without cache", "Per run", ""];
   const rows = documents(results).map((d) =>
     d.ran === 0
-      ? [`${d.title} (${d.folder})`, String(d.cases), "–", "", "", "", "", "", "", `${d.skipped} skipped: files missing`]
+      ? [`${d.title} (${d.folder})`, shortModel(d.model), String(d.cases), "–", "", "", "", "", "", "", `${d.skipped} skipped: files missing`]
       : [
           `${d.title} (${d.folder})`,
+          shortModel(d.model),
           String(d.cases),
           pct(d.passRate),
           String(d.failing),
@@ -431,13 +442,13 @@ export function terminalSummary(results: RunResults, changed: RunChanges | null)
         ],
   );
   const t = totals(results);
-  const total = ["Total", String(t.cases), pct(t.passRate), String(t.failing), String(t.toReview), usd(t.checker), usd(t.judge), usd(t.cost), "", ""];
+  const total = ["Total", "", String(t.cases), pct(t.passRate), String(t.failing), String(t.toReview), usd(t.checker), usd(t.judge), usd(t.cost), "", ""];
   const all = [header, ...rows, total];
   const widths = header.map((_, i) => Math.max(...all.map((r) => r[i].length)));
-  // The name left, the numbers right, the note as it is.
+  // The name and the model left, the numbers right, the note as it is.
   const fmt = (r: string[]) =>
     r
-      .map((cell, i) => (i === 0 ? cell.padEnd(widths[i]) : i === r.length - 1 ? cell : cell.padStart(widths[i])))
+      .map((cell, i) => (i <= 1 ? cell.padEnd(widths[i]) : i === r.length - 1 ? cell : cell.padStart(widths[i])))
       .join("  ")
       .trimEnd();
   const rule = "─".repeat(Math.max(...all.map((r) => fmt(r).length)));

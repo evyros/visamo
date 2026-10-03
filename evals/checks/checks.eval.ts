@@ -2,10 +2,9 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import { loadMessages } from "@/i18n/messages";
-import { CHECK_MODEL } from "@/lib/chat/openrouter";
+import { CHECK_MODELS } from "@/lib/chat/openrouter";
 import { askCheck } from "@/lib/checks/ask";
 import { MAX_CHECK_PAGES, prepareContent } from "@/lib/checks/files";
-import { checkShape } from "@/lib/checks/lines";
 import { RULES_VERSION, checkContext, checkMessages } from "@/lib/checks/prompt";
 import type { CheckResult } from "@/lib/checks/result";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
@@ -22,7 +21,8 @@ import { sum, type CaseOutcome, type Money, type RunOutcome } from "./results";
 // nobody expected. A case passes when every one of its runs does.
 //
 //   npm run eval:checks                       every case
-//   EVAL_FILTER=foreignPhotos npm run ...     the cases whose id has it
+//   EVAL_FILTER=foreignPhotos npm run ...     the cases whose id ("<document>/<case name>") has it;
+//                                             several, between "|": "foreignPhotos/clean|relationshipStory/clean"
 //
 // Each run is saved to evals/.out/runs/<day>/<time>/ (results.json and
 // report.html), each case compared with its last run; the newest report is also
@@ -32,7 +32,8 @@ const RUNS = Number(process.env.EVAL_RUNS ?? 3);
 const FILTER = process.env.EVAL_FILTER || null;
 
 const started = new Date();
-const cases = loadCases().filter((c) => !FILTER || c.id.includes(FILTER));
+const filters = FILTER?.split("|").map((f) => f.trim()).filter(Boolean) ?? [];
+const cases = loadCases().filter((c) => !filters.length || filters.some((f) => c.id.includes(f)));
 const outcomes: CaseOutcome[] = [];
 
 /** What calls cost: as made (cached ones too), and what this run paid. */
@@ -49,9 +50,15 @@ function money(checkCalls: EvalCompletion[], judgeCalls: EvalCompletion[]): Mone
   };
 }
 
+/**
+ * The case's files, as the app sends them. Each goes under a plain name
+ * ("upload-1.pdf"), not its own, which says what's wrong with it.
+ */
 const prepare = (evalCase: EvalCase) =>
-  prepareContent(evalCase.files, evalCase.check.maxPages ?? MAX_CHECK_PAGES, (file) =>
-    readFile(file.path).then((b) => new Uint8Array(b)),
+  prepareContent(
+    evalCase.files.map((file, i) => ({ ...file, name: `upload-${i + 1}${path.extname(file.name).toLowerCase()}` })),
+    evalCase.check.maxPages ?? MAX_CHECK_PAGES,
+    (file) => readFile(file.path).then((b) => new Uint8Array(b)),
   );
 
 async function runOnce(
@@ -69,7 +76,7 @@ async function runOnce(
   } else {
     try {
       const messages = await checkMessages({ ...evalCase, context, files: prepared.parts });
-      result = (await askCheck(messages, checkShape(evalCase.check), checkCalls, cachedCompleteJson(`check:${run}`))).result;
+      result = (await askCheck(messages, evalCase.check, checkCalls, cachedCompleteJson(`check:${run}`))).result;
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       return { run, error: message, passed: false, ...money(checkCalls, judgeCalls) };
@@ -97,7 +104,7 @@ async function evaluate(evalCase: EvalCase): Promise<CaseOutcome> {
   return { evalCase, runs, passRate: runs.filter((r) => r.passed).length / runs.length };
 }
 
-describe(`document checks (${CHECK_MODEL}, judged by ${JUDGE_MODEL}, ${RUNS} runs each)`, () => {
+describe(`document checks (${CHECK_MODELS.standard}, strong ${CHECK_MODELS.strong}, judged by ${JUDGE_MODEL}, ${RUNS} runs each)`, () => {
   for (const evalCase of cases) {
     if (evalCase.missing.length) {
       it.skip(`${evalCase.id}: add ${evalCase.missing.join(", ")}`);
@@ -116,7 +123,7 @@ describe(`document checks (${CHECK_MODEL}, judged by ${JUDGE_MODEL}, ${RUNS} run
     const saved = saveRun(outcomes, cases.filter((c) => c.missing.length), {
       started,
       filter: FILTER,
-      checkModel: CHECK_MODEL,
+      checkModels: CHECK_MODELS,
       judgeModel: JUDGE_MODEL,
       runs: RUNS,
       rulesVersion: RULES_VERSION,

@@ -2,11 +2,9 @@ import { getAppLocale } from "@/i18n/app-locale";
 import { todayInIsrael } from "@/i18n/format";
 import { format, loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
-import { CHECK_MODEL } from "@/lib/chat/openrouter";
-import { askCheck } from "@/lib/checks/ask";
+import { askCheck, checkModel } from "@/lib/checks/ask";
 import { MAX_CHECK_PAGES, prepareFiles } from "@/lib/checks/files";
 import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
-import { checkShape } from "@/lib/checks/lines";
 import type { CheckResult } from "@/lib/checks/result";
 import {
   caseChecks,
@@ -93,7 +91,7 @@ export async function POST(request: Request) {
     userId: user.id,
     fileIds: files.map((f) => f.id),
     contextHash: contextHash(context, check),
-    model: CHECK_MODEL,
+    model: checkModel(check),
     context,
     guidance: check,
     rulesVersion: RULES_VERSION,
@@ -132,7 +130,7 @@ export async function POST(request: Request) {
       spent = true;
       const answer = await askCheck(
         await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael(), dismissed }),
-        checkShape(check),
+        check,
         measured.calls,
       );
       result = answer.result;

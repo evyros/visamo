@@ -81,6 +81,11 @@ export function BottomTabs({ items, label }: { items: NavItem[]; label: string }
   );
 }
 
+/** Whether a section's page is the one showing (see `includeSubpages`). */
+function isCurrentPage(pathname: string, item: NavItem) {
+  return item.includeSubpages ? inSection(pathname, item.href) : pathname === item.href;
+}
+
 /** A section's pages, in its sidebar. */
 export function SidebarNav({ items, label }: { items: NavItem[]; label: string }) {
   const pathname = usePathname();
@@ -88,7 +93,7 @@ export function SidebarNav({ items, label }: { items: NavItem[]; label: string }
     <nav aria-label={label}>
       <ul className="flex flex-col gap-1">
         {items.map((item) => {
-          const active = item.includeSubpages ? inSection(pathname, item.href) : pathname === item.href;
+          const active = isCurrentPage(pathname, item);
           return (
             <li key={item.href}>
               <Link
@@ -105,6 +110,36 @@ export function SidebarNav({ items, label }: { items: NavItem[]; label: string }
           );
         })}
       </ul>
+    </nav>
+  );
+}
+
+/**
+ * A section's pages as a row of pills above the page, below `lg` (where the
+ * sidebar takes over). Text only, and it scrolls sideways if the labels don't fit.
+ */
+export function SectionPills({ items, label }: { items: NavItem[]; label: string }) {
+  const pathname = usePathname();
+  return (
+    <nav
+      aria-label={label}
+      className="flex h-12 shrink-0 items-center gap-1 overflow-x-auto border-b border-line-200 bg-white px-3 [scrollbar-width:none] lg:hidden"
+    >
+      {items.map((item) => {
+        const active = isCurrentPage(pathname, item);
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-current={active ? "page" : undefined}
+            className={`shrink-0 rounded-full px-3.5 py-1.5 text-[15px] font-medium whitespace-nowrap transition-colors ${
+              active ? "bg-teal-100 text-teal-700" : "text-slate-600 hover:bg-sand-50 hover:text-navy-900"
+            }`}
+          >
+            {item.label}
+          </Link>
+        );
+      })}
     </nav>
   );
 }

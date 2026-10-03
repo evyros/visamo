@@ -3,22 +3,32 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Icon } from "@/components/icons";
+import { SectionPills, SidebarNav, type NavItem } from "./app-nav";
 
 // A section's sidebar and its page. The sidebar sits on the start edge from
-// `lg` up. Below that it's a drawer, opened from a bar above the page. The
-// page scrolls on its own, so the sidebar and top bar stay put.
+// `lg` up. Below that, a section that's just pages (`pages`) shows them as
+// pills above the page; any other sidebar (`sidebar`) becomes a drawer, opened
+// from a bar above the page. The page scrolls on its own, so the sidebar and
+// top bar stay put.
 export function SectionShell({
+  pages,
+  sidebar: drawerSidebar,
   title,
-  sidebar,
   labels,
   children,
 }: {
-  /** Shown in the bar that opens the drawer. */
-  title: string;
+  /** The section's pages: a sidebar from `lg` up, pills below. */
+  pages?: { label: string; items: NavItem[] };
+  /** Anything else in the sidebar: a drawer below `lg`. */
   sidebar?: ReactNode;
-  labels: { open: string; close: string };
+  /** With `sidebar`: shown in the bar that opens the drawer. */
+  title?: string;
+  /** With `sidebar`: the drawer buttons' names. */
+  labels?: { open: string; close: string };
   children: ReactNode;
 }) {
+  const sidebar = pages ? <SidebarNav label={pages.label} items={pages.items} /> : drawerSidebar;
+  const drawer = !pages && drawerSidebar != null;
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const [lastPathname, setLastPathname] = useState(pathname);
@@ -60,7 +70,13 @@ export function SectionShell({
 
   return (
     <div className="flex min-h-0 flex-1">
-      {sidebar && (
+      {pages && (
+        // w-64 matches the logo area in app-header.tsx.
+        <aside className="hidden w-64 shrink-0 flex-col overflow-y-auto border-e border-line-200 bg-white p-4 lg:flex">
+          {sidebar}
+        </aside>
+      )}
+      {drawer && (
         <>
           {open && <div className="fixed inset-0 z-40 bg-navy-900/30 lg:hidden" onClick={close} />}
           {/* w-64 matches the logo area in app-header.tsx. */}
@@ -74,7 +90,7 @@ export function SectionShell({
             <div className="mb-2 flex justify-end lg:hidden">
               <button
                 type="button"
-                aria-label={labels.close}
+                aria-label={labels?.close}
                 onClick={close}
                 className="inline-flex size-10 items-center justify-center rounded-lg text-navy-900 hover:bg-navy-900/5"
               >
@@ -86,12 +102,13 @@ export function SectionShell({
         </>
       )}
       <div className="flex min-w-0 flex-1 flex-col">
-        {sidebar && (
+        {pages && <SectionPills label={pages.label} items={pages.items} />}
+        {drawer && (
           <div className="flex h-12 shrink-0 items-center gap-2 border-b border-line-200 bg-white px-2 lg:hidden">
             <button
               ref={toggleRef}
               type="button"
-              aria-label={labels.open}
+              aria-label={labels?.open}
               aria-expanded={open}
               aria-controls="section-sidebar"
               onClick={() => setOpen(true)}

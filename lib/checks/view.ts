@@ -1,11 +1,15 @@
 import type { Locale } from "@/i18n/config";
+import type { Part } from "@/lib/documents/points";
 import { findingText, type CheckFinding, type CheckRating, type FindingText } from "./result";
+
+/** A finding in the viewer's language, with the part it's about for a document made of parts. */
+export type FindingView = FindingText & { part?: Part };
 
 /** An item's latest check as the documents page shows it, in the viewer's language. */
 export type CheckView = {
   rating: CheckRating;
-  issues: FindingText[];
-  recommendations: FindingText[];
+  issues: FindingView[];
+  recommendations: FindingView[];
   /** ISO date. */
   checkedAt: string;
   /** Null when the account is gone. */
@@ -27,10 +31,11 @@ export function checkView(
   locale: Locale,
 ): CheckView | null {
   if (!check.result || !check.checkedAt) return null;
+  const view = (f: CheckFinding): FindingView => ({ ...findingText(f, locale), ...(f.part && { part: f.part }) });
   return {
     rating: check.result.rating,
-    issues: check.result.issues.map((f) => findingText(f, locale)),
-    recommendations: check.result.recommendations.map((f) => findingText(f, locale)),
+    issues: check.result.issues.map(view),
+    recommendations: check.result.recommendations.map(view),
     checkedAt: check.checkedAt.toISOString(),
     checkedByName: check.checkedByName,
     fileIds: check.fileIds,

@@ -28,8 +28,11 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   the languages accepted without one.
 - `points.ts`: what an item has to show, by the case, for the few documents
   whose content depends on it (the civil status: the status now, before the
-  marriage, the children). The card shows them as bullets
-  (`app.documents.points.<point>`), and the check adds a line for each.
+  marriage, the children), or that are made of parts uploaded together (form
+  AS/6: the application, both declarations, the landlord's affidavit). The
+  card shows them as bullets (`app.documents.points.<point>`), and the check
+  adds lines for each. A document of parts has a check part for each, and
+  each finding names its part (`app.documentsPage.check.parts`).
 - `build.ts`: `buildDocumentList(case)` → the list, each item with its
   points. The list is never stored; progress is saved per item `key`.
 - `scenarios.ts`: example couples. Tests check some lists exactly;

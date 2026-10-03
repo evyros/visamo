@@ -25,47 +25,58 @@ export async function allCaseFiles(caseId: string) {
 
 export type AdminFile = Awaited<ReturnType<typeof allCaseFiles>>[number];
 
+/** A check run's columns for the admin pages; what was sent (context, guidance) is left out. */
+const runColumns = {
+  id: documentCheck.id,
+  documentKey: documentCheck.documentKey,
+  state: documentCheck.state,
+  rating: documentCheck.rating,
+  issues: documentCheck.issues,
+  recommendations: documentCheck.recommendations,
+  error: documentCheck.error,
+  fileIds: documentCheck.fileIds,
+  /** Differs between two runs when the case details or the check guidance changed. */
+  contextHash: documentCheck.contextHash,
+  model: documentCheck.model,
+  rulesVersion: documentCheck.rulesVersion,
+  knowledgeVersion: documentCheck.knowledgeVersion,
+  attempts: documentCheck.attempts,
+  ratingCorrected: documentCheck.ratingCorrected,
+  pages: documentCheck.pages,
+  costUsd: documentCheck.costUsd,
+  tokensIn: documentCheck.tokensIn,
+  cachedTokens: documentCheck.cachedTokens,
+  durationMs: documentCheck.durationMs,
+  startedAt: documentCheck.startedAt,
+  finishedAt: documentCheck.finishedAt,
+  checkedByName: user.name,
+};
+
 /**
- * Every check run of the case, or of one of its documents, newest first.
- * Leaves out what was sent and the raw answers (context, guidance, calls):
- * they're large, and for reviewing one run, not for the list.
+ * Every check run of the case, newest first. Leaves out the model calls:
+ * their answers and reasoning are large, and for one document's history.
  */
-export async function allCaseChecks(caseId: string, documentKey?: string) {
+export async function allCaseChecks(caseId: string) {
   return db
-    .select({
-      id: documentCheck.id,
-      documentKey: documentCheck.documentKey,
-      state: documentCheck.state,
-      rating: documentCheck.rating,
-      issues: documentCheck.issues,
-      recommendations: documentCheck.recommendations,
-      error: documentCheck.error,
-      fileIds: documentCheck.fileIds,
-      /** Differs between two runs when the case details or the check guidance changed. */
-      contextHash: documentCheck.contextHash,
-      model: documentCheck.model,
-      rulesVersion: documentCheck.rulesVersion,
-      knowledgeVersion: documentCheck.knowledgeVersion,
-      attempts: documentCheck.attempts,
-      ratingCorrected: documentCheck.ratingCorrected,
-      pages: documentCheck.pages,
-      costUsd: documentCheck.costUsd,
-      tokensIn: documentCheck.tokensIn,
-      cachedTokens: documentCheck.cachedTokens,
-      durationMs: documentCheck.durationMs,
-      startedAt: documentCheck.startedAt,
-      finishedAt: documentCheck.finishedAt,
-      checkedByName: user.name,
-    })
+    .select(runColumns)
     .from(documentCheck)
     .leftJoin(user, eq(user.id, documentCheck.checkedBy))
-    .where(
-      and(eq(documentCheck.caseId, caseId), documentKey ? eq(documentCheck.documentKey, documentKey) : undefined),
-    )
+    .where(eq(documentCheck.caseId, caseId))
+    .orderBy(desc(documentCheck.startedAt));
+}
+
+/** Every check run of one document, newest first, with its model calls (lib/chat/openrouter.ts Completion). */
+export async function documentChecks(caseId: string, documentKey: string) {
+  return db
+    .select({ ...runColumns, calls: documentCheck.calls })
+    .from(documentCheck)
+    .leftJoin(user, eq(user.id, documentCheck.checkedBy))
+    .where(and(eq(documentCheck.caseId, caseId), eq(documentCheck.documentKey, documentKey)))
     .orderBy(desc(documentCheck.startedAt));
 }
 
 export type AdminCheckRun = Awaited<ReturnType<typeof allCaseChecks>>[number];
+export type AdminCheckRunWithCalls = Awaited<ReturnType<typeof documentChecks>>[number];
 
 /**
  * The case's details changes that put documents on its list or took them

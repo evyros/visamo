@@ -46,6 +46,19 @@ describe("pointsFor", () => {
     }
   });
 
+  it("lists form AS/6's parts: the foreign partner's declaration by where they are, the landlord's affidavit with the lease", () => {
+    expect(pointsOf("marriedInCyprus", "statusApplicationMarried")).toEqual([
+      "as6Application",
+      "as6IsraeliDeclaration",
+      "as6ForeignDeclaration",
+      "as6LandlordAffidavit",
+    ]);
+    expect(pointsOf("foreignAbroad", "statusApplicationMarried")).toContain("as6ForeignDeclarationLater");
+    // Both abroad: they file together once in Israel, with both declarations.
+    expect(pointsOf("bothAbroad", "statusApplicationMarried")).toContain("as6ForeignDeclaration");
+    expect(pointsOf("neverLivedTogetherBothAbroad", "statusApplicationMarried")).not.toContain("as6LandlordAffidavit");
+  });
+
   it("gives other documents none", () => {
     expect(pointsOf("marriedInCyprus", "foreignPassport")).toEqual([]);
   });

@@ -1,6 +1,6 @@
 import "server-only";
 import { DOCUMENT_ALIASES, type DocumentId } from "./catalog";
-import type { Point } from "./points";
+import type { Part, Point } from "./points";
 
 // How to check each document: what the document checker (lib/checks) looks
 // for in a couple's files. This is Visamo's own knowledge of how documents
@@ -14,6 +14,9 @@ import type { Point } from "./points";
 //                good" from "can be improved".
 //   maxPages     the most pages one check sends, when the document is
 //                usually longer than the default (lib/checks/files.ts).
+//   parts        for a document made of parts uploaded together (form AS/6):
+//                each part's own required and recommended lines. Each
+//                finding then names its part.
 //
 // Written in English, for the model. A line can be stricter or more detailed
 // than lib/knowledge, but never contradict it. No line checks a document
@@ -32,6 +35,16 @@ export type DocumentCheck = {
   required: readonly string[];
   recommended: readonly string[];
   maxPages?: number;
+  parts?: readonly CheckPart[];
+};
+
+/** A part of a document made of several (see points.ts), with its own lines. */
+export type CheckPart = {
+  part: Part;
+  /** What the part is and how to find it, for the model. */
+  name: string;
+  required: readonly string[];
+  recommended: readonly string[];
 };
 
 /** Bills of many months, from several providers. */
@@ -47,7 +60,7 @@ const passportPhoto: DocumentCheck = {
 };
 
 /** The line each point adds to a civil-status item's check (see points.ts). */
-const civilStatusPoints: Record<Point, string> = {
+const civilStatusPoints: Record<Exclude<Point, `as6${string}`>, string> = {
   statusNowSingle:
     "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months, that shows they're single, or that no marriage is registered for them.",
   statusNowDivorced:
@@ -80,7 +93,7 @@ const civilStatusPoints: Record<Point, string> = {
 function civilStatusCheck(points: readonly Point[]): DocumentCheck {
   return {
     required: [
-      ...points.map((point) => civilStatusPoints[point]),
+      ...points.flatMap((point) => (point in civilStatusPoints ? [civilStatusPoints[point as keyof typeof civilStatusPoints]] : [])),
       "The civil-status documents are issued by an authority of the country this item is for, as in the document's details: a civil-status certificate, an extract from a population or civil register, a record search showing no marriage is registered, or a certificate of no impediment to marriage. Or, if there's no way to get one, a notarized or consular affidavit of their status: signed in front of a notary in Israel, an Israeli consul abroad, the country's consul in Israel, or a notary in that country.",
       "One affidavit that declares several of the points above covers each of them: they don't need a document each.",
       "Each document from abroad carries the certification the file says it needs (an apostille or consular legalization), in the same file. An affidavit signed abroad carries that country's apostille or legalization.",
@@ -96,11 +109,21 @@ function civilStatusCheck(points: readonly Point[]): DocumentCheck {
   };
 }
 
-export const checks = {
-  // From the form (AS/6). It comes in two formats, with the pages in a different order: find each part by its title.
-  statusApplicationMarried: {
+/** The foreign partner's declaration, as filled in and signed. */
+const foreignDeclarationLines = [
+  "It is the foreign partner's declaration from form AS/6, titled \"הצהרת בן הזוג המוזמן\", with the whole page: the statements, the explanation lines, the signature line and the confirmation section.",
+  "The foreign partner's first and last name are filled in.",
+  "Each of the statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
+];
+
+/** Form AS/6's parts, by the points that call for them (see points.ts). */
+const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
+  // From the form: the application and the applicants' declaration.
+  as6Application: {
+    part: "application",
+    name: "The application: the sections \"פרטי המזמין/ה\" and \"פרטי המוזמן/ת\", and the applicants' declaration (\"הצהרת המבקשים\")",
     required: [
-      "It is form AS/6, \"בקשה לקבלת מעמד בישראל לבן זוג זר הנשוי לישראלי\", with the application (the sections \"פרטי המזמין/ה\" and \"פרטי המוזמן/ת\") and the applicants' declaration (\"הצהרת המבקשים\"). Find them by these titles, not by page number: the form comes in two formats.",
+      "It is form AS/6, \"בקשה לקבלת מעמד בישראל לבן זוג זר הנשוי לישראלי\", with the application (the sections \"פרטי המזמין/ה\" and \"פרטי המוזמן/ת\") and the applicants' declaration (\"הצהרת המבקשים\").",
       "One request is marked: permanent residency (בקשה לישיבת קבע) or naturalization (בקשה להתאזרחות).",
       "The Israeli partner's details are filled in: status (citizen or permanent resident), ID number, family and first name, date of birth, gender, civil status, address and a phone number.",
       "The foreign partner's details are filled in: passport number and expiry, family and first name, date of birth, gender, civil status, citizenship, address abroad and a phone number.",
@@ -109,12 +132,81 @@ export const checks = {
       "The office's parts (received by, the clerk's name, the receipt, \"לשימוש משרדי\") are empty.",
     ],
     recommended: [
-      "The people who can give details about the couple are listed, each with their ID number, relation, address and phone.",
+      "The people who can give details about the couple are listed, each with their ID number, relation and phone. Their address is optional: never report it missing.",
       "Both partners' civil status is marked as married, and the date of marriage is filled in.",
       "If the file says the foreign partner is in Israel, the date and place of entry and their status in Israel are filled in.",
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
+  // From the form, and how it's signed: in front of a lawyer or registrar.
+  as6IsraeliDeclaration: {
+    part: "israeliDeclaration",
+    name: "The Israeli partner's declaration, titled \"הצהרת בן הזוג המזמין\"",
+    required: [
+      "It is the Israeli partner's declaration from form AS/6, titled \"הצהרת בן הזוג המזמין\", with the whole page: the five statements, the explanation lines, the signature line and the confirmation section.",
+      "Each of the five statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
+      "The place, the date and the Israeli partner's signature are filled in.",
+      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
+    ],
+    recommended: ["The ticks are clear, and the page is scanned straight and readable in full."],
+  },
+  // From the form, and how it's signed: in front of a lawyer or registrar.
+  as6ForeignDeclaration: {
+    part: "foreignDeclaration",
+    name: "The foreign partner's declaration, titled \"הצהרת בן הזוג המוזמן\"",
+    required: [
+      ...foreignDeclarationLines,
+      "The place, the date and the foreign partner's signature are filled in.",
+      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
+    ],
+    recommended: ["The ticks are clear, and the page is scanned straight and readable in full."],
+  },
+  // A foreign partner abroad, with the Israeli partner filing alone from Israel: they sign it once
+  // they're in Israel, and the application is filed without it.
+  as6ForeignDeclarationLater: {
+    part: "foreignDeclaration",
+    name: "The foreign partner's declaration, titled \"הצהרת בן הזוג המוזמן\". The foreign partner is abroad and the Israeli partner files without it: they sign it once they're in Israel, so it may be missing, and unsigned if it's there",
+    required: [],
+    recommended: [
+      `If it's in the files: ${foreignDeclarationLines.map((line) => line.charAt(0).toLowerCase() + line.slice(1)).join(" ")} Its signature and the lawyer's confirmation may still be empty. If it isn't in the files, report nothing about it.`,
+    ],
+  },
+  // From the form, and how it's signed: in front of a lawyer or registrar. Only for couples who
+  // rent, which onboarding doesn't ask: nothing in it is required.
+  as6LandlordAffidavit: {
+    part: "landlordAffidavit",
+    name: "The landlord's affidavit (נספח אש6), titled \"תצהיר נספח להסכם שכ\"ד - בני זוג\", with a copy of the landlord's Teudat Zehut. Only for couples who rent",
+    required: [],
+    recommended: [
+      "The landlord's affidavit is in the files, with the whole page. If it isn't, this is the only finding for this part: say it's needed if they rent their home, signed by the landlord in front of a lawyer, and not if they own it.",
+      "The landlord's first name, last name and ID number are filled in.",
+      "The tenant whose application it supports is named, with their ID number.",
+      "The home's address is filled in, with its size, and the statement that it's rented to the couple.",
+      "The bills table is filled in: for electricity, water, phone and arnona, whether the landlord or the tenant pays.",
+      "The date and the landlord's name and signature are filled in.",
+      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name, license number and date, the declarer's ID number, and their stamp and signature.",
+      "A copy of the landlord's Teudat Zehut is uploaded with it.",
+      "The section on who else lives in the home is filled in, or clearly marked that no one else does.",
+      "The landlord's civil status, number of children under 18 and occupation are filled in.",
+    ],
+  },
+};
+
+/**
+ * Form AS/6, uploaded whole: a part for each point the item has. It comes in
+ * two formats, with the pages in a different order: each part is found by
+ * its title, never its page number (the checker is told so for every part).
+ */
+function as6Check(points: readonly Point[]): DocumentCheck {
+  return {
+    required: [],
+    recommended: [],
+    parts: points.flatMap((point) => (point in as6Parts ? [as6Parts[point as keyof typeof as6Parts]] : [])),
+  };
+}
+
+export const checks = {
+  statusApplicationMarried: as6Check,
   // From the form (AS/1, two pages) and lib/knowledge.
   entryPermitApplication: {
     required: [
@@ -162,19 +254,6 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  // From the form (AS/6, the Israeli partner's declaration) and how it's signed: in front of a lawyer or registrar.
-  israeliAffidavitMarried: {
-    required: [
-      "It is the Israeli partner's declaration from form AS/6, titled \"הצהרת בן הזוג המזמין\" (find it by its title: the form comes in two formats, and the page number differs), with the whole page: the five statements, the explanation lines, the signature line and the confirmation section.",
-      "Each of the five statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
-      "The place, the date and the Israeli partner's signature are filled in.",
-      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
-    ],
-    recommended: [
-      "The ticks are clear, and the page is scanned straight and readable in full.",
-    ],
-  },
-  foreignAffidavitMarried: "notYet",
   // From the form (5.2.0009_a) and how it's signed: at the appointment, in front of the clerk.
   affidavitCommonLaw: {
     required: [
@@ -433,24 +512,6 @@ export const checks = {
       "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
       "For a home that isn't the Israeli partner's: recent bills in the owners' names, and mail, bank statements or phone bills addressed to the Israeli partner at that address, are uploaded too.",
       "It is scanned in full, readable, page by page in order.",
-    ],
-  },
-  // From the form (AS/6, the landlord's affidavit) and how it's signed: in front of a lawyer or registrar.
-  landlordAffidavit: {
-    required: [
-      "It is the landlord's affidavit from form AS/6 (נספח אש6), titled \"תצהיר נספח להסכם שכ\"ד - בני זוג\", with the whole page.",
-      "The landlord's first name, last name and ID number are filled in.",
-      "The tenant whose application it supports is named, with their ID number.",
-      "The home's address is filled in, with its size, and the statement that it's rented to the couple.",
-      "The bills table is filled in: for electricity, water, phone and arnona, whether the landlord or the tenant pays.",
-      "The date and the landlord's name and signature are filled in.",
-      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name, license number and date, the declarer's ID number, and their stamp and signature.",
-      "A copy of the landlord's Teudat Zehut is uploaded with it.",
-    ],
-    recommended: [
-      "The section on who else lives in the home is filled in, or clearly marked that no one else does.",
-      "The landlord's civil status, number of children under 18 and occupation are filled in.",
-      "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
   utilityBills: {

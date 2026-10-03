@@ -10,7 +10,8 @@ import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
 import { buyUrl } from "@/lib/buy-paths";
 import { newTab } from "@/lib/site";
-import type { CheckRating, FindingText } from "@/lib/checks/result";
+import type { CheckRating } from "@/lib/checks/result";
+import type { FindingView } from "@/lib/checks/view";
 import type { CheckView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
@@ -777,10 +778,11 @@ function CheckFooter({
             <Findings
               kind={result.rating === "unreadable" ? "unreadable" : "issue"}
               label={c.issues}
+              parts={c.parts}
               list={result.issues}
             />
             {result.rating === "unreadable" && <p className="text-[15px] text-slate-700">{c.unreadableHint}</p>}
-            <Findings kind="tip" label={c.recommendations} list={result.recommendations} />
+            <Findings kind="tip" label={c.recommendations} parts={c.parts} list={result.recommendations} />
           </div>
           <div className="mt-3">
             <AskLink documentKey={documentKey}>
@@ -817,25 +819,29 @@ const findingStyle = {
 /**
  * A check's issues or recommendations, each in its own box, tinted and
  * edged by its kind, so there are no headings. `label` names the list for
- * screen readers.
+ * screen readers. For a document made of parts, each box names its part
+ * above its title.
  */
 function Findings({
   kind,
   label,
+  parts,
   list,
 }: {
   kind: keyof typeof findingStyle;
   label: string;
-  list: FindingText[];
+  parts: Labels["check"]["parts"];
+  list: FindingView[];
 }) {
   if (list.length === 0) return null;
   const style = findingStyle[kind];
   return (
     <ul aria-label={label} className="space-y-1.5">
-      {list.map(({ title, detail }) => (
+      {list.map(({ title, detail, part }) => (
         <li key={title + detail} className={`flex gap-2 rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
           <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
           <div className="min-w-0">
+            {part && <p className="text-xs font-semibold text-slate-600">{parts[part]}</p>}
             {title && <p className="text-[15px] font-semibold text-navy-900">{title}</p>}
             <p className="mt-0.5 text-sm text-slate-700">{detail}</p>
           </div>

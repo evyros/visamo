@@ -33,6 +33,9 @@ export function formatUsd(usd: number) {
   return `$${usd.toFixed(usd >= 0.01 ? 2 : 4)}`;
 }
 
+/** US dollars to three places, for one run or call: "$0.014". */
+export const formatCallUsd = (usd: number) => `$${usd.toFixed(3)}`;
+
 /** A case's model cost, and how many runs or answers it leaves out for having no reported cost. */
 export function CostFigure({ cost }: { cost: { usd: number; unknown: number } }) {
   return (

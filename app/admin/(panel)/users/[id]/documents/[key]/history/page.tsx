@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { regionName } from "@/i18n/format";
 import { format, loadMessages, type Messages } from "@/i18n/messages";
 import { requireAdmin } from "@/lib/admin";
-import { allCaseChecks, allCaseFiles, caseListChanges, listChangesFor } from "@/lib/admin-documents";
+import { documentChecks, allCaseFiles, caseListChanges, listChangesFor } from "@/lib/admin-documents";
 import { findUser } from "@/lib/admin-users";
 import { caseDocuments } from "@/lib/case-documents";
 import { caseChecks } from "@/lib/checks/store";
@@ -50,7 +50,7 @@ export default async function AdminDocumentHistoryPage({ params }: Props) {
   const [{ list }, allFiles, runs, caseChanges, current, messages] = await Promise.all([
     caseDocuments(user.caseId),
     allCaseFiles(user.caseId),
-    allCaseChecks(user.caseId, key),
+    documentChecks(user.caseId, key),
     caseListChanges(user.caseId),
     caseChecks(user.caseId),
     loadMessages("en"),

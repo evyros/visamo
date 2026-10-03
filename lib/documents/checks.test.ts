@@ -7,6 +7,13 @@ const written = Object.entries(checks)
   .filter(([, check]) => check !== "notYet")
   .map(([id, check]) => [id, typeof check === "function" ? check(points) : check] as [string, DocumentCheck]);
 
+/** Every line of a check, its parts' included. */
+const linesOf = (check: DocumentCheck) => [
+  ...check.required,
+  ...check.recommended,
+  ...(check.parts ?? []).flatMap((part) => [...part.required, ...part.recommended]),
+];
+
 describe("checkFor", () => {
   it("finds a document's check by its list key, with or without a country", () => {
     expect(checkFor("securityCv")).toBe(checks.securityCv);
@@ -22,23 +29,50 @@ describe("checkFor", () => {
   });
 
   it("has no check for a document that's put off, or for an unknown key", () => {
-    expect(checkFor("foreignAffidavitMarried")).toBeNull();
+    expect(checkFor("childPoliceCertificate")).toBeNull();
     expect(checkFor("noSuchDocument")).toBeNull();
+  });
+
+  it("checks form AS/6 by its parts, the landlord's affidavit only where it's listed, and none of it required", () => {
+    const withLandlord = checkFor("statusApplicationMarried", [
+      "as6Application",
+      "as6IsraeliDeclaration",
+      "as6ForeignDeclaration",
+      "as6LandlordAffidavit",
+    ])!;
+    expect(withLandlord.parts?.map((p) => p.part)).toEqual([
+      "application",
+      "israeliDeclaration",
+      "foreignDeclaration",
+      "landlordAffidavit",
+    ]);
+    expect(withLandlord.parts?.find((p) => p.part === "landlordAffidavit")?.required).toEqual([]);
+    const abroad = checkFor("statusApplicationMarried", ["as6Application", "as6IsraeliDeclaration", "as6ForeignDeclarationLater"])!;
+    expect(abroad.parts?.map((p) => p.part)).toEqual(["application", "israeliDeclaration", "foreignDeclaration"]);
+    expect(abroad.parts?.find((p) => p.part === "foreignDeclaration")?.required).toEqual([]);
+  });
+
+  it("follows the AS/6 declarations, merged into the form, to its check", () => {
+    for (const old of ["israeliAffidavitMarried", "foreignAffidavitMarried", "landlordAffidavit"]) {
+      expect(checkFor(old, ["as6Application"])?.parts?.[0].part, old).toBe("application");
+    }
   });
 });
 
 describe("the checks", () => {
   it("give every written check at least one requirement, and no empty lines", () => {
+    const required = (check: DocumentCheck) =>
+      check.required.length + (check.parts ?? []).reduce((n, part) => n + part.required.length, 0);
     for (const [id, check] of written) {
-      expect(check.required.length, id).toBeGreaterThan(0);
-      for (const line of [...check.required, ...check.recommended]) expect(line.trim(), id).not.toBe("");
+      expect(required(check), id).toBeGreaterThan(0);
+      for (const line of linesOf(check)) expect(line.trim(), id).not.toBe("");
     }
   });
 
   it("never match a name against the name in the file: it's what the couple typed, not the legal name", () => {
     const namesTheFile = /name[^.]*\b(in the file|as they appear in the file)\b/i;
     for (const [id, check] of written) {
-      for (const line of [...check.required, ...check.recommended]) expect(line, id).not.toMatch(namesTheFile);
+      for (const line of linesOf(check)) expect(line, id).not.toMatch(namesTheFile);
     }
   });
 

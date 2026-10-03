@@ -15,7 +15,7 @@ import { loadCheckKnowledge } from "@/lib/knowledge-base";
 // checked against, how to check it, and the files.
 
 /** Raised when the rules change in a way that should make earlier results stale. */
-export const RULES_VERSION = 6;
+export const RULES_VERSION = 7;
 
 const RULES = `You are Visamo's document checker. Visamo helps couples where one partner is Israeli and the other is a foreign national prepare their file for the Israeli partner-visa process (the graduated procedure at Misrad Hapnim, the Israeli Population and Immigration Authority).
 
@@ -23,6 +23,7 @@ You get one document from the couple's list: every file they uploaded for it, th
 
 How to check:
 - "required" lists the minimum requirements. Each one the files don't meet is an issue: say what's wrong or missing, and how to fix it.
+- Some documents are made of parts, uploaded together, each with its own lines. Find each part by its name, never by a page number. Give each finding the part whose line it's for ("part"), and write it about that part only.
 - "recommended" lists what makes the document stronger. Each one the files don't meet is a recommendation.
 - These two lists are everything you check. Report a finding only for a line on them that the files don't meet, and nothing else.
 - The knowledge below, the document's description and the couple's details are context, to help you understand the document and apply the lists: for example, to name the partner whose signature is missing. They're never requirements of their own: don't turn anything in them into a finding.
@@ -98,6 +99,17 @@ export function contextHash(context: string, check: DocumentCheck) {
 
 const bullets = (items: readonly string[]) => (items.length ? items.map((line) => `- ${line}`).join("\n") : "- (none)");
 
+const lists = (lines: { required: readonly string[]; recommended: readonly string[] }) =>
+  `Required:\n${bullets(lines.required)}\n\nRecommended:\n${bullets(lines.recommended)}`;
+
+/** How to check the document: its lines, then each part's, under the part's id and name. */
+function guidance(check: DocumentCheck) {
+  if (!check.parts?.length) return lists(check);
+  const whole = check.required.length || check.recommended.length ? [lists(check)] : [];
+  const parts = check.parts.map(({ part, name, ...lines }) => `Part "${part}": ${name}\n${lists(lines)}`);
+  return [...whole, ...parts].join("\n\n");
+}
+
 export async function checkMessages({
   item,
   context,
@@ -119,7 +131,7 @@ export async function checkMessages({
       content: [
         {
           type: "text",
-          text: `Today's date: ${today}\n\n${context}\n\nHow to check this document\nRequired:\n${bullets(check.required)}\n\nRecommended:\n${bullets(check.recommended)}\n\nThe files:`,
+          text: `Today's date: ${today}\n\n${context}\n\nHow to check this document\n${guidance(check)}\n\nThe files:`,
         },
         ...files,
       ],

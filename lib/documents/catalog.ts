@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 28;
+export const CATALOG_VERSION = 29;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -81,13 +81,15 @@ const AS6 = "AS/6 checklist";
 export const documents = [
   // ── Forms ──
   {
+    // The whole form, uploaded together: the application, both partners' declarations, and the
+    // landlord's affidavit where a lease is asked for (its points, points.ts).
     id: "statusApplicationMarried",
     mayNeedTranslation: false,
     owner: "couple",
     category: "forms",
     when: "married",
     form: "AS/6",
-    source: `${P8} §ד.2.א`,
+    source: `${P8} §ד.2.א, §ד.2.ז; AS/6, the landlord's affidavit (affidavit annexed to the lease – couples)`,
     verified: true,
   },
   {
@@ -110,24 +112,6 @@ export const documents = [
     when: "foreignInIsrael",
     form: "AS/3",
     source: "Practice, confirmed by the product owner",
-    verified: true,
-  },
-  {
-    id: "israeliAffidavitMarried",
-    mayNeedTranslation: false,
-    owner: "israeli",
-    category: "forms",
-    when: "married",
-    source: `${P8} §ד.2.ז; ${AS6}`,
-    verified: true,
-  },
-  {
-    id: "foreignAffidavitMarried",
-    mayNeedTranslation: false,
-    owner: "foreign",
-    category: "forms",
-    when: "married",
-    source: `${P8} §ד.2.ז; ${AS6}`,
     verified: true,
   },
   {
@@ -380,19 +364,6 @@ export const documents = [
     verified: false,
   },
   {
-    // Only for couples who rent; onboarding doesn't ask whether they do.
-    id: "landlordAffidavit",
-    mayNeedTranslation: false,
-    owner: "couple",
-    category: "centerOfLife",
-    // Annexed to the lease, wherever it's asked for; part of AS/6, so for married couples only.
-    when: { all: ["married", { any: ["livingTogether", "israeliInIsrael"] }] },
-    optional: true,
-    form: "AS/6",
-    source: "AS/6, the landlord's affidavit (affidavit annexed to the lease – couples)",
-    verified: true,
-  },
-  {
     id: "utilityBills",
     // From abroad, for a couple who lived together there.
     mayNeedTranslation: true,
@@ -573,6 +544,10 @@ export type DocumentId = (typeof documents)[number]["id"];
 export const DOCUMENT_ALIASES: Readonly<Record<string, DocumentId>> = {
   // v2: the visa pages and entry stamps are part of the passport copy.
   foreignEntryVisa: "foreignPassport",
+  // v29: parts of form AS/6, uploaded with it as one document.
+  israeliAffidavitMarried: "statusApplicationMarried",
+  foreignAffidavitMarried: "statusApplicationMarried",
+  landlordAffidavit: "statusApplicationMarried",
 };
 
 /** Ids removed without a replacement. Never used again, so old saved progress can't attach to a new document. */

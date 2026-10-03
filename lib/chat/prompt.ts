@@ -102,8 +102,11 @@ export async function casePrompt(caseId: string, userId: string) {
     const say = (label: string, list: CheckFinding[]) =>
       list.length
         ? `${label}: ${list
-            .map((f) => findingText(f, "en"))
-            .map(({ title, detail }) => (title ? `${title}: ${detail}` : detail))
+            .map((f) => {
+              const { title, detail } = findingText(f, "en");
+              const text = title ? `${title}: ${detail}` : detail;
+              return f.part ? `(${t.app.documentsPage.check.parts[f.part]}) ${text}` : text;
+            })
             .join(" / ")}`
         : null;
     return [

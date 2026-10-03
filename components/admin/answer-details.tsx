@@ -1,15 +1,13 @@
 import { Fragment } from "react";
 import type { AdminChatMessage } from "@/lib/admin-chats";
-import type { ChatCall } from "@/lib/chat/openrouter";
 import { Icon } from "@/components/icons";
-import { formatNumber, formatUsd, Pill } from "./admin-ui";
+import { formatNumber, formatCallUsd } from "./admin-ui";
+import { CallsTable, FinishPill, seconds } from "./model-calls";
 
 // Under an answer on the admin's chat page: its cost and time, and behind a
 // "more" button the rest of what it took (the model calls and their tokens)
 // and what it was given (the couple's file, the earlier messages, and the
 // rules, knowledge and catalog versions).
-
-const seconds = (ms: number | null) => (ms == null ? null : `${(ms / 1000).toFixed(1)}s`);
 
 export function AnswerDetails({ message: m }: { message: AdminChatMessage }) {
   // Every answer records its calls; the column is only empty on questions.
@@ -30,7 +28,7 @@ export function AnswerDetails({ message: m }: { message: AdminChatMessage }) {
     // The cost and time at a glance; everything else behind the "more" button.
     <details className="group mt-2 text-[13px] text-slate-500">
       <summary className="flex w-fit cursor-pointer list-none items-center gap-1.5 tabular-nums [&::-webkit-details-marker]:hidden">
-        <span>{m.costUsd != null ? formatUsd(m.costUsd) : "Cost unknown"}</span>
+        <span>{m.costUsd != null ? formatCallUsd(m.costUsd) : "Cost unknown"}</span>
         {m.answerMs != null && <span>· {seconds(m.answerMs)}</span>}
         <FinishPill reason={m.finishReason} />
         <span
@@ -51,7 +49,7 @@ export function AnswerDetails({ message: m }: { message: AdminChatMessage }) {
         </dl>
         <div>
           <div className="font-semibold text-navy-900">Model calls</div>
-          <CallsTable calls={calls} />
+          <CallsTable calls={calls} label={(call) => (call.purpose === "answer" ? "Answer" : "Title")} />
         </div>
         {m.caseContext && (
           <details>
@@ -63,49 +61,5 @@ export function AnswerDetails({ message: m }: { message: AdminChatMessage }) {
         )}
       </div>
     </details>
-  );
-}
-
-/** Only when the answer didn't end on its own: at the token cap (the couple got it cut short), or broken off. */
-function FinishPill({ reason }: { reason: string | null }) {
-  if (reason === "stop") return null;
-  if (reason === "length") return <Pill tone="amber">Hit the token cap</Pill>;
-  if (reason === null) return <Pill tone="terracotta">Cut off</Pill>;
-  return <Pill>{reason}</Pill>;
-}
-
-function CallsTable({ calls }: { calls: ChatCall[] }) {
-  return (
-    <div className="mt-2 overflow-x-auto rounded-lg border border-line-200">
-      <table className="w-full min-w-[720px] text-start">
-        <thead className="text-slate-500">
-          <tr>
-            {["For", "Provider", "Model", "In", "Cached", "Out", "Cost", "Time", "Finish", "Generation"].map((h) => (
-              <th key={h} className="px-3 py-2 text-start font-semibold">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-line-200 text-slate-700 tabular-nums">
-          {calls.map((call, i) => (
-            <tr key={i}>
-              <td className="px-3 py-2">{call.purpose === "answer" ? "Answer" : "Title"}</td>
-              <td className="px-3 py-2">{call.provider ?? "—"}</td>
-              <td className="px-3 py-2 break-all">{call.model ?? "—"}</td>
-              <td className="px-3 py-2">{formatNumber(call.tokensIn)}</td>
-              <td className="px-3 py-2">{formatNumber(call.cachedTokens)}</td>
-              <td className="px-3 py-2">{formatNumber(call.tokensOut)}</td>
-              <td className="px-3 py-2">{call.costUsd != null ? formatUsd(call.costUsd) : "—"}</td>
-              <td className="px-3 py-2">{seconds(call.ms)}</td>
-              <td className="px-3 py-2">{call.finishReason ?? "—"}</td>
-              <td className="px-3 py-2 break-all">
-                <code>{call.generationId ?? "—"}</code>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
   );
 }

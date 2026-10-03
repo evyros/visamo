@@ -119,6 +119,10 @@ export type Completion = {
   finishReason: string | null;
   tokensIn: number;
   tokensOut: number;
+  /** Of `tokensOut`, the model's hidden reasoning: it counts toward max_tokens, before the answer. */
+  reasoningTokens: number;
+  /** The reasoning as the model reports it (Gemini: a summary of it); null when it reports none, or streamed. */
+  reasoning: string | null;
   /** Input tokens read from the prompt cache (cheaper). */
   cachedTokens: number;
   /** In US dollars; null if OpenRouter didn't report it. */
@@ -164,6 +168,8 @@ function fromResponse(json: Record<string, any>, answer: string, started: number
     finishReason: json.choices?.[0]?.finish_reason ?? null,
     tokensIn: usage.prompt_tokens ?? 0,
     tokensOut: usage.completion_tokens ?? 0,
+    reasoningTokens: usage.completion_tokens_details?.reasoning_tokens ?? 0,
+    reasoning: json.choices?.[0]?.message?.reasoning || null,
     cachedTokens: usage.prompt_tokens_details?.cached_tokens ?? 0,
     costUsd: typeof usage.cost === "number" ? usage.cost : null,
     ms: Math.round(performance.now() - started),

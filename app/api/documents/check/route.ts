@@ -10,6 +10,7 @@ import { caseChecks, checkBalance, claimCheck, failCheck, saveCheck, type CheckM
 import { checkView } from "@/lib/checks/view";
 import { refund, spend } from "@/lib/credits";
 import { checkFor } from "@/lib/documents/checks";
+import type { Part } from "@/lib/documents/points";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
 
@@ -23,7 +24,17 @@ import { findUserCase } from "@/lib/session";
 
 export const maxDuration = 300;
 
-const MAX_ANSWER_TOKENS = 4000;
+/**
+ * The model's reasoning counts toward it, before the answer: a document of
+ * several parts (form AS/6) can reason through 4000 tokens and get cut off
+ * mid-answer. Only the tokens used are paid for.
+ */
+const MAX_ANSWER_TOKENS = 16000;
+
+/** What a call that gave no check result returned, for the run's error and the log. */
+const describe = (call: Completion) =>
+  `finish ${call.finishReason}, ${call.tokensOut} tokens out (${call.reasoningTokens} reasoning), ` +
+  `${call.answer.length} chars, generation ${call.generationId}`;
 
 type ErrorCode =
   | "unauthorized"
@@ -45,16 +56,16 @@ const fail = (error: ErrorCode, status: number, extra?: { maxPages: number }) =>
  * doesn't fit its findings. Each call goes into `calls` as it's made, so a
  * run that fails midway still records what it cost.
  */
-async function ask(messages: ModelMessage[], calls: Completion[]) {
+async function ask(messages: ModelMessage[], parts: readonly Part[], calls: Completion[]) {
   const call = async () => {
     const completion = await completeJson(messages, {
       model: CHECK_MODEL,
       maxTokens: MAX_ANSWER_TOKENS,
       name: "document_check",
-      schema: checkResultSchema,
+      schema: checkResultSchema(parts),
     });
     calls.push(completion);
-    return parseCheck(completion.answer);
+    return parseCheck(completion.answer, parts);
   };
   const settled = (answer: CheckResult) => {
     const result = settle(answer);
@@ -62,10 +73,11 @@ async function ask(messages: ModelMessage[], calls: Completion[]) {
   };
   const first = await call();
   if (first && isConsistent(first)) return { result: first, corrected: false };
+  if (!first) console.warn("document check: answer wasn't a check result, asking again", describe(calls.at(-1)!));
   const second = await call();
   if (second) return settled(second);
   if (first) return settled(first);
-  throw new Error("The model's answer wasn't a check result");
+  throw new Error(`The model's answer wasn't a check result: ${calls.map(describe).join("; ")}`);
 }
 
 /** Every list item's check: whether one is running, and its latest result. */
@@ -149,6 +161,7 @@ export async function POST(request: Request) {
       spent = true;
       const answer = await ask(
         await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael() }),
+        check.parts?.map((p) => p.part) ?? [],
         measured.calls,
       );
       result = answer.result;

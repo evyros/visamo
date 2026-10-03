@@ -3,6 +3,30 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v29 — 2026-10-03
+
+**What changed:** `israeliAffidavitMarried`, `foreignAffidavitMarried` and
+`landlordAffidavit` are merged into `statusApplicationMarried` (form AS/6),
+and their ids now alias to it. Its card lists the form's parts as points: the
+application, the Israeli partner's declaration, the foreign partner's
+declaration (not needed yet for a foreign partner abroad while the Israeli
+partner files from Israel; couples both abroad file it together),
+and the landlord's affidavit, under the landlord affidavit's old condition
+(living together, or the Israeli partner in Israel). Its check has a part for
+each point, and each finding names its part; nothing in the landlord's part
+is required. The three guides are merged into the form's guide.
+
+**Why:** Couples get the declarations as pages of the same form, and upload
+it all as one PDF. One item, with its parts listed and checked part by part,
+fits how they file it.
+
+**Source:** Product decision; AS/6 and 5.2.0008 §ד.2.א, §ד.2.ז, as before.
+
+**Lists that changed:** Every married scenario: -israeliAffidavitMarried
+-foreignAffidavitMarried -landlordAffidavit, except neverLivedTogetherBothAbroad
+(no landlord's affidavit before either): -israeliAffidavitMarried
+-foreignAffidavitMarried.
+
 ## v28 — 2026-10-02
 
 **What changed:** `foreignChildrenAffidavit` is merged into

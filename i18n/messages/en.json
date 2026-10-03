@@ -1311,7 +1311,7 @@
         "statusApplicationMarried": {
           "title": "Status application for a married spouse (form AS/6)",
           "shortTitle": "Status application (form AS/6)",
-          "description": "The application for status for a foreign spouse married to an Israeli. Both of you sign it."
+          "description": "The application for status for a foreign spouse married to an Israeli, with the declarations that go with it."
         },
         "entryPermitApplication": {
           "title": "Entry permit application (form AS/1)",
@@ -1322,16 +1322,6 @@
           "title": "Visa change application (form AS/3)",
           "shortTitle": "Visa change application (form AS/3)",
           "description": "For a foreign partner already in Israel: the application to change their visa category, filled in Hebrew and English, with a recent photo."
-        },
-        "israeliAffidavitMarried": {
-          "title": "Affidavit of the Israeli partner",
-          "shortTitle": "Affidavit (form AS/6)",
-          "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
-        },
-        "foreignAffidavitMarried": {
-          "title": "Affidavit of the foreign partner",
-          "shortTitle": "Affidavit (form AS/6)",
-          "description": "A sworn statement in the ministry's wording, that the documents are true and that you'll report any change. Signed in front of a lawyer."
         },
         "affidavitCommonLaw": {
           "title": "Joint affidavit of both partners",
@@ -1452,11 +1442,6 @@
           "title": "Lease or purchase contract of the Israeli partner's home",
           "shortTitle": "Lease or purchase contract",
           "description": "The lease or purchase contract of the Israeli partner's home, in their name: the original, a copy and the lease appendix."
-        },
-        "landlordAffidavit": {
-          "title": "Landlord's affidavit",
-          "shortTitle": "Landlord's affidavit",
-          "description": "If you rent: an affidavit from your landlord in the ministry's wording (form AS/6), that they own the home and rent it to you, who else lives there, and who pays the bills. Signed in front of a lawyer, together with a scan of the landlord's Teudat Zehut."
         },
         "utilityBills": {
           "title": "Bills for your home",
@@ -1585,7 +1570,12 @@
         "statusBeforeWidowed": "Proof of marital status before the marriage (widowed).",
         "statusBeforeDivorcedOrWidowed": "Proof of marital status before the marriage (divorced or widowed, as the last marriage ended).",
         "noChildren": "Proof of no children from a previous relationship.",
-        "children": "Proof of children from previous relationships, and who has guardianship of each."
+        "children": "Proof of children from previous relationships, and who has guardianship of each.",
+        "as6Application": "The application, filled in, with both signatures.",
+        "as6IsraeliDeclaration": "The Israeli partner's declaration, signed in front of a lawyer.",
+        "as6ForeignDeclaration": "The foreign partner's declaration, signed in front of a lawyer.",
+        "as6ForeignDeclarationLater": "The foreign partner's declaration isn't needed yet: they sign it in front of a lawyer once they're in Israel.",
+        "as6LandlordAffidavit": "If you rent: the landlord's affidavit, signed in front of a lawyer, with a copy of the landlord's Teudat Zehut."
       }
     },
     "documentsPage": {
@@ -1686,7 +1676,7 @@
           "tooLarge": "These files are too large to check together. Try smaller scans.",
           "noChecks": "You've used all your document checks. Contact support for more.",
           "notIncluded": "Document checks come with Full file check.",
-          "failed": "The check didn't finish, and it wasn't counted. Please try again.",
+          "failed": "Something went wrong with the check, and it wasn't counted. Please try again.",
           "generic": "Something went wrong. Please try again."
         },
         "upgrade": "Get Full file check",
@@ -1701,6 +1691,12 @@
             "one": "1 tip",
             "other": "{count} tips"
           }
+        },
+        "parts": {
+          "application": "The application",
+          "israeliDeclaration": "Israeli partner's declaration",
+          "foreignDeclaration": "Foreign partner's declaration",
+          "landlordAffidavit": "Landlord's affidavit"
         }
       },
       "drop": "or drop them here",

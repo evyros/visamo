@@ -1,15 +1,19 @@
-import type { ReactNode } from "react";
-import type { AdminCheckRun, AdminFile, ListChange } from "@/lib/admin-documents";
+import { Fragment, type ReactNode } from "react";
+import type { AdminCheckRun as RunRow, AdminCheckRunWithCalls, AdminFile, ListChange } from "@/lib/admin-documents";
 import type { CheckRating } from "@/lib/checks/result";
 import { Icon, type IconName } from "@/components/icons";
-import { formatDateTime, formatNumber, Pill } from "./admin-ui";
+import { formatDateTime, formatNumber, formatCallUsd, Pill } from "./admin-ui";
 import { Findings, ratingTone, runId } from "./document-card";
+import { CallsTable, FinishPill } from "./model-calls";
 
 // A document's history as a timeline, newest first: files uploaded and
 // removed, every check with the files it saw and what it said, and the
 // details changes that put the document on the case's list or took it off.
 
 type Ratings = Record<CheckRating, string>;
+
+/** A run, with its model calls on the history page (the documents page only counts entries). */
+type AdminCheckRun = RunRow & Partial<Pick<AdminCheckRunWithCalls, "calls">>;
 
 /** Uploads or removals by the same person this close together are one entry: files added at once. */
 const GROUP_WITHIN_MS = 5 * 60 * 1000;
@@ -208,21 +212,10 @@ function RunCard({
   ratings: Ratings;
 }) {
   const added = new Set(changes?.added);
-  // How much of the prompt the provider served from its cache (the rules and the knowledge), on hover.
-  const cache =
-    run.tokensIn != null &&
-    (run.cachedTokens ? `${formatNumber(run.cachedTokens)} of ${formatNumber(run.tokensIn)} tokens cached` : "Not cached");
+  // What it saw and how long it took; what it cost is in the details below.
   const facts: ReactNode[] = [
     run.pages != null && `${run.pages} ${run.pages === 1 ? "page" : "pages"}`,
-    run.attempts != null && `${run.attempts} ${run.attempts === 1 ? "call" : "calls"}`,
-    run.costUsd != null && (
-      <span title={cache || undefined} className={cache ? "cursor-help underline decoration-dotted underline-offset-2" : undefined}>
-        ${run.costUsd.toFixed(4)}
-      </span>
-    ),
     run.durationMs != null && `${(run.durationMs / 1000).toFixed(1)}s`,
-    run.model,
-    `rules v${run.rulesVersion} · knowledge v${run.knowledgeVersion}`,
   ].filter(Boolean);
 
   return (
@@ -270,8 +263,65 @@ function RunCard({
             )}
           </div>
         )}
+        <RunDetails run={run} />
       </div>
     </article>
+  );
+}
+
+/**
+ * At the run's foot: its cost and tokens at a glance, and behind a "more"
+ * button the model, the versions, and each model call with its reasoning. A
+ * run that failed before calling the model has none.
+ */
+function RunDetails({ run }: { run: AdminCheckRun }) {
+  const calls = run.calls ?? [];
+  if (!calls.length) return null;
+  // Unknown for calls recorded before reasoning was.
+  const reasoning = calls.every((c) => c.reasoningTokens != null)
+    ? calls.reduce((sum, c) => sum + c.reasoningTokens, 0)
+    : null;
+  const tokensOut = calls.reduce((sum, c) => sum + c.tokensOut, 0);
+  const capped = calls.some((c) => c.finishReason === "length");
+  const glance = [
+    run.costUsd != null ? formatCallUsd(run.costUsd) : "Cost unknown",
+    run.tokensIn != null &&
+      `${formatNumber(run.tokensIn)} in${run.cachedTokens ? ` (${formatNumber(run.cachedTokens)} cached)` : ""}`,
+    `${formatNumber(tokensOut)} out${reasoning != null ? ` (${formatNumber(reasoning)} reasoning)` : ""}`,
+    `${calls.length} ${calls.length === 1 ? "call" : "calls"}`,
+  ].filter(Boolean);
+  const details: [string, string][] = [
+    ["Model", run.model],
+    ["Versions", `rules v${run.rulesVersion} · knowledge v${run.knowledgeVersion}`],
+  ];
+
+  return (
+    <details className="group text-[13px] text-slate-500">
+      <summary className="flex w-fit cursor-pointer list-none flex-wrap items-center gap-1.5 tabular-nums [&::-webkit-details-marker]:hidden">
+        <span>{glance.join(" · ")}</span>
+        {capped && <FinishPill reason="length" />}
+        <span
+          className="ms-0.5 inline-flex size-6 items-center justify-center rounded-md text-slate-500 group-open:bg-navy-900/5 hover:bg-navy-900/5 hover:text-navy-900"
+          aria-label="More details"
+        >
+          <Icon name="more" className="size-4" />
+        </span>
+      </summary>
+      <div className="mt-2 space-y-3 rounded-lg border border-line-200 bg-white p-3">
+        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
+          {details.map(([label, value]) => (
+            <Fragment key={label}>
+              <dt className="font-semibold text-navy-900">{label}</dt>
+              <dd className="tabular-nums">{value}</dd>
+            </Fragment>
+          ))}
+        </dl>
+        <div>
+          <div className="font-semibold text-navy-900">Model calls</div>
+          <CallsTable calls={calls} label={(_, i) => `Call ${i + 1}`} />
+        </div>
+      </div>
+    </details>
   );
 }
 

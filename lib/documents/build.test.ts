@@ -27,8 +27,6 @@ describe("buildDocumentList", () => {
     expect(keys("marriedInCyprus")).toEqual([
       "statusApplicationMarried",
       "visaChangeApplication",
-      "israeliAffidavitMarried",
-      "foreignAffidavitMarried",
       "relationshipStory",
       "israeliId",
       "israeliPhotos",
@@ -43,7 +41,6 @@ describe("buildDocumentList", () => {
       "foreignCivilStatus:US",
       "foreignPoliceCertificate:US",
       "housingContract",
-      "landlordAffidavit",
       "utilityBills",
       "governmentServices",
       "foreignHealthInsurance",
@@ -94,13 +91,13 @@ describe("buildDocumentList", () => {
     }
   });
 
-  it("gives married couples an affidavit each, and common-law couples one together", () => {
+  it("gives married couples their declarations in form AS/6, and common-law couples an affidavit together", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
-      const affidavits = keys(name).filter(
-        (k) => /affidavit/i.test(k) && k !== "landlordAffidavit",
-      );
+      const affidavits = keys(name).filter((k) => /affidavit/i.test(k));
       const married = scenarios[name].relationship.relationship === "married";
-      expect(affidavits, name).toEqual(married ? ["israeliAffidavitMarried", "foreignAffidavitMarried"] : ["affidavitCommonLaw"]);
+      expect(affidavits, name).toEqual(married ? [] : ["affidavitCommonLaw"]);
+      const points = find(name, "statusApplicationMarried")?.points ?? [];
+      if (married) expect(points.slice(0, 2), name).toEqual(["as6Application", "as6IsraeliDeclaration"]);
     }
   });
 
@@ -195,12 +192,13 @@ describe("buildDocumentList", () => {
     expect(find("marriedInCyprus", "foreignPassport")?.mayNeedTranslation).toBe(false);
   });
 
-  it("lists the lease for couples who lived together or whose Israeli partner lives in Israel, and with it, for married couples, the landlord's affidavit as optional", () => {
+  it("lists the lease for couples who lived together or whose Israeli partner lives in Israel, and with it, for married couples, the landlord's affidavit in form AS/6", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
       const { relationship, people } = scenarios[name];
       const home = relationship.livingTogether || people.some((p) => p.residence === "israel");
       const married = relationship.relationship === "married";
-      expect(find(name, "landlordAffidavit")?.optional, name).toBe(home && married ? true : undefined);
+      const landlord = find(name, "statusApplicationMarried")?.points.includes("as6LandlordAffidavit") ?? false;
+      expect(landlord, name).toBe(home && married);
       const leases = keys(name).filter((k) => k === "housingContract" || k === "israeliHousingContract");
       expect(leases, name).toHaveLength(home ? 1 : 0);
     }

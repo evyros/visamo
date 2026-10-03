@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { AdminFile } from "@/lib/admin-documents";
 import type { ItemCheck } from "@/lib/checks/store";
 import { findingText, type CheckFinding, type CheckRating } from "@/lib/checks/result";
+import en from "@/i18n/messages/en.json";
 import { Icon } from "@/components/icons";
 import { formatBytes, formatDateTime, Pill, type PillTone } from "./admin-ui";
 
@@ -164,7 +165,7 @@ const findingStyle = {
   unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500", label: "Couldn’t read" },
 } as const;
 
-/** A check's issues or recommendations, like the app shows them: a tinted box each, its title over its detail. */
+/** A check's issues or recommendations, like the app shows them: a tinted box each, its part and title over its detail. */
 export function Findings({ kind, findings }: { kind: keyof typeof findingStyle; findings: CheckFinding[] }) {
   if (!findings.length) return null;
   const style = findingStyle[kind];
@@ -176,6 +177,9 @@ export function Findings({ kind, findings }: { kind: keyof typeof findingStyle; 
           <li key={i} className={`flex gap-2 rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
             <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
             <div className="min-w-0">
+              {finding.part && (
+                <p className="text-xs font-semibold text-slate-600">{en.app.documentsPage.check.parts[finding.part]}</p>
+              )}
               {title && <p className="text-[15px] font-semibold text-navy-900">{title}</p>}
               <p className="mt-0.5 text-sm text-slate-700">{detail}</p>
             </div>

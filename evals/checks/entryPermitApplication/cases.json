@@ -1,0 +1,75 @@
+{
+  "scenario": "foreignAbroad",
+  "today": "2026-10-01",
+  "cases": [
+    { "name": "clean, typed", "files": ["as1.pdf"], "expect": { "rating": "looksGood" } },
+    {
+      "name": "clean, handwritten, photographed",
+      "files": ["as1-handwritten-page-1.jpg", "as1-handwritten-page-2.jpg"],
+      "expect": { "rating": ["looksGood", "canImprove"], "mayFlag": ["typed, or handwritten clearly"] }
+    },
+    {
+      "name": "handwritten, messy, B/1 instead of B/2",
+      "files": ["as1-handwritten-b1-page-1.jpg", "as1-handwritten-b1-page-2.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["visa category at the top"], "mayFlag": ["typed, or handwritten clearly", "same visa category is written at the top of page 2"] }
+    },
+    {
+      "name": "page 1 only",
+      "files": ["as1-page-1-only.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["with both pages"], "mayFlag": ["*"] }
+    },
+    {
+      "name": "foreign partner didn't sign",
+      "files": ["as1-not-signed-by-foreign.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["foreign partner's declaration on page 2"] }
+    },
+    {
+      "name": "salary option not marked",
+      "files": ["as1-salary-not-marked.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["Israeli partner's declaration on page 2"] }
+    },
+    {
+      "name": "passport number differs between the pages",
+      "files": ["as1-passport-numbers-differ.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["travel document is marked"] }
+    },
+    {
+      "name": "earlier request rejected, without when and where",
+      "files": ["as1-rejected-yes-no-details.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["questions about earlier requests"] }
+    },
+    {
+      "name": "office's part filled in",
+      "files": ["as1-office-filled.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["For official use only"] }
+    },
+    {
+      "name": "no embassy to notify",
+      "files": ["as1-no-embassy.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["embassy or consulate"] }
+    },
+    {
+      "name": "passport valid for less than 2 years",
+      "files": ["as1-passport-expiring.pdf"],
+      "expect": { "rating": "canImprove", "flagged": ["valid until"] }
+    },
+    {
+      "name": "says married, but the couple is common-law",
+      "scenario": "commonLawApart",
+      "files": ["as1.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["family status fits"], "mayFlag": ["spouse section", "purpose of entry"] }
+    },
+    {
+      "name": "says male, but the partner is a woman",
+      "files": ["as1.pdf"],
+      "foreign": { "gender": "female" },
+      "expect": { "rating": "needsFixing", "flagged": ["gender fits"] }
+    },
+    {
+      "name": "says American, but the partner is Ukrainian",
+      "files": ["as1.pdf"],
+      "foreign": { "nationality": "UA", "birthCountry": "UA" },
+      "expect": { "rating": "needsFixing", "flagged": ["nationality and citizenship fit"], "mayFlag": ["embassy or consulate"] }
+    }
+  ]
+}

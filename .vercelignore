@@ -2,3 +2,7 @@
 # so they stay out of Vercel builds.
 /collect
 /data
+
+# The evals: their cases, files (large size of scans) and reports. Only
+# run locally, against the models; the app never uses them.
+/evals

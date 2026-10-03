@@ -58,18 +58,42 @@ export function ChatView({
     setMessagesLeft(initialMessagesLeft);
   }
   const endRef = useRef<HTMLDivElement>(null);
+  const spacerRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLOListElement>(null);
+  const composerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  // Follow the answer as it streams, unless the user scrolled up to read.
-  const follow = useRef(true);
+  // The question just sent: it scrolls to the top of the view and its answer
+  // comes in below it, without moving the page under the reader. Room is made
+  // under a short answer so the question can get there.
+  const [pinned, setPinned] = useState<string | null>(null);
+  // Whether the end of the conversation is in view; if not, a button scrolls to it.
+  const [atEnd, setAtEnd] = useState(true);
 
   const outOfMessages = messagesLeft <= 0;
   // The character count only shows once the message is close to the limit.
   const nearLimit = input.length >= maxLength * 0.9;
   const waiting = streaming && messages.at(-1)?.role === "user";
+  const empty = messages.length === 0;
+
+  // Where the scroll stops with the last message just above the box to ask in,
+  // leaving out the room made for a pinned question.
+  function contentEnd(scroller: HTMLElement) {
+    const spacerTop = spacerRef.current?.getBoundingClientRect().top ?? 0;
+    const bottom = spacerTop - scroller.getBoundingClientRect().top + scroller.scrollTop;
+    return bottom + (composerRef.current?.offsetHeight ?? 0) - scroller.clientHeight;
+  }
+
+  // Calls back when the view, the conversation or the box to ask in changes size.
+  function observeSizes(scroller: HTMLElement, callback: () => void) {
+    const observer = new ResizeObserver(callback);
+    for (const element of [scroller, listRef.current, composerRef.current]) if (element) observer.observe(element);
+    return () => observer.disconnect();
+  }
 
   // Open a chat at its latest message, with the cursor after a draft, to go on writing.
   useLayoutEffect(() => {
-    endRef.current?.scrollIntoView({ block: "end" });
+    const scroller = endRef.current?.closest("main");
+    if (scroller) scroller.scrollTop = scroller.scrollHeight;
     const box = inputRef.current;
     box?.setSelectionRange(box.value.length, box.value.length);
   }, []);
@@ -77,25 +101,50 @@ export function ChatView({
   useEffect(() => {
     const scroller = endRef.current?.closest("main");
     if (!scroller) return;
-    const onScroll = () => {
-      follow.current = scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight < 80;
-    };
+    const onScroll = () => setAtEnd(contentEnd(scroller) - scroller.scrollTop < 8);
+    onScroll();
     scroller.addEventListener("scroll", onScroll, { passive: true });
-    return () => scroller.removeEventListener("scroll", onScroll);
-  }, []);
+    const unobserve = observeSizes(scroller, onScroll);
+    return () => {
+      scroller.removeEventListener("scroll", onScroll);
+      unobserve();
+    };
+  }, [empty]);
 
-  useEffect(() => {
-    if (follow.current) endRef.current?.scrollIntoView({ block: "end" });
-  }, [messages]);
+  useLayoutEffect(() => {
+    const scroller = endRef.current?.closest("main");
+    const spacer = spacerRef.current;
+    const question = pinned && scroller?.querySelector(`[data-message-id="${pinned}"]`);
+    if (!scroller || !spacer) return;
+    if (!question) {
+      spacer.style.height = "0px";
+      return;
+    }
+    const top = () =>
+      question.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop - 16;
+    // Keep just enough room under the answer for the question to stay at the
+    // top: it shrinks as the answer grows, so the page doesn't move.
+    const fit = () => {
+      spacer.style.height = `${Math.max(0, top() - contentEnd(scroller))}px`;
+    };
+    fit();
+    scroller.scrollTo({ top: top(), behavior: motion() });
+    return observeSizes(scroller, fit);
+  }, [pinned]);
+
+  function scrollToEnd() {
+    const scroller = endRef.current?.closest("main");
+    scroller?.scrollTo({ top: contentEnd(scroller), behavior: motion() });
+  }
 
   async function ask(message: string) {
     const text = message.trim();
     if (!text || streaming || outOfMessages || text.length > maxLength) return;
     setError(null);
     setStreaming(true);
-    follow.current = true;
     const messageId = crypto.randomUUID();
     setMessages((list) => [...list, { id: messageId, role: "user", content: text, author: null }]);
+    setPinned(messageId);
     setInput("");
     const isNew = !chatId;
     if (isNew) setPending({ id: null, title: text });
@@ -119,6 +168,7 @@ export function ChatView({
       // The message wasn't sent: take it back into the box, and out of the sidebar.
       if (isNew) setPending(null);
       setMessages((list) => list.filter((m) => m.id !== messageId));
+      setPinned(null);
       setInput(text);
       setError(key);
       setStreaming(false);
@@ -170,7 +220,6 @@ export function ChatView({
   }
 
   const [before, after] = t.disclaimer.split("{terms}");
-  const empty = messages.length === 0;
 
   return (
     <div className="flex min-h-full flex-col">
@@ -202,10 +251,10 @@ export function ChatView({
             )}
           </div>
         ) : (
-          <ol className="flex flex-col gap-6 pb-6" aria-live="polite" aria-busy={streaming}>
+          <ol ref={listRef} className="flex flex-col gap-6 pb-6" aria-live="polite" aria-busy={streaming}>
             {messages.map((message) =>
               message.role === "user" ? (
-                <li key={message.id} className="flex flex-col items-end">
+                <li key={message.id} data-message-id={message.id} className="flex flex-col items-end">
                   {message.author && (
                     <span aria-hidden="true" className="mb-1 pe-1 text-xs font-medium text-slate-500">
                       <bdi>{message.author}</bdi>
@@ -252,11 +301,22 @@ export function ChatView({
             )}
           </ol>
         )}
+        <div ref={spacerRef} aria-hidden="true" />
         <div ref={endRef} />
       </div>
 
-      <div className="sticky bottom-0 bg-gradient-to-t from-sand-50 from-70% to-transparent pt-4">
-        <div className="mx-auto w-full max-w-[768px] px-4 pb-3 sm:px-6">
+      <div ref={composerRef} className="sticky bottom-0 bg-gradient-to-t from-sand-50 from-70% to-transparent pt-4">
+        <div className="relative mx-auto w-full max-w-[768px] px-4 pb-3 sm:px-6">
+          {!empty && !atEnd && (
+            <button
+              type="button"
+              onClick={scrollToEnd}
+              aria-label={t.scrollDown}
+              className="absolute bottom-full left-1/2 mb-4 inline-flex size-9 -translate-x-1/2 items-center justify-center rounded-full border border-line-200 bg-white text-navy-900 shadow-soft transition-colors hover:bg-sand-50"
+            >
+              <Icon name="arrowDown" className="size-[18px]" />
+            </button>
+          )}
           {error && (
             <p role="alert" className="mb-2 rounded-lg bg-terracotta-100 px-3 py-2 text-[15px] text-terracotta-600">
               {t.errors[error]}
@@ -337,6 +397,11 @@ export function ChatView({
       </div>
     </div>
   );
+}
+
+// Smooth scrolling, unless the user asked for less motion.
+function motion(): ScrollBehavior {
+  return matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 }
 
 function Avatar() {

@@ -1725,6 +1725,12 @@
         }
       },
       "drop": "or drop them here",
+      "form": "Form {form} (PDF)",
+      "formNames": {
+        "AS/1": "AS/1",
+        "AS/3": "AS/3",
+        "AS/6": "AS/6"
+      },
       "requirements": {
         "copies": "Bring {count} copies to Misrad Hapnim",
         "unlessIssuedUntil": "{what}, unless it was issued up to {year}",

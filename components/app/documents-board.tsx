@@ -47,6 +47,8 @@ export type DocumentItem = {
   description: string;
   /** What it has to show, by the couple's case, right under the description; empty for most documents. */
   points: string[];
+  /** The Misrad Hapnim form to fill in, for the forms themselves. */
+  form?: { name: string; url: string };
   /** What to prepare before uploading: certification (with its exemption), translation, signing. */
   requirements: Requirement[];
   /** Only if it applies to the couple (the description says when). */
@@ -603,6 +605,16 @@ function DocumentCard({
                 <li key={point}>{point}</li>
               ))}
             </ul>
+          )}
+          {item.form && (
+            <a
+              href={item.form.url}
+              {...newTab}
+              className="mt-3 inline-flex items-center gap-1 text-[15px] font-semibold text-teal-700 hover:underline"
+            >
+              <Icon name="pdf" className="size-5 shrink-0" />
+              {format(t.form, { form: item.form.name })}
+            </a>
           )}
           {item.requirements.length > 0 && (
             <ul className="mt-3 space-y-1.5">

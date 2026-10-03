@@ -6,6 +6,7 @@ import { format } from "@/i18n/messages";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
 import { caseChecks, checkBalance } from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
+import { formUrls } from "@/lib/documents/catalog";
 import { ownerOrder } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
@@ -84,6 +85,7 @@ export default async function DocumentsPage() {
             title: format(text.shortTitle, { country }),
             description: format(text.description, { country }),
             points: d.points.map((point) => catalog.points[point]),
+            ...(d.form && { form: { name: t.formNames[d.form], url: formUrls[d.form] } }),
             requirements,
             optional: d.optional,
             check: {

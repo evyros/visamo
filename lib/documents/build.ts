@@ -1,4 +1,4 @@
-import { documents, type Category, type DocumentDefinition, type DocumentId, type Owner } from "./catalog";
+import { documents, type Category, type DocumentDefinition, type DocumentId, type FormId, type Owner } from "./catalog";
 import { certificationFor, type Certification, type Issuer } from "./certification";
 import { evaluate } from "./conditions";
 import { profileOf, type CaseProfile, type CaseSnapshot, type Fact } from "./facts";
@@ -14,7 +14,7 @@ export type RequiredDocument = {
   id: DocumentId;
   owner: Owner;
   category: Category;
-  form?: string;
+  form?: FormId;
   /** How many copies to bring, when more than one. */
   copies?: number;
   /** The couple decides whether it applies to them (see the catalog). */

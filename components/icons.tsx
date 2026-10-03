@@ -78,6 +78,19 @@ const paths = {
       <path d="M14 3v5h5M9 13h6M9 17h4" />
     </>
   ),
+  // A page with a filled "PDF" label; the letters are cut out in white.
+  pdf: (
+    <>
+      <path d="M7 11.5V5a2 2 0 0 1 2-2h6.5L20 7.5V19a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2" />
+      <path d="M15.5 3v4.5H20" />
+      <rect x="2.5" y="11.5" width="14" height="8" rx="1.5" fill="currentColor" />
+      <g stroke="white" strokeWidth={1.1}>
+        <path d="M4.6 18v-5h1.3a1.4 1.4 0 0 1 0 2.8H4.6" />
+        <path d="M8.4 18v-5h.9a2.5 2.5 0 0 1 0 5Z" />
+        <path d="M14.4 13h-2.1v5M12.3 15.5h1.7" />
+      </g>
+    </>
+  ),
   guide: (
     <>
       <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z" />

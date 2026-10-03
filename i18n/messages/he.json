@@ -1725,6 +1725,12 @@
         }
       },
       "drop": "או לגרור לכאן",
+      "form": "טופס {form} (PDF)",
+      "formNames": {
+        "AS/1": "אש/1",
+        "AS/3": "אש/3",
+        "AS/6": "אש/6"
+      },
       "requirements": {
         "copies": "יש להביא {count} עותקים למשרד הפנים",
         "unlessIssuedUntil": "{what}, אלא אם הונפק עד {year}",

@@ -66,7 +66,7 @@ export type DocumentDefinition = {
    */
   signAtAppointment?: boolean;
   /** The Misrad Hapnim form, for the forms themselves. */
-  form?: string;
+  form?: FormId;
   /** Where the requirement comes from: a procedure section, a form. */
   source: string;
   /** Checked against the source by a person. */
@@ -77,6 +77,15 @@ export type DocumentDefinition = {
 const P8 = "Procedure 5.2.0008 (edition 16, 2026-07-20)";
 const P9 = "Procedure 5.2.0009";
 const AS6 = "AS/6 checklist";
+
+/** The forms on gov.il, linked from their documents. */
+export const formUrls = {
+  "AS/1": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf",
+  "AS/3": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf",
+  "AS/6": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf",
+} as const;
+
+export type FormId = keyof typeof formUrls;
 
 export const documents = [
   // ── Forms ──

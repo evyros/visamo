@@ -1,0 +1,207 @@
+{
+  "scenario": "marriedOnline",
+  "today": "2026-10-01",
+  "israeli": {
+    "name": "Evyatar Rozner",
+    "gender": "male"
+  },
+  "foreign": {
+    "name": "Elizabeth Anne Sieck",
+    "gender": "female"
+  },
+  "cases": [
+    {
+      "name": "real file: everything more than 6 months old",
+      "files": [
+        "real-certificate.pdf",
+        "real-affidavit.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad",
+          "apostille or legalization pages are scanned",
+          "affidavit is dated"
+        ]
+      }
+    },
+    {
+      "name": "real file: no marriage record only, no affidavit",
+      "files": [
+        "real-certificate.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "no children from a previous relationship",
+          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "real file, but the partner has children",
+      "scenario": "childrenStayingBehind",
+      "files": [
+        "real-certificate.pdf",
+        "real-affidavit.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "listing their children",
+          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
+        ],
+        "mayFlag": [
+          "Each child is named",
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "real file, but the couple is common-law",
+      "scenario": "commonLawLivingTogether",
+      "files": [
+        "real-certificate.pdf",
+        "real-affidavit.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "shows they're single"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "certificate without its apostille",
+      "files": [
+        "certificate-no-apostille.pdf",
+        "real-affidavit.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "carries the certification",
+          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
+        ],
+        "mayFlag": [
+          "apostille or legalization pages are scanned",
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "affidavit without the notary",
+      "files": [
+        "real-certificate.pdf",
+        "affidavit-not-notarized.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "no children from a previous relationship",
+          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "Germany: single, with apostille, no translation",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Lena Marie Becker",
+        "gender": "female",
+        "nationality": "DE",
+        "birthCountry": "DE"
+      },
+      "files": [
+        "germany-single-status.pdf",
+        "affidavit-lena.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "notarized translation is uploaded"
+        ]
+      }
+    },
+    {
+      "name": "Philippines: CENOMAR, with apostille",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Maria Clara Santos Reyes",
+        "gender": "female",
+        "nationality": "PH",
+        "birthCountry": "PH"
+      },
+      "files": [
+        "philippines-cenomar.pdf",
+        "affidavit-maria.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "Ukraine: no marriage record, translated, no apostille",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Olena Petrivna Kovalenko",
+        "gender": "female",
+        "nationality": "UA",
+        "birthCountry": "UA"
+      },
+      "files": [
+        "ukraine-no-marriage-record.pdf",
+        "affidavit-olena.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "carries the certification"
+        ],
+        "mayFlag": [
+          "apostille or legalization pages are scanned",
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "United States: no marriage record, with apostille",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Emily Rose Carter",
+        "gender": "female"
+      },
+      "files": [
+        "us-no-marriage-record.pdf",
+        "affidavit-emily.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ]
+      }
+    }
+  ]
+}

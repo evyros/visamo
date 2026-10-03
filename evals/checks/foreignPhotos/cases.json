@@ -1,0 +1,58 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-10-01",
+  "cases": [
+    { "name": "clean", "files": ["passport-photo.jpg"], "expect": { "rating": "looksGood" } },
+    {
+      "name": "black and white",
+      "files": ["passport-photo-bw.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["in color"] }
+    },
+    {
+      "name": "black and white headshot",
+      "files": ["bw-headshot.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["in color"], "mayFlag": ["passport-format photo of one person"] }
+    },
+    {
+      "name": "dark background",
+      "files": ["dark-background.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["light, plain background"] }
+    },
+    {
+      "name": "busy background",
+      "files": ["busy-background.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["light, plain background"], "mayFlag": ["passport-format photo of one person"] }
+    },
+    {
+      "name": "head tilted",
+      "files": ["tilted.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"] }
+    },
+    {
+      "name": "two people",
+      "files": ["two-people.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"] }
+    },
+    {
+      "name": "looking away",
+      "files": ["looking-away.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+    },
+    {
+      "name": "half body",
+      "files": ["half-body.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+    },
+    {
+      "name": "sunglasses, head turned",
+      "files": ["sunglasses-dark-background.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+    },
+    {
+      "name": "not a photo",
+      "files": ["rent-receipt.png"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+    },
+    { "name": "blank", "files": ["blank.jpg"], "expect": { "rating": "unreadable" } }
+  ]
+}

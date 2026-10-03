@@ -2,10 +2,12 @@ import { getAppLocale } from "@/i18n/app-locale";
 import { todayInIsrael } from "@/i18n/format";
 import { format, loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
-import { CHECK_MODEL, completeJson, type Completion, type ModelMessage } from "@/lib/chat/openrouter";
+import { CHECK_MODEL } from "@/lib/chat/openrouter";
+import { askCheck } from "@/lib/checks/ask";
 import { MAX_CHECK_PAGES, prepareFiles } from "@/lib/checks/files";
 import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
-import { checkResultSchema, isConsistent, parseCheck, settle, type CheckResult } from "@/lib/checks/result";
+import { checkShape } from "@/lib/checks/lines";
+import type { CheckResult } from "@/lib/checks/result";
 import {
   caseChecks,
   checkBalance,
@@ -18,7 +20,6 @@ import {
 import { checkView } from "@/lib/checks/view";
 import { refund, spend } from "@/lib/credits";
 import { checkFor } from "@/lib/documents/checks";
-import type { Part } from "@/lib/documents/points";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
 
@@ -32,18 +33,6 @@ import { findUserCase } from "@/lib/session";
 // every item's state, for a page that was open while a check ran.
 
 export const maxDuration = 300;
-
-/**
- * The model's reasoning counts toward it, before the answer: a document of
- * several parts (form AS/6) can reason through 4000 tokens and get cut off
- * mid-answer. Only the tokens used are paid for.
- */
-const MAX_ANSWER_TOKENS = 16000;
-
-/** What a call that gave no check result returned, for the run's error and the log. */
-const describe = (call: Completion) =>
-  `finish ${call.finishReason}, ${call.tokensOut} tokens out (${call.reasoningTokens} reasoning), ` +
-  `${call.answer.length} chars, generation ${call.generationId}`;
 
 type ErrorCode =
   | "unauthorized"
@@ -59,35 +48,6 @@ type ErrorCode =
   | "failed";
 const fail = (error: ErrorCode, status: number, extra?: { maxPages: number }) =>
   Response.json({ error, ...extra }, { status });
-
-/**
- * The model's answer, asked for once more if it's malformed or its rating
- * doesn't fit its findings. Each call goes into `calls` as it's made, so a
- * run that fails midway still records what it cost.
- */
-async function ask(messages: ModelMessage[], parts: readonly Part[], calls: Completion[]) {
-  const call = async () => {
-    const completion = await completeJson(messages, {
-      model: CHECK_MODEL,
-      maxTokens: MAX_ANSWER_TOKENS,
-      name: "document_check",
-      schema: checkResultSchema(parts),
-    });
-    calls.push(completion);
-    return parseCheck(completion.answer, parts);
-  };
-  const settled = (answer: CheckResult) => {
-    const result = settle(answer);
-    return { result, corrected: result.rating !== answer.rating };
-  };
-  const first = await call();
-  if (first && isConsistent(first)) return { result: first, corrected: false };
-  if (!first) console.warn("document check: answer wasn't a check result, asking again", describe(calls.at(-1)!));
-  const second = await call();
-  if (second) return settled(second);
-  if (first) return settled(first);
-  throw new Error(`The model's answer wasn't a check result: ${calls.map(describe).join("; ")}`);
-}
 
 /** Every list item's check: whether one is running, and its latest result. */
 export async function GET() {
@@ -170,9 +130,9 @@ export async function POST(request: Request) {
         return fail("noChecks", 402);
       }
       spent = true;
-      const answer = await ask(
+      const answer = await askCheck(
         await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael(), dismissed }),
-        check.parts?.map((p) => p.part) ?? [],
+        checkShape(check),
         measured.calls,
       );
       result = answer.result;

@@ -61,13 +61,25 @@ async function downscaled(bytes: Uint8Array) {
   }
 }
 
-/** The files as the model's content: each labelled with its name, then the file. */
-export async function prepareFiles(caseId: string, files: CheckFile[], maxPages: number): Promise<PreparedFiles> {
+/** The case's files, from the Blob store, as the model's content. */
+export function prepareFiles(caseId: string, files: CheckFile[], maxPages: number): Promise<PreparedFiles> {
+  return prepareContent(files, maxPages, (file) => read(caseId, file.id));
+}
+
+/**
+ * Files as the model's content: each labelled with its name, then the file.
+ * `read` gets a file's bytes (the evals read theirs from disk).
+ */
+export async function prepareContent<F extends { name: string; contentType: string }>(
+  files: F[],
+  maxPages: number,
+  read: (file: F) => Promise<Uint8Array>,
+): Promise<PreparedFiles> {
   const parts: ContentPart[] = [];
   let pages = 0;
   let bytes = 0;
   for (const [index, file] of files.entries()) {
-    const content = await read(caseId, file.id);
+    const content = await read(file);
     parts.push({ type: "text", text: `File ${index + 1} of ${files.length}: "${file.name}"` });
 
     if (file.contentType === "application/pdf") {

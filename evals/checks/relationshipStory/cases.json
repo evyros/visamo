@@ -1,0 +1,98 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-10-01",
+  "cases": [
+    { "name": "clean", "files": ["clean.pdf"], "expect": { "rating": "looksGood" } },
+    {
+      "name": "ours: one partner writing, not signed, no life together",
+      "files": ["ours.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["It describes their life together", "signed by both partners"],
+        "mayFlag": ["It describes their relationship", "3–4 paragraphs", "anecdotes", "Concrete dates", "It is dated"]
+      }
+    },
+    {
+      "name": "signed by one partner",
+      "files": ["one-signature.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["signed by both partners"], "mayFlag": ["It is dated"] }
+    },
+    {
+      "name": "not signed",
+      "files": ["not-signed.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["signed by both partners"], "mayFlag": ["It is dated"] }
+    },
+    {
+      "name": "doesn't say how they met",
+      "files": ["no-meeting.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["tells how and when they met"], "mayFlag": ["anecdotes", "Concrete dates"] }
+    },
+    {
+      "name": "doesn't describe their life together",
+      "files": ["no-life-together.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["It describes their life together"], "mayFlag": ["anecdotes"] }
+    },
+    {
+      "name": "says married in Cyprus, file says married in Israel",
+      "scenario": "marriedInIsrael",
+      "files": ["clean.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["Nothing in it contradicts"] }
+    },
+    {
+      "name": "says married, file says common-law",
+      "scenario": "commonLawLivingTogether",
+      "files": ["clean.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["Nothing in it contradicts"] }
+    },
+    {
+      "name": "in English",
+      "files": ["english.pdf"],
+      "expect": { "rating": ["canImprove", "looksGood"], "flagged": ["written in Hebrew"] }
+    },
+    {
+      "name": "one short paragraph",
+      "files": ["short.pdf"],
+      "expect": {
+        "rating": ["canImprove", "needsFixing"],
+        "flagged": ["3–4 paragraphs", "anecdotes"],
+        "mayFlag": ["It describes their relationship", "It describes their life together", "Concrete dates"]
+      }
+    },
+    {
+      "name": "no dates, only \"a few years ago\"",
+      "files": ["vague-dates.pdf"],
+      "expect": { "rating": "canImprove", "flagged": ["Concrete dates"] }
+    },
+    {
+      "name": "undated, no names by the signatures",
+      "files": ["undated.pdf"],
+      "expect": { "rating": ["canImprove", "looksGood"], "flagged": ["It is dated"] }
+    },
+    {
+      "name": "years apart, not explained",
+      "files": ["apart-unexplained.pdf"],
+      "expect": { "rating": ["canImprove", "looksGood"], "flagged": ["relatively short"], "mayFlag": ["anecdotes"] }
+    },
+    {
+      "name": "not a letter",
+      "files": ["rent-receipt.png"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["It is a letter about this couple"],
+        "mayFlag": [
+          "tells how and when",
+          "It describes their relationship",
+          "It describes their life together",
+          "signed by both partners",
+          "Nothing in it contradicts",
+          "written in Hebrew",
+          "3–4 paragraphs",
+          "anecdotes",
+          "Concrete dates",
+          "relatively short",
+          "It is dated"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-10-01",
+  "cases": [
+    { "name": "complete", "files": ["as6-complete.pdf"], "expect": { "rating": ["looksGood", "canImprove"] } },
+    {
+      "name": "application signed by one partner",
+      "files": ["as6-one-signature.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["application: signed by both partners"] }
+    },
+    {
+      "name": "no request marked",
+      "files": ["as6-no-request.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["application: One request is marked"] }
+    },
+    {
+      "name": "Israeli statement not ticked or explained",
+      "files": ["as6-israeli-unticked.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["israeliDeclaration: Each of the five statements is ticked"] }
+    },
+    {
+      "name": "foreign declaration without the lawyer's confirmation",
+      "files": ["as6-foreign-no-confirmation.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["foreignDeclaration: confirmation (אישור קבלת ההצהרה)"] }
+    },
+    {
+      "name": "foreign declaration page missing",
+      "files": ["as6-no-foreign-page.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["foreignDeclaration: It is the foreign partner's declaration"],
+        "mayFlag": ["foreignDeclaration: first and last name", "foreignDeclaration: statements is ticked", "foreignDeclaration: place, the date", "foreignDeclaration: confirmation (אישור"]
+      }
+    },
+    {
+      "name": "foreign partner abroad, declaration not signed yet",
+      "scenario": "foreignAbroad",
+      "files": ["as6-foreign-unsigned.pdf"],
+      "expect": { "rating": ["looksGood", "canImprove"] }
+    }
+  ]
+}

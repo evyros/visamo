@@ -42,6 +42,16 @@ describe("parseCheck", () => {
     ).toBeNull();
   });
 
+  it("keeps the line a finding names, and drops one the check doesn't have", () => {
+    const shape = { parts: [], lines: ["R1", "S1"] };
+    const answer = {
+      rating: "needsFixing",
+      issues: [{ ...finding("Expired"), line: "R1" }, { ...finding("Other"), line: "none" }, { ...finding("Odd"), line: "R9" }],
+      recommendations: [],
+    };
+    expect(parseCheck(JSON.stringify(answer), shape)!.issues.map((f) => f.line)).toEqual(["R1", undefined, undefined]);
+  });
+
   it("caps findings, and drops empty ones", () => {
     const long = "x".repeat(MAX_DETAIL_LENGTH + 50);
     const answer = {

@@ -8,6 +8,7 @@ import type { ContentPart, ModelMessage } from "@/lib/chat/openrouter";
 import type { RequiredDocument } from "@/lib/documents/build";
 import type { DocumentCheck } from "@/lib/documents/checks";
 import type { DismissReason, FindingKind } from "./dismissals";
+import { checkLines, type CheckLine } from "./lines";
 import type { CheckFinding } from "./result";
 import { loadCheckKnowledge } from "@/lib/knowledge-base";
 
@@ -17,7 +18,7 @@ import { loadCheckKnowledge } from "@/lib/knowledge-base";
 // checked against, how to check it, and the files.
 
 /** Raised when the rules change in a way that should make earlier results stale. */
-export const RULES_VERSION = 7;
+export const RULES_VERSION = 8;
 
 const RULES = `You are Visamo's document checker. Visamo helps couples where one partner is Israeli and the other is a foreign national prepare their file for the Israeli partner-visa process (the graduated procedure at Misrad Hapnim, the Israeli Population and Immigration Authority).
 
@@ -32,6 +33,7 @@ How to check:
 - Today's date is given: use it for validity and "issued in the last…" periods.
 - Base every finding on what the files actually say. In its detail, quote or state briefly what you read that the finding rests on: the names, dates or wording ("The tenants listed are …", "The lease runs from … to …"). Read the files closely before you decide something is missing: a finding that contradicts the files is worse than none.
 - Keep each finding to its list: an issue is for a "required" line, a recommendation for a "recommended" line. Never call a recommendation required, needed or a must.
+- Each line has an id: R1, R2… for the required lines, S1, S2… for the recommended ones. Give each finding the id of the line it's for ("line"), or "none" if it's for no line. Never write an id in a finding's text.
 - The rating:
   - "needsFixing" when there's at least one issue.
   - "canImprove" when there are no issues, but recommendations worth doing.
@@ -99,16 +101,21 @@ export function contextHash(context: string, check: DocumentCheck) {
     .slice(0, 32);
 }
 
-const bullets = (items: readonly string[]) => (items.length ? items.map((line) => `- ${line}`).join("\n") : "- (none)");
-
-const lists = (lines: { required: readonly string[]; recommended: readonly string[] }) =>
-  `Required:\n${bullets(lines.required)}\n\nRecommended:\n${bullets(lines.recommended)}`;
+/** A group of lines, required then recommended, each under its id. */
+function lists(lines: readonly CheckLine[]) {
+  const bullets = (kind: CheckLine["kind"]) => {
+    const items = lines.filter((line) => line.kind === kind);
+    return items.length ? items.map((line) => `- ${line.id}: ${line.text}`).join("\n") : "- (none)";
+  };
+  return `Required:\n${bullets("required")}\n\nRecommended:\n${bullets("recommended")}`;
+}
 
 /** How to check the document: its lines, then each part's, under the part's id and name. */
 function guidance(check: DocumentCheck) {
-  if (!check.parts?.length) return lists(check);
-  const whole = check.required.length || check.recommended.length ? [lists(check)] : [];
-  const parts = check.parts.map(({ part, name, ...lines }) => `Part "${part}": ${name}\n${lists(lines)}`);
+  const lines = checkLines(check);
+  if (!check.parts?.length) return lists(lines);
+  const whole = check.required.length || check.recommended.length ? [lists(lines.filter((line) => !line.part))] : [];
+  const parts = check.parts.map(({ part, name }) => `Part "${part}": ${name}\n${lists(lines.filter((line) => line.part === part))}`);
   return [...whole, ...parts].join("\n\n");
 }
 
@@ -128,7 +135,8 @@ const reasonText: Record<DismissReason, string> = {
 function dismissedText(dismissed: readonly { kind: FindingKind; finding: CheckFinding; reason: DismissReason }[]) {
   if (!dismissed.length) return "";
   const lines = dismissed.map(({ kind, finding, reason }) => {
-    const part = finding.part ? ` (part "${finding.part}")` : "";
+    const where = [finding.line && `line ${finding.line}`, finding.part && `part "${finding.part}"`].filter(Boolean);
+    const part = where.length ? ` (${where.join(", ")})` : "";
     return `- ${kind === "issue" ? "Issue" : "Recommendation"}${part}: "${finding.en.title}": ${finding.en.detail} The couple says it's wrong: ${reasonText[reason]}.`;
   });
   return `\n\nIn the last check of this document, the couple dismissed these findings as wrong:\n${lines.join("\n")}\nLook at each one again, carefully, in these files. Report it only if the files clearly show it, and never mention that it was dismissed. Check everything else as usual.`;

@@ -1,0 +1,57 @@
+{
+  "scenario": "commonLawLivingTogether",
+  "today": "2026-10-01",
+  "cases": [
+    { "name": "clean, typed", "files": ["affidavit.pdf"], "expect": { "rating": "looksGood" } },
+    { "name": "clean, handwritten, photographed", "files": ["affidavit-handwritten.jpg"], "expect": { "rating": "looksGood" } },
+    {
+      "name": "signed by both",
+      "files": ["affidavit-signed.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["It is not signed yet"] }
+    },
+    {
+      "name": "signed by the Israeli partner",
+      "files": ["affidavit-signed-by-israeli.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["It is not signed yet"] }
+    },
+    {
+      "name": "the copy signed at the office",
+      "files": ["affidavit-signed-at-office.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["It is not signed yet", "office's confirmation section"] }
+    },
+    {
+      "name": "Israeli partner's ID number missing",
+      "files": ["affidavit-no-id.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["Israeli partner's full name and ID number"] }
+    },
+    {
+      "name": "foreign partner's passport number missing",
+      "files": ["affidavit-no-passport.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["foreign partner's full name and passport number"] }
+    },
+    {
+      "name": "a statement they can't declare, without the reason",
+      "files": ["affidavit-explanation-no-reason.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["statements they can't declare"] }
+    },
+    {
+      "name": "a statement they can't declare, with the reason",
+      "files": ["affidavit-explanation.pdf"],
+      "expect": { "rating": "looksGood" }
+    },
+    {
+      "name": "scanned without the signature section",
+      "files": ["affidavit-cut-off.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["It is the common-law affidavit form"],
+        "mayFlag": ["Israeli partner's full name and ID number", "foreign partner's full name and passport number", "It is not signed yet", "office's confirmation section"]
+      }
+    },
+    {
+      "name": "the married couples' AS/6 declaration instead",
+      "files": ["as6-declaration.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["It is the common-law affidavit form"], "mayFlag": ["*"] }
+    }
+  ]
+}

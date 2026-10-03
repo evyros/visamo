@@ -27,6 +27,7 @@ export function ChatView({
   chatId,
   initialMessages,
   draft,
+  suggestions,
   messagesLeft: initialMessagesLeft,
   maxLength,
   termsUrl,
@@ -36,6 +37,8 @@ export function ChatView({
   initialMessages: Message[];
   /** What the box starts with: a question begun from a document's card, or nothing. */
   draft: string;
+  /** The questions a new chat suggests, picked from the case. */
+  suggestions: string[];
   messagesLeft: number;
   maxLength: number;
   termsUrl: string;
@@ -183,7 +186,7 @@ export function ChatView({
             <p className="mt-2 max-w-md text-slate-500">{t.greetingIntro}</p>
             {!outOfMessages && (
               <ul className="mt-8 flex w-full max-w-xl flex-col gap-2">
-                {t.suggestions.map((suggestion) => (
+                {suggestions.map((suggestion) => (
                   <li key={suggestion}>
                     <button
                       type="button"

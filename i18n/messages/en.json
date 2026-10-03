@@ -1085,11 +1085,29 @@
       "buyMore": "Buy more messages",
       "greeting": "How can I help you?",
       "greetingIntro": "Ask about the process, your documents or what comes next. You can write in any language.",
-      "suggestions": [
-        "Which documents do we still need?",
-        "What is an apostille, and do I need one?",
-        "What happens after we file our application?"
-      ],
+      "suggestions": {
+        "file": {
+          "missing": "Which documents do we still need?",
+          "ready": "Are we ready to file our application?",
+          "complete": "Is there anything else we should prepare?"
+        },
+        "document": {
+          "fix": "How do I fix what the check found in “{document}”?",
+          "apostille": "Does “{document}” need an apostille?",
+          "legalization": "How do I get “{document}” legalized?",
+          "translation": "Does “{document}” need a translation?",
+          "show": "What does “{document}” need to show?",
+          "general": "What is an apostille, and do I need one?"
+        },
+        "stage": {
+          "notFiled": "What happens at the first appointment?",
+          "filedAwaiting": "What happens while we wait for an answer?",
+          "firstResponse": "What does our first response mean, and what comes next?",
+          "interviewScheduled": "How should we prepare for the interview?",
+          "interviewDone": "What happens after the interview?",
+          "approved": "What comes after the approval?"
+        }
+      },
       "placeholder": "Ask anything",
       "inputLabel": "Your message",
       "send": "Send",

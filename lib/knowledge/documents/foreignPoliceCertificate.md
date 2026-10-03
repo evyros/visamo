@@ -250,6 +250,7 @@ the apostille: it comes from the Foreign, Commonwealth and Development Office
 An FBI Identity History Summary, from the FBI. You apply with your
 fingerprints. It's a federal document, so its apostille comes from the US
 Department of State, not from a state.
+Pro tip: As an apostille can only be obtained via mail from the Department of State or in person with appointment in Wahsington, DC through the Department of State, if you have a trusted POC in the United States, we recommend sending the completed background check to them and having them subit for the apostille. Go to the US Department of State website - requesting authentication services for the full apostille process.
 
 ## What it should include
 

@@ -2,9 +2,9 @@
 
 The last 3-12 salary slips. If you're self-employed: a confirmation signed by your accountant of the income you reported for the last year.
 
-The Israeli partner's payslips (tlushim, תלושי שכר), with a confirmation
-from work, if they're employed (שכיר). If they don't get payslips, they show
-their income in another way, depending on their situation (below).
+The Israeli partner's payslips (tlushim, תלושי שכר), if they're employed
+(שכיר). If they don't get payslips, they show their income in another way,
+depending on their situation (below).
 
 The Israeli partner has to show they can support the household: recent
 payslips and bank statements, and the shuma if they're self-employed.
@@ -13,12 +13,10 @@ payslips and bank statements, and the shuma if they're self-employed.
 
 - **The last 12 payslips.** The official requirement is 3 months, but in
   practice the ministry asks for 12 in most cases.
-- **A confirmation from work** (אישור מקום עבודה), from the employer.
 - **If the Israeli partner lives abroad and works for a business outside
-  Israel:** a certified translation of the payslips and the confirmation
-  from work, if they aren't in Hebrew or Arabic (see
-  [certification.md](../certification.md)). In practice, English is usually
-  accepted without one.
+  Israel:** a certified translation of the payslips, if they aren't in
+  Hebrew or Arabic (see [certification.md](../certification.md)). In
+  practice, English is usually accepted without one.
 
 ## If you don't have it
 

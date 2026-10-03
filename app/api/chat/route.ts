@@ -23,7 +23,8 @@ export const maxDuration = 120;
 
 /** Earlier messages sent along with a new one, so a long chat stays affordable. */
 const HISTORY = 20;
-const MAX_ANSWER_TOKENS = 1200;
+/** The model's thinking counts toward it too, so leave room beyond the short answer the rules ask for. */
+const MAX_ANSWER_TOKENS = 4000;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 type ErrorCode = "unauthorized" | "invalid" | "tooLong" | "notFound" | "noMessages" | "failed";
@@ -215,7 +216,8 @@ async function summarize(message: string): Promise<{ text: string; call: Complet
         },
         { role: "user", content: message },
       ],
-      30,
+      // Room for the model's thinking before the few words.
+      300,
     );
     return { text: call.answer.replace(/^["'«“]+|["'»”.]+$/g, "").slice(0, 80) || fallback, call };
   } catch (error) {

@@ -6,8 +6,8 @@ import "server-only";
 
 const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
-/** Claude Haiku, latest. OPENROUTER_MODEL overrides it, e.g. to try another model. */
-const MODEL = process.env.OPENROUTER_MODEL || "anthropic/claude-haiku-4.5";
+/** GPT-5.6 Luna. OPENROUTER_MODEL overrides it, e.g. to try another model. */
+const MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-5.6-luna";
 
 /**
  * The document checker's model: Gemini Flash, on trial against Claude Sonnet,

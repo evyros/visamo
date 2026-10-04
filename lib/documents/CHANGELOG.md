@@ -3,6 +3,20 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v30 — 2026-10-04
+
+**What changed:** `foreignBirthCertificate` items now carry the foreign
+partner's country of birth, and its description names it ("The original,
+from where they were born: United States."). The document check's details
+now include "For the country" for it.
+
+**Why:** The page, the chat and the check said "the country of birth"
+without naming it, though the case knows it.
+
+**Source:** Product decision; 5.2.0008 §ד.2.ה, as before.
+
+**Lists that changed:** None: same keys; every list's birth certificate item gains its country.
+
 ## v29 — 2026-10-03
 
 **What changed:** `israeliAffidavitMarried`, `foreignAffidavitMarried` and

@@ -1383,7 +1383,7 @@
         "foreignBirthCertificate": {
           "title": "Birth certificate",
           "shortTitle": "Birth certificate",
-          "description": "The original, from the country of birth."
+          "description": "The original, from where they were born: {country}."
         },
         "foreignNameChange": {
           "title": "Proof of the name change",

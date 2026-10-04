@@ -1383,7 +1383,7 @@
         "foreignBirthCertificate": {
           "title": "תעודת לידה",
           "shortTitle": "תעודת לידה",
-          "description": "המקור, מארץ הלידה."
+          "description": "המקור, מארץ הלידה: {country}."
         },
         "foreignNameChange": {
           "title": "אישור על שינוי השם",
@@ -1701,7 +1701,7 @@
           "failed": "אירעה תקלה בבדיקה, והיא לא נספרה. נסו שוב.",
           "generic": "משהו השתבש. אפשר לנסות שוב."
         },
-        "upgrade": "לרכישת בדיקת תיק מלאה",
+        "upgrade": "בדיקת תיק מלאה",
         "upgradeHint": "אל תתנו לפרט שגוי לעכב את התיק שלכם.",
         "cantOpenTitle": "לא הצלחנו לפתוח קובץ",
         "counts": {

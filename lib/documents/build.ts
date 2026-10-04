@@ -19,7 +19,7 @@ export type RequiredDocument = {
   copies?: number;
   /** The couple decides whether it applies to them (see the catalog). */
   optional: boolean;
-  /** The country it's for, for one item per country. */
+  /** The country it's for, for one item per country, or the one it comes from when that's known from the case (the birth certificate). */
   country?: string;
   /** Null for documents not issued by an authority (forms, photos, evidence). */
   certification: Certification | null;
@@ -64,6 +64,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
     const countries = doc.each ? profile.countries.police : [undefined];
     return countries.map((country): RequiredDocument => {
       const issuer = issuerOf(doc.issuedBy, profile, country);
+      const from = country ?? (doc.issuedBy === "birthCountry" ? profile.countries.birthCountry : undefined);
       return {
         key: country ? `${doc.id}:${country}` : doc.id,
         id: doc.id as DocumentId,
@@ -72,7 +73,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         ...(doc.form && { form: doc.form }),
         ...(doc.copies && { copies: doc.copies }),
         optional: !!doc.optional,
-        ...(country && { country }),
+        ...(from && { country: from }),
         certification: issuer === undefined ? null : certificationFor(issuer, doc.exemption),
         mayNeedTranslation: doc.mayNeedTranslation,
         signAtAppointment: !!doc.signAtAppointment,

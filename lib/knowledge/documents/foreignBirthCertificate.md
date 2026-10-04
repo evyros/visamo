@@ -1,6 +1,6 @@
 # Birth certificate (תעודת לידה)
 
-The original, from the country of birth.
+The original, from where they were born.
 
 The foreign partner's birth certificate. Every couple needs it, however and wherever you married.
 

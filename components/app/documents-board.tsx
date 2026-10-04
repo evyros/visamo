@@ -407,7 +407,11 @@ export function DocumentsBoard({
             </div>
             <p className="mt-3 text-sm text-slate-600">
               {t.progressHint}{" "}
-              <Link href={buyUrl("/file/documents")} className="font-semibold text-teal-700 hover:underline">
+              <Link
+                href={buyUrl("/file/documents")}
+                className="whitespace-nowrap font-semibold text-teal-700 hover:underline"
+              >
+                <Icon name="checkCircle" className="me-1 inline-block size-4 align-[-0.2em]" />
                 {t.check.upgrade}
               </Link>
             </p>

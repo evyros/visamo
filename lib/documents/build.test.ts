@@ -17,7 +17,6 @@ const everyone = [
   "messageHistory",
   "recommendationLetters",
   "foreignHealthInsurance",
-  "ishurToshav",
   "israeliIncomeProof",
   "foreignIncomeProof",
 ];
@@ -166,6 +165,13 @@ describe("buildDocumentList", () => {
     expect(keys("foreignAbroad")).toContain("governmentServices");
     expect(find("foreignAbroad", "governmentServices")?.because).toEqual(["israeliInIsrael"]);
     expect(keys("bothAbroad")).not.toContain("governmentServices");
+  });
+
+  it("asks for the municipality confirmation only when at least one of them lives in Israel", () => {
+    expect(keys("foreignAbroad")).toContain("ishurToshav");
+    expect(find("foreignAbroad", "ishurToshav")?.because).toEqual(["israeliInIsrael"]);
+    expect(keys("bothAbroad")).not.toContain("ishurToshav");
+    expect(keys("neverLivedTogetherBothAbroad")).not.toContain("ishurToshav");
   });
 
   it("asks for the security CV only from the countries that need a security check", () => {

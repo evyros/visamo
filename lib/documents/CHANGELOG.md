@@ -3,6 +3,19 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v31 — 2026-10-04
+
+**What changed:** `ishurToshav` (the municipality confirmation of your center
+of life) is now asked for only when at least one partner lives in Israel
+(`{ any: [israeliInIsrael, foreignInIsrael] }`), like `governmentServices`.
+
+**Why:** The municipality confirms a home in its locality, registered for
+arnona. A couple who both live abroad has no home in Israel to confirm.
+
+**Source:** Product decision; 5.2.0008 §ד.2.ח, AS/6 checklist, as before.
+
+**Lists that changed:** bothAbroad, neverLivedTogetherBothAbroad: -ishurToshav.
+
 ## v30 — 2026-10-04
 
 **What changed:** `foreignBirthCertificate` items now carry the foreign

@@ -30,6 +30,14 @@ export const prices: Record<ProductId, number> = {
   fileCheck: 369,
 };
 
+/**
+ * The price a product goes up to after its launch price, shown struck through
+ * next to `prices`. Remove a product's entry when its launch price ends.
+ */
+export const afterLaunchPrices: Partial<Record<ProductId, number>> = {
+  fileCheck: 549,
+};
+
 /** Signup, and with `product`, what the person chose to buy on the pricing page. */
 export function signupUrl(locale: Locale, product?: ProductId) {
   const url = new URL("/signup", site.appUrl);

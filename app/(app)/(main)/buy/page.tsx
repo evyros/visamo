@@ -11,6 +11,7 @@ import { prices } from "@/lib/site";
 import { BuyButton } from "@/components/app/purchase";
 import { primaryButton, secondaryButton } from "@/components/app/settings-ui";
 import { Icon, type IconName } from "@/components/icons";
+import { LaunchPrice } from "@/components/launch-price";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.buy };
@@ -77,6 +78,7 @@ export default async function BuyPage({ searchParams }: PageProps<"/buy">) {
           tagline={pricing.fileCheck.tagline}
           price={formatPrice(prices.fileCheck, locale)}
           priceNote={pricing.fileCheck.priceNote}
+          launch={checks.fileCheck ? null : <LaunchPrice product="fileCheck" t={messages} locale={locale} />}
           footnote={pricing.fileCheck.footnote}
         >
           <ul className="mt-6 space-y-3 text-[15px]">
@@ -126,6 +128,7 @@ function ProductCard({
   tagline,
   price,
   priceNote,
+  launch,
   footnote,
   children,
 }: {
@@ -135,6 +138,8 @@ function ProductCard({
   tagline: string;
   price: string;
   priceNote: string;
+  /** The launch-price line under the price, while there is one. */
+  launch?: React.ReactNode;
   footnote: string;
   children: React.ReactNode;
 }) {
@@ -158,6 +163,7 @@ function ProductCard({
         </span>
         <span className="text-sm text-slate-500">{priceNote}</span>
       </p>
+      {launch}
       {children}
       <p className="mt-3 text-center text-xs text-slate-500">{footnote}</p>
     </article>

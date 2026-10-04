@@ -534,7 +534,12 @@
       "cta": "לרכישת 50 הודעות",
       "footnote": "תשלום חד-פעמי. ההודעות לא פגות."
     },
-    "recommended": "מומלץ"
+    "recommended": "מומלץ",
+    "launch": {
+      "badge": "מחיר השקה",
+      "after": "{price} אחרי ההשקה",
+      "save": "חוסכים {amount}"
+    }
   },
   "security": {
     "hero": {

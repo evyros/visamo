@@ -3,6 +3,7 @@ import type { Messages } from "@/i18n/dictionaries";
 import { formatPrice } from "@/i18n/format";
 import { prices, signupUrl } from "@/lib/site";
 import { Icon } from "./icons";
+import { LaunchPrice } from "./launch-price";
 import { ButtonLink } from "./ui";
 
 // Free and Full file check side by side, and the message pack under them: a
@@ -53,6 +54,7 @@ export function PricingCards({
                 </span>
                 {option.priceNote && <span className="text-sm text-slate-500">{option.priceNote}</span>}
               </p>
+              {id !== "free" && <LaunchPrice product={id} t={t} locale={locale} />}
 
               {!compact && (
                 <ul className="mt-6 space-y-3 text-[15px]">

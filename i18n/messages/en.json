@@ -534,7 +534,12 @@
       "cta": "Get 50 messages",
       "footnote": "One-time payment. Messages don't expire."
     },
-    "recommended": "Recommended"
+    "recommended": "Recommended",
+    "launch": {
+      "badge": "Launch price",
+      "after": "{price} after launch",
+      "save": "Save {amount}"
+    }
   },
   "security": {
     "hero": {

@@ -136,9 +136,18 @@ volunteer or work-holiday visa, a tourist visa):
 
 ### Without a valid visa
 
-If the foreign partner is in Israel without a valid visa, it's a
-complicated case, and we recommend going through the process with a lawyer
-who handles partner visas. What the procedure says (5.2.0008):
+If the foreign partner stayed in Israel past their visa (an overstay), in
+practice it doesn't affect their eligibility for the partner visa at all.
+
+- **The best way:** the foreign partner leaves Israel, and you start the
+  process properly from abroad, through the entry permit (see "If the
+  foreign partner is outside Israel" above; if you both live abroad, through
+  the consulate: see [both-abroad.md](both-abroad.md)).
+- **Don't come back before the entry permit.** Until the office grants it,
+  the foreign partner shouldn't try to enter Israel again: it's very likely
+  they'll be refused entry and deported.
+
+By procedure 5.2.0008, if they stay and apply from Israel:
 
 - **With a court ruling ordering them to leave Israel:** as a rule, the
   application isn't handled until they leave (§ג.12). Only in very rare

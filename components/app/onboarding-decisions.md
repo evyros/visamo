@@ -44,10 +44,10 @@ Foreign partner only:
   others." Each country adds a police certificate and a proof of civil
   status.
 - **Where they are now:** in Israel with a valid visa / in Israel without one
-  / outside Israel. "Without one" shows a yellow notice recommending a
-  lawyer, but doesn't block finishing: the documents are the same, and
-  Visamo still helps with them. It adds no document (the explanation letter
-  was dropped in catalog v18). "With a valid visa" includes a tourist
+  / outside Israel. "Without one" shows no notice and doesn't block
+  finishing: an overstay doesn't affect eligibility, so it isn't treated as
+  a case for a lawyer. It adds no document (the explanation letter was
+  dropped in catalog v18). "With a valid visa" includes a tourist
   visit: visiting is allowed; only coming to stay needs the entry permit
   first. The nationality
   also tells the chat whether a partner abroad enters on an ETA-IL or needs a

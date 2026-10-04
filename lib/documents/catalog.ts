@@ -565,7 +565,7 @@ export const RETIRED_DOCUMENT_IDS: readonly string[] = [
   "feeReceipt",
   // v2: split into the center-of-life documents every couple needs.
   "centerOfLifeEvidence",
-  // v18: a stay without a valid visa is a case for a lawyer, not a letter.
+  // v18: no procedure or form asks for a letter about a stay without a valid visa.
   "foreignStayExplanation",
   // v25: a duplicate. Common-law couples have no status application of their own: AS/3 or AS/1.
   "statusApplicationCommonLaw",

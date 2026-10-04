@@ -38,11 +38,6 @@ export default async function SignupPage({
   const locale = await getAppLocale();
   const t = (await getAppDictionary()).app.auth;
 
-  // COMING SOON: signup is open only in local dev. Remove this block to open it everywhere.
-  if (process.env.NODE_ENV !== "development") {
-    return <AuthHeading title={t.signup.title}>{t.comingSoon}</AuthHeading>;
-  }
-
   const legal = (slug: string) => new URL(localePath(locale, `/legal/${slug}`), site.url).toString();
 
   return (

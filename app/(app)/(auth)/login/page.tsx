@@ -17,16 +17,6 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   const { error, reset } = await searchParams;
   const t = (await getAppDictionary()).app.auth;
 
-  // COMING SOON: login is open only in local dev. Remove this block to open it everywhere.
-  if (process.env.NODE_ENV !== "development") {
-    return (
-      <>
-        <AuthHeading title={t.login.title} />
-        <p className="text-center text-[16px] text-slate-700">{t.comingSoon}</p>
-      </>
-    );
-  }
-
   return (
     <>
       <AuthHeading title={t.login.title} />

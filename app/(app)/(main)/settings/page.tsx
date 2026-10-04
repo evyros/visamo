@@ -51,6 +51,26 @@ export default async function AccountPage() {
         {hasPassword ? <ChangePasswordForm t={t} auth={messages.app.auth} /> : <p>{t.googleOnly}</p>}
       </SettingsCard>
 
+      {/* Always on for password logins and never turned off (lib/auth.ts), so there's nothing to set. */}
+      <SettingsCard title={t.twoStepTitle}>
+        <div className="space-y-3">
+          {hasPassword && <p>{t.twoStepOn}</p>}
+          {hasGoogle && (
+            <>
+              <p>{t.twoStepGoogle}</p>
+              <a
+                href="https://myaccount.google.com/signinoptions/twosv"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block font-semibold text-teal-700 underline-offset-4 hover:underline"
+              >
+                {t.twoStepGoogleLink}
+              </a>
+            </>
+          )}
+        </div>
+      </SettingsCard>
+
       <SettingsCard title={t.languageTitle}>
         <p className="mb-4">{t.languageBody}</p>
         <AppLanguageSwitch />

@@ -4,10 +4,11 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { eq } from "drizzle-orm";
 import { nextCookies } from "better-auth/next-js";
 import { magicLink } from "better-auth/plugins/magic-link";
+import { twoFactor } from "better-auth/plugins/two-factor";
 import { localeFromHeaders } from "@/i18n/negotiate";
 import { db } from "./db";
 import * as schema from "./db/schema";
-import { sendAuthEmail } from "./email";
+import { sendAuthEmail, sendLoginCode } from "./email";
 import { loginUrl, site } from "./site";
 
 // Sign-in methods:
@@ -19,6 +20,13 @@ import { loginUrl, site } from "./site";
 //   Better Auth's reset flow.
 // Plain email + password sign-up is off, so every password belongs to an
 // email that was verified first.
+//
+// Two-step login: logging in with a password also asks for a 6-digit code
+// sent to the email (the two-factor plugin). It's on for every user and can't
+// be turned off. Google logins skip it: Google has its own security, and the
+// code would go to the same Google account. So does the sign-up link, since
+// opening it already proves the email. Sessions last 30 days, so users rarely
+// see the code.
 
 type RequestContext = { headers?: Headers; request?: Request } | null | undefined;
 
@@ -30,6 +38,26 @@ export const auth = betterAuth({
   baseURL: site.appUrl,
   secret: process.env.BETTER_AUTH_SECRET,
   database: drizzleAdapter(db, { provider: "pg", schema }),
+
+  session: {
+    expiresIn: 60 * 60 * 24 * 30,
+    updateAge: 60 * 60 * 24,
+  },
+
+  // In the database, so every server instance counts the same attempts. The
+  // two-factor plugin allows 3 requests per 10 seconds on its routes.
+  rateLimit: { storage: "database" },
+
+  // Two-step login is always on: no route turns it off, and the plugin's
+  // authenticator-app and backup-code routes aren't used.
+  disabledPaths: [
+    "/two-factor/enable",
+    "/two-factor/disable",
+    "/two-factor/get-totp-uri",
+    "/two-factor/verify-totp",
+    "/two-factor/generate-backup-codes",
+    "/two-factor/verify-backup-code",
+  ],
 
   user: {
     additionalFields: {
@@ -77,7 +105,7 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
-        before: async (user, ctx) => ({ data: { ...user, locale: localeOf(ctx) } }),
+        before: async (user, ctx) => ({ data: { ...user, locale: localeOf(ctx), twoFactorEnabled: true } }),
       },
     },
   },
@@ -87,6 +115,19 @@ export const auth = betterAuth({
       expiresIn: 60 * 30,
       sendMagicLink: async ({ email, url }, ctx) => {
         await sendAuthEmail({ kind: "signup", to: email, url, locale: localeOf(ctx) });
+      },
+    }),
+    twoFactor({
+      totpOptions: { disable: true },
+      // Both last 10 minutes: the code, and the login waiting for it.
+      twoFactorCookieMaxAge: 60 * 10,
+      otpOptions: {
+        period: 10,
+        storeOTP: "hashed",
+        allowedAttempts: 5,
+        sendOTP: async ({ user, otp }, ctx) => {
+          await sendLoginCode({ to: user.email, code: otp, locale: localeOf(ctx) });
+        },
       },
     }),
     // Must stay last: lets server actions set auth cookies.

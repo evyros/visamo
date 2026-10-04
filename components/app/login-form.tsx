@@ -2,16 +2,26 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { authClient } from "@/lib/auth-client";
 import { Field, Notice, SubmitButton, describe, inputClass, isEmail } from "./auth-ui";
 import { authErrorMessage, type AuthLabels } from "./auth-errors";
+import { LoginCodeForm } from "./login-code-form";
 import { PasswordInput } from "./password-input";
 
-export function LoginForm({ t }: { t: AuthLabels }) {
+export function LoginForm({
+  t,
+  lead,
+}: {
+  t: AuthLabels;
+  /** Shown above the form and hidden at the code step: "Continue with Google". */
+  lead?: ReactNode;
+}) {
   const router = useRouter();
   const [errors, setErrors] = useState<{ email?: string; password?: string; form?: string }>({});
   const [pending, setPending] = useState(false);
+  /** The email we sent a login code to, once the password was accepted. */
+  const [codeSentTo, setCodeSentTo] = useState("");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -31,18 +41,41 @@ export function LoginForm({ t }: { t: AuthLabels }) {
     }
 
     setPending(true);
-    const { error } = await authClient.signIn.email({ email, password });
+    const { data: signedIn, error } = await authClient.signIn.email({ email, password });
     if (error) {
       setErrors({ form: authErrorMessage(error, t) });
       setPending(false);
+      return;
+    }
+    // Every password login has a second step (lib/auth.ts): no session yet,
+    // just a pending login that a code we email now completes.
+    if ("twoFactorRedirect" in signedIn && signedIn.twoFactorRedirect) {
+      const { error } = await authClient.twoFactor.sendOtp();
+      setPending(false);
+      if (error) setErrors({ form: authErrorMessage(error, t) });
+      else setCodeSentTo(email);
       return;
     }
     router.replace("/");
     router.refresh();
   }
 
+  if (codeSentTo) {
+    return (
+      <LoginCodeForm
+        email={codeSentTo}
+        t={t}
+        onBack={() => {
+          setCodeSentTo("");
+          setErrors({});
+        }}
+      />
+    );
+  }
+
   return (
     <form noValidate onSubmit={onSubmit} className="space-y-5">
+      {lead}
       {errors.form && <Notice>{errors.form}</Notice>}
       <Field id="email" label={t.email} error={errors.email}>
         <input

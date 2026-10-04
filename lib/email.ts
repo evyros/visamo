@@ -6,7 +6,8 @@ import { site } from "@/lib/site";
 
 // Transactional emails, sent through Resend in the recipient's language. They
 // share one layout: a heading, a paragraph, a button with the link spelled out
-// (when there's a link), and a note for anyone who didn't expect the email.
+// (when there's a link) or a code to type in (when there's a code), and a note
+// for anyone who didn't expect the email.
 // Without RESEND_API_KEY (local development), they're printed to the terminal.
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
@@ -20,18 +21,20 @@ const escape = (value: string) =>
 async function sendEmail({
   to,
   url,
+  code,
   locale,
   copy,
   replyTo,
 }: {
   to: string;
   url?: string;
+  code?: string;
   locale: Locale;
   copy: Copy;
   replyTo?: string;
 }) {
   if (!resend) {
-    console.info(`\n[email] ${copy.subject} → ${to}\n${url ?? copy.body}\n`);
+    console.info(`\n[email] ${copy.subject} → ${to}\n${url ?? code ?? copy.body}\n`);
     return;
   }
 
@@ -52,13 +55,18 @@ async function sendEmail({
         <p style="margin:24px 0 4px;font-size:13px;color:#55606e">${escape(t.fallback)}</p>
         <p style="margin:0 0 24px;font-size:13px;word-break:break-all" dir="ltr"><a href="${escape(url)}" style="color:#2f7f76">${escape(url)}</a></p>`
             : ""
+        }${
+          code
+            ? `
+        <p style="margin:0 0 24px;font-size:32px;font-weight:bold;letter-spacing:8px;font-family:'Courier New',monospace;text-align:center" dir="ltr">${escape(code)}</p>`
+            : ""
         }
         <p style="margin:0;font-size:13px;color:#55606e">${escape(copy.ignore)}</p>
       </td></tr>
     </table>
   </body>
 </html>`;
-  const text = [copy.heading, copy.body, url, copy.ignore].filter(Boolean).join("\n\n");
+  const text = [copy.heading, copy.body, url, code, copy.ignore].filter(Boolean).join("\n\n");
 
   const { error } = await resend.emails.send({ from, to, replyTo, subject: copy.subject, html, text });
   if (error) throw new Error(`Resend: ${error.message}`);
@@ -77,6 +85,12 @@ export async function sendAuthEmail({
 }) {
   const t = (await loadMessages(locale)).app.email;
   await sendEmail({ to, url, locale, copy: { ...t[kind], ignore: t.ignore } });
+}
+
+/** The code that finishes a password login (the two-factor plugin in lib/auth.ts). */
+export async function sendLoginCode({ to, code, locale }: { to: string; code: string; locale: Locale }) {
+  const copy = (await loadMessages(locale)).app.email.loginCode;
+  await sendEmail({ to, code, locale, copy });
 }
 
 /** Invites a partner into the file. `inviter` is the inviting partner's name. */

@@ -33,9 +33,15 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
       <div className="space-y-6">
         {reset === "done" && <Notice tone="success">{t.login.passwordUpdated}</Notice>}
         {error && <Notice>{t.errors.generic}</Notice>}
-        <GoogleButton label={t.google} errorCallbackURL="/login" />
-        <Divider label={t.or} />
-        <LoginForm t={t} />
+        <LoginForm
+          t={t}
+          lead={
+            <>
+              <GoogleButton label={t.google} errorCallbackURL="/login" />
+              <Divider label={t.or} />
+            </>
+          }
+        />
       </div>
       <p className="mt-8 text-center text-[15px]">
         {t.login.noAccount}{" "}

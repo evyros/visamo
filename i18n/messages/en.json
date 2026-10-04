@@ -897,6 +897,15 @@
         "invalid": "This link has expired or was already used.",
         "requestNew": "Send me a new link"
       },
+      "code": {
+        "title": "Check your email",
+        "intro": "We sent a 6-digit code to **{email}**. Enter it to finish logging in.",
+        "label": "Code",
+        "submit": "Continue",
+        "resend": "Send a new code",
+        "resent": "We sent a new code.",
+        "back": "Back to log in"
+      },
       "sending": "Sending…",
       "saving": "Saving…",
       "errors": {
@@ -907,6 +916,9 @@
         "passwordMismatch": "The passwords don't match.",
         "invalidCredentials": "The email or password is incorrect. If you signed up with Google, use Continue with Google.",
         "tooManyAttempts": "Too many attempts. Wait a minute and try again.",
+        "codeInvalid": "That code is incorrect.",
+        "codeExpired": "This code has expired or was entered wrong too many times. Send a new code.",
+        "loginExpired": "Too much time has passed. Log in again.",
         "generic": "Something went wrong. Please try again."
       }
     },
@@ -1206,6 +1218,10 @@
         "passwordChanged": "Your password was changed. Any other devices were logged out.",
         "wrongPassword": "The current password is incorrect.",
         "googleOnly": "You log in with Google, so there's no password to change.",
+        "twoStepTitle": "Two-step login",
+        "twoStepOn": "On. When you log in with your password, we also email you a code.",
+        "twoStepGoogle": "When you log in with Google, your Google account protects your login. To make it safer, turn on 2-Step Verification in your Google account.",
+        "twoStepGoogleLink": "Turn on 2-Step Verification in Google",
         "languageTitle": "Language",
         "languageBody": "The app's language, on every device you log in on.",
         "deleteTitle": "Delete account",
@@ -1282,6 +1298,12 @@
         "heading": "You log in with Google",
         "body": "We got a request to reset the password for your Visamo account. Your account doesn't have a password: you log in with Google. On the login page, choose Continue with Google.",
         "button": "Go to login"
+      },
+      "loginCode": {
+        "subject": "Your Visamo login code",
+        "heading": "Your login code",
+        "body": "Enter this code on the login page to finish logging in. It's valid for 10 minutes.",
+        "ignore": "If you didn't just log in, someone may know your password. Change it in Settings, or reset it from the login page."
       },
       "invite": {
         "subject": "{name} invited you to your file on Visamo",

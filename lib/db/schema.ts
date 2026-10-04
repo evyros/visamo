@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import {
+  bigint,
   boolean,
   doublePrecision,
   index,
@@ -22,8 +23,9 @@ import type { StageDates } from "../stages";
 import type { AccessDuration, AccessReason } from "../support-access-options";
 
 // Better Auth's core tables (user, session, account, verification), plus the
-// user's app language. Field names match what Better Auth expects; change them
-// only together with the auth config in lib/auth.ts.
+// user's app language and the two-factor plugin's tables. Field names match
+// what Better Auth expects; change them only together with the auth config in
+// lib/auth.ts.
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -33,6 +35,8 @@ export const user = pgTable("user", {
   image: text("image"),
   /** The app language, so it follows the user to a new device. */
   locale: text("locale"),
+  /** Logging in with a password also asks for a code sent by email. True for every user (lib/auth.ts). */
+  twoFactorEnabled: boolean("two_factor_enabled").notNull().default(true),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -86,7 +90,7 @@ export const account = pgTable(
   (table) => [index("account_user_id_idx").on(table.userId)],
 );
 
-/** Short-lived tokens: sign-up links and password reset links. */
+/** Short-lived tokens: sign-up links, password reset links and login codes. */
 export const verification = pgTable(
   "verification",
   {
@@ -102,6 +106,35 @@ export const verification = pgTable(
   },
   (table) => [index("verification_identifier_idx").on(table.identifier)],
 );
+
+/**
+ * The two-factor plugin's table, for authenticator apps and backup codes. We
+ * use only codes sent by email, which live in verification, so it stays empty;
+ * the plugin still looks it up when checking a code.
+ */
+export const twoFactor = pgTable(
+  "two_factor",
+  {
+    id: text("id").primaryKey(),
+    secret: text("secret").notNull(),
+    backupCodes: text("backup_codes").notNull(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    verified: boolean("verified").default(true),
+    failedVerificationCount: integer("failed_verification_count").default(0),
+    lockedUntil: timestamp("locked_until"),
+  },
+  (table) => [index("two_factor_user_id_idx").on(table.userId), index("two_factor_secret_idx").on(table.secret)],
+);
+
+/** Better Auth's rate limits, kept in the database so every server instance shares them. */
+export const rateLimit = pgTable("rate_limit", {
+  id: text("id").primaryKey(),
+  key: text("key").notNull().unique(),
+  count: integer("count").notNull(),
+  lastRequest: bigint("last_request", { mode: "number" }).notNull(),
+});
 
 // ── Cases ────────────────────────────────────────────────────────────────────
 // A case (תיק) is one couple's immigration file. Users are logins that can

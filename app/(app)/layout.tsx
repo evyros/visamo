@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
+import { FullStory } from "@/components/fullstory";
 import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { fontVariables } from "@/lib/fonts";
@@ -32,6 +33,7 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
         </a>
         {children}
         <Analytics />
+        <FullStory />
       </body>
     </html>
   );

@@ -14,6 +14,8 @@ function urlFromEnv(value: string | undefined, fallback: string) {
 
 // Deployment-specific values. Override with environment variables.
 export const site = {
+  /** The brand's Hebrew spelling, for search engines only; the site always shows "Visamo". */
+  nameHe: "ויזאמו",
   url: urlFromEnv(process.env.NEXT_PUBLIC_SITE_URL, "https://visamo.co.il"),
   appUrl: urlFromEnv(process.env.NEXT_PUBLIC_APP_URL, "https://app.visamo.co.il"),
   /** The admin panel (app/admin), for the owner only. */

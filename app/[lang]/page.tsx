@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
 import { localePath } from "@/lib/site";
+import { homeStructuredData, jsonLd } from "@/lib/structured-data";
 import { FaqList } from "@/components/faq-list";
 import { FinalCta } from "@/components/final-cta";
 import { Features } from "@/components/home/features";
@@ -31,6 +32,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(homeStructuredData()) }} />
       <Hero t={t} locale={locale} />
       <Problem t={t} />
       <HowWeBuilt t={t} locale={locale} />

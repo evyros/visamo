@@ -57,6 +57,13 @@ const paths = {
       <path d="m8 12.5 2.8 2.8L16 10" />
     </>
   ),
+  /** The logo's "V" in its rounded square, as a line icon: marks the document check. */
+  visamo: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <path d="M8 9.2 12 15.8l4-6.6" />
+    </>
+  ),
   alert: (
     <>
       <path d="M12 3.5 2.5 20h19L12 3.5Z" />

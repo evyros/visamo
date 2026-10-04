@@ -22,6 +22,7 @@ import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/do
 import { Notice } from "@/components/app/auth-ui";
 import { Dialog } from "@/components/app/dialog";
 import { Icon } from "@/components/icons";
+import { LogoMark } from "@/components/logo";
 
 // The documents page: the case's list, grouped by whose document it is, each
 // document a card that opens to its uploads. A file goes through two phases:
@@ -411,7 +412,7 @@ export function DocumentsBoard({
                 href={buyUrl("/file/documents")}
                 className="whitespace-nowrap font-semibold text-teal-700 hover:underline"
               >
-                <Icon name="checkCircle" className="me-1 inline-block size-4 align-[-0.2em]" />
+                <Icon name="visamo" className="me-1 inline-block size-4 align-[-0.2em]" />
                 {t.check.upgrade}
               </Link>
             </p>
@@ -713,6 +714,14 @@ const ratingStyle: Record<
 
 /** The check's rating as an icon alone: the shape tells them apart, not only the color. */
 function CheckIcon({ rating, label }: { rating: CheckRating; label: string }) {
+  // A passed check carries the logo itself, as Visamo's seal.
+  if (rating === "looksGood") {
+    return (
+      <span role="img" aria-label={label} className="inline-flex shrink-0">
+        <LogoMark className="size-6" />
+      </span>
+    );
+  }
   const { icon, color } = ratingStyle[rating];
   return (
     <span
@@ -805,7 +814,7 @@ function CheckFooter({
     state = c.upgradeHint;
     action = (
       <Link href={buyUrl("/file/documents")} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
-        <Icon name="checkCircle" className="size-4" />
+        <Icon name="visamo" className="size-4" />
         {c.upgrade}
       </Link>
     );
@@ -820,7 +829,7 @@ function CheckFooter({
         aria-describedby={uploaded ? undefined : tipId}
         className={`${button} bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
       >
-        <Icon name="checkCircle" className="size-4" />
+        <Icon name="visamo" className="-me-0.5 size-5" />
         {last ? c.again : c.check}
       </button>
     );
@@ -849,7 +858,7 @@ function CheckFooter({
         )}
         {action}
         {inRow && (
-          <span className="order-last sm:order-none sm:ms-auto">
+          <span className="order-last flex sm:order-none sm:ms-auto">
             <AskLink documentKey={documentKey}>{t.ask.label}</AskLink>
           </span>
         )}
@@ -1179,7 +1188,7 @@ function Status({ t, state, optional }: { t: Labels; state: DocState; optional: 
     case "readyTips":
       return (
         <span className={`${pill} bg-teal-100 text-teal-700`}>
-          <Icon name="checkCircle" className="size-3.5" />
+          <Icon name="visamo" className="size-3.5" />
           {t.status[state]}
           {state === "readyTips" && <span aria-hidden className="ms-0.5 size-1.5 rounded-full bg-amber-500" />}
         </span>

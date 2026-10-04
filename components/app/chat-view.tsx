@@ -45,9 +45,12 @@ export function ChatView({
   t: Messages["app"]["chat"];
 }) {
   const router = useRouter();
-  const { setPending } = usePendingChat();
+  const { setPending, handoff, setHandoff } = usePendingChat();
+  // What the view before the move to this chat's URL had on screen (chat-pending.tsx).
+  // Kept from the first render: the mount effect clears the handoff.
+  const [received] = useState(handoff && handoff.chatId === chatId ? handoff : null);
   const [messages, setMessages] = useState(initialMessages);
-  const [input, setInput] = useState(draft);
+  const [input, setInput] = useState(received?.input ?? draft);
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<ErrorKey | null>(null);
   const [messagesLeft, setMessagesLeft] = useState(initialMessagesLeft);
@@ -65,7 +68,11 @@ export function ChatView({
   // The question just sent: it scrolls to the top of the view and its answer
   // comes in below it, without moving the page under the reader. Room is made
   // under a short answer so the question can get there.
-  const [pinned, setPinned] = useState<string | null>(null);
+  const [pinned, setPinned] = useState<string | null>(() =>
+    received ? (initialMessages.findLast((m) => m.role === "user")?.id ?? null) : null,
+  );
+  // Where the handed-over view was scrolled to, until the next question.
+  const restoreRef = useRef(received?.scrollTop ?? null);
   // Whether the end of the conversation is in view; if not, a button scrolls to it.
   const [atEnd, setAtEnd] = useState(true);
 
@@ -92,11 +99,12 @@ export function ChatView({
 
   // Open a chat at its latest message, with the cursor after a draft, to go on writing.
   useLayoutEffect(() => {
+    if (received) setHandoff(null);
     const scroller = endRef.current?.closest("main");
-    if (scroller) scroller.scrollTop = scroller.scrollHeight;
+    if (scroller && restoreRef.current === null) scroller.scrollTop = scroller.scrollHeight;
     const box = inputRef.current;
     box?.setSelectionRange(box.value.length, box.value.length);
-  }, []);
+  }, [received, setHandoff]);
 
   useEffect(() => {
     const scroller = endRef.current?.closest("main");
@@ -128,7 +136,8 @@ export function ChatView({
       spacer.style.height = `${Math.max(0, top() - contentEnd(scroller))}px`;
     };
     fit();
-    scroller.scrollTo({ top: top(), behavior: motion() });
+    if (restoreRef.current !== null) scroller.scrollTop = restoreRef.current;
+    else scroller.scrollTo({ top: top(), behavior: motion() });
     return observeSizes(scroller, fit);
   }, [pinned]);
 
@@ -144,6 +153,7 @@ export function ChatView({
     setStreaming(true);
     const messageId = crypto.randomUUID();
     setMessages((list) => [...list, { id: messageId, role: "user", content: text, author: null }]);
+    restoreRef.current = null;
     setPinned(messageId);
     setInput("");
     const isNew = !chatId;
@@ -201,7 +211,11 @@ export function ChatView({
     // The chat and the answer are saved now: refresh the sidebar for the real
     // title, and give a new chat its own URL (which renders the same
     // messages), unless the user has gone to another page meanwhile.
-    if (isNew && newChatId && window.location.pathname === "/chat") router.replace(`/chat/${newChatId}`);
+    if (isNew && newChatId && window.location.pathname === "/chat") {
+      const scroller = endRef.current?.closest("main");
+      setHandoff({ chatId: newChatId, scrollTop: scroller?.scrollTop ?? 0, input: inputRef.current?.value ?? "" });
+      router.replace(`/chat/${newChatId}`);
+    }
     router.refresh();
     inputRef.current?.focus();
   }

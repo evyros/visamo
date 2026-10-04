@@ -6,6 +6,7 @@ import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/lib/site";
+import { getSession } from "@/lib/session";
 import "../globals.css";
 
 // Root layout for the app (app.visamo.co.il). The language comes from a
@@ -21,6 +22,7 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
   const locale = await getAppLocale();
   const t = await getAppDictionary();
   const { dir, script } = locales[locale];
+  const user = (await getSession())?.user;
 
   return (
     <html lang={locale} dir={dir} data-script={script} data-scroll-behavior="smooth" className={fontVariables}>
@@ -33,7 +35,7 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
         </a>
         {children}
         <Analytics />
-        <FullStory />
+        <FullStory user={user && { id: user.id, email: user.email, name: user.name }} />
       </body>
     </html>
   );

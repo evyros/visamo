@@ -7,6 +7,7 @@ import { deleteChat } from "@/app/(app)/(main)/chat/actions";
 import { format } from "@/i18n/messages";
 import { Icon } from "@/components/icons";
 import { usePendingChat } from "./chat-pending";
+import { LinkPendingHighlight } from "./link-pending";
 
 export type ChatSummary = { id: string; title: string | null };
 
@@ -64,9 +65,10 @@ export function ChatHistory({
                 // The user went elsewhere while it was being answered.
                 <Link
                   href={pending.id ? `/chat/${pending.id}` : "/chat"}
-                  className="block truncate rounded-lg py-2 ps-3 pe-10 text-[15px] text-slate-700 transition-colors hover:bg-sand-50 hover:text-navy-900"
+                  className="relative block truncate rounded-lg py-2 ps-3 pe-10 text-[15px] text-slate-700 transition-colors hover:bg-sand-50 hover:text-navy-900"
                 >
                   <bdi>{pending.title}</bdi>
+                  <LinkPendingHighlight />
                 </Link>
               )}
             </li>
@@ -79,11 +81,12 @@ export function ChatHistory({
                 <Link
                   href={`/chat/${chat.id}`}
                   aria-current={active ? "page" : undefined}
-                  className={`block truncate rounded-lg py-2 ps-3 pe-10 text-[15px] transition-colors ${
+                  className={`relative block truncate rounded-lg py-2 ps-3 pe-10 text-[15px] transition-colors ${
                     active ? "bg-teal-100 font-medium text-teal-700" : "text-slate-700 hover:bg-sand-50 hover:text-navy-900"
                   }`}
                 >
                   <bdi>{title}</bdi>
+                  <LinkPendingHighlight />
                 </Link>
                 <button
                   type="button"

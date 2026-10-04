@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "@/components/icons";
+import { LinkPendingHighlight } from "./link-pending";
 
 export type NavItem = {
   href: string;
@@ -132,11 +133,12 @@ export function SectionPills({ items, label }: { items: NavItem[]; label: string
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`shrink-0 rounded-full px-3.5 py-1.5 text-[15px] font-medium whitespace-nowrap transition-colors ${
+            className={`relative shrink-0 rounded-full px-3.5 py-1.5 text-[15px] font-medium whitespace-nowrap transition-colors ${
               active ? "bg-teal-100 text-teal-700" : "text-slate-600 hover:bg-sand-50 hover:text-navy-900"
             }`}
           >
             {item.label}
+            <LinkPendingHighlight />
           </Link>
         );
       })}

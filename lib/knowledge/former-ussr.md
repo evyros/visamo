@@ -25,7 +25,7 @@ USSR. It's the authority on Soviet and post-Soviet records and documents.
 - **When:** for common-law couples, it comes before the B/1 visa. Married
   couples get the B/1 visa first, but have to complete this step before they
   can move up to A/5 (temporary resident).
-- **How:** once you're both in Israel, Misrad Hapnim usually tells you to
+- **How:** once you're both in Israel, Misrad Hapnim (משרד הפנים) usually tells you to
   fill in an online Nativ questionnaire. After you send it, Nativ calls you
   both to a short interview at its offices in Jerusalem.
 - **The wait:** waiting times for a Nativ interview are long. If you haven't

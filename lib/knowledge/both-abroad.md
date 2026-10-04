@@ -2,7 +2,7 @@
 
 If you both live abroad and want to move to Israel to start the process,
 you start at the Israeli consulate or embassy in your country of residence,
-not at a Misrad Hapnim branch. This is how it works in practice.
+not at a Misrad Hapnim (משרד הפנים) branch. This is how it works in practice.
 
 ## The entry permit comes first
 

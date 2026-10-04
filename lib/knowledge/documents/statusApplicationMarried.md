@@ -35,7 +35,7 @@ The form is on the Population and Immigration Authority's site (see
 1. Fill in the application, and both sign the applicants' declaration.
 2. **Each partner's declaration:** tick (☒) the box next to each statement
    you declare, write the place and the date, and sign it **in front of a
-   lawyer (עו"ד) or a Misrad Hapnim registrar (רשם)**, who confirms the
+   lawyer (עו"ד) or a Misrad Hapnim (משרד הפנים) registrar (רשם)**, who confirms the
    declaration at the bottom of the page.
 3. **If you rent:** your landlord fills in their affidavit and signs it
    in front of a lawyer or a registrar, the same way. Attach **a scan of the

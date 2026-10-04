@@ -275,7 +275,7 @@ authentication services.
 
 In practice, from the day the police certificate is issued until the
 foreign partner gets the B/1 visa, they shouldn't travel to another country.
-Misrad Hapnim knows every exit from Israel and every entry into it. A trip
+Misrad Hapnim (משרד הפנים) knows every exit from Israel and every entry into it. A trip
 abroad after the certificate was issued is time it doesn't cover, so the
 office can no longer be sure no offense was committed abroad. If they did
 travel, they need a new police certificate from their country of origin.

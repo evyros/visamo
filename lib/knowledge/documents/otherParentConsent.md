@@ -10,7 +10,7 @@ with their current address (see [children.md](../children.md)).
 
 The other parent can give it:
 
-- in person, at the Misrad Hapnim office;
+- in person, at the Misrad Hapnim (משרד הפנים) office;
 - by signing the application form (AS/6, in the application, under the children coming along);
 - in a signed consent letter, attached to the application;
 - at the Israeli consulate, or in front of a local notary with an apostille

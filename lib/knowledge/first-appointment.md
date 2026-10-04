@@ -1,7 +1,7 @@
 # The first appointment
 
 After you file the application (see [application.md](application.md)),
-Misrad Hapnim calls you to a first appointment at your branch (לשכה). There, the clerk reviews your documents.
+Misrad Hapnim (משרד הפנים) calls you to a first appointment at your branch (לשכה). There, the clerk reviews your documents.
 What comes out of it depends on where the foreign partner is.
 
 ## Who goes

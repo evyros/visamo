@@ -1,6 +1,6 @@
 # Documents for the first application
 
-The documents to open your file with Misrad Hapnim. Sources: procedure
+The documents to open your file with Misrad Hapnim (משרד הפנים). Sources: procedure
 5.2.0008 §ד.2 (married couples), the checklist attached to form AS/6, and
 how offices work in practice. Each document is described below, by group.
 

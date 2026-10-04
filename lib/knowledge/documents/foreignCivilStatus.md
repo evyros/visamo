@@ -234,7 +234,7 @@ Portugal issues no civil-status certificate. Go to a notary for a certificate
 of life and identity (certificado de vida e identidade), and make sure it says
 single (solteiro/a). A narrative birth certificate (certidão de nascimento
 narrativa) records any marriage or divorce, but doesn't say "single" in words,
-and Misrad Hapnim may not accept it as proof of status. The apostille comes from
+and Misrad Hapnim (משרד הפנים) may not accept it as proof of status. The apostille comes from
 the regional prosecutor's office (Procuradoria-Geral Regional).
 
 ### Russia

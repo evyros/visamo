@@ -3,7 +3,7 @@
 A joint bank account confirmation. Without one, other proof of shared money: transfers to each other, card statements with household purchases or the same delivery address, receipts for large expenses.
 
 A confirmation that you manage a joint bank account (אישור על ניהול חשבון
-בנק משותף), from the AS/6 checklist. Misrad Hapnim asks for it to show that
+בנק משותף), from the AS/6 checklist. Misrad Hapnim (משרד הפנים) asks for it to show that
 you share your finances. The procedure also lists a bank statement (תדפיס
 חשבון בנק) among the proofs of a shared center of life (5.2.0008 §ד.2.ח).
 

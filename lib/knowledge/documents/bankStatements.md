@@ -15,7 +15,7 @@ your branch. Ask for a confirmation of account ownership too (אישור ניה�
 
 ## What it should include
 
-- **The last 12 months.** The period asked for differs between Misrad Hapnim
+- **The last 12 months.** The period asked for differs between Misrad Hapnim (משרד הפנים)
   branches: we recommend bringing a statement for the full 12 months.
 - **The balance, and all the incoming and outgoing transactions.**
 - **Proof of account ownership,** with the statements.

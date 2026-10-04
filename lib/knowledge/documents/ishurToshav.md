@@ -16,7 +16,7 @@ it.
   in to your account there.
 - **In person:** many don't. It's very common that when you ask for it, the
   municipality says they don't know the document, or can't issue it. Then
-  book an appointment, go in person, and say you need it for Misrad Hapnim
+  book an appointment, go in person, and say you need it for Misrad Hapnim (משרד הפנים)
   (the Population and Immigration Authority): they'll understand what you
   mean.
 - **A small local council or a kibbutz** can write a confirmation that

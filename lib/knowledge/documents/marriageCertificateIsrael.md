@@ -15,6 +15,6 @@ It's an Israeli document, in Hebrew: no certification or translation.
 
 ## Questions
 
-**Do we need to register the marriage with Misrad Hapnim first?**
+**Do we need to register the marriage with Misrad Hapnim (משרד הפנים) first?**
 No. A marriage through the rabbinate or a religious court in Israel is
 already registered.

@@ -1,10 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 
-export const DATA_DIR = path.resolve(import.meta.dirname, "..", "data", "facebook");
-export const RAW_DIR = path.join(DATA_DIR, "raw");
+// Committed, in the repo's data/. The raw responses (large) and the browser profile
+// (the logged-in session) stay in the gitignored collect/data/.
+export const DATA_DIR = path.resolve(import.meta.dirname, "..", "..", "data", "facebook");
+const LOCAL_DIR = path.resolve(import.meta.dirname, "..", "data", "facebook");
+export const RAW_DIR = path.join(LOCAL_DIR, "raw");
 export const POSTS_DIR = path.join(DATA_DIR, "posts");
-export const PROFILE_DIR = path.join(DATA_DIR, ".browser-profile");
+export const PROFILE_DIR = path.join(LOCAL_DIR, ".browser-profile");
 export const CURSORS_DIR = path.join(DATA_DIR, "cursors");
 export const EXPANDED_FILE = path.join(DATA_DIR, "expanded.json");
 
@@ -62,33 +65,39 @@ export function writeJsonl(file, rows) {
 }
 
 // Each post is a folder: posts/<id>/post.json, comments/<comment id>.json and
-// images/ (filled by images.mjs). Rewritten on every parse so it mirrors the
-// latest parse; downloaded images are never deleted.
+// images/ (filled by images.mjs). posts/ is committed but raw/ isn't, so a parse
+// only adds and updates: a post or comment missing from raw/ (another checkout,
+// lost raw files) is left as it is, never deleted.
 export const postDir = (postId) => path.join(POSTS_DIR, String(postId));
+
+// Folder names only: Finder leaves .DS_Store files in here.
+function postIds() {
+  return fs
+    .readdirSync(POSTS_DIR, { withFileTypes: true })
+    .filter((e) => e.isDirectory())
+    .map((e) => e.name);
+}
+
+// Overwrites the row on disk with the parsed one, keeping the earlier first_seen
+// in case the raw file that saw it first is gone.
+function writeRow(file, row) {
+  const old = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+  if (old?.first_seen && (!row.first_seen || old.first_seen < row.first_seen)) row = { ...row, first_seen: old.first_seen };
+  fs.writeFileSync(file, JSON.stringify(row, null, 2) + "\n");
+}
 
 export function writePosts(posts, comments) {
   const byPost = Map.groupBy(comments, (c) => c.post_id);
-  const keep = new Set(posts.map((p) => String(p.id)));
-  for (const id of fs.readdirSync(POSTS_DIR)) {
-    if (keep.has(id)) continue;
-    fs.rmSync(path.join(postDir(id), "post.json"), { force: true });
-    fs.rmSync(path.join(postDir(id), "comments"), { recursive: true, force: true });
-    if (!fs.readdirSync(postDir(id)).length) fs.rmdirSync(postDir(id));
-  }
   for (const post of posts) {
     const dir = path.join(postDir(post.id), "comments");
-    fs.rmSync(dir, { recursive: true, force: true });
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(postDir(post.id), "post.json"), JSON.stringify(post, null, 2) + "\n");
-    for (const c of byPost.get(post.id) ?? []) {
-      fs.writeFileSync(path.join(dir, `${c.id}.json`), JSON.stringify(c, null, 2) + "\n");
-    }
+    writeRow(path.join(postDir(post.id), "post.json"), post);
+    for (const c of byPost.get(post.id) ?? []) writeRow(path.join(dir, `${c.id}.json`), c);
   }
 }
 
 export function readPosts() {
-  return fs
-    .readdirSync(POSTS_DIR)
+  return postIds()
     .map((id) => path.join(postDir(id), "post.json"))
     .filter((file) => fs.existsSync(file))
     .map((file) => JSON.parse(fs.readFileSync(file, "utf8")));

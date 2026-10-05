@@ -1,10 +1,11 @@
-// Rebuilds posts/<id>/post.json, posts/<id>/comments/*.json and images.jsonl from every raw capture.
+// Writes posts/<id>/post.json, posts/<id>/comments/*.json and images.jsonl from every raw capture.
+// Adds and updates only: rows already on disk that raw/ doesn't have are kept.
 // Safe to re-run: rows are keyed by Facebook id and merged across captures.
 //
 //   node facebook/parse.mjs
 import fs from "node:fs";
 import path from "node:path";
-import { DATA_DIR, RAW_DIR, writeJsonl, writePosts } from "./lib.mjs";
+import { DATA_DIR, RAW_DIR, readJsonl, writeJsonl, writePosts } from "./lib.mjs";
 
 const posts = new Map();
 const comments = new Map();
@@ -185,7 +186,10 @@ const COMMENT_FIELDS = ["id", "post_id", "parent_comment_id", "posted_at", "auth
 const shape = (fields) => (row) => Object.fromEntries(fields.map((f) => [f, row[f] ?? null]));
 
 writePosts([...posts.values()].map(shape(POST_FIELDS)), [...comments.values()].map(shape(COMMENT_FIELDS)));
-writeJsonl(path.join(DATA_DIR, "images.jsonl"), [...images.values()]);
+// Merged like posts: images already listed but missing from raw/ stay listed.
+const IMAGES_FILE = path.join(DATA_DIR, "images.jsonl");
+const listed = fs.existsSync(IMAGES_FILE) ? readJsonl(IMAGES_FILE) : [];
+writeJsonl(IMAGES_FILE, [...new Map([...listed.map((img) => [img.id, img]), ...images]).values()]);
 
 const withText = [...posts.values()].filter((p) => p.text).length;
 console.log(

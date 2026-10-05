@@ -9,7 +9,7 @@
 // `--comments` also loads each new post's comments as soon as the feed shows it.
 // `posts` loads the comments of every post found so far that doesn't have them yet
 // (run parse.mjs first). Comments are loaded by comments.mjs, without opening posts.
-// Each response becomes one file in data/facebook/raw/<run>/; parse.mjs turns them into rows.
+// Each response becomes one file in collect/data/facebook/raw/<run>/; parse.mjs turns them into rows.
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline/promises";
@@ -111,7 +111,7 @@ function saveCursor(name, pageInfo, reach) {
   );
 }
 
-// Your own Chrome, with a separate profile kept in data/: log in once, it stays logged in.
+// Your own Chrome, with a separate profile kept in collect/data/: log in once, it stays logged in.
 const context = await chromium.launchPersistentContext(PROFILE_DIR, {
   channel: "chrome",
   headless: false,

@@ -1,7 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type FormEvent,
+  type KeyboardEvent,
+} from "react";
 import { format, type Messages } from "@/i18n/messages";
 import { Icon } from "@/components/icons";
 import { LogoMark } from "@/components/logo";
@@ -70,6 +78,9 @@ export function ChatView({
   const [atEnd, setAtEnd] = useState(true);
 
   const outOfMessages = messagesLeft <= 0;
+  // The box shows the count only once it runs low; it's always in the section menu.
+  const lowOnMessages = messagesLeft < LOW_MESSAGES;
+  const disclaimerHidden = useDisclaimerHidden();
   // The character count only shows once the message is close to the limit.
   const nearLimit = input.length >= maxLength * 0.9;
   const waiting = streaming && messages.at(-1)?.role === "user";
@@ -222,6 +233,7 @@ export function ChatView({
   }
 
   const [before, after] = t.disclaimer.split("{terms}");
+  const messagesLeftText = messagesLeft === 1 ? t.messagesLeftOne : format(t.messagesLeft, { count: messagesLeft });
 
   return (
     <div className="flex min-h-full flex-col">
@@ -327,6 +339,10 @@ export function ChatView({
             </p>
           )}
 
+          {lowOnMessages && !outOfMessages && (
+            <p className="mb-2 ps-1 text-xs text-slate-500 sm:hidden">{messagesLeftText}</p>
+          )}
+
           {outOfMessages ? (
             <div className="rounded-2xl border border-line-200 bg-white px-4 py-4 text-[15px] shadow-soft">
               <p className="text-navy-900">{t.noMessages}</p>
@@ -335,9 +351,10 @@ export function ChatView({
               </BuyLink>
             </div>
           ) : (
+            // On a phone the send button sits beside the text, to keep the box one line high.
             <form
               onSubmit={onSubmit}
-              className="rounded-2xl border border-line-200 bg-white shadow-soft focus-within:border-teal-600"
+              className="flex items-end rounded-2xl border border-line-200 bg-white shadow-soft focus-within:border-teal-600 sm:block"
             >
               <label htmlFor="chat-input" className="sr-only">
                 {t.inputLabel}
@@ -356,13 +373,11 @@ export function ChatView({
                 placeholder={t.placeholder}
                 aria-describedby={nearLimit ? "chat-count" : undefined}
                 autoFocus
-                className="block max-h-48 min-h-14 w-full resize-none bg-transparent px-4 pt-4 pb-1 text-base text-navy-900 [field-sizing:content] placeholder:text-slate-500 focus:outline-none"
+                className="block max-h-48 min-h-14 w-full min-w-0 flex-1 resize-none bg-transparent px-4 py-4 text-base text-navy-900 [field-sizing:content] placeholder:text-slate-500 focus:outline-none sm:pb-1"
               />
-              <div className="flex items-center justify-between gap-3 px-3 pb-3">
-                <p className="ps-1 text-xs text-slate-500">
-                  {messagesLeft === 1 ? t.messagesLeftOne : format(t.messagesLeft, { count: messagesLeft })}
-                </p>
-                <div className="flex items-center gap-3">
+              <div className="flex shrink-0 items-center justify-between gap-3 pe-2.5 pb-2.5 sm:px-3 sm:pb-3">
+                {lowOnMessages && <p className="hidden ps-1 text-xs text-slate-500 sm:block">{messagesLeftText}</p>}
+                <div className="ms-auto flex items-center gap-3">
                   {nearLimit && (
                     <span
                       id="chat-count"
@@ -384,23 +399,70 @@ export function ChatView({
             </form>
           )}
 
-          <p className="mt-2 text-center text-xs text-slate-500">
-            {before}
-            <a
-              href={termsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-teal-700 underline underline-offset-2"
+          {/* Only a phone can hide it: there it costs room, a desktop keeps it. */}
+          <div className={`mt-2 items-start justify-center gap-1 ${disclaimerHidden ? "hidden sm:flex" : "flex"}`}>
+            <p className="text-center text-xs text-slate-500">
+              {before}
+              <a
+                href={termsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-teal-700 underline underline-offset-2"
+              >
+                {t.terms}
+                <span className="sr-only"> {t.newWindow}</span>
+              </a>
+              {after}
+            </p>
+            <button
+              type="button"
+              onClick={hideDisclaimer}
+              aria-label={t.hideDisclaimer}
+              className="-mt-[3px] inline-flex size-7 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-line-200 hover:text-navy-900 sm:hidden"
             >
-              {t.terms}
-              <span className="sr-only"> {t.newWindow}</span>
-            </a>
-            {after}
-          </p>
+              <Icon name="x" className="size-4" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
+}
+
+const LOW_MESSAGES = 5;
+
+// On a phone the note under the box can be hidden, and stays hidden on this
+// device. It renders hidden on the server, so a returning reader never sees it flash.
+const DISCLAIMER_KEY = "visamo.chatDisclaimerHidden";
+const disclaimerListeners = new Set<() => void>();
+let disclaimerHiddenNow = false;
+
+function useDisclaimerHidden() {
+  return useSyncExternalStore(
+    (listener) => {
+      disclaimerListeners.add(listener);
+      return () => disclaimerListeners.delete(listener);
+    },
+    () => {
+      if (disclaimerHiddenNow) return true;
+      try {
+        return localStorage.getItem(DISCLAIMER_KEY) === "1";
+      } catch {
+        return false;
+      }
+    },
+    () => true,
+  );
+}
+
+function hideDisclaimer() {
+  disclaimerHiddenNow = true;
+  try {
+    localStorage.setItem(DISCLAIMER_KEY, "1");
+  } catch {
+    // Storage can be blocked; then it's hidden until the page reloads.
+  }
+  for (const listener of disclaimerListeners) listener();
 }
 
 // Smooth scrolling, unless the user asked for less motion.

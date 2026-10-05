@@ -1146,6 +1146,7 @@
       "noMessages": "You've used all your messages.",
       "disclaimer": "Visamo gives general information, not legal advice. For your case, talk to a licensed lawyer. See our {terms}.",
       "terms": "Terms of Use",
+      "hideDisclaimer": "Hide this notice",
       "newWindow": "(opens in a new window)",
       "deleteChat": "Delete chat",
       "deleteChatNamed": "Delete “{title}”",

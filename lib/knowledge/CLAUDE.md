@@ -17,6 +17,11 @@ and the rules for children, the former USSR and the security check.
 - Open questions and what isn't verified yet: `lib/documents/OPEN_QUESTIONS.md`.
 - The history of corrections ("an earlier note said…"). State what's true now.
 - Who gave a correction ("the product owner").
+- Where a fact came from: no website, organization, article or person
+  ("AIC says…"). State the fact itself. Procedure sections are still cited
+  (below).
+- Anything not verified and current: no pending or announced rule changes,
+  proposals or debates.
 - How to verify a document: what to look for on it, red flags, the details
   offices check. That's in `lib/documents/checks.ts`, which only the
   document checker reads. Here, say what a document is and what's asked for;

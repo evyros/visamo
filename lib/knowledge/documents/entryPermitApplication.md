@@ -12,7 +12,7 @@ name) don't apply to you. It has two pages, in Hebrew and English.
 The Israeli partner submits it with the file. At the first appointment, the
 clerk reviews it and grants the entry permit. With it, the foreign partner
 enters Israel on a B/2 visa (ב/2) and gets B/1 after arriving: see
-[first-appointment.md](../first-appointment.md). If you both live abroad,
+[entry-permit.md](../entry-permit.md). If you both live abroad,
 this form isn't part of your file: you ask for the entry permit at the
 Israeli consulate in your country before you come, and file after you
 arrive. See [both-abroad.md](../both-abroad.md).
@@ -109,14 +109,18 @@ B/2 (ב/2). The foreign partner enters Israel on it, as a status in between,
 and gets the B/1 visa (ב/1), which lets them work, after arriving. You write
 the type at the top of the form. It's a required field.
 
+**How long until the entry permit is granted?**
+In practice, usually 3 to 4 weeks from filing at the faster branches, and 2
+to 4 months at busy ones. It can't be predicted: see [entry-permit.md](../entry-permit.md).
+
 **Can my partner come to Israel as a tourist instead?**
 To visit, yes. To stay and live together in Israel, they need the entry
-permit first: coming as a tourist with that intention goes against Israel's
-immigration policy.
+permit first: see [entry-permit.md](../entry-permit.md).
 
 **What happens when my partner lands?**
-Tell your branch as soon as they arrive, by email or in person. The office
-calls you in to get the B/1 visa, or sets a date for an interview.
+Tell your branch as soon as they arrive. The office calls you in to get the
+B/1 visa, or sets a date for an interview: see
+[entry-permit.md](../entry-permit.md).
 
 **Who signs the form?**
 Both of you, each on your own declaration on page 2: the Israeli partner as

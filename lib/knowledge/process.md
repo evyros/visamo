@@ -10,12 +10,18 @@ permanent residency. Each stage is renewed with updated documents, and at
 every renewal you show again that your relationship is genuine and that you
 live together in Israel.
 
-A foreign partner who is outside Israel first gets an entry permit, enters
-on a B/2 visa (ב/2) in the meantime, and gets B/1 after arriving. See
-[first-appointment.md](first-appointment.md). If you both live abroad, you
-ask for the entry permit at the Israeli consulate in your country: see
-[both-abroad.md](both-abroad.md). How you file the application, and what
-happens while you wait, is in [application.md](application.md).
+**If the foreign partner is outside Israel, they need an entry permit before
+they move to Israel.** There are two ways to get it:
+
+- **The Israeli partner lives in Israel:** you file the application online,
+  and the branch grants the permit at or after the first appointment. The
+  foreign partner enters on a B/2 visa (ב/2) in the meantime, and gets B/1
+  after arriving.
+- **You both live abroad:** you ask for it at the Israeli consulate in your
+  country, and file after you arrive: see [both-abroad.md](both-abroad.md).
+
+See [entry-permit.md](entry-permit.md). How you file the application, and
+what happens while you wait, is in [application.md](application.md).
 
 - **Married couples:** procedure 5.2.0008.
 - **Common-law couples** (ידועים בציבור), including same-sex couples:

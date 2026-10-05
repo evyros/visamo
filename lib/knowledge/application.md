@@ -53,7 +53,7 @@ of your financial situation.
   likely to be refused entry if they try to visit as a tourist, even from a
   visa-exempt country: they're marked as someone waiting for an entry permit.
   They come once the permit is granted (see
-  [first-appointment.md](first-appointment.md)).
+  [entry-permit.md](entry-permit.md)).
 - **A foreign partner in Israel stays in Israel.** They can leave, but they
   won't be let back in until the entry permit is granted, unless they have a
   valid visa to return on.

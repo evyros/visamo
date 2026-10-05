@@ -38,4 +38,9 @@ to live together, bring:
 **I live with my parents. Can we still apply?**
 Yes, but expect the clerks to look more closely at how you live. Bring your parents' signed letter inviting you both to live with them,
 copies of their Teudat Zehut with the appendix, proof of the home (the נסח טאבו the purchase contract or their lease), recent bills in their names,
-and mail or statements addressed to you there. .
+and mail or statements addressed to you there.
+
+**My partner is still abroad, but the office asked for a joint lease and shared bills. What do we send?**
+Clerks sometimes work from the default list. The Israeli partner sends a
+letter explaining that the foreign partner is applying from abroad, with the
+lease and bills of the Israeli partner's own home.

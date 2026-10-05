@@ -5,7 +5,8 @@ through the graduated procedure (ההליך המדורג).
 
 - [process.md](process.md): what the process is, how long it takes, and who it's for.
 - [application.md](application.md): filing the application online, and what happens while you wait.
-- [first-appointment.md](first-appointment.md): the first appointment at Misrad Hapnim, how a partner abroad enters Israel, and the first visa.
+- [first-appointment.md](first-appointment.md): the first appointment at Misrad Hapnim, and the first visa.
+- [entry-permit.md](entry-permit.md): the entry permit a partner abroad needs before moving to Israel, the two ways to get it, and visiting before you file.
 - [interview.md](interview.md): the interview, and how to prepare for it.
 - [both-abroad.md](both-abroad.md): when you both live abroad, starting at the Israeli consulate.
 - [documents.md](documents.md): the documents for the first application, each one described in [documents/](documents/).

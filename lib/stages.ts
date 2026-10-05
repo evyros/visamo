@@ -59,7 +59,7 @@ const catalog: readonly { stage: Stage; when?: Condition }[] = [
   { stage: "consulate", when: bothAbroad },
   { stage: "filed", when: { not: bothAbroad } },
   { stage: "firstAppointment", when: { not: bothAbroad } },
-  // first-appointment.md: the branch grants the entry permit, or the consulate passes it on.
+  // entry-permit.md: the branch grants the entry permit, or the consulate passes it on.
   { stage: "entryPermit", when: "foreignAbroad" },
   { stage: "arrived", when: "foreignAbroad" },
   { stage: "filed", when: bothAbroad },

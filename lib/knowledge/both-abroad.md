@@ -6,18 +6,17 @@ not at a Misrad Hapnim (משרד הפנים) branch. This is how it works in pra
 
 ## The entry permit comes first
 
-What matters is why the foreign partner enters Israel. You're coming to
-stay and start the process, so they need an entry permit first. People
-also call it the "asmachta" (אסמכתא).
-
-Don't fly in together as tourists instead. In practice, a foreign partner
-who arrives with the Israeli partner without the permit is likely to be
-suspected of coming to stay, stopped at border control, and flown back.
+You're coming to stay and start the process, so the foreign partner needs an
+entry permit before you move. Don't fly in together as tourists instead. What
+the permit is, and what's the same for every couple: see
+[entry-permit.md](entry-permit.md).
 
 ## At the consulate
 
 1. **Book an appointment** at the Israeli consulate or embassy. It's in
-   person, and both of you usually need to come.
+   person, and both of you usually need to come. You should contact it before
+   you have every document: it gives you its list of documents and sets the
+   appointment dates.
 2. **Ask for an entry permit**, saying plainly that it's to move to Israel
    and start the graduated procedure (ההליך המדורג).
 3. **The consulate passes it on.** It can't grant the partner visa itself:

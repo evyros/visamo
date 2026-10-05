@@ -36,26 +36,10 @@ the documents. There are two ways it can go.
 ### Everything is in order: the entry permit
 
 The office grants the foreign partner an entry permit (היתר כניסה), to come
-to Israel and continue the process here. People often call it the "hazmana"
-(הזמנה, the invitation). You may hear at the appointment, or by phone or
-email a couple of weeks later.
-
-- **Citizens of a country exempt from a visa to Israel** can fly as soon as
-  they have the permit, with an ETA-IL (the electronic travel authorization
-  every visa-exempt visitor needs). In the ETA-IL application, choose
-  "Visit (tourism)" as the purpose and "up to 90 days" as the length of stay:
-  the Population and Immigration Authority confirmed this for partners with an
-  entry permit. In practice, no written proof of the permit is needed at the
-  border.
-- **Citizens of a country that needs a visa to Israel** go to the Israeli
-  consulate where they live, to get a B/2 visa (ב/2) in their passport.
-
-**When to come:** the procedures set no deadline, but offices usually expect
-the foreign partner to enter within 3 months of the permit. Tell your clerk
-the date you plan to arrive, and ask them to confirm it.
-
-Some airlines won't fly a foreigner to Israel without a return ticket. Check
-the airline's rules before you book a one-way ticket.
+to Israel and continue the process here. You may hear at the appointment, or
+by phone or email a couple of weeks later. How long it takes, how the foreign
+partner travels, and what to do once they arrive: see
+[entry-permit.md](entry-permit.md).
 
 ### The office needs more
 
@@ -68,21 +52,6 @@ the airline's rules before you book a one-way ticket.
   often asked for when the foreign partner comes from a non-Western country
   (Eastern Europe, East Asia, South America or Africa, among others). See
   [interview.md](interview.md).
-
-### After the foreign partner arrives
-
-- They enter Israel on a B/2 visa (ב/2), as a status in between.
-- Tell your branch as soon as they arrive, by email or in person. The office
-  then calls you in to get the B/1 visa (ב/1), or sets a date for an
-  interview. An interview is usually set only once the foreign partner is in
-  Israel.
-
-### Visiting, or moving to Israel
-
-The foreign partner can come to Israel as a tourist when the purpose is a
-visit. If the purpose is to stay and live with you in Israel, they need the
-entry permit first: coming as a tourist with that intention, without the
-permit, goes against Israel's immigration policy.
 
 ## If the foreign partner is in Israel
 
@@ -129,7 +98,8 @@ volunteer or work-holiday visa, a tourist visa):
   the office must review a partner application while the partner stays in
   Israel. Show the office the ruling if it insists on leaving first.
 - **A tourist visa:** coming as a tourist to stay goes against Israel's
-  immigration policy (above). If the foreign partner is already here, the
+  immigration policy (see
+  [entry-permit.md](entry-permit.md)). If the foreign partner is already here, the
   application is still handled and they aren't deported while it's decided,
   but the office may look at it more closely, and they can't come back in if
   they leave.
@@ -140,9 +110,8 @@ If the foreign partner stayed in Israel past their visa (an overstay), in
 practice it doesn't affect their eligibility for the partner visa at all.
 
 - **The best way:** the foreign partner leaves Israel, and you start the
-  process properly from abroad, through the entry permit (see "If the
-  foreign partner is outside Israel" above; if you both live abroad, through
-  the consulate: see [both-abroad.md](both-abroad.md)).
+  process properly from abroad, through the entry permit: see
+  [entry-permit.md](entry-permit.md).
 - **Don't come back before the entry permit.** Until the office grants it,
   the foreign partner shouldn't try to enter Israel again: it's very likely
   they'll be refused entry and deported.

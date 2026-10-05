@@ -223,7 +223,7 @@ export const checks = {
   entryPermitApplication: {
     required: [
       "It is form AS/1 (אש/1), \"Application for entry visa to Israel\", with both pages: page 1 with the inviter's and the invitee's details, and page 2 with the addresses and the two declarations.",
-      "The visa category at the top (\"category of ___\", מסוג) is B/2 (ב/2): the foreign partner enters Israel on it, and gets B/1 after arriving. B/1 or anything else here is an issue.",
+      "The visa category at the top (\"category of ___\", מסוג) is B/1 (ב/1), the partner's visa, with or without \"partner\" (בן/בת זוג) next to it. B/2 or anything else here is an issue.",
       "The Israeli partner's details are filled in: first and family name, ID number, relation to the invitee, and cellphone number.",
       "The foreign partner's family name and given name are filled in, in English, on both pages.",
       "The foreign partner's father's name, mother's name, date of birth and occupation are filled in.",

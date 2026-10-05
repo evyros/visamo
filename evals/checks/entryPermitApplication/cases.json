@@ -4,13 +4,13 @@
   "cases": [
     { "name": "clean, typed", "files": ["as1.pdf"], "expect": { "rating": "looksGood" } },
     {
-      "name": "clean, handwritten, photographed",
-      "files": ["as1-handwritten-page-1.jpg", "as1-handwritten-page-2.jpg"],
+      "name": "handwritten, messy, photographed",
+      "files": ["as1-handwritten-b1-page-1.jpg", "as1-handwritten-b1-page-2.jpg"],
       "expect": { "rating": ["looksGood", "canImprove"], "mayFlag": ["typed, or handwritten clearly"] }
     },
     {
-      "name": "handwritten, messy, B/1 instead of B/2",
-      "files": ["as1-handwritten-b1-page-1.jpg", "as1-handwritten-b1-page-2.jpg"],
+      "name": "handwritten, photographed, B/2 instead of B/1",
+      "files": ["as1-handwritten-page-1.jpg", "as1-handwritten-page-2.jpg"],
       "expect": { "rating": "needsFixing", "flagged": ["visa category at the top"], "mayFlag": ["typed, or handwritten clearly", "same visa category is written at the top of page 2"] }
     },
     {

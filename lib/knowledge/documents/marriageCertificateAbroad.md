@@ -37,7 +37,8 @@ appendix (ספח) of their Teudat Zehut. Offices enforce this, and applying
 without it can delay the process significantly. If your Teudat Zehut
 already says married, you don't need to.
 
-To register it, you both go in person to your Misrad Hapnim branch, with:
+To register it, the Israeli partner can go alone to their Misrad Hapnim
+branch. If either of you changes your name, you both go. Bring:
 
 - the certified (and, if needed, translated) marriage certificate, with
   copies;
@@ -47,8 +48,8 @@ To register it, you both go in person to your Misrad Hapnim branch, with:
 - the Israeli partner's Teudat Zehut and passport, and the foreign partner's
   passport.
 
-Without a name change, it's usually a walk-in service. With one, book an
-appointment: the Teudat Zehut and passport are replaced.
+Without a name change, it's usually a walk-in service. With one, you both
+go, and book an appointment: the Teudat Zehut and passport are replaced.
 
 By law, the marriage is registered within 30 days of the wedding. It isn't
 strictly enforced: you can register it later. If you're already in the
@@ -56,9 +57,10 @@ graduated procedure as a common-law couple, tell your branch's visa
 department as soon as you marry: they may send you to register first, and
 then convert your file to a married couple's.
 There, the office gives you form MR/6, "notice of change in civil status"
-(הודעה על שינוי מצב אישי), and you both sign it in front of the clerk. It
-isn't part of the partner visa application: it's done before it, when you
-register the marriage. On it, you can also choose a family name: take your
+(הודעה על שינוי מצב אישי), and you sign it in front of the clerk, when you
+register the marriage. The online partner visa application asks for MR/6
+too: once you're registered, upload the appendix (ספח) that shows you as
+married instead. On it, you can also choose a family name: take your
 spouse's, add it to yours, keep yours, or choose a new one together (up to
 two family names). A new name cancels your current travel documents, so
 you'll need new ones.

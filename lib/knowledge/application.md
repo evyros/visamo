@@ -32,6 +32,9 @@ The application is on the government's service page (see
 3. Fill in the form and upload the documents, each in its field. Forms AS/1,
    AS/3 and AS/6 can be downloaded inside the form. Passport photos go in the
    field for frontal photos of the couple (תמונה חזותית של בני הזוג).
+   The form also asks for form MR/6, the notice of change in civil status.
+   If the Israeli partner is already registered as married, upload their
+   appendix (ספח) that shows it instead.
 4. You can save the form and come back to it: you get a link by SMS or email.
 5. **Pay the fee** for opening the file at the end. In 2026 it's 1,085 NIS,
    for married and common-law couples alike.
@@ -74,8 +77,8 @@ appointment it gives may be months later.
 
 The answer is one of two things:
 
-- **A request for more documents,** usually by email. Send them through the
-  same online form, unless they tell you otherwise.
+- **A request for more documents,** usually by email. Send them by email to
+  your branch, with the files attached, unless they tell you otherwise.
 - **A first appointment,** sometimes with a list of documents to bring.
 
 ## Missing documents: the 45 days
@@ -84,6 +87,11 @@ If a document, a translation or a certification is missing, the office tells
 you which, by email and by registered mail, and gives you **45 days**
 (calendar days) to bring it. You can ask for more time. Until it's in, the
 file doesn't move; if it doesn't come, the office can close the file.
+
+**If the office closes the file:** it sends a letter saying why. You have
+**21 days** to object to it in writing, for example when it says a document
+is missing that you already sent. Keep the confirmation of every document you
+send, and copies of the files, so you can show what you sent and when.
 
 **When a document can't be had at all:** since July 2026, the regional
 director can let you start the process without it, in exceptional cases. You

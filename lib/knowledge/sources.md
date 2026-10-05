@@ -35,8 +35,10 @@
   the visa category, for a foreign partner already in Israel.
   https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf
 - **MR/6** (מר/6): the notice of change in civil status, to register a
-  marriage abroad in the population registry. It isn't part of the partner
-  visa application: you sign it before, when you register the marriage.
+  marriage abroad in the population registry. You sign it when you register
+  the marriage, before you apply. The online application asks for it: if
+  the Israeli partner is already registered as married, upload their
+  appendix (ספח) instead.
   https://www.gov.il/BlobFolder/generalpage/visas_forms/he/mr_6.pdf
 - **The common-law affidavit** (5.2.0009_a): the declaration both partners
   sign with an application under procedure 5.2.0009.

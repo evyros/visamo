@@ -37,7 +37,7 @@ permit, goes against Israel's immigration policy.
 **If the Israeli partner lives in Israel:** from filing until the permit,
 it depends on your branch's backlog, how complete your file is, and the
 foreign partner's country. In practice, the faster branches grant it usually
-within 3 to 4 weeks, and busy branches take 2 to 4 months. It can't be
+within 3 to 4 weeks, and busy branches take 2 to 5 months. It can't be
 predicted: plan for a few months.
 
 **Do we have to wait apart all that time?** It's hard to spend months apart,

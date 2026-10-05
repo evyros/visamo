@@ -36,8 +36,8 @@ The form is on the Population and Immigration Authority's site
 - **The visa you're asking for**, at the top of the form: "Application for
   entry visa to Israel category of ___" (בקשה למתן אשרת כניסה לישראל מסוג).
   It's required. The type depends on the purpose of entry; for a partner,
-  it's **B/2 (ב/2)**: the foreign partner enters on it, and gets B/1 (ב/1)
-  after arriving. Write the same type at the top of page 2.
+  it's **B/1 (ב/1)**, the partner's visa ("B/1 partner", ב/1 בן/בת זוג,
+  is fine too). Write the same type at the top of page 2.
 - **The Israeli partner's details** (פרטי המזמין הישראלי): first and family
   name, ID number (ת.ז.), relation to the invitee, and cellphone number. The
   company name and company ID are for employers.
@@ -105,13 +105,14 @@ documents. It isn't sent separately. At the first appointment, the clerk
 reviews it and grants the entry permit.
 
 **Which visa do we ask for?**
-B/2 (ב/2). The foreign partner enters Israel on it, as a status in between,
-and gets the B/1 visa (ב/1), which lets them work, after arriving. You write
-the type at the top of the form. It's a required field.
+B/1 (ב/1), the partner's visa, which lets the foreign partner work. You
+write the type at the top of the form. It's a required field. The foreign
+partner still enters Israel on a B/2 visa (ב/2), as a status in between, and
+gets the B/1 after arriving.
 
 **How long until the entry permit is granted?**
 In practice, usually 3 to 4 weeks from filing at the faster branches, and 2
-to 4 months at busy ones. It can't be predicted: see [entry-permit.md](../entry-permit.md).
+to 5 months at busy ones. It can't be predicted: see [entry-permit.md](../entry-permit.md).
 
 **Can my partner come to Israel as a tourist instead?**
 To visit, yes. To stay and live together in Israel, they need the entry

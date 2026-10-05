@@ -40,6 +40,19 @@ foreign partner's country. In practice, the faster branches grant it usually
 within 3 to 4 weeks, and busy branches take 2 to 4 months. It can't be
 predicted: plan for a few months.
 
+**Do we have to wait apart all that time?** It's hard to spend months apart,
+waiting for an answer. In practice, if your relationship rests on strong
+ground, with proof that you've lived together abroad (a short-term lease,
+shared expenses and the like), you can try to speed it up:
+
+1. The Israeli partner goes to the branch without an appointment. Come
+   early in the morning, before it opens.
+2. Explain your situation, and bring all the proof with you.
+3. Ask them to grant the entry permit, or even a B/1 visa (ב/1), so the
+   foreign partner can come to Israel and continue the process here.
+
+The branch may refuse, and tell you to go through the usual process.
+
 ## Traveling with the permit
 
 **If the permit came from your branch:**

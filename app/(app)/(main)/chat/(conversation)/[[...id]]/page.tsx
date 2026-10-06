@@ -29,7 +29,7 @@ export default async function ChatPage({ params, searchParams }: PageProps<"/cha
   const chatId = segments?.[0] ?? null;
 
   const { user, caseId } = await requireCase();
-  const [t, locale, { paid, messagesLeft }, messages] = await Promise.all([
+  const [t, locale, { paid }, messages] = await Promise.all([
     getAppDictionary(),
     getAppLocale(),
     chatBalance(caseId),
@@ -77,7 +77,6 @@ export default async function ChatPage({ params, searchParams }: PageProps<"/cha
       }))}
       draft={aboutTitle ? format(t.app.chat.aboutDocument, { document: aboutTitle }) : ""}
       suggestions={suggestions}
-      messagesLeft={messagesLeft}
       maxLength={maxMessageLength({ paid })}
       termsUrl={new URL(localePath(locale, "/legal/terms"), site.url).toString()}
       t={t.app.chat}

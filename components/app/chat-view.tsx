@@ -13,6 +13,7 @@ import {
 import { format, type Messages } from "@/i18n/messages";
 import { Icon } from "@/components/icons";
 import { LogoMark } from "@/components/logo";
+import { messagesLeftText, useChatBalance } from "./chat-balance";
 import { ChatMarkdown, textDirection } from "./chat-markdown";
 import { usePendingChat } from "./chat-pending";
 import { BuyLink } from "./purchase";
@@ -36,7 +37,6 @@ export function ChatView({
   initialMessages,
   draft,
   suggestions,
-  messagesLeft: initialMessagesLeft,
   maxLength,
   termsUrl,
   t,
@@ -47,7 +47,6 @@ export function ChatView({
   draft: string;
   /** The questions a new chat suggests, picked from the case. */
   suggestions: string[];
-  messagesLeft: number;
   maxLength: number;
   termsUrl: string;
   t: Messages["app"]["chat"];
@@ -58,13 +57,8 @@ export function ChatView({
   const [input, setInput] = useState(draft);
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<ErrorKey | null>(null);
-  const [messagesLeft, setMessagesLeft] = useState(initialMessagesLeft);
-  // A purchase refreshes the page with the new balance.
-  const [lastInitial, setLastInitial] = useState(initialMessagesLeft);
-  if (initialMessagesLeft !== lastInitial) {
-    setLastInitial(initialMessagesLeft);
-    setMessagesLeft(initialMessagesLeft);
-  }
+  // Shared with the sidebar: a message sent comes off both at once.
+  const { messagesLeft, setMessagesLeft } = useChatBalance();
   const endRef = useRef<HTMLDivElement>(null);
   const spacerRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLOListElement>(null);
@@ -159,6 +153,7 @@ export function ChatView({
     setMessages((list) => [...list, { id: messageId, role: "user", content: text, author: null }]);
     setPinned(messageId);
     setInput("");
+    setMessagesLeft((left) => left - 1);
     const isNew = !chatId;
     if (isNew) setPending({ id: null, title: text });
 
@@ -177,7 +172,8 @@ export function ChatView({
       const code = (await response?.json().catch(() => null))?.error as string | undefined;
       const key: ErrorKey =
         code === "tooLong" || code === "noMessages" || code === "failed" ? code : "generic";
-      if (code === "noMessages") setMessagesLeft(0);
+      // Not spent after all, unless the balance had run out.
+      setMessagesLeft((left) => (code === "noMessages" ? 0 : left + 1));
       // The message wasn't sent: take it back into the box, and out of the sidebar.
       if (isNew) setPending(null);
       setMessages((list) => list.filter((m) => m.id !== messageId));
@@ -233,7 +229,6 @@ export function ChatView({
   }
 
   const [before, after] = t.disclaimer.split("{terms}");
-  const messagesLeftText = messagesLeft === 1 ? t.messagesLeftOne : format(t.messagesLeft, { count: messagesLeft });
 
   return (
     <div className="flex min-h-full flex-col">
@@ -340,7 +335,7 @@ export function ChatView({
           )}
 
           {lowOnMessages && !outOfMessages && (
-            <p className="mb-2 ps-1 text-xs text-slate-500 sm:hidden">{messagesLeftText}</p>
+            <p className="mb-2 ps-1 text-xs text-slate-500 sm:hidden">{messagesLeftText(messagesLeft, t)}</p>
           )}
 
           {outOfMessages ? (
@@ -376,7 +371,7 @@ export function ChatView({
                 className="block max-h-48 min-h-14 w-full min-w-0 flex-1 resize-none bg-transparent px-4 py-4 text-base text-navy-900 [field-sizing:content] placeholder:text-slate-500 focus:outline-none sm:pb-1"
               />
               <div className="flex shrink-0 items-center justify-between gap-3 pe-2.5 pb-2.5 sm:px-3 sm:pb-3">
-                {lowOnMessages && <p className="hidden ps-1 text-xs text-slate-500 sm:block">{messagesLeftText}</p>}
+                {lowOnMessages && <p className="hidden ps-1 text-xs text-slate-500 sm:block">{messagesLeftText(messagesLeft, t)}</p>}
                 <div className="ms-auto flex items-center gap-3">
                   {nearLimit && (
                     <span

@@ -928,6 +928,7 @@ export const guidesEn: Guides = {
               list: [
                 "**What's translated:** the document, and the apostille or legalization on it too. An apostille in English, or that includes English, usually needs no translation.",
                 "**Who translates:** a notary who knows both languages and translates it themselves. A translation someone else made, which a notary only approved, isn't accepted. Translate from the document's own language straight into Hebrew.",
+                "**Translate into Hebrew, not English.** A translation into English is a risk: the clerk handling your file may not read English well enough to accept it. Hebrew is the safest choice, and makes for a smoother process.",
                 "**If no notary in Israel knows the language,** a double translation is allowed: first into a third language abroad (English, say), then into Hebrew in Israel.",
                 "**Your own evidence** (chats, emails, letters from friends) doesn't need a notary. If it isn't in Hebrew or English, translate it yourselves, or mark the important parts and explain them.",
               ],

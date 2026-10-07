@@ -246,7 +246,7 @@ export const documents = [
     mayNeedTranslation: false,
     owner: "couple",
     category: "relationship",
-    source: "Practice, confirmed by the product owner; AIC's list of documents for the application",
+    source: "Practice, confirmed by the product owner",
     verified: true,
   },
   {
@@ -410,7 +410,7 @@ export const documents = [
     mayNeedTranslation: true,
     owner: "foreign",
     category: "centerOfLife",
-    source: "Practice, confirmed by the product owner; AIC's list of documents for the application",
+    source: "Practice, confirmed by the product owner",
     verified: true,
   },
   {

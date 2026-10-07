@@ -12,6 +12,9 @@ What comes out of it depends on where the foreign partner is.
 - **You both live abroad:** you start at the Israeli consulate, not here:
   see [both-abroad.md](both-abroad.md).
 
+No one can go to a Misrad Hapnim branch for you. You can't send someone else
+in your place, to an appointment or to the walk-in hours.
+
 ## What to bring
 
 - The original documents from abroad, certified and translated (see

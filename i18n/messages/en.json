@@ -62,7 +62,7 @@
     "label": "Main",
     "why": "Why Visamo?",
     "howItWorks": "How it works",
-    "features": "Features",
+    "guides": "Guides",
     "security": "Security",
     "pricing": "Pricing",
     "contact": "Contact",
@@ -78,6 +78,7 @@
       "title": "Product",
       "howItWorks": "How it works",
       "features": "Features",
+      "guides": "Guides",
       "pricing": "Pricing",
       "login": "Log in"
     },
@@ -308,7 +309,11 @@
       "items": [
         {
           "q": "Can we do it ourselves, without Visamo?",
-          "a": "Of course, and many couples do. But if you don't know the small details and requirements of the graduated procedure, it's usually harder, frustrating, and it takes longer: small mistakes lead to delays and a lot of uncertainty. Visamo helps you run a smoother process, with every document checked and every step explained."
+          "a": "Of course, and many couples do. But if you don't know the small details and requirements of the graduated procedure, it's usually harder, frustrating, and it takes longer: small mistakes lead to delays and a lot of uncertainty. Visamo helps you run a smoother process, with every document checked and every step explained.",
+          "link": {
+            "label": "How the Israel partner visa works, step by step",
+            "path": "/guide/partner-visa-israel"
+          }
         },
         {
           "q": "What can we get for free?",

@@ -14,7 +14,7 @@ export async function Header() {
   const links = [
     { href: `${localePath(locale)}#why`, label: t.nav.why },
     { href: `${localePath(locale)}#how-it-works`, label: t.nav.howItWorks },
-    { href: `${localePath(locale)}#features`, label: t.nav.features },
+    { href: localePath(locale, "/guide"), label: t.nav.guides },
     { href: localePath(locale, "/pricing"), label: t.nav.pricing },
     { href: localePath(locale, "/contact"), label: t.nav.contact },
   ];

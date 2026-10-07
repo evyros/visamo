@@ -17,6 +17,7 @@ export async function Footer() {
       links: [
         { href: `${p("/")}#how-it-works`, label: f.product.howItWorks },
         { href: `${p("/")}#features`, label: f.product.features },
+        { href: p("/guide"), label: f.product.guides },
         { href: p("/pricing"), label: f.product.pricing },
         { href: loginUrl(locale), label: f.product.login },
       ],

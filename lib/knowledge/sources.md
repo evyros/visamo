@@ -7,13 +7,20 @@
   https://www.gov.il/BlobFolder/policy/status_foreigner_married_to_israeli_procedure/he/5.2.0008.pdf
   - §ד.2: the documents to open a file.
   - §ד.4: applicants from the former USSR are referred to Nativ.
+  - §ג.7–ג.8: the B/1 while the file is checked isn't counted in the
+    gradual process, which starts with the A/5.
+  - §ה.1(6): couples who both lived abroad file online within 30 days of the
+    foreign partner's entry.
   - §ה.2(1): who is rejected at the start.
   - §ה.2(7): the center-of-life check.
   - §ה.2(9): children from a previous relationship, and the other parent.
   - Police certificates from other countries: from each country lived in for
     at least 6 months in a row (in both procedures since January 2024).
 - **5.2.0009**: common-law couples, including same-sex couples.
-  https://www.gov.il/BlobFolder/policy/israelis_couples_status_procedure/he/5.2.0009.pdf
+  Edition 17, updated 16 July 2026.
+  https://www.gov.il/BlobFolder/policy/israelis_couples_status_procedure/he/5.2.0009..pdf
+  - §ה.1.ה: couples who both lived abroad file online within 30 days of the
+    foreign partner's entry.
   - Clause 10 (page 16): the interview is held, whenever possible, when the
     couple shows the original documents.
 - **1.3.0001**: foreign documents (certification and translation).

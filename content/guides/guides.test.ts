@@ -104,7 +104,9 @@ describe("the guides", () => {
 
     it(`${slug} says ויזה in Hebrew, not אשרה`, () => {
       const hebrew = [he.metaTitle, he.description, he.title, ...he.facts, ...texts(slug, guidesHe.docs)];
-      for (const text of hebrew) expect(text).not.toMatch(/אשר[הת]/);
+      // The noun with its prefixes (אשרה, האשרה, לאשרת…), not the verb (מאשרת, "approves").
+      const visa = /(^|[^\u0590-\u05FF])[ובלכש]?ה?אשר(ה|ת|ות)(?![\u0590-\u05FF])/;
+      for (const text of hebrew) expect(text).not.toMatch(visa);
     });
   }
 });

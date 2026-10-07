@@ -50,7 +50,9 @@ into Hebrew or English (see [certification.md](certification.md)):
 
 Once the visa is in the foreign partner's passport, you can travel to
 Israel together. After you arrive, file the full status application online
-with your local Misrad Hapnim branch, within the time you're given. That
+with your local Misrad Hapnim branch **within 30 days of the foreign
+partner's entry** (5.2.0008 §ה.1(6), 5.2.0009 §ה.1.ה). The entry permit
+alone doesn't start the process. That
 moves the foreign partner toward the B/1 visa (ב/1) and starts the
 graduated procedure. From there, the process is the same as for a partner
 who's already in Israel: see [first-appointment.md](first-appointment.md).

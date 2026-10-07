@@ -48,6 +48,10 @@ By the procedures, measured in time, not in the number of visas:
 - **Married (a man and a woman):** B/1 for up to 6 months, as a status in
   between, while the office checks your file and interviews you. Then A/5 for
   4 years, and then a choice between citizenship and permanent residency.
+  By procedure 5.2.0008 (§ג.7–ג.8), this B/1 is a temporary status while the
+  file is checked, and isn't counted in the gradual process: the
+  process itself starts with the A/5, given first for a year, then
+  extended every 2 years, 4 years in all.
 - **Married (same sex):** B/1 for up to 6 months, then A/5 for 4 years, then
   permanent residency, with the option to apply for citizenship after it.
 - **Common-law:** B/1 for 3 years, then A/5 for 4 years, then permanent

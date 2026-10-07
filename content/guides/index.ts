@@ -26,6 +26,28 @@ export const guideSources: Record<GuideSlug, string[]> = {
   ],
   "a5-visa": ["process.md", "interview.md", "documents/foreignHealthInsurance.md"],
   "b1-visa": ["process.md", "first-appointment.md", "entry-permit.md", "documents/foreignHealthInsurance.md"],
+  "partner-visa-timeline": [
+    "process.md",
+    "application.md",
+    "first-appointment.md",
+    "entry-permit.md",
+    "interview.md",
+    "certification.md",
+    "documents/foreignPoliceCertificate.md",
+  ],
+  "common-law-couples": [
+    "process.md",
+    "application.md",
+    "first-appointment.md",
+    "interview.md",
+    "documents.md",
+    "documents/affidavitCommonLaw.md",
+    "documents/jointLivingEvidence.md",
+    "documents/foreignCivilStatus.md",
+  ],
+  "entry-permit": ["entry-permit.md", "application.md", "first-appointment.md", "interview.md"],
+  "both-partners-abroad": ["both-abroad.md", "entry-permit.md"],
+  "apostille-and-translation": ["certification.md"],
 };
 
 /** Every piece of a guide's body text, in reading order: its answer, sections and questions. */

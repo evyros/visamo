@@ -2,7 +2,16 @@
 // Every fact in them comes from lib/knowledge, which stays the source of truth;
 // guides.test.ts flags a guide whose sources changed since it was last checked.
 
-export const guideSlugs = ["partner-visa-israel", "a5-visa", "b1-visa"] as const;
+export const guideSlugs = [
+  "partner-visa-israel",
+  "partner-visa-timeline",
+  "common-law-couples",
+  "entry-permit",
+  "both-partners-abroad",
+  "apostille-and-translation",
+  "b1-visa",
+  "a5-visa",
+] as const;
 export type GuideSlug = (typeof guideSlugs)[number];
 
 /**

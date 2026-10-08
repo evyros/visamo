@@ -1,13 +1,18 @@
 {
   "partner-visa-israel": {
     "sources": "c020b42863c7ed347e5a68ac5f05a49984ed4d4dbe92661866dd45698a21f193",
-    "en": "f910c3a057423a81cb14cb21854923789b5bed2bedbc87ea99a16e3322b71e19",
-    "he": "b139c04c492b615638b37f721f578ce0f8da74e299744358c22c1f8162ce5862"
+    "en": "c0200407c346338447d5a39577be708414f7ddde387dab9421f51ef1102f7f44",
+    "he": "8fc21e2785be5f25914d069a5a3b80ad61cb6e950919d9e30b06eb5b879e81e9"
   },
   "partner-visa-timeline": {
     "sources": "1afbaae0b14172f9130b68daf7e928ca6ea5fcc19f4822eb1ddf2311dfa4d9ec",
-    "en": "f3ba0702ba6c2e23c199d909a9483e6785da8107f31663e214fcf3a3ae6158a5",
-    "he": "44da38d2a772de97e0ca0407b89648e5eb8edc70fdaf512155727ff97b976e00"
+    "en": "ba455b6f807bf6d2b4faec7752f476b32f91385a0c91caae2d05b063d9a15877",
+    "he": "f9d5b77af2a1d58100b30b070e35359ff1b993599cdb471092dfc369a96f20ed"
+  },
+  "partner-visa-documents": {
+    "sources": "edd69408dbf6c055340b2e03b37ce8828ce840cbcace64eaa1472f0c90d9da0f",
+    "en": "2411107110b9fa4291f0a23491c8fede9f6b59e7c636cdbcbc158dc33a093750",
+    "he": "aa3a6fb6e27e39a27ca91c035a50264876a7be88d90c8304f424cfd8e974db7d"
   },
   "common-law-couples": {
     "sources": "c46e7cb967d2d26e0635d15aadb9153a68a7b4af084ebb19e0e2c4baef8bdc18",

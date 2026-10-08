@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import { guidesEn } from "./en";
 import { guidesHe } from "./he";
-import type { Guide, GuideSlug, Guides } from "./types";
+import type { Guide, GuideGroupId, GuideSlug, Guides } from "./types";
 
 // One entry per locale; adding a language means adding its guides file here.
 const guides: Record<Locale, Guides> = { en: guidesEn, he: guidesHe };
@@ -45,9 +45,37 @@ export const guideSources: Record<GuideSlug, string[]> = {
     "documents/jointLivingEvidence.md",
     "documents/foreignCivilStatus.md",
   ],
+  "partner-visa-documents": [
+    "documents.md",
+    "certification.md",
+    "children.md",
+    "application.md",
+    "documents/foreignPoliceCertificate.md",
+    "documents/foreignCivilStatus.md",
+  ],
   "entry-permit": ["entry-permit.md", "application.md", "first-appointment.md", "interview.md"],
   "both-partners-abroad": ["both-abroad.md", "entry-permit.md"],
   "apostille-and-translation": ["certification.md"],
+};
+
+/**
+ * How the guides list (/guide) is laid out: one featured guide to start with,
+ * then the rest in groups. Every guide appears exactly once (guides.test.ts).
+ */
+export const guideIndex: {
+  featured: GuideSlug;
+  groups: { id: GuideGroupId; numbered: boolean; slugs: GuideSlug[] }[];
+} = {
+  featured: "partner-visa-israel",
+  groups: [
+    {
+      id: "steps",
+      numbered: true,
+      slugs: ["partner-visa-documents", "apostille-and-translation", "entry-permit", "partner-visa-timeline"],
+    },
+    { id: "visas", numbered: false, slugs: ["b1-visa", "a5-visa"] },
+    { id: "situation", numbered: false, slugs: ["common-law-couples", "both-partners-abroad"] },
+  ],
 };
 
 /** Every piece of a guide's body text, in reading order: its answer, sections and questions. */
@@ -76,4 +104,4 @@ export function readingMinutes(guide: Guide) {
   return Math.max(1, Math.round(words / 200));
 }
 
-export { guideSlugs, type Guide, type GuideBlock, type GuideSlug } from "./types";
+export { guideGroupIds, guideSlugs, type Guide, type GuideBlock, type GuideSlug } from "./types";

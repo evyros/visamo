@@ -5,6 +5,7 @@
 export const guideSlugs = [
   "partner-visa-israel",
   "partner-visa-timeline",
+  "partner-visa-documents",
   "common-law-couples",
   "entry-permit",
   "both-partners-abroad",
@@ -13,6 +14,9 @@ export const guideSlugs = [
   "a5-visa",
 ] as const;
 export type GuideSlug = (typeof guideSlugs)[number];
+
+export const guideGroupIds = ["steps", "visas", "situation"] as const;
+export type GuideGroupId = (typeof guideGroupIds)[number];
 
 /**
  * Text with a little inline markup: **bold**, and links written
@@ -57,6 +61,13 @@ export type Guides = {
     /** `{minutes}` is filled in from the guide's length. */
     readingTime: string;
   };
-  index: { metaTitle: string; description: string; title: string; intro: string };
+  index: {
+    metaTitle: string;
+    description: string;
+    title: string;
+    intro: string;
+    startHere: string;
+    groups: Record<GuideGroupId, { title: string; intro: string }>;
+  };
   docs: Record<GuideSlug, Guide>;
 };

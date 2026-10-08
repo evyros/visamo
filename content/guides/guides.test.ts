@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { guideSlugs, guideSources, guideTexts, type GuideBlock, type GuideSlug } from ".";
+import { guideIndex, guideSlugs, guideSources, guideTexts, type GuideBlock, type GuideSlug } from ".";
 import { guidesEn } from "./en";
 import { guidesHe } from "./he";
 
@@ -77,6 +77,13 @@ const shape = (block: GuideBlock) =>
           : "note";
 
 const texts = (slug: GuideSlug, docs: typeof guidesEn.docs) => guideTexts(docs[slug]);
+
+describe("the guides list", () => {
+  it("shows every guide exactly once", () => {
+    const shown = [guideIndex.featured, ...guideIndex.groups.flatMap((group) => group.slugs)];
+    expect([...shown].sort()).toEqual([...guideSlugs].sort());
+  });
+});
 
 describe("the guides", () => {
   for (const slug of guideSlugs) {

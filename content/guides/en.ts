@@ -17,6 +17,12 @@ export const guidesEn: Guides = {
     title: "Guides to the Israel partner visa",
     intro:
       "Everything about getting status in Israel for the foreign partner of an Israeli, explained step by step, from what couples went through and the official procedures.",
+    startHere: "Start here",
+    groups: {
+      steps: { title: "Step by step", intro: "Getting through the process." },
+      visas: { title: "The visas", intro: "What each stage gives you." },
+      situation: { title: "Your situation", intro: "If this is you." },
+    },
   },
   docs: {
     "partner-visa-israel": {
@@ -83,7 +89,7 @@ export const guidesEn: Guides = {
           body: [
             {
               steps: [
-                "**Gather the documents,** starting with the ones from abroad: they take the longest. A document from abroad needs an apostille or consular legalization from the country that issued it, and often a translation. [Apostille and translation](guide:apostille-and-translation)",
+                "**Gather the documents,** starting with the ones from abroad: they take the longest. A document from abroad needs an apostille or consular legalization from the country that issued it, and often a translation. [The full list of documents](guide:partner-visa-documents)",
                 "**File the application online.** The Israeli partner logs in with the government's identification system, you upload the documents, and pay the fee for opening the file: 1,085 NIS in 2026.",
                 "**Wait for an answer:** a request for more documents, or a first appointment at your Misrad Hapnim branch.",
                 "**The first appointment.** The clerk goes over your original documents. If the foreign partner is abroad and everything is in order, the office grants the entry permit, at the appointment or a couple of weeks later, and the foreign partner comes to Israel. [The entry permit](guide:entry-permit)",
@@ -452,7 +458,7 @@ export const guidesEn: Guides = {
           id: "before",
           heading: "Before you file: the documents",
           body: [
-            "Documents from abroad take the longest: each needs an apostille or consular legalization from the country that issued it, and often a translation. Some branches reject an application that's missing them instead of giving you time to complete it, so apply when the file is complete. [Apostille and translation](guide:apostille-and-translation)",
+            "Documents from abroad take the longest: each needs an apostille or consular legalization from the country that issued it, and often a translation. Some branches reject an application that's missing them instead of giving you time to complete it, so apply when the file is complete. [The full list of documents](guide:partner-visa-documents)",
           ],
         },
         {
@@ -995,6 +1001,154 @@ export const guidesEn: Guides = {
       cta: {
         title: "Is every document certified right?",
         body: "Check each document, its apostille and its translation before you file. Start free.",
+      },
+    },
+
+    "partner-visa-documents": {
+      metaTitle: "Documents for the Israel Partner Visa: The Full List (2026)",
+      description:
+        "Every document Misrad Hapnim asks for to open a partner visa file, by subject: forms, identity, your relationship, civil status, the police certificate and your life together, and who needs each one.",
+      facts: ["Every document, by subject", "Married & common-law", "Who needs what"],
+      title: "The documents for the Israel partner visa",
+      answer:
+        "To open a partner visa file, Misrad Hapnim asks for **forms**, **identity documents**, **proof of your relationship**, the foreign partner's **civil status** and **police certificate**, and proof that you **share a life**. Which ones you need depends on your situation: married or common-law, where each of you lives, previous marriages, and children. Documents from abroad need an apostille, and often a translation.",
+      updated: "2026-10-08",
+      sections: [
+        {
+          id: "first",
+          heading: "Good to know first",
+          body: [
+            {
+              list: [
+                "**Originals, certified.** A document from abroad needs an apostille or consular legalization from the country that issued it, and often a translation into Hebrew. [Apostille and translation](guide:apostille-and-translation)",
+                "**Some documents have to be recent.** The foreign partner's civil-status document and police certificate have to be issued in the last 6 months before you file.",
+                "**The passport** has to be valid for at least 2 more years.",
+                "**The clerk can ask for more:** any other document your circumstances call for.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "forms",
+          heading: "Forms",
+          body: [
+            {
+              list: [
+                "**Status application (form AS/6):** married couples.",
+                "**Joint affidavit:** common-law couples. You sign it at the appointment, not before.",
+                "**Entry permit application (form AS/1):** when the foreign partner is abroad and the Israeli partner lives in Israel.",
+                "**Visa change application (form AS/3):** when the foreign partner is already in Israel.",
+                "**A letter about your relationship:** every couple, signed by both of you.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "identity",
+          heading: "Identity",
+          body: [
+            {
+              list: [
+                "**The Israeli partner's Teudat Zehut,** with its appendix (ספח).",
+                "**The foreign partner's passport.**",
+                "**Passport photos** of each of you.",
+                "**The foreign partner's birth certificate.**",
+                "**Proof of a name change:** if the foreign partner changed their name.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "relationship",
+          heading: "Your relationship",
+          body: [
+            {
+              list: [
+                "**Your marriage certificate:** married couples. A marriage in Israel needs no certification.",
+                "**Photos of you together.**",
+                "**Your message and call history.**",
+                "**Letters of recommendation** from family and friends in Israel.",
+                "**Evidence of living together:** if you live, or lived, together.",
+                "**Birth certificates of your children together:** if you have any.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "civil-status",
+          heading: "Civil status",
+          body: [
+            {
+              list: [
+                "**The foreign partner's civil status,** and whether they have children: issued in the last 6 months.",
+                "**A divorce decree, or a previous spouse's death certificate:** for each previous marriage, of either of you.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "police",
+          heading: "Police certificate",
+          body: [
+            "The foreign partner's police certificate, from their country of citizenship and from each other country they lived in for at least 6 months in a row, issued in the last 6 months. [How a rejected police certificate delays a file](guide:partner-visa-timeline)",
+          ],
+        },
+        {
+          id: "life-together",
+          heading: "Your life together",
+          body: [
+            {
+              list: [
+                "**A lease or purchase contract:** of your shared home, or of the Israeli partner's home if you don't live together.",
+                "**Bills for the home:** electricity, water, arnona and the like.",
+                "**A municipality confirmation** (אישור תושב) **and proof of government services:** if either of you lives in Israel.",
+                "**Bank documents:** a shared bank account for married couples, bank statements for common-law couples.",
+                "**Salary slips** of each of you.",
+                "**Health insurance** for the foreign partner.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "children",
+          heading: "Children moving to Israel",
+          body: [
+            {
+              list: [
+                "**Birth certificates and passports** of the children.",
+                "**Police certificates** for children 14 and older.",
+                "**The other parent's consent and address,** or a court ruling on custody, or the other parent's death certificate.",
+              ],
+            },
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Which documents do we need for the partner visa?",
+          a: "Forms, identity documents, proof of your relationship, the foreign partner's civil status and police certificate, and proof of your life together. The exact list depends on whether you're married, where each of you lives, previous marriages and children.",
+        },
+        {
+          q: "Do married and common-law couples need the same documents?",
+          a: "Mostly. Married couples bring form AS/6, the marriage certificate and a shared bank account. Common-law couples sign a joint affidavit instead, and bring bank statements and more proof that they live together.",
+        },
+        {
+          q: "Do the documents have to be originals?",
+          a: "Yes, with their apostille or legalization. A copy is accepted only when the original can't be had.",
+        },
+        {
+          q: "How recent do the documents have to be?",
+          a: "The foreign partner's civil-status document and police certificate have to be issued in the last 6 months before you file. The passport has to be valid for at least 2 more years.",
+        },
+        {
+          q: "Do documents in English need a translation?",
+          a: "By law, yes: only Hebrew and Arabic are accepted without one. In practice, clerks often accept English. When you do translate, translate into Hebrew.",
+        },
+      ],
+      related: ["apostille-and-translation", "partner-visa-timeline"],
+      cta: {
+        title: "Get your personal document list",
+        body: "Answer a few questions and see exactly which documents your file needs, then check each one before you file. Start free.",
       },
     },
   },

@@ -1034,10 +1034,10 @@ export const guidesEn: Guides = {
           body: [
             {
               list: [
-                "**Status application (form AS/6):** married couples.",
-                "**Joint affidavit:** common-law couples. You sign it at the appointment, not before.",
-                "**Entry permit application (form AS/1):** when the foreign partner is abroad and the Israeli partner lives in Israel.",
-                "**Visa change application (form AS/3):** when the foreign partner is already in Israel.",
+                "[Status application (form AS/6)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf): married couples.",
+                "[Joint affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf): common-law couples. You sign it at the appointment, not before.",
+                "[Entry permit application (form AS/1)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf): when the foreign partner is abroad and the Israeli partner lives in Israel.",
+                "[Visa change application (form AS/3)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf): when the foreign partner is already in Israel.",
                 "**A letter about your relationship:** every couple, signed by both of you.",
               ],
             },

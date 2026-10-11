@@ -38,7 +38,9 @@ into Hebrew or English (see [certification.md](certification.md)):
 - **A police certificate** from the foreign partner's country.
 - **Proof of your life together.** Since you live abroad, this has to be
   strong: leases, joint bank accounts, bills, your history of text
-  messages, and photos that show a real, ongoing life together.
+  messages, and photos that show a real, ongoing life together. If you
+  both live in the same country, you're expected to live together there:
+  a request without it is unlikely to be approved, though you can try.
 - **Where you'll live in Israel** during the stay.
 - **Insurance** covering the whole stay in Israel.
 - **A confirmation of employment** from the Israeli partner's employer.

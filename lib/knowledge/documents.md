@@ -27,7 +27,8 @@ follows what you say.
   shared there: the lease or purchase contract, its bills, and the rest. If
   you can't bring them, bring what supports it instead, such as receipts and
   flight bookings, to show your relationship is genuine.
-- **You haven't lived together:** if the Israeli partner lives in Israel,
+- **You haven't lived together:** this works when you couldn't live
+  together (see below). If the Israeli partner lives in Israel,
   they still bring the lease or purchase contract of their home. Either way,
   you'll need a stronger case that your relationship is genuine and that you
   share a life. For example:
@@ -42,6 +43,13 @@ The procedures ask for proof of a shared center of life for at least the
 last year, but it isn't a condition for applying. Couples who have been
 together for less, or who have never lived together, married or not, are
 processed normally.
+
+**In practice, that holds only if you couldn't live together:** for example,
+you live in different countries and haven't had the chance to share a home.
+If you've both lived in the same country, in Israel or abroad, the office
+expects you to have lived together there. Applying without it is unlikely
+to succeed, though you can try. In that case, move in together first, and
+then apply.
 
 What decides it is whether you can show that the relationship is genuine:
 visits and time spent together, meeting each other's family and friends,

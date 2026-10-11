@@ -12,7 +12,7 @@ import type { Unexpected, Verdict } from "./grade";
 
 export const JUDGE_MODEL = process.env.EVAL_JUDGE_MODEL || "anthropic/claude-opus-5.5";
 
-const RULES = `You review the findings of Visamo's document checker. Visamo helps couples where one partner is Israeli and the other is a foreign national prepare their file for the Israeli partner-visa process (the graduated procedure at Misrad Hapnim, the Israeli Population and Immigration Authority). The checker is a model that reads one document of a couple's file, every file uploaded for it, and reports what doesn't meet a list of lines: "required" lines (an unmet one is an issue) and "recommended" lines (an unmet one is a recommendation).
+const RULES = `You review the findings of Visamo's document checker. Visamo helps couples where one partner is Israeli and the other is a foreign national prepare their file for the Israeli partner-visa process (the gradual process at Misrad Hapnim, the Israeli Population and Immigration Authority). The checker is a model that reads one document of a couple's file, every file uploaded for it, and reports what doesn't meet a list of lines: "required" lines (an unmet one is an issue) and "recommended" lines (an unmet one is a recommendation).
 
 The findings you get are ones the test didn't expect. For each one, decide:
 - "allowed": it says the same thing as one of the approved findings listed, in other words. Give that finding's number in "allowed".

@@ -8,12 +8,14 @@ import {
   getProcessTexts,
   processGuide,
   processPath,
+  processPublished,
   processUpdated,
   relatedGuides,
   trackPath,
   trackSlugs,
+  type Answers,
 } from "@/content/process";
-import { locales } from "@/i18n/config";
+import { locales, type Locale } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
 import { localePath, site } from "@/lib/site";
@@ -21,6 +23,7 @@ import { jsonLd, processStructuredData } from "@/lib/structured-data";
 import { GuideText } from "@/components/guide";
 import { Icon } from "@/components/icons";
 import {
+  AboutGuide,
   DocumentList,
   ProcessCta,
   ProcessStep,
@@ -54,10 +57,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: trackPath(canonicalAnswers(answers)),
     title: guide.metaTitle,
     description: guide.description,
+    image: { path: shareImage(locale, answers), alt: guide.metaTitle },
+    article: { published: processPublished, modified: processUpdated },
   });
 }
 
 const DOCUMENTS_ID = "documents";
+
+/** The situation's share image: the canonical one's, as its other metadata. */
+const shareImage = (locale: Locale, answers: Answers) =>
+  localePath(locale, `${trackPath(canonicalAnswers(answers))}/opengraph-image`);
 
 export default async function ProcessGuidePage({ params }: Props) {
   const answers = await answersFrom(params);
@@ -75,7 +84,9 @@ export default async function ProcessGuidePage({ params }: Props) {
   const structuredData = processStructuredData({
     guide,
     updated: processUpdated,
+    published: processPublished,
     url: absolute(trackPath(answers)),
+    image: new URL(shareImage(locale, answers), site.url).toString(),
     crumbs: [
       { name: labels.guides, url: absolute("/guide") },
       { name: labels.process, url: absolute(processPath) },
@@ -179,6 +190,8 @@ export default async function ProcessGuidePage({ params }: Props) {
                 </ProcessStep>
               ))}
             </ol>
+
+            <AboutGuide answers={answers} texts={texts} locale={locale} />
           </div>
         </div>
       </Container>

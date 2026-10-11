@@ -2,8 +2,8 @@
 
 ## What it is
 
-A foreign partner of an Israeli gets status through the **graduated
-procedure** (ההליך המדורג): a few years of temporary visas before permanent
+A foreign partner of an Israeli gets status through the **gradual
+process** (ההליך המדורג): a few years of temporary visas before permanent
 status. The foreign partner usually moves from a B/1 visa (with a work
 permit) to A/5 (temporary resident), and at the end to citizenship or
 permanent residency. Each stage is renewed with updated documents, and at
@@ -80,7 +80,7 @@ move up to A/5 once the file is converted and you're interviewed.
 
 - **Residents of the Palestinian territories, and citizens of Iran, Iraq,
   Syria and Lebanon**, fall under the Citizenship and Entry into Israel Law.
-  Most can't use the graduated procedure: 5.2.0008 §ה.2(1) rejects them at
+  Most can't use the gradual process: 5.2.0008 §ה.2(1) rejects them at
   the start (for residents of the territories, by age: men under 35, women
   under 25).
 - **A Jewish foreign partner, or one with a Jewish parent or grandparent**,
@@ -98,7 +98,7 @@ Israel has no civil marriage: a marriage in Israel goes through a religious
 court, which usually needs you to share a religion. Couples who can't marry
 here marry abroad (Cyprus, say) or online (Utah), and Israel registers it.
 The civil union register in Israel, Brit Hazugiot (ברית הזוגיות), doesn't
-count for the graduated procedure.
+count for the gradual process.
 
 ## Good to know
 

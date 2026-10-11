@@ -5,16 +5,16 @@ import {
   getProcessTexts,
   locations,
   processPath,
+  processPublished,
   processUpdated,
   relationships,
   trackPath,
 } from "@/content/process";
 import { answersKey } from "@/content/process/types";
-import { getGuides } from "@/content/guides";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
 import { localePath, site } from "@/lib/site";
-import { guideStructuredData, jsonLd } from "@/lib/structured-data";
+import { jsonLd, processLandingStructuredData } from "@/lib/structured-data";
 import { FaqList } from "@/components/faq-list";
 import { Icon } from "@/components/icons";
 import { ProcessCta } from "@/components/process/parts";
@@ -24,7 +24,13 @@ import { Container, Eyebrow, SectionTitle, mobileCenter } from "@/components/ui"
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const { landing } = getProcessTexts(locale);
-  return pageMetadata({ locale, path: processPath, title: landing.metaTitle, description: landing.description });
+  return pageMetadata({
+    locale,
+    path: processPath,
+    title: landing.metaTitle,
+    description: landing.description,
+    image: { path: localePath(locale, `${processPath}/opengraph-image/default`), alt: landing.metaTitle },
+  });
 }
 
 export default async function ProcessLandingPage() {
@@ -60,16 +66,17 @@ export default async function ProcessLandingPage() {
   );
 
   const absolute = (path: string) => new URL(localePath(locale, path), site.url).toString();
-  const structuredData = guideStructuredData({
-    guide: {
-      title: `${landing.title} ${landing.titleAccent}`,
-      description: landing.description,
-      updated: processUpdated,
-      faq: landing.faq,
-    },
+  const structuredData = processLandingStructuredData({
+    title: `${landing.title} ${landing.titleAccent}`,
+    crumb: texts.labels.process,
+    description: landing.description,
     url: absolute(processPath),
+    image: absolute(`${processPath}/opengraph-image/default`),
+    published: processPublished,
+    updated: processUpdated,
+    faq: landing.faq,
     indexUrl: absolute("/guide"),
-    indexName: getGuides(locale).labels.guides,
+    indexName: texts.labels.guides,
     inLanguage: locale,
   });
 
@@ -85,6 +92,18 @@ export default async function ProcessLandingPage() {
         <div aria-hidden="true" className="texture-dots pointer-events-none absolute inset-0" />
         <Container className="relative grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:gap-16 lg:py-24">
           <div className={mobileCenter}>
+            <nav
+              aria-label={texts.labels.guides}
+              className="mb-4 flex items-center justify-center gap-1.5 text-sm font-semibold lg:justify-start"
+            >
+              <Link href={localePath(locale, "/guide")} className="text-teal-700 hover:underline">
+                {texts.labels.guides}
+              </Link>
+              <Icon name="chevron" className="size-3.5 text-slate-300" />
+              <span aria-current="page" className="text-slate-500">
+                {texts.labels.process}
+              </span>
+            </nav>
             <Eyebrow>{landing.eyebrow}</Eyebrow>
             <SectionTitle as="h1" className="mt-4">
               {landing.title} <span className="block text-teal-600">{landing.titleAccent}</span>

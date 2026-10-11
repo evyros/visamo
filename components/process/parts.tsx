@@ -292,6 +292,37 @@ export function ProcessStep({
   );
 }
 
+// ── Who wrote the guide, and from what ─────────────────────────────────────
+
+export function AboutGuide({ answers, texts, locale }: { answers: Answers; texts: ProcessTexts; locale: Locale }) {
+  const { about, labels } = texts;
+  return (
+    <section className="mt-16 rounded-2xl border border-line-200 bg-white p-5 sm:p-7">
+      <h2 className="font-display text-xl font-semibold text-navy-900 sm:text-2xl">{about.title}</h2>
+      <p className="mt-2 text-[15.5px] leading-7">{about.body}</p>
+      <ul className="mt-4 space-y-2 text-[15px] leading-6">
+        {about.sources(answers).map((source) => (
+          <li key={source.url} className="flex gap-2.5">
+            <Icon name="file" className="mt-0.5 size-4 text-slate-500" />
+            <a href={source.url} {...newTab} className="font-semibold text-teal-700 underline underline-offset-4 hover:text-teal-600">
+              {source.label}
+              <Icon name="external" className="ms-1 inline size-3.5 align-[-2px]" strokeWidth={2} />
+              <span className="sr-only">{labels.newTab}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <Link
+        href={localePath(locale, "/about")}
+        className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-teal-700 hover:underline"
+      >
+        {about.story}
+        <Icon name="arrow" className="size-4" />
+      </Link>
+    </section>
+  );
+}
+
 // ── The documents, in the filing step ───────────────────────────────────────────────────────────
 
 const groupIcons: Record<DocumentGroupId, IconName> = {

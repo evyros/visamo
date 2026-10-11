@@ -12,7 +12,7 @@
     },
     "pricing": {
       "title": "Partner Visa Document Check: Pricing, One-Time Payment",
-      "description": "One-time prices, no subscription. Start free, or check every document in your file for ₪369, once, for the whole graduated procedure."
+      "description": "One-time prices, no subscription. Start free, or check every document in your file for ₪369, once, for the whole gradual process."
     },
     "security": {
       "title": "How We Protect Your Documents",
@@ -20,7 +20,7 @@
     },
     "howBuilt": {
       "title": "How We Built Visamo: Couples' Experience, Powered by AI",
-      "description": "Visamo's AI is built on the experience of many couples who went through Israel's graduated procedure. How we built it, what the AI does, and what it doesn't."
+      "description": "Visamo's AI is built on the experience of many couples who went through Israel's gradual process. How we built it, what the AI does, and what it doesn't."
     },
     "dataPrivacy": {
       "title": "How we handle your data",
@@ -73,12 +73,13 @@
     "closeMenu": "Close menu"
   },
   "footer": {
-    "tagline": "Independent software that guides couples smoothly through Israel's graduated procedure to an A/5 visa.",
+    "tagline": "Independent software that guides couples smoothly through Israel's gradual process to an A/5 visa.",
     "product": {
       "title": "Product",
       "howItWorks": "How it works",
       "features": "Features",
       "guides": "Guides",
+      "process": "Partner visa, step by step",
       "pricing": "Pricing",
       "login": "Log in"
     },
@@ -102,7 +103,7 @@
       "email": "Email"
     },
     "disclaimerTitle": "Visamo is not a law firm and not a government service.",
-    "disclaimer": "Visamo is independent software that helps couples organize, prepare and check documents for Israel's graduated procedure. We do not provide legal advice or legal representation, and using Visamo does not create a lawyer–client relationship. Visamo is not affiliated with, endorsed by, or an official portal of the Ministry of Interior or the Population and Immigration Authority. All decisions on your application are made solely by the authorities. For advice about your specific situation, consult a licensed Israeli lawyer.",
+    "disclaimer": "Visamo is independent software that helps couples organize, prepare and check documents for Israel's gradual process. We do not provide legal advice or legal representation, and using Visamo does not create a lawyer–client relationship. Visamo is not affiliated with, endorsed by, or an official portal of the Ministry of Interior or the Population and Immigration Authority. All decisions on your application are made solely by the authorities. For advice about your specific situation, consult a licensed Israeli lawyer.",
     "copyright": "© {year} Visamo. All rights reserved.",
     "madeWith": "Built with {heart} by a couple who's been through it.",
     "heartLabel": "love"
@@ -226,7 +227,7 @@
         {
           "icon": "compass",
           "title": "Is this normal? Now you'll know.",
-          "body": "A step-by-step map of the graduated procedure that tells you what usually happens at each stage, how long waits typically run, and when it's worth getting a professional opinion.",
+          "body": "A step-by-step map of the gradual process that tells you what usually happens at each stage, how long waits typically run, and when it's worth getting a professional opinion.",
           "bullets": [
             "What to expect at each stage",
             "Routine vs. worth a closer look",
@@ -309,7 +310,7 @@
       "items": [
         {
           "q": "Can we do it ourselves, without Visamo?",
-          "a": "Of course, and many couples do. But if you don't know the small details and requirements of the graduated procedure, it's usually harder, frustrating, and it takes longer: small mistakes lead to delays and a lot of uncertainty. Visamo helps you run a smoother process, with every document checked and every step explained.",
+          "a": "Of course, and many couples do. But if you don't know the small details and requirements of the gradual process, it's usually harder, frustrating, and it takes longer: small mistakes lead to delays and a lot of uncertainty. Visamo helps you run a smoother process, with every document checked and every step explained.",
           "link": {
             "label": "How the Israel partner visa works, step by step",
             "path": "/guide/partner-visa-israel"
@@ -500,7 +501,7 @@
         },
         {
           "q": "How long does Full file check last?",
-          "a": "For your whole graduated procedure, every stage. You pay once."
+          "a": "For your whole gradual process, every stage. You pay once."
         },
         {
           "q": "Can I upload documents for free?",
@@ -602,7 +603,7 @@
     "hero": {
       "eyebrow": "How we built Visamo",
       "title": "Built on what couples went through, not only on what's written.",
-      "subtitle": "Visamo's AI answers your questions and checks your documents using the experience of many couples who went through Israel's graduated procedure. Here's how we built it, and what to expect from it."
+      "subtitle": "Visamo's AI answers your questions and checks your documents using the experience of many couples who went through Israel's gradual process. Here's how we built it, and what to expect from it."
     },
     "gap": {
       "title": "Why the rules on paper aren't enough",
@@ -679,7 +680,7 @@
     "eyebrow": "A note from the founder",
     "title": "The story behind Visamo",
     "paragraphs": [
-      "When my American wife and I started the graduated procedure, I thought the interviews would be the hard part. They weren't. **The paperwork was.**",
+      "When my American wife and I started the gradual process, I thought the interviews would be the hard part. They weren't. **The paperwork was.**",
       "Some documents we didn't even know how to get. A certificate that was valid in March had expired by our appointment in July. We waited months for a slot, only to hear “come back with the missing page,” and then waited months more for the next round. More than once, our file was sent back over something we didn't know was mandatory.",
       "Our “system” was a folder on our computer, full of revisions. Between the rounds and the rejections, the whole process took us **almost two years**. I'm Israeli, I read every form in my own language, and I still felt lost. For my wife, who doesn't speak Hebrew, it was even harder.",
       "So I built what we needed: **one calm place for every document, every date and every step**. Visamo can't decide anyone's case. But it makes the process smoother, with much less risk of missing something along the way. Bureaucracy shouldn't be the hardest part of building a life with the person you love."

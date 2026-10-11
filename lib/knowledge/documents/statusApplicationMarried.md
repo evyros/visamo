@@ -107,7 +107,7 @@ The part titled "הצהרת המבקשים".
   - the details in the application are true, and are the basis for deciding
     it;
   - you'll report any change in your circumstances while it's handled, and
-    during the graduated procedure if it's approved;
+    during the gradual process if it's approved;
   - you'll update the Authority on your address and any change to it, and
     the Authority may check further, including visiting your home: not
     cooperating can close the application, or cancel or not renew the

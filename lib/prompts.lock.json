@@ -1,10 +1,10 @@
 {
   "chatRules": {
-    "version": 6,
-    "fingerprint": "875d46ec1acf5407cf68f3c7cb20d153d75e054cf3c1b5402cecd820305d7260"
+    "version": 7,
+    "fingerprint": "6a09bd9a72f0e81d657a84642bf2ba37b267e4626cf493e451c379b5d088deb9"
   },
   "knowledge": {
-    "version": 79,
-    "fingerprint": "205524494c309ac57d0d949afa183a87c93e99d35311687d4236cbac2172079d"
+    "version": 80,
+    "fingerprint": "7c8c0b6a042418f9ce1531f91714cacddf862d0bbc9d7e43de7168156946b84f"
   }
 }

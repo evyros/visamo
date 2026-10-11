@@ -23,7 +23,7 @@ const a5Gives = [
 export const processEn: ProcessTexts = {
   labels: {
     guides: "Guides",
-    process: "Your process, step by step",
+    process: "Partner visa, step by step",
     updated: "Last updated",
     step: "Step {n}",
     stepsNav: "The steps",
@@ -67,11 +67,11 @@ export const processEn: ProcessTexts = {
   },
 
   landing: {
-    metaTitle: "Israel Partner Visa Process: Your Step-by-Step Guide",
+    metaTitle: "Israel Partner Visa Process for Your Situation",
     description:
-      "Answer 3 quick questions and see the Israel partner visa process for your situation: every step from the documents to A/5, what to watch for, and the documents to gather.",
+      "Answer 3 quick questions and see the Israel partner and spouse visa process for your situation: every step to A/5, and the documents to gather.",
     eyebrow: "Free interactive guide",
-    title: "Your partner visa process,",
+    title: "Your Israel partner visa process,",
     titleAccent: "step by step.",
     intro:
       "Answer three quick questions, and get the whole gradual process for your situation: every step in order, what to watch for, and the documents to start gathering.",
@@ -140,19 +140,19 @@ export const processEn: ProcessTexts = {
 
   guide: {
     metaTitle: (a) =>
-      `Israel Partner Visa for ${married(a) ? "Married" : "Common-Law"} Couples ${
-        { bothInIsrael: "Living in Israel", partnerAbroad: "with a Partner Abroad", bothAbroad: "Living Abroad" }[a.location]
+      `Israel Partner Visa: ${married(a) ? "Married" : "Common-Law"}, ${
+        { bothInIsrael: "Both in Israel", partnerAbroad: "Partner Abroad", bothAbroad: "Both Abroad" }[a.location]
       }`,
     description: (a) => {
-      const visas = married(a) ? "the B/1 visa, the interview and A/5" : "the interview, the B/1 visa and A/5";
+      const visas = married(a) ? "B/1, the interview and A/5" : "the interview, B/1 and A/5";
       const start = {
         bothInIsrael: "filing online, the first appointment",
-        partnerAbroad: "filing online, the entry permit",
+        partnerAbroad: "filing, the entry permit",
         bothAbroad: "the consulate, the entry permit, filing in Israel",
       }[a.location];
-      return `The Israel partner visa for ${relationshipName(a)} ${locationName(a)}, step by step: ${start}, ${visas}, with what to watch for and the documents to gather.`;
+      return `The Israel partner visa for ${relationshipName(a)} ${locationName(a)}: ${start}, ${visas}, step by step.`;
     },
-    title: (a) => `The partner visa process for ${relationshipName(a)} ${locationName(a)}`,
+    title: (a) => `The Israel partner visa process for ${relationshipName(a)} ${locationName(a)}`,
     answer: (a) =>
       `${
         {
@@ -484,7 +484,7 @@ export const processEn: ProcessTexts = {
       short: "The answer",
       meta: [{ icon: "clock", text: "3 weeks to 4+ months" }],
       body: [
-        "Misrad Hapnim has no deadline for answering. As of 2026, the first answer takes from 3 weeks to more than 4 months, depending on the branch, and the appointment it gives may be months later.",
+        "Misrad Hapnim (PIBA) has no deadline for answering. As of 2026, the first answer takes from 3 weeks to more than 4 months, depending on the branch, and the appointment it gives may be months later.",
         "The answer is one of two things: a **request for more documents**, usually by email, or a **first appointment**, sometimes with a list of documents to bring.",
       ],
       bubbles: [
@@ -596,7 +596,7 @@ export const processEn: ProcessTexts = {
         { icon: "receipt", text: "205 NIS" },
       ],
       body: [
-        "B/1 (ב/1 כללי) is an unrestricted work visa marked \"partner\". It's a sticker in the passport, issued by your branch: 205 NIS in 2026, by credit card only. [The B/1 visa](guide:b1-visa)",
+        "B/1 (ב/1 כללי, often written B1) is an unrestricted work visa marked \"partner\". It's a sticker in the passport, issued by your branch: 205 NIS in 2026, by credit card only. [The B/1 visa](guide:b1-visa)",
         married(a)
           ? "Married couples usually get it for 6 months: the time the office has to interview you and decide on the A/5."
           : "Common-law couples usually get it for a year, and stay on B/1 for 3 years in all, renewing it with updated documents. Offered only 6 months? Point the clerk to procedure 5.2.0009.",
@@ -675,7 +675,7 @@ export const processEn: ProcessTexts = {
       milestone: { title: "You've got the A/5 visa", lead: "What you get now:", items: a5Gives },
       meta: [{ icon: "clock", text: married(a) ? "After up to 6 months on B/1" : "After 3 years on B/1" }],
       body: [
-        "A/5 (א/5) is temporary residency: the foreign partner becomes a temporary resident (תושב ארעי). [The A/5 visa](guide:a5-visa)",
+        "A/5 (א/5, often written A5) is temporary residency: the foreign partner becomes a temporary resident (תושב ארעי). [The A/5 visa](guide:a5-visa)",
         married(a)
           ? "Married couples move up to A/5 after up to 6 months on B/1. It's given first for a year, then extended every 2 years: 4 years in all. Then comes a choice between citizenship and permanent residency."
           : "Common-law couples move up to A/5 after 3 years on B/1, and stay on it for 4 years. Then comes permanent residency, with the option to apply for citizenship after it.",
@@ -834,6 +834,21 @@ export const processEn: ProcessTexts = {
       cta: "Get your exact list, free",
     },
   },
+
+  about: {
+    title: "About this guide",
+    body: "Written by Visamo from the official procedures of the Population and Immigration Authority, and from what couples went through in practice. Not legal advice.",
+    sources: (a) => [
+      married(a)
+        ? { label: "Procedure 5.2.0008: status for a foreigner married to an Israeli citizen", url: "https://www.gov.il/BlobFolder/policy/status_foreigner_married_to_israeli_procedure/he/5.2.0008.pdf" }
+        : { label: "Procedure 5.2.0009: status for common-law couples", url: "https://www.gov.il/BlobFolder/policy/israelis_couples_status_procedure/he/5.2.0009..pdf" },
+      { label: "Procedure 5.1.0013: how interviews are conducted", url: "https://www.gov.il/BlobFolder/policy/making_interviews_procedure/he/5.1.0013.pdf" },
+      { label: "The online application on gov.il", url: "https://www.gov.il/en/service/requesting-status-for-foreign-life-partner" },
+    ],
+    story: "The story behind Visamo",
+  },
+
+  share: { subtitle: "Every step, what to watch for, and the documents to gather." },
 
   cta: {
     eyebrow: "Before you file!",

@@ -26,6 +26,9 @@ export function getProcessTexts(locale: Locale): ProcessTexts {
 /** The landing page. The guide for each situation is a page under it: processPath/<track>. */
 export const processPath = "/guide/partner-visa-process";
 
+/** When the guide was first published, as YYYY-MM-DD: for search engines and share previews. */
+export const processPublished = "2026-10-11";
+
 /** When the facts were last checked against lib/knowledge, as YYYY-MM-DD. */
 export const processUpdated = "2026-10-11";
 

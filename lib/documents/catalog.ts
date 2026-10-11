@@ -2,7 +2,7 @@ import type { Exemption } from "./certification";
 import type { Condition } from "./conditions";
 
 // The document catalog: every document a couple might need for the first
-// application in the graduated procedure (renewals aren't supported), and
+// application in the gradual process (renewals aren't supported), and
 // when each one is needed. Titles and descriptions live in the messages,
 // under app.documents.items.<id>.
 //

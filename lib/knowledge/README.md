@@ -1,7 +1,7 @@
 # The Israeli partner visa: what you need to know
 
 A guide to getting status in Israel for the foreign partner of an Israeli,
-through the graduated procedure (ההליך המדורג).
+through the gradual process (ההליך המדורג).
 
 - [process.md](process.md): what the process is, how long it takes, and who it's for.
 - [application.md](application.md): filing the application online, and what happens while you wait.

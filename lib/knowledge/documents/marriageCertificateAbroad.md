@@ -17,7 +17,7 @@ registered as married in Israel before you apply (below).
   Governor's office**, not from the country you were in during the ceremony.
   Order it with the certificate, sent to your address in Israel. Israel
   registers these marriages since court rulings in 2022 and 2023, and since
-  July 2023 they count for the graduated procedure like any marriage abroad.
+  July 2023 they count for the gradual process like any marriage abroad.
   Not every country recognizes them: check that the foreign partner's country
   does.
 
@@ -31,7 +31,7 @@ registered as married in Israel before you apply (below).
 
 ## After you get it
 
-**Register the marriage in Israel before you apply for the partner visa in the graduated procedure.** The Israeli partner
+**Register the marriage in Israel before you apply for the partner visa in the gradual process.** The Israeli partner
 must be registered as married at Misrad Hapnim (משרד הפנים), with it written on the
 appendix (ספח) of their Teudat Zehut. Offices enforce this, and applying
 without it can delay the process significantly. If your Teudat Zehut
@@ -53,7 +53,7 @@ go, and book an appointment: the Teudat Zehut and passport are replaced.
 
 By law, the marriage is registered within 30 days of the wedding. It isn't
 strictly enforced: you can register it later. If you're already in the
-graduated procedure as a common-law couple, tell your branch's visa
+gradual process as a common-law couple, tell your branch's visa
 department as soon as you marry: they may send you to register first, and
 then convert your file to a married couple's.
 There, the office gives you form MR/6, "notice of change in civil status"

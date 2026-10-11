@@ -95,7 +95,9 @@ export function guideStructuredData({
 export function processStructuredData({
   guide,
   updated,
+  published,
   url,
+  image,
   crumbs,
   inLanguage,
 }: {
@@ -105,7 +107,10 @@ export function processStructuredData({
     steps: { id: string; title: string; body: unknown[]; faq: { q: string; a: string }[] }[];
   };
   updated: string;
+  published: string;
   url: string;
+  /** The page's share image, absolute. */
+  image: string;
   /** The pages above this one, from the top: the guides, then the landing page. */
   crumbs: { name: string; url: string }[];
   inLanguage: string;
@@ -122,6 +127,8 @@ export function processStructuredData({
       "@type": "HowTo",
       name: guide.title,
       description: guide.description,
+      image,
+      datePublished: published,
       dateModified: updated,
       inLanguage,
       mainEntityOfPage: url,
@@ -156,6 +163,71 @@ export function processStructuredData({
         name: crumb.name,
         item: crumb.url,
       })),
+    },
+  ];
+}
+
+/**
+ * JSON-LD for the process guide's landing page: a page (not an article), its
+ * questions and answers, and where it sits on the site. The URLs are absolute.
+ */
+export function processLandingStructuredData({
+  title,
+  description,
+  url,
+  image,
+  published,
+  updated,
+  faq,
+  indexUrl,
+  indexName,
+  crumb,
+  inLanguage,
+}: {
+  /** Its name in the breadcrumbs, shorter than the title. */
+  crumb: string;
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+  published: string;
+  updated: string;
+  faq: { q: string; a: string }[];
+  indexUrl: string;
+  indexName: string;
+  inLanguage: string;
+}) {
+  const publisher = { "@type": "Organization", name, url: site.url, logo: `${site.url}/logo.svg` };
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title,
+      description,
+      url,
+      image,
+      datePublished: published,
+      dateModified: updated,
+      inLanguage,
+      publisher,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage,
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: plain(item.a) },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: indexName, item: indexUrl },
+        { "@type": "ListItem", position: 2, name: crumb, item: url },
+      ],
     },
   ];
 }

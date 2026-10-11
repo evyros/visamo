@@ -236,6 +236,15 @@ describe("both languages", () => {
     }
   });
 
+  it("cites the same official sources in both languages, all on gov.il", () => {
+    for (const a of allAnswers) {
+      const en = processEn.about.sources(a);
+      const he = processHe.about.sources(a);
+      expect(he.length, name(a)).toBe(en.length);
+      for (const source of [...en, ...he]) expect(source.url, name(a)).toMatch(/^https:\/\/www\.gov\.il\//);
+    }
+  });
+
   it("has the same fixed lists in both languages", () => {
     expect(processHe.landing.faq.length).toBe(processEn.landing.faq.length);
     expect(processHe.landing.glance.stages.length).toBe(processEn.landing.glance.stages.length);

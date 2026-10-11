@@ -13,7 +13,7 @@ export const guidesEn: Guides = {
   index: {
     metaTitle: "Guides to the Israel Partner Visa",
     description:
-      "Clear, up-to-date guides to the Israel partner visa: the graduated procedure, the B/1 and A/5 visas, and what to expect at each step.",
+      "Clear, up-to-date guides to the Israel partner visa: the gradual process, the B/1 and A/5 visas, and what to expect at each step.",
     title: "Guides to the Israel partner visa",
     intro:
       "Everything about getting status in Israel for the foreign partner of an Israeli, explained step by step, from what couples went through and the official procedures.",
@@ -30,7 +30,7 @@ export const guidesEn: Guides = {
       description:
         "How the foreign partner of an Israeli gets status: the gradual process, B/1 to A/5, how long it takes for married and common-law couples, and who can apply.",
       facts: ["B/1 → A/5 → permanent status", "Married & common-law"],
-      title: "The Israel partner visa: how it works, step by step",
+      title: "The Israel partner visa: how it works",
       answer:
         "The foreign partner of an Israeli gets status in Israel through the **gradual process** (ההליך המדורג): a few years on temporary visas before permanent status. The foreign partner usually starts on a **B/1** visa, which lets them live and work in Israel, moves up to **A/5** temporary residency, and at the end gets citizenship or permanent residency. Married and common-law couples, same-sex couples included, can all apply.",
       updated: "2026-10-05",
@@ -190,7 +190,7 @@ export const guidesEn: Guides = {
       facts: ["4 years", "Israeli ID", "Public health insurance"],
       title: "The A/5 visa: temporary residency for partners of Israelis",
       answer:
-        "**A/5** (א/5, often written A5) is temporary residency in Israel. For the foreign partner of an Israeli, it's the second stage of the graduated procedure, after B/1: an Israeli ID number, and the social rights of a resident, including public health insurance. Married couples get it after up to 6 months on B/1, common-law couples after 3 years, and it lasts 4 years before permanent status.",
+        "**A/5** (א/5, often written A5) is temporary residency in Israel. For the foreign partner of an Israeli, it's the second stage of the gradual process, after B/1: an Israeli ID number, and the social rights of a resident, including public health insurance. Married couples get it after up to 6 months on B/1, common-law couples after 3 years, and it lasts 4 years before permanent status.",
       updated: "2026-10-05",
       sections: [
         {
@@ -327,7 +327,7 @@ export const guidesEn: Guides = {
               table: {
                 head: ["", "Partner B/1 (ב/1 כללי)", "Worker B/1"],
                 rows: [
-                  ["Who gets it", "The foreign partner of an Israeli, in the graduated procedure", "A foreign worker"],
+                  ["Who gets it", "The foreign partner of an Israeli, in the gradual process", "A foreign worker"],
                   ["Work", "Any field, as an employee or self-employed", "One employer or field"],
                 ],
               },
@@ -400,7 +400,7 @@ export const guidesEn: Guides = {
           id: "inter-visa",
           heading: "Ask for the inter-visa too",
           body: [
-            "Without the inter-visa (אינטר ויזה), leaving Israel ends the B/1. It's a second sticker that keeps the main visa valid when the foreign partner travels abroad. Partners in the graduated procedure get it without trouble, with the same validity as the main visa, for another 205 NIS (2026).",
+            "Without the inter-visa (אינטר ויזה), leaving Israel ends the B/1. It's a second sticker that keeps the main visa valid when the foreign partner travels abroad. Partners in the gradual process get it without trouble, with the same validity as the main visa, for another 205 NIS (2026).",
             { note: "Get the inter-visa with the B/1, even if you don't plan to travel." },
           ],
         },
@@ -619,6 +619,7 @@ export const guidesEn: Guides = {
           heading: "Applying",
           body: [
             "In the online application, choose **shared life** (חיים משותפים). The fee for opening the file is the same as for married couples: 1,085 NIS in 2026.",
+            "The whole process for your situation, step by step: [both in Israel](/guide/partner-visa-process/common-law-both-in-israel), [with the foreign partner abroad](/guide/partner-visa-process/common-law-partner-abroad), or [both living abroad](/guide/partner-visa-process/common-law-both-abroad).",
           ],
         },
         {
@@ -850,6 +851,7 @@ export const guidesEn: Guides = {
           body: [
             "Once the visa is in the foreign partner's passport, you can travel to Israel together. After you arrive, file the full status application online with your local Misrad Hapnim branch, **within 30 days of the foreign partner's entry**. The entry permit alone doesn't start the process. From there, the process is the same as for a partner who's already in Israel: the first appointment, then the B/1 visa. [All about the B/1](guide:b1-visa)",
             "An interview at the consulate is only for the entry permit: it doesn't replace the interview in Israel.",
+            "Every step, from the consulate to A/5: [for married couples](/guide/partner-visa-process/married-both-abroad) and [for common-law couples](/guide/partner-visa-process/common-law-both-abroad).",
           ],
         },
       ],

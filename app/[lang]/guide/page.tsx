@@ -28,10 +28,12 @@ export default async function GuidesPage() {
         <SectionTitle as="h1">{index.title}</SectionTitle>
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg lg:mx-0 lg:text-start">{index.intro}</p>
 
-        {/* The process guide's landing page: the steps for the couple's situation, for free. */}
+
+        <h2 className="mt-12 text-sm font-semibold tracking-wide text-teal-700 uppercase">{index.startHere}</h2>
+        {/* The process guide: the steps for the couple's situation, for free. */}
         <Link
           href={localePath(locale, processPath)}
-          className="group relative mt-10 flex flex-col gap-5 overflow-hidden rounded-2xl bg-navy-900 p-6 text-white sm:flex-row sm:items-center sm:p-7"
+          className="group relative mt-3 flex flex-col gap-5 overflow-hidden rounded-2xl bg-navy-900 p-6 text-white sm:flex-row sm:items-center sm:p-7"
         >
           <span
             aria-hidden="true"
@@ -47,16 +49,6 @@ export default async function GuidesPage() {
             <Icon name="arrow" className="size-4" />
           </span>
         </Link>
-
-        <h2 className="mt-12 text-sm font-semibold tracking-wide text-teal-700 uppercase">{index.startHere}</h2>
-        <GuideCard
-          className="mt-3"
-          locale={locale}
-          slug={guideIndex.featured}
-          guide={guides.docs[guideIndex.featured]}
-          readingTime={readingTime(guides.docs[guideIndex.featured])}
-          featured
-        />
 
         {guideIndex.groups.map((group) => {
           const List = group.numbered ? "ol" : "ul";
@@ -86,13 +78,12 @@ export default async function GuidesPage() {
   );
 }
 
-/** A guide's card: the featured one with its description, the grouped ones without. */
+/** A guide's card, in its group. */
 function GuideCard({
   locale,
   slug,
   guide,
   readingTime,
-  featured = false,
   step,
   className = "",
 }: {
@@ -100,25 +91,21 @@ function GuideCard({
   slug: GuideSlug;
   guide: Guide;
   readingTime: string;
-  featured?: boolean;
   step?: number;
   className?: string;
 }) {
   return (
     <Link
       href={localePath(locale, `/guide/${slug}`)}
-      className={`group flex flex-col rounded-2xl border bg-white hover:border-teal-600 ${
-        featured ? "border-teal-600/40 p-6 sm:p-7" : "border-line-200 p-5"
-      } ${className}`}
+      className={`group flex flex-col rounded-2xl border border-line-200 bg-white p-5 hover:border-teal-600 ${className}`}
     >
       <span className="flex items-start justify-between gap-4">
-        <span className={`font-display font-semibold text-navy-900 group-hover:text-teal-700 ${featured ? "text-2xl" : "text-lg"}`}>
+        <span className="font-display text-lg font-semibold text-navy-900 group-hover:text-teal-700">
           {step !== undefined && <span className="text-teal-600">{step} · </span>}
           {guide.title}
         </span>
         <Icon name="arrow" className="mt-1.5 size-5 shrink-0 text-teal-600" />
       </span>
-      {featured && <span className="mt-2 block text-[16px] leading-7 text-slate-700">{guide.description}</span>}
       <span className="mt-4 flex flex-wrap gap-2">
         {guide.facts.map((fact) => (
           <span key={fact} className="rounded-full bg-teal-100 px-3 py-1 text-sm font-medium text-teal-700">

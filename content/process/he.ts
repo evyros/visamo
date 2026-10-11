@@ -21,7 +21,7 @@ const a5Gives = [
 export const processHe: ProcessTexts = {
   labels: {
     guides: "מדריכים",
-    process: "ההליך שלכם, צעד אחר צעד",
+    process: "ויזה לבני זוג, צעד אחר צעד",
     updated: "עודכן לאחרונה",
     step: "שלב {n}",
     stepsNav: "השלבים",
@@ -138,7 +138,7 @@ export const processHe: ProcessTexts = {
         partnerAbroad: "הגשה אונליין, היתר הכניסה",
         bothAbroad: "הקונסוליה, היתר הכניסה, ההגשה בישראל",
       }[a.location];
-      return `הוויזה לבני זוג ל${relationshipName(a)} ${locationName(a)}, צעד אחר צעד: ${start}, ${visas}, עם מה שחשוב לשים לב אליו והמסמכים שצריך לאסוף.`;
+      return `הוויזה לבני זוג ל${relationshipName(a)} ${locationName(a)}: ${start}, ${visas}, צעד אחר צעד.`;
     },
     title: (a) => `ההליך לוויזה לבני זוג: ${relationshipName(a)} ${locationName(a)}`,
     answer: (a) =>
@@ -785,6 +785,21 @@ export const processHe: ProcessTexts = {
       cta: "קבלו את הרשימה המדויקת, בחינם",
     },
   },
+
+  about: {
+    title: "על המדריך הזה",
+    body: "נכתב על ידי Visamo מתוך הנהלים הרשמיים של רשות האוכלוסין וההגירה, ומתוך מה שזוגות עברו בפועל. לא ייעוץ משפטי.",
+    sources: (a) => [
+      married(a)
+        ? { label: "נוהל 5.2.0008: מתן מעמד לזר הנשוי לאזרח ישראלי", url: "https://www.gov.il/BlobFolder/policy/status_foreigner_married_to_israeli_procedure/he/5.2.0008.pdf" }
+        : { label: "נוהל 5.2.0009: מתן מעמד לידועים בציבור", url: "https://www.gov.il/BlobFolder/policy/israelis_couples_status_procedure/he/5.2.0009..pdf" },
+      { label: "נוהל 5.1.0013: עריכת ראיונות", url: "https://www.gov.il/BlobFolder/policy/making_interviews_procedure/he/5.1.0013.pdf" },
+      { label: "הבקשה המקוונת ב-gov.il", url: "https://www.gov.il/he/service/requesting-status-for-foreign-life-partner" },
+    ],
+    story: "הסיפור מאחורי Visamo",
+  },
+
+  share: { subtitle: "כל השלבים, על מה לשים לב, ואילו מסמכים לאסוף." },
 
   cta: {
     eyebrow: "לפני שמגישים!",

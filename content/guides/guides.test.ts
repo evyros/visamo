@@ -80,7 +80,7 @@ const texts = (slug: GuideSlug, docs: typeof guidesEn.docs) => guideTexts(docs[s
 
 describe("the guides list", () => {
   it("shows every guide exactly once", () => {
-    const shown = [guideIndex.featured, ...guideIndex.groups.flatMap((group) => group.slugs)];
+    const shown = guideIndex.groups.flatMap((group) => group.slugs);
     expect([...shown].sort()).toEqual([...guideSlugs].sort());
   });
 });

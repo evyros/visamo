@@ -32,7 +32,7 @@ It's in Hebrew, so it needs no translation.
      reviewing it;
   2. you'll report to the Population and Immigration Authority any change in
      your circumstances while the application is handled, and during the
-     graduated procedure if it's approved;
+     gradual process if it's approved;
   3. you intend to settle in Israel;
   4. you aren't addicted to hard drugs or alcohol;
   5. you don't have a mental illness;

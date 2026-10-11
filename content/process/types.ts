@@ -158,6 +158,16 @@ export type ProcessTexts = {
     depends: { title: string; intro: string; items: string[]; more: string; cta: string };
   };
   /** The closing section: the fear, then what answers it. */
+  /** Under the steps: who wrote the guide and from what, with the official sources. */
+  about: {
+    title: string;
+    body: string;
+    sources: (a: Answers) => { label: string; url: string }[];
+    /** The link to the founder's story (/about). */
+    story: string;
+  };
+  /** The preview when a page is shared, under its title. */
+  share: { subtitle: string };
   cta: {
     eyebrow: string;
     title: string;

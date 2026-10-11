@@ -18,7 +18,7 @@ the permit is, and what's the same for every couple: see
    you have every document: it gives you the list of documents and sets the
    appointment dates.
 2. **Ask for an entry permit**, saying plainly that it's to move to Israel
-   and start the graduated procedure (ההליך המדורג).
+   and start the gradual process (ההליך המדורג).
 3. **The consulate passes it on.** It can't grant the partner visa itself:
    it reviews your documents, does a first check, and sends the request to
    the Population and Immigration Authority in Israel.
@@ -56,7 +56,7 @@ with your local Misrad Hapnim branch **within 30 days of the foreign
 partner's entry** (5.2.0008 §ה.1(6), 5.2.0009 §ה.1.ה). The entry permit
 alone doesn't start the process. That
 moves the foreign partner toward the B/1 visa (ב/1) and starts the
-graduated procedure. From there, the process is the same as for a partner
+gradual process. From there, the process is the same as for a partner
 who's already in Israel: see [first-appointment.md](first-appointment.md).
 An interview you had at the consulate was only for the entry permit: it
 doesn't replace the interview in Israel.

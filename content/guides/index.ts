@@ -59,19 +59,24 @@ export const guideSources: Record<GuideSlug, string[]> = {
 };
 
 /**
- * How the guides list (/guide) is laid out: one featured guide to start with,
- * then the rest in groups. Every guide appears exactly once (guides.test.ts).
+ * How the guides list (/guide) is laid out: it starts with the process guide
+ * (content/process), then the guides in groups. Every guide appears exactly
+ * once (guides.test.ts).
  */
 export const guideIndex: {
-  featured: GuideSlug;
   groups: { id: GuideGroupId; numbered: boolean; slugs: GuideSlug[] }[];
 } = {
-  featured: "partner-visa-israel",
   groups: [
     {
       id: "steps",
       numbered: true,
-      slugs: ["partner-visa-documents", "apostille-and-translation", "entry-permit", "partner-visa-timeline"],
+      slugs: [
+        "partner-visa-israel",
+        "partner-visa-documents",
+        "apostille-and-translation",
+        "entry-permit",
+        "partner-visa-timeline",
+      ],
     },
     { id: "visas", numbered: false, slugs: ["b1-visa", "a5-visa"] },
     { id: "situation", numbered: false, slugs: ["common-law-couples", "both-partners-abroad"] },

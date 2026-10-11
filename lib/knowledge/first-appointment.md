@@ -91,7 +91,7 @@ volunteer or work-holiday visa, a tourist visa):
   - **A caregiver who's still employed:** bring a letter from the employer
     saying they know about the partner visa application and agree to keep
     employing them. Without an employer, the visa becomes a B/2.
-  - **A visa from an earlier graduated procedure** is cancelled, and they get
+  - **A visa from an earlier gradual process** is cancelled, and they get
     a B/2 until the decision.
 - **Two applications at once:** you can't have two visa applications open at
   the same time (other than asylum, aliyah or conversion). If another one is
@@ -145,6 +145,6 @@ By procedure 5.2.0008, if they stay and apply from Israel:
 - **Ask for the inter-visa too.** The inter-visa (אינטר ויזה, a multiple-entry
   visa) is a second sticker that keeps the main visa valid when the foreign
   partner travels abroad. Without it, leaving Israel ends the main visa.
-  Partners in the graduated procedure get it without trouble, with the same
+  Partners in the gradual process get it without trouble, with the same
   validity as the main visa, for another 205 NIS (2026). Get it with the
   visa, even if you don't plan to travel.

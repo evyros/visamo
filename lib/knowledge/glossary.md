@@ -36,7 +36,7 @@ Population, Immigration and Border Authority.
 
 | English | As people say it | Hebrew |
 | --- | --- | --- |
-| The graduated procedure | hahalich hamedorag | ההליך המדורג |
+| The gradual process | hahalich hamedorag | ההליך המדורג |
 | A procedure (the ministry's written rules) | nohal | נוהל |
 | Status (the right to live in Israel) | maamad | מעמד |
 | The application | habakasha | הבקשה |

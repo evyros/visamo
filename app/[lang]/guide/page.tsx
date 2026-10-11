@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getGuides, guideIndex, readingMinutes, type Guide, type GuideSlug } from "@/content/guides";
+import { getProcessTexts, processPath } from "@/content/process";
 import type { Locale } from "@/i18n/config";
 import { format, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
@@ -19,12 +20,33 @@ export default async function GuidesPage() {
   const guides = getGuides(locale);
   const { index } = guides;
   const readingTime = (guide: Guide) => format(guides.labels.readingTime, { minutes: readingMinutes(guide) });
+  const process = getProcessTexts(locale);
 
   return (
     <section className="py-16 sm:py-20">
       <Container narrow>
         <SectionTitle as="h1">{index.title}</SectionTitle>
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg lg:mx-0 lg:text-start">{index.intro}</p>
+
+        {/* The process guide's landing page: the steps for the couple's situation, for free. */}
+        <Link
+          href={localePath(locale, processPath)}
+          className="group relative mt-10 flex flex-col gap-5 overflow-hidden rounded-2xl bg-navy-900 p-6 text-white sm:flex-row sm:items-center sm:p-7"
+        >
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-24 end-[-15%] size-72 rounded-full bg-teal-600/30 blur-3xl"
+          />
+          <span className="relative min-w-0 flex-1">
+            <span className="block text-sm font-semibold text-sage-200">{process.landing.eyebrow}</span>
+            <span className="mt-1 block font-display text-2xl font-semibold">{process.labels.process}</span>
+            <span className="mt-2 block text-[16px] leading-7 text-white/80">{process.landing.intro}</span>
+          </span>
+          <span className="relative inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-[10px] bg-white px-5 font-semibold text-navy-900 group-hover:bg-sand-50">
+            {process.landing.picker.label}
+            <Icon name="arrow" className="size-4" />
+          </span>
+        </Link>
 
         <h2 className="mt-12 text-sm font-semibold tracking-wide text-teal-700 uppercase">{index.startHere}</h2>
         <GuideCard

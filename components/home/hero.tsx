@@ -50,7 +50,8 @@ export function Hero({ t, locale }: { t: Messages; locale: Locale }) {
 
 type Mockup = Messages["home"]["hero"]["mockup"];
 
-export function CheckMockup({ mockup }: { mockup: Mockup }) {
+/** `animated`: the scan line and the rows sliding in, as on the home page. The process guide shows it still. */
+export function CheckMockup({ mockup, animated = true }: { mockup: Mockup; animated?: boolean }) {
   return (
     <figure aria-label={mockup.label} className="relative mx-auto w-full max-w-[460px]">
       <div className="relative overflow-hidden rounded-2xl border border-line-200 bg-white p-5 shadow-soft sm:p-6">
@@ -67,17 +68,19 @@ export function CheckMockup({ mockup }: { mockup: Mockup }) {
 
         {/* Every document uses the same row; only the status changes its color. */}
         <div className="relative mt-5">
-          <div aria-hidden="true" className="animate-scan absolute inset-x-0 top-0 z-10 h-0.5 bg-teal-600/70" />
+          {animated && (
+            <div aria-hidden="true" className="animate-scan absolute inset-x-0 top-0 z-10 h-0.5 bg-teal-600/70" />
+          )}
           <ul className="space-y-2.5">
             {mockup.rows.map((row, i) => {
               const ok = row.status === "ok";
               return (
                 <li
                   key={row.name}
-                  className={`animate-rise flex items-start gap-3 rounded-xl border p-3.5 ${
+                  className={`${animated ? "animate-rise" : ""} flex items-start gap-3 rounded-xl border p-3.5 ${
                     ok ? "border-teal-600/25 bg-teal-100/50" : "border-amber-500/35 bg-amber-100/60"
                   }`}
-                  style={{ animationDelay: `${2.2 + i * 0.25}s` }}
+                  style={animated ? { animationDelay: `${2.2 + i * 0.25}s` } : undefined}
                 >
                   <StatusBadge ok={ok} />
                   <div className="min-w-0 flex-1 text-sm leading-6">

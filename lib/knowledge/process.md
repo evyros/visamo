@@ -38,8 +38,9 @@ what happens while you wait, is in [application.md](application.md).
   restricted B/1 that foreign workers get for one employer or field. A B/1
   holder isn't a resident for National Insurance, so has no public health
   insurance.
-- **A/5** (א/5), temporary resident: an Israeli ID number, and the social
-  rights of a resident, including public health insurance.
+- **A/5** (א/5), temporary resident: an Israeli ID number and a Teudat
+  Zehut, and the social rights of a resident, including public health
+  insurance.
 
 ## How long it takes
 

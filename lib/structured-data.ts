@@ -86,3 +86,76 @@ export function guideStructuredData({
     },
   ];
 }
+
+/**
+ * JSON-LD for one version of the process guide (content/process): its steps,
+ * the steps' questions and answers, and where it sits on the site. The URLs
+ * are absolute.
+ */
+export function processStructuredData({
+  guide,
+  updated,
+  url,
+  crumbs,
+  inLanguage,
+}: {
+  guide: {
+    title: string;
+    description: string;
+    steps: { id: string; title: string; body: unknown[]; faq: { q: string; a: string }[] }[];
+  };
+  updated: string;
+  url: string;
+  /** The pages above this one, from the top: the guides, then the landing page. */
+  crumbs: { name: string; url: string }[];
+  inLanguage: string;
+}) {
+  const publisher = { "@type": "Organization", name, url: site.url, logo: `${site.url}/logo.svg` };
+  // A step's text is its first paragraph; a step that opens with a list has its title.
+  const stepText = (step: (typeof guide.steps)[number]) => {
+    const first = step.body.find((block): block is string => typeof block === "string");
+    return plain(first ?? step.title);
+  };
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: guide.title,
+      description: guide.description,
+      dateModified: updated,
+      inLanguage,
+      mainEntityOfPage: url,
+      author: publisher,
+      publisher,
+      step: guide.steps.map((step, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        name: step.title,
+        text: stepText(step),
+        url: `${url}#step-${step.id}`,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage,
+      mainEntity: guide.steps
+        .flatMap((step) => step.faq)
+        .map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: plain(item.a) },
+        })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [...crumbs, { name: guide.title, url }].map((crumb, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: crumb.name,
+        item: crumb.url,
+      })),
+    },
+  ];
+}

@@ -98,6 +98,8 @@ const paths = {
       </g>
     </>
   ),
+  // A link that leaves the site. Not mirrored in RTL: it points out of the page, not along the text.
+  external: <path d="M14 4h6v6M20 4l-9 9M18 13.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5.5" />,
   guide: (
     <>
       <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z" />

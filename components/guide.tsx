@@ -6,7 +6,8 @@ import { localePath, newTab } from "@/lib/site";
 
 // The guides' text (content/guides): **bold**, and [links](guide:<slug>) to
 // another guide or [links](/path) to a page, both kept in the reader's language,
-// or [links](https://…) to another site, opened in a new tab.
+// [links](#id) to a part of the same page, or [links](https://…) to another
+// site, opened in a new tab.
 
 const linkStyle = "font-semibold text-teal-700 underline underline-offset-4 hover:text-teal-600";
 
@@ -32,6 +33,10 @@ export function GuideText({ text, locale }: { text: string; locale: Locale }) {
         </strong>
       ) : /^https?:\/\//.test(target) ? (
         <a key={match.index} href={target} {...newTab} className={linkStyle}>
+          {label}
+        </a>
+      ) : target.startsWith("#") ? (
+        <a key={match.index} href={target} className={linkStyle}>
           {label}
         </a>
       ) : (

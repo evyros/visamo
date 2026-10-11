@@ -15,7 +15,7 @@ the permit is, and what's the same for every couple: see
 
 1. **Book an appointment** at the Israeli consulate or embassy. It's in
    person, and both of you usually need to come. You should contact it before
-   you have every document: it gives you its list of documents and sets the
+   you have every document: it gives you the list of documents and sets the
    appointment dates.
 2. **Ask for an entry permit**, saying plainly that it's to move to Israel
    and start the graduated procedure (ההליך המדורג).
@@ -43,7 +43,7 @@ into Hebrew or English (see [certification.md](certification.md)):
   a request without it is unlikely to be approved, though you can try.
 - **Where you'll live in Israel** during the stay.
 - **Insurance** covering the whole stay in Israel.
-- **A confirmation of employment** from the Israeli partner's employer.
+- **Proof of income.**
 - **Two recent passport photos**, the same photo twice: in color, on a
   white background, with the full face from the front.
 - **A bank statement** printout covering at least 3 months.
@@ -61,5 +61,4 @@ who's already in Israel: see [first-appointment.md](first-appointment.md).
 An interview you had at the consulate was only for the entry permit: it
 doesn't replace the interview in Israel.
 
-The consulate's list of documents differs from one consulate to another:
-contact it first, and follow its list.
+Every Israeli consulate asks for the same documents: the list above.

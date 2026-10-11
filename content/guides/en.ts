@@ -98,6 +98,7 @@ export const guidesEn: Guides = {
                 "**The A/5 visa,** and after it, permanent status.",
               ],
             },
+            "[See the steps for your situation](/guide/partner-visa-process): answer three questions, and get the whole process for you, with what to watch for at each step.",
             {
               note: "If the foreign partner is abroad, don't move to Israel as a tourist before the entry permit: coming as a tourist to stay goes against Israel's immigration policy. If you both live abroad, you start at the Israeli consulate in your country instead, and file after you arrive. [When you both live abroad](guide:both-partners-abroad)",
             },
@@ -590,7 +591,7 @@ export const guidesEn: Guides = {
               list: [
                 "**You live together in Israel:** covering at least the last 12 months.",
                 "**You lived together abroad:** the same kinds of documents, from the home you shared there.",
-                "**You haven't lived together:** a stronger case that your relationship is genuine: receipts for things you bought together, letters from people who saw you together, flight and hotel bookings for the two of you, and your message and call history.",
+                "**You haven't lived together:** a stronger case that your relationship is genuine: receipts for things you bought together, letters from people who saw you together, flight and hotel bookings for the two of you, and your message and call history. This works when you couldn't live together. If you've both lived in the same country, the office expects you to have lived together there: move in together first.",
               ],
             },
             "**That you're both free to marry.** For the foreign partner, an official document of their civil status, issued in the last 6 months. [Apostille and translation](guide:apostille-and-translation)",
@@ -649,7 +650,7 @@ export const guidesEn: Guides = {
         },
         {
           q: "Do we have to have lived together for a year?",
-          a: "No. The procedures ask for a shared life of at least the last year, but it isn't a condition for applying. A shorter relationship is processed normally, as long as you can show it's genuine.",
+          a: "No. The procedures ask for a shared life of at least the last year, but it isn't a condition for applying. A shorter relationship is processed normally, as long as you can show it's genuine. But if you've both lived in the same country, the office expects you to have lived together there.",
         },
         {
           q: "Does a registered partnership from abroad count as a marriage?",
@@ -733,7 +734,6 @@ export const guidesEn: Guides = {
                 "**When to come:** offices usually expect the foreign partner to enter within 3 months of the permit. Tell your clerk the date you plan to arrive, and ask them to confirm it.",
               ],
             },
-            "Some airlines won't fly a foreigner to Israel without a return ticket: check before you book a one-way ticket.",
           ],
         },
         {
@@ -816,7 +816,7 @@ export const guidesEn: Guides = {
           body: [
             {
               steps: [
-                "**Book an appointment** at the Israeli consulate or embassy. It's in person, and both of you usually need to come. Contact it before you have every document: it gives you its list of documents and sets the dates.",
+                "**Book an appointment** at the Israeli consulate or embassy. It's in person, and both of you usually need to come. Contact it before you have every document: it gives you the list of documents and sets the dates.",
                 "**Ask for an entry permit,** saying plainly that it's to move to Israel and start the gradual process (ההליך המדורג).",
                 "**The consulate passes it on.** It can't grant the partner visa itself: it reviews your documents, does a first check, and sends the request to the Population and Immigration Authority in Israel.",
                 "**The Authority decides.** Once it approves the entry, it tells the consulate, which gives the foreign partner an entry visa, usually a B/2 visa, valid for a set period.",

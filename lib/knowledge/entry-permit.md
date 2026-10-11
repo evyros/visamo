@@ -74,8 +74,8 @@ process.
 **If you both live abroad:** the consulate puts the entry visa in the
 foreign partner's passport: see [both-abroad.md](both-abroad.md).
 
-Some airlines won't fly a foreigner to Israel without a return ticket. Check
-the airline's rules before you book a one-way ticket.
+With the entry permit, airlines let the foreign partner board, even on a
+one-way ticket.
 
 ## After the foreign partner arrives
 
@@ -107,6 +107,9 @@ tourist invitation):
   "invitation" (הזמנה).
 - Some branches say it isn't needed for a visa-exempt country, since there's
   ETA-IL. You're entitled to it: ETA-IL doesn't guarantee entry.
+
+**Flights.** Without an entry permit, some airlines won't fly a foreigner to
+Israel without a return ticket.
 
 **If entry is refused at the border.** The foreign partner is flown back,
 and should be given a paper with the decision. They have 30 days to appeal

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { guideSlugs } from "@/content/guides";
+import { allAnswers, processPath, trackPath } from "@/content/process";
 import { defaultLocale, liveLocales } from "@/i18n/config";
 import { localePath, site } from "@/lib/site";
 
@@ -7,6 +8,9 @@ const paths = [
   "/",
   "/guide",
   ...guideSlugs.map((slug) => `/guide/${slug}`),
+  processPath,
+  // The versions for couples who haven't lived together point to these (canonicalAnswers).
+  ...allAnswers.filter((a) => a.livedTogether).map(trackPath),
   "/pricing",
   "/security",
   "/about",

@@ -294,7 +294,7 @@ export function ProcessStep({
 
 // ── Who wrote the guide, and from what ─────────────────────────────────────
 
-export function AboutGuide({ answers, texts, locale }: { answers: Answers; texts: ProcessTexts; locale: Locale }) {
+export function AboutGuide({ answers, texts }: { answers: Answers; texts: ProcessTexts }) {
   const { about, labels } = texts;
   return (
     <section className="rounded-2xl border border-line-200 bg-white p-5 sm:p-7">
@@ -312,13 +312,6 @@ export function AboutGuide({ answers, texts, locale }: { answers: Answers; texts
           </li>
         ))}
       </ul>
-      <Link
-        href={localePath(locale, "/about")}
-        className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-teal-700 hover:underline"
-      >
-        {about.story}
-        <Icon name="arrow" className="size-4" />
-      </Link>
     </section>
   );
 }

@@ -163,8 +163,6 @@ export type ProcessTexts = {
     title: string;
     body: string;
     sources: (a: Answers) => { label: string; url: string }[];
-    /** The link to the founder's story (/about). */
-    story: string;
   };
   /** The preview when a page is shared, under its title. */
   share: { subtitle: string };

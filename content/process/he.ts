@@ -791,7 +791,6 @@ export const processHe: ProcessTexts = {
       { label: "נוהל 5.1.0013: עריכת ראיונות", url: "https://www.gov.il/BlobFolder/policy/making_interviews_procedure/he/5.1.0013.pdf" },
       { label: "הבקשה המקוונת ב-gov.il", url: "https://www.gov.il/he/service/requesting-status-for-foreign-life-partner" },
     ],
-    story: "הסיפור מאחורי Visamo",
   },
 
   share: { subtitle: "כל השלבים, על מה לשים לב, ואילו מסמכים לאסוף." },

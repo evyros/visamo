@@ -840,7 +840,6 @@ export const processEn: ProcessTexts = {
       { label: "Procedure 5.1.0013: how interviews are conducted", url: "https://www.gov.il/BlobFolder/policy/making_interviews_procedure/he/5.1.0013.pdf" },
       { label: "The online application on gov.il", url: "https://www.gov.il/en/service/requesting-status-for-foreign-life-partner" },
     ],
-    story: "The story behind Visamo",
   },
 
   share: { subtitle: "Every step, what to watch for, and the documents to gather." },

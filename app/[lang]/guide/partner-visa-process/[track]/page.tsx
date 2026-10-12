@@ -198,7 +198,7 @@ export default async function ProcessGuidePage({ params }: Props) {
 
       {/* After the call to action, so the last step leads straight into it. */}
       <Container narrow className="py-14 sm:py-16">
-        <AboutGuide answers={answers} texts={texts} locale={locale} />
+        <AboutGuide answers={answers} texts={texts} />
 
         <h2 className="mt-14 font-display text-xl font-semibold text-navy-900">{labels.related}</h2>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">

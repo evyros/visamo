@@ -256,11 +256,6 @@ export const processEn: ProcessTexts = {
               ? "Living together in Israel, you prove it with the documents of your home (the lease or purchase contract, its bills and the rest), covering at least the last 12 months."
               : "Bring the documents of the home you share or shared abroad: the lease or purchase contract, its bills and the rest. If you can't, bring what supports it instead, such as receipts and flight bookings.",
         }),
-        ...only(!a.livedTogether, {
-          tone: "tip" as const,
-          title: "Haven't lived together? You can still apply",
-          text: "You're processed normally, as long as you've met in person and spent time together. Show that your relationship is genuine: flight and hotel bookings for the two of you, receipts for things you bought together, letters from people who saw you together, and your message history.",
-        }),
         {
           tone: "tip",
           title: "Keep everything in one binder",
@@ -599,7 +594,7 @@ export const processEn: ProcessTexts = {
         "B/1 (ב/1 כללי, often written B1) is an unrestricted work visa marked \"partner\". It's a sticker in the passport, issued by your branch: 205 NIS in 2026, by credit card only. [The B/1 visa](guide:b1-visa)",
         married(a)
           ? "Married couples usually get it for 6 months: the time the office has to interview you and decide on the A/5."
-          : "Common-law couples usually get it for a year, and stay on B/1 for 3 years in all, renewing it with updated documents. Offered only 6 months? Point the clerk to procedure 5.2.0009.",
+          : "Common-law couples usually get it for a year, and stay on B/1 for 3 years in all, renewing it with updated documents.",
       ],
       bubbles: [
         {

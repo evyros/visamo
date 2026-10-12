@@ -190,16 +190,17 @@ export default async function ProcessGuidePage({ params }: Props) {
                 </ProcessStep>
               ))}
             </ol>
-
-            <AboutGuide answers={answers} texts={texts} locale={locale} />
           </div>
         </div>
       </Container>
 
       <ProcessCta texts={texts} locale={locale} mockup={mockup} />
 
+      {/* After the call to action, so the last step leads straight into it. */}
       <Container narrow className="py-14 sm:py-16">
-        <h2 className="font-display text-xl font-semibold text-navy-900">{labels.related}</h2>
+        <AboutGuide answers={answers} texts={texts} locale={locale} />
+
+        <h2 className="mt-14 font-display text-xl font-semibold text-navy-900">{labels.related}</h2>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
           {relatedGuides(answers).map((slug) => (
             <li key={slug}>

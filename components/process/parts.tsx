@@ -297,7 +297,7 @@ export function ProcessStep({
 export function AboutGuide({ answers, texts, locale }: { answers: Answers; texts: ProcessTexts; locale: Locale }) {
   const { about, labels } = texts;
   return (
-    <section className="mt-16 rounded-2xl border border-line-200 bg-white p-5 sm:p-7">
+    <section className="rounded-2xl border border-line-200 bg-white p-5 sm:p-7">
       <h2 className="font-display text-xl font-semibold text-navy-900 sm:text-2xl">{about.title}</h2>
       <p className="mt-2 text-[15.5px] leading-7">{about.body}</p>
       <ul className="mt-4 space-y-2 text-[15px] leading-6">

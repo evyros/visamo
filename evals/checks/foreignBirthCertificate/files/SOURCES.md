@@ -14,3 +14,8 @@ From Wikimedia Commons, public domain:
 
 ukraine-1994-with-translation.pdf adds a Hebrew translation made for the
 evals, certified by a made-up notary in Israel.
+
+thailand-2026.jpg and thailand-2026-translation.jpg are a real file,
+photographed: a Thai birth certificate (ท.ร.1 ตอน 2), an
+extract certified by the district registrar, and its English translation by
+a translation agency in Thailand. Neither is legalized.

@@ -131,7 +131,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "notarized translation is uploaded"
+          "certified translation is uploaded"
         ]
       }
     },

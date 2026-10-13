@@ -123,7 +123,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "notarized translation is uploaded"
+          "certified translation is uploaded"
         ],
         "mayFlag": [
           "Every side or page"
@@ -160,10 +160,58 @@
         "rating": "needsFixing",
         "flagged": [
           "carries the certification",
-          "notarized translation is uploaded"
+          "certified translation is uploaded"
         ],
         "mayFlag": [
           "apostille or legalization pages are scanned"
+        ]
+      }
+    },
+    {
+      "name": "real file: Thailand, translated by an agency, nothing legalized",
+      "files": [
+        "thailand-2026.jpg",
+        "thailand-2026-translation.jpg"
+      ],
+      "foreign": {
+        "name": "Sasiprapha Ngonkaew",
+        "gender": "female",
+        "birthCountry": "TH",
+        "nationality": "TH"
+      },
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "carries the certification",
+          "certified translation is uploaded"
+        ],
+        "mayFlag": [
+          "translation was made abroad",
+          "apostille or legalization pages are scanned",
+          "scanned straight and in color"
+        ]
+      }
+    },
+    {
+      "name": "real file: Thailand, certificate only, no translation",
+      "files": [
+        "thailand-2026.jpg"
+      ],
+      "foreign": {
+        "name": "Sasiprapha Ngonkaew",
+        "gender": "female",
+        "birthCountry": "TH",
+        "nationality": "TH"
+      },
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "carries the certification",
+          "certified translation is uploaded"
+        ],
+        "mayFlag": [
+          "apostille or legalization pages are scanned",
+          "scanned straight and in color"
         ]
       }
     }

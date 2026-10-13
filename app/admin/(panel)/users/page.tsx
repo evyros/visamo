@@ -120,7 +120,19 @@ function UserRow({ row }: { row: AdminUserRow }) {
         {row.caseId ? (
           <div className="flex flex-wrap gap-1.5">
             <Pill tone={row.paid ? "teal" : "neutral"}>{purchasesLabel(row)}</Pill>
-            {row.role === "partner" && <Pill>Partner</Pill>}
+            {row.role === "partner" &&
+              (row.owner ? (
+                // Above the row's link, so it opens the owner rather than this user.
+                <Link
+                  href={`/users/${row.owner.id}`}
+                  title={`Partner of ${row.owner.name}`}
+                  className="relative z-10 rounded-full hover:opacity-80"
+                >
+                  <Pill>Partner</Pill>
+                </Link>
+              ) : (
+                <Pill>Partner</Pill>
+              ))}
           </div>
         ) : (
           <Pill tone="slate">No case yet</Pill>

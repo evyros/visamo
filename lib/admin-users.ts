@@ -64,14 +64,34 @@ export async function caseCosts(caseIds: string[]) {
   return costs;
 }
 
-/** The rows with their case's granted and used totals and its model cost; null without a case. */
-async function withTotals<T extends { caseId: string | null }>(rows: T[]) {
+/** Each case's owner, the partner who created it in onboarding. */
+async function caseOwners(caseIds: string[]) {
+  if (!caseIds.length) return new Map<string, { id: string; name: string }>();
+  const rows = await db
+    .select({ caseId: caseMember.caseId, id: user.id, name: user.name })
+    .from(caseMember)
+    .innerJoin(user, eq(user.id, caseMember.userId))
+    .where(and(inArray(caseMember.caseId, caseIds), eq(caseMember.role, "owner")));
+  return new Map(rows.map(({ caseId, ...owner }) => [caseId, owner]));
+}
+
+/**
+ * The rows with their case's granted and used totals and its model cost; null without a case.
+ * A partner's row also gets the case's owner; null for everyone else.
+ */
+async function withTotals<T extends { caseId: string | null; role: string | null }>(rows: T[]) {
   const caseIds = [...new Set(rows.flatMap((r) => (r.caseId ? [r.caseId] : [])))];
-  const [totals, costs] = await Promise.all([creditTotals(caseIds), caseCosts(caseIds)]);
+  const partnerCaseIds = [...new Set(rows.flatMap((r) => (r.caseId && r.role === "partner" ? [r.caseId] : [])))];
+  const [totals, costs, owners] = await Promise.all([
+    creditTotals(caseIds),
+    caseCosts(caseIds),
+    caseOwners(partnerCaseIds),
+  ]);
   return rows.map((row) => ({
     ...row,
     totals: row.caseId ? totals.get(row.caseId)! : null,
     cost: row.caseId ? costs.get(row.caseId)! : null,
+    owner: row.caseId && row.role === "partner" ? (owners.get(row.caseId) ?? null) : null,
   }));
 }
 

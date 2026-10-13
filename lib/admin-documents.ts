@@ -1,5 +1,5 @@
 import "server-only";
-import { and, asc, desc, eq } from "drizzle-orm";
+import { and, asc, desc, eq, sql } from "drizzle-orm";
 import { alias } from "drizzle-orm/pg-core";
 import { db } from "./db";
 import { caseEvent, caseFile, casePerson, documentCheck, user } from "./db/schema";
@@ -49,8 +49,13 @@ const runColumns = {
   durationMs: documentCheck.durationMs,
   startedAt: documentCheck.startedAt,
   finishedAt: documentCheck.finishedAt,
+  rerunAt: documentCheck.rerunAt,
+  replacedBy: documentCheck.replacedBy,
   checkedByName: user.name,
 };
+
+/** Newest first. A rerun has the time of the run it replaced, and comes before it. */
+const newestFirst = [desc(documentCheck.startedAt), sql`${documentCheck.rerunAt} desc nulls last`];
 
 /**
  * Every check run of the case, newest first. Leaves out the model calls:
@@ -62,7 +67,7 @@ export async function allCaseChecks(caseId: string) {
     .from(documentCheck)
     .leftJoin(user, eq(user.id, documentCheck.checkedBy))
     .where(eq(documentCheck.caseId, caseId))
-    .orderBy(desc(documentCheck.startedAt));
+    .orderBy(...newestFirst);
 }
 
 /** Every check run of one document, newest first, with its model calls (lib/chat/openrouter.ts Completion). */
@@ -72,7 +77,7 @@ export async function documentChecks(caseId: string, documentKey: string) {
     .from(documentCheck)
     .leftJoin(user, eq(user.id, documentCheck.checkedBy))
     .where(and(eq(documentCheck.caseId, caseId), eq(documentCheck.documentKey, documentKey)))
-    .orderBy(desc(documentCheck.startedAt));
+    .orderBy(...newestFirst);
 }
 
 export type AdminCheckRun = Awaited<ReturnType<typeof allCaseChecks>>[number];

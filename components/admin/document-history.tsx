@@ -5,6 +5,7 @@ import { Icon, type IconName } from "@/components/icons";
 import { formatDateTime, formatNumber, formatCallUsd, Pill } from "./admin-ui";
 import { Findings, ratingTone, runId } from "./document-card";
 import { CallsTable, FinishPill } from "./model-calls";
+import { RerunCheckForm } from "./rerun-check-form";
 
 // A document's history as a timeline, newest first: files uploaded and
 // removed, every check with the files it saw and what it said, and the
@@ -102,6 +103,7 @@ export function DocumentTimeline({
   runs,
   listChanges,
   currentRunId,
+  rerun,
   ratings,
 }: {
   /** The document's files, removed ones too. */
@@ -111,6 +113,8 @@ export function DocumentTimeline({
   listChanges: ListChange[];
   /** The run whose result the couple sees now. */
   currentRunId: string | null;
+  /** Offers to rerun the current run. */
+  rerun?: { userId: string; documentKey: string };
   ratings: Ratings;
 }) {
   const byId = new Map(files.map((f) => [f.id, f]));
@@ -140,6 +144,7 @@ export function DocumentTimeline({
                 changes={changesSince(entry.run, entry.previous)}
                 byId={byId}
                 current={entry.run.id === currentRunId}
+                rerun={entry.run.id === currentRunId ? rerun : undefined}
                 ratings={ratings}
               />
             )}
@@ -203,12 +208,14 @@ function RunCard({
   changes,
   byId,
   current,
+  rerun,
   ratings,
 }: {
   run: AdminCheckRun;
   changes: ReturnType<typeof changesSince>;
   byId: Map<string, AdminFile>;
   current: boolean;
+  rerun?: { userId: string; documentKey: string };
   ratings: Ratings;
 }) {
   const added = new Set(changes?.added);
@@ -229,6 +236,14 @@ function RunCard({
           <RunResult run={run} ratings={ratings} />
           {current && <Pill tone="teal">Shown to the couple</Pill>}
           {run.checkedByName && <span className="text-sm text-slate-500">run by {run.checkedByName}</span>}
+          {run.rerunAt && (
+            <span className="text-sm text-slate-500">· rerun by the admin {formatDateTime(run.rerunAt)}</span>
+          )}
+          {run.replacedBy && (
+            <a href={`#${runId(run.replacedBy)}`} className="text-sm font-semibold text-teal-700 hover:underline">
+              Replaced by a rerun
+            </a>
+          )}
         </div>
         <div className="text-[13px] text-slate-500 tabular-nums">
           {facts.map((fact, i) => (
@@ -264,6 +279,7 @@ function RunCard({
           </div>
         )}
         <RunDetails run={run} />
+        {rerun && <RerunCheckForm {...rerun} checkId={run.id} />}
       </div>
     </article>
   );

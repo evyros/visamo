@@ -37,7 +37,8 @@ export async function checkBalance(caseId: string) {
 export type CheckRun = {
   caseId: string;
   documentKey: string;
-  userId: string;
+  /** Who it's recorded as run by: for a rerun, whoever ran the run it replaces. */
+  userId: string | null;
   fileIds: string[];
   contextHash: string;
   model: string;
@@ -45,6 +46,8 @@ export type CheckRun = {
   guidance: DocumentCheck;
   rulesVersion: number;
   knowledgeVersion: number;
+  /** An admin's rerun of the item's latest run (lib/checks/rerun.ts). */
+  rerun?: boolean;
 };
 
 /** What a run took, recorded when it ends; a failed run has what it got to. */
@@ -98,6 +101,7 @@ export async function claimCheck(run: CheckRun) {
         guidance: run.guidance,
         rulesVersion: run.rulesVersion,
         knowledgeVersion: run.knowledgeVersion,
+        rerunAt: run.rerun ? new Date() : null,
       })
       .onConflictDoNothing()
       .returning({ id: documentCheck.id }),
@@ -131,6 +135,34 @@ export async function saveCheck(id: string, run: CheckRun, result: CheckResult, 
       type: "document.checked",
       data: { documentKey: run.documentKey, rating: result.rating },
     }),
+  ]);
+}
+
+/**
+ * Ends an admin's rerun with its result, in the place of the run it reran:
+ * it takes that run's who and when, and that run is marked replaced. No
+ * event: to the couple, it's the same check.
+ */
+export async function saveRerun(
+  id: string,
+  replaced: { id: string; startedAt: Date; finishedAt: Date | null },
+  result: CheckResult,
+  metrics: CheckMetrics,
+) {
+  await db.batch([
+    db
+      .update(documentCheck)
+      .set({
+        state: "done",
+        rating: result.rating,
+        issues: result.issues,
+        recommendations: result.recommendations,
+        startedAt: replaced.startedAt,
+        finishedAt: replaced.finishedAt,
+        ...metricColumns(metrics),
+      })
+      .where(eq(documentCheck.id, id)),
+    db.update(documentCheck).set({ replacedBy: id }).where(eq(documentCheck.id, replaced.id)),
   ]);
 }
 
@@ -178,13 +210,19 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
   const [{ details, branch }, files, rows, t] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
-    // Newest first, so an item's first finished run is its result. Failed runs are history only.
+    // Newest first, so an item's first finished run is its result. Failed and replaced runs are history only.
     db
       .select({ check: documentCheck, userName: user.name, personName: casePerson.name })
       .from(documentCheck)
       .leftJoin(user, eq(user.id, documentCheck.checkedBy))
       .leftJoin(casePerson, eq(casePerson.userId, documentCheck.checkedBy))
-      .where(and(eq(documentCheck.caseId, caseId), inArray(documentCheck.state, ["done", "running"])))
+      .where(
+        and(
+          eq(documentCheck.caseId, caseId),
+          inArray(documentCheck.state, ["done", "running"]),
+          isNull(documentCheck.replacedBy),
+        ),
+      )
       .orderBy(desc(documentCheck.startedAt)),
     loadMessages("en"),
   ]);
@@ -207,7 +245,10 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
     const contextFresh = !!check && row?.contextHash === contextHash(checkContext(details, branch, item, t), check);
     checks.set(item.key, {
       checkable: !!check,
-      running: mine.some((r) => r.check.state === "running" && r.check.startedAt.getTime() > expired),
+      // An admin's rerun isn't shown running: the couple sees the result it replaces until it's done.
+      running: mine.some(
+        (r) => r.check.state === "running" && !r.check.rerunAt && r.check.startedAt.getTime() > expired,
+      ),
       runId: row?.id ?? null,
       result,
       dismissed: gone,
@@ -248,14 +289,22 @@ async function dismissedFrom(checkIds: string[]) {
   return byRun;
 }
 
-/** The latest finished run of an item: the one its result is, and whose findings can be dismissed. */
-async function latestRun(caseId: string, documentKey: string) {
+/**
+ * The latest finished run of an item: the one its result is, and whose
+ * findings can be dismissed. With `before`, the one before that time: what
+ * was the result then.
+ */
+export async function latestRun(caseId: string, documentKey: string, before?: Date) {
   const [row] = await db
     .select({
       id: documentCheck.id,
       rating: documentCheck.rating,
       issues: documentCheck.issues,
       recommendations: documentCheck.recommendations,
+      fileIds: documentCheck.fileIds,
+      checkedBy: documentCheck.checkedBy,
+      startedAt: documentCheck.startedAt,
+      finishedAt: documentCheck.finishedAt,
     })
     .from(documentCheck)
     .where(
@@ -264,6 +313,8 @@ async function latestRun(caseId: string, documentKey: string) {
         eq(documentCheck.documentKey, documentKey),
         eq(documentCheck.state, "done"),
         isNotNull(documentCheck.rating),
+        isNull(documentCheck.replacedBy),
+        before && lt(documentCheck.startedAt, before),
       ),
     )
     .orderBy(desc(documentCheck.startedAt))
@@ -323,10 +374,11 @@ export async function undoDismissal(caseId: string, userId: string, dismissalId:
 /**
  * The findings dismissed from the item's latest result, for its next check
  * to look at again: the model's own words and the reason from the list,
- * never the couple's note.
+ * never the couple's note. With `before`, from the result at that time: what
+ * a rerun of the run then saw.
  */
-export async function dismissedForNextCheck(caseId: string, documentKey: string) {
-  const run = await latestRun(caseId, documentKey);
+export async function dismissedForNextCheck(caseId: string, documentKey: string, before?: Date) {
+  const run = await latestRun(caseId, documentKey, before);
   if (!run) return [];
   return db
     .select({ kind: findingDismissal.kind, finding: findingDismissal.finding, reason: findingDismissal.reason })

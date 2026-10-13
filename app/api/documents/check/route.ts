@@ -1,22 +1,12 @@
 import { getAppLocale } from "@/i18n/app-locale";
 import { todayInIsrael } from "@/i18n/format";
-import { format, loadMessages } from "@/i18n/messages";
+import { loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
-import { askCheck, checkModel } from "@/lib/checks/ask";
-import { MAX_CHECK_PAGES, prepareFiles } from "@/lib/checks/files";
-import { RULES_VERSION, checkContext, checkMessages, contextHash } from "@/lib/checks/prompt";
-import type { CheckResult } from "@/lib/checks/result";
-import {
-  caseChecks,
-  checkBalance,
-  claimCheck,
-  dismissedForNextCheck,
-  failCheck,
-  saveCheck,
-  type CheckMetrics,
-} from "@/lib/checks/store";
+import { checkModel } from "@/lib/checks/ask";
+import { RULES_VERSION, checkContext, contextHash } from "@/lib/checks/prompt";
+import { performCheck } from "@/lib/checks/run";
+import { caseChecks, checkBalance, claimCheck, dismissedForNextCheck, saveCheck } from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
-import { refund, spend } from "@/lib/credits";
 import { checkFor } from "@/lib/documents/checks";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { findUserCase } from "@/lib/session";
@@ -44,6 +34,7 @@ type ErrorCode =
   | "tooLarge"
   | "noChecks"
   | "failed";
+const failureStatus = { tooLarge: 400, noChecks: 402, failed: 502 } as const;
 const fail = (error: ErrorCode, status: number, extra?: { maxPages: number }) =>
   Response.json({ error, ...extra }, { status });
 
@@ -83,7 +74,6 @@ export async function POST(request: Request) {
   const files = allFiles.filter((f) => f.documentKey === documentKey);
   if (files.length === 0) return fail("noDocument", 400);
 
-  const started = performance.now();
   const context = checkContext(details, branch, item, await loadMessages("en"));
   const run = {
     caseId,
@@ -100,53 +90,20 @@ export async function POST(request: Request) {
   const runId = await claimCheck(run);
   if (!runId) return fail("running", 409);
 
-  // What the run took, filled in as it goes.
-  const measured: Omit<CheckMetrics, "durationMs"> = { fileCount: files.length, calls: [] };
-  const metrics = (): CheckMetrics => ({ ...measured, durationMs: Math.round(performance.now() - started) });
-  let spent = false;
-  try {
-    const maxPages = check.maxPages ?? MAX_CHECK_PAGES;
-    const prepared = await prepareFiles(caseId, files, maxPages);
-    let result: CheckResult;
-    if (!prepared.ok && "error" in prepared) {
-      await failCheck(runId, prepared.error, metrics());
-      return fail(prepared.error, 400, prepared.error === "tooManyPages" ? { maxPages } : undefined);
-    }
-    if (!prepared.ok) {
-      // A file PDFium can't open: no need to ask the model, and not counted.
-      const [en, he] = await Promise.all([loadMessages("en"), loadMessages("he")]);
-      const say = (t: typeof en) => ({
-        title: t.app.documentsPage.check.cantOpenTitle,
-        detail: format(t.app.documentsPage.check.cantOpen, { name: prepared.unreadable }),
-      });
-      result = { rating: "unreadable", issues: [{ en: say(en), he: say(he) }], recommendations: [] };
-    } else {
-      measured.pages = prepared.pages;
-      measured.bytesSent = prepared.bytes;
-      if ((await spend(caseId, "checks", user.id, runId)) === null) {
-        await failCheck(runId, "noChecks", metrics());
-        return fail("noChecks", 402);
-      }
-      spent = true;
-      const answer = await askCheck(
-        await checkMessages({ item, context, check, files: prepared.parts, today: todayInIsrael(), dismissed }),
-        check,
-        measured.calls,
-      );
-      result = answer.result;
-      measured.ratingCorrected = answer.corrected;
-      if (result.rating === "unreadable") {
-        await refund(caseId, "checks", user.id, runId);
-        spent = false;
-      }
-    }
-    await saveCheck(runId, run, result, metrics());
-  } catch (error) {
-    console.error("document check failed", error);
-    if (spent) await refund(caseId, "checks", user.id, runId);
-    await failCheck(runId, error instanceof Error ? error.message : String(error), metrics());
-    return fail("failed", 502);
-  }
+  const failure = await performCheck({
+    runId,
+    caseId,
+    item,
+    check,
+    context,
+    files,
+    today: todayInIsrael(),
+    dismissed,
+    chargeTo: user.id,
+    save: (result, metrics) => saveCheck(runId, run, result, metrics),
+  });
+  if (failure?.error === "tooManyPages") return fail(failure.error, 400, { maxPages: failure.maxPages });
+  if (failure) return fail(failure.error, failureStatus[failure.error]);
 
   const [checks, balance, locale] = await Promise.all([caseChecks(caseId), checkBalance(caseId), getAppLocale()]);
   const itemCheck = checks.get(documentKey);

@@ -43,6 +43,13 @@
       "when": 1791105798174,
       "tag": "0005_two_step_login",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1791926625460,
+      "tag": "0006_check_reruns",
+      "breakpoints": true
     }
   ]
 }

@@ -17,6 +17,9 @@ import { Icon } from "@/components/icons";
 
 type Props = PageProps<"/admin/users/[id]/documents/[key]/history">;
 
+// For the rerun action (./actions.ts): a check can take minutes, as in app/api/documents/check.
+export const maxDuration = 300;
+
 /** The document key from the URL. Next passes the param still encoded (`id%3Acountry`). */
 function keyOf(param: string) {
   try {
@@ -63,8 +66,8 @@ export default async function AdminDocumentHistoryPage({ params }: Props) {
 
   const check = current.get(key);
   const ratings = messages.app.documentsPage.check.ratings;
-  // The couple's result is the latest finished run (lib/checks/store.ts caseChecks).
-  const currentRunId = check?.result ? (runs.find((r) => r.state === "done" && r.rating)?.id ?? null) : null;
+  // The couple's result is the latest finished run that wasn't replaced (lib/checks/store.ts caseChecks).
+  const currentRunId = check?.runId ?? null;
   const checked = new Set(check?.fileIds);
   // Removed files are in the timeline, where they were removed.
   const uploaded = files.filter((f) => !f.deletedAt);
@@ -112,6 +115,7 @@ export default async function AdminDocumentHistoryPage({ params }: Props) {
             runs={runs}
             listChanges={changes}
             currentRunId={currentRunId}
+            rerun={{ userId: user.id, documentKey: key }}
             ratings={ratings}
           />
         </div>

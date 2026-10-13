@@ -319,6 +319,14 @@ export const documentCheck = pgTable(
     startedAt: timestamp("started_at").notNull().defaultNow(),
     finishedAt: timestamp("finished_at"),
 
+    // An admin's rerun (lib/checks/rerun.ts) takes the place of the item's
+    // latest run: once done, it has that run's who and when, and the app
+    // shows it as that run. Admin-only, never read for the app's own view.
+    /** When the admin actually ran it; null for the couple's own runs. */
+    rerunAt: timestamp("rerun_at"),
+    /** The rerun that took this run's place; the app leaves this run out. */
+    replacedBy: text("replaced_by"),
+
     // What it was checked against, as sent, so an old check can be reviewed
     // after the guidance or the rules change. The knowledge base is too big
     // to keep per check: only its version (lib/knowledge-base.ts).

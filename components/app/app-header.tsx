@@ -6,6 +6,7 @@ import { requireUser } from "@/lib/session";
 import { Logo } from "@/components/logo";
 import { AccountMenu } from "./account-menu";
 import { AppLanguageSwitch } from "./app-language-switch";
+import { ImpersonationBanner } from "./impersonation-banner";
 import { SectionTabs, type NavItem } from "./app-nav";
 
 /** The sections people work in: tabs in the top bar, a bottom tab bar on phones. */
@@ -32,6 +33,7 @@ export async function AppHeader({ sections = true }: { sections?: boolean }) {
 
   return (
     <header className="shrink-0 border-b border-line-200 bg-white">
+      <ImpersonationBanner />
       <div className="flex h-16 items-center gap-6 px-4 sm:px-6 lg:gap-0 lg:ps-0">
         {/* From `lg` up the logo spans the sidebar's width (w-64 in
             section-shell.tsx), so the tabs start where the sidebar ends. */}

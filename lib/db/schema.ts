@@ -55,6 +55,8 @@ export const session = pgTable(
     userId: text("user_id")
       .notNull()
       .references(() => user.id, { onDelete: "cascade" }),
+    /** Set when the admin is signed in as the user (lib/impersonation.ts). */
+    impersonationId: text("impersonation_id").references(() => impersonation.id, { onDelete: "cascade" }),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     updatedAt: timestamp("updated_at")
       .notNull()
@@ -62,6 +64,34 @@ export const session = pgTable(
       .$onUpdate(() => new Date()),
   },
   (table) => [index("session_user_id_idx").on(table.userId)],
+);
+
+/**
+ * Each time the admin signed in to the app as a user (lib/impersonation.ts):
+ * the record stays after the session ends or expires. The link works once,
+ * for a minute.
+ */
+export const impersonation = pgTable(
+  "impersonation",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    /** The admin panel's signed-in email, since the admin isn't a user. */
+    adminEmail: text("admin_email").notNull(),
+    /** sha256 of the link's token. The token itself is only in the link. */
+    tokenHash: text("token_hash").notNull().unique(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    /** When the app took the link and started the session. Null if it never did. */
+    usedAt: timestamp("used_at"),
+    /** When the admin left with the banner's button. Otherwise the session just expired. */
+    endedAt: timestamp("ended_at"),
+    /** The admin's browser, from the request that used the link. */
+    ipAddress: text("ip_address"),
+    userAgent: text("user_agent"),
+  },
+  (table) => [index("impersonation_user_id_idx").on(table.userId, table.createdAt)],
 );
 
 /** One row per way to sign in: "google", or "credential" for a password. */

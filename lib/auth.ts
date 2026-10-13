@@ -9,6 +9,7 @@ import { localeFromHeaders } from "@/i18n/negotiate";
 import { db } from "./db";
 import * as schema from "./db/schema";
 import { sendAuthEmail, sendLoginCode } from "./email";
+import { impersonationPlugin } from "./impersonation";
 import { loginUrl, site } from "./site";
 
 // Sign-in methods:
@@ -42,6 +43,10 @@ export const auth = betterAuth({
   session: {
     expiresIn: 60 * 60 * 24 * 30,
     updateAge: 60 * 60 * 24,
+    // Set on the admin's sessions as a user (lib/impersonation.ts).
+    additionalFields: {
+      impersonationId: { type: "string", required: false, input: false },
+    },
   },
 
   // In the database, so every server instance counts the same attempts. The
@@ -130,6 +135,7 @@ export const auth = betterAuth({
         },
       },
     }),
+    impersonationPlugin(),
     // Must stay last: lets server actions set auth cookies.
     nextCookies(),
   ],

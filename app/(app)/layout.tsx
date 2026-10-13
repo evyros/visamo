@@ -22,7 +22,10 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
   const locale = await getAppLocale();
   const t = await getAppDictionary();
   const { dir, script } = locales[locale];
-  const user = (await getSession())?.user;
+  const session = await getSession();
+  const user = session?.user;
+  // The admin signed in as a user (lib/impersonation.ts) isn't recorded.
+  const impersonating = !!session?.session.impersonationId;
 
   return (
     <html lang={locale} dir={dir} data-script={script} data-scroll-behavior="smooth" className={fontVariables}>
@@ -35,7 +38,7 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
         </a>
         {children}
         <Analytics />
-        <FullStory user={user && { id: user.id, email: user.email, name: user.name }} />
+        {!impersonating && <FullStory user={user && { id: user.id, email: user.email, name: user.name }} />}
       </body>
     </html>
   );

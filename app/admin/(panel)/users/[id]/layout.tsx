@@ -46,6 +46,7 @@ export default async function AdminUserLayout({ children, params }: LayoutProps<
               { href: `${base}/chats`, label: "Chats", icon: "chat", includeSubpages: true },
               { href: `${base}/balance`, label: "Balance", icon: "receipt" },
               { href: `${base}/access`, label: "Access", icon: "shield" },
+              { href: `${base}/impersonate`, label: "Sign in as", icon: "key" },
             ]}
           />
         </>

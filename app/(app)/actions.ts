@@ -11,6 +11,7 @@ import { db } from "@/lib/db";
 import { user } from "@/lib/db/schema";
 import { BUY_COOKIE } from "@/lib/products";
 import { getSession, hasSignInMethod } from "@/lib/session";
+import { site } from "@/lib/site";
 
 /** Saves the app language on this device and, when signed in, on the user. */
 export async function saveLocale(code: string) {
@@ -45,4 +46,12 @@ export async function setPassword(password: string): Promise<SetPasswordResult> 
 /** Forgets what the person chose to buy on the pricing page, once the buy page for it has opened. */
 export async function clearBuyIntent() {
   (await cookies()).delete(BUY_COOKIE);
+}
+
+/** The impersonation banner's button: signs the admin out of the user's account and goes back to their page in the admin panel. */
+export async function stopImpersonating() {
+  const session = await getSession();
+  if (!session?.session.impersonationId) redirect("/");
+  await auth.api.signOut({ headers: await headers() });
+  redirect(new URL(`/users/${session.user.id}`, site.adminUrl).toString());
 }

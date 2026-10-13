@@ -76,7 +76,7 @@ export function DocumentCard({
             <DocumentMeta docKey={docKey} optional={optional} check={check} />
           </div>
         </div>
-        <CheckStatus check={check} files={files} ratings={ratings} />
+        <CheckStatus check={check} files={files} ratings={ratings} events={historyCount} />
       </summary>
 
       <div className="space-y-4 px-4 py-4 sm:px-5">
@@ -95,6 +95,8 @@ export function DocumentCard({
             <p className="text-sm text-slate-500">
               Latest result {formatDateTime(check.checkedAt)}
               {check.checkedByName && `, run by ${check.checkedByName}`}
+              {!check.fresh &&
+                ` · ${check.contextFresh ? "files" : "details"} changed since, so the couple sees it as uploaded`}
             </p>
             <Findings kind={result.rating === "unreadable" ? "unreadable" : "issue"} findings={result.issues} />
             <Findings kind="recommendation" findings={result.recommendations} />
@@ -106,7 +108,7 @@ export function DocumentCard({
             href={historyHref}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:underline"
           >
-            <Icon name="clock" className="size-4" />
+            <Icon name="timeline" className="size-4" />
             Document history
             <span className="font-normal text-slate-500">
               ({historyCount} {historyCount === 1 ? "event" : "events"}
@@ -131,27 +133,41 @@ export function DocumentMeta({ docKey, optional, check }: { docKey: string; opti
   );
 }
 
-/** The document's result as the couple sees it now, and whether it still applies. */
+/**
+ * The document's status as the couple sees it now: a result shows only while
+ * it still applies (components/app/documents-board.tsx freshResult); once the
+ * files or details change, it's back to uploaded. With `events`, how many
+ * entries its history has.
+ */
 export function CheckStatus({
   check,
   files,
   ratings,
+  events,
 }: {
   check?: ItemCheck;
   files: AdminFile[];
   ratings: Record<CheckRating, string>;
+  events?: number;
 }) {
-  const result = check?.result;
+  const result = check?.fresh ? check.result : undefined;
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       {check?.running && <Pill tone="navy">Checking now</Pill>}
       {result ? (
-        <>
-          <Pill tone={ratingTone[result.rating]}>{ratings[result.rating]}</Pill>
-          {!check.fresh && <Pill>{check.contextFresh ? "Files changed since" : "Details changed since"}</Pill>}
-        </>
+        <Pill tone={ratingTone[result.rating]}>{ratings[result.rating]}</Pill>
       ) : (
-        <Pill tone="slate">{files.some((f) => !f.deletedAt) ? "Not checked" : "Nothing uploaded"}</Pill>
+        <Pill tone="slate">{files.some((f) => !f.deletedAt) ? "Uploaded" : "Nothing uploaded"}</Pill>
+      )}
+      {!!events && (
+        <span
+          title={`${events} ${events === 1 ? "event" : "events"} in its history`}
+          className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500"
+        >
+          <Icon name="timeline" className="size-3.5" />
+          {events}
+          <span className="sr-only">{events === 1 ? "event" : "events"}</span>
+        </span>
       )}
     </div>
   );

@@ -151,6 +151,15 @@ const paths = {
       <path d="M12 7v5l3 2" />
     </>
   ),
+  /** A list of events: points on a line, an entry by each. */
+  timeline: (
+    <>
+      <circle cx="6" cy="5" r="2" />
+      <circle cx="6" cy="12" r="2" />
+      <circle cx="6" cy="19" r="2" />
+      <path d="M6 7v3M6 14v3M11 5h9M11 12h9M11 19h6" />
+    </>
+  ),
   refresh: (
     <>
       <path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5" />

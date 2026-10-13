@@ -66,9 +66,9 @@ export async function caseCosts(caseIds: string[]) {
 
 /** Each case's owner, the partner who created it in onboarding. */
 async function caseOwners(caseIds: string[]) {
-  if (!caseIds.length) return new Map<string, { id: string; name: string }>();
+  if (!caseIds.length) return new Map<string, { id: string; name: string; email: string }>();
   const rows = await db
-    .select({ caseId: caseMember.caseId, id: user.id, name: user.name })
+    .select({ caseId: caseMember.caseId, id: user.id, name: user.name, email: user.email })
     .from(caseMember)
     .innerJoin(user, eq(user.id, caseMember.userId))
     .where(and(inArray(caseMember.caseId, caseIds), eq(caseMember.role, "owner")));

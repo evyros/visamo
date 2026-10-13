@@ -125,7 +125,8 @@ function UserRow({ row }: { row: AdminUserRow }) {
                 // Above the row's link, so it opens the owner rather than this user.
                 <Link
                   href={`/users/${row.owner.id}`}
-                  title={`Partner of ${row.owner.name}`}
+                  // Some users have no name, only an email.
+                  title={`Partner of ${row.owner.name.trim() || row.owner.email}`}
                   className="relative z-10 rounded-full hover:opacity-80"
                 >
                   <Pill>Partner</Pill>

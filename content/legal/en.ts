@@ -70,6 +70,7 @@ export const legalEn: LegalContent = {
                 "Document processing and the information assistant: AI and document-processing providers, bound by contractual terms that prohibit keeping your data or using it to train their models.",
                 "Payments: [payment provider].",
                 "Contact form: Cloudflare Turnstile, which checks that the form is sent by a person and not a bot. Messages and attachments sent through the form are emailed to our support inbox (Google Workspace) and are not stored in our systems.",
+                "Live chat: Crisp, the chat window on the website. It stores the messages you send in the chat, and any details you choose to give there, such as your email address, so that we can answer you.",
                 "Email delivery: [email provider].",
                 "Usage analytics: FullStory, which records the actions you take on the screen in the website and the app. When you're signed in, we also give it your name and email address, and nothing more. Your files are never sent to FullStory.",
               ],
@@ -122,7 +123,7 @@ export const legalEn: LegalContent = {
         {
           heading: "10. Cookies",
           body: [
-            "We use only the cookies needed for the site to work: for example, one that remembers your language and those that keep you signed in. We also use FullStory's cookie, which links your visits for usage analytics (see section 5). We do not use advertising cookies.",
+            "We use only the cookies needed for the site to work: for example, one that remembers your language and those that keep you signed in. We also use FullStory's cookie, which links your visits for usage analytics, and Crisp's cookies, which keep your chat conversation on the website (see section 5). We do not use advertising cookies.",
           ],
         },
         {

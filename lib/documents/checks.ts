@@ -381,14 +381,15 @@ export const checks = {
   },
   relationshipEvidence: {
     required: [
-      "They are photos of the same two people together: the couple, in each photo.",
-      "There are at least 10 photos.",
+      "Judged as a whole set, not photo by photo: most photos show the couple together, or one partner with the other partner's family or friends (strong evidence, even without the other partner in it). Some photos of one partner alone, such as shots the partners took of each other, and title or scenery pictures in a collage, are fine and never an issue.",
+      "At least one photo shows one of the partners with other people, such as the other partner's family or friends.",
+      "There are at least 10 photos of the partners, not counting title or scenery pictures.",
       "The photos are in color, not black and white.",
     ],
     recommended: [
       "They're from different places and different times, not one event.",
-      "Some include family and friends with the couple.",
-      "On pages, they're arranged in a grid of 6, 9 or 12 photos to a page, each photo still clear.",
+      "At least 2 photos show other people, such as family or friends, not only the couple.",
+      "Each photo is clear enough to recognize the people in it.",
     ],
   },
   messageHistory: {

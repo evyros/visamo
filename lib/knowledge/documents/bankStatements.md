@@ -19,6 +19,6 @@ your branch. Ask for a confirmation of account ownership too (אישור ניה�
   branches: we recommend bringing a statement for the full 12 months.
 - **The balance, and all the incoming and outgoing transactions.**
 - **Proof of account ownership,** with the statements.
-- **For an account abroad:** a certified translation unless it's in Hebrew
-  or Arabic (see [certification.md](../certification.md)). In practice,
-  English is usually accepted without one.
+- **For an account abroad:** no apostille. If the statements aren't in
+  Hebrew, Arabic or English, translate them yourselves: no notary is
+  needed, unless the office asks (see [certification.md](../certification.md)).

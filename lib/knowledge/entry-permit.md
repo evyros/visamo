@@ -25,12 +25,40 @@ visit. If the purpose is to stay and live together in Israel, they need the
 entry permit first: coming as a tourist with that intention, without the
 permit, goes against Israel's immigration policy.
 
+Being apart for months while you wait is hard, and many couples try to skip
+it: the foreign partner comes to Israel as a tourist, and you start the
+process once they're here. That isn't the process. It expects a foreign
+partner who lives abroad to wait abroad until the entry permit is granted.
+
+In practice, a foreign partner who comes alone as a tourist, with a return
+ticket, is usually let in at border control. Border control looks at their
+previous visits (how often they came and how long they stayed), their return
+ticket and their hotel booking. If it suspects they came to stay in Israel,
+or to start the application here, they're refused entry.
+
 - **If you both live abroad:** don't fly in together as tourists. In
   practice, a foreign partner who arrives with the Israeli partner without
   the permit is likely to be suspected of coming to stay, stopped at border
   control, and flown back.
-- **Once you've filed:** the foreign partner is likely to be refused entry
-  if they try to visit as a tourist: see [application.md](application.md).
+- **Once you've filed:** the foreign partner can't come to Israel before
+  the entry permit is granted, not even for a visit. They're likely to be
+  refused entry at the border, and trying can also harm your application:
+  see [application.md](application.md).
+
+### If the foreign partner lives abroad but is in Israel as a tourist
+
+A couple can still file while the foreign partner is in Israel on a tourist
+visa. File before it expires. Misrad Hapnim should extend their visa while
+the application is processed: ask for it at the branch's walk-in hours,
+early in the morning. See "On another visa" in
+[first-appointment.md](first-appointment.md).
+
+However, the office always sees it as a problem that you didn't go through
+the formal procedure. There are no formal consequences, but it may look more
+closely at your case.
+
+This is only before you've filed: once you have, the foreign partner can't
+come until the entry permit is granted (above).
 
 ## How long it takes
 

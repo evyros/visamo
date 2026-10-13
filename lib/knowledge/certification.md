@@ -38,6 +38,18 @@ Foreign documents follow the population authority's procedure 1.3.0001
   to it, and separating them voids it.
 - **Order a few copies of each document.** You may need another one later,
   for a renewal, a marriage, or a document that's lost.
+- **Your everyday documents need no apostille.** A lease, bills, bank
+  statements and similar documents from abroad are asked for to show your
+  center of life or your relationship, not as official records of your
+  status. They need no apostille or legalization. They only need a
+  translation if they aren't in Hebrew, Arabic or English, and you can make
+  it yourselves: translate them, or mark the important parts and explain
+  them, so the clerk can follow. No notary is needed, unless the office asks
+  for a notarized translation. The same goes for translating payslips and
+  an insurance policy from abroad. Official documents and formal forms are different: a birth
+  certificate, a police certificate or the landlord's affidavit needs a
+  notarized translation, and an official document from abroad needs an
+  apostille or legalization too.
 
 ## Translation
 

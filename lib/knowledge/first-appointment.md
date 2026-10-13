@@ -102,10 +102,17 @@ volunteer or work-holiday visa, a tourist visa):
   Israel. Show the office the ruling if it insists on leaving first.
 - **A tourist visa:** coming as a tourist to stay goes against Israel's
   immigration policy (see
-  [entry-permit.md](entry-permit.md)). If the foreign partner is already here, the
-  application is still handled and they aren't deported while it's decided,
-  but the office may look at it more closely, and they can't come back in if
-  they leave.
+  [entry-permit.md](entry-permit.md)). If the foreign partner is already here:
+  - **File quickly,** before their tourist visa expires.
+  - **Ask the branch to extend their visa** so they can stay for the
+    gradual process. Misrad Hapnim should extend it while the application
+    is processed. To ask, go to the branch's walk-in hours (without an
+    appointment), early in the morning.
+  - **The office sees it as a problem** that you didn't go through the
+    formal procedure. There are no formal consequences, but it may look
+    more closely at your case.
+  - **If they leave Israel,** they can't come back in until the entry permit
+    is granted.
 
 ### Without a valid visa
 

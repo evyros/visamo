@@ -14,9 +14,9 @@ payslips and bank statements, and the shuma if they're self-employed.
 - **The last 12 payslips.** The official requirement is 3 months, but in
   practice the ministry asks for 12 in most cases.
 - **If the Israeli partner lives abroad and works for a business outside
-  Israel:** a certified translation of the payslips, if they aren't in
-  Hebrew or Arabic (see [certification.md](../certification.md)). In
-  practice, English is usually accepted without one.
+  Israel:** if the payslips aren't in Hebrew, Arabic or English, translate
+  them yourselves: no notary is needed, unless the office asks (see
+  [certification.md](../certification.md)).
 
 ## If you don't have it
 

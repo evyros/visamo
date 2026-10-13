@@ -14,8 +14,9 @@ contract of the Israeli partner's home).
 - **All its appendices**, with the original and a copy.
 - **If either of you owns the home you'll live in, in Israel:** the purchase
   contract of the property, instead of a lease.
-- **If you live together abroad:** the lease of the home you share there. A
-  contract that isn't in Hebrew or Arabic may need a translation (see
+- **If you live together abroad:** the lease of the home you share there. It
+  needs no apostille. If it isn't in Hebrew, Arabic or English, translate it
+  yourselves: no notary is needed, unless the office asks (see
   [certification.md](../certification.md)).
 
 ## If you don't have it

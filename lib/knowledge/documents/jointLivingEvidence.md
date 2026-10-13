@@ -18,8 +18,9 @@ the same address.
   joint bank account, and official mail addressed to each of you there.
 - **Covering at least the last 12 months,** if you live together in Israel.
 - **If you lived together abroad:** the same kinds of documents, from the
-  home you shared there. A document that isn't in Hebrew or Arabic may need
-  a translation (see [certification.md](../certification.md)).
+  home you shared there. They need no apostille. If they aren't in Hebrew,
+  Arabic or English, translate them yourselves: no notary is needed, unless
+  the office asks (see [certification.md](../certification.md)).
 
 ## If you don't have it
 

@@ -10,9 +10,9 @@ depending on their situation (below).
 
 - **The last 12 payslips.** The official requirement is 3 months, but in
   practice the ministry asks for 12 in most cases.
-- **A certified translation**, if they aren't in Hebrew or Arabic (see
-  [certification.md](../certification.md)). In practice, English is usually
-  accepted without one.
+- **A translation**, if they aren't in Hebrew, Arabic or English. Make it
+  yourselves: no notary is needed, unless the office asks (see
+  [certification.md](../certification.md)).
 
 ## If you don't have it
 

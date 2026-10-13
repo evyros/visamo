@@ -52,10 +52,12 @@ of your financial situation.
 
 ## After you file
 
-- **A foreign partner abroad waits abroad.** From the moment you file, they're
-  likely to be refused entry if they try to visit as a tourist, even from a
-  visa-exempt country: they're marked as someone waiting for an entry permit.
-  They come once the permit is granted (see
+- **A foreign partner abroad waits abroad.** From the moment you file, they
+  can't come to Israel before the entry permit is granted, not even for a
+  visit. They're likely to be refused entry if they try to come as a tourist,
+  even from a visa-exempt country: they're marked as someone waiting for an
+  entry permit. Trying can also harm your application. They come once the
+  permit is granted (see
   [entry-permit.md](entry-permit.md)).
 - **A foreign partner in Israel stays in Israel.** They can leave, but they
   won't be let back in until the entry permit is granted, unless they have a

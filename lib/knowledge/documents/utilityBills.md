@@ -29,9 +29,9 @@ you download past bills from your personal area on their website or app.
 - **The home's address** on each bill, the same as on your lease.
 - **If you live, or lived, together abroad:** the bills of the home you
   share, or shared, there, in both your names (recommended) or the Israeli
-  partner's. Bills that aren't in Hebrew or Arabic may need a translation
-  (see [certification.md](../certification.md)). In practice, English is
-  usually accepted without one.
+  partner's. They need no apostille. If they aren't in Hebrew, Arabic or
+  English, translate them yourselves: no notary is needed, unless the office
+  asks (see [certification.md](../certification.md)).
 
 ## Questions
 

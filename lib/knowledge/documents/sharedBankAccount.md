@@ -22,8 +22,9 @@ recent statement of the account.
 - **Both your names** as the account's holders.
 - **The bank's name and the account number.**
 - **A recent statement** of the account, showing it's in use.
-- **For an account abroad:** a certified translation unless it's in Hebrew
-  or Arabic. In practice, English is usually accepted without one.
+- **For an account abroad:** no apostille. If it isn't in Hebrew, Arabic or
+  English, translate it yourselves: no notary is needed, unless the office
+  asks (see [certification.md](../certification.md)).
 
 ## If you don't have it
 

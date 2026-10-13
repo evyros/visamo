@@ -36,8 +36,8 @@ need.
 - **The foreign partner's name** as the insured person.
 - **The insurer, and the coverage period:** from when to when it's valid.
 - **Coverage in Israel.**
-- **A policy from abroad:** a certified translation unless it's in Hebrew or
-  Arabic. In practice, English is usually accepted without one (see
+- **A policy from abroad:** if it isn't in Hebrew, Arabic or English,
+  translate it yourselves: no notary is needed, unless the office asks (see
   [certification.md](../certification.md)).
 
 ## Questions

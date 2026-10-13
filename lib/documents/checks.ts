@@ -420,7 +420,7 @@ export const checks = {
   jointLivingEvidence: {
     required: [
       "It shows that both partners live, or lived, at the same address: for example, a lease or property in both names, bills in both names, statements of a joint bank account, or official mail addressed to each of them at that address.",
-      "If it isn't in Hebrew, Arabic or English (from a home abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English (from a home abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "Together, the documents cover at least the last 12 months.",
@@ -508,7 +508,7 @@ export const checks = {
       "It is a lease of a home, or a purchase contract of a home. A lease names both partners as the tenants; a purchase contract is for a home in Israel.",
       "It is the whole contract, with all its appendices, not only the first or the signature page.",
       "It is signed by the parties.",
-      "If it isn't in Hebrew, Arabic or English (a lease from abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English (a lease from abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
@@ -531,7 +531,7 @@ export const checks = {
       "They are household bills of a home, from the provider: electricity, water, arnona (municipal tax), phone, or any other bill of the home, such as gas, internet, TV or vaad bayit (building committee).",
       "Each shows the home's address and the billing period.",
       "They're in the landlord's name or the Israeli partner's. For a home abroad: in both partners' names, or the Israeli partner's.",
-      "If they aren't in Hebrew, Arabic or English (bills from abroad), a notarized translation is uploaded with them. English documents need no translation: offices accept English in practice, and ask for one if they don't.",
+      "If they aren't in Hebrew, Arabic or English (bills from abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
     ],
     recommended: [
       "There are at least 3 types of household bills.",
@@ -569,7 +569,7 @@ export const checks = {
       "It is a health insurance policy, or an insurer's confirmation of coverage, for one person: from an Israeli health fund or insurance company (a plan for non-residents, a partner's plan, or a foreign worker's policy through an employer), or a policy from abroad.",
       "It covers medical treatment in Israel.",
       "It names the insurer and the coverage period, and the period hasn't ended: it's valid today, or starts in the future.",
-      "If it isn't in Hebrew, Arabic or English (a policy from abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English (a policy from abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "It's a health plan, not only emergency or accident cover.",
@@ -592,7 +592,7 @@ export const checks = {
     required: [
       "It is a bank's confirmation of a joint account, naming two account holders, or a statement of a joint account. If the couple has no joint account: other proof that they share their money, such as transfers to each other, card statements with household purchases or deliveries to the same address, or receipts for large shared expenses.",
       "A bank confirmation or statement shows the bank's name and the account number, readably.",
-      "If it isn't in Hebrew, Arabic or English (an account abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English (an account abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "It was issued recently, in the last few months.",
@@ -605,7 +605,7 @@ export const checks = {
       "They are bank statements: of a shared account, or of each partner's personal account.",
       "They show the balance and all the incoming and outgoing transactions, not a summary.",
       "Proof of account ownership is uploaded with them: a bank confirmation of who holds each account.",
-      "If they aren't in Hebrew, Arabic or English (an account abroad), a notarized translation is uploaded with them. English documents need no translation: offices accept English in practice, and ask for one if they don't.",
+      "If they aren't in Hebrew, Arabic or English (an account abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
     ],
     recommended: [
       "They cover the full last 12 months, ending recently: the period differs between branches, and 12 months covers them all.",
@@ -619,7 +619,7 @@ export const checks = {
       "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
       "A confirmation of other income: it is from whoever pays it (for example a university or National Insurance), signed or stamped, and shows the amounts and the months paid. The income is current: the latest payment shown is from one of the last 3 months, counted from today, or it states the payments continue. Income that ended earlier is an issue.",
       "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the foreign partner financially supports their shared life in Israel.",
-      "If it isn't in Hebrew, Arabic or English (an Israeli partner working for a business abroad), a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English (an Israeli partner working for a business abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",
@@ -635,7 +635,7 @@ export const checks = {
       "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
       "A confirmation of other income: it is from whoever pays it (for example a university or National Insurance), signed or stamped, and shows the amounts and the months paid. The income is current: the latest payment shown is from one of the last 3 months, counted from today, or it states the payments continue. Income that ended earlier is an issue.",
       "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the Israeli partner financially supports their shared life in Israel.",
-      "If it isn't in Hebrew, Arabic or English, a notarized translation is uploaded with it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",

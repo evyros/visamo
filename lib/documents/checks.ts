@@ -58,7 +58,7 @@ const BILLS_PAGES = 60;
 /** Passport photos, the same for both partners. */
 const passportPhoto: DocumentCheck = {
   required: [
-    "It is a passport-format photo of one person: the face straight to the camera, head upright, eyes open, with nothing covering the face.",
+    "It is a passport-format photo of one person: the face straight to the camera, head upright, eyes open, with nothing covering the face. A scan of the printed photo and the digital file are both fine. A passport's page, even with its photo, is not this document: say that it's the passport, and that what's asked for is passport-size photos of the face.",
     "It is in color, on a light, plain background.",
   ],
   recommended: [],

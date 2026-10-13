@@ -12,6 +12,7 @@ are under the same license):
 | looking-away.jpg | [Alex Bilo Headshot.jpg](https://commons.wikimedia.org/wiki/File:Alex_Bilo_Headshot.jpg) | Lindsey Rome | Attribution |
 | half-body.jpg | [2021 Headshot of Dima Ghawi.jpg](https://commons.wikimedia.org/wiki/File:2021_Headshot_of_Dima_Ghawi.jpg) | Dimaghawi2020 | CC BY-SA 4.0 |
 | sunglasses-dark-background.jpg | [Portrait of Bandu".jpg](https://commons.wikimedia.org/wiki/File:Portrait_of_Bandu%22.jpg) | Bandenaw | CC0 |
+| passport-data-page.jpg | [Norwegian Passport Specimen.jpg](https://commons.wikimedia.org/wiki/File:Norwegian_Passport_Specimen.jpg) | Government of Norway | Public domain |
 
 Made for these evals: busy-background.jpg (the app's own portrait, from
 public/images), rent-receipt.png and blank.jpg.

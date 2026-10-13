@@ -1380,9 +1380,9 @@
           "description": "The Israeli partner's ID card, with the appendix (the sefach) that lists family members."
         },
         "israeliPhotos": {
-          "title": "Passport photos of the Israeli partner",
-          "shortTitle": "Passport photos",
-          "description": "Recent passport-format photos, all copies of the same photo."
+          "title": "Passport-size photos of the Israeli partner",
+          "shortTitle": "Passport-size photos",
+          "description": "Printed photos of the face, 3.5 × 4.5 cm, as in a passport: not a copy of the passport itself. Misrad Hapnim expects you to bring 3 printed copies of the same recent photo."
         },
         "foreignPassport": {
           "title": "Foreign passport",
@@ -1390,9 +1390,9 @@
           "description": "Valid for at least 2 more years, with copies of the main page, the visa pages and the border-control stamps."
         },
         "foreignPhotos": {
-          "title": "Passport photos of the foreign partner",
-          "shortTitle": "Passport photos",
-          "description": "Recent passport-format photos, all copies of the same photo."
+          "title": "Passport-size photos of the foreign partner",
+          "shortTitle": "Passport-size photos",
+          "description": "Printed photos of the face, 3.5 × 4.5 cm, as in a passport: not a copy of the passport itself. Misrad Hapnim expects you to bring 3 printed copies of the same recent photo."
         },
         "foreignBirthCertificate": {
           "title": "Birth certificate",

@@ -53,6 +53,11 @@
       "files": ["rent-receipt.png"],
       "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
     },
+    {
+      "name": "a passport's data page",
+      "files": ["passport-data-page.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["in color", "light, plain background"] }
+    },
     { "name": "blank", "files": ["blank.jpg"], "expect": { "rating": "unreadable" } }
   ]
 }

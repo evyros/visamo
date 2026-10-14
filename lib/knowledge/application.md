@@ -11,6 +11,9 @@ you start at the consulate instead, and file online after you arrive (see
 - **Get the documents from abroad first.** They take the longest, and some
   branches reject an application that's missing them instead of giving you
   time to complete it. Apply when the file is complete.
+- **Documents with a time limit,** like the police certificate (issued in
+  the last 6 months), are counted to the day you file the online form. Get
+  them close enough to filing that they're valid on that day.
 - **The foreign partner's passport** has to be valid for at least 2 more years
   (see the foreign passport).
 - **Update the Israeli partner's address.** The application goes
@@ -62,6 +65,11 @@ of your financial situation.
 - **A foreign partner in Israel stays in Israel.** They can leave, but they
   won't be let back in until the entry permit is granted, unless they have a
   valid visa to return on.
+- **Your documents don't expire while you wait.** The day you filed the
+  online application is what counts: a document that was valid then, like a
+  police certificate issued in the last 6 months, stays good for your file,
+  even if the appointment or the interview is months later. You don't need
+  to renew it.
 - **The Israeli partner should be in Israel.** The office is unlikely to move
   the file forward while the Israeli partner is abroad for long.
 

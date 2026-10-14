@@ -13,6 +13,12 @@ how offices work in practice. Each document is described below, by group.
 - **Translation:** see [certification.md](certification.md). By law, only
   Hebrew and Arabic need no translation.
 - **The fee** is paid with the application; it isn't a document.
+- **What counts is the day you submit the file online.** A document
+  that was valid on that day stays good for your file, however long Misrad
+  Hapnim takes: the appointments and the interview don't count. So a police
+  certificate or a civil-status document issued in the last 6 months before
+  you filed doesn't need to be renewed because your appointment is months
+  later.
 - The clerk can ask for any other document the circumstances call for (§ד.3).
 
 ## Living together: what you say, and how you prove it

@@ -29,7 +29,7 @@ export const processHe: ProcessTexts = {
     quickQuestions: "שאלות קצרות",
     newTab: "(נפתח בכרטיסייה חדשה)",
     milestone: "אבן דרך",
-    tones: { important: "חשוב", tip: "טיפ", info: "כדאי לדעת" },
+    tones: { critical: "אזהרה", important: "חשוב", tip: "טיפ", info: "כדאי לדעת" },
     yourSituation: "המצב שלכם",
     change: "שינוי",
     shortVersion: "בקצרה",
@@ -426,7 +426,7 @@ export const processHe: ProcessTexts = {
           text: "אם הוא כאן בוויזה אחרת (סטודנט, עבודה, התנדבות, תייר), מגישים כשהיא עדיין בתוקף, ואז הולכים ללשכה כדי להסדיר את המעמד שלו עד ההחלטה. אם אי אפשר להאריך אותה, בקשו ויזת ב/2 בינתיים, כדי שלא יישאר אף פעם בלי ויזה.",
         }),
         ...only(a.location === "partnerAbroad", {
-          tone: "important" as const,
+          tone: "critical" as const,
           title: "מעכשיו, הצד הזר מחכה בחו\"ל",
           text: "אחרי שמגישים, סביר שהוא יסורב בכניסה אם ינסה לבקר כתייר, גם ממדינה פטורה מוויזה: הוא מסומן כמי שמחכה להיתר כניסה.",
         }),

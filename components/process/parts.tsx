@@ -97,6 +97,12 @@ export function SituationBar({ answers, texts, locale }: { answers: Answers; tex
 // ── A step ──────────────────────────────────────────────────────────────────
 
 const bubbleStyles: Record<Bubble["tone"], { box: string; icon: IconName; iconBox: string; label: string }> = {
+  critical: {
+    box: "border-crimson-600/30 bg-crimson-100",
+    icon: "alertCircle",
+    iconBox: "bg-crimson-600 text-white",
+    label: "text-crimson-600",
+  },
   important: {
     box: "border-amber-500/30 bg-amber-100/70",
     icon: "alert",

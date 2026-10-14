@@ -31,7 +31,7 @@ export const processEn: ProcessTexts = {
     quickQuestions: "Quick questions",
     newTab: "(opens in a new tab)",
     milestone: "Milestone",
-    tones: { important: "Important", tip: "Tip", info: "Good to know" },
+    tones: { critical: "Warning", important: "Important", tip: "Tip", info: "Good to know" },
     yourSituation: "Your situation",
     change: "Change",
     shortVersion: "The short version",
@@ -442,7 +442,7 @@ export const processEn: ProcessTexts = {
           text: "If they're here on another visa (student, work, volunteer, tourist), file while it's still valid, then go to the branch to settle their status until the decision. If it can't be extended, ask for a B/2 visa in between, so they're never without one.",
         }),
         ...only(a.location === "partnerAbroad", {
-          tone: "important" as const,
+          tone: "critical" as const,
           title: "From now on, the foreign partner waits abroad",
           text: "Once you file, they're likely to be refused entry if they try to visit as a tourist, even from a visa-exempt country: they're marked as waiting for an entry permit.",
         }),

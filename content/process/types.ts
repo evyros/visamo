@@ -29,7 +29,7 @@ export type StepId =
   | "interview"
   | "a5";
 
-export type Bubble = { tone: "important" | "tip" | "info"; title: string; text: GuideText };
+export type Bubble = { tone: "critical" | "important" | "tip" | "info"; title: string; text: GuideText };
 
 /** A line under a step's title: who goes, where, how long, what it costs. */
 export type StepMeta = { icon: Extract<IconName, "people" | "user" | "building" | "globe" | "clock" | "receipt">; text: string };

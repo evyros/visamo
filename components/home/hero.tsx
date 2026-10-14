@@ -32,13 +32,7 @@ export function Hero({ t, locale }: { t: Messages; locale: Locale }) {
           <p className="mt-4 text-sm text-slate-500">{hero.microcopy}</p>
           <ul className="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start">
             <li>
-              <Badge icon="lock">{t.badges.encryption}</Badge>
-            </li>
-            <li>
               <Badge icon="globe">{t.badges.languages}</Badge>
-            </li>
-            <li>
-              <Badge icon="building">{t.badges.independent}</Badge>
             </li>
           </ul>
         </div>

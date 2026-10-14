@@ -7,7 +7,8 @@ import { LaunchPrice } from "./launch-price";
 import { ButtonLink } from "./ui";
 
 // Free and Full file check side by side, and the message pack under them: a
-// top-up bought as often as needed, on either, so it isn't a third card.
+// top-up bought as often as needed, on either, so it isn't a third card. On
+// mobile they stack in price order: Free, the message pack, Full file check.
 
 const order = ["free", "fileCheck"] as const;
 const highlighted = "fileCheck";
@@ -25,19 +26,40 @@ export function PricingCards({
   headingLevel?: "h2" | "h3";
 }) {
   const pack = t.pricing.messagePack;
+  const packCard = (
+    <article
+      key="messagePack"
+      className="flex flex-col gap-4 rounded-2xl border border-line-200 bg-white p-6 sm:flex-row sm:items-center sm:gap-8 md:order-last md:col-span-2"
+    >
+      <div className="flex-1">
+        <div className="flex flex-wrap items-baseline gap-x-3">
+          <Heading className="text-lg font-semibold text-navy-900">{pack.name}</Heading>
+          <span className="font-display text-xl font-semibold text-navy-900">
+            <bdi>{formatPrice(prices.messagePack, locale)}</bdi>
+          </span>
+          <span className="text-sm text-slate-500">{pack.priceNote}</span>
+        </div>
+        {!compact && <p className="mt-1 text-[15px] text-slate-700">{pack.body}</p>}
+        <p className="mt-1 text-xs text-slate-500">{pack.footnote}</p>
+      </div>
+      <ButtonLink href={signupUrl(locale, "messagePack")} variant="primary" className="shrink-0">
+        {pack.cta}
+      </ButtonLink>
+    </article>
+  );
   return (
     <div className="mx-auto max-w-4xl">
       <div className="grid items-stretch gap-6 md:grid-cols-2">
-        {order.map((id) => {
+        {order.flatMap((id) => {
           const option = t.pricing[id];
           const featured = id === highlighted;
-          return (
+          const card = (
             <article
               key={id}
               // The featured card's 2px border is offset by 1px less padding, so text lines up.
               className={`relative flex flex-col rounded-2xl bg-white ${
                 featured
-                  ? "order-first border-2 border-navy-900 p-[31px] shadow-soft md:order-none"
+                  ? "border-2 border-navy-900 p-[31px] shadow-soft"
                   : "border border-line-200 p-8"
               }`}
             >
@@ -79,25 +101,9 @@ export function PricingCards({
               </div>
             </article>
           );
+          return id === "free" ? [card, packCard] : [card];
         })}
       </div>
-
-      <article className="mt-6 flex flex-col gap-4 rounded-2xl border border-line-200 bg-white p-6 sm:flex-row sm:items-center sm:gap-8">
-        <div className="flex-1">
-          <div className="flex flex-wrap items-baseline gap-x-3">
-            <Heading className="text-lg font-semibold text-navy-900">{pack.name}</Heading>
-            <span className="font-display text-xl font-semibold text-navy-900">
-              <bdi>{formatPrice(prices.messagePack, locale)}</bdi>
-            </span>
-            <span className="text-sm text-slate-500">{pack.priceNote}</span>
-          </div>
-          {!compact && <p className="mt-1 text-[15px] text-slate-700">{pack.body}</p>}
-          <p className="mt-1 text-xs text-slate-500">{pack.footnote}</p>
-        </div>
-        <ButtonLink href={signupUrl(locale, "messagePack")} variant="secondary" className="shrink-0">
-          {pack.cta}
-        </ButtonLink>
-      </article>
     </div>
   );
 }

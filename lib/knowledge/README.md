@@ -10,7 +10,8 @@ through the gradual process (ההליך המדורג).
 - [interview.md](interview.md): the interview, and how to prepare for it.
 - [both-abroad.md](both-abroad.md): when you both live abroad, starting at the Israeli consulate.
 - [documents.md](documents.md): the documents for the first application, each one described in [documents/](documents/).
-- [certification.md](certification.md): apostille, legalization and translation.
+- [certification.md](certification.md): apostille, legalization, translation and affidavits.
+- [affidavits.md](affidavits.md): how to make an affidavit in Israel, and what it costs.
 - [children.md](children.md): when the foreign partner's children move to Israel.
 - [former-ussr.md](former-ussr.md): the former USSR, and the Nativ step.
 - [security-check.md](security-check.md): the security check, only for Palestinian residents and citizens of Arab countries.

@@ -142,7 +142,7 @@ Israel without a return ticket.
 **If entry is refused at the border.** The foreign partner is flown back,
 and should be given a paper with the decision. They have 30 days to appeal
 to the Appeals Tribunal (בית הדין לעררים), even if they got no paper. The fee
-is 755 NIS (2025), and the appeal needs an affidavit signed before a lawyer:
+is 774 NIS (2026), and the appeal needs an affidavit signed before a lawyer:
 in practice, hire an immigration lawyer. The Authority can go on with the
 removal after you appeal, unless the tribunal orders it to stop. After a
 refusal, every later entry needs approval in advance (a tourist invitation

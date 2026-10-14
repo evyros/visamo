@@ -90,25 +90,42 @@ Foreign documents follow the population authority's procedure 1.3.0001
 
 ## Affidavits
 
-An affidavit (תצהיר) is a written statement you sign in front of someone the
-law authorizes to confirm it, after they warn you to tell the truth. It's
-how you prove a fact no official document shows, for example when a country
-doesn't issue a civil-status certificate.
+An affidavit (תצהיר) is a written statement that a person (the affiant,
+המצהיר) makes of their own free will. They swear or affirm that it's true, in
+front of someone the law authorizes to confirm it, who checks who they are
+and warns them that they must tell the truth, and that giving false
+information is punishable by law. Signing one is a legal act. In the partner
+visa process, an affidavit proves a fact no official document shows: for
+example, when the foreign partner's country doesn't issue a certain
+certificate.
 
-- **In Israel,** any Israeli lawyer can confirm one. So can the magistrate's
-  court (בית משפט השלום), at its secretariat or through its duty lawyer,
-  without an appointment, for a small fixed fee.
-- **A notarial affidavit** (תצהיר נוטריוני) is made only in front of a notary.
-  If you're asked for one, a lawyer's isn't enough.
-- **A consular affidavit** is made at a consulate: the foreign partner's
-  country's consulate in Israel, or an Israeli consulate abroad.
-- **Made abroad, in front of a local notary:** accepted, with that country's
-  apostille or legalization.
-- Sign it only in front of whoever confirms it, never before. You must
-  understand what it says: if it isn't in a language you read, have it
-  translated for you first.
-- The affidavits inside Misrad Hapnim's forms (AS/6) are explained with each
-  form.
+An affidavit is either **written freely**, as a list of numbered statements
+with a section at the bottom for its confirmation (אישור), or **part of an
+official form**, where you only fill in the missing details. Form AS/6 has
+affidavits like this; they're explained with the form.
+
+**Who can confirm one in Israel:**
+
+- **An Israeli lawyer.** Any lawyer licensed in Israel.
+- **The magistrate's court (בית משפט השלום).** Through its duty lawyer (עורך
+  דין תורן), or at its secretariat, by the chief secretary or the deputy
+  chief secretary. No appointment is needed.
+- **An Israeli notary (נוטריון).** Only a notary can make a notarial
+  affidavit (תצהיר נוטריוני). If you're asked for a notarial affidavit, a
+  lawyer's or the court's isn't enough.
+- **A foreign consul.** A consular affidavit is made at the foreign
+  partner's country's embassy or consulate in Israel. It generally carries
+  about the same weight as a notarial affidavit.
+
+**Made outside Israel:** Misrad Hapnim accepts a consular affidavit made in
+front of an Israeli consul abroad. It also accepts a notarial affidavit made
+abroad in front of a local notary, with that country's apostille, or its
+legalization where there's no apostille.
+
+Sign it only in front of whoever confirms it, never before. You must
+understand what it says: if it isn't in a language you read, have it
+translated for you first. How to make one, step by step, and what it costs:
+see [affidavits.md](affidavits.md).
 
 ## An exemption
 

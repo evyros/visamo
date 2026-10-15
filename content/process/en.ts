@@ -446,11 +446,6 @@ export const processEn: ProcessTexts = {
           title: "From now on, the foreign partner waits abroad",
           text: "Once you file, they're likely to be refused entry if they try to visit as a tourist, even from a visa-exempt country: they're marked as waiting for an entry permit.",
         }),
-        ...only(a.location === "partnerAbroad" && a.livedTogether, {
-          tone: "tip" as const,
-          title: "Lived together abroad? You can try to speed it up",
-          text: "Instead of filing online first, the Israeli partner can go to the branch without an appointment, early in the morning before it opens, with all the proof of your life together, and ask for the entry permit, or even a B/1 visa. The branch may refuse, and tell you to file online.",
-        }),
       ],
       faq: [
         {

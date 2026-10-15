@@ -721,7 +721,6 @@ export const guidesEn: Guides = {
           heading: "How long it takes",
           body: [
             "It depends on your branch's backlog, how complete your file is, and the foreign partner's country: from a few weeks at the faster branches to a few months at busy ones. It can't be predicted: plan for a few months.",
-            "**Trying to speed it up.** If your relationship rests on strong ground, with proof that you've lived together abroad, the Israeli partner can go to the branch without an appointment, early in the morning before it opens, explain your situation with all the proof, and ask for the entry permit, or even a B/1 visa. The branch may refuse and tell you to file online.",
           ],
         },
         {

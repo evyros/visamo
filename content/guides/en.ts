@@ -1102,7 +1102,8 @@ export const guidesEn: Guides = {
               list: [
                 "**A lease or purchase contract:** of your shared home, or of the Israeli partner's home if you don't live together.",
                 "**Bills for the home:** electricity, water, arnona and the like.",
-                "**A municipality confirmation** (אישור תושב) **and proof of government services:** if either of you lives in Israel.",
+                "**A municipality confirmation** (אישור תושב)**:** married couples, if either of you lives in Israel.",
+                "**Proof of government services:** if either of you lives in Israel.",
                 "**Bank documents:** a shared bank account for married couples, bank statements for common-law couples.",
                 "**Salary slips** of each of you.",
                 "**Health insurance** for the foreign partner.",

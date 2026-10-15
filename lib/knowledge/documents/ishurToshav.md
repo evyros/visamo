@@ -3,8 +3,15 @@
 Also called Ishur Toshav (אישור תושב): your municipality or local council's official confirmation that your center of life is in their locality.
 
 The municipality or local council's confirmation that your center of life
-is in their locality (5.2.0008 §ד.2.ח; the AS/6 checklist). It's on the AS/6
-checklist, but many offices don't ask for it at the first application.
+is in their locality. It's asked for in two cases:
+
+- **Married couples:** it's on the AS/6 checklist, the married couples'
+  application, so it's asked for when at least one of you lives in Israel.
+  Many offices don't ask for it at the first application.
+- **Every couple's visa renewal:** married and common-law couples alike.
+  This is **only when renewing the visa**, not with the first documents,
+  before you get the visa: common-law couples (procedure 5.2.0009) aren't
+  asked for it until then.
 
 The municipality issues it only to someone registered with it as the payer
 of arnona (municipal tax) for the home. Usually the arnona department issues

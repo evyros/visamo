@@ -70,7 +70,6 @@ describe("buildDocumentList", () => {
       "utilityBills",
       "governmentServices",
       "foreignHealthInsurance",
-      "ishurToshav",
       "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof",
@@ -167,9 +166,10 @@ describe("buildDocumentList", () => {
     expect(keys("bothAbroad")).not.toContain("governmentServices");
   });
 
-  it("asks for the municipality confirmation only when at least one of them lives in Israel", () => {
+  it("asks for the municipality confirmation only from married couples, when at least one of them lives in Israel", () => {
     expect(keys("foreignAbroad")).toContain("ishurToshav");
-    expect(find("foreignAbroad", "ishurToshav")?.because).toEqual(["israeliInIsrael"]);
+    expect(find("foreignAbroad", "ishurToshav")?.because).toEqual(["married", "israeliInIsrael"]);
+    expect(keys("commonLawLivingTogether")).not.toContain("ishurToshav");
     expect(keys("bothAbroad")).not.toContain("ishurToshav");
     expect(keys("neverLivedTogetherBothAbroad")).not.toContain("ishurToshav");
   });

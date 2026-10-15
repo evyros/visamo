@@ -23,8 +23,7 @@ for when at least one of you lives in Israel.
   driver's license or a vehicle license; or a confirmation of unemployment
   benefits.
 
-The municipality's confirmation of your center of life (Ishur Toshav), and
-the children's school records, are documents of their own.
+The children's school records are a document of their own.
 
 ## What it should include
 

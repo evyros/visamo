@@ -3,6 +3,25 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v32 — 2026-10-15
+
+**What changed:** `ishurToshav` (the municipality confirmation of your center
+of life) is now asked for only from married couples, still only when at least
+one partner lives in Israel
+(`{ all: [married, { any: [israeliInIsrael, foreignInIsrael] }] }`).
+
+**Why:** The document is an item on the AS/6 checklist, which is the married
+couples' application. Procedure 5.2.0009 (common-law) has no such item: its
+§ד.2.ח, word for word the same as 5.2.0008's, only names services from
+government institutions, including the municipality, among the proofs of a
+center of life (`governmentServices`). The AIC thread on it, too, calls it an
+appendix to AS/6.
+
+**Source:** AS/6 checklist; 5.2.0008 §ד.2.ח; 5.2.0009 §ד.2.ח.
+
+**Lists that changed:** commonLawLivingTogether, commonLawApart,
+commonLawForeignDivorced: -ishurToshav.
+
 ## v31 — 2026-10-04
 
 **What changed:** `ishurToshav` (the municipality confirmation of your center

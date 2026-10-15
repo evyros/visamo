@@ -166,7 +166,7 @@ const documentGroups: { id: DocumentGroupId; items: { id: DocumentId; when?: (a:
       { id: "bills", when: (a) => a.livedTogether },
       { id: "israeliLease", when: (a) => !a.livedTogether && homeInIsrael(a) },
       { id: "israeliBills", when: (a) => !a.livedTogether && homeInIsrael(a) },
-      { id: "ishurToshav", when: homeInIsrael },
+      { id: "ishurToshav", when: (a) => married(a) && homeInIsrael(a) },
       { id: "governmentServices", when: homeInIsrael },
       { id: "sharedBankAccount", when: married },
       { id: "bankStatements", when: commonLaw },

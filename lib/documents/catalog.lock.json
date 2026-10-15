@@ -1,6 +1,6 @@
 {
-  "version": 31,
-  "fingerprint": "7ab4f068a4bba423fa58dca36e0ca00d3b39c6a7879aaf75b094a46d6f1f2064",
+  "version": 32,
+  "fingerprint": "defae001add1c02d28010aa55d99bec33dcdbca14706821cfc97de2d7198bed5",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -121,7 +121,6 @@
       "utilityBills",
       "governmentServices",
       "foreignHealthInsurance",
-      "ishurToshav",
       "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof"
@@ -144,7 +143,6 @@
       "israeliUtilityBills",
       "governmentServices",
       "foreignHealthInsurance",
-      "ishurToshav",
       "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof"
@@ -609,7 +607,6 @@
       "utilityBills",
       "governmentServices",
       "foreignHealthInsurance",
-      "ishurToshav",
       "bankStatements",
       "israeliIncomeProof",
       "foreignIncomeProof"

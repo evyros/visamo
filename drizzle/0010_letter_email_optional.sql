@@ -1,0 +1,1 @@
+ALTER TABLE "letter_request" ALTER COLUMN "email" DROP NOT NULL;

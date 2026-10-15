@@ -44,6 +44,14 @@
       "title": "Contact & Support",
       "description": "Questions, technical issues or refund requests: send the Visamo team a message."
     },
+    "letters": {
+      "title": "Recommendation Letters for the Israel Partner Visa: Free Tool",
+      "description": "Get the recommendation letters for your partner visa from Israeli friends and family: one link, signed letters with a copy of their ID card, emailed to you as PDFs. Free."
+    },
+    "letterPage": {
+      "title": "Write a recommendation letter",
+      "description": "Write a recommendation letter for a couple applying for the Israel partner visa."
+    },
     "about": {
       "title": "The story behind Visamo",
       "description": "The story behind Visamo: two years of forms, answers and bureaucracy on the way to my wife's partner visa in Israel."
@@ -77,11 +85,10 @@
     "product": {
       "title": "Product",
       "howItWorks": "How it works",
-      "features": "Features",
       "guides": "Guides",
       "process": "Partner visa, step by step",
-      "pricing": "Pricing",
-      "login": "Log in"
+      "letters": "Recommendation letters",
+      "pricing": "Pricing"
     },
     "trust": {
       "title": "Trust",
@@ -820,6 +827,231 @@
       "hours": "Support hours"
     }
   },
+  "letters": {
+    "tool": {
+      "eyebrow": "Free tool",
+      "title": "Recommendation letters for your partner visa, from your friends",
+      "intro": "No need to explain to each friend what to write and how. Send one link: each friend writes their letter with a short guide, signs on screen and adds a photo of their ID card, and you get a signed PDF in Hebrew, in the right format.",
+      "form": {
+        "title": "Create a link for your friends",
+        "name1": "Your first name",
+        "name2": "Your partner's first name",
+        "namesHint": "As they'll appear in the letters.",
+        "email": "Email for the letters (optional)",
+        "emailHint": "Your friends' letters will be sent to this address. Without it, each friend downloads their letter and sends it to you themselves.",
+        "submit": "Create my link",
+        "sending": "Creating…",
+        "errors": {
+          "required": "This field is required.",
+          "name": "Enter a name in letters only.",
+          "email": "Enter a valid email address.",
+          "verify": "We couldn't confirm you're not a bot. Please try again.",
+          "failed": "Something went wrong. Please try again."
+        }
+      },
+      "share": {
+        "title": "Here's your link",
+        "body": "Send it to Israeli friends and family who know you as a couple. Each of them writes a letter of their own.",
+        "copy": "Copy link",
+        "copied": "Copied",
+        "sentTo": "Letters will be sent to {email}.",
+        "noEmail": "Letters won't be emailed to you: each friend downloads their letter and sends it to you themselves.",
+        "edit": "Change",
+        "addEmail": "Add an email",
+        "tip": "Ask at least 3 people, from different circles: close family, further family and friends.",
+        "inviteTitle": "Or we can email it to them",
+        "inviteLabel": "A friend's or family member's email",
+        "inviteSubmit": "Send",
+        "inviteSending": "Sending…",
+        "invited": "Sent to {email}.",
+        "inviteErrors": {
+          "email": "Enter a valid email address.",
+          "limit": "You've emailed as many people as this link allows. Copy the link and send it to the rest yourself.",
+          "failed": "The email wasn't sent. Please try again."
+        }
+      },
+      "benefits": {
+        "title": "What it does for you",
+        "items": [
+          {
+            "icon": "compose",
+            "title": "Your friends know what to write",
+            "body": "A short guide shows them what the letter should cover, so you don't have to explain it to each one."
+          },
+          {
+            "icon": "pdf",
+            "title": "A complete letter, in the right format",
+            "body": "Addressed to Misrad Hapnim, signed and dated, with the writer's details and a copy of their ID card. All in one PDF."
+          },
+          {
+            "icon": "people",
+            "title": "Easy for your friends",
+            "body": "From any phone, with no sign-up, and they sign on screen. No printing or scanning."
+          }
+        ]
+      },
+      "how": {
+        "title": "How it works",
+        "steps": [
+          {
+            "title": "Create your link",
+            "body": "Enter both your names and the email the letters should go to."
+          },
+          {
+            "title": "Send it to your friends",
+            "body": "Copy the link, or let us email it."
+          },
+          {
+            "title": "Get the letters",
+            "body": "Each letter comes as a PDF: the signed letter and a copy of the writer's ID card. It's emailed to you, or your friend downloads it and sends it to you."
+          }
+        ]
+      },
+      "privacy": {
+        "title": "We don't keep the letters",
+        "body": "Each letter and ID card photo is used only to create the PDF. Visamo doesn't store them: the PDF is emailed to you, or downloaded by the writer, and that's the only copy."
+      },
+      "faq": {
+        "title": "Questions couples ask",
+        "items": [
+          {
+            "q": "What should a recommendation letter include?",
+            "a": "You need at least 3 letters, each from a different Israeli family member or friend who knows you as a couple, in Hebrew. Each one says who the writer is and how they know you, when they first met you as a couple, and what they've seen of your life together, usually in 2–3 paragraphs. It's signed and dated, with the writer's contact details and a copy of their Teudat Zehut. If you haven't lived together, the letters should say that the writer saw you together."
+          },
+          {
+            "q": "Who should write a letter?",
+            "a": "Israeli family members and friends who know you as a couple. It's recommended to ask different kinds of people: close family, further family, and friends from different circles."
+          },
+          {
+            "q": "Does the letter have to be in Hebrew?",
+            "a": "Yes. Your friends write their answers in Hebrew, and the rest of the letter is in Hebrew too."
+          },
+          {
+            "q": "What does each friend need?",
+            "a": "About 10 minutes, their Teudat Zehut to photograph, and a finger or mouse to sign on screen. They don't need an account."
+          },
+          {
+            "q": "Do you write the letter for them?",
+            "a": "No. Each friend writes the letter in their own words, with a short guide to what it should cover. The office reads many of these letters, and each one should sound like the person who wrote it."
+          },
+          {
+            "q": "Where do the letters go?",
+            "a": "To the email address you enter when you create the link. The writer can also download a copy."
+          }
+        ]
+      }
+    },
+    "writer": {
+      "intro": {
+        "eyebrow": "Recommendation letter",
+        "title": "{names} asked you for a recommendation letter",
+        "body": "They're applying for the partner visa and need letters from Israelis who know them as a couple. Your letter helps show the Population and Immigration Authority that their relationship is real.",
+        "needsTitle": "What you'll need",
+        "needs": [
+          "About 10 minutes",
+          "Your Teudat Zehut, to photograph or as a scan",
+          "A finger or mouse, to sign"
+        ],
+        "hebrew": "Write your answers in Hebrew: the letter is submitted in Hebrew.",
+        "start": "Start writing",
+        "draft": "Your answers are saved only on this device, until you send the letter. Visamo doesn't save your letter, the photo of your ID card or your signature."
+      },
+      "step": "Step {n} of {total}",
+      "letter": {
+        "title": "Write your letter",
+        "body": "Write in Hebrew, in your own words. The address at the top and your details at the bottom are already in the letter.",
+        "guideTitle": "What to write about",
+        "guide": [
+          "Who you are and how you know them: a family member or a friend, and since when.",
+          "When you first met them as a couple.",
+          "What you've seen of their life together: visits to their home, holidays, trips, everyday life.",
+          "Events where you saw them together, and roughly when."
+        ],
+        "length": "Usually 2–3 paragraphs.",
+        "label": "Your letter",
+        "placeholder": "Write your letter here…",
+        "count": "{n}/{max}",
+        "errors": {
+          "required": "Write your letter here.",
+          "tooShort": "Add a little more - at least 2 paragraphs.",
+          "tooLong": "The letter is too long. Please shorten it."
+        }
+      },
+      "back": "Back",
+      "next": "Continue",
+      "details": {
+        "title": "Your details",
+        "body": "They go under your signature, so the office can contact you if needed.",
+        "name": "Full name",
+        "idNumber": "ID number",
+        "phone": "Phone",
+        "errors": {
+          "name": "Enter your full name, in letters only.",
+          "idNumber": "Enter a valid Israeli ID number (9 digits).",
+          "phone": "Enter a valid phone number."
+        }
+      },
+      "idCard": {
+        "title": "A photo of your ID card",
+        "body": "The office asks for a copy of the Teudat Zehut of everyone who writes a letter. Photograph the card itself, without the sefach, or upload a scan of it as a PDF.",
+        "choose": "Take a photo or choose a file",
+        "replace": "Choose another file",
+        "processing": "Preparing the photo…",
+        "check": "Make sure the whole card is in the photo and every detail can be read.",
+        "pdfNote": "Only the file's first page goes into the letter, as it is.",
+        "open": "Open",
+        "alt": "Your ID card",
+        "errors": {
+          "required": "Add a photo of your ID card.",
+          "type": "We couldn't read this file. Please use a photo (JPG or PNG) or a PDF.",
+          "tooLarge": "This file is too large. A PDF can be up to 3.5MB, or take a photo of the card instead."
+        }
+      },
+      "sign": {
+        "title": "Sign the letter",
+        "body": "Sign in the box with your finger or mouse.",
+        "clear": "Clear",
+        "label": "Signature",
+        "errors": {
+          "required": "Please sign in the box."
+        }
+      },
+      "preview": {
+        "title": "Check your letter",
+        "body": "This is the letter exactly as it will be sent. To change something, go back.",
+        "idCard": "Page 2: a photo of your ID card",
+        "edit": "Edit"
+      },
+      "actions": {
+        "download": "Download PDF",
+        "preparing": "Preparing…",
+        "send": "Send to {names}",
+        "sending": "Sending…",
+        "sendTo": "It will be emailed to {email}.",
+        "downloadOnly": "Download the letter and send it to {names} yourself, for example on WhatsApp or by email.",
+        "disclaimerTitle": "We don't save your letter.",
+        "disclaimer": "Your letter and the photo of your ID card are used only to create this PDF. Visamo doesn't keep a copy. If you send it, it goes straight to {names} by email.",
+        "disclaimerDownload": "Your letter and the photo of your ID card are used only to create this PDF. Visamo doesn't keep a copy.",
+        "errors": {
+          "invalid": "Something in the letter is missing or incorrect. Go back and check each step.",
+          "image": "We couldn't use one of the files. Go back and add the ID card or the signature again.",
+          "verify": "We couldn't confirm you're not a bot. Please try again.",
+          "limit": "This link has reached its limit of letters. Ask {names} for a new one.",
+          "notFound": "This link no longer works. Ask {names} for a new one.",
+          "failed": "Something went wrong. Please try again."
+        }
+      },
+      "done": {
+        "title": "Thank you!",
+        "body": "Your letter is on its way to {names}.",
+        "bodyDownloaded": "The file is saved on your device. Now send it to {names}.",
+        "copy": "Download a copy",
+        "promoTitle": "Know another couple going through this?",
+        "promoBody": "Visamo helps couples prepare their partner visa file, document by document, and checks each one before they submit it.",
+        "promoCta": "See how Visamo works"
+      }
+    }
+  },
   "notFound": {
     "title": "Page not found",
     "body": "The page you were looking for doesn't exist or has moved.",
@@ -1346,6 +1578,20 @@
         "heading": "We got your message",
         "body": "Your ticket number is {ticket}. We'll reply to this email address during support hours. To add details, reply to this email.",
         "ignore": "If you didn't contact Visamo, someone may have typed your email address by mistake. You can ignore this email."
+      },
+      "letter": {
+        "subject": "{writer}'s recommendation letter",
+        "heading": "{writer}'s recommendation letter has arrived",
+        "body": "It's attached as a PDF: the signed letter and a copy of the writer's ID card. Check the details, and add it to your application with your other letters. Visamo doesn't keep a copy, so save the file.",
+        "button": "Prepare your whole file with Visamo",
+        "ignore": "If you didn't ask for recommendation letters on Visamo, someone may have typed your email by mistake. You can delete this email."
+      },
+      "letterInvite": {
+        "subject": "{names} asked you for a recommendation letter",
+        "heading": "{names} asked you for a recommendation letter",
+        "body": "They're applying for the Israel partner visa and need recommendation letters from friends and family who know them as a couple. It takes about 10 minutes: write a few paragraphs, photograph your ID card and sign, and the letter is sent to them.",
+        "button": "Write the letter",
+        "ignore": "If you got this email by mistake, you can ignore it."
       }
     },
     "documents": {
@@ -1783,7 +2029,8 @@
       "ask": {
         "label": "Ask about this document",
         "fix": "Ask how to fix this"
-      }
+      },
+      "askFriends": "Help your friend write the letter"
     },
     "overview": {
       "invite": {

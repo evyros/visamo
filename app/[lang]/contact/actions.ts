@@ -1,10 +1,10 @@
 "use server";
 
-import { headers } from "next/headers";
 import { isLocale, locales } from "@/i18n/config";
 import { loadMessages } from "@/i18n/messages";
 import { CONTACT_MAX_FILES, CONTACT_MAX_TOTAL_BYTES, isContactAttachment, isPhone } from "@/lib/contact";
 import { sendSupportTicket, sendTicketConfirmation } from "@/lib/email";
+import { passedTurnstile } from "@/lib/turnstile";
 
 // The contact form posts here. After a Turnstile check, the message goes by
 // email to the support inbox, with the sender's email as Reply-To, and the
@@ -86,31 +86,6 @@ export async function sendContactMessage(data: FormData): Promise<ContactResult>
     console.error("sendContactMessage: confirmation", ticket, error);
   }
   return { ok: true, ticket };
-}
-
-/** Cloudflare's server-side check of the widget's token. Each token works once. */
-async function passedTurnstile(token: string) {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) {
-    console.error("sendContactMessage: TURNSTILE_SECRET_KEY is not set");
-    return false;
-  }
-  if (!token) return false;
-
-  const body = new FormData();
-  body.set("secret", secret);
-  body.set("response", token);
-  const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim();
-  if (ip) body.set("remoteip", ip);
-
-  try {
-    const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
-    const result = (await response.json()) as { success?: boolean };
-    return result.success === true;
-  } catch (error) {
-    console.error("sendContactMessage: Turnstile", error);
-    return false;
-  }
 }
 
 /** The image type from the file's signature, or null for anything else. */

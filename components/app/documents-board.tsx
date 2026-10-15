@@ -50,6 +50,8 @@ export type DocumentItem = {
   points: string[];
   /** The Misrad Hapnim form to fill in, for the forms themselves. */
   form?: { name: string; url: string };
+  /** A website tool that helps get it: the recommendation letters tool. */
+  tool?: { label: string; url: string };
   /** What to prepare before uploading: certification (with its exemption), translation, signing. */
   requirements: Requirement[];
   /** Only if it applies to the couple (the description says when). */
@@ -576,30 +578,49 @@ function DocumentCard({
   const bodyId = useId();
   const uploaded = files.length > 0;
   const fresh = !!freshResult(check, files);
+  // The tool's pill shows on the closed card until something's uploaded,
+  // then moves inside it.
+  const toolOnTop = item.tool && !uploaded && pending.length === 0 ? item.tool : null;
 
   return (
     <div className="rounded-card border border-line-200 bg-white">
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-controls={bodyId}
-        onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-start gap-3 rounded-card p-4 text-start focus-visible:outline-2 focus-visible:outline-teal-600 sm:p-5"
-      >
-        <span className="min-w-0 flex-1">
-          <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+      {/* The header opens and closes the card: its button's ::after covers the
+          whole row, arrow included. The tool's pill sits above that layer, so
+          clicking it only opens the tool. The pill shares the title's row and
+          wraps under it when there's no room. */}
+      <div className="relative flex items-start gap-3 p-4 sm:p-5">
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2">
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls={bodyId}
+            onClick={() => setOpen((o) => !o)}
+            className="flex flex-wrap items-center gap-x-3 gap-y-1 text-start after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-teal-600"
+          >
             <span className="font-semibold text-navy-900">{item.title}</span>
             <Status t={t} state={state} optional={item.optional} />
-          </span>
-        </span>
-        {/* In a box one text line tall, centered on the title's first line. */}
-        <span className="flex h-[1lh] shrink-0 items-center">
+          </button>
+          {toolOnTop && (
+            <a
+              href={toolOnTop.url}
+              {...newTab}
+              className="relative z-10 inline-flex items-center gap-1.5 rounded-full bg-teal-100 px-3.5 py-1.5 text-sm font-semibold text-teal-700 transition-colors hover:bg-teal-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+            >
+              <Icon name="send" className="size-4 shrink-0" />
+              {toolOnTop.label}
+            </a>
+          )}
+        </div>
+        {/* In a box one text line tall, centered on the title's first line. It
+            lets clicks through to the header's button: rotated, it would
+            otherwise sit above it. */}
+        <span aria-hidden="true" className="pointer-events-none flex h-[1lh] shrink-0 items-center">
           <Icon
             name="chevronDown"
             className={`size-5 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
           />
         </span>
-      </button>
+      </div>
 
       <div id={bodyId} hidden={!open}>
         <div className="border-t border-line-200 px-4 pt-4 pb-5 sm:px-5">
@@ -619,6 +640,16 @@ function DocumentCard({
             >
               <Icon name="pdf" className="size-5 shrink-0" />
               {format(t.form, { form: item.form.name })}
+            </a>
+          )}
+          {item.tool && !toolOnTop && (
+            <a
+              href={item.tool.url}
+              {...newTab}
+              className="mt-3 inline-flex items-center gap-1 text-[15px] font-semibold text-teal-700 hover:underline"
+            >
+              <Icon name="send" className="size-5 shrink-0" />
+              {item.tool.label}
             </a>
           )}
           {item.requirements.length > 0 && (

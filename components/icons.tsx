@@ -173,6 +173,13 @@ const paths = {
     </>
   ),
   send: <path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z" />,
+  copy: (
+    <>
+      <rect x="8.5" y="8.5" width="12" height="12" rx="2" />
+      <path d="M15.5 8.5V5.5a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3" />
+    </>
+  ),
+  pen: <path d="M15.5 4.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L15.5 4.5Z" />,
   arrowDown: <path d="M12 5v14m0 0-5-5m5 5 5-5" />,
   chevronDown: <path d="m6 9 6 6 6-6" />,
   info: (

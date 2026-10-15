@@ -14,6 +14,7 @@ const pages: { path: string; updated?: string }[] = [
   // The versions for couples who haven't lived together point to these (canonicalAnswers).
   ...allAnswers.filter((a) => a.livedTogether).map((a) => ({ path: trackPath(a), updated: processUpdated })),
   ...[
+    "/tools/recommendation-letter",
     "/pricing",
     "/security",
     "/about",

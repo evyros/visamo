@@ -12,7 +12,7 @@ import { documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
 import { checksRunningLow } from "@/lib/products";
 import { requireCase } from "@/lib/session";
-import { contactUrl } from "@/lib/site";
+import { contactUrl, localePath, site } from "@/lib/site";
 import {
   DocumentsBoard,
   type DocumentGroup,
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 // The case's documents, grouped by whose they are, with every text worked
 // out here so the board gets plain strings.
 export default async function DocumentsPage() {
-  const { caseId } = await requireCase();
+  const { caseId, user } = await requireCase();
   const [{ people, list }, files, checks, balance, messages, locale] = await Promise.all([
     caseDocuments(caseId),
     caseFiles(caseId),
@@ -49,6 +49,14 @@ export default async function DocumentsPage() {
     foreign: format(t.groups.foreign, { name: foreign }),
     children: t.groups.children,
   };
+
+  // The recommendation letters tool, on the website, with the couple's first names and email filled in.
+  const firstName = (name: string) => name.trim().split(/\s+/)[0] ?? "";
+  const letterTool = new URL(localePath(locale, "/tools/recommendation-letter"), site.url);
+  letterTool.searchParams.set("n1", firstName(israeli));
+  letterTool.searchParams.set("n2", firstName(foreign));
+  letterTool.searchParams.set("email", user.email);
+  letterTool.searchParams.set("from", "app");
 
   const groups: DocumentGroup[] = ownerOrder
     .map((owner) => ({
@@ -86,6 +94,7 @@ export default async function DocumentsPage() {
             description: format(text.description, { country }),
             points: d.points.map((point) => catalog.points[point]),
             ...(d.form && { form: { name: t.formNames[d.form], url: formUrls[d.form] } }),
+            ...(d.id === "recommendationLetters" && { tool: { label: t.askFriends, url: letterTool.toString() } }),
             requirements,
             optional: d.optional,
             check: {

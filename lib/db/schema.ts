@@ -18,6 +18,8 @@ import type { CheckFinding, CheckRating } from "../checks/result";
 import type { DocumentCheck } from "../documents/checks";
 import type { CreditKind, CreditReason } from "../credits";
 import type { CaseEvent } from "../events";
+import type { LetterEvent } from "../letters/events";
+import type { LetterVia } from "../letters/tracking";
 import type { PaymentMethod, ProductId } from "../products";
 import type { StageDates } from "../stages";
 import type { AccessDuration, AccessReason } from "../support-access-options";
@@ -693,4 +695,60 @@ export const chatMessage = pgTable(
     catalogVersion: integer("catalog_version"),
   },
   (table) => [index("chat_message_chat_id_idx").on(table.chatId, table.createdAt)],
+);
+
+// ── Recommendation letters ───────────────────────────────────────────────────
+
+/**
+ * A couple's request for recommendation letters, made on the website
+ * (lib/letters/requests.ts). Its id is the link they share with friends. The
+ * letters themselves are never stored: each is built, then downloaded or
+ * emailed to `email` (when there is one), and only counted here.
+ */
+export const letterRequest = pgTable("letter_request", {
+  /** 16 random bytes, base64url: the friends' link. */
+  id: text("id").primaryKey(),
+  /** Both partners, as the couple wrote them, in the order the letter names them. */
+  names: text("names").array().notNull(),
+  /** Where letters are emailed. Lowercased. Null when the couple gave none: friends can then only download the letter. */
+  email: text("email"),
+  /** The couple's language, for the emails to them. */
+  locale: text("locale").notNull(),
+  /** How the couple got to the tool: "app", from the documents page's link, or "site". */
+  source: text("source").notNull().default("site"),
+  /** Invite emails sent to friends from the request page, and letters emailed to the couple. */
+  invitesSent: integer("invites_sent").notNull().default(0),
+  lettersSent: integer("letters_sent").notNull().default(0),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+/**
+ * What happened with a request, for the admin panel's stats
+ * (lib/letters/events.ts): the invites the couple had us email, and each
+ * friend opening the link, downloading the letter and sending it, with the
+ * writer's details. Never the letter, the ID card or the signature.
+ */
+export const letterEvent = pgTable(
+  "letter_event",
+  {
+    id: text("id").primaryKey(),
+    requestId: text("request_id")
+      .notNull()
+      .references(() => letterRequest.id, { onDelete: "cascade" }),
+    /** A LetterEvent type from lib/letters/events.ts. */
+    type: text("type").notNull().$type<LetterEvent["type"]>(),
+    /** The event's details, shaped by its type. */
+    data: jsonb("data").notNull().$type<LetterEvent["data"]>(),
+    /** The friend's browser: a random id it keeps, to count writers without knowing who they are. Null for the couple's events. */
+    visitor: text("visitor"),
+    /** How the friend got the link: from an invite email or not. Null for the couple's events. */
+    via: text("via").$type<LetterVia>(),
+    /** For events counted once per friend (the page opened): a second insert with the same key does nothing. */
+    key: text("key"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [
+    index("letter_event_request_id_idx").on(table.requestId, table.createdAt),
+    uniqueIndex("letter_event_key_idx").on(table.requestId, table.key),
+  ],
 );

@@ -57,6 +57,27 @@
       "when": 1791927940419,
       "tag": "0007_impersonation",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792079965604,
+      "tag": "0008_letter_requests",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792085658797,
+      "tag": "0009_letter_events",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1792086098336,
+      "tag": "0010_letter_email_optional",
+      "breakpoints": true
     }
   ]
 }

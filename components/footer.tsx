@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { format, getDictionary, getLocale } from "@/i18n/dictionaries";
 import { processPath } from "@/content/process";
-import { localePath, loginUrl, site } from "@/lib/site";
+import { localePath, site } from "@/lib/site";
 import { Icon } from "./icons";
 import { Logo } from "./logo";
 import { Container } from "./ui";
@@ -17,11 +17,10 @@ export async function Footer() {
       title: f.product.title,
       links: [
         { href: `${p("/")}#how-it-works`, label: f.product.howItWorks },
-        { href: `${p("/")}#features`, label: f.product.features },
         { href: p("/guide"), label: f.product.guides },
         { href: p(processPath), label: f.product.process },
+        { href: p("/tools/recommendation-letter"), label: f.product.letters },
         { href: p("/pricing"), label: f.product.pricing },
-        { href: loginUrl(locale), label: f.product.login },
       ],
     },
     {

@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
     // run time (lib/knowledge-base.ts).
     "/api/chat": ["./lib/knowledge/**/*.md"],
     "/api/documents/check": ["./lib/knowledge/**/*.md"],
+    // The recommendation letter's fonts (lib/letters/pdf.ts), read at run time.
+    "/api/letters/**": ["./assets/fonts/Rubik-*.ttf"],
   },
 };
 

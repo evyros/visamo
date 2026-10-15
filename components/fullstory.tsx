@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { FullStory as FS, init, isInitialized } from "@fullstory/browser";
 
@@ -12,18 +13,32 @@ import { FullStory as FS, init, isInitialized } from "@fullstory/browser";
 // their account with their email and name. The website is static and passes
 // no one; the shared cookie still ties its pages to the account once the
 // visitor has signed in to the app.
+//
+// It never records a recommendation letter page (app/[lang]/letter/[token]):
+// it would capture the letter as it's typed and the writer's ID card, which
+// Visamo promises not to keep. Recording stops there and starts again after.
 
 const ORG_ID = process.env.NEXT_PUBLIC_FULLSTORY_ORG_ID ?? "";
 const ENABLED = process.env.NODE_ENV === "production" && ORG_ID !== "";
 
 export type FullStoryUser = { id: string; email: string; name: string };
 
+/** Website pages FullStory must not see, after the language segment. */
+const privatePage = (pathname: string) => /^\/[^/]+\/letter\//.test(pathname);
+
 export function FullStory({ user }: { user?: FullStoryUser | null }) {
   const identified = useRef(false);
+  const pathname = usePathname();
+  const hidden = privatePage(pathname);
 
   useEffect(() => {
-    if (ENABLED && !isInitialized()) init({ orgId: ORG_ID });
-  }, []);
+    if (!ENABLED) return;
+    if (!isInitialized()) {
+      if (!hidden) init({ orgId: ORG_ID });
+      return;
+    }
+    FS(hidden ? "shutdown" : "restart");
+  }, [hidden]);
 
   const id = user?.id;
   const email = user?.email;

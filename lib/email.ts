@@ -2,7 +2,8 @@ import "server-only";
 import { Resend } from "resend";
 import { locales, type Locale } from "@/i18n/config";
 import { format, loadMessages } from "@/i18n/messages";
-import { site } from "@/lib/site";
+import { letterFileName } from "@/lib/letters/text";
+import { signupUrl, site } from "@/lib/site";
 
 // Transactional emails, sent through Resend in the recipient's language. They
 // share one layout: a heading, a paragraph, a button with the link spelled out
@@ -14,6 +15,12 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 const from = process.env.EMAIL_FROM || "Visamo <no-reply@visamo.co.il>";
 
 type Copy = { subject: string; heading: string; body: string; button?: string; ignore: string };
+type Attachment = { filename: string; content: Buffer; contentType: string };
+
+/** A message's copy with its `{placeholder}`s filled in. */
+function formatCopy<T extends Record<string, string>>(copy: T, values: Record<string, string>) {
+  return Object.fromEntries(Object.entries(copy).map(([key, value]) => [key, format(value, values)])) as T;
+}
 
 const escape = (value: string) =>
   value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -25,6 +32,7 @@ async function sendEmail({
   locale,
   copy,
   replyTo,
+  attachments,
 }: {
   to: string;
   url?: string;
@@ -32,9 +40,11 @@ async function sendEmail({
   locale: Locale;
   copy: Copy;
   replyTo?: string;
+  attachments?: Attachment[];
 }) {
   if (!resend) {
-    console.info(`\n[email] ${copy.subject} → ${to}\n${url ?? code ?? copy.body}\n`);
+    const files = attachments?.map((a) => `\n[attachment] ${a.filename} (${a.content.length} bytes)`).join("") ?? "";
+    console.info(`\n[email] ${copy.subject} → ${to}\n${url ?? code ?? copy.body}${files}\n`);
     return;
   }
 
@@ -68,7 +78,7 @@ async function sendEmail({
 </html>`;
   const text = [copy.heading, copy.body, url, code, copy.ignore].filter(Boolean).join("\n\n");
 
-  const { error } = await resend.emails.send({ from, to, replyTo, subject: copy.subject, html, text });
+  const { error } = await resend.emails.send({ from, to, replyTo, subject: copy.subject, html, text, attachments });
   if (error) throw new Error(`Resend: ${error.message}`);
 }
 
@@ -107,7 +117,7 @@ export async function sendInviteEmail({
 }) {
   const t = (await loadMessages(locale)).app.email.invite;
   const values = { name: inviter, email: to };
-  const copy = Object.fromEntries(Object.entries(t).map(([key, value]) => [key, format(value, values)])) as Copy;
+  const copy = formatCopy(t, values);
   await sendEmail({ to, url, locale, copy });
 }
 
@@ -150,7 +160,7 @@ export async function sendSupportTicket({
   fields: [string, string][];
   message: string;
   replyTo: string;
-  attachments: { filename: string; content: Buffer; contentType: string }[];
+  attachments: Attachment[];
 }) {
   const subject = `[${ticket}] ${fields.find(([label]) => label === "Topic")?.[1] ?? "Contact form"}`;
   if (!resend) {
@@ -192,6 +202,49 @@ export async function sendSupportTicket({
  */
 export async function sendTicketConfirmation({ to, ticket, locale }: { to: string; ticket: string; locale: Locale }) {
   const t = (await loadMessages(locale)).app.email.ticket;
-  const copy = Object.fromEntries(Object.entries(t).map(([key, value]) => [key, format(value, { ticket })])) as Copy;
+  const copy = formatCopy(t, { ticket });
   await sendEmail({ to, locale, copy, replyTo: site.supportEmail });
+}
+
+/**
+ * A friend's recommendation letter, to the couple who asked for it
+ * (app/api/letters/[id]/send), attached. The PDF isn't stored anywhere, and
+ * Resend's logs are off, so this email is the only copy.
+ */
+export async function sendLetterEmail({
+  to,
+  locale,
+  writer,
+  pdf,
+}: {
+  to: string;
+  locale: Locale;
+  writer: string;
+  pdf: Uint8Array;
+}) {
+  const copy = formatCopy((await loadMessages(locale)).app.email.letter, { writer });
+  await sendEmail({
+    to,
+    url: signupUrl(locale),
+    locale,
+    copy,
+    attachments: [
+      {
+        filename: letterFileName(writer),
+        content: Buffer.from(pdf),
+        contentType: "application/pdf",
+      },
+    ],
+  });
+}
+
+/**
+ * Asks a friend to write a recommendation letter, with the link to write it.
+ * In Hebrew: the writers are Israelis. Replies go to the couple. Its text is
+ * fixed, with only the couple's names (checked to be names) and the link, so
+ * the form can't be used to send anyone a message of its own.
+ */
+export async function sendLetterInvite({ to, url, names, replyTo }: { to: string; url: string; names: string; replyTo?: string }) {
+  const copy = formatCopy((await loadMessages("he")).app.email.letterInvite, { names });
+  await sendEmail({ to, url, locale: "he", copy, replyTo });
 }

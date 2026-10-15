@@ -1,0 +1,74 @@
+{
+  "CommentListComponentsRootQuery": {
+    "doc_id": "28391659633867197",
+    "variables": {
+      "commentsIntentToken": "CHRONOLOGICAL_UNFILTERED_INTENT_V1",
+      "feedLocation": "POST_PERMALINK_DIALOG",
+      "feedbackSource": 2,
+      "focusCommentID": null,
+      "scale": 2,
+      "useDefaultActor": false,
+      "id": "ZmVlZGJhY2s6MjUzMDkwMTg0MjIwODM4MTM=",
+      "__relay_internal__pv__CometUFICommentAutoTranslationTyperelayprovider": "AUTO_TRANSLATE",
+      "__relay_internal__pv__CometUFICommentAvatarStickerAnimatedImagerelayprovider": false,
+      "__relay_internal__pv__CometUFICommentActionLinksRewriteEnabledrelayprovider": true,
+      "__relay_internal__pv__IsWorkUserrelayprovider": false
+    }
+  },
+  "CommentsListComponentsPaginationQuery": {
+    "doc_id": "39047933001517366",
+    "variables": {
+      "commentsAfterCount": -1,
+      "commentsAfterCursor": "MToxNzkyMDcxODM4OgF_X1usLMGdAKF88u39xJj7nPs6ax8Tb4PE2KLrSeUfyNTkordjJAIm_Oo0bPfHvbKKbsv0O-R6aqM4Iq4bFNfPF68AoepcN80AjTFzUNKzKjiArilmK0hVbEggM9T-sClv_L1hdlGNlaiN5Dy2z4oCgZgiZ9cro-L-z8rci6LF4xhsVoDiBRjhsuAdnzeX9y6-WbsIw3t6PT6UIBNZIqwqzml68xpmrXdYCVnAwCTF8CESXjOMn6ZBwafqzQD8o9SDf_kzuqMboRrb5gwFs7xxhkv1vBCu3ZCznxxA9VLOGDnBs4w0qUaQ1DmjmUno3syK9yEtcGD_fE9nJlBQOM0ky6RtNvyAH0wTWnDRPa8gyf4LVkQgLAn_JaWxDO8nFvFboFgc2AIMqKsgz1VPHMFOG5OFQHnn-aIYlXofJwsW35Dbw5E9amdM0xopEXF0fNzVdw",
+      "commentsBeforeCount": null,
+      "commentsBeforeCursor": null,
+      "commentsIntentToken": "CHRONOLOGICAL_UNFILTERED_INTENT_V1",
+      "feedLocation": "POST_PERMALINK_DIALOG",
+      "focusCommentID": null,
+      "scale": 2,
+      "targetDialect": null,
+      "useDefaultActor": false,
+      "id": "ZmVlZGJhY2s6MjUzMDkwMTg0MjIwODM4MTM=",
+      "__relay_internal__pv__CometUFICommentAutoTranslationTyperelayprovider": "AUTO_TRANSLATE",
+      "__relay_internal__pv__CometUFICommentAvatarStickerAnimatedImagerelayprovider": false,
+      "__relay_internal__pv__CometUFICommentActionLinksRewriteEnabledrelayprovider": true,
+      "__relay_internal__pv__IsWorkUserrelayprovider": false
+    }
+  },
+  "Depth1CommentsListPaginationQuery": {
+    "doc_id": "28470247145991012",
+    "variables": {
+      "clientKey": null,
+      "expansionToken": "MjoxNzkyMDcxODQwOgF_X1XcpWkhBSZ77idWmsob1DouYwwcAo7DBMZTqhYcb4OfWlRPcj5QH8tAJzIcE1NCl9zcOMmEhUhQv_2E5WW_pvpz6jVDZ2HBeqmhm2lISz1iXyIdUpcAPQr8vIzlh2e8cpPSDSnsw8xPkp64XXSDMxqZcimvlR3M8suksP_JR3OWiqLGOymJsTaKLo5DDN0aU_QgIEJJG271ctU4JjvGP2X89xFG7tAtzVoqApJDChjf_HPIprecH_eOH1e9PFhzyBdMf_jlPRgWf9AX1BkZJ_SSItIwrkx2pMwjKa3WCnh7y6L1rRDXrs2Xtl07euEgoYpqaZuIjm7ItWjI204BZFEbGdqnf4gTR9fGMnvQS3y_7BEzW_5DiKP_AvPcXSiY-aTVDHbVhYwez5GAVQgRg_ePSnXEfoll9OJUEUMIIqwuuZXwdz1Uiehny08zQRRucZwkmkmvKCuWh6f3-Yb20F4QIyVepKxxzJ9zbH4fgtepks_91fLB_ZdV2R_Fq6u0lhRVvxhctuqya54X8oCKs2eKPR2eAvz-8qBLS_oww3MX4YMlHyppOhXMFDDy22MDFv9ca7kqTkifQN5gk6PkTCoI0jt_8gboJAvq34N2sYda0Zi8PBolB4kivuDRQUhjnS3Fz-v8iNnK6e2vz6Vg1M51Gg4pVQ-fuJQ4wIKIXyt12_zfQUpCG3beXyqguTttxQ-eeA",
+      "feedLocation": "POST_PERMALINK_DIALOG",
+      "focusCommentID": null,
+      "repliesAfterCount": null,
+      "repliesAfterCursor": null,
+      "repliesBeforeCount": null,
+      "repliesBeforeCursor": null,
+      "scale": 2,
+      "useDefaultActor": false,
+      "id": "ZmVlZGJhY2s6MjUzMDkwMTg0MjIwODM4MTNfMjU4MzI1Nzk4MDMwNjEwMDM=",
+      "__relay_internal__pv__CometUFICommentAutoTranslationTyperelayprovider": "AUTO_TRANSLATE",
+      "__relay_internal__pv__CometUFICommentAvatarStickerAnimatedImagerelayprovider": false,
+      "__relay_internal__pv__CometUFICommentActionLinksRewriteEnabledrelayprovider": true,
+      "__relay_internal__pv__IsWorkUserrelayprovider": false
+    }
+  },
+  "Depth2CommentsListPaginationQuery": {
+    "doc_id": "28907335732287199",
+    "variables": {
+      "clientKey": null,
+      "feedLocation": "POST_PERMALINK_DIALOG",
+      "scale": 2,
+      "subRepliesAfterCount": null,
+      "subRepliesBeforeCount": null,
+      "subRepliesBeforeCursor": null,
+      "useDefaultActor": false,
+      "__relay_internal__pv__CometUFICommentAutoTranslationTyperelayprovider": "AUTO_TRANSLATE",
+      "__relay_internal__pv__CometUFICommentAvatarStickerAnimatedImagerelayprovider": false,
+      "__relay_internal__pv__CometUFICommentActionLinksRewriteEnabledrelayprovider": true,
+      "__relay_internal__pv__IsWorkUserrelayprovider": false
+    }
+  }
+}

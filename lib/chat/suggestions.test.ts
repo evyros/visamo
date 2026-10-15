@@ -13,6 +13,7 @@ const lease = { key: "lease", optional: true, certification: null, mayNeedTransl
 
 const base: SuggestionCase = {
   stage: "preparing",
+  track: ["preparing", "filed", "firstAppointment", "interview"],
   awaitingDecision: false,
   items: [form, letters, police, birth, lease],
   uploaded: new Set(),
@@ -26,6 +27,14 @@ describe("suggestionsFor", () => {
       "Does “birth” need an apostille?",
       t.stage.preparing,
     ]);
+  });
+
+  it("asks about the consulate while preparing, when both live abroad", () => {
+    const c = { ...base, track: ["preparing", "consulate", "entryPermit", "arrived", "filed"] as const };
+    expect(suggestionsFor(c, t, title)[2]).toBe(t.stage.consulate);
+    const ready = { ...c, items: [form], uploaded: new Set(["form"]) };
+    expect(suggestionsFor(ready, t, title)[0]).toBe(t.file.readyConsulate);
+    expect(suggestionsFor({ ...ready, stage: "consulate" }, t, title)[0]).toBe(t.file.complete);
   });
 
   it("puts a check's finding before anything missing", () => {

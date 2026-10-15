@@ -10,11 +10,11 @@ import {
 } from "@/app/(app)/(main)/file/actions";
 import type { Messages } from "@/i18n/messages";
 import type { CaseDetails, PersonInput, RelationshipInput } from "@/lib/case-options";
-import type { Stage } from "@/lib/stages";
+import { stagesOnceStarted, type Stage } from "@/lib/stages";
 import { Notice, SubmitButton } from "./auth-ui";
 import {
-  Choices,
   PersonFields,
+  StageQuestion,
   RelationshipFields,
   personErrors,
   personInput,
@@ -77,7 +77,7 @@ export function DetailsForm({
   locked,
   countries,
   birthCountries,
-  steps,
+  stages,
   started,
 }: {
   t: Labels;
@@ -92,8 +92,8 @@ export function DetailsForm({
   locked: Record<"israeli" | "foreign", string[]>;
   countries: Option[];
   birthCountries: Option[];
-  /** The stages' names. */
-  steps: Record<Stage, string>;
+  /** The stages as answers to where they are now, as onboarding words them. */
+  stages: Record<Stage, string>;
   /** Past the first stage: where they are is where they were when it started. */
   started: boolean;
 }) {
@@ -107,6 +107,8 @@ export function DetailsForm({
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState<string>();
   const [preview, setPreview] = useState<DetailsPreview>();
+  // When the stages change: whether they've filed anything, then where they are (StageQuestion).
+  const [hasStarted, setHasStarted] = useState<boolean | null>(null);
   const [stage, setStage] = useState<Stage | null>(null);
   const [pending, setPending] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -147,17 +149,21 @@ export function DetailsForm({
     if ("error" in result) showError(result.error);
     else {
       setPreview(result);
-      setStage(result.stage);
+      // The current stage, if the new stages still have it.
+      setHasStarted(result.stage && result.stage !== "preparing");
+      setStage(result.stage === "preparing" ? null : result.stage);
     }
   }
 
+  const chosen = !preview?.track ? null : hasStarted ? stage : hasStarted === false ? "preparing" : null;
+
   async function onSave() {
-    if (preview?.track && !stage) {
+    if (preview?.track && !chosen) {
       showError("stage");
       return;
     }
     setPending(true);
-    const result = await saveDetails(payload(), stage);
+    const result = await saveDetails(payload(), chosen);
     if (result.error) {
       setPending(false);
       showError(result.error);
@@ -174,16 +180,21 @@ export function DetailsForm({
           {formError && <Notice>{formError}</Notice>}
           <p>{preview.unchanged ? t.unchanged : t.listNote}</p>
           {preview.track && (
-            <Choices
-              id="stage"
-              legend={t.stageTitle}
-              hint={t.stageNote}
-              options={preview.track.map((s) => ({ value: s, label: steps[s] }))}
-              value={stage}
-              onChange={(s) => {
+            <StageQuestion
+              t={q}
+              legend={q.stageIntro}
+              options={stagesOnceStarted(preview.track).map((s) => ({ value: s, label: stages[s] }))}
+              started={hasStarted}
+              onStarted={(v) => {
+                setHasStarted(v);
+                setFormError(undefined);
+              }}
+              stage={stage}
+              onStage={(s) => {
                 setStage(s);
                 setFormError(undefined);
               }}
+              errors={{}}
             />
           )}
         </div>

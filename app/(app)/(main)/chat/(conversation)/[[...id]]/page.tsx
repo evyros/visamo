@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { todayInIsrael } from "@/i18n/format";
 import { format } from "@/i18n/messages";
-import { awaitingDecision, type Stage } from "@/lib/stages";
+import { awaitingDecision, trackOf, type Stage } from "@/lib/stages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { suggestionsFor } from "@/lib/chat/suggestions";
 import { caseChecks } from "@/lib/checks/store";
@@ -55,6 +55,7 @@ export default async function ChatPage({ params, searchParams }: PageProps<"/cha
     suggestions = suggestionsFor(
       {
         stage: row.stage as Stage,
+        track: trackOf(details),
         awaitingDecision: awaitingDecision(row.stage as Stage, row.stageDates, todayInIsrael()),
         items: listOf(details),
         uploaded: uploadedKeys(files),

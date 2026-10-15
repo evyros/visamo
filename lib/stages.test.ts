@@ -1,7 +1,15 @@
 import { describe, expect, it } from "vitest";
 import type { CaseDetails } from "./case-options";
 import { scenarios } from "./documents/scenarios";
-import { awaitingDecision, onboardingTrack, parseStageDate, sameTrack, trackOf } from "./stages";
+import {
+  awaitingDecision,
+  awaitingEntryPermit,
+  onboardingTrack,
+  parseStageDate,
+  sameTrack,
+  stagesOnceStarted,
+  trackOf,
+} from "./stages";
 
 const { relationship, people } = scenarios.marriedInCyprus;
 const married: CaseDetails = { relationship, israeli: people[0], foreign: people[1] };
@@ -48,8 +56,9 @@ describe("trackOf", () => {
     ]);
   });
 
-  it("starts at the consulate when both live abroad, and files after arriving", () => {
-    expect(trackOf(bothAbroad(married)).slice(0, 6)).toEqual([
+  it("goes to the consulate when both live abroad, and files after arriving", () => {
+    expect(trackOf(bothAbroad(married)).slice(0, 7)).toEqual([
+      "preparing",
       "consulate",
       "entryPermit",
       "arrived",
@@ -105,6 +114,14 @@ describe("parseStageDate", () => {
   });
 });
 
+describe("stagesOnceStarted", () => {
+  it("leaves out preparing: every track starts there", () => {
+    for (const c of [married, partnerAbroad(married), bothAbroad(married)]) expect(trackOf(c)[0]).toBe("preparing");
+    expect(stagesOnceStarted(trackOf(married))[0]).toBe("filed");
+    expect(stagesOnceStarted(trackOf(bothAbroad(married)))[0]).toBe("consulate");
+  });
+});
+
 describe("awaitingDecision", () => {
   it("waits for the decision once the interview's date has passed", () => {
     const dates = { interview: "2026-10-01" };
@@ -112,5 +129,22 @@ describe("awaitingDecision", () => {
     expect(awaitingDecision("interview", dates, "2026-10-02")).toBe(true);
     expect(awaitingDecision("approvedB1", dates, "2026-10-02")).toBe(false);
     expect(awaitingDecision("interview", {}, "2026-10-02")).toBe(false);
+  });
+});
+
+describe("awaitingEntryPermit", () => {
+  const dates = { firstAppointment: "2026-10-01" };
+
+  it("waits for the permit once the first appointment has passed, when the permit comes next", () => {
+    const track = trackOf(partnerAbroad(married));
+    expect(awaitingEntryPermit("firstAppointment", dates, "2026-10-01", track)).toBe(false);
+    expect(awaitingEntryPermit("firstAppointment", dates, "2026-10-02", track)).toBe(true);
+    expect(awaitingEntryPermit("entryPermit", dates, "2026-10-02", track)).toBe(false);
+    expect(awaitingEntryPermit("firstAppointment", {}, "2026-10-02", track)).toBe(false);
+  });
+
+  it("doesn't when the permit isn't next: the partner is in Israel, or they both arrived from abroad", () => {
+    expect(awaitingEntryPermit("firstAppointment", dates, "2026-10-02", trackOf(married))).toBe(false);
+    expect(awaitingEntryPermit("firstAppointment", dates, "2026-10-02", trackOf(bothAbroad(married)))).toBe(false);
   });
 });

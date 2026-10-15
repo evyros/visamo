@@ -4,12 +4,11 @@ import Link from "next/link";
 import { useRef, useState, type FormEvent } from "react";
 import { updateStage } from "@/app/(app)/(main)/file/actions";
 import type { Messages } from "@/i18n/messages";
-import { format } from "@/i18n/messages";
 import { dateKind, isDated, type Stage, type StageDates } from "@/lib/stages";
 import { Icon } from "@/components/icons";
 import { Field, Notice, SubmitButton, describe, inputClass } from "./auth-ui";
 import { Dialog } from "./dialog";
-import { Choices } from "./onboarding-wizard";
+import { Choices, type StageAnswers } from "./onboarding-wizard";
 import { secondaryButton } from "./settings-ui";
 
 // Where the couple is in the process: their track's stages in order
@@ -27,12 +26,15 @@ function localToday() {
 
 export function StageCard({
   t,
+  answers,
   track,
   stage,
   dates,
   shown,
 }: {
   t: Labels;
+  /** The dialog asks where they are now, so it offers the stages as answers, like onboarding. */
+  answers: StageAnswers;
   /** The case's stages, in order. */
   track: Stage[];
   stage: Stage;
@@ -96,7 +98,7 @@ export function StageCard({
       </ol>
 
       <div className="mt-5 space-y-4 border-t border-line-200 pt-4">
-        <UpdateStage t={t} track={track} stage={stage} dates={dates} />
+        <UpdateStage t={t} answers={answers} track={track} stage={stage} dates={dates} />
         <p className="text-[15px] text-slate-700">
           {t.ask.title}{" "}
           {/* Inline, not flex: a flex link sits on the icon's baseline, not the text's. */}
@@ -110,7 +112,19 @@ export function StageCard({
   );
 }
 
-function UpdateStage({ t, track, stage, dates }: { t: Labels; track: Stage[]; stage: Stage; dates: StageDates }) {
+function UpdateStage({
+  t,
+  answers,
+  track,
+  stage,
+  dates,
+}: {
+  t: Labels;
+  answers: StageAnswers;
+  track: Stage[];
+  stage: Stage;
+  dates: StageDates;
+}) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [chosen, setChosen] = useState<Stage>(stage);
   const [day, setDay] = useState("");
@@ -119,7 +133,6 @@ function UpdateStage({ t, track, stage, dates }: { t: Labels; track: Stage[]; st
 
   const dated = isDated(chosen) ? chosen : null;
   const scheduled = !!dated && dateKind(dated) === "scheduled";
-  const back = track.indexOf(chosen) < track.indexOf(stage);
   // A date saved for that stage before comes back.
   const savedDate = (s: Stage) => (isDated(s) && dates[s]) || "";
 
@@ -159,7 +172,7 @@ function UpdateStage({ t, track, stage, dates }: { t: Labels; track: Stage[]; st
           <Choices
             id="stage"
             legend={<span className="sr-only">{t.dialogTitle}</span>}
-            options={track.map((s) => ({ value: s, label: t.steps[s] }))}
+            options={track.map((s) => ({ value: s, label: answers[s] }))}
             value={chosen}
             onChange={choose}
           />
@@ -180,7 +193,6 @@ function UpdateStage({ t, track, stage, dates }: { t: Labels; track: Stage[]; st
             </Field>
           )}
           {!dated && error && <Notice>{error}</Notice>}
-          {back && <Notice tone="warning">{format(t.back, { stage: t.steps[chosen] })}</Notice>}
           <div className="flex flex-wrap items-center gap-3">
             <SubmitButton pending={pending} pendingLabel={t.saving} className="sm:w-auto">
               {t.save}

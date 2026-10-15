@@ -65,7 +65,9 @@ export type Answers = {
   /** Whether they know their branch; the branch list shows only if they do. */
   knowsBranch: boolean | null;
   branch: BranchCode | "";
-  /** Renewal can be chosen, but it stops the wizard: not supported yet. */
+  /** Filed anything yet, with the consulate or Misrad Hapnim. If not, the track's first stage is theirs. */
+  started: boolean | null;
+  /** Asked only once started. Renewal can be chosen, but it stops the wizard: not supported yet. */
   stage: OnboardingStage | typeof RENEWAL | null;
 };
 
@@ -117,6 +119,7 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
     },
     knowsBranch: null,
     branch: "",
+    started: null,
     stage: null,
   });
   const [reached, setReached] = useState(0);

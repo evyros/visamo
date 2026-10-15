@@ -22,7 +22,7 @@ import {
 } from "@/lib/documents/progress";
 import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
-import { awaitingDecision, dateKind, trackOf, type DatedStage, type Stage } from "@/lib/stages";
+import { awaitingDecision, awaitingEntryPermit, dateKind, trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import {
   ActivityCard,
   DetailsAction,
@@ -64,13 +64,20 @@ export default async function FileOverviewPage() {
   const branch = row.branch as BranchCode | null;
 
   // Stage: each date entered, and at an appointment or interview, how far ahead it is,
-  // or once the interview has passed, that they're waiting for the decision.
+  // or once it has passed, what they're waiting for: the decision after the
+  // interview, the entry permit after a first appointment that grants it.
   const shown: Partial<Record<Stage, string>> = {};
-  const waiting = awaitingDecision(stage, row.stageDates, todayInIsrael());
+  const track = trackOf(details);
+  const today = todayInIsrael();
+  const waiting = awaitingDecision(stage, row.stageDates, today)
+    ? t.stage.awaitingDecision
+    : awaitingEntryPermit(stage, row.stageDates, today, track)
+      ? t.stage.awaitingEntryPermit
+      : null;
   for (const [s, day] of Object.entries(row.stageDates) as [DatedStage, string][]) {
     shown[s] = [
       format(t.stage.dates[s].shown, { date: formatDay(day, locale) }),
-      stage === s && dateKind(s) === "scheduled" && (waiting ? t.stage.awaitingDecision : formatDaysUntil(day, locale)),
+      stage === s && dateKind(s) === "scheduled" && (waiting ?? formatDaysUntil(day, locale)),
     ]
       .filter(Boolean)
       .join(" · ");
@@ -116,7 +123,8 @@ export default async function FileOverviewPage() {
       <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <StageCard
           t={t.stage}
-          track={trackOf(details)}
+          answers={messages.app.stages}
+          track={track}
           stage={stage}
           dates={row.stageDates}
           shown={shown}

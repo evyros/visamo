@@ -19,6 +19,8 @@ type Item = {
 
 export type SuggestionCase = {
   stage: Stage;
+  /** The case's stages, in order: what comes after preparing depends on it. */
+  track: readonly Stage[];
   /** At the interview stage, after its date (awaitingDecision in lib/stages.ts). */
   awaitingDecision: boolean;
   /** The document list, in its order. */
@@ -31,8 +33,21 @@ export type SuggestionCase = {
 /** The file, a document, then the stage. `title` names a document by its list key. */
 export function suggestionsFor(c: SuggestionCase, t: Texts, title: (key: string) => string): string[] {
   const missing = c.items.filter((i) => !i.optional && !c.uploaded.has(i.key));
-  const file = missing.length ? t.file.missing : (c.stage === "preparing" || c.stage === "consulate") ? t.file.ready : t.file.complete;
-  return [file, documentQuestion(c, missing, t, title), c.awaitingDecision ? t.stage.awaitingDecision : t.stage[c.stage]];
+  return [fileQuestion(c, missing, t), documentQuestion(c, missing, t, title), stageQuestion(c, t)];
+}
+
+function fileQuestion(c: SuggestionCase, missing: readonly Item[], t: Texts) {
+  if (missing.length) return t.file.missing;
+  if (c.stage !== "preparing") return t.file.complete;
+  // Couples who both live abroad apply at the consulate first, and file with Misrad Hapnim after arriving.
+  return c.track.includes("consulate") ? t.file.readyConsulate : t.file.ready;
+}
+
+function stageQuestion(c: SuggestionCase, t: Texts) {
+  if (c.awaitingDecision) return t.stage.awaitingDecision;
+  // Couples who both live abroad go to the consulate first, not to the branch.
+  if (c.stage === "preparing" && c.track.includes("consulate")) return t.stage.consulate;
+  return t.stage[c.stage];
 }
 
 function documentQuestion(c: SuggestionCase, missing: readonly Item[], t: Texts, title: (key: string) => string) {

@@ -20,7 +20,7 @@ export default async function OnboardingPage({ params }: { params: Promise<{ ste
   const user = await requireUser();
   if (await getOrClaimCaseId(user)) redirect("/");
   const locale = await getAppLocale();
-  const t = (await getAppDictionary()).app.onboarding;
+  const { onboarding: t, stages } = (await getAppDictionary()).app;
 
-  return <OnboardingWizard t={t} {...caseOptions(locale, t)} />;
+  return <OnboardingWizard t={t} stages={stages} {...caseOptions(locale, t)} />;
 }

@@ -3,7 +3,7 @@ import { loadMessages } from "@/i18n/messages";
 import { regionName, todayInIsrael } from "@/i18n/format";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import type { Owner } from "@/lib/documents/catalog";
-import { awaitingDecision, stageDefinitions, trackOf, type DatedStage, type Stage } from "@/lib/stages";
+import { awaitingDecision, awaitingEntryPermit, stageDefinitions, trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
@@ -82,6 +82,12 @@ export async function casePrompt(caseId: string, userId: string) {
       "Interview",
       awaitingDecision(stage, row.stageDates, todayInIsrael())
         ? "its date has passed, so they're waiting for the decision"
+        : null,
+    ],
+    [
+      "First appointment",
+      awaitingEntryPermit(stage, row.stageDates, todayInIsrael(), trackOf(details))
+        ? "its date has passed, so they're waiting for the entry permit"
         : null,
     ],
     ["Their stages, in order", trackOf(details).map((s) => steps[s]).join(" → ")],

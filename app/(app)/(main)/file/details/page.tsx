@@ -55,7 +55,7 @@ export default async function DetailsPage() {
               ],
             }}
             {...caseOptions(locale, o)}
-            steps={messages.app.overview.stage.steps}
+            stages={messages.app.stages}
             started={row.stage !== trackOf(details)[0]}
           />
         </>

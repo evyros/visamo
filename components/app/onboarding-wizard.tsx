@@ -24,7 +24,7 @@ import {
   type IsraeliStatus,
   type OtherParent,
 } from "@/lib/case-options";
-import { onboardingTrack } from "@/lib/stages";
+import { onboardingTrack, stagesOnceStarted, type Stage } from "@/lib/stages";
 import { AuthHeading } from "./auth-heading";
 import { Field, Notice, Select, SubmitButton, describe, inputClass } from "./auth-ui";
 import {
@@ -41,6 +41,8 @@ import {
 // nothing.
 
 type Labels = Messages["app"]["onboarding"];
+/** Each stage as the couple says where they are: "We sent our file and haven't heard back". */
+export type StageAnswers = Messages["app"]["stages"];
 export type Option<T extends string = string> = { value: T; label: string };
 
 type FieldName =
@@ -48,6 +50,7 @@ type FieldName =
   | keyof RelationshipAnswers
   | "knowsBranch"
   | "branch"
+  | "started"
   | "stage"
   | "form";
 export type Errors = Partial<Record<FieldName, string>>;
@@ -155,11 +158,13 @@ function detailsOf(answers: Answers): CaseDetails {
 
 export function OnboardingWizard({
   t,
+  stages,
   countries,
   birthCountries,
   branches,
 }: {
   t: Labels;
+  stages: StageAnswers;
   /** Every country but Israel. */
   countries: Option[];
   /** Every country, Israel too. */
@@ -212,7 +217,7 @@ export function OnboardingWizard({
 
   // The stages follow from the earlier steps, all answered by the stage step.
   // A stage chosen before going back and changing them may be gone.
-  const offered = step === STAGE ? onboardingTrack(detailsOf(answers)) : [];
+  const laterStages = step === STAGE ? stagesOnceStarted(onboardingTrack(detailsOf(answers))) : [];
 
   function validate(): Errors {
     if (step === 0) return personErrors(answers.self, t);
@@ -220,7 +225,12 @@ export function OnboardingWizard({
     if (step === RELATIONSHIP) return relationshipErrors(answers.relationship, t);
     if (step === BRANCH && answers.knowsBranch === null) return { knowsBranch: t.errors.choose };
     if (step === BRANCH && answers.knowsBranch && !answers.branch) return { branch: t.errors.choose };
-    if (step === STAGE && !(answers.stage === RENEWAL || offered.some((s) => s === answers.stage))) {
+    if (step === STAGE && answers.started === null) return { started: t.errors.choose };
+    if (
+      step === STAGE &&
+      answers.started &&
+      !(answers.stage === RENEWAL || laterStages.some((s) => s === answers.stage))
+    ) {
       return { stage: t.errors.choose };
     }
     return {};
@@ -234,7 +244,7 @@ export function OnboardingWizard({
       partner: personInput(answers.partner),
       relationship: relationshipInput(answers.relationship),
       branch: (answers.knowsBranch && answers.branch) || null,
-      stage: answers.stage,
+      stage: answers.started ? answers.stage : "preparing",
     });
     if (result?.error) setErrors({ form: t.errors[result.error] });
     setPending(false);
@@ -269,7 +279,7 @@ export function OnboardingWizard({
 
   const last = step === STEPS.length - 1;
   // Renewals aren't supported yet: the wizard stops there, with a notice.
-  const renewal = step === STAGE && answers.stage === RENEWAL;
+  const renewal = step === STAGE && !!answers.started && answers.stage === RENEWAL;
   // Continue stays off until every field in the step is answered.
   const complete = Object.keys(validate()).length === 0 && !renewal;
 
@@ -379,13 +389,15 @@ export function OnboardingWizard({
         )}
 
         {step === STAGE && (
-          <Choices
-            id="stage"
+          <StageQuestion
+            t={t}
             legend={t.stageIntro}
-            error={errors.stage}
-            options={([...offered, RENEWAL] as const).map((s) => ({ value: s, label: t.stages[s] }))}
-            value={answers.stage}
-            onChange={(v) => set("stage", v)}
+            options={[...laterStages.map((s) => ({ value: s, label: stages[s] })), { value: RENEWAL, label: t.renewal }]}
+            started={answers.started}
+            onStarted={(v) => set("started", v)}
+            stage={answers.stage}
+            onStage={(v) => set("stage", v)}
+            errors={errors}
           />
         )}
 
@@ -949,6 +961,54 @@ function CardGroup({
         )
       )}
     </fieldset>
+  );
+}
+
+/**
+ * Where the couple is, in two questions so the list stays short: whether
+ * they've filed anything yet, and only if they have, which stage they're at
+ * (stagesOnceStarted in lib/stages.ts). Onboarding and the details page ask it.
+ */
+export function StageQuestion<T extends Stage | typeof RENEWAL>({
+  t,
+  legend,
+  hint,
+  options,
+  started,
+  onStarted,
+  stage,
+  onStage,
+  errors,
+}: {
+  t: Labels;
+  legend: ReactNode;
+  hint?: string;
+  /** The stages for a couple who started. */
+  options: Option<T>[];
+  started: boolean | null;
+  onStarted: (started: boolean) => void;
+  stage: T | null;
+  onStage: (stage: T) => void;
+  errors: Pick<Errors, "started" | "stage">;
+}) {
+  return (
+    <>
+      <Choices
+        id="started"
+        legend={legend}
+        hint={hint}
+        error={errors.started}
+        options={[
+          { value: "no", label: t.notStarted },
+          { value: "yes", label: t.started },
+        ]}
+        value={started === null ? null : started ? "yes" : "no"}
+        onChange={(v) => onStarted(v === "yes")}
+      />
+      {started && (
+        <Choices id="stage" legend={t.whereNow} error={errors.stage} options={options} value={stage} onChange={onStage} />
+      )}
+    </>
   );
 }
 

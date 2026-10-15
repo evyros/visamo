@@ -4,7 +4,7 @@ import { profileOf } from "./documents/facts";
 
 // Where the couple is in the process. Not every couple goes through the same
 // stages: a partner abroad waits for an entry permit, a couple who both live
-// abroad starts at the consulate, a partner from the former USSR goes through
+// abroad asks the consulate for it, a partner from the former USSR goes through
 // Nativ, and married and common-law couples are interviewed at different
 // points. Each stage is defined once (stageDefinitions); the catalog lists
 // them in the order they come, and a case's track is the ones its facts
@@ -25,15 +25,15 @@ type StageDefinition = {
 
 /** Each stage, once, whatever track it's on. The catalog below puts them in order. */
 export const stageDefinitions = {
-  preparing: { about: "Getting the documents ready. Nothing is filed with Misrad Hapnim yet." },
+  preparing: { about: "Getting the documents ready. Nothing is filed yet, with Misrad Hapnim or the consulate." },
   consulate: {
     about:
-      "Asking the Israeli consulate where they live for an entry permit, before moving to Israel. Nothing is filed with Misrad Hapnim yet.",
+      "Applied at the Israeli consulate where they live for an entry permit, before moving to Israel, and waiting for it. Nothing is filed with Misrad Hapnim yet.",
   },
   filed: { about: "Filed the application online with Misrad Hapnim, waiting for the first answer.", date: "past" },
   firstAppointment: { about: "The first appointment at the Misrad Hapnim branch is scheduled.", date: "scheduled" },
   entryPermit: {
-    about: "Waiting for the foreign partner's entry permit, or just got it. The foreign partner is still abroad.",
+    about: "The foreign partner's entry permit is issued. The foreign partner is still abroad, about to enter Israel.",
   },
   arrived: { about: "The foreign partner has entered Israel with the entry permit, and they're both in Israel." },
   b1: { about: "The first B/1 visa is issued. Next is the interview, before the A/5 visa." },
@@ -53,7 +53,8 @@ const bothAbroad: Condition = { all: ["foreignAbroad", "israeliAbroad"] };
  * couple who both live abroad files after arriving, everyone else before.
  */
 const catalog: readonly { stage: Stage; when?: Condition }[] = [
-  { stage: "preparing", when: { not: bothAbroad } },
+  // Every track starts here: onboarding's "haven't filed anything yet".
+  { stage: "preparing" },
   // both-abroad.md: the entry permit comes from the consulate, before anything is filed.
   // The document list is still the Misrad Hapnim file's, not the consulate's.
   { stage: "consulate", when: bothAbroad },
@@ -89,6 +90,9 @@ export function onboardingTrack(details: CaseDetails): OnboardingStage[] {
   return trackOf(details).filter((s): s is OnboardingStage => !("onboarding" in stageDefinitions[s]));
 }
 
+/** Where a couple who says they've started can be: every stage after preparing, where one who hasn't is. */
+export const stagesOnceStarted = <S extends Stage>(track: readonly S[]) => track.filter((s) => s !== "preparing");
+
 export const sameTrack = (a: readonly Stage[], b: readonly Stage[]) =>
   a.length === b.length && a.every((s, i) => s === b[i]);
 
@@ -105,6 +109,17 @@ export const dateKind = (stage: DatedStage) => stageDefinitions[stage].date;
 /** At the interview stage, after its date: waiting for the decision. `today` is `yyyy-mm-dd` in Israel. */
 export const awaitingDecision = (stage: Stage, dates: StageDates, today: string) =>
   stage === "interview" && !!dates.interview && dates.interview < today;
+
+/**
+ * At the first appointment, after its date, when the entry permit comes next:
+ * the Israeli partner went alone, and the branch grants the permit there or a
+ * couple of weeks later (lib/knowledge/entry-permit.md).
+ */
+export const awaitingEntryPermit = (stage: Stage, dates: StageDates, today: string, track: readonly Stage[]) =>
+  stage === "firstAppointment" &&
+  track[track.indexOf(stage) + 1] === "entryPermit" &&
+  !!dates.firstAppointment &&
+  dates.firstAppointment < today;
 
 /** How far ahead an appointment or interview date can be. */
 const SCHEDULED_MAX_DAYS = 2 * 365;

@@ -1045,19 +1045,11 @@
       },
       "branch": "Branch",
       "branchPlaceholder": "Choose a branch",
-      "stageIntro": "Choose the option that fits you best.",
-      "stages": {
-        "preparing": "We haven't started yet: we're getting the documents ready",
-        "consulate": "We're applying for an entry permit at the Israeli consulate",
-        "filed": "We sent our file and haven't heard back",
-        "firstAppointment": "We have a first appointment at the branch",
-        "entryPermit": "We got the entry permit",
-        "arrived": "We're both in Israel now",
-        "b1": "We got the first B/1 visa, and A/5 is next",
-        "nativ": "We were referred to Nativ",
-        "interview": "We have an interview appointment, or already had the interview",
-        "renewal": "We already have a visa and need to renew it"
-      },
+      "stageIntro": "Have you started the process yet?",
+      "notStarted": "We haven't filed anything yet",
+      "started": "We've already started officially",
+      "whereNow": "Where are you now?",
+      "renewal": "We already have a visa and need to renew it",
       "renewalUnsupported": "Visamo doesn't support visa renewals yet. It's planned and coming soon.",
       "back": "Back",
       "next": "Continue",
@@ -1100,6 +1092,19 @@
         "generic": "Something went wrong. Please try again."
       }
     },
+    "stages": {
+      "preparing": "We haven't started yet: we're getting the documents ready",
+      "consulate": "We applied for an entry permit at the Israeli consulate",
+      "filed": "We sent our file and haven't heard back",
+      "firstAppointment": "We have a first appointment at the branch",
+      "entryPermit": "We got the entry permit",
+      "arrived": "We're both in Israel now",
+      "b1": "We got the first B/1 visa, and A/5 is next",
+      "nativ": "We were referred to Nativ",
+      "interview": "We have an interview appointment, or already had the interview",
+      "approvedB1": "We were approved and got the B/1 visa",
+      "approvedA5": "We were approved and got the A/5 visa"
+    },
     "file": {
       "nav": "My file",
       "overview": "Overview",
@@ -1117,6 +1122,7 @@
         "file": {
           "missing": "Which documents do we still need?",
           "ready": "Are we ready to file our application?",
+          "readyConsulate": "Are we ready to apply at the consulate?",
           "complete": "Is there anything else we should prepare?"
         },
         "document": {
@@ -1790,12 +1796,12 @@
         "title": "Where you are",
         "steps": {
           "preparing": "Getting the documents ready",
-          "consulate": "Getting an entry permit at the consulate",
+          "consulate": "Applied for an entry permit at the consulate",
           "filed": "Filed, waiting for an answer",
           "firstAppointment": "First appointment scheduled",
-          "entryPermit": "Receive the entry permit",
+          "entryPermit": "Entry permit received",
           "arrived": "Together in Israel",
-          "b1": "Receive the B/1 visa",
+          "b1": "B/1 visa received",
           "nativ": "Nativ check",
           "interview": "Interview",
           "approvedB1": "Approved: B/1 visa",
@@ -1817,6 +1823,7 @@
           }
         },
         "awaitingDecision": "waiting for a decision",
+        "awaitingEntryPermit": "waiting for the entry permit",
         "update": "Update stage",
         "ask": {
           "title": "Have a question about the process?",
@@ -1824,7 +1831,6 @@
         },
         "dialogTitle": "Where are you now?",
         "pastHint": "Optional. It shows how long you've been waiting.",
-        "back": "This moves your file back to “{stage}”. Dates you entered stay saved.",
         "save": "Save",
         "saving": "Saving…",
         "cancel": "Cancel",
@@ -1982,8 +1988,6 @@
       "checking": "Checking…",
       "previewTitle": "Before you save",
       "unchanged": "Nothing changed yet.",
-      "stageTitle": "Where are you now?",
-      "stageNote": "These changes change the stages of your process. Choose where you are now.",
       "startHint": "Answer for when you started the process. A move to Israel since then is part of your stage.",
       "listNote": "Your document list may change: new documents might appear, and files you uploaded for documents that are no longer needed move to the “No longer needed” section on the documents page.",
       "save": "Save changes",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getGuides, guideIndex, readingMinutes, type Guide, type GuideSlug } from "@/content/guides";
+import { getGlossaryTexts, glossaryPath, glossaryTerms } from "@/content/glossary";
 import { getProcessTexts, processPath } from "@/content/process";
 import type { Locale } from "@/i18n/config";
 import { format, getLocale } from "@/i18n/dictionaries";
@@ -21,6 +22,7 @@ export default async function GuidesPage() {
   const { index } = guides;
   const readingTime = (guide: Guide) => format(guides.labels.readingTime, { minutes: readingMinutes(guide) });
   const process = getProcessTexts(locale);
+  const glossary = getGlossaryTexts(locale);
 
   return (
     <section className="py-16 sm:py-20">
@@ -73,6 +75,26 @@ export default async function GuidesPage() {
             </section>
           );
         })}
+
+        {/* The glossary: the words of the process, in English and Hebrew. */}
+        <Link
+          href={localePath(locale, glossaryPath)}
+          className="group mt-14 flex items-center gap-5 rounded-2xl border border-line-200 bg-white p-5 hover:border-teal-600 sm:p-6"
+        >
+          <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-sage-200 font-display text-xl font-semibold text-navy-900">
+            א
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-display text-lg font-semibold text-navy-900 group-hover:text-teal-700">
+              {glossary.card.title}
+            </span>
+            <span className="mt-1 block text-[16px] leading-7 text-slate-700">{glossary.card.body}</span>
+            <span className="mt-2 block text-sm text-slate-500">
+              {format(glossary.card.terms, { count: glossaryTerms.length })}
+            </span>
+          </span>
+          <Icon name="arrow" className="size-5 shrink-0 text-teal-600" />
+        </Link>
       </Container>
     </section>
   );

@@ -50,7 +50,7 @@ export const guidesEn: Guides = {
                 ],
               },
             },
-            "Before any of this comes the wait for an answer to your application. It takes between a few weeks and a few months, depending on the Misrad Hapnim branch, and the appointment it gives may be months later. [How long each stage takes](guide:partner-visa-timeline)",
+            "Before any of this comes the wait for an answer to your application. It takes between a few weeks and a few months, depending on the [Misrad Hapnim](/guide/glossary#misrad-hapnim) branch, and the appointment it gives may be months later. [How long each stage takes](guide:partner-visa-timeline)",
             "If you marry during the process, you move to the married track.",
           ],
         },
@@ -452,7 +452,7 @@ export const guidesEn: Guides = {
       facts: ["Each stage, in order", "Married & common-law", "What causes delays"],
       title: "How long the Israel partner visa takes, stage by stage",
       answer:
-        "For a married couple, the foreign partner is on a **B/1** visa for up to 6 months, then on **A/5** for 4 years, and then gets permanent status. For a common-law couple, it's 3 years on B/1, then 4 years on A/5. Before all this, getting the first answer to your application and the first appointment usually takes a few weeks to a few months, depending on your Misrad Hapnim branch.",
+        "For a married couple, the foreign partner is on a **B/1** visa for up to 6 months, then on **A/5** for 4 years, and then gets permanent status. For a common-law couple, it's 3 years on B/1, then 4 years on A/5. Before all this, getting the first answer to your application and the first appointment usually takes a few weeks to a few months, depending on your [Misrad Hapnim](/guide/glossary#misrad-hapnim) branch.",
       updated: "2026-10-07",
       sections: [
         {
@@ -684,7 +684,7 @@ export const guidesEn: Guides = {
       facts: ["Before moving to Israel", "Form AS/1", "Plan for a few months"],
       title: "The entry permit: how the foreign partner moves to Israel",
       answer:
-        "Before the foreign partner moves to Israel, they need an **entry permit** (היתר כניסה): Misrad Hapnim's approval to come to Israel and continue the process here. People also call it the **hazmana** (הזמנה, the invitation) or the asmachta (אסמכתא). If the Israeli partner lives in Israel, you file online and the branch grants it. If you both live abroad, you ask for it at the Israeli consulate.",
+        "Before the foreign partner moves to Israel, they need an **entry permit** (היתר כניסה): [Misrad Hapnim](/guide/glossary#misrad-hapnim)'s approval to come to Israel and continue the process here. People also call it the **hazmana** (הזמנה, the invitation) or the asmachta (אסמכתא). If the Israeli partner lives in Israel, you file online and the branch grants it. If you both live abroad, you ask for it at the Israeli consulate.",
       updated: "2026-10-07",
       sections: [
         {
@@ -800,7 +800,7 @@ export const guidesEn: Guides = {
       facts: ["Start at the consulate", "Entry permit first", "File after you arrive"],
       title: "When you both live abroad: starting at the Israeli consulate",
       answer:
-        "If you both live abroad and want to move to Israel, you start at the **Israeli consulate or embassy** in your country, not at a Misrad Hapnim branch. You ask there for an **entry permit** for the foreign partner. Once it's approved, the consulate puts an entry visa in their passport, you travel to Israel together, and you file the full application online after you arrive.",
+        "If you both live abroad and want to move to Israel, you start at the **Israeli consulate or embassy** in your country, not at a [Misrad Hapnim](/guide/glossary#misrad-hapnim) branch. You ask there for an **entry permit** for the foreign partner. Once it's approved, the consulate puts an entry visa in their passport, you travel to Israel together, and you file the full application online after you arrive.",
       updated: "2026-10-07",
       sections: [
         {
@@ -894,7 +894,7 @@ export const guidesEn: Guides = {
       facts: ["Apostille or legalization", "Notarized translation", "Originals only"],
       title: "Apostille and translation for the Israel partner visa",
       answer:
-        "A document from abroad needs an **apostille** (or, from countries outside the Hague Convention, **consular legalization**) from the country that issued it: it can't be done in Israel. Misrad Hapnim accepts only Hebrew and Arabic without a translation, so other documents need a **notarized translation**, though in practice English is often accepted. Bring the originals: copies aren't accepted.",
+        "A document from abroad needs an **apostille** (or, from countries outside the Hague Convention, **consular legalization**) from the country that issued it: it can't be done in Israel. [Misrad Hapnim](/guide/glossary#misrad-hapnim) accepts only Hebrew and Arabic without a translation, so other documents need a **notarized translation**, though in practice English is often accepted. Bring the originals: copies aren't accepted.",
       updated: "2026-10-07",
       sections: [
         {
@@ -1012,7 +1012,7 @@ export const guidesEn: Guides = {
       facts: ["Every document, by subject", "Married & common-law", "Who needs what"],
       title: "The documents for the Israel partner visa",
       answer:
-        "To open a partner visa file, Misrad Hapnim asks for **forms**, **identity documents**, **proof of your relationship**, the foreign partner's **civil status** and **police certificate**, and proof that you **share a life**. Which ones you need depends on your situation: married or common-law, where each of you lives, previous marriages, and children. Documents from abroad need an apostille, and often a translation.",
+        "To open a partner visa file, [Misrad Hapnim](/guide/glossary#misrad-hapnim) asks for **forms**, **identity documents**, **proof of your relationship**, the foreign partner's **civil status** and **police certificate**, and proof that you **share a life**. Which ones you need depends on your situation: married or common-law, where each of you lives, previous marriages, and children. Documents from abroad need an apostille, and often a translation.",
       updated: "2026-10-08",
       sections: [
         {

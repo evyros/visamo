@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { glossaryPath, glossaryUpdated } from "@/content/glossary";
 import { getGuides, guideSlugs } from "@/content/guides";
 import { allAnswers, processPath, processUpdated, trackPath } from "@/content/process";
 import { defaultLocale, liveLocales } from "@/i18n/config";
@@ -13,6 +14,7 @@ const pages: { path: string; updated?: string }[] = [
   { path: processPath, updated: processUpdated },
   // The versions for couples who haven't lived together point to these (canonicalAnswers).
   ...allAnswers.filter((a) => a.livedTogether).map((a) => ({ path: trackPath(a), updated: processUpdated })),
+  { path: glossaryPath, updated: glossaryUpdated },
   ...[
     "/tools/recommendation-letter",
     "/pricing",

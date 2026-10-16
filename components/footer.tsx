@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { format, getDictionary, getLocale } from "@/i18n/dictionaries";
+import { glossaryPath } from "@/content/glossary";
 import { processPath } from "@/content/process";
 import { localePath, site } from "@/lib/site";
 import { Icon } from "./icons";
@@ -19,6 +20,7 @@ export async function Footer() {
         { href: `${p("/")}#how-it-works`, label: f.product.howItWorks },
         { href: p("/guide"), label: f.product.guides },
         { href: p(processPath), label: f.product.process },
+        { href: p(glossaryPath), label: f.product.glossary },
         { href: p("/tools/recommendation-letter"), label: f.product.letters },
         { href: p("/pricing"), label: f.product.pricing },
       ],

@@ -231,3 +231,57 @@ export function processLandingStructuredData({
     },
   ];
 }
+
+/**
+ * JSON-LD for the glossary (content/glossary): its terms, each with its
+ * anchor on the page, and where it sits on the site. The URLs are absolute.
+ */
+export function glossaryStructuredData({
+  title,
+  description,
+  url,
+  updated,
+  terms,
+  indexUrl,
+  indexName,
+  inLanguage,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  updated: string;
+  terms: { id: string; name: string; alternateName: string[]; description?: string }[];
+  indexUrl: string;
+  indexName: string;
+  inLanguage: string;
+}) {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "@id": url,
+      name: title,
+      description,
+      url,
+      dateModified: updated,
+      inLanguage,
+      hasDefinedTerm: terms.map((term) => ({
+        "@type": "DefinedTerm",
+        "@id": `${url}#${term.id}`,
+        url: `${url}#${term.id}`,
+        name: term.name,
+        alternateName: term.alternateName,
+        ...(term.description && { description: term.description }),
+        inDefinedTermSet: url,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: indexName, item: indexUrl },
+        { "@type": "ListItem", position: 2, name: title, item: url },
+      ],
+    },
+  ];
+}

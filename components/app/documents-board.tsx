@@ -16,6 +16,8 @@ import type { CheckRating } from "@/lib/checks/result";
 import type { CheckView, DismissedView, FindingView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
+import type { StepDetails } from "@/lib/document-steps";
+import type { StepKind } from "@/lib/documents/steps";
 import { ACCEPTED_TYPES, MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
 import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/document-progress";
@@ -39,8 +41,18 @@ import { LogoMark } from "@/components/logo";
 // Uploaded isn't done: a document is ready only once a check passed it (looks
 // good, or tips only). Without Full file check, uploaded is as far as it goes,
 // and the progress counts uploads; with it, the progress counts ready documents.
+//
+// Each card lists what to do to its document before uploading it (the
+// apostille, the translation). It only explains: nothing there is tracked.
 
-type Labels = Messages["app"]["documentsPage"];
+/**
+ * The page's labels, without the texts the server already turned into each card's strings (the
+ * steps, the countries' texts, what can replace a document): they'd only add weight to the page.
+ */
+export type BoardLabels = Omit<Messages["app"]["documentsPage"], "steps" | "issuers" | "affidavitInstead"> & {
+  steps: Pick<Messages["app"]["documentsPage"]["steps"], "heading">;
+};
+type Labels = BoardLabels;
 
 export type DocumentItem = {
   key: string;
@@ -52,8 +64,8 @@ export type DocumentItem = {
   form?: { name: string; url: string };
   /** A website tool that helps get it: the recommendation letters tool. */
   tool?: { label: string; url: string };
-  /** What to prepare before uploading: certification (with its exemption), translation, signing. */
-  requirements: Requirement[];
+  /** What to do to it before uploading it, in order: certification, sending, translation, signing. */
+  stepGroups: StepGroup[];
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;
   check: {
@@ -64,8 +76,15 @@ export type DocumentItem = {
   };
 };
 
-/** One thing to prepare; `details`, the full text, shows in a tooltip next to the short one. */
-type Requirement = { icon: "shield" | "globe" | "file" | "info"; text: string; details?: string };
+/** One step; `details`, the full text, opens under the short one. */
+type StepItem = { kind: StepKind; text: string; details?: StepDetails };
+
+/**
+ * A part's steps: the document's, or the children's affidavit's. `title`, its heading in place
+ * of "What it needs", only on a card with both; `note`, what can replace the document if it
+ * can't be had, after its steps.
+ */
+type StepGroup = { title?: string; steps: StepItem[]; note?: string };
 
 /** What the case's purchases allow for document checks. */
 export type CheckSettings = {
@@ -87,7 +106,7 @@ const sameSet = (a: readonly string[], b: readonly string[]) => {
 /** The result, while it was checked against these very files and the current details. */
 function freshResult(check: ItemCheck, files: readonly FileView[]) {
   const last = check.last;
-  return last && last.contextFresh && sameSet(last.fileIds, files.map((f) => f.id)) ? last : null;
+  return last && last.detailsFresh && sameSet(last.fileIds, files.map((f) => f.id)) ? last : null;
 }
 
 /** Where a document stands: nothing yet, uploaded, or its current check's verdict. */
@@ -652,13 +671,18 @@ function DocumentCard({
               {item.tool.label}
             </a>
           )}
-          {item.requirements.length > 0 && (
-            <ul className="mt-3 space-y-1.5">
-              {item.requirements.map((requirement) => (
-                <RequirementRow key={requirement.text} requirement={requirement} />
-              ))}
-            </ul>
-          )}
+          {/* One heading for the steps; on a card with parts, each part's heading instead. */}
+          {item.stepGroups.map((group, g) => (
+            <div key={group.title ?? g} className="mt-4">
+              <h3 className="text-sm font-semibold text-navy-900">{group.title ?? t.steps.heading}</h3>
+              <ol className="mt-2 space-y-2">
+                {group.steps.map((step, i) => (
+                  <StepRow key={`${step.kind}-${i}`} step={step} />
+                ))}
+              </ol>
+              {group.note && <p className="mt-2 text-[15px] text-slate-700">{group.note}</p>}
+            </div>
+          ))}
           <Uploads
             t={t}
             intlLocale={intlLocale}
@@ -1633,58 +1657,72 @@ function FileMenu({
   );
 }
 
-function RequirementRow({ requirement: { icon, text, details } }: { requirement: Requirement }) {
+const stepIcon: Record<StepKind, "file" | "shield" | "send" | "globe" | "pen"> = {
+  obtain: "file",
+  authenticate: "shield",
+  send: "send",
+  translate: "globe",
+  sign: "pen",
+  affidavit: "pen",
+};
+
+/** A step on the card. With more to say, the line opens its full text under it, and closes it again. */
+function StepRow({ step }: { step: StepItem }) {
+  const [open, setOpen] = useState(false);
+  const detailsId = useId();
+  const icon = <Icon name={stepIcon[step.kind]} className="mt-1 size-4 shrink-0 text-teal-700" />;
+  // The chevron stays with the last word, so it never wraps onto a line of its own.
+  const cut = step.text.lastIndexOf(" ") + 1;
+  if (!step.details) {
+    return (
+      <li className="flex items-start gap-2 text-[15px] text-slate-700">
+        {icon}
+        <span>{step.text}</span>
+      </li>
+    );
+  }
   return (
     <li className="flex items-start gap-2 text-[15px] text-slate-700">
-      <Icon name={icon} className="mt-1 size-4 shrink-0 text-teal-700" />
-      <span>
-        {text}
-        {details && <InfoTip text={details} />}
-      </span>
+      {icon}
+      <div className="min-w-0 flex-1">
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls={detailsId}
+          onClick={() => setOpen((o) => !o)}
+          className="text-start hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+        >
+          {step.text.slice(0, cut)}
+          <span className="whitespace-nowrap">
+            {step.text.slice(cut)}
+            <Icon
+              name="chevronDown"
+              className={`ms-1 inline-block size-4 -translate-y-px align-middle text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+            />
+          </span>
+        </button>
+        <StepDetailsText id={detailsId} hidden={!open} details={step.details} />
+      </div>
     </li>
   );
 }
 
-/**
- * An info icon with its text in a tooltip, like Tooltip's, but one that opens on hover with a mouse
- * and on tap on a touch screen, where there's no hover.
- */
-function InfoTip({ text }: { text: string }) {
-  const [hovered, setHovered] = useState(false);
-  const [pinned, setPinned] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (!pinned) return;
-    const onPointer = (event: PointerEvent) => !ref.current?.contains(event.target as Node) && setPinned(false);
-    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setPinned(false);
-    document.addEventListener("pointerdown", onPointer);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("pointerdown", onPointer);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [pinned]);
-
+/** A step's full text: its lead, its points (numbered when their order matters), and its closing sentence. */
+function StepDetailsText({ id, hidden, details }: { id: string; hidden: boolean; details: StepDetails }) {
+  const { lead, points, numbered, end } = details;
+  const List = numbered ? "ol" : "ul";
   return (
-    <span ref={ref} className="relative ms-1 inline-flex -translate-y-px align-middle">
-      <button
-        type="button"
-        aria-label={text}
-        onClick={() => setPinned((p) => !p)}
-        onPointerEnter={(event) => event.pointerType === "mouse" && setHovered(true)}
-        onPointerLeave={(event) => event.pointerType === "mouse" && setHovered(false)}
-        className="inline-flex size-6 items-center justify-center rounded-full text-slate-500 hover:text-navy-900"
-      >
-        <Icon name="info" className="size-4" />
-      </button>
-      <span
-        aria-hidden
-        hidden={!(hovered || pinned)}
-        className="absolute end-0 bottom-full z-10 mb-1 w-max max-w-64 rounded-lg bg-navy-900 px-3 py-1.5 text-sm text-white shadow-soft"
-      >
-        {text}
-      </span>
-    </span>
+    <div id={id} hidden={hidden} className="mt-1 space-y-1 text-sm text-slate-600">
+      {lead && <p>{lead}</p>}
+      {points && points.length > 0 && (
+        <List className={`${numbered ? "list-decimal" : "list-disc"} space-y-1 ps-5`}>
+          {points.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </List>
+      )}
+      {end && <p>{end}</p>}
+    </div>
   );
 }
+

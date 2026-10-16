@@ -1,5 +1,6 @@
 import { format, type Messages } from "@/i18n/messages";
 import type { Stage } from "@/lib/stages";
+import type { Translation } from "@/lib/documents/catalog";
 import type { Certification } from "@/lib/documents/certification";
 
 // The three questions a new chat suggests, one for each thing the chat can do
@@ -14,7 +15,7 @@ type Item = {
   key: string;
   optional: boolean;
   certification: Certification | null;
-  mayNeedTranslation: boolean;
+  translation: Translation;
 };
 
 export type SuggestionCase = {
@@ -61,7 +62,8 @@ function documentQuestion(c: SuggestionCase, missing: readonly Item[], t: Texts,
   if (apostille) return ask(t.document.apostille, apostille);
   const legalization = by("legalization");
   if (legalization) return ask(t.document.legalization, legalization);
-  const translation = missing.find((i) => i.mayNeedTranslation);
+  // A notarized translation takes a visit to a notary; their own, only their time.
+  const translation = missing.find((i) => i.translation === "notarized");
   if (translation) return ask(t.document.translation, translation);
   if (missing[0]) return ask(t.document.show, missing[0]);
   return t.document.general;

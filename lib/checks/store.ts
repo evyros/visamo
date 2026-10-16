@@ -1,6 +1,5 @@
 import "server-only";
 import { and, desc, eq, inArray, isNotNull, isNull, lt, sql } from "drizzle-orm";
-import { loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { callTotals, type Completion } from "@/lib/chat/openrouter";
 import { db } from "@/lib/db";
@@ -9,7 +8,7 @@ import { checkFor, type DocumentCheck } from "@/lib/documents/checks";
 import { caseCreditTotals } from "@/lib/credits";
 import { recordEvent } from "@/lib/events";
 import { activeResult, type ActiveResult, type DismissReason, type FindingKind } from "./dismissals";
-import { checkContext, contextHash } from "./prompt";
+import { detailsHash } from "./prompt";
 import type { CheckFinding, CheckResult } from "./result";
 
 // Document checks in the database: every run of every item's check (the
@@ -41,6 +40,7 @@ export type CheckRun = {
   userId: string | null;
   fileIds: string[];
   contextHash: string;
+  detailsHash: string;
   model: string;
   context: string;
   guidance: DocumentCheck;
@@ -95,6 +95,7 @@ export async function claimCheck(run: CheckRun) {
         state: "running",
         fileIds: [...run.fileIds].sort(),
         contextHash: run.contextHash,
+        detailsHash: run.detailsHash,
         model: run.model,
         checkedBy: run.userId,
         context: run.context,
@@ -197,8 +198,8 @@ export type ItemCheck = {
   dismissed: DismissedFinding[];
   /** The result was checked against the item's current files and the case's current details. */
   fresh: boolean;
-  /** It was checked against the case's current details and check guidance (files aside). */
-  contextFresh: boolean;
+  /** It was checked against the couple's current details (files aside). */
+  detailsFresh: boolean;
   /** The files it checked, sorted, for the page to tell when they change. */
   fileIds: string[];
   checkedAt: Date | null;
@@ -207,7 +208,7 @@ export type ItemCheck = {
 
 /** Every list item's check, by item key. */
 export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>> {
-  const [{ details, branch }, files, rows, t] = await Promise.all([
+  const [{ details, branch }, files, rows] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
     // Newest first, so an item's first finished run is its result. Failed and replaced runs are history only.
@@ -224,7 +225,6 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
         ),
       )
       .orderBy(desc(documentCheck.startedAt)),
-    loadMessages("en"),
   ]);
   const expired = Date.now() - RUNNING_EXPIRES_SECONDS * 1000;
   const items = listOf(details).map((item) => {
@@ -242,7 +242,9 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
       : null;
     const fileIds = row?.fileIds ?? [];
     const current = files.filter((f) => f.documentKey === item.key).map((f) => f.id);
-    const contextFresh = !!check && row?.contextHash === contextHash(checkContext(details, branch, item, t), check);
+    // A result stays while its files and the couple's details do. A change to the checks or their
+    // texts never retires one: a new check uses them. A run from before the details were kept stays.
+    const detailsFresh = !!check && (!row?.detailsHash || row.detailsHash === detailsHash(details, branch));
     checks.set(item.key, {
       checkable: !!check,
       // An admin's rerun isn't shown running: the couple sees the result it replaces until it's done.
@@ -252,8 +254,8 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
       runId: row?.id ?? null,
       result,
       dismissed: gone,
-      fresh: !!result && contextFresh && sameSet(fileIds, current),
-      contextFresh,
+      fresh: !!result && detailsFresh && sameSet(fileIds, current),
+      detailsFresh,
       fileIds,
       checkedAt: row?.finishedAt ?? null,
       checkedByName: found ? (found.personName ?? found.userName) : null,

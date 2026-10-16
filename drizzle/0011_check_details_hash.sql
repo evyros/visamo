@@ -1,0 +1,1 @@
+ALTER TABLE "document_check" ADD COLUMN "details_hash" text;

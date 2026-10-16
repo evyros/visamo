@@ -41,8 +41,8 @@ export type CheckView = {
   checkedByName: string | null;
   /** The files it checked: once the item's files differ, the result no longer applies. */
   fileIds: string[];
-  /** False once the case details it was checked against changed. */
-  contextFresh: boolean;
+  /** False once the couple's details it was checked against changed. A change to the checks never retires it. */
+  detailsFresh: boolean;
 };
 
 export function checkView(
@@ -60,7 +60,7 @@ export function checkView(
     checkedAt: Date | null;
     checkedByName: string | null;
     fileIds: string[];
-    contextFresh: boolean;
+    detailsFresh: boolean;
   },
   locale: Locale,
 ): CheckView | null {
@@ -83,6 +83,6 @@ export function checkView(
     checkedAt: check.checkedAt.toISOString(),
     checkedByName: check.checkedByName,
     fileIds: check.fileIds,
-    contextFresh: check.contextFresh,
+    detailsFresh: check.detailsFresh,
   };
 }

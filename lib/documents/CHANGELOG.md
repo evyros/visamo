@@ -3,6 +3,61 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v34 — 2026-10-16
+
+**What changed:** `foreignHealthInsurance` only when the foreign partner is
+in Israel (`foreignInIsrael`).
+
+**Why:** A partner still abroad was told to get Israeli health insurance
+now. Neither procedure asks for insurance, and in practice it's needed for
+the stay in Israel: the office may ask for it once the partner is here.
+A consulate may ask both-abroad couples for travel insurance for the entry,
+but that's the consulate's own list, not the file's.
+
+**Source:** Procedures 5.2.0008 and 5.2.0009 (no insurance in §ג.5 or the
+document list in §ד.2); AIC's document list, where it's an additional
+document PIBA may ask for during the process.
+
+**Lists that changed:** `commonLawApart`, `foreignAbroad`, `bothAbroad`,
+`marriedNeverLivedTogether`, `neverLivedTogetherBothAbroad`:
+-foreignHealthInsurance.
+
+## v33 — 2026-10-16
+
+**What changed:** Every item now carries its steps (`steps.ts`): getting the
+original from the country that issued it, its apostille or legalization,
+sending it to Israel (unless both partners are abroad, and bring it when
+they move), its translation, and who it's signed in front of. `mayNeedTranslation` is replaced by
+`translation`: `"notarized"` for official documents, `"self"` for the
+couple's everyday documents (`jointLivingEvidence`, `housingContract`,
+`utilityBills`, `foreignHealthInsurance`, `sharedBankAccount`,
+`bankStatements`, `israeliIncomeProof`, `foreignIncomeProof`), `"none"` as
+before. `signAtAppointment` is replaced by `signing`: `"clerk"` for
+`affidavitCommonLaw` as before, and `"lawyer"` for `statusApplicationMarried`
+(both declarations, and the landlord's affidavit). Legalization chains by
+country (`countries.ts`): Thailand, Ethiopia and Nepal, without the ministry
+of justice; Thailand with the English translation the Thai MFA legalizes.
+How each country provides the birth certificate, the civil status and the
+police certificate (`issuers.ts`), from the guides' country sections: the
+steps name the office and the apostille authority, and where a country
+issues no civil-status document, an affidavit about the civil status
+replaces it. The civil status of the nationality always gets its affidavit
+about children: no country's document proves them. Where the document may
+not be had, or the country isn't in the table, the card says an affidavit
+about the civil status can replace it (`orAffidavit`).
+
+**Why:** The page told couples every translatable document needs a
+notarized translation, while their everyday documents only need their own
+(`lib/knowledge/certification.md`). Signing in front of a lawyer wasn't
+shown. A legalization was described the same way for every country.
+
+**Source:** Procedure 1.3.0001 §3.1.1, §3.1.2.1; AS/6, both declarations and
+the landlord's affidavit; the Thai MFA's legalization manual (March 2025);
+the Embassy of Israel in Bangkok, authentication of public documents.
+
+**Lists that changed:** none (no keys added or removed); the items' steps
+and translation changed in every scenario.
+
 ## v32 — 2026-10-15
 
 **What changed:** `ishurToshav` (the municipality confirmation of your center

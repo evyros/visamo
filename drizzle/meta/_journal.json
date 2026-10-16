@@ -78,6 +78,13 @@
       "when": 1792086098336,
       "tag": "0010_letter_email_optional",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792180539613,
+      "tag": "0011_check_details_hash",
+      "breakpoints": true
     }
   ]
 }

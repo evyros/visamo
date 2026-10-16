@@ -6,11 +6,14 @@ import type { BranchCode, CaseDetails, PersonInput } from "@/lib/case-options";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import type { ContentPart, ModelMessage } from "@/lib/chat/openrouter";
 import type { RequiredDocument } from "@/lib/documents/build";
+import type { Signing, Translation } from "@/lib/documents/catalog";
+import type { Certification } from "@/lib/documents/certification";
 import type { DocumentCheck } from "@/lib/documents/checks";
 import type { DismissReason, FindingKind } from "./dismissals";
 import { checkLines, type CheckLine } from "./lines";
 import type { CheckFinding } from "./result";
 import { loadCheckKnowledge } from "@/lib/knowledge-base";
+import { stepsInWords } from "@/lib/document-steps";
 
 // What the document checker is told: its rules and the part of the knowledge
 // base for the document's group (the same for every check in the group, so
@@ -64,11 +67,35 @@ export async function staticCheckPrompt(item: RequiredDocument) {
   return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${knowledge}\n</knowledge>`;
 }
 
+/** The certification it needs, for the check. */
+const AUTHENTICATION: Record<Exclude<Certification["authentication"], "none">, string> = {
+  apostille: "an apostille",
+  utahApostille: "an apostille from Utah",
+  legalization: "consular legalization",
+  dependsOnCountry: "an apostille or consular legalization, by the country that issued it",
+};
+
+/** Who the document is signed in front of, for the check. */
+const SIGNING: Record<Signing, string> = {
+  clerk: "only in front of the clerk at the appointment: it must not be signed yet",
+  lawyer: "in front of an Israeli lawyer, who confirms the signature",
+  lawyerCourtOrNotary: "in front of an Israeli lawyer, the magistrate's court or a notary, who confirms the signature",
+  notary: "in front of a notary, who confirms the signature",
+  consul: "in front of a consul, who confirms the signature",
+};
+
+/** The translation it needs, for the check. English is accepted in practice either way. */
+const TRANSLATION: Record<Translation, string> = {
+  notarized:
+    "a notarized translation into Hebrew, uploaded with it, unless it's in Hebrew, Arabic or English (English is accepted in practice; don't ask for its translation)",
+  self: "the couple's own translation or explanation, uploaded with it, unless it's in Hebrew, Arabic or English; no notary needed (English is accepted in practice; don't ask for its translation)",
+  none: "none needed",
+};
+
 /**
  * The document and the couple's details it's checked against, in English:
  * every onboarding answer and the branch, as the chat gets them, but not the
- * stage, which doesn't change what a document needs. No dates in it, so its
- * hash (contextHash) only changes when the details do.
+ * stage, which doesn't change what a document needs.
  */
 export function checkContext(details: CaseDetails, branch: BranchCode | null, item: RequiredDocument, t: Messages) {
   const person = (p: PersonInput) =>
@@ -85,21 +112,37 @@ export function checkContext(details: CaseDetails, branch: BranchCode | null, it
     ["What it has to show", item.points.length ? item.points.map((p) => t.app.documents.points[p]).join(" ") : null],
     ["Whose", { israeli: "the Israeli partner", foreign: "the foreign partner", couple: "the couple", children: "the children" }[item.owner]],
     ["For the country", item.country && where],
-    ["Certification", auth && auth !== "none" ? page.authentication[auth] : "none needed"],
+    ["Certification", auth && auth !== "none" ? AUTHENTICATION[auth] : "none needed"],
     ["No certification if issued up to", item.certification?.exemptIfIssuedUntil],
-    ["Signing", item.signAtAppointment ? "only in front of the clerk at the appointment: it must not be signed yet" : null],
-    ["May need a translation", item.mayNeedTranslation ? "yes, unless it's in Hebrew, Arabic or English (English is accepted in practice; don't ask for its translation)" : "no"],
+    ["Signing", item.signing ? SIGNING[item.signing] : null],
+    ["In its place", item.affidavitInstead ? page.affidavitInstead : null],
+    ["Translation", TRANSLATION[item.translation]],
+    // As the couple's card shows them: who issues it, who certifies it, the affidavits that go with it.
+    ["Steps", item.steps.length ? stepsInWords(item.steps, item.id, page) : null],
   ]);
 
   return `The document\n${document}\n\nThe couple\n${person(details.israeli)}\n\n${person(details.foreign)}\n\n${couple}`;
 }
 
-/** Identifies what a check was made against; a result with another hash is stale. */
+/**
+ * Identifies everything a check was made against: the case details and the
+ * guidance. Kept with each run, for the history; it never retires a result,
+ * so changing the checks or their texts leaves the couple's results alone.
+ */
 export function contextHash(context: string, check: DocumentCheck) {
   return createHash("sha256")
     .update(JSON.stringify([RULES_VERSION, context, check]))
     .digest("hex")
     .slice(0, 32);
+}
+
+/**
+ * Identifies the couple's own details a check was made against: their answers
+ * and their branch, nothing of the guidance. Once they change, the result no
+ * longer applies (lib/checks/store.ts).
+ */
+export function detailsHash(details: CaseDetails, branch: BranchCode | null) {
+  return createHash("sha256").update(JSON.stringify([details, branch])).digest("hex").slice(0, 32);
 }
 
 /** A group of lines, required then recommended, each under its id. */

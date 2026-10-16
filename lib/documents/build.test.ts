@@ -16,7 +16,6 @@ const everyone = [
   "relationshipEvidence",
   "messageHistory",
   "recommendationLetters",
-  "foreignHealthInsurance",
   "israeliIncomeProof",
   "foreignIncomeProof",
 ];
@@ -74,6 +73,12 @@ describe("buildDocumentList", () => {
       "israeliIncomeProof",
       "foreignIncomeProof",
     ]);
+  });
+
+  it("asks for health insurance only once the foreign partner is in Israel", () => {
+    expect(keys("marriedInCyprus")).toContain("foreignHealthInsurance");
+    expect(keys("foreignAbroad")).not.toContain("foreignHealthInsurance");
+    expect(keys("commonLawApart")).not.toContain("foreignHealthInsurance");
   });
 
   it("gives every couple the documents everyone needs", () => {
@@ -142,7 +147,8 @@ describe("buildDocumentList", () => {
       ["FR", "apostille"],
       ["GB", "apostille"],
       ["TH", "legalization"],
-      ["IN", "apostille"],
+      // India issues none: an affidavit in its place, with no certification of its own.
+      ["IN", undefined],
     ]);
   });
 
@@ -187,15 +193,76 @@ describe("buildDocumentList", () => {
     expect(find("fromUkraine", "foreignPoliceCertificate:UA")?.certification?.exemptIfIssuedUntil).toBeUndefined();
   });
 
-  it("takes whether a document may need a translation from the catalog, not from where it's issued", () => {
-    expect(find("marriedInCyprus", "foreignBirthCertificate")?.mayNeedTranslation).toBe(true);
-    expect(find("marriedInCyprus", "jointLivingEvidence")?.mayNeedTranslation).toBe(true);
-    expect(find("marriedInCyprus", "recommendationLetters")?.mayNeedTranslation).toBe(false);
+  it("takes the translation a document needs from the catalog, not from where it's issued", () => {
+    expect(find("marriedInCyprus", "foreignBirthCertificate")?.translation).toBe("notarized");
     // In English: not accepted without a translation by law, though usually accepted in practice.
-    expect(find("marriedOnline", "marriageCertificateAbroad")?.mayNeedTranslation).toBe(true);
-    expect(find("marriedInIsrael", "marriageCertificateIsrael")?.mayNeedTranslation).toBe(false);
-    expect(find("marriedInCyprus", "israeliId")?.mayNeedTranslation).toBe(false);
-    expect(find("marriedInCyprus", "foreignPassport")?.mayNeedTranslation).toBe(false);
+    expect(find("marriedOnline", "marriageCertificateAbroad")?.translation).toBe("notarized");
+    // Their everyday documents: they translate them themselves.
+    expect(find("marriedInCyprus", "jointLivingEvidence")?.translation).toBe("self");
+    expect(find("marriedInCyprus", "israeliIncomeProof")?.translation).toBe("self");
+    expect(find("marriedInCyprus", "recommendationLetters")?.translation).toBe("none");
+    expect(find("marriedInIsrael", "marriageCertificateIsrael")?.translation).toBe("none");
+    expect(find("marriedInCyprus", "israeliId")?.translation).toBe("none");
+    expect(find("marriedInCyprus", "foreignPassport")?.translation).toBe("none");
+  });
+
+  it("lists what to do to a document, in order", () => {
+    const kinds = (s: keyof typeof scenarios, key: string) => find(s, key)?.steps.map((step) => step.kind);
+    // The originals are sent to Israel from the country that issued them, wherever the foreign partner is.
+    expect(kinds("marriedInCyprus", "foreignBirthCertificate")).toEqual(["obtain", "authenticate", "send", "translate"]);
+    expect(kinds("foreignAbroad", "foreignBirthCertificate")).toEqual(["obtain", "authenticate", "send", "translate"]);
+    // Both abroad: they bring them when they move.
+    expect(kinds("bothAbroad", "foreignBirthCertificate")).toEqual(["obtain", "authenticate", "translate"]);
+    // Issued in Israel: nothing to do.
+    expect(kinds("marriedInIsrael", "marriageCertificateIsrael")).toEqual([]);
+    // From a country not known: certified if it's from abroad, but nothing to get or send.
+    expect(kinds("commonLawForeignDivorced", "foreignDivorceDecree")).toEqual(["authenticate", "translate"]);
+    expect(kinds("marriedInCyprus", "israeliIncomeProof")).toEqual(["translate"]);
+    expect(kinds("marriedInCyprus", "statusApplicationMarried")).toEqual(["sign"]);
+    expect(kinds("commonLawLivingTogether", "affidavitCommonLaw")).toEqual(["sign"]);
+  });
+
+  it("says which country a translation is from, when it's issued by one", () => {
+    const translate = (s: keyof typeof scenarios, key: string) => find(s, key)?.steps.find((step) => step.kind === "translate");
+    expect(translate("fromJordan", "foreignBirthCertificate")).toEqual({ kind: "translate", level: "notarized", from: "JO" });
+    // From a country not known: null, so the card names Hebrew and Arabic too.
+    expect(translate("commonLawForeignDivorced", "foreignDivorceDecree")).toEqual({ kind: "translate", level: "notarized", from: null });
+    expect(translate("marriedInCyprus", "israeliIncomeProof")).toEqual({ kind: "translate", level: "self" });
+  });
+
+  it("follows how the country provides the civil status", () => {
+    const kinds = (s: keyof typeof scenarios, key: string) =>
+      find(s, key)?.steps.map((step) => (step.kind === "affidavit" ? `affidavit:${step.about}` : step.kind));
+    // The US: a state's letter and the children's affidavit; one affidavit in their place if the letter can't be had.
+    expect(kinds("marriedInCyprus", "foreignCivilStatus:US")).toEqual([
+      "obtain",
+      "authenticate",
+      "send",
+      "translate",
+      "affidavit:noChildren",
+    ]);
+    expect(find("marriedInCyprus", "foreignCivilStatus:US")?.affidavitInstead).toBe(true);
+    expect(find("livedInThreeCountries", "foreignCivilStatus:TH")?.affidavitInstead).toBe(false);
+    // Thailand, a country lived in: the district office's certificate; the children only from the nationality.
+    expect(kinds("livedInThreeCountries", "foreignCivilStatus:TH")).toEqual(["obtain", "authenticate", "send", "translate"]);
+    // India issues none: an affidavit about the civil status in its place.
+    expect(kinds("livedInThreeCountries", "foreignCivilStatus:IN")).toEqual(["affidavit:status", "translate"]);
+    expect(find("livedInThreeCountries", "foreignCivilStatus:IN")?.affidavitInstead).toBe(false);
+    // An affidavit in place of the document isn't certified like one.
+    expect(find("livedInThreeCountries", "foreignCivilStatus:IN")?.certification).toBeNull();
+  });
+
+  it("names the legalization's offices where they're known for the country", () => {
+    const authenticate = (key: string) =>
+      find("livedInThreeCountries", key)?.steps.find((step) => step.kind === "authenticate");
+    expect(authenticate("foreignPoliceCertificate:TH")).toMatchObject({
+      from: "TH",
+      certification: { authentication: "legalization" },
+      chain: ["englishTranslation", "foreignMinistry", "israeliConsulate"],
+    });
+    const egypt = find("marriedInEgypt", "marriageCertificateAbroad")?.steps.find((step) => step.kind === "authenticate");
+    expect(egypt).toMatchObject({ from: "EG", certification: { authentication: "legalization" } });
+    expect(egypt).not.toHaveProperty("chain");
   });
 
   it("lists the lease for couples who lived together or whose Israeli partner lives in Israel, and with it, for married couples, the landlord's affidavit in form AS/6", () => {

@@ -5,11 +5,11 @@ import { suggestionsFor, type SuggestionCase } from "./suggestions";
 const t = en.app.chat.suggestions;
 const title = (key: string) => key;
 
-const form = { key: "form", optional: false, certification: null, mayNeedTranslation: false };
-const birth = { key: "birth", optional: false, certification: { authentication: "apostille" as const }, mayNeedTranslation: true };
-const police = { key: "police", optional: false, certification: { authentication: "legalization" as const }, mayNeedTranslation: true };
-const letters = { key: "letters", optional: false, certification: null, mayNeedTranslation: true };
-const lease = { key: "lease", optional: true, certification: null, mayNeedTranslation: true };
+const form = { key: "form", optional: false, certification: null, translation: "none" as const };
+const birth = { key: "birth", optional: false, certification: { authentication: "apostille" as const }, translation: "notarized" as const };
+const police = { key: "police", optional: false, certification: { authentication: "legalization" as const }, translation: "notarized" as const };
+const letters = { key: "letters", optional: false, certification: null, translation: "notarized" as const };
+const lease = { key: "lease", optional: true, certification: null, translation: "notarized" as const };
 
 const base: SuggestionCase = {
   stage: "preparing",

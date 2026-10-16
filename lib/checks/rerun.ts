@@ -8,7 +8,7 @@ import { caseFile } from "@/lib/db/schema";
 import { checkFor } from "@/lib/documents/checks";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { checkModel } from "./ask";
-import { RULES_VERSION, checkContext, contextHash } from "./prompt";
+import { RULES_VERSION, checkContext, contextHash, detailsHash } from "./prompt";
 import { performCheck } from "./run";
 import { claimCheck, dismissedForNextCheck, latestRun, saveRerun } from "./store";
 
@@ -52,6 +52,7 @@ export async function rerunCheck(caseId: string, documentKey: string, checkId: s
     userId: replaced.checkedBy,
     fileIds: replaced.fileIds,
     contextHash: contextHash(context, check),
+    detailsHash: detailsHash(details, branch),
     model: checkModel(check),
     context,
     guidance: check,

@@ -96,7 +96,7 @@ export function DocumentCard({
               Latest result {formatDateTime(check.checkedAt)}
               {check.checkedByName && `, run by ${check.checkedByName}`}
               {!check.fresh &&
-                ` · ${check.contextFresh ? "files" : "details"} changed since, so the couple sees it as uploaded`}
+                ` · ${check.detailsFresh ? "files" : "details"} changed since, so the couple sees it as uploaded`}
             </p>
             <Findings kind={result.rating === "unreadable" ? "unreadable" : "issue"} findings={result.issues} />
             <Findings kind="recommendation" findings={result.recommendations} />

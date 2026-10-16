@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 32;
+export const CATALOG_VERSION = 34;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -26,6 +26,20 @@ export type Category =
  * issued by an authority (forms, photos, evidence).
  */
 export type IssuedBy = "israel" | "nationality" | "birthCountry" | "marriage" | "each" | "unknown";
+
+export type Translation = "none" | "self" | "notarized";
+
+/**
+ * Who a document is signed in front of, who confirms the signature:
+ * - "clerk": the Misrad Hapnim clerk, at the appointment. The couple prints
+ *   it and fills in the details, but doesn't sign it before, and doesn't send
+ *   it with the online application.
+ * - "lawyer": an Israeli lawyer.
+ * - "lawyerCourtOrNotary": an Israeli lawyer, the magistrate's court, or a notary.
+ * - "notary": a notary only (a notarial affidavit).
+ * - "consul": a consul (an Israeli one abroad, or the foreign partner's country's in Israel).
+ */
+export type Signing = "clerk" | "lawyer" | "lawyerCourtOrNotary" | "notary" | "consul";
 
 export type DocumentDefinition = {
   /** Stable forever: saved progress is keyed by it. Never rename or reuse one; see DOCUMENT_ALIASES. */
@@ -47,24 +61,28 @@ export type DocumentDefinition = {
   each?: "policeCountry";
   issuedBy?: IssuedBy;
   /**
-   * Whether the couple may bring it in a language that needs a translation
-   * (anything but Hebrew or Arabic): the page then marks it "Translation may
-   * be needed", and the translation is uploaded with it. Decided per
-   * document, never from where it's issued: the same document can come from
-   * anywhere. False for forms in the ministry's wording, Israeli documents,
-   * photos and passports.
+   * The translation it needs if the couple brings it in a language that
+   * needs one (anything but Hebrew or Arabic, and in practice English):
+   * "notarized" for official documents, "self" for their everyday documents
+   * (a lease, bills, statements, payslips, a policy), which they translate
+   * or explain themselves, and "none" for forms in the ministry's wording,
+   * Israeli documents, photos, passports and their own evidence. The
+   * translation is uploaded with the document. Decided per document, never
+   * from where it's issued: the same document can come from anywhere.
    */
-  mayNeedTranslation: boolean;
+  translation: Translation;
   /** An exemption from authentication, by where it's from. */
   exemption?: Exemption;
   /** How many copies to bring, when more than one. Not shown on the documents list for now; the chat knows it. */
   copies?: number;
+  /** Who it's signed in front of, for a declaration or an affidavit: never signed before. See `Signing`. */
+  signing?: Signing;
   /**
-   * Signed only in front of the clerk at the Misrad Hapnim appointment: the
-   * couple prints it and fills in the details, but doesn't sign it before
-   * the appointment, and doesn't send it with the online application.
+   * An affidavit (תצהיר) replaces it where the country issues none, or it
+   * can't be had: the steps offer it, for the countries issuers.ts doesn't
+   * say issue one.
    */
-  signAtAppointment?: boolean;
+  orAffidavit?: boolean;
   /** The Misrad Hapnim form, for the forms themselves. */
   form?: FormId;
   /** Where the requirement comes from: a procedure section, a form. */
@@ -93,17 +111,19 @@ export const documents = [
     // The whole form, uploaded together: the application, both partners' declarations, and the
     // landlord's affidavit where a lease is asked for (its points, points.ts).
     id: "statusApplicationMarried",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "forms",
     when: "married",
     form: "AS/6",
+    // Both partners' declarations, and the landlord's affidavit.
+    signing: "lawyer",
     source: `${P8} §ד.2.א, §ד.2.ז; AS/6, the landlord's affidavit (affidavit annexed to the lease – couples)`,
     verified: true,
   },
   {
     id: "entryPermitApplication",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "foreign",
     category: "forms",
     // With both of them abroad, the entry permit is asked for at the consulate, before the file.
@@ -115,7 +135,7 @@ export const documents = [
   {
     // The foreign partner is already in Israel: the request to change their visa.
     id: "visaChangeApplication",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "foreign",
     category: "forms",
     when: "foreignInIsrael",
@@ -126,17 +146,17 @@ export const documents = [
   {
     // One declaration both partners sign, instead of the two AS/6 affidavits.
     id: "affidavitCommonLaw",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "forms",
     when: "commonLaw",
-    signAtAppointment: true,
+    signing: "clerk",
     source: `${P9}, the affidavit form (5.2.0009_a)`,
     verified: true,
   },
   {
     id: "relationshipStory",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "forms",
     source: `${P8} §ד.2.ו; ${AS6}`,
@@ -144,7 +164,7 @@ export const documents = [
   },
   {
     id: "securityCv",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "foreign",
     category: "forms",
     when: "foreignNeedsSecurityCheck",
@@ -155,7 +175,7 @@ export const documents = [
   // ── Identity ──
   {
     id: "israeliId",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "israeli",
     category: "identity",
     issuedBy: "israel",
@@ -164,7 +184,7 @@ export const documents = [
   },
   {
     id: "israeliPhotos",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "israeli",
     category: "identity",
     copies: 3,
@@ -173,7 +193,7 @@ export const documents = [
   },
   {
     id: "foreignPassport",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "foreign",
     category: "identity",
     source: `${P8} §ד.2.ד; ${AS6}`,
@@ -181,7 +201,7 @@ export const documents = [
   },
   {
     id: "foreignPhotos",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "foreign",
     category: "identity",
     copies: 3,
@@ -190,7 +210,7 @@ export const documents = [
   },
   {
     id: "foreignBirthCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "foreign",
     category: "identity",
     issuedBy: "birthCountry",
@@ -201,7 +221,7 @@ export const documents = [
   },
   {
     id: "foreignNameChange",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "foreign",
     category: "identity",
     when: "foreignNameChanged",
@@ -213,7 +233,7 @@ export const documents = [
   // ── Relationship ──
   {
     id: "marriageCertificateIsrael",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "relationship",
     when: "marriedInIsrael",
@@ -223,7 +243,7 @@ export const documents = [
   },
   {
     id: "marriageCertificateAbroad",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "couple",
     category: "relationship",
     when: { any: ["marriedAbroad", "marriedOnline"] },
@@ -233,7 +253,7 @@ export const documents = [
   },
   {
     id: "relationshipEvidence",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "relationship",
     source: `${P8} §ד.2.ח`,
@@ -243,7 +263,7 @@ export const documents = [
     // Up to 10 pages of their chats and calls, over the time they've been together.
     id: "messageHistory",
     // Their own evidence: they translate or explain it themselves, no notary.
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "relationship",
     source: "Practice, confirmed by the product owner",
@@ -252,7 +272,7 @@ export const documents = [
   {
     // From Israeli family and friends, in Hebrew.
     id: "recommendationLetters",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "relationship",
     source: `${P8} §ד.2.ח`,
@@ -261,7 +281,7 @@ export const documents = [
   {
     // Every couple who says they live, or lived, together, married or not.
     id: "jointLivingEvidence",
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "couple",
     category: "relationship",
     when: "livingTogether",
@@ -270,7 +290,7 @@ export const documents = [
   },
   {
     id: "jointChildrenBirthCertificates",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "couple",
     category: "relationship",
     when: "childrenTogether",
@@ -284,18 +304,20 @@ export const documents = [
     // Civil status and children. The procedure names the nationality; in practice offices ask every
     // country lived in, like the police certificate. What each item has to show: points.ts.
     id: "foreignCivilStatus",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "foreign",
     category: "civilStatus",
     each: "policeCountry",
     issuedBy: "each",
+    // Many countries have no such certificate (lib/knowledge/documents/foreignCivilStatus.md).
+    orAffidavit: true,
     copies: 2,
     source: `${P8} §ד.2.ה; ${AS6}`,
     verified: true,
   },
   {
     id: "foreignDivorceDecree",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "foreign",
     category: "civilStatus",
     when: "foreignDivorced",
@@ -306,7 +328,7 @@ export const documents = [
   },
   {
     id: "foreignSpouseDeathCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "foreign",
     category: "civilStatus",
     when: "foreignWidowed",
@@ -317,7 +339,7 @@ export const documents = [
   },
   {
     id: "israeliDivorceDecree",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "israeli",
     category: "civilStatus",
     when: "israeliDivorced",
@@ -327,7 +349,7 @@ export const documents = [
   },
   {
     id: "israeliSpouseDeathCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "israeli",
     category: "civilStatus",
     when: "israeliWidowed",
@@ -340,7 +362,7 @@ export const documents = [
   {
     // Every country of citizenship, and each other country lived in for 6 months in a row (since January 2024).
     id: "foreignPoliceCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "foreign",
     category: "criminalRecord",
     each: "policeCountry",
@@ -354,7 +376,7 @@ export const documents = [
     // The home they share, or shared: in both their names.
     id: "housingContract",
     // From abroad, for a couple who lived together there.
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "couple",
     category: "centerOfLife",
     when: "livingTogether",
@@ -365,7 +387,7 @@ export const documents = [
     // Never lived together: the Israeli partner's own home in Israel, in their name. With the
     // Israeli abroad too, there's no home to show: they prove the relationship in other ways.
     id: "israeliHousingContract",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "israeli",
     category: "centerOfLife",
     when: { all: ["israeliInIsrael", { not: "livingTogether" }] },
@@ -375,7 +397,7 @@ export const documents = [
   {
     id: "utilityBills",
     // From abroad, for a couple who lived together there.
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "couple",
     category: "centerOfLife",
     // The home you share, or shared, in Israel or abroad.
@@ -386,7 +408,7 @@ export const documents = [
   {
     // Never lived together: the bills of the Israeli partner's own home in Israel, in their name.
     id: "israeliUtilityBills",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "israeli",
     category: "centerOfLife",
     when: { all: ["israeliInIsrael", { not: "livingTogether" }] },
@@ -396,7 +418,7 @@ export const documents = [
   {
     // Services in Israel: someone has to live here to receive them.
     id: "governmentServices",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "centerOfLife",
     when: { any: ["israeliInIsrael", "foreignInIsrael"] },
@@ -405,18 +427,20 @@ export const documents = [
   },
   {
     // A B/1 holder has no public health insurance: a private plan in Israel, or a policy from abroad.
+    // Only once the foreign partner is in Israel: the procedures don't ask for it before arrival.
     id: "foreignHealthInsurance",
     // A policy from abroad.
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "foreign",
     category: "centerOfLife",
+    when: "foreignInIsrael",
     source: "Practice, confirmed by the product owner",
     verified: true,
   },
   {
     // On the AS/6 checklist, so for married couples only; and the municipality confirms a home in Israel: someone has to live here.
     id: "ishurToshav",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "centerOfLife",
     when: { all: ["married", { any: ["israeliInIsrael", "foreignInIsrael"] }] },
@@ -426,7 +450,7 @@ export const documents = [
   {
     // Part of AS/6, so for married couples only.
     id: "sharedBankAccount",
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "couple",
     category: "centerOfLife",
     when: "married",
@@ -436,7 +460,7 @@ export const documents = [
   {
     // Common-law couples' bank evidence, instead of the AS/6 joint account confirmation.
     id: "bankStatements",
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "couple",
     category: "centerOfLife",
     when: "commonLaw",
@@ -446,7 +470,7 @@ export const documents = [
   {
     id: "israeliIncomeProof",
     // From abroad, for an Israeli partner working for a business outside Israel.
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "israeli",
     category: "centerOfLife",
     source: AS6,
@@ -454,7 +478,7 @@ export const documents = [
   },
   {
     id: "foreignIncomeProof",
-    mayNeedTranslation: true,
+    translation: "self",
     owner: "foreign",
     category: "centerOfLife",
     source: AS6,
@@ -463,7 +487,7 @@ export const documents = [
   {
     // Evidence the household lives in Israel (§ה.2(7)): any of its children in school here.
     id: "childrenSchoolRecords",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "couple",
     category: "centerOfLife",
     when: { any: ["childrenTogether", "childrenMoving"] },
@@ -474,7 +498,7 @@ export const documents = [
   // ── Children moving to Israel ──
   {
     id: "childBirthCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "children",
     category: "children",
     when: "childrenMoving",
@@ -485,7 +509,7 @@ export const documents = [
   },
   {
     id: "childPassport",
-    mayNeedTranslation: false,
+    translation: "none",
     owner: "children",
     category: "children",
     when: "childrenMoving",
@@ -494,7 +518,7 @@ export const documents = [
   },
   {
     id: "childPoliceCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "children",
     category: "children",
     when: "childrenMoving",
@@ -504,7 +528,7 @@ export const documents = [
   },
   {
     id: "otherParentConsent",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "children",
     category: "children",
     when: "otherParentInvolved",
@@ -515,7 +539,7 @@ export const documents = [
   {
     // Besides the consent, the ministry writes to the other parent itself (§ה.2(9)); the couple gives their address.
     id: "otherParentAddress",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "children",
     category: "children",
     when: "otherParentInvolved",
@@ -525,7 +549,7 @@ export const documents = [
   },
   {
     id: "custodyOrder",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "children",
     category: "children",
     when: "otherParentCourtOrder",
@@ -535,7 +559,7 @@ export const documents = [
   },
   {
     id: "otherParentDeathCertificate",
-    mayNeedTranslation: true,
+    translation: "notarized",
     owner: "children",
     category: "children",
     when: "otherParentDeceased",

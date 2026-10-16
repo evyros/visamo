@@ -42,7 +42,25 @@ shown to users (`lib/knowledge/`).
   lease, the bills and the joint bank account, which are documents of their
   own. Kept for now; it may be removed later because of the overlap.
 
+- **Legalization chains** (`LEGALIZATION` in `countries.ts`): none checked
+  by a person yet. Thailand's, from procedure 1.3.0001 §3.1.2.1, the Thai
+  MFA's manual (March 2025) and the Israeli embassy in Bangkok's page (last
+  updated June 2024). Unknown for Thailand: whether the MFA's sticker
+  certifies the issuing official's signature or only the translation
+  (1.3.0001 §2.1.5.4 asks for the first); whether a notary in
+  Israel translates from Thai or from the legalized English translation; the
+  Israeli embassy's fee (535 baht in 2024). A document already in English,
+  like the police certificate, needs no English translation (product
+  owner).
+
 ## Not modelled yet
+
+- **Countries without an Israeli mission** (1.3.0001 §3.1.3): legalized
+  through a third country's mission. Their steps show the general chain.
+- **A document whose issuing country isn't known from onboarding**
+  (`issuedBy: "unknown"`: divorce decrees, children's documents): its steps
+  say "if it was issued abroad". Asking for the country per item would give
+  it the full steps and a place in the plan's countries.
 
 - **Cases where the chat should advise a lawyer.** The chat prompt
   (`lib/chat/prompt.ts`) names only some of them: a refusal, a criminal

@@ -337,8 +337,14 @@ export const documentCheck = pgTable(
     state: text("state").notNull().$type<"running" | "done" | "failed">(),
     /** The files it checked, sorted. Files never change (a replacement gets a new id), so this is what was checked. */
     fileIds: text("file_ids").array().notNull(),
-    /** A hash of what it was checked against: the case details and the document's check guidance. */
+    /** A hash of what it was checked against: the case details and the document's check guidance. For the history only. */
     contextHash: text("context_hash").notNull(),
+    /**
+     * A hash of the couple's details alone (lib/checks/prompt.ts detailsHash):
+     * once they change, the result no longer applies. A change to the
+     * guidance never retires one. Null on runs from before it was kept.
+     */
+    detailsHash: text("details_hash"),
     model: text("model").notNull(),
     /** The result, once done. */
     rating: text("rating").$type<CheckRating>(),

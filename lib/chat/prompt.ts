@@ -8,6 +8,7 @@ import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
 import { loadKnowledge } from "@/lib/knowledge-base";
+import { stepsInWords } from "@/lib/document-steps";
 
 // What the assistant is told before the conversation: who it is and its
 // rules, the knowledge base, and the couple's file. The first two are the
@@ -132,8 +133,8 @@ export async function casePrompt(caseId: string, userId: string) {
       const flags = [
         d.optional && "optional",
         d.copies && `bring ${d.copies} copies`,
-        d.mayNeedTranslation && "may need a translation",
-        d.signAtAppointment && "sign it only in front of the clerk at the appointment, and don't send it with the online application",
+        d.steps.length > 0 && `what to do to it: ${stepsInWords(d.steps, d.id, t.app.documentsPage)}`,
+        d.affidavitInstead && t.app.documentsPage.affidavitInstead,
         uploaded.has(d.key) ? "uploaded" : "not uploaded yet",
         checked(d.key),
       ]

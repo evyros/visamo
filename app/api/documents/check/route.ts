@@ -3,7 +3,7 @@ import { todayInIsrael } from "@/i18n/format";
 import { loadMessages } from "@/i18n/messages";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { checkModel } from "@/lib/checks/ask";
-import { RULES_VERSION, checkContext, contextHash } from "@/lib/checks/prompt";
+import { RULES_VERSION, checkContext, contextHash, detailsHash } from "@/lib/checks/prompt";
 import { performCheck } from "@/lib/checks/run";
 import { caseChecks, checkBalance, claimCheck, dismissedForNextCheck, saveCheck } from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
@@ -81,6 +81,7 @@ export async function POST(request: Request) {
     userId: user.id,
     fileIds: files.map((f) => f.id),
     contextHash: contextHash(context, check),
+    detailsHash: detailsHash(details, branch),
     model: checkModel(check),
     context,
     guidance: check,

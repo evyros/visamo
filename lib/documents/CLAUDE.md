@@ -20,12 +20,29 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   returns the facts that made it match (the "why" shown to the couple).
 - `catalog.ts`: every document, whose it is, its category, its condition
   (`when`, left out for every couple), `each` for one item per country,
-  `issuedBy` and `exemption` for its certification, `copies` (shown to the
-  couple only), and `optional` for a document whose need depends on
+  `issuedBy` and `exemption` for its certification, `translation`
+  (`"notarized"` for official documents, `"self"` for the couple's everyday
+  ones, `"none"`), `signing` (who it's signed in front of), `copies` (shown
+  to the couple only), and `optional` for a document whose need depends on
   something onboarding doesn't ask (the description says when).
 - `certification.ts` and `countries.ts`: apostille, consular legalization or
-  none, from the issuing country; whether a translation may be needed, and
-  the languages accepted without one.
+  none, from the issuing country, and the languages accepted without a
+  translation. `countries.ts` also has the legalization's offices for the
+  countries where they're known (`LEGALIZATION`), each from an official
+  source; every other country gets the general description.
+- `issuers.ts`: how a country provides the birth certificate, the civil
+  status and the police certificate: a document, a document that may not be
+  had, or none (an affidavit in its place). Each entry restates the
+  country's section in the document's guide (`lib/knowledge/documents/`),
+  which the tests check; the office names and explanations are in the
+  messages (`app.documentsPage.issuers`). A country without an entry gets the
+  general steps. Add a country from its guide section, never from guesses.
+- `steps.ts`: what to do to each item before it's ready, in order (get the
+  original, certify it, send it to Israel, translate it, sign it, or an
+  affidavit in its place), worked out from the above, and who does each step
+  (`byOf`). The card lists them. Their texts are in
+  `app.documentsPage.steps` (`lib/document-steps.ts`). They only explain:
+  steps aren't tracked or ticked off.
 - `points.ts`: what an item has to show, by the case, for the few documents
   whose content depends on it (the civil status: the status now, before the
   marriage, the children), or that are made of parts uploaded together (form
@@ -96,7 +113,9 @@ everything else:
   send the checker to the wrong page.
 - Written in English, for the model. Changing it doesn't change anyone's
   list, so it needs no catalog version. Results checked against the old
-  text become stale on their own (their hash includes it).
+  text stay as they are: a change to the checks never retires a couple's
+  results. Only new files, or a change in the couple's details, do
+  (`detailsHash`, `lib/checks/store.ts`); the next check uses the new text.
 
 ## Changing what couples get: the version
 

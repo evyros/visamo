@@ -13,6 +13,8 @@ import {
   type DocumentDefinition,
 } from "./catalog";
 import { factsIn } from "./conditions";
+import { APOSTILLE, FORMER_USSR, LEGALIZATION, SECURITY_CHECK } from "./countries";
+import { ISSUERS } from "./issuers";
 import { facts } from "./facts";
 import { scenarios } from "./scenarios";
 
@@ -107,7 +109,16 @@ type Lock = { version: number; fingerprint: string; scenarios: Record<string, st
 const lists = Object.fromEntries(Object.entries(scenarios).map(([name, s]) => [name, buildDocumentList(s)]));
 // Where a requirement comes from, and whether a person checked it, don't change any list.
 const rules = documents.map((d) => ({ ...d, source: undefined, verified: undefined }));
-const fingerprint = createHash("sha256").update(JSON.stringify({ rules, lists })).digest("hex");
+// The country tables too: an entry for a country no scenario has still changes those couples' lists.
+const sorted = (set: ReadonlySet<string>) => [...set].sort();
+const countries = {
+  apostille: sorted(APOSTILLE),
+  formerUssr: sorted(FORMER_USSR),
+  securityCheck: sorted(SECURITY_CHECK),
+  legalization: Object.fromEntries(Object.entries(LEGALIZATION).map(([country, l]) => [country, l!.chain])),
+  issuers: ISSUERS,
+};
+const fingerprint = createHash("sha256").update(JSON.stringify({ rules, countries, lists })).digest("hex");
 const current: Lock = {
   version: CATALOG_VERSION,
   fingerprint,

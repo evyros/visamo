@@ -1907,12 +1907,6 @@
         "optional": "Optional & recommended",
         "retired": "Not needed"
       },
-      "authentication": {
-        "apostille": "Apostille needed",
-        "legalization": "Consular legalization needed",
-        "utahApostille": "Apostille from Utah",
-        "dependsOnCountry": "Apostille or legalization, by country"
-      },
       "choose": "Upload files",
       "uploadHint": "PDF, JPG or PNG, up to 10 MB each.",
       "uploading": "Uploading… {percent}%",
@@ -2023,12 +2017,470 @@
         "AS/3": "AS/3",
         "AS/6": "AS/6"
       },
-      "requirements": {
-        "copies": "Bring {count} copies to Misrad Hapnim",
+      "steps": {
+        "heading": "What it needs",
+        "parts": {
+          "document": "For the civil status",
+          "children": "For the children"
+        },
+        "obtain": "Get the original from {country}",
+        "obtainFrom": "Get it from {office}",
+        "obtainDetails": "Ask for the original on paper, with a handwritten signature or an official stamp, and say it's for use abroad. Many Misrad Hapnim branches reject a document printed at home or downloaded online, and many countries won't put an apostille on one.",
+        "utah": "Utah",
+        "apostille": "An apostille, from {country}",
+        "apostilleFrom": "An apostille from {authority}",
+        "utahApostille": "An apostille from the Utah Lieutenant Governor",
+        "apostilleDetails": "Only the country that issued it can put an apostille on it: it can't be done in Israel. It's usually attached to the document: don't separate them, that voids it.",
+        "legalization": "Consular legalization in {country}",
+        "legalizationLead": "A chain of signatures (שרשרת חתימות), in this order:",
+        "legalizationUsualLead": "A chain of signatures (שרשרת חתימות), usually in this order:",
+        "issuingOffice": "the office that issued it",
+        "legalizationEnd": "It can only be done in {country}, not in Israel.",
+        "chain": {
+          "englishTranslation": "a certified translation into English (unless it's in English already)",
+          "ministryOfJustice": "the ministry of justice",
+          "foreignMinistry": "the foreign ministry",
+          "israeliConsulate": "the Israeli embassy"
+        },
+        "chainJoin": ", then ",
+        "dependsOnCountry": "If it was issued abroad: an apostille or consular legalization, from that country",
+        "dependsOnCountryDetails": "An apostille if the country is in the Hague Apostille Convention, consular legalization if it isn't. Only the country that issued it can do it, not Israel.",
         "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
-        "translation": "Translation may be needed",
-        "translationDetails": "A notarized translation is needed per the requirements, unless the document is in Hebrew, Arabic or English.",
-        "signAtAppointment": "Don't sign it before your appointment, and don't send it with the online application. Print it and fill in the details; you sign it in front of the clerk at the appointment."
+        "send": "Have the original sent to Israel by courier",
+        "sendDetails": "Misrad Hapnim asks for the original at the first appointment, and it's needed in Israel for the translation too. Have it sent in time from the country that issued it. If you already have it in Israel, there's nothing to do.",
+        "translateNotarized": "A notarized translation might be needed",
+        "translateNotarizedFull": "A notarized translation into Hebrew, made in Israel, if it isn't in Hebrew, Arabic or English",
+        "translateEnglish": "English is usually accepted, but a clerk may still ask for a translation.",
+        "translateArabic": "Not needed if it's in Arabic.",
+        "translateHebrewArabic": "Not needed if it's in Hebrew or Arabic.",
+        "translateNotarizedDetails": "Have it translated in Israel, by a notary who knows both languages and translates it themselves.\nThe apostille or legalization is translated too, unless it's in English or includes English.\nUpload the translation with the document.",
+        "translateSelf": "You might need to translate it",
+        "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
+        "translateSelfDetails": "Needed if it isn't in Hebrew, Arabic or English.\nNo notary is needed: translate it yourselves, or mark the important parts and explain them.\nUpload the translation with the document.",
+        "signing": {
+          "clerk": "Don't sign it before your appointment, and don't send it with the online application. Print it and fill in the details; you sign it in front of the clerk at the appointment.",
+          "lawyer": "Sign it in front of an Israeli lawyer: fill it in, but don't sign it before",
+          "lawyerCourtOrNotary": "Sign it in front of an Israeli lawyer, at the magistrate's court, or in front of a notary: fill it in, but don't sign it before",
+          "notary": "Sign it in front of a notary: fill it in, but don't sign it before",
+          "consul": "Sign it in front of a consul: fill it in, but don't sign it before"
+        },
+        "signingFor": {
+          "statusApplicationMarried": "Both your declarations, and the landlord's affidavit if you rent, are signed in front of an Israeli lawyer: fill them in, but don't sign them before"
+        },
+        "signingDetails": "Whoever confirms it checks who you are, and signs and stamps it. Sign only in front of them.",
+        "affidavit": {
+          "status": "An affidavit of civil status",
+          "children": "An affidavit about the children",
+          "noChildren": "An affidavit that there are no children"
+        },
+        "affidavitDetails": {
+          "status": "Signed in front of a notary in Israel, an Israeli consul abroad, that country's consul in Israel, or a notary in that country, with its apostille or legalization.",
+          "children": "It lists each child from a previous relationship, with their date of birth and who has guardianship of them. Sign it in front of an Israeli lawyer/notary, who confirms it; they can also write it for you.",
+          "noChildren": "It states there are no children from a previous relationship. Sign it in front of an Israeli lawyer/notary, who confirms it; they can also write it for you."
+        }
+      },
+      "affidavitInstead": "If you can't get this document, sign an affidavit about civil status instead. Sign it in front of a notary in Israel.",
+      "issuers": {
+        "foreignBirthCertificate": {
+          "BR": {
+            "office": "the registry office (cartório)",
+            "details": "Ask for the full birth certificate (certidão de nascimento de inteiro teor), on paper: the online version may not be accepted."
+          },
+          "CN": {
+            "office": "a notary office",
+            "details": "Someone born before about 1996 usually has no birth (medical) certificate (出生医学证明). Instead, a notary office issues a notarized birth certificate (出生公证), based on the household register (户口本) and the parents' documents. The apostille comes after that."
+          },
+          "CZ": {
+            "office": "the registry (matrika) of the place of birth",
+            "details": "Ask for a new birth certificate (rodný list) and say it's for use abroad: the original from the year of birth usually can't get an apostille.",
+            "apostilleDetails": "Only on the new certificate, and only after a higher certification (vyšší ověření) from the regional office."
+          },
+          "DK": {
+            "office": "the parish office",
+            "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized, or a certificate of personal data (personattest) if not. Get it in English, with a handwritten signature."
+          },
+          "ES": {
+            "office": "the civil registry (Registro Civil)",
+            "details": "Ask for the full birth certificate (certificación literal). The multilingual extract (certificado plurilingüe), in Spanish and French, doesn't save anything for Israel: it still needs a translation and an apostille."
+          },
+          "JP": {
+            "office": "the municipality where the birth was registered",
+            "details": "Japan has no birth certificate as such: ask for the certificate of acceptance of the birth registration (受理証明書 for the 出生届). Only the person who registered the birth, usually a parent, can ask for it."
+          },
+          "MX": {
+            "office": "the civil registry",
+            "details": "Ask for a birth certificate \"for apostille\" (acta de nacimiento para apostilla), with a handwritten signature: one printed from a machine or online can't be apostilled.",
+            "apostilleBy": "the same state that issued it"
+          },
+          "PT": {
+            "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. It's issued only in Portuguese."
+          },
+          "RU": {
+            "office": "the civil registry office (ЗАГС) of the place of birth",
+            "details": "Many people with an old Soviet certificate get a new copy (повторное свидетельство) from the civil registry office of the place of birth.",
+            "apostilleBy": "the regional registry archive"
+          },
+          "US": {
+            "office": "the vital records office of the state of birth",
+            "details": "Ask for a certified copy of the birth certificate.",
+            "apostilleBy": "that state's apostille authority"
+          },
+          "ZA": {
+            "office": "the Department of Home Affairs",
+            "details": "Ask for the unabridged birth certificate, from the Department of Home Affairs or through the South African embassy in Israel. It can take from 6 months to several years: order it first."
+          }
+        },
+        "foreignCivilStatus": {
+          "AR": {
+            "office": "the civil registry of the province",
+            "details": "A certificate of single status (certificado de soltería, or constancia negativa de matrimonio). Apply in person, by appointment.",
+            "apostilleBy": "Argentina's foreign ministry (Cancillería)",
+            "apostilleDetails": "Online, or in Buenos Aires from the notaries' association (Colegio de Escribanos)."
+          },
+          "AT": {
+            "office": "the registry office (Standesamt)",
+            "details": "A partial extract on the existence of a marriage or registered partnership (Teilauszug gemäß §58 PStG), or a civil-status certificate (Personenstandsurkunde). It can be issued as an international, multilingual certificate.",
+            "apostilleBy": "the town hall (Rathaus) in Vienna, or the authority of their region"
+          },
+          "AU": {
+            "office": "the state's Births, Deaths and Marriages office",
+            "details": "A single status certificate. It isn't issued online: apply in person, by post, or through someone they authorize. Choose the search period it covers (in New South Wales, 10 or 20 years: pick one that reaches back to age 16). It can take about 8 weeks even with priority service, so order it early.",
+            "apostilleBy": "the Department of Foreign Affairs and Trade (DFAT)",
+            "apostilleDetails": "At a passport office in Australia, or at the Australian embassy in Tel Aviv by appointment."
+          },
+          "BE": {
+            "office": "the municipality where they live",
+            "details": "An extract from the population register (uittreksel uit het bevolkingsregister, extrait du registre de la population) that shows the civil status (burgerlijke staat, état civil). It can also be ordered online with an e-ID.",
+            "apostilleBy": "the Federal Public Service Foreign Affairs",
+            "apostilleDetails": "Some municipalities add it automatically when you order online."
+          },
+          "BO": {
+            "office": "the civil registry (SERECÍ)",
+            "details": "A certificate of civil status (certificado de estado civil, or de soltería), issued in person. It's valid for only 3 months.",
+            "apostilleBy": "SERECÍ",
+            "apostilleDetails": "Order it at SERECÍ; it arrives by email."
+          },
+          "BR": {
+            "office": "the registry office (cartório) where the birth was registered",
+            "details": "A negative marriage certificate (certidão negativa de casamento): ask for a search of every registry office in Brazil, from the year of birth. Or a public declaration of civil status (declaração pública de estado civil), made at the registry office with two witnesses. A full birth certificate (certidão de nascimento de inteiro teor) notes any marriage or divorce, but it isn't this document.",
+            "apostilleBy": "any registry office (cartório)"
+          },
+          "CA": {
+            "office": "the province's vital statistics office",
+            "details": "There's no national certificate: each province and territory registers marriages. Ask for a marriage search letter, which says whether a marriage is registered there. It covers only that province."
+          },
+          "CH": {
+            "office": "the civil registry office (Zivilstandsamt) of their place of origin (Heimatort)",
+            "details": "A certificate of civil status (Personenstandsausweis, certificat individuel d'état civil), in 5 languages, English included. For a foreign national, it comes from the office of the place of residence.",
+            "apostilleBy": "the cantonal chancellery (Staatskanzlei) or the Federal Chancellery",
+            "apostilleDetails": "The issuing office can add it itself."
+          },
+          "CL": {
+            "office": "a notary in Chile",
+            "details": "There's no single-status certificate: the civil registry issues nothing to say someone is single. Make an affidavit of single status (declaración jurada de soltería) at a Chilean notary, with two witnesses. For the status before the marriage, it says they were single until the wedding, names the spouse with their passport or Teudat Zehut number, and is made with the marriage certificate as proof."
+          },
+          "CN": {
+            "office": "a notary office in China",
+            "details": "A notarized certificate of unmarried status (未婚公证, or 单身证明), based on the household register (户口本), which shows the marital status. It has to be issued in China: a declaration from the Chinese embassy in Israel has been refused.",
+            "apostilleBy": "China's foreign ministry or a local foreign affairs office",
+            "apostilleDetails": "China joined the Apostille Convention in November 2023: the document is apostilled after it's notarized."
+          },
+          "CZ": {
+            "office": "a city hall's registry (matrika)",
+            "details": "There's no civil-status certificate. Ask for an extract from the population register (výpis z registru obyvatel) showing the civil status (osobní stav), with a stamp that can be apostilled: say it's for use abroad. Before marrying, the certificate of legal capacity to marry (vysvědčení o právní způsobilosti k uzavření manželství), in 4 languages including English, also works.",
+            "apostilleBy": "the Czech foreign ministry",
+            "apostilleDetails": "Some documents first need a higher certification (vyšší ověření) from the regional office (krajský úřad)."
+          },
+          "DE": {
+            "office": "the citizens' office (Bürgeramt) where they're registered",
+            "details": "An extended registration certificate (erweiterte Meldebescheinigung) that includes the marital status (Familienstand). If they're no longer registered in Germany, get it by post from the office of the last town they were registered in. It's issued in German only."
+          },
+          "DK": {
+            "details": "A certificate of personal data (personattest), which says unwed or married, or a residence certificate (bopælsattest) that shows the civil status (civilstand). Order it in English, with a handwritten signature and the signer's name: a digitally signed one can't get a physical apostille.",
+            "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
+          },
+          "ES": {
+            "office": "the civil registry (Registro Civil)",
+            "details": "A certificate of life and civil status (certificado de fe de vida y estado), issued in person.",
+            "apostilleDetails": "It can be added on the spot when you collect the police certificate: bring this one with you."
+          },
+          "FR": {
+            "office": "the town hall (mairie) of the place of birth",
+            "details": "A certificate of civil status (certificat de célibat), issued against a full copy of the birth certificate from the last 3 months. Few town halls still issue it, so ask for it together with the birth certificate. The full copy of the birth certificate (copie intégrale) also shows any marriage or divorce in its margin.",
+            "apostilleBy": "the court of appeal (cour d'appel) of the region"
+          },
+          "GB": {
+            "office": "the local register office",
+            "details": "There's no national certificate of civil status. The only UK document saying someone is free to marry is a certificate of no impediment (CNI), issued only for a marriage planned abroad: give notice at the local register office, the notice is posted for a month, then it's issued. If you plan to marry abroad, get it first."
+          },
+          "HR": {
+            "office": "any registry office (matični ured)",
+            "details": "A certificate of free marital status (potvrda o slobodnom bračnom stanju), in person, usually on the spot. Get the paper original, not a digital copy from e-Građani.",
+            "apostilleBy": "the municipal civil court"
+          },
+          "HU": {
+            "office": "the district government office (kormányhivatal)",
+            "details": "A certificate of civil status (családi állapot igazolás), also online through Ügyfélkapu or at the Hungarian embassy. It shows only the current status: for the status before the marriage, ask the clerk to write it in.",
+            "apostilleBy": "the Hungarian Ministry of Foreign Affairs, or the Hungarian embassy"
+          },
+          "IN": {
+            "details": "India has no national civil-status certificate. Use an affidavit about their status instead."
+          },
+          "IS": {
+            "office": "Registers Iceland (Þjóðskrá)",
+            "details": "A certificate of marital history (hjúskaparsöguvottorð). Order it in English, and have it delivered on paper: don't print it at home.",
+            "apostilleBy": "Iceland's Ministry for Foreign Affairs",
+            "apostilleDetails": "The ministry can also send it to Israel."
+          },
+          "IT": {
+            "office": "the town hall (comune) where they're registered",
+            "details": "A certificate of free status (certificato di stato libero). Italians registered abroad (AIRE) get it from the Italian consulate.",
+            "apostilleBy": "the prefecture (prefettura) of the province that issued it"
+          },
+          "JP": {
+            "office": "the municipality where the family register (戸籍) is kept",
+            "details": "A single status certificate (独身証明書). It can only be had, and apostilled, before the marriage is registered in Japan, so get it first if you plan to marry. After the marriage, the family register (戸籍全部事項証明) shows the status.",
+            "apostilleBy": "Japan's Ministry of Foreign Affairs",
+            "apostilleDetails": "By post."
+          },
+          "MX": {
+            "office": "the civil registry of the state",
+            "details": "A certificate that no marriage is registered (constancia de inexistencia de registro de matrimonio), or of single status (constancia de soltería). Say it's for an apostille. Each state sets its own requirements, and it may be valid for as little as 30 days.",
+            "apostilleBy": "that same state"
+          },
+          "NL": {
+            "office": "the municipality where they're registered",
+            "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat). Someone who has left the Netherlands gets an extract from the non-residents' register (RNI) instead.",
+            "apostilleBy": "any court (rechtbank)",
+            "apostilleDetails": "Without an appointment."
+          },
+          "PH": {
+            "office": "the Philippine Statistics Authority (PSA)",
+            "details": "A certificate of no marriage (CENOMAR).",
+            "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)"
+          },
+          "PT": {
+            "office": "a notary",
+            "details": "Portugal issues no civil-status certificate. Ask a notary for a certificate of life and identity (certificado de vida e identidade), and make sure it says single (solteiro/a). A narrative birth certificate (certidão de nascimento narrativa) records any marriage or divorce, but doesn't say \"single\" in words, and Misrad Hapnim may not accept it as proof of status.",
+            "apostilleBy": "the regional prosecutor's office (Procuradoria-Geral Regional)"
+          },
+          "RU": {
+            "office": "any civil registry office (ЗАГС)",
+            "details": "A certificate of no registered marriage (справка об отсутствии факта государственной регистрации заключения брака, form 15). It's also available through Gosuslugi, or at a Russian consulate. In person at the registry office, it's usually issued the same day.",
+            "apostilleBy": "the civil registry office (ЗАГС)"
+          },
+          "SE": {
+            "office": "the Tax Agency (Skatteverket)",
+            "details": "An extract from the population register (utdrag om folkbokföring), in English, \"with all relations\" (med alla relationer). It serves as both the birth certificate and this document.",
+            "apostilleBy": "any notary public (notarius publicus)"
+          },
+          "SG": {
+            "office": "the Registry of Marriages, by an online search",
+            "details": "There's no certificate. Before marrying, search the Registry of Marriages online: it shows \"no marriage record found\". Once married, or for the status before the marriage, use a lawyer's affidavit of single status instead.",
+            "apostilleBy": "the Singapore Academy of Law"
+          },
+          "SI": {
+            "office": "the administrative unit (upravna enota)",
+            "details": "A certificate from the civil register showing the status as single (potrdilo o vpisu v matični register kot samski), issued on the spot.",
+            "apostilleBy": "the district court"
+          },
+          "TH": {
+            "office": "the district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
+            "details": "A certificate of marital status (หนังสือรับรองสถานภาพการสมรส, also called ใบรับรองโสด). It's issued only in Thailand: a Thai living abroad can authorize someone there to get it, by signing the authorization at a Thai embassy."
+          },
+          "UA": {
+            "office": "any civil registry office or a Ukrainian consulate",
+            "details": "An extract from the State Register of Civil Status Acts (витяг з Державного реєстру актів цивільного стану громадян) showing that no marriage record exists. Any civil registry office issues it, wherever they live."
+          },
+          "US": {
+            "office": "your state's vital records office",
+            "details": "There's no national certificate: each state and county registers marriages. Ask for a letter of single status (also called an affidavit of single status): a letter on the office's letterhead saying a search found no marriage record in that state. Not every office knows the document, so explain what you need.",
+            "apostilleBy": "that state's apostille authority (usually the Secretary of State)"
+          },
+          "ZA": {
+            "office": "the Department of Home Affairs",
+            "details": "A letter of non-impediment, from a Home Affairs branch in South Africa. It can take about 6 months, and is valid for 6 months. Check first that Home Affairs records the right status. Many use the affidavit instead, made in front of a South African notary and apostilled.",
+            "apostilleBy": "the Department of International Relations (DIRCO) in Pretoria",
+            "apostilleDetails": "For a notary's affidavit, it comes from the High Court."
+          }
+        },
+        "foreignPoliceCertificate": {
+          "AR": {
+            "office": "the National Recidivism Registry (Registro Nacional de Reincidencia)",
+            "details": "A certificate of criminal record (certificado de antecedentes penales). Apply online.",
+            "apostilleBy": "Argentina's foreign ministry (Cancillería)"
+          },
+          "AT": {
+            "office": "the state police headquarters (Landespolizeidirektion)",
+            "details": "A criminal record certificate (Strafregisterbescheinigung).",
+            "apostilleBy": "the Austrian Ministry of the Interior (Innenministerium)"
+          },
+          "AU": {
+            "office": "the Australian Federal Police (AFP)",
+            "details": "A National Police Check, applied for online. It comes digital by default: ask for the printed original on the form.",
+            "apostilleBy": "the Department of Foreign Affairs and Trade (DFAT)",
+            "apostilleDetails": "The Australian embassy in Tel Aviv can also add it, by appointment."
+          },
+          "BE": {
+            "office": "the municipality where they live",
+            "details": "An extract from the criminal record (uittreksel uit het strafregister, extrait de casier judiciaire), from the municipality where they live, or online with an e-ID.",
+            "apostilleBy": "the Federal Public Service Foreign Affairs"
+          },
+          "BO": {
+            "office": "the departmental court of justice (Palacio de Justicia)",
+            "details": "A certificate of criminal record (certificado de antecedentes penales). Apply in person, or through someone with a notarized power of attorney.",
+            "apostilleDetails": "Order the apostille at the same court, when you apply for the certificate."
+          },
+          "BR": {
+            "office": "the Federal Police (Polícia Federal)",
+            "details": "A criminal record certificate (certidão de antecedentes criminais). It's free and issued online, with an electronic verification code.",
+            "apostilleBy": "any registry office (cartório)"
+          },
+          "CA": {
+            "office": "the Royal Canadian Mounted Police (RCMP)",
+            "details": "A certified criminal record check, based on fingerprints. Apply through a company the RCMP accredits. From abroad, the fingerprints are taken on paper and sent to one."
+          },
+          "CH": {
+            "office": "the Federal Office of Justice",
+            "details": "An extract from the criminal record (Strafregisterauszug, extrait du casier judiciaire), online or at a Swiss Post branch.",
+            "apostilleBy": "the cantonal chancellery or the Federal Chancellery"
+          },
+          "CL": {
+            "office": "the civil registry (Registro Civil)",
+            "details": "A criminal record certificate for special purposes (certificado de antecedentes para fines especiales), at a branch or online.",
+            "apostilleBy": "the civil registry"
+          },
+          "CN": {
+            "office": "the local Public Security Bureau",
+            "details": "A certificate of no criminal record (无犯罪记录证明), often requested through the bureau's WeChat service. Ask for the paper certificate by post, not the online one. It's notarized before the apostille.",
+            "apostilleBy": "China's foreign ministry or a local foreign affairs office"
+          },
+          "CZ": {
+            "office": "the Criminal Register (Rejstřík trestů) in Prague",
+            "details": "An extract from the criminal register (výpis z rejstříku trestů). Best get it at the register in Prague, saying it's for an apostille so they use the right stamp. One from a CzechPOINT office can be harder to apostille. Czech embassies issue it too.",
+            "apostilleBy": "the Czech Ministry of Foreign Affairs"
+          },
+          "DE": {
+            "office": "the Federal Office of Justice (Bundesamt für Justiz)",
+            "details": "A certificate of good conduct (Führungszeugnis). Apply for the apostille first, online: you then request the certificate with the number it gives you.",
+            "apostilleBy": "the Federal Foreign Affairs Office (Bundesamt für Auswärtige Angelegenheiten)",
+            "apostilleDetails": "Apply online before requesting the certificate, then request it with the number you get."
+          },
+          "DK": {
+            "office": "any police station",
+            "details": "A criminal record certificate (straffeattest). Ask for it in English, with a handwritten signature and the signer's name. A digital one from borger.dk can't get a physical apostille.",
+            "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
+          },
+          "ES": {
+            "office": "the Spanish Ministry of Justice or a government sub-delegation",
+            "details": "A criminal record certificate (certificado de antecedentes penales), by appointment, with form 790 (the fee, paid at a bank).",
+            "apostilleBy": "the same office",
+            "apostilleDetails": "Done on the spot. Bring the birth certificate and the civil-status document too, and they apostille those as well."
+          },
+          "FR": {
+            "office": "the national criminal record office (Casier judiciaire national)",
+            "details": "An extract of the criminal record, bulletin no. 3 (extrait de casier judiciaire, bulletin n° 3). It's free, online.",
+            "apostilleBy": "the Rennes Court of Appeal",
+            "apostilleDetails": "Only this court can apostille it."
+          },
+          "GB": {
+            "office": "ACRO, the UK's criminal records office",
+            "details": "A police certificate, with their address history for the last 10 years. It isn't a DBS check.",
+            "apostilleBy": "the Foreign, Commonwealth and Development Office (FCDO)",
+            "apostilleDetails": "ACRO doesn't add it."
+          },
+          "HR": {
+            "office": "the Croatian Ministry of Justice",
+            "details": "A certificate from the criminal record (potvrda iz kaznene evidencije), not the certificate of no conviction (potvrda o nekažnjavanju). Apply in person; it's usually issued on the spot.",
+            "apostilleBy": "the municipal civil court"
+          },
+          "HU": {
+            "office": "any post office in Hungary",
+            "details": "An official certificate of good conduct (hatósági erkölcsi bizonyítvány), at any post office in Hungary, online through Ügyfélkapu, or at the Hungarian embassy.",
+            "apostilleBy": "the Hungarian Ministry of Foreign Affairs or the Hungarian embassy"
+          },
+          "IN": {
+            "office": "Passport Seva",
+            "details": "A police clearance certificate (PCC), applied for through Passport Seva."
+          },
+          "IS": {
+            "office": "the district commissioner (sýslumaður)",
+            "details": "A criminal record certificate (sakavottorð). From abroad, request it by email.",
+            "apostilleBy": "Iceland's Ministry for Foreign Affairs"
+          },
+          "IT": {
+            "office": "a public prosecutor's office (Procura della Repubblica)",
+            "details": "Two certificates: the criminal record certificate (certificato del casellario giudiziale) and the certificate of pending charges (certificato dei carichi pendenti). Ask for each in writing at the prosecutor's office.",
+            "apostilleBy": "the prosecutor's office at the court (Procura della Repubblica presso il Tribunale)",
+            "apostilleDetails": "Not the prefecture that apostilles other Italian documents."
+          },
+          "JP": {
+            "office": "the Japanese embassy in Israel",
+            "details": "A certificate of criminal record (犯罪経歴証明書). They apply in person at the embassy, with their fingerprints, and collect it about a month later."
+          },
+          "MX": {
+            "office": "the federal authorities in Mexico City",
+            "details": "The federal certificate of no criminal record (constancia de antecedentes penales federales), issued only in Mexico City, by appointment. It needs a letter from the Israeli embassy in Mexico showing it's for use abroad. From Israel, go through the Mexican embassy.",
+            "apostilleBy": "Mexico's Ministry of the Interior (SEGOB) in Mexico City",
+            "apostilleDetails": "It's a federal apostille, unlike other Mexican documents."
+          },
+          "NL": {
+            "office": "Justis",
+            "details": "A certificate of conduct (verklaring omtrent gedrag, VOG). Request it yourselves, attaching a printout of the Israeli government's page that shows it's needed.",
+            "apostilleBy": "any court (rechtbank)"
+          },
+          "PH": {
+            "office": "the National Bureau of Investigation (NBI)",
+            "details": "An NBI clearance.",
+            "apostilleDetails": "It goes only on the original, printed on the NBI's security paper."
+          },
+          "PT": {
+            "office": "any citizen's office (Loja do Cidadão) or court",
+            "details": "A criminal record certificate (certificado do registo criminal). Choose a wide purpose, such as work abroad (exercício de profissão/atividade no estrangeiro).",
+            "apostilleBy": "the regional prosecutor's office (Procuradoria-Geral Regional)"
+          },
+          "RU": {
+            "office": "Russia's Ministry of Internal Affairs (МВД)",
+            "details": "A certificate of no criminal record (справка об отсутствии судимости), from the ministry or through Gosuslugi. Order it on paper: an electronic certificate can't get an apostille.",
+            "apostilleDetails": "Order it together with the paper certificate."
+          },
+          "SE": {
+            "office": "the Swedish Police (Polisen)",
+            "details": "An extract from the criminal register (utdrag ur belastningsregistret), applied for online.",
+            "apostilleBy": "any notary public (notarius publicus)"
+          },
+          "SG": {
+            "office": "the Singapore Police Force",
+            "details": "A certificate of clearance (COC), applied for online through Singpass.",
+            "apostilleBy": "the Singapore Academy of Law"
+          },
+          "SI": {
+            "office": "the Slovenian Ministry of Justice",
+            "details": "A certificate from the criminal record (potrdilo iz kazenske evidence). Apply in person or by post. Those registered as living abroad can also apply by email.",
+            "apostilleBy": "a district court"
+          },
+          "TH": {
+            "office": "the Royal Thai Police",
+            "details": "A police clearance certificate (หนังสือรับรองความประพฤติ), from the Police Clearance Service Center at the Royal Thai Police headquarters in Bangkok. It takes a few days. It can also be issued in English, which takes a bit longer."
+          },
+          "UA": {
+            "office": "Ukraine's Ministry of Internal Affairs (МВС)",
+            "details": "A certificate of no criminal record (довідка про несудимість), at the ministry's service centers or through Diia.",
+            "apostilleDetails": "It goes on the original, not a copy."
+          },
+          "US": {
+            "office": "the FBI",
+            "details": "An FBI Identity History Summary. Apply with fingerprints.",
+            "apostilleBy": "the US Department of State",
+            "apostilleDetails": "It's federal, so not from a state. Only by mail, or in person in Washington, DC, by appointment. Someone you trust in the US can submit it for you."
+          },
+          "ZA": {
+            "office": "the South African Police Service",
+            "details": "A police clearance certificate (PCC), based on fingerprints. From abroad, apply by courier, with fingerprints taken at a local police station or the embassy. It takes 8 to 12 weeks and is valid for 6 months: plan the timing.",
+            "apostilleBy": "the Department of International Relations (DIRCO)",
+            "apostilleDetails": "It takes another 6 to 8 weeks."
+          }
+        }
       },
       "ask": {
         "label": "Ask about this document",

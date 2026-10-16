@@ -124,8 +124,13 @@ export function createCommentLoader(page) {
     );
     const docs = parseBodies(text);
     const error = docs[0]?.errors?.[0]?.message ?? (docs[0]?.error ? (docs[0].errorSummary ?? `error ${docs[0].error}`) : null);
-    if (!docs.length || error || !docs[0].data) {
+    if (!docs[0]?.data) {
       throw new Error(`${name} failed: ${error ?? text.slice(0, 200)}`);
+    }
+    // A field Facebook couldn't render (e.g. a post shared in a comment) comes back
+    // null with an error beside it; the rest of the answer is fine.
+    for (const e of docs[0].errors ?? []) {
+      console.warn(`\n${name}: ${e.message} at ${e.path?.join(".") ?? "?"}`);
     }
     await sleep(between(1500, 4000));
     return docs;

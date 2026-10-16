@@ -422,7 +422,7 @@ export function LetterWriter({
         onChange={(e) => setDetails((d) => ({ ...d, [key]: e.target.value }))}
         className={inputClass}
         aria-required
-        {...describe(`writer-${key}`, fieldErrors[key])}
+        {...describe(`writer-${key}`, fieldErrors[key], key === "name")}
         {...props}
       />
     );
@@ -432,7 +432,7 @@ export function LetterWriter({
         {heading(t.title)}
         <p className="mt-2 text-[15px] text-slate-700">{t.body}</p>
         <div className="mt-6 space-y-5">
-          <Field id="writer-name" label={t.name} error={fieldErrors.name}>
+          <Field id="writer-name" label={t.name} error={fieldErrors.name} hint={t.nameHint}>
             {input("name", { autoComplete: "name", maxLength: 60, dir: "auto" })}
           </Field>
           <div className="grid gap-5 sm:grid-cols-2">

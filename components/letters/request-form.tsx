@@ -103,6 +103,8 @@ export function RequestForm({ labels, lang }: { labels: Labels; lang: Locale }) 
       onChange={(e) => setValues((v) => ({ ...v, [key]: e.target.value }))}
       className={inputClass}
       aria-required={key !== "email"}
+      // A name follows its own script once typed; empty, the example follows the page.
+      dir={key !== "email" && values[key] ? "auto" : undefined}
       {...describe(key, errors[key], key !== "name1")}
       {...props}
     />
@@ -112,10 +114,10 @@ export function RequestForm({ labels, lang }: { labels: Labels; lang: Locale }) 
     <form ref={formRef} noValidate onSubmit={onSubmit} className="space-y-5">
       <h2 className="text-xl font-semibold text-navy-900">{f.title}</h2>
       <Field id="name1" label={f.name1} error={errors.name1}>
-        {input("name1", { autoComplete: "given-name", maxLength: 60, dir: "auto" })}
+        {input("name1", { autoComplete: "given-name", maxLength: 60, placeholder: f.name1Placeholder })}
       </Field>
       <Field id="name2" label={f.name2} error={errors.name2} hint={f.namesHint}>
-        {input("name2", { autoComplete: "off", maxLength: 60, dir: "auto" })}
+        {input("name2", { autoComplete: "off", maxLength: 60, placeholder: f.name2Placeholder })}
       </Field>
       <Field id="email" label={f.email} error={errors.email} hint={f.emailHint}>
         {input("email", { type: "email", dir: "ltr", autoComplete: "email", className: `${inputClass} text-start` })}

@@ -835,8 +835,10 @@
       "form": {
         "title": "Create a link for your friends",
         "name1": "Your first name",
+        "name1Placeholder": "e.g. דנה",
         "name2": "Your partner's first name",
-        "namesHint": "As they'll appear in the letters.",
+        "name2Placeholder": "e.g. מרקו",
+        "namesHint": "Preferably in Hebrew, since the letters are in Hebrew.",
         "email": "Email for the letters (optional)",
         "emailHint": "Your friends' letters will be sent to this address. Without it, each friend downloads their letter and sends it to you themselves.",
         "submit": "Create my link",
@@ -983,6 +985,7 @@
         "title": "Your details",
         "body": "They go under your signature, so the office can contact you if needed.",
         "name": "Full name",
+        "nameHint": "In Hebrew.",
         "idNumber": "ID number",
         "phone": "Phone",
         "errors": {

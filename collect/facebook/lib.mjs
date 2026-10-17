@@ -105,3 +105,23 @@ export function readPosts() {
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export const between = (min, max) => min + Math.floor(Math.random() * (max - min));
+
+// POSTs from inside the logged-in page, so Chrome adds the session's cookies. A request
+// that never gets an answer ("Failed to fetch": a dropped connection, a network change)
+// is retried a few times, waiting longer each time; Facebook's own answers, errors
+// included, are returned as they are.
+export async function postFromPage(page, { url, headers, body }) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await page.evaluate(
+        async ({ url, headers, body }) => (await fetch(url, { method: "POST", headers, body, credentials: "include" })).text(),
+        { url, headers, body },
+      );
+    } catch (error) {
+      if (attempt === 4 || !/Failed to fetch|NetworkError|ERR_/.test(String(error))) throw error;
+      const wait = attempt * between(15000, 30000);
+      console.warn(`\nRequest failed (${String(error.message ?? error).split("\n")[0]}); retrying in ${Math.round(wait / 1000)}s`);
+      await sleep(wait);
+    }
+  }
+}

@@ -9,7 +9,7 @@
 // The responses are saved to raw/ by capture.mjs like any other response.
 import fs from "node:fs";
 import path from "node:path";
-import { DATA_DIR, between, parseBodies, sleep } from "./lib.mjs";
+import { DATA_DIR, between, parseBodies, postFromPage, sleep } from "./lib.mjs";
 
 const ROOT = "CommentListComponentsRootQuery";
 const PAGE = "CommentsListComponentsPaginationQuery";
@@ -118,10 +118,7 @@ export function createCommentLoader(page) {
       "x-fb-lsd": form.get("lsd") ?? "",
       ...(base.asbd ? { "x-asbd-id": base.asbd } : {}),
     };
-    const text = await page.evaluate(
-      async ({ url, headers, body }) => (await fetch(url, { method: "POST", headers, body, credentials: "include" })).text(),
-      { url: base.url, headers, body: form.toString() },
-    );
+    const text = await postFromPage(page, { url: base.url, headers, body: form.toString() });
     const docs = parseBodies(text);
     const error = docs[0]?.errors?.[0]?.message ?? (docs[0]?.error ? (docs[0].errorSummary ?? `error ${docs[0].error}`) : null);
     if (!docs[0]?.data) {

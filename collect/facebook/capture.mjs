@@ -23,6 +23,7 @@ import {
   between,
   parseArgs,
   parseBodies,
+  postFromPage,
   readPosts,
   sleep,
 } from "./lib.mjs";
@@ -247,10 +248,7 @@ async function resumeFeed(maxPages) {
   for (let i = 0; i < maxPages; i++) {
     const body = new URLSearchParams(template.postData);
     body.set("variables", JSON.stringify({ ...variables, cursor: cursor.end_cursor }));
-    const text = await page.evaluate(
-      async ({ url, headers, body }) => (await fetch(url, { method: "POST", headers, body, credentials: "include" })).text(),
-      { url: template.url, headers, body: body.toString() },
-    );
+    const text = await postFromPage(page, { url: template.url, headers, body: body.toString() });
     const pageInfo = nextCursor(parseBodies(text));
     if (!pageInfo?.end_cursor) throw new Error("Facebook's answer had no next-page cursor; stopping (the saved cursor is unchanged).");
     const reach = pageReach(text);

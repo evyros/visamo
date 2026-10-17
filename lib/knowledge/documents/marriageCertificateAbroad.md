@@ -44,7 +44,7 @@ branch. If either of you changes your name, you both go. Bring:
   copies;
 - the foreign partner's proof of civil status **from before the marriage**,
   certified and, if needed, translated, with copies: it shows they were free to
-  marry (see civil status and children);
+  marry (see civil status);
 - the Israeli partner's Teudat Zehut and passport, and the foreign partner's
   passport.
 

@@ -1,0 +1,90 @@
+{
+  "scenario": "foreignAbroad",
+  "today": "2026-10-01",
+  "israeli": {
+    "name": "Evyatar Rozner",
+    "gender": "male"
+  },
+  "foreign": {
+    "name": "Elizabeth Anne Sieck",
+    "gender": "female"
+  },
+  "cases": [
+    {
+      "name": "complete",
+      "files": [
+        "foreign-declaration.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ]
+      }
+    },
+    {
+      "name": "the foreign partner's name missing",
+      "files": [
+        "foreign-declaration-no-name.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "first and last name"
+        ]
+      }
+    },
+    {
+      "name": "not signed",
+      "files": [
+        "foreign-declaration-no-signature.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "signed on the signature line"
+        ]
+      }
+    },
+    {
+      "name": "without the lawyer's confirmation",
+      "files": [
+        "foreign-declaration-no-confirmation.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "confirmation (אישור"
+        ]
+      }
+    },
+    {
+      "name": "not signed yet, and not confirmed",
+      "files": [
+        "foreign-declaration-unsigned.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "signed on the signature line",
+          "confirmation (אישור"
+        ]
+      }
+    },
+    {
+      "name": "the Israeli partner's declaration instead",
+      "files": [
+        "israeli-declaration.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "It is the foreign partner's declaration"
+        ],
+        "mayFlag": [
+          "*"
+        ]
+      }
+    }
+  ]
+}

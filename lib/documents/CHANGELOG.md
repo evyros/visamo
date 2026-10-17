@@ -3,6 +3,90 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v39 — 2026-10-17
+
+**What changed:** `statusApplicationMarried`'s signing is two steps: the
+partners' declarations (by name, the Israeli partner's alone when the
+foreign partner's is a document of its own), and, where the card has the
+landlord's affidavit, a step of its own for the landlord (`by: "landlord"`).
+The declarations' steps, and `foreignDeclarationMarried`'s, say a Misrad
+Hapnim registrar can confirm them too.
+
+**Why:** One line had the couple's declarations and the landlord's
+affidavit, which someone else signs, and only if they rent.
+
+**Source:** AS/6 (each declaration's and the landlord's affidavit's
+confirmation, by a lawyer or a registrar).
+
+**Lists that changed:** none (`statusApplicationMarried`'s steps).
+
+## v38 — 2026-10-17
+
+**What changed:** The foreign partner's signature by email is a step, not a
+point: `statusApplicationMarried` gets a `signByEmail` step, before the
+declarations' signing, when the foreign partner is abroad and the Israeli
+partner in Israel, and the `as6ForeignSignsByEmail` point is gone. Every
+signing step has a short line and its own full text.
+
+**Why:** The card mixed what the document has to show with what to do: the
+points say what's in it, the steps what to do, with the details in their
+full text.
+
+**Source:** Practice (product owner).
+
+**Lists that changed:** none (`statusApplicationMarried`'s steps and points
+in `foreignAbroad` and `marriedNeverLivedTogether`).
+
+## v37 — 2026-10-17
+
+**What changed:** A new point on `statusApplicationMarried`,
+`as6ForeignSignsByEmail`, when the foreign partner is abroad and the Israeli
+partner in Israel: the foreign partner signs only page 3 now (the applicants'
+declaration), by email, with no original; the rest once they're in Israel.
+
+**Why:** Couples didn't know how the foreign partner signs the application
+from abroad.
+
+**Source:** Practice (product owner).
+
+**Lists that changed:** none (a point on `statusApplicationMarried` in
+`foreignAbroad` and `marriedNeverLivedTogether`).
+
+## v36 — 2026-10-17
+
+**What changed:**
+- The children's affidavit is a document of its own, `previousChildrenAffidavit`,
+  for every couple, with the `children` / `noChildren` point and its own check.
+  `foreignCivilStatus` keeps its id and keys (existing uploads stay) and
+  shows only the status: its children point and the children's affidavit step
+  are gone, and so are the card's step parts.
+- A new `later` condition lists a document apart, after the others, as done
+  once the foreign partner is in Israel, and leaves it out of the progress:
+  - `previousChildrenAffidavit` and `affidavitCommonLaw`, whenever the
+    foreign partner is abroad;
+  - `statusApplicationMarried`, when both partners are abroad;
+  - `foreignHealthInsurance`, when the foreign partner is abroad and the
+    Israeli partner in Israel.
+- With the foreign partner abroad and the Israeli partner in Israel, form AS/6's
+  foreign partner's declaration is a document of its own,
+  `foreignDeclarationMarried` (listed apart, with the declaration's lines,
+  required). AS/6 drops that part, and `as6ForeignDeclarationLater` is gone.
+- `foreignHealthInsurance` is back for every couple: with the rest when both
+  are in Israel or both abroad.
+
+**Why:** A foreign partner abroad signs the children's affidavit, their AS/6
+declaration and the joint affidavit only once they're in Israel, and couples
+in Israel often declare the status and the children in one affidavit. Listing
+these apart, by where the partners are rather than by stage, lets couples see
+them from the start without counting them against the online application.
+
+**Source:** 5.2.0008 §ד.2.ה, §ד.2.ז; AS/6; practice (product owner).
+
+**Lists that changed:** every scenario: +previousChildrenAffidavit.
+`foreignAbroad`, `marriedNeverLivedTogether`: +foreignDeclarationMarried.
+`commonLawApart`, `foreignAbroad`, `bothAbroad`, `marriedNeverLivedTogether`,
+`neverLivedTogetherBothAbroad`: +foreignHealthInsurance.
+
 ## v35 — 2026-10-17
 
 **What changed:** The common-law affidavit (`affidavitCommonLaw`) links to

@@ -9,38 +9,30 @@ const pointsOf = (s: keyof typeof scenarios, key: string) =>
   buildDocumentList(scenarios[s]).find((d) => d.key === key)?.points;
 
 describe("pointsFor", () => {
-  it("asks a married partner for the status now, before the marriage, and the children", () => {
-    expect(pointsOf("marriedInCyprus", "foreignCivilStatus:US")).toEqual([
-      "statusNowMarried",
-      "statusBeforeSingle",
-      "noChildren",
-    ]);
+  it("asks a married partner for the status now and before the marriage", () => {
+    expect(pointsOf("marriedInCyprus", "foreignCivilStatus:US")).toEqual(["statusNowMarried", "statusBeforeSingle"]);
   });
 
-  it("asks a common-law partner for the status their previous marriages make them, and the children", () => {
-    expect(pointsOf("commonLawLivingTogether", "foreignCivilStatus:US")).toEqual(["statusNowSingle", "noChildren"]);
-    expect(pointsOf("commonLawForeignDivorced", "foreignCivilStatus:US")).toEqual(["statusNowDivorced", "noChildren"]);
+  it("asks a common-law partner for the status their previous marriages make them", () => {
+    expect(pointsOf("commonLawLivingTogether", "foreignCivilStatus:US")).toEqual(["statusNowSingle"]);
+    expect(pointsOf("commonLawForeignDivorced", "foreignCivilStatus:US")).toEqual(["statusNowDivorced"]);
   });
 
   it("asks for the status before the marriage by how the earlier marriages ended", () => {
     expect(pointsOf("bothPreviouslyMarried", "foreignCivilStatus:US")).toEqual([
       "statusNowMarried",
       "statusBeforeDivorcedOrWidowed",
-      "noChildren",
     ]);
   });
 
-  it("asks about the children whether or not they move to Israel", () => {
-    expect(pointsOf("childrenStayingBehind", "foreignCivilStatus:US")).toContain("children");
-    expect(pointsOf("childrenMovingWithConsent", "foreignCivilStatus:US")).toContain("children");
+  it("asks the children's affidavit about the children, whether or not they move to Israel", () => {
+    expect(pointsOf("marriedInCyprus", "previousChildrenAffidavit")).toEqual(["noChildren"]);
+    expect(pointsOf("childrenStayingBehind", "previousChildrenAffidavit")).toEqual(["children"]);
+    expect(pointsOf("childrenMovingWithConsent", "previousChildrenAffidavit")).toEqual(["children"]);
   });
 
   it("asks the other countries lived in for the status now only", () => {
-    expect(pointsOf("livedInThreeCountries", "foreignCivilStatus:FR")).toEqual([
-      "statusNowMarried",
-      "statusBeforeSingle",
-      "noChildren",
-    ]);
+    expect(pointsOf("livedInThreeCountries", "foreignCivilStatus:FR")).toEqual(["statusNowMarried", "statusBeforeSingle"]);
     for (const country of ["GB", "TH", "IN"]) {
       expect(pointsOf("livedInThreeCountries", `foreignCivilStatus:${country}`), country).toEqual(["statusNowMarried"]);
     }
@@ -53,7 +45,12 @@ describe("pointsFor", () => {
       "as6ForeignDeclaration",
       "as6LandlordAffidavit",
     ]);
-    expect(pointsOf("foreignAbroad", "statusApplicationMarried")).toContain("as6ForeignDeclarationLater");
+    // The foreign partner abroad, the Israeli partner filing from Israel: their declaration is a document of its own.
+    expect(pointsOf("foreignAbroad", "statusApplicationMarried")).toEqual([
+      "as6Application",
+      "as6IsraeliDeclaration",
+      "as6LandlordAffidavit",
+    ]);
     // Both abroad: they file together once in Israel, with both declarations.
     expect(pointsOf("bothAbroad", "statusApplicationMarried")).toContain("as6ForeignDeclaration");
     expect(pointsOf("neverLivedTogetherBothAbroad", "statusApplicationMarried")).not.toContain("as6LandlordAffidavit");

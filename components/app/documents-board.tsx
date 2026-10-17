@@ -49,7 +49,7 @@ import { LogoMark } from "@/components/logo";
  * The page's labels, without the texts the server already turned into each card's strings (the
  * steps, the countries' texts, what can replace a document): they'd only add weight to the page.
  */
-export type BoardLabels = Omit<Messages["app"]["documentsPage"], "steps" | "issuers" | "affidavitInstead"> & {
+export type BoardLabels = Omit<Messages["app"]["documentsPage"], "steps" | "issuers" | "affidavitInstead" | "oneAffidavit"> & {
   steps: Pick<Messages["app"]["documentsPage"]["steps"], "heading">;
 };
 type Labels = BoardLabels;
@@ -65,7 +65,9 @@ export type DocumentItem = {
   /** A website tool that helps get it: the recommendation letters tool. */
   tool?: { label: string; url: string };
   /** What to do to it before uploading it, in order: certification, sending, translation, signing. */
-  stepGroups: StepGroup[];
+  steps: StepItem[];
+  /** After the steps: what can replace the document if it can't be had, and where else one affidavit goes. */
+  notes: string[];
   /** Only if it applies to the couple (the description says when). */
   optional: boolean;
   check: {
@@ -78,13 +80,6 @@ export type DocumentItem = {
 
 /** One step; `details`, the full text, opens under the short one. */
 type StepItem = { kind: StepKind; text: string; details?: StepDetails };
-
-/**
- * A part's steps: the document's, or the children's affidavit's. `title`, its heading in place
- * of "What it needs", only on a card with both; `note`, what can replace the document if it
- * can't be had, after its steps.
- */
-type StepGroup = { title?: string; steps: StepItem[]; note?: string };
 
 /** What the case's purchases allow for document checks. */
 export type CheckSettings = {
@@ -120,7 +115,11 @@ function docState(uploaded: boolean, result: CheckView | null): DocState {
   return result.rating;
 }
 
-export type DocumentGroup = { owner: Owner; title: string; items: DocumentItem[] };
+/**
+ * A group of cards: whose documents they are, or "afterArrival", the ones done once the foreign
+ * partner is in Israel, which `intro` explains.
+ */
+export type DocumentGroup = { id: Owner | "afterArrival"; title: string; intro?: string; items: DocumentItem[] };
 
 /** Files for a document no longer on the list: kept, shown, and only removable. */
 export type RetiredDocument = { key: string; title: string };
@@ -442,8 +441,9 @@ export function DocumentsBoard({
       </section>
 
       {groups.map((group) => (
-        <section key={group.owner} id={group.owner} className="mt-8 scroll-mt-24">
+        <section key={group.id} id={group.id} className="mt-8 scroll-mt-24">
           <h2 className="text-lg font-semibold text-navy-900">{group.title}</h2>
+          {group.intro && <p className="mt-1 text-[15px] text-slate-600">{group.intro}</p>}
           <ul className="mt-3 space-y-3">
             {group.items.map((item) => (
               <li key={item.key}>
@@ -671,18 +671,21 @@ function DocumentCard({
               {item.tool.label}
             </a>
           )}
-          {/* One heading for the steps; on a card with parts, each part's heading instead. */}
-          {item.stepGroups.map((group, g) => (
-            <div key={group.title ?? g} className="mt-4">
-              <h3 className="text-sm font-semibold text-navy-900">{group.title ?? t.steps.heading}</h3>
+          {item.steps.length > 0 && (
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-navy-900">{t.steps.heading}</h3>
               <ol className="mt-2 space-y-2">
-                {group.steps.map((step, i) => (
+                {item.steps.map((step, i) => (
                   <StepRow key={`${step.kind}-${i}`} step={step} />
                 ))}
               </ol>
-              {group.note && <p className="mt-2 text-[15px] text-slate-700">{group.note}</p>}
+              {item.notes.map((note) => (
+                <p key={note} className="mt-2 text-[15px] text-slate-700">
+                  {note}
+                </p>
+              ))}
             </div>
-          ))}
+          )}
           <Uploads
             t={t}
             intlLocale={intlLocale}
@@ -1663,6 +1666,7 @@ const stepIcon: Record<StepKind, "file" | "shield" | "send" | "globe" | "pen"> =
   send: "send",
   translate: "globe",
   sign: "pen",
+  signByEmail: "send",
   affidavit: "pen",
 };
 

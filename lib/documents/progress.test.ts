@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
-  checkedProgressByOwner,
+  checkedProgressByGroup,
   checkedProgressOf,
-  progressByOwner,
+  progressByGroup,
   progressOf,
   standingOf,
   uploadedKeys,
@@ -10,10 +10,10 @@ import {
 } from "./progress";
 
 const items = [
-  { key: "a", optional: false, owner: "couple" as const },
-  { key: "b", optional: false, owner: "foreign" as const },
-  { key: "c", optional: true, owner: "foreign" as const },
-  { key: "d", optional: true, owner: "israeli" as const },
+  { key: "a", optional: false, owner: "couple" as const, later: false },
+  { key: "b", optional: false, owner: "foreign" as const, later: false },
+  { key: "c", optional: true, owner: "foreign" as const, later: false },
+  { key: "d", optional: true, owner: "israeli" as const, later: false },
 ];
 
 describe("progressOf", () => {
@@ -23,12 +23,21 @@ describe("progressOf", () => {
   });
 });
 
-describe("progressByOwner", () => {
-  it("leaves out owners with nothing to count", () => {
-    const groups = progressByOwner(items, new Set(["b"]), ["couple", "israeli", "foreign"]);
+describe("progressByGroup", () => {
+  it("leaves out groups with nothing to count", () => {
+    const groups = progressByGroup(items, new Set(["b"]));
     expect(groups).toEqual([
-      { owner: "couple", progress: { done: 0, total: 1 } },
-      { owner: "foreign", progress: { done: 1, total: 1 } },
+      { group: "couple", progress: { done: 0, total: 1 } },
+      { group: "foreign", progress: { done: 1, total: 1 } },
+    ]);
+  });
+
+  it("counts what's done once the foreign partner is in Israel in a group of its own, last", () => {
+    const later = [...items, { key: "e", optional: false, owner: "foreign" as const, later: true }];
+    expect(progressByGroup(later, new Set(["e"]))).toEqual([
+      { group: "couple", progress: { done: 0, total: 1 } },
+      { group: "foreign", progress: { done: 0, total: 1 } },
+      { group: "afterArrival", progress: { done: 1, total: 1 } },
     ]);
   });
 });
@@ -65,11 +74,11 @@ describe("checkedProgressOf", () => {
     expect(checkedProgressOf(items, standing)).toEqual({ ready: 1, fix: 1, unchecked: 0, notUploaded: 1, total: 3 });
   });
 
-  it("groups by owner, leaving out owners with nothing to count", () => {
+  it("groups by the page's groups, leaving out groups with nothing to count", () => {
     const standing = new Map<string, Standing>([["b", "unchecked"]]);
-    expect(checkedProgressByOwner(items, standing, ["couple", "israeli", "foreign"])).toEqual([
-      { owner: "couple", progress: { ready: 0, fix: 0, unchecked: 0, notUploaded: 1, total: 1 } },
-      { owner: "foreign", progress: { ready: 0, fix: 0, unchecked: 1, notUploaded: 0, total: 1 } },
+    expect(checkedProgressByGroup(items, standing)).toEqual([
+      { group: "couple", progress: { ready: 0, fix: 0, unchecked: 0, notUploaded: 1, total: 1 } },
+      { group: "foreign", progress: { ready: 0, fix: 0, unchecked: 1, notUploaded: 0, total: 1 } },
     ]);
   });
 });

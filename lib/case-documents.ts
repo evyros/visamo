@@ -63,11 +63,12 @@ export function listOf(details: CaseDetails) {
   return buildDocumentList({ relationship: details.relationship, people: [details.israeli, details.foreign] });
 }
 
-/** The case's people and its document list. */
+/** The case's people, its details and its document list. */
 export async function caseDocuments(caseId: string) {
   const { people, details } = await caseDetails(caseId);
   return {
     people: people.map((p) => ({ name: p.name, isIsraeli: p.isIsraeli, userId: p.userId })),
+    details,
     list: listOf(details),
   };
 }

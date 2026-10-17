@@ -23,8 +23,11 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   `issuedBy` and `exemption` for its certification, `translation`
   (`"notarized"` for official documents, `"self"` for the couple's everyday
   ones, `"none"`), `signing` (who it's signed in front of), `copies` (shown
-  to the couple only), and `optional` for a document whose need depends on
-  something onboarding doesn't ask (the description says when).
+  to the couple only), `optional` for a document whose need depends on
+  something onboarding doesn't ask (the description says when), and `later`
+  for one done only once the foreign partner is in Israel: the page lists it
+  apart, in a group of its own with its own progress. `later` reads where the
+  partners are, never the case's stage, so couples see it from the start.
 - `certification.ts` and `countries.ts`: apostille, consular legalization or
   none, from the issuing country, and the languages accepted without a
   translation. `countries.ts` also has the legalization's offices for the
@@ -44,9 +47,10 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   `app.documentsPage.steps` (`lib/document-steps.ts`). They only explain:
   steps aren't tracked or ticked off.
 - `points.ts`: what an item has to show, by the case, for the few documents
-  whose content depends on it (the civil status: the status now, before the
-  marriage, the children), or that are made of parts uploaded together (form
-  AS/6: the application, both declarations, the landlord's affidavit). The
+  whose content depends on it (the civil status: the status now and before
+  the marriage; the children's affidavit: the children, or none), or that are
+  made of parts uploaded together (form AS/6: the application, both
+  declarations, the landlord's affidavit). The
   card shows them as bullets (`app.documents.points.<point>`), and the check
   adds lines for each. A document of parts has a check part for each, and
   each finding names its part (`app.documentsPage.check.parts`).

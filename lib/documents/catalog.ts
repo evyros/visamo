@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 35;
+export const CATALOG_VERSION = 39;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -48,6 +48,14 @@ export type DocumentDefinition = {
   category: Category;
   /** Left out: every couple needs it. */
   when?: Condition;
+  /**
+   * Done only once the foreign partner is in Israel, with the entry permit:
+   * for the couples in this condition, the page lists it apart, after the
+   * documents for the online application, in a group of its own (counted in
+   * the progress like the others). By where the partners are, never by the
+   * case's stage, so a couple sees it from the start.
+   */
+  later?: Condition;
   /**
    * Needed only in a situation onboarding doesn't ask about (renting, say):
    * listed for the couples in `when`, but they decide. The description says
@@ -116,10 +124,28 @@ export const documents = [
     owner: "couple",
     category: "forms",
     when: "married",
+    // With both of them abroad, the consulate doesn't ask for it: it's filed with the online
+    // application once they're in Israel. With the Israeli partner in Israel, it's filed without the
+    // foreign partner's declaration, a document of its own (foreignDeclarationMarried).
+    later: { all: ["foreignAbroad", "israeliAbroad"] },
     form: "AS/6",
     // Both partners' declarations, and the landlord's affidavit.
     signing: "lawyer",
     source: `${P8} §ד.2.א, §ד.2.ז; AS/6, the landlord's affidavit (affidavit annexed to the lease – couples)`,
+    verified: true,
+  },
+  {
+    // Form AS/6's foreign partner's declaration, while the Israeli partner files the form from Israel
+    // without it: the foreign partner signs it once they're in Israel.
+    id: "foreignDeclarationMarried",
+    translation: "none",
+    owner: "foreign",
+    category: "forms",
+    when: { all: ["married", "foreignAbroad", "israeliInIsrael"] },
+    later: "foreignAbroad",
+    form: "AS/6",
+    signing: "lawyer",
+    source: `${P8} §ד.2.ז; AS/6, the foreign partner's declaration (הצהרת בן הזוג המוזמן)`,
     verified: true,
   },
   {
@@ -151,6 +177,8 @@ export const documents = [
     owner: "couple",
     category: "forms",
     when: "commonLaw",
+    // Both partners sign it in front of the clerk: only once the foreign partner is in Israel.
+    later: "foreignAbroad",
     form: "5.2.0009_a",
     signing: "clerk",
     source: `${P9}, the affidavit form (5.2.0009_a)`,
@@ -303,8 +331,9 @@ export const documents = [
 
   // ── Civil status ──
   {
-    // Civil status and children. The procedure names the nationality; in practice offices ask every
-    // country lived in, like the police certificate. What each item has to show: points.ts.
+    // The civil status. The procedure names the nationality; in practice offices ask every country
+    // lived in, like the police certificate. What each item has to show: points.ts. The children:
+    // previousChildrenAffidavit.
     id: "foreignCivilStatus",
     translation: "notarized",
     owner: "foreign",
@@ -314,6 +343,18 @@ export const documents = [
     // Many countries have no such certificate (lib/knowledge/documents/foreignCivilStatus.md).
     orAffidavit: true,
     copies: 2,
+    source: `${P8} §ד.2.ה; ${AS6}`,
+    verified: true,
+  },
+  {
+    // The children from previous relationships, or that there are none: an affidavit no country's
+    // document replaces. Its own document, so a couple abroad can sign it once they're in Israel.
+    id: "previousChildrenAffidavit",
+    translation: "none",
+    owner: "foreign",
+    category: "civilStatus",
+    later: "foreignAbroad",
+    signing: "lawyerCourtOrNotary",
     source: `${P8} §ד.2.ה; ${AS6}`,
     verified: true,
   },
@@ -429,13 +470,14 @@ export const documents = [
   },
   {
     // A B/1 holder has no public health insurance: a private plan in Israel, or a policy from abroad.
-    // Only once the foreign partner is in Israel: the procedures don't ask for it before arrival.
+    // With the Israeli partner filing from Israel, only once the foreign partner is there: the
+    // procedures don't ask for it before arrival.
     id: "foreignHealthInsurance",
     // A policy from abroad.
     translation: "self",
     owner: "foreign",
     category: "centerOfLife",
-    when: "foreignInIsrael",
+    later: { all: ["foreignAbroad", "israeliInIsrael"] },
     source: "Practice, confirmed by the product owner",
     verified: true,
   },

@@ -124,6 +124,11 @@ export async function casePrompt(caseId: string, userId: string) {
       .filter(Boolean)
       .join("; ");
   };
+  // Both abroad, they file once they're in Israel: these go with it. Otherwise, the file is filed without them.
+  const later =
+    details.israeli.residence === "abroad"
+      ? "done once you're both in Israel with the entry permit, not before"
+      : "done once the foreign partner is in Israel with the entry permit, not before: the online application is filed without it";
   const documents = list
     .map((d) => {
       const text = t.app.documents.items[d.id];
@@ -133,8 +138,10 @@ export async function casePrompt(caseId: string, userId: string) {
       const flags = [
         d.optional && "optional",
         d.copies && `bring ${d.copies} copies`,
-        d.steps.length > 0 && `what to do to it: ${stepsInWords(d.steps, d.id, t.app.documentsPage, d.points)}`,
+        d.steps.length > 0 && `what to do to it: ${stepsInWords(d.steps, d.id, t.app.documentsPage, { points: d.points, foreign: details.foreign.name, israeli: details.israeli.name })}`,
         d.affidavitInstead && t.app.documentsPage.affidavitInstead,
+        d.oneAffidavit && "one affidavit can declare both the civil status and the children: then it's uploaded to both",
+        d.later && later,
         uploaded.has(d.key) ? "uploaded" : "not uploaded yet",
         checked(d.key),
       ]

@@ -253,119 +253,6 @@
       }
     },
     {
-      "name": "both in Israel, foreign partner's declaration not signed yet",
-      "files": [
-        "application.pdf",
-        "israeli-declaration.pdf",
-        "foreign-declaration-unsigned.pdf",
-        "landlord-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": "needsFixing",
-        "flagged": [
-          "foreignDeclaration: signed on the signature line",
-          "foreignDeclaration: confirmation (אישור"
-        ],
-        "mayFlag": [
-          "landlordAffidavit: Teudat Zehut is uploaded"
-        ]
-      }
-    },
-    {
-      "name": "foreign partner abroad, declaration signed",
-      "scenario": "foreignAbroad",
-      "files": [
-        "application.pdf",
-        "israeli-declaration.pdf",
-        "foreign-declaration.pdf",
-        "landlord-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": [
-          "looksGood",
-          "canImprove"
-        ],
-        "mayFlag": [
-          "landlordAffidavit: Teudat Zehut is uploaded"
-        ]
-      }
-    },
-    {
-      "name": "foreign partner abroad, declaration signed without the lawyer's confirmation",
-      "scenario": "foreignAbroad",
-      "files": [
-        "application.pdf",
-        "israeli-declaration.pdf",
-        "foreign-declaration-no-confirmation.pdf",
-        "landlord-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": [
-          "looksGood",
-          "canImprove"
-        ],
-        "mayFlag": [
-          "landlordAffidavit: Teudat Zehut is uploaded"
-        ]
-      }
-    },
-    {
-      "name": "foreign partner abroad, declaration confirmed but not signed",
-      "scenario": "foreignAbroad",
-      "files": [
-        "application.pdf",
-        "israeli-declaration.pdf",
-        "foreign-declaration-no-signature.pdf",
-        "landlord-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": [
-          "looksGood",
-          "canImprove"
-        ],
-        "mayFlag": [
-          "landlordAffidavit: Teudat Zehut is uploaded"
-        ]
-      }
-    },
-    {
-      "name": "foreign partner abroad, declaration not signed yet",
-      "scenario": "foreignAbroad",
-      "files": [
-        "application.pdf",
-        "israeli-declaration.pdf",
-        "foreign-declaration-unsigned.pdf",
-        "landlord-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": [
-          "looksGood",
-          "canImprove"
-        ],
-        "mayFlag": [
-          "landlordAffidavit: Teudat Zehut is uploaded"
-        ]
-      }
-    },
-    {
-      "name": "foreign partner abroad, declaration not uploaded",
-      "scenario": "foreignAbroad",
-      "files": [
-        "application.pdf",
-        "israeli-declaration.pdf",
-        "landlord-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": [
-          "looksGood",
-          "canImprove"
-        ],
-        "mayFlag": [
-          "landlordAffidavit: Teudat Zehut is uploaded"
-        ]
-      }
-    },
-    {
       "name": "no landlord affidavit",
       "files": [
         "application.pdf",
@@ -391,6 +278,42 @@
         "rating": "canImprove",
         "flagged": [
           "landlordAffidavit: confirmation (אישור"
+        ],
+        "mayFlag": [
+          "landlordAffidavit: Teudat Zehut is uploaded"
+        ]
+      }
+    },
+    {
+      "name": "foreign partner abroad, filed without their declaration",
+      "scenario": "foreignAbroad",
+      "files": [
+        "application.pdf",
+        "israeli-declaration.pdf",
+        "landlord-affidavit.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "landlordAffidavit: Teudat Zehut is uploaded"
+        ]
+      }
+    },
+    {
+      "name": "foreign partner abroad, applicants' declaration signed by one partner",
+      "scenario": "foreignAbroad",
+      "files": [
+        "application-one-signature.pdf",
+        "israeli-declaration.pdf",
+        "landlord-affidavit.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "application: applicants' declaration is signed"
         ],
         "mayFlag": [
           "landlordAffidavit: Teudat Zehut is uploaded"

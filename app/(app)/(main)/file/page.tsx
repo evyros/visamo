@@ -11,14 +11,14 @@ import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
 import { caseChecks } from "@/lib/checks/store";
 import {
-  checkedProgressByOwner,
+  checkedProgressByGroup,
   checkedProgressOf,
-  ownerOrder,
-  progressByOwner,
+  progressByGroup,
   progressOf,
   standingOf,
   uploadedKeys,
   type CheckedProgress,
+  type Group,
 } from "@/lib/documents/progress";
 import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
@@ -86,19 +86,21 @@ export default async function FileOverviewPage() {
   // Documents: counted by upload, or with Full file check, by where each stands, as on the documents page.
   const list = listOf(details);
   const uploaded = uploadedKeys(files);
-  const groupTitle = {
-    couple: messages.app.documentsPage.groups.couple,
-    israeli: format(messages.app.documentsPage.groups.israeli, { name: details.israeli.name }),
-    foreign: format(messages.app.documentsPage.groups.foreign, { name: details.foreign.name }),
-    children: messages.app.documentsPage.groups.children,
+  const g = messages.app.documentsPage.groups;
+  const groupTitle: Record<Group, string> = {
+    couple: g.couple,
+    israeli: format(g.israeli, { name: details.israeli.name }),
+    foreign: format(g.foreign, { name: details.foreign.name }),
+    children: g.children,
+    afterArrival: details.israeli.residence === "abroad" ? g.afterArrivalBoth : format(g.afterArrival, { name: details.foreign.name }),
   };
   const documents = row.fileCheck
     ? checkedDocuments(list, uploaded, await caseChecks(caseId), messages, locale)
     : uploadedDocuments(list, uploaded, messages);
-  const groups = documents.groups.map(({ owner, ...g }) => ({
-    href: `/file/documents#${owner}`,
-    title: groupTitle[owner],
-    ...g,
+  const groups = documents.groups.map(({ group, ...rest }) => ({
+    href: `/file/documents#${group}`,
+    title: groupTitle[group],
+    ...rest,
   }));
 
   // The partner the invite banner is about: the other person in the case.
@@ -174,8 +176,8 @@ function uploadedDocuments(list: DocumentList, uploaded: ReadonlySet<string>, me
     summary: format(t.summary, progress),
     counts: undefined,
     complete: progress.total > 0 && progress.done === progress.total ? t.allDone : null,
-    groups: progressByOwner(list, uploaded, ownerOrder).map((g) => ({
-      owner: g.owner,
+    groups: progressByGroup(list, uploaded).map((g) => ({
+      group: g.group,
       summary: format(t.summary, g.progress),
       value: { kind: "uploads", progress: g.progress } satisfies ProgressValue,
     })),
@@ -206,8 +208,8 @@ function checkedDocuments(
     summary: counts.map((c) => c.text).join(", "),
     counts,
     complete: progress.total > 0 && progress.ready === progress.total ? t.allReady : null,
-    groups: checkedProgressByOwner(list, standing, ownerOrder).map((g) => ({
-      owner: g.owner,
+    groups: checkedProgressByGroup(list, standing).map((g) => ({
+      group: g.group,
       summary: readySummary(g.progress),
       value: { kind: "checks", progress: g.progress } satisfies ProgressValue,
     })),

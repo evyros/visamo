@@ -1,6 +1,6 @@
 # Joint affidavit of both partners (תצהיר משותף של בני הזוג)
 
-A declaration in the ministry's wording for couples applying on the basis of living together: that the details are true, that you'll report any change, and statements about each of you. Both of you sign it at a Misrad Hapnim office.
+The ministry's declaration for couples applying on the basis of living together, signed by both of you.
 
 For common-law couples (ידועים בציבור), the application under procedure
 5.2.0009 comes with its own affidavit, titled **בקשתי בהתאם לנוהל בני זוג על

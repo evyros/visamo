@@ -57,7 +57,8 @@ export default async function ChatPage({ params, searchParams }: PageProps<"/cha
         stage: row.stage as Stage,
         track: trackOf(details),
         awaitingDecision: awaitingDecision(row.stage as Stage, row.stageDates, todayInIsrael()),
-        items: listOf(details),
+        // The online application's documents: not the ones done once the foreign partner is in Israel.
+        items: listOf(details).filter((d) => !d.later),
         uploaded: uploadedKeys(files),
         toFix,
       },

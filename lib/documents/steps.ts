@@ -27,24 +27,12 @@ export type Step =
   | { kind: "send" }
   /** `from`: the country that issued it, when it's issued by one; null when that isn't known. */
   | { kind: "translate"; level: Exclude<Translation, "none">; from?: Issuer }
-  | { kind: "sign"; before: Signing }
-  /**
-   * An affidavit (תצהיר): about the civil status, in place of a document the
-   * country doesn't issue (`from`), or about the children ("noChildren":
-   * that there are none), which no country's document proves.
-   */
-  | { kind: "affidavit"; about: AffidavitAbout; from?: Issuer };
-
-export type AffidavitAbout = "status" | "children" | "noChildren";
-
-/**
- * Which part of a document a step is for: the document itself, or the
- * children's affidavit that goes with the civil status. A card with both
- * shows each part's steps under its own heading.
- */
-export type StepPart = "document" | "children";
-export const partOf = (step: Step): StepPart =>
-  step.kind === "affidavit" && step.about !== "status" ? "children" : "document";
+  /** `by`: someone other than the partners signs this part (form AS/6's landlord's affidavit). */
+  | { kind: "sign"; before: Signing; by?: "landlord" }
+  /** A foreign partner abroad signs only the applicants' declaration of form AS/6 now, on a scan sent by email. */
+  | { kind: "signByEmail" }
+  /** An affidavit (תצהיר) about the civil status, in place of a document the country (`from`) doesn't issue. */
+  | { kind: "affidavit"; from?: Issuer };
 
 export type StepKind = Step["kind"];
 
@@ -70,14 +58,15 @@ export function byOf(step: Step): By {
     case "authenticate":
       return "issuingCountry";
     case "send":
+    case "signByEmail":
       return "couple";
     case "translate":
       return step.level === "notarized" ? "notary" : "couple";
     case "sign":
       return SIGNED_BY[step.before];
     case "affidavit":
-      // About the children alone, a lawyer confirms it; about the status, a notary or a consul.
-      return step.about === "status" ? "notary" : "lawyer";
+      // A notary, or a consul.
+      return "notary";
   }
 }
 
@@ -90,8 +79,10 @@ export type StepsItem = {
   issuerKind?: IssuerKind;
   /** An affidavit can replace it, where a country issues none (the catalog's `orAffidavit`). */
   orAffidavit?: boolean;
-  /** It also declares the children, or that there are none, in an affidavit (the civil status's children point). */
-  children?: "children" | "noChildren";
+  /** The foreign partner, abroad, signs their part by email first (form AS/6's applicants' declaration). */
+  signByEmail?: boolean;
+  /** The landlord signs their affidavit too, in front of a lawyer (form AS/6, if they rent). */
+  landlord?: boolean;
 };
 
 /** How the country provides it: a country not known to the table may or may not issue one that can be replaced. */
@@ -103,13 +94,16 @@ const kindOf = (item: StepsItem): IssuerKind => item.issuerKind ?? (item.orAffid
  */
 export const affidavitInsteadOf = (item: StepsItem): boolean => kindOf(item) === "documentOrAffidavit";
 
+/** Whether the civil status may be proved by an affidavit: in its place, or where the country issues none. */
+export const statusByAffidavit = (item: StepsItem): boolean => kindOf(item) !== "document";
+
 /** `sendOriginals`: originals from abroad are sent to Israel; not when both partners are abroad, and bring them. */
 export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
-  const { issuer, certification, translation, signing, children } = item;
+  const { issuer, certification, translation, signing, signByEmail, landlord } = item;
   const steps: Step[] = [];
   // No such document in the country: an affidavit about the civil status in its place.
   const noDocument = kindOf(item) === "affidavit";
-  if (noDocument) steps.push({ kind: "affidavit", about: "status", ...(issuer !== undefined && { from: issuer }) });
+  if (noDocument) steps.push({ kind: "affidavit", ...(issuer !== undefined && { from: issuer }) });
   const authentication = certification?.authentication;
   // Issued abroad, by a known country: got from there and certified there.
   const fromAbroad = !noDocument && !!authentication && authentication !== "none" && issuer !== undefined;
@@ -122,8 +116,8 @@ export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
   if (translation !== "none") {
     steps.push({ kind: "translate", level: translation, ...(issuer !== undefined && { from: issuer }) });
   }
+  if (signByEmail) steps.push({ kind: "signByEmail" });
   if (signing) steps.push({ kind: "sign", before: signing });
-  // No country's document proves the children: always an affidavit of their own.
-  if (children) steps.push({ kind: "affidavit", about: children });
+  if (landlord) steps.push({ kind: "sign", before: "lawyer", by: "landlord" });
   return steps;
 }

@@ -65,7 +65,7 @@ const passportPhoto: DocumentCheck = {
 };
 
 /** The line each point adds to a civil-status item's check (see points.ts). */
-const civilStatusPoints: Record<Exclude<Point, `as6${string}`>, string> = {
+const civilStatusPoints: Record<Exclude<Point, `as6${string}` | ChildrenPoint>, string> = {
   statusNowSingle:
     "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months, that shows they're single, or that no marriage is registered for them.",
   statusNowDivorced:
@@ -84,16 +84,29 @@ const civilStatusPoints: Record<Exclude<Point, `as6${string}`>, string> = {
     "A document of the foreign partner's civil status before the marriage, showing they were widowed: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
   statusBeforeDivorcedOrWidowed:
     "A document of the foreign partner's civil status before the marriage, showing they were divorced or widowed: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+};
+
+type ChildrenPoint = Extract<Point, "children" | "noChildren">;
+
+/** The line the children's affidavit's point adds to its check (see points.ts). */
+const childrenPoints: Record<ChildrenPoint, string> = {
   noChildren:
     "An affidavit (תצהיר) of the foreign partner stating that they have no children from a previous relationship, signed by them and confirmed by a lawyer or notary, with the lawyer's or notary's stamp and signature.",
   children:
     "An affidavit (תצהיר) of the foreign partner listing their children from previous relationships, with who has guardianship of each, signed by them and confirmed by a lawyer or notary, with the lawyer's or notary's stamp and signature.",
 };
 
+/** The children from previous relationships, or that there are none: the line for its point. */
+function childrenCheck(points: readonly Point[]): DocumentCheck {
+  return {
+    required: points.flatMap((point) => (point in childrenPoints ? [childrenPoints[point as ChildrenPoint]] : [])),
+    recommended: [...(points.includes("children") ? ["Each child is named with their date of birth."] : []), "The affidavit is dated."],
+  };
+}
+
 /**
- * Civil status and children: one line for each point the item has to show,
- * whatever the files are split into. One affidavit can declare several
- * points at once.
+ * The civil status: one line for each point the item has to show, whatever
+ * the files are split into. One affidavit can declare several points at once.
  */
 function civilStatusCheck(points: readonly Point[]): DocumentCheck {
   return {
@@ -108,18 +121,22 @@ function civilStatusCheck(points: readonly Point[]): DocumentCheck {
     recommended: [
       "The apostille or legalization pages are scanned together with each document, in order.",
       "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service.",
-      ...(points.includes("children") ? ["Each child is named with their date of birth."] : []),
-      ...(points.some((point) => point === "children" || point === "noChildren") ? ["The affidavit is dated."] : []),
     ],
   };
 }
 
-/** The foreign partner's declaration, as filled in and signed. */
-const foreignDeclarationLines = [
+/**
+ * The foreign partner's declaration, filled in and signed in front of a lawyer or registrar: a part
+ * of form AS/6, or a document of its own when the Israeli partner files the form without it.
+ */
+const foreignDeclarationRequired = [
   "It is the foreign partner's declaration from form AS/6, titled \"הצהרת בן הזוג המוזמן\", with the whole page: the statements, the explanation lines, the signature line and the confirmation section.",
   "The foreign partner's first and last name are filled in.",
   "Each of the statements is ticked. Any statement that isn't ticked is explained in the lines under the list.",
+  "The foreign partner has signed on the signature line (חתימת המוזמן/ת): there's handwriting on the line itself. A filled place or date isn't a signature. The place and the date are filled in too.",
+  "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
 ];
+const foreignDeclarationRecommended = ["The ticks are clear, and the page is scanned straight and readable in full."];
 
 /** Form AS/6's parts, by the points that call for them (see points.ts). */
 const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
@@ -164,22 +181,8 @@ const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
   as6ForeignDeclaration: {
     part: "foreignDeclaration",
     name: "The foreign partner's declaration, titled \"הצהרת בן הזוג המוזמן\"",
-    required: [
-      ...foreignDeclarationLines,
-      "The foreign partner has signed on the signature line (חתימת המוזמן/ת): there's handwriting on the line itself. A filled place or date isn't a signature. The place and the date are filled in too.",
-      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name and license number, the declarer's name and ID number, and their stamp and signature.",
-    ],
-    recommended: ["The ticks are clear, and the page is scanned straight and readable in full."],
-  },
-  // A foreign partner abroad, with the Israeli partner filing alone from Israel: they sign it once
-  // they're in Israel, and the application is filed without it.
-  as6ForeignDeclarationLater: {
-    part: "foreignDeclaration",
-    name: "The foreign partner's declaration, titled \"הצהרת בן הזוג המוזמן\". The foreign partner is abroad and the Israeli partner files without it: they sign it once they're in Israel, so it may be missing, and unsigned if it's there",
-    required: [],
-    recommended: [
-      `If it's in the files: ${foreignDeclarationLines.map((line) => line.charAt(0).toLowerCase() + line.slice(1)).join(" ")} Its signature and the lawyer's confirmation may still be empty. If it isn't in the files, report nothing about it.`,
-    ],
+    required: foreignDeclarationRequired,
+    recommended: foreignDeclarationRecommended,
   },
   // From the form, and how it's signed: in front of a lawyer or registrar. Only for couples who
   // rent, which onboarding doesn't ask: nothing in it is required.
@@ -219,6 +222,13 @@ function as6Check(points: readonly Point[]): DocumentCheck {
 
 export const checks = {
   statusApplicationMarried: as6Check,
+  // The page of AS/6 the Israeli partner files without (as6ForeignDeclaration), on its own.
+  foreignDeclarationMarried: {
+    required: foreignDeclarationRequired,
+    recommended: foreignDeclarationRecommended,
+    // Scanned, with handwritten ticks and signatures, like the whole form.
+    model: "strong",
+  },
   // From the form (AS/1, two pages) and lib/knowledge.
   entryPermitApplication: {
     required: [
@@ -442,6 +452,8 @@ export const checks = {
   },
   // Its required lines follow the case: civilStatusCheck, below.
   foreignCivilStatus: civilStatusCheck,
+  // Its line follows the case: childrenCheck, above.
+  previousChildrenAffidavit: childrenCheck,
   foreignDivorceDecree: {
     required: [
       "It is an official proof of divorce: a court's divorce decree or judgment, or a divorce certificate from a civil registry.",

@@ -13,7 +13,7 @@ import { evaluate } from "./conditions";
 import { profileOf, type CaseProfile, type CaseSnapshot, type Fact } from "./facts";
 import { pointsFor, type Point } from "./points";
 import { issuerEntry } from "./issuers";
-import { affidavitInsteadOf, stepsFor, type Step, type StepsItem } from "./steps";
+import { affidavitInsteadOf, statusByAffidavit, stepsFor, type Step, type StepsItem } from "./steps";
 
 // The list builder: a case in, its documents out. Pure: no database, no
 // messages. The list isn't stored; it's built on every read, and progress is
@@ -42,6 +42,14 @@ export type RequiredDocument = {
   steps: Step[];
   /** An affidavit about the civil status can replace it if it can't be had (see steps.ts): said with its description. */
   affidavitInstead: boolean;
+  /**
+   * The civil status may be proved by an affidavit, which can declare the children too: one
+   * affidavit then goes to both the nationality's civil-status item and the children's affidavit.
+   * Set on both.
+   */
+  oneAffidavit: boolean;
+  /** Done once the foreign partner is in Israel: listed apart, in a group of its own (see the catalog). */
+  later: boolean;
   /** The facts that put it on the list; empty for documents every couple needs. */
   because: Fact[];
   /** What it has to show, by the case (see points.ts); empty for most documents. */
@@ -73,7 +81,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
   // The originals have to be in Israel for the appointment: sent there from the country that issued them,
   // unless both partners are abroad and bring them when they move.
   const sendOriginals = !(profile.facts.foreignAbroad && profile.facts.israeliAbroad);
-  return documents.flatMap((doc: DocumentDefinition) => {
+  const list = documents.flatMap((doc: DocumentDefinition) => {
     const { match, because } = evaluate(doc.when, profile.facts);
     if (!match) return [];
     const countries = doc.each ? profile.countries.police : [undefined];
@@ -93,9 +101,9 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         signing,
         ...(issuerKind && { issuerKind }),
         orAffidavit: "orAffidavit" in doc && !!doc.orAffidavit,
-        // The civil status's children point: declared in an affidavit.
-        ...(points.includes("children") && { children: "children" as const }),
-        ...(points.includes("noChildren") && { children: "noChildren" as const }),
+        // AS/6 filed without the foreign partner's declaration: they sign the applicants' declaration by email.
+        signByEmail: doc.id === "statusApplicationMarried" && !points.includes("as6ForeignDeclaration"),
+        landlord: points.includes("as6LandlordAffidavit"),
       };
       return {
         key: country ? `${doc.id}:${country}` : doc.id,
@@ -111,9 +119,14 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         ...(signing && { signing }),
         steps: stepsFor(stepsItem, sendOriginals),
         affidavitInstead: affidavitInsteadOf(stepsItem),
+        oneAffidavit: doc.id === "foreignCivilStatus" && country === profile.countries.nationality && statusByAffidavit(stepsItem),
+        later: "later" in doc && evaluate(doc.later, profile.facts).match,
         because,
         points,
       };
     });
   });
+  // The children's affidavit, where the nationality's civil status may be an affidavit too.
+  const shared = list.some((d) => d.oneAffidavit);
+  return list.map((d) => (d.id === "previousChildrenAffidavit" ? { ...d, oneAffidavit: shared } : d));
 }

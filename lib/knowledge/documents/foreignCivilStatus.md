@@ -1,10 +1,10 @@
-# Civil status and children (מצב אישי וילדים)
+# Personal status (מצב אישי)
 
 The documents must show, for the country:
 
 What the foreign partner shows about their civil status (single, divorced,
-widowed or married) and their children. Every couple needs it, including
-those married in Israel. What it has to show depends on your case:
+widowed or married). Every couple needs it, including those married in
+Israel. What it has to show depends on your case:
 
 - **Their status now,** issued in the last 6 months (§ד.2.ה). From their
   country, and in practice also from each other country they're a citizen
@@ -16,25 +16,14 @@ those married in Israel. What it has to show depends on your case:
   divorced or widowed), which shows they were free to marry you. From their
   country. A marriage certificate from their own country that shows their
   status before the marriage covers it.
-- **Their children from previous relationships,** and who has guardianship
-  of them, or that they have none: from every foreign partner, with children
-  or without.
 
 A divorce decree, or a previous spouse's death certificate, is a document of
-its own, for each previous marriage.
+its own, for each previous marriage. So is the affidavit about the foreign
+partner's children from previous relationships, or that they have none.
 
 ## How to get it
 
-**About your children:** it's an affidavit (תצהיר), "an affidavit about
-children from before the marriage or from a previous marriage, and
-guardianship of the children" (תצהיר לגבי ילדים מרווקות או מנישואין קודמים,
-ואפוטרופסות על הילדים). A lawyer writes it, or you write it and the foreign
-partner signs it in front of a lawyer (עו"ד), who confirms it. Signed abroad,
-it's signed in front of a notary there, and needs that country's
-certification (see [certification.md](../certification.md)).
-
-**About their civil status:** many countries don't issue a "civil status
-certificate" as such. What
+Many countries don't issue a "civil status certificate" as such. What
 counts is an official document from the foreign partner's country that
 states their status, or that no marriage is registered for them. Each
 country calls it something else, and some have no national document at
@@ -327,13 +316,6 @@ apostille. If you can't get one, use the affidavit (below).
 
 ## What it should include
 
-- **About the children:** each child from before the marriage or from a
-  previous marriage, with their date of birth and who has guardianship of
-  them; or, without children, a statement that they have none. The foreign
-  partner's full name and passport number, their signature, and the lawyer's
-  confirmation with their stamp. Children who stay behind are listed too.
-  Children who move to Israel also need their own documents (see
-  [children.md](../children.md)).
 - **Issued in the last 6 months.** Counted from the date it was issued, or
   from the date an affidavit was signed. Some countries set a shorter validity
   of their own (Bolivia, some Mexican states).
@@ -357,7 +339,8 @@ apostille. If you can't get one, use the affidavit (below).
   the office knows which countries do.
 - **One affidavit for everything:** if the foreign partner can't get one of the
   documents, one affidavit can declare it all: their status now, for a married
-  couple their status before the marriage, and their children.
+  couple their status before the marriage, and their children, which they
+  declare in an affidavit anyway.
 - **If your marriage certificate is from the foreign partner's country** and
   shows their status before the marriage, it can replace the document of their
   status before the marriage.
@@ -374,14 +357,6 @@ foreign partner signs a notarized or consular affidavit about their status.
 One shows the foreign partner was free to marry you; the other shows their
 status now. If they can't get one of them, a single affidavit can declare
 both, and their children too.
-
-**My partner has no children. Do we still need the affidavit about children?**
-Yes. Every foreign partner brings it: without children, it states that they
-have none.
-
-**My partner's children aren't moving to Israel. Do they go in the affidavit?**
-Yes. It's about all their children from before the marriage or a previous
-marriage, and who has guardianship of them.
 
 **Can the embassy of my partner's country in Israel issue it?**
 Some do, but offices have refused documents issued by a foreign embassy in

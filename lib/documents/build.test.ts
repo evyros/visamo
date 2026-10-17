@@ -16,6 +16,8 @@ const everyone = [
   "relationshipEvidence",
   "messageHistory",
   "recommendationLetters",
+  "previousChildrenAffidavit",
+  "foreignHealthInsurance",
   "israeliIncomeProof",
   "foreignIncomeProof",
 ];
@@ -37,6 +39,7 @@ describe("buildDocumentList", () => {
       "recommendationLetters",
       "jointLivingEvidence",
       "foreignCivilStatus:US",
+      "previousChildrenAffidavit",
       "foreignPoliceCertificate:US",
       "housingContract",
       "utilityBills",
@@ -64,6 +67,7 @@ describe("buildDocumentList", () => {
       "recommendationLetters",
       "jointLivingEvidence",
       "foreignCivilStatus:US",
+      "previousChildrenAffidavit",
       "foreignPoliceCertificate:US",
       "housingContract",
       "utilityBills",
@@ -75,10 +79,11 @@ describe("buildDocumentList", () => {
     ]);
   });
 
-  it("asks for health insurance only once the foreign partner is in Israel", () => {
-    expect(keys("marriedInCyprus")).toContain("foreignHealthInsurance");
-    expect(keys("foreignAbroad")).not.toContain("foreignHealthInsurance");
-    expect(keys("commonLawApart")).not.toContain("foreignHealthInsurance");
+  it("asks every couple for health insurance, once the foreign partner is in Israel if the Israeli partner files from there", () => {
+    for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) expect(keys(name), name).toContain("foreignHealthInsurance");
+    expect(find("marriedInCyprus", "foreignHealthInsurance")?.later).toBe(false);
+    expect(find("foreignAbroad", "foreignHealthInsurance")?.later).toBe(true);
+    expect(find("bothAbroad", "foreignHealthInsurance")?.later).toBe(false);
   });
 
   it("gives every couple the documents everyone needs", () => {
@@ -96,7 +101,7 @@ describe("buildDocumentList", () => {
 
   it("gives married couples their declarations in form AS/6, and common-law couples an affidavit together", () => {
     for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
-      const affidavits = keys(name).filter((k) => /affidavit/i.test(k));
+      const affidavits = keys(name).filter((k) => /affidavit/i.test(k) && k !== "previousChildrenAffidavit");
       const married = scenarios[name].relationship.relationship === "married";
       expect(affidavits, name).toEqual(married ? [] : ["affidavitCommonLaw"]);
       const points = find(name, "statusApplicationMarried")?.points ?? [];
@@ -218,7 +223,8 @@ describe("buildDocumentList", () => {
     // From a country not known: certified if it's from abroad, but nothing to get or send.
     expect(kinds("commonLawForeignDivorced", "foreignDivorceDecree")).toEqual(["authenticate", "translate"]);
     expect(kinds("marriedInCyprus", "israeliIncomeProof")).toEqual(["translate"]);
-    expect(kinds("marriedInCyprus", "statusApplicationMarried")).toEqual(["sign"]);
+    // The declarations, then the landlord's affidavit.
+    expect(kinds("marriedInCyprus", "statusApplicationMarried")).toEqual(["sign", "sign"]);
     expect(kinds("commonLawLivingTogether", "affidavitCommonLaw")).toEqual(["sign"]);
   });
 
@@ -231,25 +237,66 @@ describe("buildDocumentList", () => {
   });
 
   it("follows how the country provides the civil status", () => {
-    const kinds = (s: keyof typeof scenarios, key: string) =>
-      find(s, key)?.steps.map((step) => (step.kind === "affidavit" ? `affidavit:${step.about}` : step.kind));
-    // The US: a state's letter and the children's affidavit; one affidavit in their place if the letter can't be had.
-    expect(kinds("marriedInCyprus", "foreignCivilStatus:US")).toEqual([
-      "obtain",
-      "authenticate",
-      "send",
-      "translate",
-      "affidavit:noChildren",
-    ]);
+    const kinds = (s: keyof typeof scenarios, key: string) => find(s, key)?.steps.map((step) => step.kind);
+    // The US: a state's letter; one affidavit in its place if the letter can't be had.
+    expect(kinds("marriedInCyprus", "foreignCivilStatus:US")).toEqual(["obtain", "authenticate", "send", "translate"]);
     expect(find("marriedInCyprus", "foreignCivilStatus:US")?.affidavitInstead).toBe(true);
     expect(find("livedInThreeCountries", "foreignCivilStatus:TH")?.affidavitInstead).toBe(false);
-    // Thailand, a country lived in: the district office's certificate; the children only from the nationality.
+    // Thailand, a country lived in: the district office's certificate.
     expect(kinds("livedInThreeCountries", "foreignCivilStatus:TH")).toEqual(["obtain", "authenticate", "send", "translate"]);
     // India issues none: an affidavit about the civil status in its place.
-    expect(kinds("livedInThreeCountries", "foreignCivilStatus:IN")).toEqual(["affidavit:status", "translate"]);
+    expect(kinds("livedInThreeCountries", "foreignCivilStatus:IN")).toEqual(["affidavit", "translate"]);
     expect(find("livedInThreeCountries", "foreignCivilStatus:IN")?.affidavitInstead).toBe(false);
     // An affidavit in place of the document isn't certified like one.
     expect(find("livedInThreeCountries", "foreignCivilStatus:IN")?.certification).toBeNull();
+  });
+
+  it("asks every couple for the children in an affidavit of its own, signed in front of a lawyer", () => {
+    for (const name of Object.keys(scenarios) as (keyof typeof scenarios)[]) {
+      const affidavit = find(name, "previousChildrenAffidavit");
+      expect(affidavit?.points, name).toEqual([scenarios[name].people.some((p) => p.hasChildren) ? "children" : "noChildren"]);
+      expect(affidavit?.steps, name).toEqual([{ kind: "sign", before: "lawyerCourtOrNotary" }]);
+      // The civil status shows only the status.
+      for (const d of buildDocumentList(scenarios[name]).filter((d) => d.id === "foreignCivilStatus")) {
+        expect(d.points.some((p) => p === "children" || p === "noChildren"), `${name} ${d.key}`).toBe(false);
+      }
+    }
+  });
+
+  it("says one affidavit can cover the civil status and the children, where the status may be an affidavit", () => {
+    // The US: a letter that may not be had, so an affidavit in its place.
+    expect(find("marriedInCyprus", "foreignCivilStatus:US")?.oneAffidavit).toBe(true);
+    expect(find("marriedInCyprus", "previousChildrenAffidavit")?.oneAffidavit).toBe(true);
+    // France issues a document; the other countries lived in have no children's point.
+    expect(find("livedInThreeCountries", "foreignCivilStatus:FR")?.oneAffidavit).toBe(false);
+    expect(find("livedInThreeCountries", "foreignCivilStatus:IN")?.oneAffidavit).toBe(false);
+    expect(find("livedInThreeCountries", "previousChildrenAffidavit")?.oneAffidavit).toBe(false);
+  });
+
+  it("lists apart what's done once the foreign partner is in Israel, by where the partners are", () => {
+    const later = (s: keyof typeof scenarios) => keys(s).filter((key) => find(s, key)?.later);
+    // Both in Israel: nothing.
+    expect(later("marriedInCyprus")).toEqual([]);
+    expect(later("commonLawLivingTogether")).toEqual([]);
+    // The foreign partner abroad, the Israeli partner filing from Israel: AS/6's foreign declaration
+    // on its own, the children's affidavit and the health insurance.
+    expect(later("foreignAbroad")).toEqual(["foreignDeclarationMarried", "previousChildrenAffidavit", "foreignHealthInsurance"]);
+    expect(find("foreignAbroad", "statusApplicationMarried")?.points).not.toContain("as6ForeignDeclaration");
+    // They sign only the applicants' declaration now, by email, before the declarations are signed.
+    // Then the declarations, and the landlord's affidavit on its own, where the card has it.
+    const landlord = { kind: "sign", before: "lawyer", by: "landlord" };
+    expect(find("foreignAbroad", "statusApplicationMarried")?.steps).toEqual([{ kind: "signByEmail" }, { kind: "sign", before: "lawyer" }, landlord]);
+    expect(find("bothAbroad", "statusApplicationMarried")?.steps).toEqual([{ kind: "sign", before: "lawyer" }, landlord]);
+    expect(find("marriedInCyprus", "statusApplicationMarried")?.steps).toEqual([{ kind: "sign", before: "lawyer" }, landlord]);
+    // No lease asked for, no landlord.
+    expect(find("neverLivedTogetherBothAbroad", "statusApplicationMarried")?.steps).toEqual([{ kind: "sign", before: "lawyer" }]);
+    // Common-law: the joint affidavit, signed in front of the clerk.
+    expect(later("commonLawApart")).toEqual(["affidavitCommonLaw", "previousChildrenAffidavit", "foreignHealthInsurance"]);
+    // Both abroad: the whole of AS/6, with the foreign partner's declaration; the health insurance with the rest.
+    expect(later("bothAbroad")).toEqual(["statusApplicationMarried", "previousChildrenAffidavit"]);
+    expect(find("bothAbroad", "statusApplicationMarried")?.points).toContain("as6ForeignDeclaration");
+    expect(keys("bothAbroad")).toContain("foreignHealthInsurance");
+    expect(keys("bothAbroad")).not.toContain("foreignDeclarationMarried");
   });
 
   it("names the legalization's offices where they're known for the country", () => {

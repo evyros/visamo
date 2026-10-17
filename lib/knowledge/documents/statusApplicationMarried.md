@@ -1,6 +1,6 @@
 # Status application for a married spouse (form AS/6) (בקשה למעמד לבן/בת זוג נשוי/אה (טופס אש/6))
 
-The application for status for a foreign spouse married to an Israeli, with the declarations that go with it.
+Form AS/6: the application, with the declarations that go with it.
 
 Form **AS/6** (אש/6), "Application for status in Israel for a foreign spouse
 married to an Israeli" (בקשה לקבלת מעמד בישראל לבן זוג זר הנשוי לישראלי),
@@ -43,7 +43,10 @@ The form is on the Population and Immigration Authority's site (see
 
 **If the foreign partner is abroad and the Israeli partner is in Israel:**
 the Israeli partner files the form with their own parts, and the foreign
-partner fills in and signs their declaration once they arrive in Israel.
+partner fills in and signs their declaration once they arrive in Israel. In
+practice, the foreign partner signs only the applicants' declaration (הצהרת
+המבקשים) from abroad, and sends it by email: a scan is enough, with no
+original.
 **If you both live abroad,** you file together once you're both in Israel
 (see [both-abroad.md](../both-abroad.md)), so you fill in and sign both
 declarations then.

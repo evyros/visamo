@@ -23,43 +23,7 @@
         ],
         "mayFlag": [
           "paper original issued for use abroad",
-          "apostille or legalization pages are scanned",
-          "affidavit is dated"
-        ]
-      }
-    },
-    {
-      "name": "real file: no marriage record only, no affidavit",
-      "files": [
-        "real-certificate.pdf"
-      ],
-      "expect": {
-        "rating": "needsFixing",
-        "flagged": [
-          "no children from a previous relationship",
-          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
-        ],
-        "mayFlag": [
-          "paper original issued for use abroad"
-        ]
-      }
-    },
-    {
-      "name": "real file, but the partner has children",
-      "scenario": "childrenStayingBehind",
-      "files": [
-        "real-certificate.pdf",
-        "real-affidavit.pdf"
-      ],
-      "expect": {
-        "rating": "needsFixing",
-        "flagged": [
-          "listing their children",
-          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
-        ],
-        "mayFlag": [
-          "Each child is named",
-          "paper original issued for use abroad"
+          "apostille or legalization pages are scanned"
         ]
       }
     },
@@ -99,23 +63,6 @@
       }
     },
     {
-      "name": "affidavit without the notary",
-      "files": [
-        "real-certificate.pdf",
-        "affidavit-not-notarized.pdf"
-      ],
-      "expect": {
-        "rating": "needsFixing",
-        "flagged": [
-          "no children from a previous relationship",
-          "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
-        ],
-        "mayFlag": [
-          "paper original issued for use abroad"
-        ]
-      }
-    },
-    {
       "name": "Germany: single, with apostille, no translation",
       "scenario": "commonLawLivingTogether",
       "foreign": {
@@ -125,8 +72,7 @@
         "birthCountry": "DE"
       },
       "files": [
-        "germany-single-status.pdf",
-        "affidavit-lena.pdf"
+        "germany-single-status.pdf"
       ],
       "expect": {
         "rating": "needsFixing",
@@ -145,8 +91,7 @@
         "birthCountry": "PH"
       },
       "files": [
-        "philippines-cenomar.pdf",
-        "affidavit-maria.pdf"
+        "philippines-cenomar.pdf"
       ],
       "expect": {
         "rating": [
@@ -168,8 +113,7 @@
         "birthCountry": "UA"
       },
       "files": [
-        "ukraine-no-marriage-record.pdf",
-        "affidavit-olena.pdf"
+        "ukraine-no-marriage-record.pdf"
       ],
       "expect": {
         "rating": "needsFixing",
@@ -190,7 +134,26 @@
         "gender": "female"
       },
       "files": [
-        "us-no-marriage-record.pdf",
+        "us-no-marriage-record.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ]
+      }
+    },
+    {
+      "name": "United States: one affidavit for the status and the children, uploaded here",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Emily Rose Carter",
+        "gender": "female"
+      },
+      "files": [
         "affidavit-emily.pdf"
       ],
       "expect": {

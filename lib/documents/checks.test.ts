@@ -21,11 +21,14 @@ describe("checkFor", () => {
   });
 
   it("adds a required line for each point the item has to show", () => {
-    const single = checkFor("foreignCivilStatus:US", ["statusNowSingle", "noChildren"])!;
-    const married = checkFor("foreignCivilStatus:US", ["statusNowMarried", "statusBeforeSingle", "children"])!;
+    const single = checkFor("foreignCivilStatus:US", ["statusNowSingle"])!;
+    const married = checkFor("foreignCivilStatus:US", ["statusNowMarried", "statusBeforeSingle"])!;
     expect(married.required.length).toBe(single.required.length + 1);
-    expect(single.required.join(" ")).toMatch(/no children/);
     expect(married.required.join(" ")).toMatch(/before the marriage/);
+    // The children: a document of their own.
+    expect(single.required.join(" ")).not.toMatch(/children/);
+    expect(checkFor("previousChildrenAffidavit", ["noChildren"])!.required.join(" ")).toMatch(/no children/);
+    expect(checkFor("previousChildrenAffidavit", ["children"])!.required.join(" ")).toMatch(/listing their children/);
   });
 
   it("has no check for a document that's put off, or for an unknown key", () => {
@@ -47,9 +50,12 @@ describe("checkFor", () => {
       "landlordAffidavit",
     ]);
     expect(withLandlord.parts?.find((p) => p.part === "landlordAffidavit")?.required).toEqual([]);
-    const abroad = checkFor("statusApplicationMarried", ["as6Application", "as6IsraeliDeclaration", "as6ForeignDeclarationLater"])!;
-    expect(abroad.parts?.map((p) => p.part)).toEqual(["application", "israeliDeclaration", "foreignDeclaration"]);
-    expect(abroad.parts?.find((p) => p.part === "foreignDeclaration")?.required).toEqual([]);
+    // Without the foreign partner's declaration, a document of its own then, with the same lines.
+    const abroad = checkFor("statusApplicationMarried", ["as6Application", "as6IsraeliDeclaration"])!;
+    expect(abroad.parts?.map((p) => p.part)).toEqual(["application", "israeliDeclaration"]);
+    expect(checkFor("foreignDeclarationMarried")?.required).toEqual(
+      withLandlord.parts?.find((p) => p.part === "foreignDeclaration")?.required,
+    );
   });
 
   it("checks form AS/6 on the strong model, and other documents on the standard one", () => {

@@ -13,21 +13,26 @@ export type Progress = { done: number; total: number };
 /** The order documents are grouped in, by whose they are. */
 export const ownerOrder: readonly Owner[] = ["couple", "israeli", "foreign", "children"];
 
+/**
+ * The groups of the documents page: whose they are, then the ones done once
+ * the foreign partner is in Israel, whoever's they are.
+ */
+export type Group = Owner | "afterArrival";
+export const groupOrder: readonly Group[] = [...ownerOrder, "afterArrival"];
+export const groupOf = (item: { owner: Owner; later: boolean }): Group => (item.later ? "afterArrival" : item.owner);
+
 type Item = { key: string; optional: boolean };
+type Grouped = Item & { owner: Owner; later: boolean };
 
 export function progressOf(items: readonly Item[], uploaded: ReadonlySet<string>): Progress {
   const counted = items.filter((i) => !i.optional || uploaded.has(i.key));
   return { done: counted.filter((i) => uploaded.has(i.key)).length, total: counted.length };
 }
 
-/** Progress for each owner with anything to count, in the order given. */
-export function progressByOwner(
-  items: readonly (Item & { owner: Owner })[],
-  uploaded: ReadonlySet<string>,
-  order: readonly Owner[],
-): { owner: Owner; progress: Progress }[] {
-  return order
-    .map((owner) => ({ owner, progress: progressOf(items.filter((i) => i.owner === owner), uploaded) }))
+/** Progress for each group with anything to count, in the page's order. */
+export function progressByGroup(items: readonly Grouped[], uploaded: ReadonlySet<string>): { group: Group; progress: Progress }[] {
+  return groupOrder
+    .map((group) => ({ group, progress: progressOf(items.filter((i) => groupOf(i) === group), uploaded) }))
     .filter((g) => g.progress.total > 0);
 }
 
@@ -66,13 +71,12 @@ export function checkedProgressOf(items: readonly Item[], standing: ReadonlyMap<
   return counts;
 }
 
-/** Checked progress for each owner with anything to count, in the order given. */
-export function checkedProgressByOwner(
-  items: readonly (Item & { owner: Owner })[],
+/** Checked progress for each group with anything to count, in the page's order. */
+export function checkedProgressByGroup(
+  items: readonly Grouped[],
   standing: ReadonlyMap<string, Standing>,
-  order: readonly Owner[],
-): { owner: Owner; progress: CheckedProgress }[] {
-  return order
-    .map((owner) => ({ owner, progress: checkedProgressOf(items.filter((i) => i.owner === owner), standing) }))
+): { group: Group; progress: CheckedProgress }[] {
+  return groupOrder
+    .map((group) => ({ group, progress: checkedProgressOf(items.filter((i) => groupOf(i) === group), standing) }))
     .filter((g) => g.progress.total > 0);
 }

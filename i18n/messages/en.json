@@ -1603,7 +1603,12 @@
         "statusApplicationMarried": {
           "title": "Status application for a married spouse (form AS/6)",
           "shortTitle": "Status application (form AS/6)",
-          "description": "The application for status for a foreign spouse married to an Israeli, with the declarations that go with it."
+          "description": "Form AS/6: the application, with the declarations that go with it."
+        },
+        "foreignDeclarationMarried": {
+          "title": "Foreign partner's declaration (form AS/6)",
+          "shortTitle": "Declaration (form AS/6)",
+          "description": "Page 5 of the form below: the foreign partner's declaration (הצהרת בן הזוג המוזמן)."
         },
         "entryPermitApplication": {
           "title": "Entry permit application (form AS/1)",
@@ -1618,7 +1623,7 @@
         "affidavitCommonLaw": {
           "title": "Joint affidavit of both partners",
           "shortTitle": "Joint affidavit",
-          "description": "A declaration in the ministry's wording for couples applying on the basis of living together: that the details are true, that you'll report any change, and statements about each of you. Both of you sign it at a Misrad Hapnim office."
+          "description": "The ministry's declaration for couples applying on the basis of living together, signed by both of you."
         },
         "relationshipStory": {
           "title": "Letter about your relationship",
@@ -1696,9 +1701,14 @@
           "description": "One for each child you have together."
         },
         "foreignCivilStatus": {
-          "title": "Civil status and children: {country}",
-          "shortTitle": "Civil status and children: {country}",
+          "title": "Personal status: {country}",
+          "shortTitle": "Personal status: {country}",
           "description": "The documents must show, for {country}:"
+        },
+        "previousChildrenAffidavit": {
+          "title": "Affidavit about children from previous relationships",
+          "shortTitle": "Affidavit about children",
+          "description": "The foreign partner's affidavit (תצהיר) about children from before your relationship. It must show:"
         },
         "foreignDivorceDecree": {
           "title": "Divorce decree",
@@ -1863,11 +1873,10 @@
         "statusBeforeDivorcedOrWidowed": "Proof of marital status before the marriage (divorced or widowed, as the last marriage ended).",
         "noChildren": "Proof of no children from a previous relationship.",
         "children": "Proof of children from previous relationships, and who has guardianship of each.",
-        "as6Application": "The application, filled in, with both signatures.",
-        "as6IsraeliDeclaration": "The Israeli partner's declaration, signed in front of a lawyer.",
-        "as6ForeignDeclaration": "The foreign partner's declaration, signed in front of a lawyer.",
-        "as6ForeignDeclarationLater": "The foreign partner's declaration isn't needed yet: they sign it in front of a lawyer once they're in Israel.",
-        "as6LandlordAffidavit": "If you rent: the landlord's affidavit, signed in front of a lawyer, with a copy of the landlord's Teudat Zehut."
+        "as6Application": "The application, filled in and signed by both of you.",
+        "as6IsraeliDeclaration": "The Israeli partner's declaration.",
+        "as6ForeignDeclaration": "The foreign partner's declaration.",
+        "as6LandlordAffidavit": "If you rent: the landlord's affidavit, with a copy of their Teudat Zehut."
       }
     },
     "documentsPage": {
@@ -1897,6 +1906,10 @@
         "israeli": "From {name}",
         "foreign": "From {name}",
         "children": "For the children",
+        "afterArrival": "After {name} arrives in Israel",
+        "afterArrivalBoth": "After you arrive in Israel",
+        "afterArrivalIntro": "These are done once {name} is in Israel with the entry permit. The online application is filed without them.",
+        "afterArrivalBothIntro": "These are done in Israel, once you've both arrived with the entry permit.",
         "retired": "No longer needed"
       },
       "status": {
@@ -2020,10 +2033,6 @@
       },
       "steps": {
         "heading": "What it needs",
-        "parts": {
-          "document": "For the civil status",
-          "children": "For the children"
-        },
         "obtain": "Get the original from {country}",
         "obtainFrom": "Get it from {office}",
         "obtainDetails": "Ask for the original on paper, with a handwritten signature or an official stamp, and say it's for use abroad. Many Misrad Hapnim branches reject a document printed at home or downloaded online, and many countries won't put an apostille on one.",
@@ -2059,27 +2068,43 @@
         "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
         "translateSelfDetails": "Needed if it isn't in Hebrew, Arabic or English.\nNo notary is needed: translate it yourselves, or mark the important parts and explain them.\nUpload the translation with the document.",
         "signing": {
-          "clerk": "Don't sign it before your appointment, and don't send it with the online application. Print it and fill in the details; you sign it in front of the clerk at the appointment.",
-          "lawyer": "Sign it in front of an Israeli lawyer: fill it in, but don't sign it before",
-          "lawyerCourtOrNotary": "Sign it in front of an Israeli lawyer, at the magistrate's court, or in front of a notary: fill it in, but don't sign it before",
-          "notary": "Sign it in front of a notary: fill it in, but don't sign it before",
-          "consul": "Sign it in front of a consul: fill it in, but don't sign it before"
+          "clerk": "Must be signed at the appointment, in front of the clerk",
+          "lawyer": "Must be signed in front of an Israeli lawyer",
+          "lawyerCourtOrNotary": "Must be signed in front of a lawyer or notary",
+          "notary": "Must be signed in front of a notary",
+          "consul": "Must be signed in front of a consul"
         },
         "signingFor": {
-          "statusApplicationMarried": "Both your declarations, and the landlord's affidavit if you rent, are signed in front of an Israeli lawyer: fill them in, but don't sign them before",
-          "statusApplicationMarriedForeignLater": "The Israeli partner's declaration, and the landlord's affidavit if you rent, are signed in front of an Israeli lawyer: fill them in, but don't sign them before"
+          "statusApplicationMarried": {
+            "text": "Your declarations must be signed in front of an Israeli lawyer",
+            "details": "Each of you signs your own. Fill them in, but don't sign them before: the lawyer checks who you are, and signs and stamps them."
+          },
+          "statusApplicationMarriedIsraeliOnly": {
+            "text": "{israeli}'s declaration (הצהרת בן הזוג המזמין) must be signed in front of an Israeli lawyer",
+            "details": "Page 4 of the form. Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it."
+          },
+          "foreignDeclarationMarried": {
+            "text": "Must be signed in front of an Israeli lawyer",
+            "details": "Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it."
+          },
+          "landlordAffidavit": {
+            "text": "If you rent: the landlord's affidavit must be signed in front of a lawyer",
+            "details": "Your landlord signs it, in front of a lawyer, and you attach a copy of their Teudat Zehut."
+          }
         },
-        "signingDetails": "Whoever confirms it checks who you are, and signs and stamps it. Sign only in front of them.",
-        "affidavit": {
-          "status": "An affidavit of civil status",
-          "children": "An affidavit about the children",
-          "noChildren": "An affidavit that there are no children"
+        "signingDetails": {
+          "clerk": "Print it and fill in the details, but don't sign it before, and don't send it with the online application.",
+          "lawyer": "Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it.",
+          "lawyerCourtOrNotary": "An Israeli lawyer, the magistrate's court, or a notary can confirm it. Fill it in, but don't sign it before: whoever confirms it checks who you are, and signs and stamps it.",
+          "notary": "Fill it in, but don't sign it before: the notary checks who you are, and signs and stamps it.",
+          "consul": "Fill it in, but don't sign it before: the consul checks who you are, and signs and stamps it."
         },
-        "affidavitDetails": {
-          "status": "Signed in front of a notary in Israel, an Israeli consul abroad, that country's consul in Israel, or a notary in that country, with its apostille or legalization.",
-          "children": "It lists each child from a previous relationship, with their date of birth and who has guardianship of them. Sign it in front of an Israeli lawyer/notary, who confirms it; they can also write it for you.",
-          "noChildren": "It states there are no children from a previous relationship. Sign it in front of an Israeli lawyer/notary, who confirms it; they can also write it for you."
-        }
+        "signByEmail": {
+          "text": "{name} signs the applicants' declaration (הצהרת המבקשים)",
+          "details": "Only page 3 of the form. No original signature is needed at this stage: {name} can send it by email, so {israeli} can file the application. {name}'s own declaration is signed once they're in Israel."
+        },
+        "affidavit": "An affidavit of civil status",
+        "affidavitDetails": "Signed in front of a notary in Israel, an Israeli consul abroad, that country's consul in Israel, or a notary in that country, with its apostille or legalization."
       },
       "affidavitInstead": "If you can't get this document, sign an affidavit about civil status instead. Sign it in front of a notary in Israel.",
       "issuers": {
@@ -2488,7 +2513,11 @@
         "label": "Ask about this document",
         "fix": "Ask how to fix this"
       },
-      "askFriends": "Help your friend write the letter"
+      "askFriends": "Help your friend write the letter",
+      "oneAffidavit": {
+        "civilStatus": "One affidavit can declare both the civil status and the children. If yours does, upload it here and to “{document}” too.",
+        "children": "If the affidavit about the civil status also declares the children, upload it here too."
+      }
     },
     "overview": {
       "invite": {

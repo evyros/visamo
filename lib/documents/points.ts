@@ -27,9 +27,7 @@ export const points = [
   // Form AS/6's parts, uploaded together as one document.
   "as6Application",
   "as6IsraeliDeclaration",
-  // The foreign partner's declaration: signed now, or not needed yet while the Israeli partner files alone.
   "as6ForeignDeclaration",
-  "as6ForeignDeclarationLater",
   "as6LandlordAffidavit",
 ] as const;
 export type Point = (typeof points)[number];
@@ -45,41 +43,29 @@ function previous({ facts }: CaseProfile): "Single" | "Divorced" | "Widowed" | "
 /**
  * Form AS/6's parts: the application, both declarations, and the landlord's
  * affidavit wherever a lease is asked for (housingContract,
- * israeliHousingContract): it's annexed to the lease.
+ * israeliHousingContract): it's annexed to the lease. A foreign partner abroad,
+ * with the Israeli partner filing from Israel, signs their declaration once
+ * they arrive: it's a document of its own then (foreignDeclarationMarried).
  */
-function as6Points(profile: CaseProfile): Point[] {
-  const { facts } = profile;
+function as6Points({ facts }: CaseProfile): Point[] {
   return [
     "as6Application",
     "as6IsraeliDeclaration",
-    as6ForeignDeclaration(profile),
+    ...(facts.foreignAbroad && facts.israeliInIsrael ? [] : ["as6ForeignDeclaration" as const]),
     ...(facts.livingTogether || facts.israeliInIsrael ? ["as6LandlordAffidavit" as const] : []),
   ];
 }
 
-/**
- * The foreign partner's declaration, by where they are. A foreign partner
- * abroad signs it once they arrive: an Israeli partner in Israel files
- * without it, and a couple both abroad files together once they're in Israel.
- */
-function as6ForeignDeclaration({ facts }: CaseProfile): Point {
-  return !facts.foreignInIsrael && facts.israeliInIsrael ? "as6ForeignDeclarationLater" : "as6ForeignDeclaration";
-}
-
 /** What the item for `id` (and `country`, for one item per country) has to show, in order. */
 export function pointsFor(id: DocumentId, profile: CaseProfile, country?: string): Point[] {
-  if (id === "statusApplicationMarried") return as6Points(profile);
-  if (id !== "foreignCivilStatus") return [];
   const { facts } = profile;
+  if (id === "statusApplicationMarried") return as6Points(profile);
+  if (id === "previousChildrenAffidavit") return [facts.foreignHasChildren ? "children" : "noChildren"];
+  if (id !== "foreignCivilStatus") return [];
   const status: Point = facts.married ? "statusNowMarried" : `statusNow${previous(profile)}`;
-  // From the other countries lived in, only the status now. Before the marriage and the
-  // children: once, from the nationality.
-  if (country !== profile.countries.nationality) return [status];
-  return [
-    status,
-    ...(facts.married ? [`statusBefore${previous(profile)}` as const] : []),
-    facts.foreignHasChildren ? "children" : "noChildren",
-  ];
+  // From the other countries lived in, only the status now. Before the marriage: once, from the nationality.
+  if (country !== profile.countries.nationality || !facts.married) return [status];
+  return [status, `statusBefore${previous(profile)}`];
 }
 
 /**

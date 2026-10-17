@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { affidavitInsteadOf, byOf, partOf, stepsFor } from "./steps";
+import { affidavitInsteadOf, byOf, statusByAffidavit, stepsFor } from "./steps";
 
 describe("stepsFor", () => {
   it("leaves out what doesn't apply", () => {
@@ -22,29 +22,18 @@ describe("affidavits", () => {
   const civilStatus = { issuer: "IN", certification: { authentication: "legalization" as const }, translation: "notarized" as const };
 
   it("replaces a document the country doesn't issue with an affidavit about the civil status", () => {
-    const steps = stepsFor({ ...civilStatus, issuerKind: "affidavit", orAffidavit: true, children: "children" }, true);
+    const steps = stepsFor({ ...civilStatus, issuerKind: "affidavit", orAffidavit: true }, true);
     expect(steps).toEqual([
-      { kind: "affidavit", about: "status", from: "IN" },
+      { kind: "affidavit", from: "IN" },
       { kind: "translate", level: "notarized", from: "IN" },
-      { kind: "affidavit", about: "children" },
     ]);
     expect(affidavitInsteadOf({ ...civilStatus, issuerKind: "affidavit", orAffidavit: true })).toBe(false);
   });
 
-  it("always declares the children in an affidavit of their own, whatever the country issues", () => {
-    for (const issuerKind of ["document", "documentOrAffidavit", "affidavit", undefined] as const) {
-      const steps = stepsFor({ ...civilStatus, issuer: "TH", ...(issuerKind && { issuerKind }), orAffidavit: true, children: "children" }, true);
-      expect(steps.at(-1), issuerKind).toEqual({ kind: "affidavit", about: "children" });
-    }
-    // Only on the nationality's item.
-    expect(stepsFor({ ...civilStatus, issuer: "TH", orAffidavit: true }, true).some((s) => s.kind === "affidavit")).toBe(false);
-  });
-
-  it("says there are no children, for a partner without any", () => {
-    const steps = stepsFor({ ...civilStatus, issuer: "TH", orAffidavit: true, children: "noChildren" }, true);
-    expect(steps.at(-1)).toEqual({ kind: "affidavit", about: "noChildren" });
-    expect(partOf(steps.at(-1)!)).toBe("children");
-    expect(byOf(steps.at(-1)!)).toBe("lawyer");
+  it("says whether the civil status may be an affidavit: in its place, or where the country issues none", () => {
+    expect(statusByAffidavit({ ...civilStatus, issuerKind: "affidavit", orAffidavit: true })).toBe(true);
+    expect(statusByAffidavit({ ...civilStatus, issuer: "US", issuerKind: "documentOrAffidavit", orAffidavit: true })).toBe(true);
+    expect(statusByAffidavit({ ...civilStatus, issuer: "TH", issuerKind: "document", orAffidavit: true })).toBe(false);
   });
 
   it("offers an affidavit in its place, where the document may not be had, or the country isn't known", () => {
@@ -59,9 +48,8 @@ describe("affidavits", () => {
     expect(affidavitInsteadOf({ ...civilStatus, issuer: "TH" })).toBe(false);
   });
 
-  it("puts the children's at a lawyer and the status's at a notary", () => {
-    expect(byOf({ kind: "affidavit", about: "children" })).toBe("lawyer");
-    expect(byOf({ kind: "affidavit", about: "status" })).toBe("notary");
+  it("puts it at a notary", () => {
+    expect(byOf({ kind: "affidavit" })).toBe("notary");
   });
 });
 

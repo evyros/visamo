@@ -151,8 +151,10 @@ A certificate of civil status (certificat de célibat), from the town hall
 (mairie) of the place of birth, against a full copy of the birth certificate
 issued in the last 3 months. Few town halls issue it today, so ask for it
 together with the birth certificate. The full copy of the birth certificate
-(copie intégrale) also shows any marriage or divorce in its margin. The
-apostille comes from the court of appeal (cour d'appel) of the region.
+(copie intégrale) also shows any marriage or divorce in its margin. Since
+May 2025, the apostille comes from the notaries' apostille centres, not the
+court of appeal: apply online and send the paper certificate by post, or go
+to a centre in person.
 
 ### Germany
 
@@ -216,6 +218,11 @@ apostille, without an appointment.
 
 A certificate of no marriage (CENOMAR), from the Philippine Statistics
 Authority (PSA). The apostille comes from the Department of Foreign Affairs.
+For Israel, it now issues only an electronic one: the certificate and its
+apostille come as files by email, and printing them makes them invalid.
+Misrad Hapnim usually asks for the original on paper, so the clerk may push
+back on the files. Explain that for Israel, the Philippines issues it only
+this way: there's no paper option.
 
 ### Portugal
 

@@ -3,6 +3,32 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v40 — 2026-10-18
+
+**What changed:** `foreignBirthCertificate` has issuers for Germany, France,
+the United Kingdom, Italy, the Philippines, Thailand and Ukraine, restating
+their new guide sections: the card names each one's office and apostille
+authority. Issuers can be `electronic`: issued for Israel only as a file,
+with an electronic apostille. Such an item's steps have no `send` step, and
+its `obtain` step says so instead of asking for a paper original. The
+Philippines' birth certificate, CENOMAR (`foreignCivilStatus`) and
+marriage certificate are electronic: `marriageCertificateAbroad` is now in
+`issuedDocuments`, with the Philippines as its only entry. France's apostille authority, for the civil status and the
+police certificate, is now the notaries' centres (messages only).
+
+**Why:** The countries most couples come from had only the general steps.
+Since March 2026 the Philippines issues PSA certificates for Israel only
+with an electronic apostille, and the general steps told couples to ask
+for a paper original and courier it. Since May 2025 French apostilles come
+from notaries, not the courts of appeal.
+
+**Source:** The guide sections in `lib/knowledge/documents/`
+(foreignBirthCertificate, foreignCivilStatus, foreignPoliceCertificate),
+researched October 2026 from official sources of each country.
+
+**Lists that changed:** none (steps of Philippine birth certificates,
+CENOMARs and marriage certificates: no `send` step).
+
 ## v39 — 2026-10-17
 
 **What changed:** `statusApplicationMarried`'s signing is two steps: the

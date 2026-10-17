@@ -120,7 +120,7 @@ function civilStatusCheck(points: readonly Point[]): DocumentCheck {
     ],
     recommended: [
       "The apostille or legalization pages are scanned together with each document, in order.",
-      "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service.",
+      "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service. The Philippine CENOMAR is the exception: for Israel it's issued only as a file, with the DFA's electronic apostille.",
     ],
   };
 }

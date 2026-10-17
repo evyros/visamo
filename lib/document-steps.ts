@@ -82,7 +82,8 @@ export function stepText(
         text: c?.office
           ? format(s.obtainFrom, { office: c.office })
           : format(s.obtain, { country: placeName(step.from, t, locale) }),
-        details: withCountry(c?.details, s.obtainDetails),
+        // A file has no paper original: the general advice about one doesn't apply.
+        details: step.electronic && c?.details ? prose(c.details) : withCountry(c?.details, s.obtainDetails),
       };
     }
     case "authenticate": {

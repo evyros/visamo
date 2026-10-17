@@ -20,10 +20,19 @@ import type { DocumentId } from "./catalog";
  */
 export type IssuerKind = "document" | "documentOrAffidavit" | "affidavit";
 
-/** `heading`: the country's section in the document's guide. */
-export type IssuerEntry = { kind: IssuerKind; heading: string };
+/**
+ * `heading`: the country's section in the document's guide. `electronic`: for
+ * Israel, it's issued only as a file, with an electronic apostille: there's no
+ * paper original to ask for or send.
+ */
+export type IssuerEntry = { kind: IssuerKind; heading: string; electronic?: true };
 
-export const issuedDocuments = ["foreignBirthCertificate", "foreignCivilStatus", "foreignPoliceCertificate"] as const;
+export const issuedDocuments = [
+  "foreignBirthCertificate",
+  "foreignCivilStatus",
+  "foreignPoliceCertificate",
+  "marriageCertificateAbroad",
+] as const;
 export type IssuedDocument = (typeof issuedDocuments)[number];
 
 export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<string, IssuerEntry>>>>> = {
@@ -31,12 +40,19 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     BR: { kind: "document", heading: "Brazil" },
     CN: { kind: "document", heading: "China" },
     CZ: { kind: "document", heading: "Czech Republic" },
+    DE: { kind: "document", heading: "Germany" },
     DK: { kind: "document", heading: "Denmark" },
     ES: { kind: "document", heading: "Spain" },
+    FR: { kind: "document", heading: "France" },
+    GB: { kind: "document", heading: "United Kingdom" },
+    IT: { kind: "document", heading: "Italy" },
     JP: { kind: "document", heading: "Japan" },
     MX: { kind: "document", heading: "Mexico" },
+    PH: { kind: "document", heading: "Philippines", electronic: true },
     PT: { kind: "document", heading: "Portugal" },
     RU: { kind: "document", heading: "Russia" },
+    TH: { kind: "document", heading: "Thailand" },
+    UA: { kind: "document", heading: "Ukraine" },
     US: { kind: "document", heading: "United States" },
     ZA: { kind: "document", heading: "South Africa" },
   },
@@ -65,7 +81,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     JP: { kind: "documentOrAffidavit", heading: "Japan" },
     MX: { kind: "document", heading: "Mexico" },
     NL: { kind: "document", heading: "Netherlands" },
-    PH: { kind: "document", heading: "Philippines" },
+    PH: { kind: "document", heading: "Philippines", electronic: true },
     PT: { kind: "document", heading: "Portugal" },
     RU: { kind: "document", heading: "Russia" },
     SE: { kind: "document", heading: "Sweden" },
@@ -111,6 +127,9 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     UA: { kind: "document", heading: "Ukraine" },
     US: { kind: "document", heading: "United States" },
     ZA: { kind: "document", heading: "South Africa" },
+  },
+  marriageCertificateAbroad: {
+    PH: { kind: "document", heading: "Philippines", electronic: true },
   },
 };
 

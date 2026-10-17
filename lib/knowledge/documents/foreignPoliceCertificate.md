@@ -107,8 +107,10 @@ Ministry of Foreign Affairs in Copenhagen.
 
 An extract of the criminal record, bulletin no. 3 (extrait de casier
 judiciaire, bulletin n° 3), from the national criminal record office
-(Casier judiciaire national). It's free, online. Only the Rennes Court of
-Appeal puts the apostille on it.
+(Casier judiciaire national). It's free, online. Since May 2025, the
+apostille comes from the notaries' apostille centres, not the Rennes Court
+of Appeal: apply online, or at one of the centres. The extract has to be
+less than 3 months old.
 
 ### Germany
 

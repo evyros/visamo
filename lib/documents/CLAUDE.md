@@ -34,8 +34,10 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   countries where they're known (`LEGALIZATION`), each from an official
   source; every other country gets the general description.
 - `issuers.ts`: how a country provides the birth certificate, the civil
-  status and the police certificate: a document, a document that may not be
-  had, or none (an affidavit in its place). Each entry restates the
+  status, the police certificate and the marriage certificate: a document, a
+  document that may not be had, or none (an affidavit in its place), and
+  whether it's issued for Israel only as a file, with an electronic
+  apostille (`electronic`: no paper original, nothing to send). Each entry restates the
   country's section in the document's guide (`lib/knowledge/documents/`),
   which the tests check; the office names and explanations are in the
   messages (`app.documentsPage.issuers`). A country without an entry gets the

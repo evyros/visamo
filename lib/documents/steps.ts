@@ -15,8 +15,11 @@ import type { IssuerKind } from "./issuers";
 // getting and certifying the original.
 
 export type Step =
-  /** The original, on paper, from the country that issued it, for use abroad. */
-  | { kind: "obtain"; from: Exclude<Issuer, null> }
+  /**
+   * The original, on paper, from the country that issued it, for use abroad.
+   * `electronic`: the country issues it only as a file (issuers.ts), with no paper original.
+   */
+  | { kind: "obtain"; from: Exclude<Issuer, null>; electronic?: true }
   /**
    * The apostille or legalization, from the country that issued it (null:
    * not known, "if it's from abroad"). `chain`: the offices of a legalization,
@@ -77,6 +80,8 @@ export type StepsItem = {
   signing?: Signing;
   /** How the issuing country provides it, where that's known (issuers.ts). */
   issuerKind?: IssuerKind;
+  /** The issuing country issues it only as a file, with an electronic apostille (issuers.ts). */
+  electronic?: boolean;
   /** An affidavit can replace it, where a country issues none (the catalog's `orAffidavit`). */
   orAffidavit?: boolean;
   /** The foreign partner, abroad, signs their part by email first (form AS/6's applicants' declaration). */
@@ -99,7 +104,7 @@ export const statusByAffidavit = (item: StepsItem): boolean => kindOf(item) !== 
 
 /** `sendOriginals`: originals from abroad are sent to Israel; not when both partners are abroad, and bring them. */
 export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
-  const { issuer, certification, translation, signing, signByEmail, landlord } = item;
+  const { issuer, certification, translation, signing, signByEmail, landlord, electronic } = item;
   const steps: Step[] = [];
   // No such document in the country: an affidavit about the civil status in its place.
   const noDocument = kindOf(item) === "affidavit";
@@ -107,12 +112,13 @@ export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
   const authentication = certification?.authentication;
   // Issued abroad, by a known country: got from there and certified there.
   const fromAbroad = !noDocument && !!authentication && authentication !== "none" && issuer !== undefined;
-  if (fromAbroad && issuer) steps.push({ kind: "obtain", from: issuer });
+  if (fromAbroad && issuer) steps.push({ kind: "obtain", from: issuer, ...(electronic && { electronic: true as const }) });
   if (fromAbroad) {
     const chain = authentication === "legalization" && issuer ? legalizationChain(issuer) : undefined;
     steps.push({ kind: "authenticate", from: issuer, certification: certification!, ...(chain && { chain }) });
   }
-  if (fromAbroad && issuer && sendOriginals) steps.push({ kind: "send" });
+  // A file has no original to send: it comes by email.
+  if (fromAbroad && issuer && sendOriginals && !electronic) steps.push({ kind: "send" });
   if (translation !== "none") {
     steps.push({ kind: "translate", level: translation, ...(issuer !== undefined && { from: issuer }) });
   }

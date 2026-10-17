@@ -39,7 +39,7 @@ describe("a legalization's full text", () => {
     expect(text).toBe("Consular legalization in Thailand");
     expect(details).toMatchObject({ lead: t.steps.legalizationLead, numbered: true });
     expect(details?.points).toEqual([
-      "The office that issued it",
+      "A district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
       "A certified translation into English (unless it's in English already)",
       "The foreign ministry",
       "The Israeli embassy",

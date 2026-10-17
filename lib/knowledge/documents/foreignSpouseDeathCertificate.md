@@ -20,6 +20,12 @@ certificate, and certified there.
 A death certificate (Sterbeurkunde), from the civil registry office
 (Standesamt) of the place of death.
 
+### Philippines
+
+A death certificate from the Philippine Statistics Authority (PSA). For
+Israel, it comes only as a file, with the electronic apostille of the
+Department of Foreign Affairs (see [certification.md](../certification.md)).
+
 ### Russia
 
 A death certificate (свидетельство о смерти), from the civil registry office

@@ -53,6 +53,15 @@ shown to users (`lib/knowledge/`).
   like the police certificate, needs no English translation (product
   owner).
 
+- **Thailand joins the Apostille Convention on 28 February 2027** (accession
+  lodged 30 June 2026; Thai MFA notices of 1 and 6 July 2026), unless a
+  member state objects before then. Not in the guides yet: they hold no
+  pending changes. In March 2027, check the HCCH status table for Israel,
+  then rewrite the Thailand sections of the birth certificate, civil status
+  and police certificate guides, and the `TH` entries in `countries.ts`
+  (`APOSTILLE` and `LEGALIZATION`). Documents legalized before then should
+  stay accepted.
+
 ## Not modelled yet
 
 - **Countries without an Israeli mission** (1.3.0001 §3.1.3): legalized

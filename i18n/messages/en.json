@@ -2122,6 +2122,12 @@
             "details": "Ask for a new birth certificate (rodný list) and say it's for use abroad: the original from the year of birth usually can't get an apostille.",
             "apostilleDetails": "Only on the new certificate, and only after a higher certification (vyšší ověření) from the regional office."
           },
+          "DE": {
+            "office": "the registry office (Standesamt) of the place of birth",
+            "details": "Ask for the international birth certificate (internationale Geburtsurkunde). It comes from the registry office, not the residents' registration office, and can be ordered online or by post from abroad. Mail to Israel is slow, so many have it sent to family in Germany, who get the apostille and send it on.",
+            "apostilleBy": "the authority of the German state where it was issued (ask the registry office which one)",
+            "apostilleDetails": "No other certification is needed first."
+          },
           "DK": {
             "office": "the parish office",
             "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized, or a certificate of personal data (personattest) if not. Get it in English, with a handwritten signature."
@@ -2129,6 +2135,24 @@
           "ES": {
             "office": "the civil registry (Registro Civil)",
             "details": "Ask for the full birth certificate (certificación literal). The multilingual extract (certificado plurilingüe), in Spanish and French, doesn't save anything for Israel: it still needs a translation and an apostille."
+          },
+          "FR": {
+            "office": "the town hall (mairie) of the place of birth",
+            "details": "Ask for the full copy of the birth certificate (copie intégrale d'acte de naissance): it names the parents and shows any marriage or divorce in its margin. Order a new one for the apostille. A French citizen born abroad gets it from the Central Civil Status Service (Service central d'état civil) in Nantes, online or by post, in about a month.",
+            "apostilleBy": "the notaries' apostille centres",
+            "apostilleDetails": "Apply online and send the paper certificate by post, or go to a centre in person. It takes about 3 working days. The apostille is electronic: ask for it on paper, with a stamp and handwritten signature, since Misrad Hapnim asks for the original."
+          },
+          "GB": {
+            "office": "the General Register Office (GRO) for England and Wales, National Records of Scotland, or GRONI for Northern Ireland",
+            "details": "Ask for the full birth certificate, with the parents' details, not the short one. Every UK birth certificate is a certified copy of the register entry, so a new one counts as the original. All three offices take orders online and can send it abroad.",
+            "apostilleBy": "the Foreign, Commonwealth and Development Office (FCDO)",
+            "apostilleDetails": "Straight on the certificate, with no notary or solicitor first. Only the paper apostille, by post: it can take up to 25 working days plus delivery. A certificate issued years ago can be refused if the registrar's signature can't be checked; a newly ordered one avoids that."
+          },
+          "IT": {
+            "office": "the town hall (comune) where the birth was registered",
+            "details": "Ask for an extract of the birth record (estratto per riassunto dell'atto di nascita), ideally with the parents' names (con paternità e maternità), on paper, signed by hand, for use abroad: one downloaded online, or sent by email with a digital signature, can't get an apostille. It also shows what was later noted on the record, such as a marriage. The Italian embassy in Israel doesn't issue birth certificates: ask the comune, which can post it to you.",
+            "apostilleBy": "the prefecture (prefettura) of the province the comune is in",
+            "apostilleDetails": "Many prefectures accept it by post, with a prepaid return envelope."
           },
           "JP": {
             "office": "the municipality where the birth was registered",
@@ -2139,6 +2163,12 @@
             "details": "Ask for a birth certificate \"for apostille\" (acta de nacimiento para apostilla), with a handwritten signature: one printed from a machine or online can't be apostilled.",
             "apostilleBy": "the same state that issued it"
           },
+          "PH": {
+            "office": "the Philippine Statistics Authority (PSA)",
+            "details": "The PSA birth certificate, in English. For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way. If some entries are blurred or unreadable, add a copy from the local civil registrar to the request.",
+            "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
+            "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
+          },
           "PT": {
             "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. It's issued only in Portuguese."
           },
@@ -2146,6 +2176,16 @@
             "office": "the civil registry office (ЗАГС) of the place of birth",
             "details": "Many people with an old Soviet certificate get a new copy (повторное свидетельство) from the civil registry office of the place of birth.",
             "apostilleBy": "the regional registry archive"
+          },
+          "TH": {
+            "office": "a district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
+            "details": "The birth certificate (สูติบัตร), or a certified copy from a district office: any district office for someone born from 1980 on, the one where the birth was registered for someone born earlier. A lost certificate isn't issued again: get the certified copy instead, which can also be issued in English. A Thai living abroad can authorize a relative in Thailand to get it, by signing the authorization at a Thai embassy. Certify the Thai document together with its English translation, not the translation alone. If the name has changed since birth, the ministry also asks for the name change certificate (ใบสำคัญการเปลี่ยนชื่อ)."
+          },
+          "UA": {
+            "office": "any civil registry office (ДРАЦС) in Ukraine",
+            "details": "If the certificate was issued after 1998, or is lost or worn, get a new copy (повторне свідоцтво про народження). Any civil registry office issues it, not only the one where the birth was registered, usually the same day. Someone in Ukraine can apply for you with a notarized power of attorney, and Ukrainian citizens can order it through Diia. From Israel, it goes through the consular department of the Ukrainian embassy in Tel Aviv, by appointment, and can take months; Ukrainian men aged 18 to 60 need a valid military registration document for consular services. If the birth was registered in an occupied area and the record isn't in Ukraine's registry, it has to be restored first: up to 3 months in Ukraine, or 6 through a consulate.",
+            "apostilleBy": "any civil registry office (ДРАЦС)",
+            "apostilleDetails": "It takes a few working days."
           },
           "US": {
             "office": "the vital records office of the state of birth",
@@ -2234,7 +2274,8 @@
           "FR": {
             "office": "the town hall (mairie) of the place of birth",
             "details": "A certificate of civil status (certificat de célibat), issued against a full copy of the birth certificate from the last 3 months. Few town halls still issue it, so ask for it together with the birth certificate. The full copy of the birth certificate (copie intégrale) also shows any marriage or divorce in its margin.",
-            "apostilleBy": "the court of appeal (cour d'appel) of the region"
+            "apostilleBy": "the notaries' apostille centres",
+            "apostilleDetails": "Apply online and send the paper certificate by post, or go to a centre in person."
           },
           "GB": {
             "office": "the local register office",
@@ -2283,7 +2324,7 @@
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
-            "details": "A certificate of no marriage (CENOMAR).",
+            "details": "A certificate of no marriage (CENOMAR). For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)"
           },
           "PT": {
@@ -2407,8 +2448,8 @@
           "FR": {
             "office": "the national criminal record office (Casier judiciaire national)",
             "details": "An extract of the criminal record, bulletin no. 3 (extrait de casier judiciaire, bulletin n° 3). It's free, online.",
-            "apostilleBy": "the Rennes Court of Appeal",
-            "apostilleDetails": "Only this court can apostille it."
+            "apostilleBy": "the notaries' apostille centres",
+            "apostilleDetails": "Apply online, or at one of the centres. The extract has to be less than 3 months old."
           },
           "GB": {
             "office": "ACRO, the UK's criminal records office",
@@ -2506,6 +2547,14 @@
             "details": "A police clearance certificate (PCC), based on fingerprints. From abroad, apply by courier, with fingerprints taken at a local police station or the embassy. It takes 8 to 12 weeks and is valid for 6 months: plan the timing.",
             "apostilleBy": "the Department of International Relations (DIRCO)",
             "apostilleDetails": "It takes another 6 to 8 weeks."
+          }
+        },
+        "marriageCertificateAbroad": {
+          "PH": {
+            "office": "the Philippine Statistics Authority (PSA)",
+            "details": "The PSA marriage certificate. For Israel, it comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
+            "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
+            "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
           }
         }
       },

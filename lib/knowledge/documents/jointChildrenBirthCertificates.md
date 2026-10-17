@@ -25,7 +25,10 @@ It's an Israeli document: no certification or translation.
 From the civil registry of the country where the child was born, like the
 foreign partner's own birth certificate. It's certified there: an
 apostille, or consular legalization if that country isn't in the Apostille
-Convention (see [certification.md](../certification.md)).
+Convention (see [certification.md](../certification.md)). A child born in
+the Philippines: the birth certificate from the Philippine Statistics
+Authority (PSA), which for Israel comes only as a file, with an electronic
+apostille.
 
 ## What it should include
 

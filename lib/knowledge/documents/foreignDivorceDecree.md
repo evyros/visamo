@@ -36,7 +36,9 @@ a declaration of nullity: the court decision, with its certificate of
 finality, and the marriage certificate from the Philippine Statistics
 Authority (PSA), annotated with it. In the Philippines, a divorce granted
 abroad counts only once a Philippine court recognizes it and the marriage
-certificate is annotated.
+certificate is annotated. For Israel, the annotated marriage certificate
+comes only as a file, with an electronic apostille (see
+[certification.md](../certification.md)).
 
 ### Russia
 

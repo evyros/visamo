@@ -82,7 +82,7 @@
       }
     },
     {
-      "name": "Philippines: CENOMAR, with apostille",
+      "name": "Philippines: CENOMAR, with electronic apostille",
       "scenario": "commonLawLivingTogether",
       "foreign": {
         "name": "Maria Clara Santos Reyes",
@@ -97,9 +97,6 @@
         "rating": [
           "looksGood",
           "canImprove"
-        ],
-        "mayFlag": [
-          "paper original issued for use abroad"
         ]
       }
     },

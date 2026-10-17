@@ -29,6 +29,13 @@ Foreign documents follow the population authority's procedure 1.3.0001
 - **The originals have to be in Israel** for the first appointment, even if
   the foreign partner is still abroad: send them by courier to the Israeli
   partner in time. They're also needed for the translation.
+- **Some documents come only as a file.** For Israel, the Philippines
+  issues its PSA certificates (birth, marriage and death certificates, and
+  the certificate of no marriage, CENOMAR) only as a file with an electronic
+  apostille, sent by email. Printing them makes them invalid, so there's no
+  paper original to ask for or send. Misrad Hapnim usually asks for
+  originals on paper, so the clerk may push back on the files: explain that
+  for Israel, the Philippines issues them only this way.
 - **Ask for a paper document "for use abroad".** Many offices reject a
   document printed at home or downloaded from an online service, and many
   countries won't put an apostille on one. Ask for the printed original, with

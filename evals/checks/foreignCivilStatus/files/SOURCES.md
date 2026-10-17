@@ -11,7 +11,9 @@ The other countries' documents are made up for the evals, for made-up
 people, in each country's usual format: no real copies of these documents
 are free to use. germany-single-status.pdf (a Standesamt confirmation of
 single status, with an apostille), philippines-cenomar.pdf (a PSA
-certificate of no marriage record, with an apostille),
+e-certificate of no marriage record, with the DFA's electronic apostille:
+since March 2026 the only form the Philippines issues for Israel; the QR
+codes are made-up patterns),
 ukraine-no-marriage-record.pdf (a DRACS extract with a Hebrew translation,
 without an apostille), us-no-marriage-record.pdf (a county clerk's
 certification of no marriage record, with an apostille), and an affidavit of no children for each person,

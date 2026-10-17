@@ -12,6 +12,13 @@ describe("stepsFor", () => {
     expect(steps.map((s) => s.kind)).toEqual(["authenticate", "translate"]);
   });
 
+  it("sends nothing to Israel for a document issued only as a file", () => {
+    const item = { issuer: "PH", certification: { authentication: "apostille" as const }, translation: "notarized" as const };
+    expect(stepsFor({ ...item, electronic: true }, true).map((s) => s.kind)).toEqual(["obtain", "authenticate", "translate"]);
+    expect(stepsFor({ ...item, electronic: true }, true)[0]).toEqual({ kind: "obtain", from: "PH", electronic: true });
+    expect(stepsFor(item, true).map((s) => s.kind)).toEqual(["obtain", "authenticate", "send", "translate"]);
+  });
+
   it("gets a Utah marriage's original from Utah", () => {
     const steps = stepsFor({ issuer: "utah", certification: { authentication: "utahApostille" }, translation: "notarized" }, false);
     expect(steps[0]).toEqual({ kind: "obtain", from: "utah" });

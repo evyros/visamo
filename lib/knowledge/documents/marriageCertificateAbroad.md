@@ -21,6 +21,12 @@ registered as married in Israel before you apply (below).
   Not every country recognizes them: check that the foreign partner's country
   does.
 
+### Philippines
+
+The marriage certificate from the Philippine Statistics Authority (PSA).
+For Israel, it comes only as a file, with the electronic apostille of the
+Department of Foreign Affairs (see [certification.md](../certification.md)).
+
 ## What it should include
 
 - **The original certificate, with its certification:** the apostille or

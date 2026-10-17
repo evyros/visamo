@@ -90,7 +90,8 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
       const from = country ?? (doc.issuedBy === "birthCountry" ? profile.countries.birthCountry : undefined);
       const signing = "signing" in doc ? doc.signing : undefined;
       const points = pointsFor(doc.id as DocumentId, profile, country);
-      const issuerKind = issuerEntry(doc.id as DocumentId, issuer)?.kind;
+      const issued = issuerEntry(doc.id as DocumentId, issuer);
+      const issuerKind = issued?.kind;
       // A country that issues no such document: an affidavit in its place, which isn't certified like one.
       const certification =
         issuer === undefined || issuerKind === "affidavit" ? null : certificationFor(issuer, doc.exemption);
@@ -100,6 +101,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         translation: doc.translation,
         signing,
         ...(issuerKind && { issuerKind }),
+        ...(issued?.electronic && { electronic: true }),
         orAffidavit: "orAffidavit" in doc && !!doc.orAffidavit,
         // AS/6 filed without the foreign partner's declaration: they sign the applicants' declaration by email.
         signByEmail: doc.id === "statusApplicationMarried" && !points.includes("as6ForeignDeclaration"),

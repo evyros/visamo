@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 34;
+export const CATALOG_VERSION = 35;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -101,6 +101,7 @@ export const formUrls = {
   "AS/1": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf",
   "AS/3": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf",
   "AS/6": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf",
+  "5.2.0009_a": "https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf",
 } as const;
 
 export type FormId = keyof typeof formUrls;
@@ -150,6 +151,7 @@ export const documents = [
     owner: "couple",
     category: "forms",
     when: "commonLaw",
+    form: "5.2.0009_a",
     signing: "clerk",
     source: `${P9}, the affidavit form (5.2.0009_a)`,
     verified: true,

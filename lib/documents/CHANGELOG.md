@@ -3,6 +3,17 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v35 — 2026-10-17
+
+**What changed:** The common-law affidavit (`affidavitCommonLaw`) links to
+its form, 5.2.0009_a, like the other forms.
+
+**Why:** Couples had to find the form on gov.il themselves.
+
+**Source:** Procedure 5.2.0009, the affidavit form (5.2.0009_a)
+
+**Lists that changed:** none (only the form link)
+
 ## v34 — 2026-10-16
 
 **What changed:** `foreignHealthInsurance` only when the foreign partner is

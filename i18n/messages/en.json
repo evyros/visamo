@@ -2011,11 +2011,12 @@
         }
       },
       "drop": "or drop them here",
-      "form": "Form {form} (PDF)",
+      "form": "{form} form (PDF)",
       "formNames": {
         "AS/1": "AS/1",
         "AS/3": "AS/3",
-        "AS/6": "AS/6"
+        "AS/6": "AS/6",
+        "5.2.0009_a": "Affidavit"
       },
       "steps": {
         "heading": "What it needs",

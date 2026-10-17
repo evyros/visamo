@@ -57,6 +57,9 @@ export function Turnstile({ resetKey }: { resetKey: number }) {
           sitekey: SITE_KEY,
           appearance: "interaction-only",
           theme: "light",
+          // The normal widget is a fixed 300px wide; on a narrow phone it
+          // would push the page sideways, so it's the 150px one there.
+          size: (container.current.parentElement?.clientWidth ?? 300) < 300 ? "compact" : "normal",
         });
       })
       .catch(console.error);

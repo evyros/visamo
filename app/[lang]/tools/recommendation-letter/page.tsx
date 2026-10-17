@@ -31,10 +31,10 @@ export default async function RecommendationLetterPage() {
       <section className="py-16 sm:py-20">
         <Container>
           {/* On a phone the form comes right after the intro, before how it works. */}
-          <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-x-16">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-x-16">
             <div className={mobileCenter}>
               <Eyebrow>{l.eyebrow}</Eyebrow>
-              <SectionTitle as="h1" className="mt-3">
+              <SectionTitle as="h1" className="mt-3 break-words hyphens-auto">
                 {l.title}
               </SectionTitle>
               <p className="mt-5 text-lg">{l.intro}</p>

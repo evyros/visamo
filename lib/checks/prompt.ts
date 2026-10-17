@@ -118,7 +118,7 @@ export function checkContext(details: CaseDetails, branch: BranchCode | null, it
     ["In its place", item.affidavitInstead ? page.affidavitInstead : null],
     ["Translation", TRANSLATION[item.translation]],
     // As the couple's card shows them: who issues it, who certifies it, the affidavits that go with it.
-    ["Steps", item.steps.length ? stepsInWords(item.steps, item.id, page) : null],
+    ["Steps", item.steps.length ? stepsInWords(item.steps, item.id, page, item.points) : null],
   ]);
 
   return `The document\n${document}\n\nThe couple\n${person(details.israeli)}\n\n${person(details.foreign)}\n\n${couple}`;

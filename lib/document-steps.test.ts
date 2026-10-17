@@ -64,3 +64,20 @@ describe("a legalization's offices", () => {
     for (const messages of [en, he]) expect(Object.keys(messages.app.documentsPage.steps.chain).sort()).toEqual([...chainLinks].sort());
   });
 });
+
+describe("AS/6's signing line", () => {
+  const sign = (points: Parameters<typeof stepText>[4]) =>
+    stepText({ kind: "sign", before: "lawyer" }, "statusApplicationMarried", t, "en", points).text;
+
+  it("has both declarations signed, when both partners sign now", () => {
+    expect(sign(["as6Application", "as6IsraeliDeclaration", "as6ForeignDeclaration"])).toBe(
+      t.steps.signingFor.statusApplicationMarried,
+    );
+  });
+
+  it("has only the Israeli partner's signed, while the foreign partner's waits", () => {
+    expect(sign(["as6Application", "as6IsraeliDeclaration", "as6ForeignDeclarationLater"])).toBe(
+      t.steps.signingFor.statusApplicationMarriedForeignLater,
+    );
+  });
+});

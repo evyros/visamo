@@ -3,6 +3,7 @@ import { regionName } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import type { DocumentId } from "./documents/catalog";
 import type { Issuer } from "./documents/certification";
+import type { Point } from "./documents/points";
 import { ARABIC, USUAL_CHAIN, type ChainLink } from "./documents/countries";
 import type { Step } from "./documents/steps";
 
@@ -39,8 +40,23 @@ function placeName(from: Exclude<Issuer, null>, t: Labels, locale: Locale) {
   return from === "utah" ? t.steps.utah : regionName(from, locale);
 }
 
-/** The step's line, and the full text behind it. */
-export function stepText(step: Step, id: DocumentId, t: Labels, locale: Locale): { text: string; details?: StepDetails } {
+/**
+ * The document's own signing line, where it has one: by its points, where they
+ * change who signs now (AS/6 while the foreign partner's declaration waits).
+ */
+function signingFor(id: DocumentId, points: readonly Point[], t: Labels): string | undefined {
+  const own = t.steps.signingFor as Partial<Record<string, string>>;
+  return (points.includes("as6ForeignDeclarationLater") && own[`${id}ForeignLater`]) || own[id];
+}
+
+/** The step's line, and the full text behind it. `points`: what the item has to show (points.ts). */
+export function stepText(
+  step: Step,
+  id: DocumentId,
+  t: Labels,
+  locale: Locale,
+  points: readonly Point[] = [],
+): { text: string; details?: StepDetails } {
   const s = t.steps;
   switch (step.kind) {
     case "obtain": {
@@ -96,7 +112,7 @@ export function stepText(step: Step, id: DocumentId, t: Labels, locale: Locale):
         ? { text: s.translateNotarized, details: pointsOf(`${translationWhen(step.from, t)}\n${s.translateNotarizedDetails}`) }
         : { text: s.translateSelf, details: pointsOf(s.translateSelfDetails) };
     case "sign": {
-      const own = (s.signingFor as Partial<Record<string, string>>)[id];
+      const own = signingFor(id, points, t);
       return step.before === "clerk"
         ? { text: s.signing.clerk }
         : { text: own ?? s.signing[step.before], details: prose(s.signingDetails) };
@@ -128,10 +144,10 @@ function chainWords(chain: readonly ChainLink[], t: Labels) {
 }
 
 /** The steps as one line, in English, for the chat's and the check's view of a document: the full sentence where the line is short. */
-export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels): string {
+export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels, points: readonly Point[] = []): string {
   const say = (step: Step) => {
     if (step.kind === "translate") return step.level === "notarized" ? t.steps.translateNotarizedFull : t.steps.translateSelfFull;
-    const { text } = stepText(step, id, t, "en");
+    const { text } = stepText(step, id, t, "en", points);
     return step.kind === "authenticate" && step.chain ? `${text}: ${chainWords(step.chain, t)}` : text;
   };
   return steps.map((step, i) => `${i + 1}. ${say(step)}`).join(" ");

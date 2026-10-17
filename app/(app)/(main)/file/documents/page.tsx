@@ -95,7 +95,7 @@ export default async function DocumentsPage() {
               return [
                 {
                   ...(titled && { title: t.steps.parts[part] }),
-                  steps: steps.map((step) => ({ kind: step.kind, ...stepText(step, d.id, t, locale) })),
+                  steps: steps.map((step) => ({ kind: step.kind, ...stepText(step, d.id, t, locale, d.points) })),
                   ...(part === "document" && d.affidavitInstead && { note: t.affidavitInstead }),
                 },
               ];

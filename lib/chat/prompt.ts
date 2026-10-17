@@ -133,7 +133,7 @@ export async function casePrompt(caseId: string, userId: string) {
       const flags = [
         d.optional && "optional",
         d.copies && `bring ${d.copies} copies`,
-        d.steps.length > 0 && `what to do to it: ${stepsInWords(d.steps, d.id, t.app.documentsPage)}`,
+        d.steps.length > 0 && `what to do to it: ${stepsInWords(d.steps, d.id, t.app.documentsPage, d.points)}`,
         d.affidavitInstead && t.app.documentsPage.affidavitInstead,
         uploaded.has(d.key) ? "uploaded" : "not uploaded yet",
         checked(d.key),

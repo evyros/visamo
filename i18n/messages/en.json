@@ -2065,7 +2065,8 @@
           "consul": "Sign it in front of a consul: fill it in, but don't sign it before"
         },
         "signingFor": {
-          "statusApplicationMarried": "Both your declarations, and the landlord's affidavit if you rent, are signed in front of an Israeli lawyer: fill them in, but don't sign them before"
+          "statusApplicationMarried": "Both your declarations, and the landlord's affidavit if you rent, are signed in front of an Israeli lawyer: fill them in, but don't sign them before",
+          "statusApplicationMarriedForeignLater": "The Israeli partner's declaration, and the landlord's affidavit if you rent, are signed in front of an Israeli lawyer: fill them in, but don't sign them before"
         },
         "signingDetails": "Whoever confirms it checks who you are, and signs and stamps it. Sign only in front of them.",
         "affidavit": {

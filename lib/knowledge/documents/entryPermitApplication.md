@@ -1,6 +1,6 @@
 # Entry permit application (form AS/1) (בקשה להיתר כניסה (טופס אש/1))
 
-Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process.
+Needed so the foreign partner can enter Israel for the process.
 
 Form **AS/1** (אש/1), "Application for entry visa to Israel" (בקשה למתן אשרת
 כניסה לישראל), is the entry permit application, for a foreign partner who is

@@ -1613,7 +1613,7 @@
         "entryPermitApplication": {
           "title": "Entry permit application (form AS/1)",
           "shortTitle": "Entry permit application (form AS/1)",
-          "description": "Needed while the foreign partner is outside Israel and the Israeli partner lives in Israel, so the foreign partner can enter for the process."
+          "description": "Needed so the foreign partner can enter Israel for the process."
         },
         "visaChangeApplication": {
           "title": "Visa change application (form AS/3)",

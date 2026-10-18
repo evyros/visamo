@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
-import { localePath } from "@/lib/site";
+import { localePath, signupUrl } from "@/lib/site";
 import { homeStructuredData, jsonLd } from "@/lib/structured-data";
 import { FaqList } from "@/components/faq-list";
 import { FinalCta } from "@/components/final-cta";
@@ -12,8 +12,7 @@ import { HowItWorks } from "@/components/home/how-it-works";
 import { HowWeBuilt } from "@/components/home/how-we-built";
 import { Problem } from "@/components/home/problem";
 import { SecurityBand } from "@/components/home/security-band";
-import { PricingCards } from "@/components/pricing-cards";
-import { ButtonLink, Container, SectionTitle, TextLink } from "@/components/ui";
+import { ButtonLink, Container, SectionTitle } from "@/components/ui";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getDictionary();
@@ -41,15 +40,15 @@ export default async function HomePage() {
       <SecurityBand t={t} locale={locale} />
       <FounderTeaser t={t} locale={locale} />
 
+      {/* Free first, prices on /pricing: a full price card here read as a paid product. */}
       <section className="bg-white py-16 sm:py-24">
-        <Container>
-          <div className="flex flex-col items-center gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <SectionTitle>{t.home.pricingTeaser.title}</SectionTitle>
-            <TextLink href={localePath(locale, "/pricing")}>{t.home.pricingTeaser.cta}</TextLink>
-          </div>
-          <div className="mt-12">
-            <PricingCards t={t} locale={locale} compact />
-          </div>
+        <Container narrow className="text-center">
+          <SectionTitle align="center">{t.home.pricingTeaser.title}</SectionTitle>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-pretty text-slate-700">{t.home.pricingTeaser.body}</p>
+          <ButtonLink href={signupUrl(locale)} className="mt-8">
+            {t.nav.startFree}
+          </ButtonLink>
+          <p className="mt-4 text-sm text-slate-500">{t.home.pricingTeaser.microcopy}</p>
         </Container>
       </section>
 

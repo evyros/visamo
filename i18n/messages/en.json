@@ -310,8 +310,9 @@
       "link": "The story behind Visamo"
     },
     "pricingTeaser": {
-      "title": "One-time prices. No subscription.",
-      "cta": "See full pricing"
+      "title": "Start free. Pay only if you need more.",
+      "body": "Your personal document list, step-by-step guidance through the process and 5 chat messages are free. Need more? Two one-time purchases: a Message pack, or the Full file check for your whole file. No subscription.",
+      "microcopy": "No credit card needed."
     },
     "faq": {
       "title": "Questions couples ask us",

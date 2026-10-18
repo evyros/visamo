@@ -16,12 +16,10 @@ const highlighted = "fileCheck";
 export function PricingCards({
   t,
   locale,
-  compact = false,
   headingLevel: Heading = "h3",
 }: {
   t: Messages;
   locale: Locale;
-  compact?: boolean;
   /** h2 where the cards aren't under a section heading, so levels aren't skipped. */
   headingLevel?: "h2" | "h3";
 }) {
@@ -39,7 +37,7 @@ export function PricingCards({
           </span>
           <span className="text-sm text-slate-500">{pack.priceNote}</span>
         </div>
-        {!compact && <p className="mt-1 text-[15px] text-slate-700">{pack.body}</p>}
+        <p className="mt-1 text-[15px] text-slate-700">{pack.body}</p>
         <p className="mt-1 text-xs text-slate-500">{pack.footnote}</p>
       </div>
       <ButtonLink href={signupUrl(locale, "messagePack")} variant="primary" className="shrink-0">
@@ -78,16 +76,14 @@ export function PricingCards({
               </p>
               {id !== "free" && <LaunchPrice product={id} t={t} locale={locale} />}
 
-              {!compact && (
-                <ul className="mt-6 space-y-3 text-[15px]">
-                  {option.includes.map((item) => (
-                    <li key={item} className="flex gap-2.5">
-                      <Icon name="check" className="mt-1 size-4 text-teal-600" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <ul className="mt-6 space-y-3 text-[15px]">
+                {option.includes.map((item) => (
+                  <li key={item} className="flex gap-2.5">
+                    <Icon name="check" className="mt-1 size-4 text-teal-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
               <div className="mt-auto pt-8">
                 <ButtonLink

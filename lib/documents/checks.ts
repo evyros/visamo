@@ -547,7 +547,7 @@ export const checks = {
     required: [
       "They are household bills of a home, from the provider: electricity, water, arnona (municipal tax), phone, or any other bill of the home, such as gas, internet, TV or vaad bayit (building committee).",
       "Each shows the home's address and the billing period.",
-      "They're in the landlord's name or the Israeli partner's. For a home abroad: in both partners' names, or the Israeli partner's.",
+      "They're in the landlord's name, or in one or both partners' names.",
       "If they aren't in Hebrew, Arabic or English (bills from abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
     ],
     recommended: [

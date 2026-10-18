@@ -1749,7 +1749,7 @@
         "utilityBills": {
           "title": "Bills for your home",
           "shortTitle": "Bills for your home",
-          "description": "Bills for your shared house from the last 12 months, in the landlord's name or the Israeli partner's, for example: electricity bill, water bill, arnona bill, phone bill, etc."
+          "description": "Bills for your shared house from the last 12 months, in the landlord's name or yours, for example: electricity bill, water bill, arnona bill, phone bill, etc."
         },
         "israeliUtilityBills": {
           "title": "Bills for the Israeli partner's home",

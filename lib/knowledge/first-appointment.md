@@ -93,6 +93,11 @@ volunteer or work-holiday visa, a tourist visa):
     employing them. Without an employer, the visa becomes a B/2.
   - **A visa from an earlier gradual process** is cancelled, and they get
     a B/2 until the decision.
+- **If their visa expires before the first B/1 visa:** whatever visa the
+  foreign partner is on, if it expires before Misrad Hapnim has processed
+  your application and given them the first B/1 visa of the gradual
+  process, they must go to the branch's walk-in hours and ask for an
+  extension.
 - **Two applications at once:** you can't have two visa applications open at
   the same time (other than asylum, aliyah or conversion). If another one is
   still pending, you choose one.

@@ -234,11 +234,20 @@ own your home.
 
 ## If you don't have it
 
-**The landlord's affidavit:** in some cases, Misrad Hapnim waives it when
-there's a strong reason you can't get it. Even so, it's strongly recommended
-to bring it.
+**The landlord's affidavit:** the form asks for it, but it asks a lot of
+your landlord: to come in with their Teudat Zehut and sign in front of a
+lawyer. Many landlords who aren't family won't do that. In
+practice, when your landlord won't cooperate, Misrad Hapnim usually waives
+the affidavit, and you can file the application without it. If your landlord
+is willing, still bring it.
 
 ## Questions
+
+**Our landlord won't sign the affidavit. Can we still apply?**
+Yes. Signing it means your landlord has to bring their Teudat Zehut and sign
+in front of a lawyer, and many landlords who aren't family
+refuse. In practice, Misrad Hapnim usually waives the affidavit in that case,
+and you file the application without it.
 
 **Our form's pages are in a different order. Is it the wrong form?**
 No. AS/6 comes in two formats, with the pages in a different order. Find

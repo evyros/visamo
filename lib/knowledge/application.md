@@ -65,6 +65,11 @@ of your financial situation.
 - **A foreign partner in Israel stays in Israel.** They can leave, but they
   won't be let back in until the entry permit is granted, unless they have a
   valid visa to return on.
+- **Keep the foreign partner's visa valid.** If the visa they're in Israel
+  on expires before Misrad Hapnim has processed your application and given
+  them the first B/1 visa of the gradual process, they must go to the
+  branch's walk-in hours and ask for an extension: see "On another visa" in
+  [first-appointment.md](first-appointment.md).
 - **Your documents don't expire while you wait.** The day you filed the
   online application is what counts: a document that was valid then, like a
   police certificate issued in the last 6 months, stays good for your file,

@@ -29,6 +29,8 @@ export const points = [
   "as6IsraeliDeclaration",
   "as6ForeignDeclaration",
   "as6LandlordAffidavit",
+  // With the landlord's affidavit, for a couple who owns their home: proof of it instead.
+  "as6HomeOwnership",
 ] as const;
 export type Point = (typeof points)[number];
 
@@ -43,7 +45,8 @@ function previous({ facts }: CaseProfile): "Single" | "Divorced" | "Widowed" | "
 /**
  * Form AS/6's parts: the application, both declarations, and the landlord's
  * affidavit wherever a lease is asked for (housingContract,
- * israeliHousingContract): it's annexed to the lease. A foreign partner abroad,
+ * israeliHousingContract): it's annexed to the lease. With it, proof of
+ * owning the home, for a couple who owns it, which onboarding doesn't ask. A foreign partner abroad,
  * with the Israeli partner filing from Israel, signs their declaration once
  * they arrive: it's a document of its own then (foreignDeclarationMarried).
  */
@@ -52,7 +55,7 @@ function as6Points({ facts }: CaseProfile): Point[] {
     "as6Application",
     "as6IsraeliDeclaration",
     ...(facts.foreignAbroad && facts.israeliInIsrael ? [] : ["as6ForeignDeclaration" as const]),
-    ...(facts.livingTogether || facts.israeliInIsrael ? ["as6LandlordAffidavit" as const] : []),
+    ...(facts.livingTogether || facts.israeliInIsrael ? (["as6LandlordAffidavit", "as6HomeOwnership"] as const) : []),
   ];
 }
 

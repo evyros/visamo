@@ -16,7 +16,7 @@
         "real.pdf"
       ],
       "expect": {
-        "rating": "canImprove",
+        "rating": "needsFixing",
         "flagged": [
           "landlordAffidavit: affidavit is in the files"
         ]
@@ -260,7 +260,7 @@
         "foreign-declaration.pdf"
       ],
       "expect": {
-        "rating": "canImprove",
+        "rating": "needsFixing",
         "flagged": [
           "landlordAffidavit: affidavit is in the files"
         ]
@@ -275,7 +275,7 @@
         "landlord-affidavit-no-confirmation.pdf"
       ],
       "expect": {
-        "rating": "canImprove",
+        "rating": "needsFixing",
         "flagged": [
           "landlordAffidavit: confirmation (אישור"
         ],

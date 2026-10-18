@@ -139,7 +139,8 @@ const foreignDeclarationRequired = [
 const foreignDeclarationRecommended = ["The ticks are clear, and the page is scanned straight and readable in full."];
 
 /** Form AS/6's parts, by the points that call for them (see points.ts). */
-const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
+// Proof of owning the home (as6HomeOwnership) has no part of its own: the landlord's part accepts it.
+const as6Parts: Record<Exclude<Extract<Point, `as6${string}`>, "as6HomeOwnership">, CheckPart> = {
   // From the form: the application and the applicants' declaration.
   as6Application: {
     part: "application",
@@ -185,19 +186,22 @@ const as6Parts: Record<Extract<Point, `as6${string}`>, CheckPart> = {
     recommended: foreignDeclarationRecommended,
   },
   // From the form, and how it's signed: in front of a lawyer or registrar. Only for couples who
-  // rent, which onboarding doesn't ask: nothing in it is required.
+  // rent, which onboarding doesn't ask: a couple who owns their home uploads proof of it instead.
+  // A landlord who won't sign it: a signed letter from them in its place.
   as6LandlordAffidavit: {
     part: "landlordAffidavit",
-    name: "The landlord's affidavit (נספח אש6), titled \"תצהיר נספח להסכם שכ\"ד - בני זוג\", with a copy of the landlord's Teudat Zehut. Only for couples who rent",
-    required: [],
+    name: "The landlord's affidavit (נספח אש6), titled \"תצהיר נספח להסכם שכ\"ד - בני זוג\", with a copy of the landlord's Teudat Zehut; or a letter from the landlord in its place; or, for a couple who owns their home, proof that they own it",
+    required: [
+      "The landlord's affidavit is in the files, with the whole page; or a letter from the landlord in its place; or proof that the couple owns the home, such as a land registry extract (נסח טאבו). If none is, this is the only finding for this part: say that if they rent their home, the landlord's affidavit is needed, signed by the landlord in front of a lawyer, or, if the landlord won't sign it, a letter from the landlord confirming the couple lives in their home, with the landlord's contact details and signature; and that if they own their home, they upload proof that they own it instead. With a letter or proof of ownership in place of the affidavit, the affidavit's lines in this part don't apply: don't report them.",
+      "If the affidavit is there: the landlord has signed it (שם וחתימת המצהיר): there's a handwritten signature, not only a name. The date is filled in too.",
+      "If the affidavit is there: the lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name, license number and date, the declarer's ID number, and their stamp and signature.",
+      "If a letter from the landlord is there instead of the affidavit: it confirms the couple lives in the landlord's home, gives the home's address and the landlord's full name, ID number and contact details, and has the landlord's handwritten signature and a date.",
+    ],
     recommended: [
-      "The landlord's affidavit is in the files, with the whole page. If it isn't, this is the only finding for this part: say it's needed if they rent their home, signed by the landlord in front of a lawyer, and not if they own it.",
       "The landlord's first name, last name and ID number are filled in.",
       "The tenant whose application it supports is named, with their ID number.",
       "The home's address is filled in, with its size, and the statement that it's rented to the couple.",
       "The bills table is filled in: for electricity, water, phone and arnona, whether the landlord or the tenant pays.",
-      "The landlord has signed (שם וחתימת המצהיר): there's a handwritten signature, not only a name. The date is filled in too.",
-      "The lawyer's or registrar's confirmation (אישור קבלת ההצהרה) is filled in: their name, license number and date, the declarer's ID number, and their stamp and signature.",
       "A copy of the landlord's Teudat Zehut is uploaded with it.",
       "The section on who else lives in the home is filled in, or clearly marked that no one else does.",
       "The landlord's civil status, number of children under 18 and occupation are filled in.",

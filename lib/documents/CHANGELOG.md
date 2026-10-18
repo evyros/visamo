@@ -3,6 +3,31 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v41 — 2026-10-18
+
+**What changed:** Form AS/6 has a new point, `as6HomeOwnership`, next to
+`as6LandlordAffidavit` and under the same condition: a couple who owns their
+home shows proof of it (a land registry extract, נסח טאבו) instead of the
+landlord's affidavit. Its bullet is separate from the renters' one. It has no
+check part of its own: the landlord's part accepts the affidavit, a letter
+from a landlord who won't sign it, or proof of owning the home.
+
+**Why:** Onboarding doesn't ask whether the couple rents or owns. The
+landlord's part of the check is now required, so a couple who owns their
+home needs a way to meet it, and to see on the card what to bring.
+
+**Source:** Visamo's practice: AS/6, the landlord's affidavit (affidavit
+annexed to the lease – couples).
+
+**Lists that changed:** none (a point on `statusApplicationMarried` in every
+married scenario with the landlord's affidavit: marriedInCyprus,
+marriedInIsrael, marriedOnline, marriedInEgypt, foreignFirst,
+bornInUSSRWithGermanNationality, fromUkraine, fromJordan,
+livedInThreeCountries, foreignAbroad, foreignWithoutVisa, foreignNameChanged,
+bothPreviouslyMarried, permanentResident, bothAbroad,
+marriedNeverLivedTogether, childrenStayingBehind, childrenMovingWithConsent,
+childrenMovingMixed, childrenTogether).
+
 ## v40 — 2026-10-18
 
 **What changed:** `foreignBirthCertificate` has issuers for Germany, France,

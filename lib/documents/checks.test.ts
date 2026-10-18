@@ -36,7 +36,7 @@ describe("checkFor", () => {
     expect(checkFor("noSuchDocument")).toBeNull();
   });
 
-  it("checks form AS/6 by its parts, the landlord's affidavit only where it's listed, and none of it required", () => {
+  it("checks form AS/6 by its parts, the landlord's affidavit only where it's listed", () => {
     const withLandlord = checkFor("statusApplicationMarried", [
       "as6Application",
       "as6IsraeliDeclaration",
@@ -49,7 +49,10 @@ describe("checkFor", () => {
       "foreignDeclaration",
       "landlordAffidavit",
     ]);
-    expect(withLandlord.parts?.find((p) => p.part === "landlordAffidavit")?.required).toEqual([]);
+    // Required, but a letter from the landlord or proof of owning the home stands in for it.
+    const [present] = withLandlord.parts?.find((p) => p.part === "landlordAffidavit")?.required ?? [];
+    expect(present).toMatch(/a letter from the landlord in its place/);
+    expect(present).toMatch(/proof that the couple owns the home/);
     // Without the foreign partner's declaration, a document of its own then, with the same lines.
     const abroad = checkFor("statusApplicationMarried", ["as6Application", "as6IsraeliDeclaration"])!;
     expect(abroad.parts?.map((p) => p.part)).toEqual(["application", "israeliDeclaration"]);

@@ -39,7 +39,10 @@ The form is on the Population and Immigration Authority's site (see
    declaration at the bottom of the page.
 3. **If you rent:** your landlord fills in their affidavit and signs it
    in front of a lawyer or a registrar, the same way. Attach **a scan of the
-   landlord's Teudat Zehut** to it.
+   landlord's Teudat Zehut** to it. If your landlord won't sign it, bring a
+   letter from them instead (see "If you don't have it").
+   **If you own your home:** attach proof that you own it instead, such as
+   a land registry extract (נסח טאבו).
 
 **If the foreign partner is abroad and the Israeli partner is in Israel:**
 the Israeli partner files the form with their own parts, and the foreign
@@ -209,8 +212,9 @@ the marriage, and that everything they submit is true.
 נספח להסכם שכ"ד - בני זוג). In it, the landlord declares that they own the
 home, that it's rented to you, who else lives there, and who pays the bills.
 Like the lease, it's asked for when you live together, or have lived
-together, and whenever the Israeli partner lives in Israel. Not needed if you
-own your home.
+together, and whenever the Israeli partner lives in Israel. If you own your
+home, you don't need it: bring proof that you own it instead, such as a land
+registry extract (נסח טאבו).
 
 - **The landlord's details:** first name, last name and ID number (מ"ז).
 - **Whose application it supports:** the tenant's name and ID number, and
@@ -238,8 +242,15 @@ own your home.
 your landlord: to come in with their Teudat Zehut and sign in front of a
 lawyer. Many landlords who aren't family won't do that. In
 practice, when your landlord won't cooperate, Misrad Hapnim usually waives
-the affidavit, and you can file the application without it. If your landlord
-is willing, still bring it.
+the affidavit, but only if you bring **a letter from your landlord** in its
+place, confirming that you live in their home. Without the affidavit or the
+letter, don't file. If your landlord is willing, still bring the affidavit.
+
+The letter should have:
+
+- **The home's address,** and that you both live there.
+- **The landlord's details:** full name, ID number (מ"ז) and contact details.
+- **The landlord's signature,** and the date.
 
 ## Questions
 
@@ -247,7 +258,12 @@ is willing, still bring it.
 Yes. Signing it means your landlord has to bring their Teudat Zehut and sign
 in front of a lawyer, and many landlords who aren't family
 refuse. In practice, Misrad Hapnim usually waives the affidavit in that case,
-and you file the application without it.
+but only if you bring a letter from your landlord instead, confirming that
+you live in their home, with their contact details and signature.
+
+**We own our home. Do we need the landlord's affidavit?**
+No. Bring proof that you own the home instead, such as a land registry
+extract (נסח טאבו).
 
 **Our form's pages are in a different order. Is it the wrong form?**
 No. AS/6 comes in two formats, with the pages in a different order. Find

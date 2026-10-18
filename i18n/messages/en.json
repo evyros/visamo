@@ -1877,7 +1877,8 @@
         "as6Application": "The application, filled in and signed by both of you.",
         "as6IsraeliDeclaration": "The Israeli partner's declaration.",
         "as6ForeignDeclaration": "The foreign partner's declaration.",
-        "as6LandlordAffidavit": "If you rent: the landlord's affidavit, with a copy of their Teudat Zehut."
+        "as6LandlordAffidavit": "If you rent: the landlord's affidavit.",
+        "as6HomeOwnership": "If you own your home: proof that you own it, such as a land registry extract (נסח טאבו)."
       }
     },
     "documentsPage": {
@@ -2090,7 +2091,7 @@
           },
           "landlordAffidavit": {
             "text": "If you rent: the landlord's affidavit must be signed in front of a lawyer",
-            "details": "Your landlord signs it, in front of a lawyer, and you attach a copy of their Teudat Zehut."
+            "details": "Your landlord signs it, in front of a lawyer, and you attach a copy of their Teudat Zehut. If they won't, ask them for a letter confirming you live in their home, with their contact details and signature."
           }
         },
         "signingDetails": {

@@ -44,16 +44,19 @@ describe("pointsFor", () => {
       "as6IsraeliDeclaration",
       "as6ForeignDeclaration",
       "as6LandlordAffidavit",
+      "as6HomeOwnership",
     ]);
     // The foreign partner abroad, the Israeli partner filing from Israel: their declaration is a document of its own.
     expect(pointsOf("foreignAbroad", "statusApplicationMarried")).toEqual([
       "as6Application",
       "as6IsraeliDeclaration",
       "as6LandlordAffidavit",
+      "as6HomeOwnership",
     ]);
     // Both abroad: they file together once in Israel, with both declarations.
     expect(pointsOf("bothAbroad", "statusApplicationMarried")).toContain("as6ForeignDeclaration");
     expect(pointsOf("neverLivedTogetherBothAbroad", "statusApplicationMarried")).not.toContain("as6LandlordAffidavit");
+    expect(pointsOf("neverLivedTogetherBothAbroad", "statusApplicationMarried")).not.toContain("as6HomeOwnership");
   });
 
   it("gives other documents none", () => {

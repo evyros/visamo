@@ -205,8 +205,8 @@
         "footnote": "AI-generated general information, based on published sources and couples' experience. Not legal advice. When your case needs a lawyer, the assistant will say so.",
         "chat": {
           "label": "Example conversation with the Visamo assistant",
-          "question": "They're asking for an Ishur Toshav, but my municipality doesn't issue it. Can I just bring an Arnona bill instead?",
-          "answer": "No. An Arnona bill doesn't replace the Ishur Toshav, and it's mandatory. This is a common issue, since some municipalities in Israel don't know what it is. In order to get it…",
+          "question": "My birth certificate is in English. Do I need to translate it?",
+          "answer": "Usually not. Most clerks accept English documents, but it depends on the clerk, so be ready to translate if they ask…",
           "name": "Visamo assistant"
         }
       },

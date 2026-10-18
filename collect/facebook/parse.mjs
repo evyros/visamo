@@ -175,8 +175,14 @@ for (const file of files) {
   for (const doc of entry.docs) walk(doc, ctx);
 }
 
+// Group posts that hold nothing to learn from (e.g. pinned admin notices). Feed captures
+// keep bringing them back, so they're dropped here rather than deleted by hand.
+const EXCLUDED_POSTS = new Set([
+  "25309018422083813", // Admin notice about Facebook's "Use nickname" feature.
+]);
+
 // Drop anything that isn't a group post, along with its comments and images.
-for (const [id, post] of posts) if (!post.group) posts.delete(id);
+for (const [id, post] of posts) if (!post.group || EXCLUDED_POSTS.has(id)) posts.delete(id);
 for (const [id, c] of comments) if (!posts.has(c.post_id)) comments.delete(id);
 for (const [id, img] of images) if (!posts.has(img.post_id)) images.delete(id);
 

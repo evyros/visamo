@@ -61,6 +61,17 @@ shown to users (`lib/knowledge/`).
   and police certificate guides, and the `TH` entries in `countries.ts`
   (`APOSTILLE` and `LEGALIZATION`). Documents legalized before then should
   stay accepted.
+- **Pregnancy** (`lib/knowledge/pregnancy.md`, 2026-10-18). Left out as
+  unverified or thin: the airlines' pregnancy limits (week 28 / 36, a
+  general rule with no Israeli source); offices asking for an ultrasound
+  (one Facebook report); DNA samples given at a consulate; whether 5.2.0004
+  (2005) was updated after HCJ 10533/04 (2011: a genetic test only as a last
+  resort); how National Insurance handles a common-law partner on BL/303 in
+  practice (the law covers her, §1 "אשתו"); whether months on a B/1 count
+  for maternity pay under its "valid foreign worker visa" wording; how long
+  a family-court paternity ruling takes; whether Tipat Halav funds tests for
+  women without insurance; a father's paternity leave on a B/1;
+  second-parent recognition for same-sex couples.
 
 ## Not modelled yet
 

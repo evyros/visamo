@@ -13,6 +13,7 @@ through the gradual process (ההליך המדורג).
 - [certification.md](certification.md): apostille, legalization, translation and affidavits.
 - [affidavits.md](affidavits.md): how to make an affidavit in Israel, and what it costs.
 - [children.md](children.md): when the foreign partner's children move to Israel.
+- [pregnancy.md](pregnancy.md): a pregnancy during the process: the baby's registration, recognizing the father, and the cost of the birth.
 - [former-ussr.md](former-ussr.md): the former USSR, and the Nativ step.
 - [security-check.md](security-check.md): the security check, only for Palestinian residents and citizens of Arab countries.
 - [sources.md](sources.md): the official procedures and forms.

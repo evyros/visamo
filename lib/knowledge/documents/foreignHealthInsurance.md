@@ -45,6 +45,11 @@ need.
 **My partner is still abroad. Do they need it now?**
 They need it for their stay in Israel. Arrange it for when they arrive.
 
+**Does it cover a pregnancy?**
+Usually not if the pregnancy began before the policy did: check before you
+buy it. The cost of the birth itself can be covered by National Insurance:
+see [pregnancy.md](../pregnancy.md).
+
 **Can my partner join my health fund?**
 Not as a member of the public health insurance while on a B/1. But Clalit and
 Meuhedet offer a private partner's plan to the partner of a member.

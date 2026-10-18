@@ -154,6 +154,10 @@ By procedure 5.2.0008, if they stay and apply from Israel:
   every year. Married couples usually get 6 months, the time the office has to
   interview you and decide on the A/5. A common-law couple offered only 6
   months can point the clerk to procedure 5.2.0009.
+- **Extending the B/1:** if the appointment you get to extend it is
+  scheduled for after the foreign partner's visa expires, they must go to
+  the branch's walk-in hours and ask for an extension, the same as before
+  the first B/1.
 - **Ask for the inter-visa too.** The inter-visa (אינטר ויזה, a multiple-entry
   visa) is a second sticker that keeps the main visa valid when the foreign
   partner travels abroad. Without it, leaving Israel ends the main visa.

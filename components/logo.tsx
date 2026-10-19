@@ -5,7 +5,7 @@ export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
     <span dir="ltr" className={`inline-flex items-center gap-2 ${text}`}>
       <LogoMark className="size-8" />
       {/* The wordmark keeps one typeface in every language. */}
-      <span className="font-[family-name:var(--font-source-serif)] text-[22px] leading-none font-semibold tracking-tight">
+      <span className="font-[family-name:var(--font-fraunces)] text-[22px] leading-none font-medium tracking-tight [font-variation-settings:'SOFT'_50]">
         Visamo
       </span>
     </span>

@@ -29,6 +29,8 @@
   /* Each locale swaps these through the variables below. */
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), ui-serif, Georgia, serif;
+  /* Fraunces' softness; fonts without the axis ignore it. */
+  --font-display--font-variation-settings: "SOFT" 50;
 
   --shadow-soft: 0 1px 2px rgb(15 42 68 / 0.06), 0 8px 24px rgb(15 42 68 / 0.06);
   --radius-card: 12px;
@@ -36,7 +38,7 @@
 
 html[data-script="latin"] {
   --font-body: var(--font-inter);
-  --font-heading: var(--font-source-serif);
+  --font-heading: var(--font-fraunces);
 }
 
 html[data-script="hebrew"] {

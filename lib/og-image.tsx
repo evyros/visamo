@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import fontkit, { type Font } from "@pdf-lib/fontkit";
 import { ImageResponse } from "next/og";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 
@@ -27,22 +28,59 @@ function visualWord(word: string) {
   return parts.reverse().map((part) => mirrored[part] ?? part).join("");
 }
 
+const wordGap = 0.28; // em
+
+/** Fills lines up to `width`, the way a browser wraps. */
+function wrap(widths: number[], gap: number, width: number) {
+  const lines: number[][] = [];
+  let line: number[] = [];
+  let used = 0;
+  widths.forEach((w, i) => {
+    if (line.length && used + gap + w > width) {
+      lines.push(line);
+      line = [];
+      used = 0;
+    }
+    used += (line.length ? gap : 0) + w;
+    line.push(i);
+  });
+  if (line.length) lines.push(line);
+  return lines;
+}
+
 /**
  * The image renderer lays text out left to right only. Hebrew is set word by
- * word in a row that runs right to left and wraps, so the first words stay on
+ * word, each line a row that runs right to left, so the first words stay on
  * the first line. Neighbouring Latin words stay together in their own order.
+ * The renderer's balanced wrapping can't reach these rows, so the lines are
+ * balanced here: the narrowest width that needs no extra line.
  */
-function RtlText({ text }: { text: string }) {
+function RtlText({ text, font, size, maxWidth }: { text: string; font: Font; size: number; maxWidth: number }) {
   const words: string[] = [];
   for (const word of text.split(/\s+/).filter(Boolean)) {
     const previous = words.at(-1);
     if (previous && onlyLtr.test(previous) && onlyLtr.test(word)) words[words.length - 1] = `${previous} ${word}`;
     else words.push(word);
   }
+  const shown = words.map((word) => (onlyLtr.test(word) ? word : visualWord(word)));
+  const widths = shown.map((word) => (font.layout(word).advanceWidth / font.unitsPerEm) * size);
+  const gap = wordGap * size;
+  const count = wrap(widths, gap, maxWidth).length;
+  let low = Math.max(...widths);
+  let high = maxWidth;
+  while (high - low > 1) {
+    const mid = (low + high) / 2;
+    if (wrap(widths, gap, mid).length > count) low = mid;
+    else high = mid;
+  }
   return (
-    <div style={{ display: "flex", flexDirection: "row-reverse", flexWrap: "wrap", columnGap: "0.28em" }}>
-      {words.map((word, i) => (
-        <span key={i}>{onlyLtr.test(word) ? word : visualWord(word)}</span>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+      {wrap(widths, gap, high).map((line, i) => (
+        <div key={i} style={{ display: "flex", flexDirection: "row-reverse", columnGap: `${wordGap}em` }}>
+          {line.map((w) => (
+            <span key={w}>{shown[w]}</span>
+          ))}
+        </div>
       ))}
     </div>
   );
@@ -56,10 +94,14 @@ export async function ogLocale(params: Promise<{ lang: string }> | { lang: strin
 
 export async function renderOgImage(locale: Locale, { title, subtitle }: { title: string; subtitle: string }) {
   const hebrew = locales[locale].script === "hebrew";
-  const family = hebrew ? "Rubik" : "Inter";
-  const [regular, semiBold] = await Promise.all([
-    readFile(join(fonts, `${family}-Regular.ttf`)),
-    readFile(join(fonts, `${family}-SemiBold.ttf`)),
+  // The site's pairs: English titles in Fraunces over Inter, Hebrew in Rubik.
+  // The Fraunces files are static cuts at the site's softness (SOFT 50).
+  const heading = hebrew ? "Rubik" : "Fraunces";
+  const body = hebrew ? "Rubik" : "Inter";
+  const [regular, semiBold, logo] = await Promise.all([
+    readFile(join(fonts, `${body}-Regular.ttf`)),
+    readFile(join(fonts, `${heading}-SemiBold.ttf`)),
+    readFile(join(fonts, "Fraunces-Medium.ttf")),
   ]);
 
   return new ImageResponse(
@@ -74,7 +116,7 @@ export async function renderOgImage(locale: Locale, { title, subtitle }: { title
           alignItems: hebrew ? "flex-end" : "flex-start",
           padding: "72px 80px",
           background: "#f8f6f1",
-          fontFamily: family,
+          fontFamily: body,
           color: "#0f2a44",
         }}
       >
@@ -90,7 +132,7 @@ export async function renderOgImage(locale: Locale, { title, subtitle }: { title
               strokeLinejoin="round"
             />
           </svg>
-          <div style={{ fontSize: 40, fontWeight: 600, fontFamily: "Inter" }}>Visamo</div>
+          <div style={{ fontSize: 40, fontWeight: 500, fontFamily: "Visamo Logo", letterSpacing: -1 }}>Visamo</div>
         </div>
         <div
           style={{
@@ -101,11 +143,15 @@ export async function renderOgImage(locale: Locale, { title, subtitle }: { title
             textAlign: hebrew ? "right" : "left",
           }}
         >
-          <div style={{ display: "flex", fontSize: 72, fontWeight: 600, lineHeight: 1.1, maxWidth: 1000 }}>
-            {hebrew ? <RtlText text={title} /> : title}
+          <div
+            style={{ display: "flex", fontFamily: heading, fontSize: 72, fontWeight: 600, lineHeight: 1.1, maxWidth: 1000, textWrap: "balance" }}
+          >
+            {hebrew ? <RtlText text={title} font={fontkit.create(semiBold)} size={72} maxWidth={1000} /> : title}
           </div>
-          <div style={{ display: "flex", fontSize: 34, fontWeight: 400, lineHeight: 1.35, color: "#334155", maxWidth: 1040 }}>
-            {hebrew ? <RtlText text={subtitle} /> : subtitle}
+          <div
+            style={{ display: "flex", fontSize: 34, fontWeight: 400, lineHeight: 1.35, color: "#334155", maxWidth: 1040, textWrap: "balance" }}
+          >
+            {hebrew ? <RtlText text={subtitle} font={fontkit.create(regular)} size={34} maxWidth={1040} /> : subtitle}
           </div>
         </div>
         <div style={{ display: "flex", height: 8, width: 120, borderRadius: 4, background: "#2f7f76" }} />
@@ -114,11 +160,9 @@ export async function renderOgImage(locale: Locale, { title, subtitle }: { title
     {
       ...size,
       fonts: [
-        { name: family, data: regular, weight: 400, style: "normal" },
-        { name: family, data: semiBold, weight: 600, style: "normal" },
-        ...(hebrew
-          ? [{ name: "Inter", data: await readFile(join(fonts, "Inter-SemiBold.ttf")), weight: 600 as const, style: "normal" as const }]
-          : []),
+        { name: body, data: regular, weight: 400, style: "normal" },
+        { name: heading, data: semiBold, weight: 600, style: "normal" },
+        { name: "Visamo Logo", data: logo, weight: 500, style: "normal" },
       ],
     },
   );

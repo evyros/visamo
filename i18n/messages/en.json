@@ -126,42 +126,34 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "For couples going through Israel's partner visa, from B/1 to A/5",
       "title": "Your partner visa in Israel,",
       "titleAccent": "step by step.",
-      "subtitle": "Visamo guides you through every step of your partner visa process in your language, and **checks each document** before you submit it to Misrad Hapnim, so a small mistake doesn't **cost you months**.",
+      "subtitle": "Every step explained and every document checked before you submit, so a small mistake doesn't cost you months.",
       "secondaryCta": "See how it works",
-      "microcopy": "No credit card required.",
-      "mockup": {
-        "label": "Example of an instant document check",
-        "title": "Document check",
-        "checking": "Checked by AI, based on real couples' experience",
-        "rows": [
+      "microcopy": "No credit card required · English & Hebrew",
+      "visual": {
+        "label": "Example of a couple's documents being checked",
+        "progress": "{ready} of {total} documents ready",
+        "checked": "Checked",
+        "fix": "Found 1 issue",
+        "documents": [
           {
-            "status": "ok",
-            "name": "Marriage certificate.pdf",
-            "text": "Matches the requirements"
+            "name": "Birth certificate",
+            "status": "checked"
           },
           {
-            "status": "fix",
-            "name": "Birth certificate.pdf",
-            "text": "Name spelled differently than in the passport.",
-            "fix": "What to do"
+            "name": "Personal status",
+            "status": "fix"
           },
           {
-            "status": "fix",
-            "name": "Police certificate.pdf",
-            "text": "Issued 8 months ago, older than allowed.",
-            "fix": "How to fix"
+            "name": "Police certificate",
+            "status": "checked"
           },
           {
-            "status": "fix",
-            "name": "Declaration of no children.pdf",
-            "text": "The affidavit wording isn't valid.",
-            "fix": "How to fix"
+            "name": "Joint affidavit",
+            "status": "fix"
           }
-        ],
-        "caption": "Found in 40 seconds. Not after months of waiting."
+        ]
       }
     },
     "problem": {
@@ -189,20 +181,31 @@
       "eyebrow": "How we built Visamo",
       "title": "Built on couples' real experience. Powered by AI.",
       "body": "The published requirements are vague, and what's asked in practice can change from one office to the next. So we gathered what couples actually went through and built it into Visamo's AI.",
-      "ai": {
-        "title": "Checked by AI",
-        "body": "Answers and document checks arrive in seconds, day or night. No one on our team reviews your documents, and it isn't legal advice."
-      },
       "link": "How we built Visamo"
     },
     "features": {
       "title": "Everything you need for the process, in one place.",
-      "intro": "Answers when you're unsure, every document explained, and a check before anything goes to the Ministry.",
+      "intro": "From your first document to the Ministry's answer.",
+      "documents": {
+        "title": "Every document explained, then checked",
+        "body": "What it is, where to get it, and what it must include. Then upload it, and know right away what needs fixing.",
+        "mockup": {
+          "label": "Example of a document check",
+          "title": "Police certificate",
+          "field": "Date of issue",
+          "finding": {
+            "title": "Issued 8 months ago",
+            "detail": "Misrad Hapnim expects one from the last 6 months."
+          },
+          "passed": [
+            "Apostille",
+            "Certified translation"
+          ]
+        }
+      },
       "assistant": {
-        "tag": "AI assistant",
-        "title": "An AI assistant that knows the process inside out",
-        "body": "Which documents do you need? Is this wait normal? Ask in your own words and get a clear answer, based on the process, its documents and the stages couples go through. Day or night, in your language.",
-        "footnote": "AI-generated general information, based on published sources and couples' experience. Not legal advice. When your case needs a lawyer, the assistant will say so.",
+        "title": "Ask anything, in your language",
+        "body": "Which documents do we need? What if we can't get one? Get a clear answer, day or night.",
         "chat": {
           "label": "Example conversation with the Visamo assistant",
           "question": "My birth certificate is in English. Do I need to translate it?",
@@ -210,50 +213,54 @@
           "name": "Visamo assistant"
         }
       },
-      "cards": [
-        {
-          "icon": "shield",
-          "tag": "Full file check",
-          "title": "Know on the spot, not months later",
-          "body": "Upload a document, and with one click Visamo's AI checks it against the requirements, including what couples learned the hard way, and tells you how to fix anything that's off.",
-          "bullets": [
-            "Missing pages, signatures, apostille or translation",
-            "Issue dates that are too old",
-            "Incorrect formats, missing details"
+      "tracker": {
+        "title": "Know where you stand, and what's next",
+        "body": "Your own track through the process: what's behind you, what comes next, and how long until your next appointment.",
+        "mockup": {
+          "label": "Example of the process tracker",
+          "title": "Where you are",
+          "subtitle": "Example file",
+          "now": "You're here",
+          "steps": [
+            {
+              "status": "done",
+              "name": "Getting the documents ready"
+            },
+            {
+              "status": "done",
+              "name": "Filed, waiting for an answer",
+              "detail": "Filed on 3 Feb 2026"
+            },
+            {
+              "status": "done",
+              "name": "First appointment scheduled"
+            },
+            {
+              "status": "done",
+              "name": "B/1 visa received"
+            },
+            {
+              "status": "here",
+              "name": "Interview",
+              "detail": "Interview on 12 Nov 2026 · in 24 days"
+            },
+            {
+              "status": "next",
+              "name": "Approved: A/5 visa"
+            }
           ]
-        },
-        {
-          "icon": "guide",
-          "title": "“What is that document, and where do I get it?”",
-          "body": "Every document on your list, explained in plain words: what it really is, which office issues it in your country or in Israel, how long it usually takes, and what it must include.",
-          "bullets": [
-            "Official names decoded (e.g. “תעודת יושר” = police clearance certificate)",
-            "Where to order it, by country",
-            "Apostille and translation rules"
-          ]
-        },
-        {
-          "icon": "compass",
-          "title": "Is this normal? Now you'll know.",
-          "body": "A step-by-step map of the gradual process that tells you what usually happens at each stage, how long waits typically run, and when it's worth getting a professional opinion.",
-          "bullets": [
-            "What to expect at each stage",
-            "Routine vs. worth a closer look",
-            "Got a letter? Understand what it's asking for"
-          ],
-          "footnote": "General information about the published process. For advice on your own case, speak with a licensed lawyer."
         }
-      ],
-      "secondary": [
+      },
+      "items": [
         {
           "icon": "folder",
-          "title": "Your story together, organized",
-          "body": "Photos, joint bills, a lease, trips: keep the proof of your relationship in one place, sorted by date, so you always know what you have for each period."
+          "title": "Your proof, organized",
+          "body": "Photos, bills, a lease, trips: sorted by date, in one place."
         },
         {
           "icon": "people",
           "title": "Built for two",
-          "body": "Each partner has their own login and their own language, on the same shared file."
+          "body": "Each partner logs in, in their own language, to one shared file."
         }
       ]
     },
@@ -262,12 +269,11 @@
       "steps": [
         {
           "title": "Tell us about the two of you.",
-          "body": "We will ask which country each of you comes from, whether you're married or living together as partners, etc. Your answers build a document list made for you, with every item explained."
+          "body": "A few short questions: where each of you is from, and whether you're married or living together. Your answers build a document list made for you, with every item explained."
         },
         {
           "title": "Upload, and get checked on the spot.",
-          "body": "Check each document as soon as it's uploaded. Anything that needs fixing comes with clear steps.",
-          "tag": "Full file check"
+          "body": "Check each document as soon as it's uploaded. Anything that needs fixing comes with clear steps."
         },
         {
           "title": "Submit it yourself, ready.",
@@ -311,7 +317,7 @@
     },
     "pricingTeaser": {
       "title": "Start free. Pay only if you need more.",
-      "body": "Your personal document list, step-by-step guidance through the process and 5 chat messages are free. Need more? Two one-time purchases: a Message pack, or the Full file check for your whole file. No subscription.",
+      "body": "Your document list, the step-by-step guidance and 5 chat messages are free. Want more messages, or every document checked? Pay once. No subscription.",
       "microcopy": "No credit card needed."
     },
     "faq": {

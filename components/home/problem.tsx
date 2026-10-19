@@ -43,11 +43,7 @@ export function Problem({ t }: { t: Messages }) {
 function Column({ label, tone, children }: { label: string; tone: "without" | "with"; children: ReactNode }) {
   const without = tone === "without";
   return (
-    <div
-      className={`rounded-2xl border p-5 sm:p-8 ${
-        without ? "border-line-200 bg-sand-50" : "border-teal-600/30 bg-white shadow-soft"
-      }`}
-    >
+    <div className={`rounded-2xl border p-5 sm:p-8 ${without ? "border-line-200" : "border-teal-600/30 bg-white"}`}>
       <p className={`mb-6 text-sm font-semibold uppercase tracking-wide ${without ? "text-slate-500" : "text-teal-700"}`}>
         {label}
       </p>
@@ -57,16 +53,16 @@ function Column({ label, tone, children }: { label: string; tone: "without" | "w
 }
 
 const nodeTones = {
-  plain: { card: "border-line-200 bg-white", icon: "bg-sand-50 text-slate-700" },
-  alert: { card: "border-terracotta-600/40 bg-white", icon: "bg-terracotta-600 text-white" },
-  teal: { card: "border-teal-600/25 bg-teal-100/40", icon: "bg-teal-600 text-white" },
+  plain: "bg-white text-slate-700 ring-1 ring-line-200",
+  alert: "bg-terracotta-600 text-white",
+  teal: "bg-teal-600 text-white",
 };
 
+/** A step on the timeline: just its icon on the line and its label, no box. */
 function Node({ icon, title, tone = "plain" }: { icon: IconName; title: string; tone?: keyof typeof nodeTones }) {
-  const style = nodeTones[tone];
   return (
-    <div className={`flex items-center gap-3 rounded-xl border px-3 py-3 ${style.card}`}>
-      <span className={`inline-flex size-9 shrink-0 items-center justify-center rounded-full ${style.icon}`}>
+    <div className="flex items-center gap-3">
+      <span className={`inline-flex size-9 shrink-0 items-center justify-center rounded-full ${nodeTones[tone]}`}>
         <Icon name={icon} className="size-[18px]" />
       </span>
       <p className="font-medium leading-snug text-navy-900">{title}</p>
@@ -74,12 +70,12 @@ function Node({ icon, title, tone = "plain" }: { icon: IconName; title: string; 
   );
 }
 
-// Connectors line up with the center of the node icons (12px padding + 18px).
+// Connectors line up with the center of the node icons (36px / 2, less half the 2px line).
 function Line({ tone = "plain" }: { tone?: "plain" | "teal" }) {
   return (
     <div
       aria-hidden="true"
-      className={`ms-[29px] h-5 border-s-2 ${tone === "teal" ? "border-teal-600/50" : "border-slate-300"}`}
+      className={`ms-[17px] h-5 border-s-2 ${tone === "teal" ? "border-teal-600/50" : "border-slate-300"}`}
     />
   );
 }
@@ -89,7 +85,7 @@ function Wait({ label, tone = "plain", surface }: { label: string; tone?: "plain
   const alert = tone === "alert";
   return (
     <div
-      className={`ms-[29px] flex h-20 items-center border-s-2 border-dashed ${alert ? "border-terracotta-600" : "border-slate-400"}`}
+      className={`ms-[17px] flex h-20 items-center border-s-2 border-dashed ${alert ? "border-terracotta-600" : "border-slate-400"}`}
     >
       {/* The clock sits on the line; its background hides the dashes behind it. */}
       <span

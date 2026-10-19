@@ -1,12 +1,12 @@
 import type { Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/dictionaries";
 import { signupUrl } from "@/lib/site";
-import { ButtonLink, Container, SectionTitle, Tag, mobileCenter } from "../ui";
+import { ButtonLink, Container, SectionTitle, mobileCenter } from "../ui";
 
 export function HowItWorks({ t, locale }: { t: Messages; locale: Locale }) {
   const how = t.home.how;
   return (
-    <section id="how-it-works" className="py-16 sm:py-24">
+    <section id="how-it-works" className="bg-white py-16 sm:py-24">
       <Container>
         <SectionTitle className="max-w-3xl">{how.title}</SectionTitle>
 
@@ -17,7 +17,6 @@ export function HowItWorks({ t, locale }: { t: Messages; locale: Locale }) {
                 <span className="inline-flex size-10 items-center justify-center rounded-full bg-navy-900 font-semibold text-white">
                   {(i + 1).toLocaleString(locale)}
                 </span>
-                {"tag" in step && step.tag && <Tag>{step.tag}</Tag>}
                 {i < how.steps.length - 1 && (
                   <span aria-hidden="true" className="hidden h-px flex-1 border-t-2 border-dotted border-line-200 lg:block" />
                 )}

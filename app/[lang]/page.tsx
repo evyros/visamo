@@ -34,9 +34,10 @@ export default async function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(homeStructuredData()) }} />
       <Hero t={t} locale={locale} />
       <Problem t={t} />
-      <HowWeBuilt t={t} locale={locale} />
-      <Features t={t} />
       <HowItWorks t={t} locale={locale} />
+      <Features t={t} />
+      {/* What it does first, then why to trust it: how it's built, security, the founder. */}
+      <HowWeBuilt t={t} locale={locale} />
       <SecurityBand t={t} locale={locale} />
       <FounderTeaser t={t} locale={locale} />
 

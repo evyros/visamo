@@ -37,7 +37,7 @@ export default async function ProcessLandingPage() {
   const locale = await getLocale();
   const texts = getProcessTexts(locale);
   // The closing section shows the home page's document check, as proof.
-  const { mockup } = (await getDictionary()).home.hero;
+  const { visual } = (await getDictionary()).home.hero;
   const { landing, answers } = texts;
   const { picker } = landing;
 
@@ -205,7 +205,7 @@ export default async function ProcessLandingPage() {
         </Container>
       </section>
 
-      <ProcessCta texts={texts} locale={locale} mockup={mockup} />
+      <ProcessCta texts={texts} locale={locale} visual={visual} />
     </>
   );
 }

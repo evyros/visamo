@@ -24,15 +24,17 @@ export function SecurityBand({ t, locale }: { t: Messages; locale: Locale }) {
             <Icon name="arrow" className="size-4" />
           </Link>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {s.promises.map((promise) => (
-            <div key={promise.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <li key={promise.title} className="flex gap-4">
               {isIconName(promise.icon) && <IconTile name={promise.icon} tone="dark" />}
-              <p className="mt-4 font-semibold text-white">{promise.title}</p>
-              <p className="mt-1 text-[15px] leading-7">{promise.body}</p>
-            </div>
+              <div>
+                <p className="font-semibold text-white">{promise.title}</p>
+                <p className="mt-1 text-[15px] leading-7">{promise.body}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </Container>
     </section>
   );

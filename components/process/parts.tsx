@@ -6,7 +6,7 @@ import type { Locale } from "@/i18n/config";
 import { localePath, newTab, signupUrl } from "@/lib/site";
 import type { Messages } from "@/i18n/dictionaries";
 import { GuideBlocks, GuideText } from "../guide";
-import { CheckMockup } from "../home/hero";
+import { ExampleDocumentDeck } from "../home/hero";
 import { Icon, type IconName } from "../icons";
 import { ButtonLink, Container, mobileCenter } from "../ui";
 
@@ -424,11 +424,11 @@ export function DocumentList({
   );
 }
 
-type Mockup = Messages["home"]["hero"]["mockup"];
+type DeckVisual = Messages["home"]["hero"]["visual"];
 
 // ── The call to action ──────────────────────────────────────────────────────
 
-export function ProcessCta({ texts, locale, mockup }: { texts: ProcessTexts; locale: Locale; mockup: Mockup }) {
+export function ProcessCta({ texts, locale, visual }: { texts: ProcessTexts; locale: Locale; visual: DeckVisual }) {
   const { cta } = texts;
   return (
     <section className="relative overflow-hidden bg-navy-900 py-16 text-white sm:py-24">
@@ -446,8 +446,9 @@ export function ProcessCta({ texts, locale, mockup }: { texts: ProcessTexts; loc
           <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-white/80 lg:mx-0">{cta.body}</p>
         </div>
 
-        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center [&_figcaption]:text-white/70">
-          <CheckMockup mockup={mockup} animated={false} />
+        {/* The same deck as the home page's hero: the couple's documents, each checked in turn. */}
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+          <ExampleDocumentDeck visual={visual} />
         </div>
 
         <div className="lg:col-start-1 lg:row-start-2 lg:pt-10">

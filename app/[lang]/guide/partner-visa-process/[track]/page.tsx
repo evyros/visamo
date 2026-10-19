@@ -73,7 +73,7 @@ export default async function ProcessGuidePage({ params }: Props) {
   const locale = await getLocale();
   const texts = getProcessTexts(locale);
   // The closing section shows the home page's document check, as proof.
-  const { mockup } = (await getDictionary()).home.hero;
+  const { visual } = (await getDictionary()).home.hero;
   const { labels } = texts;
   const guide = processGuide(locale, answers);
   const guides = getGuides(locale);
@@ -194,7 +194,7 @@ export default async function ProcessGuidePage({ params }: Props) {
         </div>
       </Container>
 
-      <ProcessCta texts={texts} locale={locale} mockup={mockup} />
+      <ProcessCta texts={texts} locale={locale} visual={visual} />
 
       {/* After the call to action, so the last step leads straight into it. */}
       <Container narrow className="py-14 sm:py-16">

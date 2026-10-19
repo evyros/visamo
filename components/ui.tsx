@@ -111,16 +111,8 @@ export function Badge({ icon, children, tone = "light" }: { icon: IconName; chil
 export function IconTile({ name, tone = "sage" }: { name: IconName; tone?: "sage" | "dark" }) {
   const styles = tone === "sage" ? "bg-sage-200 text-navy-900" : "bg-white/10 text-sage-200";
   return (
-    <span className={`inline-flex size-12 items-center justify-center rounded-xl ${styles}`}>
+    <span className={`inline-flex size-12 shrink-0 items-center justify-center rounded-xl ${styles}`}>
       <Icon name={name} className="size-6" />
-    </span>
-  );
-}
-
-export function Tag({ children }: { children: ReactNode }) {
-  return (
-    <span className="inline-flex items-center rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-700">
-      {children}
     </span>
   );
 }

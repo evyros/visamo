@@ -39,8 +39,11 @@ Apostille Convention (see [certification.md](../certification.md)).
 - **The final decree or certificate:** the document that ends the marriage,
   not a step on the way.
 - **For a divorce abroad:** the certification of that country, and a
-  certified translation unless it's in Hebrew or Arabic. In practice, an
-  English document is usually accepted without one.
+  notarized translation (תרגום נוטריוני) into Hebrew, by a notary in Israel,
+  unless it's in Hebrew or Arabic: a translator's translation, even a
+  certified one, will be rejected. It's an official document, unlike bills,
+  letters or bank statements, which you can translate yourselves. In practice, an English document is
+  usually accepted without one.
 
 ## Questions
 

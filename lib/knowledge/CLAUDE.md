@@ -120,6 +120,12 @@ grouped like the page, moving each one's headings under its group. So:
   actually work differ, say both: "By law…, in practice…". Practice comes from
   the product owner's experience; write it as "in practice", never hide the
   law.
+- **A requirement reads as a requirement.** Never "the safest choice",
+  "recommended" or "to be safe" for something Misrad Hapnim asks for, like a
+  notarized translation: the models repeat it as optional.
+- **Name the exact kind of document asked for**, never a looser one a couple
+  could mistake for it: "a notarized translation (תרגום נוטריוני)", never "a
+  certified translation", which a certified translator also makes.
 - Cite the procedure section when a fact comes from one (5.2.0008 §ד.2.ה).
 - **Point to a part of a form by its title, never its page number.** AS/6
   comes in two formats, with the pages in a different order and different

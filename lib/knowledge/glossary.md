@@ -93,7 +93,7 @@ Population, Immigration and Border Authority.
 | Consular legalization | imut konsulari | אימות קונסולרי |
 | Notary | notaryon | נוטריון |
 | Notarized statement (a statement signed in front of a notary) | hatzhara notaryonit | הצהרה נוטריונית |
-| Certified (notarized) translation | tirgum notaryoni | תרגום נוטריוני |
+| Notarized translation (made by a notary, not a translator) | tirgum notaryoni | תרגום נוטריוני |
 | Lawyer | orech din | עורך דין |
 | Affidavit (a statement signed in front of a lawyer) | tatzhir | תצהיר |
 

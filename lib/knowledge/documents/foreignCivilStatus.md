@@ -331,7 +331,10 @@ apostille. If you can't get one, use the affidavit (below).
 - **The certification:** an apostille, or consular legalization if the
   country isn't in the Apostille Convention (see
   [certification.md](../certification.md)).
-- **A certified translation**, unless it's in Hebrew or Arabic. In practice,
+- **A notarized translation (תרגום נוטריוני) into Hebrew**, by a notary in
+  Israel, unless it's in Hebrew or Arabic: a translator's translation, even a
+  certified one, will be rejected. It's an official document, unlike bills, letters or bank
+  statements, which you can translate yourselves. In practice,
   an English document is usually accepted without one, but the clerk can
   still ask you to translate it.
 

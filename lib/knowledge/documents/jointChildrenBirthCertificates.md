@@ -35,5 +35,8 @@ apostille.
 - **One for each child** you have together.
 - **Both of you named as the parents.**
 - **For a child born abroad:** the certification of that country, and a
-  certified translation unless it's in Hebrew or Arabic. In practice, an
-  English document is usually accepted without one.
+  notarized translation (תרגום נוטריוני) into Hebrew, by a notary in Israel,
+  unless it's in Hebrew or Arabic: a translator's translation, even a
+  certified one, will be rejected. It's an official document, unlike bills,
+  letters or bank statements, which you can translate yourselves. In practice, an English document is
+  usually accepted without one.

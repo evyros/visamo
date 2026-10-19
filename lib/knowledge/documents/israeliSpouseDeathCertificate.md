@@ -30,9 +30,12 @@ that country isn't in the Apostille Convention (see
 ## What it should include
 
 - **One for each marriage** that ended in the spouse's death.
-- **For a death abroad:** the certification of that country, and a certified
-  translation unless it's in Hebrew or Arabic. In practice, an English
-  document is usually accepted without one.
+- **For a death abroad:** the certification of that country, and a
+  notarized translation (תרגום נוטריוני) into Hebrew, by a notary in Israel,
+  unless it's in Hebrew or Arabic: a translator's translation, even a
+  certified one, will be rejected. It's an official document, unlike bills,
+  letters or bank statements, which you can translate yourselves. In practice,
+  an English document is usually accepted without one.
 
 ## Questions
 

@@ -60,10 +60,33 @@ Foreign documents follow the population authority's procedure 1.3.0001
 
 ## Translation
 
+Documents are translated in one of two ways, depending on what they are:
+
+- **Official documents and formal forms** (certificates, court decrees,
+  police certificates, affidavits): a notarized translation (תרגום נוטריוני)
+  into Hebrew, by a notary in Israel. Any other translation of them, even
+  by a certified translator, will be rejected. The rest of this section is
+  about them.
+- **Personal/unofficial documents: your everyday documents and your own
+  evidence** (a lease, bills, bank statements, payslips, an insurance
+  policy, chats, emails, letters from friends): no notary, unlike official
+  documents. If they aren't in Hebrew, Arabic or English, translate them
+  yourselves, or mark the important parts and explain them, so the clerk
+  can follow. A notarized translation is needed only if the office
+  asks for one.
+
+For official documents and formal forms, unlike personal/unofficial
+documents such as bills, letters or bank statements:
+
 - **By law, Misrad Hapnim (משרד הפנים) accepts only Hebrew and Arabic without a
-  translation.** A document in any other language needs a notarized
-  translation (תרגום נוטריוני). Procedure 1.3.0001 also lets a clerk accept a
-  document in a language they fully understand.
+  translation.** An official document in any other language needs a
+  notarized translation into Hebrew. Personal/unofficial documents, like
+  bills, letters or bank statements, don't: you can translate them
+  yourselves.
+  Procedure 1.3.0001 also lets a clerk accept a document in a language they
+  fully understand. That's about the document itself, never its
+  translation: a translation that isn't notarized will be rejected, whoever
+  the clerk is.
 - **English, in practice:** most clerks read English well enough to accept an
   English document without a translation, especially a short one. It depends
   on the clerk handling your file. If they don't accept it, they'll ask you
@@ -72,28 +95,38 @@ Foreign documents follow the population authority's procedure 1.3.0001
   The AS/6 checklist itself says public documents need a notarized
   translation into Hebrew "except from Arabic and English" (מלבד מהשפות
   ערבית ואנגלית), which you can point a clerk to.
+- **Every other language needs the notarized translation.** An official
+  document in German, Russian, Spanish or any language other than Hebrew,
+  Arabic or English needs a notarized translation into Hebrew. That's the
+  requirement, not just the safest way. Personal/unofficial documents in
+  those languages, like bills, letters or bank statements, still need no
+  notary.
+  What's accepted in practice for English is only about documents written in
+  English: it doesn't make a translation into English enough.
 - **What's translated:** the document, and the apostille or legalization on
   it too. An apostille that's in English, or that includes English, usually
   needs no translation.
-- **Who translates:** a notary who knows both languages and translates it
-  themselves. A translation someone else made, which a notary only
-  approved, isn't accepted. Translate from the document's own language
-  straight into Hebrew.
-- **Translate into Hebrew, not English.** When a document needs a
-  translation, a translation into English is a risk: the clerk handling your
-  file may not read English well enough to accept it. Hebrew is the safest
-  choice, and makes for a smoother process.
+- **Who translates:** a notary (נוטריון) who knows both languages and
+  translates it themselves. A translation by a translator, even a certified
+  or sworn one (מתרגם מוסמך), or by a translation agency, isn't a notarized
+  translation: Misrad Hapnim will reject it. So will a translation someone
+  else made, which a notary only approved. This doesn't depend on the clerk. If you already have one of these, have
+  the official document translated again by a notary. Translate from the
+  document's own language straight into Hebrew. For personal/unofficial
+  documents, like bills, letters or bank statements, your own translation is
+  enough.
+- **Use a notary in Israel, not abroad.** We highly recommend it: Misrad
+  Hapnim may reject a notarized translation made abroad. A translation done
+  in Israel also needs no apostille: only the original document does. A
+  notarized translation done abroad needs an apostille of its own, from the
+  country where it was made, so the document has two apostilles: one on the
+  document, one on the translation. Even then, it may not be accepted.
+- **Into Hebrew, not English.** The notarized translation that's asked for is
+  into Hebrew. A translation into English isn't what's asked for, and the
+  clerk handling your file can refuse it.
 - **If no notary in Israel knows the language,** Misrad Hapnim allows a double
   translation: first into a third language abroad (English, say), then from
   it into Hebrew in Israel.
-- **We recommend translating in Israel.** A translation done in Israel needs
-  no apostille: only the original document does. A notarized translation done
-  abroad needs an apostille of its own, from the country where it was made,
-  and is sometimes not accepted for other reasons. So a document translated
-  abroad has two apostilles: one on the document, one on the translation.
-- **Your own evidence** (chats, emails, letters from friends): it doesn't need
-  a notary. If it isn't in Hebrew or English, translate it yourselves, or mark
-  the important parts and explain them, so the clerk can follow.
 
 ## Affidavits
 

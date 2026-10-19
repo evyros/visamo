@@ -31,7 +31,10 @@ Department of Foreign Affairs (see [certification.md](../certification.md)).
 
 - **The original certificate, with its certification:** the apostille or
   consular legalization of the country that issued it, or Utah's.
-- **A certified translation**, unless it's in Hebrew or Arabic. In practice,
+- **A notarized translation (תרגום נוטריוני) into Hebrew**, by a notary in
+  Israel, unless it's in Hebrew or Arabic: a translator's translation, even a
+  certified one, will be rejected. It's an official document, unlike bills, letters or bank
+  statements, which you can translate yourselves. In practice,
   an English certificate is usually accepted without one, but the clerk can
   still ask you to translate it.
 

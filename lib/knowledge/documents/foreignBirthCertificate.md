@@ -211,7 +211,10 @@ state's apostille authority adds the apostille.
 - **Both sides**, when the back has anything on it. Certificates from the
   former USSR often have stamps on the back, such as a citizenship stamp,
   and the apostille can be placed there too.
-- **A certified translation**, unless it's in Hebrew or Arabic. In practice,
+- **A notarized translation (תרגום נוטריוני) into Hebrew**, by a notary in
+  Israel, unless it's in Hebrew or Arabic: a translator's translation, even a
+  certified one, will be rejected. It's an official document, unlike bills, letters or bank
+  statements, which you can translate yourselves. In practice,
   an English certificate is usually accepted without one, but the clerk can
   still ask you to translate it.
 
@@ -241,4 +244,6 @@ countries that signed the convention on them, and Israel didn't: translate
 it, and get the apostille, like any other certificate.
 
 **Does the translation also need an apostille?**
-No. Only the original certificate is certified.
+Not if a notary in Israel translates it: only the original certificate is
+certified. A notarized translation made abroad needs an apostille of its
+own (see [certification.md](../certification.md)).

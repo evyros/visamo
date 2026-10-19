@@ -1,14 +1,23 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { Messages } from "@/i18n/messages";
 import { Line, Paper, Stamp, StatusChip } from "./mockup";
 
 // The hero's illustration: a couple's documents as a deck of papers, each
-// coming to the front in turn with its check's result. A mistake shows only
-// as a chip and a marked line; what it means is shown under Features.
+// coming to the front in turn with its check's result. Issues show only as a
+// chip and a marked line for each; what they mean is shown under Features.
 
-type Visual = Messages["home"]["hero"]["visual"];
+type DeckDocument = {
+  name: string;
+  /** How many issues its check found: 0 for a document that passed. */
+  issues: number;
+  /** The chip's text: "Checked", "Found 2 issues". */
+  result: string;
+};
+
+/** The paper's text lines, by width, and which of them the issues mark, in order. */
+const lines = ["w-full", "w-11/12", "w-full", "w-2/3"];
+const marked = [1, 3];
 
 /** How long each document stays at the front, in ms. */
 const STEP = 3200;
@@ -30,10 +39,20 @@ function slot(position: number, count: number) {
   return behind[position - 1] ?? hidden;
 }
 
-export function DocumentDeck({ visual, progress, ratio }: { visual: Visual; progress: string; ratio: number }) {
+export function DocumentDeck({
+  label,
+  documents,
+  progress,
+  ratio,
+}: {
+  label: string;
+  documents: DeckDocument[];
+  progress: string;
+  ratio: number;
+}) {
   const ref = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
-  const count = visual.documents.length;
+  const count = documents.length;
 
   // Runs only while it's on screen and the tab is in view, and never for
   // people who asked for less motion: they see the first document, still.
@@ -67,16 +86,16 @@ export function DocumentDeck({ visual, progress, ratio }: { visual: Visual; prog
     // On a phone, side padding keeps the chips that stick out past the deck clear of the screen's edges.
     <figure
       ref={ref}
-      aria-label={visual.label}
+      aria-label={label}
       className="relative mx-auto w-full max-w-[360px] px-5 py-8 sm:max-w-[380px] sm:px-0"
     >
       <div className="relative">
         {/* Every card in one grid cell: the deck is as tall as a card, and each moves by transform alone. */}
         <div aria-hidden="true" className="grid">
-          {visual.documents.map((doc, i) => {
+          {documents.map((doc, i) => {
             const position = (i - active + count) % count;
             const isFront = position === 0;
-            const fix = doc.status === "fix";
+            const flagged = marked.slice(0, doc.issues);
             return (
               <div
                 key={doc.name}
@@ -84,17 +103,16 @@ export function DocumentDeck({ visual, progress, ratio }: { visual: Visual; prog
               >
                 <Paper title={doc.name}>
                   <div className="mt-6 space-y-2.5">
-                    <Line className="w-full" />
-                    {/* A mistake marks one line, as the check does. */}
-                    {fix ? (
-                      <div className="-mx-2 rounded-lg bg-crimson-100 px-2 py-2 ring-1 ring-crimson-600/30">
-                        <Line tone="alert" className="w-11/12" />
-                      </div>
-                    ) : (
-                      <Line className="w-11/12" />
+                    {/* Each issue marks a line, as the check does. */}
+                    {lines.map((width, line) =>
+                      flagged.includes(line) ? (
+                        <div key={line} className="-mx-2 rounded-lg bg-crimson-100 px-2 py-2 ring-1 ring-crimson-600/30">
+                          <Line tone="alert" className={width} />
+                        </div>
+                      ) : (
+                        <Line key={line} className={width} />
+                      ),
                     )}
-                    <Line className="w-full" />
-                    <Line className="w-2/3" />
                   </div>
                   <div className="mt-8 flex items-end justify-between">
                     <div className="w-24 space-y-1.5">
@@ -110,7 +128,7 @@ export function DocumentDeck({ visual, progress, ratio }: { visual: Visual; prog
                     isFront ? "scale-100 opacity-100 delay-500" : "scale-90 opacity-0"
                   }`}
                 >
-                  <StatusChip tone={fix ? "fix" : "ok"}>{fix ? visual.fix : visual.checked}</StatusChip>
+                  <StatusChip tone={doc.issues > 0 ? "fix" : "ok"}>{doc.result}</StatusChip>
                 </span>
               </div>
             );

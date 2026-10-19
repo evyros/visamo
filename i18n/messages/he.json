@@ -118,7 +118,6 @@
   },
   "badges": {
     "encryption": "הצפנת AES-256",
-    "languages": "עברית ואנגלית",
     "independent": "כלי עצמאי, לא אתר ממשלתי",
     "ssl": "חיבור מאובטח SSL",
     "noSale": "אנחנו לא מוכרים מידע",
@@ -135,23 +134,26 @@
         "label": "דוגמה לבדיקת המסמכים של זוג",
         "progress": "{ready} מתוך {total} מסמכים מוכנים",
         "checked": "נבדק",
-        "fix": "נמצאה בעיה אחת",
+        "fix": {
+          "one": "נמצאה בעיה אחת",
+          "other": "נמצאו {count} בעיות"
+        },
         "documents": [
           {
             "name": "תעודת לידה",
-            "status": "checked"
+            "issues": 0
           },
           {
             "name": "מצב אישי",
-            "status": "fix"
+            "issues": 1
           },
           {
             "name": "תעודת יושר",
-            "status": "checked"
+            "issues": 0
           },
           {
             "name": "תצהיר משותף",
-            "status": "fix"
+            "issues": 2
           }
         ]
       }

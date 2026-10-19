@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProcessLandingPage() {
   const locale = await getLocale();
   const texts = getProcessTexts(locale);
-  // The closing section shows the home page's document check, as proof.
+  // The closing section shows the home page's deck of documents being checked, as proof.
   const { visual } = (await getDictionary()).home.hero;
   const { landing, answers } = texts;
   const { picker } = landing;

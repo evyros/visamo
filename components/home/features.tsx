@@ -118,8 +118,8 @@ function CheckMockup({ mockup }: { mockup: Features["documents"]["mockup"] }) {
         <div className="mt-8">
           <Stamp />
         </div>
-        {/* What passed, on the page's corner as in the hero, clear of the note at any width. */}
-        {/* Start-aligned, so the checks line up in one column. */}
+        {/* What passed, on the page's corner as in the hero, clear of the note at any width.
+            Start-aligned, so the checks line up in one column. */}
         <div className="absolute -end-10 -top-3 flex flex-col items-start gap-2">
           {mockup.passed.map((item) => (
             <StatusChip key={item} size="sm">

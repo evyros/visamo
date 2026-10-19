@@ -43,7 +43,12 @@ const documentsTotal = 21;
 export function ExampleDocumentDeck({ visual }: { visual: Messages["home"]["hero"]["visual"] }) {
   return (
     <DocumentDeck
-      visual={visual}
+      label={visual.label}
+      documents={visual.documents.map(({ name, issues }) => ({
+        name,
+        issues,
+        result: issues === 0 ? visual.checked : format(issues === 1 ? visual.fix.one : visual.fix.other, { count: issues }),
+      }))}
       progress={format(visual.progress, { ready: documentsReady, total: documentsTotal })}
       ratio={documentsReady / documentsTotal}
     />

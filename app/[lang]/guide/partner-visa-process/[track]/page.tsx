@@ -72,7 +72,7 @@ export default async function ProcessGuidePage({ params }: Props) {
   const answers = await answersFrom(params);
   const locale = await getLocale();
   const texts = getProcessTexts(locale);
-  // The closing section shows the home page's document check, as proof.
+  // The closing section shows the home page's deck of documents being checked, as proof.
   const { visual } = (await getDictionary()).home.hero;
   const { labels } = texts;
   const guide = processGuide(locale, answers);

@@ -47,52 +47,57 @@ export async function Footer() {
 
   return (
     <footer className="bg-navy-900 text-slate-300">
-      <Container className="py-16">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_repeat(4,1fr)]">
-          <div>
-            <Logo tone="light" />
-            <p className="mt-4 max-w-xs text-sm leading-6">{f.tagline}</p>
-          </div>
-          {columns.map((column) => (
-            <nav key={column.title} aria-label={column.title}>
-              <h2 className="text-sm font-semibold text-white">{column.title}</h2>
+      {/* The footer repeats on every page and its disclaimer is the most brand-heavy
+          text on the site, so Google lifted it as the snippet for a "Visamo" search.
+          data-nosnippet keeps it out (Google honors it on div, span and section). */}
+      <div data-nosnippet>
+        <Container className="py-16">
+          <div className="grid gap-10 md:grid-cols-[1.4fr_repeat(4,1fr)]">
+            <div>
+              <Logo tone="light" />
+              <p className="mt-4 max-w-xs text-sm leading-6">{f.tagline}</p>
+            </div>
+            {columns.map((column) => (
+              <nav key={column.title} aria-label={column.title}>
+                <h2 className="text-sm font-semibold text-white">{column.title}</h2>
+                <ul className="mt-4 space-y-3 text-sm">
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="hover:text-white hover:underline">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+            <div id="contact">
+              <h2 className="text-sm font-semibold text-white">{f.support.title}</h2>
               <ul className="mt-4 space-y-3 text-sm">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="hover:text-white hover:underline">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <a href={`mailto:${site.supportEmail}`} className="hover:text-white hover:underline">
+                    <bdi>{site.supportEmail}</bdi>
+                  </a>
+                  <p className="mt-1 whitespace-pre-line text-xs text-slate-300/80">{f.support.hours}</p>
+                </li>
               </ul>
-            </nav>
-          ))}
-          <div id="contact">
-            <h2 className="text-sm font-semibold text-white">{f.support.title}</h2>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li>
-                <a href={`mailto:${site.supportEmail}`} className="hover:text-white hover:underline">
-                  <bdi>{site.supportEmail}</bdi>
-                </a>
-                <p className="mt-1 whitespace-pre-line text-xs text-slate-300/80">{f.support.hours}</p>
-              </li>
-            </ul>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-14 flex gap-3 rounded-xl border border-white/10 bg-white/5 p-5 text-sm leading-6">
-          <Icon name="info" className="mt-0.5 size-5 text-sage-200" />
-          <p>
-            <strong className="font-semibold text-white">{f.disclaimerTitle}</strong> {f.disclaimer}
+          <div className="mt-14 flex gap-3 rounded-xl border border-white/10 bg-white/5 p-5 text-sm leading-6">
+            <Icon name="info" className="mt-0.5 size-5 text-sage-200" />
+            <p>
+              <strong className="font-semibold text-white">{f.disclaimerTitle}</strong> {f.disclaimer}
+            </p>
+          </div>
+
+          <p className="mt-8 text-center text-xs text-slate-300/80 lg:text-start">
+            {format(f.copyright, { year: new Date().getFullYear() })}
+            <span aria-hidden="true"> · </span>
+            <MadeWith text={f.madeWith} label={f.heartLabel} />
           </p>
-        </div>
-
-        <p className="mt-8 text-center text-xs text-slate-300/80 lg:text-start">
-          {format(f.copyright, { year: new Date().getFullYear() })}
-          <span aria-hidden="true"> · </span>
-          <MadeWith text={f.madeWith} label={f.heartLabel} />
-        </p>
-      </Container>
+        </Container>
+      </div>
     </footer>
   );
 }

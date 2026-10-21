@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
-import { FullStory } from "@/components/fullstory";
 import { PostHog } from "@/components/posthog";
 import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
@@ -40,7 +39,6 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
         </a>
         {children}
         <Analytics />
-        {!impersonating && <FullStory user={recorded} />}
         {!impersonating && <PostHog user={recorded} />}
       </body>
     </html>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Crisp } from "@/components/crisp";
-import { FullStory } from "@/components/fullstory";
 import { PostHog } from "@/components/posthog";
 import { builtLocales, locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
@@ -55,7 +54,6 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         </main>
         <Footer />
         <Analytics />
-        <FullStory />
         <PostHog />
         <Crisp locale={locale} />
       </body>

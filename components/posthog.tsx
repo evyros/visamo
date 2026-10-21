@@ -3,24 +3,25 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import posthog from "posthog-js";
-import type { FullStoryUser } from "@/components/fullstory";
 
-// PostHog analytics and session recording, running next to FullStory
-// (components/fullstory.tsx) while we compare the two. Same rules: the website
-// and the app, not the admin panel; never under `next dev`; only where
+// PostHog analytics and session recording, on the website and the app (not
+// the admin panel). It never runs under `next dev`, and only runs where
 // NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN is set. Its cookie covers every subdomain,
-// so a visit from visamo.co.il into app.visamo.co.il stays one session.
+// so a visit that moves from visamo.co.il to app.visamo.co.il stays one
+// session.
 //
 // Requests go to /ingest on our own host, and next.config.ts forwards them to
-// PostHog, so ad blockers drop fewer of them than FullStory's. Keep that in
-// mind when comparing session counts between the two.
+// PostHog, so ad blockers drop fewer of them.
 //
 // The app passes the signed-in user, and PostHog files the session under their
 // account with their email and name.
 //
-// It never records a recommendation letter page (app/[lang]/letter/[token]),
-// for the same reason as FullStory: recording stops there, no event from the
-// page is sent, and recording starts again after.
+// It never records a recommendation letter page (app/[lang]/letter/[token]):
+// it would capture the letter as it's typed and the writer's ID card, which
+// Visamo promises not to keep. Recording stops there, no event from the page
+// is sent, and recording starts again after.
+
+export type PostHogUser = { id: string; email: string; name: string };
 
 const TOKEN = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN ?? "";
 const ENABLED = process.env.NODE_ENV === "production" && TOKEN !== "";
@@ -44,7 +45,7 @@ function maskInput(text: string, element?: HTMLElement) {
   return sensitive ? "*".repeat(text.length) : text;
 }
 
-export function PostHog({ user }: { user?: FullStoryUser | null }) {
+export function PostHog({ user }: { user?: PostHogUser | null }) {
   const identified = useRef(false);
   const pathname = usePathname();
   const hidden = privatePage(pathname);
@@ -55,7 +56,7 @@ export function PostHog({ user }: { user?: FullStoryUser | null }) {
       if (hidden) return;
       posthog.init(TOKEN, {
         api_host: "/ingest",
-        ui_host: "https://us.posthog.com",
+        ui_host: "https://eu.posthog.com",
         defaults: "2026-08-30",
         person_profiles: "identified_only",
         // Every field goes through maskInput, which decides what to hide.

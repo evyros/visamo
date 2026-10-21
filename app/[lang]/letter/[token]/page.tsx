@@ -8,8 +8,8 @@ import { Container } from "@/components/ui";
 
 // Where a couple's friend writes their recommendation letter: the link from
 // the tool (app/[lang]/tools/recommendation-letter). Private to whoever has
-// the link, so it's kept out of search. FullStory doesn't record it
-// (components/fullstory.tsx): the page shows the letter and the ID card.
+// the link, so it's kept out of search. PostHog doesn't record it
+// (components/posthog.tsx): the page shows the letter and the ID card.
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getDictionary();

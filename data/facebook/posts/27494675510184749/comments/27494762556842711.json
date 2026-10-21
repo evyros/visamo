@@ -1,0 +1,10 @@
+{
+  "id": "27494762556842711",
+  "post_id": "27494675510184749",
+  "parent_comment_id": null,
+  "posted_at": "2026-06-27T19:25:14.000Z",
+  "author_id": "100002014278323",
+  "author_name": "Wendy Feringa",
+  "text": "Each field has space for just 1 document, but of course when you for example upload bills you have more than 1.\nYou can use a program like ILovePdf to make it into 1 file.\nBesides that, yes you can use the \"additional documents\" field but I wouldn't load to many there.\nSo it doesn't get \"lost\" and will get properly looked at.",
+  "first_seen": "2026-10-21T14:59:07.772Z"
+}

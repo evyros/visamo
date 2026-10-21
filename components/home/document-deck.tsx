@@ -84,10 +84,11 @@ export function DocumentDeck({
 
   return (
     // On a phone, side padding keeps the chips that stick out past the deck clear of the screen's edges.
+    // isolate: the cards' and progress card's z-indexes stay inside the deck, under the sticky site header.
     <figure
       ref={ref}
       aria-label={label}
-      className="relative mx-auto w-full max-w-[360px] px-5 py-8 sm:max-w-[380px] sm:px-0"
+      className="isolate relative mx-auto w-full max-w-[360px] px-5 py-8 sm:max-w-[380px] sm:px-0"
     >
       <div className="relative">
         {/* Every card in one grid cell: the deck is as tall as a card, and each moves by transform alone. */}

@@ -437,7 +437,7 @@ export function LetterWriter({
           </Field>
           <div className="grid gap-5 sm:grid-cols-2">
             <Field id="writer-idNumber" label={t.idNumber} error={fieldErrors.idNumber}>
-              {input("idNumber", { inputMode: "numeric", dir: "ltr", autoComplete: "off", maxLength: 11, className: `${inputClass} text-start` })}
+              {input("idNumber", { inputMode: "numeric", dir: "ltr", autoComplete: "off", maxLength: 11, className: `${inputClass} ph-mask text-start` })}
             </Field>
             <Field id="writer-phone" label={t.phone} error={fieldErrors.phone}>
               {input("phone", { type: "tel", dir: "ltr", autoComplete: "tel", className: `${inputClass} text-start` })}

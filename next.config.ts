@@ -4,6 +4,17 @@ const nextConfig: NextConfig = {
   // PDFium (PDF thumbnails, lib/files/thumbnail.ts) loads its WebAssembly
   // file from its own folder: keep it out of the bundle, and ship the file.
   serverExternalPackages: ["@hyzyla/pdfium"],
+  // PostHog (components/posthog.tsx) sends to /ingest on our own hosts, and
+  // these forward it to PostHog's US region. Its endpoints end in a slash, so
+  // Next's trailing-slash redirect is off; proxy.ts does it for pages instead.
+  skipTrailingSlashRedirect: true,
+  async rewrites() {
+    return [
+      { source: "/ingest/static/:path*", destination: "https://us-assets.i.posthog.com/static/:path*" },
+      { source: "/ingest/array/:path*", destination: "https://us-assets.i.posthog.com/array/:path*" },
+      { source: "/ingest/:path*", destination: "https://us.i.posthog.com/:path*" },
+    ];
+  },
   experimental: {
     // The contact form's attachments (lib/contact.ts): up to 4MB of files plus
     // the message, just under Vercel's 4.5MB request cap.

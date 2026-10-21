@@ -31,6 +31,7 @@
     "drizzle-orm": "^0.45.3",
     "next": "16.3.6",
     "pdf-lib": "^1.17.1",
+    "posthog-js": "^1.438.13",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "resend": "^6.30.0",

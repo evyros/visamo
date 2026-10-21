@@ -195,7 +195,7 @@ function SharePanel({ labels, created, onEdit }: { labels: Labels["share"]; crea
           dir="ltr"
           aria-label={labels.title}
           onFocus={(e) => e.target.select()}
-          className={`${inputBase} min-w-0 text-start text-[15px] sm:flex-1`}
+          className={`${inputBase} ph-mask min-w-0 text-start text-[15px] sm:flex-1`}
         />
         <button type="button" onClick={copy} className={`${primaryButton} shrink-0`}>
           <Icon name={copied ? "check" : "copy"} className="size-5" />

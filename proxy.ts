@@ -17,6 +17,16 @@ const RETURN_COOKIE = "return_to";
 // URLs; the app (app.visamo.co.il) keeps it in a cookie; the admin panel
 // (admin.visamo.co.il) is served from app/admin.
 export function proxy(request: NextRequest) {
+  // next.config.ts turns off Next's own trailing-slash redirect for PostHog's
+  // /ingest paths, so pages get it here: /he/guide/ goes to /he/guide.
+  const { pathname } = request.nextUrl;
+  if (pathname !== "/" && pathname.endsWith("/")) {
+    // A plain URL: NextURL would put the trailing slash back.
+    const url = new URL(request.url);
+    url.pathname = pathname.replace(/\/+$/, "") || "/";
+    return NextResponse.redirect(url, 308);
+  }
+
   const host = request.headers.get("host");
   if (host === adminHost) return adminProxy(request);
   return host === appHost ? appProxy(request) : siteProxy(request);
@@ -103,7 +113,7 @@ function appProxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals, API routes and any file with an extension
-  // (favicon.ico, robots.txt, sitemap.xml, images).
-  matcher: ["/((?!_next|api|.*\\..*).*)"],
+  // Skip Next internals, API routes, PostHog's /ingest (next.config.ts) and
+  // any file with an extension (favicon.ico, robots.txt, sitemap.xml, images).
+  matcher: ["/((?!_next|api|ingest|.*\\..*).*)"],
 };

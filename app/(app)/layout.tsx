@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { FullStory } from "@/components/fullstory";
+import { PostHog } from "@/components/posthog";
 import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { fontVariables } from "@/lib/fonts";
@@ -26,6 +27,7 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
   const user = session?.user;
   // The admin signed in as a user (lib/impersonation.ts) isn't recorded.
   const impersonating = !!session?.session.impersonationId;
+  const recorded = user && { id: user.id, email: user.email, name: user.name };
 
   return (
     <html lang={locale} dir={dir} data-script={script} data-scroll-behavior="smooth" className={fontVariables}>
@@ -38,7 +40,8 @@ export default async function AppRootLayout({ children }: { children: ReactNode 
         </a>
         {children}
         <Analytics />
-        {!impersonating && <FullStory user={user && { id: user.id, email: user.email, name: user.name }} />}
+        {!impersonating && <FullStory user={recorded} />}
+        {!impersonating && <PostHog user={recorded} />}
       </body>
     </html>
   );

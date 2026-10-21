@@ -19,7 +19,8 @@ and the rules for children, the former USSR and the security check.
 - Who gave a correction ("the product owner").
 - Where a fact came from: no website, organization, article or person
   ("AIC says…"). State the fact itself. Procedure sections are still cited
-  (below).
+  (below). The one general note on where the knowledge as a whole comes
+  from is in `sources.md`, for couples who ask the chat.
 - Anything not verified and current: no pending or announced rule changes,
   proposals or debates.
 - How to verify a document: what to look for on it, red flags, the details

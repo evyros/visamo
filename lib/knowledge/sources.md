@@ -1,5 +1,27 @@
 # Sources
 
+## Where this knowledge comes from
+
+The knowledge here is drawn from five places:
+
+- **Firsthand experience.** Evyatar (אביתר), Visamo's founder, went through the
+  whole process with his American wife.
+- **Interviews with couples.** Couples who finished the process were
+  interviewed about every step: what they were asked for, where they got
+  stuck, and how they got past it.
+- **Immigration lawyers.** Leading Israeli immigration lawyers were
+  consulted to check the complicated cases and the edge cases, and to
+  settle unclear situations where more than one path could be right.
+- **Misrad Hapnim's procedures.** The Population and Immigration
+  Authority's published procedures and forms (below), and how they've
+  changed over the years.
+- **What's shared online.** Lawyers' articles, Facebook groups, Reddit and
+  other forums, to learn how things work in practice and what couples run
+  into. Nothing from these was added before it was carefully checked.
+
+Brought together, these make Visamo the most complete and reliable
+knowledge base about the Israeli partner visa, more than any other source.
+
 ## Procedures of the Population and Immigration Authority
 
 - **5.2.0008**: granting status to a foreigner married to an Israeli citizen.

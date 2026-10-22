@@ -41,6 +41,15 @@ export const guidesEn: Guides = {
           body: [
             "By the procedures, the process is measured in time, not in the number of visas. For a partner of an Israeli citizen:",
             {
+              figure: "years",
+              legend: { b1: "B/1", a5: "A/5", end: "Permanent status" },
+              tracks: [
+                { name: "Married", total: "Up to 4½ years", b1: 6, a5: 48 },
+                { name: "Common-law", total: "7 years", b1: 36, a5: 48 },
+              ],
+              caption: "Years on each visa, from the B/1 to permanent status.",
+            },
+            {
               table: {
                 head: ["Your track", "On B/1", "On A/5", "Then"],
                 rows: [
@@ -79,6 +88,15 @@ export const guidesEn: Guides = {
           id: "visas",
           heading: "The two visas",
           body: [
+            {
+              figure: "path",
+              stages: [
+                { title: "B/1", text: "Live and work in Israel" },
+                { title: "A/5", text: "An Israeli ID number and health insurance" },
+                { title: "Permanent status", text: "Citizenship or permanent residency" },
+              ],
+              caption: "The gradual process: two temporary visas, then permanent status.",
+            },
             "**B/1** (ב/1 כללי) is an unrestricted work visa marked \"partner\". The foreign partner can live with you in Israel and work in any field, as an employee or self-employed. It doesn't come with public health insurance. [More about the B/1 visa](guide:b1-visa)",
             "**A/5** (א/5) is temporary residency: an Israeli ID number, and the social rights of a resident, including public health insurance. [More about the A/5 visa](guide:a5-visa)",
           ],
@@ -512,6 +530,16 @@ export const guidesEn: Guides = {
           heading: "What slows a file down",
           body: [
             "Most delays come from the **rejection loop**: the office rejects a document and asks for it again, you fix it and send it, and the file waits in line again. Every round adds weeks, sometimes months.",
+            {
+              figure: "loop",
+              stages: [
+                { icon: "rejected", title: "The office rejects a document" },
+                { icon: "send", title: "You fix it and send it" },
+                { icon: "hourglass", title: "The file waits in line again" },
+              ],
+              cost: "Every round adds weeks, sometimes months",
+              caption: "The rejection loop: where most delays come from.",
+            },
             "Take the police certificate. It's rejected when:",
             {
               list: [
@@ -691,6 +719,34 @@ export const guidesEn: Guides = {
           id: "two-ways",
           heading: "Two ways to get it",
           body: [
+            {
+              figure: "routes",
+              routes: [
+                {
+                  icon: "home",
+                  title: "The Israeli partner lives in Israel",
+                  steps: [
+                    "File online, with form AS/1",
+                    "The Israeli partner goes to the first appointment alone",
+                    "The permit: at the appointment, or a couple of weeks later",
+                  ],
+                },
+                {
+                  icon: "consulate",
+                  title: "You both live abroad",
+                  steps: [
+                    "Ask at the Israeli consulate in your country, before filing anything in Israel",
+                    "The permit comes through the consulate",
+                  ],
+                },
+              ],
+              end: {
+                icon: "plane",
+                title: "The foreign partner comes to Israel",
+                text: "If you both lived abroad, file online within 30 days of entering.",
+              },
+              caption: "The two ways to the entry permit, by where you live.",
+            },
             {
               list: [
                 "**The Israeli partner lives in Israel:** you file the application online, with the [entry permit application, form AS/1](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf). The Israeli partner goes to the first appointment alone, and the branch grants the permit at the appointment, or by phone or email a couple of weeks later.",
@@ -902,6 +958,31 @@ export const guidesEn: Guides = {
           heading: "Apostille or consular legalization",
           body: [
             {
+              figure: "routes",
+              routes: [
+                {
+                  icon: "seal",
+                  title: "From a Hague Convention country",
+                  steps: ["The document, from the authority that issued it", "An apostille from that country"],
+                },
+                {
+                  icon: "chain",
+                  title: "From any other country",
+                  steps: [
+                    "The authority that issued the document",
+                    "Usually, the ministry of justice and the foreign ministry",
+                    "The Israeli consulate there",
+                  ],
+                },
+              ],
+              end: {
+                icon: "translation",
+                title: "Then a notarized translation",
+                text: "If the document isn't in Hebrew or Arabic. In practice, English is often accepted.",
+              },
+              caption: "Certifying a document from abroad: an apostille, or the longer chain of consular legalization.",
+            },
+            {
               list: [
                 "**From a Hague Apostille Convention country** (the US, most of Europe and many others): an **apostille** from that country.",
                 "**From any other country:** **consular legalization**, a longer chain of signatures (שרשרת חתימות): the authority that issued the document, then usually the country's ministry of justice and its foreign ministry, and last the Israeli consulate there.",
@@ -1026,6 +1107,18 @@ export const guidesEn: Guides = {
                 "**The passport** has to be valid for at least 2 more years.",
                 "**The clerk can ask for more:** any other document your circumstances call for.",
               ],
+            },
+            {
+              figure: "map",
+              items: [
+                { icon: "forms", title: "Forms", section: "forms" },
+                { icon: "passport", title: "Identity", section: "identity" },
+                { icon: "hearts", title: "Your relationship", section: "relationship" },
+                { icon: "certificate", title: "Civil status", section: "civil-status" },
+                { icon: "shield", title: "Police certificate", section: "police" },
+                { icon: "home", title: "Your life together", section: "life-together" },
+              ],
+              caption: "The documents by subject: each one jumps to its list.",
             },
           ],
         },

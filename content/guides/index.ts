@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import { guidesEn } from "./en";
 import { guidesHe } from "./he";
-import type { Guide, GuideGroupId, GuideSlug, Guides } from "./types";
+import type { Guide, GuideBlock, GuideGroupId, GuideSlug, Guides } from "./types";
 
 // One entry per locale; adding a language means adding its guides file here.
 const guides: Record<Locale, Guides> = { en: guidesEn, he: guidesHe };
@@ -83,24 +83,57 @@ export const guideIndex: {
   ],
 };
 
+/** A block's text, in reading order. */
+export function blockTexts(block: GuideBlock): string[] {
+  if (typeof block === "string") return [block];
+  if ("list" in block) return block.list;
+  if ("steps" in block) return block.steps;
+  if ("table" in block) return [...block.table.head, ...block.table.rows.flat()];
+  if ("note" in block) return [block.note];
+  switch (block.figure) {
+    case "path":
+      return [...block.stages.flatMap((s) => [s.title, s.text]), block.caption];
+    case "years":
+      return [...Object.values(block.legend), ...block.tracks.flatMap((t) => [t.name, t.total]), block.caption];
+    case "routes":
+      return [
+        ...block.routes.flatMap((r) => [r.title, ...r.steps]),
+        block.end.title,
+        ...(block.end.text ? [block.end.text] : []),
+        block.caption,
+      ];
+    case "loop":
+      return [...block.stages.map((s) => s.title), block.cost, block.caption];
+    case "map":
+      return [...block.items.map((item) => item.title), block.caption];
+  }
+}
+
+/** A block's kind and size, and a drawing's numbers: the same in both languages. */
+export function blockShape(block: GuideBlock): string {
+  if (typeof block === "string") return "p";
+  if ("list" in block) return `list:${block.list.length}`;
+  if ("steps" in block) return `steps:${block.steps.length}`;
+  if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
+  if ("note" in block) return "note";
+  switch (block.figure) {
+    case "path":
+      return `path:${block.stages.length}`;
+    case "years":
+      return `years:${block.tracks.map((t) => `${t.b1}/${t.a5}`).join(",")}`;
+    case "routes":
+      return `routes:${block.routes.map((r) => `${r.icon}/${r.steps.length}`).join(",")}>${block.end.icon}/${block.end.text ? 1 : 0}`;
+    case "loop":
+      return `loop:${block.stages.map((s) => s.icon).join(",")}`;
+    case "map":
+      return `map:${block.items.map((item) => `${item.icon}@${item.section}`).join(",")}`;
+  }
+}
+
 /** Every piece of a guide's body text, in reading order: its answer, sections and questions. */
 export function guideTexts(guide: Guide): string[] {
   const blocks = guide.sections.flatMap((section) => [section.heading, ...section.body]);
-  return [
-    guide.answer,
-    ...blocks.flatMap((block) =>
-      typeof block === "string"
-        ? [block]
-        : "list" in block
-          ? block.list
-          : "steps" in block
-            ? block.steps
-            : "table" in block
-              ? [...block.table.head, ...block.table.rows.flat()]
-              : [block.note],
-    ),
-    ...guide.faq.flatMap((item) => [item.q, item.a]),
-  ];
+  return [guide.answer, ...blocks.flatMap(blockTexts), ...guide.faq.flatMap((item) => [item.q, item.a])];
 }
 
 /** Minutes to read a guide, at 200 words a minute. */
@@ -109,4 +142,13 @@ export function readingMinutes(guide: Guide) {
   return Math.max(1, Math.round(words / 200));
 }
 
-export { guideGroupIds, guideSlugs, type Guide, type GuideBlock, type GuideSlug } from "./types";
+export {
+  figureIcons,
+  guideGroupIds,
+  guideSlugs,
+  type FigureIcon,
+  type Guide,
+  type GuideBlock,
+  type GuideFigure,
+  type GuideSlug,
+} from "./types";

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import type { GuideBlock } from "@/content/guides";
 import type { Locale } from "@/i18n/config";
 import { localePath, newTab } from "@/lib/site";
+import { GuideFigure } from "./guide-figures";
 
 // The guides' text (content/guides): **bold**, and [links](guide:<slug>) to
 // another guide or [links](/path) to a page, both kept in the reader's language,
@@ -127,6 +128,9 @@ export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: 
               </tbody>
             </table>
           );
+        }
+        if ("figure" in block) {
+          return <GuideFigure key={i} figure={block} locale={locale} />;
         }
         return (
           <p key={i} className="rounded-xl border-s-4 border-teal-600 bg-teal-100/60 px-5 py-4">

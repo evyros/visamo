@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { guideSlugs, type GuideBlock, type GuideSlug } from "@/content/guides";
+import { blockShape, blockTexts, guideSlugs, type GuideSlug } from "@/content/guides";
 import { guidesEn } from "@/content/guides/en";
 import {
   allAnswers,
@@ -132,28 +132,6 @@ describe("the versions", () => {
 
 // ── Both languages say the same ──────────────────────────────────────────────
 
-const shape = (block: GuideBlock) =>
-  typeof block === "string"
-    ? "p"
-    : "list" in block
-      ? `list:${block.list.length}`
-      : "steps" in block
-        ? `steps:${block.steps.length}`
-        : "table" in block
-          ? `table:${block.table.head.length}x${block.table.rows.length}`
-          : "note";
-
-const blockTexts = (block: GuideBlock): string[] =>
-  typeof block === "string"
-    ? [block]
-    : "list" in block
-      ? block.list
-      : "steps" in block
-        ? block.steps
-        : "table" in block
-          ? [...block.table.head, ...block.table.rows.flat()]
-          : [block.note];
-
 /** Every piece of text a version shows, for the link and wording checks. */
 function allTexts(texts: ProcessTexts, locale: "en" | "he", a: Answers) {
   const guide = processGuide(locale, a);
@@ -187,7 +165,7 @@ describe("both languages", () => {
       expect(he.steps.map((s) => s.id)).toEqual(en.steps.map((s) => s.id));
       for (const [i, step] of en.steps.entries()) {
         const other = he.steps[i];
-        expect(other.body.map(shape), step.id).toEqual(step.body.map(shape));
+        expect(other.body.map(blockShape), step.id).toEqual(step.body.map(blockShape));
         expect(other.bubbles.map((b) => b.tone), step.id).toEqual(step.bubbles.map((b) => b.tone));
         expect(other.meta.map((m) => m.icon), step.id).toEqual(step.meta.map((m) => m.icon));
         expect(other.faq.length, step.id).toBe(step.faq.length);

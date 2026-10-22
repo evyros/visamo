@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { guideIndex, guideSlugs, guideSources, guideTexts, type GuideBlock, type GuideSlug } from ".";
+import { blockShape, guideIndex, guideSlugs, guideSources, guideTexts, type GuideSlug } from ".";
 import { guidesEn } from "./en";
 import { guidesHe } from "./he";
 
@@ -65,17 +65,6 @@ describe("the guides' lock", () => {
 
 // ── Both languages have the same shape ───────────────────────────────────────
 
-const shape = (block: GuideBlock) =>
-  typeof block === "string"
-    ? "p"
-    : "list" in block
-      ? `list:${block.list.length}`
-      : "steps" in block
-        ? `steps:${block.steps.length}`
-        : "table" in block
-          ? `table:${block.table.head.length}x${block.table.rows.length}`
-          : "note";
-
 const texts = (slug: GuideSlug, docs: typeof guidesEn.docs) => guideTexts(docs[slug]);
 
 describe("the guides list", () => {
@@ -92,7 +81,7 @@ describe("the guides", () => {
 
     it(`${slug} has the same sections, blocks and questions in both languages`, () => {
       expect(he.sections.map((s) => s.id)).toEqual(en.sections.map((s) => s.id));
-      expect(he.sections.map((s) => s.body.map(shape))).toEqual(en.sections.map((s) => s.body.map(shape)));
+      expect(he.sections.map((s) => s.body.map(blockShape))).toEqual(en.sections.map((s) => s.body.map(blockShape)));
       expect(he.faq.length).toBe(en.faq.length);
       expect(he.facts.length).toBe(en.facts.length);
       expect(he.related).toEqual(en.related);
@@ -105,6 +94,15 @@ describe("the guides", () => {
         for (const link of [...links, ...docs[slug].related]) {
           expect(guideSlugs, `${slug} links to ${link}`).toContain(link);
           expect(link).not.toBe(slug);
+        }
+      }
+    });
+
+    it(`${slug}'s section maps jump to its own sections`, () => {
+      const ids = en.sections.map((s) => s.id);
+      for (const block of en.sections.flatMap((s) => s.body)) {
+        if (typeof block === "object" && "figure" in block && block.figure === "map") {
+          for (const item of block.items) expect(ids, item.title).toContain(item.section);
         }
       }
     });

@@ -114,7 +114,8 @@
     "disclaimer": "Visamo is independent software that helps couples organize, prepare and check documents for Israel's gradual process. We do not provide legal advice or legal representation, and using Visamo does not create a lawyer–client relationship. Visamo is not affiliated with, endorsed by, or an official portal of the Ministry of Interior or the Population and Immigration Authority. All decisions on your application are made solely by the authorities. For advice about your specific situation, consult a licensed Israeli lawyer.",
     "copyright": "© {year} Visamo. All rights reserved.",
     "madeWith": "Built with {heart} by a couple who's been through it.",
-    "heartLabel": "love"
+    "heartLabel": "love",
+    "facebook": "Visamo on Facebook"
   },
   "badges": {
     "encryption": "AES-256 encryption",

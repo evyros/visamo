@@ -4,7 +4,8 @@ const name = "Visamo";
 
 /**
  * JSON-LD for the homepage. WebSite gives Google the site name for search
- * results; Organization ties both spellings of the brand to one entity.
+ * results; Organization ties both spellings of the brand, and its social
+ * profiles, to one entity.
  */
 export function homeStructuredData() {
   const alternateName = [site.nameHe];
@@ -24,6 +25,7 @@ export function homeStructuredData() {
       url: site.url,
       logo: `${site.url}/logo.svg`,
       email: site.supportEmail,
+      sameAs: Object.values(site.social),
     },
   ];
 }

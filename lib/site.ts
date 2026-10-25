@@ -22,6 +22,10 @@ export const site = {
   adminUrl: urlFromEnv(process.env.NEXT_PUBLIC_ADMIN_URL, "https://admin.visamo.co.il"),
   supportEmail: "support@visamo.co.il",
   securityEmail: "support@visamo.co.il",
+  /** Visamo's social profiles: linked from the footer and listed as sameAs in the homepage's JSON-LD. */
+  social: {
+    facebook: "https://www.facebook.com/visamoapp",
+  },
 };
 
 /** One-time prices in ILS, VAT included. */

@@ -9,6 +9,12 @@ costs.
 1. **Make sure you understand it.** You must understand what your affidavit
    says. If it isn't in a language you read, have it translated for you
    before you go.
+
+   **Which language.** Write it in Hebrew and English side by side, so both
+   you and the clerk can read it. An affidavit in English only can be
+   accepted, but it's up to the clerk who handles your file. If it's in
+   Hebrew only and you don't read Hebrew, the lawyer translates it for you
+   before you sign, and adds a line to the affidavit saying they did.
 2. **Write it, or fill in the details, but leave the signature empty.** Never
    sign it on your own: you sign only in front of whoever confirms it.
 3. **Go to someone who can confirm it**: any Israeli lawyer, the magistrate's

@@ -11,7 +11,7 @@ process starts there instead: see [first-appointment.md](first-appointment.md).
 - **The Israeli partner lives in Israel:** you file the application online,
   with the entry permit application (form AS/1), and the Israeli partner
   goes to the first appointment alone. The branch grants the permit at the
-  appointment, or by phone or email a couple of weeks later. See
+  appointment, or by phone or email within a few days to a few weeks. See
   [application.md](application.md) and
   [first-appointment.md](first-appointment.md).
 - **You both live abroad:** you ask for it at the Israeli consulate in your

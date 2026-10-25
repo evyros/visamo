@@ -81,8 +81,9 @@ of your financial situation.
 ## Waiting for an answer
 
 Misrad Hapnim has no deadline for answering. As of 2026, the first answer
-takes from 3 weeks to more than 4 months, depending on the branch, and the
-appointment it gives may be months later.
+takes about 2 months on average, from 3 weeks to more than 4 months
+depending on the branch. The appointment it gives is usually a few weeks to
+a few months later.
 
 - **No answer after 3 weeks:** email your branch with both your names, your
   ID and passport numbers, the reference number, and a short question. Many

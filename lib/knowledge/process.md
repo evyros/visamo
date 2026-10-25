@@ -65,6 +65,51 @@ years at a time; the office doesn't have to.
 Marrying during the process moves you to the married track: on B/1, you can
 move up to A/5 once the file is converted and you're interviewed.
 
+## How long each wait takes
+
+Misrad Hapnim has no deadline for most steps. How long you wait depends
+mostly on your branch's backlog and on how complete your file is. In
+practice, as of 2026:
+
+1. **Filing online → the first answer:** about 2 months on average, from 3
+   weeks to more than 4 months depending on the branch. The answer is a
+   request for more documents, or a first appointment. See
+   [application.md](application.md).
+2. **The first answer → the first appointment:** the appointment is usually
+   set a few weeks to a few months ahead.
+3. **The first appointment → the entry permit** (a foreign partner abroad):
+   at the appointment, or within a few days to a few weeks. From filing to
+   the permit, the faster branches usually take 3 to 4 weeks, and busy
+   branches 2 to 5 months. See [entry-permit.md](entry-permit.md).
+4. **Once you're both in Israel → the first visa (B/1):**
+   - **Married couples:** issued at the appointment where all the documents
+     are in, without an interview.
+   - **Common-law couples:** only after an interview together. Interview
+     slots are in high demand: the wait often passes 6 months, and at the
+     busiest branches it can reach a year. See
+     [first-appointment.md](first-appointment.md).
+5. **The interview → the decision:** some offices decide on the spot, others
+   take weeks or months. Write to the office if you've heard nothing after 3
+   weeks. See [interview.md](interview.md).
+6. **B/1 → A/5 (married couples):** the B/1 is given for up to 6 months, the
+   time the office has to interview you and decide on the A/5.
+
+What makes it longer:
+
+- **A request for more documents:** you have 45 calendar days to bring
+  them, and the file doesn't move until they're in. See
+  [application.md](application.md).
+- **A simultaneous interview** (ראיון סימולטני), for a foreign partner
+  abroad: it adds a lot of time before the entry permit. See
+  [interview.md](interview.md).
+- **Children of the foreign partner:** the ministry waits up to 6 months for
+  the other parent's reply. See [children.md](children.md).
+- **The former USSR:** the Nativ interview has long waits. See
+  [former-ussr.md](former-ussr.md).
+
+A complete, accurate file from the start is the best way to keep the waits
+short: most of the extra time comes from documents asked for later.
+
 ## Who can sponsor
 
 - **An Israeli citizen.** A married partner of a different sex ends the

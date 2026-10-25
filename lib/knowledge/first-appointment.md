@@ -40,7 +40,7 @@ the documents. There are two ways it can go.
 
 The office grants the foreign partner an entry permit (היתר כניסה), to come
 to Israel and continue the process here. You may hear at the appointment, or
-by phone or email a couple of weeks later. How long it takes, how the foreign
+by phone or email within a few days to a few weeks. How long it takes, how the foreign
 partner travels, and what to do once they arrive: see
 [entry-permit.md](entry-permit.md).
 
@@ -53,7 +53,8 @@ partner travels, and what to do once they arrive: see
   interviewed at the office in Israel while the foreign partner is
   interviewed at the Israeli consulate where they live. In practice, it's
   often asked for when the foreign partner comes from a non-Western country
-  (Eastern Europe, East Asia, South America or Africa, among others). See
+  (Eastern Europe, East Asia, South America or Africa, among others). It
+  adds a lot of time before the entry permit. See
   [interview.md](interview.md).
 
 ## If the foreign partner is in Israel
@@ -73,8 +74,9 @@ to change their visa category, with the file.
   - By procedure 5.2.0009 (clause 10, page 16), the interview is held,
     whenever possible, at the appointment where you show the original
     documents. Ask the clerk for it, and point them to that clause.
-  - In practice, many branches have long queues for interviews: at the
-    busiest ones, the wait for a first visa's interview can reach a year.
+  - In practice, many branches have long queues for interviews: the wait
+    for a first visa's interview often passes 6 months, and at the busiest
+    branches it can reach a year.
 
 ### On another visa
 

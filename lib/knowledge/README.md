@@ -3,7 +3,7 @@
 A guide to getting status in Israel for the foreign partner of an Israeli,
 through the gradual process (ההליך המדורג).
 
-- [process.md](process.md): what the process is, how long it takes, and who it's for.
+- [process.md](process.md): what the process is, how long it takes and how long each wait takes, and who it's for.
 - [application.md](application.md): filing the application online, and what happens while you wait.
 - [first-appointment.md](first-appointment.md): the first appointment at Misrad Hapnim, and the first visa.
 - [entry-permit.md](entry-permit.md): the entry permit a partner abroad needs before moving to Israel, the two ways to get it, and visiting before you file.

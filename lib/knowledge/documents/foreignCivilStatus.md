@@ -18,8 +18,9 @@ Israel. What it has to show depends on your case:
   status before the marriage covers it.
 
 A divorce decree, or a previous spouse's death certificate, is a document of
-its own, for each previous marriage. So is the affidavit about the foreign
-partner's children from previous relationships, or that they have none.
+its own, for each previous marriage. So is a married foreign partner's
+affidavit about their children from previous relationships, or that they
+have none.
 
 ## How to get it
 
@@ -349,8 +350,8 @@ apostille. If you can't get one, use the affidavit (below).
   the office knows which countries do.
 - **One affidavit for everything:** if the foreign partner can't get one of the
   documents, one affidavit can declare it all: their status now, for a married
-  couple their status before the marriage, and their children, which they
-  declare in an affidavit anyway.
+  couple their status before the marriage, and their children, which a
+  married foreign partner declares in an affidavit anyway.
 - **If your marriage certificate is from the foreign partner's country** and
   shows their status before the marriage, it can replace the document of their
   status before the marriage.

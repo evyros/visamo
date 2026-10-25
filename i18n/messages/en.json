@@ -2093,6 +2093,10 @@
             "text": "{israeli}'s declaration (הצהרת בן הזוג המזמין) must be signed in front of an Israeli lawyer",
             "details": "Page 4 of the form. Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it."
           },
+          "previousChildrenAffidavit": {
+            "text": "Only {foreign} signs it, in front of a lawyer or notary",
+            "details": "An Israeli lawyer, the magistrate's court, or a notary can confirm it. Fill it in, but don't sign it before: whoever confirms it checks {foreign}'s identity, and signs and stamps it. {israeli} doesn't sign it."
+          },
           "foreignDeclarationMarried": {
             "text": "Must be signed in front of an Israeli lawyer",
             "details": "Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it."

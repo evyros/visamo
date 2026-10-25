@@ -130,7 +130,7 @@ export function stepText(
         : { text: s.translateSelf, details: pointsOf(s.translateSelfDetails) };
     case "sign": {
       const { text, details } = signingText(step, id, points, t);
-      return { text: format(text, { israeli }), details: prose(details) };
+      return { text: format(text, { israeli, foreign }), details: prose(format(details, { israeli, foreign })) };
     }
     case "signByEmail":
       return {

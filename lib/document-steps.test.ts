@@ -98,7 +98,7 @@ describe("a signature", () => {
       expect(Object.keys(s.signingDetails).sort()).toEqual(Object.keys(s.signing).sort());
     }
     for (const before of ["clerk", "lawyer", "lawyerCourtOrNotary", "notary", "consul"] as const) {
-      expect(stepText({ kind: "sign", before }, "previousChildrenAffidavit", t, "en"), before).toEqual({
+      expect(stepText({ kind: "sign", before }, "otherParentConsent", t, "en"), before).toEqual({
         text: t.steps.signing[before],
         details: { lead: t.steps.signingDetails[before] },
       });
@@ -106,9 +106,16 @@ describe("a signature", () => {
   });
 
   it("gives the chat and the check its full text too", () => {
-    expect(stepsInWords([{ kind: "sign", before: "lawyerCourtOrNotary" }], "previousChildrenAffidavit", t)).toBe(
+    expect(stepsInWords([{ kind: "sign", before: "lawyerCourtOrNotary" }], "otherParentConsent", t)).toBe(
       `1. ${t.steps.signing.lawyerCourtOrNotary}: ${t.steps.signingDetails.lawyerCourtOrNotary}`,
     );
+  });
+
+  it("names the foreign partner as the only one who signs the children affidavit", () => {
+    const { text, details } = stepText({ kind: "sign", before: "lawyerCourtOrNotary" }, "previousChildrenAffidavit", t, "en", { foreign: "Liz", israeli: "Evy" });
+    expect(text).toBe("Only Liz signs it, in front of a lawyer or notary");
+    expect(details?.lead).toContain("checks Liz's identity");
+    expect(details?.lead).toContain("Evy doesn't sign it.");
   });
 });
 

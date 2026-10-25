@@ -63,6 +63,8 @@ Authority's procedure for conducting interviews.
 
 The interview is usually the last step before the decision. Some offices
 decide on the spot, others take weeks or months; ask the clerk when to
-expect it, and write to the office if you've heard nothing after 3 weeks. If
+expect it, and write to the office if you've heard nothing after 3 weeks.
+When answers didn't match, the office may approve on condition of a deposit
+(ערבות) rather than refuse: see [deposit.md](deposit.md). If
 the application is refused, ask for the interview record: the office gives
 it only to those who ask.

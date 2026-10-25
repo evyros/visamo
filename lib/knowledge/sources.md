@@ -36,6 +36,9 @@ knowledge base about the Israeli partner visa, more than any other source.
   - §ה.2(1): who is rejected at the start.
   - §ה.2(7): the center-of-life check.
   - §ה.2(9): children from a previous relationship, and the other parent.
+  - §ג.9 and §ו.2: a deposit, at any stage or as a condition for starting
+    the gradual process.
+  - §ג.22: an internal appeal, within 21 days of the decision.
   - Police certificates from other countries: from each country lived in for
     at least 6 months in a row (in both procedures since January 2024).
 - **5.2.0009**: common-law couples, including same-sex couples.
@@ -45,6 +48,16 @@ knowledge base about the Israeli partner visa, more than any other source.
     foreign partner's entry.
   - Clause 10 (page 16): the interview is held, whenever possible, when the
     couple shows the original documents.
+  - §ג.6 and §ו.2: a deposit, at any stage or as a condition for starting
+    the gradual process.
+  - §ג.18: an internal appeal, within 21 days of the decision.
+- **5.1.0004**: the Authority's general guarantees procedure: who may ask for
+  how much, how a deposit is paid, returned or forfeited. Updated 15 January
+  2026.
+  https://www.gov.il/BlobFolder/policy/procedure_guarantees_2012/he/5.1.0004.pdf
+- **5.4.0001**: visit permits for tourists, including visits approved in
+  advance.
+  https://www.gov.il/BlobFolder/policy/procedure_for_handling_tourist_visa_application_b2/he/5.4.0001.pdf
 - **1.3.0001**: foreign documents (certification and translation).
 - **5.1.0013**: how the Authority conducts interviews.
   https://www.gov.il/BlobFolder/policy/making_interviews_procedure/he/5.1.0013.pdf

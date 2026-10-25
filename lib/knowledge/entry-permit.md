@@ -130,7 +130,8 @@ tourist invitation):
 - They apply at the visa department of their branch, at least 21 working
   days before the visit.
 - The office may ask for a deposit, to guarantee the visitor leaves on time.
-  It's returned once they leave.
+  It's returned once they leave. In practice it's often around 15,000 NIS:
+  see [deposit.md](deposit.md) for how it's paid.
 - It's a separate request from the entry permit, though both are called an
   "invitation" (הזמנה).
 - Some branches say it isn't needed for a visa-exempt country, since there's

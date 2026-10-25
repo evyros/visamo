@@ -56,6 +56,9 @@ partner travels, and what to do once they arrive: see
   (Eastern Europe, East Asia, South America or Africa, among others). It
   adds a lot of time before the entry permit. See
   [interview.md](interview.md).
+- **A deposit** (ערבות): the entry permit may be approved on condition that
+  you leave a deposit, most often 30,000 NIS, returned later. See
+  [deposit.md](deposit.md).
 
 ## If the foreign partner is in Israel
 

@@ -50,7 +50,11 @@ Population, Immigration and Border Authority.
 | The invitee (the foreign partner, on form AS/1) | hamuzman | המוזמן |
 | Center of life | merkaz chaim | מרכז חיים |
 | The fee | agra | אגרה |
-
+| Deposit (money or a bank guarantee held until its conditions are met) | arvut | ערבות |
+| Bank guarantee | arvut bankait | ערבות בנקאית |
+| The Guarantees Unit at Ben Gurion airport | yechidat ha'arvuyot | יחידת הערבויות |
+| Forfeiting a deposit | chilut | חילוט |
+| Internal appeal (to Misrad Hapnim itself) | arar pnimi | ערר פנימי |
 ## Visas and status
 
 | English | As people say it | Hebrew |

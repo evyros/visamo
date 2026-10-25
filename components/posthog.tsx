@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import posthog from "posthog-js";
+import { withoutShareTokens } from "@/lib/app-paths";
 
 // PostHog analytics and session recording, on the website and the app (not
 // the admin panel). It never runs under `next dev`, and only runs where
@@ -20,6 +21,9 @@ import posthog from "posthog-js";
 // it would capture the letter as it's typed and the writer's ID card, which
 // Visamo promises not to keep. Recording stops there, no event from the page
 // is sent, and recording starts again after.
+//
+// A shared chat's link (app/(app)/shared/[token]) is the key to the chat, so
+// its token is taken out of every event's URLs before they're sent.
 
 export type PostHogUser = { id: string; email: string; name: string };
 
@@ -63,7 +67,15 @@ export function PostHog({ user }: { user?: PostHogUser | null }) {
         session_recording: { maskAllInputs: true, maskInputFn: maskInput },
         // The page view as the visitor arrives on a letter page fires before
         // this component sees the new path, so drop it here too.
-        before_send: (event) => (privatePage(window.location.pathname) ? null : event),
+        before_send: (event) => {
+          if (!event || privatePage(window.location.pathname)) return null;
+          for (const properties of [event.properties, event.$set, event.$set_once]) {
+            for (const [key, value] of Object.entries(properties ?? {})) {
+              if (typeof value === "string") properties![key] = withoutShareTokens(value);
+            }
+          }
+          return event;
+        },
       });
       return;
     }

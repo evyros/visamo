@@ -8,17 +8,21 @@ export function Dialog({
   ref,
   title,
   closeLabel,
+  onClose,
   children,
 }: {
   ref: RefObject<HTMLDialogElement | null>;
   title: string;
   closeLabel: string;
+  /** Called once it's closed, whichever way. */
+  onClose?: () => void;
   children: ReactNode;
 }) {
   return (
     <dialog
       ref={ref}
       aria-label={title}
+      onClose={onClose}
       onClick={(event) => event.target === event.currentTarget && event.currentTarget.close()}
       className="m-auto w-[min(92vw,480px)] rounded-card bg-white p-0 shadow-soft backdrop:bg-navy-900/50"
     >

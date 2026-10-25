@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { getAppDictionary } from "@/i18n/app-locale";
+import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { chatBalance, listChats } from "@/lib/chat/store";
 import { requireCase } from "@/lib/session";
 import { ChatBalanceProvider, MessagesLeft } from "@/components/app/chat-balance";
@@ -10,13 +10,15 @@ import { BuyLink } from "@/components/app/purchase";
 import { Icon } from "@/components/icons";
 import { ButtonLink } from "@/components/ui";
 
-// The sidebar: new chat, the case's chats (both partners see them all), and
-// the messages left with a way to buy more. The chat page refreshes it after
-// each answer, and takes a message off the count as soon as it's sent.
+// The sidebar: new chat, the case's chats (both partners see them all, and
+// either can share or delete one), and the messages left with a way to buy
+// more. The chat page refreshes it after each answer, and takes a message off
+// the count as soon as it's sent.
 export default async function ChatLayout({ children }: { children: ReactNode }) {
   const { caseId } = await requireCase();
-  const [t, chats, { messagesLeft }] = await Promise.all([
+  const [t, locale, chats, { messagesLeft }] = await Promise.all([
     getAppDictionary(),
+    getAppLocale(),
     listChats(caseId),
     chatBalance(caseId),
   ]);
@@ -36,12 +38,16 @@ export default async function ChatLayout({ children }: { children: ReactNode }) 
               </ButtonLink>
               <ChatHistory
                 chats={chats}
+                locale={locale}
                 t={{
                   history: c.history,
                   noChats: c.noChats,
                   newChat: c.newChat,
-                  deleteChatNamed: c.deleteChatNamed,
+                  chatMenu: c.chatMenu,
+                  shareChat: c.shareChat,
+                  delete: c.delete,
                   deleteConfirm: c.deleteConfirm,
+                  share: c.share,
                 }}
               />
               <div className="mt-auto border-t border-line-200 px-1 pt-4 text-[15px]">

@@ -176,6 +176,57 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
 }
 
+/* A chat's title in the chat sidebar (components/app/chat-history.tsx): one
+   line across the whole row, fading out at the row's end, the ⋯ button's
+   side, when it doesn't fit. On a desktop the button shows over the end of a
+   hovered row (data-menu), so the fade moves in to clear it. Hovered, a title
+   that doesn't fit slides to show the rest, after the button's pause (300ms),
+   and snaps back after. How far is the title's own width against the row's
+   (100% against 100cqw), so nothing is measured. */
+.chat-title {
+  --fade: 12px;
+  /* How much of the row's end is covered now: nothing, or the ⋯ button. */
+  --covered: 0px;
+  display: block;
+  overflow: hidden;
+  container-type: inline-size;
+  mask-image: linear-gradient(to right, black calc(100% - var(--covered) - var(--fade)), transparent calc(100% - var(--covered)));
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - var(--covered) - var(--fade)), transparent calc(100% - var(--covered)));
+}
+[dir="rtl"] .chat-title {
+  mask-image: linear-gradient(to left, black calc(100% - var(--covered) - var(--fade)), transparent calc(100% - var(--covered)));
+  -webkit-mask-image: linear-gradient(to left, black calc(100% - var(--covered) - var(--fade)), transparent calc(100% - var(--covered)));
+}
+/* Below lg the button always shows, beside the title, not over it. */
+@media (min-width: 64rem) {
+  .chat-title[data-menu] {
+    --menu: 28px;
+  }
+}
+/* With the menu open the pointer has left the row, but the button is still there. */
+.group:has([aria-expanded="true"]) .chat-title {
+  --covered: var(--menu, 0px);
+}
+.chat-title > bdi {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+}
+@media (hover: hover) {
+  .group:hover .chat-title {
+    --covered: var(--menu, 0px);
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .group:hover .chat-title > bdi {
+    translate: min(0px, calc(100cqw - 100% - var(--covered) - var(--fade)));
+    transition: translate var(--slide-time, 3s) linear 300ms;
+  }
+  [dir="rtl"] .group:hover .chat-title > bdi {
+    translate: max(0px, calc(100% - 100cqw + var(--covered) + var(--fade)));
+  }
+}
+
 /* Tailwind v4 dropped the pointer cursor on buttons; restore it. */
 button:not(:disabled),
 [role="button"]:not([aria-disabled="true"]) {

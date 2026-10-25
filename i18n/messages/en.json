@@ -1410,8 +1410,30 @@
       "hideDisclaimer": "Hide this notice",
       "newWindow": "(opens in a new window)",
       "deleteChat": "Delete chat",
-      "deleteChatNamed": "Delete “{title}”",
       "deleteConfirm": "Delete this chat for both of you? This can't be undone.",
+      "chatMenu": "Options for “{title}”",
+      "shareChat": "Share",
+      "delete": "Delete",
+      "share": {
+        "title": "Share chat",
+        "loading": "Loading…",
+        "intro": "Anyone with the link can read this chat, including messages sent after you share it. Your names aren't shown.",
+        "expiresAfter": "The link works for",
+        "durations": {
+          "1d": "1 day",
+          "1w": "1 week",
+          "1m": "1 month"
+        },
+        "create": "Create link",
+        "creating": "Creating link…",
+        "cancel": "Cancel",
+        "close": "Close",
+        "linkLabel": "Link to this chat",
+        "ready": "Anyone with this link can read the chat until {date}.",
+        "copy": "Copy",
+        "copied": "Copied",
+        "error": "Something went wrong. Please try again."
+      },
       "errors": {
         "tooLong": "Your message is too long. Please shorten it and try again.",
         "noMessages": "You've used all your messages. Buy more to keep asking.",
@@ -2860,6 +2882,19 @@
         "24": "24 hours",
         "72": "3 days",
         "168": "7 days"
+      }
+    },
+    "shared": {
+      "untitled": "Shared chat",
+      "question": "Question",
+      "unavailable": {
+        "title": "This chat isn't shared anymore",
+        "body": "The link has expired, or the chat was deleted."
+      },
+      "cta": {
+        "title": "Have questions of your own?",
+        "body": "Ask Visamo anything about your partner visa and Misrad Hapnim.",
+        "start": "Try Visamo"
       }
     }
   }

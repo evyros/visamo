@@ -11,6 +11,7 @@ import {
   timestamp,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
+import type { Locale } from "../../i18n/config";
 import type { ChatCall, Completion } from "../chat/openrouter";
 import type { ReviewOutcome } from "../admin-dismissals";
 import type { DismissReason, FindingKind } from "../checks/dismissals";
@@ -701,6 +702,37 @@ export const chatMessage = pgTable(
     catalogVersion: integer("catalog_version"),
   },
   (table) => [index("chat_message_chat_id_idx").on(table.chatId, table.createdAt)],
+);
+
+/**
+ * A public link to one chat (lib/chat/shares.ts): anyone with it can read the
+ * chat, as it is now, until it expires or the chat is deleted. A chat has at
+ * most one working link; sharing again replaces it.
+ */
+export const chatShare = pgTable(
+  "chat_share",
+  {
+    id: text("id").primaryKey(),
+    chatId: text("chat_id")
+      .notNull()
+      .references(() => chat.id, { onDelete: "cascade" }),
+    caseId: text("case_id")
+      .notNull()
+      .references(() => cases.id, { onDelete: "cascade" }),
+    /**
+     * The link's token, kept as is so the link can be copied again: hashing it
+     * would hide nothing that this database doesn't already hold.
+     */
+    token: text("token").notNull().unique(),
+    createdBy: text("created_by").references(() => user.id, { onDelete: "set null" }),
+    /** The app's language when it was shared: the public page is shown in it. */
+    locale: text("locale").$type<Locale>(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    expiresAt: timestamp("expires_at").notNull(),
+    /** When a newer link replaced it. */
+    revokedAt: timestamp("revoked_at"),
+  },
+  (table) => [index("chat_share_chat_id_idx").on(table.chatId)],
 );
 
 // ── Recommendation letters ───────────────────────────────────────────────────

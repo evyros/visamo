@@ -31,6 +31,12 @@ type ButtonLinkProps = Omit<ComponentProps<typeof Link>, "className"> & {
   className?: string;
 };
 
+/** A button's look, for a link that can't be a <Link>: ButtonLink's. */
+export function buttonClass(variant: keyof typeof buttonStyles = "primary", size: "md" | "sm" = "md") {
+  const sizing = size === "md" ? "h-12 px-6 text-base" : "h-10 px-4 text-sm";
+  return `inline-flex items-center justify-center gap-2 rounded-[10px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${sizing} ${buttonStyles[variant]}`;
+}
+
 export function ButtonLink({
   variant = "primary",
   size = "md",
@@ -39,12 +45,8 @@ export function ButtonLink({
   children,
   ...props
 }: ButtonLinkProps) {
-  const sizing = size === "md" ? "h-12 px-6 text-base" : "h-10 px-4 text-sm";
   return (
-    <Link
-      className={`inline-flex items-center justify-center gap-2 rounded-[10px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${sizing} ${buttonStyles[variant]} ${className}`}
-      {...props}
-    >
+    <Link className={`${buttonClass(variant, size)} ${className}`} {...props}>
       {icon && <Icon name={icon} className="size-5" />}
       {children}
     </Link>

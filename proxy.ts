@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 import { LOCALE_COOKIE, isLocale } from "./i18n/config";
 import { asLiveLocale, localeFromHeaders } from "./i18n/negotiate";
-import { accessPathPattern, publicAppPaths } from "./lib/app-paths";
+import { SHARED_CHAT_HEADER, accessPathPattern, publicAppPaths, sharedChatPathPattern } from "./lib/app-paths";
 import { BUY_COOKIE, isProductId } from "./lib/products";
 import { site } from "./lib/site";
 
@@ -91,7 +91,8 @@ function appProxy(request: NextRequest) {
   // An optimistic check on the cookie alone, so signed-out visitors skip a
   // render. Pages still verify the session itself (lib/session.ts).
   const signedIn = !!getSessionCookie(request);
-  if (!publicAppPaths.includes(pathname) && !signedIn) {
+  const sharedChat = sharedChatPathPattern.test(pathname);
+  if (!publicAppPaths.includes(pathname) && !sharedChat && !signedIn) {
     const response = NextResponse.redirect(new URL("/login", request.url));
     // Every way of logging in lands on "/", which then returns to the link.
     if (accessPathPattern.test(pathname)) {
@@ -107,8 +108,15 @@ function appProxy(request: NextRequest) {
     return response;
   }
 
-  const response = NextResponse.next();
+  // A shared chat's page tells the app's language which link it is; only
+  // here, so no other request can claim to be one.
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete(SHARED_CHAT_HEADER);
+  if (sharedChat) requestHeaders.set(SHARED_CHAT_HEADER, pathname.slice("/shared/".length));
+  const response = NextResponse.next({ request: { headers: requestHeaders } });
   response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  // A shared chat's link is its key: a link out of the page mustn't pass it on.
+  if (sharedChat) response.headers.set("Referrer-Policy", "no-referrer");
   return response;
 }
 

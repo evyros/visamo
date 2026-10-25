@@ -12,19 +12,12 @@ import {
 } from "react";
 import { format, type Messages } from "@/i18n/messages";
 import { Icon } from "@/components/icons";
-import { LogoMark } from "@/components/logo";
 import { messagesLeftText, useChatBalance } from "./chat-balance";
-import { ChatMarkdown, textDirection } from "./chat-markdown";
+import { ChatAvatar, ChatMessage, type ChatMessageData } from "./chat-messages";
 import { usePendingChat } from "./chat-pending";
 import { BuyLink } from "./purchase";
 
-type Message = {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  /** The other partner's name, for a message they wrote; null for the user's own. */
-  author: string | null;
-};
+type Message = ChatMessageData;
 type ErrorKey = keyof Messages["app"]["chat"]["errors"];
 
 // The conversation and the box to ask in, laid out like a chat app: messages
@@ -263,41 +256,12 @@ export function ChatView({
           </div>
         ) : (
           <ol ref={listRef} className="flex flex-col gap-6 pt-6 pb-6" aria-live="polite" aria-busy={streaming}>
-            {messages.map((message) =>
-              message.role === "user" ? (
-                <li key={message.id} data-message-id={message.id} className="flex flex-col items-end">
-                  {message.author && (
-                    <span aria-hidden="true" className="mb-1 pe-1 text-xs font-medium text-slate-500">
-                      <bdi>{message.author}</bdi>
-                    </span>
-                  )}
-                  <div
-                    className={`max-w-[85%] rounded-2xl rounded-ee-md px-4 py-2.5 text-navy-900 ${
-                      message.author ? "border border-line-200 bg-white" : "bg-teal-100"
-                    }`}
-                  >
-                    <span className="sr-only">{message.author ?? t.you}: </span>
-                    <p dir={textDirection(message.content)} className="whitespace-pre-wrap break-words">
-                      {message.content}
-                    </p>
-                  </div>
-                </li>
-              ) : (
-                <li key={message.id} className="flex gap-3">
-                  <Avatar />
-                  <div
-                    dir={textDirection(message.content)}
-                    className="min-w-0 flex-1 break-words pt-1 text-slate-700"
-                  >
-                    <span className="sr-only">{t.assistant}: </span>
-                    <ChatMarkdown text={message.content} />
-                  </div>
-                </li>
-              ),
-            )}
+            {messages.map((message) => (
+              <ChatMessage key={message.id} message={message} t={t} />
+            ))}
             {waiting && (
               <li className="flex gap-3">
-                <Avatar />
+                <ChatAvatar />
                 <span className="flex items-center gap-1 pt-1" role="status">
                   <span className="sr-only">{t.writing}</span>
                   {[0, 150, 300].map((delay) => (
@@ -463,8 +427,4 @@ function hideDisclaimer() {
 // Smooth scrolling, unless the user asked for less motion.
 function motion(): ScrollBehavior {
   return matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-}
-
-function Avatar() {
-  return <LogoMark className="size-8 shrink-0" />;
 }

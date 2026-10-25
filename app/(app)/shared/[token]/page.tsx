@@ -68,7 +68,7 @@ export default async function SharedChatPage({ params }: PageProps<"/shared/[tok
   );
 }
 
-/** Into Visamo: the website, to see what it is. */
+/** Into Visamo: sign-up, which takes someone already signed in straight into the app. */
 function JoinCard({ t }: { t: Messages["app"]["shared"]["cta"] }) {
   return (
     <div className="relative w-full overflow-hidden rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 px-6 pt-12 pb-8 text-center sm:py-10">
@@ -77,8 +77,10 @@ function JoinCard({ t }: { t: Messages["app"]["shared"]["cta"] }) {
       <div className="relative">
         <h2 className="font-display text-lg font-semibold text-navy-900 sm:text-xl">{t.title}</h2>
         <p className="mt-1 text-slate-600">{t.body}</p>
-        {/* The website without a language, so it picks the visitor's own, not the chat's. */}
-        <a href={site.url} className={`${buttonClass("primary", "sm")} mt-4`}>
+        {/* A full page load, not a <Link>: the root layout (lang, dir) was
+            rendered in the shared chat's language, and the app opens in the
+            visitor's own. No ?lang= for the same reason. */}
+        <a href={new URL("/signup", site.appUrl).toString()} className={`${buttonClass("primary", "sm")} mt-4`}>
           {t.start}
         </a>
       </div>

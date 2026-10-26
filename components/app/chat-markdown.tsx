@@ -1,8 +1,9 @@
 import { Fragment, type ReactNode } from "react";
 
 // The little Markdown the assistant is asked to write: paragraphs, bullet and
-// numbered lists, and **bold**. Anything else shows as plain text. It's
-// rendered as React elements, never as HTML, so an answer can't inject markup.
+// numbered lists, **bold**, and bare links to Visamo's website. Anything else
+// shows as plain text, other links too. It's rendered as React elements, never
+// as HTML, so an answer can't inject markup.
 
 type Block = { kind: "p"; lines: string[] } | { kind: "ul" | "ol"; items: string[] };
 
@@ -32,14 +33,38 @@ function blocksOf(text: string): Block[] {
   return blocks;
 }
 
+const URL_TEXT = /(https:\/\/\S+?)(?=[.,;:!?)\]]*(?:\s|$))/g;
+const LINK_HOSTS = ["visamo.co.il", "www.visamo.co.il"];
+
+/** Not URL.parse: older Safari doesn't have it. */
+function hostOf(url: string) {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return "";
+  }
+}
+
+/** The text with its URLs on Visamo's website as links, opened in a new tab. */
+function links(text: string): ReactNode[] {
+  return text.split(URL_TEXT).map((part, i) => {
+    if (i % 2 === 0 || !LINK_HOSTS.includes(hostOf(part))) return part;
+    return (
+      <a key={i} href={part} target="_blank" rel="noopener" className="break-all text-terracotta-600 underline underline-offset-2">
+        {part}
+      </a>
+    );
+  });
+}
+
 function inline(text: string): ReactNode[] {
   return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
     i % 2 === 1 ? (
       <strong key={i} className="font-semibold text-navy-900">
-        {part}
+        {links(part)}
       </strong>
     ) : (
-      part
+      <Fragment key={i}>{links(part)}</Fragment>
     ),
   );
 }

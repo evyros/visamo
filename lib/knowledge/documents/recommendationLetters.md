@@ -16,6 +16,15 @@ Ask Israeli family members and friends who know you as a couple to write
 one, in Hebrew. Each writer signs their letter, and gives you a copy of
 their Teudat Zehut to attach.
 
+Visamo has a free tool that makes this easier: you create one link and send
+it to your friends. Each friend writes their own letter with a short guide,
+signs on screen and adds a photo of their Teudat Zehut, and you get a signed
+PDF in Hebrew with the copy of their ID. It's emailed to you, or your friend
+downloads it and sends it to you. Visamo doesn't keep the letters or the ID
+photos. In English:
+https://www.visamo.co.il/en/tools/recommendation-letter, in Hebrew:
+https://www.visamo.co.il/he/tools/recommendation-letter.
+
 ## What it should include
 
 - **At least 3 letters,** from different writers. It's recommended to ask

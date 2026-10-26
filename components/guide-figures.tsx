@@ -37,6 +37,8 @@ export function GuideFigure({ figure, locale }: { figure: Figure; locale: Locale
     <figure className="my-8">
       {figure.figure === "path" ? (
         <PathFigure figure={figure} />
+      ) : figure.figure === "trip" ? (
+        <TripFigure figure={figure} />
       ) : figure.figure === "years" ? (
         <YearsFigure figure={figure} locale={locale} />
       ) : figure.figure === "routes" ? (
@@ -59,10 +61,16 @@ const pathTiles = [PassportTile, IdCardTile, HomeTile];
 
 function PathFigure({ figure }: { figure: Extract<Figure, { figure: "path" }> }) {
   return (
-    <div className="rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 px-3 py-7 sm:px-8 sm:py-9">
+    <div
+      className={`rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 px-3 sm:px-8 ${
+        // Room above for the pin on the current stage.
+        figure.current === undefined ? "py-7 sm:py-9" : "pt-10 pb-7 sm:pt-11 sm:pb-9"
+      }`}
+    >
       <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-start">
         {figure.stages.map((stage, i) => {
           const Tile = pathTiles[Math.min(i, pathTiles.length - 1)];
+          const current = i === figure.current;
           return [
             i > 0 && (
               <div key={`to-${i}`} aria-hidden="true" className="flex h-[72px] items-center sm:h-24">
@@ -70,8 +78,13 @@ function PathFigure({ figure }: { figure: Extract<Figure, { figure: "path" }> })
               </div>
             ),
             <div key={i} className="flex flex-col items-center px-1 text-center">
-              <Tile />
-              <p className="mt-3 font-display text-[16px] leading-tight font-semibold text-navy-900 sm:text-lg">
+              <div className="relative">
+                {current && <YouAreHere />}
+                <Tile />
+              </div>
+              <p
+                className={`mt-3 font-display text-[16px] leading-tight font-semibold sm:text-lg ${current ? "text-teal-700" : "text-navy-900"}`}
+              >
                 {stage.title}
               </p>
               <p className="mt-1 text-[13px] leading-5 text-balance text-slate-500 sm:text-[15px] sm:leading-6">
@@ -82,6 +95,26 @@ function PathFigure({ figure }: { figure: Extract<Figure, { figure: "path" }> })
         })}
       </div>
     </div>
+  );
+}
+
+/** The stage the guide is about: a ring around its tile, and a pin dropped on it. */
+function YouAreHere() {
+  return (
+    <>
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -inset-[7px] rounded-[25px] border-2 border-dashed border-teal-600/60 sm:rounded-[31px]"
+      />
+      <svg
+        viewBox="0 0 24 30"
+        aria-hidden="true"
+        className="pointer-events-none absolute start-1/2 -top-[31px] h-[26px] w-[21px] -translate-x-1/2 select-none drop-shadow-[0_3px_5px_rgb(15_42_68_/_0.22)] rtl:translate-x-1/2 sm:-top-[34px] sm:h-[29px] sm:w-6"
+      >
+        <path d="M12 28.5S2.5 19.6 2.5 12a9.5 9.5 0 0 1 19 0c0 7.6-9.5 16.5-9.5 16.5Z" fill={C.teal} stroke="#fff" strokeWidth="2" strokeLinejoin="round" />
+        <circle cx="12" cy="12" r="3.6" fill="#fff" />
+      </svg>
+    </>
   );
 }
 
@@ -205,6 +238,246 @@ function HomeTile() {
       <circle cx="68" cy="68" r="14" fill={C.navy} />
       <circle cx="68" cy="68" r="11.5" fill={C.amber} />
       <path d={star(68, 68.6, 6.6)} fill="#fff" stroke="#fff" strokeWidth="0.8" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// ── A trip abroad, with the second sticker and without ──────────────────────
+
+function TripFigure({ figure }: { figure: Extract<Figure, { figure: "trip" }> }) {
+  return (
+    <div className="rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 p-2.5 sm:p-6">
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
+        {(["kept", "ended"] as const).map((way) => (
+          <div key={way} className="rounded-xl border border-line-200 bg-white p-1.5 sm:p-2.5">
+            <TripScene ended={way === "ended"} />
+            <div className="px-1.5 pt-2.5 pb-1.5 sm:px-2 sm:pt-3">
+              <p className="text-[14px] leading-5 font-semibold text-navy-900 sm:text-[15px] sm:leading-6">{figure[way].title}</p>
+              <p className="mt-1 text-[13px] leading-5 text-slate-600 sm:text-[15px] sm:leading-6">{figure[way].text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** A cloud with a flat bottom, its top-left corner at (x, y). */
+function Cloud({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) {
+  return (
+    <g transform={`translate(${x} ${y}) scale(${scale})`} fill="#fff">
+      <circle cx="8" cy="7.5" r="5" />
+      <circle cx="15" cy="6.5" r="6" />
+      <circle cx="21.5" cy="8.5" r="4" />
+      <rect x="8" y="7.5" width="13.5" height="5" />
+    </g>
+  );
+}
+
+/** A plane at (x, y), turned `angle` degrees from flying toward +x, on a halo so it sits over the route. */
+function Plane({ x, y, angle, scale = 0.72 }: { x: number; y: number; angle: number; scale?: number }) {
+  return (
+    <g transform={`translate(${x} ${y}) rotate(${angle}) scale(${scale}) translate(-27 -24)`}>
+      <g stroke="#fff" strokeWidth="5" strokeLinejoin="round" style={{ paintOrder: "stroke" }}>
+        {planeShape}
+      </g>
+    </g>
+  );
+}
+
+/** An ink stamp from passport control: an arrow out of the country, or back in. */
+function BorderStamp({ x, y, angle, back = false }: { x: number; y: number; angle: number; back?: boolean }) {
+  return (
+    <g transform={`translate(${x} ${y}) rotate(${angle})`} fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="-9" y="-5.5" width="18" height="11" rx="2.5" stroke={back ? C.navy : C.teal700} strokeOpacity="0.5" strokeWidth="1.2" />
+      <path
+        d={back ? "M4 0h-8m2.6-2.6L-4 0l2.6 2.6" : "M-4 0h8M1.4-2.6 4 0l-2.6 2.6"}
+        stroke={back ? C.navy : C.teal700}
+        strokeOpacity="0.6"
+        strokeWidth="1.3"
+      />
+    </g>
+  );
+}
+
+/**
+ * A visa sticker on a passport page: a colored band, then the photo and the
+ * holder's details, or (`roundTrip`) the inter-visa's two arrows.
+ */
+function VisaSticker({ x, y, band, roundTrip = false, id }: { x: number; y: number; band: string; roundTrip?: boolean; id: string }) {
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <defs>
+        <clipPath id={`${id}-clip`}>
+          <rect width="40" height="31" rx="2.5" />
+        </clipPath>
+        <linearGradient id={`${id}-holo`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor={C.amber} />
+          <stop offset="0.5" stopColor="#f2d9a6" />
+          <stop offset="1" stopColor={C.teal} />
+        </linearGradient>
+      </defs>
+      <rect width="40" height="31" rx="2.5" fill="#fff" stroke={C.line} strokeWidth="0.8" />
+      <g clipPath={`url(#${id}-clip)`}>
+        <rect width="40" height="7" fill={band} />
+        {/* A faint security pattern across the sticker. */}
+        <path
+          d="M0 25q5-3 10 0t10 0 10 0 10 0M0 28q5-3 10 0t10 0 10 0 10 0"
+          fill="none"
+          stroke={band}
+          strokeOpacity="0.1"
+          strokeWidth="0.8"
+        />
+      </g>
+      <circle cx="4" cy="3.5" r="1.5" fill={C.amber} />
+      <rect x="8" y="2.8" width="12" height="1.4" rx="0.7" fill="#fff" fillOpacity="0.6" />
+      {roundTrip ? (
+        <g fill="none" stroke={C.teal} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5.4 16.2a5.6 5.6 0 0 1 10.3-1.8" />
+          <path d="m16.3 11.6-.6 2.8-2.8-.5" />
+          <path d="M16.2 19.3a5.6 5.6 0 0 1-10.3 1.8" />
+          <path d="m5.3 23.9.6-2.8 2.8.5" />
+        </g>
+      ) : (
+        <>
+          <rect x="3" y="10" width="10" height="13" rx="1.5" fill={C.teal100} />
+          <circle cx="8" cy="14.6" r="2.4" fill={C.teal} />
+          <path d="M4.4 23a3.6 3.6 0 0 1 7.2 0Z" fill={C.teal} />
+        </>
+      )}
+      <rect x="16" y="11" width="18" height="2.2" rx="1.1" fill={C.navy} />
+      <rect x="16" y="15.5" width="13" height="1.8" rx="0.9" fill={C.slate300} />
+      <rect x="16" y="19.5" width="15" height="1.8" rx="0.9" fill={C.slate300} />
+      <circle cx="34.5" cy="20" r="3.1" fill={`url(#${id}-holo)`} fillOpacity="0.85" />
+      {/* The machine-readable line. */}
+      <g fill={C.slate300}>
+        {Array.from({ length: 12 }, (_, k) => (
+          <circle key={k} cx={3.5 + k * 3} cy="27.5" r="0.6" />
+        ))}
+      </g>
+    </g>
+  );
+}
+
+/**
+ * A passport, open on its visa pages, beside a dotted flight out to a globe.
+ * Kept: two stickers, an exit and an entry stamp, and the flight back. Ended:
+ * the inter-visa's place is empty, the B/1 is stamped void, and the plane
+ * only flies out.
+ */
+function TripScene({ ended }: { ended: boolean }) {
+  const id = ended ? "gf-trip-ended" : "gf-trip-kept";
+  const accent = ended ? C.terracotta : C.teal;
+  return (
+    <svg viewBox="0 0 240 136" aria-hidden="true" className="flip-rtl pointer-events-none block h-auto w-full select-none">
+      <defs>
+        <linearGradient id={`${id}-bg`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={ended ? "#fcf8f1" : "#f1f8f6"} />
+          <stop offset="1" stopColor={ended ? C.amber100 : C.teal100} />
+        </linearGradient>
+        <linearGradient id={`${id}-cover`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor={C.navy800} />
+          <stop offset="1" stopColor={C.navy} />
+        </linearGradient>
+        {/* The fold between the pages. */}
+        <linearGradient id={`${id}-fold`} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor={C.navy} stopOpacity="0" />
+          <stop offset="0.5" stopColor={C.navy} stopOpacity="0.13" />
+          <stop offset="1" stopColor={C.navy} stopOpacity="0" />
+        </linearGradient>
+        <clipPath id={`${id}-globe`}>
+          <circle cx="210" cy="70" r="15" />
+        </clipPath>
+      </defs>
+
+      <rect width="240" height="136" rx="10" fill={`url(#${id}-bg)`} />
+      <Cloud x={140} y={56} />
+      <Cloud x={204} y={20} scale={0.7} />
+      {ended && <Cloud x={176} y={104} scale={0.85} />}
+
+      {/* The passport's shadow on the ground. */}
+      <ellipse cx="68" cy="118" rx="48" ry="4.5" fill={C.navy} fillOpacity="0.08" />
+
+      <g transform="rotate(-6 66 72)">
+        <rect x="13" y="33" width="106" height="78" rx="7" fill={`url(#${id}-cover)`} />
+        <rect x="17" y="36.5" width="49" height="71" rx="4" fill="#fff" />
+        <rect x="66" y="36.5" width="49" height="71" rx="4" fill="#fdfbf7" />
+        <rect x="60" y="36.5" width="12" height="71" fill={`url(#${id}-fold)`} />
+        {/* The guilloche printed on every page. */}
+        <path
+          d="M21 96q4-3 8 0t8 0 8 0 8 0 8 0M21 101q4-3 8 0t8 0 8 0 8 0 8 0"
+          fill="none"
+          stroke={C.teal}
+          strokeOpacity="0.16"
+          strokeWidth="0.9"
+        />
+
+        <g opacity={ended ? 0.55 : 1}>
+          <VisaSticker id={`${id}-b1`} x={21.5} y={42} band={C.teal} />
+        </g>
+        {ended ? (
+          <>
+            {/* Where the inter-visa would be. */}
+            <rect x="70.5" y="42" width="40" height="31" rx="2.5" fill="none" stroke={C.slate300} strokeWidth="1.1" strokeDasharray="2.6 2.4" />
+            <BorderStamp x={82} y={90} angle={-8} />
+            {/* The B/1, stamped void. */}
+            <g transform="rotate(-16 41.5 57.5)" fill="none" stroke={C.terracotta}>
+              <rect x="25" y="49.5" width="33" height="16" rx="3" strokeWidth="1.9" />
+              <rect x="27.6" y="52.1" width="27.8" height="10.8" rx="1.8" strokeWidth="0.8" strokeOpacity="0.7" />
+              <path d="M31 57.5h21" strokeWidth="2" strokeLinecap="round" strokeDasharray="3.2 1.9" />
+            </g>
+          </>
+        ) : (
+          <>
+            <VisaSticker id={`${id}-inter`} x={70.5} y={42} band={C.navy} roundTrip />
+            <BorderStamp x={82} y={90} angle={-8} />
+            <BorderStamp x={102} y={86} angle={9} back />
+          </>
+        )}
+      </g>
+
+      {/* The globe: abroad. */}
+      <circle cx="210" cy="70" r="16.5" fill="#fff" />
+      <g clipPath={`url(#${id}-globe)`} fill="none" stroke={C.teal} strokeWidth="1.1" strokeOpacity="0.75">
+        <circle cx="210" cy="70" r="15" fill={C.teal100} stroke="none" />
+        <path d="M203 60.5c3 1.5 5.5.5 7.5 3s-1 5-3.5 6-4.5 4-2.5 7.5" fill={C.sage} stroke="none" />
+        <path d="M216 74c2.5-1 5 .5 6 3s-1.5 5-4 5.5-4-1.5-3.5-4" fill={C.sage} stroke="none" />
+        <ellipse cx="210" cy="70" rx="6.5" ry="15" />
+        <path d="M195 70h30M196 62h28M196 78h28" />
+      </g>
+      <circle cx="210" cy="70" r="15" fill="none" stroke={C.navy} strokeWidth="1.6" />
+
+      {/* Out: dotted, under the plane, ending in an arrow at the globe. */}
+      <path d="M124 46C146 16 182 16 197 54" fill="none" stroke={C.teal} strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.1 5.2" />
+      <path d="m192.6 51.4 4.6 3.4 1.2-5.6" fill="none" stroke={C.teal} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <Plane x={163} y={24.6} angle={5} />
+
+      {!ended && (
+        <>
+          {/* And back, home to the same visa. */}
+          <path d="M198 88C184 120 150 122 133 101" fill="none" stroke={C.teal} strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.1 5.2" />
+          <path d="m133.6 106.4-.9-5.6 5.6-.5" fill="none" stroke={C.teal} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <Plane x={166.5} y={114} angle={171} />
+        </>
+      )}
+
+      {/* The verdict, pinned to the passport's corner. */}
+      <circle cx="113" cy="106" r="12.5" fill="#fff" />
+      <circle cx="113" cy="106" r="10.5" fill={accent} />
+      {ended ? (
+        <path d="M109.2 102.2l7.6 7.6M116.8 102.2l-7.6 7.6" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
+      ) : (
+        // A check reads only one way round: turned back when the scene mirrors.
+        <path
+          d="m108.2 106.3 3.3 3.3 6.4-6.7"
+          fill="none"
+          stroke="#fff"
+          strokeWidth="2.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="origin-center [transform-box:fill-box] rtl:-scale-x-100"
+        />
+      )}
     </svg>
   );
 }
@@ -483,6 +756,16 @@ function IconTile({ name, className }: { name: FigureIcon; className: string }) 
   );
 }
 
+/** A plane seen from above, nose toward +x, centered near (27, 24). */
+const planeShape = (
+  <>
+    <path d="M14 24c0-1.4 1-2.4 2.4-2.4H36c2.2 0 4.4 1.1 4.4 2.4s-2.2 2.4-4.4 2.4H16.4C15 26.4 14 25.4 14 24Z" fill={C.navy} />
+    <path d="M29 22 22.5 11.5h-3L24 22ZM29 26l-6.5 10.5h-3L24 26Z" fill={C.navy} />
+    <path d="M18.5 22.2 14.5 17h-2l2 5.2ZM18.5 25.8 14.5 31h-2l2-5.2Z" fill={C.navy} />
+    <rect x="33" y="23.2" width="3.4" height="1.6" rx="0.8" fill={C.amber} stroke="none" />
+  </>
+);
+
 const heart = "M22 35.5c-.6-.4-11-6.6-11-14.2A5.9 5.9 0 0 1 22 18.4a5.9 5.9 0 0 1 11 2.9c0 7.6-10.4 13.8-11 14.2Z";
 
 const icons: Record<FigureIcon, ReactNode> = {
@@ -524,10 +807,7 @@ const icons: Record<FigureIcon, ReactNode> = {
   plane: (
     <g transform="rotate(-28 24 24) translate(-3 0)">
       <path d="M5 24h7" stroke={C.teal} strokeWidth="2" strokeLinecap="round" strokeDasharray="0.1 3.6" />
-      <path d="M14 24c0-1.4 1-2.4 2.4-2.4H36c2.2 0 4.4 1.1 4.4 2.4s-2.2 2.4-4.4 2.4H16.4C15 26.4 14 25.4 14 24Z" fill={C.navy} />
-      <path d="M29 22 22.5 11.5h-3L24 22ZM29 26l-6.5 10.5h-3L24 26Z" fill={C.navy} />
-      <path d="M18.5 22.2 14.5 17h-2l2 5.2ZM18.5 25.8 14.5 31h-2l2-5.2Z" fill={C.navy} />
-      <rect x="33" y="23.2" width="3.4" height="1.6" rx="0.8" fill={C.amber} />
+      {planeShape}
     </g>
   ),
   translation: (

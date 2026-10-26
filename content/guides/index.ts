@@ -93,6 +93,8 @@ export function blockTexts(block: GuideBlock): string[] {
   switch (block.figure) {
     case "path":
       return [...block.stages.flatMap((s) => [s.title, s.text]), block.caption];
+    case "trip":
+      return [block.kept.title, block.kept.text, block.ended.title, block.ended.text, block.caption];
     case "years":
       return [...Object.values(block.legend), ...block.tracks.flatMap((t) => [t.name, t.total]), block.caption];
     case "routes":
@@ -118,7 +120,9 @@ export function blockShape(block: GuideBlock): string {
   if ("note" in block) return "note";
   switch (block.figure) {
     case "path":
-      return `path:${block.stages.length}`;
+      return `path:${block.stages.length}${block.current === undefined ? "" : `@${block.current}`}`;
+    case "trip":
+      return "trip";
     case "years":
       return `years:${block.tracks.map((t) => `${t.b1}/${t.a5}`).join(",")}`;
     case "routes":

@@ -328,14 +328,14 @@ export const guidesEn: Guides = {
     },
 
     "b1-visa": {
-      metaTitle: "B/1 Visa in Israel for Partners of Israelis",
+      metaTitle: "B/1 (B1) Visa in Israel for Partners of Israelis (2026)",
       description:
-        "Partners of Israelis get B/1 general, the unrestricted form of Israel's work visa. What it allows, how long it lasts for married and common-law couples, and how you move to A/5.",
+        "B/1 (B1) general is the first visa partners of Israelis get: work in any field, but no public health insurance. How long it lasts, what it costs, the inter-visa, and moving up to A/5.",
       facts: ["Work in any field", "Up to 6 months or 3 years"],
       title: "The B/1 visa for partners of Israelis",
       answer:
-        "B/1 is Israel's work visa. **Partners of Israelis get it in its general form, B/1 general** (ב/1 כללי), marked \"partner\": the foreign partner can live in Israel with you and work in any field, as an employee or self-employed. Foreign workers get a restricted B/1, for one employer or field. Married couples are on B/1 for up to 6 months, common-law couples for 3 years, before moving up to A/5.",
-      updated: "2026-10-05",
+        "B/1 (ב/1, often written B1) is Israel's work visa. **Partners of Israelis get it in its general form, B/1 general** (ב/1 כללי), marked \"partner\": the foreign partner can live in Israel with you and work in any field, as an employee or self-employed. Foreign workers get a restricted B/1, for one employer or field. Married couples are on B/1 for up to 6 months, common-law couples for 3 years, before moving up to A/5. It costs 205 NIS (2026), doesn't come with public health insurance, and needs a second sticker, the inter-visa, to stay valid when the foreign partner travels abroad.",
+      updated: "2026-10-26",
       sections: [
         {
           id: "two-b1",
@@ -364,6 +364,64 @@ export const guidesEn: Guides = {
                 "**No public health insurance.** A B/1 holder isn't a resident for National Insurance. Public health insurance starts with A/5.",
               ],
             },
+          ],
+        },
+        {
+          id: "getting-it",
+          heading: "Getting the B/1",
+          body: [
+            {
+              figure: "routes",
+              routes: [
+                {
+                  icon: "home",
+                  title: "The foreign partner is in Israel",
+                  steps: [
+                    "You both come to the first appointment, with the original documents",
+                    "The foreign partner files form AS/3",
+                    "Married: the B/1 at that appointment. Common-law: an interview first",
+                  ],
+                },
+                {
+                  icon: "plane",
+                  title: "The foreign partner is abroad",
+                  steps: [
+                    "They come with the entry permit, on a B/2 visa",
+                    "Tell your branch as soon as they arrive",
+                    "The office calls you in, or sets a date for an interview",
+                  ],
+                },
+              ],
+              end: {
+                icon: "passport",
+                title: "The B/1, a sticker in the passport",
+                text: "205 NIS in 2026, by credit card only. Ask for the inter-visa too.",
+              },
+              caption: "Two ways to the B/1: from Israel, or after coming in with the entry permit.",
+            },
+            "**If the foreign partner is in Israel,** you both come to the first appointment with the original documents, and the foreign partner files [form AS/3](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf) to change their visa.",
+            {
+              list: [
+                "**Married couples:** if all the documents are there, the B/1 is issued at that appointment, without an interview. An office that asks a married couple with a complete file for an interview first is going against procedure 5.2.0008.",
+                "**Common-law couples:** you're interviewed first. By procedure 5.2.0009 (clause 10, page 16), the interview is held, whenever possible, at the appointment where you show the original documents: ask for it. Otherwise, the wait for an interview often passes 6 months, and at the busiest branches it can reach a year.",
+              ],
+            },
+            "**If the foreign partner is abroad,** they come to Israel with [the entry permit](guide:entry-permit) and enter on a B/2 visa. Tell your branch as soon as they arrive: the office then calls you in to get the B/1, or sets a date for an interview.",
+            "The B/1 is a sticker in the passport, issued and signed by your branch. In 2026 it costs 205 NIS, by credit card only.",
+          ],
+        },
+        {
+          id: "inter-visa",
+          heading: "Ask for the inter-visa too",
+          body: [
+            "Without the inter-visa (אינטר ויזה), leaving Israel ends the B/1. It's a second sticker that keeps the main visa valid when the foreign partner travels abroad. Partners in the gradual process get it without trouble, with the same validity as the main visa, for another 205 NIS (2026).",
+            {
+              figure: "trip",
+              kept: { title: "With the inter-visa", text: "Travel abroad, and come back on the same B/1" },
+              ended: { title: "Without it", text: "Leaving Israel ends the B/1" },
+              caption: "The inter-visa: a second sticker that keeps the B/1 valid when the foreign partner travels.",
+            },
+            { note: "Get the inter-visa with the B/1, even if you don't plan to travel." },
           ],
         },
         {
@@ -397,35 +455,23 @@ export const guidesEn: Guides = {
               },
             },
             "A common-law couple offered only 6 months can point the clerk to procedure 5.2.0009.",
-          ],
-        },
-        {
-          id: "getting-it",
-          heading: "Getting the B/1",
-          body: [
-            "**If the foreign partner is in Israel,** you both come to the first appointment with the original documents, and the foreign partner files [form AS/3](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf) to change their visa.",
-            {
-              list: [
-                "**Married couples:** if all the documents are there, the B/1 is issued at that appointment, without an interview. An office that asks a married couple with a complete file for an interview first is going against procedure 5.2.0008.",
-                "**Common-law couples:** you're interviewed first. By procedure 5.2.0009 (clause 10, page 16), the interview is held, whenever possible, at the appointment where you show the original documents: ask for it. At the busiest branches, the wait for an interview can otherwise reach a year.",
-              ],
-            },
-            "**If the foreign partner is abroad,** they come to Israel with [the entry permit](guide:entry-permit) and enter on a B/2 visa. Tell your branch as soon as they arrive: the office then calls you in to get the B/1, or sets a date for an interview.",
-            "The B/1 is a sticker in the passport, issued and signed by your branch. In 2026 it costs 205 NIS, by credit card only.",
-          ],
-        },
-        {
-          id: "inter-visa",
-          heading: "Ask for the inter-visa too",
-          body: [
-            "Without the inter-visa (אינטר ויזה), leaving Israel ends the B/1. It's a second sticker that keeps the main visa valid when the foreign partner travels abroad. Partners in the gradual process get it without trouble, with the same validity as the main visa, for another 205 NIS (2026).",
-            { note: "Get the inter-visa with the B/1, even if you don't plan to travel." },
+            "For married couples, the B/1 is a status in between, while the office checks your file and interviews you. By procedure 5.2.0008, it isn't counted in the gradual process: the 4 years start with the A/5.",
           ],
         },
         {
           id: "to-a5",
           heading: "Moving up to A/5",
           body: [
+            {
+              figure: "path",
+              stages: [
+                { title: "B/1", text: "Live and work in Israel" },
+                { title: "A/5", text: "An Israeli ID number and health insurance" },
+                { title: "Permanent status", text: "Citizenship or permanent residency" },
+              ],
+              current: 0,
+              caption: "B/1 is the foreign partner's first visa, before A/5 and permanent status.",
+            },
             "Married couples move up to A/5 after up to 6 months on B/1, once they're interviewed. Common-law couples move up after 3 years. If you marry while on B/1, you move to the married track. [All about the A/5 visa](guide:a5-visa)",
           ],
         },
@@ -436,8 +482,16 @@ export const guidesEn: Guides = {
           a: "Yes. The partner B/1 (ב/1 כללי) is an unrestricted work visa: any field, as an employee or self-employed.",
         },
         {
+          q: "Is B1 the same as B/1?",
+          a: "Yes. It's the same visa, written either way. In Hebrew it's ב/1, said \"bet achat\", and the partner's B/1 is ב/1 כללי, B/1 general.",
+        },
+        {
           q: "Does B/1 include health insurance?",
           a: "No. A B/1 holder isn't a resident for National Insurance, so they need private health insurance until A/5.",
+        },
+        {
+          q: "Can my partner join my health fund?",
+          a: "Not as a member of the public health insurance while on a B/1. But Clalit and Meuhedet offer a private partner's plan to the partner of a member of that fund, married or not.",
         },
         {
           q: "How much does the B/1 visa cost?",
@@ -446,6 +500,10 @@ export const guidesEn: Guides = {
         {
           q: "How long is a B/1 visa valid?",
           a: "Married couples usually get 6 months, the time the office has to interview them and decide on the A/5. Common-law couples usually get a year, and are on B/1 for 3 years.",
+        },
+        {
+          q: "Do the months on B/1 count toward the process?",
+          a: "For married couples, no: the B/1 is a status in between, for up to 6 months, while the office checks your file and interviews you, and the 4 years start with the A/5 (procedure 5.2.0008). For common-law couples, the 3 years on B/1 are part of the process, before the 4 years on A/5.",
         },
         {
           q: "What is the inter-visa?",

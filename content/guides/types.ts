@@ -42,6 +42,15 @@ export type GuideFigure =
       /** The visas in order, each with what it makes possible. */
       figure: "path";
       stages: { title: string; text: string }[];
+      /** The stage the guide is about, marked "you are here" (an index into `stages`). */
+      current?: number;
+      caption: GuideText;
+    }
+  | {
+      /** A trip abroad on a visa: with the second sticker it's `kept`, without it it's `ended`. */
+      figure: "trip";
+      kept: { title: string; text: string };
+      ended: { title: string; text: string };
       caption: GuideText;
     }
   | {

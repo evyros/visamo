@@ -595,7 +595,7 @@ export const processEn: ProcessTexts = {
         {
           tone: "important",
           title: "Ask for the inter-visa too",
-          text: "The inter-visa (אינטר ויזה) is a second sticker that keeps the B/1 valid when the foreign partner travels abroad: without it, leaving Israel ends the visa. It's another 205 NIS. Get it with the visa, even if you don't plan to travel.",
+          text: "The inter-visa (אינטר ויזה), sometimes called a re-entry visa, is a second sticker that keeps the B/1 valid when the foreign partner travels abroad: without it, leaving Israel ends the visa. It's another 205 NIS. Get it with the visa, even if you don't plan to travel.",
         },
         {
           tone: "info",

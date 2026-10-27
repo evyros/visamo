@@ -55,8 +55,10 @@ of your financial situation.
 
 ### Technical problems with the online form
 
-If the online form won't move on, for example to the declaration and the
-payment after you've uploaded everything, or it shows an error:
+It's common for the online form to get stuck: many couples run into it, and
+it usually doesn't mean you did something wrong. If the form won't move on,
+for example to the declaration and the payment after you've uploaded
+everything, or it shows an error:
 
 - Check that every required field has a file, and that the files' format and
   total size are within the limits above. Over the size limit, the form can

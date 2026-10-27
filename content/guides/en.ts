@@ -33,7 +33,7 @@ export const guidesEn: Guides = {
       title: "The Israel partner visa: how it works",
       answer:
         "The foreign partner of an Israeli gets status in Israel through the **gradual process** (ההליך המדורג): a few years on temporary visas before permanent status. The foreign partner usually starts on a **B/1** visa, which lets them live and work in Israel, moves up to **A/5** temporary residency, and at the end gets citizenship or permanent residency. Married and common-law couples, same-sex couples included, can all apply.",
-      updated: "2026-10-05",
+      updated: "2026-10-22",
       sections: [
         {
           id: "how-long",

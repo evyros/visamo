@@ -80,7 +80,8 @@ or someone else. The money goes back to the guarantor. By procedure
   cancelled check or a bank account confirmation (אישור ניהול חשבון) for the
   Israeli account the money will go back to. The guarantor signs a consent
   form (טופס הסכמה להפקדת ערובה) and gets a copy stamped as received. In
-  practice, you can do it by email instead, at Arvuyot45@piba.gov.il: send
+  practice, you can do it by email instead, at Arvuyot45@piba.gov.il, which
+  usually answers fast: send
   the decision, a copy of the foreign partner's passport, the Israeli
   partner's Teudat Zehut and the bank account confirmation, and pay the
   voucher (שובר) the unit sends back, online by credit card or at a Postal

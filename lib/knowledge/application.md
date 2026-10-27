@@ -69,6 +69,9 @@ everything, or it shows an error:
 - Save the form instead of refreshing the page, so you don't have to upload
   everything again.
 
+**Can I just go to the branch and have them fix it?**
+Yes, but it's a common problem with the online form, so first try the steps
+above: check the files, use a computer, and try another browser or network.
 If it still won't work, email your branch a screenshot, with both your names
 and ID or passport numbers. If they don't answer, go at the walk-in hours,
 early, with the screenshot and your documents printed. Filing is online, so

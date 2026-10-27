@@ -53,6 +53,26 @@ it, with your ID or passport number, whenever you contact the office.
 exemption under procedure 5.1.0003, in person at the branch, with full proof
 of your financial situation.
 
+### Technical problems with the online form
+
+If the online form won't move on, for example to the declaration and the
+payment after you've uploaded everything, or it shows an error:
+
+- Check that every required field has a file, and that the files' format and
+  total size are within the limits above. Over the size limit, the form can
+  stop without showing an error.
+- Use a computer, not a phone.
+- Try a private window, another browser, or another network (such as your
+  phone's hotspot).
+- Save the form instead of refreshing the page, so you don't have to upload
+  everything again.
+
+If it still won't work, email your branch a screenshot, with both your names
+and ID or passport numbers. If they don't answer, go at the walk-in hours,
+early, with the screenshot and your documents printed. Filing is online, so
+the branch may send you back to the form; in practice, a clerk can sometimes
+fix the problem in your file, or take the documents on paper.
+
 ## After you file
 
 - **A foreign partner abroad waits abroad.** From the moment you file, they

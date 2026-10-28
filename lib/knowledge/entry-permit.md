@@ -6,6 +6,9 @@ here. People often call it the "hazmana" (הזמנה, the invitation), and also
 the "asmachta" (אסמכתא). If the foreign partner is already in Israel, the
 process starts there instead: see [first-appointment.md](first-appointment.md).
 
+This is for when you mean to start the process. For a visit only, where the
+foreign partner goes home at the end of it, see [visiting.md](visiting.md).
+
 ## Two ways to get it
 
 - **The Israeli partner lives in Israel:** you file the application online,
@@ -18,23 +21,29 @@ process starts there instead: see [first-appointment.md](first-appointment.md).
   country, before anything is filed in Israel, and you file after you
   arrive. See [both-abroad.md](both-abroad.md).
 
-## Don't come as a tourist instead
+## Coming as a tourist and filing here
 
 The foreign partner can come to Israel as a tourist when the purpose is a
-visit. If the purpose is to stay and live together in Israel, they need the
-entry permit first: coming as a tourist with that intention, without the
-permit, goes against Israel's immigration policy.
+visit (see [visiting.md](visiting.md)). If the purpose is to stay and live
+together in Israel, the recommended way is the entry permit: you ask for it
+while the foreign partner waits abroad, and they come once it's granted.
 
-Being apart for months while you wait is hard, and many couples try to skip
-it: the foreign partner comes to Israel as a tourist, and you start the
-process once they're here. That isn't the process. It expects a foreign
-partner who lives abroad to wait abroad until the entry permit is granted.
+Being apart for months while you wait is hard, and many couples skip it: the
+foreign partner comes to Israel as a tourist, and you start the process once
+they're here. It's possible, but less recommended: the process expects a
+foreign partner who lives abroad to wait abroad until the entry permit is
+granted, and the office may look more closely at your case (below).
 
 In practice, a foreign partner who comes alone as a tourist, with a return
 ticket, is usually let in at border control. Border control looks at their
 previous visits (how often they came and how long they stayed), their return
 ticket and their hotel booking. If it suspects they came to stay in Israel,
-or to start the application here, they're refused entry.
+or to start the application here, they're refused entry (see "If entry is
+refused at the border" in [visiting.md](visiting.md)).
+
+Never come on a tourist invitation (Misrad Hapnim's approval of a visit in
+advance) to start the process: see "Never start the process after a tourist
+invitation" in [visiting.md](visiting.md).
 
 - **If you both live abroad:** don't fly in together as tourists. In
   practice, a foreign partner who arrives with the Israeli partner without
@@ -48,14 +57,17 @@ or to start the application here, they're refused entry.
 ### If the foreign partner lives abroad but is in Israel as a tourist
 
 A couple can still file while the foreign partner is in Israel on a tourist
-visa. File before it expires. Misrad Hapnim should extend their visa while
+visa (except when they came on a tourist invitation). File before it
+expires. Misrad Hapnim should extend their visa while
 the application is processed: ask for it at the branch's walk-in hours,
 early in the morning. See "On another visa" in
 [first-appointment.md](first-appointment.md).
 
 However, the office always sees it as a problem that you didn't go through
 the formal procedure. There are no formal consequences, but it may look more
-closely at your case.
+closely at your case. If they came on a tourist invitation, don't file
+during that visit: see "Never start the process after a tourist invitation"
+in [visiting.md](visiting.md).
 
 This is only before you've filed: once you have, the foreign partner can't
 come until the entry permit is granted (above).
@@ -114,37 +126,3 @@ one-way ticket.
   once the foreign partner is in Israel.
 - **If you both live abroad:** you file the full application online after
   you arrive: see [both-abroad.md](both-abroad.md).
-
-## Visiting before you file
-
-**Approving a visit in advance.** No foreigner has an automatic right to
-enter Israel, and an approved ETA-IL doesn't guarantee entry. Having an
-Israeli partner isn't a reason to refuse entry, but border control may
-suspect the visitor means to stay. The risk is higher for a citizen of a
-non-Western country, on a first visit, after frequent or long visits, for a
-young visitor, and with weak ties at home (no job, home or lease there). If
-several of these apply, or the foreign partner was refused entry before, the
-Israeli partner can ask Misrad Hapnim to approve the visit in advance (a
-tourist invitation):
-
-- They apply at the visa department of their branch, at least 21 working
-  days before the visit.
-- The office may ask for a deposit, to guarantee the visitor leaves on time.
-  It's returned once they leave. In practice it's often around 15,000 NIS:
-  see [deposit.md](deposit.md) for how it's paid.
-- It's a separate request from the entry permit, though both are called an
-  "invitation" (הזמנה).
-- Some branches say it isn't needed for a visa-exempt country, since there's
-  ETA-IL. You're entitled to it: ETA-IL doesn't guarantee entry.
-
-**Flights.** Without an entry permit, some airlines won't fly a foreigner to
-Israel without a return ticket.
-
-**If entry is refused at the border.** The foreign partner is flown back,
-and should be given a paper with the decision. They have 30 days to appeal
-to the Appeals Tribunal (בית הדין לעררים), even if they got no paper. The fee
-is 774 NIS (2026), and the appeal needs an affidavit signed before a lawyer:
-in practice, hire an immigration lawyer. The Authority can go on with the
-removal after you appeal, unless the tribunal orders it to stop. After a
-refusal, every later entry needs approval in advance (a tourist invitation
-or a visa), but you can still start the partner process.

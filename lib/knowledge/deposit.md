@@ -142,6 +142,6 @@ the foreign partner's obligation to leave.
 - **A visit approved in advance** (a tourist invitation): the office may ask
   for a deposit that the visitor will leave on time (procedure 5.4.0001
   §ה.9), returned once they leave. In practice it's often around 15,000 NIS,
-  paid to the same Guarantees Unit. See [entry-permit.md](entry-permit.md).
+  paid to the same Guarantees Unit. See [visiting.md](visiting.md).
 - **A birth before the foreign partner has public health insurance:** the
   hospital's deposit, see [pregnancy.md](pregnancy.md).

@@ -6,7 +6,8 @@ through the gradual process (ההליך המדורג).
 - [process.md](process.md): what the process is, how long it takes and how long each wait takes, and who it's for.
 - [application.md](application.md): filing the application online, and what happens while you wait.
 - [first-appointment.md](first-appointment.md): the first appointment at Misrad Hapnim, and the first visa.
-- [entry-permit.md](entry-permit.md): the entry permit a partner abroad needs before moving to Israel, the two ways to get it, and visiting before you file.
+- [entry-permit.md](entry-permit.md): the entry permit a partner abroad needs to come and start the process, and the two ways to get it.
+- [visiting.md](visiting.md): a visit only, as a tourist, without starting the process: showing it's a visit, a refusal at the border, and the tourist invitation.
 - [interview.md](interview.md): the interview, and how to prepare for it.
 - [deposit.md](deposit.md): the deposit (ערבות) the office sometimes asks for, how to pay it, and how to get it back.
 - [both-abroad.md](both-abroad.md): when you both live abroad, starting at the Israeli consulate.

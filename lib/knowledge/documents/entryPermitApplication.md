@@ -115,8 +115,9 @@ In practice, usually 3 to 4 weeks from filing at the faster branches, and 2
 to 5 months at busy ones. It can't be predicted: see [entry-permit.md](../entry-permit.md).
 
 **Can my partner come to Israel as a tourist instead?**
-To visit, yes. To stay and live together in Israel, they need the entry
-permit first: see [entry-permit.md](../entry-permit.md).
+To visit, yes: see [visiting.md](../visiting.md). To stay and live together
+in Israel, they need the entry permit first: see
+[entry-permit.md](../entry-permit.md).
 
 **What happens when my partner lands?**
 Tell your branch as soon as they arrive. The office calls you in to get the

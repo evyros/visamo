@@ -110,9 +110,10 @@ volunteer or work-holiday visa, a tourist visa):
   and bans other applications, but in 2025 the appeals tribunal ruled that
   the office must review a partner application while the partner stays in
   Israel. Show the office the ruling if it insists on leaving first.
-- **A tourist visa:** coming as a tourist to stay goes against Israel's
-  immigration policy (see
-  [entry-permit.md](entry-permit.md)). If the foreign partner is already here:
+- **A tourist visa:** coming as a tourist and filing here is possible, but
+  less recommended than the entry permit (see
+  [entry-permit.md](entry-permit.md)), and never after a tourist invitation.
+  If the foreign partner is already here:
   - **File quickly,** before their tourist visa expires.
   - **Ask the branch to extend their visa** so they can stay for the
     gradual process. Misrad Hapnim should extend it while the application

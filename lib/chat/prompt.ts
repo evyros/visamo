@@ -5,6 +5,7 @@ import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import type { Owner } from "@/lib/documents/catalog";
 import { awaitingDecision, awaitingEntryPermit, stageDefinitions, trackOf, type DatedStage, type Stage } from "@/lib/stages";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
+import { branchLoad, branchLoadText } from "@/lib/branch-load";
 import { findingText, type CheckFinding } from "@/lib/checks/result";
 import { caseChecks } from "@/lib/checks/store";
 import { loadKnowledge } from "@/lib/knowledge-base";
@@ -78,6 +79,8 @@ export async function casePrompt(caseId: string, userId: string) {
 
   const relationship = lines([
     ...relationshipLines(details.relationship, branch, t),
+    // For estimating their waits: the chat only, the document checker doesn't need it.
+    ["How busy their branch is", branch && branchLoadText[branchLoad[branch]]],
     // The stage as the couple sees it, and what it means.
     ["Stage in the process", `${steps[stage]}: ${stageDefinitions[stage].about}`],
     [

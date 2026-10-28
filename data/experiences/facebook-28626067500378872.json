@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28626067500378872",
+  "source_hash": "4e5a7f8b1e115789",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:35.257Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Barak Sason says that before they married he phoned Misrad Hapnim to ask how to extend his wife's visa and was told she had to fly to Italy to bring documents; once she left she was flagged and not allowed back.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28626935870292035"
+      ],
+      "author_id": "100000962295118",
+      "author_name": "Barak Sason",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-28T05:34:18.000Z"
+    }
+  ]
+}

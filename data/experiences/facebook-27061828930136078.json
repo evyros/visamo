@@ -1,0 +1,138 @@
+{
+  "source": "facebook",
+  "thread_id": "27061828930136078",
+  "source_hash": "fe025710b15a2055",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.106Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Enosh got no answer to emails or online requests about renewing his visa, went in person to Petah Tikva and was given an appointment only about a month out, close to visa expiry; the clerk said not to rely on email.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [
+        "email",
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27061828930136078",
+        "27062086436776994"
+      ],
+      "author_id": "100003518078840",
+      "author_name": "Enosh Almog",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-05-24",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Clerks advise coming in person rather than relying on email or online requests to get a renewal appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-24T06:59:49.000Z"
+    },
+    {
+      "summary": "Enosh's first visa renewal at Petah Tikva went fine: the office answered his email with an appointment date within two weeks.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27062086436776994"
+      ],
+      "author_id": "100003518078840",
+      "author_name": "Enosh Almog",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 14,
+          "ongoing": false,
+          "text": "בחידוש הראשון לא הייתה בעייה לקח שבועיים עד שהגיבו עם תאריך"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-24T07:36:08.000Z"
+    },
+    {
+      "summary": "Alex always booked appointments at Petah Tikva through the online form without problems, gets a confirmation email, and says it takes weeks just to get the appointment so it should be done 3 months ahead.",
+      "branch": "petah-tikva",
+      "branch_text": "פ\"ת",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27061957733456531"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sends a confirmation email after the online appointment form and asks to reply if no answer arrives within X business days",
+        "Takes weeks to set an appointment, so book at least 3 months ahead"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-24T07:18:12.000Z"
+    }
+  ]
+}

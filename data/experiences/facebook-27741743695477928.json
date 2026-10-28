@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27741743695477928",
+  "source_hash": "d961ef7e6844ea59",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.917Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marlon, a Brazilian foreign spouse, submitted a married-partner application and PIBA replied listing missing documents, including an updated marriage registration in the population registry, although the couple believed they had submitted the MR/6.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27741743695477928",
+        "27743200041998960"
+      ],
+      "author_id": "61586095950405",
+      "author_name": "Marlon Do Couto",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-07-20",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T13:16:43.000Z"
+    }
+  ]
+}

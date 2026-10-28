@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28631189949866627",
+  "source_hash": "9bfd96345c442785",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:35.599Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yaniv came to Misrad Hapnim without the original notarized document, was sent home to arrange it and given a new appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28631189949866627"
+      ],
+      "author_id": "100000368121182",
+      "author_name": "Yaniv Lifshitz",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires the original notarized document at the appointment, not a copy."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-28T14:41:28.000Z"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27682680288050936",
+  "source_hash": "f3ba17069a52c827",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.588Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta Zuliani says her clerk at the Tel Aviv branch told her at her last appointment that the marriage must be registered in the home country at the end of the process, which another member says is outdated.",
+      "branch": "tel-aviv",
+      "branch_text": "Tlv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27683451731307125",
+        "27684129184572713"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-15T04:58:51.000Z"
+    }
+  ]
+}

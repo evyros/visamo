@@ -1,0 +1,194 @@
+{
+  "source": "facebook",
+  "thread_id": "27347243284927973",
+  "source_hash": "77a8c8c9b396e889",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:34.742Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Anna López says they were required to provide a Hebrew translation of a Spanish birth certificate even though French and English versions were on the next page.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27347370508248584"
+      ],
+      "author_id": "100000821775275",
+      "author_name": "Anna López",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires a Hebrew translation of a birth certificate even when it has English or French versions on a following page."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-15T11:35:43.000Z"
+    },
+    {
+      "summary": "Devi Marianne Vanhon says her Swiss birth certificate and civil status certificate in German were accepted without translation, only apostilled.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27347518938233741"
+      ],
+      "author_id": "830647765",
+      "author_name": "Devi Marianne Vanhon",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepted Swiss documents in German with an apostille and no translation."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-15T11:52:22.000Z"
+    },
+    {
+      "summary": "Manuela Gurtner says her Swiss documents, in German, French and English within the main fields, with an apostille, were all accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27359965960322372",
+        "27445883648397269"
+      ],
+      "author_id": "100003588653254",
+      "author_name": "Manuela Gurtner",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepted Swiss documents with English incorporated in the main fields, plus an apostille, without Hebrew translation."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-16T11:15:14.000Z"
+    },
+    {
+      "summary": "Wendy Feringa says that when their file was missing documents they had 45 days to send them, and when they were late the file was closed, though it was reopened with the same documents two months later during corona.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27361618843490417",
+        "27384565381195763"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives 45 days to send missing documents; the file is closed if they are late, and extra time is not guaranteed.",
+        "Whether untranslated foreign documents are accepted depends on the office and the clerk."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T14:08:19.000Z"
+    },
+    {
+      "summary": "Talya Ronen says the Krayot office accepts such documents without translation.",
+      "branch": "krayot",
+      "branch_text": "Krayot",
+      "channels": [],
+      "source_ids": [
+        "27402372472748387"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts documents that are partly in a foreign language without a Hebrew translation."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-19T18:59:19.000Z"
+    }
+  ]
+}

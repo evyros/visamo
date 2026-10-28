@@ -1,0 +1,122 @@
+{
+  "source": "facebook",
+  "thread_id": "28652986571020298",
+  "source_hash": "2a993e06fe76c49f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:36.250Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Grace DA Shimon got a birth certificate from the Netanya office without an appointment.",
+      "branch": "netanya",
+      "branch_text": "לשכת נתניה",
+      "channels": [
+        "in-person"
+      ],
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "source_ids": [
+        "28653059154346373",
+        "28653062104346078"
+      ],
+      "author_id": "100001375445680",
+      "author_name": "Grace DA Shimon",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues birth certificates without an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T08:52:24.000Z"
+    },
+    {
+      "summary": "Ariel Anisfeld says the birth certificate was issued only at the Population Authority office.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "source_ids": [
+        "28654330650885890"
+      ],
+      "author_id": "100000696596726",
+      "author_name": "Ariel Anisfeld",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-30T11:13:27.000Z"
+    },
+    {
+      "summary": "Niv Grinberg got a birth certificate from the office without an appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "source_ids": [
+        "28665346336450988"
+      ],
+      "author_id": "1274775551",
+      "author_name": "Niv Grinberg",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-01T08:09:00.000Z"
+    }
+  ]
+}

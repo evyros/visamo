@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "26991329317186040",
+  "source_hash": "a8f501b1d4515554",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:47.182Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yair Bashkanski and his wife, at the meeting to extend her B/1 after they left Israel, said they were between the Philippines and Israel and not continuing the gradual process, and were told she would get a one-year B/2 tourist visa with an inter-visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26991597330492572",
+        "26992311477087824"
+      ],
+      "author_id": "100075622262071",
+      "author_name": "Yair Bashkanski",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-18T06:53:13.000Z"
+    },
+    {
+      "summary": "Shlomit Sharoni's foreign husband, a researcher at the Hebrew University, was refused an expert visa because he was found to have intent to settle, after they had left in the last year of the gradual process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26993832110269094"
+      ],
+      "author_id": "600424123",
+      "author_name": "Shlomit Sharoni",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-18T11:10:43.000Z"
+    },
+    {
+      "summary": "Shlomit Sharoni and her husband restarted the process from abroad about three months before arriving, and it took him a month in Israel to get a work permit, with the university pressing on his behalf.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26993832110269094",
+        "27020068700978768"
+      ],
+      "author_id": "600424123",
+      "author_name": "Shlomit Sharoni",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-18T11:10:43.000Z"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "source": "facebook",
+  "thread_id": "27613277271657905",
+  "source_hash": "23ae5a9d0884c183",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:08.485Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aishwarya Ajmera applied to MH in May, but because her partner's address was old the application went to the wrong branch (Rehovot) and they are now trying to move the file to Beer Sheva.",
+      "branch": "rehovot",
+      "branch_text": "Rehovot",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27613277271657905",
+        "27613523738299925"
+      ],
+      "author_id": "61570906136180",
+      "author_name": "Aishwarya Ajmera",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-05",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-08T09:03:45.000Z"
+    },
+    {
+      "summary": "Roberta Zuliani transferred from Ramat Gan to Tel Aviv and waited 8 months for an appointment there because it depended on the new branch's availability, delaying her B1 to A5 upgrade.",
+      "branch": "tel-aviv",
+      "branch_text": "Tlv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27613384744980491",
+        "27613604101625222",
+        "27613617474957218"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "After a file is transferred between branches, the appointment depends on the new branch's availability; Tel Aviv is very busy and an appointment can take months"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-08T09:19:06.000Z"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "27489215284064105",
+  "source_hash": "b2dfbb48689bea49",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:04.113Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Guya Tammir says that for the first A5 renewal she got no guidance and then a message asking for 5 handwritten recommendations, from someone other than the clerk who handled her before.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27489215284064105"
+      ],
+      "author_id": "100002957730609",
+      "author_name": "Guya Tammir",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-27T08:48:08.000Z"
+    },
+    {
+      "summary": "Guya Tammir says that in the previous 3 meetings, handled by the same clerk, they never brought originals except birth and marriage certificates and sent pictures.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27489215284064105"
+      ],
+      "author_id": "100002957730609",
+      "author_name": "Guya Tammir",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-27T08:48:08.000Z"
+    }
+  ]
+}

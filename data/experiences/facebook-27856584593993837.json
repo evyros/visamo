@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27856584593993837",
+  "source_hash": "2fd513904d75d80b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:15.795Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liad Tzabari says he has invited his wife's parents to Israel every year for 10 years: 3 months on entry, then visa extensions up to a year at the local Population Authority office, which he says officials keep trying to make difficult.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27857410680577895"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Relatives enter for 3 months, then tourist visa extensions are given up to a year when there is a justified situation"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-30T11:50:45.000Z"
+    }
+  ]
+}

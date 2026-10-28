@@ -1,0 +1,79 @@
+{
+  "source": "facebook",
+  "thread_id": "26791746207144353",
+  "source_hash": "aff6d625512fa223",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.201Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Andrea Rada had a bad experience with the Netanya office and recommends moving to Kfar Saba.",
+      "branch": "netanya",
+      "branch_text": "this office",
+      "channels": [],
+      "source_ids": [
+        "26796953873290253"
+      ],
+      "author_id": "100003033336503",
+      "author_name": "Andrea Rada",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-02T05:13:57.000Z"
+    },
+    {
+      "summary": "Andrea Rada says the Kfar Saba office is better with international couples.",
+      "branch": "kfar-saba",
+      "branch_text": "kafar saba",
+      "channels": [],
+      "source_ids": [
+        "26796953873290253"
+      ],
+      "author_id": "100003033336503",
+      "author_name": "Andrea Rada",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-02T05:13:57.000Z"
+    }
+  ]
+}

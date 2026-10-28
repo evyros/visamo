@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27061649786820659",
+  "source_hash": "6bd064dc9b3daa4c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.154Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liel Shakarov passed the first interview and received an A5 visa, was given a temporary ID slip at the meeting, and the ID card is due by post in about a month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "27061649786820659"
+      ],
+      "author_id": "100004797126504",
+      "author_name": "Liel Shakarov",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the A5 at the first interview and a temporary ID slip at the meeting; the ID card arrives by post about a month later."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-24T06:34:17.000Z"
+    }
+  ]
+}

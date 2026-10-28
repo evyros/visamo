@@ -1,0 +1,152 @@
+{
+  "source": "facebook",
+  "thread_id": "28318835554435403",
+  "source_hash": "7b1a31523356ee9e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:28.231Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Małgorzata Napierała sent the online documents in April to the Tel Aviv branch, went in person twice and her partner emailed three times, with no progress or invitation for almost 5 months; an answer came only after writing to another mailbox.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "online",
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28318835554435403",
+        "28319069277745364",
+        "28325453237106968",
+        "28371829605802664"
+      ],
+      "author_id": "100000975133437",
+      "author_name": "Małgorzata Napierała",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-04",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 150,
+          "ongoing": true,
+          "text": "It has been almost 5 months!"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-05T05:57:06.000Z"
+    },
+    {
+      "summary": "Amy Double-Yoo submitted documents in March and heard nothing for 5 months despite her boyfriend visiting the office; a lawyer found an IT error had recorded the application as made in July.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "28320201460965479",
+        "28371765259142432"
+      ],
+      "author_id": "1652453048",
+      "author_name": "Amy Double-Yoo",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 150,
+          "ongoing": true,
+          "text": "We submitted the documents and heard nothing for 5 months"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-05T08:30:12.000Z"
+    },
+    {
+      "summary": "Vincent Coudron took 5 months to receive the invitation at the Eilat branch, which he describes as less busy.",
+      "branch": "eilat",
+      "branch_text": "Eilat",
+      "channels": [],
+      "source_ids": [
+        "28318971344421824"
+      ],
+      "author_id": "1092596056",
+      "author_name": "Vincent Coudron",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 150,
+          "ongoing": false,
+          "text": "took me 5 months to receive invitation in a less busy branch in Eilat"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-05T06:12:12.000Z"
+    }
+  ]
+}

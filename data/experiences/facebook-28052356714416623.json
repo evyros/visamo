@@ -1,0 +1,132 @@
+{
+  "source": "facebook",
+  "thread_id": "28052356714416623",
+  "source_hash": "321407ab13a3a727",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.260Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Post author applied in person about two months ago to invite his Colombian partner as a tourist; the clerk was kind and promised an answer within 40 days, but after two months with no answer an email said the request was for a future date and to update them a month before the flight, contradicting the clerk.",
+      "branch": null,
+      "branch_text": "visa department (מחלקת האשרות)",
+      "channels": [
+        "in-person",
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "28052356714416623",
+        "28052778001041161",
+        "28069729529346008"
+      ],
+      "author_id": "100000107224370",
+      "author_name": "שחר שגיא",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 60,
+          "ongoing": true,
+          "text": "עברו כאמור חודשיים (two months have passed, promised an answer within 40 days)"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Reaching the visa department requires arriving at 8 in the morning and waiting about two hours to get in"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-15T07:59:06.000Z"
+    },
+    {
+      "summary": "Michael Bassin says that in 2023 he tried, with a lawyer, to invite his then-partner (now wife) to Israel as a tourist and got an absolute refusal.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28052407704411524",
+        "28052451297740498"
+      ],
+      "author_id": "5313365",
+      "author_name": "Michael Bassin",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-15T08:04:51.000Z"
+    },
+    {
+      "summary": "Maya Mic recently attended a meeting at the visa department to invite her partner for a visit in September and was told by the clerk an answer would come within a month, possibly less.",
+      "branch": null,
+      "branch_text": "visa department",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28053802980938663"
+      ],
+      "author_id": "808749569",
+      "author_name": "Maya Mic",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-15T10:45:08.000Z"
+    }
+  ]
+}

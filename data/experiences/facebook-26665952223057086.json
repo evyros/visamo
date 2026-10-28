@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "26665952223057086",
+  "source_hash": "9683b2605b3e9e4c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.757Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shachar Tsarfaty's partner, in her first B/1 year, has a visa extension appointment at the end of May, with paperwork already submitted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26665952223057086"
+      ],
+      "author_id": "100004019387059",
+      "author_name": "Shachar Tsarfaty",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-21T06:19:36.000Z"
+    }
+  ]
+}

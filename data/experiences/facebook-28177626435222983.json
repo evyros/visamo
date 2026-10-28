@@ -1,0 +1,135 @@
+{
+  "source": "facebook",
+  "thread_id": "28177626435222983",
+  "source_hash": "3cb54f9b94653555",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:47:34.053Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Australian/British woman and her unmarried Israeli partner applied for B/1 at Tel Aviv in March 2026 and heard nothing in 5 months; he went to the office several times and was told the case was assigned to someone.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28177626435222983",
+        "28178101358508824",
+        "28180284704957156"
+      ],
+      "author_id": "1652453048",
+      "author_name": "Amy Double-Yoo",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 150,
+          "ongoing": true,
+          "text": "We have heard nothing since we made our application. 5 months now."
+        }
+      ],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-08-25T13:31:32.000Z"
+    },
+    {
+      "summary": "Israeli woman with a Dutch husband, at the Tel Aviv branch in a similar long wait, is working with a lawyer on a court appeal over the long separation of the married couple.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV branch",
+      "channels": [],
+      "source_ids": [
+        "28178165961835697"
+      ],
+      "author_id": "100008310431331",
+      "author_name": "Tamar Weisal",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-25T14:20:50.000Z"
+    },
+    {
+      "summary": "Advice that the Tel Aviv branch is super busy and tends to respond by email.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28178402908478669",
+        "28178407975144829"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tel Aviv is very busy.",
+        "Tel Aviv tends to be responsive by email."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-25T14:42:46.000Z"
+    }
+  ]
+}

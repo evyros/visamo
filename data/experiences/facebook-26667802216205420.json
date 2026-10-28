@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "26667802216205420",
+  "source_hash": "e18f1cfaf242fa82",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.478Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Siriwan received a message from the authority that, due to the security situation, her visa was automatically extended to 27/07/2026 with no need to come to the office, and asks about re-entering.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "26667802216205420",
+        "26668130536172588",
+        "26668156052836703"
+      ],
+      "author_id": "1132713202",
+      "author_name": "Siriwan Shvartz",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-04-21T10:23:01.000Z"
+    },
+    {
+      "summary": "Klara says some offices such as Tel Aviv allow coming without an appointment, where a window with little waiting updates the passport and ID card.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26679019478417027"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Takes walk-ins at a window without long waiting and updates the passport and ID card by hand"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-22T10:25:35.000Z"
+    }
+  ]
+}

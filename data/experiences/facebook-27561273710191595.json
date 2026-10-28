@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "27561273710191595",
+  "source_hash": "27bbeb78b31866b3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:06.940Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Carmelle Silberman filed for a B/1 extension only days before it expired while her American partner was abroad, and had not heard back from the office after the visa expired.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27561777720141194",
+        "27562014603450839"
+      ],
+      "author_id": "100000439373400",
+      "author_name": "Carmelle Silberman",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-07",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-03T15:25:43.000Z"
+    }
+  ]
+}

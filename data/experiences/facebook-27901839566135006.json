@@ -1,0 +1,183 @@
+{
+  "source": "facebook",
+  "thread_id": "27901839566135006",
+  "source_hash": "25a8ae16548453c2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.479Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At the Petah Tikva office for his father-in-law's tourist visa extension, the manager said she would not answer him because he had filed a complaint, and a clerk threatened to refuse unless he wrote a separate explanatory letter.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27901839566135006"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": "2026-08-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-03"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-03T13:55:17.000Z"
+    },
+    {
+      "summary": "Says the Petah Tikva office was professional and very sensitive toward them.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תיקווה",
+      "channels": [],
+      "source_ids": [
+        "27904944719157824"
+      ],
+      "author_id": "100000948146061",
+      "author_name": "Yara Niv-Burrell",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T14:31:51.000Z"
+    },
+    {
+      "summary": "Says their process at Petah Tikva was very positive.",
+      "branch": "petah-tikva",
+      "branch_text": "פ\"ת",
+      "channels": [],
+      "source_ids": [
+        "27905408262444803"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T15:22:15.000Z"
+    },
+    {
+      "summary": "About nine years ago the Tel Aviv office was terrible for them.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [],
+      "source_ids": [
+        "27925952647057031"
+      ],
+      "author_id": "601942452",
+      "author_name": "Ashley Inbal Gabriel",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2017",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-05T07:39:38.000Z"
+    },
+    {
+      "summary": "After moving to Petah Tikva about nine years ago they got warm treatment and the staff helped and smoothed things.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "27925952647057031"
+      ],
+      "author_id": "601942452",
+      "author_name": "Ashley Inbal Gabriel",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2017",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-05T07:39:38.000Z"
+    }
+  ]
+}

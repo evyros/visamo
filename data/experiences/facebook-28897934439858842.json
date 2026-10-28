@@ -1,0 +1,96 @@
+{
+  "source": "facebook",
+  "thread_id": "28897934439858842",
+  "source_hash": "33cff946035f347a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:38.051Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta's second A5 renewal at the Tel Aviv branch was split into a documents-check meeting and an interview days later; the clerk extended her visa 3 months 'as a precaution' with a 250 NIS fee, said no 2-year visas are issued and told her to move cities if she doesn't like it.",
+      "branch": "tel-aviv",
+      "branch_text": "Tlv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28897934439858842",
+        "28900774179574868",
+        "28900761612909458"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10-18"
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "interview",
+          "days": 4,
+          "ongoing": false,
+          "text": "The interview is this Thursday"
+        }
+      ],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "neutral",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Schedules two meetings for a renewal: a documents check, then an interview",
+        "Does not issue 2-year visas",
+        "Extends the visa 3 months before the interview and charges for it, with the next sticker free"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-18T08:45:18.000Z"
+    },
+    {
+      "summary": "Ekaterina was told by the office in August that 2-year visas are not issued yet, while others got them.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28900835896235363",
+        "28900896656229287"
+      ],
+      "author_id": "100075437182705",
+      "author_name": "Ekaterina Molchanova",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-10-18T13:41:54.000Z"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "source": "facebook",
+  "thread_id": "28043552775297017",
+  "source_hash": "53fabf9803d55c35",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.153Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Pavol Nagy, abroad, could not submit documents for the A5 renewal on the gov.il online form because of an error, and had no appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28043552775297017",
+        "28043585758627052"
+      ],
+      "author_id": "1346473653",
+      "author_name": "Pavol Nagy",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-14T15:34:45.000Z"
+    },
+    {
+      "summary": "Alon Maimon had the same online document-submission error last year and the office told them by email to bring the documents printed instead.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28043565961962365"
+      ],
+      "author_id": "685226508",
+      "author_name": "Alon Maimon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-14T15:36:05.000Z"
+    },
+    {
+      "summary": "Maya Ilani hit the same online upload error, went to the Tel Aviv branch, and after an hour a clerk changed something on her file so she could submit documents online.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV branch",
+      "channels": [
+        "online",
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28044173298568298",
+        "28076262092026085"
+      ],
+      "author_id": "703814643",
+      "author_name": "Maya Ilani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-14T16:32:20.000Z"
+    },
+    {
+      "summary": "Shiela Onod Siton got the same upload error for her renewal, was asked to bring all documents in person, and visited twice where they said it was a system error, still unable to upload before the appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28065201113132183"
+      ],
+      "author_id": "61591350653073",
+      "author_name": "Shiela Onod Siton",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T09:36:46.000Z"
+    }
+  ]
+}

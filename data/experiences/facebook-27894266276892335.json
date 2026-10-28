@@ -1,0 +1,79 @@
+{
+  "source": "facebook",
+  "thread_id": "27894266276892335",
+  "source_hash": "ed4b02e7f81755d4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:16.795Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Enno Raschke says they were asked for a landlord affidavit of residence, went with a landlord letter and phone number instead, and after some discussion it was accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27894357986883164"
+      ],
+      "author_id": "100000260807282",
+      "author_name": "Enno Raschke",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T14:47:20.000Z"
+    },
+    {
+      "summary": "Roberta Zuliani says they bring a landlord letter, a copy of the landlord's ID and phone number as proof of residence, and that was enough.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27894407586878204"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-02T14:52:54.000Z"
+    }
+  ]
+}

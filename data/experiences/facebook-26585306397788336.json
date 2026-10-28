@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "26585306397788336",
+  "source_hash": "6363ad8396b67ebc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:35.138Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aliona Smulkstys's husband's visa department appointment on March 5 was cancelled because of the war.",
+      "branch": null,
+      "branch_text": "מחלקת אשרות",
+      "channels": [],
+      "source_ids": [
+        "26585306397788336"
+      ],
+      "author_id": "100000379883810",
+      "author_name": "Aliona Smulkstys",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-03-05"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-13T11:06:50.000Z"
+    },
+    {
+      "summary": "At the Beer Sheva branch, Aliona Smulkstys's husband was told his tourist visa was not valid and he had to pay to extend it despite the war extension, the visit took 5 hours, and the visa sticker was issued with a wrong family name; their email about extra A/5 documents had gone unanswered.",
+      "branch": "beer-sheva",
+      "branch_text": "סניף באר שבע",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26585306397788336",
+        "26589010554084587",
+        "26589034817415494"
+      ],
+      "author_id": "100000379883810",
+      "author_name": "Aliona Smulkstys",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-13"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-13T11:06:50.000Z"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26912287948423511",
+  "source_hash": "3fce4855334d5b9c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:17.897Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ambra and partner married through Utah, emailed PIBA about it and got no response.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26912287948423511"
+      ],
+      "author_id": "100005502729051",
+      "author_name": "Ambra Anton",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T05:22:47.000Z"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "28091602397158721",
+  "source_hash": "ec0aeb4532d44784",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.046Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Talya Ronen finally registered her marriage to her Italian husband in Israel after a year of trying, supplying all documents requested over that year, though his name was not entered in her registry record.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28091602397158721"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T13:31:00.000Z"
+    },
+    {
+      "summary": "Rotem Lavi Kim says the same documents had to be submitted again at the start of the gradual process in Herzliya, after already submitting them for marriage registration.",
+      "branch": "herzliya",
+      "branch_text": "הרצליה",
+      "channels": [],
+      "source_ids": [
+        "28091856413799986"
+      ],
+      "author_id": "823036459",
+      "author_name": "Rotem Lavi Kim",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for the same documents again at the start of the gradual process even if they were submitted for marriage registration"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T13:51:24.000Z"
+    }
+  ]
+}

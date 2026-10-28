@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27426693466982954",
+  "source_hash": "834330cc4f161292",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:01.587Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Noam Kanner and his US partner, assigned to the Kiryat Ata branch, got an email setting a meeting to present original documents, with a request for additional bank and account documents.",
+      "branch": "krayot",
+      "branch_text": "סניף קרית אתא",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27426693466982954"
+      ],
+      "author_id": "100000021857839",
+      "author_name": "Noam Kanner",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-21T20:18:20.000Z"
+    }
+  ]
+}

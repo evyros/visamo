@@ -1,0 +1,82 @@
+{
+  "source": "facebook",
+  "thread_id": "27087331034252534",
+  "source_hash": "f05a5b116b81104a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:50.596Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yar Den and her partner are in Greece and Misrad Hapnim asked for an updated criminal record certificate of the partner to approve her entry to Israel; the translating notary is in Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27087331034252534"
+      ],
+      "author_id": "1695237382",
+      "author_name": "Yar Den",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-26T15:21:37.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg says Misrad Hapnim did not accept a notary translation of a copy of a birth certificate, so they had to translate again from the original.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27095207186798252",
+        "27096313836687587"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not accept a notary translation made from a copy of a document; the translation must be from the original"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-27T05:09:03.000Z"
+    }
+  ]
+}

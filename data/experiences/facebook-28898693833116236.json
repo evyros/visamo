@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28898693833116236",
+  "source_hash": "33038805529c0df5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:38.112Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Viktorija Einorė-Bechor, applying for permanent residency, was told by the clerk to bring the usual renewal documents, a statement that she prefers PR over citizenship, and form A6, but the clerk did not mention the extra documents and lawyer signatures the form asks for.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28898693833116236"
+      ],
+      "author_id": "1323013271",
+      "author_name": "Viktorija Einorė-Bechor",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-18T10:04:24.000Z"
+    }
+  ]
+}

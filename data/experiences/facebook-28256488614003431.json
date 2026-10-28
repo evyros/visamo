@@ -1,0 +1,158 @@
+{
+  "source": "facebook",
+  "thread_id": "28256488614003431",
+  "source_hash": "12a8269a92823b42",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:42.185Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Amir's partner received a B/2 entry approval for a month by email, and MH told them to come to the branch on landing to extend the visa and set an interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28256488614003431",
+        "28257116240607335",
+        "28257273440591615"
+      ],
+      "author_id": "100006255219946",
+      "author_name": "Amir Golan",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells people by email to come to the branch on landing to extend the tourist visa and set an interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-31T17:53:22.000Z"
+    },
+    {
+      "summary": "Eli emailed MH after his wife landed with an approved entry and got an immediate appointment at Holon, where she received a B/1.",
+      "branch": "holon",
+      "branch_text": "סניף חולון",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28264065626579063"
+      ],
+      "author_id": "100001474689530",
+      "author_name": "Eli Ashkenazi",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives an immediate appointment and the B/1 after an email sent once the partner has landed with an approved entry"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-01T08:29:49.000Z"
+    },
+    {
+      "summary": "Liyad says Holon is an exceptionally good office.",
+      "branch": "holon",
+      "branch_text": "חולון",
+      "channels": [],
+      "source_ids": [
+        "28268325802819712"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-01T15:47:49.000Z"
+    },
+    {
+      "summary": "Liyad says Petah Tikva is less friendly to people who complain about them.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "28268325802819712"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-01T15:47:49.000Z"
+    }
+  ]
+}

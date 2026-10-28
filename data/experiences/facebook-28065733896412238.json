@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28065733896412238",
+  "source_hash": "f54ed45fede22693",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.818Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Amir Golan's partner was given a one-month B/2 visa to continue the process and schedule a couple interview in Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28065733896412238"
+      ],
+      "author_id": "100006255219946",
+      "author_name": "Amir Golan",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T10:37:21.000Z"
+    }
+  ]
+}

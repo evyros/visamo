@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26704389555880019",
+  "source_hash": "27cf93201e27f72d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.296Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ron Alkobi has a center-of-life appointment and interview at Tel Aviv at the end of May and was told to bring a landlord letter confirming the couple rent the flat, which he cannot fully provide.",
+      "branch": "tel-aviv",
+      "branch_text": "משרד הפנים תל אביב - מרכז",
+      "channels": [],
+      "source_ids": [
+        "26704389555880019"
+      ],
+      "author_id": "1468534077",
+      "author_name": "Ron Alkobi",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for a landlord letter confirming the couple rent the apartment before the center-of-life interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-24T11:23:01.000Z"
+    }
+  ]
+}

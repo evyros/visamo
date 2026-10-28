@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26942548775397428",
+  "source_hash": "fe1d057e6a13552c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:46.635Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ilan's family went through citizenship after a Reform conversion; the clerk was surprised as she had not met such a case, and the conversion shortened their citizenship process by a year and a half.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26942548775397428"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-14T13:15:07.000Z"
+    }
+  ]
+}

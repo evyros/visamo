@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28090136323971995",
+  "source_hash": "c1faa43173fc9f81",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:22.988Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "In the gradual process for the B/1, the poster received an email saying they may enter Israel, must apply for an ETA, and should schedule the interview after arriving.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28090136323971995"
+      ],
+      "author_id": "100006594494758",
+      "author_name": "Evs Evs",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-18T10:52:24.000Z"
+    }
+  ]
+}

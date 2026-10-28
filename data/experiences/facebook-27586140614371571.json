@@ -1,0 +1,97 @@
+{
+  "source": "facebook",
+  "thread_id": "27586140614371571",
+  "source_hash": "368e3168f78b2dfc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:07.377Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Married Israeli-Japanese couple handed in physical papers, heard nothing for over a month, then learned from a mail notice that a registered letter with the results had been sent on 28.6.26; they received a B/2 visa on 7 July.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "27586140614371571",
+        "27601901596128806"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-06-28",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": false,
+          "text": "waiting for the first invitation after providing the physical papers more than a month ago"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Sends decisions by registered mail and notifies by SMS or mail notice before the letter arrives"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-05T20:31:48.000Z"
+    },
+    {
+      "summary": "Yana Baya says the letter demanding a guarantee deposit in her file was sent from the ministry in April 2018 and has still not arrived.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "mail"
+      ],
+      "source_ids": [
+        "27594981096820856"
+      ],
+      "author_id": "100000948723953",
+      "author_name": "Yana Baya",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2018-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-06T16:11:59.000Z"
+    }
+  ]
+}

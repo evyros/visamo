@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "27994768840175411",
+  "source_hash": "1427b22ce336cda2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:19.962Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leyla's husband has an appointment in September to hand in the physical documents, after which she expects an entry invitation.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27994768840175411"
+      ],
+      "author_id": "100032055502074",
+      "author_name": "Leyla Berglund",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T19:47:08.000Z"
+    },
+    {
+      "summary": "Roberta's partner handed in the documents; her visa was denied after a lot of legal effort, and when the invitation finally arrived it already set an interview date in Israel and allowed entry only 2 weeks before it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27995167760135519",
+        "28000218932963735"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-10T20:33:40.000Z"
+    }
+  ]
+}

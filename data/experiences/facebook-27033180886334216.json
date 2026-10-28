@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27033180886334216",
+  "source_hash": "4820eccc9c033e3b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.127Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dosa went to Misrad Hapnim and was told that two documents must be signed by an attorney before they can be uploaded for the B1 application.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27033180886334216"
+      ],
+      "author_id": "100004216234669",
+      "author_name": "Dósa D. Bálint",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-21T15:05:49.000Z"
+    }
+  ]
+}

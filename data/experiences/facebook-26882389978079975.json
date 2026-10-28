@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "26882389978079975",
+  "source_hash": "d1a0512fec98df9a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:44.032Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Doreen Hazan got an email in early March from the Petah Tikva office confirming initial document submission and inviting her to a May appointment with originals, but missed that she had to confirm attendance by email; after she replied she got no answer.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26882389978079975",
+        "26938157229169916"
+      ],
+      "author_id": "1171278936",
+      "author_name": "Doreen Hazan",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-03",
+        "appointment_set": "2026-03",
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Invitation email to the first document appointment requires confirming attendance by email"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-09T15:44:51.000Z"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "source": "facebook",
+  "thread_id": "26743489128636728",
+  "source_hash": "a0b7e43f45604cee",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.260Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nor's documents translated from Turkish into English were not accepted about 5 years ago and the office asked for Hebrew.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26743633435288964"
+      ],
+      "author_id": "100011799444382",
+      "author_name": "Nor Ahmad Oğlu",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2021",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asked for a Hebrew translation of a document that had been translated into English from another language"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:05:31.000Z"
+    },
+    {
+      "summary": "Enosh, married to a Filipina, says English-language documents did not need translation, only an apostille from the Philippines.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26743841391934835"
+      ],
+      "author_id": "100003518078840",
+      "author_name": "Enosh Almog",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not require translation of documents originally in English, only an apostille"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:26:18.000Z"
+    },
+    {
+      "summary": "Yuval's husband's English birth certificate from the Philippines was not asked to be translated at the Haifa branch.",
+      "branch": "haifa",
+      "branch_text": "סניף חיפה",
+      "channels": [],
+      "source_ids": [
+        "26744010635251244"
+      ],
+      "author_id": "1477170628",
+      "author_name": "Yuval Malchi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not ask for translation of an English-language birth certificate"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:43:12.000Z"
+    },
+    {
+      "summary": "Yuval's husband's English birth certificate from the Philippines was not asked to be translated at the Afula branch.",
+      "branch": "afula",
+      "branch_text": "עפולה",
+      "channels": [],
+      "source_ids": [
+        "26744010635251244"
+      ],
+      "author_id": "1477170628",
+      "author_name": "Yuval Malchi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not ask for translation of an English-language birth certificate"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:43:12.000Z"
+    },
+    {
+      "summary": "Roza, married to a Kenyan, submitted originally-English documents at Afula and was not asked to translate them, only for relevant stamps.",
+      "branch": "afula",
+      "branch_text": "סניף עפולה",
+      "channels": [],
+      "source_ids": [
+        "26744132418572399"
+      ],
+      "author_id": "100095484819841",
+      "author_name": "Roza Maricha",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not ask for translation of documents originally in English, only of the relevant stamps"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:55:26.000Z"
+    }
+  ]
+}

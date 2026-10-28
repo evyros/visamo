@@ -1,0 +1,163 @@
+{
+  "source": "facebook",
+  "thread_id": "28473577615627862",
+  "source_hash": "27e1d46ca0f6386b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.104Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Belmonte Lorna renewed her A5 for the third time at the Haifa branch and was given only one year, not the two years she had heard about.",
+      "branch": "haifa",
+      "branch_text": "Haifa branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28473577615627862"
+      ],
+      "author_id": "100052315873953",
+      "author_name": "Belmonte Lorna",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issued a one-year A5 at renewal in September 2026"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-16T15:34:51.000Z"
+    },
+    {
+      "summary": "CatchMe Elrond had a second A5 renewal at Rehovot and the clerk said the two-year visa is planned but not given right now.",
+      "branch": "rehovot",
+      "branch_text": "rehovot",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28474704545515169"
+      ],
+      "author_id": "100003343634582",
+      "author_name": "CatchMe Elrond",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not give a two-year A5 at renewal yet, a clerk said it is planned"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-16T17:20:31.000Z"
+    },
+    {
+      "summary": "Antonella Schmidt renewed her A5 in Jerusalem the previous Thursday and got a visa for one year and 8 months plus a new appointment in a year to request citizenship.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28476919188627038"
+      ],
+      "author_id": "1657170316",
+      "author_name": "Antonella Schmidt",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gave an A5 renewal for one year and 8 months and booked the citizenship appointment a year ahead"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-16T21:14:01.000Z"
+    },
+    {
+      "summary": "Katharina Krueger got a two-year A5 in Haifa about a week and a half ago after writing 24 months on the application form; the clerk did not argue.",
+      "branch": "haifa",
+      "branch_text": "Haifa",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28481096188209338"
+      ],
+      "author_id": "100003076218117",
+      "author_name": "Katharina Krueger",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issued a two-year A5 when 24 months was written on the application form"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-17T05:00:04.000Z"
+    }
+  ]
+}

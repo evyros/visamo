@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "28832039963114957",
+  "source_hash": "46fe2d066d68fb2e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.521Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ofer Rosenblat, living in Spain with his Honduran wife, says the immigration office in Israel told him to go to the embassy about her airport delays, while the embassy says she can enter without problems.",
+      "branch": null,
+      "branch_text": "the immigration office in Israel",
+      "channels": [],
+      "source_ids": [
+        "28832039963114957"
+      ],
+      "author_id": "1081285049",
+      "author_name": "Ofer Rosenblat",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-13T16:55:31.000Z"
+    },
+    {
+      "summary": "Lior Beres heard that PIBA has recently been refusing to recognize or handle the embassy process that facilitates entry for married couples living abroad.",
+      "branch": null,
+      "branch_text": "PIBA",
+      "channels": [],
+      "source_ids": [
+        "28839614089024211"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "secondhand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Reportedly refuses recently to handle embassy requests that facilitate entry for married couples living abroad"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-10-14T05:57:49.000Z"
+    }
+  ]
+}

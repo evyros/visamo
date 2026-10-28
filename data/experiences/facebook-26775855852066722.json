@@ -1,0 +1,179 @@
+{
+  "source": "facebook",
+  "thread_id": "26775855852066722",
+  "source_hash": "40fc37dc5a2fc53c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:44.911Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Emma Brusse emailed the Tel Aviv visa office many times without a reply while her war-related automatic A5 extension was about to expire.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26775855852066722"
+      ],
+      "author_id": "100082104615081",
+      "author_name": "Emma Brusse",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-04-30T09:04:48.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik advises that when Tel Aviv does not answer emails you go in person on a weekday morning except Wednesday, arriving 7 to 7:30 to get a place in the queue.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26775916392060668"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue",
+        "no-reply"
+      ],
+      "practices": [
+        "Does not answer emails reliably, so people go in person",
+        "Walk-in appointment requests are handled on weekday mornings except Wednesday",
+        "Arriving at 7 to 7:30 gets a good place in the queue"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T09:12:51.000Z"
+    },
+    {
+      "summary": "Doron Blumshtein advises arriving at Tel Aviv by 7:30, better 7:00, because email replies take weeks or months; only the Israeli partner needs to be there.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26775928728726101",
+        "26776149338704040"
+      ],
+      "author_id": "534703936",
+      "author_name": "Doron Blumshtein",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue",
+        "no-reply"
+      ],
+      "practices": [
+        "Email replies can take weeks or months",
+        "Arrive by 7:30, better around 7:00, to be seen",
+        "Only the Israeli partner has to be present to request an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T09:14:31.000Z"
+    },
+    {
+      "summary": "Natalia Bar says a friend with unanswered emails went to the Tel Aviv window in April 2026 and was given an appointment for mid May.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26775934972058810"
+      ],
+      "author_id": "721947487",
+      "author_name": "Natalia Bar",
+      "firsthand": "secondhand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-04",
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Gives an appointment at the window when emails went unanswered"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T09:15:23.000Z"
+    }
+  ]
+}

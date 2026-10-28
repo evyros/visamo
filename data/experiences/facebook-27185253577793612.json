@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "27185253577793612",
+  "source_hash": "f16d8efb32be9164",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:53.464Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ziv Ben Haim says he and his Filipina girlfriend, in the B/1 process, have been given an initial interview appointment for next month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27185253577793612"
+      ],
+      "author_id": "1680941857",
+      "author_name": "Ziv Ben Haim",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-02T15:15:07.000Z"
+    },
+    {
+      "summary": "Diana Faccetti Ricaurte waited about a month after the interview for the appointment where the visa was issued, but it took two months because the office cancelled all appointments during the war.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27192939080358395"
+      ],
+      "author_id": "100004778944848",
+      "author_name": "Diana Faccetti Ricaurte",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 60,
+          "ongoing": false,
+          "text": "we had to wait about a month for the appointment where they issued our visa, but it ended up taking two months because of the war"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-03T04:00:37.000Z"
+    }
+  ]
+}

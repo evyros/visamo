@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "26912621138390192",
+  "source_hash": "3b5ee6f83f16eed3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:08.627Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Inbar, announcing she became a citizen, says that once the process finally started and after dropping the lawyers, and having learned the process from the group, everything with Misrad Hapnim went smoothly and quickly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26912621138390192",
+        "26914336634885309"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-12T06:02:15.000Z"
+    }
+  ]
+}

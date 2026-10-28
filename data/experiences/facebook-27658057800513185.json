@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "27658057800513185",
+  "source_hash": "9129aa38cd1c08a2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:44.684Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leah Hunt had an appointment at the Haifa branch right after its relocation; the branch phoned her to come to the original Haifa office, while her emails to the branch were not going through.",
+      "branch": "haifa",
+      "branch_text": "Haifa",
+      "channels": [
+        "phone",
+        "email"
+      ],
+      "source_ids": [
+        "27658057800513185",
+        "27658461450472820",
+        "27663413656644266",
+        "27665665376419094"
+      ],
+      "author_id": "100006926492376",
+      "author_name": "Leah Hunt",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-14"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Phones people with appointments to tell them where to come when the office location changes"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-12T17:32:59.000Z"
+    },
+    {
+      "summary": "Victoria Ginzburg says the Haifa branch was working out of the Kiryat Ata branch, with an email address for reaching it.",
+      "branch": "haifa",
+      "branch_text": "Haifa",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27658439503808348"
+      ],
+      "author_id": "100004230308331",
+      "author_name": "Victoria Ginzburg",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "While the Haifa office was closed, the Haifa branch worked out of the Kiryat Ata branch"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-12T18:21:40.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27781251968193767",
+  "source_hash": "3c71ce8c54a184d2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:13.280Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lem Na Ei received an interview notification in July 2026 from the Ramat Gan branch for an interview scheduled in September.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan branch",
+      "channels": [],
+      "source_ids": [
+        "27781251968193767"
+      ],
+      "author_id": "100011706343913",
+      "author_name": "Lem Na Ei",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-07",
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-23T18:20:52.000Z"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "26914609541524685",
+  "source_hash": "eb78a00cbc9adcac",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:45.405Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Michael Bondarevsky was told at the previous B1 renewal interview that the next one would be for A5, but the appointment they were given is a regular B1 renewal interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26914609541524685"
+      ],
+      "author_id": "1804940388",
+      "author_name": "Michael Bondarevsky",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T10:02:04.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg's husband received B1, had an interview about 3 months later and an appointment to receive the A5 and ID card another 3 months after that; after the interview they were asked for center-of-life documents of their choice, with no form.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26947817198203919"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 90,
+          "ongoing": false,
+          "text": "after another 3 months an appointment to receive A5 and ID card"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-14T21:53:07.000Z"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "27348846421434326",
+  "source_hash": "38fb3757dfb07573",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.653Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Couple was interviewed for a B/1 last Sunday, were told an answer would come within two weeks, and were then told not to renew the visa that expires in six days because the system shows they are awaiting an answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27348846421434326"
+      ],
+      "author_id": "100025144188926",
+      "author_name": "Ofri Hashavia Cohen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 8,
+          "ongoing": true,
+          "text": "interviewed last Sunday, interviewer said answer within two weeks"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-15T14:11:28.000Z"
+    }
+  ]
+}

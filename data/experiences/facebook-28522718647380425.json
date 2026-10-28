@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "28522718647380425",
+  "source_hash": "abf9796494bdfe84",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:09.212Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Israeli husband of a Finnish wife: documents were submitted online, within two months there was an appointment at the office to hand over originals, after which she was invited to Israel; she entered on B2, got a B1, and A/5 half a year later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28530486406603649"
+      ],
+      "author_id": "100001820074119",
+      "author_name": "Omri Pinchas",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 60,
+          "ongoing": false,
+          "text": "submitted the documents online, and within two months we had a meeting at the office to hand in original documents"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Registers a couple as married on a foreign marriage certificate and starts the shortened gradual process."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-20T22:36:23.000Z"
+    },
+    {
+      "summary": "Commenter says their married-by-conversion process went B2, B1, A5 and was turbo fast, with citizenship after three A5 periods.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28524483900537233"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-20T12:38:45.000Z"
+    }
+  ]
+}

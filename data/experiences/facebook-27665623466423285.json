@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27665623466423285",
+  "source_hash": "b6c72088f9809e55",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:42.406Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior Beres reports that on 14 July the Haifa office's visa department moved back to its original place on Sderot HaPalyam.",
+      "branch": "haifa",
+      "branch_text": "לשכת חיפה",
+      "channels": [],
+      "source_ids": [
+        "27683913341260964"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Haifa visa department returned to its original location on Sderot HaPalyam in July 2026."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-15T06:08:38.000Z"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "source": "facebook",
+  "thread_id": "28457961770522780",
+  "source_hash": "eefff790c16e617e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:43.996Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani's couple went through to A/5 but the guarantee money has still not been released.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28480876544897969"
+      ],
+      "author_id": "670196384",
+      "author_name": "Shani Ofer",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-17T04:36:06.000Z"
+    },
+    {
+      "summary": "Ayala emailed about getting the guarantee back, was quickly told to come in person with the deposit letter and sign, the money was released after 2-3 weeks, and the clerks were lovely.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28462955593356731",
+        "28468461286139495"
+      ],
+      "author_id": "100000439726226",
+      "author_name": "Ayala Asras",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Guarantee refund requires coming in person with the deposit letter and signing; email alone is not enough",
+        "Guarantee is released about 2-3 weeks after the visit"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-15T20:55:39.000Z"
+    },
+    {
+      "summary": "Liran emailed the airport branch with the release approval and received the guarantee money in his bank about a month later.",
+      "branch": null,
+      "branch_text": "סניף נתב\"ג",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28458636153788675",
+        "28458653303786960"
+      ],
+      "author_id": "1021975696",
+      "author_name": "Liran Binyamin",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Guarantee refund can be requested by email to the airport unit with the branch's written release approval; money arrives in the bank in about a month"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-15T14:09:41.000Z"
+    }
+  ]
+}

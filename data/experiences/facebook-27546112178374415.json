@@ -1,0 +1,307 @@
+{
+  "source": "facebook",
+  "thread_id": "27546112178374415",
+  "source_hash": "5b649a583902a197",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:50.038Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shiran, an Israeli citizen married to a temporary resident, was twice told by phone that her newborn's details would update only after 30 business days, and when they did not, to go to a branch in person.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27546112178374415"
+      ],
+      "author_id": "1588684048",
+      "author_name": "Shiran Manor",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T05:52:15.000Z"
+    },
+    {
+      "summary": "Shiran went to the Shalom branch in Tel Aviv to register her baby and was turned away because she and her husband are assigned to the Netanya branch, which handles his whole process.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף השלום בתל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27546112178374415"
+      ],
+      "author_id": "1588684048",
+      "author_name": "Shiran Manor",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Registers a baby only at the branch the couple is assigned to"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T05:52:15.000Z"
+    },
+    {
+      "summary": "At Netanya, Shiran handed over the hospital's birth documents to register her baby, and was told they would check the details and call her, without registering him that day.",
+      "branch": "netanya",
+      "branch_text": "סניף נתניה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27546112178374415",
+        "27547008988284734"
+      ],
+      "author_id": "1588684048",
+      "author_name": "Shiran Manor",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-02T05:52:15.000Z"
+    },
+    {
+      "summary": "Aviv's wife gave birth about half a year before; they brought the forms and about a week later got an appointment that both spouses had to attend, and were told it applies only to the first child.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27546247171694249"
+      ],
+      "author_id": "100000165248332",
+      "author_name": "Aviv Nachmias",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 7,
+          "ongoing": false,
+          "text": "אחרי שבוע בערך קבעו לנו פגישה"
+        }
+      ],
+      "experience_when": "2026-01",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires both parents to attend an appointment when registering a first child born to a foreign parent"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T06:10:37.000Z"
+    },
+    {
+      "summary": "Arkam says their baby was registered automatically.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27546467841672182"
+      ],
+      "author_id": "100038010422904",
+      "author_name": "Arkam Tantori",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-02T06:41:26.000Z"
+    },
+    {
+      "summary": "Ashley says that with her eldest, about 15 years ago, the registration said until age one that her husband only claimed paternity, and they wanted a DNA test before recording him as father; they agreed at age one.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27546732251645741"
+      ],
+      "author_id": "601942452",
+      "author_name": "Ashley Inbal Gabriel",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2011",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T07:17:58.000Z"
+    },
+    {
+      "summary": "Talya says the Misrad Hapnim request received at the hospital was registered differently from what they stated (the father was left out), so it took longer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27547157774936522",
+        "27547378348247798"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T08:17:28.000Z"
+    },
+    {
+      "summary": "Anita's baby was registered at the hospital by a Misrad Hapnim representative with both parents, which would have blocked his status, so at the Holon office the pages were torn and the partner's details thrown away, after which the child got status and an ID.",
+      "branch": "holon",
+      "branch_text": "לשכת חולון",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27547601381558828"
+      ],
+      "author_id": "1129436461",
+      "author_name": "Anita Bunny Ge",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T09:16:59.000Z"
+    }
+  ]
+}

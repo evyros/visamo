@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "26906076342378005",
+  "source_hash": "963f253a2dc2b7ad",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:44.973Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ady Zafri says that in the past, when documents had to be completed, he went early in the morning to the Ramat Gan branch and it did not work out.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat gan branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26906076342378005",
+        "26906776625641310"
+      ],
+      "author_id": "611424344",
+      "author_name": "Ady Zafri",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-11T17:25:20.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg went early in the morning to the Netanya branch to complete documents, waited in the sun and was sent away, and completed the documents by email instead.",
+      "branch": "netanya",
+      "branch_text": "סניף נתניה",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26906761078976198",
+        "26906908772294762"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Does not accept walk-ins for completing documents",
+        "Asks for missing documents by email, stating which and the deadline, and takes them back by email"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T18:33:40.000Z"
+    }
+  ]
+}

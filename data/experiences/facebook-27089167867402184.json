@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27089167867402184",
+  "source_hash": "0595c3813dc5dd8d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:50.711Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Claudia Galarza Cervantes has a partner visa interview at the Holon office about two weeks after her May 26 post.",
+      "branch": "holon",
+      "branch_text": "Holon office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27089167867402184"
+      ],
+      "author_id": "100000497590652",
+      "author_name": "Claudia Galarza Cervantes",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-26T18:29:59.000Z"
+    }
+  ]
+}

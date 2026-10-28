@@ -1,0 +1,143 @@
+{
+  "source": "facebook",
+  "thread_id": "27844936318491998",
+  "source_hash": "56c8067a733fc122",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:03.254Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yoni Mizrahi had a B/1 to A/5 interview on June 1, 2026, was told all was in order, and still had no answer by July 29.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27844936318491998",
+        "27880009384984691"
+      ],
+      "author_id": "1160454984",
+      "author_name": "Yoni Mizrahi",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-01"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 58,
+          "ongoing": true,
+          "text": "On June 1st, 2026, we had an interview... So far, we haven't received any answer"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T10:07:20.000Z"
+    },
+    {
+      "summary": "Alon Solell, not married, was promised an answer within 3 months of the interview, got none, and at a walk-in visit received another 3-month extension.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27845167861802177",
+        "27862472746738355"
+      ],
+      "author_id": "856599753",
+      "author_name": "Alon Solell",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 90,
+          "ongoing": true,
+          "text": "אחרי 3 חודשים (כמעט עד הדקה ה-90), לא קיבלנו תשובה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T10:35:46.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod was told an answer after the interview would take up to two weeks and received it after 10 days.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27847712311547732"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 10,
+          "ongoing": false,
+          "text": "לנו אמרו עד שבועיים ואחרי 10 ימים קבלנו תשובה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T15:09:53.000Z"
+    }
+  ]
+}

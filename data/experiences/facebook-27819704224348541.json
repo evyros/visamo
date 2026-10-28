@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27819704224348541",
+  "source_hash": "c815a71ec136b6fd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:14.377Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Elizabeth Villar had an appointment at Misrad Hapnim on 2026-07-27 to invite her mother (a Peruvian, visa-exempt) to visit; she submitted translated documents, copies, photos, her husband's payslips and a 105 NIS fee, was told to wait for an email decision, and found the process much more complicated than expected.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27821424334176530",
+        "27822822000703430"
+      ],
+      "author_id": "562564163",
+      "author_name": "Elizabeth Villar",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-27"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-27T11:12:58.000Z"
+    }
+  ]
+}

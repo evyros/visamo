@@ -1,0 +1,57 @@
+{
+  "source": "facebook",
+  "thread_id": "27740933782225586",
+  "source_hash": "cfc101790b4f346e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.848Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar went to Misrad Hapnim for her husband's work visa and was given an appointment six months away for the A/5, set 5 days after his B/1 expires, and told to apply for an extension a month before expiry.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27740933782225586"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-07",
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 180,
+          "ongoing": false,
+          "text": "given an appointment six months from now"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T11:41:41.000Z"
+    }
+  ]
+}

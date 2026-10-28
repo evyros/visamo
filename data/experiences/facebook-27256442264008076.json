@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27256442264008076",
+  "source_hash": "72bd73ba1b5e5097",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:55.809Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lisa Naomi has a B1 renewal appointment at Misrad Hapnim Tel Aviv the next morning and asks whether the office is operating.",
+      "branch": "tel-aviv",
+      "branch_text": "misrad hapnim tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27256442264008076"
+      ],
+      "author_id": "100001225156669",
+      "author_name": "Lisa Naomi",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-09"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T05:37:56.000Z"
+    }
+  ]
+}

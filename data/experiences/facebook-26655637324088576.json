@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "26655637324088576",
+  "source_hash": "9faaa74336f62a9f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:20.281Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yoel Aizik, in Israel with his partner abroad, sent a request to the immigration unit and says they sent the full document list and are very organized.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26656261064026202",
+        "26656419650677010"
+      ],
+      "author_id": "557759525",
+      "author_name": "Yoel Aizik",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T07:44:45.000Z"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "source": "facebook",
+  "thread_id": "27915822368070059",
+  "source_hash": "be6772cb73279223",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:23.869Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Emily Zambrano says Misrad Hapnim told her a citizenship decision takes up to 6 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27915822368070059"
+      ],
+      "author_id": "667952949",
+      "author_name": "Emily Zambrano",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T12:47:35.000Z"
+    },
+    {
+      "summary": "Beatrice Asla got her citizenship decision in at most 3 weeks.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27916328971352732"
+      ],
+      "author_id": "100000380517474",
+      "author_name": "Beatrice Asla",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-04T13:41:55.000Z"
+    },
+    {
+      "summary": "Naddii Sharabi was told citizenship takes 3 to 4 months and received it after 5 months, delayed by the March war; they once missed a call from the office.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27916603651325264"
+      ],
+      "author_id": "676153962",
+      "author_name": "Naddii Sharabi",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 150,
+          "ongoing": false,
+          "text": "They told me that it usually takes 3 to 4 months. I got it after 5 months"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Calls the applicant or partner from unknown numbers during the citizenship process"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T14:11:09.000Z"
+    },
+    {
+      "summary": "Genia MB at the TLV branch got a call about 3 weeks after submitting the last citizenship documents, with the appointment 2 days later, before the new law.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV branch",
+      "channels": [
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "27916674911318138",
+        "27916684914650471"
+      ],
+      "author_id": "100000462871894",
+      "author_name": "Genia MB",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 21,
+          "ongoing": false,
+          "text": "I got the call after about 3 weeks after submitting the last docs"
+        },
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 2,
+          "ongoing": false,
+          "text": "appointment was 2 days after"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T14:18:45.000Z"
+    },
+    {
+      "summary": "Katerina Elior got her citizenship decision 3-4 weeks after the interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27919241494394813"
+      ],
+      "author_id": "100001280841400",
+      "author_name": "Katerina Elior",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 25,
+          "ongoing": false,
+          "text": "Mine was 3-4 weeks too from the interview"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-04T18:24:31.000Z"
+    },
+    {
+      "summary": "Sofia Salcedo was told citizenship takes up to 6 months and was called a few days before six months to come collect it the next day.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27930541843264778"
+      ],
+      "author_id": "1098816833",
+      "author_name": "Sofía Salcedo",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 175,
+          "ongoing": false,
+          "text": "A mi me dijeron hasta 6 meses y faltando pocos días para cumplir los seis meses me llamaron"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-05T15:34:16.000Z"
+    }
+  ]
+}

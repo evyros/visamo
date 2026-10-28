@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "27268130399505929",
+  "source_hash": "dda092d1204cd12a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.320Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "An Israeli citizen of 7 years tried to renew their Israeli passport in April and was told they had not been in the country long enough; they say nobody told them about the limit on time abroad in the first year of citizenship.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27268130399505929",
+        "27294507866868182"
+      ],
+      "author_id": "100022484026122",
+      "author_name": "Circus Monkeys",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-09T07:04:08.000Z"
+    }
+  ]
+}

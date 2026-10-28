@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27605308242454808",
+  "source_hash": "6153094da39f82a7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:08.085Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Or's partner had a Tel Aviv appointment on June 15 to change his status to A5, received a temporary Teudat Zehut and was told the ID would come via the post office within two weeks, but after three weeks nothing had arrived.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27605308242454808"
+      ],
+      "author_id": "100000113621919",
+      "author_name": "Or Kadosh",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-15"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a temporary Teudat Zehut at the A5 appointment and says the ID will be sent for pickup within two weeks."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-07T14:28:28.000Z"
+    },
+    {
+      "summary": "Juli waited about a month and a half for her first Teudat Zehut at the Ramat Gan branch.",
+      "branch": "ramat-gan",
+      "branch_text": "RG branch",
+      "channels": [],
+      "source_ids": [
+        "27606248269027472"
+      ],
+      "author_id": "1661065127",
+      "author_name": "Juli Je",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-07T16:19:36.000Z"
+    }
+  ]
+}

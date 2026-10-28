@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "28090067103978917",
+  "source_hash": "c8409233a7e00177",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:46.642Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Danika Malovic says they always submitted recommendation letters with a photo of only the front of the writer's ID card and never had an issue.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28091096567209304"
+      ],
+      "author_id": "512532884",
+      "author_name": "Danika Malovic",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts recommendation letters with a photo of only the front of the writer's ID card"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T12:37:39.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says all the recommendation letters she submitted had the front of the writer's ID card only, with signature and mobile number.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28093138037005157"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts recommendation letters with a photo of only the front of the writer's ID card"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T16:05:14.000Z"
+    },
+    {
+      "summary": "Rotem Lavi Kim says friends wrote her a recommendation letter with a passport copy instead of an ID and it was accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28091978107121150"
+      ],
+      "author_id": "823036459",
+      "author_name": "Rotem Lavi Kim",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepted a recommendation letter with a passport copy instead of an ID card"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-18T14:03:54.000Z"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source": "facebook",
+  "thread_id": "27928902776762018",
+  "source_hash": "35e475da8b3dd294",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:42.339Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Manuela's second B/1 interview at Safed: documents sent 3 months ahead and the office replied with what was missing, the appointment was moved earlier twice, the clerk was friendly, and a 2-year B/1 was granted.",
+      "branch": "safed",
+      "branch_text": "Zfat",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27928902776762018"
+      ],
+      "author_id": "100003588653254",
+      "author_name": "Manuela Gurtner",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-05"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Available by email and replies with the missing documents when they are sent 3 months in advance",
+        "Asks to be emailed 4 months before the visa expires and then sends the list of required documents",
+        "Can move the interview earlier when asked by email",
+        "Interviews the partner with questions on family, daily life and that day, while the other fills in AS3",
+        "Granted a 2-year B/1 on request"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-05T13:02:58.000Z"
+    }
+  ]
+}

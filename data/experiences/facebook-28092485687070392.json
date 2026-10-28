@@ -1,0 +1,208 @@
+{
+  "source": "facebook",
+  "thread_id": "28092485687070392",
+  "source_hash": "307ce5329e3534c9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:34.692Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Gouni Jacobi says a Misrad Hapnim clerk at the hospital told them to complete the newborn's registration at the branch that issues his wife's visa (Tel Aviv).",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28092485687070392",
+        "28092626297056331"
+      ],
+      "author_id": "100013394739502",
+      "author_name": "Gouni Jacobi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A Misrad Hapnim clerk at the hospital starts the baby's registration, and it is completed at the branch that issues the mother's visa."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T14:56:57.000Z"
+    },
+    {
+      "summary": "Laure Denizot (the baby's mother) reports that they went to the Tel Aviv branch with a 4-day-old baby, stood in the visa line, and the registration was resolved quickly.",
+      "branch": "tel-aviv",
+      "branch_text": "PIBA",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28127126093606351"
+      ],
+      "author_id": "1209071059",
+      "author_name": "Laure Denizot",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "It was finally resolved quickly"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Baby registration is handled in the visa line without an appointment."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-21T11:03:04.000Z"
+    },
+    {
+      "summary": "Kate Mar Chaim says that once their baby was registered at Misrad Hapnim the pediatrician appointment came quickly, and believes the registration is instant so health-fund signup can happen the same day.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28092627187056242"
+      ],
+      "author_id": "621390075",
+      "author_name": "Kate Mar Chaim",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Registering the baby at Misrad Hapnim is instant, so health-fund signup can follow the same day."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-18T15:11:45.000Z"
+    },
+    {
+      "summary": "Julie Dernovsky advises that at the Tel Aviv branch a baby can be registered without an appointment by arriving at 8:00 Sunday to Tuesday or Thursday and joining the third queue (Population Registry) with both parents and the documents.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv PIBA branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28092668470385447"
+      ],
+      "author_id": "1318561017",
+      "author_name": "Julie Dernovsky",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Baby registration needs no appointment: arrive at 8:00 Sunday to Tuesday or Thursday and join the third queue next to the windows (Population Registry).",
+        "Both parents must attend, with birth and hospital documents, ID and passports.",
+        "The branch is closed on Wednesdays."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-18T15:16:02.000Z"
+    },
+    {
+      "summary": "Boglarka Tankò-Cohen says that when her daughter was born about a year and a half ago they did not need to go to Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28093304000321894"
+      ],
+      "author_id": "100006691595637",
+      "author_name": "Boglàrka Tankò-Cohen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025-02",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-18T16:22:53.000Z"
+    }
+  ]
+}

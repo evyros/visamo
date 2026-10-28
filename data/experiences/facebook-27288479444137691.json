@@ -1,0 +1,174 @@
+{
+  "source": "facebook",
+  "thread_id": "27288479444137691",
+  "source_hash": "5816105c938dafff",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:57.165Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nir Kerbis (not married, partner abroad) at Rishon Lezion was summoned to submit original documents on 30.8.26 and asked whether the appointment can be advanced.",
+      "branch": "rishon-lezion",
+      "branch_text": "rishon lezion branch",
+      "channels": [],
+      "source_ids": [
+        "27288479444137691",
+        "27289916100660692",
+        "27314809101504725"
+      ],
+      "author_id": "100032502885226",
+      "author_name": "Nir Kerbis",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-30"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-10T18:27:16.000Z"
+    },
+    {
+      "summary": "Victoria Ginzburg tried repeatedly by email and phone to get an earlier appointment at her PIBA office and nothing worked; the department only called back in response to her emails.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "27289556497363319",
+        "27294696496849319",
+        "27299169303068705"
+      ],
+      "author_id": "100004230308331",
+      "author_name": "Victoria Ginzburg",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-10T20:29:12.000Z"
+    },
+    {
+      "summary": "Anita Bunny Ge submitted original documents at Holon in December and was given an interview date the same day, four months later in April, because slots were scarce.",
+      "branch": "holon",
+      "branch_text": "לשכת משרד הפנים חולון",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27299412279711074"
+      ],
+      "author_id": "1129436461",
+      "author_name": "Anita Bunny Ge",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2025-12",
+        "appointment": "2026-04"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 120,
+          "ongoing": false,
+          "text": "ארבעה חודשים לאחר מכן בחודש אפריל"
+        }
+      ],
+      "experience_when": "2025-12",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far",
+        "no-appointments-available"
+      ],
+      "practices": [
+        "Gives the interview date on the day the original documents are submitted, based on availability",
+        "Appointments, summons and interviews usually cannot be advanced unless the office itself frees a slot"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-11T14:35:03.000Z"
+    },
+    {
+      "summary": "Anita Bunny Ge describes the whole process at Holon as a drawn-out ordeal: a clerk gave misleading instructions, demanded costly translations that turned out unnecessary, and took about two and a half years to an approval.",
+      "branch": "holon",
+      "branch_text": "לשכת משרד הפנים חולון",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27299470266371942"
+      ],
+      "author_id": "1129436461",
+      "author_name": "Anita Bunny Ge",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-11T14:40:31.000Z"
+    }
+  ]
+}

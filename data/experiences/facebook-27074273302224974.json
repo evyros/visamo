@@ -1,0 +1,212 @@
+{
+  "source": "facebook",
+  "thread_id": "27074273302224974",
+  "source_hash": "7885c7611ae77301",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:21.013Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar presented her B/1 documents at Netanya; the clerks refused her partner's birth certificate as a government-sent copy and tried to send her home, but accepted it after she insisted, and she awaits an answer.",
+      "branch": "netanya",
+      "branch_text": "netanya branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27074273302224974",
+        "27074455485540089"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-25"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "May refuse a birth certificate that is a copy rather than the original."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T11:13:40.000Z"
+    },
+    {
+      "summary": "Alex says he got the answer on the same day after presenting documents for the B/1.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27074362128882758"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "Got the answer on the same day"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T11:25:21.000Z"
+    },
+    {
+      "summary": "Or heard back about a month after applying at Hadera about two years ago.",
+      "branch": "hadera",
+      "branch_text": "hadera",
+      "channels": [],
+      "source_ids": [
+        "27074419815543656"
+      ],
+      "author_id": "100000113621919",
+      "author_name": "Or Kadosh",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": false,
+          "text": "about two years ago in hadera i heard back like a month after"
+        }
+      ],
+      "experience_when": "2024",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-25T11:32:50.000Z"
+    },
+    {
+      "summary": "After switching branches and restarting the process in Tel Aviv, Or heard back within a week or two.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv",
+      "channels": [],
+      "source_ids": [
+        "27074419815543656"
+      ],
+      "author_id": "100000113621919",
+      "author_name": "Or Kadosh",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 10,
+          "ongoing": false,
+          "text": "it took them like a week or two to get back to me"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-25T11:32:50.000Z"
+    },
+    {
+      "summary": "Layla got immediate answers in Tel Aviv when she applied about 1.5 years ago.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [],
+      "source_ids": [
+        "27074823865503251"
+      ],
+      "author_id": "1098473753",
+      "author_name": "Layla Hazmi Gómez",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T12:22:17.000Z"
+    }
+  ]
+}

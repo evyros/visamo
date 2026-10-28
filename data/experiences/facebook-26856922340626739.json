@@ -1,0 +1,82 @@
+{
+  "source": "facebook",
+  "thread_id": "26856922340626739",
+  "source_hash": "0bcc16b4a70a0378",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.329Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "An anonymous member (posted by Jordan Grimmer-Tufik) received an email from Misrad Hapnim asking for a 30,000 shekel guarantee for his wife, partly because he had not visited her abroad for over a year, though an exit ban from insolvency prevented him.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26856922340626739"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T14:55:34.000Z"
+    },
+    {
+      "summary": "Roberta Zuliani says they were also asked for a guarantee, first 20k, appealed with a lawyer, and the answer was to pay 15k, which they paid to avoid going to court.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26857084253943881",
+        "26857099367275703"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-07T15:12:18.000Z"
+    }
+  ]
+}

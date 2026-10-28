@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "26985347037784268",
+  "source_hash": "7baa4addc56dec6e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.376Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ana Lucía brings the last 6 months of payslips and the contract to renewals and has never presented an employer letter.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26985466311105674",
+        "26985544147764557"
+      ],
+      "author_id": "547019934",
+      "author_name": "Ana Lucía Ben Arieh-Gutiérrez",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepted 6 months of payslips plus the contract at renewal without an employer letter"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-17T18:15:23.000Z"
+    },
+    {
+      "summary": "Mark says that in Jerusalem 12 recent payslips are enough for the renewal, and a Bituach Leumi unemployment letter helps for months without work.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26991363797182592"
+      ],
+      "author_id": "100001424834783",
+      "author_name": "Mark Rozenkrants",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Needs the last 12 payslips at renewal",
+        "A Bituach Leumi unemployment letter covers months without work"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-18T06:24:58.000Z"
+    }
+  ]
+}

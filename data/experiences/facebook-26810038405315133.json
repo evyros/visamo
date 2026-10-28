@@ -1,0 +1,163 @@
+{
+  "source": "facebook",
+  "thread_id": "26810038405315133",
+  "source_hash": "3842aac5980133a0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:44.947Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nor's Turkish husband gets Israeli citizenship after a November interview; at Petah Tikva they were treated well with no problems, after 6 years of process.",
+      "branch": "petah-tikva",
+      "branch_text": "סניף פתח תקווה",
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "26810038405315133",
+        "26810357095283264"
+      ],
+      "author_id": "100011799444382",
+      "author_name": "Nor Ahmad Oğlu",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-03T11:45:31.000Z"
+    },
+    {
+      "summary": "Klara's husband's file at Jerusalem is awaiting a permanent residence decision and she keeps chasing them by email.",
+      "branch": "jerusalem",
+      "branch_text": "בירושלים",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26810177291967911"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-03T12:03:58.000Z"
+    },
+    {
+      "summary": "Alex applied for citizenship at Petah Tikva in November and waited for a phone call; the reps are nice and fair, but on the day they were called asking why they did not come, with no prior notice of the appointment.",
+      "branch": "petah-tikva",
+      "branch_text": "פ\"ת",
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "26810331238619183",
+        "26829980409987599"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": "2025-11",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-05"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "ceremony",
+          "days": 180,
+          "ongoing": false,
+          "text": "applied in November ... today was our turn (May 5)"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-03T12:23:52.000Z"
+    },
+    {
+      "summary": "Yara says the Petah Tikva branch is excellent, with humane people.",
+      "branch": "petah-tikva",
+      "branch_text": "הסניף הזה",
+      "channels": [],
+      "source_ids": [
+        "26811524715166502"
+      ],
+      "author_id": "100000948146061",
+      "author_name": "Yara Niv-Burrell",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-03T14:50:07.000Z"
+    }
+  ]
+}

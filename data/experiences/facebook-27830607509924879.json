@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "27830607509924879",
+  "source_hash": "b95da53a045db9ea",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:14.778Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Klara's husband received A/5 for a year twice at earlier renewals.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27830607509924879"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-28T05:22:40.000Z"
+    },
+    {
+      "summary": "At the latest visit Klara's husband's A/5 was extended by only three months instead of a year; the clerk said it is the law without further explanation, and they must return in September.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27830607509924879",
+        "27832283523090611"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-28T05:22:40.000Z"
+    }
+  ]
+}

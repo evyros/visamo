@@ -1,0 +1,53 @@
+{
+  "source": "facebook",
+  "thread_id": "28104878992497728",
+  "source_hash": "70a0d18da7771d3d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.661Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A tourist visa application for the poster's partner was refused about a month after applying, for insufficient evidence of ongoing communication and of ties and legal status in the third country where she lives; the poster says he submitted everything listed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28104878992497728"
+      ],
+      "author_id": "100011666040120",
+      "author_name": "Denis Neuman",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": "2026-07",
+        "first_response": "2026-08-19",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": false,
+          "text": "About a month ago, we applied for a tourist visa ... Today, we received a refusal"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-19T14:40:55.000Z"
+    }
+  ]
+}

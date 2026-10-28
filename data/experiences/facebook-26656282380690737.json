@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26656282380690737",
+  "source_hash": "baef6150630de983",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:38.084Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Emma Brusse's A5 renewal appointment on March 5 was cancelled due to the war, she got an automatic 3-month extension, and her emails to the office have gone unanswered.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26656282380690737"
+      ],
+      "author_id": "100082104615081",
+      "author_name": "Emma Brusse",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-03-05"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-04-20T07:48:20.000Z"
+    }
+  ]
+}

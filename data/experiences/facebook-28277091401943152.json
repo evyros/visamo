@@ -1,0 +1,57 @@
+{
+  "source": "facebook",
+  "thread_id": "28277091401943152",
+  "source_hash": "05d7ba78128f3f93",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:27.258Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Petar Jovanović renewed his A5 in July 2026 at Tel Aviv and was given two appointments for July 2027, one to present documents and one for the interview, the latter on a Friday morning.",
+      "branch": "tel-aviv",
+      "branch_text": "Misrad HaPnim in Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28277091401943152"
+      ],
+      "author_id": "1037734075",
+      "author_name": "Petar Jovanović",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-07",
+        "appointment": "2027-07"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 365,
+          "ongoing": false,
+          "text": "they gave us two appointments in July next year"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-02T06:30:17.000Z"
+    }
+  ]
+}

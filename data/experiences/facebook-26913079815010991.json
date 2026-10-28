@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "26913079815010991",
+  "source_hash": "b7c4b4deff488e66",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:45.300Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Boris Liberfarb says that in previous years at Ramla (up to the fourth year) he never uploaded documents in advance and was never told to.",
+      "branch": "ramle",
+      "branch_text": "סניף רמלה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26913079815010991"
+      ],
+      "author_id": "833108113",
+      "author_name": "Boris Liberfarb",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T06:58:23.000Z"
+    },
+    {
+      "summary": "Boris Liberfarb emailed Ramla for another meeting in his fourth year; their reply email for the first time said to upload documents in advance through a link, but the government login link gives an error and no document can be uploaded.",
+      "branch": "ramle",
+      "branch_text": "סניף רמלה",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "26913079815010991",
+        "26913686664950306"
+      ],
+      "author_id": "833108113",
+      "author_name": "Boris Liberfarb",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Now asks for documents to be uploaded in advance through a digital link sent with the appointment email"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T06:58:23.000Z"
+    }
+  ]
+}

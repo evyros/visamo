@@ -1,0 +1,150 @@
+{
+  "source": "facebook",
+  "thread_id": "28812867025032251",
+  "source_hash": "9863cdee63779b62",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.128Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ayelet says they were notified 4 months in advance of their interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28825249537127333"
+      ],
+      "author_id": "100001049398844",
+      "author_name": "Ayelet Madvil",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "interview",
+          "days": 120,
+          "ongoing": false,
+          "text": "לנו הודיעו 4 חודשים מראש לראיון"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-13T06:21:18.000Z"
+    },
+    {
+      "summary": "Oren was notified three weeks in advance of the interview at Be'er Sheva.",
+      "branch": "beer-sheva",
+      "branch_text": "באר שבע",
+      "channels": [],
+      "source_ids": [
+        "28846829294969357"
+      ],
+      "author_id": "100012864820247",
+      "author_name": "Oren Mataev",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "interview",
+          "days": 21,
+          "ongoing": false,
+          "text": "לנו הודיעו שלושה שבועות מראש"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-14T17:21:07.000Z"
+    },
+    {
+      "summary": "Aliona's interview at Be'er Sheva was set half a year after submitting the documents, and only after an email to the Interior Minister were they told, two weeks before the interview.",
+      "branch": "beer-sheva",
+      "branch_text": "באר שבע",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28849021291416824"
+      ],
+      "author_id": "100000379883810",
+      "author_name": "Aliona Smulkstys",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "interview",
+          "days": 180,
+          "ongoing": false,
+          "text": "קבעו ראיון חצי שנה אחרי הגשת המסמכים"
+        },
+        {
+          "from": "appointment-set",
+          "to": "interview",
+          "days": 14,
+          "ongoing": false,
+          "text": "הודיעו לנו שבועיים לפני הראיון"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-14T20:54:20.000Z"
+    }
+  ]
+}

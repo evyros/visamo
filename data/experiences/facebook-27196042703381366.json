@@ -1,0 +1,10 @@
+{
+  "source": "facebook",
+  "thread_id": "27196042703381366",
+  "source_hash": "6588f63725a36bfd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:53.727Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": []
+}

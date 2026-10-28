@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "28089486040703690",
+  "source_hash": "178bf5be42be7fd7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:22.886Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Omer submitted an A/5 renewal about two weeks ago and is still waiting for a call to set the interview date.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28089695200682774"
+      ],
+      "author_id": "100001774436011",
+      "author_name": "Omer Tsivoney",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-08-04",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 14,
+          "ongoing": true,
+          "text": "היינו בתור לפני שבועיים, מחכים שיתקשרו לקבוע תאריך לראיון"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T09:58:34.000Z"
+    },
+    {
+      "summary": "Grace was given an extension appointment one day before her visa expired.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28090943460557948"
+      ],
+      "author_id": "100001375445680",
+      "author_name": "Grace DA Shimon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T12:21:34.000Z"
+    }
+  ]
+}

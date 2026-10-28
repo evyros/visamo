@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28897901853195434",
+  "source_hash": "40b586d23386ffc0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.947Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "David Tsofnas says his wife's ETA-IL tourist applications keep being refused despite her earlier B1, eta@piba.gov.il gave no information, and his mother keeps resubmitting documents at Misrad Hapnim with no answer date.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28897901853195434",
+        "28898485213137098"
+      ],
+      "author_id": "100001663113219",
+      "author_name": "David Tsofnas",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-18T08:33:04.000Z"
+    }
+  ]
+}

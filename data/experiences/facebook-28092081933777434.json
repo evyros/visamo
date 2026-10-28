@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28092081933777434",
+  "source_hash": "5ebd4823bac25de7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.105Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Camille, on an unrestricted B/1 process and now married, has an appointment next month and asks whether to resubmit all documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28092081933777434"
+      ],
+      "author_id": "100002536849407",
+      "author_name": "Camille",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-18T14:14:51.000Z"
+    }
+  ]
+}

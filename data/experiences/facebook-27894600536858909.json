@@ -1,0 +1,206 @@
+{
+  "source": "facebook",
+  "thread_id": "27894600536858909",
+  "source_hash": "1e09b08ad1c5c999",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:16.866Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jessica and her wife have an A/5 renewal appointment on 5 October at the Bnei Brak-Ramat Gan branch; an SMS from the Authority told them to upload all documents 3 months before the appointment, which was already too late, but when she phoned they said she could bring everything on the day.",
+      "branch": "ramat-gan",
+      "branch_text": "בני ברק–רמת גן",
+      "channels": [
+        "sms",
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "27894600536858909",
+        "27919061357746160"
+      ],
+      "author_id": "100000481905305",
+      "author_name": "Jessica Terpins",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10-05"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sends an SMS asking to upload all documents through the site 3 months before the renewal appointment",
+        "Allows bringing all documents on the day of the renewal appointment when asked by phone"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T15:14:24.000Z"
+    },
+    {
+      "summary": "In the previous two renewals of their A/5, Jessica and her wife brought all documents on the day of the appointment, with no upload requested.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27894600536858909"
+      ],
+      "author_id": "100000481905305",
+      "author_name": "Jessica Terpins",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T15:14:24.000Z"
+    },
+    {
+      "summary": "Denis and his partner were told at last year's renewal meeting at Holon that documents are now uploaded digitally; by email they were told to upload a few days before the meeting.",
+      "branch": "holon",
+      "branch_text": "סניף חולון",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27894741446844818"
+      ],
+      "author_id": "100000512548107",
+      "author_name": "Denis Israel",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Told renewal documents are uploaded digitally, a few days before the meeting"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T15:30:24.000Z"
+    },
+    {
+      "summary": "Yehuda and his husband uploaded documents less than 3 months ahead because the link was sent too late; at the Bnei Brak-Ramat Gan appointment the clerks complained about missing recent bills and forms they had never been asked to fill in.",
+      "branch": "ramat-gan",
+      "branch_text": "באותו סניף שציינת",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27919004381085191",
+        "27919039907748305",
+        "28370975655888059"
+      ],
+      "author_id": "609222465",
+      "author_name": "Yehuda Azar",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Expects updated center-of-life documents for the period between the online upload and the appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T18:02:54.000Z"
+    },
+    {
+      "summary": "The year before, Yehuda was not allowed to upload to the site, so he brought everything to the appointment, and the clerks complained that he had not uploaded online.",
+      "branch": "ramat-gan",
+      "branch_text": "באותו סניף שציינת",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27919004381085191"
+      ],
+      "author_id": "609222465",
+      "author_name": "Yehuda Azar",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T18:02:54.000Z"
+    }
+  ]
+}

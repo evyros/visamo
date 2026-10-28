@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27056806913971613",
+  "source_hash": "85962de5c8663621",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.677Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maximilian sent updated documents over 3 months ago ahead of an interview in Jerusalem in about two weeks and got only an automatic reply.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27056806913971613"
+      ],
+      "author_id": "100002908185104",
+      "author_name": "Maximilian Overbeck",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-23T18:34:05.000Z"
+    }
+  ]
+}

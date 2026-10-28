@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "26865544359764537",
+  "source_hash": "6f7ae041beea6a69",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.160Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ady was asked by email to bring a notarized personal status affidavit from the USA, including where they married and whether there are children out of wedlock.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26865544359764537",
+        "26865909823061324"
+      ],
+      "author_id": "611424344",
+      "author_name": "Ady Zafri",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-08T07:00:35.000Z"
+    },
+    {
+      "summary": "Kai, a UK citizen living in Australia, told the office they could not get a UK affidavit and was told a notarised affidavit made and apostilled in Australia would be accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26866796986305941"
+      ],
+      "author_id": "100000173542735",
+      "author_name": "Kai Connolly",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an affidavit notarised and apostilled in the country of residence when one cannot be obtained from the country of citizenship"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-08T09:28:45.000Z"
+    }
+  ]
+}

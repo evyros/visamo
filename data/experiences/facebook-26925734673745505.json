@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "26925734673745505",
+  "source_hash": "048c55e366125e97",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:45.844Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shlomit Sharoni applied for a shortened process about six months ago with the support of their clerk and has had no answer since.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26925734673745505",
+        "26927762893542683"
+      ],
+      "author_id": "600424123",
+      "author_name": "Shlomit Sharoni",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": "2025-11",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 180,
+          "ongoing": true,
+          "text": "הגשנו בקשה לקיצור הליך כבר לפני חצי שנה... כבר חצי שנה ואין מענה"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T07:09:29.000Z"
+    },
+    {
+      "summary": "Klara Kedem applied for a shortened process; after the interview and agreement the file was sent to Jerusalem and has been stuck there a long time, while she sends reminders every two or three days and her visa expires in two months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26927066316945674"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "file-transferred"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T09:21:23.000Z"
+    }
+  ]
+}

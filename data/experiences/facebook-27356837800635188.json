@@ -1,0 +1,126 @@
+{
+  "source": "facebook",
+  "thread_id": "27356837800635188",
+  "source_hash": "8982ce9dd9ad31c2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:12.240Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Israeli man whose Thai girlfriend arrived on a 30-day tourist visa emailed the immigration office and booked a my.gov appointment to extend it, but felt he would not get an answer soon.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27356837800635188"
+      ],
+      "author_id": "100009801637487",
+      "author_name": "Stav Kipper",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-16T05:00:31.000Z"
+    },
+    {
+      "summary": "Advice that the Ashkelon office usually takes walk-ins in the morning at opening, every day except Wednesday.",
+      "branch": "ashkelon",
+      "branch_text": "לשכה באשקלון",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27369396852712616"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Ashkelon usually takes walk-ins in the morning when it opens, every day except Wednesday."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-17T05:28:37.000Z"
+    },
+    {
+      "summary": "In 2016 the author went to the Jerusalem branch before 7:30 AM without an appointment to extend a tourist visa; they could extend only up to the return flight date.",
+      "branch": "jerusalem",
+      "branch_text": "MH Jerusalem branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27357597603892541",
+        "27360114616974173"
+      ],
+      "author_id": "1736307021",
+      "author_name": "Aui Aru",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2016",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Jerusalem takes walk-ins for tourist visa extensions early in the morning, before 7:30 AM.",
+        "Tourist visa extensions are granted only up to the date of the return flight ticket."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-16T06:32:32.000Z"
+    }
+  ]
+}

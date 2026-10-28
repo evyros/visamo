@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28385333844452240",
+  "source_hash": "14c27c994021c278",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:30.081Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At the final meeting at the Jerusalem branch, the author was suddenly required to prove her marriage was registered in her home state, given 45 days, or the case would be closed and she could not submit her citizenship application.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28385333844452240",
+        "28385775394408085"
+      ],
+      "author_id": "100067189440776",
+      "author_name": "לבנה אור",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires proof of marriage registration in the home country at the final meeting, giving 45 days to provide it"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T09:44:13.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28568868599432096",
+  "source_hash": "561676e68ef6fbff",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:33.881Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Talya Ronen says registering her marital status took a whole year because the authority kept inventing documents they needed, which only postponed the start of the process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28570172085968414"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-23T16:00:13.000Z"
+    }
+  ]
+}

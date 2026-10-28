@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27280740508244918",
+  "source_hash": "b70fabd481b37911",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.765Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Couple in the partner-visa process for over a year have finally been given an interview appointment for August 2026.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27280740508244918"
+      ],
+      "author_id": "100000326395843",
+      "author_name": "Eva Alkemade",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-06",
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-10T05:14:18.000Z"
+    }
+  ]
+}

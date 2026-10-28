@@ -1,0 +1,131 @@
+{
+  "source": "facebook",
+  "thread_id": "27246740184978284",
+  "source_hash": "b0106063fb0628ac",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.105Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Poulain Denise Josephine Amélie has waited for the citizenship answer since November, her visa expires within a month, and an email a month ago only got a reply that there is nothing new.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem branch",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27246740184978284"
+      ],
+      "author_id": "595244390",
+      "author_name": "Poulain Denise Josephine Amélie",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T08:28:40.000Z"
+    },
+    {
+      "summary": "Zahrah Ruth's citizenship approval took 10 months after the interview (July 2025), when she got a call and an appointment to receive it in May 2026, then about 4 weeks for the passport.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27247174544934848"
+      ],
+      "author_id": "644476090",
+      "author_name": "Zahrah Ruth",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 300,
+          "ongoing": false,
+          "text": "my citizenship approval took 10 months after the interview"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-07T09:21:39.000Z"
+    },
+    {
+      "summary": "Aliza Wollmann dealt with the citizenship matter at the Jerusalem branch a few months ago, found it quick and the clerks very friendly, and says people are usually asked to come at 8:30 to the citizenship department.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27248467641472205"
+      ],
+      "author_id": "100000402107089",
+      "author_name": "Aliza Wollmann",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The Jerusalem citizenship department usually asks people to come at 8:30."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T11:56:45.000Z"
+    }
+  ]
+}

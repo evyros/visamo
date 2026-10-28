@@ -1,0 +1,79 @@
+{
+  "source": "facebook",
+  "thread_id": "26792962133689427",
+  "source_hash": "1670c353be4513f3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:41.854Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roman Ovsei was sent a document list for his wife's B/1 to A/5 interview that mentions only form Ash/3 and not Ash/6.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26792962133689427"
+      ],
+      "author_id": "100025709350635",
+      "author_name": "Roman Ovsei",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-01T19:56:15.000Z"
+    },
+    {
+      "summary": "Roman Ovsei says an earlier branch forgot to tell them they had to go through an interview in the process, so they lost several months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26792962133689427"
+      ],
+      "author_id": "100025709350635",
+      "author_name": "Roman Ovsei",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-01T19:56:15.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28347656184886673",
+  "source_hash": "bd4183104c1497ae",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.249Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Katerina Elior told the office at the start that they travel a lot as photographers; days abroad were never checked and no missing days were added before citizenship, with a nice clerk.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28350780877907537"
+      ],
+      "author_id": "100001280841400",
+      "author_name": "Katerina Elior",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-07T18:32:52.000Z"
+    }
+  ]
+}

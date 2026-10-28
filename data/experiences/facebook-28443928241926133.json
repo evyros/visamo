@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28443928241926133",
+  "source_hash": "98a574f40e80b1dc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:31.132Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jenni, an A/5 holder, has been given a first A/5 renewal appointment for 1 December 2026 and asks whether she can book a trip abroad in the meantime.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28443928241926133"
+      ],
+      "author_id": "100037688707182",
+      "author_name": "Jenni IG Yona",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-12-01"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T14:48:55.000Z"
+    }
+  ]
+}

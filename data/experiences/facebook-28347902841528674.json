@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28347902841528674",
+  "source_hash": "6114b5a7102dcb7a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.125Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ofri Hashavia Cohen's husband got a B1 about three months ago, and the clerk at the appointment asked them to email after three months to request an appointment for the A5.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28347902841528674"
+      ],
+      "author_id": "100025144188926",
+      "author_name": "Ofri Hashavia Cohen",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks couples on a B1 to email after three months to request an appointment for the A5."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-07T14:12:53.000Z"
+    }
+  ]
+}

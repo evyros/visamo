@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "28264232999895659",
+  "source_hash": "7c81503362de3382",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:27.061Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At last year's A/5 interview in Jerusalem, when she asked about applying for citizenship after 4 years on A/5, the clerk said she needed 4 meetings and made her feel suspicious for asking; the next A/5 appointment was set a year ahead.",
+      "branch": "jerusalem",
+      "branch_text": "Misrad Hapnim Jerusalem",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28264232999895659",
+        "28264313116554314",
+        "28264967389822220"
+      ],
+      "author_id": "100067189440776",
+      "author_name": "לבנה אור",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Schedules the next A/5 appointment a year ahead at the interview."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-01T08:48:20.000Z"
+    },
+    {
+      "summary": "Before her final A/5 appointment in Jerusalem in September 2026, the documents sent 3 months earlier had received no confirmation from the office.",
+      "branch": "jerusalem",
+      "branch_text": "Misrad Hapnim Jerusalem",
+      "channels": [],
+      "source_ids": [
+        "28264232999895659"
+      ],
+      "author_id": "100067189440776",
+      "author_name": "לבנה אור",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": null,
+        "appointment_set": "2025",
+        "appointment": "2026-09"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 90,
+          "ongoing": true,
+          "text": "We submitted the required documents 3 months ago, but have not heard back from misrad Hapnim to confirm"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-01T08:48:20.000Z"
+    }
+  ]
+}

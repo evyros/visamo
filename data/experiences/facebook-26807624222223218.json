@@ -1,0 +1,168 @@
+{
+  "source": "facebook",
+  "thread_id": "26807624222223218",
+  "source_hash": "be6e5efb3361a122",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:42.026Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior Meridor received an SMS reminder for his wife's A5 renewal and a link to fill in an online document, and found the Ramat Gan office had moved from Bialik Street to Bnei Brak.",
+      "branch": "ramat-gan",
+      "branch_text": "הלשכה ברחוב ביאליק ברמת גן",
+      "channels": [
+        "sms",
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "26807624222223218"
+      ],
+      "author_id": "1044808542",
+      "author_name": "Lior Meridor",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The Ramat Gan office moved from Bialik Street to Bnei Brak.",
+        "Sends an SMS reminder with a link to an online form and asks for documents to be uploaded to the site before the renewal appointment."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-03T06:00:36.000Z"
+    },
+    {
+      "summary": "In earlier renewals at the Bialik Street Ramat Gan office, Lior Meridor was not required to fill in an online form.",
+      "branch": "ramat-gan",
+      "branch_text": "הלשכה ברחוב ביאליק ברמת גן",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26807624222223218"
+      ],
+      "author_id": "1044808542",
+      "author_name": "Lior Meridor",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the old Bialik Street office, renewals did not require an online form."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-03T06:00:36.000Z"
+    },
+    {
+      "summary": "Yalee Azani says that at the Bialik office the digital system was not yet in use and they were told to come with everything in order rather than send it by email; after the move to Bnei Brak they got a message for a July appointment to upload documents to the system.",
+      "branch": "ramat-gan",
+      "branch_text": "ביאליק / בני ברק",
+      "channels": [
+        "in-person",
+        "sms",
+        "online"
+      ],
+      "source_ids": [
+        "26810659611919679"
+      ],
+      "author_id": "744805309",
+      "author_name": "Yalee Azani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Since the move to Bnei Brak the office uses the digital system and asks for documents to be uploaded."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-03T13:05:09.000Z"
+    },
+    {
+      "summary": "Tal Lior says the Holon branch required uploading all renewal documents to the website, which lists all the forms needed.",
+      "branch": "holon",
+      "branch_text": "סניף חולון",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26807897062195934"
+      ],
+      "author_id": "100000288963545",
+      "author_name": "Tal Lior",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires renewal documents to be uploaded to the website."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-03T06:40:47.000Z"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "27709984611987170",
+  "source_hash": "5e7397ef52a5f606",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:34.987Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A husband whose wife's A/5 expires a week before the renewal appointment emailed the Haifa branch, which replied that the gap is fine and the visa can be extended after the interview.",
+      "branch": "haifa",
+      "branch_text": "Haifa branch",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27709984611987170",
+        "27710636851921946",
+        "27710600271925604",
+        "27712255005093464"
+      ],
+      "author_id": "100001509172179",
+      "author_name": "Gil Yedidya",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Says in writing that a one-week gap between A/5 expiry and the renewal appointment is acceptable.",
+        "Asks for a few more papers to be brought to the interview itself."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-17T13:41:31.000Z"
+    },
+    {
+      "summary": "A wife on an A/5 whose visa was automatically extended because of the war was given a renewal appointment one day before expiry and received an A/5 for another year; registered at Netanya.",
+      "branch": "netanya",
+      "branch_text": "Netanya Branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27749233861395578"
+      ],
+      "author_id": "100001375445680",
+      "author_name": "Grace DA Shimon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Automatically extends the A/5 during war and schedules the renewal appointment before the extended expiry."
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-07-21T04:00:10.000Z"
+    }
+  ]
+}

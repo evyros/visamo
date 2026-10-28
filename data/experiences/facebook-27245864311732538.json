@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27245864311732538",
+  "source_hash": "0bb4e4dc127fddc1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:54.888Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Brooke Mah's visa renewal appointment was set for 1.5 months after her visa expires, and Misrad Hapnim said they will not extend the visa until the appointment date.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27245864311732538",
+        "27246572488328387"
+      ],
+      "author_id": "566799784",
+      "author_name": "Brooke Mah",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T06:40:31.000Z"
+    }
+  ]
+}

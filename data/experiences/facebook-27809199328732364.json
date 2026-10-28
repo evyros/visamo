@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27809199328732364",
+  "source_hash": "f1284f17cf93039a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:13.924Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kai, a UK foreign spouse, was given an appointment on 11 August 2026 to hand in his documents for a B1 visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27809199328732364"
+      ],
+      "author_id": "100000173542735",
+      "author_name": "Kai Connolly",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-11"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-26T06:49:58.000Z"
+    }
+  ]
+}

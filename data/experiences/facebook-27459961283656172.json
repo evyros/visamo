@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "27459961283656172",
+  "source_hash": "002308af0d23276d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:05.986Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Bar Tuvia's citizenship application, after getting an A5 quickly, was hard: they were asked for documents from the country of origin of her German partner's parents and it took almost two years from the interview to receipt, though the branch clerk was supportive and headquarters caused the difficulties.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27459961283656172"
+      ],
+      "author_id": "1269229231",
+      "author_name": "Shani Bar Tuvia",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 700,
+          "ongoing": false,
+          "text": "almost two years from the naturalization interview until receiving it"
+        }
+      ],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "For citizenship where the partner's parents came from another country, may ask for documents from that country showing he is not a citizen there and not entitled to citizenship."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-24T18:50:33.000Z"
+    }
+  ]
+}

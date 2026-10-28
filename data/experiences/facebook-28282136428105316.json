@@ -1,0 +1,162 @@
+{
+  "source": "facebook",
+  "thread_id": "28282136428105316",
+  "source_hash": "b23961db71bfe6c0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:00.784Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Estefany, arrived 3 weeks ago for the unmarried track, was given an interview appointment at Petah Tikva in January 2027 and asks how to get an earlier one.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva office",
+      "channels": [],
+      "source_ids": [
+        "28282136428105316",
+        "28287330230919269",
+        "28287324620919830"
+      ],
+      "author_id": "679523415",
+      "author_name": "Estefany MisasDiaz",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-01"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-02T14:52:17.000Z"
+    },
+    {
+      "summary": "Juan arrived in February and was given an interview in September; the office is not named.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28289573790694913"
+      ],
+      "author_id": "100000967855871",
+      "author_name": "Juan C. Torres",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-03T03:27:00.000Z"
+    },
+    {
+      "summary": "Juan knows another couple who started the process in the north and got their interview appointment one week after the partner arrived.",
+      "branch": null,
+      "branch_text": "the north",
+      "channels": [],
+      "source_ids": [
+        "28289573790694913"
+      ],
+      "author_id": "100000967855871",
+      "author_name": "Juan C. Torres",
+      "firsthand": "secondhand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Offices in the north can give an interview appointment about a week after the partner arrives"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-03T03:27:00.000Z"
+    },
+    {
+      "summary": "Liesa arrived in March 2025 on a Misrad Hapnim invitation and was given an interview at the end of October 2025; emails and two in-person visits could not move it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28319230301062595"
+      ],
+      "author_id": "100000113548118",
+      "author_name": "Liesa Alker",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-10"
+      },
+      "waits": [],
+      "experience_when": "2025-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Will not move an interview to an earlier date; promises to call if someone cancels"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-05T06:41:28.000Z"
+    }
+  ]
+}

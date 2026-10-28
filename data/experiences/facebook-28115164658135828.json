@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "28115164658135828",
+  "source_hash": "5ce660371991e7aa",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:09.274Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Unmarried couple applied online at the Herzliya branch and got an email answer on 2026-08-20 giving the Israeli partner a document handover date of September 6, which they called a fairly quick reply.",
+      "branch": "herzliya",
+      "branch_text": "Herzlyia branch",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28115164658135828"
+      ],
+      "author_id": "100004155787457",
+      "author_name": "Tessa Olivary",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-08-20",
+        "appointment_set": "2026-08-20",
+        "appointment": "2026-09-06"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-20T11:49:21.000Z"
+    }
+  ]
+}

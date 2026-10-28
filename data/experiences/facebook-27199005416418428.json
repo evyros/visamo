@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27199005416418428",
+  "source_hash": "0c453175874d95af",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.067Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ilan never sent documents online before his A/5 interviews; the clerk said an appointment would simply be set and they should bring the documents, and recycled recommendation letters weren't checked.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27199271563058480"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sets the A/5 renewal appointment without documents being uploaded beforehand",
+        "Did not check recycled recommendation letters"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-03T15:00:30.000Z"
+    }
+  ]
+}

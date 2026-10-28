@@ -1,0 +1,54 @@
+{
+  "source": "facebook",
+  "thread_id": "28652913957694226",
+  "source_hash": "58b1c1c55d94d1e3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:36.197Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Rosdhane Apfel at Ramat Gan was given the citizenship application form and a meeting date of 2027-01-03, told to write a letter and send documents online 3 months before, but got no list of documents.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan branch",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "28652913957694226",
+        "28653111014341187",
+        "28653149011004054"
+      ],
+      "author_id": "684147862",
+      "author_name": "Rosdhane Apfel",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-01-25",
+        "appointment": "2027-01-03"
+      },
+      "waits": [],
+      "experience_when": "2026-01",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Asks citizenship applicants to send the documents online 3 months before the appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T08:35:42.000Z"
+    }
+  ]
+}

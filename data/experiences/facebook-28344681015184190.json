@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28344681015184190",
+  "source_hash": "55d0ffff91659fd0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:28.896Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Claudia Galarza Cervantes says they applied for the partner visa while not living together and their process got complicated.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28350675781251380"
+      ],
+      "author_id": "100000497590652",
+      "author_name": "Claudia Galarza Cervantes",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-07T18:21:35.000Z"
+    }
+  ]
+}

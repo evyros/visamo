@@ -1,0 +1,93 @@
+{
+  "source": "facebook",
+  "thread_id": "27608359378816361",
+  "source_hash": "9baf87e4c663b53c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.016Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Married couple applied online to Beer Sheva in April; on July 7 they got a first response with an appointment on August 2 that asks for notarized translations although their documents are in English.",
+      "branch": "beer-sheva",
+      "branch_text": "Beer Sheva",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27608359378816361"
+      ],
+      "author_id": "100012864820247",
+      "author_name": "Oren Mataev",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-04",
+        "first_response": "2026-07-07",
+        "appointment_set": "2026-07-07",
+        "appointment": "2026-08-02"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 26,
+          "ongoing": false,
+          "text": "today we received our first response and an invitation to an appointment on August 2nd"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-07T20:37:21.000Z"
+    },
+    {
+      "summary": "Shira submitted documents in English and it was fine.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27608647322120900"
+      ],
+      "author_id": "1242948976",
+      "author_name": "Shira Ohanah",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts documents in English without translation"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-07T21:21:31.000Z"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source": "facebook",
+  "thread_id": "26859373443714962",
+  "source_hash": "f1ed35d8c9d66b25",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.209Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ricarda, whose Haifa branch was bombed and is served by Haifa Krayot, went for a passport sticker proving her war-extended A/5 and inter-visa and was told stickers are not given because the extension is in the system.",
+      "branch": "krayot",
+      "branch_text": "Haifa Krayot branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26859373443714962"
+      ],
+      "author_id": "1014450299",
+      "author_name": "Ricarda Ruetz",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Told an applicant with a war-extended visa that no passport sticker is given because the extension is recorded in the system"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T18:56:08.000Z"
+    },
+    {
+      "summary": "Angela went to the Krayot branch (Haifa is not working) this week and was given the passport sticker for her extended visa.",
+      "branch": "krayot",
+      "branch_text": "Kraiot is near Ikea",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26859679413684365",
+        "26867815152870791"
+      ],
+      "author_id": "100006180633845",
+      "author_name": "Angela Ines",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the passport sticker for an extended visa at the Krayot branch while the Haifa branch is closed"
+      ],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-05-07T19:26:15.000Z"
+    },
+    {
+      "summary": "Angela got her visa sticker in Herzliya with no problem.",
+      "branch": "herzliya",
+      "branch_text": "herzliya",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26860028596982780"
+      ],
+      "author_id": "1035703795",
+      "author_name": "Angela García",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the passport sticker for an extended visa at Herzliya"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T20:01:57.000Z"
+    }
+  ]
+}

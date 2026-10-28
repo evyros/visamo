@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "26776187252033582",
+  "source_hash": "d2090a5427e106c4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:41.021Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Julie Moret Savary's visa was automatically renewed and she got an SMS saying a new appointment would be scheduled, but emails to the Tel Aviv office got no response.",
+      "branch": "tel-aviv",
+      "branch_text": "Kiryat HaMemshala",
+      "channels": [
+        "sms",
+        "email"
+      ],
+      "source_ids": [
+        "26776187252033582"
+      ],
+      "author_id": "100000623436947",
+      "author_name": "Julie Moret Savary",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T09:47:55.000Z"
+    }
+  ]
+}

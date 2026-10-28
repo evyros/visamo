@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27843506168635013",
+  "source_hash": "2bc5749093bf3119",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:15.269Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tom Pl was given contradicting information at the partner visa interview about how days abroad are counted; the visa was received on Feb 10 2026.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27843506168635013"
+      ],
+      "author_id": "677062553",
+      "author_name": "Tom Pl",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-02",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T07:00:42.000Z"
+    }
+  ]
+}

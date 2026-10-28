@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "27966195306366098",
+  "source_hash": "99fed62ec843ee9d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.995Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Asaf, preparing the annual renewal, found the online form asks for many documents but accepts only a single PDF or image, not a zip.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27966195306366098",
+        "27966328033019492"
+      ],
+      "author_id": "683739375",
+      "author_name": "Asaf Haddad",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "neutral",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The online renewal form takes one PDF or image per field, not a zip"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-08T11:13:07.000Z"
+    },
+    {
+      "summary": "Renan did not send an apartment contract with this year's renewal because the form did not list it, and was asked to supply it afterwards.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27966951052957190"
+      ],
+      "author_id": "581847971",
+      "author_name": "Renan Ohana",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-08T12:33:22.000Z"
+    }
+  ]
+}

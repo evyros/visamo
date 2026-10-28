@@ -1,0 +1,208 @@
+{
+  "source": "facebook",
+  "thread_id": "26934204226231883",
+  "source_hash": "608d9f7b6cb24d36",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:46.361Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shay's Russian wife requested her first A/5 renewal in May 2025; after 10 days they got an answer giving only 6 months to examine sincerity of the relationship and shared center of life, because the office counted about 7 months abroad.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26934204226231883"
+      ],
+      "author_id": "788698159",
+      "author_name": "Shay Atik",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-05",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 10,
+          "ongoing": false,
+          "text": "לאחר 10 ימים קיבלנו תשובה"
+        }
+      ],
+      "experience_when": "2025-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives A/5 for only 6 months when the couple spent long periods abroad, to re-examine the shared center of life"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-13T21:47:39.000Z"
+    },
+    {
+      "summary": "At the November 2025 interview to renew his wife's 6-month A/5, the interviewer gave no answer on the spot; in December the team leader's letter said they had not proven a shared center of life and demanded she leave within 14 days, and the internal appeal to the branch manager was rejected.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "26934204226231883"
+      ],
+      "author_id": "788698159",
+      "author_name": "Shay Atik",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-11"
+      },
+      "waits": [],
+      "experience_when": "2025-11",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The interviewer consults the team leader before answering on a renewal where center of life is in question",
+        "Counts all time abroad in the year, including time outside the granted extension, when judging center of life"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-13T21:47:39.000Z"
+    },
+    {
+      "summary": "Shay (an Israeli citizen) applied to invite his wife's 16-year-old son to visit after the team leader told him she would refuse; 70 days later a letter rejected it, citing risk of settling in Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "26934204226231883"
+      ],
+      "author_id": "788698159",
+      "author_name": "Shay Atik",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 70,
+          "ongoing": false,
+          "text": "70 יום לאחר הגשת הבקשה קיבלתי מראש הצוות בסניף מכתב"
+        }
+      ],
+      "experience_when": "2025-12",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T21:47:39.000Z"
+    },
+    {
+      "summary": "After the appeal to the appeals tribunal, the lawyers settled: the wife's A/5 was extended by half a year, counted continuously, with a further center-of-life review at its end, and the appeal was withdrawn.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26934204226231883"
+      ],
+      "author_id": "788698159",
+      "author_name": "Shay Atik",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T21:47:39.000Z"
+    },
+    {
+      "summary": "Liad says Petah Tikva office is full of failings (shouting them at the Interior Minister, who blocked him on WhatsApp) and that the clerks treat citizens as if doing them a favor.",
+      "branch": "petah-tikva",
+      "branch_text": "לשכת פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "26936891602629812"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-14T03:06:14.000Z"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28296083776710581",
+  "source_hash": "5039f1711e268c47",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:27.889Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Xristina Pappa, a married Israeli-Greek couple waiting for Rehovot to schedule their appointment, was told at a walk-in status check that the B1 might not be issued on the spot and that each case is different.",
+      "branch": "rehovot",
+      "branch_text": "Rehovot",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28296083776710581"
+      ],
+      "author_id": "1010689048",
+      "author_name": "Xristina Pappa",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Clerks may say the B1 will not necessarily be issued on the spot at the documents appointment."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-03T14:33:19.000Z"
+    }
+  ]
+}

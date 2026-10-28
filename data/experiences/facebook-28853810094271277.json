@@ -1,0 +1,124 @@
+{
+  "source": "facebook",
+  "thread_id": "28853810094271277",
+  "source_hash": "b601949f9b83ce22",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.706Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar's partner's B/1 expires on 19 January but the renewal appointment she was given is on 24 January.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28853810094271277"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-01-24"
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-15T05:27:44.000Z"
+    },
+    {
+      "summary": "Kathrin says visa extensions can be done by going to Misrad Hapnim early morning (8-9, not Wednesdays), and that having a new appointment means a short gap is not a problem.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28853904510928502",
+        "28884111951241091"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Visa extensions are done at walk-in early in the morning, 8-9, except Wednesdays"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-10-15T05:37:40.000Z"
+    },
+    {
+      "summary": "Kathrin notes that some branches, such as Hadera, do not allow walk-ins.",
+      "branch": "hadera",
+      "branch_text": "hadera branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28853904510928502"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Does not allow walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-15T05:37:40.000Z"
+    }
+  ]
+}

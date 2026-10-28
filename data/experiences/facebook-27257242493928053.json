@@ -1,0 +1,199 @@
+{
+  "source": "facebook",
+  "thread_id": "27257242493928053",
+  "source_hash": "0c6e31b08db942a1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.420Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shachar Sagi went to his appointment at the Tel Aviv South branch to start a tourist invitation for his partner and was told no visa meetings were being held that day, though Instagram said the branch was open.",
+      "branch": "jaffa",
+      "branch_text": "לשכת תל אביב דרום",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27257242493928053",
+        "27257498457235790",
+        "27257536417231994",
+        "27257539203898382",
+        "27258598047125831"
+      ],
+      "author_id": "100000107224370",
+      "author_name": "שחר שגיא",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-08"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T07:38:21.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says partner visa applications are handled at the Menachem Begin branch in Tel Aviv, while the South Tel Aviv branch only handles student, tourist and refugee visas.",
+      "branch": "jaffa",
+      "branch_text": "south tel aviv branch",
+      "channels": [],
+      "source_ids": [
+        "27257485243903778"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handles only student, tourist and refugee visas, not partner visa applications"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-08T08:14:24.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says the Menachem Begin branch in Tel Aviv handles all partner visa applications but is closed for visa issues at the moment, and that visa departments were also closed temporarily during the last war.",
+      "branch": "tel-aviv",
+      "branch_text": "MH TLV Derech menachem begin",
+      "channels": [],
+      "source_ids": [
+        "27257485243903778",
+        "27258707163781586",
+        "27258712733781029"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handles all partner visa applications",
+        "Closed for visa issues in June 2026",
+        "Visa departments were closed temporarily during the last war"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T08:14:24.000Z"
+    },
+    {
+      "summary": "Lior Beres says the Menachem Begin branch is closed for all issues.",
+      "branch": "tel-aviv",
+      "branch_text": "Menachem Begin",
+      "channels": [],
+      "source_ids": [
+        "27258783593773943"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Closed for all issues in June 2026"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T11:08:59.000Z"
+    },
+    {
+      "summary": "Lior Beres says Tel Aviv South was supposed to be open with no stated limits on services, but during the day it emerged that not all services were available, and visa services are always the first to be cut.",
+      "branch": "jaffa",
+      "branch_text": "תל אביב דרום",
+      "channels": [],
+      "source_ids": [
+        "27259034053748897"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Visa services are the first to be cut when services are limited"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T11:40:49.000Z"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26789402017378772",
+  "source_hash": "e2db9a4a933d0c15",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.146Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Moran Jacob says they missed two Holon Interior Ministry appointments because of the war and the office is not replying to their emails.",
+      "branch": "holon",
+      "branch_text": "משרד הפנים בחולון",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26789402017378772"
+      ],
+      "author_id": "1447416934",
+      "author_name": "Moran Jacob",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-01T13:10:41.000Z"
+    }
+  ]
+}

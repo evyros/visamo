@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "26708616305457344",
+  "source_hash": "44bd240f0c9bfb02",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.350Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Coral Ifergan has a renewal interview at Misrad Hapnim in under a month, with different forms this time including a landlord form for their rented flat, and did not receive an application number or date by email.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26708616305457344",
+        "26708671802118461",
+        "26714697181515923"
+      ],
+      "author_id": "1780099632",
+      "author_name": "Coral Ifergan",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks renters to submit a landlord form with the renewal documents"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-24T18:25:58.000Z"
+    }
+  ]
+}

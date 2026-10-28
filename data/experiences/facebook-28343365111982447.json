@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "28343365111982447",
+  "source_hash": "80f449d3cdf3055a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:28.727Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ofri Hashavia Cohen says that when her husband got the B1 the office told them to email after three months to set an interview for the A5.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "source_ids": [
+        "28343365111982447",
+        "28343428681976090",
+        "28344466368538988"
+      ],
+      "author_id": "100025144188926",
+      "author_name": "Ofri Hashavia Cohen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks couples to email about three months after the B1 to book the A5 interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-07T05:34:46.000Z"
+    }
+  ]
+}

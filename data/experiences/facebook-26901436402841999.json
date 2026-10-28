@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26901436402841999",
+  "source_hash": "a7ad0ab328ff561b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:41.626Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shachar has a B/1 extension meeting in two weeks, set a year earlier on the day the visa was issued; they filed the extension documents 3 months ago and have received no email or text since.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26901436402841999"
+      ],
+      "author_id": "100004019387059",
+      "author_name": "Shachar Tsarfaty",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-02",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T08:59:57.000Z"
+    }
+  ]
+}

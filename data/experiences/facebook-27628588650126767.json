@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "27628588650126767",
+  "source_hash": "a8e7a068da4c80ff",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:21.226Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Petar Jovanović and his husband were called in on time at Tel Aviv and got the second A5 and extended ID after a 6-minute interview where the clerk said they should only be scheduled every 2 years.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv Branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27628588650126767",
+        "27628963896755909"
+      ],
+      "author_id": "1037734075",
+      "author_name": "Petar Jovanović",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-09"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "told that the interview is over and my visa has been granted"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews the partners separately, with a translator if needed.",
+        "Grants the A5 and extends the ID on the spot at the interview.",
+        "A clerk said couples considered not problematic should be scheduled for an interview every 2 years, not yearly."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-09T19:22:11.000Z"
+    },
+    {
+      "summary": "Klara Kedem says the people at Misrad Hapnim are nice but the rest is not.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27648505704801728"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-11T18:35:48.000Z"
+    }
+  ]
+}

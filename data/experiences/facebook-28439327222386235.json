@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "28439327222386235",
+  "source_hash": "66ef51913d11c86f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:30.852Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Married couple had their first meeting at MH Tel Aviv on July 27, received the B1, were given an appointment for end of February for the A5 and a paper asking for updated documents one month before; the meeting was quick and mostly with the Israeli husband.",
+      "branch": "tel-aviv",
+      "branch_text": "MH TLV",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28439327222386235"
+      ],
+      "author_id": "677194128",
+      "author_name": "Samantha Petraglia Ravitz",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-07-27",
+        "appointment": "2027-02"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the B1 at the first meeting and sets the A5 appointment then",
+        "Hands a paper asking for updated documents one month before the next appointment",
+        "First meeting is quick and mostly with the Israeli partner"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-14T07:10:14.000Z"
+    }
+  ]
+}

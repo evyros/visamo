@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "27281097191542583",
+  "source_hash": "7c1910ce426979fd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.990Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kathrin Petersen says the Tel Aviv branch always wanted to see all of the last 12 months of utility bills from them for renewals, and only the new bills between the upload and the appointment need to be brought in person.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv branch",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27281155694870066",
+        "27283034391348863"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks to see all of the last 12 months of utility bills as proof of shared life.",
+        "Only bills newer than the online upload need to be brought to the appointment."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-10T05:58:30.000Z"
+    }
+  ]
+}

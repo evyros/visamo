@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27087056307613340",
+  "source_hash": "38d4385f44a9987e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.201Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A wife describes her husband's long process ending in Israeli citizenship, with many documents, emails, visits to the Petah Tikva office and interviews, ending with a request for a renewed ID and first Israeli passport.",
+      "branch": "petah-tikva",
+      "branch_text": "לשכת פ״ת",
+      "channels": [
+        "in-person",
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "27087056307613340"
+      ],
+      "author_id": "717888081",
+      "author_name": "Liata Fiore",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-26T14:52:15.000Z"
+    },
+    {
+      "summary": "Says the Petah Tikva office is very nice and that there has been a big change there.",
+      "branch": "petah-tikva",
+      "branch_text": "לשכת פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "27102453832740254"
+      ],
+      "author_id": "100000271568617",
+      "author_name": "שרית מורי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-27T17:26:51.000Z"
+    }
+  ]
+}

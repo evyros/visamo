@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28118509114468049",
+  "source_hash": "1dc0b02ffa758486",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:24.315Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aaron Wright, flying from the UK on a tourist visa, says Misrad HaPnim invited him to come get his first B/1 visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28118509114468049"
+      ],
+      "author_id": "100000143569835",
+      "author_name": "Aaron Wright",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-20T17:28:30.000Z"
+    }
+  ]
+}

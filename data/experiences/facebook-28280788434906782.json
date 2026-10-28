@@ -1,0 +1,170 @@
+{
+  "source": "facebook",
+  "thread_id": "28280788434906782",
+  "source_hash": "d3a23dc3fd00cf72",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:56.413Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yaniv Lifshitz applied at the Krayot office on 24.6.2026 as a married couple, has had no decision or clear explanation after many emails and a visit, and was told it would be handled.",
+      "branch": "krayot",
+      "branch_text": "בלשכת קריות",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28280788434906782"
+      ],
+      "author_id": "100000368121182",
+      "author_name": "Yaniv Lifshitz",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-06-24",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 70,
+          "ongoing": true,
+          "text": "הבקשה הוגשה בתאריך 24.6.2026 ... מאז אנחנו פשוט לא מצליחים לקבל תשובה"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-02T12:53:27.000Z"
+    },
+    {
+      "summary": "Klara Kedem says she usually gets an answer when she goes to the Population Authority, for example when extending her husband's A5 by two years.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28280951694890456"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-02T13:08:27.000Z"
+    },
+    {
+      "summary": "Klara Kedem says her request for her husband's permanent residence before he had 5 years on A5 got stuck, and she was told it was being handled when it was not.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28280951694890456"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-02T13:08:27.000Z"
+    },
+    {
+      "summary": "Yoav Alexander Levy says he only got answers when he went to the office in person, while emails were answered about once in 100 and with a few words after weeks of daily emailing.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28281422874843338"
+      ],
+      "author_id": "580754179",
+      "author_name": "Yoav Alexander Levy",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-02T13:49:37.000Z"
+    }
+  ]
+}

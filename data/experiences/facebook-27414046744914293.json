@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27414046744914293",
+  "source_hash": "6bbd164de7376126",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:01.137Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Hovar Bahadin's husband was given an appointment at the office, described by phone as the last interview before the committee decision, and an SMS then asked her to pay a fee and enter a passport/travel document, which confused her.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone",
+        "sms"
+      ],
+      "source_ids": [
+        "27414046744914293"
+      ],
+      "author_id": "100007901166541",
+      "author_name": "Hovar Bahadin",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-20T18:32:14.000Z"
+    }
+  ]
+}

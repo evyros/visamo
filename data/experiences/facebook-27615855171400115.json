@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27615855171400115",
+  "source_hash": "fb4081f6331103fc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.708Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leah Hunt, with an A/5 renewal appointment coming up at the Haifa office, was emailed to bring more official mail in both partners' names than they have, having submitted documents in March.",
+      "branch": "haifa",
+      "branch_text": "Haifa office",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27615855171400115"
+      ],
+      "author_id": "100006926492376",
+      "author_name": "Leah Hunt",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks renewal applicants by email to bring more official mail addressed to both partners"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-08T14:30:49.000Z"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27688121580840140",
+  "source_hash": "22e67f97ae4b7a30",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.708Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sarah Arieh-Parnell was given the citizenship application forms at her last A5 renewal, with a date to submit them roughly when her current A5 expires after almost 3 years 10 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27690939527225012"
+      ],
+      "author_id": "744803477",
+      "author_name": "Sarah Arieh-Parnell",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-15T20:18:03.000Z"
+    },
+    {
+      "summary": "Lior Beres says that at Herzliya his citizenship interview was held together with the A5 renewal.",
+      "branch": "herzliya",
+      "branch_text": "Hertzliya",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27695675670084731"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holds the citizenship interview together with the A5 renewal"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-16T07:03:58.000Z"
+    }
+  ]
+}

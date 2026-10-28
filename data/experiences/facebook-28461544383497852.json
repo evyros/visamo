@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28461544383497852",
+  "source_hash": "101b2883a010d3d4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:31.668Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alex Alon, a married couple in the gradual process at Tel Aviv, says at their last A5 meeting they were told not to stay abroad more than two months before the next meeting.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28461544383497852",
+        "28463875746598049"
+      ],
+      "author_id": "665586910",
+      "author_name": "Alex Alon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells couples in the gradual process not to stay abroad more than two months before the next meeting."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-15T18:27:44.000Z"
+    }
+  ]
+}

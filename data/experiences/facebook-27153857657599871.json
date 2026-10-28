@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27153857657599871",
+  "source_hash": "a824477c245b1ceb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:52.400Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "After marrying, Peleg Neufeld went to the visa department to convert their PIBA file to married status and was told to first file an online request and wait to be contacted for an appointment; he doubts this and says the clerk was wrong about something else in the past.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27153857657599871",
+        "27170438949275075"
+      ],
+      "author_id": "1338465818",
+      "author_name": "Peleg Neufeld",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T08:56:24.000Z"
+    },
+    {
+      "summary": "Rachel Zer says the appointment to update a couple's marital status was done directly at the office, and since they had a visa renewal appointment a few months later, they were told to wait and update the details then.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27154444610874509"
+      ],
+      "author_id": "727136169",
+      "author_name": "Rachel Zer",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T09:56:26.000Z"
+    }
+  ]
+}

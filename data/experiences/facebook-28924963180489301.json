@@ -1,0 +1,53 @@
+{
+  "source": "facebook",
+  "thread_id": "28924963180489301",
+  "source_hash": "4981eb1eb309a504",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:38.412Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "After waiting 5 months for their case to be opened, Małgorzata was asked for a German good-conduct certificate and then told her Polish documents were about to expire and must be replaced.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28924963180489301"
+      ],
+      "author_id": "100000975133437",
+      "author_name": "Małgorzata Napierała",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 150,
+          "ongoing": false,
+          "text": "After waiting 5 months to have our case opened"
+        }
+      ],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-20T08:16:52.000Z"
+    }
+  ]
+}

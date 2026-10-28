@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "26856251040693869",
+  "source_hash": "4fde6a058d70928f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.217Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Talya Ronen invited her partner as a tourist through Misrad Hapnim with a lawyer and received only a vague email saying there is no impediment to entry, with no clear approval or document.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "26856251040693869",
+        "26860220103630296",
+        "26866352186350421"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T13:43:58.000Z"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "source": "facebook",
+  "thread_id": "26546958798289763",
+  "source_hash": "62ae249cfc7ac3d1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:42.249Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jordan Grimmer-Tufik advises that Tel Aviv answers emails with a backlog of about a month and a half, and urgent matters may need a visit in person.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv - Menachem Begin",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "26548108518174791"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Answers emails with a backlog of about a month and a half.",
+        "Urgent matters may require going in person."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-09T19:53:25.000Z"
+    }
+  ]
+}

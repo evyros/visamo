@@ -1,0 +1,102 @@
+{
+  "source": "facebook",
+  "thread_id": "27904980065820956",
+  "source_hash": "589e19deacaa7612",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.755Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sharona was given an interview and original-documents appointment at Ramat Gan only 7 months later, in February 2027, after submitting all documents.",
+      "branch": "ramat-gan",
+      "branch_text": "לשכת רמת גן",
+      "channels": [],
+      "source_ids": [
+        "27904980065820956",
+        "27965379159781046"
+      ],
+      "author_id": "100001459603706",
+      "author_name": "שרונה ביניאשוילי",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-08",
+        "appointment": "2027-02"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 210,
+          "ongoing": false,
+          "text": "שלחו לי תור לראיון ... רק בעוד 7 חודשים בפברואר 2027"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-03T14:35:39.000Z"
+    },
+    {
+      "summary": "Lior says a seven-month wait for an interview at the Ramat Gan office is unfortunately not unusual and is the normal waiting time there.",
+      "branch": "ramat-gan",
+      "branch_text": "לשכת רמת גן",
+      "channels": [],
+      "source_ids": [
+        "27979530231699272"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 210,
+          "ongoing": false,
+          "text": "המתנה של שבעה חודשים בלשכת רמת גן זה לא חריג ... זמני ההמתנה הרגילים שם לריאיון"
+        }
+      ],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Interviews are typically about seven months away"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-09T13:58:30.000Z"
+    }
+  ]
+}

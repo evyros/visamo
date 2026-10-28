@@ -1,0 +1,61 @@
+{
+  "source": "facebook",
+  "thread_id": "26693246266994348",
+  "source_hash": "708f90055f56f10e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.111Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A first-time applicant got a document-completion letter three weeks after applying, sent the documents by email as the Herzliya office told them, got an automatic receipt, and heard nothing since.",
+      "branch": "herzliya",
+      "branch_text": "לשכת הרצליה",
+      "channels": [
+        "email",
+        "mail"
+      ],
+      "source_ids": [
+        "26693246266994348",
+        "26696947866624188"
+      ],
+      "author_id": "100000187666781",
+      "author_name": "Zhi Yen Lo",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 21,
+          "ongoing": false,
+          "text": "three weeks after we submitted the application we received a letter requiring documents"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Herzliya asks for completion documents to be sent by email and replies with an automatic receipt"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T14:27:24.000Z"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "source": "facebook",
+  "thread_id": "28437521435900147",
+  "source_hash": "744cdc05f06455a4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.154Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "שחר שגיא applied to invite his Colombian partner as a tourist, was told it would take under 40 days, and got an emailed approval after roughly 3 months, delayed by the war.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28437521435900147",
+        "28442807682038189"
+      ],
+      "author_id": "100000107224370",
+      "author_name": "שחר שגיא",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-09",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 90,
+          "ongoing": false,
+          "text": "אמרו לי שיקח פחות מ40 ימים ולקח הרבה יותר מ40 ימים (לדעתי איזה 3 חודשים)"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells applicants the tourist invitation answer takes under 40 days, but it can take much longer"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T03:41:08.000Z"
+    },
+    {
+      "summary": "שחר שגיא was told by Misrad Hapnim that his partner's entry was approved but a deposit through the airport guarantees unit was required, valid for one month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28437521435900147"
+      ],
+      "author_id": "100000107224370",
+      "author_name": "שחר שגיא",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T03:41:08.000Z"
+    },
+    {
+      "summary": "Maya Mic applied for a tourist invitation about a month ago with no answer yet, although the clerk said several times it would come in under a month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28441565325495758"
+      ],
+      "author_id": "808749569",
+      "author_name": "Maya Mic",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": "2026-08",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": true,
+          "text": "אני הגשתי בקשה לפני כחודש ועדיין לא ענו (הפקידה אמרה לי מס' פעמים שהתשובה תהיה תוך פחות מחודש)"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T11:11:50.000Z"
+    },
+    {
+      "summary": "Ilan Bar paid the guarantee twice and both times Misrad Hapnim replied within an hour and a half; it can be paid online by credit card with no trip to the airport.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28441565325495758",
+        "28442881138697510",
+        "28442920062026951"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Guarantee can be paid online by credit card without going to the airport"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T11:11:50.000Z"
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "source": "facebook",
+  "thread_id": "27697488749903423",
+  "source_hash": "2e1b97bcf38cbb68",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:45.030Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alexandra Mary Hughes, who lives in the north, says the clerk at her office always has a go at her for not speaking Hebrew when she goes.",
+      "branch": null,
+      "branch_text": "up north",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27697544359897862",
+        "27697488749903423"
+      ],
+      "author_id": "1212548824",
+      "author_name": "Alexandra Mary Hughes",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T11:14:13.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg's husband, who doesn't speak Hebrew, had a citizenship interview with a translator on the phone translating back and forth.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "phone"
+      ],
+      "source_ids": [
+        "27697744016544563"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Provides a phone translator for citizenship interviews of applicants who don't speak Hebrew."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T11:38:47.000Z"
+    },
+    {
+      "summary": "Alex Zhivotovsky, a married couple, was asked a few simple Hebrew questions during the citizenship meeting, which felt like a formality.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27698334893152142",
+        "27698672349785063"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks a few simple Hebrew questions at the citizenship meeting, even of married couples."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T12:42:23.000Z"
+    },
+    {
+      "summary": "Ilan Bar says their citizenship process was fast and the interviews went smoothly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27698480646470900"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T12:57:49.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says her husband, who knows no Hebrew, finalized the citizenship process smoothly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27698793773106254"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T13:31:20.000Z"
+    },
+    {
+      "summary": "Agata Sh says her own citizenship process was one of the smoothest although she spoke little or no Hebrew.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27701222069530091"
+      ],
+      "author_id": "794224238",
+      "author_name": "Agata Sh",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T17:54:11.000Z"
+    },
+    {
+      "summary": "Diana Georgieva had her citizenship interview in 2026 and was not required to speak Hebrew; the sentence she mentioned turned out to belong to the later naturalization declaration.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27698520006466964",
+        "27719621201023511"
+      ],
+      "author_id": "45013042",
+      "author_name": "Diana Georgieva",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-16T13:01:58.000Z"
+    },
+    {
+      "summary": "Zonuni Ngente Soroka says nobody spoke to her in Hebrew during the whole process, including the citizenship interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27698536999798598"
+      ],
+      "author_id": "866760031",
+      "author_name": "Zonuni Ngente Soroka",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T13:03:49.000Z"
+    },
+    {
+      "summary": "Nadav Mor says the Haifa branch brings a translator to the meeting, e.g. for Russian, possibly other languages.",
+      "branch": "haifa",
+      "branch_text": "Haifa branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27698923596426605"
+      ],
+      "author_id": "100082744322363",
+      "author_name": "Nadav Mor",
+      "firsthand": "advice",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Brings a translator to meetings, e.g. for Russian speakers."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T13:45:08.000Z"
+    },
+    {
+      "summary": "Genine Stoltenkamp - Schuster says her interview was entirely in English.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27699213739730924"
+      ],
+      "author_id": "723580296",
+      "author_name": "Genine Stoltenkamp - Schuster",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T14:16:27.000Z"
+    },
+    {
+      "summary": "Karen Koh had her citizenship interview in English at Tel Aviv and was offered citizenship, which she declined.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27700545826264382"
+      ],
+      "author_id": "584966913",
+      "author_name": "Karen Koh",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holds citizenship interviews in English."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-16T16:37:17.000Z"
+    },
+    {
+      "summary": "Loredana Mussa requested an interpreter in her native language at Akko throughout the process and for citizenship, and never spoke Hebrew.",
+      "branch": "akko",
+      "branch_text": "Akko office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27702045372781094"
+      ],
+      "author_id": "1437994360",
+      "author_name": "Loredana Mussa",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Provides an interpreter in the applicant's language on request."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-16T19:35:59.000Z"
+    },
+    {
+      "summary": "Piper Evans had her citizenship interview 100% in English at the Bnei Brak office.",
+      "branch": "bnei-brak",
+      "branch_text": "the office in Bnei Brak",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27715695088082789"
+      ],
+      "author_id": "1468272801",
+      "author_name": "Piper Evans",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holds citizenship interviews in English."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-18T01:02:32.000Z"
+    }
+  ]
+}

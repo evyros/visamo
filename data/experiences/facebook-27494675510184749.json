@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "27494675510184749",
+  "source_hash": "4228f1abc8835fa1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:04.407Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kat found that the online application accepts only one document per field, including the final Additional Documents field, although about seven extra documents are requested.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27494675510184749"
+      ],
+      "author_id": "100000232909236",
+      "author_name": "Kat Gold",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The online application allows one uploaded file per document field."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-27T19:14:13.000Z"
+    },
+    {
+      "summary": "Elena had to compress her files or use screenshots to upload them to the online application because the files were too heavy.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27494855573500076"
+      ],
+      "author_id": "100004648533876",
+      "author_name": "Elena Ruiz González",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The online application limits uploaded file size."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-27T19:37:31.000Z"
+    }
+  ]
+}

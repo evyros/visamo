@@ -1,0 +1,160 @@
+{
+  "source": "facebook",
+  "thread_id": "28107866035532357",
+  "source_hash": "3f3821fba5eddafc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:34.532Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kate Kaoss, married, passed the interview and was registered as married, but at the Tel Aviv branch on 2026-08-20 was told (by the branch manager) that citizenship won't go to the committee without her German marriage confirmation, and nothing can be done if it takes years.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28107866035532357",
+        "28112962335022727",
+        "28113005825018378"
+      ],
+      "author_id": "100012404228458",
+      "author_name": "Kate Kaoss",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires confirmation of the marriage registration from the home country before moving a citizenship file to the committee."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-19T20:05:54.000Z"
+    },
+    {
+      "summary": "Nansi Gjineci says that last December Misrad Hapnim told her she needs to bring the home-country marriage registration to complete the process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28111852181800409",
+        "28112356831749944"
+      ],
+      "author_id": "1062817244",
+      "author_name": "Nansi Gjineci",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025-12",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells couples the home-country marriage registration is required to complete the process."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-20T04:57:21.000Z"
+    },
+    {
+      "summary": "Lo Chaiching says that when getting the B1, PIBA told them they have four years to register the marriage in the home country, and that it must be done before applying for citizenship.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28111752948476999"
+      ],
+      "author_id": "100014412667198",
+      "author_name": "Lo Chaiching",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells couples at the B1 stage they have four years to register the marriage in the home country."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-20T04:44:21.000Z"
+    },
+    {
+      "summary": "Lior Beres says there is currently a problem in Tel Aviv with a manager who insists on the home-country marriage registration for citizenship.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV",
+      "channels": [],
+      "source_ids": [
+        "28116726674646293"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A manager at the branch currently requires the home-country marriage registration for citizenship, against the written procedure."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-20T14:27:36.000Z"
+    }
+  ]
+}

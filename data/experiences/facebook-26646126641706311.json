@@ -1,0 +1,351 @@
+{
+  "source": "facebook",
+  "thread_id": "26646126641706311",
+  "source_hash": "442761f85edc608b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:38.582Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "After applying online, she got an email requesting more documents signed only 'Tel Aviv branch', hit a bug uploading them online, and found out only by going in person that the file was at the Menachem Begin office; the online personal area has been down for months.",
+      "branch": "tel-aviv",
+      "branch_text": "לשכת תל אביב מנחם בגין",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "26646126641706311",
+        "26646376618347980",
+        "26646402475012061",
+        "26647569261562049",
+        "26648966271422348"
+      ],
+      "author_id": "1161323712",
+      "author_name": "Anaty V Hoop",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requests for more documents are signed only 'Tel Aviv branch' without saying which office handles the file.",
+        "The online site had a bug when uploading requested documents."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T05:57:04.000Z"
+    },
+    {
+      "summary": "Her emails to the South Tel Aviv (Salame) office about her application went unanswered and she was never told the file was handled by the Menachem Begin office; she describes excessive waiting there, and the office handled her earlier tourist visa request.",
+      "branch": "jaffa",
+      "branch_text": "דרום תל אביב, רחוב סלמה",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "26646368085015500",
+        "26646402475012061",
+        "26647569261562049"
+      ],
+      "author_id": "1161323712",
+      "author_name": "Anaty V Hoop",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "long-queue"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T06:36:20.000Z"
+    },
+    {
+      "summary": "Advice for the Tel Aviv walk-in office: arrive 7:30-7:45, offices open at 8:00 except Wednesday, best on Monday or Tuesday as Sunday and Thursday are busiest.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26646356045016704"
+      ],
+      "author_id": "680845060",
+      "author_name": "Tamar Bass",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Opens at 8:00 for walk-ins every day except Wednesday; people queue from 7:30-7:45.",
+        "Sunday and Thursday are the busiest days; Monday and Tuesday are better."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T06:34:24.000Z"
+    },
+    {
+      "summary": "Went to the office on the morning of the post, arrived at 8:05, and the queue did not move; says there is no order and staff shout at you if you ask for guidance.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26646498491669126",
+        "26646529701666005"
+      ],
+      "author_id": "559468278",
+      "author_name": "Ronen Capelouto",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T06:57:05.000Z"
+    },
+    {
+      "summary": "Says the South Tel Aviv office combined with arranging a tourist visa for a partner is one of the greatest challenges for an Israeli who falls for a foreigner.",
+      "branch": "jaffa",
+      "branch_text": "לשכת דרום תל אביב",
+      "channels": [],
+      "source_ids": [
+        "26646814348304207"
+      ],
+      "author_id": "1725474127",
+      "author_name": "Aviad Shalom",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-19T07:46:34.000Z"
+    },
+    {
+      "summary": "Advice that visa matters are handled only at the Akko branch, not at the Karmiel branch.",
+      "branch": "akko",
+      "branch_text": "עכו",
+      "channels": [],
+      "source_ids": [
+        "26647153674936941"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Visa matters in the area are handled only at the Akko branch."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T08:40:26.000Z"
+    },
+    {
+      "summary": "Has experience with the Jaffa office and calls it a torment.",
+      "branch": "jaffa",
+      "branch_text": "יפו",
+      "channels": [],
+      "source_ids": [
+        "26647299051589070"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T09:03:14.000Z"
+    },
+    {
+      "summary": "Has experience with the Tel Aviv office and calls it a torment.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [],
+      "source_ids": [
+        "26647299051589070"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T09:03:14.000Z"
+    },
+    {
+      "summary": "Says everything went almost smoothly and pleasantly for their visa matters at Tel Aviv.",
+      "branch": "tel-aviv",
+      "branch_text": "אשרות ת״א",
+      "channels": [],
+      "source_ids": [
+        "26652899651029010"
+      ],
+      "author_id": "733217221",
+      "author_name": "Oded Nuriany",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T22:30:16.000Z"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "source": "facebook",
+  "thread_id": "27855325184119778",
+  "source_hash": "cf8c8e6bfb0e58fb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:15.724Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ana Lucía did her citizenship process at the Jerusalem branch; they asked for the originals of the opening documents, saw and copied them, and required the personal letter to be in Hebrew.",
+      "branch": "jerusalem",
+      "branch_text": "JLM branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27855505037435126",
+        "27855506960768267",
+        "27856886513963645"
+      ],
+      "author_id": "547019934",
+      "author_name": "Ana Lucía Ben Arieh-Gutiérrez",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025-12",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks citizenship applicants to bring the originals of the documents presented when opening the case, then copies them and sends them home",
+        "Requires the personal letter for the citizenship application to be written in Hebrew"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-30T07:49:06.000Z"
+    },
+    {
+      "summary": "Alix Pahaut (not married, after permanent residency) was told at the Afula general counter to write a personal letter for the citizenship application, and days later was emailed a list of centre-of-life documents.",
+      "branch": "afula",
+      "branch_text": "Afula",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27885738121078484"
+      ],
+      "author_id": "336100042",
+      "author_name": "Alix Pahaut",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells citizenship applicants to write a personal letter at the general counter, which they can write on the spot",
+        "Emails the list of documents to bring to the appointment a few days after the citizenship application is submitted",
+        "Asks for centre-of-life documents for the past 3 years, nothing from the home country"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-01T19:00:47.000Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28110382811947346",
+  "source_hash": "d1ae8b767b505ed8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.996Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Omri Pinchas asked the clerk at an interview whether relatives need an official invitation to visit; she was surprised and said she thought not, but seemed unfamiliar with the question.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28110382811947346"
+      ],
+      "author_id": "100001820074119",
+      "author_name": "Omri Pinchas",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-20T01:50:43.000Z"
+    }
+  ]
+}

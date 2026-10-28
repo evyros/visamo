@@ -1,0 +1,163 @@
+{
+  "source": "facebook",
+  "thread_id": "27252213594430943",
+  "source_hash": "0374e61f7bb29fe3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:55.578Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sakuntala Saenabhud Gafni (Afula) was given an appointment for her final A5 renewal / permanent residency in mid-September, two months after her visa expires; after she emailed again the branch agreed to reschedule.",
+      "branch": "afula",
+      "branch_text": "Afula branch",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27252213594430943",
+        "27252421487743487",
+        "27258558543796448"
+      ],
+      "author_id": "100024524681010",
+      "author_name": "Sakuntala Saenabhud Gafni",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "neutral",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-07T18:58:05.000Z"
+    },
+    {
+      "summary": "Sakuntala Saenabhud Gafni said that in previous years Afula staff told her not to book too early and to contact them about one month before the visa expiry.",
+      "branch": "afula",
+      "branch_text": "Afula branch",
+      "channels": [],
+      "source_ids": [
+        "27252421487743487"
+      ],
+      "author_id": "100024524681010",
+      "author_name": "Sakuntala Saenabhud Gafni",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells people not to book a renewal appointment too early, only about one month before the visa expires"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-07T19:25:38.000Z"
+    },
+    {
+      "summary": "Lyn Zachy submitted the online A/5 application 6 months before expiry and still got an appointment about two weeks after the visa expires; the branch refused an earlier appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27257661157219520",
+        "27261035193548783",
+        "27262236776761958"
+      ],
+      "author_id": "100053383565778",
+      "author_name": "Lyn Zachy",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-08T08:39:05.000Z"
+    },
+    {
+      "summary": "Enosh Almog said he is in a similar situation, with a renewal appointment after his visa expiry, and that it is fine to extend the visa by walk-in and wait for the later meeting.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27255856720733297"
+      ],
+      "author_id": "100003518078840",
+      "author_name": "Enosh Almog",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-08T04:13:25.000Z"
+    }
+  ]
+}

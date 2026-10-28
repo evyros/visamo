@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "26656967827288859",
+  "source_hash": "9935eb84ff0e7e48",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:38.386Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Steve Edwards applied for a B/1 in January and by April 20 had not been given a date for the initial meeting at the Eilat office.",
+      "branch": "eilat",
+      "branch_text": "Eilat",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26656967827288859"
+      ],
+      "author_id": "737080103",
+      "author_name": "Steve Edwards",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-01",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 90,
+          "ongoing": true,
+          "text": "submitted our application in January and have yet to be given a date for the initial meeting"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T09:32:39.000Z"
+    },
+    {
+      "summary": "Vincent Coudron visited MH Eilat on April 23 and was told they would not give a status update and he could only wait, with no estimate.",
+      "branch": "eilat",
+      "branch_text": "MH Eilat",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26691863553799286"
+      ],
+      "author_id": "1092596056",
+      "author_name": "Vincent Coudron",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not give applicants a status update or an estimate while the application is waiting for an appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-23T12:04:47.000Z"
+    }
+  ]
+}

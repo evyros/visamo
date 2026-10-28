@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "27824869720498658",
+  "source_hash": "7c4c3cfaebc083e9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:14.503Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yaniv Ok went to the Interior Ministry office on 27 July 2026, where the clerk asked for his partner's original documents (birth certificate, police clearance, status certificate); he had passed scans through the government area and was told he has 45 days to present the originals.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27824869720498658",
+        "27824953283823635"
+      ],
+      "author_id": "100026609512477",
+      "author_name": "Yaniv Ok",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-27"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires the foreign partner's original documents to be shown in Israel, with 45 days to present them."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-27T17:15:47.000Z"
+    }
+  ]
+}

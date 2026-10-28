@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27918738461111783",
+  "source_hash": "add975ff8c035052",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.760Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sara Chen received an A/5 and a temporary ID card at the office on 2026-08-04 after a long wait.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27918738461111783"
+      ],
+      "author_id": "100090401027718",
+      "author_name": "Sara Chen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-04"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-04T17:37:46.000Z"
+    }
+  ]
+}

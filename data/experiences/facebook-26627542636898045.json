@@ -1,0 +1,90 @@
+{
+  "source": "facebook",
+  "thread_id": "26627542636898045",
+  "source_hash": "c67185d6a42d25ed",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:37.055Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leah O'Reilly went in person to the Hadera office to open an unmarried-couple file and was turned away and told everything must be done online.",
+      "branch": "hadera",
+      "branch_text": "Hadera office",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "26627542636898045",
+        "26629205426731766"
+      ],
+      "author_id": "100002506983095",
+      "author_name": "Leah O'Reilly",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Does not open partner-visa files in person; everything must be submitted online"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T08:57:44.000Z"
+    },
+    {
+      "summary": "Kat Gold said her lawyer obtained an in-person appointment at the office to drop documents without an online application being submitted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26628891003429875",
+        "26649816534670655"
+      ],
+      "author_id": "100000232909236",
+      "author_name": "Kat Gold",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-17T11:59:27.000Z"
+    }
+  ]
+}

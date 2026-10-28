@@ -1,0 +1,93 @@
+{
+  "source": "facebook",
+  "thread_id": "26656431040675871",
+  "source_hash": "52f27607127282e9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:47:59.701Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "April Cullen missed their 9 April A/5 renewal appointment at Akko, emailed and phoned repeatedly with no reply, and got a mid-July appointment after about two weeks.",
+      "branch": "akko",
+      "branch_text": "Akko",
+      "channels": [
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "26656431040675871",
+        "26676928215292820"
+      ],
+      "author_id": "1831380471",
+      "author_name": "April Cullen",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-04-21",
+        "appointment_set": "2026-04-21",
+        "appointment": "2026-07"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "appointment-far"
+      ],
+      "practices": [
+        "Did not answer emails or phone calls about rebooking a renewal appointment for about two weeks."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T08:11:43.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod advises that Akko allows walk-ins widely, unlike other branches, and a new appointment can be requested in person.",
+      "branch": "akko",
+      "branch_text": "Akko",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26676828268636148"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Allows walk-ins widely, unlike other branches.",
+        "Walk-ins without appointment are received from 08:00 to 12:00, except Wednesdays."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-22T05:20:53.000Z"
+    }
+  ]
+}

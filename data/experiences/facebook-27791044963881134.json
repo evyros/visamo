@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "27791044963881134",
+  "source_hash": "6c2b4c342c5efb15",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:13.643Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maya could not submit her husband's A5 renewal online, getting a message to contact the Tel Aviv Central office; at the branch she spent an hour at desk 27 until a clerk from the back changed something on her file so she could submit online.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv Central",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27791044963881134",
+        "28076266572025637"
+      ],
+      "author_id": "703814643",
+      "author_name": "Maya Ilani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-24T13:44:55.000Z"
+    },
+    {
+      "summary": "Alon says the online renewal upload has had a bug for a year; last time he printed everything and brought it, and in Tel Aviv they made no problems.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27792419077077056",
+        "27792742627044701"
+      ],
+      "author_id": "685226508",
+      "author_name": "Alon Maimon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts printed documents at the renewal appointment when the online upload fails"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-24T16:12:27.000Z"
+    },
+    {
+      "summary": "Liran was blocked from the online renewal submission for over a month, despite two branch visits, emails and calls; at the branch they refused to accept documents and said the meeting would not take place without an online submission; it cleared up on its own a day before the comment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person",
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "27792569853728645",
+        "27792553613730269"
+      ],
+      "author_id": "1021975696",
+      "author_name": "Liran Binyamin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-24T16:29:08.000Z"
+    }
+  ]
+}

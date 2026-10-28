@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27502112229441077",
+  "source_hash": "13d07d77bb12f18a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:41.916Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yair says he went to a branch without an appointment and got a registration extract (תמצית רישום), and says the extended version is also issued to walk-ins.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27502143832771250",
+        "27503679329284367"
+      ],
+      "author_id": "100001745077136",
+      "author_name": "Yair Yosef Shalom",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues registration extracts to walk-ins without an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-28T12:23:27.000Z"
+    }
+  ]
+}

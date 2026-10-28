@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28563684609950495",
+  "source_hash": "f9f8fdd0291e4647",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:33.777Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sophie and her husband stopped the process about ten years ago when they left Israel; on returning two years ago they were told they had to start from the beginning because their center of life was not in Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28577707251881564"
+      ],
+      "author_id": "715114060",
+      "author_name": "Sophie Zandel Recanatesi",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2024",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T05:50:41.000Z"
+    }
+  ]
+}

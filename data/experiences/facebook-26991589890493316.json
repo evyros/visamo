@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "26991589890493316",
+  "source_hash": "ad01ef403fce0fa1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:47.299Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Eloy and his wife got no reply to an email about their appointment at the Tel Aviv office, so they went in person and had to schedule the appointment all over again.",
+      "branch": "tel-aviv",
+      "branch_text": "ministry of internal affairs office in Tel Aviv",
+      "channels": [
+        "in-person",
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "26991589890493316",
+        "26992910203694618"
+      ],
+      "author_id": "100004947152145",
+      "author_name": "Eloy Emmaunel Young",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-18T06:52:17.000Z"
+    }
+  ]
+}

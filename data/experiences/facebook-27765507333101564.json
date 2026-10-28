@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "27765507333101564",
+  "source_hash": "52ab40c727856554",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:12.651Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dorin Amar (Hadera branch) could not submit an invitation for her partner's visit through the site, the appointment form led nowhere and got no reply, and by phone she was told to come in the morning and give the documents to the guard.",
+      "branch": "hadera",
+      "branch_text": "לשכת חדרה",
+      "channels": [
+        "online",
+        "phone"
+      ],
+      "source_ids": [
+        "27765507333101564"
+      ],
+      "author_id": "100000195608972",
+      "author_name": "Dorin Amar",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "For invitation documents, people are told to come in the morning and hand them to the guard"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T12:30:23.000Z"
+    }
+  ]
+}

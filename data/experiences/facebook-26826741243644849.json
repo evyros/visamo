@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "26826741243644849",
+  "source_hash": "c689edfdfdde4581",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:57.583Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kathrin Petersen advises to expect 3-6 months at Tel Aviv for the first appointment, where the entry invitation is usually issued, sometimes weeks later.",
+      "branch": "tel-aviv",
+      "branch_text": "MH tlv",
+      "channels": [],
+      "source_ids": [
+        "26827530553565918"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "First appointment is usually 3-6 months after applying.",
+        "The invitation to enter is usually issued at the first appointment, sometimes weeks after it."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-05T03:28:58.000Z"
+    }
+  ]
+}

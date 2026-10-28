@@ -1,0 +1,139 @@
+{
+  "source": "facebook",
+  "thread_id": "27358898713762430",
+  "source_hash": "38695e5354eeced4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.672Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ilana Wannagas completed her A/5 documents at the Rehovot branch about two and a half months ago, has had no response or appointment, and her email to the branch went unanswered.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27358898713762430",
+        "27359007423751559"
+      ],
+      "author_id": "1638669554",
+      "author_name": "Ilana Wannagas",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 75,
+          "ongoing": true,
+          "text": "השלמתי מסמכים לויזה A5 מלפני חודשיים וחצי ועדיין לא קיבלתי תגובה"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T09:12:59.000Z"
+    },
+    {
+      "summary": "Polina Shapira says that at the Rehovot branch walk-ins without an appointment should come between 8 and 8:30.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27359099423742359"
+      ],
+      "author_id": "1552004524",
+      "author_name": "Polina Shapira",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Walk-ins without an appointment should arrive between 8:00 and 8:30"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T09:36:31.000Z"
+    },
+    {
+      "summary": "Adi Nafshi-Bueno advises going to Rehovot in person early, 8:00 to 8:30, except Wednesday when the branch doesn't work.",
+      "branch": "rehovot",
+      "branch_text": "רחובות",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27359819597003675"
+      ],
+      "author_id": "645629468",
+      "author_name": "Adi Nafshi-Bueno",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Walk-ins should arrive between 8:00 and 8:30",
+        "Doesn't work with the public on Wednesdays"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T10:59:18.000Z"
+    }
+  ]
+}

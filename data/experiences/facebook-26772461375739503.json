@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "26772461375739503",
+  "source_hash": "28340dfca536dfb7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:46.493Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Emmanuelle Roni Cohen Skaly says Ashkelon does not receive walk-ins.",
+      "branch": "ashkelon",
+      "branch_text": "Ashkelon",
+      "channels": [],
+      "source_ids": [
+        "26777468318572142"
+      ],
+      "author_id": "100006946212711",
+      "author_name": "Emmanuelle Roni Cohen Skaly",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Ashkelon does not take walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-30T12:23:35.000Z"
+    },
+    {
+      "summary": "Tamar Bass says they received a multi-entry visa when PIBA changed her husband's B2 to a B1, with a separate fee for the B1 and for the entry visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26777439535241687"
+      ],
+      "author_id": "680845060",
+      "author_name": "Tamar Bass",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T12:20:11.000Z"
+    },
+    {
+      "summary": "Tadas Smulkstys's B2 expired on 5 March without the automatic extension; about a month later Be'er Sheva told him it had not been extended and he had to pay for the extension.",
+      "branch": "beer-sheva",
+      "branch_text": "PIBA Be'er Sheva",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26779133061739001"
+      ],
+      "author_id": "100012131917836",
+      "author_name": "Tadas Smulkstys",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T15:33:38.000Z"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "source": "facebook",
+  "thread_id": "27064998999819071",
+  "source_hash": "492d518225baab30",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:49.157Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Iina, at Rehovot, uploaded the first A5 renewal documents over 3 months ahead and emailed 2 weeks ago but still has no renewal appointment, with the visa expiring in early August.",
+      "branch": "rehovot",
+      "branch_text": "Rehovot",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27064998999819071",
+        "27066871676298470"
+      ],
+      "author_id": "100000405661577",
+      "author_name": "Iina Raz",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 90,
+          "ongoing": true,
+          "text": "uploaded the documents more than 3 months in advance"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "no-appointments-available"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-24T14:00:32.000Z"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26991068937212078",
+  "source_hash": "a65c507f60ecb433",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:47.127Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Daniel Reyes Torres, in the gradual process, applied for a visa extension three months before expiry, was sent an online payment link, and has an appointment in August; unsure whether to pay now.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26991068937212078",
+        "26995646266754345",
+        "27014922308160074"
+      ],
+      "author_id": "100082831598461",
+      "author_name": "Daniel Reyes Torres",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-18T05:50:21.000Z"
+    }
+  ]
+}

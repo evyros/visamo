@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "27494299016889065",
+  "source_hash": "ffe1313ef65a80e2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:04.278Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nadica Shima Ilieva has an A5 interview at Akko on July 26, was given only a paper document list and told at the office there was nothing to upload online, and is worried by that.",
+      "branch": "akko",
+      "branch_text": "MVD Akko",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27494299016889065",
+        "27498374549814845",
+        "27499103126408654",
+        "27502518249400475"
+      ],
+      "author_id": "100000983687108",
+      "author_name": "Nadica Shima Ilieva",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-26"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a paper list of documents to bring to the A5 interview and says nothing about uploading documents online"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-27T18:28:33.000Z"
+    },
+    {
+      "summary": "Jennifer Zimni-Gitler has an upgrade to A5 in July and says the office told them nothing about extra documents or uploading.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27498145999837700"
+      ],
+      "author_id": "1337136348",
+      "author_name": "Jennifer Zimni-Gitler",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-28T03:26:04.000Z"
+    }
+  ]
+}

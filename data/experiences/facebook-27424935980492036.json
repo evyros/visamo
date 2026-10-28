@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "27424935980492036",
+  "source_hash": "318ba62246a41b53",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:11.674Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Magdalena Orban was given an October renewal appointment at Hadera although she needs one before July 16; her email went unanswered and she cannot reach them by phone.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "27424935980492036"
+      ],
+      "author_id": "1495230948",
+      "author_name": "Magdalena Orban",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-21T16:52:27.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Hadera does not do walk-ins and suggests emailing them to ask to come in to renew the B1 until the appointment.",
+      "branch": "hadera",
+      "branch_text": "hadera",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27441100988875535"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Does not accept walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-23T02:41:20.000Z"
+    }
+  ]
+}

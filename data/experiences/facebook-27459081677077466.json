@@ -1,0 +1,121 @@
+{
+  "source": "facebook",
+  "thread_id": "27459081677077466",
+  "source_hash": "bd4e3ffd93d037ea",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.430Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Denise was informed she would get her citizenship the following week and asks what happens at the ceremony.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27459081677077466"
+      ],
+      "author_id": "595244390",
+      "author_name": "Poulain Denise Josephine Amélie",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-24T17:01:50.000Z"
+    },
+    {
+      "summary": "Carolina says at her citizenship ceremony the clerk read the declaration and she did not say a word.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27460417586943875"
+      ],
+      "author_id": "1301981690",
+      "author_name": "Carolina Camaño",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the citizenship ceremony the clerk may read the declaration while the applicant says nothing"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-24T19:48:02.000Z"
+    },
+    {
+      "summary": "Lindsey's citizenship interviewer noticed her weak Hebrew and spoke slowly and repeated questions; she was given a text to read at the ceremony that can be read in English letters.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27460621970256770"
+      ],
+      "author_id": "507731836",
+      "author_name": "Lindsey Anne Meadows",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a Hebrew text to read at receiving citizenship, which can be read in English transliteration"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-24T20:17:27.000Z"
+    }
+  ]
+}

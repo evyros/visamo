@@ -1,0 +1,157 @@
+{
+  "source": "facebook",
+  "thread_id": "27325195957132706",
+  "source_hash": "262427879f6f5a60",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.745Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "April Cullen has her second A/5 renewal appointment at the Akko branch next month and asks whether separate interviews are held again.",
+      "branch": "akko",
+      "branch_text": "Akko",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27325195957132706"
+      ],
+      "author_id": "1831380471",
+      "author_name": "April Cullen",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-13T14:26:38.000Z"
+    },
+    {
+      "summary": "Heather Gladding says that in her experience renewals did not involve separate interviews again.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27325363280449307"
+      ],
+      "author_id": "603389713",
+      "author_name": "Heather Gladding",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Doesn't hold separate interviews at renewal"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-13T14:43:40.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says that in Akko there is an interview at every renewal.",
+      "branch": "akko",
+      "branch_text": "Akko",
+      "channels": [],
+      "source_ids": [
+        "27326596586992643"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holds an interview at every renewal"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-13T16:47:45.000Z"
+    },
+    {
+      "summary": "Nor Ahmad Oğlu says that at the Petah Tikva branch there was a separate interview every time throughout the whole process.",
+      "branch": "petah-tikva",
+      "branch_text": "סניף פתח תקווה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27327265313592437"
+      ],
+      "author_id": "100011799444382",
+      "author_name": "Nor Ahmad Oğlu",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews the partners separately at every stage"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-13T17:57:53.000Z"
+    }
+  ]
+}

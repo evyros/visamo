@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28095745176744443",
+  "source_hash": "961a9e4fe534286a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.316Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "The poster's mother-in-law's invitation request was denied by email after he handed in all requested documents at the appointment, citing her coming from a high-risk country (Ukraine) with no further explanation and no offer of a deposit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28095745176744443",
+        "28096062500046044"
+      ],
+      "author_id": "584536401",
+      "author_name": "Gilad Shmaya",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T20:27:40.000Z"
+    }
+  ]
+}

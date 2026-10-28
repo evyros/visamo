@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27270148332637469",
+  "source_hash": "396866a016d5c518",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.539Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Married partner changed her status to married at Misrad Hapnim, providing a translated single-status document from Mexico and the marriage certificate.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27270148332637469"
+      ],
+      "author_id": "100002037262093",
+      "author_name": "Nastia Godneva",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-09T10:17:09.000Z"
+    }
+  ]
+}

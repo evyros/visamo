@@ -1,0 +1,206 @@
+{
+  "source": "facebook",
+  "thread_id": "26691752013810440",
+  "source_hash": "889e66c9aeadaca2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.757Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ilan's first application to bring his partner to Israel as a tourist, filled in and sent near the end of the Covid period, was refused.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26691752013810440"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T11:52:50.000Z"
+    },
+    {
+      "summary": "Ilan resubmitted the tourist entry application on a Saturday evening and got a phone call at noon Sunday saying it was approved but a guarantee was required.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "phone"
+      ],
+      "source_ids": [
+        "26691752013810440"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 1,
+          "ongoing": false,
+          "text": "הגשתי את הבקשה בשבת בערב. ביום ראשון, בשעה 12 בצהריים, קיבלתי טלפון"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T11:52:50.000Z"
+    },
+    {
+      "summary": "Ilan paid the guarantee the day after the approval call, and his lawyer handled the airport procedure at Ben Gurion; he notes the guarantee can now be paid by credit card.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26691752013810440"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The guarantee can be paid by credit card"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T11:52:50.000Z"
+    },
+    {
+      "summary": "Ilan went through the common-law process with a short B/2, then B/1 for a year, and his wife got her first A/5 at the end of 2023 within a few months after they married.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26691752013810440"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T11:52:50.000Z"
+    },
+    {
+      "summary": "After applying for aliyah once his wife was registered as Jewish, she received Israeli citizenship after about 7 months of interviews and a short process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26691752013810440"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 210,
+          "ongoing": false,
+          "text": "הגשנו בקשה לעלייה, ואחרי כ-7 חודשים של ראיונות ותהליך קצר אשתי קיבלה אזרחות ישראלית"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T11:52:50.000Z"
+    }
+  ]
+}

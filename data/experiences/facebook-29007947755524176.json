@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "29007947755524176",
+  "source_hash": "f0b8fac76010212b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:40.134Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alex Zhivotovsky says that when he submitted his documents Misrad Hapnim requested at least three recommendation letters from Israelis and focused on them, along with photos and a personal letter.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "29008616448790640"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-10-26T12:25:05.000Z"
+    }
+  ]
+}

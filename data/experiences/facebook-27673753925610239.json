@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27673753925610239",
+  "source_hash": "c259ff767d2afdb0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.780Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ejims Fort says the immigration authority asked for a statement from a lawyer among the documents requested when uploading documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27673753925610239"
+      ],
+      "author_id": "100024222163981",
+      "author_name": "Ejims Fort",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-14T06:31:39.000Z"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "source": "facebook",
+  "thread_id": "27978566325128996",
+  "source_hash": "2eebe5bd8efeca42",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:00.842Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "An unmarried applicant (posted anonymously by Kathrin) passed the citizenship interview and was invited to the loyalty ceremony but cannot attend the date and was told to wait for the next one.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27978566325128996"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A missed citizenship ceremony date is moved to the next available date"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-09T12:16:55.000Z"
+    },
+    {
+      "summary": "The same couple says Misrad Hapnim has seen them every year for 8 years and things always go smoothly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27978566325128996"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-09T12:16:55.000Z"
+    },
+    {
+      "summary": "Laura could not attend the ceremony date, went to Misrad Hapnim without an appointment to extend the A/5, and was given a new ceremony date for the next day instead.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27978624841789811"
+      ],
+      "author_id": "588193279",
+      "author_name": "Laura Or",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a new citizenship ceremony date at a walk-in visit when the original date was missed"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-09T12:23:18.000Z"
+    },
+    {
+      "summary": "Yulia knows of cases where citizenship was denied and the A/5 extended another year after the applicant mentioned plans to work abroad at the final interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27989715177347444"
+      ],
+      "author_id": "1115760717",
+      "author_name": "Yulia Makarenko",
+      "firsthand": "secondhand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Applicants who mention plans to work abroad at the final citizenship interview may be denied and given a one-year A/5 extension"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T11:58:11.000Z"
+    }
+  ]
+}

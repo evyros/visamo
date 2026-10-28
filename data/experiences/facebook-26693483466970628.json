@@ -1,0 +1,397 @@
+{
+  "source": "facebook",
+  "thread_id": "26693483466970628",
+  "source_hash": "f58af90a77a70f49",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:20.166Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Osher Oved Somudom (Kfar Saba) got a citizenship invitation email a week after the interview and the ceremony within a month, in December.",
+      "branch": "kfar-saba",
+      "branch_text": "כפר סבא",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26693494400302868",
+        "26693516226967352",
+        "26693760333609608"
+      ],
+      "author_id": "61560462412979",
+      "author_name": "Osher Oved Somudom",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-11"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 7,
+          "ongoing": false,
+          "text": "שבוע אחרי שלחו לנו מייל זימון לקבלת אזרחות"
+        },
+        {
+          "from": "interview",
+          "to": "ceremony",
+          "days": 30,
+          "ongoing": false,
+          "text": "סהכ מהראיון לטקס- חודש"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T14:51:17.000Z"
+    },
+    {
+      "summary": "Nor Ahmad Oğlu (Petah Tikva) had the citizenship interview in November and was still waiting for an answer in April, then got it on May 3.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "26693657420286566",
+        "26693660046952970",
+        "26693684503617191",
+        "26694288760223432",
+        "26810180048634302",
+        "26810295531956087"
+      ],
+      "author_id": "100011799444382",
+      "author_name": "Nor Ahmad Oğlu",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-11"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 150,
+          "ongoing": false,
+          "text": "הראיון בנובמבר, היום קבלנו תשובה (3 במאי)"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T15:07:14.000Z"
+    },
+    {
+      "summary": "Lior Beres says the citizenship answer in Herzliya took 8 months, in 2022 or possibly 2023.",
+      "branch": "herzliya",
+      "branch_text": "הרצליה",
+      "channels": [],
+      "source_ids": [
+        "26695166340135674",
+        "26695171536801821"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 240,
+          "ongoing": false,
+          "text": "בהרצליה בשנת 2022 8 חודשים"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T17:35:50.000Z"
+    },
+    {
+      "summary": "Dror Levi (Beer Sheva) says the citizenship answer took a month.",
+      "branch": "beer-sheva",
+      "branch_text": "באר שבע",
+      "channels": [],
+      "source_ids": [
+        "26700842199568088",
+        "26701175486201426"
+      ],
+      "author_id": "100000113333705",
+      "author_name": "Dror Levi",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 30,
+          "ongoing": false,
+          "text": "חודש"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-24T04:29:17.000Z"
+    },
+    {
+      "summary": "Dana Estrin says the citizenship answer took a year at the Hadera office.",
+      "branch": "hadera",
+      "branch_text": "לשכת חדרה",
+      "channels": [],
+      "source_ids": [
+        "26702136552771986"
+      ],
+      "author_id": "100006538423238",
+      "author_name": "Dana Estrin",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 365,
+          "ongoing": false,
+          "text": "לקח לנו שנה !!!!"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-24T07:00:53.000Z"
+    },
+    {
+      "summary": "Liissa von Manetsch-Dorohina (Tel Aviv) went from an invitation to the office in late February 2025 to citizenship in early March 2025, two months in total from the idea in late December 2024.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [],
+      "source_ids": [
+        "26705612685757706",
+        "26706338972351744"
+      ],
+      "author_id": "517797256",
+      "author_name": "Liissa von Manetsch-Dorohina",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-02"
+      },
+      "waits": [],
+      "experience_when": "2025-03",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-24T13:23:52.000Z"
+    },
+    {
+      "summary": "Hila FH says the citizenship answer took a few months at Ramat Gan.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [],
+      "source_ids": [
+        "26717641801221461"
+      ],
+      "author_id": "1042918629",
+      "author_name": "Hila FH",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-25T11:55:59.000Z"
+    },
+    {
+      "summary": "Alex Zhivotovsky (Petah Tikva) waited 5.5 months for the citizenship answer, with a war in the middle, after being told at the interview it would take up to half a year.",
+      "branch": "petah-tikva",
+      "branch_text": "פ\"ת",
+      "channels": [],
+      "source_ids": [
+        "26836291976023109"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 165,
+          "ongoing": false,
+          "text": "5.5 חודשים, אבל הייתה מלחמה באמצע"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells applicants at the citizenship interview that the answer takes up to half a year.",
+        "Usually handles requests quickly, but citizenship needs approval from Jerusalem."
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-05T21:37:16.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says it will be almost a month from the citizenship interview to the ceremony invitation, with a phone call after about three weeks saying it was approved.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "26841976008788039"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 21,
+          "ongoing": false,
+          "text": "טלפון קבלתי אחרי כשלושה שבועות לעדכן שאושר"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-06T10:06:04.000Z"
+    }
+  ]
+}

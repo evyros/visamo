@@ -1,0 +1,100 @@
+{
+  "source": "facebook",
+  "thread_id": "27442069492112018",
+  "source_hash": "6ac757b5bc37c7cc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:02.209Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shlomit Sharoni submitted a letter requesting to shorten the gradual process at the 2-year meeting, filled in forms and paid 800 NIS; the office answered only after 7 months and set a meeting a month later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27460542866931347"
+      ],
+      "author_id": "600424123",
+      "author_name": "Shlomit Sharoni",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-06",
+        "appointment": "2026-07"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 210,
+          "ongoing": false,
+          "text": "רק אחרי 7 חודשים ענו למכתב וקבעו לנו פגישה"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-24T20:05:49.000Z"
+    },
+    {
+      "summary": "Klara Kedem asked at the last branch meeting for her 85-year-old husband, married nine years with three A/5 visas, to become a permanent resident; the answer has been stuck at the ministry for over half a year and she expects nothing from the office.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27519524294366537",
+        "27519538457698454"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 180,
+          "ongoing": true,
+          "text": "התשובה תקועה במשרד הפנים מעל חצי שנה"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-29T23:16:55.000Z"
+    }
+  ]
+}

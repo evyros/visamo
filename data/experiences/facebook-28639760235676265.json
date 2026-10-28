@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "28639760235676265",
+  "source_hash": "6ebdf191d9f3ea90",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:35.707Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Gilad's partner on a second-year B/1 did not ask for a multi-entry visa at the last renewal and was not given one, and the office did not mention it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28639760235676265",
+        "28642057698779852"
+      ],
+      "author_id": "584536401",
+      "author_name": "Gilad Shmaya",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-29T07:14:31.000Z"
+    },
+    {
+      "summary": "Lindsey went to the Herzliya office at 5:30 am for walk-in service, where only about the first 15 people are let in, and found it traumatising.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28639853272333628"
+      ],
+      "author_id": "507731836",
+      "author_name": "Lindsey Anne Meadows",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Lets in only about the first 15 walk-ins, so people arrive before dawn."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-29T07:27:01.000Z"
+    }
+  ]
+}

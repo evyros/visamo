@@ -1,0 +1,58 @@
+{
+  "source": "facebook",
+  "thread_id": "27099945892991048",
+  "source_hash": "b6df9ce23aefe906",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:51.052Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Inbar at the Akko branch applied for renewal and citizenship 3 months ahead, got the citizenship meeting and interview in one meeting a month before the renewal date, the visa was not renewed as it had a month left, and the ceremony and passport application followed 3 weeks later.",
+      "branch": "akko",
+      "branch_text": "Akko branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27108129662172671"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "ceremony",
+          "days": 21,
+          "ongoing": false,
+          "text": "3 weeks after and before the renewal we had the citizenship ceremony"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holds the citizenship interview in the same meeting where the last documents are handed in.",
+        "Does not renew the A5 when it still has a month of validity and the citizenship answer is due within that time."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-28T02:56:30.000Z"
+    }
+  ]
+}

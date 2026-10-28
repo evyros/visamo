@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "27733771436275154",
+  "source_hash": "f02237c157df0176",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.633Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Michael Bassin applied while based abroad with his wife, and got his interview date 5 weeks after applying in spring 2024.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27738747345777563",
+        "27738773802441584",
+        "27738805349105096"
+      ],
+      "author_id": "5313365",
+      "author_name": "Michael Bassin",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 35,
+          "ongoing": false,
+          "text": "I got it 5 weeks after I applied"
+        }
+      ],
+      "experience_when": "2024-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T06:28:59.000Z"
+    }
+  ]
+}

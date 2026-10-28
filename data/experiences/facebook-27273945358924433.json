@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27273945358924433",
+  "source_hash": "77a4aa3585d41736",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.610Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Zuzanna's husband first handed over the documents alone, her entry invitation came a few days later, and after she arrived they had an appointment at which the initial interview date was set.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27274028585582777",
+        "27282539688065000"
+      ],
+      "author_id": "100025451289327",
+      "author_name": "Zuzanna Nowicka-Krispel",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-09T17:00:06.000Z"
+    },
+    {
+      "summary": "Victoria Ginzburg went to the in-person document meeting in June 2026; her partner did not get his invitation because the office asked for more documents it had missed when reviewing the application 6 months earlier.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27284961374489498",
+        "27314364188215883"
+      ],
+      "author_id": "100004230308331",
+      "author_name": "Victoria Ginzburg",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-11"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-10T12:38:49.000Z"
+    }
+  ]
+}

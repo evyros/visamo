@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26690530503932591",
+  "source_hash": "47ffcbb08552a35b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.460Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At the first meeting the couple showed passports, recommendations and bills; the husband got a foreign-worker visa until the next meeting and a friendly clerk said to bring a lease and bills.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26690530503932591"
+      ],
+      "author_id": "100002532856382",
+      "author_name": "Noy Shekel O'connor",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a foreign-worker visa until the next appointment after the first meeting"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-23T09:31:09.000Z"
+    }
+  ]
+}

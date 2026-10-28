@@ -1,0 +1,165 @@
+{
+  "source": "facebook",
+  "thread_id": "28088031027515858",
+  "source_hash": "1464c57d44f27e69",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:46.591Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Bogdana Parshikova (Kfar Saba) applied for citizenship on 3 August after the gradual process, was told she would get an answer before her visa expires, but her visa and ID expire that week; her husband's email got no answer.",
+      "branch": "kfar-saba",
+      "branch_text": "Kfar Saba",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28088031027515858",
+        "28088278830824411",
+        "28088309697487991"
+      ],
+      "author_id": "100003632152241",
+      "author_name": "Bogdana Parshikova",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-08-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 15,
+          "ongoing": true,
+          "text": "applied for citizenship on 3rd of August, no answer by 18 August"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T06:21:13.000Z"
+    },
+    {
+      "summary": "Lem Na Ei went to the office as a walk-in the day the visa expired and waited until the couples' interviews ended; a clerk not handling the case brought them in and gave the new visa and ID at 3 PM, while another clerk had suggested only a 3-month renewal.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28088094470842847"
+      ],
+      "author_id": "100011706343913",
+      "author_name": "Lem Na Ei",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T06:29:55.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Kfar Saba allows walk-ins, best early in the morning except Wednesdays.",
+      "branch": "kfar-saba",
+      "branch_text": "Kfar Saba",
+      "channels": [],
+      "source_ids": [
+        "28088292187489742"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Kfar Saba takes walk-ins, best early in the morning, except Wednesdays"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T06:56:41.000Z"
+    },
+    {
+      "summary": "Ewelina Ochrymiuk says walk-in at Kfar Saba is only on Thursday morning from 8 to 9.",
+      "branch": "kfar-saba",
+      "branch_text": "kfar saba",
+      "channels": [],
+      "source_ids": [
+        "28090296797289281"
+      ],
+      "author_id": "100000417612775",
+      "author_name": "Ewelina Ochrymiuk",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Kfar Saba takes walk-ins only on Thursday mornings from 8 to 9"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T11:11:16.000Z"
+    }
+  ]
+}

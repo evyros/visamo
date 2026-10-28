@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27411364348515866",
+  "source_hash": "1379977398e0d45d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.035Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Oded Nuriany says the process with their Brazilian partner was an okay experience overall.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27420317077620593"
+      ],
+      "author_id": "733217221",
+      "author_name": "Oded Nuriany",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-21T07:59:11.000Z"
+    }
+  ]
+}

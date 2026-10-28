@@ -1,0 +1,155 @@
+{
+  "source": "facebook",
+  "thread_id": "27901206269531669",
+  "source_hash": "9c0cb4405351ed7e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:19.083Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nema Dorrer went to the branch expecting a joint B1 interview but was told the meeting was only to extend her tourist visa by 3 months; the clerk said she could leave and re-enter as a tourist without mentioning any problems.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27901206269531669",
+        "27901916972793932"
+      ],
+      "author_id": "100076075053699",
+      "author_name": "Nema Dorrer",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-03"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T06:42:29.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says that when her then-boyfriend (now husband) left for his mother's death at the start of the process, they were told he could return, but he was not allowed back for over a year until officially invited, and the clerks' own instructions were disregarded.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27903638439288452"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T12:05:19.000Z"
+    },
+    {
+      "summary": "Lieke van der Made, 7 years in the process, says every clerk tells her different things and about half turn out untrue.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27902148059437490"
+      ],
+      "author_id": "100002153527503",
+      "author_name": "Lieke van der Made",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T09:01:28.000Z"
+    },
+    {
+      "summary": "Claudia Galarza Cervantes says a friend obtained a re-entry visa from the office for about 350 shekel before leaving Israel while still without a B1.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27901728742812755",
+        "27904225179229778"
+      ],
+      "author_id": "100000497590652",
+      "author_name": "Claudia Galarza Cervantes",
+      "firsthand": "secondhand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues a re-entry visa to someone who does not yet have a B1, reportedly for about 350 shekel"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-03T08:02:47.000Z"
+    }
+  ]
+}

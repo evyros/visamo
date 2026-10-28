@@ -1,0 +1,169 @@
+{
+  "source": "facebook",
+  "thread_id": "27358823717103263",
+  "source_hash": "9b6b0ed15fd9d2a6",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.348Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liran Binyamin could not submit the online renewal application because the site said it could not be submitted and to contact the Bnei Brak office, with the visa expiring in 3 months; he emailed the office and planned to go in person.",
+      "branch": "bnei-brak",
+      "branch_text": "הלשכה בבני ברק",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27358823717103263",
+        "27359027767082858",
+        "27361553200163648",
+        "27361563456829289"
+      ],
+      "author_id": "1021975696",
+      "author_name": "Liran Binyamin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Requires the online application before giving a renewal appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T09:04:26.000Z"
+    },
+    {
+      "summary": "Alon Maimon says that last year the same online-submission error happened to him and he simply brought everything printed, and he finds it sad they don't fix it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27358987493753552"
+      ],
+      "author_id": "685226508",
+      "author_name": "Alon Maimon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts printed documents in person when the online submission fails"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T09:23:16.000Z"
+    },
+    {
+      "summary": "Alon Maimon says Tel Aviv always gives an appointment in advance, and that phoning is hard to get through.",
+      "branch": "tel-aviv",
+      "branch_text": "בתל אביב",
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27359049873747314"
+      ],
+      "author_id": "685226508",
+      "author_name": "Alon Maimon",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Always gives an appointment in advance"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T09:30:49.000Z"
+    },
+    {
+      "summary": "Tai Lang says the same online-submission block happened to them too.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27360603470258621"
+      ],
+      "author_id": "100006434856840",
+      "author_name": "Tai Lang",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-16T12:23:30.000Z"
+    }
+  ]
+}

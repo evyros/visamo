@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "27468517922800508",
+  "source_hash": "b3d7e9a6e7b85d94",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:20.949Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior G. emailed the visa department a scan of the hospital birth document, got approval in under 24 hours, then collected the baby's birth certificate with Israeli ID at the general service counter.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27468701946115439",
+        "27469708356014798"
+      ],
+      "author_id": "100000447348389",
+      "author_name": "Lior Gorodisky",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 1,
+          "ongoing": false,
+          "text": "Less than 24 hours after we sent the e-mail"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Baby's birth can be registered by emailing the visa department a scan of the hospital document, then collecting the birth certificate with Israeli ID at the general service counter."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-25T13:54:44.000Z"
+    },
+    {
+      "summary": "Lieke says that in her experience the visa department sends you to the general department and the general department sends you back to the visa department.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27479921038326863"
+      ],
+      "author_id": "100002153527503",
+      "author_name": "Lieke van der Made",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-26T13:02:53.000Z"
+    }
+  ]
+}

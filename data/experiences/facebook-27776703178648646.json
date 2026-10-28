@@ -1,0 +1,125 @@
+{
+  "source": "facebook",
+  "thread_id": "27776703178648646",
+  "source_hash": "b878a65100281fca",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:03.305Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nikki Yarin passed the B/1 interview but Misrad Hapnim says it cannot approve the visa without a physical apostilled copy of her CENOMAR, not the PDF e-apostille.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27776703178648646"
+      ],
+      "author_id": "100038184667870",
+      "author_name": "Nikki Yarin",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "May ask for a physical apostilled copy rather than an electronic one"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-23T10:18:25.000Z"
+    },
+    {
+      "summary": "Erika VGone says Afula confirmed it accepts e-apostilled Philippine documents; she emailed hers, they accepted it and her citizenship application began.",
+      "branch": "afula",
+      "branch_text": "Misrad Hapnim in Afula",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27777366221915675",
+        "27831720033146960"
+      ],
+      "author_id": "590127500",
+      "author_name": "Erika VGone",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts e-apostilled documents from the Philippines",
+        "Accepts documents sent by email"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-23T11:32:09.000Z"
+    },
+    {
+      "summary": "Asher Dubinsky emailed the Ministry of the Interior about digital-only Philippine apostilles and was told they were not aware of this; he is waiting for an answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27780106761641621"
+      ],
+      "author_id": "591599905",
+      "author_name": "אשר דובינסקי",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-23T16:18:16.000Z"
+    }
+  ]
+}

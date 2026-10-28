@@ -1,0 +1,128 @@
+{
+  "source": "facebook",
+  "thread_id": "27503160116002955",
+  "source_hash": "4c18a849148bc8dd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:26.582Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar applied through the online application from Israel, was invited to an interview to present documents, and then her husband abroad received an invitation to enter Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27503160116002955",
+        "27503569755961991"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-28T14:14:07.000Z"
+    },
+    {
+      "summary": "Vincent, married, arrived in Israel in February after an embassy invitation, applied online, and was only given a B1 appointment for the end of July.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27503242412661392"
+      ],
+      "author_id": "1092596056",
+      "author_name": "Vincent Coudron",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-28T14:22:56.000Z"
+    },
+    {
+      "summary": "Ori's Kenyan wife came to Israel and a few days later they went to Misrad Hapnim without booking an appointment and got a 6-month work visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27503453779306922",
+        "27509383195380647",
+        "27509388102046823"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gave a 6-month work visa to a partner who walked in a few days after arriving, with no appointment."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-28T14:45:33.000Z"
+    }
+  ]
+}

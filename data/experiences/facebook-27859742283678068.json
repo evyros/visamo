@@ -1,0 +1,108 @@
+{
+  "source": "facebook",
+  "thread_id": "27859742283678068",
+  "source_hash": "3f4958d0d3a576a3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:15.895Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Laura Or passed her last A/5 interview, was called about 6 weeks later to receive citizenship but missed the suggested date, then got no email replies; she walked in, waited 3 hours, got an appointment for the next day and received citizenship in under 30 minutes.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27859742283678068",
+        "27890836547235308",
+        "27901332892852340"
+      ],
+      "author_id": "588193279",
+      "author_name": "Laura Or",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-08-02",
+        "appointment": "2026-08-03"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 42,
+          "ongoing": false,
+          "text": "around 6 weeks"
+        },
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 1,
+          "ongoing": false,
+          "text": "waited for 3 hours and then they gave us an appointment for today (the next day)"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "long-queue"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-30T16:01:20.000Z"
+    },
+    {
+      "summary": "Lindsey Anne Meadows says she went to the office at 5 am and by 6 the line was already long and not everyone was seen.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27866965622955734"
+      ],
+      "author_id": "507731836",
+      "author_name": "Lindsey Anne Meadows",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue",
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-31T06:29:58.000Z"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "27165993943052909",
+  "source_hash": "b3e61a867210c538",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:52.969Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yuri and his wife, moving from B/1 to A/5, were emailed a list of documents that included a new certificate of integrity, but PIBA later said it was a mistake and no certificate was needed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27165993943052909",
+        "27166804156305221",
+        "27168315212820782",
+        "27181764238142546",
+        "27186067991045504"
+      ],
+      "author_id": "1244716251",
+      "author_name": "Yuri Sadovski",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-05-27",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-10"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-01T06:14:08.000Z"
+    }
+  ]
+}

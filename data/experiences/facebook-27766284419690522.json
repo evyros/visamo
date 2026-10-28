@@ -1,0 +1,188 @@
+{
+  "source": "facebook",
+  "thread_id": "27766284419690522",
+  "source_hash": "f28fead17b64a27f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:28.224Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yuval Malchi had a perfectly fine experience with the Haifa office, nothing extreme either way.",
+      "branch": "haifa",
+      "branch_text": "לשכת חיפה",
+      "channels": [],
+      "source_ids": [
+        "27766413346344296"
+      ],
+      "author_id": "1477170628",
+      "author_name": "Yuval Malchi",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T14:12:00.000Z"
+    },
+    {
+      "summary": "Anna López says Haifa is excellent.",
+      "branch": "haifa",
+      "branch_text": "חיפה",
+      "channels": [],
+      "source_ids": [
+        "27766447579674206"
+      ],
+      "author_id": "100000821775275",
+      "author_name": "Anna López",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-22T14:16:05.000Z"
+    },
+    {
+      "summary": "Mark Litman did the whole process at Ramat Gan and says it depended on the clerk: a regular clerk was amazing, others less so, but everything succeeded.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27766484196337211"
+      ],
+      "author_id": "547707137",
+      "author_name": "Mark Litman",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "neutral",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-22T14:20:29.000Z"
+    },
+    {
+      "summary": "Leah Hunt had difficulties at the Haifa office during covid and at the start of her process years ago.",
+      "branch": "haifa",
+      "branch_text": "Haifa office",
+      "channels": [],
+      "source_ids": [
+        "27767142156271415"
+      ],
+      "author_id": "100006926492376",
+      "author_name": "Leah Hunt",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T15:36:08.000Z"
+    },
+    {
+      "summary": "Leah Hunt says that in recent years she has been very happy with Haifa: they answer her emails and even call when needed.",
+      "branch": "haifa",
+      "branch_text": "Haifa office",
+      "channels": [
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "27767142156271415"
+      ],
+      "author_id": "100006926492376",
+      "author_name": "Leah Hunt",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Answers emails and calls when needed"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T15:36:08.000Z"
+    }
+  ]
+}

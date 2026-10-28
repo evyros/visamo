@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28454924977493126",
+  "source_hash": "35ffb2814b594b1f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:31.356Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Inbar Axelrod's husband had to prove officially a childhood name change after adoption; it was hard but they eventually found a way MH accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28455497217435902"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-15T09:16:26.000Z"
+    }
+  ]
+}

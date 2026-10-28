@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27111353538516950",
+  "source_hash": "ded5bb04f3151477",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:51.224Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Omri Goldstein and his unmarried Brazilian partner applied online at Kfar Saba in February; the clerk sent the entry clearance to the embassy in Brasilia as an invitation to a B/2 interview despite visa-exempt citizenship, then said everything on her side was done while the embassy waited on Misrad Hapnim; on 31 May Misrad Hapnim allowed arrival on the ETA-IL only, admitting a mistake.",
+      "branch": "kfar-saba",
+      "branch_text": "Misrad Hapnim Kfar Saba",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27111353538516950",
+        "27157961240522846"
+      ],
+      "author_id": "1219601579",
+      "author_name": "Omri Goldstein",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "common-law",
+      "dates": {
+        "submitted": "2026-02",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-28T08:47:20.000Z"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "source": "facebook",
+  "thread_id": "28501126292872994",
+  "source_hash": "fdf1c6cee822cc7b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:44.150Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At Hadera, the author applied in March 2026 with an expired tourist visa, was quickly told what documents were missing, was refused a B/1 before the appointment, and got a first document-handing appointment in October.",
+      "branch": "hadera",
+      "branch_text": "MH Hadera",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28501126292872994",
+        "28508892275429729",
+        "28511999171785706",
+        "28563770943275195",
+        "28563784093273880",
+        "28508754585443498",
+        "28508835528768737"
+      ],
+      "author_id": "100000364609558",
+      "author_name": "Frau Uwe",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 210,
+          "ongoing": false,
+          "text": "we applied in March and got the first interview in October"
+        }
+      ],
+      "experience_when": "2026-03",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Does not issue a B/1 before the first document-handing appointment",
+        "Applicant with an expired tourist visa and an appointment invitation was told it's fine to wait, but not to leave the country"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-18T16:09:16.000Z"
+    },
+    {
+      "summary": "Mariana says that at her first A5 interview, with the B1 expired about a month, they asked straight away whether they wanted an inter visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28508581582127465"
+      ],
+      "author_id": "100001037432040",
+      "author_name": "Mariana Tomaz",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Offers an inter visa at the first A5 interview without being asked"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-19T06:12:14.000Z"
+    },
+    {
+      "summary": "Camille applied in June, got the first appointment one month later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28521996307452659"
+      ],
+      "author_id": "1384655121",
+      "author_name": "Camille Robin",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 30,
+          "ongoing": false,
+          "text": "We applied for the visa in June and got the first appointment 1 month later"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-20T07:59:13.000Z"
+    },
+    {
+      "summary": "A month after the first appointment, Camille went back with her boyfriend and easily got a permission to leave and come back for a small payment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28521996307452659"
+      ],
+      "author_id": "1384655121",
+      "author_name": "Camille Robin",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a leave-and-return permission in person for a small fee a month after the first appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-20T07:59:13.000Z"
+    },
+    {
+      "summary": "Marije, at Hadera, applied in May 2026 and is now sorting out the last document.",
+      "branch": "hadera",
+      "branch_text": "Hadera office",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28549288778056745",
+        "28567608156224807"
+      ],
+      "author_id": "100005505123740",
+      "author_name": "Marije Bakker",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-05",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-22T07:41:07.000Z"
+    }
+  ]
+}

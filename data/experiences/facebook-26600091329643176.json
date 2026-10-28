@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "26600091329643176",
+  "source_hash": "0a6c18fd6e6ab677",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:35.754Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar Berger (Netanya branch) submitted all documents online in February and received an invitation to the office to hand in the documents physically, set for the end of May.",
+      "branch": "netanya",
+      "branch_text": "לשכת נתניה",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "26600091329643176",
+        "26604030539249255"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2026-02",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 90,
+          "ongoing": false,
+          "text": "הגשתי את כל המסמכים בפברואר וקיבלתי הזמנה לסוף מאי"
+        }
+      ],
+      "experience_when": "2026-02",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-14T20:12:44.000Z"
+    },
+    {
+      "summary": "David Revivo, married, at the Jerusalem branch: only he was interviewed, for about 5 hours, before the partner's entry permit was issued; the issue was a birth certificate and apostille problem.",
+      "branch": "jerusalem",
+      "branch_text": "סניף ירושלים",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26602887339363575",
+        "26604276319224677",
+        "26605011685817807"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T03:42:25.000Z"
+    },
+    {
+      "summary": "Shira Ohanah had no interview, and about six weeks later her partner received an invitation to come to Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26602927139359595"
+      ],
+      "author_id": "1242948976",
+      "author_name": "Shira Ohanah",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-15T03:48:21.000Z"
+    }
+  ]
+}

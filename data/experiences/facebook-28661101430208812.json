@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "28661101430208812",
+  "source_hash": "845685b06b44edb4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:34.848Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Steff Steff says that a few years ago she waited 5 months to be invited, and that when her ex handed in the documents they could not be older than three months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28666328589686096"
+      ],
+      "author_id": "654616356",
+      "author_name": "Steff Steff",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 150,
+          "ongoing": false,
+          "text": "a few years ago I had to wait 5 months to get invited"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Documents handed in must not be older than three months."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-01T10:06:23.000Z"
+    }
+  ]
+}

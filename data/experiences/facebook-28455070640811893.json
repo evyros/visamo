@@ -1,0 +1,57 @@
+{
+  "source": "facebook",
+  "thread_id": "28455070640811893",
+  "source_hash": "a920f7a8ed7c494d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:31.408Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Rhana Az, married to an Italian, sent the online application at Ramat Gan the day after relocating to Israel and within days received a long letter asking for a Hebrew notarized translation of an already-issued criminal record, proof of Israeli public service use and six months of Israeli bills, and for AS-6 declarations to be signed before a notary although this was not asked earlier.",
+      "branch": "ramat-gan",
+      "branch_text": "ramat gan",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28455070640811893",
+        "28460840310234926",
+        "28460982410220716"
+      ],
+      "author_id": "791107248",
+      "author_name": "Rhana Az",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-09",
+        "first_response": "2026-09-15",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 4,
+          "ongoing": false,
+          "text": "sent the online request 1 day after entering; got the letter today, we are literally here 5 days"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-15T08:31:46.000Z"
+    }
+  ]
+}

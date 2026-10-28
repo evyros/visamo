@@ -1,0 +1,650 @@
+{
+  "source": "facebook",
+  "thread_id": "26916195418032764",
+  "source_hash": "d8b9d28f7d898144",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:15.586Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ofri Hashavia Cohen received a summons to the first interview for opening the process (branch not stated).",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26916195418032764",
+        "26916323791353260"
+      ],
+      "author_id": "100025144188926",
+      "author_name": "Ofri Hashavia Cohen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-05",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T12:55:52.000Z"
+    },
+    {
+      "summary": "Alon Maimon says all of their interviews went fine, were not interrogative, had simple questions, and the interviewers even helped when an answer didn't quite fit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26916309744687998",
+        "26916587024660270"
+      ],
+      "author_id": "685226508",
+      "author_name": "Alon Maimon",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T13:08:04.000Z"
+    },
+    {
+      "summary": "Janet Rañada had an interview at the Beer Sheva branch (never used a lawyer) and recorded it on her phone without asking.",
+      "branch": "beer-sheva",
+      "branch_text": "beersheva",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26916386034680369",
+        "26916411958011110",
+        "26917564761229163"
+      ],
+      "author_id": "1002229663",
+      "author_name": "Janet Rañada",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T13:16:04.000Z"
+    },
+    {
+      "summary": "Janet Rañada later had an interview at the Rishon Lezion branch (no lawyer) and recorded it on her phone without asking.",
+      "branch": "rishon-lezion",
+      "branch_text": "rishon",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26916386034680369",
+        "26916411958011110",
+        "26917564761229163"
+      ],
+      "author_id": "1002229663",
+      "author_name": "Janet Rañada",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T13:16:04.000Z"
+    },
+    {
+      "summary": "Ana Moylan says that before their interviews started the clerk took both partners' phones and kept them behind her desk (branch not stated).",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26917518304567142"
+      ],
+      "author_id": "1683853043",
+      "author_name": "Ana Moylan",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Clerk takes both partners' phones and keeps them during the interview"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T15:11:29.000Z"
+    },
+    {
+      "summary": "Ofek Ogen describes their first interview almost a decade ago: questions about how they met and daily life, and the most direct one was what he would do if the application were not approved.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26916399334679039",
+        "26917425444576428"
+      ],
+      "author_id": "582828058",
+      "author_name": "Ofek Ogen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2016",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interview asks about the relationship background and daily life: who does what at home, last night's dinner, birthday gifts"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T13:17:29.000Z"
+    },
+    {
+      "summary": "Ofek Ogen says that in one of their interviews he didn't remember the birthday gift he gave his wife and it was not a problem.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26955080614144244"
+      ],
+      "author_id": "582828058",
+      "author_name": "Ofek Ogen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-15T11:01:19.000Z"
+    },
+    {
+      "summary": "Idit Waldman, in a same-sex couple with a 'complex' case, says she never involved a lawyer at any stage and so far the process is working.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26916422934676679",
+        "27140164175635886"
+      ],
+      "author_id": "1052187890",
+      "author_name": "Idit Waldman",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T13:19:58.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod finished the process on the day of the post; after dropping her lawyer everything went smoothly, and her citizenship interview was relaxed and the citizenship was approved in under three weeks, before the visa expired.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26916792054639767",
+        "26966980669620905"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 21,
+          "ongoing": false,
+          "text": "אושרה ... תוך פחות משלושה שבועות מהראיון"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Citizenship interview looks for answers that make sense rather than exact details"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T13:59:03.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod's interview about three years ago: her husband forgot two windows when describing the bedroom, the interviewers asked him to answer again, and the interview passed successfully.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26966980669620905"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-16T07:45:07.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says no one ever took their phones at their interviews.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26968772206108418",
+        "26972996055686033"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-16T11:06:43.000Z"
+    },
+    {
+      "summary": "Wendy Feringa says that at MH Tel Aviv phones are taken from interviewees, and her partner's interview lasted about 1.5 hours.",
+      "branch": "tel-aviv",
+      "branch_text": "MH Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26919775111008128",
+        "26971115902540715"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Takes interviewees' phones during the interview",
+        "Interview can last about 1.5 hours"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T18:55:53.000Z"
+    },
+    {
+      "summary": "Wendy Feringa knows of a couple who recorded their conversation at the information desk; the manager got involved and a note was added to their file.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26919775111008128"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "secondhand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Recording a conversation at the information desk can bring in the manager and a note in the file"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T18:55:53.000Z"
+    },
+    {
+      "summary": "Arkady Godlin says they forgot details like birthdays and gifts in their interviews and everything was fine.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26916553897996916"
+      ],
+      "author_id": "100002121054503",
+      "author_name": "Arkady Godlin",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T13:33:45.000Z"
+    },
+    {
+      "summary": "Hagit Braunstein Pritchard took a lawyer to the first interview, found it unnecessary, and describes the interview as light and easy.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26917123344606638"
+      ],
+      "author_id": "642829599",
+      "author_name": "Hagit Braunstein Pritchard",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T14:32:42.000Z"
+    },
+    {
+      "summary": "ליעד צברי calls the staff at Petah Tikva amateurs and extreme liars, and says the office may delay a visa upgrade hoping the couple will split.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26917395487912757",
+        "26917747111210928"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-12T14:59:47.000Z"
+    },
+    {
+      "summary": "Ori Stern and his partner prepared for the interview with a shared WhatsApp group and passed it without a lawyer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26965993469719625"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-16T05:51:46.000Z"
+    }
+  ]
+}

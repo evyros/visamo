@@ -1,0 +1,98 @@
+{
+  "source": "facebook",
+  "thread_id": "28900804439571842",
+  "source_hash": "8a85e31cb124de53",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:42.307Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maya Mic had a meeting at the Salame (Jaffa) office in early August about a tourist invitation for a friend, was told an answer would come within a month, and still had none on 18 October.",
+      "branch": "jaffa",
+      "branch_text": "משרד האוכלוסין בסלמה בת\"א",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28900804439571842"
+      ],
+      "author_id": "808749569",
+      "author_name": "Maya Mic",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 75,
+          "ongoing": true,
+          "text": "meeting in early August, told an answer within a month, still nothing on 18 October"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-18T13:38:56.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen advises contacting the Jaffa visa department by email or in person, since the phone center is not connected to the visa department.",
+      "branch": "jaffa",
+      "branch_text": "Ashrot-Yaffo@piba.gov.il",
+      "channels": [
+        "email",
+        "in-person",
+        "phone"
+      ],
+      "source_ids": [
+        "28901060929546193"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The phone call center cannot give information about visa department files.",
+        "Status questions go by email to the Jaffa visa department or in person."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-18T14:02:04.000Z"
+    }
+  ]
+}

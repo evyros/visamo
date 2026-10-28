@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "27622775580708074",
+  "source_hash": "5f6edd96d95e626b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:05.967Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Itay and his wife were asked to fill in the AS6 form with a landlord affidavit and a mayor's signature before their final visa interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27622775580708074"
+      ],
+      "author_id": "1190721832",
+      "author_name": "Itay Ringler",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T06:58:16.000Z"
+    },
+    {
+      "summary": "Adi's landlord refused to sign the affidavit, so they wrote an explanatory page for Misrad Hapnim, which accepted it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27624592860526346"
+      ],
+      "author_id": "645629468",
+      "author_name": "Adi Nafshi-Bueno",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an explanatory page when the landlord refuses to sign the affidavit"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T11:22:07.000Z"
+    }
+  ]
+}

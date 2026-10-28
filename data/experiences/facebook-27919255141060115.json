@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27919255141060115",
+  "source_hash": "4533a33c4224c713",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.278Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maya Mic went to the Population and Immigration Authority to ask about a tourist invitation and had a meeting the day before the comment to submit documents for a short-visit tourist invitation.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27926505063668456"
+      ],
+      "author_id": "808749569",
+      "author_name": "Maya Mic",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-04"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-05T08:46:29.000Z"
+    }
+  ]
+}

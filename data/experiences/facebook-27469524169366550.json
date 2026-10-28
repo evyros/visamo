@@ -1,0 +1,60 @@
+{
+  "source": "facebook",
+  "thread_id": "27469524169366550",
+  "source_hash": "854b02380e7ae83a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:03.831Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Noa Kovensky, a permanent resident's newly married spouse, requested a citizenship appointment online, got an appointment by email a few weeks later, and at the July 5 meeting the clerk said the interview should have been booked together with it, so it was set for October.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27469524169366550",
+        "27471489729169994",
+        "27551853281133638",
+        "27585414097777556"
+      ],
+      "author_id": "649898571",
+      "author_name": "Noa Kovensky",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-05"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 21,
+          "ongoing": false,
+          "text": "they came back to me by email after a few weeks, with a date for a meeting"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-25T15:27:17.000Z"
+    }
+  ]
+}

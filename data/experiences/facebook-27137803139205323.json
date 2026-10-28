@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27137803139205323",
+  "source_hash": "68d9c1f8f3e6e0ec",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:41.967Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Barbora flew her baby, born abroad, to Israel on a tourist visa and registered her at Misrad Hapnim herself; MH took one day, the whole process under a month, and MH didn't make trouble about her 4 months abroad.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27138497919135845"
+      ],
+      "author_id": "1567823401",
+      "author_name": "Barbora Valníčková",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Registers a baby born abroad as an Israeli citizen in about one day once all apostilled, translated and notarized documents are provided",
+        "Asks for pregnancy papers, birth and hospital release documents with the baby's name and date of birth, first pediatric checks, and the birth certificate"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-30T05:41:10.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27443826868602947",
+  "source_hash": "f7201906c1b38384",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:02.482Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "רומי בן רקיע says that when registering a baby born within a similar time after marriage, MH did not require a DNA test, only documents proving they were a couple earlier plus the marriage documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27453061414346159"
+      ],
+      "author_id": "61557542881237",
+      "author_name": "רומי בן רקיע",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-24T04:00:51.000Z"
+    }
+  ]
+}

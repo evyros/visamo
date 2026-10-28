@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26647339101585065",
+  "source_hash": "7babff6a5d3b88fd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:37.780Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Klara Kedem visited the Tel Aviv office to ask about her husband's permanent residency, was told it is in Jerusalem with no status change yet, got his visa to 16.7.26 and a new ID card to July, and was treated nicely though the visit was tiring.",
+      "branch": "tel-aviv",
+      "branch_text": "לשכת האוכלוסין בדרך בגין תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26647339101585065"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-19"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sticks the extended visa in the passport and issues a new ID card on the spot"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-19T09:09:25.000Z"
+    }
+  ]
+}

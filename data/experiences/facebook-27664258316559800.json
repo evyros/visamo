@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27664258316559800",
+  "source_hash": "84e0a142c9789090",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:09.952Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Asher Dubinsky emailed Misrad Hapnim about Philippine digital apostilles and was told they were not aware of them and that they do not accept them; he is waiting for a reply to the clarification he sent.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27664258316559800",
+        "27667641909554774",
+        "27674919292160369"
+      ],
+      "author_id": "591599905",
+      "author_name": "אשר דובינסקי",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-13T09:30:00.000Z"
+    }
+  ]
+}

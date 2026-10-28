@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27646618948323737",
+  "source_hash": "456cdfc129532716",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:09.465Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Eve has a second A5 meeting at Tel Aviv on the morning of July 12 and asks how many passport photos to bring.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27646618948323737"
+      ],
+      "author_id": "100004776090146",
+      "author_name": "Eve Alungat",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-12"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-11T14:41:37.000Z"
+    },
+    {
+      "summary": "Devi says that over about seven years of appointments they have only ever had to hand in one passport photo each.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27647073958278236"
+      ],
+      "author_id": "830647765",
+      "author_name": "Devi Marianne Vanhon",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for one passport photo per person at appointments."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-11T15:37:07.000Z"
+    }
+  ]
+}

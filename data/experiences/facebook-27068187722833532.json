@@ -1,0 +1,130 @@
+{
+  "source": "facebook",
+  "thread_id": "27068187722833532",
+  "source_hash": "d0ecec24f155272c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:49.523Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Klara Kedem says her husband's permanent residence application is stuck at the Interior Ministry in Jerusalem, and she is fed up with the Tel Aviv office, with his visa ending in July.",
+      "branch": "tel-aviv",
+      "branch_text": "הלשכה בתל אביב",
+      "channels": [],
+      "source_ids": [
+        "27068187722833532",
+        "27072243442427960"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-24T20:25:28.000Z"
+    },
+    {
+      "summary": "Hagai Ninio had a permanent residence interview on 24 Nov 2025 and was called for the final grant on 13 May 2026, a week before the visa expired; nerve-wracking but it worked out.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27070934219225549"
+      ],
+      "author_id": "1017212304",
+      "author_name": "Hagai Ninio",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-11-24"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 170,
+          "ongoing": false,
+          "text": "interview 24 November 2025, called for the permanent residence grant on 13.5.26"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T03:22:31.000Z"
+    },
+    {
+      "summary": "Shlomit Sharoni has been waiting more than half a year for an answer on her request to shorten the process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27074121032240201"
+      ],
+      "author_id": "600424123",
+      "author_name": "Shlomit Sharoni",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 180,
+          "ongoing": true,
+          "text": "אני מחכה לתשובה על קיצור הליך כבר יותר מחצי שנה"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T10:53:28.000Z"
+    }
+  ]
+}

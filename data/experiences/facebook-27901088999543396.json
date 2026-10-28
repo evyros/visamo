@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27901088999543396",
+  "source_hash": "967c8b0c665dff21",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:17.074Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Idan Hochner handed in documents for the gradual process at his appointment; the clerk said she had never seen a Chinese apostille, would verify it with another clerk and set another appointment, and two weeks later he was told the documents had been sent away for verification.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27901088999543396"
+      ],
+      "author_id": "1391991300",
+      "author_name": "Idan Hochner",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sends apostilled foreign documents to the Foreign Ministry for verification."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T06:24:30.000Z"
+    },
+    {
+      "summary": "Rotem Lavi Kim says they had a similar case with documents from Korea, which the branch sent to the Foreign Ministry for verification.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27901171689535127"
+      ],
+      "author_id": "823036459",
+      "author_name": "Rotem Lavi Kim",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-03T06:37:14.000Z"
+    }
+  ]
+}

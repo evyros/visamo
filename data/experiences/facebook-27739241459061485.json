@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "27739241459061485",
+  "source_hash": "fb2ab2c6eb45fb87",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.740Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alon's A/5 was cancelled by PIBA and, after a year with no status and a legal fight, it was restored.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27739241459061485",
+        "27739448152374149"
+      ],
+      "author_id": "856599753",
+      "author_name": "Alon Solell",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T07:48:17.000Z"
+    },
+    {
+      "summary": "Shira received a paper printed at Misrad Hapnim for her new status and the ID card arrived by post a few weeks later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "27744980438487587",
+        "27764208903231407"
+      ],
+      "author_id": "1242948976",
+      "author_name": "Shira Ohanah",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a printed paper at the office and sends the ID card by post a few weeks later"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-20T18:57:54.000Z"
+    }
+  ]
+}

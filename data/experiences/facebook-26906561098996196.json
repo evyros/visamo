@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26906561098996196",
+  "source_hash": "ce6a18c44dbb4646",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:45.028Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sean Grossman's wife, in her third year on A/5, has an extension appointment at Misrad Hapnim the following week, and they plan to leave the country.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26906561098996196"
+      ],
+      "author_id": "61588926927238",
+      "author_name": "Sean Grossman",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-11T18:13:57.000Z"
+    }
+  ]
+}

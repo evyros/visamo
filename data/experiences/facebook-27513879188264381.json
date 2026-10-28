@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27513879188264381",
+  "source_hash": "763bcb575798b76a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:05.314Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Hanna Rapuano-Dewan found the online portal for applying for a third visa in the family unification process opened a blank page in several browsers, and it worked from a different network.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27513879188264381",
+        "27517431921242441"
+      ],
+      "author_id": "1046341169",
+      "author_name": "Hanna Rapuano-Dewan",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-29T13:24:57.000Z"
+    }
+  ]
+}

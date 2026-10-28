@@ -1,0 +1,130 @@
+{
+  "source": "facebook",
+  "thread_id": "27605890339063265",
+  "source_hash": "f5d627ad020222a9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:00.901Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sharona opened a status-regulation file on the Interior Ministry website the evening before and could not upload documents or fill and sign the affidavit, fearing the file will be rejected.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27605890339063265",
+        "27616639427988356",
+        "27616763097975989"
+      ],
+      "author_id": "100001459603706",
+      "author_name": "שרונה ביניאשוילי",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-07-06",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-07T15:37:01.000Z"
+    },
+    {
+      "summary": "Lior says the online application cannot be submitted without all required uploads, and extra documents can only be added if the authority requests them and opens the option.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27606112482374384",
+        "27622628404056125"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Online application cannot be sent without uploading every required field",
+        "Applicants cannot upload additional documents unless the authority asks and opens the option",
+        "After review the office sends requests for completions and corrections"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-07T16:03:12.000Z"
+    },
+    {
+      "summary": "Wendy says the online application accepts only PDF files, so photos from the gallery cannot be uploaded and multiple documents must be merged into one file.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27614950618157237"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "advice",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The online application accepts only PDF files",
+        "Several documents of one kind, such as bills, must be combined into a single file"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-08T12:42:49.000Z"
+    }
+  ]
+}

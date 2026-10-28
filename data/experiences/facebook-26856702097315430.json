@@ -1,0 +1,122 @@
+{
+  "source": "facebook",
+  "thread_id": "26856702097315430",
+  "source_hash": "ada8e113a594be79",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.274Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Carolina Camano entered as a foreign spouse on a B2 visa after her husband was declared a citizen by birth, and faced endless interviews to prove the 17-year marriage was genuine.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26856702097315430"
+      ],
+      "author_id": "1301981690",
+      "author_name": "Carolina Camaño",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T14:32:21.000Z"
+    },
+    {
+      "summary": "Carolina Camano received Israeli citizenship in May 2026 after a legal battle, when Misrad Hapnim accepted an exception following legal notices and frustrating, degrading interviews.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26856702097315430"
+      ],
+      "author_id": "1301981690",
+      "author_name": "Carolina Camaño",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T14:32:21.000Z"
+    },
+    {
+      "summary": "Klara Kedem says her husband's permanent residency request emails go unanswered; she sends one every two days after the branch said the decision is with the Jerusalem head office.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "26857086603943646"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-07T15:12:31.000Z"
+    }
+  ]
+}

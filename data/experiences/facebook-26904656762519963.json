@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "26904656762519963",
+  "source_hash": "8ca673af60c89369",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.583Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leah submitted an extension application online in March, got an automatic extension, then emailed Haifa in May and received an appointment date the next morning with instructions on what to bring.",
+      "branch": "haifa",
+      "branch_text": "Haifa branch",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "26904656762519963"
+      ],
+      "author_id": "100006926492376",
+      "author_name": "Leah Hunt",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": "2026-05",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Replies to emails asking for an appointment the next morning"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-11T15:06:47.000Z"
+    }
+  ]
+}

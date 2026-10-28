@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27158910207094616",
+  "source_hash": "1d058ca5096ae646",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:11.802Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Niks Niks says a friend's baby with an Israeli father was given an ID number and citizenship by the Population Authority after a DNA test.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27158910207094616"
+      ],
+      "author_id": "100007955349616",
+      "author_name": "Niks Niks",
+      "firsthand": "secondhand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-31T17:04:40.000Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28161245673527726",
+  "source_hash": "07b0eb406bf496f7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:25.233Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Devika Sharma's B/1 expires on Nov 10 and the Rehovot office gave her an interview date of Nov 12; the clerk said it is fine to enter Israel a day before expiry.",
+      "branch": "rehovot",
+      "branch_text": "misrad hapanim in rehovot",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28161245673527726"
+      ],
+      "author_id": "586920863",
+      "author_name": "Devika Sharma",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-08",
+        "appointment": "2026-11-12"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-24T07:41:08.000Z"
+    }
+  ]
+}

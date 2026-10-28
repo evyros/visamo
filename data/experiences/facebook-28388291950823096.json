@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28388291950823096",
+  "source_hash": "01ed72434a2ca253",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:30.250Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yaniv, married to a Brazilian partner, was ignored by Misrad Hapnim emails, so he went to the office in person and was given a document-presentation appointment for the following week.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28388291950823096"
+      ],
+      "author_id": "100000368121182",
+      "author_name": "Yaniv Lifshitz",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-09",
+        "appointment_set": "2026-09",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T14:22:32.000Z"
+    }
+  ]
+}

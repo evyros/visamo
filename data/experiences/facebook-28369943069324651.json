@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28369943069324651",
+  "source_hash": "ba3b9d2475a53ed9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.709Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ofri Hashavia Cohen's husband has been on B1 for three months and the office asked them to upload forms for the A5 at this stage.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "source_ids": [
+        "28369943069324651"
+      ],
+      "author_id": "100025144188926",
+      "author_name": "Ofri Hashavia Cohen",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-09T07:50:35.000Z"
+    }
+  ]
+}

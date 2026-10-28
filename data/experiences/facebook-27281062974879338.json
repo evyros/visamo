@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27281062974879338",
+  "source_hash": "c19c2530fd6949ed",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.934Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Achinoam Veeder says her partner is in Israel on a tourist visa until their appointment in August.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27281062974879338"
+      ],
+      "author_id": "100000282480299",
+      "author_name": "Achinoam Veeder",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-10T05:48:28.000Z"
+    }
+  ]
+}

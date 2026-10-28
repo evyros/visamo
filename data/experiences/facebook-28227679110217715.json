@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "28227679110217715",
+  "source_hash": "c7252661e3740825",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:26.170Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Gouni Jacobi says his PIBA clerk told him an invitation letter from him is enough for his wife's French family visiting on ETA, with no advance visa needed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28227679110217715"
+      ],
+      "author_id": "100013394739502",
+      "author_name": "Gouni Jacobi",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-29T08:54:37.000Z"
+    },
+    {
+      "summary": "Boglàrka Tankò-Cohen says the PIBA clerk told her the same (an invitation letter is enough), but at the airport her family had problems and an official invitation through Misrad Hapnim was demanded.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28228192853499674",
+        "28239428335709459"
+      ],
+      "author_id": "100006691595637",
+      "author_name": "Boglàrka Tankò-Cohen",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-29T09:55:19.000Z"
+    }
+  ]
+}

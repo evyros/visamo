@@ -1,0 +1,96 @@
+{
+  "source": "facebook",
+  "thread_id": "27515708091414824",
+  "source_hash": "0329b31ec74fa08c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.021Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Josh, at Ramat Gan on a student visa switching to B/1, got a document handover meeting in July and an interview in January 2027, and finds the 6-month gap too long.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan",
+      "channels": [],
+      "source_ids": [
+        "27515708091414824"
+      ],
+      "author_id": "100040953558601",
+      "author_name": "Josh Mansfield",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "interview",
+          "days": 180,
+          "ongoing": false,
+          "text": "interview date for January 2027 with a document handover meeting in july... 6 months is simply a lot of time"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-29T16:24:17.000Z"
+    },
+    {
+      "summary": "Caleb, whose partner started the process while he was abroad, asked for a multiple-entry inter-visa and got it with no limit on entries; the visa officer offered him the choice of multiple or single entry.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27523721503946816",
+        "27525882580397375",
+        "27526869376965362"
+      ],
+      "author_id": "100031417868915",
+      "author_name": "Caleb Sefa Bansah",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Visa officer asks whether the applicant wants a single or multiple-entry inter-visa",
+        "Multiple-entry inter-visa has no limit on the number of exits and entries"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-30T08:03:37.000Z"
+    }
+  ]
+}

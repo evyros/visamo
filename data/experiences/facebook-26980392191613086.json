@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26980392191613086",
+  "source_hash": "54b4da9c90f77285",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.061Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leenor and partner, after an address change, were told by their branch to email the new branch to transfer their file; the new branch is slow to answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26980392191613086"
+      ],
+      "author_id": "1544204576",
+      "author_name": "Leenor Alfahel",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "file-transferred"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-17T09:08:48.000Z"
+    }
+  ]
+}

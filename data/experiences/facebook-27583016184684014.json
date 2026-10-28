@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "27583016184684014",
+  "source_hash": "4c37eeb4ba390ea6",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:07.326Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Stav requested a tourist visa extension for his Thai partner online and by email with no reply, visited the Ashkelon office where a clerk took his number but never called back, and on a later visit was told the branch has no clerk who receives walk-ins for visas.",
+      "branch": "ashkelon",
+      "branch_text": "משרד הפנים וההגירה באשקלון",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27583016184684014",
+        "27589754810676818"
+      ],
+      "author_id": "100009801637487",
+      "author_name": "Stav Kipper",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Has no clerk who receives walk-in visa requests"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-05T14:23:17.000Z"
+    },
+    {
+      "summary": "Liad Falach says the Ashkelon Interior Ministry office, to which they belong, is really slow.",
+      "branch": "ashkelon",
+      "branch_text": "משרד הפנים באשקלון",
+      "channels": [],
+      "source_ids": [
+        "27640937112225254"
+      ],
+      "author_id": "100076264340244",
+      "author_name": "ליאור פלאח",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-11T01:03:33.000Z"
+    }
+  ]
+}

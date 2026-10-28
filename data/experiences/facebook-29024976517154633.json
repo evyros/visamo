@@ -1,0 +1,125 @@
+{
+  "source": "facebook",
+  "thread_id": "29024976517154633",
+  "source_hash": "0a8d5f06345ccfd7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.652Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aybars was asked to pay a guarantee as a condition for the A/5 and asks how and where to deposit it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "29024976517154633"
+      ],
+      "author_id": "61557393320963",
+      "author_name": "Aybars Pars",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-27T16:34:20.000Z"
+    },
+    {
+      "summary": "John says the letter he received states the guarantee amount; the bank issues it, it is sent by registered mail to the airport branch, or you can bring the page to Ben Gurion in person.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "mail",
+        "in-person"
+      ],
+      "source_ids": [
+        "29025826933736258"
+      ],
+      "author_id": "1827049754",
+      "author_name": "John James Benitez",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Guarantee letter states the required amount",
+        "Bank guarantee can be posted to the airport office or handed in at Ben Gurion without waiting"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-27T17:52:00.000Z"
+    },
+    {
+      "summary": "Lior says a guarantee can be deposited as a bank guarantee, bank check, credit or cash, and the guarantees unit answers emails quickly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "29026157323703219"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a guarantee as bank guarantee, bank check, credit or cash",
+        "The guarantees unit answers emails quickly",
+        "The deposit is refunded later in the process"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-27T18:23:00.000Z"
+    }
+  ]
+}

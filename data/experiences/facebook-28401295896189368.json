@@ -1,0 +1,205 @@
+{
+  "source": "facebook",
+  "thread_id": "28401295896189368",
+  "source_hash": "3b589c731ddf67e5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.517Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ori handed in documents in September, was told items were missing, had an interview in February, and his wife arrived in May on a tourist visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28401772112808413"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-11T13:09:51.000Z"
+    },
+    {
+      "summary": "Ori's wife's tourist visa was replaced two days after arrival with a half-year work visa, and he deposited a 40,000 NIS guarantee, kept until she leaves or gets citizenship and possibly reclaimable after 1-2 years.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28401772112808413",
+        "28480331821619108"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Keeps the guarantee deposit until the partner leaves the country or gets citizenship, and may return it on request after 1-2 years."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-11T13:09:51.000Z"
+    },
+    {
+      "summary": "Yoel says their case took months until approval, then the partner got a half-year tourist visa with a joint interview at the end of it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28403695232616101"
+      ],
+      "author_id": "557759525",
+      "author_name": "Yoel Aizik",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-11T15:41:28.000Z"
+    },
+    {
+      "summary": "Rosie, married civilly to a British resident, got approval in about 3-4 weeks after the document meeting, after she pushed them hard.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28421219970863627"
+      ],
+      "author_id": "569208535",
+      "author_name": "Rosie Upcraft Partouche",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 25,
+          "ongoing": false,
+          "text": "לנו לקח בערך 3 -4 שבועות"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-12T22:23:19.000Z"
+    },
+    {
+      "summary": "Oren, married, at Beer Sheva was called the day after handing in documents and told the visa was approved and to turn to the embassy.",
+      "branch": "beer-sheva",
+      "branch_text": "לשכת באר שבע",
+      "channels": [
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "28425048157147475"
+      ],
+      "author_id": "100012864820247",
+      "author_name": "Oren Mataev",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 1,
+          "ongoing": false,
+          "text": "התקשרו יום אחרי הפגישה הראשונית של הצגת המסמכים"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-13T05:36:37.000Z"
+    }
+  ]
+}

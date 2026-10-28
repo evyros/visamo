@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27762667930052171",
+  "source_hash": "f3992fd9cf746eee",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:12.318Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shay invited his wife's 17-year-old son (she is on A5); Misrad Hapnim asked for a 15,000 NIS guarantee and gave him a one-month visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27763291699989794"
+      ],
+      "author_id": "788698159",
+      "author_name": "Shay Atik",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T08:02:31.000Z"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28992865190365766",
+  "source_hash": "82deaa940f31031d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:39.371Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Joanna Kowalewska says that she had to show her marriage was legalized in Poland, while other couples were not asked for it, so it is unpredictable.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "29019709844347967"
+      ],
+      "author_id": "1591545421",
+      "author_name": "Joanna Kowalewska",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sometimes asks for proof that the marriage was legalized in the partner's home country, but not for every couple."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-27T08:06:18.000Z"
+    }
+  ]
+}

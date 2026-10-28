@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28549274534724836",
+  "source_hash": "b9cf4f0e454c1c0c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:33.227Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marije says PIBA asked for a Dutch document to be translated into Hebrew even though it already had English on it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28549274534724836"
+      ],
+      "author_id": "100005505123740",
+      "author_name": "Marije Bakker",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-22T07:39:33.000Z"
+    }
+  ]
+}

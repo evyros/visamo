@@ -1,0 +1,157 @@
+{
+  "source": "facebook",
+  "thread_id": "27274159985569637",
+  "source_hash": "4749615b3aefb63b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.661Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yehuda Azar, at his third interview for ID and A5, was asked about missing recent bills, an extension form and a lease that were not part of the online form the office's SMS had sent him to fill in.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms",
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27274159985569637",
+        "27279081408410828"
+      ],
+      "author_id": "609222465",
+      "author_name": "Yehuda Azar",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-04-01",
+        "appointment_set": null,
+        "appointment": "2026-06-09"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-09T17:13:17.000Z"
+    },
+    {
+      "summary": "Yehuda Azar asked by email for his deposit back, wrote the letter the office requested, got no update for over a year, and at the interview was told to prepare a new letter.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27274491782203124"
+      ],
+      "author_id": "609222465",
+      "author_name": "Yehuda Azar",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-09T17:46:53.000Z"
+    },
+    {
+      "summary": "ליעד צברי says that when he began bringing his mother-in-law to Israel after the gradual process, the office first agreed to only 3 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27274613305524305"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-09T17:58:21.000Z"
+    },
+    {
+      "summary": "ליעד צברי says that today each of his wife's parents is allowed to visit for a full consecutive year, after he fought and filed many complaints with the State Comptroller.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27274613305524305"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-09T17:58:21.000Z"
+    }
+  ]
+}

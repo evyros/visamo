@@ -1,0 +1,128 @@
+{
+  "source": "facebook",
+  "thread_id": "27258894097096226",
+  "source_hash": "dfed6356dd472a54",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.195Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sophie, married with an A5, got an automatic visa extension to 7 July 2026 when the Tel Aviv office closed during the Iran war, then got no reply to an online appointment request or an email for a new renewal appointment.",
+      "branch": "tel-aviv",
+      "branch_text": "the visa office in Tel Aviv",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27258894097096226"
+      ],
+      "author_id": "100001621054485",
+      "author_name": "Sophie Storch",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Gave an automatic visa extension when the office was closed during the war."
+      ],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-06-08T11:23:07.000Z"
+    },
+    {
+      "summary": "Zeynep says the same happened to them: no replies through the online form or email, so they went to the branch early, took a walk-in number and asked for an interview date.",
+      "branch": null,
+      "branch_text": "MH",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27258983687087267"
+      ],
+      "author_id": "664544261",
+      "author_name": "Zeynep Gün",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T11:34:32.000Z"
+    },
+    {
+      "summary": "Aurora says the same happened with the visa extension, and they went to their branch early in the morning to schedule the next appointment.",
+      "branch": null,
+      "branch_text": "our branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27259717583680544"
+      ],
+      "author_id": "1356965567",
+      "author_name": "Aurora Fitch",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "low",
+      "posted_at": "2026-06-08T13:05:40.000Z"
+    }
+  ]
+}

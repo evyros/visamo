@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "27915887128063583",
+  "source_hash": "b704b0b9b810bfbc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.077Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Fabio Zveibel's wife received a B1 visa, an A/5 interview was scheduled for November, and the receptionist said to bring all updated documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27915887128063583"
+      ],
+      "author_id": "572615758",
+      "author_name": "Fabio Zveibel",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-08",
+        "appointment": "2026-11"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 90,
+          "ongoing": false,
+          "text": "we already have an A5 interview scheduled for November"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-04T12:54:30.000Z"
+    }
+  ]
+}

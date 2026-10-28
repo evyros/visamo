@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "27154039154248388",
+  "source_hash": "b89c20fb6e75046a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:52.453Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jordan's partner had a final permanent-residency interview at the Jerusalem branch in October 2025, was told a decision takes 2 to 6 months, and still has no decision about 8 months later.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem branch (Shlomo HaMelech Street)",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27154039154248388"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-10"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 240,
+          "ongoing": true,
+          "text": "final interview last October ... haven't heard anything from them since then (8 months, per a commenter)"
+        }
+      ],
+      "experience_when": "2025-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T09:14:55.000Z"
+    }
+  ]
+}

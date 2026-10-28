@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28031125473206414",
+  "source_hash": "e62cebe5a43f20c3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.979Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Betty's father's Thai wife's family-unification process was stopped by Misrad Hapnim over the personal status document, which exists only unsigned in Thai and as a verified English version.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28031125473206414",
+        "28031435776508717",
+        "28031983046453990"
+      ],
+      "author_id": "100008797150275",
+      "author_name": "Betty Testa",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-13T15:55:14.000Z"
+    }
+  ]
+}

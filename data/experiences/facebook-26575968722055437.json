@@ -1,0 +1,132 @@
+{
+  "source": "facebook",
+  "thread_id": "26575968722055437",
+  "source_hash": "331e65293f466a16",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.667Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At the first A/5 interview, a few days before the war broke out, the anonymous member got a decision the same day granting the A/5 conditional on a 30,000 ILS deposit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26575968722055437"
+      ],
+      "author_id": "1464968195129892",
+      "author_name": "BeautifulRabbit8865",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-02-26"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "We received a decision on the same day"
+        }
+      ],
+      "experience_when": "2026-02",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T13:11:59.000Z"
+    },
+    {
+      "summary": "The anonymous member appealed the 30,000 ILS deposit a week after the decision; offices were closed by the war, emails to PIBA went unanswered, and only the case clerk confirmed receipt and said the appeal would go to the office manager once the office reopened.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26575968722055437",
+        "26576738578645118",
+        "26576987545286888",
+        "26577188605266782"
+      ],
+      "author_id": "1464968195129892",
+      "author_name": "BeautifulRabbit8865",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "The decision letter gives 45 days to pay the deposit or the file is closed, and paying the deposit voids a pending appeal"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T13:11:59.000Z"
+    },
+    {
+      "summary": "Roberta was asked for a 25,000 ILS deposit, appealed, it was lowered to 20,000, and it was returned after a year and a half.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26577945455191097"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T17:02:04.000Z"
+    }
+  ]
+}

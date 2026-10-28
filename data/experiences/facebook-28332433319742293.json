@@ -1,0 +1,122 @@
+{
+  "source": "facebook",
+  "thread_id": "28332433319742293",
+  "source_hash": "f12747cad528a3ef",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:28.284Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Este Fita, unmarried, at her latest A/5 renewal was told by the clerk that if they marry before the next appointment she could apply for citizenship, and was told this year that permanent residency requires waiting one more year.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28332433319742293",
+        "28372725005713124"
+      ],
+      "author_id": "1138730268",
+      "author_name": "Este Fita",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-06T08:09:48.000Z"
+    },
+    {
+      "summary": "Natalia Bar says that in June 2026 the clerk asked for registration of her marriage in her home country, noted it in her file and emailed her about it, and would not continue until she brought it; refusing delayed things.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28333282266324065",
+        "28358890243763267"
+      ],
+      "author_id": "721947487",
+      "author_name": "Natalia Bar",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-06T09:54:08.000Z"
+    },
+    {
+      "summary": "Jessica Maziy had an unpleasant experience at Misrad Hapnim Ashdod: she was given only a B visa for over four years during the process and got A/5 only after marriage.",
+      "branch": "ashdod",
+      "branch_text": "Misrad Hapnim Ashdod",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28334774186174873"
+      ],
+      "author_id": "100000102791882",
+      "author_name": "Jessica Maziy",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-06T12:39:28.000Z"
+    }
+  ]
+}

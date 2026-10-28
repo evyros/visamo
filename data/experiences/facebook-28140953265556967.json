@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "28140953265556967",
+  "source_hash": "897026dff8f3f576",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:41.817Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shaked emailed the Holon office about inviting her husband's parents and hasn't had an answer; the online booking only offered a general appointment in November.",
+      "branch": "holon",
+      "branch_text": "חולון",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "28140953265556967",
+        "28141700275482266",
+        "28142934585358835"
+      ],
+      "author_id": "100070119846909",
+      "author_name": "Shaked Cohen",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-22T13:06:22.000Z"
+    },
+    {
+      "summary": "Eli used a lawyer to write a letter for a relative invitation and got an answer in about 3 weeks.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28145187775133516"
+      ],
+      "author_id": "100048768920853",
+      "author_name": "Eli Dan",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 21,
+          "ongoing": false,
+          "text": "3 weeks למענה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-22T20:57:30.000Z"
+    }
+  ]
+}

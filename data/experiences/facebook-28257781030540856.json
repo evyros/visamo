@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "28257781030540856",
+  "source_hash": "9205dbabad1e3ed9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:26.941Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Rosie, in England, had a consulate interview about a week and a half earlier, bought flight tickets, and has not yet received the entry permit; she was told earlier to start the process in August to be in Israel in September.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28257781030540856",
+        "28271598199159139"
+      ],
+      "author_id": "569208535",
+      "author_name": "Rosie Upcraft Partouche",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-31T20:15:09.000Z"
+    },
+    {
+      "summary": "Ashley says getting the entry permit took them half a year.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28259124253739867"
+      ],
+      "author_id": "100039047347234",
+      "author_name": "Ashley Lammas",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-31T23:02:48.000Z"
+    },
+    {
+      "summary": "Seli's entry permit had not arrived despite booked flights, and they had to press the consulate with emails and calls almost daily before it moved.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "28260578306927795"
+      ],
+      "author_id": "716051528",
+      "author_name": "Seli Shama",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-01T01:53:32.000Z"
+    }
+  ]
+}

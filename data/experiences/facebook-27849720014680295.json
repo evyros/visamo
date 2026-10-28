@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "27849720014680295",
+  "source_hash": "5579d419d0801dbe",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.687Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A couple moving to the Kfar Saba office were told to come without an appointment to update on the office change and ask if Thursday is a valid day.",
+      "branch": "kfar-saba",
+      "branch_text": "לשכה בכפר סבא",
+      "channels": [],
+      "source_ids": [
+        "27849720014680295"
+      ],
+      "author_id": "1080612810",
+      "author_name": "Yifat Sara Baruchi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells couples transferring in to come without an appointment to update on the move."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T18:49:08.000Z"
+    },
+    {
+      "summary": "Says the Kfar Saba team is available, contacted them by email and phone before they came to ask for missing documents, and can be emailed back; felt attentive and helpful.",
+      "branch": "kfar-saba",
+      "branch_text": "כפר סבא",
+      "channels": [
+        "email",
+        "phone"
+      ],
+      "source_ids": [
+        "27855071037478526"
+      ],
+      "author_id": "100000687874188",
+      "author_name": "Noga Bareket Jervis",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Contacts couples by email and phone before the visit to ask for missing documents."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-30T06:47:47.000Z"
+    }
+  ]
+}

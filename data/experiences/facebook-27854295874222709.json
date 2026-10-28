@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27854295874222709",
+  "source_hash": "a4ed44da36e5db9a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:57.635Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Abigail Ofer reports that the Tel Aviv Misrad Hapnim office was closed on 30 July.",
+      "branch": "tel-aviv",
+      "branch_text": "misrad hapnim in tel aviv",
+      "channels": [],
+      "source_ids": [
+        "27854295874222709"
+      ],
+      "author_id": "223708479",
+      "author_name": "Abigail Ofer",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-30T04:59:12.000Z"
+    }
+  ]
+}

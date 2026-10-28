@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27988417924143836",
+  "source_hash": "11994b10c303ee4c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:19.562Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Gil and his A/5 wife have a Misrad Hapnim appointment about a week away to register their newborn and get an ID number, but the baby needs a health fund registration sooner.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27988417924143836"
+      ],
+      "author_id": "1107431474",
+      "author_name": "Gil Boral",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T09:20:59.000Z"
+    }
+  ]
+}

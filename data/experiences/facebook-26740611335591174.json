@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "26740611335591174",
+  "source_hash": "881d6b381378f61e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.420Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dima's A5 renewal appointment in Holon was cancelled and rescheduled about 2 months later because of the war.",
+      "branch": "holon",
+      "branch_text": "Holon",
+      "channels": [],
+      "source_ids": [
+        "26740611335591174"
+      ],
+      "author_id": "1252656449",
+      "author_name": "Dima Kantargi",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-04-27T10:43:32.000Z"
+    },
+    {
+      "summary": "Lital's meeting for the move to A/5 took place and the office accepted an AS3 form signed in January.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26740807328904908"
+      ],
+      "author_id": "1034138753",
+      "author_name": "Lital Zikri",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an AS3 form signed a few months earlier"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T11:07:12.000Z"
+    }
+  ]
+}

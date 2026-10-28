@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "28646270475025241",
+  "source_hash": "19f8ef706b64f7da",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:44.100Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alex at Petah Tikva says the clerk at the first document-handing meeting was impressed, his partner got entry permission that day, and staff helped when he forgot a document or an interview answer.",
+      "branch": "petah-tikva",
+      "branch_text": "פ\"ת",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28653399864312302",
+        "28653812804271008"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Helps applicants who forgot a document or an answer rather than looking to fail them",
+        "Entry permission for the partner was given the same day as the first meeting"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T09:31:26.000Z"
+    }
+  ]
+}

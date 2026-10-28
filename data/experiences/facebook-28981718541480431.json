@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "28981718541480431",
+  "source_hash": "1013540720566aa9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.620Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marine Dahan finally received a date for her first appointment at the Eilat branch, to present documents alone since her partner is in Mexico.",
+      "branch": "eilat",
+      "branch_text": "לשכת אילת",
+      "channels": [],
+      "source_ids": [
+        "28981718541480431",
+        "28982422201410065"
+      ],
+      "author_id": "100002654763624",
+      "author_name": "Marine Dahan",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-10",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handles files of couples where the partner is a foreigner"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-24T10:44:51.000Z"
+    },
+    {
+      "summary": "Ofek Sharlo says the Eilat branch also handles mixed couples.",
+      "branch": "eilat",
+      "branch_text": "אילת",
+      "channels": [],
+      "source_ids": [
+        "29033045106347774"
+      ],
+      "author_id": "1718515535",
+      "author_name": "Ofek Sharlo",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handles mixed couples' partner visa files"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-28T07:16:58.000Z"
+    }
+  ]
+}

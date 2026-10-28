@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27721250050860626",
+  "source_hash": "837423f123eadb99",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.501Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "In earlier Center of Life appointments at Tel Aviv, a signed letter from the roommate plus receipts in his name was accepted instead of Arnona bills in their names.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27721250050860626"
+      ],
+      "author_id": "100049796330514",
+      "author_name": "יוסף אהרון ביטון",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a roommate's signed letter and receipts when the bills are not in the couple's names"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-18T13:15:27.000Z"
+    }
+  ]
+}

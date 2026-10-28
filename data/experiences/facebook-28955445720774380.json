@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "28955445720774380",
+  "source_hash": "4f044d8b27f3138d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:39.082Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lieke van der Made reports that a translation of an apostilled document done abroad was not accepted by Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28956251577360461"
+      ],
+      "author_id": "100002153527503",
+      "author_name": "Lieke van der Made",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not always accept translations of apostilled documents made abroad; translation in Israel is safer."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-22T14:48:32.000Z"
+    },
+    {
+      "summary": "Boglàrka Tankò-Cohen says the translations made abroad were not accepted and they had to be redone in Israel, paying twice.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28958547860464166"
+      ],
+      "author_id": "100006691595637",
+      "author_name": "Boglàrka Tankò-Cohen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not always accept translations of apostilled documents made abroad; translation in Israel is safer."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-22T18:06:58.000Z"
+    }
+  ]
+}

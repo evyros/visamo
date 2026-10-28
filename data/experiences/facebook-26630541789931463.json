@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "26630541789931463",
+  "source_hash": "4fb6319ab7bf4e8c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:37.225Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Oprescu Andreea Gabriela and her Druze Romanian partner received a refusal of the unmarried-partner B/1 after a simultaneous interview, citing inconsistencies in their answers, with 21 days to appeal (Akko office).",
+      "branch": "akko",
+      "branch_text": "Akko",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26630541789931463"
+      ],
+      "author_id": "100008652731177",
+      "author_name": "Oprescu Andreea Gabriela",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews both partners at the same time and compares their answers",
+        "Gives 21 days to appeal a refusal"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T15:23:24.000Z"
+    },
+    {
+      "summary": "Roberta Zuliani says her visa was denied at first and was later won on appeal with a lawyer, who quoted 3 to 6k NIS just to file.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26631006349885007"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-17T16:18:57.000Z"
+    }
+  ]
+}

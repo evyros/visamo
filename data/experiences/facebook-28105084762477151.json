@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28105084762477151",
+  "source_hash": "07d250069c5aa02a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.711Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Inbar Hillel and his wife moved several times in a short period, once living apart, and PIBA told them to avoid moving again.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28105084762477151"
+      ],
+      "author_id": "61568108931988",
+      "author_name": "Inbar Hillel",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-19T15:00:43.000Z"
+    }
+  ]
+}

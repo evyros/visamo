@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27077872418531729",
+  "source_hash": "08f1aba3c9097f78",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:17.383Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kelly had an interview at MH to move from B1 to A5, was told to wait up to three months for the A5 approval, and had the B1 extended another three months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27077872418531729"
+      ],
+      "author_id": "733088628",
+      "author_name": "Kelly Gravenhorst",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T18:25:30.000Z"
+    }
+  ]
+}

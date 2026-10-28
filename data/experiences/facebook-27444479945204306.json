@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27444479945204306",
+  "source_hash": "2e1b0be66846f0fe",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:02.537Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Victoria Ginzburg says that at the in-person document meeting the office accepted a statutory declaration of single status, with apostille, in place of a second Australian police check and single-status document her UK partner could not obtain.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27445410275111273",
+        "27480123058306661"
+      ],
+      "author_id": "100004230308331",
+      "author_name": "Victoria Ginzburg",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T11:32:56.000Z"
+    }
+  ]
+}

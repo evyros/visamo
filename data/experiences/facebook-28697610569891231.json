@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "28697610569891231",
+  "source_hash": "fe7da1a6fd0997e7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:45.773Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At Hadera she had one appointment for the permanent residency application and a separate later appointment for the interview.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28715874651398156"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Hadera holds one appointment for the application and a separate one for the interview."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-05T09:16:04.000Z"
+    },
+    {
+      "summary": "Advice that Tel Aviv is known for separating interview meetings from document meetings.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28715764598075828"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tel Aviv separates interview meetings from document meetings."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-05T09:03:17.000Z"
+    }
+  ]
+}

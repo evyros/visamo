@@ -1,0 +1,286 @@
+{
+  "source": "facebook",
+  "thread_id": "27845384238447206",
+  "source_hash": "acd1a74e9f900bbf",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:34.020Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Osher and her husband did their A/5 years and then citizenship at Kfar Saba: the usual documents, a separate interview with an interviewer who barely took any papers and helped fill in the forms, a ceremony with the branch manager a month later, and the passport and ID a month after that.",
+      "branch": "kfar-saba",
+      "branch_text": "לשכת כפ״ס",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27845920395060257",
+        "27846646588320971",
+        "27847485331570430",
+        "28650984277887194",
+        "28651046321214323",
+        "28651296354522653"
+      ],
+      "author_id": "61560462412979",
+      "author_name": "Osher Oved Somudom",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "ceremony",
+          "days": 30,
+          "ongoing": false,
+          "text": "אחרי חודש הוזמנו לטקס אצל מנהלת הסניף"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews the partners separately with general questions",
+        "Interviewer helps fill in the citizenship forms at the end of the interview",
+        "Citizenship appointment is booked by email, and the officer replies with the list of documents to bring",
+        "Asks for the same documents for citizenship as for the A/5 renewal",
+        "Holds the citizenship ceremony with the branch manager, where the applicant pledges loyalty to the State of Israel"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T12:02:29.000Z"
+    },
+    {
+      "summary": "In their first two years at Kfar Saba, Osher's couple dealt with a clearly unpleasant clerk and cried a lot, until they moved to a different clerk.",
+      "branch": "kfar-saba",
+      "branch_text": "כפר סבא",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27846109891707974",
+        "27846646588320971"
+      ],
+      "author_id": "61560462412979",
+      "author_name": "Osher Oved Somudom",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T12:23:35.000Z"
+    },
+    {
+      "summary": "Ortal and her partner finished their visa process about a month before the post with a clerk named Sari, whom they describe as the best, after an earlier elderly kind clerk.",
+      "branch": "kfar-saba",
+      "branch_text": "שרי (מישהי מהסניף)",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27846074555044841",
+        "27846166611702302"
+      ],
+      "author_id": "699644086",
+      "author_name": "Ortal Claire Revach",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T12:19:39.000Z"
+    },
+    {
+      "summary": "Ortal's couple earlier dealt with a different, very kind and elderly clerk before moving to Sari.",
+      "branch": "kfar-saba",
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27846166611702302"
+      ],
+      "author_id": "699644086",
+      "author_name": "Ortal Claire Revach",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-29T12:29:49.000Z"
+    },
+    {
+      "summary": "At the end of their last visa Sari told Ortal's couple they could apply for citizenship and updated the colleague who will handle it; they only need to submit a form signed before a lawyer.",
+      "branch": "kfar-saba",
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28650689287916693",
+        "28652707037714918"
+      ],
+      "author_id": "699644086",
+      "author_name": "Ortal Claire Revach",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-30T03:49:25.000Z"
+    },
+    {
+      "summary": "Razz says no clerk beats Sari and everyone there is lovely, so much that she is sad to move apartments.",
+      "branch": "kfar-saba",
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27848438831475080"
+      ],
+      "author_id": "544612715",
+      "author_name": "Razz Markowitz",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-29T16:25:42.000Z"
+    },
+    {
+      "summary": "Michal's couple submitted the documents from the official list for citizenship, then were taken to an inner room where the husband signed a declaration and read a few lines swearing allegiance; Hebrew was not required.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27851687127816917"
+      ],
+      "author_id": "628099143",
+      "author_name": "Michal Thomas",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T23:19:45.000Z"
+    }
+  ]
+}

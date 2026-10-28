@@ -1,0 +1,54 @@
+{
+  "source": "facebook",
+  "thread_id": "27689371387381826",
+  "source_hash": "b57223b2199a349b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.764Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Zuzanna, newly married, got a call from Ashkelon after many emails: B1 extension appointment on Nov 9 and an interview on Jan 10, with no documents needed and little explanation.",
+      "branch": "ashkelon",
+      "branch_text": "MisradHapnim Ashqelon",
+      "channels": [
+        "email",
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "27689371387381826",
+        "27695390073446624",
+        "27695666020085696"
+      ],
+      "author_id": "100025451289327",
+      "author_name": "Zuzanna Nowicka-Krispel",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-07-15",
+        "appointment": "2026-11-09"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handled the B1 renewal by email without an online form and gave a B1 extension appointment before the visa expired.",
+        "Told the couple to bring only passport and ID to the extension appointment and not to upload documents beforehand."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-15T17:11:10.000Z"
+    }
+  ]
+}

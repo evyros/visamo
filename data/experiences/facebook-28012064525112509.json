@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28012064525112509",
+  "source_hash": "b6cb8f9fd25caa91",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.244Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Peace, a Nigerian partner of an Israeli, says the visa was not issued right after the husband's first interview despite complete documents, there were unnecessary delays and little information, but arrival at the airport went smoothly and they received the B/1 visa two days before the post.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28012064525112509"
+      ],
+      "author_id": "100089423002647",
+      "author_name": "Nzeke Peace Agbanya",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-12T05:34:20.000Z"
+    }
+  ]
+}

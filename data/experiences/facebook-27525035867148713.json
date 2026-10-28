@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27525035867148713",
+  "source_hash": "3658ccd405933e13",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:25.901Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Angela García says her mother came to visit twice after she went to her city's branch and asked to invite relatives.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27525652857087014"
+      ],
+      "author_id": "1035703795",
+      "author_name": "Angela García",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A relative's visit can be arranged by going to the branch and asking to invite them."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-30T11:48:56.000Z"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "26607750052210637",
+  "source_hash": "7b560e15795b19f4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:36.385Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shahar Sagi, inviting his Colombian partner to visit, says the Jaffa office first set an appointment for mid-March that was cancelled because of the war, then called back on the day of the post and set one for the end of May, which he finds frustratingly far.",
+      "branch": "jaffa",
+      "branch_text": "לשכת יפו",
+      "channels": [],
+      "source_ids": [
+        "26607750052210637"
+      ],
+      "author_id": "100000107224370",
+      "author_name": "שחר שגיא",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-04-15",
+        "appointment": "2026-05"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 45,
+          "ongoing": false,
+          "text": "היום חזרו אליי וקבעו תור לסוף מאי"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T15:13:29.000Z"
+    }
+  ]
+}

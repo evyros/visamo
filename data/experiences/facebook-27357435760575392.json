@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "27357435760575392",
+  "source_hash": "7c5cc114e4f9d594",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.956Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ashir Sontuoso, at Tel Aviv, applied online about two months before June 2026 and got a reply asking to complete a Philippines birth certificate and a marriage certificate although everything was attached; his message via the site's support form was answered by email saying they don't handle the visa department and pointing to the appointment-booking link, with no further answer yet.",
+      "branch": "tel-aviv",
+      "branch_text": "לשכת תל אביב",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27357435760575392",
+        "27361494420169526",
+        "27389547040697597"
+      ],
+      "author_id": "100088444636497",
+      "author_name": "Ashir Sontuoso",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-04",
+        "first_response": "2026-06",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 60,
+          "ongoing": false,
+          "text": "הגשנו בקשה אש6 לפני חודשיים וסופסוף קיבלנו תשובה"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T07:57:06.000Z"
+    },
+    {
+      "summary": "Mor Leon's partner from the Philippines was not given a personal interview at the first appointment; they received a B/1 visa, an entry visa and a date for the A/5 interview, and were asked to show only the four original Philippines documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27372645719054396"
+      ],
+      "author_id": "1011843008",
+      "author_name": "Mor Leon",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-17T11:54:54.000Z"
+    }
+  ]
+}

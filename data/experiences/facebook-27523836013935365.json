@@ -1,0 +1,90 @@
+{
+  "source": "facebook",
+  "thread_id": "27523836013935365",
+  "source_hash": "78cad6895b8d313f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:05.699Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roee Mikovsky was asked for a guarantee at the branch in November 2022, was sent to the airport guarantees unit, paid by a voucher after emailing them, returned with the receipt, and was told by word of mouth the money would be refundable after the A/5.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27523836013935365",
+        "27524058333913133",
+        "27524155997236700"
+      ],
+      "author_id": "100003946760379",
+      "author_name": "Roee Mikovsky",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2022-11",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-30T08:16:55.000Z"
+    },
+    {
+      "summary": "Jacky Chen asked for the guarantee refund by email, a lawyer's letter and in person, got no replies to emails, and was told last week there was still no answer from headquarters and to talk again at the next meeting in a month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27526216723697294"
+      ],
+      "author_id": "100022286251887",
+      "author_name": "Jacky Chen",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-30T12:49:34.000Z"
+    }
+  ]
+}

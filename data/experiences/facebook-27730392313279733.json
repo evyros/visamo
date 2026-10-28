@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27730392313279733",
+  "source_hash": "cdbc4298c09ec299",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.309Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sara Chen's foreign partner finishes the B1 stage and has an August appointment to receive the A/5 and an Israeli ID number.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27730392313279733"
+      ],
+      "author_id": "100090401027718",
+      "author_name": "Sara Chen",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-19T10:28:42.000Z"
+    }
+  ]
+}

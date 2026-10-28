@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28263344379984521",
+  "source_hash": "9c01d35804271af0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:26.993Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Haggai Daus's wife got a one-month visa on arrival, extended at the branch walk-in hours, but the document-submission appointment they were promised is two days after the extended visa expires.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28263344379984521"
+      ],
+      "author_id": "100010107611058",
+      "author_name": "Haggai Daus",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Extends a tourist visa at the branch walk-in hours."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-01T07:07:17.000Z"
+    }
+  ]
+}

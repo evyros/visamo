@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "28105168575802103",
+  "source_hash": "afae2078d680442b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.763Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Achinoam says that from document review to the summons to an in-person interview took them over a year, noting it varies between cases and offices.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28105495812436046"
+      ],
+      "author_id": "100000282480299",
+      "author_name": "Achinoam Veeder",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 365,
+          "ongoing": false,
+          "text": "לנו לקח מעל שנה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-19T15:40:45.000Z"
+    }
+  ]
+}

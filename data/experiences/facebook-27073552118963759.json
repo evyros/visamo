@@ -1,0 +1,127 @@
+{
+  "source": "facebook",
+  "thread_id": "27073552118963759",
+  "source_hash": "6fcd61b7af09ebe4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:49.768Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kelly had an interview to upgrade from B1 to A5 the previous Wednesday; they were told the answer could take up to three months and extended the B1 by three months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27073552118963759"
+      ],
+      "author_id": "733088628",
+      "author_name": "Kelly Gravenhorst",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-20"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T09:36:44.000Z"
+    },
+    {
+      "summary": "Michael waited 6 months after the A5 interview for approval, with the B1 renewed a couple of times meanwhile; the A5 was approved while they were abroad.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27074403235545314"
+      ],
+      "author_id": "5313365",
+      "author_name": "Michael Bassin",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 180,
+          "ongoing": false,
+          "text": "We waited 6 months for the a5 after interview"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T11:30:42.000Z"
+    },
+    {
+      "summary": "Lem Na Ei got no call after the A5 interview as the visa was about to expire, went to the office without an appointment, was first stopped by the guard, and got the A5 the same afternoon after a helpful clerk checked with the manager.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27078103601841944"
+      ],
+      "author_id": "100011706343913",
+      "author_name": "Lem Na Ei",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T18:54:50.000Z"
+    }
+  ]
+}

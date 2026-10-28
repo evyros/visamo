@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27655153877470244",
+  "source_hash": "c27362b10afc1b29",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.542Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "April's second-year A5 renewal at Akko went marvellously: 8am appointment, out by 9:45 with the A5 intervisa given the same day, and the staff always professional.",
+      "branch": "akko",
+      "branch_text": "MH Akko",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27655153877470244"
+      ],
+      "author_id": "1831380471",
+      "author_name": "April Cullen",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-12"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the A5 intervisa on the day of the renewal appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-12T11:30:42.000Z"
+    }
+  ]
+}

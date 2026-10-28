@@ -1,0 +1,181 @@
+{
+  "source": "facebook",
+  "thread_id": "27901983349453961",
+  "source_hash": "66afafe54726c1c0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.287Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Carmen Elena started the partner visa process in March 2025 and got her B1 in August 2025 at the Hadera branch.",
+      "branch": "hadera",
+      "branch_text": "Hadera Branch",
+      "channels": [],
+      "source_ids": [
+        "27901983349453961"
+      ],
+      "author_id": "100001091787763",
+      "author_name": "Carmen Elena",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2025-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-08"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 150,
+          "ongoing": false,
+          "text": "started the process March 2025 and got my b1 august 2025"
+        }
+      ],
+      "experience_when": "2025-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T08:38:33.000Z"
+    },
+    {
+      "summary": "Carmen Elena's husband tried to register their marriage at Misrad Hapnim and was asked for a new certificate of celibacy and, by email, a new police clearance, despite the earlier ones submitted in the visa process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27901983349453961",
+        "27902119066107056",
+        "27905026612482968",
+        "27905227419129554",
+        "28001016316217330"
+      ],
+      "author_id": "100001091787763",
+      "author_name": "Carmen Elena",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At marriage registration, asks for a new certificate of celibacy dated up to the wedding even when one was submitted earlier",
+        "At marriage registration, asks again for a police clearance from the home country"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-03T08:38:33.000Z"
+    },
+    {
+      "summary": "Pauline Aldon Boral was asked for a celibacy certificate when registering her wedding in Israel after 2 years on B1, because she had left the country; getting the documents took another 2 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27935244466127849"
+      ],
+      "author_id": "518298215",
+      "author_name": "Pauline Aldon Boral",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At marriage registration, asks for a celibacy certificate even when the file already has one, if the foreign partner left the country",
+        "Did not ask for new criminal records at marriage registration"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-06T00:31:40.000Z"
+    },
+    {
+      "summary": "Orbulov Anca's husband submitted the documents in September 2025 after a Zoom wedding, approval came in November, and not having registered the marriage in Romania was no problem.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27905390242446605",
+        "27906271679025128"
+      ],
+      "author_id": "100001412370078",
+      "author_name": "Orbulov Anca",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-09",
+        "first_response": "2025-11",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 60,
+          "ongoing": false,
+          "text": "Soțul a depus actele in septembrie și am primit aprobare in noiembrie"
+        }
+      ],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Did not require the marriage to be registered in the foreign partner's home country when applying"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T15:20:16.000Z"
+    }
+  ]
+}

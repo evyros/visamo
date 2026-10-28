@@ -1,0 +1,90 @@
+{
+  "source": "facebook",
+  "thread_id": "27411511328501168",
+  "source_hash": "59f31181b0d48815",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:01.086Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maria Salome and her Israeli husband applied online for the A5 in March; the office replied about a missing apostille, gave 45 days and extended them, and no first interview has been set.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27411511328501168",
+        "27412506955068272"
+      ],
+      "author_id": "100000364609558",
+      "author_name": "Maria Salome",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-03",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-20T14:06:41.000Z"
+    },
+    {
+      "summary": "Ilana Wannagas applied for the A5 in December and still has not received any appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27412708285048139"
+      ],
+      "author_id": "1638669554",
+      "author_name": "Ilana Wannagas",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2025-12",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 180,
+          "ongoing": true,
+          "text": "We applied for A5 too in December and still didn't get any appointment"
+        }
+      ],
+      "experience_when": "2025-12",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-20T16:09:55.000Z"
+    }
+  ]
+}

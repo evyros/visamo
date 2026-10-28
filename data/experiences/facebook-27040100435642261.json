@@ -1,0 +1,244 @@
+{
+  "source": "facebook",
+  "thread_id": "27040100435642261",
+  "source_hash": "2911ab2c593c2256",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:11.854Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roni Lavi had an in-person appointment at Hadera where the clerk scheduled the next appointment before they left, and the SMS confirmation arrived a few minutes later.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person",
+        "sms"
+      ],
+      "source_ids": [
+        "27040100435642261",
+        "27042076925444612"
+      ],
+      "author_id": "1510530787",
+      "author_name": "Roni Lavi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-05-22",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Schedules the next appointment at the end of an appointment",
+        "Sends an SMS confirmation of the appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-22T06:09:44.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen never got SMS notifications during her process at Tel Aviv and says most branches do not send them.",
+      "branch": "tel-aviv",
+      "branch_text": "MH tel aviv",
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27040473662271605"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not send SMS notifications about appointments"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-22T07:01:27.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg tried to request an appointment early in her process when she had not heard from the office for a long time and never got one that way.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27041004245551880"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-22T08:13:14.000Z"
+    },
+    {
+      "summary": "Anja Hohenester-Zimmern says Hadera usually does not allow walk-ins and usually sends a reminder 1-2 days before the appointment.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person",
+        "sms"
+      ],
+      "source_ids": [
+        "27042060475446257",
+        "27042181228767515"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Usually does not allow walk-ins",
+        "Usually sends a reminder 1-2 days before the appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-22T10:38:08.000Z"
+    },
+    {
+      "summary": "Toni Gabriel says appointments at Hadera are usually requested in person by asking the guard for a form, filling it in and having the guard hand it to the clerk.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27042717778713860"
+      ],
+      "author_id": "100000502563473",
+      "author_name": "Toni Gabriel",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Appointments can be requested in person via a form given by the guard and passed to the clerk"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-22T12:04:53.000Z"
+    },
+    {
+      "summary": "Tal Hakmon never got an SMS before an appointment and simply came to the office on time.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms",
+        "in-person"
+      ],
+      "source_ids": [
+        "27044609751857996"
+      ],
+      "author_id": "596449182",
+      "author_name": "Tal Hakmon",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-22T15:43:19.000Z"
+    }
+  ]
+}

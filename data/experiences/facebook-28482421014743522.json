@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28482421014743522",
+  "source_hash": "ccc876de5374a770",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:32.190Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alex has a final A/5 interview in November after 4 years on A/5; the MH clerk said they must state at that meeting whether they want permanent residency or citizenship.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28482421014743522"
+      ],
+      "author_id": "665586910",
+      "author_name": "Alex Alon",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-11"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the final A/5 interview (with center-of-life check) applicants must state whether they want residency or citizenship."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-17T07:27:08.000Z"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "28076919368627024",
+  "source_hash": "01f38819eac5e361",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:22.364Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yaniv Ok had an appointment at the Petah Tikva office on 23/07/2026 to show original documents, was told he had 45 days to submit them or the file closes, and his partner mailed the originals from abroad.",
+      "branch": "petah-tikva",
+      "branch_text": "סניף לפתח תקווה",
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "28076919368627024",
+        "28077085578610403"
+      ],
+      "author_id": "100026609512477",
+      "author_name": "Yaniv Ok",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-23"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives 45 days after the appointment to hand in the original documents, otherwise the file is closed automatically."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-17T09:31:20.000Z"
+    },
+    {
+      "summary": "Klara Kedem says she always arrives early, before 8, at the Tel Aviv office without an appointment and sorts things out with the clerk, though not always to her satisfaction.",
+      "branch": "tel-aviv",
+      "branch_text": "בלשכה בתל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28077076715277956"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Clerks see people who arrive early without an appointment."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-17T09:51:02.000Z"
+    }
+  ]
+}

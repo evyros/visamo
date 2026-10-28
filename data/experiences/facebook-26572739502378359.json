@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "26572739502378359",
+  "source_hash": "b7503f42f0867e47",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.357Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Boaz's A/5 appointment was cancelled due to the war with no SMS or email, his B/1 expired meanwhile, and at the Netanya branch he was told cancelled appointments are being rescheduled slowly according to the visa extension date.",
+      "branch": "netanya",
+      "branch_text": "MH (Netanya branch)",
+      "channels": [
+        "in-person",
+        "sms",
+        "email"
+      ],
+      "source_ids": [
+        "26572739502378359",
+        "26588108320841477"
+      ],
+      "author_id": "699387066",
+      "author_name": "Boaz Dekel",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Re-schedules cancelled appointments in line with the visa extension expiration date, and it takes a while."
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T06:08:06.000Z"
+    },
+    {
+      "summary": "Pearl Xu complains that someone who did the interview long ago still needs an appointment just to collect the A5 card.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26585580224427620"
+      ],
+      "author_id": "100000836960706",
+      "author_name": "Pearl Xu",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-13T11:45:21.000Z"
+    }
+  ]
+}

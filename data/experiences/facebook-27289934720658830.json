@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27289934720658830",
+  "source_hash": "221c8e5159ab1d05",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:25.949Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Zeynep Gün submitted a Turkish criminal record with an electronic e-Apostille about two years ago and it was accepted without problems.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27290976053888030"
+      ],
+      "author_id": "664544261",
+      "author_name": "Zeynep Gün",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2024",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a Turkish criminal record with an electronic e-Apostille (PDF, no physical stamp)."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-10T23:27:58.000Z"
+    }
+  ]
+}

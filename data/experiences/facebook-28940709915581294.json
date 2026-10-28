@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28940709915581294",
+  "source_hash": "a5fa545beda97cc5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.573Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At their second A/5 renewal in Rehovot the clerk checked and agreed to issue a 2-year visa when the husband asked; the interview also went over all their entries and exits.",
+      "branch": "rehovot",
+      "branch_text": "Rehovot branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28940709915581294"
+      ],
+      "author_id": "1063140511",
+      "author_name": "Alex Lai",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the A/5 for two years at renewal when the couple asks.",
+        "Renewal interview goes over the couple's entries and exits."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-21T12:10:55.000Z"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28897690579883228",
+  "source_hash": "83f9ba2e4d2a36cb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.895Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Julie Schut was given an appointment to show original documents after submitting, and was issued a new B2 tourist visa at it to cover the time until her interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28899512953034324"
+      ],
+      "author_id": "1112360473",
+      "author_name": "Julie Schut",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues a new B2 tourist visa at the document appointment to cover the wait until the interview."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-18T11:33:39.000Z"
+    }
+  ]
+}

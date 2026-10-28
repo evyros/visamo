@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28101501196168841",
+  "source_hash": "72147880bf321c7e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.472Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yalee Azani's new ID card after a visa renewal was posted to them while abroad and returned to the handling branch, Ramat Gan.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [
+        "mail"
+      ],
+      "source_ids": [
+        "28101501196168841"
+      ],
+      "author_id": "744805309",
+      "author_name": "Yalee Azani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-19T08:40:16.000Z"
+    }
+  ]
+}

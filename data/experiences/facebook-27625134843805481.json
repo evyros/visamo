@@ -1,0 +1,145 @@
+{
+  "source": "facebook",
+  "thread_id": "27625134843805481",
+  "source_hash": "8fadcee675d438f1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:05.918Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Married couple submitted documents online to Tel Aviv on Dec 25 2024; on Jul 26 2025 they were called in and the B1 was given with no interview, with the next date set for March 2026.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV BRANCH",
+      "channels": [
+        "online",
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "27625134843805481"
+      ],
+      "author_id": "100007955349616",
+      "author_name": "Niks Niks",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": "2024-12-25",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-07-26"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 213,
+          "ongoing": false,
+          "text": "December 25, 2024 - submit to misrad thru online ... July 26, 2025 - they call us to come to the office"
+        }
+      ],
+      "experience_when": "2025-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Can give the B1 at the first appointment without an interview"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-09T12:31:01.000Z"
+    },
+    {
+      "summary": "On March 5 2026 the appointment was cancelled because of the war; the office messaged by phone that there was no need to come and extended the B1 three months to July 5.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV BRANCH",
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27625134843805481"
+      ],
+      "author_id": "100007955349616",
+      "author_name": "Niks Niks",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-03-05"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Extended visas for 3 months by phone message when appointments were cancelled for the war"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T12:31:01.000Z"
+    },
+    {
+      "summary": "Interview for the A/5 on May 18 2026 (Hebrew, no translator), approval news on June 10, sticker and biometrics on June 22 and ID delivered to the home on July 9; she calls the process smooth and the staff friendly, though the case handler changed twice.",
+      "branch": "tel-aviv",
+      "branch_text": "MH TLV BRANCH",
+      "channels": [
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "27625134843805481"
+      ],
+      "author_id": "100007955349616",
+      "author_name": "Niks Niks",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-18"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 23,
+          "ongoing": false,
+          "text": "May 18 interview ... it was june 10 that we pass the a5"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "neutral",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Calls the couple to the office for the interview and for the sticker",
+        "Delivers the A/5 ID card to the home address"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-09T12:31:01.000Z"
+    }
+  ]
+}

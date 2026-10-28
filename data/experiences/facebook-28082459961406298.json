@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28082459961406298",
+  "source_hash": "ddbd5eeebd4abc9c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:22.566Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Max Chaplin submitted his wife's A/5 renewal request on time but was given a meeting three weeks after the visa expires; at the Hadera branch the guard, shown the procedure page, said they could not give an earlier appointment or help.",
+      "branch": "hadera",
+      "branch_text": "Hadera branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28082459961406298",
+        "28088938184091809"
+      ],
+      "author_id": "558927794",
+      "author_name": "Max Chaplin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-17T18:44:15.000Z"
+    }
+  ]
+}

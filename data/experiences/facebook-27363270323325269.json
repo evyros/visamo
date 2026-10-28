@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "27363270323325269",
+  "source_hash": "7225bb590c2f0452",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:59.705Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Samm Orozco and his wife emailed the Tel Aviv branch to get back the 30,000 NIS deposit made a year earlier and got no answer.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27363270323325269"
+      ],
+      "author_id": "100054673914308",
+      "author_name": "Samm Orozco",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-16T17:05:18.000Z"
+    },
+    {
+      "summary": "Bela Claret got her deposit back, years after asking, at Hadera after a clerk told her to hand in a written Hebrew letter explaining why.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27368012612851040",
+        "27370818072570494"
+      ],
+      "author_id": "1160635318",
+      "author_name": "Bela Claret",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Deposit refund requires a written letter in Hebrew, handed in person, explaining why the money should be returned",
+        "Emailing a deposit refund request does not work"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-17T02:48:28.000Z"
+    }
+  ]
+}

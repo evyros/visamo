@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "26595779043407738",
+  "source_hash": "3cbc02044dde4363",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.554Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jordan says many non-married couples wait 8-12 months from the initial application to the B/1 visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26599658273019815"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 300,
+          "ongoing": false,
+          "text": "Many non-married couples wait between eight to 12 months between the initial application and receiving the B1 visa"
+        }
+      ],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Unmarried couples commonly wait 8-12 months from application to B/1"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-14T19:10:23.000Z"
+    },
+    {
+      "summary": "Jordan says Haifa has traditionally been a very efficient branch, though it depends on the clerk and the case.",
+      "branch": "haifa",
+      "branch_text": "Haifa",
+      "channels": [],
+      "source_ids": [
+        "26599658273019815"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-14T19:10:23.000Z"
+    }
+  ]
+}

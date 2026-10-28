@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27040530848932553",
+  "source_hash": "d484a3a5a9a53132",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.310Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sonja says her Kfar Saba branch always told her to be abroad at most 2 months a year, and even less in the last 2 years before citizenship.",
+      "branch": "kfar-saba",
+      "branch_text": "kfar Saba",
+      "channels": [],
+      "source_ids": [
+        "27046667028318935"
+      ],
+      "author_id": "100000172609406",
+      "author_name": "Sonja Freund",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells couples to spend at most 2 months a year abroad, and less in the last 2 years before citizenship."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-22T19:47:14.000Z"
+    }
+  ]
+}

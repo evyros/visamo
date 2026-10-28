@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "26757587377226903",
+  "source_hash": "3dc0cc393fa6de94",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:40.453Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Adi Nafshi-Bueno, married in Utah, tried to register the marriage before applying for the visa; Misrad Hapnim said it must first be registered in the husband's country and would not register until the process was opened, so it was done together at the appointment to submit and verify forms.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "26758525917133049"
+      ],
+      "author_id": "645629468",
+      "author_name": "Adi Nafshi-Bueno",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not register a marriage before the partner visa process is opened; registers it at the appointment to submit and verify the forms.",
+        "Does not enforce the 30-day marriage reporting deadline."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-28T21:19:16.000Z"
+    }
+  ]
+}

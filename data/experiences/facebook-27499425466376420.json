@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27499425466376420",
+  "source_hash": "ede430c83b218bf2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:04.458Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Joyce Loupo renewed her Israeli passport before it expired and was given another one-year passport.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27501893822796251"
+      ],
+      "author_id": "100002613182459",
+      "author_name": "Joyce Loupo",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-28T11:53:51.000Z"
+    }
+  ]
+}

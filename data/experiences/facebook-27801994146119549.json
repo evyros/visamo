@@ -1,0 +1,58 @@
+{
+  "source": "facebook",
+  "thread_id": "27801994146119549",
+  "source_hash": "368eab23fca15653",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:13.751Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Vincent Coudron describes a 2 to 6+ month wait for the appointment and work visa after applying online, and says his own B/1 took 5 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27804872185831745",
+        "27831630763155887"
+      ],
+      "author_id": "1092596056",
+      "author_name": "Vincent Coudron",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 150,
+          "ongoing": false,
+          "text": "On my case, it took me 5 months to have the B1"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-25T19:23:48.000Z"
+    }
+  ]
+}

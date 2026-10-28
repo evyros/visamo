@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28152026264449667",
+  "source_hash": "630639872c88ad9d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:24.947Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Heather Gladding says Misrad Hapnim still refuses to recognise her as a parent and insists on a court ruling, so she and her wife gave up registering the children on her ID.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28159907116994915"
+      ],
+      "author_id": "603389713",
+      "author_name": "Heather Gladding",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-24T04:32:06.000Z"
+    }
+  ]
+}

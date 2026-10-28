@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26779800838338890",
+  "source_hash": "a73c89e8b771e6aa",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:41.326Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Achinoam Veeder says that after a long wait Misrad Hapnim Beer Sheva called to say her South African partner could collect a B/2 visa at the embassy, but the document MH sent was then said by the embassy to be the wrong one, leaving them confused with 2 weeks until it expires.",
+      "branch": "beer-sheva",
+      "branch_text": "MH beer Sheva",
+      "channels": [
+        "phone",
+        "email"
+      ],
+      "source_ids": [
+        "26779800838338890"
+      ],
+      "author_id": "100000282480299",
+      "author_name": "Achinoam Veeder",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T16:47:05.000Z"
+    }
+  ]
+}

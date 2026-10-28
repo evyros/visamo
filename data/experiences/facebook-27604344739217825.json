@@ -1,0 +1,184 @@
+{
+  "source": "facebook",
+  "thread_id": "27604344739217825",
+  "source_hash": "326246c8039b6c0f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.647Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Calls their experience at Petah Tikva shameful, vindictive and corrupt, and says he proved in court that the office lied and won costs.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "27604385702547062",
+        "27605498572435775"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-07T12:41:43.000Z"
+    },
+    {
+      "summary": "Says their experience with the Kfar Saba office has been good overall: available, positive treatment, and the process going well; understands Hod Hasharon belongs to Kfar Saba.",
+      "branch": "kfar-saba",
+      "branch_text": "לשכת כפר סבא",
+      "channels": [],
+      "source_ids": [
+        "27604735862512046"
+      ],
+      "author_id": "100000687874188",
+      "author_name": "Noga Bareket Jervis",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handles Hod Hasharon residents, as far as the author understands."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-07T13:21:21.000Z"
+    },
+    {
+      "summary": "Just finished the process at Kfar Saba and calls the office amazing, available and efficient.",
+      "branch": "kfar-saba",
+      "branch_text": "כפר סבא",
+      "channels": [],
+      "source_ids": [
+        "27604913319160967"
+      ],
+      "author_id": "699644086",
+      "author_name": "Ortal Claire Revach",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-07T13:41:52.000Z"
+    },
+    {
+      "summary": "Says the process at Ramat Gan was very easy.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [],
+      "source_ids": [
+        "27605110469141252"
+      ],
+      "author_id": "1038186771",
+      "author_name": "Chen Kopolovich",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-07T14:05:02.000Z"
+    },
+    {
+      "summary": "Five years in the process at Ramat Gan with no problems, everyone nice and no hostility.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [],
+      "source_ids": [
+        "27618642414454724"
+      ],
+      "author_id": "100008897356397",
+      "author_name": "Shir Brandstein",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-08T20:18:33.000Z"
+    }
+  ]
+}

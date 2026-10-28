@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28458547437130880",
+  "source_hash": "564b1de445547405",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:31.576Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ayala Sinuani Wang says they emailed the deposits unit about releasing the deposit and were sent a form that requires the foreign partner's ID.",
+      "branch": null,
+      "branch_text": "Pikdonot@sa.piba.gov.il",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28469041556081468"
+      ],
+      "author_id": "582326988",
+      "author_name": "Ayala Sinuani Wang",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The deposits unit sends the deposit release form by email on request, to be returned with a copy of the foreign partner's ID"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-16T08:03:07.000Z"
+    }
+  ]
+}

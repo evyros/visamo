@@ -1,0 +1,229 @@
+{
+  "source": "facebook",
+  "thread_id": "27510274595291507",
+  "source_hash": "bb235209e633c23e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:39.002Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Achtenberg, at the last meeting before the citizenship interview at Tel Aviv, was told that a fresh unmarried certificate wasn't enough and the partner must update his status to married in his origin country; a later written reply from the office confirmed it.",
+      "branch": "tel-aviv",
+      "branch_text": "משרד הפנים בתל אביב",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27510274595291507",
+        "27511147728537527",
+        "27994163383569290",
+        "28031630703155891"
+      ],
+      "author_id": "755595360",
+      "author_name": "Shani Achtenberg",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a recent certificate showing no change in the partner's marital status only to extend the A/5 during the process",
+        "Requires, to finish the citizenship process, an updated, apostilled and translated certificate from the origin country showing the marriage is registered"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-29T05:51:56.000Z"
+    },
+    {
+      "summary": "Tiki Hamdani says that after the final interview the office called and asked them to complete the same marital-status registration document, and it is causing many difficulties.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27511200711865562"
+      ],
+      "author_id": "732372961",
+      "author_name": "Tiki Hamdani",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-29T08:06:04.000Z"
+    },
+    {
+      "summary": "Karo Albert Yusupov says that in April they were asked to present a certificate from the country of origin, and that the office now requires it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27511272491858384",
+        "27905978012387828"
+      ],
+      "author_id": "708151099",
+      "author_name": "Karo Albert Yusupov",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-29T08:16:09.000Z"
+    },
+    {
+      "summary": "Karo Albert Yusupov says friends, a mixed couple finishing next year toward citizenship, were asked for the origin-country certificate.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27511284585190508"
+      ],
+      "author_id": "708151099",
+      "author_name": "Karo Albert Yusupov",
+      "firsthand": "secondhand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-29T08:17:46.000Z"
+    },
+    {
+      "summary": "ליעד צברי says that after marrying in Cyprus and registering with the Philippine foreign ministry there, they brought the marriage certificate to Misrad Hapnim and continued without trouble.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27517499824568984"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-29T19:15:27.000Z"
+    },
+    {
+      "summary": "Slav Vals says the office demanded the origin-country marital status document from them in order to start the process, in the first submissions.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27558288470490119"
+      ],
+      "author_id": "1518004157",
+      "author_name": "Slav Vals",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-03T08:26:38.000Z"
+    }
+  ]
+}

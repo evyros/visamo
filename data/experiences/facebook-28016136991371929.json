@@ -1,0 +1,318 @@
+{
+  "source": "facebook",
+  "thread_id": "28016136991371929",
+  "source_hash": "0bc85e0d34491240",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.423Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Gilad, at a routine interview about ten days before the post, was asked for a year of payslips, a bank statement printout and six months of credit card statements; the documents he emailed the next day got no reply.",
+      "branch": "rehovot",
+      "branch_text": "הלשכה ברחובות",
+      "channels": [
+        "in-person",
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "28016136991371929"
+      ],
+      "author_id": "584536401",
+      "author_name": "Gilad Shmaya",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T12:44:22.000Z"
+    },
+    {
+      "summary": "Gilad went to the Rehovot office the day before his wife's visa expired after emails were ignored; the clerk was absent, staff shouted at him for coming without an appointment, and the office manager extended the visa by only three months.",
+      "branch": "rehovot",
+      "branch_text": "הלשכה ברחובות",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28016136991371929",
+        "28020593404259621"
+      ],
+      "author_id": "584536401",
+      "author_name": "Gilad Shmaya",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-12T12:44:22.000Z"
+    },
+    {
+      "summary": "Klara says the office never answers emails, she has to come in person before 8, and the last time her husband's visa was extended only by three months with the explanation that it is the law.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28017526107899684",
+        "28017575284561433"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T14:42:25.000Z"
+    },
+    {
+      "summary": "Liat filed an appeal in February 2026 about her partner's visit and still has no decision, despite two urgent requests from the lawyer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28017262434592718",
+        "28021139684204993"
+      ],
+      "author_id": "100006357045903",
+      "author_name": "Liat Levi Levi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": "2026-02",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-02",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T14:23:32.000Z"
+    },
+    {
+      "summary": "Ariel says at the start the Rehovot office lost his application forms and was ashamed to admit it; he filed a legal appeal and it was handled quickly.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28018634421122186"
+      ],
+      "author_id": "1337848045",
+      "author_name": "Ariel Shai",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T16:24:28.000Z"
+    },
+    {
+      "summary": "Ariel says Rehovot refused to return a 30,000 NIS guarantee, so he demanded a formal refusal decision and filed an internal appeal on it.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [],
+      "source_ids": [
+        "28018634421122186"
+      ],
+      "author_id": "1337848045",
+      "author_name": "Ariel Shai",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T16:24:28.000Z"
+    },
+    {
+      "summary": "About a year before the post, at his fourth-year A/5 renewal, Rehovot questioned why Ariel had several addresses with utility bills and claimed he and his wife had separated.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28018634421122186"
+      ],
+      "author_id": "1337848045",
+      "author_name": "Ariel Shai",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T16:24:28.000Z"
+    },
+    {
+      "summary": "Ariel found the Rehovot visa department inefficient, with annual conflicts, and once slept in the corridor in a sleeping bag to get an appointment in the morning; he advises that emails do not work and only in-person submission of a stamped letter works.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28018634421122186",
+        "28023715437280751"
+      ],
+      "author_id": "1337848045",
+      "author_name": "Ariel Shai",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue",
+        "no-reply"
+      ],
+      "practices": [
+        "Does not respond to emails; a letter handed in person with a received stamp is what gets recorded"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T16:24:28.000Z"
+    }
+  ]
+}

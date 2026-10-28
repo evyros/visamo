@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "27359447067040928",
+  "source_hash": "7d50bc08f0901052",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:59.453Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Michael John had a couple's visa interview at Tel Aviv on April 26 and had heard nothing by mid-June.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27359447067040928",
+        "27370243722627929"
+      ],
+      "author_id": "839205556",
+      "author_name": "Michael John",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-26"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 51,
+          "ongoing": true,
+          "text": "We had our interview for the couple's visa on april 26th. It went well but no news since."
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T10:16:52.000Z"
+    },
+    {
+      "summary": "Indalecio Ledesma and partner have been waiting since May 25 at the Hadera office and send weekly follow-ups without any answer.",
+      "branch": "hadera",
+      "branch_text": "hadera",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27414374651548169"
+      ],
+      "author_id": "665548582",
+      "author_name": "Indalecio Ledesma",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-20T19:09:09.000Z"
+    }
+  ]
+}

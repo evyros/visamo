@@ -1,0 +1,168 @@
+{
+  "source": "facebook",
+  "thread_id": "26613483574970618",
+  "source_hash": "6e71cb15361f7c83",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.847Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Orbit Joy urgently needed a re-entry (interview) visa for her partner from the Tel Aviv visa department after the war closure, and arrives at 6:45-7:00 but others still get ahead of her in the queue.",
+      "branch": "tel-aviv",
+      "branch_text": "מחלקת האשרות בלשכת תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26613483574970618",
+        "26616190328033276"
+      ],
+      "author_id": "100002855537869",
+      "author_name": "Orbit Joy",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue",
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T03:58:45.000Z"
+    },
+    {
+      "summary": "Anja Hohenester-Zimmern says the Tel Aviv visa department is back at work and you can walk in early in the morning.",
+      "branch": "tel-aviv",
+      "branch_text": "They (Tel Aviv visa department)",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26613539228298386"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Visa department takes walk-ins early in the morning"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T04:05:43.000Z"
+    },
+    {
+      "summary": "Tamar Bass advises arriving at 7:45 for the Tel Aviv visa department as a queue forms before the 8:00 opening, and says Sunday and Thursday are the busiest days.",
+      "branch": "tel-aviv",
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26614223011563341"
+      ],
+      "author_id": "680845060",
+      "author_name": "Tamar Bass",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "A queue forms before the 8:00 opening",
+        "Sunday and Thursday are the busiest days"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T05:29:03.000Z"
+    },
+    {
+      "summary": "Anaty V Hoop says the visa department doesn't answer and she has no choice but to come in person, calling it disgraceful service.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26646195558366086"
+      ],
+      "author_id": "1161323712",
+      "author_name": "Anaty V Hoop",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-19T06:08:27.000Z"
+    }
+  ]
+}

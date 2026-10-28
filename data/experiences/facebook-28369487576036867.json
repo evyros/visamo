@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28369487576036867",
+  "source_hash": "52e411f115b4bd76",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.658Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Brooke Rene has a September 22 appointment to hand in documents for the B1 and her tourist visa ends on the 12th, while the office asks for 30 days to answer a request for a visa extension appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28369487576036867",
+        "28371218889197069"
+      ],
+      "author_id": "100002986896259",
+      "author_name": "Brooke Rene",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09-22"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for 30 days to answer a request for an appointment to extend a tourist visa."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-09T06:57:48.000Z"
+    }
+  ]
+}

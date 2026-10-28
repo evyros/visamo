@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27460367113615589",
+  "source_hash": "4636b52263fa10db",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:21.276Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Omer Eliyahu moved from Tel Aviv to Ramat Gan and has an annual visa renewal appointment at the Tel Aviv office in February 2027, and asks how to transfer the file.",
+      "branch": "tel-aviv",
+      "branch_text": "לשכת תל אביב",
+      "channels": [],
+      "source_ids": [
+        "27460367113615589"
+      ],
+      "author_id": "100000231295281",
+      "author_name": "Omer Eliyahu",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-02"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-24T19:41:00.000Z"
+    },
+    {
+      "summary": "Dor Kushinsky moved to Ramat Gan, emailed to say so, and was emailed back that it was handled, with a date for the next appointment.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27465112566474377"
+      ],
+      "author_id": "1123335433",
+      "author_name": "Dor Kushinsky",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A change of address and office can be handled by email; they reply that the file was moved and give the next appointment date."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-25T06:26:16.000Z"
+    }
+  ]
+}

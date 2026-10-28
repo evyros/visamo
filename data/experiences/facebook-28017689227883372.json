@@ -1,0 +1,132 @@
+{
+  "source": "facebook",
+  "thread_id": "28017689227883372",
+  "source_hash": "3410432da1ec9e18",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:46.364Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Raanan Nevet filed the appointment-request form after his wife landed on a 30-day visa, was told an answer takes 30 working days, and was told by phone and email that only a specific department handles such requests.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "phone",
+        "email"
+      ],
+      "source_ids": [
+        "28017689227883372",
+        "28018140341171594"
+      ],
+      "author_id": "654652801",
+      "author_name": "Raanan Nevet",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-08-12",
+        "first_response": "2026-08-12",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Appointment-request form is acknowledged with an answer promised within 30 working days",
+        "Phone and email staff do not handle status-regulation requests, only a specific department does"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T14:57:20.000Z"
+    },
+    {
+      "summary": "Raanan Nevet asked the visa department at Hadera on 16 Aug and was told meeting appointments are currently available only in December, after his wife's visa would expire.",
+      "branch": "hadera",
+      "branch_text": "משרד הפנים בחדרה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28065270129791948"
+      ],
+      "author_id": "654652801",
+      "author_name": "Raanan Nevet",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Visa department appointments are booked months ahead, to December as of mid-August 2026"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T09:45:11.000Z"
+    },
+    {
+      "summary": "Lior Beres says the Hadera visa department does not receive people without an appointment, but you can leave a letter with the guard.",
+      "branch": "hadera",
+      "branch_text": "מחלקת אשרות בחדרה",
+      "channels": [],
+      "source_ids": [
+        "28067494122902882"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "The Hadera visa department does not take walk-ins",
+        "A letter can be left with the guard at Hadera"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T13:46:36.000Z"
+    }
+  ]
+}

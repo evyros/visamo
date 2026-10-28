@@ -1,0 +1,138 @@
+{
+  "source": "facebook",
+  "thread_id": "28841328712186082",
+  "source_hash": "800d4bbd42f82bda",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.471Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Irmante at Ramat Gan was given a citizenship/permanent residence appointment due in November but has not been told the date; last May she got a 6-month ID slip and was told they would call, and she dislikes not getting the date a month ahead.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat gan branch",
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28841328712186082",
+        "28848041154848171"
+      ],
+      "author_id": "100000089260391",
+      "author_name": "Irmante Zach",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not give the appointment date a month in advance, only a call shortly before"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-14T09:05:16.000Z"
+    },
+    {
+      "summary": "Boglarka at Ramat Gan got the citizenship application appointment at her third A/5 renewal, set about 9 months ahead, with documents to be uploaded 3 months before.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat gan",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "28841492732169680",
+        "28844376031881350"
+      ],
+      "author_id": "100006691595637",
+      "author_name": "Boglàrka Tankò-Cohen",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 270,
+          "ongoing": false,
+          "text": "on the third renewal they set the appointment for an other 9 month"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Sets the citizenship application appointment at the third A/5 renewal, about 9 months later",
+        "Citizenship application is possible after 3 years and 9 months on A/5",
+        "Documents are uploaded 3 months before the appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-14T09:22:45.000Z"
+    },
+    {
+      "summary": "Heidi was told the citizenship appointment will be a couple of days before the visa expires, with a phone call about 2 weeks before.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28841673592151594"
+      ],
+      "author_id": "658620595",
+      "author_name": "Heidi Maynard",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-10-14T09:42:00.000Z"
+    }
+  ]
+}

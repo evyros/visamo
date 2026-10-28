@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26756483407337300",
+  "source_hash": "f16b05a580644aee",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:40.301Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A. Цветанова cancelled her A/5 interview when she and her Israeli spouse moved abroad, and Misrad Hapnim told her she could not re-open her file until November 2026.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26756483407337300"
+      ],
+      "author_id": "100028343344112",
+      "author_name": "А. Цветанова",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "After a cancelled A/5 interview the file cannot be re-opened for a set waiting period"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-28T17:26:51.000Z"
+    }
+  ]
+}

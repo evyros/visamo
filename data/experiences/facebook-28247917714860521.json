@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "28247917714860521",
+  "source_hash": "d00454e99a3f296a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:41.765Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Batel tried to register her baby born in Israel (2021) with the father's name at the population registry and was told it wasn't possible because he isn't an Israeli resident and had no visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28251695957816030",
+        "28262628276722798"
+      ],
+      "author_id": "100000146037639",
+      "author_name": "Batel Afriat Mochizuki",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2021",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-08-31T09:54:50.000Z"
+    },
+    {
+      "summary": "Rachel registered her children, including one born in Israel while living in Japan, at the registry station with no problem.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28262585316727094",
+        "28290590237259935",
+        "28343436345308657"
+      ],
+      "author_id": "699627374",
+      "author_name": "Rachel Grinboim Kanie",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-01T05:38:36.000Z"
+    }
+  ]
+}

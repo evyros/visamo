@@ -1,0 +1,154 @@
+{
+  "source": "facebook",
+  "thread_id": "26742664362052538",
+  "source_hash": "200b52ad9e9f9c97",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.705Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tal's husband's visa was renewed two weeks before the post and they are still waiting for the new ID card, with no extension sticker given on the old one.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26742664362052538",
+        "26743917101927264"
+      ],
+      "author_id": "100010283404438",
+      "author_name": "Tal David",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T14:28:34.000Z"
+    },
+    {
+      "summary": "Last year, at the previous renewal, Tal's husband was also not given an extension sticker on the old ID.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26743917101927264"
+      ],
+      "author_id": "100010283404438",
+      "author_name": "Tal David",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:33:46.000Z"
+    },
+    {
+      "summary": "Noga, on A/5, was not given an extension sticker at the last renewal and was told it is fine to wait for the new ID.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26743803811938593"
+      ],
+      "author_id": "614639382",
+      "author_name": "Noga Kosto",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not always put an extension sticker on the old ID after a renewal, telling people to wait for the new ID"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:22:32.000Z"
+    },
+    {
+      "summary": "Ashley was given a registry extract (tamtzit rishum) to use as ID until the new ID card arrived.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26744038265248481"
+      ],
+      "author_id": "100039047347234",
+      "author_name": "Ashley Lammas",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a registry extract to use as ID until the new ID card arrives"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T16:45:58.000Z"
+    }
+  ]
+}

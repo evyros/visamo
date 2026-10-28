@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "28056332490685712",
+  "source_hash": "8f84f2cdaf698304",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.206Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alejandra says last year at the Netanya branch they could not upload documents for the A/5 renewal, were told they needed them printed, and were not given an appointment.",
+      "branch": "netanya",
+      "branch_text": "Netanya branch",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28056332490685712"
+      ],
+      "author_id": "100006549572061",
+      "author_name": "Alejandra Silva",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asked for printed documents when online upload did not work"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-15T15:03:41.000Z"
+    },
+    {
+      "summary": "Galia says Netanya told them to send an email 3 months before renewal to ask for an appointment.",
+      "branch": "netanya",
+      "branch_text": "Netanya",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28056801123972182",
+        "28063091223343172"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells applicants to email 3 months before renewal to request an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-15T15:50:31.000Z"
+    }
+  ]
+}

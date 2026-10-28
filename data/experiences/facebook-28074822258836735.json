@@ -1,0 +1,128 @@
+{
+  "source": "facebook",
+  "thread_id": "28074822258836735",
+  "source_hash": "2416f2b91fad0238",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:42.293Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Afik's wife's yearly A/5 extension interview in Netanya was set two weeks after the visa expires; the office said communication is by email only and the emails gave no substantive answer about the gap.",
+      "branch": "netanya",
+      "branch_text": "לשכת רשות האוכלוסין בנתניה",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28074822258836735",
+        "28075620038756957"
+      ],
+      "author_id": "1651335456",
+      "author_name": "Afik Alon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Netanya handles inquiries by email only and doesn't receive people in person to extend the visa temporarily"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-17T04:53:58.000Z"
+    },
+    {
+      "summary": "Alex's interview was set after the visa expiry; the clerk said it was fine since they're in the system and gave written confirmation, but he found email answers short and uninformative.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28075731142079180"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an interview date after the visa expires, noting in the system that the file is being handled, and gives written confirmation"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-17T06:57:38.000Z"
+    },
+    {
+      "summary": "Avihu had an interview after the visa expiry; the clerk said it was fine as it was registered in the system, and it caused no problems.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28076322252020069"
+      ],
+      "author_id": "746533128",
+      "author_name": "Avihu Harush",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Treats an interview set shortly after visa expiry as fine, since it is registered in the system"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-17T08:16:12.000Z"
+    }
+  ]
+}

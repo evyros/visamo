@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "28333601192958839",
+  "source_hash": "9bf4d70f14d2f021",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:42.194Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Petar Jovanović renewed his A5 at Tel Aviv in July 2026 and was given two appointments in July 2027, one for documents and one for the interview, with the interview falling on a Friday.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28333601192958839"
+      ],
+      "author_id": "1037734075",
+      "author_name": "Petar Jovanović",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-07",
+        "appointment": "2027-07"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives separate appointments for presenting documents and for the interview at renewals"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-06T10:32:20.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Tel Aviv does not work on Fridays and is usually responsive by email.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28333855176266774"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not work on Fridays"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-06T11:01:44.000Z"
+    }
+  ]
+}

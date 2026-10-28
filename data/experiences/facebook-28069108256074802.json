@@ -1,0 +1,57 @@
+{
+  "source": "facebook",
+  "thread_id": "28069108256074802",
+  "source_hash": "37c0c24dbfbdc178",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.941Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta applied at Jaffa MH to invite her 76-year-old grandmother as a tourist; 15 days later the office emailed asking for the grandmother's and great-grandmother's birth certificates and proof of residence, which she found absurd.",
+      "branch": "jaffa",
+      "branch_text": "Jaffa MH",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28069108256074802",
+        "28069559626029665"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": "2026-08-01",
+        "first_response": "2026-08-16",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 15,
+          "ongoing": false,
+          "text": "Today, 15 days later we got an email saying that we need to submit the following documents"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T16:32:20.000Z"
+    }
+  ]
+}

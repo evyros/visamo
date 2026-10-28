@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27065022656483372",
+  "source_hash": "cd634cda036b046c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:49.302Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sara Anter, a UK married couple, was asked after submitting documents online and in original for proof of marriage registration in the UK; a nice PIBA official explained an apostilled notary affidavit would do.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27065022656483372"
+      ],
+      "author_id": "100037073499783",
+      "author_name": "Sara Anter",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-24T14:03:18.000Z"
+    }
+  ]
+}

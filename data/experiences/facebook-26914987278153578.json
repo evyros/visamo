@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "26914987278153578",
+  "source_hash": "7f57911f146935b1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:23.250Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Amy Double-Yoo submitted B/1 documents online on 30 March (during the war) and had heard nothing by 12 May.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26914987278153578"
+      ],
+      "author_id": "1652453048",
+      "author_name": "Amy Double-Yoo",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-03-30",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 43,
+          "ongoing": true,
+          "text": "submitted the documents online on the 30th March... heard nothing yet (post of 12 May)"
+        }
+      ],
+      "experience_when": "2026-03",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T10:44:25.000Z"
+    },
+    {
+      "summary": "Klara Kedem advises that going early to the Tel Aviv branch gets you an answer.",
+      "branch": "tel-aviv",
+      "branch_text": "tel Aviv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26915270044791968"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Going early to the branch gets you an answer on your file status."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T11:16:13.000Z"
+    }
+  ]
+}

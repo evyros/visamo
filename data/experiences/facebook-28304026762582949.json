@@ -1,0 +1,159 @@
+{
+  "source": "facebook",
+  "thread_id": "28304026762582949",
+  "source_hash": "35504811d6273211",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.430Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Misrad Hapnim at the hospital told a couple whose wife has an A/5 to deposit 3,000 shekels, take the birth document to Misrad Hapnim and Bituach Leumi outside, and return with the documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28304026762582949",
+        "28323425953976363",
+        "28323438690641756"
+      ],
+      "author_id": "593130360",
+      "author_name": "Daniel Nachshoni",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the hospital, asks a couple with an A/5 for a 3,000 shekel deposit and sends them to Misrad Hapnim and Bituach Leumi outside to register the baby."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-04T04:21:25.000Z"
+    },
+    {
+      "summary": "Says they went to Misrad Hapnim outside the hospital to register the baby, though some couples manage it in the hospital.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28304478845871074"
+      ],
+      "author_id": "100002153527503",
+      "author_name": "Lieke van der Made",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-04T05:09:05.000Z"
+    },
+    {
+      "summary": "Everything was done in the hospital when she gave birth with no deposit, and they went to Misrad Hapnim only later to get the baby a passport.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28304520135866945"
+      ],
+      "author_id": "100015349140965",
+      "author_name": "Lauren Beth",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-04T05:13:24.000Z"
+    },
+    {
+      "summary": "Gave birth last year and registered the baby with only the teudat zehut, the details were checked, and there were no problems.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28308227098829582"
+      ],
+      "author_id": "100077679466566",
+      "author_name": "Kaya Khaimov",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-04T11:42:50.000Z"
+    }
+  ]
+}

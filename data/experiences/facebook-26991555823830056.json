@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26991555823830056",
+  "source_hash": "4e9eba810210ab67",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:47.242Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tomer Avlakosh says that at the 2025 B1 renewal at Tel Aviv they had to present the lease-addendum affidavit for couples signed by the landlord before a lawyer.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26991555823830056",
+        "26992852720367033"
+      ],
+      "author_id": "1273616893",
+      "author_name": "Tomer Avlakosh",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-18T06:48:09.000Z"
+    }
+  ]
+}

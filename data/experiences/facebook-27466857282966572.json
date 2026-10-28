@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27466857282966572",
+  "source_hash": "1c56cdc92d6d46ac",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:03.486Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Samantha registered her marriage with Misrad Hapnim a week earlier, but the online spouse-visa application still requires her husband to fill in form MR/6 to change his marital status.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27466857282966572"
+      ],
+      "author_id": "677194128",
+      "author_name": "Samantha Petraglia Ravitz",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-25T10:17:53.000Z"
+    },
+    {
+      "summary": "Galia re-filled form MR/6 for the online application even though the marriage was already registered, adding a handwritten note at the top saying it was already filled out and they were registered with Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27467445816241052"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-25T11:30:47.000Z"
+    }
+  ]
+}

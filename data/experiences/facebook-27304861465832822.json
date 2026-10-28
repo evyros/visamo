@@ -1,0 +1,189 @@
+{
+  "source": "facebook",
+  "thread_id": "27304861465832822",
+  "source_hash": "73824bc69ab5ffd3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:57.439Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aimee Lindner and her partner handed in documents physically at MH Tel Aviv in August 2025 and were given an interview appointment for May 2026.",
+      "branch": "tel-aviv",
+      "branch_text": "MH Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27304861465832822",
+        "27311679281817707",
+        "27310170205301948"
+      ],
+      "author_id": "100004262855517",
+      "author_name": "Aimee Lindner",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2025-08",
+        "appointment": "2025-08"
+      },
+      "waits": [],
+      "experience_when": "2025-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-12T00:19:27.000Z"
+    },
+    {
+      "summary": "Aimee Lindner's interview at MH Tel Aviv in May 2026 went well and the clerk said she would get the B1 visa, but asked for updated documents covering the nine months since August 2025.",
+      "branch": "tel-aviv",
+      "branch_text": "MH Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27304861465832822",
+        "27311679281817707",
+        "27310170205301948"
+      ],
+      "author_id": "100004262855517",
+      "author_name": "Aimee Lindner",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2025-08",
+        "appointment": "2026-05"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 270,
+          "ongoing": false,
+          "text": "we went 9 month ago to submit all the documents physically and got the appointment for the interview for May"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Asks for updated documents covering the gap between the first appointment and the interview",
+        "Hands out the B1 visa right after the documents are uploaded"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-12T00:19:27.000Z"
+    },
+    {
+      "summary": "After the May 2026 interview at MH Tel Aviv, the lawyer could not upload the requested documents online for weeks; in June MH refused printed documents, said online only, and did not answer emails.",
+      "branch": "tel-aviv",
+      "branch_text": "MH Tel Aviv",
+      "channels": [
+        "in-person",
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27304861465832822",
+        "27311679281817707",
+        "27309040095414959",
+        "27334146759570959",
+        "27309281192057516",
+        "27310181775300791"
+      ],
+      "author_id": "100004262855517",
+      "author_name": "Aimee Lindner",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Does not accept printed documents at the office once the file is handled online"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-12T00:19:27.000Z"
+    },
+    {
+      "summary": "Lucy Sej, in the Herzliya MH branch, has been in a tourist visa loop for 9 months, is repeatedly asked for the same documents, was given a 2-week ultimatum, and was asked to send documents by email because the application didn't work.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya MH",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27309135615405407",
+        "27309413465377622"
+      ],
+      "author_id": "61571925855735",
+      "author_name": "Lucy Sej",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for documents by email when the online application isn't working"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-12T08:23:15.000Z"
+    }
+  ]
+}

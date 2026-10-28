@@ -1,0 +1,124 @@
+{
+  "source": "facebook",
+  "thread_id": "26831122169873423",
+  "source_hash": "80d6d003dedd8b87",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.194Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Steve, waiting for the initial meeting, asked the Eilat office for an inter-visa and was told it can't issue one.",
+      "branch": "eilat",
+      "branch_text": "our local office (Eilat)",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26831122169873423",
+        "26917563554562617"
+      ],
+      "author_id": "737080103",
+      "author_name": "Steve Edwards",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Doesn't issue an inter-visa before the initial meeting"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-05T11:37:35.000Z"
+    },
+    {
+      "summary": "Steve travelled to the Tel Aviv office for an inter-visa and was told only Eilat can issue it, after the initial meeting.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26917563554562617"
+      ],
+      "author_id": "737080103",
+      "author_name": "Steve Edwards",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T15:15:52.000Z"
+    },
+    {
+      "summary": "Ronen's partner was given a one-time inter-visa by the Tel Aviv office while waiting for the initial meeting; very easy, just showed up and waited a turn.",
+      "branch": "tel-aviv",
+      "branch_text": "The local office in TLV",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26832508623068111"
+      ],
+      "author_id": "559468278",
+      "author_name": "Ronen Capelouto",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues a one-time inter-visa on a walk-in to people waiting for the initial meeting"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-05T14:19:05.000Z"
+    }
+  ]
+}

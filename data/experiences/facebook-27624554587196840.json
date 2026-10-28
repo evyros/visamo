@@ -1,0 +1,59 @@
+{
+  "source": "facebook",
+  "thread_id": "27624554587196840",
+  "source_hash": "7d9a08d0ec6b7489",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:08.945Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Rishav had his A5 interview in April 2026 and by early July Misrad Hapnim said his file was being sent to a committee with no dates, while his B1 expired on July 14; at the office a clerk sent them away saying they could not come without an appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "27624554587196840",
+        "27637017995950499"
+      ],
+      "author_id": "100001629444159",
+      "author_name": "Rishav Sharma",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 90,
+          "ongoing": true,
+          "text": "interview in April, B1 expires July 14, they sent us to a committee and didn't share any dates"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T11:17:04.000Z"
+    }
+  ]
+}

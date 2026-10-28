@@ -1,0 +1,214 @@
+{
+  "source": "facebook",
+  "thread_id": "27126194657032838",
+  "source_hash": "040f9ac5babc7c1a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:41.688Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Mike's partner needs a re-entry permit before a July trip but their Hadera appointment is in August; the office doesn't answer emails and refused them entry in person.",
+      "branch": "hadera",
+      "branch_text": "חדרה",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27126194657032838",
+        "27128548986797405",
+        "27128552780130359",
+        "27128556470129990"
+      ],
+      "author_id": "581842871",
+      "author_name": "Mike Bustenai",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused",
+        "no-reply",
+        "appointment-far"
+      ],
+      "practices": [
+        "Hadera doesn't allow walk-ins, even for urgent cases",
+        "Hadera doesn't let people pass a message inside"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-29T10:10:23.000Z"
+    },
+    {
+      "summary": "David says the Ramat Gan office let them in and helped a lot in a similar urgent situation.",
+      "branch": "ramat-gan",
+      "branch_text": "לשכת רמת גן",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27126817273637243",
+        "27129735963345374"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Lets people in without an appointment for urgent situations"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-29T11:07:11.000Z"
+    },
+    {
+      "summary": "David saw the Tel Aviv office refuse to let people in and treat them unkindly.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27129735963345374"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Doesn't let people in without an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-29T15:29:39.000Z"
+    },
+    {
+      "summary": "David says the Jerusalem office let people in and was nice.",
+      "branch": "jerusalem",
+      "branch_text": "ירושלים",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27129735963345374"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Lets people in without an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-29T15:29:39.000Z"
+    },
+    {
+      "summary": "Ron got a 300 NIS permit from the Tel Aviv office allowing two exits and returns before the couple interview, flew for two weeks, and passed the interview.",
+      "branch": "tel-aviv",
+      "branch_text": "בלשכת תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27130333213285649"
+      ],
+      "author_id": "1468534077",
+      "author_name": "Ron Alkobi",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues a 300 NIS permit allowing two exits and returns until the couple interview",
+        "Recommends not traveling for a long time"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-29T16:22:47.000Z"
+    }
+  ]
+}

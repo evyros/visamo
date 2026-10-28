@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "28065323586453269",
+  "source_hash": "4a2cf618ca35b6ed",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.645Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Julie Schut says Misrad Hapnim extended her B2 visa until February 13 and gave an interview appointment for the B1 visa in mid-January.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28065323586453269",
+        "28551361854516104"
+      ],
+      "author_id": "1112360473",
+      "author_name": "Julie Schut",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-01"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-16T09:51:42.000Z"
+    }
+  ]
+}

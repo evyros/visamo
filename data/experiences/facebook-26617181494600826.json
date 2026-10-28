@@ -1,0 +1,312 @@
+{
+  "source": "facebook",
+  "thread_id": "26617181494600826",
+  "source_hash": "856cd5be4567fc47",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:34.461Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tanya says that when she had visa questions in Tel Aviv, she and her partner reached the visa department's information window as walk-ins without problems.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26617181494600826"
+      ],
+      "author_id": "100008236688720",
+      "author_name": "Тукбаева Таня",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Visa department has an information window that takes walk-ins."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-16T11:38:20.000Z"
+    },
+    {
+      "summary": "Lior Beres says Hadera has no walk-in service and doesn't let people in.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26617237434595232"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Doesn't take walk-ins and doesn't let people in without an appointment."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-16T11:44:47.000Z"
+    },
+    {
+      "summary": "Lior Beres calls the Hadera office notorious for horrible, law-breaking service and conduct.",
+      "branch": "hadera",
+      "branch_text": "the Hadera office",
+      "channels": [],
+      "source_ids": [
+        "26656226987362943"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-20T07:39:14.000Z"
+    },
+    {
+      "summary": "Zahrah Ruth had her citizenship interview in July 2025, got no answer to emails for about nine months, received a 3-month A5 extension by SMS, and was finally called on 2026-04-21 with citizenship scheduled for May.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "sms",
+        "online",
+        "phone"
+      ],
+      "source_ids": [
+        "26650801904572118",
+        "26650818907903751",
+        "26666921069626868"
+      ],
+      "author_id": "644476090",
+      "author_name": "Zahrah Ruth",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-04-21",
+        "appointment": "2026-05"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 270,
+          "ongoing": false,
+          "text": "I had my citizenship interview in July 2025. No answer as of yet (April 2026); we got the call today"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-19T17:13:30.000Z"
+    },
+    {
+      "summary": "Sarah Laval, assigned to Hadera after moving from Jerusalem, uploaded documents in October 2025 but got an appointment only for March 2026 after emailing in January; the appointment was cancelled due to the war, emails went unanswered, and after an email in May she was given mid-August while her visa expires June 2.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "26656164600702515",
+        "26855323980786575"
+      ],
+      "author_id": "61551463010895",
+      "author_name": "Sarah Laval",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2025-10",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 150,
+          "ongoing": false,
+          "text": "uploaded all the required documents in October 2025, but we only received an appointment for March 2026"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far",
+        "no-reply"
+      ],
+      "practices": [
+        "Appointment only came after the couple emailed to ask about the case.",
+        "Cancelled appointments due to the war were not rescheduled in response to emails."
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T07:28:53.000Z"
+    },
+    {
+      "summary": "Bela Claret, in Hadera for 5 years, says security rarely let them in without an appointment, but sometimes they could leave a written note with contact details for the office to call back; the clerks liked them.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26617883851197257"
+      ],
+      "author_id": "1160635318",
+      "author_name": "Bela Claret",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Security rarely lets people in without an appointment.",
+        "Sometimes security hands out a paper to write the request and contact details, and the office then sends an appointment day and time."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-16T12:57:08.000Z"
+    },
+    {
+      "summary": "Bela Claret had her citizenship interview on 5 August 2025 and got citizenship about two months before April 2026, after worrying about the delay.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [],
+      "source_ids": [
+        "26617883851197257",
+        "26650927771226198"
+      ],
+      "author_id": "1160635318",
+      "author_name": "Bela Claret",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-08-05"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 180,
+          "ongoing": false,
+          "text": "interview 5th of August 2025; got citizenship 2 months before April 2026"
+        }
+      ],
+      "experience_when": "2026-02",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Grants citizenship to many people in one day, so it seems to gather a group first."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T12:57:08.000Z"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "source": "facebook",
+  "thread_id": "28580171738301782",
+  "source_hash": "30ac8431d8e4c4f9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:21.130Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kfir Karavani and his German wife, back in Israel after 4 years, uploaded documents online, got no update, learned at the office an unreceived email had been sent, got a 3-week visa extension, and on the expiry day were told only to go home and wait, with no answer on her status.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28580171738301782",
+        "28580478944937728"
+      ],
+      "author_id": "719623814",
+      "author_name": "Kfir Karavani",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Clerks at the counter and the online system have no authority to answer, unlike a face-to-face meeting with a deciding clerk."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-24T10:28:55.000Z"
+    },
+    {
+      "summary": "Kfir Karavani says that in two earlier periods living in Israel on A5 visas everything went smoothly and they sat face to face with a clerk who had authority.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28580171738301782",
+        "28580478944937728"
+      ],
+      "author_id": "719623814",
+      "author_name": "Kfir Karavani",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T10:28:55.000Z"
+    },
+    {
+      "summary": "Ayal Adiri's partner's visa was due to expire Sept 19 with a renewal appointment on Oct 20; they were told staying is fine if she doesn't leave, and after about 10 polite emails the appointment was moved to two days later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28590270460625243"
+      ],
+      "author_id": "1396466166",
+      "author_name": "Ayal Adiri",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10-20"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Someone with a renewal appointment in the system may stay in Israel after the visa date passes, as long as they don't leave the country."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-25T04:33:07.000Z"
+    },
+    {
+      "summary": "Raphael Mohr says his wife stayed in Israel for several months without a visa early in the process after they filed an appeal while she had a valid visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28615318678120421"
+      ],
+      "author_id": "717877014",
+      "author_name": "Raphael Mohr",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-27T04:05:01.000Z"
+    }
+  ]
+}

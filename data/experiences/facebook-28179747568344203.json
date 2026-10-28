@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28179747568344203",
+  "source_hash": "f3af7e8aadd37d94",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:25.587Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Orr Keret, on a B/1 and now married, had a file conversion appointment at PIBA, is waiting for an appointment to hand over documents, with a second interview about a month after; was told the ID comes after the interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28179747568344203"
+      ],
+      "author_id": "1092524024",
+      "author_name": "Orr Keret",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-25T16:48:12.000Z"
+    }
+  ]
+}

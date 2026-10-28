@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "26881851658133807",
+  "source_hash": "022486d730609a25",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:42.136Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta says the Tel Aviv office accepted an English translation of a Georgian marriage certificate without issues.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv/Ramat Gan branches",
+      "channels": [],
+      "source_ids": [
+        "26883661677952805"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an English translation of a Georgian marriage certificate"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-09T18:08:19.000Z"
+    },
+    {
+      "summary": "Roberta says the Ramat Gan office accepted an English translation of a Georgian marriage certificate without issues.",
+      "branch": "ramat-gan",
+      "branch_text": "Tel Aviv/Ramat Gan branches",
+      "channels": [],
+      "source_ids": [
+        "26883661677952805"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an English translation of a Georgian marriage certificate"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-09T18:08:19.000Z"
+    },
+    {
+      "summary": "Maria says the Haifa office accepted the Georgian marriage certificate in English.",
+      "branch": "haifa",
+      "branch_text": "Haifa",
+      "channels": [],
+      "source_ids": [
+        "26891344633851176"
+      ],
+      "author_id": "100000516122155",
+      "author_name": "Maria Kostina",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a Georgian marriage certificate in English"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-10T11:35:06.000Z"
+    }
+  ]
+}

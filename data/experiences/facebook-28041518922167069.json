@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "28041518922167069",
+  "source_hash": "01862481f3508737",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.100Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liad says that while his wife was a temporary resident the office gave them invitation letters for her parents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28043236005328694",
+        "28057736223878672"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives invitation letters for relatives while the Israeli's partner is a temporary resident"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-14T15:03:43.000Z"
+    },
+    {
+      "summary": "Liad says that since his wife became a citizen 5 years ago the office no longer lets them invite her parents, so he invites them himself.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28057736223878672"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not issue invitation letters for relatives once the partner is a citizen"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-15T17:24:42.000Z"
+    }
+  ]
+}

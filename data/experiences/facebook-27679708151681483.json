@@ -1,0 +1,208 @@
+{
+  "source": "facebook",
+  "thread_id": "27679708151681483",
+  "source_hash": "66f1961322b651e5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.484Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Loredana Mussa invited her mother through Misrad Hapnim in Akko, paid a refundable guarantee of about 15,000 NIS, got no answer until days before the flight despite her husband's repeated visits, and received the approval by post 2 months after the visit.",
+      "branch": "akko",
+      "branch_text": "ministerul de interne din Akko",
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "27679921268326838",
+        "27683259664659665",
+        "27683275604658071"
+      ],
+      "author_id": "1437994360",
+      "author_name": "Loredana Mussa",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 105,
+          "ongoing": false,
+          "text": "cred ca 3-4 luni ... nu am primit răspuns până în ultimele zile dinaintea zborului (applied about 3-4 months before the visit, no answer until the last days before the flight)"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Tells people who ask in person that an invitation request is still in processing, and gives no answer until days before the visit",
+        "Sends the approval of a relative's invitation by post, with nothing by email or phone",
+        "Needs persistent in-person follow-up before answering invitation requests"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-14T20:03:33.000Z"
+    },
+    {
+      "summary": "Maria Kostina was told at Misrad Hapnim when getting her first A/5 to wait another year before asking to invite relatives, because the request would most likely be refused.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27686021714383460"
+      ],
+      "author_id": "100000516122155",
+      "author_name": "Maria Kostina",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-15T11:06:36.000Z"
+    },
+    {
+      "summary": "Omri Pinchas asked at the Misrad Hapnim interview whether his wife's family needed a formal invitation to visit, and the clerk said there was no need, which he now doubts.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27689501050702193"
+      ],
+      "author_id": "100001820074119",
+      "author_name": "Omri Pinchas",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-15T17:26:00.000Z"
+    },
+    {
+      "summary": "Jaxon Billingsley says his clerk at Misrad Hapnim also told him a formal invitation for relatives was not needed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27732643939721237"
+      ],
+      "author_id": "100083020994944",
+      "author_name": "Jaxon Billingsley",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-19T15:24:27.000Z"
+    },
+    {
+      "summary": "Boglàrka Tankò-Cohen does an official invitation through Misrad Hapnim for her Romanian family, starting 1-2 months before the visit, never paid a deposit, but paid for Hebrew translations of the parents' employer letters and other documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27679871958331769",
+        "27685183231133975",
+        "27685192157799749"
+      ],
+      "author_id": "100006691595637",
+      "author_name": "Boglàrka Tankò-Cohen",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-14T19:56:52.000Z"
+    }
+  ]
+}

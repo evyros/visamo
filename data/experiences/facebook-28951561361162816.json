@@ -1,0 +1,100 @@
+{
+  "source": "facebook",
+  "thread_id": "28951561361162816",
+  "source_hash": "def75dd4dbf58178",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:38.858Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Rosie Upcraft Partouche (Beer Sheva) submitted the online application and paid the fee about a week before 2026-10-22 and is waiting for an appointment and her British husband's first B1.",
+      "branch": "beer-sheva",
+      "branch_text": "Beer sheva",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28951561361162816",
+        "28952371897748429"
+      ],
+      "author_id": "569208535",
+      "author_name": "Rosie Upcraft Partouche",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-10",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 7,
+          "ongoing": true,
+          "text": "I submitted the online application and paid the fees about a week ago"
+        }
+      ],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-22T06:56:41.000Z"
+    },
+    {
+      "summary": "Rosie Upcraft Partouche applied from abroad for her husband's entry invitation, it took about a month despite chasing them by phone every day, and she found it very stressful; they were told the gradual process can't start while living abroad, so he entered on a B2 tourist visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28957343753917910"
+      ],
+      "author_id": "569208535",
+      "author_name": "Rosie Upcraft Partouche",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 30,
+          "ongoing": false,
+          "text": "It took us about a month to get the invitation, after we chased them everyday"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-22T16:23:37.000Z"
+    }
+  ]
+}

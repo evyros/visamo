@@ -1,0 +1,59 @@
+{
+  "source": "facebook",
+  "thread_id": "28999371176381834",
+  "source_hash": "f338b519a5e38987",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:40.009Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jonathan Beiski, after 7 years in the gradual process, had a permanent residence interview in July and was told an answer would come; since then there has been no response by phone or email and the visa ends in December.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "phone",
+        "email"
+      ],
+      "source_ids": [
+        "28999371176381834"
+      ],
+      "author_id": "100000286069362",
+      "author_name": "Jonathan Beiski",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 100,
+          "ongoing": true,
+          "text": "היינו בראיון לתושבות קבע ביולי ... מאז אין קול ואין עונה"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-25T18:12:07.000Z"
+    }
+  ]
+}

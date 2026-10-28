@@ -1,0 +1,159 @@
+{
+  "source": "facebook",
+  "thread_id": "28385552294430395",
+  "source_hash": "d56cc3a9f6a71d91",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.207Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Arja Isabell, on a 6-month B2 visa awaiting a February interview, was told only on receiving the visa that she could not leave Israel, and that leaving needs proof travel is essential.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28385552294430395",
+        "28385608884424736",
+        "28385631724422452"
+      ],
+      "author_id": "100081103516294",
+      "author_name": "Arja Isabell",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-02"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tells B2 holders awaiting an interview they can leave only with proof that travel is essential"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T10:07:02.000Z"
+    },
+    {
+      "summary": "Joyce Ki, on a B2 waiting for B1, was granted a re-entry visa for the exact dates of a business trip, with a company letter in English that Misrad Hapnim kept.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28385823831069908"
+      ],
+      "author_id": "1237372",
+      "author_name": "Joyce Ki",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Granted a re-entry visa for the exact dates stated in an employer letter"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-10T10:34:45.000Z"
+    },
+    {
+      "summary": "Małgorzata Napierała asked to leave Israel for medical exams in her home country and was allowed to go and come back once.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28387390544246570"
+      ],
+      "author_id": "100000975133437",
+      "author_name": "Małgorzata Napierała",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T13:01:33.000Z"
+    },
+    {
+      "summary": "Theresa Graf paid extra for a re-entry visa at the Tel Aviv branch when extending her tourist visa before her first appointment, and could leave and enter twice.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28392288493756775"
+      ],
+      "author_id": "100000636035719",
+      "author_name": "Theresa Graf",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sells a re-entry visa for a tourist visa, allowing two exits and entries"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-10T20:42:13.000Z"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "28549699098015713",
+  "source_hash": "b19b89922708a9a2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:33.335Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Laura Rnd had her A5 renewed for one year in Tel Aviv for the second time; when she asked for two years the clerk said it does not apply to A5 visas.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28549699098015713",
+        "28550051194647170"
+      ],
+      "author_id": "1286293737",
+      "author_name": "Laura Rnd",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Clerks say the two-year visa does not apply to A5 renewals"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-22T08:26:30.000Z"
+    },
+    {
+      "summary": "Csilla Kovacs did not get a two-year visa at Tel Aviv about two weeks before the comment, same as a friend.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV",
+      "channels": [],
+      "source_ids": [
+        "28557721827213440"
+      ],
+      "author_id": "834208165",
+      "author_name": "Csilla Kovacs",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-22T19:55:53.000Z"
+    }
+  ]
+}

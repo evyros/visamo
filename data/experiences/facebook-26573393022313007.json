@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "26573393022313007",
+  "source_hash": "5697ccf5e670af1d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:21.079Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alex Raihel has an A5 renewal appointment on May 28, one day before his Russian wife's visa expires, and asks whether that is a problem.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26573393022313007"
+      ],
+      "author_id": "1057564322",
+      "author_name": "Alex Raihel",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-28"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T07:39:27.000Z"
+    },
+    {
+      "summary": "Michael Aramanovich's A/5 extension at Hadera last November was extremely smooth and done on the spot in under 20 minutes.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26573556388963337"
+      ],
+      "author_id": "704062674",
+      "author_name": "Michael Aramanovich",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "took less than 20 minutes on the spot"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Hadera completes the A/5 extension on the spot at the appointment, in under 20 minutes."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-12T08:00:24.000Z"
+    }
+  ]
+}

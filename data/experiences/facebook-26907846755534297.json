@@ -1,0 +1,90 @@
+{
+  "source": "facebook",
+  "thread_id": "26907846755534297",
+  "source_hash": "c18e67719cbf880d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:45.180Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Doron went to the Tel Aviv office to reschedule an A5 interview cancelled in March because of the war, after an email sent 4 weeks earlier got no reply; staff said they still answer emails more than 2 months old.",
+      "branch": "tel-aviv",
+      "branch_text": "the office in Tel Aviv",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26907846755534297"
+      ],
+      "author_id": "534703936",
+      "author_name": "Doron Blumshtein",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Replies to emails only after more than 2 months"
+      ],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-05-11T20:29:48.000Z"
+    },
+    {
+      "summary": "Klara keeps emailing the office to nag them and never gets a response.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26920251740960465"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T19:47:14.000Z"
+    }
+  ]
+}

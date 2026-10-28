@@ -1,0 +1,177 @@
+{
+  "source": "facebook",
+  "thread_id": "28065730449745916",
+  "source_hash": "341e13a46952745f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.155Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "An unmarried couple sent documents to the Hadera office at the beginning of July and had received no answer by mid-August.",
+      "branch": "hadera",
+      "branch_text": "Hadera office",
+      "channels": [],
+      "source_ids": [
+        "28065730449745916",
+        "28066056653046629",
+        "28082597964725831"
+      ],
+      "author_id": "100006111671092",
+      "author_name": "Jochebed Abigail Santiago",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": "2026-07",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 45,
+          "ongoing": true,
+          "text": "sent our documents at the beginning of July ... have not received an answer"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T10:36:57.000Z"
+    },
+    {
+      "summary": "Anja advises that Hadera usually does not allow walk-ins.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28065794569739504"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Usually does not allow walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T10:44:19.000Z"
+    },
+    {
+      "summary": "Cel learned their appointment date at Hadera by handing the security guard the partner's ID and asking about its status, and says the office does not usually answer emails.",
+      "branch": "hadera",
+      "branch_text": "MH Hadera office",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28066068996378728"
+      ],
+      "author_id": "1189653278",
+      "author_name": "Cel Pedire",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Applicants can ask the security guard at the entrance about their appointment status by handing over the partner's ID",
+        "Does not usually respond to emails"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T11:15:41.000Z"
+    },
+    {
+      "summary": "Yogev says at Hadera you approach the guard at the entrance and can fill in a note with the request; two weeks later he got a message with the meeting date, and emails get answered but only after some digging.",
+      "branch": "hadera",
+      "branch_text": "בסניף בחדרה",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28070825802569714"
+      ],
+      "author_id": "100000099162920",
+      "author_name": "Yogev Tiram",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Applicants can leave a written request with the entrance guard and receive a message with the meeting date",
+        "Answers emails, but only after persistent follow-up"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T19:39:32.000Z"
+    }
+  ]
+}

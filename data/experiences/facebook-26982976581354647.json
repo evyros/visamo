@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "26982976581354647",
+  "source_hash": "e47393f1e99370fa",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:33.987Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shahar was given a first interview date only in December.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26982976581354647"
+      ],
+      "author_id": "100000371184943",
+      "author_name": "Shahar Cohen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-12"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-17T14:00:58.000Z"
+    },
+    {
+      "summary": "Shahar was also invited to an appointment on 1 June to extend the B/2 visa, even though B/2 visas were automatically extended to 24 August.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26982976581354647"
+      ],
+      "author_id": "100000371184943",
+      "author_name": "Shahar Cohen",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-01"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-17T14:00:58.000Z"
+    }
+  ]
+}

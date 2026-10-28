@@ -1,0 +1,190 @@
+{
+  "source": "facebook",
+  "thread_id": "27696941106624854",
+  "source_hash": "542f1df355f24c49",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:20.037Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Israeli wife of an American applying for his B/1 says PIBA required an Argentine criminal record and status certificate because they spent time there as tourists, refused to waive it, and gave a final four-week extension.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27696941106624854"
+      ],
+      "author_id": "61557603600334",
+      "author_name": "Amit Regev",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-16T09:56:36.000Z"
+    },
+    {
+      "summary": "Anna Kupinska says MhP demanded a criminal record from Sweden after about 5 months there, and accepted a Swedish police letter saying she hadn't stayed long enough to have a record.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27697205813265050",
+        "27700167429635555"
+      ],
+      "author_id": "100004829855238",
+      "author_name": "Anna Kupinska",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a letter from a foreign police authority saying no record exists because the stay was too short, in place of a criminal record certificate."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T10:30:36.000Z"
+    },
+    {
+      "summary": "Mish Mish says Misrad Hapnim accepted an affidavit sworn at the embassy in place of a South Korean criminal background check that was unobtainable.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27697518649900433",
+        "27699232403062391",
+        "27705805449071753",
+        "27727713523547612"
+      ],
+      "author_id": "515155100",
+      "author_name": "Mish Mish",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an affidavit sworn at the relevant embassy instead of a criminal record check that cannot be obtained."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T11:11:04.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg says her husband was required to provide a non-criminal record from China, where they lived for a significant time without being citizens.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27699717749680523"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T15:08:12.000Z"
+    },
+    {
+      "summary": "Mauro Manero says that about 15 years ago, in a similar document problem with Argentina, the Israeli embassy in Buenos Aires explained the situation to PIBA through internal channels as a favour.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27700740762911555",
+        "27707044915614473"
+      ],
+      "author_id": "676851438",
+      "author_name": "Mauro Manero",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2011",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-16T16:58:50.000Z"
+    }
+  ]
+}

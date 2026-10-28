@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27522991920686441",
+  "source_hash": "bf907fa1d30f9b77",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:05.647Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Foreign partner on A/5 says the extension appointment at Misrad Hapnim, her third A/5 extension, is set for mid-to-late July.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27522991920686441"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-30T06:29:28.000Z"
+    }
+  ]
+}

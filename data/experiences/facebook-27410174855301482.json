@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27410174855301482",
+  "source_hash": "7cb4cdc0a1ebcb78",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:00.917Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Vincent Coudron, married to an Israeli, finally has an appointment at Misrad Hapnim to hand over documents already uploaded online.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27410174855301482"
+      ],
+      "author_id": "1092596056",
+      "author_name": "Vincent Coudron",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-20T11:41:32.000Z"
+    }
+  ]
+}

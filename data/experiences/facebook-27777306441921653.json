@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "27777306441921653",
+  "source_hash": "24ef7d42b7280baf",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:05.789Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alberto, an unmarried couple awaiting a B1 interview in September, reports no difficulties so far, only a very slow process, with the B2 extended until the interview date.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27777306441921653"
+      ],
+      "author_id": "1661081460",
+      "author_name": "Alberto Piva",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-23T11:25:29.000Z"
+    },
+    {
+      "summary": "Jordan and partner had their B1 granted on the day of the interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27778676715117959"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "We had our B1 granted on the day of the interview"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Usually gives the B1 decision on the day of the interview",
+        "A newer clerk may need a manager to review the decision, which usually isn't a long wait"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-23T13:49:27.000Z"
+    }
+  ]
+}

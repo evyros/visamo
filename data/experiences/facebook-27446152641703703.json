@@ -1,0 +1,243 @@
+{
+  "source": "facebook",
+  "thread_id": "27446152641703703",
+  "source_hash": "817475beded36f36",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:46.444Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Julie Schut received an interview appointment at Ramat Gan for January 2027 and an invitation to an initial meeting in July where a new B2 visa will be issued until the interview.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan branch",
+      "channels": [],
+      "source_ids": [
+        "27446152641703703"
+      ],
+      "author_id": "1112360473",
+      "author_name": "Julie Schut",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-06",
+        "appointment": "2027-01"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 210,
+          "ongoing": false,
+          "text": "just received our appointment for the interview, but it's in January 2027"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T12:59:48.000Z"
+    },
+    {
+      "summary": "Elena Ruiz Gonzalez at Ramat Gan brought all documents in person (originals and copies, copies kept) at the first appointment, where the Intervisa was offered on the spot.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27446711441647823",
+        "27449861337999500"
+      ],
+      "author_id": "100004648533876",
+      "author_name": "Elena Ruiz González",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Takes all documents in person at the first appointment, originals and copies, and keeps the copies",
+        "Checks documents from the partner's home country only at the first appointment",
+        "Offered a multi-entry Intervisa while waiting for the final interview, though not everyone gets it",
+        "Earlier interview slots are very hard to get except perhaps in emergencies"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T14:02:33.000Z"
+    },
+    {
+      "summary": "Elena Ruiz Gonzalez says that at the Ramat Gan interview they brought updated proof of shared life (arnona, water, payslips, photos, bank account) and were not asked for her own-country documents.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27446711441647823"
+      ],
+      "author_id": "100004648533876",
+      "author_name": "Elena Ruiz González",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the interview asks for updated shared-life documents such as arnona, water, payslips, photos and bank account",
+        "Does not ask again for the foreign partner's home-country documents at the interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T14:02:33.000Z"
+    },
+    {
+      "summary": "Or Kadosh says Hadera declined their request for an Intervisa while on a B2 visa.",
+      "branch": "hadera",
+      "branch_text": "hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27446407341678233"
+      ],
+      "author_id": "100000113621919",
+      "author_name": "Or Kadosh",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Declined to issue an Intervisa to a couple on a B2 visa"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T13:28:18.000Z"
+    },
+    {
+      "summary": "Alberto Piva obtained an Intervisa while on a B2, valid for three months and a single entry, and felt they are not very willing to issue one.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27447447734907527",
+        "27450072437978390"
+      ],
+      "author_id": "1661081460",
+      "author_name": "Alberto Piva",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T15:25:08.000Z"
+    },
+    {
+      "summary": "Claudia Galarza Cervantes says a friend got an Intervisa for 350 shekel while on a B2 until her interview, which was moved from September to November.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27448560948129539"
+      ],
+      "author_id": "100000497590652",
+      "author_name": "Claudia Galarza Cervantes",
+      "firsthand": "secondhand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-23T17:31:20.000Z"
+    }
+  ]
+}

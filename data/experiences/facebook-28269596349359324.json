@@ -1,0 +1,80 @@
+{
+  "source": "facebook",
+  "thread_id": "28269596349359324",
+  "source_hash": "d38aa8873ec0f756",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:27.162Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sara's married partner came in on an invitation and the office's appointment notice asks for the marriage booklet, lawyer-signed inviter declarations (page 5), a request letter, and both spouses present.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28269596349359324",
+        "28270704719248487"
+      ],
+      "author_id": "100037073499783",
+      "author_name": "Sara Anter",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-01T17:35:28.000Z"
+    },
+    {
+      "summary": "Dina describes writing a request letter to change the visa type, stating when she applied, when her husband got the entry permit and arrived, and asking for a work visa for him.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28280252788293680"
+      ],
+      "author_id": "100001373683908",
+      "author_name": "Dina Lukats Wright",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-02T12:03:24.000Z"
+    }
+  ]
+}

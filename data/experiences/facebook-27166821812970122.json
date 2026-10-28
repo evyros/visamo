@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27166821812970122",
+  "source_hash": "a02f6378580714a0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:53.075Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Juli Je obtained her summary of entries and exits by going alone, in person, to Misrad Hapnim as the foreign partner.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27167933176192319"
+      ],
+      "author_id": "1661065127",
+      "author_name": "Juli Je",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-01T09:44:49.000Z"
+    }
+  ]
+}

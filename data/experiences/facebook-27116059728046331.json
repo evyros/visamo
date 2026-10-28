@@ -1,0 +1,170 @@
+{
+  "source": "facebook",
+  "thread_id": "27116059728046331",
+  "source_hash": "35b36785795862b4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:42.037Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nzeke's partner was asked to deposit 30,000 NIS, they appealed and waited 11 months for the decision, with 30 days to pay; over a year apart.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27116059728046331",
+        "27124171940568443"
+      ],
+      "author_id": "100089423002647",
+      "author_name": "Nzeke Peace Agbanya",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 330,
+          "ongoing": false,
+          "text": "We waited 11 months until they arrived at the decision"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-28T16:36:13.000Z"
+    },
+    {
+      "summary": "Grace says that at the Netanya office they got an answer by email after only a month (about an appeal).",
+      "branch": "netanya",
+      "branch_text": "לשכת נתניה",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27122486984070272"
+      ],
+      "author_id": "100001375445680",
+      "author_name": "Grace DA Shimon",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 30,
+          "ongoing": false,
+          "text": "לאחר חודש בלבד קיבלנו תשובה דרך המייל"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Answers appeals by email, in one case after a month"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-29T03:49:48.000Z"
+    },
+    {
+      "summary": "Alina's couple paid a 30k deposit and were told by their consul it would be returned on moving to A/5.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27124375407214763"
+      ],
+      "author_id": "100004979203242",
+      "author_name": "Alina Yatsyk",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-29T07:03:42.000Z"
+    },
+    {
+      "summary": "Lem paid the deposit the next day and the visa was approved the following day, but in the third year on A/5 the deposits still haven't been released.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27172921405693496"
+      ],
+      "author_id": "100011706343913",
+      "author_name": "Lem Na Ei",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-01T17:45:52.000Z"
+    }
+  ]
+}

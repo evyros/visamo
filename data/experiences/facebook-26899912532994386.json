@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "26899912532994386",
+  "source_hash": "56083bed68c7bdb8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:44.483Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nikko Peralta requested the entry/exit recap online and was told it would be mailed in 2-3 days but it never arrived, so went to Misrad Hapnim as a walk-in: the process took about 2 minutes but the wait for a number was over an hour.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "mail",
+        "in-person"
+      ],
+      "source_ids": [
+        "26900955549556751"
+      ],
+      "author_id": "1800510714",
+      "author_name": "Nikko Peralta",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Walk-in requests for the entry/exit recap are handled in about 2 minutes once the number is called",
+        "Queues are shorter if you arrive before 8:00 AM"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-11T07:57:54.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says the online request for the entry/exit recap, which is sent by post, never worked for her on A5 or later as a permanent resident; it never arrived, and going in person is best.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "mail"
+      ],
+      "source_ids": [
+        "26900416449610661"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-11T06:45:14.000Z"
+    }
+  ]
+}

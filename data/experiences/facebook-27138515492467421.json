@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27138515492467421",
+  "source_hash": "87ebd926265139c0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:47:59.636Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yonatan Ginzberg's wife, on a B/1 in Ramat Gan, was given an interview appointment for moving to A/5 after marriage and is asked to bring a municipality residence confirmation.",
+      "branch": "ramat-gan",
+      "branch_text": "סניף רמת גן",
+      "channels": [],
+      "source_ids": [
+        "27138515492467421"
+      ],
+      "author_id": "1262344343",
+      "author_name": "Yonatan Ginzberg",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for a municipality confirmation of center of life at the interview for A/5 after marriage."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-30T05:42:58.000Z"
+    },
+    {
+      "summary": "Ilan Bar says that he and his wife had nothing shared (no joint bank account, utilities, lease) and were given no problems in the whole citizenship process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27138707235781580"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Did not insist on shared bank account, utilities or lease in the citizenship process."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-30T06:03:15.000Z"
+    }
+  ]
+}

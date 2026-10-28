@@ -1,0 +1,121 @@
+{
+  "source": "facebook",
+  "thread_id": "27154065204245783",
+  "source_hash": "2ee22c33fefe3a50",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:20:58.011Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Natali's husband's visa expired the next day after an interview while awaiting a decision; the office manager refused to extend it and said it was being handled, although they had extended it before.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27154065204245783",
+        "27154606567524980",
+        "27154757694176534"
+      ],
+      "author_id": "100072826831107",
+      "author_name": "Natali Kılıç",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T09:17:36.000Z"
+    },
+    {
+      "summary": "Liyad says that in his wife's father's case, Petah Tikva charged a fee but did not extend the visa, then after two weeks offered a 3-month tourist visa.",
+      "branch": "petah-tikva",
+      "branch_text": "לשכת פתח תקווה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27154918277493809"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T10:45:26.000Z"
+    },
+    {
+      "summary": "Alex says that at an interview for the move to A/5 held on the day the visa expired, they waited several more days for approval and the clerk said not to worry as they were in the system.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27155940837391553"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T12:28:15.000Z"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "26778777128441261",
+  "source_hash": "fb2d813533d8881f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:42.025Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar Weisal's application started at Kfar Saba and was transferred to Tel Aviv; Kfar Saba told her a tourist entry for her partner was possible while waiting, which others say is wrong.",
+      "branch": "kfar-saba",
+      "branch_text": "Kfar Saba",
+      "channels": [],
+      "source_ids": [
+        "26779696148349359"
+      ],
+      "author_id": "100008310431331",
+      "author_name": "Tamar Weisal",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "file-transferred"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T16:35:12.000Z"
+    },
+    {
+      "summary": "Danika Malovic says the Tel Aviv office on Begin near Azrieli is the one that processes partner visas.",
+      "branch": "tel-aviv",
+      "branch_text": "Begin near Azrieli",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26778815935104047"
+      ],
+      "author_id": "512532884",
+      "author_name": "Danika Malovic",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Partner visas are processed at the Begin Road office, not the Salame Road office"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-30T14:58:03.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says she personally got wrong information from some clerks.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26780006728318301"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-30T17:10:21.000Z"
+    }
+  ]
+}

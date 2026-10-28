@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "27579606895024943",
+  "source_hash": "31e2ca27b7fabc42",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:20:55.424Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ido went alone to a first interview in April, where the clerk went through the documents thoroughly and approved his Belgian partner's entry in principle; he emailed the clerk on 26/06 as instructed and by 5 July had no reply.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27579606895024943",
+        "27581197291532570"
+      ],
+      "author_id": "100001752319848",
+      "author_name": "Ido Aharon",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "neutral",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "The clerk can approve the foreign partner's entry at the first meeting and asks to be emailed about a month before arrival to set an appointment for after landing."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-05T07:14:49.000Z"
+    },
+    {
+      "summary": "Shira's partner's entry was approved by a phone call from the office, an email confirmation was enough, and a few days after landing they walked in without an appointment to get his work permit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27580407114944921",
+        "27581249721527327"
+      ],
+      "author_id": "1242948976",
+      "author_name": "Shira Ohanah",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Can phone to say the foreign partner's entry is approved and give an email confirmation on request.",
+        "Took a walk-in without an appointment a few days after the partner landed."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-05T09:03:05.000Z"
+    }
+  ]
+}

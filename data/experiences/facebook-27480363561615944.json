@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27480363561615944",
+  "source_hash": "bf0ed39cb548318a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:03.994Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar Berger, married, got the visa and was told by email to apply for a digital ETA-IL for her partner's arrival, and asked what to fill in.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27480363561615944"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-26T13:51:22.000Z"
+    }
+  ]
+}

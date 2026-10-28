@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26954832020835770",
+  "source_hash": "b6dda4b039b8bc9c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:46.787Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Brid Sender Kelleher says that about 10 years ago her documents, translated into English in Israel, were accepted by Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26972678295717809",
+        "27002697339382571",
+        "27002702432715395"
+      ],
+      "author_id": "719432669",
+      "author_name": "Brid Sender Kelleher",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2016",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-16T17:39:14.000Z"
+    }
+  ]
+}

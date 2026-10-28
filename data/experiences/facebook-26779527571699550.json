@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "26779527571699550",
+  "source_hash": "0d092e045a0611b6",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.440Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Ofer was told by the Tel Aviv clerk handling their file that the marriage date cannot be added to the extended registry extract, as this requires the original marriage certificate.",
+      "branch": "tel-aviv",
+      "branch_text": "בת״א",
+      "channels": [],
+      "source_ids": [
+        "26779527571699550",
+        "26787540244231616"
+      ],
+      "author_id": "670196384",
+      "author_name": "Shani Ofer",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T16:16:18.000Z"
+    }
+  ]
+}

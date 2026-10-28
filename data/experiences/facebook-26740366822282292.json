@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26740366822282292",
+  "source_hash": "9c4a08c543ea39c0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.805Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Denis Zisman's interview appointment at Tel Aviv is months away, and a clerk told him he could take another couple's earlier spot if it is cancelled.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [],
+      "source_ids": [
+        "26740366822282292",
+        "26740570715595236",
+        "26740679218917719"
+      ],
+      "author_id": "1251197617",
+      "author_name": "Denis Zisman",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T10:13:38.000Z"
+    }
+  ]
+}

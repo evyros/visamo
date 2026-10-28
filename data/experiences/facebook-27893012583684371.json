@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "27893012583684371",
+  "source_hash": "a2147e92f0537e0a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:23.087Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kathrin Petersen answers that Ramat Gan takes walk-ins only in the early morning, usually 8-9 am Sunday to Thursday except Wednesdays.",
+      "branch": "ramat-gan",
+      "branch_text": "Misrad Hapnim Ramat Gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27893506023635027"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Takes walk-ins only early in the morning, usually 8-9 am, Sunday to Thursday except Wednesdays."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T13:12:24.000Z"
+    },
+    {
+      "summary": "Claudia Galarza Cervantes answers that Ramat Gan takes walk-ins, but early in the morning.",
+      "branch": "ramat-gan",
+      "branch_text": "Misrad Hapnim Ramat Gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27897723029879993"
+      ],
+      "author_id": "100000497590652",
+      "author_name": "Claudia Galarza Cervantes",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Takes walk-ins, but only early in the morning."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T21:52:35.000Z"
+    }
+  ]
+}

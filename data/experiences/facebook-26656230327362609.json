@@ -1,0 +1,58 @@
+{
+  "source": "facebook",
+  "thread_id": "26656230327362609",
+  "source_hash": "0184b897bf6090bb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.799Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shaked Cohen and partner had a simultaneous relationship interview at the Jerusalem office and the Guatemala embassy on 18 February, were told an answer would come within 30 days, and over two months later had heard nothing and got no reply to email.",
+      "branch": "jerusalem",
+      "branch_text": "לשכת ירושלים",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26656230327362609"
+      ],
+      "author_id": "1497032830",
+      "author_name": "Shaked Cohen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-02-18"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 61,
+          "ongoing": true,
+          "text": "ב18 בפברואר ... עד היום (מעל חודשיים אחרי) אף אחד לא יצא איתנו קשר"
+        }
+      ],
+      "experience_when": "2026-02",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-04-20T07:39:45.000Z"
+    }
+  ]
+}

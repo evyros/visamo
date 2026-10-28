@@ -1,0 +1,88 @@
+{
+  "source": "facebook",
+  "thread_id": "26920026114316361",
+  "source_hash": "7320e895824d73a2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:44.869Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lindsay, on a student visa, submitted the partnership visa application online at Tel Aviv and was told in a letter she must close the file or switch to a tourist visa by May 31 to continue.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv office",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26920026114316361",
+        "26927370086915297",
+        "26927319256920380"
+      ],
+      "author_id": "587055106",
+      "author_name": "Lindsay Margaret",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T19:22:28.000Z"
+    },
+    {
+      "summary": "Ana opened her partner-visa case in person at the Jerusalem branch in 2020 while on a student visa and was told she would be switched to a tourist visa if the student visa expired before the B/1.",
+      "branch": "jerusalem",
+      "branch_text": "JLM branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26920318490953790",
+        "26920411204277852"
+      ],
+      "author_id": "547019934",
+      "author_name": "Ana Lucía Ben Arieh-Gutiérrez",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2020",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Lets an applicant on a student visa open the partner case in person, and switches them to a tourist visa if the student visa expires before the B/1."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-12T19:54:40.000Z"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source": "facebook",
+  "thread_id": "27622991540686478",
+  "source_hash": "f8d8373762deb398",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:08.831Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Andru Rotker at Herzliya branch has brought printed documents to every appointment over three years of B1 and was never asked to upload anything online.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27622991540686478",
+        "27624290610556571"
+      ],
+      "author_id": "61550540407566",
+      "author_name": "Andru Rotker",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Has asked couples to bring printed documents to appointments rather than upload them online."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T07:32:14.000Z"
+    },
+    {
+      "summary": "Nikko Peralta at Herzliya branch was told by the clerk there was no need to upload documents before the A/5 renewal, just to bring them to the appointment.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27623684367283862"
+      ],
+      "author_id": "1800510714",
+      "author_name": "Nikko Peralta",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Clerks tell couples to bring all renewal documents to the appointment instead of uploading them online."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-09T09:15:35.000Z"
+    },
+    {
+      "summary": "Sarah Arieh-Parnell at Herzliya branch says that every year they have only wanted hard copies of documents.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27625809147071384"
+      ],
+      "author_id": "744803477",
+      "author_name": "Sarah Arieh-Parnell",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Wants hard copies of documents at yearly appointments."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-09T13:52:11.000Z"
+    }
+  ]
+}

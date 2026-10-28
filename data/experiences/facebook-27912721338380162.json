@@ -1,0 +1,58 @@
+{
+  "source": "facebook",
+  "thread_id": "27912721338380162",
+  "source_hash": "837763fce2ca54d1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:17.820Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Racel Resayaga, married to an Israeli, applied online on Feb 27, 2026 at Beer Sheva; the office asked for more documents in June, she complied, and has heard nothing since, including no reply to an appointment request by email.",
+      "branch": "beer-sheva",
+      "branch_text": "MH Beersheva",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27912721338380162"
+      ],
+      "author_id": "100051547913662",
+      "author_name": "Racel Resayaga",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-02-27",
+        "first_response": "2026-06",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 110,
+          "ongoing": false,
+          "text": "Filed our application online last Feb 27, 2026... MH Beersheva answered our online application last June"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-04T06:32:03.000Z"
+    }
+  ]
+}

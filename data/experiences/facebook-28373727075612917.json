@@ -1,0 +1,59 @@
+{
+  "source": "facebook",
+  "thread_id": "28373727075612917",
+  "source_hash": "f917f87061f3ba22",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.922Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Orbulov Anca had her first A5 interview on August 16, got a new B1, asked for a further father's consent letter for her son's citizenship, and on Sept 9 got an email granting her A5 but not her son's.",
+      "branch": null,
+      "branch_text": "MH",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28373727075612917"
+      ],
+      "author_id": "100001412370078",
+      "author_name": "Orbulov Anca",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-16"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 24,
+          "ongoing": false,
+          "text": "first A5 interview on August 16th ... Today we received an email (posted Sept 9)"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues a new B1 visa at the interview while the A/5 is pending",
+        "Asks the other parent's notarized consent to the child becoming an Israeli citizen, not only to relocating, even with a full custody decision"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-09T14:07:07.000Z"
+    }
+  ]
+}

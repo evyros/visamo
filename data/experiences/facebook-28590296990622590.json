@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "28590296990622590",
+  "source_hash": "4574994220c369aa",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:34.521Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yair Bashkanski and his partner stopped the process to move to her country; at the branch meeting they were told to close the process and her B/1 was converted to a B/2 inter-visa valid for a year, to be renewed yearly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28590930503892572",
+        "28591499977168958"
+      ],
+      "author_id": "100075622262071",
+      "author_name": "Yair Bashkanski",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-25T05:48:07.000Z"
+    }
+  ]
+}

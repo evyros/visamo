@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26980936944891944",
+  "source_hash": "fb5f7f9d00f91727",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:47.006Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dana Steward Kerr has an appointment to show original documents and was asked for her husband's passport and an original notarized power of attorney, which she did not understand; the power of attorney was likely a copy-paste item.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26980936944891944",
+        "26981738458145126",
+        "26984123234573315"
+      ],
+      "author_id": "100000101679208",
+      "author_name": "Dana Steward Kerr",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-17T10:14:00.000Z"
+    }
+  ]
+}

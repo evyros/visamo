@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "28356637920655166",
+  "source_hash": "4c3889a9692697f2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.272Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Arkady, filling in the online application, notes it now asks for bank statements going back a year, where it used to be 3 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28356637920655166",
+        "28357213383930953"
+      ],
+      "author_id": "100002121054503",
+      "author_name": "Arkady Godlin",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-08T07:08:16.000Z"
+    },
+    {
+      "summary": "Earlier, the online application asked for only 3 months of bank statements, according to Arkady.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28357213383930953"
+      ],
+      "author_id": "100002121054503",
+      "author_name": "Arkady Godlin",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-08T08:25:31.000Z"
+    }
+  ]
+}

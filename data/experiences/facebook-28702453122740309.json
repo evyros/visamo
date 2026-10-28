@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "28702453122740309",
+  "source_hash": "9e748272d46d6f48",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.256Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "An American on an A/5 found only her first and middle name on her child's Israeli birth certificate; at a walk-in at 8:00 she was issued the official Hebrew and English birth certificate with her surname, needing no apostille.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28702453122740309",
+        "28744153418570279",
+        "28704322512553370"
+      ],
+      "author_id": "100000102791882",
+      "author_name": "Jessica Maziy",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues a Hebrew and English birth certificate at the office on a walk-in around 8:00, with no apostille needed for the US Embassy."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-04T07:43:09.000Z"
+    }
+  ]
+}

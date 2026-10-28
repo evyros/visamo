@@ -1,0 +1,60 @@
+{
+  "source": "facebook",
+  "thread_id": "27499707969681503",
+  "source_hash": "78db3e6d1b4043e1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:28.348Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liza Pascal's second A/5 renewal appointment at Tel Aviv had no interview, no questions, no printouts and no passport photos requested; they just gave the visa.",
+      "branch": "tel-aviv",
+      "branch_text": "Misrad Hapnim TLV",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27499707969681503",
+        "27519560094362957"
+      ],
+      "author_id": "530903833",
+      "author_name": "Liza Pascal",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "they just gave us the visa"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Did not ask for printouts of documents submitted digitally at an A/5 renewal",
+        "May renew the A/5 without an interview or passport photos"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-28T07:03:02.000Z"
+    }
+  ]
+}

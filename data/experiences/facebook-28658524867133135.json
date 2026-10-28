@@ -1,0 +1,202 @@
+{
+  "source": "facebook",
+  "thread_id": "28658524867133135",
+  "source_hash": "8a3da448afe45840",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:36.592Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shaked Zada cannot upload the forms for the first visa application on the Misrad Hapnim site and fears the call center email will go unanswered.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28658524867133135",
+        "28658653953786893"
+      ],
+      "author_id": "1401037551",
+      "author_name": "Shaked Zada",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T18:01:56.000Z"
+    },
+    {
+      "summary": "Neyda Pitt's couple could not upload documents on the site, and after much insistence were allowed to bring printed documents to Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28658589793793309"
+      ],
+      "author_id": "688068827",
+      "author_name": "Neyda Pitt",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Allows printed documents to be brought to the office when the site's upload does not work."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T18:08:15.000Z"
+    },
+    {
+      "summary": "Almog Cohen-Huszti could not upload the forms this year; an email offering to bring them in person got a late reply that they don't answer such questions, and they brought the forms to the Tel Aviv appointment.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף תל אביב",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28658635133788775"
+      ],
+      "author_id": "1044626823",
+      "author_name": "Almog Cohen-Huszti",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "positive"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Asks for the forms to be uploaded before the appointment so nothing is missing, but accepts them physically at the meeting."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T18:12:37.000Z"
+    },
+    {
+      "summary": "Almog Cohen-Huszti had the same problem uploading forms the previous year and also brought them physically to the appointment.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף תל אביב",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28658635133788775"
+      ],
+      "author_id": "1044626823",
+      "author_name": "Almog Cohen-Huszti",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-30T18:12:37.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik had trouble with the site on home wifi, but it worked when using a phone hotspot.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28665147606470861"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-01T07:44:50.000Z"
+    }
+  ]
+}

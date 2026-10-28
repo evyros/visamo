@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27827433523575611",
+  "source_hash": "3fdade28d712a457",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:14.652Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Natia Natia has an appointment on 6 August at the Holon office to extend a stay visa and asks for the document checklist.",
+      "branch": "holon",
+      "branch_text": "לשכת חולון",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27827433523575611"
+      ],
+      "author_id": "100000131484246",
+      "author_name": "Natia Natia",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-06"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-27T22:30:08.000Z"
+    }
+  ]
+}

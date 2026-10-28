@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27078757208443250",
+  "source_hash": "c24065c9522ac6f3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:25.998Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aleks Jaworska submitted the online application on landing in Israel, and a UK Certificate of No Trace was accepted as proof of previous marital status in Tel Aviv.",
+      "branch": "tel-aviv",
+      "branch_text": "in Tel Aviv",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27083008814684756",
+        "27237963399189296"
+      ],
+      "author_id": "100000261250157",
+      "author_name": "Aleks Jaworska",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a Certificate of No Trace from the UK General Register Office as proof of previous marital status."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-26T06:48:49.000Z"
+    }
+  ]
+}

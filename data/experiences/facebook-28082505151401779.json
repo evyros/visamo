@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28082505151401779",
+  "source_hash": "326b1edb26871520",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:22.618Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta invited a relative on an entry-permit request, sending passport, invitation letter, photos, proof of roots and birth certificate without tickets or insurance, and was told translations of extra documents can be done by herself.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28087735960878698"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T05:41:34.000Z"
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "version": 3,
+  "record": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "summary",
+      "branch",
+      "branch_text",
+      "channels",
+      "source_ids",
+      "author_id",
+      "author_name",
+      "firsthand",
+      "service",
+      "track",
+      "dates",
+      "waits",
+      "experience_when",
+      "experience",
+      "aspects",
+      "busy_signals",
+      "practices",
+      "war_related",
+      "confidence"
+    ],
+    "properties": {
+      "summary": {
+        "type": "string",
+        "description": "One English sentence: who, where, what happened. For reviewing."
+      },
+      "branch": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "An id from branches.json, or null when the office isn't a known branch or can't be told."
+      },
+      "branch_text": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The office as the person wrote it, e.g. \"MH Yafo\". Null when no office is named."
+      },
+      "channels": {
+        "type": "array",
+        "items": {
+          "enum": [
+            "in-person",
+            "email",
+            "phone",
+            "sms",
+            "online",
+            "mail"
+          ]
+        },
+        "description": "How they dealt with Misrad Hapnim: at an office, by email, by phone (a branch or *3450), by text message, through the online forms and site, by post."
+      },
+      "source_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The post and comment ids this record is taken from."
+      },
+      "author_id": {
+        "type": "string"
+      },
+      "author_name": {
+        "type": "string"
+      },
+      "firsthand": {
+        "enum": [
+          "firsthand",
+          "secondhand",
+          "advice"
+        ]
+      },
+      "service": {
+        "enum": [
+          "application",
+          "first-appointment",
+          "interview",
+          "renewal",
+          "upgrade",
+          "citizenship",
+          "reentry-permit",
+          "entry-permit",
+          "relative-invitation",
+          "visa-extension",
+          "guarantee",
+          "general",
+          "other"
+        ]
+      },
+      "track": {
+        "enum": [
+          "married",
+          "common-law",
+          null
+        ]
+      },
+      "dates": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "submitted",
+          "first_response",
+          "appointment_set",
+          "appointment"
+        ],
+        "properties": {
+          "submitted": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "YYYY-MM-DD or YYYY-MM."
+          },
+          "first_response": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "appointment_set": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "When they were given the appointment."
+          },
+          "appointment": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The appointment's own date."
+          }
+        }
+      },
+      "waits": {
+        "type": "array",
+        "description": "Waits between two events of the process, as stated. Only waits with a clear start and end.",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "from",
+            "to",
+            "days",
+            "ongoing",
+            "text"
+          ],
+          "properties": {
+            "from": {
+              "enum": [
+                "applied",
+                "first-response",
+                "appointment-set",
+                "appointment",
+                "interview",
+                "decision",
+                "ceremony"
+              ]
+            },
+            "to": {
+              "enum": [
+                "applied",
+                "first-response",
+                "appointment-set",
+                "appointment",
+                "interview",
+                "decision",
+                "ceremony"
+              ]
+            },
+            "days": {
+              "type": "number",
+              "description": "Approximate: a week is 7, a month is 30. For an ongoing wait, how long so far."
+            },
+            "ongoing": {
+              "type": "boolean",
+              "description": "True when they're still waiting for the `to` event."
+            },
+            "text": {
+              "type": "string",
+              "description": "The words it was stated in."
+            }
+          }
+        }
+      },
+      "experience_when": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "YYYY-MM when it happened, or YYYY when only the year can be told. Not always when it was posted."
+      },
+      "experience": {
+        "enum": [
+          "positive",
+          "negative",
+          "neutral",
+          "mixed",
+          null
+        ]
+      },
+      "aspects": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "staff",
+          "communication",
+          "organization",
+          "strictness"
+        ],
+        "properties": {
+          "staff": {
+            "enum": [
+              "positive",
+              "negative",
+              "neutral",
+              "not-mentioned"
+            ]
+          },
+          "communication": {
+            "enum": [
+              "positive",
+              "negative",
+              "neutral",
+              "not-mentioned"
+            ]
+          },
+          "organization": {
+            "enum": [
+              "positive",
+              "negative",
+              "neutral",
+              "not-mentioned"
+            ]
+          },
+          "strictness": {
+            "enum": [
+              "positive",
+              "negative",
+              "neutral",
+              "not-mentioned"
+            ]
+          }
+        }
+      },
+      "busy_signals": {
+        "type": "array",
+        "items": {
+          "enum": [
+            "walk-ins-refused",
+            "no-appointments-available",
+            "appointment-far",
+            "long-queue",
+            "file-transferred",
+            "no-reply"
+          ]
+        }
+      },
+      "practices": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "How this office works, in short English sentences."
+      },
+      "war_related": {
+        "type": "boolean"
+      },
+      "confidence": {
+        "enum": [
+          "high",
+          "medium",
+          "low"
+        ]
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "relevant",
+      "records"
+    ],
+    "properties": {
+      "relevant": {
+        "type": "boolean",
+        "description": "Whether the thread is about Misrad Hapnim or the visa process at all. False for social and off-topic threads, and for other authorities and services (banks, the Ministry of Transport, Bituach Leumi)."
+      },
+      "records": {
+        "type": "array"
+      }
+    }
+  }
+}

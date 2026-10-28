@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27337958199189815",
+  "source_hash": "b0ddea7751d000e2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.156Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yair Segal says that after their last meeting at the Tel Aviv branch they were allowed to apply for citizenship for his wife, and Misrad Hapnim asked for a lawyer-signed form, a Tel Aviv Municipality document and a landlord-signed document.",
+      "branch": "tel-aviv",
+      "branch_text": "משרד הפנים, סניף תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27337958199189815"
+      ],
+      "author_id": "532123809",
+      "author_name": "Yair Segal",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-14T15:34:18.000Z"
+    }
+  ]
+}

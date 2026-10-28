@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "26609683092017333",
+  "source_hash": "1b7ee7567314b930",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:36.437Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior Urian says their appointment at Misrad Hapnim went ahead despite the automatic visa extension.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26613744471611195"
+      ],
+      "author_id": "706039530",
+      "author_name": "Lior Urian",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "neutral",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T04:30:11.000Z"
+    },
+    {
+      "summary": "Moran Jacob asks why Misrad Hapnim is not answering emails.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26615927054726270"
+      ],
+      "author_id": "1447416934",
+      "author_name": "Moran Jacob",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-16T09:10:04.000Z"
+    }
+  ]
+}

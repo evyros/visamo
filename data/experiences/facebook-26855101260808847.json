@@ -1,0 +1,59 @@
+{
+  "source": "facebook",
+  "thread_id": "26855101260808847",
+  "source_hash": "1c3a2bc364b32485",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.162Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Noa Yang, the Israeli spouse, walked into MH in December after emails went unanswered to request a relative invitation, got a January appointment to submit it, and only in early May received a conditional approval that the invite would be granted once flight tickets are sent.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "26865447466440893",
+        "26865487846436855"
+      ],
+      "author_id": "1306608608",
+      "author_name": "Noa Yang",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": "2025-12",
+        "first_response": null,
+        "appointment_set": "2025-12",
+        "appointment": "2026-01"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 150,
+          "ongoing": false,
+          "text": "walked into MH last December... we only received the invite from MH last week (a conditional approval)"
+        }
+      ],
+      "experience_when": "2025-12",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-08T06:49:19.000Z"
+    }
+  ]
+}

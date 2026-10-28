@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "26968949889423983",
+  "source_hash": "fdf50e43ebccedb3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:46.903Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Adam Smushkin and his wife, after the A/5 track, were asked to fill in form A/S 6 for the citizenship application and were unsure which document column applies.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26968949889423983"
+      ],
+      "author_id": "683424323",
+      "author_name": "Adam Smushkin",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-16T11:26:03.000Z"
+    }
+  ]
+}

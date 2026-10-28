@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "26615938551391787",
+  "source_hash": "41db0478059f3baa",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:36.616Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Moran's scheduled meeting at the Holon office did not happen because of the war; they got an automatic message extending the visa to a date before they will be abroad, and the office's email doesn't receive messages and nobody answers.",
+      "branch": "holon",
+      "branch_text": "לשכת חולון",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26615938551391787",
+        "26616234381362204",
+        "26617921977860111"
+      ],
+      "author_id": "1447416934",
+      "author_name": "Moran Jacob",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T09:11:31.000Z"
+    }
+  ]
+}

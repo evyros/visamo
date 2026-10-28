@@ -1,0 +1,118 @@
+{
+  "source": "facebook",
+  "thread_id": "28630510649934557",
+  "source_hash": "74b9006af0b1c4a3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:09.240Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marine Dahan had documents translated abroad by a notary working with the Israeli embassy and they were not accepted anyway.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28631125819873040"
+      ],
+      "author_id": "100002654763624",
+      "author_name": "Marine Dahan",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-28T14:34:27.000Z"
+    },
+    {
+      "summary": "Avishay Back says translations done abroad with an apostille on the original and on the translation certification were accepted for his own file and for other couples, with no rejection.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28634607882858167",
+        "28641240975528191",
+        "28642818528703769"
+      ],
+      "author_id": "746200716",
+      "author_name": "Avishay Back",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-28T20:37:31.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen knows of several cases where Misrad Hapnim rejected documents translated abroad and people had to pay for translation twice.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28641123468873275",
+        "28642126125439676"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "secondhand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Often rejects translations of documents made abroad."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-29T10:07:59.000Z"
+    }
+  ]
+}

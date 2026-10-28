@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "27615465441439088",
+  "source_hash": "6dd35ab0495e75a5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.837Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tina says Netanya takes ages to answer emails, so they plan to go in person to register their newborn.",
+      "branch": "netanya",
+      "branch_text": "Nethanja Branch",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27615465441439088",
+        "27622018127450486"
+      ],
+      "author_id": "100001591441720",
+      "author_name": "Tina Raupach",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Takes a long time to answer emails"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-08T13:45:20.000Z"
+    },
+    {
+      "summary": "Galia says that at Netanya you can come to the general counter at the entrance level between 08:30 and 09:00 without an appointment to ask questions.",
+      "branch": "netanya",
+      "branch_text": "Netanya branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27622433387408960"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "General counter at the entrance takes questions without an appointment between 08:30 and 09:00"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-09T06:04:18.000Z"
+    }
+  ]
+}

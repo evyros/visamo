@@ -1,0 +1,237 @@
+{
+  "source": "facebook",
+  "thread_id": "27744451368540494",
+  "source_hash": "13884554eedf295e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:05.869Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Laura submitted documents online in October 2025, got an email a week later with an in-person appointment on November 5, where the clerk checked documents and set the first interview for late March.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva Branch",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27744451368540494"
+      ],
+      "author_id": "100021790041498",
+      "author_name": "Laura Kreutner",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2025-10",
+        "first_response": null,
+        "appointment_set": "2025-10",
+        "appointment": "2025-11-05"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 7,
+          "ongoing": false,
+          "text": "One week after that, my Israeli partner got an email saying that we could hand in the documents in person with an appointment on November 5th"
+        },
+        {
+          "from": "appointment-set",
+          "to": "interview",
+          "days": 139,
+          "ongoing": false,
+          "text": "our appointment would be at the end of March (something like the 24th or 29th)"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Offers a German translator for the interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T17:56:26.000Z"
+    },
+    {
+      "summary": "In December 2025 the clerk answered an email and, after an official request was accepted, issued a one-time re-entry visa so Laura could travel, and extended her B2 until the interview.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva Branch",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27744451368540494"
+      ],
+      "author_id": "100021790041498",
+      "author_name": "Laura Kreutner",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025-12",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a one-time re-entry visa after an emailed official request to the clerk",
+        "Extends the B2 tourist visa up to the scheduled interview date"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-20T17:56:26.000Z"
+    },
+    {
+      "summary": "The March interview was cancelled because of the war; an email to the clerk got a reply in one or two days with a new date of July 7, and the B2 was automatically extended 3 months.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva Branch",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27744451368540494"
+      ],
+      "author_id": "100021790041498",
+      "author_name": "Laura Kreutner",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-07"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Extends the B2 visa automatically when an interview is cancelled"
+      ],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-07-20T17:56:26.000Z"
+    },
+    {
+      "summary": "B1 interview on July 7: about an hour's wait, translator by phone at the normal desk, about 30 minutes per partner, decision confirmed with a manager and the B1 collected two days later with a short wait.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva Branch",
+      "channels": [
+        "in-person",
+        "phone"
+      ],
+      "source_ids": [
+        "27744451368540494",
+        "27745468091772155",
+        "27744735451845419"
+      ],
+      "author_id": "100021790041498",
+      "author_name": "Laura Kreutner",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-07"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "a few hours later he called my partner to say we could pick up the visa 2 days after"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews the partners one after the other, about 30 minutes each",
+        "Interviews are held at the normal desk with other people around",
+        "Uses a phone translator for interviews",
+        "Confirms the answers with a manager before giving the B1",
+        "Lets people collect the visa a couple of days later directly from the clerk"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-20T17:56:26.000Z"
+    },
+    {
+      "summary": "Chiaki also had an interview in Petah Tikva, was told the visa could be received without waiting, but waited 2 hours.",
+      "branch": "petah-tikva",
+      "branch_text": "PT",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27744735451845419"
+      ],
+      "author_id": "100004182639970",
+      "author_name": "Chiaki Kosaka",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T18:28:46.000Z"
+    }
+  ]
+}

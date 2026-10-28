@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "26931719083147064",
+  "source_hash": "99e961bf193ab504",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:46.305Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Bere Yojebed Torres, a Mexican citizen applying for citizenship, is being asked for police clearance certificates for her minor children aged 14 and 15, which Mexico does not issue to minors.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26931719083147064"
+      ],
+      "author_id": "100010205410205",
+      "author_name": "Bere Yojebed Torres",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-13T17:29:09.000Z"
+    }
+  ]
+}

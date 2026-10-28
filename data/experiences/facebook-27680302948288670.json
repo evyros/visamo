@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "27680302948288670",
+  "source_hash": "19b363c79801873b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.535Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alon Solell and his partner had separate 2nd annual A5 interviews in January 2025, were promised an answer within 3 months, and instead got two successive 3-month temporary A5s with no reply.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27680302948288670"
+      ],
+      "author_id": "856599753",
+      "author_name": "Alon Solell",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-01"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 180,
+          "ongoing": false,
+          "text": "told we'll get the reply within 3 months... After 3 months we didn't get a reply and got another 3 months A5. Then in July 2025 we got the call"
+        }
+      ],
+      "experience_when": "2025-01",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews the partners separately at the annual A5 interview",
+        "Gives temporary 3-month A5 visas while the decision is pending"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-14T21:00:47.000Z"
+    },
+    {
+      "summary": "In July 2025 Alon Solell was called to the office, handed a deportation letter and all previous visas were stamped CANCELLED on the spot; the letter claimed no shared friends, no trips together and no family events, which he says are false; the internal appeal was ignored.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27680302948288670"
+      ],
+      "author_id": "856599753",
+      "author_name": "Alon Solell",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-07"
+      },
+      "waits": [],
+      "experience_when": "2025-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-14T21:00:47.000Z"
+    }
+  ]
+}

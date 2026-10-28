@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "26923490287303277",
+  "source_hash": "1fc99c237980cc23",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.589Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Orbit and their partner went to get an inter-visa about a week before the post and it was approved for him.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26923490287303277"
+      ],
+      "author_id": "100002855537869",
+      "author_name": "Orbit Joy",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T02:44:10.000Z"
+    },
+    {
+      "summary": "The office moved the couple's document-submission appointment for center-of-life earlier than the original date.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26923490287303277"
+      ],
+      "author_id": "100002855537869",
+      "author_name": "Orbit Joy",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T02:44:10.000Z"
+    }
+  ]
+}

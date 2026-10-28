@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "26829414773377496",
+  "source_hash": "1cf6c69bc3d1b713",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:42.466Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Uri Melamed and his partner applied online for a B/1 at Beer Sheva at the end of February and by early May had received no email about the status of the application.",
+      "branch": "beer-sheva",
+      "branch_text": "באר שבע",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26829414773377496"
+      ],
+      "author_id": "100006918185576",
+      "author_name": "Uri Melamed",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-02",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 70,
+          "ongoing": true,
+          "text": "applied online at the end of February, still no email as of May 5"
+        }
+      ],
+      "experience_when": "2026-02",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-05T07:46:37.000Z"
+    }
+  ]
+}

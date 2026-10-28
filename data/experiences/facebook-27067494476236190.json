@@ -1,0 +1,122 @@
+{
+  "source": "facebook",
+  "thread_id": "27067494476236190",
+  "source_hash": "4042205bd86d90c5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.537Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aleks, a British-Polish citizen married to a woman in the US, had the apostilled marriage certificate and proof of being single accepted, and a UK Certificate of No Trace from the General Register Office was accepted at the Tel Aviv office.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv office",
+      "channels": [],
+      "source_ids": [
+        "27067598196225818",
+        "27179296855055951"
+      ],
+      "author_id": "100000261250157",
+      "author_name": "Aleks Jaworska",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a UK Certificate of No Trace from the General Register Office as proof of single status"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-24T19:05:01.000Z"
+    },
+    {
+      "summary": "Abigail could not get a UK document for a marriage held overseas, argued with the staff, and at Ramat Gan the branch manager eventually let it go.",
+      "branch": "ramat-gan",
+      "branch_text": "misrad hapnim in ramat gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27071414405844197"
+      ],
+      "author_id": "223708479",
+      "author_name": "Abigail Ofer",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Branch manager may waive a marriage-registration document that the country cannot issue"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T04:31:37.000Z"
+    },
+    {
+      "summary": "Alex's Petah Tikva branch still demanded a document for a Ukrainian marriage, and a declaration from a Ukrainian notary with an apostille satisfied them.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah-Tikva",
+      "channels": [],
+      "source_ids": [
+        "27071945675791070"
+      ],
+      "author_id": "622840373",
+      "author_name": "Alex Zhivotovsky",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Needs some document to tick off the checklist and accepts an apostilled notary declaration in place of an unobtainable one"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T05:48:11.000Z"
+    }
+  ]
+}

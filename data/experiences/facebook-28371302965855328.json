@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28371302965855328",
+  "source_hash": "b28700428cc44cbf",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:44.254Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Anne Marie switched from a partner visa to a student visa from within Israel years ago, and it went very smoothly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28383588247960133"
+      ],
+      "author_id": "1012360552",
+      "author_name": "Anne Marie Novak",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T06:35:28.000Z"
+    }
+  ]
+}

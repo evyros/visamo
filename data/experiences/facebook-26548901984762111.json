@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26548901984762111",
+  "source_hash": "e51e281a56e5efca",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.294Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nema applied with a certified extract from the German birth register and the office accepted it without questions.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26551835074468802"
+      ],
+      "author_id": "100076075053699",
+      "author_name": "Nema Dorrer",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a certified extract from the birth register in place of a birth certificate"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-10T05:16:25.000Z"
+    }
+  ]
+}

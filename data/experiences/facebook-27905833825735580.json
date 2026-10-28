@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27905833825735580",
+  "source_hash": "7ffbc840c6ad91b0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:17.642Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maya Mic has an appointment the next day at the Shlomo branch in Tel Aviv to present documents for inviting her partner as a tourist, and asks which documents are needed.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף שלמה בת\"א",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27905833825735580"
+      ],
+      "author_id": "808749569",
+      "author_name": "Maya Mic",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-04"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-03T16:09:50.000Z"
+    }
+  ]
+}

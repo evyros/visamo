@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26901144789537827",
+  "source_hash": "d89f8275a98544a0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:44.669Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nema Dorrer says her partner got a phone call from Misrad Hapnim granting her entry after their B1 application, on the day of the post.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "26901144789537827"
+      ],
+      "author_id": "100076075053699",
+      "author_name": "Nema Dorrer",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-05-11",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T08:22:14.000Z"
+    }
+  ]
+}

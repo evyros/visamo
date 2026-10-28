@@ -1,0 +1,119 @@
+{
+  "source": "facebook",
+  "thread_id": "27524402620545371",
+  "source_hash": "246aa162cf10daac",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:23.942Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Noy Shekel O'connor describes the whole partner-visa process at Rishon Lezion as easy, with sweet staff, ending with her husband's A/5 and ID.",
+      "branch": "rishon-lezion",
+      "branch_text": "הסניף של ראשון לציון",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27524402620545371",
+        "27540411805611119"
+      ],
+      "author_id": "100002532856382",
+      "author_name": "Noy Shekel O'connor",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-30T09:26:15.000Z"
+    },
+    {
+      "summary": "Noy's husband received an entry permit from Misrad Hapnim after getting a foreign worker visa, and no guarantee was paid.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27548601231458843",
+        "27548604864791813"
+      ],
+      "author_id": "100002532856382",
+      "author_name": "Noy Shekel O'connor",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-02T11:22:36.000Z"
+    },
+    {
+      "summary": "Klara Kedem went to renew a visa and was given only 3 months because of an automatic extension during the war, and is upset about having to return soon.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27525072430478390"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-30T10:43:40.000Z"
+    }
+  ]
+}

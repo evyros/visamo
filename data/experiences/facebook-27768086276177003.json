@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27768086276177003",
+  "source_hash": "a7c7ac61273289a8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:12.789Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Matan and his partner, who lives in Barcelona, are in the process with the Netanya branch and after about a year received an email approving her entry to Israel, after which the interview can be scheduled.",
+      "branch": "netanya",
+      "branch_text": "MH Netanya",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27768086276177003"
+      ],
+      "author_id": "100003063460804",
+      "author_name": "Matan Giladi",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The interview is scheduled only after the foreign partner has entered Israel following the entry approval."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T17:04:21.000Z"
+    }
+  ]
+}

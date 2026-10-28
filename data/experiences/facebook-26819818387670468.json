@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "26819818387670468",
+  "source_hash": "a4eeec01c88dad2a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:42.248Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Hutzler-Vahle's visa renewal appointment at Tel Aviv was postponed from March because of the war, and emails and an online inquiry about a new date went unanswered.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף תל אביב",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "26819818387670468",
+        "26822141080771532"
+      ],
+      "author_id": "1618282715",
+      "author_name": "Shani Hutzler-Vahle",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-05-04T10:30:54.000Z"
+    }
+  ]
+}

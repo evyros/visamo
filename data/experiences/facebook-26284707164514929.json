@@ -1,0 +1,131 @@
+{
+  "source": "facebook",
+  "thread_id": "26284707164514929",
+  "source_hash": "807390925a0a226d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.471Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Andrea Rada's husband's A/5 expired on 8 February and his renewal appointment at Hadera on 12 March was cancelled, with no new appointment in sight.",
+      "branch": "hadera",
+      "branch_text": "חדרה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26284707164514929",
+        "26402428412742803"
+      ],
+      "author_id": "100003033336503",
+      "author_name": "Andrea Rada",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-03-12"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-appointments-available"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-11T09:33:24.000Z"
+    },
+    {
+      "summary": "Andrea Rada and her husband were not let into the Hadera branch without an appointment on 11 April, and were told the visa department was closed.",
+      "branch": "hadera",
+      "branch_text": "חדרה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26406000792385565",
+        "26560536973598612"
+      ],
+      "author_id": "100003033336503",
+      "author_name": "Andrea Rada",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Does not admit walk-ins without an appointment"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-03-27T16:05:48.000Z"
+    },
+    {
+      "summary": "Anja Hohenester-Zimmern says Hadera usually doesn't allow walk-ins.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26412665398385771"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Usually doesn't allow walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-03-28T06:37:20.000Z"
+    }
+  ]
+}

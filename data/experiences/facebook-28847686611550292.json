@@ -1,0 +1,56 @@
+{
+  "source": "facebook",
+  "thread_id": "28847686611550292",
+  "source_hash": "c9d465f73e2ea3ab",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.674Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nema and an unmarried partner had a B1 interview at Hadera about a week before the post and have not heard back; the office said it would call and nothing was signed.",
+      "branch": "hadera",
+      "branch_text": "Hadera Branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28847686611550292",
+        "28849425894709697"
+      ],
+      "author_id": "100076075053699",
+      "author_name": "Nema Dorrer",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 7,
+          "ongoing": true,
+          "text": "had our interview for B1 about a week ago and haven't heard back"
+        }
+      ],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-14T18:37:01.000Z"
+    }
+  ]
+}

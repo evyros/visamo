@@ -1,0 +1,99 @@
+{
+  "source": "facebook",
+  "thread_id": "27072138579105113",
+  "source_hash": "803b748dfd3e4348",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:57.538Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Małgorzata Napierała uploaded documents online for Tel Aviv and has waited over a month for a response or interview invitation.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27072138579105113"
+      ],
+      "author_id": "100000975133437",
+      "author_name": "Małgorzata Napierała",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": true,
+          "text": "waiting already over a month for a response/invitation for the interview"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T06:16:47.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen advises that Tel Aviv is busy, a month or more for a response is common, and to email or visit if there is no answer after two months.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27072232979095673"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Often takes a month or more to answer a new application.",
+        "If there is no answer after two months, email or go in person."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T06:30:18.000Z"
+    }
+  ]
+}

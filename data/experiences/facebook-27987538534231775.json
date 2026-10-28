@@ -1,0 +1,750 @@
+{
+  "source": "facebook",
+  "thread_id": "27987538534231775",
+  "source_hash": "b3e10586705e933c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:15.110Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leonid Natapov renewed an A5 at Tel Aviv in August 2026 and found only documents uploaded online were checked, printed copies ignored, and couples who had not uploaded beforehand were sent home.",
+      "branch": "tel-aviv",
+      "branch_text": "PIBA Tel Aviv",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27987538534231775"
+      ],
+      "author_id": "817949406",
+      "author_name": "Leonid Natapov",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-10"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Checks only documents uploaded online before the renewal appointment and ignores printed copies (from 2026).",
+        "Sends home couples who did not upload documents online before the appointment."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-10T07:22:36.000Z"
+    },
+    {
+      "summary": "Leonid Natapov says that in earlier years, up to early August 2025, Tel Aviv checked the printed documents at renewals and ignored the online submission.",
+      "branch": "tel-aviv",
+      "branch_text": "PIBA Tel Aviv",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27987538534231775",
+        "27991060233879605",
+        "27988154270836868"
+      ],
+      "author_id": "817949406",
+      "author_name": "Leonid Natapov",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Until about August 2025 checked printed documents at renewals and ignored what was uploaded online."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-10T07:22:36.000Z"
+    },
+    {
+      "summary": "Lieke van der Made noticed Tel Aviv being very strict: couples without documents uploaded online had to make a new appointment.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27987557370896558"
+      ],
+      "author_id": "100002153527503",
+      "author_name": "Lieke van der Made",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Couples without documents uploaded online are told to make a new appointment."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T07:25:19.000Z"
+    },
+    {
+      "summary": "Abigail Ofer says Tel Aviv also checked printed documents last year, like Leonid Natapov.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27991869617132000",
+        "27988289910823304"
+      ],
+      "author_id": "223708479",
+      "author_name": "Abigail Ofer",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Until about 2025 checked printed documents at renewals."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-10T15:22:54.000Z"
+    },
+    {
+      "summary": "Abigail Ofer registered a baby at Tel Aviv in August 2026 and saw a couple turned away for not uploading documents, by the man who hands out the numbers.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28001648459487449",
+        "27988289910823304"
+      ],
+      "author_id": "223708479",
+      "author_name": "Abigail Ofer",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-04"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The person handing out queue numbers turns away couples who have not uploaded documents."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-11T09:58:55.000Z"
+    },
+    {
+      "summary": "Renan Ohana went to Jerusalem this year without printed documents with no issues, and says Jerusalem has looked only at online documents for a year.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27988189850833310",
+        "27988196194166009"
+      ],
+      "author_id": "581847971",
+      "author_name": "Renan Ohana",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Looks only at documents uploaded online and does not want printed copies (since about 2025).",
+        "Doesn't need printed copies of documents uploaded online."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T08:49:55.000Z"
+    },
+    {
+      "summary": "Liza Pascal went to Tel Aviv in July 2026 for a renewal (not the first A5) without printed documents, no issues.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27989074367411525"
+      ],
+      "author_id": "530903833",
+      "author_name": "Liza Pascal",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Doesn't need printed copies of documents uploaded online at renewals."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-10T10:44:14.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik has gone to Tel Aviv for the last three years without printed documents, and even those printed for the gap after upload were not checked, with no issues.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27991040463881582"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Doesn't need printed copies of documents uploaded online at renewals."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-10T14:09:58.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen's colleague had an appointment at Tel Aviv on 2026-08-10 without uploading documents; they were made to upload on the spot and no printed documents were looked at.",
+      "branch": "tel-aviv",
+      "branch_text": "MH tlv",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27999955976323364",
+        "28000157289636566",
+        "28001320092853619"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "secondhand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-10"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Won't look at printed documents; makes people who didn't upload do the upload on the spot."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-11T06:27:56.000Z"
+    },
+    {
+      "summary": "Aviad Moreshet stopped printing documents a year ago and had two extensions with no issues, branch not stated.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27988137014171927"
+      ],
+      "author_id": "1799293159",
+      "author_name": "Aviad Moreshet",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T08:42:43.000Z"
+    },
+    {
+      "summary": "Enosh Almog confirms that at Petach Tikva, for two renewals, nothing printed was needed except important documents that arose after the online application.",
+      "branch": "petah-tikva",
+      "branch_text": "piba petach tikva",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27988492267469735"
+      ],
+      "author_id": "100003518078840",
+      "author_name": "Enosh Almog",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Doesn't need printed documents at renewals, except important documents that arose after the online submission."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-10T09:30:52.000Z"
+    },
+    {
+      "summary": "Maya Ilani could not submit the online form because the system would not let her, emailed her office with the issue and expects no reply for months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27988737347445227",
+        "27989049687413993"
+      ],
+      "author_id": "703814643",
+      "author_name": "Maya Ilani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-10T10:02:40.000Z"
+    },
+    {
+      "summary": "Anastasia Sola was told at Holon to submit documents online; they submitted everything for a year though only 3 months of documents were needed, a hassle but preferable.",
+      "branch": "holon",
+      "branch_text": "MH Holon",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27990114957307466"
+      ],
+      "author_id": "100000424000573",
+      "author_name": "Anastasia Sola",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks couples to submit documents online, needing only the last 3 months of documents."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T12:43:10.000Z"
+    },
+    {
+      "summary": "Dima Kantargi says he isn't aware of any option to submit online at Holon.",
+      "branch": "holon",
+      "branch_text": "Holon branch",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27993533510298944"
+      ],
+      "author_id": "1252656449",
+      "author_name": "Dima Kantargi",
+      "firsthand": "advice",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holon did not offer or mention online submission of renewal documents to some couples."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-10T17:50:36.000Z"
+    },
+    {
+      "summary": "Simona Ferrari says at Holon the next appointment is set a year ahead, she never applied online and was never asked to upload documents.",
+      "branch": "holon",
+      "branch_text": "Holon",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28001053922880236"
+      ],
+      "author_id": "1188194425",
+      "author_name": "Simona Ferrari",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sets the next renewal appointment a year ahead at the previous one.",
+        "Did not ask some couples to upload documents online."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-11T08:47:11.000Z"
+    },
+    {
+      "summary": "Alon Tsur says Holon asked them to submit online for the first time this year for their next appointment, though the procedure requires it for every renewal.",
+      "branch": "holon",
+      "branch_text": "Holon",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28336353322683626",
+        "28336331656019126"
+      ],
+      "author_id": "1019715520",
+      "author_name": "Alon Tsur",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Started asking for online submission of documents for renewals only in 2026."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-06T15:13:52.000Z"
+    },
+    {
+      "summary": "Tali Go renewed the A5 three times at the Rishon Lezion branch and was never told to submit forms online.",
+      "branch": "rishon-lezion",
+      "branch_text": "ראשלצ",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27993567170295578"
+      ],
+      "author_id": "717065692",
+      "author_name": "Tali Go",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Did not require online form submission at A5 renewals (until at least the third renewal)."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-10T17:53:35.000Z"
+    },
+    {
+      "summary": "Roberta Zuliani was told last year by a clerk that printed documents aren't needed, only the online ones are checked, and missing documents are flagged before the interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27993644910287804"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T18:00:28.000Z"
+    },
+    {
+      "summary": "Greta Abrill Zarate Morales says they sent emails to the office without any answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27995283580123937"
+      ],
+      "author_id": "1547955332",
+      "author_name": "Greta Abrill Zarate Morales",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-10T20:48:01.000Z"
+    }
+  ]
+}

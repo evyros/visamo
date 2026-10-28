@@ -1,0 +1,133 @@
+{
+  "source": "facebook",
+  "thread_id": "27901640692821560",
+  "source_hash": "6eaf376c1e62fbfc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:41.867Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Abigail went to Tel Aviv to register a newborn, was told an appointment is required despite the website, and that the baby won't get a TZ number on the spot because a committee decides, with no timeline.",
+      "branch": "tel-aviv",
+      "branch_text": "PIBA (Tel Aviv)",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27901640692821560",
+        "27904519049200391",
+        "27906705315648431"
+      ],
+      "author_id": "223708479",
+      "author_name": "Abigail Ofer",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires an appointment to register a newborn",
+        "Doesn't issue a TZ number on the spot for a baby of a foreign parent; a committee decides"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-03T07:49:28.000Z"
+    },
+    {
+      "summary": "Saskia says both her children got their TZ and citizenship on the spot when her husband registered them, without an appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27913978574921105"
+      ],
+      "author_id": "100065323002819",
+      "author_name": "Saskia Lev",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "on the spot"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T09:12:22.000Z"
+    },
+    {
+      "summary": "Sharon's child was added to the couple's process and received a TZ number only after a long wait, with citizenship at age 3.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27905553955763567",
+        "27906741045644858"
+      ],
+      "author_id": "100078988905661",
+      "author_name": "Sharon Tahar",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A child born to the foreign partner is added to the couple's process and gets the parent's status"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-03T15:38:25.000Z"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "source": "facebook",
+  "thread_id": "28655750757410546",
+  "source_hash": "683d433f65fac805",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:36.441Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Budan Dominik, a foreign partner in Croatia, got an email from PIBA less than a month after the online submission, inviting the Israeli partner to an appointment to present documents, which confused them about the interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28655750757410546",
+        "28659017740417181"
+      ],
+      "author_id": "100000602347228",
+      "author_name": "Budan Dominik",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": false,
+          "text": "we got the email less than one month after the online submission of the document"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-30T13:32:14.000Z"
+    }
+  ]
+}

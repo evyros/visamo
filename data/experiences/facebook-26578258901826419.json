@@ -1,0 +1,133 @@
+{
+  "source": "facebook",
+  "thread_id": "26578258901826419",
+  "source_hash": "c607c274e50f7e09",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:47:59.756Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Peleg Ben Barak advises that Tel Aviv center takes walk-ins if you arrive early, around 7:00-7:15.",
+      "branch": "tel-aviv",
+      "branch_text": "PIBA Tel Aviv center",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26578293508489625"
+      ],
+      "author_id": "100003026131915",
+      "author_name": "Peleg Ben Barak",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Takes walk-ins, but you need to arrive early, around 7:00-7:15."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-12T17:44:33.000Z"
+    },
+    {
+      "summary": "Or Kadosh says Tel Aviv takes walk-ins, advises arriving around 6:45, and says arriving at 7:30 once meant waiting hours.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26578964565089186"
+      ],
+      "author_id": "100000113621919",
+      "author_name": "Or Kadosh",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Takes walk-ins, but those who arrive after about 7:00 can wait hours."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T19:04:44.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik advises that marriage registration is a walk-in at the registry department at any time, usually without the foreign partner, and that an appointment to convert the file can be requested by email.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26579405255045117"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Registers marriages as a walk-in at the registry department, at any time of day.",
+        "Usually the foreign partner does not need to attend marriage registration.",
+        "The visa department may want the marriage registered before converting the file.",
+        "An appointment to convert the file can be requested by email."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T19:58:29.000Z"
+    }
+  ]
+}

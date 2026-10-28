@@ -1,0 +1,136 @@
+{
+  "source": "facebook",
+  "thread_id": "27313205811665054",
+  "source_hash": "4623e73fd698f896",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:19.166Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Rosen submitted initial documents on 31.7.22, emailed on 15.8 to ask for a meeting, got a reply on 17.8 with an appointment on 3.11.22 at Rehovot where they received the first visa.",
+      "branch": "rehovot",
+      "branch_text": "סניף רחובות",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27314466901538945",
+        "27313453321640303"
+      ],
+      "author_id": "100005396911386",
+      "author_name": "Shani Rosen",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2022-07-31",
+        "first_response": "2022-08-17",
+        "appointment_set": "2022-08-17",
+        "appointment": "2022-11-03"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 17,
+          "ongoing": false,
+          "text": "submitted 31.7.22, email reply with a meeting on 17.8"
+        },
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 78,
+          "ongoing": false,
+          "text": "meeting set on 17.8 for 3.11.22"
+        }
+      ],
+      "experience_when": "2022-11",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Answers an email request for a first meeting within two days"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-12T18:56:50.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Holon is quite a busy branch, so expect longer times than the usual 3-6 months to a first appointment.",
+      "branch": "holon",
+      "branch_text": "holon branch",
+      "channels": [],
+      "source_ids": [
+        "27313969814921987"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holon is a busy branch with longer waits than average"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-12T18:06:05.000Z"
+    },
+    {
+      "summary": "Liad Tzabari, with 14 years of experience dealing with the office, says the clerks in Petah Tikva are the worst, calling it where all the slaughters happen.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "27327555150230120"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-13T18:30:09.000Z"
+    }
+  ]
+}

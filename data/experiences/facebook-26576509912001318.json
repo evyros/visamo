@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26576509912001318",
+  "source_hash": "af4528454d8d65f6",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.742Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Christina's husband attended a Misrad Hapnim appointment without her (she was abroad), and was told to book a new appointment with her before his visa expires on 12 July.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26576509912001318",
+        "26576690061983303"
+      ],
+      "author_id": "1082231414",
+      "author_name": "Christina Gabriela Sharon",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-12"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T14:14:59.000Z"
+    }
+  ]
+}

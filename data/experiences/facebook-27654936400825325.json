@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "27654936400825325",
+  "source_hash": "db0db92818d97774",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:09.577Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Uršulė and her partner applied for the partner visa the first time while she studied in Israel and says the process kept her jobless for about a year.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27655132790805686"
+      ],
+      "author_id": "100000021471146",
+      "author_name": "Uršulė Pinčiukienė",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-12T11:27:44.000Z"
+    },
+    {
+      "summary": "On their second partner-visa application, after returning from working abroad, Uršulė and her partner faced constant delays in getting a first appointment date and misleading or incomplete information, costing about 8000 NIS in flights, documents and repeated tourist visa payments.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27655132790805686"
+      ],
+      "author_id": "100000021471146",
+      "author_name": "Uršulė Pinčiukienė",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-12T11:27:44.000Z"
+    }
+  ]
+}

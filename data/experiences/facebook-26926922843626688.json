@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "26926922843626688",
+  "source_hash": "09ec0af9d2c8c513",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.425Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kathrin says that in 2023 Misrad Hapnim in Tel Aviv told her an appointment was needed for a multiple entry visa.",
+      "branch": "tel-aviv",
+      "branch_text": "MH tlv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26927098383609134"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Told in 2023 that a multiple entry visa needs an appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T09:25:03.000Z"
+    },
+    {
+      "summary": "Lior advises that a multiple entry visa can be done at Tel Aviv South by scheduled meeting, requested by email or through the online link.",
+      "branch": "jaffa",
+      "branch_text": "Tel Aviv South",
+      "channels": [
+        "in-person",
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "26927083583610614"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Entry visas are handled by scheduled meeting, requested by email or online"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T09:23:29.000Z"
+    },
+    {
+      "summary": "Lior says that in Tel Aviv center you can go without a meeting for an entry visa, but expect long waiting times.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV center",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26927083583610614"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Takes walk-ins for entry visas without a meeting, with long waits"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-13T09:23:29.000Z"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "28245003838485242",
+  "source_hash": "ed33b066844effc1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:26.447Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ofek, an Israeli mother with a foreign husband, says the hospital Misrad HaPnim clerks registered the baby under her only, so she went to Misrad HaPnim a week later with the paternity procedure form to add her husband.",
+      "branch": null,
+      "branch_text": "hospital Misrad HaPnim office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28245174541801505",
+        "28255957177389908"
+      ],
+      "author_id": "100013798785537",
+      "author_name": "Ofek Kaplinsky",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The hospital Misrad HaPnim office registers only the Israeli parent when the other parent is foreign; the foreign parent is added later at Misrad HaPnim."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-30T19:28:21.000Z"
+    },
+    {
+      "summary": "Naddii describes registering a baby born to a couple on A5: temporary ID from the hospital, then both parents and baby went to Misrad HaPnim for the permanent ID number and birth certificate.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28249219048063721",
+        "28252852261033733"
+      ],
+      "author_id": "676153962",
+      "author_name": "Naddii Sharabi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The hospital gives a temporary ID number for a baby of A5 parents; Misrad HaPnim then issues the permanent ID number and birth certificate."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-31T04:38:47.000Z"
+    }
+  ]
+}

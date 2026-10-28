@@ -1,0 +1,125 @@
+{
+  "source": "facebook",
+  "thread_id": "27825831773735786",
+  "source_hash": "ea6f78f4836e567b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:25.796Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ayala Sabag applied online for her South Korean husband, got a document request weeks later with a 45-day deadline, but the online system has no way to upload more documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27825831773735786"
+      ],
+      "author_id": "100069753070971",
+      "author_name": "Ayala Sabag",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-27T19:00:59.000Z"
+    },
+    {
+      "summary": "Shiran Manor says they were emailed that documents were missing and sent everything by email because the website had no option.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27833448686307428"
+      ],
+      "author_id": "1588684048",
+      "author_name": "Shiran Manor",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "When documents are missing after the online application, they can be sent by email because the site has no upload option."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-28T11:37:08.000Z"
+    },
+    {
+      "summary": "Diana Moshayev went to the office in person to complete documents and found it much faster than email.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27843663191952644"
+      ],
+      "author_id": "100001957164683",
+      "author_name": "Diana Moshayev",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handing in missing documents in person at the office is much faster than sending them by email."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T07:21:51.000Z"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "source": "facebook",
+  "thread_id": "28616822917969997",
+  "source_hash": "8ad9b607bab43d94",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:34.751Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta's attempt to invite her grandmother for under a month was a nightmare: she went to her own office and was sent to Jaffa, which handles tourist visas, needing passport, proof of ties, birth certificates and an invitation letter; Claude-made translations were accepted.",
+      "branch": "jaffa",
+      "branch_text": "Jaffa",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28616922461293376",
+        "28646299981688957"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tourist visa invitations are handled at the Jaffa office",
+        "Asks for the invitee's passport, proof of ties to the home country, birth certificates and an invitation letter",
+        "Accepted unnotarized translations of documents"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-27T07:40:45.000Z"
+    },
+    {
+      "summary": "Eve says that at Tel Aviv they were directed to the Jaffa office, which handles tourism.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28621114887540800"
+      ],
+      "author_id": "100004776090146",
+      "author_name": "Eve Alungat",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Refers tourist matters to the Jaffa office"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-27T15:57:57.000Z"
+    },
+    {
+      "summary": "David was asked for documents for a family invitation without being told whether they need notarization and Hebrew translation.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28645891598396462"
+      ],
+      "author_id": "100027342515419",
+      "author_name": "David Eduardo",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-29T18:01:38.000Z"
+    }
+  ]
+}

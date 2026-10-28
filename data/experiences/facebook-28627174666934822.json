@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28627174666934822",
+  "source_hash": "2b6de943d70c0c69",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.388Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "David Revivo got his second A5 at the Ramat Gan branch on May 31, 2026, for one year, and says he has a good experience with that branch.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28627174666934822"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-31"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issued a one-year A5 at renewal on May 31, 2026"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-28T06:10:31.000Z"
+    }
+  ]
+}

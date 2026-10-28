@@ -1,0 +1,136 @@
+{
+  "source": "facebook",
+  "thread_id": "28361729713479320",
+  "source_hash": "caaa462fa922d168",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.483Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Senna Breeschoten applied online on 2025-09-09 and received the invitation to come to Israel on 2026-09-08, about a year later, after multiple challenges along the way.",
+      "branch": "rehovot",
+      "branch_text": "Rehovot",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28361729713479320",
+        "28362642290054729",
+        "28432946623024295"
+      ],
+      "author_id": "100004702981993",
+      "author_name": "Senna Breeschoten",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2025-09-09",
+        "first_response": "2026-09-08",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 364,
+          "ongoing": false,
+          "text": "almost exactly a year ago we did the online application, at 09/09/2025"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-08T16:27:31.000Z"
+    },
+    {
+      "summary": "Arja Isabell waited outside Israel about 10 months for the partner visa application to be reviewed before being invited in, then got a 6-month visa two weeks later with the first appointment set for February 2027.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28385323554453269",
+        "28399675699684721"
+      ],
+      "author_id": "100081103516294",
+      "author_name": "Arja Isabell",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-09",
+        "appointment": "2027-02"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 300,
+          "ongoing": false,
+          "text": "it took us 10 months to get the partner visa approval / I had to wait outside of Israel for 10 months"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T09:43:11.000Z"
+    },
+    {
+      "summary": "Arja Isabell was told on receiving her 6-month visa that she cannot leave Israel for the first 6 months, which clashed with commitments abroad.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28385323554453269"
+      ],
+      "author_id": "100081103516294",
+      "author_name": "Arja Isabell",
+      "firsthand": "firsthand",
+      "service": "reentry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-10T09:43:11.000Z"
+    }
+  ]
+}

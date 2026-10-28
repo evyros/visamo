@@ -1,0 +1,98 @@
+{
+  "source": "facebook",
+  "thread_id": "27269196559399313",
+  "source_hash": "cf59f597f6617cd2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:24.001Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ĺù Ŝĥîər had an A/5 interview at the Jerusalem branch on May 3, got the sticker, but by June 12 had not received the teudat zehut and the email to the office went unanswered.",
+      "branch": "jerusalem",
+      "branch_text": "jerusalem branch",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27269196559399313",
+        "27289567114028924",
+        "27289573454028290",
+        "27293991690253133",
+        "27297906923194943"
+      ],
+      "author_id": "100000998963250",
+      "author_name": "Ĺù Ŝĥîər",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-03"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-09T08:22:06.000Z"
+    },
+    {
+      "summary": "David Eduardo says the teudat zehut was sent to him 1 week after his meeting on 2 June 2026.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27307767482208887"
+      ],
+      "author_id": "100027342515419",
+      "author_name": "David Eduardo",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-02"
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 7,
+          "ongoing": false,
+          "text": "They send to me 1 week after the meeting"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-12T05:40:20.000Z"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "source": "facebook",
+  "thread_id": "28585560401096249",
+  "source_hash": "36eb038a9e353ed0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.451Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kami applied online at Hadera in December while his Japanese wife was abroad; the recommendation letters lacked signatures, he fixed that quickly, and was given an office appointment for March.",
+      "branch": "hadera",
+      "branch_text": "hadera branch",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28585560401096249",
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-12",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-03"
+      },
+      "waits": [],
+      "experience_when": "2025-12",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Requires recommendation letters to be signed."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T19:24:14.000Z"
+    },
+    {
+      "summary": "At the March appointment in Hadera the clerk said a file could not be opened without the marriage certificate (still in transit by express mail) and set a new appointment for June to submit again; she called to explain and was very nice.",
+      "branch": "hadera",
+      "branch_text": "hadera branch",
+      "channels": [
+        "in-person",
+        "phone"
+      ],
+      "source_ids": [
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-03"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Does not open a file without the marriage certificate."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-25T06:21:36.000Z"
+    },
+    {
+      "summary": "In June at Hadera Kami submitted all documents; the clerk asked for updated salary slips and 3 months of bank statements and said further documents (AS6 pages 5 and 7, AS3) would be needed once the partner arrived on a B/2.",
+      "branch": "hadera",
+      "branch_text": "hadera branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for updated salary slips and 3 months of bank statements at the document appointment.",
+        "Asks for AS6 pages 5 and 7 and the AS3 after the partner arrives on a B/2."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-25T06:21:36.000Z"
+    },
+    {
+      "summary": "After the June submission, sync problems between the Hadera office and the embassy in Japan delayed the wife's entry approval by another 2.5 months, keeping the couple apart for 8 months.",
+      "branch": "hadera",
+      "branch_text": "hadera branch",
+      "channels": [],
+      "source_ids": [
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06"
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "decision",
+          "days": 75,
+          "ongoing": false,
+          "text": "אחרי עוד חודשיים וחצי היא קיבלה אישור להיכנס"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-25T06:21:36.000Z"
+    },
+    {
+      "summary": "At a September Hadera appointment (an earlier slot freed by a cancellation) the couple handed in the requested documents and received a half-year B/1.",
+      "branch": "hadera",
+      "branch_text": "hadera branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28585560401096249",
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the first B/1 for half a year."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T19:24:14.000Z"
+    }
+  ]
+}

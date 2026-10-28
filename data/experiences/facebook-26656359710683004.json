@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "26656359710683004",
+  "source_hash": "7d3699bfbfd0ed96",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:38.148Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Achinoam Veeder's South African partner was approved to enter Israel after a long wait from a December 24 application, and MH told them to get the visa at the embassy within a month without mentioning extra documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26656359710683004",
+        "26665411203111188"
+      ],
+      "author_id": "100000282480299",
+      "author_name": "Achinoam Veeder",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": "2025-12-24",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T08:00:30.000Z"
+    }
+  ]
+}

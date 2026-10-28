@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27062395116746126",
+  "source_hash": "4354aee11cfc49ed",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:49.014Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Or Yam and her husband have a final meeting at the Herzliya branch on 2026-08-03 to renew his A/5, after which they can apply for citizenship; they live in Beer Sheva but are still handled by Herzliya.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya brench",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27062395116746126"
+      ],
+      "author_id": "100000777940855",
+      "author_name": "Or Yam",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-03"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Keeps handling couples at the branch where they went through most of the process even after they move to another city"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-24T08:18:37.000Z"
+    }
+  ]
+}

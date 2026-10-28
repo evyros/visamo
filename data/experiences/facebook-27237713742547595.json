@@ -1,0 +1,162 @@
+{
+  "source": "facebook",
+  "thread_id": "27237713742547595",
+  "source_hash": "ee2704add7cf9fbe",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:19.215Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yaniv Ok submitted the online application on 7 May 2026 with his partner abroad and after almost a month had heard nothing.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27237713742547595",
+        "27239433439042292"
+      ],
+      "author_id": "100026609512477",
+      "author_name": "Yaniv Ok",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-05-07",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": true,
+          "text": "עבר כבר כמעט חודש"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-06T13:56:07.000Z"
+    },
+    {
+      "summary": "Eden Shefa says that in her experience with the Jerusalem branch it is often hard to reach someone, but when you do they try to help.",
+      "branch": "jerusalem",
+      "branch_text": "סניף ירושלים",
+      "channels": [],
+      "source_ids": [
+        "27239919945660308"
+      ],
+      "author_id": "100041659632355",
+      "author_name": "Eden Shefa",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-06T17:42:00.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says the Tel Aviv branch is considered especially busy, with a wait of many months.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף תל אביב",
+      "channels": [],
+      "source_ids": [
+        "27241049825547320"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tel Aviv is considered an especially busy branch with a wait of many months"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-06T19:53:54.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod says the Jerusalem branch is considered especially busy, with a wait of many months.",
+      "branch": "jerusalem",
+      "branch_text": "ירושלים",
+      "channels": [],
+      "source_ids": [
+        "27241049825547320"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Jerusalem is considered an especially busy branch with a wait of many months"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-06T19:53:54.000Z"
+    }
+  ]
+}

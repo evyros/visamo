@@ -1,0 +1,80 @@
+{
+  "source": "facebook",
+  "thread_id": "26913309174988055",
+  "source_hash": "b1b8048038076d1c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:45.353Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lucie, in Kenya, applied for a spouse visa and was given a B2 visa (entry permit) and is confused about whether she can stay and work after arriving.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26913309174988055",
+        "26913398384979134"
+      ],
+      "author_id": "61580484856152",
+      "author_name": "Lucie Tish",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T07:26:44.000Z"
+    },
+    {
+      "summary": "Michael Bassin's wife arrived in Israel on a B2 visa, and after 3 days in Israel it was converted to a B1.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26913946221591017"
+      ],
+      "author_id": "5313365",
+      "author_name": "Michael Bassin",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-12T08:44:32.000Z"
+    }
+  ]
+}

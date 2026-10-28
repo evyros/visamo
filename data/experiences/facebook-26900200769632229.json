@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "26900200769632229",
+  "source_hash": "d623eee66f36c870",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:44.539Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Johanna Del Rey, at the Jerusalem branch, cannot upload documents for her visa renewal because the site says the page is unavailable, and the branch refused to move her file north because she is in her last year on A/5.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem branch",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26900200769632229",
+        "26903039372681702"
+      ],
+      "author_id": "100003235717500",
+      "author_name": "Johanna Del Rey",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not transfer a file to another branch when the applicant is in the last year on A/5",
+        "Gives the renewal appointment after the documents are uploaded online"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-11T06:16:00.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik recently kept getting an error when uploading documents to the Misrad Hapnim site, in every browser, and it worked only after changing the wifi network.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26901136332872006"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T08:21:11.000Z"
+    }
+  ]
+}

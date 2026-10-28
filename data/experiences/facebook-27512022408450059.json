@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27512022408450059",
+  "source_hash": "4c8144a460cc1561",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:23.193Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior Beres advises that at Tel Aviv the wait for the B/1 depends on the interview queue and is usually a few good months at least; marrying could shorten it since no interview is needed, but not instantly.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [],
+      "source_ids": [
+        "27512848261700807"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Interview queue is usually at least a few months.",
+        "Converting an unmarried file to a marriage file requires submitting additional documents."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-29T11:35:54.000Z"
+    }
+  ]
+}

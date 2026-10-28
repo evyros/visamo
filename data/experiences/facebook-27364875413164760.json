@@ -1,0 +1,54 @@
+{
+  "source": "facebook",
+  "thread_id": "27364875413164760",
+  "source_hash": "fb10796027f41710",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:59.882Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liron Dook, at Petah Tikva, applied for citizenship at the end of the gradual process and has had no update or answer for about six months.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "27364875413164760",
+        "27369526856032949"
+      ],
+      "author_id": "100000013197671",
+      "author_name": "Liron Dook",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 180,
+          "ongoing": true,
+          "text": "מאז חלפו כבר כשישה חודשים, ועדיין לא קיבלנו עדכון או תשובה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T20:04:45.000Z"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27844324201886543",
+  "source_hash": "7949600873ddeeb7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:15.321Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ayala, whose husband's status process is under way, says someone at Misrad Hapnim told her she could invite him as a tourist through form A/1.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27844324201886543",
+        "27844440451874918"
+      ],
+      "author_id": "100069753070971",
+      "author_name": "Ayala Sabag",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-29T08:49:35.000Z"
+    }
+  ]
+}

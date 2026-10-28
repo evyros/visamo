@@ -1,0 +1,120 @@
+{
+  "source": "facebook",
+  "thread_id": "27752005551118409",
+  "source_hash": "4aebd53c292ea8db",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:34.918Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "A French applicant for a spousal reunification visa says the office keeps asking for a certificate of single status that does not exist in France, even after she submitted an affidavit prepared with an Israeli lawyer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27752005551118409",
+        "27752145144437783"
+      ],
+      "author_id": "1504455076",
+      "author_name": "Ophélie Toulet",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-21T09:56:58.000Z"
+    },
+    {
+      "summary": "A French applicant got a certificate of single status from her town hall (mairie) and says Misrad Hapnim in Israel accepted it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27752538584398439"
+      ],
+      "author_id": "1110233412",
+      "author_name": "Izou MG",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a certificate of single status issued by a French town hall (mairie)."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-21T11:01:19.000Z"
+    },
+    {
+      "summary": "A commenter says they went through the same single-status certificate problem and solved it with an affidavit stating they are single.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27762443883407909"
+      ],
+      "author_id": "100031417868915",
+      "author_name": "Caleb Sefa Bansah",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an affidavit of single status when the certificate is not available."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-22T06:05:55.000Z"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "source": "facebook",
+  "thread_id": "27247612768224359",
+  "source_hash": "d495d44f0797c072",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.481Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lara, at her B/1 visa interview, was asked for police clearance and proof of marital status from Mexico and Brazil, where she lived over six months, and the embassies say they do not issue them to foreigners.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27247612768224359"
+      ],
+      "author_id": "61577591366877",
+      "author_name": "Lara M. Zambruno",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-07T10:15:53.000Z"
+    },
+    {
+      "summary": "Ronen and his spouse, American diplomats in 3 countries, were still required to obtain police certificates from each country they served in.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27247925788193057"
+      ],
+      "author_id": "559468278",
+      "author_name": "Ronen Capelouto",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T10:53:34.000Z"
+    },
+    {
+      "summary": "Kat, a German, did marital-status affidavits with a lawyer for France and the USA and understands the office accepts sworn affidavits where a country does not issue the document.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27248011908184445"
+      ],
+      "author_id": "100000232909236",
+      "author_name": "Kat Gold",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a sworn affidavit instead of a marital-status certificate from countries that do not issue one"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T11:03:36.000Z"
+    },
+    {
+      "summary": "Leyla's Swedish marriage certificate did not match what Israel wanted, so she used an apostilled affidavit signed with a Swedish lawyer and translated into Hebrew, which the office accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27248922111426758"
+      ],
+      "author_id": "100032055502074",
+      "author_name": "Leyla Berglund",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an apostilled affidavit with an apostilled Hebrew translation when Sweden does not issue the required certificate"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-07T12:46:28.000Z"
+    },
+    {
+      "summary": "Nadica was asked for marital-status documents from Russia, where she lived over six months without citizenship, and paid a lawyer in Russia to handle it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27249184274733875"
+      ],
+      "author_id": "100000983687108",
+      "author_name": "Nadica Shima Ilieva",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T13:14:23.000Z"
+    }
+  ]
+}

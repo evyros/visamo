@@ -1,0 +1,211 @@
+{
+  "source": "facebook",
+  "thread_id": "26841832298802410",
+  "source_hash": "490052d4afe243a0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.795Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ori Stern had an interview on 24 February and only received the answer on 5 May.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26841832298802410"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-02-24"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 70,
+          "ongoing": false,
+          "text": "סוףוסוף אתמול קיבלנו תשובה לראיון מ24/2"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-06T09:47:21.000Z"
+    },
+    {
+      "summary": "Ori Stern was told to deposit 40,000 shekels and got no answer from the airport guarantees unit by email or phone; he also went there in person.",
+      "branch": null,
+      "branch_text": "מחלקת ערבויות בנתב״ג",
+      "channels": [
+        "email",
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "26841832298802410",
+        "26841951655457141",
+        "26842226918762948",
+        "26865246089794364"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-06T09:47:21.000Z"
+    },
+    {
+      "summary": "Lior Beres says the airport guarantees unit actually answers emails quickly.",
+      "branch": null,
+      "branch_text": "Arvuyot45@piba.gov.il",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26841873045465002"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The guarantees unit usually answers emails quickly"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-06T09:52:38.000Z"
+    },
+    {
+      "summary": "Nzeke Peace Agbanya and her husband got no response from Misrad Hapnim for a long time despite him going in and sending follow-up emails, then received a decision on 7 May telling them to pay 30,000 shekels.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26842081692110804",
+        "26848177198167920",
+        "26865557856429854"
+      ],
+      "author_id": "100089423002647",
+      "author_name": "Nzeke Peace Agbanya",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-06T10:19:34.000Z"
+    },
+    {
+      "summary": "Anaty V Hoop put down a 30,000 shekel deposit at the office's request when her partner visited on a tourist visa, and it was returned a month after he left the country.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26842240072094966"
+      ],
+      "author_id": "1161323712",
+      "author_name": "Anaty V Hoop",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Returns the tourist visit deposit about a month after the visitor leaves the country"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-06T10:39:13.000Z"
+    }
+  ]
+}

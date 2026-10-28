@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27917612784557684",
+  "source_hash": "4bb4a1a1878da91e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.210Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Amit Regev's husband's request for a tourist visa extension, made through a free-legal-services attorney while the B/1 application is incomplete, was rejected; the PIBA phone line gave her no straight answers on the process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27917612784557684",
+        "27917819641203665",
+        "27919006971084932"
+      ],
+      "author_id": "61557603600334",
+      "author_name": "Amit Regev",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-04T15:56:40.000Z"
+    },
+    {
+      "summary": "Amit Regev and her husband submitted the online B/1 application; PIBA asked for more documents and gave a final extension and deadline, and the case is open while they wait on one document.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27919006971084932"
+      ],
+      "author_id": "61557603600334",
+      "author_name": "Amit Regev",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-04T18:03:06.000Z"
+    }
+  ]
+}

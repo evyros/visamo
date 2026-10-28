@@ -1,0 +1,157 @@
+{
+  "source": "facebook",
+  "thread_id": "27007874382198200",
+  "source_hash": "b80ae59657245d7f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:26.067Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roni Lavi had an A5 renewal appointment for May and was told during the war that visas were automatically extended to August, and asks whether the appointment still stands.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27007874382198200"
+      ],
+      "author_id": "1510530787",
+      "author_name": "Roni Lavi",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-19T14:49:25.000Z"
+    },
+    {
+      "summary": "Ashley Lammas had an April renewal appointment, got an automatic extension, then a ceasefire, attended the appointment normally and renewed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27007979788854326"
+      ],
+      "author_id": "100039047347234",
+      "author_name": "Ashley Lammas",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Renewal appointments still take place after an automatic visa extension is announced, if the office is open."
+      ],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-05-19T14:59:46.000Z"
+    },
+    {
+      "summary": "Tal Hakmon recently renewed an A5 for one year at the appointment they already had.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27008038718848433"
+      ],
+      "author_id": "596449182",
+      "author_name": "Tal Hakmon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-19T15:05:42.000Z"
+    },
+    {
+      "summary": "Karen Barouk had the same situation, the appointment was not cancelled, they attended and their visa was renewed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27008276715491300"
+      ],
+      "author_id": "784820409",
+      "author_name": "Karen Barouk",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Renewal appointments are not cancelled when an automatic visa extension is announced."
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-19T15:28:36.000Z"
+    }
+  ]
+}

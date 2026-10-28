@@ -1,0 +1,79 @@
+{
+  "source": "facebook",
+  "thread_id": "28069967162655578",
+  "source_hash": "72520c45c0612553",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.895Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Racel Resayaga says a friend who stayed illegally and applied for a partner visa was asked for a 30,000 shekel bond and hired a lawyer for her complicated case.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28074971928821768"
+      ],
+      "author_id": "100051547913662",
+      "author_name": "Racel Resayaga",
+      "firsthand": "secondhand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-17T05:13:41.000Z"
+    },
+    {
+      "summary": "Emmanuelle Barraud did not extend her visa after appointments were cancelled several times in 2020, and the office blamed her heavily, making the process longer and stressful, though it was solved without a lawyer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28073225335663094"
+      ],
+      "author_id": "100000019050032",
+      "author_name": "Emmanuelle Barraud",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2020",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-17T01:25:24.000Z"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27533923239593309",
+  "source_hash": "f2a113ca80983dbb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:06.325Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta Zuliani was asked for a deposit that the office wrote would be returned in a year and a half, and it was returned then.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27534474606204839"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sometimes the deposit is returned only when the process ends."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-01T05:35:34.000Z"
+    },
+    {
+      "summary": "Wendy Feringa was asked for a deposit with no stated return date and, when she asked, was told it would be kept for the whole process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27538100135842286"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The deposit is kept for the whole process."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-01T13:10:12.000Z"
+    }
+  ]
+}

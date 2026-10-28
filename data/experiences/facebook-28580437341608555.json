@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28580437341608555",
+  "source_hash": "fae3614cde18b6f4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:34.351Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marínà Mikhàila Shneerson, married to an Israeli, found the online partner-visa application requires uploading form M6 and blocks progress without it, although her husband is already registered as married.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28580437341608555"
+      ],
+      "author_id": "574126142",
+      "author_name": "Marínà Mikhàila Shneerson",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The online application requires an M6 upload even for couples already registered as married"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-24T10:59:23.000Z"
+    }
+  ]
+}

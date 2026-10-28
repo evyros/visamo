@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "27999896722995956",
+  "source_hash": "bd5c6a49a1f7d26f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.014Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leah had all documents signed by a lawyer and uploaded them via a link, and at the final interview the officer checked them and said they were fine; she found it unclear why they were requested without saying where to upload them, and a clerk phoned to ask for marriage and birth certificates, police record and proof of status, then sent an upload link.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "phone",
+        "in-person"
+      ],
+      "source_ids": [
+        "28010979585221003",
+        "28024483407203954"
+      ],
+      "author_id": "1453547273",
+      "author_name": "Leah Keller Crosbie",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Phones to ask for additional documents and sends a link to upload them"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T03:30:19.000Z"
+    }
+  ]
+}

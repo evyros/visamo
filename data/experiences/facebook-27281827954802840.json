@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27281827954802840",
+  "source_hash": "f0b1a9f82751a244",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:57.042Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Visa renewal meeting was cancelled because the visa office closed after the Iranian attack on Monday; several emails went unanswered and the visa expires in two days.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27281827954802840"
+      ],
+      "author_id": "511087879",
+      "author_name": "Nataša Franzisca Ivanović",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-06-10T07:11:55.000Z"
+    },
+    {
+      "summary": "Visa was extended automatically from April until July with no email or notice; walking into the ministry showed it was renewed in the database, and the clerk stamped the passport and extended it to April 2027.",
+      "branch": null,
+      "branch_text": "ministry of interior",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27281952898123679"
+      ],
+      "author_id": "519973657",
+      "author_name": "Badzz Vany",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-10T07:25:04.000Z"
+    }
+  ]
+}

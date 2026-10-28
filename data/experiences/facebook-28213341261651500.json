@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28213341261651500",
+  "source_hash": "f84c4da3eb0bea9f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:26.119Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Loly Abril Van, applying for a second A/5, found the online link only offers a first-time application and no renewal option.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28213341261651500"
+      ],
+      "author_id": "1408325551",
+      "author_name": "Loly Abril Van",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-28T06:47:34.000Z"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source": "facebook",
+  "thread_id": "27743527835299514",
+  "source_hash": "b06d20761a2131ef",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.977Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Isaac Gavra attended the first meeting at PIBA to show original documents for a partner visa; he was told the foreign partner would get a one-year B1 after the interview to finish her annulment, or the file would be closed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27743527835299514",
+        "27749955777990053",
+        "27750897214562576",
+        "27751216247864006"
+      ],
+      "author_id": "1102737945",
+      "author_name": "Isaac Gavra",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-20"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Wants to see that the partner's annulment or divorce is in process before accepting the file",
+        "Gives a one-year B1 to finish the annulment, then closes the file if it is not finished"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T16:21:52.000Z"
+    },
+    {
+      "summary": "Bat El Marcos Madar says Petah Tikva would not let them open the file in 2021 while her annulment was still in process.",
+      "branch": "petah-tikva",
+      "branch_text": "MH petak tikva",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27750703031248661",
+        "27750920227893608"
+      ],
+      "author_id": "100000047332582",
+      "author_name": "Bat El Marcos Madar",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2021",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Did not allow opening a file while the partner's annulment was still in process (as of 2021)"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-21T07:15:00.000Z"
+    },
+    {
+      "summary": "Alcantara Elias Vian got a first B1 in 2022 while the annulment was in process, then received repeated short extensions of 3 to 6 months over almost five years.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27745174968468134"
+      ],
+      "author_id": "100003370457940",
+      "author_name": "Alcantara Elias Vian",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T19:20:13.000Z"
+    }
+  ]
+}

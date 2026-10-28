@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28841720348813585",
+  "source_hash": "ed8364bf9ef43006",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.516Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sol Yarkoni's husband was told by a clerk to cancel his 5a2 request after getting B/1, then was invited to a 5a2 interview, and was told both were cancelled without any formal paper.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28841720348813585"
+      ],
+      "author_id": "1604460814",
+      "author_name": "Sol Yarkoni",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-14T09:46:56.000Z"
+    }
+  ]
+}

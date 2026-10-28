@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "26742086548776986",
+  "source_hash": "556be29ec0f3121f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.913Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Janet Rañada, who married in Georgia while on a B1 partner visa, says Misrad Hapnim never asked for a Philippine marriage certificate, only an apostilled certificate from Georgia.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26742550878730553"
+      ],
+      "author_id": "1002229663",
+      "author_name": "Janet Rañada",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T14:16:53.000Z"
+    }
+  ]
+}

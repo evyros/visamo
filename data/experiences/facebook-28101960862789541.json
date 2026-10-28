@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "28101960862789541",
+  "source_hash": "c1a5c84009269d76",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.525Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Joslin GCruz applied for a partner visa and says Misrad Hapnim keeps denying it because they don't believe the couple has lived together for almost 13 years; they sent an appeal and are waiting for the result.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28101960862789541",
+        "28102874736031487",
+        "28106121135706847",
+        "28112823028369991"
+      ],
+      "author_id": "100002303532482",
+      "author_name": "Joslin GCruz",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-19T09:34:56.000Z"
+    }
+  ]
+}

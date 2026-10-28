@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27988714110780884",
+  "source_hash": "751126c67977ff7b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:19.690Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Michal Sade Castro says they were told at the office, when getting the first A/5, to email PIBA for an appointment for the renewal.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27988714110780884"
+      ],
+      "author_id": "765763627",
+      "author_name": "Michal Sade Castro",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-10T09:59:41.000Z"
+    }
+  ]
+}

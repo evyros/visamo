@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28996181313367487",
+  "source_hash": "03effa882f4e4f26",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:39.795Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "After Reef's partner was approved to come to Israel, the authority told them to bring a declaration, signed by an Israeli lawyer, that he has no children; they had submitted such a declaration before and it was accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28996181313367487",
+        "28996531796665772",
+        "28996970943288524"
+      ],
+      "author_id": "100075058160330",
+      "author_name": "Reef Shoshani",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-25T13:21:02.000Z"
+    }
+  ]
+}

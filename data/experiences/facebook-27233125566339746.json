@@ -1,0 +1,87 @@
+{
+  "source": "facebook",
+  "thread_id": "27233125566339746",
+  "source_hash": "887dce41626e72cb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:50.435Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ayala applied to invite her in-laws from China, got approval, paid the visa fee and deposit at the airport; when the Shanghai consulate demanded a new application, Misrad Hapnim was friendly and explained by email that the passport only needed to be submitted at the consulate.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27233125566339746",
+        "27233356009650035"
+      ],
+      "author_id": "582326988",
+      "author_name": "Ayala Sinuani Wang",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for a deposit paid at the airport and the visa fee after approving a relative's invitation."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-06T05:12:32.000Z"
+    },
+    {
+      "summary": "Idan's wife received Misrad Hapnim approval to come to Israel for the gradual-process interview, and Idan complains that the office demands a million documents and proofs while the final decision is left to the consulate.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28039054129080215",
+        "28058553447130283"
+      ],
+      "author_id": "1391991300",
+      "author_name": "Idan Hochner",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-14T07:49:24.000Z"
+    }
+  ]
+}

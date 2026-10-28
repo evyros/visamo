@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "27382987921353509",
+  "source_hash": "ad4d349da782d7c3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:00.418Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dana handed in her original documents at the Tiberias office two days before posting, including a change of marital status to married and adding her husband's name, and is now waiting for the next step.",
+      "branch": "tiberias",
+      "branch_text": "לשכת טבריה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27382987921353509",
+        "27385892447729723"
+      ],
+      "author_id": "100000101679208",
+      "author_name": "Dana Steward Kerr",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-16"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-18T06:21:57.000Z"
+    }
+  ]
+}

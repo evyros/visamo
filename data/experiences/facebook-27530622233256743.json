@@ -1,0 +1,154 @@
+{
+  "source": "facebook",
+  "thread_id": "27530622233256743",
+  "source_hash": "25beae7f067ce09c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.326Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Freya, who handed in documents at the Azrieli Tel Aviv branch, says 'same for us' to a couple who applied 2.5 months ago with no answer.",
+      "branch": "tel-aviv",
+      "branch_text": "Azrieli Branch in TLV",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27530622233256743",
+        "27547787141540252"
+      ],
+      "author_id": "100002544129877",
+      "author_name": "Freya Prein",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 75,
+          "ongoing": true,
+          "text": "same for us (applied 2,5 months ago and still no answer)"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-30T21:10:24.000Z"
+    },
+    {
+      "summary": "Kathrin says Tel Aviv is a busy branch: 3-6 months to the first appointment and, for unmarried couples, another 3-6 months to the interview where the visa is given.",
+      "branch": "tel-aviv",
+      "branch_text": "tlv",
+      "channels": [],
+      "source_ids": [
+        "27533372662981700"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 135,
+          "ongoing": false,
+          "text": "it can take 3-6 months for the first appointment"
+        },
+        {
+          "from": "appointment",
+          "to": "interview",
+          "days": 135,
+          "ongoing": false,
+          "text": "the second appointment, which takes another 3-6 months"
+        }
+      ],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Takes about 3-6 months to the first appointment",
+        "Unmarried couples get the visa only at the interview, a further 3-6 months later"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-01T03:17:03.000Z"
+    },
+    {
+      "summary": "Małgorzata applied 2.5 months ago and has had no answer; her office is not named.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27536387619346871"
+      ],
+      "author_id": "100000975133437",
+      "author_name": "Małgorzata Napierała",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 75,
+          "ongoing": true,
+          "text": "We applied 2,5 months ago and still no answer"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-01T09:51:00.000Z"
+    }
+  ]
+}

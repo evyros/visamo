@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27890526107266352",
+  "source_hash": "ad5db14b2a2c2c84",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:16.164Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "April received a text from the post office and Misrad Hapnim a week ago saying her teudat zehut is on its way.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27890526107266352"
+      ],
+      "author_id": "1831380471",
+      "author_name": "April Cullen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T06:45:47.000Z"
+    },
+    {
+      "summary": "Ya'akov's wife and son's first teudat zehut never arrived, so they collected them at Misrad Hapnim; the second ones were picked up at the post office.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27891021513883478"
+      ],
+      "author_id": "530197242",
+      "author_name": "Ya'akov Yehudi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-02T07:54:05.000Z"
+    }
+  ]
+}

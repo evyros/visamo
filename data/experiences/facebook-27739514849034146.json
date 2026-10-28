@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "27739514849034146",
+  "source_hash": "7981add06e562ae0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.598Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Has a final A/5 meeting and citizenship application booked for January at the Herzliya branch and asks whether the file can stay there after moving.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya branch",
+      "channels": [],
+      "source_ids": [
+        "27739514849034146"
+      ],
+      "author_id": "744803477",
+      "author_name": "Sarah Arieh-Parnell",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-01"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-20T08:29:58.000Z"
+    },
+    {
+      "summary": "Dropped papers for the last renewal in July 2025, moved city in August 2025, and did the last interview and citizenship process in Jerusalem without issues, bringing the new apartment contract to the interview.",
+      "branch": "jerusalem",
+      "branch_text": "JLM",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27740328412286123",
+        "27749175871401377"
+      ],
+      "author_id": "547019934",
+      "author_name": "Ana Lucía Ben Arieh-Gutiérrez",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": "2025-07",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Kept the file at the same branch after the couple moved cities, with the new rental contract brought to the last interview."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-20T10:24:02.000Z"
+    }
+  ]
+}

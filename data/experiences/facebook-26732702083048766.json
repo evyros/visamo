@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26732702083048766",
+  "source_hash": "3b72d7dd4607a0c3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:13.158Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Anant Raj Pathak submitted an online B/1 renewal application that had no section to fill in or upload the AS3, and the system let them submit anyway.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26732702083048766"
+      ],
+      "author_id": "1081547491",
+      "author_name": "Anant Raj Pathak",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-04",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-26T17:49:00.000Z"
+    }
+  ]
+}

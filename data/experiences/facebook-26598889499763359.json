@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "26598889499763359",
+  "source_hash": "2359f9ceb02ba6ee",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.105Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Gali says Haifa is a great office where they started the process, before moving to Ramle.",
+      "branch": "haifa",
+      "branch_text": "חיפה",
+      "channels": [],
+      "source_ids": [
+        "26599537883031854",
+        "26606699022315740"
+      ],
+      "author_id": "1315687344",
+      "author_name": "Gali Katz",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-14T18:54:08.000Z"
+    }
+  ]
+}

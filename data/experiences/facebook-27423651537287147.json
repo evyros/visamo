@@ -1,0 +1,79 @@
+{
+  "source": "facebook",
+  "thread_id": "27423651537287147",
+  "source_hash": "5a967ecde5fb4df7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:01.468Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Zhi Yen Lo and partner have been asked for documents three times; the third request, for arnona and water bills, demands everything within 7 days or the application is cancelled.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27423651537287147"
+      ],
+      "author_id": "100000187666781",
+      "author_name": "Zhi Yen Lo",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-21T14:34:38.000Z"
+    },
+    {
+      "summary": "Wendy Feringa says that when they opened their file it was closed because they missed a few bills.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27425637990421835"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-21T18:11:35.000Z"
+    }
+  ]
+}

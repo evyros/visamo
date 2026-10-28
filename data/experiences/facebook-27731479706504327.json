@@ -1,0 +1,113 @@
+{
+  "source": "facebook",
+  "thread_id": "27731479706504327",
+  "source_hash": "cdd718b66d1d4725",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:25.850Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Omri Tcherner got a text message with an appointment (Tel Aviv branch) in just under a month after submitting the online application.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv branch",
+      "channels": [
+        "online",
+        "sms"
+      ],
+      "source_ids": [
+        "27731479706504327",
+        "27739053822413582"
+      ],
+      "author_id": "1064222404",
+      "author_name": "Omri Tcherner",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": false,
+          "text": "received the text message in just under a month since submission"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-19T13:00:11.000Z"
+    },
+    {
+      "summary": "Julie Schut had her first appointment at Ramat Gan, where they took copies of only some documents, and left with a tourist visa extension and an intervisa until the interview.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan branch",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27739096495742648",
+        "27740187995633498"
+      ],
+      "author_id": "1112360473",
+      "author_name": "Julie Schut",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 12,
+          "ongoing": false,
+          "text": "12 days from the moment we sent in the application to get a request for an additional document"
+        },
+        {
+          "from": "first-response",
+          "to": "appointment-set",
+          "days": 1,
+          "ongoing": false,
+          "text": "one more day until we got an appointment to show the originals"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the first appointment they take copies of only the main documents (birth certificate, criminal background, personal status), not everything uploaded.",
+        "Gives a tourist visa extension and an intervisa for exit and re-entry at the first appointment, valid until the interview."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-20T07:24:56.000Z"
+    }
+  ]
+}

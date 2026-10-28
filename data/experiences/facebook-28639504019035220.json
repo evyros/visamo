@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28639504019035220",
+  "source_hash": "224f2a607428d283",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:35.651Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Toni Gabriel was given forms to fill in and an appointment next month to apply for citizenship after the last A5 renewal.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28639504019035220"
+      ],
+      "author_id": "100000502563473",
+      "author_name": "Toni Gabriel",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10"
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-29T06:40:39.000Z"
+    }
+  ]
+}

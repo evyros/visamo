@@ -1,0 +1,139 @@
+{
+  "source": "facebook",
+  "thread_id": "26606073102378332",
+  "source_hash": "3cc072f72043f0f9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.857Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roni sent an online request to the Hadera office during the war, a month passed, and an email also got no answer.",
+      "branch": "hadera",
+      "branch_text": "לשכת חדרה",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "26606073102378332",
+        "26615006144818361"
+      ],
+      "author_id": "100000665116592",
+      "author_name": "Roni Valenci",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": true,
+          "text": "שלחתי בקשה מכוונת, חלף חודש, שלחתי מייל ועוד לא קיבלתי מענה"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T11:36:44.000Z"
+    },
+    {
+      "summary": "Ayala emailed her office during the war and was told emails from the war period would not be reviewed and to send a new one once the authority was working again.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26614147024904273"
+      ],
+      "author_id": "582326988",
+      "author_name": "Ayala Sinuani Wang",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T05:19:54.000Z"
+    },
+    {
+      "summary": "Ayala sent a new email on the Thursday after the war ended and got an answer the following Tuesday, at a branch she describes as less busy.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26615023481483294"
+      ],
+      "author_id": "582326988",
+      "author_name": "Ayala Sinuani Wang",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 5,
+          "ongoing": false,
+          "text": "אני שלחתי מייל בחמישי וענו לי בשלישי"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T07:12:10.000Z"
+    }
+  ]
+}

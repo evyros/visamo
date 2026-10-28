@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "28998165099835775",
+  "source_hash": "665b76db4e512c3d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:39.903Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "After divorcing her husband, the commenter closed the file by simply informing Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28999242756394676"
+      ],
+      "author_id": "1472021064787294",
+      "author_name": "BeautifulCranberry4135",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-25T17:59:02.000Z"
+    },
+    {
+      "summary": "Oksana closed the file when they left the country by simply emailing Misrad Hapnim.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "29000266102959008"
+      ],
+      "author_id": "721350184",
+      "author_name": "Oksana Quinlan",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-25T19:46:26.000Z"
+    }
+  ]
+}

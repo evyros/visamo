@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "28014134158238879",
+  "source_hash": "15e40db1b664b919",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.369Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nophry Lev Ari's wife applied for citizenship at the Beer Sheva office about nine months before the post and still has no final answer; the Beer Sheva clerk offered to send the file by internal mail to Akko, though she would have preferred to finish it herself.",
+      "branch": "beer-sheva",
+      "branch_text": "לשכת באר שבע",
+      "channels": [],
+      "source_ids": [
+        "28014134158238879",
+        "28015230861462542",
+        "28019274264391535"
+      ],
+      "author_id": "500904215",
+      "author_name": "Nophry Lev Ari",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 270,
+          "ongoing": true,
+          "text": "הוגשה לפני בערך תשעה חודשים, ועדיין לא קיבלנו תשובה סופית"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Can transfer a file to another branch by internal mail"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T09:35:38.000Z"
+    },
+    {
+      "summary": "Tamar Ohana says the office could not tell her whether her daughter on A5 can get citizenship by virtue of the parenting order, leaving them in the dark.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28018452997806995"
+      ],
+      "author_id": "757953067",
+      "author_name": "Tamar Ohana",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-12T16:07:33.000Z"
+    }
+  ]
+}

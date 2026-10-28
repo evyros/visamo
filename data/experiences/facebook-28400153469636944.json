@@ -1,0 +1,135 @@
+{
+  "source": "facebook",
+  "thread_id": "28400153469636944",
+  "source_hash": "bb7b472e178035d1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:30.301Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Anca, married, got her first B/1 in February (at Afula, as the post's author) with no experience stated.",
+      "branch": "afula",
+      "branch_text": "Afula",
+      "channels": [],
+      "source_ids": [
+        "28400153469636944",
+        "28405419879110303"
+      ],
+      "author_id": "100001412370078",
+      "author_name": "Orbulov Anca",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-02"
+      },
+      "waits": [],
+      "experience_when": "2026-02",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-11T10:47:59.000Z"
+    },
+    {
+      "summary": "After the 16 August interview at Afula, Anca was given a B/1 until the A/5 confirmation, and the clerk told her an inter-visa was not worth getting, which led her to expect a timely answer.",
+      "branch": "afula",
+      "branch_text": "Afula",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28400153469636944",
+        "28405419879110303"
+      ],
+      "author_id": "100001412370078",
+      "author_name": "Orbulov Anca",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-16"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a B/1 until the A/5 confirmation after the interview, rather than deciding the A/5 on the spot"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-11T10:47:59.000Z"
+    },
+    {
+      "summary": "On 10 September Anca went to Afula for an inter-visa, found no A/5 confirmation yet, was told she stays on B/1 until a December appointment, and her 13-year-old son has no valid visa and the clerk had no answer.",
+      "branch": "afula",
+      "branch_text": "Afula",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "28400153469636944",
+        "28405419879110303"
+      ],
+      "author_id": "100001412370078",
+      "author_name": "Orbulov Anca",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-09-10",
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 26,
+          "ongoing": true,
+          "text": "our interview was on August 16th ... no confirmation for my A5 visa"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [
+        "Can keep the applicant on B/1 for months after the interview while the A/5 decision is pending"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-11T10:47:59.000Z"
+    }
+  ]
+}

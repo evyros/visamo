@@ -1,0 +1,121 @@
+{
+  "source": "facebook",
+  "thread_id": "27347330421585926",
+  "source_hash": "afe97266799406a3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.388Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Coral Ifergan could not attend the Tel Aviv citizenship day announced a day ahead; the clerk by phone said they would call again when there is a new day.",
+      "branch": "tel-aviv",
+      "branch_text": "סניף תל אביב",
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27347330421585926",
+        "27347556188230016"
+      ],
+      "author_id": "1780099632",
+      "author_name": "Coral Ifergan",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Notifies of the citizenship day only a day ahead"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-15T11:31:09.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen got citizenship in Tel Aviv in 2023 by being told to just come, with no collective citizenship days.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [],
+      "source_ids": [
+        "27347512451567723",
+        "27348375414814760"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "In 2023 gave citizenship individually on being told to come, with no collective citizenship days"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-15T11:51:40.000Z"
+    },
+    {
+      "summary": "Lior Beres could not attend the citizenship day at Herzliya two to three years ago and it was postponed by two months.",
+      "branch": "herzliya",
+      "branch_text": "בהרצליה",
+      "channels": [],
+      "source_ids": [
+        "27348163018169333"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-15T13:00:34.000Z"
+    }
+  ]
+}

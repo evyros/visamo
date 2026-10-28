@@ -1,0 +1,135 @@
+{
+  "source": "facebook",
+  "thread_id": "28027448833574078",
+  "source_hash": "9ca6f33afcaaa3bc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.827Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marine applied for the common-law track at the Eilat branch two months ago; they confirmed receipt and said it awaits review, and later said there was no update.",
+      "branch": "eilat",
+      "branch_text": "לשכת אילת",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28027448833574078"
+      ],
+      "author_id": "100002654763624",
+      "author_name": "Marine Dahan",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 60,
+          "ongoing": true,
+          "text": "הגשתי בקשה לפני חודשיים"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-13T09:33:56.000Z"
+    },
+    {
+      "summary": "Lior says the Eilat branch is known as problematic and suggests going there in person and being assertive.",
+      "branch": "eilat",
+      "branch_text": "לשכת אילת",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28027455923573369"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-13T09:34:51.000Z"
+    },
+    {
+      "summary": "Yoel says they did the process in Eilat and that the wait for a response is three months at minimum.",
+      "branch": "eilat",
+      "branch_text": "Eilat",
+      "channels": [],
+      "source_ids": [
+        "28028410503477911",
+        "28038534742465487"
+      ],
+      "author_id": "557759525",
+      "author_name": "Yoel Aizik",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 90,
+          "ongoing": false,
+          "text": "שלושה חודשים מינימום"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-13T11:23:04.000Z"
+    }
+  ]
+}

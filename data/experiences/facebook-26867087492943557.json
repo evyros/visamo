@@ -1,0 +1,79 @@
+{
+  "source": "facebook",
+  "thread_id": "26867087492943557",
+  "source_hash": "f050546d1a3f5695",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.729Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Mathias Herfs, after 5 years in the partner-visa process, says his visa was extended during the war to past his planned departure date, and he still has a renewal meeting scheduled next month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26867087492943557"
+      ],
+      "author_id": "100011672258633",
+      "author_name": "Mathias Herfs",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-08T10:03:24.000Z"
+    },
+    {
+      "summary": "Regina Claudia did not close her file with her first Israeli partner in 2015; when she reopened with her current partner in 2024 the file was still open and she was told leaving it open is a criminal offence.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26867288422923464"
+      ],
+      "author_id": "513298101",
+      "author_name": "Regina Claudia",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2024",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-08T10:25:59.000Z"
+    }
+  ]
+}

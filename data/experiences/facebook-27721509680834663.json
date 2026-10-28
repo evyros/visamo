@@ -1,0 +1,55 @@
+{
+  "source": "facebook",
+  "thread_id": "27721509680834663",
+  "source_hash": "f895d3d46725b6b5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.843Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Eli Hari asks about a common-law case at the Ramat Gan office that, after the sincerity (center of life) interview, has had no decision or system update for over half a year.",
+      "branch": "ramat-gan",
+      "branch_text": "לשכת רמת גן",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27721509680834663"
+      ],
+      "author_id": "562063738",
+      "author_name": "Eli Hari",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 180,
+          "ongoing": true,
+          "text": "עיכוב חריג של מעל חצי שנה במתן החלטה ... ללא שום עדכון במערכת"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-18T13:43:25.000Z"
+    }
+  ]
+}

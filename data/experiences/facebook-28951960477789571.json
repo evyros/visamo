@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28951960477789571",
+  "source_hash": "d59c02dff10cdbe9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:38.927Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ambra, an A/5 holder, obtained Misrad Hapnim approval for tourist visas for her parents after they were turned back in July, and paid the required deposits.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28951960477789571"
+      ],
+      "author_id": "100005502729051",
+      "author_name": "Ambra Anton",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-22T08:17:37.000Z"
+    }
+  ]
+}

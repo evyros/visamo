@@ -1,0 +1,172 @@
+{
+  "source": "facebook",
+  "thread_id": "26579106625074980",
+  "source_hash": "48c9dbab17e3f51d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:44.963Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Julie Pignet came to a B1 renewal meeting in April 2026 with all documents, was told on the spot there would be no interview until September, got only a 4-month extension, and her documents were not checked.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26579106625074980",
+        "26587584610893848",
+        "26594367243548918",
+        "26603519605967015"
+      ],
+      "author_id": "100000403880743",
+      "author_name": "Julie Pignet",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-11"
+      },
+      "waits": [
+        {
+          "from": "appointment",
+          "to": "interview",
+          "days": 120,
+          "ongoing": false,
+          "text": "one for the documents and one four months later for the interview"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T19:21:34.000Z"
+    },
+    {
+      "summary": "Julie Pignet's first visa application at Herzliya handled documents and interview in one day and gave a one-year visa.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26587584610893848"
+      ],
+      "author_id": "100000403880743",
+      "author_name": "Julie Pignet",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Handles documents and interview in one day",
+        "Gave a one-year visa at the first appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-13T15:58:43.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Tel Aviv always holds the interview separately from the document meeting and usually gives a one-year visa.",
+      "branch": "tel-aviv",
+      "branch_text": "MH tel aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26593380883647554"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Holds the interview separately from the meeting for handing in documents",
+        "Usually gives a one-year visa"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-14T05:44:29.000Z"
+    },
+    {
+      "summary": "Karen Barouk's document appointment was cancelled in March 2026 and she is unsure whether her May interview appointment will still happen.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26595102490142060"
+      ],
+      "author_id": "784820409",
+      "author_name": "Karen Barouk",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "low",
+      "posted_at": "2026-04-14T09:47:28.000Z"
+    }
+  ]
+}

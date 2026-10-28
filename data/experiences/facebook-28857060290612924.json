@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28857060290612924",
+  "source_hash": "6c848c090214db50",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.843Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Borka, a B1 holder, was told by Clalit to get a document from Misrad Hapnim proving the relationship, but Misrad Hapnim said they don't issue such a document.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28857060290612924"
+      ],
+      "author_id": "100004048388959",
+      "author_name": "Borka Barsai",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-15T10:59:43.000Z"
+    }
+  ]
+}

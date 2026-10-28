@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26867057639613209",
+  "source_hash": "b208c7479f37bd67",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.657Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lisa's boyfriend (from Ukraine) had the first Misrad Hapnim appointment to hand in original documents for a B/1, and the officer confirmed the documents were checked and fine.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26867057639613209",
+        "26868192529499720"
+      ],
+      "author_id": "1668042372",
+      "author_name": "Lisa Rozumniak",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-08T09:59:54.000Z"
+    }
+  ]
+}

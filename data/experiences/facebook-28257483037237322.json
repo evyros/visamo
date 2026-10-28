@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28257483037237322",
+  "source_hash": "f27fb34243fd881a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:26.891Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Joy Nadua says Misrad Hapnim finally replied by email asking for Hebrew translations to be submitted in the online form, and they could not find where to upload them until they found the option later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "28257483037237322",
+        "28257996657185960",
+        "28270319032620389"
+      ],
+      "author_id": "100000541237473",
+      "author_name": "Joy Nadua",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-31T19:39:10.000Z"
+    }
+  ]
+}

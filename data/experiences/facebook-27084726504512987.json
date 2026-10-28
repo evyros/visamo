@@ -1,0 +1,156 @@
+{
+  "source": "facebook",
+  "thread_id": "27084726504512987",
+  "source_hash": "e4a6dc2707177405",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:23:42.086Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yotam's last interview at Beer Sheva was in February, it was relatively fast, and afterwards they were called to naturalization with no further steps; wife received citizenship on 2026-05-26.",
+      "branch": "beer-sheva",
+      "branch_text": "לשכת באר שבע",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27084788974506740",
+        "27084726504512987"
+      ],
+      "author_id": "1449622399",
+      "author_name": "Yotam Govrin",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-02"
+      },
+      "waits": [],
+      "experience_when": "2026-02",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Citizenship process is relatively fast; after the last interview the couple was called for naturalization"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-26T10:44:06.000Z"
+    },
+    {
+      "summary": "Yotam says the process, begun during Covid, was long and frustrating and the file passed through three different branches.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27084726504512987"
+      ],
+      "author_id": "1449622399",
+      "author_name": "Yotam Govrin",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "file-transferred"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-26T10:36:42.000Z"
+    },
+    {
+      "summary": "Leon just finished the last interview at the Tel Aviv office.",
+      "branch": "tel-aviv",
+      "branch_text": "לשכת תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27084750794510558"
+      ],
+      "author_id": "100000782463824",
+      "author_name": "Leon Rudnitsky",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-26T10:39:35.000Z"
+    },
+    {
+      "summary": "Klara says they are stuck at the Jerusalem Misrad Hapnim with her husband's permanent residency.",
+      "branch": "jerusalem",
+      "branch_text": "משרד הפנים בירושלים",
+      "channels": [],
+      "source_ids": [
+        "27084858831166421"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-26T10:52:30.000Z"
+    }
+  ]
+}

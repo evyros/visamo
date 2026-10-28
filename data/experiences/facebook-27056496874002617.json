@@ -1,0 +1,59 @@
+{
+  "source": "facebook",
+  "thread_id": "27056496874002617",
+  "source_hash": "9176bf7de22e222c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.622Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Victoria Ginzburg uploaded documents online with her partner abroad in the UK and was given an appointment to hand in physical documents about 6 months later; it was first set for March, 3 months after submission, then moved to June because of the war.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27056496874002617",
+        "27063997489919222"
+      ],
+      "author_id": "100004230308331",
+      "author_name": "Victoria Ginzburg",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2025-12",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-11"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment",
+          "days": 180,
+          "ongoing": false,
+          "text": "6 months after uploading them online"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-23T17:55:41.000Z"
+    }
+  ]
+}

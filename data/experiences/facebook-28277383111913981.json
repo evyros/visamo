@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28277383111913981",
+  "source_hash": "63a299d49a780426",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:27.340Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Wendy went through the partner process with her ex at MH Tel Aviv while he held a refugee visa; Misrad Hapnim renewed his refugee visa until the first B1.",
+      "branch": "tel-aviv",
+      "branch_text": "MH Tel Aviv",
+      "channels": [],
+      "source_ids": [
+        "28296259320026360"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Renews a partner's refugee visa until the first B1 is issued"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-03T14:48:51.000Z"
+    }
+  ]
+}

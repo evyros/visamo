@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27208193442166292",
+  "source_hash": "3c8c3e6699139655",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:54.106Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shahar Cohen's partner is still on a B2 tourist visa and the office set their interview for December, months away.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27208193442166292"
+      ],
+      "author_id": "100000371184943",
+      "author_name": "Shahar Cohen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-12"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-04T07:44:30.000Z"
+    }
+  ]
+}

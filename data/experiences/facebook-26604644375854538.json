@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "26604644375854538",
+  "source_hash": "8f1fcbf231e1b9df",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:35.976Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shachar Sagi has had no email reply from the Jaffa branch since the return to routine, while trying to rebook a cancelled meeting for his partner's first-time B2 visit visa.",
+      "branch": "jaffa",
+      "branch_text": "סניף יפו",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26604644375854538",
+        "26604736442511998"
+      ],
+      "author_id": "100000107224370",
+      "author_name": "שחר שגיא",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T08:11:26.000Z"
+    }
+  ]
+}

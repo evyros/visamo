@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27945046341814328",
+  "source_hash": "22501fa98ce9846d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.696Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Camille and her husband handed in their marriage license at Rishon on May 10; the clerk updated the husband's ID status to married, but they heard nothing about her B1 to A/5 change.",
+      "branch": "rishon-lezion",
+      "branch_text": "Misrad hapnim Rishon",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27945046341814328"
+      ],
+      "author_id": "100002536849407",
+      "author_name": "Camille",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-05-10"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-06T18:42:57.000Z"
+    }
+  ]
+}

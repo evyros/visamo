@@ -1,0 +1,60 @@
+{
+  "source": "facebook",
+  "thread_id": "26865607936424846",
+  "source_hash": "759656d195c9e13a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:43.604Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shoshannah Somers and her husband had their B1 to A5 interview in early February with their lawyer, sent extra documents, and three months later still have no decision.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26865607936424846",
+        "26866300746355565",
+        "26866766516308988"
+      ],
+      "author_id": "100000222278636",
+      "author_name": "Shoshannah Somers",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 90,
+          "ongoing": true,
+          "text": "now it's already been three months since our interview"
+        }
+      ],
+      "experience_when": "2026-02",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-08T07:08:07.000Z"
+    }
+  ]
+}

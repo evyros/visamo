@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "28096108730041421",
+  "source_hash": "9b73006653c76d6f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:23.377Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Alon and his partner received an office document saying to upload documents one month before the meeting, while the procedure requires three months before; a commenter says the document is outdated.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28096108730041421",
+        "28100309939621300",
+        "28100552312930396"
+      ],
+      "author_id": "856599753",
+      "author_name": "Alon Solell",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-18T21:11:30.000Z"
+    },
+    {
+      "summary": "Enosh booked a physical meeting at the last renewal and uploaded the documents one month before the meeting using the link, which was accepted since a date was already set.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "28096800453305582"
+      ],
+      "author_id": "100003518078840",
+      "author_name": "Enosh Almog",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-18T22:44:53.000Z"
+    }
+  ]
+}

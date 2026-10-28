@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28641683055483983",
+  "source_hash": "d61acbc3b77cbc2c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:11.139Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar Witztum has the last A/5 renewal appointment coming up; they always brought physical copies and never uploaded documents, and have heard of people turned away for not uploading online.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28641683055483983"
+      ],
+      "author_id": "579371293",
+      "author_name": "Tamar Witztum",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10"
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-29T11:08:37.000Z"
+    }
+  ]
+}

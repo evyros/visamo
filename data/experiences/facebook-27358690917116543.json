@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27358690917116543",
+  "source_hash": "9de20db1e617e9c3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:59.171Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liran says that when they moved city, their office told them they would be assigned to the new city's branch, and that only in the last year of the process can one move city and stay at the same branch.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27361074540211514"
+      ],
+      "author_id": "1021975696",
+      "author_name": "Liran Binyamin",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "file-transferred"
+      ],
+      "practices": [
+        "Moves the file to the branch of the new city after an address change, unless the couple is in the last year of the process."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T13:12:33.000Z"
+    }
+  ]
+}

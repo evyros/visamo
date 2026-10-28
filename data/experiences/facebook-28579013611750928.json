@@ -1,0 +1,123 @@
+{
+  "source": "facebook",
+  "thread_id": "28579013611750928",
+  "source_hash": "60722acecccb68d8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:50.508Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Asmaul renewed her A/5 for the second time at Ramat Gan; the officer first printed a 1-year sticker, then cancelled it and re-printed one with 2 years validity after she asked.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28579013611750928"
+      ],
+      "author_id": "100021764416406",
+      "author_name": "Asmaul Chusna",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Re-prints the A/5 sticker with 2 years validity when asked at a renewal."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-24T08:08:58.000Z"
+    },
+    {
+      "summary": "Belmonte renewed her A/5 for the third time at Haifa and was given 1 year instead of 2.",
+      "branch": "haifa",
+      "branch_text": "Haifa branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28579466898372266"
+      ],
+      "author_id": "100052315873953",
+      "author_name": "Belmonte Lorna",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gave a 1-year A/5 at a third renewal."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T09:03:25.000Z"
+    },
+    {
+      "summary": "Dory renewed a B/1 visa on 15 September and was given only 1 year even after politely asking for 2 years.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28587233797595576"
+      ],
+      "author_id": "100002695039668",
+      "author_name": "Dory Navarro Dionisio",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09-15"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T22:44:57.000Z"
+    }
+  ]
+}

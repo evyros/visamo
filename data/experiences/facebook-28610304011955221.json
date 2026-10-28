@@ -1,0 +1,124 @@
+{
+  "source": "facebook",
+  "thread_id": "28610304011955221",
+  "source_hash": "369f6a2b4ce7eeed",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:45.035Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior Beres calls the Eilat branch one of the worst in the country, if not the worst, for professionalism, treatment and fairness, and says applicants must be very well prepared there.",
+      "branch": "eilat",
+      "branch_text": "לשכת אילת",
+      "channels": [],
+      "source_ids": [
+        "28611459085173047"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Applicants need to be much better prepared than at other branches and may need to fight for their rights"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-26T18:55:55.000Z"
+    },
+    {
+      "summary": "Shlomit Sharoni found the Eilat experience fine overall; after moving to Jerusalem they kept their file at Eilat at an advanced stage.",
+      "branch": "eilat",
+      "branch_text": "אילת",
+      "channels": [],
+      "source_ids": [
+        "28615703348081954",
+        "28616762947975994"
+      ],
+      "author_id": "600424123",
+      "author_name": "Shlomit Sharoni",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Let a couple at an advanced stage keep their file at Eilat after moving to Jerusalem"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-27T04:56:48.000Z"
+    },
+    {
+      "summary": "Tal David, almost 4 years in the process at Eilat, describes the staff as lovely, quick to answer emails and setting meetings per the visa without delay.",
+      "branch": "eilat",
+      "branch_text": "אילת",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28629728266679462"
+      ],
+      "author_id": "100010283404438",
+      "author_name": "Tal David",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Answers emails quickly",
+        "Sets meetings according to the visa expiry without delays"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-28T11:55:44.000Z"
+    }
+  ]
+}

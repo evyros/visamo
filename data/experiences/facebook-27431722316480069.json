@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27431722316480069",
+  "source_hash": "e3a22a89b6099cac",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:01.638Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "David Ben Yeshua's wife's entry was approved in May with a 30,000 shekel deposit; his appeal letter was passed to the Ramla branch manager on May 12 and 40 days later, despite emails and a visit, there was still no decision.",
+      "branch": "ramle",
+      "branch_text": "our branch in Ramla",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27431722316480069",
+        "27432095489776085"
+      ],
+      "author_id": "61581871709941",
+      "author_name": "David Ben Yeshua",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-05-12",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-22T08:07:55.000Z"
+    },
+    {
+      "summary": "Joyce Loupo says that about 5 years ago she paid a 30,000 shekel deposit and it was refunded after a year.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27433075596344741"
+      ],
+      "author_id": "100002613182459",
+      "author_name": "Joyce Loupo",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2021",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-22T11:11:41.000Z"
+    }
+  ]
+}

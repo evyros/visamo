@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "25310908351894820",
+  "source_hash": "cf11d4637410fcee",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:33.742Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ekaterina Molchanova says Misrad Hapnim insisted on a non-criminal record from China, which does not issue them to foreigners, and only accepted a foreign-ministry confirmation, a Chinese lawyer's opinion and an affidavit after a long, complicated process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "25321125224206466"
+      ],
+      "author_id": "100075437182705",
+      "author_name": "Ekaterina Molchanova",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2025-11-25T21:15:09.000Z"
+    }
+  ]
+}

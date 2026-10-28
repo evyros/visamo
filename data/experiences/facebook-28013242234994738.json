@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "28013242234994738",
+  "source_hash": "070b69576b2fb563",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.311Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yar Den and her wife applied for the gradual process at the Rehovot office, which emailed on 12 August 2026 asking them to complete documents: a pre-marriage personal status certificate and a filled-in Mar/6 form.",
+      "branch": "rehovot",
+      "branch_text": "משרד הפנים ברחובות",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "28013242234994738"
+      ],
+      "author_id": "1695237382",
+      "author_name": "Yar Den",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": "2026-08-12",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-12T07:54:28.000Z"
+    }
+  ]
+}

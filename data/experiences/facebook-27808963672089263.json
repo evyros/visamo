@@ -1,0 +1,126 @@
+{
+  "source": "facebook",
+  "thread_id": "27808963672089263",
+  "source_hash": "9cfaadd8469f3b22",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:13.803Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Pauline Aldon Boral had an appointment at MH Yafo to invite her French parents; her Israeli husband couldn't attend because of the hospital, so he emailed to ask for a new meeting and they are waiting for a reply.",
+      "branch": "jaffa",
+      "branch_text": "MH in Yafo",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27808963672089263",
+        "27827539123565051"
+      ],
+      "author_id": "518298215",
+      "author_name": "Pauline Aldon Boral",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-26T06:14:09.000Z"
+    },
+    {
+      "summary": "Eve Alungat's husband went alone to MH Yafo to invite her parents.",
+      "branch": "jaffa",
+      "branch_text": "Yafo",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27809076302078000"
+      ],
+      "author_id": "100004776090146",
+      "author_name": "Eve Alungat",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Lets the Israeli spouse attend the relative-invitation appointment alone"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-26T06:31:15.000Z"
+    },
+    {
+      "summary": "Paul Brenker's Israeli wife went to MH Yafo in January to invite his parents ten days before they arrived; the front desk said short notice was fine, they never heard back, and the parents' ETA was later revoked mid-stay and they got a one-year travel ban.",
+      "branch": "jaffa",
+      "branch_text": "Misrad Hapnim in Yafo",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27811145995204364",
+        "27838690545783242"
+      ],
+      "author_id": "100001590165628",
+      "author_name": "Paul Brenker",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-01",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-26T11:30:30.000Z"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "source": "facebook",
+  "thread_id": "28064978529821108",
+  "source_hash": "ececdb3af0fa52a9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.534Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ella Kleinig, British and married in Cyprus, was asked by a clerk for apostilled UK proof that her status is updated to married before her A5 interview, a document that does not exist, and was told to obtain something within four years.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28064978529821108",
+        "28065207193131575"
+      ],
+      "author_id": "773180451",
+      "author_name": "Ella Kleinig",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T09:09:01.000Z"
+    },
+    {
+      "summary": "Sara Chen, whose British husband married in Cyprus, was asked several times by different clerks for proof of marriage registration in the UK; they said they would look into her UK letter but seemed unsure themselves.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28065109546474673"
+      ],
+      "author_id": "100090401027718",
+      "author_name": "Sara Chen",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "neutral",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T09:25:19.000Z"
+    },
+    {
+      "summary": "Erin Mustard was asked for a lawyer's letter on single status but nothing about updating marital status, and found the requirements inconsistent.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28065104706475157"
+      ],
+      "author_id": "100001525876484",
+      "author_name": "Erin Mustard",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-16T09:24:42.000Z"
+    },
+    {
+      "summary": "Nansi Gjineci was told at her last A5 renewal that proof of marriage registration is not needed now but stays pending in the system until the end of the process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28065075663144728"
+      ],
+      "author_id": "1062817244",
+      "author_name": "Nansi Gjineci",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T09:21:03.000Z"
+    },
+    {
+      "summary": "Kate Mar Chaim was asked for proof of UK registration of her US marriage, brought an apostilled letter from the British embassy to the appointment, and it was accepted and her status updated to married.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28066567996328828"
+      ],
+      "author_id": "621390075",
+      "author_name": "Kate Mar Chaim",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T12:11:15.000Z"
+    }
+  ]
+}

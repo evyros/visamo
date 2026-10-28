@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "27443031972015770",
+  "source_hash": "5ca7b3a3761701da",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:02.387Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Isaac Gavra was invited to the Petah Tikva office on 20 July to present original documents, a month after uploading the online application.",
+      "branch": "petah-tikva",
+      "branch_text": "משרד הפנים בפתח תקווה",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27443031972015770",
+        "27443235745328726"
+      ],
+      "author_id": "1102737945",
+      "author_name": "Isaac Gavra",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2026-05",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-20"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 30,
+          "ongoing": false,
+          "text": "הוזמנו ... חודש אחרי העלאת הבקשה באינטרנט"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-23T06:19:31.000Z"
+    },
+    {
+      "summary": "ליעד צברי describes the Petah Tikva office and its visa department as corrupt and unprofessional, saying staff mistreat people who insist on their rights, lie and try to delay couples entering the gradual process.",
+      "branch": "petah-tikva",
+      "branch_text": "הלשכה (Petah Tikva thread)",
+      "channels": [],
+      "source_ids": [
+        "27443486465303654",
+        "27445109505141350",
+        "27445217645130536"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-23T07:23:15.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg at Netanya brought a binder with everything printed, and at that meeting their B1 visa was extended.",
+      "branch": "netanya",
+      "branch_text": "בנתניה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27443829375269363"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T08:09:53.000Z"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "28038061925846102",
+  "source_hash": "95f69d159ebcef0e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:34.641Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "May Kassirer says that on a previous attempt Hadera refused to let them in without an appointment, and that in the past the office ignored everything they sent.",
+      "branch": "hadera",
+      "branch_text": "בחדרה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28038278929157735",
+        "28038373729148255"
+      ],
+      "author_id": "649407176",
+      "author_name": "May Kassirer",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused",
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-14T06:11:57.000Z"
+    },
+    {
+      "summary": "May Kassirer sent an online appointment-request form to Hadera in August 2026 urgently, after her partner got a shortened tourist visa at the border and needs to arrange a new visa before 30 August.",
+      "branch": "hadera",
+      "branch_text": "חדרה",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28038061925846102",
+        "28038337929151835",
+        "28038373729148255"
+      ],
+      "author_id": "649407176",
+      "author_name": "May Kassirer",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-14T05:45:03.000Z"
+    },
+    {
+      "summary": "Lior Beres says there is no appointment-free service in Hadera.",
+      "branch": "hadera",
+      "branch_text": "בחדרה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28038341979151430"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Offers no service without an appointment."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-14T06:20:02.000Z"
+    }
+  ]
+}

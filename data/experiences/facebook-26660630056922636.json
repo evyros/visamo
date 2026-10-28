@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "26660630056922636",
+  "source_hash": "844c83f91259f7a2",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.808Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lir's wife, whose A/5 was auto-extended due to the war but whose ID had expired, went to the office the day before and was given an interview and renewal appointment in 20 days, with the new ID expected about 20 days later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26660630056922636",
+        "26662197186765923"
+      ],
+      "author_id": "1154283745",
+      "author_name": "Lir Ivri",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-04-19",
+        "appointment": "2026-05-09"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 20,
+          "ongoing": false,
+          "text": "קבעו לנו תור לראיון וחידוש בעוד 20 יום"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T17:45:22.000Z"
+    },
+    {
+      "summary": "Klara went to the Tel Aviv office without an appointment and was given a new, updated ID for her husband at the window with almost no wait.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26678968358422139",
+        "26678970721755236"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Issues an updated ID at the window to walk-ins without an appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-22T10:18:51.000Z"
+    }
+  ]
+}

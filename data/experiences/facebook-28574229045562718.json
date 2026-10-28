@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "28574229045562718",
+  "source_hash": "0fb687e2751771be",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:33.931Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Pol Cruañas, an unmarried couple at the Tel Aviv office, submitted the online application on 22/07 and got a document request on 03/08; after submitting the bills the office closed the application on 23/09 for missing base documents that they say were submitted on day one.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv office",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28574229045562718",
+        "28576003165385306",
+        "28583524834633139"
+      ],
+      "author_id": "100010426243955",
+      "author_name": "Pol Cruañas",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": "2026-07-22",
+        "first_response": "2026-08-03",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 12,
+          "ongoing": false,
+          "text": "22/07 submitted; 03/08 got an email asking for additional documents"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-23T23:12:10.000Z"
+    },
+    {
+      "summary": "Genna Barbara says that when she submitted her whole visa application online, none of the documents were saved on the office's side.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28578056378513318"
+      ],
+      "author_id": "100001231429817",
+      "author_name": "Genna Barbara",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-24T06:24:56.000Z"
+    }
+  ]
+}

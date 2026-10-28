@@ -1,0 +1,82 @@
+{
+  "source": "facebook",
+  "thread_id": "28163102250008735",
+  "source_hash": "2c6d044c77590b60",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:25.321Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Malka's partner, on a B/1 since 2022, was asked for a 30,000 shekel deposit to grant the A/5 after the interview, because some answers differed between the partners.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28163102250008735",
+        "28163553716630255"
+      ],
+      "author_id": "61557718055203",
+      "author_name": "Malka",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-24T11:25:59.000Z"
+    },
+    {
+      "summary": "Wendy Feringa's couple was asked for a deposit, tried to have the amount lowered, and in the end paid the full amount requested.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28232167046435588"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "guarantee",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-29T16:46:21.000Z"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "source": "facebook",
+  "thread_id": "27706241825694782",
+  "source_hash": "44750eb75589ebb9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.113Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Kami Tzayig submitted documents online in December and in person in June, then got a registered letter the Hadera office had meant for the Tokyo embassy; Hadera and the embassy each sent him to the other, until after several emails they issued a formal entry permit and his wife entered in August, and the next appointment was moved up two months.",
+      "branch": "hadera",
+      "branch_text": "לשכה (חדרה)",
+      "channels": [
+        "online",
+        "in-person",
+        "mail",
+        "email"
+      ],
+      "source_ids": [
+        "27706241825694782",
+        "27706607502324881",
+        "27706889735629991",
+        "28119695797682714"
+      ],
+      "author_id": "100001584661984",
+      "author_name": "Kami Tzayig",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-12",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-17T05:41:59.000Z"
+    }
+  ]
+}

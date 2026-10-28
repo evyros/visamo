@@ -1,0 +1,59 @@
+{
+  "source": "facebook",
+  "thread_id": "26605564195762556",
+  "source_hash": "f9377a6b34441745",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:36.027Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Klara Kedem's husband had a permanent residency interview on 2026-01-13 with no known outcome, and the *3450 line could not tell her the result.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone",
+        "online"
+      ],
+      "source_ids": [
+        "26605564195762556",
+        "26605729489079360",
+        "26605920552393587",
+        "26607044815614494"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-01-13"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 92,
+          "ongoing": true,
+          "text": "היה לנו ראיון ב 13.1.26 ואיני זוכרת מה היה בסופו"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T10:28:27.000Z"
+    }
+  ]
+}

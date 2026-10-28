@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26798565719795735",
+  "source_hash": "3be78e6abcde91f1",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:41.906Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ady and his wife, at the end of the A5 gradual process, were asked months after their interview for a document proving the marriage is registered in the US, though they married in Cyprus; the office later asked for a notarized affidavit from the US.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26798565719795735",
+        "26798684959783811",
+        "26857487423903564"
+      ],
+      "author_id": "611424344",
+      "author_name": "Ady Zafri",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-02T08:57:02.000Z"
+    }
+  ]
+}

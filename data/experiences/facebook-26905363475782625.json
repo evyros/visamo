@@ -1,0 +1,164 @@
+{
+  "source": "facebook",
+  "thread_id": "26905363475782625",
+  "source_hash": "0a4d4bfb490cb2a8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.658Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Daria and her husband have a citizenship interview in early June and ask whether he can travel afterwards.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26905363475782625"
+      ],
+      "author_id": "797267579",
+      "author_name": "Daria Foyer",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T16:18:06.000Z"
+    },
+    {
+      "summary": "Daria's husband's visa was automatically extended to August via an SMS because of the war.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "26905951349057171"
+      ],
+      "author_id": "797267579",
+      "author_name": "Daria Foyer",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T17:13:07.000Z"
+    },
+    {
+      "summary": "Inbar prepared documents for the citizenship interview, was not asked to resubmit the AS/6 already filed at the start, and was promised and received an answer within 3 weeks.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26905901465728826",
+        "26906026045716368",
+        "27159797990339171"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 21,
+          "ongoing": false,
+          "text": "הובטח שנקבל תשובה לפני (תוך 3 שבועות) וכך קרה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not ask for the AS/6 again at the citizenship interview if it was filed at the start of the process",
+        "Does not take the foreign passport after the citizenship interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-11T17:08:26.000Z"
+    },
+    {
+      "summary": "Leon, who had submitted the AS/6 at the start of the process, was asked to submit it again after the last interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27156022157383421"
+      ],
+      "author_id": "100000782463824",
+      "author_name": "Leon Rudnitsky",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T12:36:04.000Z"
+    }
+  ]
+}

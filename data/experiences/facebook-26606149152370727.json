@@ -1,0 +1,52 @@
+{
+  "source": "facebook",
+  "thread_id": "26606149152370727",
+  "source_hash": "154f695b2ec159fb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:54.369Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Catharina Michels went to MH Tel Aviv in person after her A5 extension appointment was cancelled; it took 3 hours, she got the extended visa and re-entry permit in her passport and a new appointment in 3 weeks.",
+      "branch": "tel-aviv",
+      "branch_text": "MH Tel Aviv",
+      "channels": [
+        "in-person",
+        "sms"
+      ],
+      "source_ids": [
+        "26606149152370727"
+      ],
+      "author_id": "100000099562802",
+      "author_name": "Catharina Michels",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-04",
+        "appointment": "2026-05"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "negative",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "When an appointment is cancelled, they message the couple to come in person to schedule a new one",
+        "Documents already uploaded for a cancelled appointment are kept for the new appointment",
+        "Issues the extended visa and re-entry permit in the passport at the visit"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T11:47:03.000Z"
+    }
+  ]
+}

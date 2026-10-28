@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "27891867587132204",
+  "source_hash": "6de571c79e788fad",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:42.365Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Michael John had the first couple's visa interview on 26 April, had no reply by 2 August, and his tourist visa was about to expire; he emailed and planned to go in person.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27891867587132204"
+      ],
+      "author_id": "839205556",
+      "author_name": "Michael John",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-26"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 98,
+          "ongoing": true,
+          "text": "couple's visa interview (first one) on April 26th, and still no reply"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-02T09:49:00.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik knows of a couple who waited six months before their B/1 was granted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27895432346775728"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "secondhand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-02T16:47:56.000Z"
+    }
+  ]
+}

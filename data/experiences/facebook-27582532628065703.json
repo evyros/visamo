@@ -1,0 +1,120 @@
+{
+  "source": "facebook",
+  "thread_id": "27582532628065703",
+  "source_hash": "9c62ac0503392fc8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:20.114Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lucy Sej, applying for family reunification at the Herzliya Pituach branch while on a tourist visa, says they keep extending her tourist visa while she completes documents, which she sends directly by email.",
+      "branch": "herzliya",
+      "branch_text": "Herzliya Pituach Branch",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27583557207963245",
+        "27585488677770098",
+        "27596904989961800"
+      ],
+      "author_id": "61571925855735",
+      "author_name": "Lucy Sej",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-10",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Extends the tourist visa while the applicant completes missing documents.",
+        "Lets applicants send documents directly by email."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-05T15:22:11.000Z"
+    },
+    {
+      "summary": "Julie Schut applied from within Israel and got an appointment to extend her B/2 visa until the B/1 interview in January.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27582788248040141"
+      ],
+      "author_id": "1112360473",
+      "author_name": "Julie Schut",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-05T13:58:33.000Z"
+    },
+    {
+      "summary": "Julie Schut says that because she lived abroad more than about 6 months, they asked her for criminal record and single status documents from a second country, so she submitted for two countries.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27616063848045914"
+      ],
+      "author_id": "1112360473",
+      "author_name": "Julie Schut",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-08T14:54:39.000Z"
+    }
+  ]
+}

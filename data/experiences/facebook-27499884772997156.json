@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27499884772997156",
+  "source_hash": "ccb2993fd30cded0",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.001Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lior advises that a short-term tourist invitation is done by requesting a meeting at the Tel Aviv South office, held at least 21 business days before the planned visit.",
+      "branch": "jaffa",
+      "branch_text": "לשכת תל אביב דרום",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27500125656306401"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "advice",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Tourist invitations are handled by meeting at the Tel Aviv South office",
+        "The meeting should be at least 21 business days before the planned visit"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-28T08:01:51.000Z"
+    }
+  ]
+}

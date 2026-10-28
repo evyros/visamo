@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "26562635706722072",
+  "source_hash": "fc036c42316b0c54",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:46.542Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marlijn de Haan, on an A5 at the Haifa office, emailed from abroad that she and her partner were living abroad for about a year and her visa was cancelled immediately.",
+      "branch": "haifa",
+      "branch_text": "Haifa office",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26569073686078274"
+      ],
+      "author_id": "100000075868838",
+      "author_name": "Marlijn de Haan",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Cancelled an A5 visa straight away on an email from abroad saying the couple were living abroad"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-11T20:28:08.000Z"
+    },
+    {
+      "summary": "יוסף אהרון ביטון says Tel Aviv gives out a limited number of walk-in queue numbers at about 8 am, so come at least 30 minutes early; walk-ins run every day except Wednesday and Friday.",
+      "branch": "tel-aviv",
+      "branch_text": "PIBA Tel Aviv (near Azrieli)",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26574391772213132",
+        "26575585675427075"
+      ],
+      "author_id": "100049796330514",
+      "author_name": "יוסף אהרון ביטון",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Gives out a limited number of walk-in queue numbers at about 8 am",
+        "Takes walk-ins every day except Wednesday, and is closed on Fridays"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-12T09:49:20.000Z"
+    }
+  ]
+}

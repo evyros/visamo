@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "27656047467380885",
+  "source_hash": "495401bb56b15966",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:09.694Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Danika Malovic says that at her last interview at the Tel Aviv branch in May they asked to see her phone's camera roll.",
+      "branch": "tel-aviv",
+      "branch_text": "tlv branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27656476880671277",
+        "27657889973863301"
+      ],
+      "author_id": "512532884",
+      "author_name": "Danika Malovic",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks to see the camera roll on the phone at the interview"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-12T14:19:42.000Z"
+    },
+    {
+      "summary": "Claudia Galarza Cervantes says that on the day of her interview they asked her to hand her phone to her partner, and the same for her boyfriend.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27658135653838733"
+      ],
+      "author_id": "100000497590652",
+      "author_name": "Claudia Galarza Cervantes",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-12T17:42:49.000Z"
+    }
+  ]
+}

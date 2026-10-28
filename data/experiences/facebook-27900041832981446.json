@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27900041832981446",
+  "source_hash": "71a0d22670e937a8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.381Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maya, in the common-law process, had a landlord who would not cooperate and the office accepted a lawyer's declaration instead of the landlord's affidavit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27905546735764289",
+        "27907252938927002",
+        "27917943477857948"
+      ],
+      "author_id": "808749569",
+      "author_name": "Maya Mic",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a lawyer's declaration about the apartment and rental contract when the landlord will not sign an affidavit"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-03T15:37:37.000Z"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "source": "facebook",
+  "thread_id": "27151761854476118",
+  "source_hash": "08f5221cc8434f73",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:45.692Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar Berger's Argentine partner was asked to bring a birth certificate, got a photocopy and government verification by email, but the clerk at the appointment insisted on the original.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27151761854476118",
+        "27152424274409876"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T05:09:24.000Z"
+    },
+    {
+      "summary": "Rocio Noetinger, Argentinian, presented her digital Argentine birth certificate and had no problems.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27152408284411475"
+      ],
+      "author_id": "1095953332",
+      "author_name": "Rocio Noetinger",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts an Argentine birth certificate that was apostilled and notarized by a lawyer in Israel"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T06:19:41.000Z"
+    },
+    {
+      "summary": "Galia Rautenberg says the office required the original hard copy of the certificate authenticated by an Israeli notary, as in her Brazilian case.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27153152201003750"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires the original hard copy of foreign certificates authenticated by a notary in Israel"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T07:41:10.000Z"
+    },
+    {
+      "summary": "Mariángeles Ramírez at Hadera had no issues submitting a certified copy of her Argentine birth certificate with apostille and Hebrew translation.",
+      "branch": "hadera",
+      "branch_text": "Misrad Hapnim in Hadera",
+      "channels": [],
+      "source_ids": [
+        "27189163697402600"
+      ],
+      "author_id": "1000581955",
+      "author_name": "Mariángeles Ramírez",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts a certified copy of a birth certificate with apostille and Hebrew translation"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-02T21:17:09.000Z"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "source": "facebook",
+  "thread_id": "28373877775597847",
+  "source_hash": "7da4b05e4e7bf003",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:29.974Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marine Dahan applied online; after 3 months the Eilat office asked for all documents of her Mexican partner again, rejecting the Mexico-made notarial translation and requiring translation by an Israeli notary.",
+      "branch": "eilat",
+      "branch_text": "לשכת אילת",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28373877775597847",
+        "28375990812053210",
+        "28415872898065001",
+        "28439981212320836"
+      ],
+      "author_id": "100002654763624",
+      "author_name": "Marine Dahan",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 90,
+          "ongoing": false,
+          "text": "אחרי 3 חודשים לשכת אילת חזרה אליי"
+        }
+      ],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires document translations by a notary in Israel who speaks the document's language"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-09T14:19:27.000Z"
+    }
+  ]
+}

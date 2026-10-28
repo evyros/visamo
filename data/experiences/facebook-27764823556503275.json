@@ -1,0 +1,56 @@
+{
+  "source": "facebook",
+  "thread_id": "27764823556503275",
+  "source_hash": "b1d6eef60dc80b99",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:12.596Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ayala Sabag applied online for her husband's status; almost two months later got an email saying documents were missing, including ones already uploaded.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27764823556503275"
+      ],
+      "author_id": "100069753070971",
+      "author_name": "Ayala Sabag",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 60,
+          "ongoing": false,
+          "text": "almost two months after submitting our application, I received an email"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T11:13:10.000Z"
+    }
+  ]
+}

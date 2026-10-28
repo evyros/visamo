@@ -1,0 +1,90 @@
+{
+  "source": "facebook",
+  "thread_id": "26606384769013832",
+  "source_hash": "9fb57051db354bcf",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:23.304Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Janet Rañada renewed a one-year post-citizenship passport early and the clerk processed it without charge, as a mere extension of validity; a friend had the same.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "26606384769013832",
+        "26607844485534527"
+      ],
+      "author_id": "1002229663",
+      "author_name": "Janet Rañada",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Renewing the first one-year passport after citizenship, before it expires, may be done at no charge.",
+        "The prepaid fee can be refunded online or kept as credit toward the next renewal."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T12:18:00.000Z"
+    },
+    {
+      "summary": "Ana Lucía Ben Arieh-Gutiérrez says the clerk at her citizenship ceremony repeatedly stressed that the first passport is valid for only one year.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26607680502217592"
+      ],
+      "author_id": "547019934",
+      "author_name": "Ana Lucía Ben Arieh-Gutiérrez",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "At the citizenship ceremony the clerk stresses that the first passport is valid for one year."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T15:04:53.000Z"
+    }
+  ]
+}

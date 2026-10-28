@@ -1,0 +1,130 @@
+{
+  "source": "facebook",
+  "thread_id": "28709611305357824",
+  "source_hash": "08e82a275f14bc34",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:42.145Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yasmin Friedman's Tel Aviv application is about to be closed because of a mistake, and her email sent two weeks earlier got no answer.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28709611305357824",
+        "28719092531076368",
+        "28719156614403293"
+      ],
+      "author_id": "100000503774035",
+      "author_name": "Yasmin Friedman",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-04T20:10:20.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik says the PIBA central call center staff cannot help with individual cases and often give wrong information.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "28709649728687315"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The central call center cannot help with individual cases and often gives wrong information",
+        "Does not offer useful phone help; email, or in person early on a weekday morning except Wednesday"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-04T20:15:23.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Tel Aviv usually takes about 4 weeks to answer emails.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28725059740479647"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Usually takes about 4 weeks to answer emails"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-06T00:45:22.000Z"
+    }
+  ]
+}

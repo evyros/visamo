@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27698077066511258",
+  "source_hash": "7db6d6d880f080f4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.998Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Vincent Coudron, married, uploaded documents online, was told to upload again (A6), then got an email with a first appointment at MH and unclear instructions about documents under section 3.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27698077066511258",
+        "27712921431693488"
+      ],
+      "author_id": "1092596056",
+      "author_name": "Vincent Coudron",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-16T12:14:47.000Z"
+    }
+  ]
+}

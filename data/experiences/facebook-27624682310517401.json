@@ -1,0 +1,157 @@
+{
+  "source": "facebook",
+  "thread_id": "27624682310517401",
+  "source_hash": "2f593ff31ba2de25",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:49.570Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jordan Grimmer-Tufik says the common response time in Tel Aviv, just to get a date for the next stage, is around 3 months but can be longer.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [],
+      "source_ids": [
+        "27625072313811734"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 90,
+          "ongoing": false,
+          "text": "the common response time (to just get a date for the next stage) is around 3 months, but it can be longer"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Usually takes about 3 months to respond with a date for the next stage, sometimes longer"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T12:23:22.000Z"
+    },
+    {
+      "summary": "Naor Meningher strongly recommends not going to the Tel Aviv branch, calling them horrible.",
+      "branch": "tel-aviv",
+      "branch_text": "tlv branch",
+      "channels": [],
+      "source_ids": [
+        "27627044973614468"
+      ],
+      "author_id": "706148790",
+      "author_name": "Naor Meningher",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-09T16:10:12.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says she and other couples she knows had mostly good experiences at the Tel Aviv branch.",
+      "branch": "tel-aviv",
+      "branch_text": "there (the tlv branch)",
+      "channels": [],
+      "source_ids": [
+        "27748892954763002"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-21T03:18:32.000Z"
+    },
+    {
+      "summary": "Marlon Do Couto, a Brazilian in the UK with an Israeli husband, submitted their documents last week while the husband was visiting London.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27735479366104361"
+      ],
+      "author_id": "61586095950405",
+      "author_name": "Marlon Do Couto",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-07",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-19T21:49:27.000Z"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "28282683854717240",
+  "source_hash": "944030c5f5925737",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:27.627Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nitzan Fridman's Nepali husband, on an A/5, was asked by the Interior Ministry for a Nepal document proving his marital status, so they travelled to Nepal for it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28282683854717240",
+        "28295106263474999"
+      ],
+      "author_id": "100014180677455",
+      "author_name": "Nitzan Fridman",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-02T15:39:30.000Z"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "source": "facebook",
+  "thread_id": "27280952878223681",
+  "source_hash": "b9b1e12ce156ac7f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:56.882Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tamar, married and applying for her husband abroad, had an interview at the Netanya office about 2.5 weeks before the post and is still waiting for a response; two emails only got 'we'll update when there's news'.",
+      "branch": "netanya",
+      "branch_text": "the Netanya office",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "27280952878223681"
+      ],
+      "author_id": "100000086580087",
+      "author_name": "Tamar Berger",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 17,
+          "ongoing": true,
+          "text": "About two and a half weeks ago, I had an interview ... since then I've been waiting for a response"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-10T05:36:41.000Z"
+    },
+    {
+      "summary": "Yulia says everything in the process moves slowly, needing months of waiting and multiple follow-ups, and that her emails to the office got no answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27281014344884201"
+      ],
+      "author_id": "100008014479525",
+      "author_name": "Yulia Volkova",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-10T05:43:25.000Z"
+    }
+  ]
+}

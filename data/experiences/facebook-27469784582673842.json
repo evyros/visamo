@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27469784582673842",
+  "source_hash": "817d77dcaa3bcf9b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:03.886Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jay Hunter says in their case, with a similar situation, the office wanted recommendation letters from people in Israel and did not contact any recommender.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27469873045998329",
+        "27469947679324199"
+      ],
+      "author_id": "100071715631848",
+      "author_name": "Jay Hunter",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-25T16:06:17.000Z"
+    },
+    {
+      "summary": "Polina Shapira says that when they uploaded a recommendation letter without a copy of the recommender's ID, the office asked them to add it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27470261025959531",
+        "27470477969271170"
+      ],
+      "author_id": "1552004524",
+      "author_name": "Polina Shapira",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-25T16:49:26.000Z"
+    }
+  ]
+}

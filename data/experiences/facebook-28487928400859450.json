@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28487928400859450",
+  "source_hash": "a7bf225b832f8890",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:32.403Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Hutzler-Vahle, married with an A/5 holder husband, has an appointment with the Ministry of Interior only in February while they plan to leave Israel in November.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28487928400859450"
+      ],
+      "author_id": "1618282715",
+      "author_name": "Shani Hutzler-Vahle",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-02"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-17T16:27:11.000Z"
+    }
+  ]
+}

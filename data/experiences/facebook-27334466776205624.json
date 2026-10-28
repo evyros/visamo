@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27334466776205624",
+  "source_hash": "7dba404124459675",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:57.940Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yovel Mordechai handed in documents at a first appointment and received two B/1 stickers (visa plus multiple-entry visa) valid about 8.5 months, and was told no earlier interview appointment was available.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27334466776205624",
+        "27361943273457974"
+      ],
+      "author_id": "100000170470965",
+      "author_name": "Yovel Mordechai",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": "2026-06-14",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06-14"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-appointments-available"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-14T09:06:17.000Z"
+    }
+  ]
+}

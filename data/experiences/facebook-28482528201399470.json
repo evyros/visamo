@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "28482528201399470",
+  "source_hash": "c80b69f7dd284389",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:32.240Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marine Dahan got a request for missing documents from the Eilat office and could not upload them online; technical support sent her to the PIBA email, which told her to book an appointment.",
+      "branch": "eilat",
+      "branch_text": "לשכת אילת",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "source_ids": [
+        "28482528201399470",
+        "28484918817827075",
+        "28484926824492941"
+      ],
+      "author_id": "100002654763624",
+      "author_name": "Marine Dahan",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-17T07:39:32.000Z"
+    }
+  ]
+}

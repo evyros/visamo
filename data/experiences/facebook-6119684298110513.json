@@ -1,0 +1,155 @@
+{
+  "source": "facebook",
+  "thread_id": "6119684298110513",
+  "source_hash": "1bbc6769d9105715",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:58.000Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maximilian Overbeck asked Misrad Hapnim for an entry/exit document covering only the period since his A2 visa and says they asked no questions.",
+      "branch": null,
+      "branch_text": "MH",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "6547048615374077"
+      ],
+      "author_id": "100002908185104",
+      "author_name": "Maximilian Overbeck",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2023-08-20T09:38:45.000Z"
+    },
+    {
+      "summary": "Justine Smnn advises that at Tel Aviv you can ask for the entry/exit document without an appointment, by waiting at the first window rather than the visa section.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "24599736073012055"
+      ],
+      "author_id": "100001503076981",
+      "author_name": "Justine Smnn",
+      "firsthand": "advice",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives the entry/exit document without an appointment at the first window, not the visa section."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2025-09-10T07:10:47.000Z"
+    },
+    {
+      "summary": "Saki Mizoroki went to the Petah Tikva office in September 2023, found it pretty empty and was out within 20 minutes, and highly recommends it.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "6622391621173109"
+      ],
+      "author_id": "100001625622506",
+      "author_name": "Saki Mizoroki",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2023-09"
+      },
+      "waits": [],
+      "experience_when": "2023-09",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2023-09-11T06:28:42.000Z"
+    },
+    {
+      "summary": "Lindsey Anne Meadows is happy that Petah Tikva proves helpful and does the right thing by them.",
+      "branch": "petah-tikva",
+      "branch_text": "petah tikvah",
+      "channels": [],
+      "source_ids": [
+        "6622604577818480"
+      ],
+      "author_id": "507731836",
+      "author_name": "Lindsey Anne Meadows",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2023-09",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2023-09-11T08:13:36.000Z"
+    }
+  ]
+}

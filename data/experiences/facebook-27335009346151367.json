@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27335009346151367",
+  "source_hash": "fd04b75d42238d06",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:57.993Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dan Okner was told to bring original documents with an apostille from abroad and translate them in Israel with a notary, after an English translation done with a notary was not accepted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27335065079479127"
+      ],
+      "author_id": "1230121414",
+      "author_name": "Dan Okner",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-14T10:19:29.000Z"
+    }
+  ]
+}

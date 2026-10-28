@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26927221966930109",
+  "source_hash": "2e2d59013f008d74",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:46.022Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Marita received citizenship after a 9.5 year process and said completing the online submission was a feat, done with Google Translate and copy-paste.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26927221966930109",
+        "26928830543435918"
+      ],
+      "author_id": "573399280",
+      "author_name": "Marita Orlanov",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-13T09:37:51.000Z"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "source": "facebook",
+  "thread_id": "26617287811256861",
+  "source_hash": "d63fcda96f62f3da",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:04.508Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Inbar's husband had his citizenship interview at Akko: the branch manager was kind, explained the process and timeline and interviewed the partners separately and respectfully; approval came by phone about 3 weeks later.",
+      "branch": "akko",
+      "branch_text": "עכו",
+      "channels": [
+        "in-person",
+        "phone"
+      ],
+      "source_ids": [
+        "26617287811256861",
+        "26840464762272497",
+        "26619518824367093"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-04-16"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 21,
+          "ongoing": false,
+          "text": "3 שבועות מאז הראיון"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Interviews the partners separately for citizenship.",
+        "The branch manager explains the process and expected timeline at the citizenship interview."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-16T11:50:35.000Z"
+    },
+    {
+      "summary": "Ilan says Akko is the best Misrad Hapnim branch, with professional women staff who treat applicants well and move simple cases faster.",
+      "branch": "akko",
+      "branch_text": "סניף עכו",
+      "channels": [],
+      "source_ids": [
+        "26618454524473523"
+      ],
+      "author_id": "100031141651356",
+      "author_name": "Ilan Bar",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-16T13:57:52.000Z"
+    }
+  ]
+}

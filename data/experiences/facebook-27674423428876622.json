@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27674423428876622",
+  "source_hash": "41d0eb0e32f5ce6a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.227Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "After opening a status-regulation file, the poster was asked to complete documents, including a notarised or lawyer-certified affidavit of the invited partner's personal status, even though an embassy-authenticated original status document was already provided.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27674423428876622"
+      ],
+      "author_id": "100001459603706",
+      "author_name": "שרונה ביניאשוילי",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-14T08:14:58.000Z"
+    }
+  ]
+}

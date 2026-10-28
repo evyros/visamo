@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26656018167383825",
+  "source_hash": "bcd061ef9a50e2bd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.842Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Omer Levy left Israel in August, wrote to Misrad Hapnim in February asking to cancel the partner's A5 visa, and was told they must come in person to close the file while Bituach Leumi keeps charging monthly.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26656018167383825"
+      ],
+      "author_id": "1018223752",
+      "author_name": "Omer Levy",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-02",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-20T07:04:57.000Z"
+    }
+  ]
+}

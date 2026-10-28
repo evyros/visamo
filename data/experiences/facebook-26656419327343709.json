@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26656419327343709",
+  "source_hash": "96455a411933ec7f",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:38.202Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Mitch Van Dyke left Israel after three years on B/1 then A/5 and was told by Misrad Hapnim that the case closes automatically after the visa expires.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26656419327343709",
+        "26674957385489903"
+      ],
+      "author_id": "100002630910481",
+      "author_name": "Mitch Van Dyke",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Told that the case is closed automatically after the A/5 visa expires"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-20T08:09:58.000Z"
+    }
+  ]
+}

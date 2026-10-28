@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27358801620438806",
+  "source_hash": "0b83e552e3603127",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:59.293Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Klara Kedem says her husband's permanent residence answer is stuck in Jerusalem and her emails go unanswered, and asks for someone to file an appeal on her behalf.",
+      "branch": null,
+      "branch_text": "Jerusalem",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "27358801620438806"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-16T09:01:56.000Z"
+    }
+  ]
+}

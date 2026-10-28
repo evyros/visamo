@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "26544301305222179",
+  "source_hash": "f0ad3c49171a5f2c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:54.489Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roni Lavi says calls to the MH *3450 line keep going straight to voicemail.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "26544301305222179"
+      ],
+      "author_id": "1510530787",
+      "author_name": "Roni Lavi",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-09T11:49:41.000Z"
+    }
+  ]
+}

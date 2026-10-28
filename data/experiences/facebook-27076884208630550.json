@@ -1,0 +1,163 @@
+{
+  "source": "facebook",
+  "thread_id": "27076884208630550",
+  "source_hash": "d2973a493efda24c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.055Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Anaïs's friend traveled abroad more than 6 months and the office did not even mention it when she renewed her visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27076884208630550"
+      ],
+      "author_id": "100003396923915",
+      "author_name": "Anaïs Herbillon",
+      "firsthand": "secondhand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T16:27:01.000Z"
+    },
+    {
+      "summary": "Kathrin knows friends who had not even reached 90 days abroad and Misrad Hapnim refused to extend their visa or gave only a 3-month extension.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27077134608605510"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "secondhand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Most branches judge time abroad by 'center of life' rather than a written 90-day limit",
+        "The war is not accepted as an excuse for time abroad; a family emergency may help"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-25T16:56:50.000Z"
+    },
+    {
+      "summary": "Elitsa had problems at the Holon branch over 31 days in a row abroad; the clerk said the maximum is 30 days at once and refused compromises, but she got the visa in the end.",
+      "branch": "holon",
+      "branch_text": "Holon's branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27077265995259038",
+        "27077557291896575"
+      ],
+      "author_id": "1087115891",
+      "author_name": "Elitsa Lazarova",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "A Holon clerk claimed a maximum of 30 days abroad at once"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-25T17:12:17.000Z"
+    },
+    {
+      "summary": "Khelly was away 103 days and at the Petah Tikva branch was asked about it at the extension but not pressed for details; she had a valid reason and got the extension.",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27091504080501896"
+      ],
+      "author_id": "100000960887031",
+      "author_name": "Khelly Vaknin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks about long stays abroad at renewal but may not require more detail when there is a valid reason"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-26T22:31:22.000Z"
+    }
+  ]
+}

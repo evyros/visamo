@@ -1,0 +1,128 @@
+{
+  "source": "facebook",
+  "thread_id": "26616469614672014",
+  "source_hash": "940110c9dcb0494c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:04.590Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Paula's A/5 was renewed and she was given a paper with a code for the new ID card, but the card had not arrived by the post by mid-April.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "26616469614672014",
+        "26642978328687809",
+        "26642980858687556"
+      ],
+      "author_id": "1080101086",
+      "author_name": "Paula Schäfer",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-16T10:15:37.000Z"
+    },
+    {
+      "summary": "Peter's A/5 renewal appointment was rushed: they took a photo for the ID but did not explain how it would arrive or give the paper with the post-office code.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26618187907833518"
+      ],
+      "author_id": "648831602",
+      "author_name": "Peter Bondrop",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-16T13:30:33.000Z"
+    },
+    {
+      "summary": "Klara and her husband came to the Tel Aviv office without an appointment for the A/5 extension in the passport, and at the visa-section window gave a photo, filled a one-page form and got a new ID card on the spot.",
+      "branch": "tel-aviv",
+      "branch_text": "MH in TLV",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26652421374410171",
+        "26652425664409742",
+        "26665642136421428",
+        "26666119233040385"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Takes walk-ins at the visa-section window for the A/5 extension.",
+        "Issues the new ID card on the spot at the A/5 extension, valid until the A/5 end date."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-19T21:07:50.000Z"
+    }
+  ]
+}

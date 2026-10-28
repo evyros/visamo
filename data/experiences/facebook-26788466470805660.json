@@ -1,0 +1,91 @@
+{
+  "source": "facebook",
+  "thread_id": "26788466470805660",
+  "source_hash": "be25b023bd5e8b99",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:06.243Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At Ramat Gan/Givatayim, Viktorija got her last visa extension and was told to bring the papers and a permanent-residency request next time, with the meeting scheduled early and no explanation given.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan/Givatayim branch",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26788466470805660"
+      ],
+      "author_id": "1323013271",
+      "author_name": "Viktorija Einorė-Bechor",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-01T11:23:06.000Z"
+    },
+    {
+      "summary": "Enno says permanent residency took him 3 months in Jerusalem, which he calls among the fastest branches.",
+      "branch": "jerusalem",
+      "branch_text": "Jerusalem",
+      "channels": [],
+      "source_ids": [
+        "26788782394107401"
+      ],
+      "author_id": "100000260807282",
+      "author_name": "Enno Raschke",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 90,
+          "ongoing": false,
+          "text": "In Jerusalem, which is among the fastest, it took 3 months for me"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Among the fastest branches for permanent residency decisions"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-01T12:00:05.000Z"
+    }
+  ]
+}

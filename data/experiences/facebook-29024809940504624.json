@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "29024809940504624",
+  "source_hash": "01ea589fe60e1fe5",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:40.376Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Liat Levi Levi could not get past the document stage to the affidavit and payment in the online application for status regulation under common-law life, after three hours; a red triangle appears next to the 'sincerity of the relationship' field with no explanation.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "29024809940504624",
+        "29026895593629392"
+      ],
+      "author_id": "100006357045903",
+      "author_name": "Liat Levi Levi",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "common-law",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-27T16:19:25.000Z"
+    }
+  ]
+}

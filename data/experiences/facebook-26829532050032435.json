@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "26829532050032435",
+  "source_hash": "3f3471ca712156c6",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:42.518Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shahar Cohen and his partner applied for a B/1 at Ramat Gan and were given an interview only in December, leaving her unable to work meanwhile.",
+      "branch": "ramat-gan",
+      "branch_text": "רמת גן",
+      "channels": [],
+      "source_ids": [
+        "26829532050032435",
+        "26833934079592232"
+      ],
+      "author_id": "100000371184943",
+      "author_name": "Shahar Cohen",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-12"
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-05T08:03:16.000Z"
+    },
+    {
+      "summary": "Agnes Mazeau says that in January they were given an interview date at the end of December.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26829771593341814"
+      ],
+      "author_id": "100089096164870",
+      "author_name": "Agnes Mazeau",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-01",
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 330,
+          "ongoing": false,
+          "text": "In January, they gave us the interview for the end of December"
+        }
+      ],
+      "experience_when": "2026-01",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-05T08:36:49.000Z"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "source": "facebook",
+  "thread_id": "27860950613557235",
+  "source_hash": "2b1a5fe0758eb8b9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:15.948Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Max Chaplin applied online to extend his wife's A/5 at the Hadera office, got no reply to the application or his email for six weeks, then at the office was given an October 8 appointment after her September 16 expiry and told the visa would not be extended before then.",
+      "branch": "hadera",
+      "branch_text": "לשכת חדרה",
+      "channels": [
+        "online",
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27860950613557235",
+        "27866709826314647",
+        "27903783739273922",
+        "27912501721735457"
+      ],
+      "author_id": "558927794",
+      "author_name": "Max Chaplin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": "2026-08-03",
+        "appointment_set": "2026-08-03",
+        "appointment": "2026-10-08"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 42,
+          "ongoing": true,
+          "text": "הגשתי בקשה להארכת אשרה א5 של אשתי לפני שישה שבועות ... ומאז לא קיבלתי תשובה"
+        },
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 66,
+          "ongoing": false,
+          "text": "they said an appointment was set for me in October (told on August 3; appointment on October 8)"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-30T18:13:51.000Z"
+    },
+    {
+      "summary": "Lior Beres calls Hadera unbearable, says casual walk-in service is not available there, and suggests leaving a note with the security guards when an online request goes unanswered.",
+      "branch": "hadera",
+      "branch_text": "חדרה",
+      "channels": [],
+      "source_ids": [
+        "27861354040183559"
+      ],
+      "author_id": "100002340939049",
+      "author_name": "Lior Beres",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Does not provide service to walk-ins.",
+        "A note can be left with the security guards when an online request gets no answer."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-30T18:58:15.000Z"
+    },
+    {
+      "summary": "Cel Pedire's B1 expired on February 11 and the March 8 Hadera appointment was cancelled when the war broke out; after unanswered emails she was without a valid visa for almost 4 months, and at the appointment was asked for updated documents before receiving the visa on June 11.",
+      "branch": "hadera",
+      "branch_text": "MH Hadera",
+      "channels": [
+        "email",
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27864512816534348",
+        "27866796089639354"
+      ],
+      "author_id": "1189653278",
+      "author_name": "Cel Pedire",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-06"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Doesn't usually reply to emails.",
+        "Better to go in person and fill out an appointment request form, then wait for their response.",
+        "Security guard can check on their computer whether a spouse already has an appointment, if you give them the Teudat Zehut.",
+        "Documents submitted online months earlier may be treated as outdated and updated ones requested at the appointment."
+      ],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-07-31T01:27:02.000Z"
+    },
+    {
+      "summary": "Sarah Laval's A/5 expired on June 3 and Hadera only gave her an appointment for mid-August; she was not allowed inside the office and her Israeli partner was sent away by security, who said hundreds are in the same situation.",
+      "branch": "hadera",
+      "branch_text": "Hadera MOI office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27866802116305418"
+      ],
+      "author_id": "61551463010895",
+      "author_name": "Sarah Laval",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far",
+        "walk-ins-refused"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-31T06:08:34.000Z"
+    },
+    {
+      "summary": "Liad Tzabari says that in Petah Tikva only a complaint to the public inquiries office and the State Comptroller helped them.",
+      "branch": "petah-tikva",
+      "branch_text": "פתח תקווה",
+      "channels": [],
+      "source_ids": [
+        "27863477483304548"
+      ],
+      "author_id": "100055170917274",
+      "author_name": "ליעד צברי",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-30T23:16:03.000Z"
+    }
+  ]
+}

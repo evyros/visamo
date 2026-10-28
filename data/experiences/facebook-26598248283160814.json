@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "26598248283160814",
+  "source_hash": "75902ee326e82998",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:35.567Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Romi Ben Rakia says Misrad Hapnim accepted her digitally apostilled Spanish certificate and an EU-wide criminal record after initial objections, but made her argue for the Spanish embassy single-status certificate, accepting it with a notarized affidavit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26603413132644329"
+      ],
+      "author_id": "61557542881237",
+      "author_name": "רומי בן רקיע",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts digitally apostilled documents",
+        "Accepts an EU-wide criminal record certificate",
+        "May ask for an apostilled single-status certificate from the home country, and accepts the embassy certificate with a notarized affidavit when it cannot be issued abroad"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T05:00:38.000Z"
+    }
+  ]
+}

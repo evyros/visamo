@@ -1,0 +1,157 @@
+{
+  "source": "facebook",
+  "thread_id": "26730180656634242",
+  "source_hash": "98a6d394f7892300",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.456Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Doron Blumshtein's A/5 interview at the Tel Aviv office, set for mid-March, was postponed because of the war and they received no update about a new date.",
+      "branch": "tel-aviv",
+      "branch_text": "המשרד בתל אביב",
+      "channels": [],
+      "source_ids": [
+        "26730180656634242"
+      ],
+      "author_id": "534703936",
+      "author_name": "Doron Blumshtein",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-04-26T13:13:58.000Z"
+    },
+    {
+      "summary": "Uršulė Pinčiukienė emailed the Beer Sheva branch in mid March and mid April about a rescheduled appointment and got no answer.",
+      "branch": "beer-sheva",
+      "branch_text": "BS branch",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26730864273232547"
+      ],
+      "author_id": "100000021471146",
+      "author_name": "Uršulė Pinčiukienė",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "low",
+      "posted_at": "2026-04-26T14:28:57.000Z"
+    },
+    {
+      "summary": "Hila Mosacho emailed about a postponed first interview and got a new date in August, which means waiting more than a year for it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26734445529541088"
+      ],
+      "author_id": "1097674583",
+      "author_name": "Hila Mosacho",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-26T21:20:22.000Z"
+    },
+    {
+      "summary": "David Revivo sent two emails about a rescheduled appointment; the office answered the second one relatively fast and set a new appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26739468305705477"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "low",
+      "posted_at": "2026-04-27T08:23:23.000Z"
+    }
+  ]
+}

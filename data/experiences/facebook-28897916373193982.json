@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "28897916373193982",
+  "source_hash": "5592651b5be629d9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:37.998Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yulia Volkova was given a form to fill in for the citizenship application that seems to need her landlord's signature.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28897916373193982"
+      ],
+      "author_id": "100008014479525",
+      "author_name": "Yulia Volkova",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-10",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-10-18T08:34:37.000Z"
+    },
+    {
+      "summary": "Camille says Misrad Hapnim emailed them the citizenship form but did not ask for it when they gave the interview.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28899059986412954"
+      ],
+      "author_id": "100002536849407",
+      "author_name": "Camille",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-10-18T10:44:58.000Z"
+    }
+  ]
+}

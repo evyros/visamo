@@ -1,0 +1,264 @@
+{
+  "source": "facebook",
+  "thread_id": "27005401542445484",
+  "source_hash": "d1c8960d4cb883f3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:11.071Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Tlalit Raayoni Last's visa renewal appointment at Hadera was cancelled during the war, emails went unanswered since, the call center said no appointment existed, a gibberish SMS arrived, and the real date turned out to be a month and five days after the visa expired; a complaint to public inquiries got a new appointment.",
+      "branch": "hadera",
+      "branch_text": "סניף חדרה",
+      "channels": [
+        "email",
+        "phone",
+        "sms",
+        "online"
+      ],
+      "source_ids": [
+        "27005401542445484",
+        "27005453072440331",
+        "27005883879063917",
+        "27006168845702087",
+        "27006345395684432",
+        "27019778151007823",
+        "27022970414021930",
+        "27062468476738790",
+        "27051412907844347"
+      ],
+      "author_id": "745008680",
+      "author_name": "Tlalit Raayoni Last",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": "2026-05-17",
+        "first_response": "2026-05-20",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Hadera has not answered renewal appointment emails since the war",
+        "Hadera usually doesn't allow walk-ins"
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-05-19T10:19:27.000Z"
+    },
+    {
+      "summary": "Andrea Rada, who has a disability, went to Hadera as early as she could to renew her visa urgently but only got an appointment without being let in, then a complaint to public inquiries got her appointment moved earlier.",
+      "branch": "hadera",
+      "branch_text": "חדרה",
+      "channels": [
+        "in-person",
+        "phone"
+      ],
+      "source_ids": [
+        "27051353204516984"
+      ],
+      "author_id": "100003033336503",
+      "author_name": "Andrea Rada",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Public inquiries complaint can lead to a call that moves the appointment earlier"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-23T06:51:22.000Z"
+    },
+    {
+      "summary": "Anja Hohenester-Zimmern advises that Hadera usually doesn't allow walk-ins.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27005663825752589"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Usually doesn't allow walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-05-19T10:51:18.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod got a similar garbled SMS after her appointment had been set, which she attributes to a system fault; the reminder SMS came the day before the appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27005426752442963",
+        "27005474479104857",
+        "27005458629106442"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-19T10:22:39.000Z"
+    },
+    {
+      "summary": "Zahrah Ruth requested renewals through the online application without uploading documents and then received an SMS with the appointment; she never had to upload any document.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "sms"
+      ],
+      "source_ids": [
+        "27019355351050103"
+      ],
+      "author_id": "644476090",
+      "author_name": "Zahrah Ruth",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-20T10:23:04.000Z"
+    },
+    {
+      "summary": "Zahrah Ruth waited almost 10 months after the citizenship interview for the approval call, with no replies to her appointment requests in the meantime; she got citizenship about two weeks before the comment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "phone"
+      ],
+      "source_ids": [
+        "27019355351050103"
+      ],
+      "author_id": "644476090",
+      "author_name": "Zahrah Ruth",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 300,
+          "ongoing": false,
+          "text": "during our waiting time after the citizenship interview ... after almost 10 months we got the call for the citizenship approval"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-20T10:23:04.000Z"
+    }
+  ]
+}

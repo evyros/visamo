@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "26627332490252393",
+  "source_hash": "de0e56d2f3462582",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:36.991Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Eden Raveh, applying for a married partner's status, was asked by the online form to attach a request form and documents such as a lease, partner's workplace proof and a municipality center-of-life confirmation that they do not have yet.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26627332490252393"
+      ],
+      "author_id": "1157436587",
+      "author_name": "Eden Raveh",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The online application form asks for a request form, a lease, workplace proof and a municipality center-of-life confirmation"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T08:27:27.000Z"
+    },
+    {
+      "summary": "Ori Stern submitted the application with what he had, took about two weeks to submit, and added the missing documents when called for review.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "26627580356894273"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T09:02:58.000Z"
+    }
+  ]
+}

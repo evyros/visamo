@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "27593305213655111",
+  "source_hash": "962ca3021b4a09e4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:07.772Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Hannah Horn applied for a partner visa in December 2025 and has heard nothing despite several emails about the status.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27593305213655111",
+        "27593460853639547"
+      ],
+      "author_id": "1476848057",
+      "author_name": "Hannah Horn",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2025-12",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 180,
+          "ongoing": true,
+          "text": "I applied for a partner visa in December 2025 but haven't heard anything back at all"
+        }
+      ],
+      "experience_when": "2025-12",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-06T13:03:35.000Z"
+    },
+    {
+      "summary": "Hannah Horn was told her student visa cannot be renewed while her partner visa application is pending and that she must choose one of the two applications.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27593305213655111"
+      ],
+      "author_id": "1476848057",
+      "author_name": "Hannah Horn",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-06T13:03:35.000Z"
+    },
+    {
+      "summary": "Vitória Lissa França applied for a partner visa while on a volunteer visa; when it ended she went to the office and was given a tourist visa until her B1.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27593515893634043"
+      ],
+      "author_id": "100001015830078",
+      "author_name": "Vitória Lissa França",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-06T13:27:10.000Z"
+    }
+  ]
+}

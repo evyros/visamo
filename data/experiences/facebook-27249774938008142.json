@@ -1,0 +1,164 @@
+{
+  "source": "facebook",
+  "thread_id": "27249774938008142",
+  "source_hash": "67cc169d8ee1bf29",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:49.004Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Roberta Zuliani renewed an A5 in Tel Aviv after sending documents only 2 days before the appointment, which was fine; she usually leaves each appointment with the next one scheduled.",
+      "branch": "tel-aviv",
+      "branch_text": "Tlv",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27249857377999898",
+        "27251477551171214",
+        "27258105640508405"
+      ],
+      "author_id": "100007285929849",
+      "author_name": "Roberta Zuliani",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts renewal documents uploaded just before the appointment",
+        "Schedules the next renewal appointment at the end of each appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-07T14:27:19.000Z"
+    },
+    {
+      "summary": "Katerina Elior sent her renewal application the night before and says nobody cared, at Tel Aviv.",
+      "branch": "tel-aviv",
+      "branch_text": "TLV",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27257745750544394"
+      ],
+      "author_id": "100001280841400",
+      "author_name": "Katerina Elior",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Does not object to renewal documents uploaded the night before the appointment"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-08T08:50:37.000Z"
+    },
+    {
+      "summary": "Alla Rabinovich arrived for a visa renewal 5 minutes before closing and everything was fine.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27253168711002098"
+      ],
+      "author_id": "585521025",
+      "author_name": "Alla Rabinovich",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T21:15:06.000Z"
+    },
+    {
+      "summary": "Max Chaplin says the PIBA phone representative did not mention the online renewal form page.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "27256221327363503",
+        "27276138235371812"
+      ],
+      "author_id": "558927794",
+      "author_name": "Max Chaplin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-08T05:05:38.000Z"
+    }
+  ]
+}

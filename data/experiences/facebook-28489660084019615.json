@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28489660084019615",
+  "source_hash": "bd7cfa79b006a181",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:32.446Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Juli Je, who changed faith through Misrad Hapnim, says several contacts were ignored and she then received an appointment invitation with no details of what it is for.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28489660084019615"
+      ],
+      "author_id": "1661065127",
+      "author_name": "Juli Je",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-17T19:26:13.000Z"
+    }
+  ]
+}

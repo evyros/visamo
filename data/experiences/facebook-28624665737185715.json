@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28624665737185715",
+  "source_hash": "db5fae4fe26c386b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:35.196Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Talya Ronen recalls that for a short-visit invitation for her partner she had to show bank statements, salary slips and his apartment and work documents.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28626748526977436"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-28T05:06:41.000Z"
+    }
+  ]
+}

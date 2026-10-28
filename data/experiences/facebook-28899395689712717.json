@@ -1,0 +1,65 @@
+{
+  "source": "facebook",
+  "thread_id": "28899395689712717",
+  "source_hash": "5ff5ff2e937201b4",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:38.160Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jake and his partner applied in early June 2026 at Be'er Sheva as an unmarried couple and on Oct 18 were given a document check appointment for Jan 26, 2027, leaving them apart another three months.",
+      "branch": "beer-sheva",
+      "branch_text": "Be’er Sheva branch",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28899395689712717"
+      ],
+      "author_id": "100000672241784",
+      "author_name": "Jake Logan",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "common-law",
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": null,
+        "appointment_set": "2026-10-18",
+        "appointment": "2027-01-26"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 135,
+          "ongoing": false,
+          "text": "We applied in early June 2026 ... Today, we received an email scheduling our document check"
+        },
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 100,
+          "ongoing": false,
+          "text": "scheduling our document check for January 26, 2027, leaving us separated for another three months"
+        }
+      ],
+      "experience_when": "2026-10",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-10-18T11:21:14.000Z"
+    }
+  ]
+}

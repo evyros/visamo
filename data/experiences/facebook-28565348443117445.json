@@ -1,0 +1,157 @@
+{
+  "source": "facebook",
+  "thread_id": "28565348443117445",
+  "source_hash": "ba0b8c46ce444e55",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.377Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Her husband's visa expires on 27.9 but the renewal appointment, set earlier, is on 4.10; she notes that Tel Aviv luckily has a morning walk-in slot.",
+      "branch": "tel-aviv",
+      "branch_text": "תל אביב",
+      "channels": [],
+      "source_ids": [
+        "28565348443117445",
+        "28566729849645971"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10-04"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Has a walk-in slot for casual visitors between 8 and 9 in the morning."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-23T09:14:04.000Z"
+    },
+    {
+      "summary": "Went to the office between 8 and 9 in the morning, explained the visa gap before the appointment, and had the visa extended by 3 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28565918216393801"
+      ],
+      "author_id": "596449182",
+      "author_name": "Tal Hakmon",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-23T10:09:51.000Z"
+    },
+    {
+      "summary": "Once was told at the office that a gap of a few days between visa expiry and the appointment is not a problem.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28565772883075001"
+      ],
+      "author_id": "699644086",
+      "author_name": "Ortal Claire Revach",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-23T09:55:58.000Z"
+    },
+    {
+      "summary": "Once during the process at Hadera, with an appointment booked after the visa expired, emails and a visit got the answer that a booked appointment is enough, and there was no problem afterward.",
+      "branch": "hadera",
+      "branch_text": "סניף חדרה",
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "28566708796314743"
+      ],
+      "author_id": "100006538423238",
+      "author_name": "Dana Estrin",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Says a booked appointment is enough when the visa expires before it."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-23T11:22:03.000Z"
+    }
+  ]
+}

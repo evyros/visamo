@@ -1,0 +1,129 @@
+{
+  "source": "facebook",
+  "thread_id": "27980649874920641",
+  "source_hash": "41bf9903ce11d766",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:47:45.041Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Dutch woman applying with her boyfriend at the Hadera branch had started the application and was asked to add some documents or make changes.",
+      "branch": "hadera",
+      "branch_text": "Hadera branch",
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27980649874920641",
+        "27985609007758061"
+      ],
+      "author_id": "100005505123740",
+      "author_name": "Marije Bakker",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-09T15:52:44.000Z"
+    },
+    {
+      "summary": "Dutch woman applied with her Israeli partner in September 2025 and got a request to hand in paperwork physically in December, delayed by an expired document and a missed email.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27982835464702082"
+      ],
+      "author_id": "100004702981993",
+      "author_name": "Senna Breeschoten",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2025-09",
+        "first_response": "2025-12",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 90,
+          "ongoing": false,
+          "text": "applied in September last year, got a request to hand in the paperwork physically in December"
+        }
+      ],
+      "experience_when": "2025-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-09T20:01:42.000Z"
+    },
+    {
+      "summary": "Advice that waiting times at Hadera are usually not so bad.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [],
+      "source_ids": [
+        "27985672197751742"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Waiting times at Hadera are usually not so bad."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-10T02:54:11.000Z"
+    }
+  ]
+}

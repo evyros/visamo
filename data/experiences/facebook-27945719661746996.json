@@ -1,0 +1,92 @@
+{
+  "source": "facebook",
+  "thread_id": "27945719661746996",
+  "source_hash": "83c00eb4246e55c7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.779Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yar Den and her wife applied online for the gradual process about two months earlier and received an email from Misrad Hapnim asking for more proof of living at their address.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27945719661746996",
+        "27945924845059811",
+        "27951731807812448"
+      ],
+      "author_id": "1695237382",
+      "author_name": "Yar Den",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-06",
+        "first_response": "2026-08-06",
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 60,
+          "ongoing": false,
+          "text": "לפני חודשיים קיבלנו הזמנה והגשנו בקשה מקוונת (two months before the email)"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-06T19:59:50.000Z"
+    },
+    {
+      "summary": "Polina Shapira brought a signed statement from her parents that she lives with them plus their bills, and Misrad Hapnim also asked her for a land registry (tabu) extract.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27949609254691370"
+      ],
+      "author_id": "1552004524",
+      "author_name": "Polina Shapira",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-07T03:34:54.000Z"
+    }
+  ]
+}

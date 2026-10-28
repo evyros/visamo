@@ -1,0 +1,170 @@
+{
+  "source": "facebook",
+  "thread_id": "26739816559003985",
+  "source_hash": "65c5fd457ca83339",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:49:42.092Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Doron Blumshtein's A5 interview at Tel Aviv was cancelled because of the war with Iran and he wants to reschedule in person.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26739816559003985",
+        "26740697292249245"
+      ],
+      "author_id": "534703936",
+      "author_name": "Doron Blumshtein",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T09:07:57.000Z"
+    },
+    {
+      "summary": "Jordan Grimmer-Tufik advises that Tel Aviv takes walk-ins any weekday except Wednesday, arriving 7 to 7:30 for a place in the queue, but to email first.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26740055372313437"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "long-queue"
+      ],
+      "practices": [
+        "Takes walk-ins any weekday except Wednesday",
+        "Arriving at 7 to 7:30 gets a place in the queue"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-27T09:37:05.000Z"
+    },
+    {
+      "summary": "Danny Minahan emailed Tel Aviv last week and again this week to reschedule an appointment and had no response yet.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26740519652267009",
+        "26750205581298416"
+      ],
+      "author_id": "670165554",
+      "author_name": "Danny Minahan",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T10:32:15.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says Tel Aviv usually takes about 2-3 weeks to answer emails in normal times.",
+      "branch": "tel-aviv",
+      "branch_text": "MH tel aviv",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26741398848845756",
+        "26750694841249490"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [
+        "Usually takes about 2-3 weeks to answer emails in normal times"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-27T12:14:38.000Z"
+    }
+  ]
+}

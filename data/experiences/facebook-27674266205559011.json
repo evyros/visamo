@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "27674266205559011",
+  "source_hash": "c405adc387d20668",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.161Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leah Hunt had the first appointment on the first day the Haifa office reopened: interviews were short but the visit took over 2 hours due to computer problems, with an entrance detour and security delay, staff friendly and everything otherwise smooth.",
+      "branch": "haifa",
+      "branch_text": "#Haifa office",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27674266205559011"
+      ],
+      "author_id": "100006926492376",
+      "author_name": "Leah Hunt",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Entrance is through a guard station at the garden with the arches while construction fences block the usual west stairs",
+        "Personal protection items are checked in at security and retrieved with a slip when leaving",
+        "Many walk-ins are already waiting at 8am"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-14T07:51:21.000Z"
+    }
+  ]
+}

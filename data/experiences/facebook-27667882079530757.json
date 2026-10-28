@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27667882079530757",
+  "source_hash": "da9d00a71c46a3d7",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:10.019Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Idit Waldman's partner had her A5 renewed at the Interior Ministry on 2.7.26 and was told to collect the new ID card by post, but it had not arrived by July 13 while the old one expired July 7.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "mail"
+      ],
+      "source_ids": [
+        "27667882079530757"
+      ],
+      "author_id": "1052187890",
+      "author_name": "Idit Waldman",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-02"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Renews the A5 at the office and sends the new ID card by post for collection"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-13T16:36:56.000Z"
+    }
+  ]
+}

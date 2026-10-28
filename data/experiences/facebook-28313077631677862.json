@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "28313077631677862",
+  "source_hash": "83d05b5f3ef1ca5b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:28.161Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aishwarya Ajmera was asked by Misrad Hapnim for additional documents and corrections, could not find where to upload them, and the office replied by email only that they must be sent through the website.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28313077631677862",
+        "28331260426526249"
+      ],
+      "author_id": "61570906136180",
+      "author_name": "Aishwarya Ajmera",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-04T19:14:51.000Z"
+    },
+    {
+      "summary": "Leah Keller Crosbie had the same trouble finding where to upload additional documents and managed by using the saved link to the original upload form.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "28337320675920224"
+      ],
+      "author_id": "1453547273",
+      "author_name": "Leah Keller Crosbie",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-06T16:48:55.000Z"
+    }
+  ]
+}

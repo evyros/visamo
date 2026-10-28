@@ -1,0 +1,86 @@
+{
+  "source": "facebook",
+  "thread_id": "27247651524887150",
+  "source_hash": "251910669308d751",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:55.209Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Galia Rautenberg's husband got an A5 visa and was told the ID card would be sent home; an SMS to collect it from the post office came about 5 weeks later.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms",
+        "mail"
+      ],
+      "source_ids": [
+        "27247651524887150",
+        "27310099628642339"
+      ],
+      "author_id": "1539563213",
+      "author_name": "Galia Rautenberg",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T10:20:30.000Z"
+    },
+    {
+      "summary": "Liz Pinhasi says her ID card took a bit over 2 months and she got an SMS to pick it up at the nearest post office.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms",
+        "mail"
+      ],
+      "source_ids": [
+        "27248786258107010"
+      ],
+      "author_id": "609884108",
+      "author_name": "Liz Pinhasi",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-07T12:31:58.000Z"
+    }
+  ]
+}

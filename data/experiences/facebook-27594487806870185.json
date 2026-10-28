@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "27594487806870185",
+  "source_hash": "8b4ebd95efff35dc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.042Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "At her second A/5 interview she asked how to invite a relative for up to 90 days and was given a list of documents for the visitor and the couple, then an appointment to present them and pay the fee.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27594487806870185",
+        "27615045064814459"
+      ],
+      "author_id": "562564163",
+      "author_name": "Elizabeth Villar",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-06"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Gives a list of documents for inviting a relative at the A/5 interview, then an appointment to submit them and pay the fee."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-06T15:16:21.000Z"
+    },
+    {
+      "summary": "A commenter says their relative's entry was refused after all the invitation documents were submitted.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28095668266752134"
+      ],
+      "author_id": "584536401",
+      "author_name": "Gilad Shmaya",
+      "firsthand": "firsthand",
+      "service": "relative-invitation",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-18T20:18:25.000Z"
+    }
+  ]
+}

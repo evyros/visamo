@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "27774001188918845",
+  "source_hash": "b1d775d49e735a31",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:35.528Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "During the last war her renewal appointment was cancelled and her visa and inter-visa were extended automatically for 3 months, with SMS notices of both, and she rescheduled once the offices reopened.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27774116045574026"
+      ],
+      "author_id": "61551463010895",
+      "author_name": "Sarah Laval",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "positive",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Automatically extends visas and inter-visas by SMS when appointments are cancelled due to war."
+      ],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-07-23T05:05:47.000Z"
+    }
+  ]
+}

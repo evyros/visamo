@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "28344647445187547",
+  "source_hash": "94239e65499ea2be",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:28.842Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Emily Zambrano and her husband brought their Georgian marriage certificate with an apostille to Misrad Hapnim, which asked for a translation done in Israel.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28344647445187547"
+      ],
+      "author_id": "667952949",
+      "author_name": "Emily Zambrano",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-07T08:24:21.000Z"
+    }
+  ]
+}

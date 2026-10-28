@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "26670343022618006",
+  "source_hash": "a258b296d5da3edf",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:38.784Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Eden Raveh and her husband submitted the online application; Misrad Hapnim emailed that the AS/6 invitee declaration lacked a lawyer's signature, giving 45 days to fix it, and the Petah Tikva office's automatic reply to her email promised an answer within 30 days.",
+      "branch": "petah-tikva",
+      "branch_text": "my local piba (petach tikva)",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "26670343022618006",
+        "26692047260447582"
+      ],
+      "author_id": "1157436587",
+      "author_name": "Eden Raveh",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Automatic reply to emails says an answer will come within 30 days"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-21T15:23:59.000Z"
+    }
+  ]
+}

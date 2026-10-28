@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "26583830681269241",
+  "source_hash": "af00b6353e43577c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:35.083Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yasha Rozov's partner had her B/2 extended at Misrad Hapnim when they submitted their B/1 application, and their interview is set for September.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26583830681269241"
+      ],
+      "author_id": "599650851",
+      "author_name": "Yasha Rozov",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-09"
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-13T07:21:55.000Z"
+    }
+  ]
+}

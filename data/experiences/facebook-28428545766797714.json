@@ -1,0 +1,88 @@
+{
+  "source": "facebook",
+  "thread_id": "28428545766797714",
+  "source_hash": "9cd9f0ad85674933",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:30.697Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Before this year, the poster brought all documents to the A5 renewal meeting at Ramla.",
+      "branch": "ramle",
+      "branch_text": "ברמלה",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28428545766797714"
+      ],
+      "author_id": "100001430367536",
+      "author_name": "Lior Zarfaty",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "In earlier renewals, documents were brought to the meeting"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T07:49:12.000Z"
+    },
+    {
+      "summary": "For the current A5 renewal at Ramla the poster was told to submit the documents on the website beforehand, and the visa department did not answer part of their email.",
+      "branch": "ramle",
+      "branch_text": "ברמלה",
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "28428545766797714"
+      ],
+      "author_id": "100001430367536",
+      "author_name": "Lior Zarfaty",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for renewal documents to be uploaded to the site before the appointment"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-14T07:49:12.000Z"
+    }
+  ]
+}

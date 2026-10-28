@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26742893872029587",
+  "source_hash": "4bc78fb2a6ce0d87",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.228Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "James Stewart got an SMS setting an appointment at a different branch than their usual one, where they were asked to upload many documents although the application had not changed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms",
+        "online"
+      ],
+      "source_ids": [
+        "26742893872029587"
+      ],
+      "author_id": "100012873817087",
+      "author_name": "James Stewart",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T14:52:11.000Z"
+    }
+  ]
+}

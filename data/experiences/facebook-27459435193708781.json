@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27459435193708781",
+  "source_hash": "6a5bc02d42ed102a",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:03.109Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Noam Lottem says that when they went to PIBA to pick up his German partner's work and holiday visa, they were told she was not eligible, yet it was granted for 6 months instead of a year and they were told to start the partner visa process.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27459435193708781"
+      ],
+      "author_id": "1639974432",
+      "author_name": "Noam Lottem",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-24T17:43:30.000Z"
+    }
+  ]
+}

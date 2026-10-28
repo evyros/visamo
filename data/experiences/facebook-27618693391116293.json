@@ -1,0 +1,133 @@
+{
+  "source": "facebook",
+  "thread_id": "27618693391116293",
+  "source_hash": "a34e31690bfc1e9c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:22:02.357Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Osher's couple went from B/1 to 3 years and 9 months on A/5, had a final citizenship interview, and within a month had the ceremony and her husband was a citizen.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27621312464187719"
+      ],
+      "author_id": "61560462412979",
+      "author_name": "Osher Oved Somudom",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "ceremony",
+          "days": 30,
+          "ongoing": false,
+          "text": "תוך חודש כבר היה לנו את הטקס"
+        }
+      ],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T03:13:56.000Z"
+    },
+    {
+      "summary": "Liat's partner was refused a visit permit, and they have now been waiting half a year for the approval, even with a lawyer who cannot speed it up.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27622543574064608"
+      ],
+      "author_id": "100006357045903",
+      "author_name": "Liat Levi Levi",
+      "firsthand": "firsthand",
+      "service": "entry-permit",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 180,
+          "ongoing": true,
+          "text": "אנחנו מחכים כבר חצי שנה לאישור לביקור של הבן זוג שלי אחרי שהוא קיבל סירוב"
+        }
+      ],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-09T06:22:05.000Z"
+    },
+    {
+      "summary": "Klara says the population authority has been tormenting her husband for years, calling it horror and suffering.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27644739015178397",
+        "27644741055178193",
+        "27644756288510003"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-11T10:41:58.000Z"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "source": "facebook",
+  "thread_id": "28063154413336853",
+  "source_hash": "82560c7af9cd65d6",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:25:38.922Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sarah's appointments were postponed or cancelled several times due to the security situation, leaving a gap in her visa before she was finally seen.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28063154413336853"
+      ],
+      "author_id": "61551463010895",
+      "author_name": "Sarah Laval",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T05:18:14.000Z"
+    },
+    {
+      "summary": "Sarah's first appointment at Hadera after moving from another branch went well: a kind clerk, the visa issued on the spot before the interview, and the inter-visa stickers placed in her passport, though uploaded documents were not found and printed copies were needed.",
+      "branch": "hadera",
+      "branch_text": "Hadera Population Authority office",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "28063154413336853"
+      ],
+      "author_id": "61551463010895",
+      "author_name": "Sarah Laval",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "neutral",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Works with paper files, so bring printed documents even if they were uploaded online",
+        "Requires a mandatory interview the first time after transferring from another branch",
+        "Can issue the visa at the appointment before the interview when there is a gap in the visa",
+        "Gives a one-year visa when the passport has less than two years of validity and asks for a renewed passport next time"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T05:18:14.000Z"
+    },
+    {
+      "summary": "Cel says the Hadera branch is friendly and straightforward but does not respond to emails and does not allow walk-ins.",
+      "branch": "hadera",
+      "branch_text": "MH Hadera",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "28063298056655822"
+      ],
+      "author_id": "1189653278",
+      "author_name": "Cel Pedire",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused",
+        "no-reply"
+      ],
+      "practices": [
+        "Does not respond to emails",
+        "Does not allow walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-16T05:36:50.000Z"
+    },
+    {
+      "summary": "Bjorn says his couple's dealings with Hadera were helpful and friendly.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [],
+      "source_ids": [
+        "28067607086224919"
+      ],
+      "author_id": "698504265",
+      "author_name": "Bjorn Vang Jensen",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-16T13:57:59.000Z"
+    }
+  ]
+}

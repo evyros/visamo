@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "27257821533870149",
+  "source_hash": "3b762ebeecbbd24d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:55.918Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shani Hutzler-Vahle had a visa-department appointment with her husband, postponed since the March war, and got a reminder for the next day while the Tel Aviv branch appeared closed; last time they got an immediate extension.",
+      "branch": "tel-aviv",
+      "branch_text": "הלשכה (תל אביב)",
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27257821533870149"
+      ],
+      "author_id": "1618282715",
+      "author_name": "Shani Hutzler-Vahle",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T09:01:01.000Z"
+    },
+    {
+      "summary": "Adi Rachum says her partner's visa expired mid-war in March, they only received appointment reminders and never a cancellation although the branch was closed, and he got an automatic extension with no official notice.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms"
+      ],
+      "source_ids": [
+        "27258410427144593"
+      ],
+      "author_id": "1471025973",
+      "author_name": "Adi Rachum",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-03",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-08T10:21:03.000Z"
+    }
+  ]
+}

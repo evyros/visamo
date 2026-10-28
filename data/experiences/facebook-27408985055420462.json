@@ -1,0 +1,81 @@
+{
+  "source": "facebook",
+  "thread_id": "27408985055420462",
+  "source_hash": "6c06bb78eca34e2d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:00.812Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Grace DA Shimon's A/5 was extended automatically because of the war, after which they received a new appointment at the Interior Ministry to extend the visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27408985055420462"
+      ],
+      "author_id": "100001375445680",
+      "author_name": "Grace DA Shimon",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-20T09:10:49.000Z"
+    },
+    {
+      "summary": "Polina Shapira's interview for moving to A/5 was postponed; she went to the branch to reschedule and was told she did not need to re-upload the forms she had already uploaded.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27409273492058285"
+      ],
+      "author_id": "1552004524",
+      "author_name": "Polina Shapira",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-20T09:48:34.000Z"
+    }
+  ]
+}

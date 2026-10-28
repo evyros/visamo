@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "27348269104825391",
+  "source_hash": "3918c6bb5a10d53b",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:58.508Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Couple on B/1 at Tel Aviv have a center-of-life appointment and then an interview two weeks later for moving to A/5 after marriage; the office verified the marriage certificate and updated the ID appendix, and asked for an updated center-of-life document without details.",
+      "branch": "tel-aviv",
+      "branch_text": "לשכת תל אביב",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27348269104825391"
+      ],
+      "author_id": "100049796330514",
+      "author_name": "יוסף אהרון ביטון",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Schedules a center-of-life appointment, then the interview about two weeks later",
+        "Asks for an updated center-of-life document before the B/1 to A/5 interview"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-15T13:11:06.000Z"
+    },
+    {
+      "summary": "David says the Ramat Gan office required a center-of-life certificate, a form issued by the municipal arnona department.",
+      "branch": "ramat-gan",
+      "branch_text": "לשכת רמת גן",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27350846957900939",
+        "27356044034047898"
+      ],
+      "author_id": "100089386005706",
+      "author_name": "David Revivo",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires a center-of-life certificate issued by the municipal arnona department"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-06-15T17:38:56.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28017622041223424",
+  "source_hash": "2b7de4e51f425470",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:20.483Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Hannah Horn, applying for the partner visa for the first time, was told to resubmit two documents from her first request because they were too dated.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28017622041223424"
+      ],
+      "author_id": "1476848057",
+      "author_name": "Hannah Horn",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-12T14:51:04.000Z"
+    }
+  ]
+}

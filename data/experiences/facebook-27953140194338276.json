@@ -1,0 +1,240 @@
+{
+  "source": "facebook",
+  "thread_id": "27953140194338276",
+  "source_hash": "82f1caaa9c8930d9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:18.837Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Reut Argaman, treated at the Tel Aviv branch, has an appointment for another interview in August 2026 and understood that documents are now uploaded online instead of brought printed.",
+      "branch": "tel-aviv",
+      "branch_text": "בת״א",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27953140194338276"
+      ],
+      "author_id": "1354163941",
+      "author_name": "Reut Argaman",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Asks for supporting documents to be uploaded online before the repeat interview instead of brought printed"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-07T10:32:00.000Z"
+    },
+    {
+      "summary": "Reut Argaman, at the Tel Aviv branch, had the previous year's interview in August 2025 and brought many printed documents (receipts, bills, letters).",
+      "branch": "tel-aviv",
+      "branch_text": "בת״א",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27953140194338276"
+      ],
+      "author_id": "1354163941",
+      "author_name": "Reut Argaman",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-08"
+      },
+      "waits": [],
+      "experience_when": "2025-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Previously expected printed supporting documents to be brought to the interview"
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-07T10:32:00.000Z"
+    },
+    {
+      "summary": "Natia Natia took all her documents printed to the appointment.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27954492250869737"
+      ],
+      "author_id": "100000131484246",
+      "author_name": "Natia Natia",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-07T12:55:28.000Z"
+    },
+    {
+      "summary": "Yoni Mizrahi went to the appointment with printed documents two or three months before and the office did not like it, though missing documents are liked even less.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27963228259996136"
+      ],
+      "author_id": "1160454984",
+      "author_name": "Yoni Mizrahi",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-08T05:17:13.000Z"
+    },
+    {
+      "summary": "Yehuda Azar uploaded documents two months ahead although the message asked for three months (the SMS came only two months ahead), and was told at the appointment that the last two months' bills were missing.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "sms",
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27964207116564917"
+      ],
+      "author_id": "609222465",
+      "author_name": "Yehuda Azar",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sends the SMS to upload documents only two months before the appointment while asking for bills from three months back"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-08T07:14:03.000Z"
+    },
+    {
+      "summary": "Leah Keller Crosbie says couples who had not uploaded documents online to the link were sent home, their appointment cancelled; she uploaded everything and returned the next day when all was fine.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27968296249489337",
+        "27968327652819530"
+      ],
+      "author_id": "1453547273",
+      "author_name": "Leah Keller Crosbie",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Sends couples home and cancels the appointment when documents were not uploaded online beforehand"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-08T14:49:23.000Z"
+    }
+  ]
+}

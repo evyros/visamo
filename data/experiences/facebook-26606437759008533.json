@@ -1,0 +1,88 @@
+{
+  "source": "facebook",
+  "thread_id": "26606437759008533",
+  "source_hash": "01e917b04c2c13c8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:51:01.603Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Talya called the authority several times and even they could not say where the Haifa visa and registration departments now sit.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone"
+      ],
+      "source_ids": [
+        "26606437759008533"
+      ],
+      "author_id": "1013418737",
+      "author_name": "Talya Ronen",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T12:25:04.000Z"
+    },
+    {
+      "summary": "Lee says the original Haifa branch is completely closed and its representatives now sit inside the Krayot branch; the Haifa email is still active.",
+      "branch": "haifa",
+      "branch_text": "סניף חיפה",
+      "channels": [
+        "in-person",
+        "email"
+      ],
+      "source_ids": [
+        "26606490875669888",
+        "26607402215578754"
+      ],
+      "author_id": "100001223531275",
+      "author_name": "Lee Suli",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The original Haifa building is closed and Haifa staff sit inside the Krayot branch",
+        "The Haifa email address is active"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T12:32:08.000Z"
+    }
+  ]
+}

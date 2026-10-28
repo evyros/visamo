@@ -1,0 +1,51 @@
+{
+  "source": "facebook",
+  "thread_id": "28067266359592325",
+  "source_hash": "07111e603de17dce",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.871Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Shaked got an email from the Petah Tikva office, answering one she sent four months earlier, saying an appointment was set but giving no date; the office does not answer and the appointment is not shown in her gov.il account.",
+      "branch": "petah-tikva",
+      "branch_text": "לשכת פתח תקווה",
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "28067266359592325",
+        "28067749742877320"
+      ],
+      "author_id": "1401037551",
+      "author_name": "Shaked Zada",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-08",
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T13:23:41.000Z"
+    }
+  ]
+}

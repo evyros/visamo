@@ -1,0 +1,173 @@
+{
+  "source": "facebook",
+  "thread_id": "26776861401966167",
+  "source_hash": "c992476ef20bf7ed",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:41.086Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Turkish wife of an Israeli started the process as a married couple in June 2021 at the Ramle branch and received a B/1.",
+      "branch": "ramle",
+      "branch_text": "the Ramle branch",
+      "channels": [],
+      "source_ids": [
+        "26776861401966167"
+      ],
+      "author_id": "100000378081883",
+      "author_name": "Hatıra Eylül Admon",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2021-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T11:10:44.000Z"
+    },
+    {
+      "summary": "She first received an A/5 in December 2021, in the process begun at Ramle.",
+      "branch": "ramle",
+      "branch_text": "the Ramle branch",
+      "channels": [],
+      "source_ids": [
+        "26776861401966167"
+      ],
+      "author_id": "100000378081883",
+      "author_name": "Hatıra Eylül Admon",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2021-12",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-30T11:10:44.000Z"
+    },
+    {
+      "summary": "She applied for citizenship in September 2025 and had the interview in December 2025; after it MH kept asking for more follow-up documents (including a first-time resume form for the gradual process) until approval and an invitation to receive citizenship in late April 2026.",
+      "branch": "ramle",
+      "branch_text": "the Ramle branch",
+      "channels": [],
+      "source_ids": [
+        "26776861401966167"
+      ],
+      "author_id": "100000378081883",
+      "author_name": "Hatıra Eylül Admon",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-09",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-12"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "interview",
+          "days": 90,
+          "ongoing": false,
+          "text": "Applied for citizenship in September 2025 and had the interview for the citizenship in December 2025"
+        },
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 120,
+          "ongoing": false,
+          "text": "interview in December 2025 ... earlier this week we were told that the application was approved (April 2026)"
+        }
+      ],
+      "experience_when": "2025-12",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "After the citizenship interview, asks for more and more follow-up documents every couple of weeks",
+        "Asks for a resume form (קורות חיים לאבחון) as part of the citizenship file for couples in the gradual process"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T11:10:44.000Z"
+    },
+    {
+      "summary": "Husband is Turkish; they had the citizenship interview in November and are still waiting for an answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26779658805019760"
+      ],
+      "author_id": "100011799444382",
+      "author_name": "Nor Ahmad Oğlu",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 150,
+          "ongoing": true,
+          "text": "עשינו ראיון בנובמבר ומחכים לתשובה עדיין"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-30T16:30:56.000Z"
+    }
+  ]
+}

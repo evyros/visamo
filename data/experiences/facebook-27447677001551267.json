@@ -1,0 +1,60 @@
+{
+  "source": "facebook",
+  "thread_id": "27447677001551267",
+  "source_hash": "7b9a30ab2b8bdbdd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:02.768Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ji Min Ahn applied for a partnership visa on June 8, went to the office on June 21-23 and was told the application had not been opened yet, got an appointment on July 13 on the spot, and cites a Beer Sheva backlog where only February applications are being processed.",
+      "branch": "beer-sheva",
+      "branch_text": "Beer sheva",
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "27447677001551267",
+        "27457052980613669"
+      ],
+      "author_id": "100003606227602",
+      "author_name": "Ji Min Ahn",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": "2026-06-08",
+        "first_response": null,
+        "appointment_set": "2026-06",
+        "appointment": "2026-07-13"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 15,
+          "ongoing": true,
+          "text": "On June 8 we applied; the application hasn't been opened yet (posted June 23)"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Has a months-long backlog: in June 2026 it was only processing applications from February.",
+        "Gives a visa-extension appointment on the spot at the counter."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-23T15:51:17.000Z"
+    }
+  ]
+}

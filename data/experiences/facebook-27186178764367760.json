@@ -1,0 +1,84 @@
+{
+  "source": "facebook",
+  "thread_id": "27186178764367760",
+  "source_hash": "3fcb9231df271582",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:53.568Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Yanay, in the gradual process, got an online-service error blocking the yearly document upload before the visa extension appointment, and emailed PIBA about it.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "email"
+      ],
+      "source_ids": [
+        "27186178764367760"
+      ],
+      "author_id": "1269828473",
+      "author_name": "Yanay Kolodny",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-02T16:35:40.000Z"
+    },
+    {
+      "summary": "Tamar says she also hit the same online-service error and that it was nothing, fixed by another browser or clearing the cache.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27186407467678223"
+      ],
+      "author_id": "100008310431331",
+      "author_name": "Tamar Weisal",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-02T16:56:13.000Z"
+    }
+  ]
+}

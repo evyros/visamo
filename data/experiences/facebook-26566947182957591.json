@@ -1,0 +1,48 @@
+{
+  "source": "facebook",
+  "thread_id": "26566947182957591",
+  "source_hash": "d4fd7bce7efbc3bc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:34.269Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Sara Chen says her husband was told to submit an online extension request and was given an interview on July 13 for renewal into A/5.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online",
+        "in-person"
+      ],
+      "source_ids": [
+        "26566947182957591"
+      ],
+      "author_id": "100090401027718",
+      "author_name": "Sara Chen",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-13"
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-11T15:41:38.000Z"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28177079301944363",
+  "source_hash": "a2c22958c103bd27",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:25.439Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Amit Regev says Misrad Hapnim specifically requested a 7-page document (including apostille) be translated into Hebrew with notarization, while not asking for other English documents to be translated.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28177079301944363"
+      ],
+      "author_id": "61557603600334",
+      "author_name": "Amit Regev",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-25T12:41:53.000Z"
+    }
+  ]
+}

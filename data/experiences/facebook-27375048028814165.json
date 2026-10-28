@@ -1,0 +1,135 @@
+{
+  "source": "facebook",
+  "thread_id": "27375048028814165",
+  "source_hash": "98c92a851eaaf188",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:48:44.806Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Mariángeles Ramírez and her husband had a good experience with the Hadera branch through B1, marriage and A5 stages and want to keep their file there.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [],
+      "source_ids": [
+        "27375048028814165"
+      ],
+      "author_id": "1000581955",
+      "author_name": "Mariángeles Ramírez",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-06-17T15:48:05.000Z"
+    },
+    {
+      "summary": "Mariángeles Ramírez sent a renewal appointment request to Hadera in February 2026 and never got an answer; a reminder arrived for an appointment that was not in the app, and a new appointment requested by email and website was set for October.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "online",
+        "email",
+        "sms"
+      ],
+      "source_ids": [
+        "27375048028814165",
+        "27377933165192318"
+      ],
+      "author_id": "1000581955",
+      "author_name": "Mariángeles Ramírez",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": "2026-02",
+        "first_response": null,
+        "appointment_set": "2026-06",
+        "appointment": "2026-10"
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "first-response",
+          "days": 120,
+          "ongoing": true,
+          "text": "In February we sent an appointment request... We have never received an answer about our request"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply",
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-06-17T15:48:05.000Z"
+    },
+    {
+      "summary": "Anja Hohenester-Zimmern says Hadera usually does not allow walk-ins.",
+      "branch": "hadera",
+      "branch_text": "Hadera",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27380722754913359"
+      ],
+      "author_id": "1437404455",
+      "author_name": "Anja Hohenester-Zimmern",
+      "firsthand": "advice",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": null,
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "walk-ins-refused"
+      ],
+      "practices": [
+        "Usually does not allow walk-ins"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-06-18T01:44:24.000Z"
+    }
+  ]
+}

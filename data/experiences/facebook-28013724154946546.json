@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "28013724154946546",
+  "source_hash": "b6e6b638faa93128",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:48.669Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lisa Rozumniak, a Ukrainian applying for B/1, has an interview scheduled for January and a separate Nativ appointment in September.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28013724154946546"
+      ],
+      "author_id": "1668042372",
+      "author_name": "Lisa Rozumniak",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2027-01"
+      },
+      "waits": [],
+      "experience_when": "2026-08",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-12T08:48:20.000Z"
+    }
+  ]
+}

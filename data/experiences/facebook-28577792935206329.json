@@ -1,0 +1,49 @@
+{
+  "source": "facebook",
+  "thread_id": "28577792935206329",
+  "source_hash": "aaba7e7c1948c513",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:34.035Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Livna Or, at the end of A/5, was stopped at the Jerusalem office from submitting her citizenship application because the supervisor said an embassy affidavit and state letter were not enough proof that her US marriage is registered.",
+      "branch": "jerusalem",
+      "branch_text": "Misrad Hapnim in JERUSALEM, Shlomzion HaMalka",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28577792935206329"
+      ],
+      "author_id": "100067189440776",
+      "author_name": "לבנה אור",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-10"
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires proof that a marriage abroad is registered in the home country, or that the state law does not require registration, before accepting a citizenship application"
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-09-24T05:59:14.000Z"
+    }
+  ]
+}

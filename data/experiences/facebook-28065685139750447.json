@@ -1,0 +1,123 @@
+{
+  "source": "facebook",
+  "thread_id": "28065685139750447",
+  "source_hash": "f91f2ad012ab98e9",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:21.702Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Belén Pedroni, married in Argentina, says the office refused her marriage-registration documents, demanding the judge's name on the apostille and the 'original' marriage certificate.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28065685139750447"
+      ],
+      "author_id": "1560412242",
+      "author_name": "Belén Pedroni",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T10:33:37.000Z"
+    },
+    {
+      "summary": "Belén Pedroni's B1 visa was renewed in May and the A/5 interview was scheduled for December.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28065685139750447"
+      ],
+      "author_id": "1560412242",
+      "author_name": "Belén Pedroni",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": "2026-05",
+        "appointment": "2026-12"
+      },
+      "waits": [
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 210,
+          "ongoing": false,
+          "text": "In May, they renewed my B1 visa and scheduled our A5 interview for December"
+        }
+      ],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-16T10:33:37.000Z"
+    },
+    {
+      "summary": "Sophie Antonini Vizel says she was asked the same documentation requirements for her marriage but had no problem with them.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28069638066021821"
+      ],
+      "author_id": "1406710825",
+      "author_name": "Sophie Antonini Vizel",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-08-16T17:24:55.000Z"
+    }
+  ]
+}

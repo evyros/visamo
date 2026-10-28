@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "26763119160007058",
+  "source_hash": "f7bb0db41b1fb7db",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:40.504Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Jordan's B1 interview appointment was cancelled by PIBA the day before for 'staffing issues' with no new date, and a new appointment came 7 weeks later than the original.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26763735976612043"
+      ],
+      "author_id": "1059427108",
+      "author_name": "Jordan Grimmer-Tufik",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-04-29T08:13:18.000Z"
+    }
+  ]
+}

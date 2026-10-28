@@ -1,0 +1,250 @@
+{
+  "source": "facebook",
+  "thread_id": "26591107040541605",
+  "source_hash": "fe3bff879f24e7b8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:35.193Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Ori Stern started the partner-visa process in September, waited months through the holidays for the simultaneous interview, was promised a decision right after it, and then the visa department stopped working when the war began; he praises the staff and blames the policy.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26591107040541605"
+      ],
+      "author_id": "100083064570207",
+      "author_name": "Ori Stern",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-09",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 225,
+          "ongoing": true,
+          "text": "מאז תחילת ספטמבר אני כלוא בתוך סיוט בירוקרטי; since early September, still no decision"
+        }
+      ],
+      "experience_when": "2026",
+      "experience": "mixed",
+      "aspects": {
+        "staff": "positive",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-13T23:56:01.000Z"
+    },
+    {
+      "summary": "Gilad Shmaya waited over a year: documents were ignored at first, after four months of being at the office he got an appointment three months ahead, then came a missing-documents request, a guarantee, and a court judgment request after a baby was born, 14 months in total.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26600575802928062"
+      ],
+      "author_id": "584536401",
+      "author_name": "Gilad Shmaya",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "appointment-set",
+          "days": 120,
+          "ongoing": false,
+          "text": "אחרי ארבעה חודשים שהייתי שם פיזית נזכרו לתת לי תור"
+        },
+        {
+          "from": "appointment-set",
+          "to": "appointment",
+          "days": 90,
+          "ongoing": false,
+          "text": "תור לעוד שלושה חודשים קדימה"
+        }
+      ],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "appointment-far"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-14T21:29:58.000Z"
+    },
+    {
+      "summary": "Barak Sason, whose wife is Italian, was separated from her for months until the office held an interview he calls an interrogation, and a religious clerk asked if his family wasn't ashamed he married a non-Jew, after which he had to be pleasant for her to renew his wife's visa.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26596738083311834"
+      ],
+      "author_id": "100000962295118",
+      "author_name": "Barak Sason",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-14T13:15:32.000Z"
+    },
+    {
+      "summary": "Inbar Axelrod said that early in her process a Misrad Hapnim clerk told her it would have been easier for her husband to come if she were not Jewish.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26594912386827737"
+      ],
+      "author_id": "614994110",
+      "author_name": "Inbar Axelrod",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "neutral",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-14T09:22:14.000Z"
+    },
+    {
+      "summary": "Yar Den and her partner of five years went through many hardships with Misrad Hapnim, including discrimination, dismissive treatment and endless bureaucracy, and lost a High Court petition filed with an NGO.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26606538338998475"
+      ],
+      "author_id": "1695237382",
+      "author_name": "Yar Den",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "negative",
+        "communication": "not-mentioned",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-15T12:38:25.000Z"
+    },
+    {
+      "summary": "Nzeke Peace Agbanya and her husband have been waiting since June last year without a decision, after submitting all requested documents and getting a new passport as asked.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26642979142021061"
+      ],
+      "author_id": "100089423002647",
+      "author_name": "Nzeke Peace Agbanya",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-18T20:44:33.000Z"
+    }
+  ]
+}

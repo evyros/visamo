@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "26739826492336325",
+  "source_hash": "91ba8f642cb67566",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:39.688Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Layla Hazmi Gómez, on an A/5, was asked by Misrad Hapnim for proof of registration of her Utah marriage in the UK, which the UK does not allow her to register.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26739826492336325"
+      ],
+      "author_id": "1098473753",
+      "author_name": "Layla Hazmi Gómez",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "neutral"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-27T09:09:15.000Z"
+    }
+  ]
+}

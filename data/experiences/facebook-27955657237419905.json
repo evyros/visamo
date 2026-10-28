@@ -1,0 +1,47 @@
+{
+  "source": "facebook",
+  "thread_id": "27955657237419905",
+  "source_hash": "b453858a37618028",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:21:08.704Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Adi, who married in Cyprus in 2022, says Misrad Hapnim accepted officially issued English documents without translation, though an apostille was still needed.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27960420000276962"
+      ],
+      "author_id": "552211162",
+      "author_name": "Adi Palmer",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2022",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Accepts officially issued English-language documents without translation, with an apostille."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-08-07T23:48:44.000Z"
+    }
+  ]
+}

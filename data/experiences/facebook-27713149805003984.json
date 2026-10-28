@@ -1,0 +1,121 @@
+{
+  "source": "facebook",
+  "thread_id": "27713149805003984",
+  "source_hash": "a6db8ad1ef19682e",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:47:58.240Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Israeli woman married to a Korean man applied online for a foreign-spouse visa and was told she must come to Israel and hand in all documents to the Ministry of Interior before she can invite her husband; she returned to Israel to start.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "online"
+      ],
+      "source_ids": [
+        "27713149805003984"
+      ],
+      "author_id": "100069753070971",
+      "author_name": "Ayala Sabag",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-17T19:04:36.000Z"
+    },
+    {
+      "summary": "Woman living in Safed whose marriage registration submitted through the Israeli embassy in Korea was completed within two days; she says Safed is very efficient on timing.",
+      "branch": "safed",
+      "branch_text": "צפת",
+      "channels": [],
+      "source_ids": [
+        "27718696297782668"
+      ],
+      "author_id": "1108250049",
+      "author_name": "Sarit Hazan Kim",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "positive",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Safed registers marriages submitted via the embassy abroad quickly, within about two days."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-18T07:58:47.000Z"
+    },
+    {
+      "summary": "Israeli woman living in Korea could not get population registry service while abroad, so she flew to Israel alone, arranged what was needed and returned.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27720249900960641"
+      ],
+      "author_id": "823036459",
+      "author_name": "Rotem Lavi Kim",
+      "firsthand": "firsthand",
+      "service": "other",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "The population registry does not provide service to Israelis who are outside Israel."
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-18T11:19:04.000Z"
+    }
+  ]
+}

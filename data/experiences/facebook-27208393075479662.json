@@ -1,0 +1,45 @@
+{
+  "source": "facebook",
+  "thread_id": "27208393075479662",
+  "source_hash": "fcbef6a2ad9be636",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:54.158Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Claudia Isakov's B1 expired in May, her renewal was delayed by the war, she was told of an automatic extension until August and given a renewal appointment that month.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27208393075479662"
+      ],
+      "author_id": "100008986505192",
+      "author_name": "Claudia Isakov",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08"
+      },
+      "waits": [],
+      "experience_when": "2026-06",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "high",
+      "posted_at": "2026-06-04T08:08:00.000Z"
+    }
+  ]
+}

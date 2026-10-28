@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27625114743807491",
+  "source_hash": "2b6d94bff85eb22d",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:09.061Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Eve Alungat has an A5 second appointment on Sunday at Tel Aviv MH, having submitted shared-life documents online with some months missing.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv MH",
+      "channels": [
+        "in-person",
+        "online"
+      ],
+      "source_ids": [
+        "27625114743807491"
+      ],
+      "author_id": "100004776090146",
+      "author_name": "Eve Alungat",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-07-12"
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Shared-life documents can be submitted online before the A5 appointment, with missing months brought printed."
+      ],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-09T12:28:37.000Z"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "source": "facebook",
+  "thread_id": "27764496736535957",
+  "source_hash": "389e1c031e07a6fc",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:12.541Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Aishwarya Ajmera got an email from MH asking again for a marriage certificate and rent agreement already submitted with the application; a missing back stamp turned out to be the likely reason.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27764496736535957",
+        "27764988119820152",
+        "27775676558751308"
+      ],
+      "author_id": "61570906136180",
+      "author_name": "Aishwarya Ajmera",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T10:36:54.000Z"
+    },
+    {
+      "summary": "Nate Mills was asked by email to resend a document already sent, got no clear answer until going in person and demanding they check the file, then was told the document was not from the previous 6 months.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "email",
+        "in-person"
+      ],
+      "source_ids": [
+        "27765695819749382"
+      ],
+      "author_id": "61571227869352",
+      "author_name": "Nate Mills",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Requires some documents to be issued within the previous 6 months"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-22T12:51:19.000Z"
+    }
+  ]
+}

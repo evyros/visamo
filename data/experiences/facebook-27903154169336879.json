@@ -1,0 +1,58 @@
+{
+  "source": "facebook",
+  "thread_id": "27903154169336879",
+  "source_hash": "a44a3a2bcfa720bd",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T19:24:21.177Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Thina Reshetnyak had an A5 renewal interview at Ashkelon, where the clerk knew the recent procedure and issued a 2-year visa to her and her daughter.",
+      "branch": "ashkelon",
+      "branch_text": "Ashkelon Katsnelson",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27903154169336879",
+        "27904537479198548"
+      ],
+      "author_id": "100006577111500",
+      "author_name": "Thina Reshetnyak",
+      "firsthand": "firsthand",
+      "service": "renewal",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-08-03"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 0,
+          "ongoing": false,
+          "text": "Today, we had our interview... we were issued a 2-year visa"
+        }
+      ],
+      "experience_when": "2026-08",
+      "experience": "positive",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "positive"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Ashkelon's clerks know the recent 2-year A5 policy and can issue a 2-year visa at the renewal interview, though not always."
+      ],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-08-03T11:08:08.000Z"
+    }
+  ]
+}

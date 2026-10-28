@@ -1,0 +1,83 @@
+{
+  "source": "facebook",
+  "thread_id": "28462193116766312",
+  "source_hash": "901b380045b865b8",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:31.722Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Nir Kerbis says that after the appointment presenting his English partner's original documents, they were asked to fill in a 14-page form that refers to Palestinian Authority residents and Arab countries, and he asks why.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "28462193116766312"
+      ],
+      "author_id": "100032502885226",
+      "author_name": "Nir Kerbis",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-09",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-09-15T19:30:59.000Z"
+    },
+    {
+      "summary": "Natasha Nasa, who is half Asian and half English with no Arab background, says the form she was given is in Arabic and she does not understand why.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "28463588843293406",
+        "28468200699498887",
+        "28468505172801773"
+      ],
+      "author_id": "100024325028232",
+      "author_name": "Natasha Nasa",
+      "firsthand": "firsthand",
+      "service": "first-appointment",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-09-15T22:11:17.000Z"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "source": "facebook",
+  "thread_id": "27730711426581155",
+  "source_hash": "e07bdffcf30681da",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:11.387Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Elena had a B1 interview at Ramat Gan more than a month ago and has had no decision; the clerk said an answer would come soon.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat gan",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "27730711426581155",
+        "27730798613239103"
+      ],
+      "author_id": "100004648533876",
+      "author_name": "Elena Ruiz González",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 30,
+          "ongoing": true,
+          "text": "We had our interview for the B1 Visa more than a month ago and still no answer"
+        }
+      ],
+      "experience_when": "2026-06",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "high",
+      "posted_at": "2026-07-19T11:16:54.000Z"
+    },
+    {
+      "summary": "Joh and partner were told at their interview or appointment to wait a maximum of 45 days for the decision.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27730926859892945"
+      ],
+      "author_id": "100000338800522",
+      "author_name": "Joh Atabay",
+      "firsthand": "firsthand",
+      "service": "interview",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "neutral",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-19T11:46:08.000Z"
+    },
+    {
+      "summary": "Wendy and partner waited several months each time for answers from Misrad Hapnim, in what she calls a complicated case.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27731192479866383"
+      ],
+      "author_id": "100002014278323",
+      "author_name": "Wendy Feringa",
+      "firsthand": "firsthand",
+      "service": "general",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": null,
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-07-19T12:22:04.000Z"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "source": "facebook",
+  "thread_id": "27155604317425205",
+  "source_hash": "582c4e14b1c3f0fb",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:52.592Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Leon Rudnitsky, two weeks after a final interview, was phoned by a clerk saying the citizenship application and payment were missing, was emailed the AS6 form he had already filed in 2021, and was told to bring original documents and a notary, with no exit visa offered.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "phone",
+        "email"
+      ],
+      "source_ids": [
+        "27155604317425205",
+        "27155763334075970",
+        "27155786960740274"
+      ],
+      "author_id": "100000782463824",
+      "author_name": "Leon Rudnitsky",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-31T11:55:12.000Z"
+    }
+  ]
+}

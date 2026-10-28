@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "27832686426383654",
+  "source_hash": "8ade305be9c64bae",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:33:14.926Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Lucy applied for family reunification in October 2025; the Herzliya branch rejected her Kosovo documents, first insisting on notarised translation, then accepting she may be right, and 10 days later emailing that the documents were still not accepted.",
+      "branch": "herzliya",
+      "branch_text": "Misrad Hapnim in Herzliya branch",
+      "channels": [
+        "in-person",
+        "email",
+        "online"
+      ],
+      "source_ids": [
+        "27832686426383654",
+        "27832855899700040",
+        "27833331772985786"
+      ],
+      "author_id": "61571925855735",
+      "author_name": "Lucy Sej",
+      "firsthand": "firsthand",
+      "service": "application",
+      "track": "married",
+      "dates": {
+        "submitted": "2025-10",
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "negative",
+      "aspects": {
+        "staff": "neutral",
+        "communication": "negative",
+        "organization": "negative",
+        "strictness": "negative"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-28T10:02:13.000Z"
+    },
+    {
+      "summary": "Lucy says Misrad Hapnim agreed two weeks earlier to extend her tourist visa once more for 3 months while her family-reunification documents are pending.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "27832686426383654"
+      ],
+      "author_id": "61571925855735",
+      "author_name": "Lucy Sej",
+      "firsthand": "firsthand",
+      "service": "visa-extension",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-07",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-07-28T10:02:13.000Z"
+    }
+  ]
+}

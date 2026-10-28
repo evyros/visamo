@@ -1,0 +1,184 @@
+{
+  "source": "facebook",
+  "thread_id": "26627956443523331",
+  "source_hash": "390614febdfc38d3",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:37.122Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Klara Kedem at Tel Aviv had a permanent residency interview in January for her husband and has had no decision by mid-April, so plans to walk in.",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26627956443523331",
+        "26628406946811614"
+      ],
+      "author_id": "730832725",
+      "author_name": "Klara Kedem",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2026-01"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 90,
+          "ongoing": true,
+          "text": "היה ראיון בינואר ועדיין לא קבלנו תשובה"
+        }
+      ],
+      "experience_when": "2026-04",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": true,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T09:54:15.000Z"
+    },
+    {
+      "summary": "Kathrin Petersen says her permanent residency application at Tel Aviv took 6 months to get an answer.",
+      "branch": "tel-aviv",
+      "branch_text": "tel aviv branch",
+      "channels": [],
+      "source_ids": [
+        "26628356503483325"
+      ],
+      "author_id": "553783454",
+      "author_name": "Kathrin Petersen",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "applied",
+          "to": "decision",
+          "days": 180,
+          "ongoing": false,
+          "text": "when i applied for permanent residency there, it took 6 months for an answer"
+        }
+      ],
+      "experience_when": null,
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [
+        "Permanent residency answers take about 6 months"
+      ],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T10:49:52.000Z"
+    },
+    {
+      "summary": "Hagai Ninio had a permanent residency interview on 2025-11-24 handled by the Ramat Gan Givatayim office and has heard nothing since.",
+      "branch": "ramat-gan",
+      "branch_text": "Ramat Gan Givatayim office",
+      "channels": [],
+      "source_ids": [
+        "26628739790111663"
+      ],
+      "author_id": "1017212304",
+      "author_name": "Hagai Ninio",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": "2025-11-24"
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 144,
+          "ongoing": true,
+          "text": "Our interview for permanent residency was on November 24, 2025... we haven't heard from them since"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-04-17T11:40:21.000Z"
+    },
+    {
+      "summary": "Nor Ahmad Oğlu had a permanent residency interview in November and still has no answer.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [],
+      "source_ids": [
+        "26630827443236231"
+      ],
+      "author_id": "100011799444382",
+      "author_name": "Nor Ahmad Oğlu",
+      "firsthand": "firsthand",
+      "service": "upgrade",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [
+        {
+          "from": "interview",
+          "to": "decision",
+          "days": 150,
+          "ongoing": true,
+          "text": "לנו היה ראיון בנובמר ועדיין לא קבלנו תשובה"
+        }
+      ],
+      "experience_when": "2025-11",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-04-17T15:57:53.000Z"
+    }
+  ]
+}

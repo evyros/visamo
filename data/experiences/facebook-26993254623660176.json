@@ -1,0 +1,46 @@
+{
+  "source": "facebook",
+  "thread_id": "26993254623660176",
+  "source_hash": "7866cef51280367c",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:47.418Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Maya Bar Sadan, who finished the gradual process with permanent residence, was told by the visas department in Rehovot to request a citizenship appointment from the registry department, and cannot find where to book it on GoVisit.",
+      "branch": "rehovot",
+      "branch_text": "מחלקת אשרות ברחובות",
+      "channels": [],
+      "source_ids": [
+        "26993254623660176",
+        "27030779599907678"
+      ],
+      "author_id": "100001811288978",
+      "author_name": "מאיה בר סדן",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "low",
+      "posted_at": "2026-05-18T10:07:11.000Z"
+    }
+  ]
+}

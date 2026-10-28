@@ -1,0 +1,85 @@
+{
+  "source": "facebook",
+  "thread_id": "26889847770667529",
+  "source_hash": "7a0ac1a4c016f697",
+  "schema_version": 3,
+  "extracted_at": "2026-10-28T18:32:44.190Z",
+  "model": "claude-sonnet-5-5",
+  "relevant": true,
+  "records": [
+    {
+      "summary": "Muly Barkai says the Ramat Gan visa department does not answer emails, and that they were asked to submit form A.S. 6 and proof of center of life for the citizenship application.",
+      "branch": "ramat-gan",
+      "branch_text": "מחלקת אשרות רמת גן",
+      "channels": [
+        "email"
+      ],
+      "source_ids": [
+        "26889847770667529"
+      ],
+      "author_id": "779542391",
+      "author_name": "Muly Barkai",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": "married",
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2026-05",
+      "experience": "negative",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "negative",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [
+        "no-reply"
+      ],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-10T08:22:31.000Z"
+    },
+    {
+      "summary": "Ana Lucía Ben Arieh-Gutiérrez says that when she applied for citizenship last year, the office asked to see again the documents from the start of the case five years earlier, kept copies and returned the originals.",
+      "branch": null,
+      "branch_text": null,
+      "channels": [
+        "in-person"
+      ],
+      "source_ids": [
+        "26891671560485150"
+      ],
+      "author_id": "547019934",
+      "author_name": "Ana Lucía Ben Arieh-Gutiérrez",
+      "firsthand": "firsthand",
+      "service": "citizenship",
+      "track": null,
+      "dates": {
+        "submitted": null,
+        "first_response": null,
+        "appointment_set": null,
+        "appointment": null
+      },
+      "waits": [],
+      "experience_when": "2025",
+      "experience": "neutral",
+      "aspects": {
+        "staff": "not-mentioned",
+        "communication": "not-mentioned",
+        "organization": "not-mentioned",
+        "strictness": "not-mentioned"
+      },
+      "busy_signals": [],
+      "practices": [],
+      "war_related": false,
+      "confidence": "medium",
+      "posted_at": "2026-05-10T12:13:56.000Z"
+    }
+  ]
+}

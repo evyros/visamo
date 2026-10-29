@@ -46,17 +46,25 @@ export function StageBars({
   rtl: boolean;
   labels: { info: string; typical: string; usual: string; axis: string };
 }) {
+  /** The stage whose numbers are open, and the one whose description is. */
   const [active, setActive] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
+  /** When a pointer last went down on a stage: the focus a tap or click brings isn't the keyboard's. */
+  const pressed = useRef(0);
   const root = useRef<HTMLDivElement>(null);
 
-  // An open stage closes on Escape, or a tap anywhere else.
+  // An open stage closes on Escape or a tap anywhere else; an open description on a tap anywhere but its button.
   useEffect(() => {
-    if (!active) return;
+    if (!active && !info) return;
     const outside = (event: PointerEvent) => {
-      if (!root.current?.contains(event.target as Node)) setActive(null);
+      const target = event.target as Element;
+      if (!root.current?.contains(target)) setActive(null);
+      if (!target.closest?.("[data-info]")) setInfo(null);
     };
     const escape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActive(null);
+      if (event.key !== "Escape") return;
+      setActive(null);
+      setInfo(null);
     };
     document.addEventListener("pointerdown", outside);
     document.addEventListener("keydown", escape);
@@ -64,7 +72,7 @@ export function StageBars({
       document.removeEventListener("pointerdown", outside);
       document.removeEventListener("keydown", escape);
     };
-  }, [active]);
+  }, [active, info]);
 
   // The capsules grow in once, from where they start, unless the reader asked for less motion.
   useEffect(() => {
@@ -84,6 +92,7 @@ export function StageBars({
       <ol className="space-y-6">
         {rows.map((row) => {
           const open = active === row.id;
+          const described = info === row.id;
           const tip = `stage-info-${row.id}`;
           const at = row.title.lastIndexOf(" ");
           return (
@@ -95,10 +104,17 @@ export function StageBars({
                     {row.title.slice(0, at + 1)}
                     <span className="whitespace-nowrap">
                       {row.title.slice(at + 1)}
+                      {/* Phones can't hover, and iOS doesn't focus a tapped button, so a tap or click opens it. */}
                       <button
                         type="button"
+                        data-info
                         aria-label={labels.info}
                         aria-describedby={tip}
+                        aria-expanded={described}
+                        onClick={() => {
+                          setInfo(described ? null : row.id);
+                          setActive(null);
+                        }}
                         className="-my-1 ms-0.5 inline-flex size-7 items-center justify-center rounded-full align-middle font-normal text-slate-500 transition-colors hover:bg-sand-50 hover:text-teal-700"
                       >
                         <Icon name="info" className="size-[18px]" />
@@ -108,7 +124,11 @@ export function StageBars({
                   <span
                     id={tip}
                     role="tooltip"
-                    className="pointer-events-none invisible absolute start-0 top-full z-30 mt-1.5 w-max max-w-72 rounded-lg bg-navy-900 px-3 py-2 text-sm leading-6 text-white opacity-0 shadow-soft transition-opacity group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+                    className={`pointer-events-none absolute start-0 top-full z-30 mt-1.5 w-max max-w-72 rounded-lg bg-navy-900 px-3 py-2 text-sm leading-6 text-white shadow-soft transition-opacity ${
+                      described
+                        ? "visible opacity-100"
+                        : "invisible opacity-0 group-hover:visible group-hover:opacity-100 group-has-[:focus-visible]:visible group-has-[:focus-visible]:opacity-100"
+                    }`}
                   >
                     {row.detail}
                   </span>
@@ -122,10 +142,15 @@ export function StageBars({
                 aria-expanded={open}
                 onPointerEnter={(e) => e.pointerType === "mouse" && setActive(row.id)}
                 onPointerLeave={(e) => e.pointerType === "mouse" && setActive(null)}
-                // A tap opens or closes it; a mouse already opened it on the way in.
-                onClick={(e) => (e.nativeEvent as PointerEvent).pointerType !== "mouse" && setActive((a) => (a === row.id ? null : row.id))}
-                // Only from the keyboard: a tap focuses it too, and its click would close it again.
-                onFocus={(e) => e.currentTarget.matches(":focus-visible") && setActive(row.id)}
+                onPointerDown={() => {
+                  pressed.current = Date.now();
+                  setInfo(null);
+                }}
+                // A tap opens or closes it as the finger lifts (a scroll that started on it is cancelled before
+                // then). Not on click: iOS can report a tap's click as a mouse's. A mouse opened it on the way in.
+                onPointerUp={(e) => e.pointerType !== "mouse" && setActive((a) => (a === row.id ? null : row.id))}
+                // From the keyboard only: the focus that comes with a tap or a click isn't a reason to open.
+                onFocus={() => Date.now() - pressed.current > 1000 && setActive(row.id)}
                 onBlur={() => setActive(null)}
                 className="relative mt-1.5 cursor-pointer rounded-full py-1.5 outline-offset-2 [-webkit-tap-highlight-color:transparent]"
               >

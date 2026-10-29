@@ -69,6 +69,27 @@ export const branchesEn: BranchesTexts = {
     search: { label: "Find a branch", placeholder: "City or street", empty: "No branch matches “{query}”.", clear: "Clear" },
     all: "All",
   },
+  faq: {
+    title: "Questions couples ask",
+    stages: {
+      firstAnswer: {
+        q: "How long does Misrad Hapnim take to give a first answer?",
+        a: "The typical wait is {value} after filing online, until a request for documents or an appointment. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is: toward the short end at a less busy branch, toward the long end at a busier one.",
+      },
+      entryPermit: {
+        q: "How long does the entry permit take?",
+        a: "The typical wait is {value} after filing online, for a partner who's abroad. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is: toward the short end at a less busy branch, toward the long end at a busier one.",
+      },
+      b1Visa: {
+        q: "How long until the B/1 visa?",
+        a: "The typical wait is {value} after filing online. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is: toward the short end at a less busy branch, toward the long end at a busier one.",
+      },
+    },
+    official: {
+      q: "Are these official numbers?",
+      a: "No. They're counted from couples' reports, not taken from Misrad Hapnim. People share more when something goes wrong, so the numbers lean negative: read them as a comparison between branches.",
+    },
+  },
   method: {
     title: "How we counted",
     items: [

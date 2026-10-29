@@ -237,8 +237,8 @@ export function processLandingStructuredData({
 /**
  * JSON-LD for the branches page (/branches): its numbers as a Dataset, for
  * Google's Dataset Search and for AI tools reading the page: what's measured,
- * over which months and where, how it was counted, and each stage's wait. The
- * URL is absolute.
+ * over which months and where, how it was counted, and each stage's wait; and
+ * its questions and answers. The URL is absolute.
  */
 export function branchesStructuredData({
   title,
@@ -247,6 +247,7 @@ export function branchesStructuredData({
   temporalCoverage,
   measurementTechnique,
   variables,
+  faq,
   inLanguage,
 }: {
   title: string;
@@ -257,9 +258,10 @@ export function branchesStructuredData({
   measurementTechnique: string;
   /** What the page shows: a stage's wait carries its typical days. */
   variables: { name: string; description: string; days?: number }[];
+  faq: { q: string; a: string }[];
   inLanguage: string;
 }) {
-  return {
+  const dataset = {
     "@context": "https://schema.org",
     "@type": "Dataset",
     "@id": url,
@@ -279,6 +281,19 @@ export function branchesStructuredData({
       ...(v.days !== undefined && { value: v.days, unitText: "days" }),
     })),
   };
+  return [
+    dataset,
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage,
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
+  ];
 }
 
 /**

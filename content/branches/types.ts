@@ -89,6 +89,11 @@ export type BranchesTexts = {
     search: { label: string; placeholder: string; empty: string; clear: string };
     all: string;
   };
+  /**
+   * Questions people search for, answered from the page's own numbers: in a stage's answer, "{value}", "{range}" and
+   * "{count}" are the chart's (about 2 months, 4 weeks to 3 months, 21 waits reported). About the numbers only, no advice.
+   */
+  faq: { title: string; stages: Record<StageId, { q: string; a: string }>; official: { q: string; a: string } };
   method: { title: string; items: { title: string; body: string }[] };
   /** The invitation to vote, under the title. The button's words also name the survey page in its breadcrumb. */
   share: { eyebrow: string; title: string; body: string; button: string };

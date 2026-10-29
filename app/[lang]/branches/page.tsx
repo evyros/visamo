@@ -10,6 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { localePath, signupUrl, site } from "@/lib/site";
 import { branchesStructuredData, jsonLd } from "@/lib/structured-data";
 import { BranchList, type BranchListItem } from "@/components/branch-list";
+import { FaqList } from "@/components/faq-list";
 import { BusyGauge, BusyLevel, SentimentBar, SentimentLegend, StageChart, plural, stageWords } from "@/components/branch-stats";
 import { Icon } from "@/components/icons";
 import { ButtonLink, Container } from "@/components/ui";
@@ -49,8 +50,17 @@ export default async function BranchesPage() {
   const posted = months(stats.posted.from, stats.posted.to, locale);
   const basis = format(texts.basis, { couples: stats.couples.toLocaleString(intl), ...posted });
 
-  // The numbers as a Dataset, in the words the page shows them, without the
-  // marks that keep a range's digits in order in Hebrew.
+  // The questions people search for, each stage's answered from its live numbers.
+  const faq = [
+    ...stats.stages.map((s) => {
+      const w = stageWords(s, texts, locale);
+      return { q: texts.faq.stages[s.id].q, a: format(texts.faq.stages[s.id].a, { value: w.value, range: w.range, count: w.count }) };
+    }),
+    texts.faq.official,
+  ];
+
+  // The numbers as a Dataset, and the questions, in the words the page shows
+  // them, without the marks that keep a range's digits in order in Hebrew.
   const plain = (text: string) => text.replace(/[\u2066-\u2069]/g, "");
   const structuredData = branchesStructuredData({
     title: texts.title,
@@ -71,6 +81,7 @@ export default async function BranchesPage() {
       { name: texts.levels.title, description: texts.levels.intro },
       { name: texts.sentiment.title, description: Object.values(texts.sentiment.items).join(" / ") },
     ],
+    faq: faq.map((item) => ({ q: item.q, a: plain(item.a) })),
     inLanguage: locale,
   });
 
@@ -151,6 +162,15 @@ export default async function BranchesPage() {
                 levels: Object.fromEntries(levels.map((l) => [l, texts.levels.items[l].label])) as Record<BranchLoad, string>,
               }}
             />
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-12 sm:pb-16">
+        <Container>
+          <h2 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">{texts.faq.title}</h2>
+          <div className="mt-6 max-w-3xl">
+            <FaqList items={faq} locale={locale} />
           </div>
         </Container>
       </section>

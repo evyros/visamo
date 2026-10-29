@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27901983349453961",
+  "extracted_at": "2026-10-29T19:04:52.759Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27901983349453961"
+      ],
+      "author_id": "100001091787763",
+      "firsthand": "firsthand",
+      "branch": "hadera",
+      "branch_text": "Hadera Branch",
+      "stage": "b1Visa",
+      "filed": "2025-03",
+      "reached": "2025-08",
+      "days": 150,
+      "ongoing": false,
+      "when": "2025-08",
+      "war_related": false,
+      "text": "started the process March 2025 and got my b1 august 2025- Hadera Branch"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27801994146119549",
+  "extracted_at": "2026-10-29T19:03:51.168Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27831630763155887"
+      ],
+      "author_id": "1092596056",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "b1Visa",
+      "filed": null,
+      "reached": null,
+      "days": 150,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "you apply online and you can wait between 2 to 6+ months to have the appointment and the working visa. In the meantime you are not authorized to work at all and to leave the country. On my case, it took me 5 months to have the B1"
+    }
+  ]
+}

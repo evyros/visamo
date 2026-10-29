@@ -24,6 +24,7 @@ import type { LetterVia } from "../letters/tracking";
 import type { PaymentMethod, ProductId } from "../products";
 import type { StageDates } from "../stages";
 import type { AccessDuration, AccessReason } from "../support-access-options";
+import type { BranchReportSource, ReportExperience, SurveyVoteStatus } from "../branch-report-options";
 
 // Better Auth's core tables (user, session, account, verification), plus the
 // user's app language and the two-factor plugin's tables. Field names match
@@ -788,5 +789,86 @@ export const letterEvent = pgTable(
   (table) => [
     index("letter_event_request_id_idx").on(table.requestId, table.createdAt),
     uniqueIndex("letter_event_key_idx").on(table.requestId, table.key),
+  ],
+);
+
+/**
+ * What couples reported about a Misrad Hapnim branch, from every source, for
+ * the branches page (/branches, lib/branch-reports.ts): one row per
+ * report, a Facebook post or comment, or a survey vote. Each of the page's
+ * stages, all from filing online, is a pair of columns: its wait in days,
+ * and whether they're still waiting (the days are then the time so far). The imported sources were
+ * seeded once from the research data (collect/experiences/import.mjs) and
+ * hold no names, text or links. A survey row counts once its vote is
+ * verified, and an email's newer vote for the same branch wins.
+ */
+export const branchReport = pgTable(
+  "branch_report",
+  {
+    id: text("id").primaryKey(),
+    source: text("source").notNull().$type<BranchReportSource>(),
+    /** One couple across their reports, so each counts once: "facebook:<author id>", or "survey:<email>". */
+    coupleKey: text("couple_key").notNull(),
+    /** A BranchCode from lib/case-options.ts; null when the report named no branch. */
+    branch: text("branch"),
+    /** How they felt dealing with the office; null when they didn't say, or weren't the ones who went. */
+    experience: text("experience").$type<ReportExperience>(),
+    /** When it happened, YYYY-MM (or YYYY when only the year is known). */
+    experienceMonth: text("experience_month"),
+    /** When it was reported: the post's date, or the vote's. */
+    reportedAt: timestamp("reported_at").notNull(),
+    /** Caused by the war: left out of the numbers. */
+    warRelated: boolean("war_related").notNull().default(false),
+    /** Filing → the first answer. */
+    firstAnswerDays: integer("first_answer_days"),
+    firstAnswerWaiting: boolean("first_answer_waiting").notNull().default(false),
+    /** Filing → the entry permit, for a partner abroad. */
+    entryPermitDays: integer("entry_permit_days"),
+    entryPermitWaiting: boolean("entry_permit_waiting").notNull().default(false),
+    /** Filing → the first B/1 visa. */
+    b1VisaDays: integer("b1_visa_days"),
+    b1VisaWaiting: boolean("b1_visa_waiting").notNull().default(false),
+    /** For a survey row, its vote. */
+    voteId: text("vote_id").references(() => surveyVote.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (table) => [
+    index("branch_report_branch_idx").on(table.branch),
+    index("branch_report_source_idx").on(table.source),
+    uniqueIndex("branch_report_vote_idx").on(table.voteId),
+  ],
+);
+
+/**
+ * A vote on the branches survey (/branches/survey): who voted, and the
+ * code that verifies it. Its answers are a branchReport row, counted once the
+ * code is entered. For the same branch, an email's newer verified vote
+ * replaces the older one (lib/branch-reports.ts).
+ */
+export const surveyVote = pgTable(
+  "survey_vote",
+  {
+    id: text("id").primaryKey(),
+    /** Lowercased. */
+    email: text("email").notNull(),
+    locale: text("locale").notNull(),
+    branch: text("branch").notNull(),
+    /** Anything they wanted to add: read in the admin panel, never published. */
+    comment: text("comment"),
+    status: text("status").notNull().default("pending").$type<SurveyVoteStatus>(),
+    /** HMAC of the 6-digit code with the server's secret; cleared once verified. */
+    codeHash: text("code_hash"),
+    codeExpiresAt: timestamp("code_expires_at"),
+    /** Codes tried, and codes sent (the first included), for the caps. */
+    attempts: integer("attempts").notNull().default(0),
+    codesSent: integer("codes_sent").notNull().default(1),
+    /** HMAC of the voter's IP with the server's secret, for the daily cap per IP; never the IP itself. */
+    ipHash: text("ip_hash"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    verifiedAt: timestamp("verified_at"),
+  },
+  (table) => [
+    index("survey_vote_email_idx").on(table.email, table.createdAt),
+    index("survey_vote_ip_idx").on(table.ipHash, table.createdAt),
   ],
 );

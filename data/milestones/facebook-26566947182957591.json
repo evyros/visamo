@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "26566947182957591",
+  "extracted_at": "2026-10-29T19:07:10.066Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "26566947182957591"
+      ],
+      "author_id": "100090401027718",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "b1Visa",
+      "filed": "2025-06-01",
+      "reached": "2026-01-15",
+      "days": 228,
+      "ongoing": false,
+      "when": "2026-01",
+      "war_related": false,
+      "text": "בעלי קיבל ויזה ב1 בינואר 15 ... הגשת הבקשה הראשונית הייתה בחודש 1/6/2025"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27832686426383654",
+  "extracted_at": "2026-10-29T19:06:49.247Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27832686426383654"
+      ],
+      "author_id": "61571925855735",
+      "firsthand": "firsthand",
+      "branch": "herzliya",
+      "branch_text": "Herzliya branch",
+      "stage": "b1Visa",
+      "filed": "2025-10",
+      "reached": null,
+      "days": 270,
+      "ongoing": true,
+      "when": "2026-07",
+      "war_related": false,
+      "text": "I had applied for family Reunification in october 2025 and since then I am in tourist visas."
+    }
+  ]
+}

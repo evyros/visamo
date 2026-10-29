@@ -1,0 +1,75 @@
+{
+  "source": "facebook",
+  "thread_id": "28830512216601065",
+  "extracted_at": "2026-10-29T19:08:44.710Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28831643546487932"
+      ],
+      "author_id": "1403787395",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 90,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "מרגע שהגשנו עד הרגע שהוא יכל להיכנס לארץ לקח שלושה חודשים."
+    },
+    {
+      "source_ids": [
+        "28840658802253073"
+      ],
+      "author_id": "1080101086",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 180,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "we had submitted the docs some time October, got an appointment for January and the entry approval was issued in April"
+    },
+    {
+      "source_ids": [
+        "28832289693089984"
+      ],
+      "author_id": "100000063463614",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 540,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "I couldn't go to Israel for a year and a half since the application was submitted bc this was how long it took them to process the application"
+    },
+    {
+      "source_ids": [
+        "28841749625477324"
+      ],
+      "author_id": "1396466166",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "b1Visa",
+      "filed": null,
+      "reached": null,
+      "days": 360,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "מהרגע שהתחלנו את התהליך , כמעט שנה עד לויזה הראשונה שקיבלה"
+    }
+  ]
+}

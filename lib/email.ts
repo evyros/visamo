@@ -103,6 +103,12 @@ export async function sendLoginCode({ to, code, locale }: { to: string; code: st
   await sendEmail({ to, code, locale, copy });
 }
 
+/** The code that makes a branches survey vote count (lib/branch-reports.ts), and a link that enters it. */
+export async function sendSurveyCode({ to, code, url, locale }: { to: string; code: string; url: string; locale: Locale }) {
+  const copy = (await loadMessages(locale)).app.email.surveyCode;
+  await sendEmail({ to, code, url, locale, copy });
+}
+
 /** Invites a partner into the file. `inviter` is the inviting partner's name. */
 export async function sendInviteEmail({
   to,

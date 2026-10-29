@@ -8,6 +8,7 @@ export const adminSections: NavItem[] = [
   { href: "/users", label: "Users", icon: "people" },
   { href: "/dismissals", label: "Dismissed", icon: "alertCircle" },
   { href: "/letters", label: "Letters", icon: "mail" },
+  { href: "/survey", label: "Survey", icon: "checkCircle" },
 ];
 
 /** The admin panel's top bar, laid out like the app's (components/app/app-header.tsx). */

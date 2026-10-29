@@ -1,0 +1,26 @@
+{
+  "source": "facebook",
+  "thread_id": "27613277271657905",
+  "extracted_at": "2026-10-29T19:05:48.310Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27613277271657905",
+        "27613523738299925",
+        "27613562624962703"
+      ],
+      "author_id": "61570906136180",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": "moving from Rehovot to beer sheva",
+      "stage": "b1Visa",
+      "filed": "2026-05",
+      "reached": null,
+      "days": 90,
+      "ongoing": true,
+      "when": "2026-07",
+      "war_related": false,
+      "text": "we submitted application to MH in May ... our file was already in system for 3 months ... It's for appointment to my b1 visa"
+    }
+  ]
+}

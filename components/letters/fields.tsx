@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
+import { Icon } from "../icons";
 
 // Form pieces shared by the recommendation letter forms: the couple's
 // (request-form.tsx) and the friend's (letter-writer.tsx). They match the
@@ -10,6 +11,21 @@ export const inputBase =
 
 /** A field under its label. */
 export const inputClass = `mt-1.5 ${inputBase}`;
+
+/**
+ * A native select with its own chevron, inset from the edge like the text: the browser's own sits against the border.
+ * `className` goes on its wrapper, for spacing.
+ */
+export function Select({ className = "", children, ...props }: ComponentProps<"select">) {
+  return (
+    <div className={`relative ${className}`}>
+      <select className={`${inputBase} appearance-none pe-11`} {...props}>
+        {children}
+      </select>
+      <Icon name="chevronDown" className="pointer-events-none absolute end-3.5 top-1/2 size-5 -translate-y-1/2 text-slate-500" />
+    </div>
+  );
+}
 
 export const primaryButton =
   "inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-teal-600 px-6 font-semibold text-white shadow-soft transition-colors hover:bg-teal-700 disabled:opacity-70";

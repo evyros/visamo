@@ -1,0 +1,26 @@
+{
+  "source": "facebook",
+  "thread_id": "28501126292872994",
+  "extracted_at": "2026-10-29T19:04:14.065Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28511999171785706",
+        "28508892275429729",
+        "28502538269398463"
+      ],
+      "author_id": "100000364609558",
+      "firsthand": "firsthand",
+      "branch": "hadera",
+      "branch_text": "MH Hadera",
+      "stage": "b1Visa",
+      "filed": "2026-03",
+      "reached": null,
+      "days": 180,
+      "ongoing": true,
+      "when": "2026-09",
+      "war_related": false,
+      "text": "We applied in March and the appointment is in October."
+    }
+  ]
+}

@@ -88,6 +88,7 @@
       "guides": "Guides",
       "process": "Partner visa, step by step",
       "glossary": "Glossary",
+      "branches": "Misrad Hapnim branches",
       "letters": "Recommendation letters",
       "pricing": "Pricing"
     },
@@ -1592,6 +1593,13 @@
         "heading": "Your login code",
         "body": "Enter this code on the login page to finish logging in. It's valid for 10 minutes.",
         "ignore": "If you didn't just log in, someone may know your password. Change it in Settings, or reset it from the login page."
+      },
+      "surveyCode": {
+        "subject": "Your code to verify your branch vote",
+        "heading": "Verify your vote",
+        "body": "Enter this code on the survey page to make your vote count, or use the button. It's valid for 30 minutes.",
+        "button": "Verify my vote",
+        "ignore": "If you didn't vote on Visamo's branch survey, you can ignore this email. Nothing will be counted."
       },
       "invite": {
         "subject": "{name} invited you to your file on Visamo",

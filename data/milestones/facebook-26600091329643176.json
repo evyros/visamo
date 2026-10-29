@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "26600091329643176",
+  "extracted_at": "2026-10-29T19:04:23.079Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "26602927139359595"
+      ],
+      "author_id": "1242948976",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 42,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "לנו לא היה ראיון, אחרי בערך שישה שבועות הוא קיבל הזמנה לבוא לישראל"
+    }
+  ]
+}

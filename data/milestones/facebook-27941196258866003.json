@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27941196258866003",
+  "extracted_at": "2026-10-29T19:05:36.999Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27941976198788009"
+      ],
+      "author_id": "677194128",
+      "firsthand": "firsthand",
+      "branch": "tel-aviv",
+      "branch_text": "TLV branch",
+      "stage": "b1Visa",
+      "filed": "2026-06-26",
+      "reached": "2026-07-27",
+      "days": 31,
+      "ongoing": false,
+      "when": "2026-07",
+      "war_related": false,
+      "text": "We submitted our documents online on June 26, heard back via email for a few additional documents on July 17 and were scheduled to turn in our physical documents on July 27 and we received my B1 at that appointment"
+    }
+  ]
+}

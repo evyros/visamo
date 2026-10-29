@@ -1,0 +1,25 @@
+{
+  "source": "facebook",
+  "thread_id": "27111353538516950",
+  "extracted_at": "2026-10-29T19:06:52.258Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27111353538516950",
+        "27157961240522846"
+      ],
+      "author_id": "1219601579",
+      "firsthand": "firsthand",
+      "branch": "kfar-saba",
+      "branch_text": "Misrad Hapnim Kfar Saba",
+      "stage": "entryPermit",
+      "filed": "2026-02",
+      "reached": "2026-05",
+      "days": 90,
+      "ongoing": false,
+      "when": "2026-05",
+      "war_related": false,
+      "text": "We submitted the online application in February at Misrad Hapnim Kfar Saba and completed documents in March."
+    }
+  ]
+}

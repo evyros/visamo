@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27246704751648494",
+  "extracted_at": "2026-10-29T19:06:49.586Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27246704751648494"
+      ],
+      "author_id": "1102737945",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "b1Visa",
+      "filed": "2026-05",
+      "reached": null,
+      "days": 30,
+      "ongoing": true,
+      "when": "2026-06",
+      "war_related": false,
+      "text": "we applied online for partner visa last month"
+    }
+  ]
+}

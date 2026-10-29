@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27980649874920641",
+  "extracted_at": "2026-10-29T19:04:07.974Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27982835464702082"
+      ],
+      "author_id": "100004702981993",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": "2025-09",
+      "reached": null,
+      "days": 330,
+      "ongoing": true,
+      "when": "2026-08",
+      "war_related": false,
+      "text": "My israeli partner and I have applied in September last year, got a request to hand in the paperwork physically in December, but got delayed by some expired document and a missed e-mail. I have not been able to visit him in Israel since we applied"
+    }
+  ]
+}

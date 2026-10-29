@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27744451368540494",
+  "extracted_at": "2026-10-29T19:06:18.835Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27744451368540494"
+      ],
+      "author_id": "100021790041498",
+      "firsthand": "firsthand",
+      "branch": "petah-tikva",
+      "branch_text": "Petah Tikva Branch",
+      "stage": "b1Visa",
+      "filed": "2025-10",
+      "reached": "2026-07",
+      "days": 270,
+      "ongoing": false,
+      "when": "2026-07",
+      "war_related": true,
+      "text": "We submitted our documents in October 2025."
+    }
+  ]
+}

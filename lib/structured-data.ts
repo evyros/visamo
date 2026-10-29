@@ -235,6 +235,53 @@ export function processLandingStructuredData({
 }
 
 /**
+ * JSON-LD for the branches page (/branches): its numbers as a Dataset, for
+ * Google's Dataset Search and for AI tools reading the page: what's measured,
+ * over which months and where, how it was counted, and each stage's wait. The
+ * URL is absolute.
+ */
+export function branchesStructuredData({
+  title,
+  description,
+  url,
+  temporalCoverage,
+  measurementTechnique,
+  variables,
+  inLanguage,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  /** The months the reports span, as an ISO 8601 interval: "2025-09/2026-10". */
+  temporalCoverage: string;
+  measurementTechnique: string;
+  /** What the page shows: a stage's wait carries its typical days. */
+  variables: { name: string; description: string; days?: number }[];
+  inLanguage: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": url,
+    name: title,
+    description,
+    url,
+    inLanguage,
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name, url: site.url },
+    temporalCoverage,
+    spatialCoverage: { "@type": "Place", name: "Israel" },
+    measurementTechnique,
+    variableMeasured: variables.map((v) => ({
+      "@type": "PropertyValue",
+      name: v.name,
+      description: v.description,
+      ...(v.days !== undefined && { value: v.days, unitText: "days" }),
+    })),
+  };
+}
+
+/**
  * JSON-LD for the glossary (content/glossary): its terms, each with its
  * anchor on the page, and where it sits on the site. The URLs are absolute.
  */

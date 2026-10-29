@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27768086276177003",
+  "extracted_at": "2026-10-29T19:06:49.783Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27768086276177003"
+      ],
+      "author_id": "100003063460804",
+      "firsthand": "firsthand",
+      "branch": "netanya",
+      "branch_text": "MH Netanya branch",
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": "2026-07",
+      "days": 365,
+      "ongoing": false,
+      "when": "2026-07",
+      "war_related": false,
+      "text": "אחרי שנה בערך מתחילת התהליך, סוף סוף קיבלנו מייל שהיא מאושרת להיכנס לארץ"
+    }
+  ]
+}

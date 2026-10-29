@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "28899395689712717",
+  "extracted_at": "2026-10-29T19:07:10.961Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28899395689712717"
+      ],
+      "author_id": "100000672241784",
+      "firsthand": "firsthand",
+      "branch": "beer-sheva",
+      "branch_text": "Be’er Sheva",
+      "stage": "entryPermit",
+      "filed": "2026-06",
+      "reached": null,
+      "days": 135,
+      "ongoing": true,
+      "when": "2026-10",
+      "war_related": false,
+      "text": "My partner is currently in her home country of South Korea waiting for an entry permit. She was previously in Israel on a B1 work visa, switched to a B2 when her contract ended, and left in early September before it expired. We applied in early June 2026"
+    }
+  ]
+}

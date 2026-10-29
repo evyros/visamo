@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "28661101430208812",
+  "extracted_at": "2026-10-29T19:06:21.585Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28666328589686096"
+      ],
+      "author_id": "654616356",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 150,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "a few years ago I had to wait 5 months to get invited"
+    }
+  ]
+}

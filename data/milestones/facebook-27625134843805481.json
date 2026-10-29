@@ -1,0 +1,24 @@
+{
+  "source": "facebook",
+  "thread_id": "27625134843805481",
+  "extracted_at": "2026-10-29T19:06:52.346Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "27625134843805481"
+      ],
+      "author_id": "100007955349616",
+      "firsthand": "firsthand",
+      "branch": "tel-aviv",
+      "branch_text": "TLV BRANCH",
+      "stage": "b1Visa",
+      "filed": "2024-12-25",
+      "reached": "2025-07-26",
+      "days": 213,
+      "ongoing": false,
+      "when": "2025-07",
+      "war_related": false,
+      "text": "December 25, 2024 - we completed the documents and submit to misrad thru online (TLV BRANCH) July 26, 2025 - they call us to come to the office and suddenly no interview at all they just give my b1 unrestricted to my passport"
+    }
+  ]
+}

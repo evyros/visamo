@@ -1,0 +1,44 @@
+{
+  "source": "facebook",
+  "thread_id": "28361729713479320",
+  "extracted_at": "2026-10-29T19:04:52.796Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28361729713479320",
+        "28362642290054729",
+        "28432946623024295"
+      ],
+      "author_id": "100004702981993",
+      "firsthand": "firsthand",
+      "branch": "rehovot",
+      "branch_text": "Our Piba branch is at Rehovot",
+      "stage": "entryPermit",
+      "filed": "2025-09-09",
+      "reached": "2026-09-08",
+      "days": 364,
+      "ongoing": false,
+      "when": "2026-09",
+      "war_related": false,
+      "text": "almost exactly a year ago we did the online application, at 09/09/2025. But, we had multiple challenges along the way"
+    },
+    {
+      "source_ids": [
+        "28385323554453269",
+        "28399675699684721"
+      ],
+      "author_id": "100081103516294",
+      "firsthand": "firsthand",
+      "branch": null,
+      "branch_text": null,
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 300,
+      "ongoing": false,
+      "when": "2026",
+      "war_related": false,
+      "text": "I had to wait outside of Israel for 10 months. After they reviewed my partner visa application I was invited into the country"
+    }
+  ]
+}

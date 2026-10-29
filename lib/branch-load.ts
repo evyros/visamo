@@ -9,9 +9,9 @@ import type { BranchCode } from "./case-options";
 // (collect/experiences: the busy index in aggregate.mjs, which weighs reports
 // of overload and the waits couples gave against the national figures), with
 // the product owner's placements where reports were few or none, or ran
-// against what's known in practice.
+// against what's known in practice. "unknown" where there's too little to tell.
 
-export type BranchLoad = "lessBusy" | "typical" | "busier";
+export type BranchLoad = "lessBusy" | "typical" | "busier" | "unknown";
 
 export const branchLoad: Record<BranchCode, BranchLoad> = {
   telAvivCenter: "busier",
@@ -20,7 +20,7 @@ export const branchLoad: Record<BranchCode, BranchLoad> = {
   jerusalemSouth: "lessBusy",
   eilat: "typical",
   ashdod: "typical",
-  ashkelon: "lessBusy",
+  ashkelon: "typical",
   beersheba: "typical",
   bneiBrak: "typical",
   ramatGanGivatayim: "busier",
@@ -28,18 +28,18 @@ export const branchLoad: Record<BranchCode, BranchLoad> = {
   holon: "lessBusy",
   hadera: "busier",
   haifa: "lessBusy",
-  afula: "lessBusy",
-  tiberias: "lessBusy",
+  afula: "unknown",
+  tiberias: "unknown",
   kfarSaba: "typical",
   nofHagalilNazareth: "lessBusy",
   netanya: "lessBusy",
-  acre: "lessBusy",
+  acre: "unknown",
   petahTikva: "typical",
-  safed: "lessBusy",
+  safed: "unknown",
   krayot: "typical",
   roshHaayin: "lessBusy",
-  rishonLezion: "lessBusy",
-  ramla: "lessBusy",
+  rishonLezion: "unknown",
+  ramla: "unknown",
   rehovot: "busier",
 };
 
@@ -48,4 +48,5 @@ export const branchLoadText: Record<BranchLoad, string> = {
   lessBusy: "less busy than most branches: expect their waits toward the short end of the usual ranges",
   typical: "about as busy as most branches: expect their waits around the usual figures",
   busier: "busier than most branches: expect their waits toward the long end of the usual ranges",
+  unknown: "not known: too few reports from their branch to tell, so go by the usual ranges",
 };

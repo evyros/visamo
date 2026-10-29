@@ -1,0 +1,43 @@
+{
+  "source": "facebook",
+  "thread_id": "28585560401096249",
+  "extracted_at": "2026-10-29T19:06:28.944Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28585560401096249",
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "firsthand": "firsthand",
+      "branch": "hadera",
+      "branch_text": "hadera",
+      "stage": "entryPermit",
+      "filed": "2025-12",
+      "reached": "2026-08",
+      "days": 240,
+      "ongoing": false,
+      "when": "2026-08",
+      "war_related": false,
+      "text": "הגשתי מקוון בדצמבר ... ואחרי עוד חודשיים וחצי היא קיבלה אישור להיכנס"
+    },
+    {
+      "source_ids": [
+        "28585560401096249",
+        "28591209990531290"
+      ],
+      "author_id": "100001584661984",
+      "firsthand": "firsthand",
+      "branch": "hadera",
+      "branch_text": "hadera",
+      "stage": "b1Visa",
+      "filed": "2025-12",
+      "reached": "2026-09",
+      "days": 270,
+      "ongoing": false,
+      "when": "2026-09",
+      "war_related": false,
+      "text": "הגשתי מקוון בדצמבר ... ואז קיבלנו ב1 לחצי שנה"
+    }
+  ]
+}

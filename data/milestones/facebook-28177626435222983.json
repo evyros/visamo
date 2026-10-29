@@ -1,0 +1,25 @@
+{
+  "source": "facebook",
+  "thread_id": "28177626435222983",
+  "extracted_at": "2026-10-29T19:04:07.875Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28177626435222983",
+        "28180284704957156"
+      ],
+      "author_id": "1652453048",
+      "firsthand": "firsthand",
+      "branch": "tel-aviv",
+      "branch_text": "Tel Aviv",
+      "stage": "entryPermit",
+      "filed": "2026-03",
+      "reached": null,
+      "days": 150,
+      "ongoing": true,
+      "when": "2026-08",
+      "war_related": true,
+      "text": "We made the inital online B1 application in March 2026, under the Tel Aviv branch. He is in Israel, I am out of Israel. We have heard nothing since we made our application. 5 months now."
+    }
+  ]
+}

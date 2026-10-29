@@ -1,0 +1,43 @@
+{
+  "source": "facebook",
+  "thread_id": "28951561361162816",
+  "extracted_at": "2026-10-29T19:06:09.795Z",
+  "milestones": [
+    {
+      "source_ids": [
+        "28957343753917910",
+        "28952371897748429"
+      ],
+      "author_id": "569208535",
+      "firsthand": "firsthand",
+      "branch": "beer-sheva",
+      "branch_text": "Beer sheva",
+      "stage": "entryPermit",
+      "filed": null,
+      "reached": null,
+      "days": 30,
+      "ongoing": false,
+      "when": null,
+      "war_related": false,
+      "text": "We started the proces abroad to get my husband invitation to enter Israel... It took us about a month to get the invetation, after we chased them everyday."
+    },
+    {
+      "source_ids": [
+        "28951561361162816",
+        "28952371897748429"
+      ],
+      "author_id": "569208535",
+      "firsthand": "firsthand",
+      "branch": "beer-sheva",
+      "branch_text": "Beer sheva",
+      "stage": "b1Visa",
+      "filed": "2026-10",
+      "reached": null,
+      "days": 7,
+      "ongoing": true,
+      "when": "2026-10",
+      "war_related": false,
+      "text": "I submitted the online application and paid the fees about a week ago. How long does it take to get an appointment and for my husband to get the first B1?"
+    }
+  ]
+}

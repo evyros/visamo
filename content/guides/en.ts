@@ -59,7 +59,7 @@ export const guidesEn: Guides = {
                 ],
               },
             },
-            "Before any of this comes the wait for an answer to your application. It takes between a few weeks and a few months, depending on the [Misrad Hapnim](/guide/glossary#misrad-hapnim) branch, and the appointment it gives may be months later. [How long each stage takes](guide:partner-visa-timeline)",
+            "Before any of this comes the wait for an answer to your application. It takes between a few weeks and a few months, depending on the [Misrad Hapnim](/guide/glossary#misrad-hapnim) branch, and the appointment it gives may be months later. See [how long each stage takes](guide:partner-visa-timeline).",
             "If you marry during the process, you move to the married track.",
           ],
         },
@@ -542,7 +542,7 @@ export const guidesEn: Guides = {
           id: "first-answer",
           heading: "From filing to the first appointment",
           body: [
-            "Misrad Hapnim has no deadline for answering. The first answer usually takes a few weeks to a few months, depending on the branch, and the appointment it gives may be months later.",
+            "Misrad Hapnim has no deadline for answering. The first answer usually takes a few weeks to a few months, depending on the branch, and the appointment it gives may be months later. [How busy each branch is](/branches)",
             "The answer is either a request for more documents, or a first appointment at your branch.",
             {
               note: "No answer after a month? Don't email: go to your branch in person, at the walk-in hours, with both your names, your ID and passport numbers, and the reference number.",
@@ -834,7 +834,7 @@ export const guidesEn: Guides = {
           id: "how-long",
           heading: "How long it takes",
           body: [
-            "It depends on your branch's backlog, how complete your file is, and the foreign partner's country: from a few weeks at the faster branches to a few months at busy ones. It can't be predicted: plan for a few months.",
+            "It depends on your branch's backlog, how complete your file is, and the foreign partner's country: from a few weeks at the faster branches to a few months at busy ones. It can't be predicted: plan for a few months. [How busy each branch is](/branches)",
           ],
         },
         {

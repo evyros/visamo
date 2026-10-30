@@ -78,11 +78,11 @@ export const branchesEn: BranchesTexts = {
       },
       entryPermit: {
         q: "How long does the entry permit take?",
-        a: "The typical wait is {value} after filing online, for a partner who's abroad. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is: toward the short end at a less busy branch, toward the long end at a busier one.",
+        a: "The typical wait is {value} after filing online, for a partner who's abroad. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is. The range is also wide because many couples misunderstand the document requirements or the process, which delays their file.",
       },
       b1Visa: {
         q: "How long until the B/1 visa?",
-        a: "The typical wait is {value} after filing online. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is: toward the short end at a less busy branch, toward the long end at a busier one.",
+        a: "The typical wait is {value} after filing online. Half of couples got it in {range} ({count}). Where you land in that range depends on how busy your branch is. The range is also wide because many couples misunderstand the document requirements or the process, which delays their file.",
       },
     },
     official: {

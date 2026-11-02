@@ -46,7 +46,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: {
         languages: {
           ...Object.fromEntries(liveLocales.map((code) => [code, absolute(code, path)])),
-          "x-default": absolute(defaultLocale, path),
+          // As in lib/metadata.ts: the home page falls back to the bare "/".
+          "x-default": path === "/" ? new URL("/", site.url).toString() : absolute(defaultLocale, path),
         },
       },
     })),

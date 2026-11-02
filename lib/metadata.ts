@@ -27,7 +27,9 @@ export async function pageMetadata({
   const languages: Record<string, string> = Object.fromEntries(
     liveLocales.map((code) => [code, localePath(code, path)]),
   );
-  languages["x-default"] = localePath(defaultLocale, path);
+  // The bare "/" picks a language for the visitor (proxy.ts): Google's suggested
+  // fallback for a home page that redirects by language.
+  languages["x-default"] = path === "/" ? "/" : localePath(defaultLocale, path);
 
   return {
     title: absoluteTitle ? { absolute: title } : title,

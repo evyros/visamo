@@ -34,10 +34,9 @@ Israel without a return ticket.
 The foreign partner is flown back, and should be given a paper with the
 decision. They have 30 days to appeal to the Appeals Tribunal (בית הדין
 לעררים), even if they got no paper. The fee is 774 NIS (2026), and the
-appeal needs an affidavit signed before a lawyer: in practice, hire an
-immigration lawyer. The Authority can go on with the removal after you
-appeal, unless the tribunal orders it to stop. You can still start the
-partner process.
+appeal needs an affidavit signed before a lawyer. The Authority can go on
+with the removal after you appeal, unless the tribunal orders it to stop.
+You can still start the partner process.
 
 ## Visiting after a refusal
 

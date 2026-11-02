@@ -2305,7 +2305,7 @@
           },
           "DE": {
             "office": "the citizens' office (Bürgeramt) where they're registered",
-            "details": "An extended registration certificate (erweiterte Meldebescheinigung) that includes the marital status (Familienstand). If they're no longer registered in Germany, get it by post from the office of the last town they were registered in. It's issued in German only."
+            "details": "An extended registration certificate (erweiterte Meldebescheinigung) that includes the marital status (Familienstand). If they're no longer registered in Germany, get it by post from the office of the last town they were registered in: it shows the marital status only as of the day they left, so add an affidavit about their status since then. It's issued in German only."
           },
           "DK": {
             "details": "A certificate of personal data (personattest), which says unwed or married, or a residence certificate (bopælsattest) that shows the civil status (civilstand). Order it in English, with a handwritten signature and the signer's name: a digitally signed one can't get a physical apostille.",

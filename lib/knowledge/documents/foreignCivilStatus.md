@@ -161,9 +161,16 @@ to a centre in person.
 
 An extended registration certificate (erweiterte Meldebescheinigung) that
 includes the marital status (Familienstand), from the citizens' office
-(Bürgeramt) of the town where they're registered. A German who is no longer
-registered in Germany gets it by post from the office of the last town they
-were registered in. It's issued in German only.
+(Bürgeramt) of the town where they're registered. The basic certificate
+doesn't show the marital status: ask for it to be included. It's issued in
+German only.
+
+**After deregistering (Abmeldung):** a German who no longer lives in Germany
+gets it by post from the office of the last town they were registered in. Ask
+for it to include the date they moved out and the address abroad. Germany
+keeps no register of Germans living abroad, so it shows their marital status
+only as of the day they left. Order it now, with a new apostille, and add an
+affidavit about their status since then (see "If you don't have it", below).
 
 ### Hungary
 
@@ -348,13 +355,55 @@ apostille. If you can't get one, use the affidavit (below).
   [certification.md](../certification.md)). By the procedure, the office
   doesn't have to accept an affidavit if the country does issue a document:
   the office knows which countries do.
+- **If the country can only show their status up to a past date:** for
+  example, they deregistered or moved away, and the country's register
+  stopped following their status then. Bring the strongest official document
+  the country issues anyway, even though it shows their status only up to
+  that date. It's still issued in the last 6 months, with a new apostille.
+  Add an affidavit (תצהיר) about their status from that date until now: the
+  document covers the years it can, and the affidavit covers the rest. Here
+  the affidavit adds to the document; it doesn't replace it.
 - **One affidavit for everything:** if the foreign partner can't get one of the
   documents, one affidavit can declare it all: their status now, for a married
-  couple their status before the marriage, and their children, which a
-  married foreign partner declares in an affidavit anyway.
+  couple their status before the marriage, and their children.
+- **Declare the children in it too.** Whenever the foreign partner makes an
+  affidavit about their status, it also lists their children from previous
+  relationships, or states that they have none. A married foreign partner
+  declares their children in an affidavit anyway. A common-law couple doesn't
+  have to bring one, but in practice the office can still ask about children
+  later in the process: in the same affidavit it costs nothing more, and
+  answers that question before it's asked.
 - **If your marriage certificate is from the foreign partner's country** and
   shows their status before the marriage, it can replace the document of their
   status before the marriage.
+
+**The statement.** For a foreign partner who isn't married. Fill in the
+details in square brackets, and leave the signature empty until they're in
+front of the lawyer or notary. Line c is for a country that can only show
+their status up to a past date: leave it out if the country issues nothing.
+Divorced or widowed, replace line b with the date the last marriage ended
+(the divorce decree or death certificate is still a document of its own).
+With children, replace line d with each child: their full name, date of
+birth, and who has guardianship of them. Married, the affidavit about
+children from previous relationships has the statement, and it declares the
+marriage too.
+
+Statement
+
+I the undersigned [Title] [Full Name] holder of [Country] Passport number [Passport Number], have been instructed to tell the entire truth and nothing but the truth and should I fail to do so, will be subject to penalties applicable by law, and hereby declare the following:
+
+a. I was born on [Date of Birth] in [Place of Birth, Country].
+
+b. I have never been married, and I am not married now.
+
+c. On [Date] I moved from [Country] to [Country], and I have lived there since. My civil status until that date is shown in the [Document's Name] issued by [Authority] on [Date of Issue]. Since that date and until today, I have not married anyone, in any country.
+
+d. I don't have any children.
+
+e. I affirm and agree that my statement is made for the process of receiving a visa, from Ministry of Interior of Israel.
+
+____________________      ________________
+Signature                            Date
 
 ## Questions
 
@@ -381,4 +430,14 @@ document of its own. This one shows their status now.
 **Does it need to be issued in the last 6 months even if nothing changed?**
 Yes. The status is checked as of now, so an older document isn't
 accepted, even if it's otherwise correct. The document of the status before
-a marriage is the exception: it shows the status at that time.
+a marriage is the exception: it shows the status at that time. If the
+country can only show the status up to a past date, the document is still
+issued in the last 6 months, and an affidavit covers the time since.
+
+**I left my country years ago, and it can only confirm my status up to then. What do I bring?**
+The strongest document your country issues, issued in the last 6 months
+with a new apostille, even though it shows your status only up to the day
+you left. Add an affidavit about your status from that day until now, which
+also declares your children, or that you have none (see the statement
+above). A German who deregistered gets the extended registration certificate
+from the last town they were registered in (see Germany, above).

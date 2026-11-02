@@ -162,6 +162,54 @@
           "paper original issued for use abroad"
         ]
       }
+    },
+    {
+      "name": "Germany, deregistered in 2022: certificate up to the move, and an affidavit for the years since",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Julia Katharina Hoffmann",
+        "gender": "female",
+        "nationality": "DE",
+        "birthCountry": "DE"
+      },
+      "files": [
+        "germany-deregistered.pdf",
+        "affidavit-julia-since-2022.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad",
+          "apostille or legalization pages are scanned"
+        ]
+      }
+    },
+    {
+      "name": "Germany, deregistered in 2022: certificate up to the move, without an affidavit",
+      "scenario": "commonLawLivingTogether",
+      "foreign": {
+        "name": "Julia Katharina Hoffmann",
+        "gender": "female",
+        "nationality": "DE",
+        "birthCountry": "DE"
+      },
+      "files": [
+        "germany-deregistered.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "up to a past date"
+        ],
+        "mayFlag": [
+          "shows they're single",
+          "paper original issued for use abroad",
+          "apostille or legalization pages are scanned"
+        ]
+      }
     }
   ]
 }

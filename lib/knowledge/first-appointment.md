@@ -135,7 +135,7 @@ practice it doesn't affect their eligibility for the partner visa at all.
   [entry-permit.md](entry-permit.md).
 - **Don't come back before the entry permit.** Until the office grants it,
   the foreign partner shouldn't try to enter Israel again: it's very likely
-  they'll be refused entry and deported.
+  they'll be refused entry and sent back.
 
 By procedure 5.2.0008, if they stay and apply from Israel:
 

@@ -18,6 +18,11 @@ ukraine-no-marriage-record.pdf (a DRACS extract with a Hebrew translation,
 without an apostille), us-no-marriage-record.pdf (a county clerk's
 certification of no marriage record, with an apostille), and an affidavit of no children for each person,
 before a made-up notary in Israel.
+germany-deregistered.pdf is a Berlin Bürgeramt's extended registration
+certificate for someone who deregistered to Israel in 2022, issued in 2026
+with the status as of the move, its apostille and a notary's Hebrew
+translation; affidavit-julia-since-2022.pdf is her affidavit of her status
+since the move and of no children.
 
 The made-up documents are dated August–September 2026, within 6 months of
 the cases' fixed date (2026-10-01). The real file's are older, as they are.

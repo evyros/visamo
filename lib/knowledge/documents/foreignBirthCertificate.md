@@ -123,6 +123,17 @@ Ask the civil registry for a birth certificate "for apostille" (acta de
 nacimiento para apostilla), with a handwritten signature: one from a machine
 or online can't be apostilled. The apostille comes from the same state.
 
+### Peru
+
+A certified copy of the birth record (copia certificada del acta de
+nacimiento), from RENIEC, the national registry (Registro Nacional de
+Identificación y Estado Civil). An older record RENIEC hasn't digitized is
+issued by the municipality where the birth was registered, and a birth
+registered at a Peruvian consulate abroad by the foreign ministry. RENIEC
+also lets you print a copy at home from its website: for use abroad, get it
+at a RENIEC office, on paper, with the registrar's signature. The apostille
+comes from the foreign ministry (Cancillería).
+
 ### Philippines
 
 The birth certificate from the Philippine Statistics Authority (PSA). It's

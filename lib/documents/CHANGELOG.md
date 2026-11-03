@@ -3,6 +3,25 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v43 — 2026-11-03
+
+**What changed:** Peru has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating their new
+guide sections: RENIEC for the birth record and the certificate that no
+marriage is registered, the Poder Judicial's Registro Nacional de Condenas
+for the criminal record, and the apostille from the foreign ministry.
+
+**Why:** Peruvian documents had only the general steps, without their
+offices.
+
+**Source:** gob.pe: RENIEC, "Solicitar copia certificada de acta o partida
+en Reniec" (updated 5 Oct 2026) and "Solicitar Constancia Negativa de
+Inscripción de Nacimiento, Matrimonio y Defunción en Reniec" (updated 3 Oct
+2026); IRCC, "How to get a police certificate – Peru".
+
+**Lists that changed:** none (steps of Peruvian birth certificates, civil
+status and police certificates: their office and apostille authority).
+
 ## v42 — 2026-11-03
 
 **What changed:** Cuba has issuers for `foreignBirthCertificate`,

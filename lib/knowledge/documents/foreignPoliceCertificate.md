@@ -182,6 +182,17 @@ Israel, go through the Mexican embassy. Its apostille is federal, from the
 Ministry of the Interior (SEGOB) in Mexico City, unlike other Mexican
 documents.
 
+### Peru
+
+A certificate of criminal record (certificado de antecedentes penales), from
+the judiciary's National Register of Convictions (Registro Nacional de
+Condenas del Poder Judicial). Get it on paper, at a Poder Judicial office. A
+Peruvian living abroad can ask for it through a Peruvian consulate, or have
+someone in Peru apply for it with their written authorization or a power of
+attorney. The police (PNP) issue a separate certificate of police record
+(certificado de antecedentes policiales), about police records rather than
+convictions. The apostille comes from the foreign ministry (Cancillería).
+
 ### Netherlands
 
 A certificate of conduct (verklaring omtrent gedrag, VOG), from Justis. You

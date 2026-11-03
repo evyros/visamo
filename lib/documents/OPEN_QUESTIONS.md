@@ -88,6 +88,16 @@ shown to users (`lib/knowledge/`).
   Recheck if Cuba joins the Apostille Convention (not on the HCCH table of
   30 June 2026).
 
+- **Peru** (researched November 2026, quickly; `PE` in the issuers).
+  Unknown: whether Misrad Hapnim asks only for the Poder Judicial's
+  criminal record, or also for the police's (antecedentes policiales) or
+  the INPE's (antecedentes judiciales), which IRCC asks foreigners for;
+  whether a criminal record issued online (a digitally signed file) with
+  the foreign ministry's electronic apostille is accepted (1.3.0001 §4.3.3
+  allows a digital police certificate with an electronic apostille);
+  whether RENIEC's copy printed at home can be apostilled; what a
+  divorced or widowed Peruvian shows for their status.
+
 - **Thailand joins the Apostille Convention on 28 February 2027** (accession
   lodged 30 June 2026; Thai MFA notices of 1 and 6 July 2026), unless a
   member state objects before then. Not in the guides yet: they hold no

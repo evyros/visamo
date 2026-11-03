@@ -235,6 +235,16 @@ the civil registry of the state. Say it's for an apostille. Each state sets its
 own requirements, and its validity can be as short as 30 days. The apostille
 comes from the same state.
 
+### Peru
+
+A certificate that no marriage is registered (constancia negativa de
+inscripción de matrimonio), from RENIEC, the national registry: it's what
+Peru issues when a certificate of single status (constancia de soltería) is
+asked for. It covers the records in RENIEC's system. Ask for it at a RENIEC
+office or a MAC center, on paper: it can also be requested online, but then
+it comes by email. The apostille comes from the foreign ministry
+(Cancillería).
+
 ### Netherlands
 
 An extract from the population register (uittreksel BRP) that includes the

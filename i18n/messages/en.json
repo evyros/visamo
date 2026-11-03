@@ -2217,6 +2217,11 @@
             "details": "Ask for a birth certificate \"for apostille\" (acta de nacimiento para apostilla), with a handwritten signature: one printed from a machine or online can't be apostilled.",
             "apostilleBy": "the same state that issued it"
           },
+          "PE": {
+            "office": "RENIEC, Peru's national registry",
+            "details": "A certified copy of the birth record (copia certificada del acta de nacimiento). An older record RENIEC hasn't digitized comes from the municipality where the birth was registered, and a birth registered at a Peruvian consulate from the foreign ministry. For use abroad, get it at a RENIEC office, on paper, with the registrar's signature, not the copy printed at home from its website.",
+            "apostilleBy": "Peru's foreign ministry (Cancillería)"
+          },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
             "details": "The PSA birth certificate, in English. For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way. If some entries are blurred or unreadable, add a copy from the local civil registrar to the request.",
@@ -2379,6 +2384,11 @@
             "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat). Someone who has left the Netherlands gets an extract from the non-residents' register (RNI) instead.",
             "apostilleBy": "any court (rechtbank)",
             "apostilleDetails": "Without an appointment."
+          },
+          "PE": {
+            "office": "RENIEC, Peru's national registry",
+            "details": "A certificate that no marriage is registered (constancia negativa de inscripción de matrimonio): it's what Peru issues for a certificate of single status (constancia de soltería). Ask for it at a RENIEC office or a MAC center, on paper: requested online, it comes by email.",
+            "apostilleBy": "Peru's foreign ministry (Cancillería)"
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
@@ -2558,6 +2568,11 @@
             "office": "Justis",
             "details": "A certificate of conduct (verklaring omtrent gedrag, VOG). Request it yourselves, attaching a printout of the Israeli government's page that shows it's needed.",
             "apostilleBy": "any court (rechtbank)"
+          },
+          "PE": {
+            "office": "the judiciary's National Register of Convictions (Registro Nacional de Condenas)",
+            "details": "A certificate of criminal record (certificado de antecedentes penales), on paper, from a Poder Judicial office. A Peruvian living abroad can ask for it through a Peruvian consulate, or have someone in Peru apply with their written authorization or a power of attorney. The police's certificate of police record (antecedentes policiales) is a separate document.",
+            "apostilleBy": "Peru's foreign ministry (Cancillería)"
           },
           "PH": {
             "office": "the National Bureau of Investigation (NBI)",

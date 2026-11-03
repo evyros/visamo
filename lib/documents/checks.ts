@@ -483,29 +483,6 @@ export const checks = {
       "It is the certified document scanned in full, readable, with the issuing office's seal or signature visible.",
     ],
   },
-  israeliDivorceDecree: {
-    required: [
-      "It is an official proof of divorce: a divorce certificate from an Israeli rabbinical court (תעודת גירושין), a judgment of an Israeli religious court (Sharia or ecclesiastical) or of the family court dissolving the marriage (התרת נישואין), or a divorce decree or certificate from abroad.",
-      "It is final: the document that ends the marriage, not an interim step.",
-      "From abroad: it carries an apostille or consular legalization from the country where the divorce was granted, in the same file. An Israeli one needs no certification.",
-      "From abroad: if it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
-    ],
-    recommended: [
-      "Every page is included, not only the first and the last.",
-      "It is scanned straight and readable in full, with the court's seal or signature visible.",
-    ],
-  },
-  israeliSpouseDeathCertificate: {
-    required: [
-      "It is an official death certificate: from the Israeli Population and Immigration Authority (a digitally signed or manually signed certificate), or from a civil registry abroad.",
-      "From abroad: it carries an apostille or consular legalization from the country that issued it, in the same file. An Israeli one needs no certification.",
-      "From abroad: if it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
-    ],
-    recommended: [
-      "If the Israeli partner was widowed more than once, there's a death certificate for each of those marriages.",
-      "It is the full document, readable, with the issuing office's seal or signature visible.",
-    ],
-  },
   foreignPoliceCertificate: {
     required: [
       "It is an official criminal record certificate (a police certificate, or a certificate of no criminal record) from the national authority of the country this item is for, as in the document's details.",

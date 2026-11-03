@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 43;
+export const CATALOG_VERSION = 44;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -380,26 +380,6 @@ export const documents = [
     source: AS6,
     verified: true,
   },
-  {
-    id: "israeliDivorceDecree",
-    translation: "notarized",
-    owner: "israeli",
-    category: "civilStatus",
-    when: "israeliDivorced",
-    issuedBy: "unknown",
-    source: "Practice: offices ask the Israeli partner for it (product owner)",
-    verified: true,
-  },
-  {
-    id: "israeliSpouseDeathCertificate",
-    translation: "notarized",
-    owner: "israeli",
-    category: "civilStatus",
-    when: "israeliWidowed",
-    issuedBy: "unknown",
-    source: P8,
-    verified: false,
-  },
 
   // ── Criminal record ──
   {
@@ -641,4 +621,7 @@ export const RETIRED_DOCUMENT_IDS: readonly string[] = [
   "statusApplicationCommonLaw",
   // v28: merged into foreignCivilStatus, the nationality's item: its children point.
   "foreignChildrenAffidavit",
+  // v44: Misrad Hapnim sees the Israeli partner's civil status in the population registry.
+  "israeliDivorceDecree",
+  "israeliSpouseDeathCertificate",
 ];

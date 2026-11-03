@@ -1233,7 +1233,7 @@ export const guidesEn: Guides = {
             {
               list: [
                 "**The foreign partner's civil status,** and whether they have children: issued in the last 6 months.",
-                "**A divorce decree, or a previous spouse's death certificate:** for each previous marriage, of either of you.",
+                "**Proof of divorce (a divorce certificate or decree), or a previous spouse's death certificate:** for each of the foreign partner's previous marriages.",
               ],
             },
           ],

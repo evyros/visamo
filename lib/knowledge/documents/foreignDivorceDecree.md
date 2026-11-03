@@ -1,6 +1,6 @@
-# Divorce decree (פסק דין לגירושין)
+# Divorce certificate or decree (תעודת גירושין או פסק דין)
 
-The final divorce decree of each of the foreign partner's previous marriages that ended in divorce.
+The final divorce certificate or decree for each of the foreign partner's previous marriages that ended in divorce.
 
 For each of the foreign partner's previous marriages that ended in divorce:
 the final divorce decree, which shows the divorce is complete and can no

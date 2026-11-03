@@ -3,6 +3,26 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v44 — 2026-11-03
+
+**What changed:** Removed `israeliDivorceDecree` and
+`israeliSpouseDeathCertificate`, and retired their ids. The Israeli
+partner's ID card guide says a divorced or widowed Israeli partner brings no
+divorce or death certificate, and has the registry updated first if it
+doesn't record the divorce or the death.
+
+**Why:** Misrad Hapnim sees the Israeli partner's civil status in the
+population registry. If the registry isn't up to date, updating it is a
+step of its own, before the application and outside the graduated
+procedure.
+
+**Source:** Product decision; AIC's list of documents asks the Israeli
+partner only for the ID card, and its lawyer answers that PIBA has the
+Israeli side's personal status (one caveat: a divorce certificate may be
+asked for).
+
+**Lists that changed:** bothPreviouslyMarried: -israeliSpouseDeathCertificate.
+
 ## v43 — 2026-11-03
 
 **What changed:** Peru has issuers for `foreignBirthCertificate`,

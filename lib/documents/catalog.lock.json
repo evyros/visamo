@@ -1,6 +1,6 @@
 {
-  "version": 43,
-  "fingerprint": "8f9af40aa5fa619bc23ffeb4aa5fc5cac337a2726289a8116bca20f1e3422ff0",
+  "version": 44,
+  "fingerprint": "952ab0f6902497762f843a5e0ffbafd38a92a70bcc5d31a038dd295e69807622",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -388,7 +388,6 @@
       "previousChildrenAffidavit",
       "foreignDivorceDecree",
       "foreignSpouseDeathCertificate",
-      "israeliSpouseDeathCertificate",
       "foreignPoliceCertificate:US",
       "housingContract",
       "utilityBills",

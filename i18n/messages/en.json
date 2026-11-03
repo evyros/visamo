@@ -1751,24 +1751,14 @@
           "description": "The foreign partner's affidavit (תצהיר) about children from before your relationship. It must show:"
         },
         "foreignDivorceDecree": {
-          "title": "Divorce decree",
-          "shortTitle": "Divorce decree",
-          "description": "The final divorce decree of each of the foreign partner's previous marriages that ended in divorce."
+          "title": "Divorce certificate or decree",
+          "shortTitle": "Proof of divorce",
+          "description": "The final divorce certificate or decree for each of the foreign partner's previous marriages that ended in divorce."
         },
         "foreignSpouseDeathCertificate": {
           "title": "Death certificate of a previous spouse",
           "shortTitle": "Death certificate of a previous spouse",
           "description": "For each of the foreign partner's previous marriages that ended in the spouse's death."
-        },
-        "israeliDivorceDecree": {
-          "title": "Divorce decree",
-          "shortTitle": "Divorce decree",
-          "description": "The final divorce decree of each of the Israeli partner's previous marriages that ended in divorce."
-        },
-        "israeliSpouseDeathCertificate": {
-          "title": "Death certificate of a previous spouse",
-          "shortTitle": "Death certificate of a previous spouse",
-          "description": "For each of the Israeli partner's previous marriages that ended in the spouse's death."
         },
         "foreignPoliceCertificate": {
           "title": "Police certificate: {country}",

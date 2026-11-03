@@ -45,7 +45,7 @@ export async function staticPrompt() {
   return `${RULES}\n\nWhat you know about the process:\n\n<knowledge>\n${await loadKnowledge()}\n</knowledge>`;
 }
 
-/** Whose a document is, for one whose full title doesn't say it ("Divorce decree", which both partners have). */
+/** Whose a document is, for one whose full title doesn't say it ("Divorce certificate or decree"). */
 const WHOSE: Record<Owner, string> = {
   couple: "the couple's",
   israeli: "the Israeli partner's",

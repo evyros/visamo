@@ -346,11 +346,10 @@ describe("buildDocumentList", () => {
     expect(find("marriedInCyprus", "foreignPassport")?.copies).toBeUndefined();
   });
 
-  it("asks for each ending of a previous marriage", () => {
+  it("asks for each ending of the foreign partner's previous marriages", () => {
     expect(keys("bothPreviouslyMarried")).toEqual(
-      expect.arrayContaining(["foreignDivorceDecree", "foreignSpouseDeathCertificate", "israeliSpouseDeathCertificate"]),
+      expect.arrayContaining(["foreignDivorceDecree", "foreignSpouseDeathCertificate"]),
     );
-    expect(keys("bothPreviouslyMarried")).not.toContain("israeliDivorceDecree");
   });
 
   it("asks for school records only when there are children in the household", () => {

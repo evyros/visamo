@@ -13,6 +13,11 @@ civil status and family members.
   **If you married abroad or online,** it has to show you as married:
   register the marriage at your Misrad Hapnim (משרד הפנים) branch before you apply (you
   sign form MR/6 there).
+  **If you were divorced or widowed,** there's no divorce certificate or death
+  certificate to bring: Misrad Hapnim sees your civil status in the population
+  registry. If the registry doesn't record the divorce or the death yet, for
+  example one abroad, have it updated at your Misrad Hapnim branch before you
+  apply.
 - A driver's license isn't enough: bring the Teudat Zehut itself.
 
 It's an Israeli document, in Hebrew: no certification or translation.
@@ -25,3 +30,9 @@ or print it at a self-service station. It's free.
 
 **Can I bring my driver's license or passport instead?**
 No. Misrad Hapnim asks for the Teudat Zehut itself, with its appendix.
+
+**I was divorced, or my previous spouse died. Do I bring the divorce
+certificate or the death certificate?**
+No. Misrad Hapnim sees your civil status in the population registry. If the
+divorce or the death isn't recorded there yet, for example one abroad, have
+it updated at your Misrad Hapnim branch before you apply.

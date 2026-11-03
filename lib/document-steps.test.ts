@@ -47,6 +47,29 @@ describe("a legalization's full text", () => {
     expect(details?.end).toBe("It can only be done in Thailand, not in Israel.");
   });
 
+  it("goes on through the third country, where Israel has no embassy", () => {
+    const step = {
+      kind: "authenticate" as const,
+      from: "CU",
+      certification: { authentication: "legalization" as const },
+      chain: ["ministryOfJustice", "viaEmbassy", "viaForeignMinistry", "viaIsraeliConsulate"] as const,
+      via: "CA",
+    };
+    const { text, details } = stepText(step, "foreignBirthCertificate", t, "en");
+    expect(text).toBe("Consular legalization in Cuba, through Canada");
+    expect(details?.points).toEqual([
+      "The civil registry (Registro Civil)",
+      "The ministry of justice",
+      "The embassy of Canada in Cuba",
+      "The foreign ministry of Canada",
+      "The Israeli embassy in Canada",
+    ]);
+    expect(details?.end).toBe("Israel has no embassy in Cuba, so the chain goes on through Canada. None of it can be done in Israel.");
+    expect(stepsInWords([step], "foreignBirthCertificate", t)).toBe(
+      "1. Consular legalization in Cuba, through Canada: the ministry of justice, then the embassy of Canada in Cuba, then the foreign ministry of Canada, then the Israeli embassy in Canada",
+    );
+  });
+
   it("numbers the usual offices for a country whose own aren't known", () => {
     const { details } = legalization("EG");
     expect(details?.lead).toBe(t.steps.legalizationUsualLead);

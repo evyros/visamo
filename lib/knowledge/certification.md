@@ -19,6 +19,12 @@ the country that issued it can certify it: it can't be done in Israel.
   signatures (שרשרת חתימות): the authority that issued the document, then
   usually the country's ministry of justice and its foreign ministry, and last the
   Israeli consulate there.
+- From a country that isn't in the convention and where Israel has no
+  embassy, because the two have no diplomatic relations: the chain goes on
+  **through a third country** that has relations with Israel (1.3.0001
+  §3.1.3). After the country's own signatures, that third country's embassy
+  in the issuing country certifies them, then its foreign ministry, and
+  last the Israeli embassy in that third country.
 
 Foreign documents follow the population authority's procedure 1.3.0001
 (referenced by 5.2.0008 §ד.2.ה).

@@ -19,6 +19,13 @@ describe("stepsFor", () => {
     expect(stepsFor(item, true).map((s) => s.kind)).toEqual(["obtain", "authenticate", "send", "translate"]);
   });
 
+  it("legalizes through a third country where Israel has no embassy", () => {
+    const steps = stepsFor({ issuer: "CU", certification: { authentication: "legalization" }, translation: "notarized" }, true);
+    expect(steps[1]).toMatchObject({ kind: "authenticate", via: "CA" });
+    const thai = stepsFor({ issuer: "TH", certification: { authentication: "legalization" }, translation: "notarized" }, true);
+    expect(thai[1]).not.toHaveProperty("via");
+  });
+
   it("gets a Utah marriage's original from Utah", () => {
     const steps = stepsFor({ issuer: "utah", certification: { authentication: "utahApostille" }, translation: "notarized" }, false);
     expect(steps[0]).toEqual({ kind: "obtain", from: "utah" });

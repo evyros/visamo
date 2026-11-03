@@ -53,6 +53,41 @@ shown to users (`lib/knowledge/`).
   like the police certificate, needs no English translation (product
   owner).
 
+- **Cuba** (researched November 2026; `CU` in `LEGALIZATION` and the
+  issuers). Canada as the third country is the product owner's; the
+  Canadian steps (Global Affairs Canada, then the Israeli embassy in
+  Canada) follow §3.1.3 as written, though §3.1.2.2 lets the Israeli consul
+  in Canada certify Canadian signatures directly. Unknown:
+  - Decided (product owner, November 2026): a clerk accepts a Cuban chain
+    with no foreign-ministry signature, and the guides and steps say so.
+    Why: Cuba falls under §3.1.3, whose first step is only "certified by
+    the issuing country" (no ministry named; §3.1.1's justice-then-foreign-
+    ministry order is for the usual chain); the Ministry of Justice's
+    legalization is Cuba's only one since 3 Feb 2025 ("solo cambia quien
+    actúa", Granma), and the Netherlands' official page and Spain's
+    consulate take it in MINREX's place. No Israeli case found either way:
+    revisit if a clerk asks for MINREX.
+  - The Canadian embassy in Havana's own page (international.gc.ca, Havana
+    info, read November 2026) offers authentication "to Canadian citizens
+    and, in limited cases, to non-Canadian citizens if the documents are
+    intended for use in Canada". Whether it does it for Cuban documents
+    going to Israel is only the product owner's confirmation. Since Canada
+    joined the Apostille Convention (11 Jan 2024), Global Affairs Canada
+    can't apostille the embassy's certificate (art. 1(3)(a) excludes
+    consular documents), so its step is a non-apostille authentication,
+    then the Israeli embassy's legalization.
+  - Whether certificates issued online through the Bienestar platform,
+    which by Reglamento art. 273.2 skip the Ministry of Justice's "prior
+    legalization", still need its single legalization before an embassy.
+  - The police certificate for abroad: the Ministry of Justice says only
+    the CJI branches handle it; April 2026 news says the collective law
+    firms (ONBC). Res. 486/2025 lists the international law firms.
+  - Stamp (sello) amounts and real waiting times.
+  - Whether Ley 180's certificate of capacity to marry abroad is accepted
+    as the civil status before a marriage.
+  Recheck if Cuba joins the Apostille Convention (not on the HCCH table of
+  30 June 2026).
+
 - **Thailand joins the Apostille Convention on 28 February 2027** (accession
   lodged 30 June 2026; Thai MFA notices of 1 and 6 July 2026), unless a
   member state objects before then. Not in the guides yet: they hold no

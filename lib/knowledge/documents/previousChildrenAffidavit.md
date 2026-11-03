@@ -24,6 +24,12 @@ of a lawyer (עו"ד), who confirms it (see [affidavits.md](../affidavits.md)).
 notary with that country's apostille or legalization (see
 [certification.md](../certification.md)).
 
+**From Cuba:** Cuba issues no document that shows someone's children, or
+that they have none, so this affidavit is the proof. Israel has no consul in
+Cuba, and an affidavit signed in front of a Cuban notary would need the
+whole legalization through Canada: a Cuban partner who lives in Cuba signs
+it once in Israel.
+
 **Declare the personal status in it too.** It's best to make it one
 affidavit about both the foreign partner's personal status (מצב אישי) and
 their children, like the statement below. If their country issues strong

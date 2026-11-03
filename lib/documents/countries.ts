@@ -63,8 +63,20 @@ export const APOSTILLE: ReadonlySet<string> = new Set([
  * - "ministryOfJustice": the country's ministry of justice.
  * - "foreignMinistry": the country's ministry of foreign affairs.
  * - "israeliConsulate": the Israeli embassy or consulate in the country.
+ * - "viaEmbassy", "viaForeignMinistry", "viaIsraeliConsulate": where Israel has
+ *   no embassy, the chain goes on through a third country that has relations
+ *   with Israel (the legalization's `via`): its embassy in the country, its
+ *   foreign ministry, then the Israeli embassy there (procedure 1.3.0001 §3.1.3).
  */
-export const chainLinks = ["englishTranslation", "ministryOfJustice", "foreignMinistry", "israeliConsulate"] as const;
+export const chainLinks = [
+  "englishTranslation",
+  "ministryOfJustice",
+  "foreignMinistry",
+  "israeliConsulate",
+  "viaEmbassy",
+  "viaForeignMinistry",
+  "viaIsraeliConsulate",
+] as const;
 export type ChainLink = (typeof chainLinks)[number];
 
 /** The usual chain, after the issuing office (procedure 1.3.0001 §3.1.1): for a country not in LEGALIZATION. */
@@ -72,6 +84,8 @@ export const USUAL_CHAIN: readonly ChainLink[] = ["ministryOfJustice", "foreignM
 
 type Legalization = {
   chain: readonly ChainLink[];
+  /** The third country the chain goes through, where Israel has no embassy in the country (the "via" links). */
+  via?: string;
   /** Where the chain comes from: the country's or the Israeli mission's official page. */
   source: string;
   /** Checked against the source by a person. */
@@ -105,8 +119,19 @@ export const LEGALIZATION: Readonly<Partial<Record<string, Legalization>>> = {
       "Procedure 1.3.0001 §3.1.2.1; Thai MFA, Department of Consular Affairs, legalization manual (March 2025); Embassy of Israel in Bangkok, authentication of public documents",
     verified: false,
   },
+  // No Israeli embassy in Cuba: through Canada (§3.1.3). Since 3 Feb 2025 the Ministry of Justice
+  // legalizes Cuban documents for use abroad, in place of the foreign ministry (MINREX).
+  CU: {
+    chain: ["ministryOfJustice", "viaEmbassy", "viaForeignMinistry", "viaIsraeliConsulate"],
+    via: "CA",
+    source:
+      "Procedure 1.3.0001 §3.1.3; MINREX, legalization transferred to MINJUS (3 Feb 2025); MINREX Resolution 37/2026 (consular fees)",
+    verified: false,
+  },
 };
 
-export function legalizationChain(country: string): readonly ChainLink[] | undefined {
-  return LEGALIZATION[country]?.chain;
+/** The legalization's offices, and the third country it goes through if there's one. */
+export function legalizationOf(country: string): Pick<Legalization, "chain" | "via"> | undefined {
+  const legalization = LEGALIZATION[country];
+  return legalization && { chain: legalization.chain, ...(legalization.via && { via: legalization.via }) };
 }

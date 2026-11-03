@@ -88,6 +88,27 @@ the certificate of no conviction (potvrda o nekažnjavanju), from the Ministry
 of Justice, in person, usually on the spot. The apostille comes from the
 municipal civil court.
 
+### Cuba
+
+A criminal record certificate (certificación de antecedentes penales), from
+the Central Register of Convicted Persons (Registro Central de Sancionados)
+of the Ministry of Justice. For use abroad, it's a kind of its own
+("Exterior Personal"), obtained and legalized only through the
+international law firms, such as the Consultoría Jurídica Internacional
+(CJI). A Cuban living abroad asks for it through a Cuban consulate, which
+can take months. It also lists sentences of foreign courts against Cuban
+citizens. In Cuba it's valid for a year, but Misrad Hapnim asks for one
+issued in the last 6 months. Get it on paper, not the digital certificate
+from the online service: Israel accepts a digital police certificate only
+with an electronic apostille (1.3.0001 §4.3.3), and Cuba issues none.
+
+Cuba isn't in the Apostille Convention, and Israel has no embassy in Cuba,
+so the legalization goes on through Canada (see
+[certification.md](../certification.md)): the Cuban Ministry of Justice
+(MINJUS), then the Canadian embassy in Havana, then Global Affairs Canada,
+and last the Israeli embassy in Canada. It's filed through an international
+law firm in Cuba, such as the CJI, or through a Cuban consulate abroad.
+
 ### Czech Republic
 
 An extract from the criminal register (výpis z rejstříku trestů), best from the

@@ -2083,15 +2083,20 @@
         "utahApostille": "An apostille from the Utah Lieutenant Governor",
         "apostilleDetails": "Only the country that issued it can put an apostille on it: it can't be done in Israel. It's usually attached to the document: don't separate them, that voids it.",
         "legalization": "Consular legalization in {country}",
+        "legalizationVia": "Consular legalization in {country}, through {via}",
         "legalizationLead": "A chain of signatures (שרשרת חתימות), in this order:",
         "legalizationUsualLead": "A chain of signatures (שרשרת חתימות), usually in this order:",
         "issuingOffice": "the office that issued it",
         "legalizationEnd": "It can only be done in {country}, not in Israel.",
+        "legalizationViaEnd": "Israel has no embassy in {country}, so the chain goes on through {via}. None of it can be done in Israel.",
         "chain": {
           "englishTranslation": "a certified translation into English (unless it's in English already)",
           "ministryOfJustice": "the ministry of justice",
           "foreignMinistry": "the foreign ministry",
-          "israeliConsulate": "the Israeli embassy"
+          "israeliConsulate": "the Israeli embassy",
+          "viaEmbassy": "the embassy of {via} in {country}",
+          "viaForeignMinistry": "the foreign ministry of {via}",
+          "viaIsraeliConsulate": "the Israeli embassy in {via}"
         },
         "chainJoin": ", then ",
         "dependsOnCountry": "If it was issued abroad: an apostille or consular legalization, from that country",
@@ -2161,6 +2166,10 @@
           "CN": {
             "office": "a notary office",
             "details": "Someone born before about 1996 usually has no birth (medical) certificate (出生医学证明). Instead, a notary office issues a notarized birth certificate (出生公证), based on the household register (户口本) and the parents' documents. The apostille comes after that."
+          },
+          "CU": {
+            "office": "the civil registry (Registro Civil)",
+            "details": "A birth certificate (certificación de nacimiento), from any civil registry office, not only the one where the birth was registered. Ask for the full copy (certificación literal), not the short extract the registry issues otherwise. It has no expiry date. A Cuban living abroad asks for it through a Cuban consulate. The legalization is filed through an international law firm in Cuba, such as the Consultoría Jurídica Internacional (CJI), or through a Cuban consulate abroad."
           },
           "CZ": {
             "office": "the registry (matrika) of the place of birth",
@@ -2296,6 +2305,10 @@
             "details": "A notarized certificate of unmarried status (未婚公证, or 单身证明), based on the household register (户口本), which shows the marital status. It has to be issued in China: a declaration from the Chinese embassy in Israel has been refused.",
             "apostilleBy": "China's foreign ministry or a local foreign affairs office",
             "apostilleDetails": "China joined the Apostille Convention in November 2023: the document is apostilled after it's notarized."
+          },
+          "CU": {
+            "office": "the civil registry (Registro Civil)",
+            "details": "A certificate of single status (certificación de soltería), from any civil registry office, or a Cuban consulate for a Cuban living abroad. Divorced, a divorce certificate (certificación de divorcio); widowed, a certificate of widowhood (certificación de viudez). In Cuba it's valid for a year, but Misrad Hapnim asks for one issued in the last 6 months. The legalization is filed through an international law firm in Cuba, such as the CJI, or through a Cuban consulate abroad."
           },
           "CZ": {
             "office": "a city hall's registry (matrika)",
@@ -2467,6 +2480,10 @@
             "office": "the local Public Security Bureau",
             "details": "A certificate of no criminal record (无犯罪记录证明), often requested through the bureau's WeChat service. Ask for the paper certificate by post, not the online one. It's notarized before the apostille.",
             "apostilleBy": "China's foreign ministry or a local foreign affairs office"
+          },
+          "CU": {
+            "office": "the Central Register of Convicted Persons (Registro Central de Sancionados)",
+            "details": "A criminal record certificate (certificación de antecedentes penales) from the Ministry of Justice's Central Register of Convicted Persons (Registro Central de Sancionados), of the kind for use abroad (\"Exterior Personal\"). It's obtained and legalized only through the international law firms; a Cuban living abroad asks for it through a Cuban consulate, which can take months. Get it on paper, not the digital one from the online service: Israel accepts a digital police certificate only with an electronic apostille, and Cuba issues none."
           },
           "CZ": {
             "office": "the Criminal Register (Rejstřík trestů) in Prague",

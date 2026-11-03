@@ -35,6 +35,27 @@ Someone born before about 1996 usually has no birth (medical) certificate
 based on the household register (户口本) and the parents' documents. Then the
 apostille.
 
+### Cuba
+
+A birth certificate (certificación de nacimiento), from the civil registry
+(Registro Civil). Every record is in one national electronic registry, so
+any registry office issues it, not only the one where the birth was
+registered. Ask for the full copy (certificación literal): the registry
+issues a short extract (en extracto) unless the full copy is asked for, and
+the extract isn't enough. It has no expiry date. A Cuban living abroad asks
+for it through a Cuban consulate.
+
+Cuba isn't in the Apostille Convention, and Israel has no embassy in Cuba,
+so the legalization goes on through Canada (see
+[certification.md](../certification.md)): the Cuban Ministry of Justice
+(Ministerio de Justicia, MINJUS), then the Canadian embassy in Havana, then
+Canada's foreign ministry (Global Affairs Canada), and last the Israeli
+embassy in Canada. The Cuban foreign ministry (MINREX) isn't part of it:
+since February 2025, the Ministry of Justice legalizes Cuban documents for
+use abroad. You don't file the legalization yourselves: in Cuba it goes
+through the international law firms, such as the Consultoría Jurídica
+Internacional (CJI), and from abroad through a Cuban consulate.
+
 ### Czech Republic
 
 Get a new birth certificate (rodný list) from the registry (matrika) of the

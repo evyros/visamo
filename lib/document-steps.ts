@@ -4,7 +4,7 @@ import { format, type Messages } from "@/i18n/messages";
 import type { DocumentId } from "./documents/catalog";
 import type { Issuer } from "./documents/certification";
 import type { Point } from "./documents/points";
-import { ARABIC, USUAL_CHAIN, type ChainLink } from "./documents/countries";
+import { ARABIC, USUAL_CHAIN } from "./documents/countries";
 import type { Step } from "./documents/steps";
 
 // A document's steps (lib/documents/steps.ts) in words: the documents page
@@ -100,16 +100,17 @@ export function stepText(
           case "utahApostille":
             return { text: s.utahApostille, details: prose(s.apostilleDetails) };
           case "legalization": {
-            // The line names the country; the full text, its offices in order: the country's own
-            // where they're known, the usual ones otherwise.
-            const offices = [c?.office ?? s.issuingOffice, ...(step.chain ?? USUAL_CHAIN).map((link) => s.chain[link])];
+            // The line names the country, and the third country it goes through if there's one; the
+            // full text, its offices in order: the country's own where they're known, the usual ones otherwise.
+            const via = step.via ? regionName(step.via, locale) : "";
+            const offices = [c?.office ?? s.issuingOffice, ...chainOffices(step, t, locale)];
             return {
-              text: format(s.legalization, { country }),
+              text: via ? format(s.legalizationVia, { country, via }) : format(s.legalization, { country }),
               details: {
                 lead: step.chain ? s.legalizationLead : s.legalizationUsualLead,
                 points: offices.map((office) => office.charAt(0).toLocaleUpperCase(locale) + office.slice(1)),
                 numbered: true,
-                end: format(s.legalizationEnd, { country }),
+                end: via ? format(s.legalizationViaEnd, { country, via }) : format(s.legalizationEnd, { country }),
               },
             };
           }
@@ -155,9 +156,14 @@ function translationWhen(from: Issuer | undefined, t: Labels) {
   return s.translateEnglish;
 }
 
-/** A legalization's offices, in order: "the foreign ministry, then the Israeli embassy". */
-function chainWords(chain: readonly ChainLink[], t: Labels) {
-  return chain.map((link) => t.steps.chain[link]).join(t.steps.chainJoin);
+/**
+ * A legalization's offices after the issuing one, in order ("the foreign ministry", "the Israeli
+ * embassy"), naming the country and the third country (`via`) where an office is theirs.
+ */
+function chainOffices(step: Extract<Step, { kind: "authenticate" }>, t: Labels, locale: Locale) {
+  const country = step.from ? placeName(step.from, t, locale) : "";
+  const via = step.via ? regionName(step.via, locale) : "";
+  return (step.chain ?? USUAL_CHAIN).map((link) => format(t.steps.chain[link], { country, via }));
 }
 
 /** The steps as one line, in English, for the chat's and the check's view of a document: the full sentence where the line is short. */
@@ -165,7 +171,7 @@ export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels, 
   const say = (step: Step) => {
     if (step.kind === "translate") return step.level === "notarized" ? t.steps.translateNotarizedFull : t.steps.translateSelfFull;
     const { text, details } = stepText(step, id, t, "en", c);
-    if (step.kind === "authenticate" && step.chain) return `${text}: ${chainWords(step.chain, t)}`;
+    if (step.kind === "authenticate" && step.chain) return `${text}: ${chainOffices(step, t, "en").join(t.steps.chainJoin)}`;
     // The line names the signer in short, or not at all (an affidavit): its full text says who and how.
     if (step.kind === "affidavit" || step.kind === "sign" || step.kind === "signByEmail") {
       return `${text}: ${[details?.lead, ...(details?.points ?? []), details?.end].filter(Boolean).join(" ")}`;

@@ -39,6 +39,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
   foreignBirthCertificate: {
     BR: { kind: "document", heading: "Brazil" },
     CN: { kind: "document", heading: "China" },
+    CU: { kind: "document", heading: "Cuba" },
     CZ: { kind: "document", heading: "Czech Republic" },
     DE: { kind: "document", heading: "Germany" },
     DK: { kind: "document", heading: "Denmark" },
@@ -67,6 +68,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     CH: { kind: "document", heading: "Switzerland" },
     CL: { kind: "document", heading: "Chile" },
     CN: { kind: "document", heading: "China" },
+    CU: { kind: "document", heading: "Cuba" },
     CZ: { kind: "documentOrAffidavit", heading: "Czech Republic" },
     DE: { kind: "document", heading: "Germany" },
     DK: { kind: "document", heading: "Denmark" },
@@ -103,6 +105,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     CH: { kind: "document", heading: "Switzerland" },
     CL: { kind: "document", heading: "Chile" },
     CN: { kind: "document", heading: "China" },
+    CU: { kind: "document", heading: "Cuba" },
     CZ: { kind: "document", heading: "Czech Republic" },
     DE: { kind: "document", heading: "Germany" },
     DK: { kind: "document", heading: "Denmark" },

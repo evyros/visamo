@@ -3,6 +3,30 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v42 — 2026-11-03
+
+**What changed:** Cuba has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating their new
+guide sections. A legalization can now go on through a third country
+(`via` in `LEGALIZATION`, with the chain links `viaEmbassy`,
+`viaForeignMinistry` and `viaIsraeliConsulate`): the authenticate step
+carries `via`, and its text names the third country. Cuba's chain: the
+Ministry of Justice, then the Canadian embassy in Havana, Global Affairs
+Canada and the Israeli embassy in Canada.
+
+**Why:** Cuban documents had the usual chain, ending at an Israeli embassy
+in Cuba, which doesn't exist: Israel and Cuba have no diplomatic relations.
+Since 3 February 2025 Cuba's Ministry of Justice legalizes documents for use
+abroad, in place of the foreign ministry.
+
+**Source:** Procedure 1.3.0001 §3.1.3 (31.8.2022); Canada as the third
+country (product owner); MINREX, 3 Feb 2025; Ley 180/2025 and its
+Reglamento (Res. 61/2026, Gaceta Oficial No. 26, 16 Mar 2026); MINJUS,
+Registro Central de Sancionados; Res. 486/2025 and Res. 37/2026.
+
+**Lists that changed:** none (steps of Cuban birth certificates, civil
+status and police certificates: their office, and the chain through Canada).
+
 ## v41 — 2026-10-18
 
 **What changed:** Form AS/6 has a new point, `as6HomeOwnership`, next to

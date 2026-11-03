@@ -51,6 +51,12 @@ describe("the catalog", () => {
       for (const fact of factsIn(d.when)) expect(facts, d.id).toContain(fact);
     }
   });
+
+  it("names the third country of every legalization that goes through one, and only those", () => {
+    for (const [country, l] of Object.entries(LEGALIZATION)) {
+      expect(!!l!.via, country).toBe(l!.chain.some((link) => link.startsWith("via")));
+    }
+  });
 });
 
 describe("the messages", () => {
@@ -115,7 +121,7 @@ const countries = {
   apostille: sorted(APOSTILLE),
   formerUssr: sorted(FORMER_USSR),
   securityCheck: sorted(SECURITY_CHECK),
-  legalization: Object.fromEntries(Object.entries(LEGALIZATION).map(([country, l]) => [country, l!.chain])),
+  legalization: Object.fromEntries(Object.entries(LEGALIZATION).map(([country, l]) => [country, { chain: l!.chain, via: l!.via }])),
   issuers: ISSUERS,
 };
 const fingerprint = createHash("sha256").update(JSON.stringify({ rules, countries, lists })).digest("hex");

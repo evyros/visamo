@@ -1,6 +1,6 @@
 import type { Signing, Translation } from "./catalog";
 import type { Certification, Issuer } from "./certification";
-import { legalizationChain, type ChainLink } from "./countries";
+import { legalizationOf, type ChainLink } from "./countries";
 import type { IssuerKind } from "./issuers";
 
 // What a couple does to a document before it's ready, in the order it's done:
@@ -23,9 +23,10 @@ export type Step =
   /**
    * The apostille or legalization, from the country that issued it (null:
    * not known, "if it's from abroad"). `chain`: the offices of a legalization,
-   * in order, where they're known for the country.
+   * in order, where they're known for the country. `via`: the third country
+   * the chain goes through, where Israel has no embassy in the issuing one.
    */
-  | { kind: "authenticate"; from: Issuer; certification: Certification; chain?: readonly ChainLink[] }
+  | { kind: "authenticate"; from: Issuer; certification: Certification; chain?: readonly ChainLink[]; via?: string }
   /** The original sent to Israel from the country that issued it, for the translation and the appointment. */
   | { kind: "send" }
   /** `from`: the country that issued it, when it's issued by one; null when that isn't known. */
@@ -114,8 +115,8 @@ export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
   const fromAbroad = !noDocument && !!authentication && authentication !== "none" && issuer !== undefined;
   if (fromAbroad && issuer) steps.push({ kind: "obtain", from: issuer, ...(electronic && { electronic: true as const }) });
   if (fromAbroad) {
-    const chain = authentication === "legalization" && issuer ? legalizationChain(issuer) : undefined;
-    steps.push({ kind: "authenticate", from: issuer, certification: certification!, ...(chain && { chain }) });
+    const legalization = authentication === "legalization" && issuer ? legalizationOf(issuer) : undefined;
+    steps.push({ kind: "authenticate", from: issuer, certification: certification!, ...legalization });
   }
   // A file has no original to send: it comes by email.
   if (fromAbroad && issuer && sendOriginals && !electronic) steps.push({ kind: "send" });

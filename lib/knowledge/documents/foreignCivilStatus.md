@@ -122,6 +122,27 @@ from any registry office (matični ured), in person, usually on the spot. Get
 the paper original, not a digital copy from e-Građani. The apostille comes from
 the municipal civil court.
 
+### Cuba
+
+A certificate of single status (certificación de soltería), from the civil
+registry (Registro Civil): any registry office, or a Cuban consulate for a
+Cuban living abroad. In Cuba it's valid for a year, but Misrad Hapnim asks
+for one issued in the last 6 months. Divorced, a divorce certificate
+(certificación de divorcio), whether the divorce was in court or before a
+notary; widowed, a certificate of widowhood (certificación de viudez). A
+registered common-law union (unión de hecho afectiva) isn't a civil status
+in Cuba: the certificate still says single. To marry abroad, the registry or
+a Cuban consulate also issues a certificate of capacity to marry abroad
+(certificación de capacidad legal para contraer matrimonio en el
+extranjero).
+
+Cuba isn't in the Apostille Convention, and Israel has no embassy in Cuba,
+so the legalization goes on through Canada (see
+[certification.md](../certification.md)): the Cuban Ministry of Justice
+(MINJUS), then the Canadian embassy in Havana, then Global Affairs Canada,
+and last the Israeli embassy in Canada. It's filed through an international
+law firm in Cuba, such as the CJI, or through a Cuban consulate abroad.
+
 ### Czech Republic
 
 There's no civil-status certificate. Bring one of these:

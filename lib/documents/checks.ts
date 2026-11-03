@@ -54,6 +54,14 @@ export type CheckPart = {
 
 /** Bills of many months, from several providers. */
 const BILLS_PAGES = 60;
+/** Bank statements of 12 months, from one account or each partner's. */
+const STATEMENTS_PAGES = 40;
+/** A whole contract with its appendices, or two leases that cover the year. */
+const CONTRACT_PAGES = 40;
+/** Many documents or single photos, gathered over a year or more. */
+const EVIDENCE_PAGES = 40;
+/** 12 payslips, with bank statements beside them. */
+const INCOME_PAGES = 30;
 
 /** Passport photos, the same for both partners. */
 const passportPhoto: DocumentCheck = {
@@ -406,6 +414,7 @@ export const checks = {
       "At least 2 photos show other people, such as family or friends, not only the couple.",
       "Each photo is clear enough to recognize the people in it.",
     ],
+    maxPages: EVIDENCE_PAGES,
   },
   messageHistory: {
     required: [
@@ -443,6 +452,7 @@ export const checks = {
       "There are several kinds of evidence, not only one document.",
       "Each document is readable in full, with the address and the dates visible.",
     ],
+    maxPages: EVIDENCE_PAGES,
   },
   jointChildrenBirthCertificates: {
     required: [
@@ -509,6 +519,7 @@ export const checks = {
       "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
       "It is scanned in full, readable, page by page in order.",
     ],
+    maxPages: CONTRACT_PAGES,
   },
   israeliHousingContract: {
     required: [
@@ -520,6 +531,7 @@ export const checks = {
       "For a home that isn't the Israeli partner's: recent bills in the owners' names, and mail, bank statements or phone bills addressed to the Israeli partner at that address, are uploaded too.",
       "It is scanned in full, readable, page by page in order.",
     ],
+    maxPages: CONTRACT_PAGES,
   },
   utilityBills: {
     required: [
@@ -606,6 +618,7 @@ export const checks = {
       "They cover the full last 12 months, ending recently: the period differs between branches, and 12 months covers them all.",
       "The bank's name and the account number are visible on each statement.",
     ],
+    maxPages: STATEMENTS_PAGES,
   },
   israeliIncomeProof: {
     required: [
@@ -622,6 +635,7 @@ export const checks = {
       "A no-income letter comes with proof that one of them can support their life in Israel: a savings account, bank statements, or similar. The other partner's own income documents can show it instead.",
       "It is scanned straight and readable in full, with nothing cut off at the edges.",
     ],
+    maxPages: INCOME_PAGES,
   },
   foreignIncomeProof: {
     required: [
@@ -638,6 +652,7 @@ export const checks = {
       "A no-income letter comes with proof that one of them can support their life in Israel: a savings account, bank statements, or similar. The other partner's own income documents can show it instead.",
       "It is scanned straight and readable in full, with nothing cut off at the edges.",
     ],
+    maxPages: INCOME_PAGES,
   },
   childrenSchoolRecords: "notYet",
   childBirthCertificate: "notYet",

@@ -123,6 +123,23 @@ Ask the civil registry for a birth certificate "for apostille" (acta de
 nacimiento para apostilla), with a handwritten signature: one from a machine
 or online can't be apostilled. The apostille comes from the same state.
 
+### Nepal
+
+A birth registration certificate (जन्म दर्ता प्रमाणपत्र, janma darta
+pramanpatra), from the ward office of the municipality or rural
+municipality where the birth was registered. Someone born before 1977,
+when birth registration began, first asks there for a late registration.
+
+Nepal isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)): the foreign ministry's Department
+of Consular Services in Tripureshwor, Kathmandu, then the Israeli embassy in
+Kathmandu. Before the foreign ministry, the local government that issued it
+has its chief administrative officer, or the head of its registration
+section, verify the signature: the foreign ministry certifies a local
+document only then. The Israeli embassy's legalization is filed through VFS
+in Kathmandu: you hand in the original there, with the fee, and don't visit
+the embassy.
+
 ### Peru
 
 A certified copy of the birth record (copia certificada del acta de

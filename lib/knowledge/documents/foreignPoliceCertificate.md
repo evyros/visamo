@@ -182,6 +182,25 @@ Israel, go through the Mexican embassy. Its apostille is federal, from the
 Ministry of the Interior (SEGOB) in Mexico City, unlike other Mexican
 documents.
 
+### Nepal
+
+A police clearance certificate, from the Nepal Police headquarters in Naxal,
+Kathmandu. It's applied for online, in Nepali or English, through the Nepal
+Police's online police clearance system, and it's free.
+
+Nepal isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)): the foreign ministry's Department
+of Consular Services in Tripureshwor, Kathmandu, then the Israeli embassy in
+Kathmandu. The Israeli embassy's legalization is filed through VFS in
+Kathmandu: you hand in the original there, with the fee, and don't visit the
+embassy.
+
+### Netherlands
+
+A certificate of conduct (verklaring omtrent gedrag, VOG), from Justis. You
+request it yourself, attaching a printout of the Israeli government's page
+that shows you need it. Any court (rechtbank) adds the apostille.
+
 ### Peru
 
 A certificate of criminal record (certificado de antecedentes penales), from
@@ -192,12 +211,6 @@ someone in Peru apply for it with their written authorization or a power of
 attorney. The police (PNP) issue a separate certificate of police record
 (certificado de antecedentes policiales), about police records rather than
 convictions. The apostille comes from the foreign ministry (Cancillería).
-
-### Netherlands
-
-A certificate of conduct (verklaring omtrent gedrag, VOG), from Justis. You
-request it yourself, attaching a printout of the Israeli government's page
-that shows you need it. Any court (rechtbank) adds the apostille.
 
 ### Philippines
 

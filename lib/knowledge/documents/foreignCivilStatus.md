@@ -235,6 +235,29 @@ the civil registry of the state. Say it's for an apostille. Each state sets its
 own requirements, and its validity can be as short as 30 days. The apostille
 comes from the same state.
 
+### Nepal
+
+An unmarried certificate (अविवाहित प्रमाणित, abivahit pramanit), from the ward
+office of the municipality or rural municipality.
+
+Nepal isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)): the foreign ministry's Department
+of Consular Services in Tripureshwor, Kathmandu, then the Israeli embassy in
+Kathmandu. Before the foreign ministry, the local government that issued it
+has its chief administrative officer, or the head of its registration
+section, verify the signature: the foreign ministry certifies a local
+document only then. The Israeli embassy's legalization is filed through VFS
+in Kathmandu: you hand in the original there, with the fee, and don't visit
+the embassy.
+
+### Netherlands
+
+An extract from the population register (uittreksel BRP) that includes the
+marital status (burgerlijke staat), from the municipality where they're
+registered. Someone who has left the Netherlands gets an extract from the
+non-residents' register (RNI) instead. Any court (rechtbank) adds the
+apostille, without an appointment.
+
 ### Peru
 
 A certificate that no marriage is registered (constancia negativa de
@@ -244,14 +267,6 @@ asked for. It covers the records in RENIEC's system. Ask for it at a RENIEC
 office or a MAC center, on paper: it can also be requested online, but then
 it comes by email. The apostille comes from the foreign ministry
 (Cancillería).
-
-### Netherlands
-
-An extract from the population register (uittreksel BRP) that includes the
-marital status (burgerlijke staat), from the municipality where they're
-registered. Someone who has left the Netherlands gets an extract from the
-non-residents' register (RNI) instead. Any court (rechtbank) adds the
-apostille, without an appointment.
 
 ### Philippines
 

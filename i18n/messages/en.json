@@ -2207,6 +2207,10 @@
             "details": "Ask for a birth certificate \"for apostille\" (acta de nacimiento para apostilla), with a handwritten signature: one printed from a machine or online can't be apostilled.",
             "apostilleBy": "the same state that issued it"
           },
+          "NP": {
+            "office": "the ward office where the birth was registered",
+            "details": "A birth registration certificate (जन्म दर्ता प्रमाणपत्र, janma darta pramanpatra), from the ward office of the municipality or rural municipality where the birth was registered. Someone born before 1977, when birth registration began, first asks there for a late registration. Before the foreign ministry, the local government's chief administrative officer, or the head of its registration section, verifies the signature: the foreign ministry certifies a local document only then. The Israeli embassy's legalization is filed through VFS in Kathmandu: hand in the original there, with the fee; there's no visit to the embassy."
+          },
           "PE": {
             "office": "RENIEC, Peru's national registry",
             "details": "A certified copy of the birth record (copia certificada del acta de nacimiento). An older record RENIEC hasn't digitized comes from the municipality where the birth was registered, and a birth registered at a Peruvian consulate from the foreign ministry. For use abroad, get it at a RENIEC office, on paper, with the registrar's signature, not the copy printed at home from its website.",
@@ -2374,6 +2378,10 @@
             "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat). Someone who has left the Netherlands gets an extract from the non-residents' register (RNI) instead.",
             "apostilleBy": "any court (rechtbank)",
             "apostilleDetails": "Without an appointment."
+          },
+          "NP": {
+            "office": "the ward office",
+            "details": "An unmarried certificate (अविवाहित प्रमाणित, abivahit pramanit), from the ward office of the municipality or rural municipality. Before the foreign ministry, the local government's chief administrative officer, or the head of its registration section, verifies the signature: the foreign ministry certifies a local document only then. The Israeli embassy's legalization is filed through VFS in Kathmandu: hand in the original there, with the fee; there's no visit to the embassy."
           },
           "PE": {
             "office": "RENIEC, Peru's national registry",
@@ -2558,6 +2566,10 @@
             "office": "Justis",
             "details": "A certificate of conduct (verklaring omtrent gedrag, VOG). Request it yourselves, attaching a printout of the Israeli government's page that shows it's needed.",
             "apostilleBy": "any court (rechtbank)"
+          },
+          "NP": {
+            "office": "the Nepal Police headquarters",
+            "details": "A police clearance certificate, from the Nepal Police headquarters in Naxal, Kathmandu. Apply online, in Nepali or English, through the Nepal Police's online police clearance system. It's free. The Israeli embassy's legalization is filed through VFS in Kathmandu: hand in the original there, with the fee; there's no visit to the embassy."
           },
           "PE": {
             "office": "the judiciary's National Register of Convictions (Registro Nacional de Condenas)",

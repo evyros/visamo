@@ -3,6 +3,25 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v45 — 2026-11-04
+
+**What changed:** Nepal has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating their new
+guide sections: the ward office for the birth registration certificate and
+the unmarried certificate, the Nepal Police headquarters for the police
+clearance certificate. Its legalization chain (the foreign ministry, then
+the Israeli embassy) is unchanged.
+
+**Why:** Nepalese documents had the right chain, but no issuing office.
+
+**Source:** NetherlandsWorldwide, "Legalisation of documents from Nepal";
+IRCC, "How to get a police certificate – Nepal"; MoFAGA circular of
+3 Dec 2020 on verifying local documents before consular attestation (The
+Himalayan Times, 4 Dec 2020); procedure 1.3.0001 §3.1.2.1.
+
+**Lists that changed:** none (steps of Nepalese birth certificates, civil
+status and police certificates: their office).
+
 ## v44 — 2026-11-03
 
 **What changed:** Removed `israeliDivorceDecree` and

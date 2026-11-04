@@ -88,6 +88,22 @@ shown to users (`lib/knowledge/`).
   Recheck if Cuba joins the Apostille Convention (not on the HCCH table of
   30 June 2026).
 
+- **Nepal** (researched November 2026, quickly; `NP` in the issuers).
+  Answered (November 2026): the Israeli embassy in Kathmandu takes
+  legalizations only through VFS Kathmandu, with no visit to the embassy
+  (its authentication page, updated 24 June 2024, and its consular page,
+  updated 1 October 2024, which applies VFS to all foreigners); in the
+  guides. VFS's own fees and hours aren't confirmed (its site blocks
+  automated reading). Unknown: whether
+  the police clearance certificate, issued online, is a digital document
+  (1.3.0001 §4.3.3 wants an electronic apostille for one, and Nepal has
+  none) or is printed and stamped for the foreign ministry; whether the
+  ward office's certificates are in Nepali only, and if so whether a notary
+  in Israel translates from Nepali or the double translation through
+  English is needed; what a divorced or widowed Nepali shows for their
+  status. The local verification before the foreign ministry is in the
+  obtain step's text, not a link of the chain.
+
 - **Peru** (researched November 2026, quickly; `PE` in the issuers).
   Unknown: whether Misrad Hapnim asks only for the Poder Judicial's
   criminal record, or also for the police's (antecedentes policiales) or

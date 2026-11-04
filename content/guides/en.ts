@@ -1304,5 +1304,183 @@ export const guidesEn: Guides = {
         body: "Answer a few questions and see exactly which documents your file needs, then check each one before you file. Start free.",
       },
     },
+
+    "visiting-your-partner-in-israel": {
+      metaTitle: "Visiting Your Partner in Israel: What to Expect at Border Control",
+      description:
+        "Partners of Israelis are often refused entry at the border, on suspicion they mean to stay. What to bring, what to say, the tourist invitation (hazmana), and what to do if entry is refused.",
+      facts: ["Return ticket & ties at home", "Tourist invitation: 21 working days", "Never file on a tourist invitation"],
+      title: "Visiting your partner in Israel: what to expect at border control",
+      answer:
+        "Having an Israeli partner isn't a reason to refuse entry, but it's a common reason border control suspects a visitor means to **stay**, and sends them back on the next flight. Come with a **return ticket**, a **hotel booking** or your host's details, and **proof of your life at home**: work, studies, a lease. The safer way is a **tourist invitation**: the Israeli partner asks [Misrad Hapnim](/guide/glossary#misrad-hapnim) to approve the visit in advance. But never start the partner visa during a visit on a tourist invitation.",
+      updated: "2026-11-04",
+      sections: [
+        {
+          id: "why-refused",
+          heading: "Why partners get refused at the border",
+          body: [
+            "No foreigner has an automatic right to enter Israel. An approved ETA-IL lets you board the flight, but it doesn't guarantee entry: border control decides at the airport.",
+            "One of the main reasons visitors are refused is **fear of settling** (חשש להשתקעות): the suspicion that the visitor won't go home when the visit ends. A partner in Israel is exactly what raises it. The same goes for someone coming to see family in Israel. The risk is higher:",
+            {
+              list: [
+                "For a citizen of a non-Western country.",
+                "On a first visit.",
+                "After frequent or long visits.",
+                "For a young visitor.",
+                "With weak ties at home: no job, studies, lease or home there.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "two-ways",
+          heading: "Two ways to visit",
+          body: [
+            {
+              figure: "routes",
+              routes: [
+                {
+                  icon: "plane",
+                  title: "Fly in and show it's a visit",
+                  steps: [
+                    "An ETA-IL, or a B/2 visa from the consulate",
+                    "A return ticket and proof of your life at home",
+                    "Border control decides at the airport",
+                  ],
+                },
+                {
+                  icon: "seal",
+                  title: "A tourist invitation",
+                  steps: [
+                    "The Israeli partner applies at their branch, 21 working days ahead",
+                    "Misrad Hapnim approves the visit in advance",
+                  ],
+                },
+              ],
+              end: {
+                icon: "home",
+                title: "Home at the end of the visit",
+                text: "A visit isn't the time to start the partner visa.",
+              },
+              caption: "Decided at the border, or approved before you fly.",
+            },
+            {
+              list: [
+                "**On your own:** a citizen of a visa-exempt country flies with an ETA-IL, the electronic travel authorization. A citizen of a country that needs a visa to Israel gets a B/2 visa at the Israeli consulate where they live. Either way, you carry proof that it's a visit.",
+                "**On a tourist invitation:** the Israeli partner asks Misrad Hapnim to approve the visit before you fly. It isn't required unless you were refused entry before, but it's the safer way, especially when several of the risks above apply: the visit is approved in advance, instead of decided at the border.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "what-to-bring",
+          heading: "What to bring",
+          body: [
+            "Carry reliable proof that you're coming for a visit and going home, to show border control if you're stopped and asked about your visit:",
+            {
+              list: [
+                "**A return ticket,** for a date within the time you're asking to stay. Some airlines won't fly a foreigner to Israel without one.",
+                "**Where you're staying:** a hotel booking, or the address and contact details of whoever hosts you.",
+                "**Proof of your ties at home:** a letter from your employer, proof of studies, a lease or a home you own, family you live with or care for.",
+                "**A letter from your Israeli partner,** printed and signed: their full name, ID number and phone number, with a copy of their Teudat Zehut; how you know each other, where you're staying, the purpose of the visit, and when you're leaving.",
+              ],
+            },
+            {
+              note: "Keep the letter for when it's asked for, or if you're taken for further questioning. Don't hand it over straight away.",
+            },
+          ],
+        },
+        {
+          id: "at-the-border",
+          heading: "At border control",
+          body: [
+            {
+              list: [
+                "**Tell the truth.** Saying you're visiting your partner is fine. Lying to border control is a reason to refuse entry, and can bring a ban on entering Israel for years.",
+                "**Keep your answers consistent:** why you're coming, for how long, and when you're going back.",
+                "**Between visits:** coming often, leaving and coming back soon after, or long stays in a row raise suspicion on the next visit. Leave time between visits, and always leave before the stay you were given runs out.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "tourist-invitation",
+          heading: "The tourist invitation (hazmana)",
+          body: [
+            "It's Misrad Hapnim's approval of a visit in advance. It's the safer way to visit, and it's required in two cases: **after a refusal at the border**, when every later visit needs approval in advance, and **if the ETA-IL is refused**, when the visitor can't board without a B/2 visa from the consulate or a tourist invitation.",
+            {
+              steps: [
+                "**The Israeli partner applies** at the visa department of their branch, at least **21 working days** before the visit. You don't need a lawyer for it.",
+                "**The office may ask for a deposit,** to guarantee the visitor leaves on time. In practice it's often around 15,000 NIS, and it's returned once they leave.",
+                "**The visit is approved,** and the foreign partner flies in on it.",
+              ],
+            },
+            "Some offices say a visitor from a visa-exempt country doesn't need an invitation, since they can get an ETA-IL. The Israeli partner is entitled to ask for it anyway: an ETA-IL doesn't guarantee entry.",
+            {
+              note: "The tourist invitation isn't the [entry permit](guide:entry-permit), though people call both a \"hazmana\" (הזמנה). The tourist invitation is for a visit. The entry permit is for coming to live in Israel and start the partner visa.",
+            },
+          ],
+        },
+        {
+          id: "dont-file",
+          heading: "Never start the partner visa on a tourist invitation",
+          body: [
+            "With a tourist invitation, you told Misrad Hapnim the visit is temporary, and you may have left a deposit that the foreign partner leaves on time. Filing for the partner visa during that visit looks like an attempt to deceive the office, which expects the process to start while the foreign partner is abroad. It harms your credibility for the rest of the process.",
+            {
+              list: [
+                "**If you want to come and stay,** it isn't a visit: ask for the entry permit instead. [All about the entry permit](guide:entry-permit)",
+                "**Once you've filed,** the foreign partner can't come to Israel before the entry permit is granted, not even for a visit.",
+              ],
+            },
+          ],
+        },
+        {
+          id: "refused",
+          heading: "If entry is refused",
+          body: [
+            "The foreign partner is flown back, and should be given a paper with the decision. Until the flight, they may be held at the detention facility at Ben Gurion airport (מתקן יהלו\"ם). The flight is often within hours, so stay calm, and if you want to fight the decision while they're still in Israel, act at once.",
+            {
+              list: [
+                "**Appeal within 30 days** to the Appeals Tribunal (בית הדין לעררים), even if no paper was given. The fee is 774 NIS (2026), and the appeal needs an affidavit signed before a lawyer.",
+                "**The removal can go ahead** after you appeal, unless the tribunal orders it to stop.",
+                "**Every later visit needs approval in advance:** a visa, or a tourist invitation.",
+                "**You can still start the partner visa.** A refusal at the border doesn't close that door.",
+              ],
+            },
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Can I tell border control I'm visiting my partner?",
+          a: "Yes. It isn't a reason to refuse entry. Make it clear the visit is for a limited time and when you're going back. Lying is a reason to refuse entry, and can bring a ban of years.",
+        },
+        {
+          q: "Do I need a tourist invitation if I have an ETA-IL?",
+          a: "No, unless you were refused entry before. But an ETA-IL doesn't guarantee entry, and the invitation is the safer way, especially on a first visit, after frequent visits, or with weak ties at home.",
+        },
+        {
+          q: "Is the tourist invitation the same as the hazmana for the partner visa?",
+          a: "No. People call both a hazmana, but the tourist invitation approves a visit, and the entry permit lets the foreign partner come to live in Israel and start the process.",
+        },
+        {
+          q: "Can we start the partner visa while my partner is here on a tourist invitation?",
+          a: "No. It looks like an attempt to deceive the office and harms your credibility for the rest of the process. To come and stay, ask for the entry permit.",
+        },
+        {
+          q: "How much is the deposit for a tourist invitation?",
+          a: "Not every visitor is asked for one. In practice it's often around 15,000 NIS, and it's returned once the visitor leaves on time.",
+        },
+        {
+          q: "My partner was refused entry. Can we still apply for the partner visa?",
+          a: "Yes. A refusal doesn't stop you from starting the process. Future visits need approval in advance, a visa or a tourist invitation.",
+        },
+      ],
+      related: ["entry-permit", "partner-visa-israel"],
+      cta: {
+        title: "Ready to live together in Israel?",
+        body: "When the visits aren't enough, start the partner visa the right way. See which documents your file needs, and check each one before you file. Start free.",
+      },
+    },
   },
 };

@@ -12,6 +12,7 @@ export const guideSlugs = [
   "apostille-and-translation",
   "b1-visa",
   "a5-visa",
+  "visiting-your-partner-in-israel",
 ] as const;
 export type GuideSlug = (typeof guideSlugs)[number];
 

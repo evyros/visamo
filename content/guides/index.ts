@@ -56,6 +56,7 @@ export const guideSources: Record<GuideSlug, string[]> = {
   "entry-permit": ["entry-permit.md", "application.md", "first-appointment.md", "interview.md"],
   "both-partners-abroad": ["both-abroad.md", "entry-permit.md"],
   "apostille-and-translation": ["certification.md"],
+  "visiting-your-partner-in-israel": ["visiting.md", "deposit.md", "entry-permit.md", "application.md"],
 };
 
 /**
@@ -79,7 +80,7 @@ export const guideIndex: {
       ],
     },
     { id: "visas", numbered: false, slugs: ["b1-visa", "a5-visa"] },
-    { id: "situation", numbered: false, slugs: ["common-law-couples", "both-partners-abroad"] },
+    { id: "situation", numbered: false, slugs: ["common-law-couples", "both-partners-abroad", "visiting-your-partner-in-israel"] },
   ],
 };
 

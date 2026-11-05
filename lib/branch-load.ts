@@ -40,7 +40,7 @@ export const branchLoad: Record<BranchCode, BranchLoad> = {
   roshHaayin: "lessBusy",
   rishonLezion: "unknown",
   ramla: "unknown",
-  rehovot: "busier",
+  rehovot: "typical",
 };
 
 /** What each level means for the couple's waits, as the chat reads it. */

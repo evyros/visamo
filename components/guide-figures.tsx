@@ -45,6 +45,8 @@ export function GuideFigure({ figure, locale }: { figure: Figure; locale: Locale
         <RoutesFigure figure={figure} />
       ) : figure.figure === "loop" ? (
         <LoopFigure figure={figure} />
+      ) : figure.figure === "renewals" ? (
+        <RenewalsFigure figure={figure} locale={locale} />
       ) : (
         <MapFigure figure={figure} />
       )}
@@ -707,6 +709,108 @@ function LoopFigure({ figure }: { figure: Extract<Figure, { figure: "loop" }> })
         <p className="absolute top-[74px] left-1/2 w-max max-w-[94%] -translate-x-1/2 -translate-y-1/2 sm:top-[44px] sm:max-w-[85%] rounded-full border border-terracotta-600/25 bg-white px-3 py-1 text-center text-xs leading-5 font-semibold text-terracotta-600 shadow-soft sm:px-3.5 sm:text-sm">
           {figure.cost}
         </p>
+      </div>
+    </div>
+  );
+}
+
+// ── A visa's stickers, renewed ───────────────────────────────────────────────
+
+/** A renewal: two arrows going around, on an amber badge. Symmetric when turned, so it needs no mirroring. */
+function RenewalBadge({ className }: { className: string }) {
+  return (
+    <svg viewBox="-10 -10 20 20" aria-hidden="true" className={`pointer-events-none shrink-0 select-none ${className}`}>
+      <circle r="9.6" fill="#fff" />
+      <circle r="8" fill={C.amber} />
+      <g fill="none" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M-4.5 0.4a4.5 4.5 0 0 1 8.2-3" />
+        <path d="M4.3-5.4 3.7-2.6 0.9-3.2" />
+        <path d="M4.5-0.4a4.5 4.5 0 0 1-8.2 3" />
+        <path d="M-4.3 5.4-3.7 2.6-0.9 3.2" />
+      </g>
+    </svg>
+  );
+}
+
+function EndStar({ className }: { className: string }) {
+  return (
+    <svg viewBox="-10 -10 20 20" aria-hidden="true" className={`pointer-events-none shrink-0 select-none ${className}`}>
+      <circle r="9.6" fill="#fff" />
+      <circle r="8.2" fill={C.amber} />
+      <path d={star(0, 0.5, 4.8)} fill="#fff" stroke="#fff" strokeWidth="0.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/**
+ * Each way of renewing as a row of stickers, their widths in months, with a
+ * renewal between every two and the star at the end. Rows of the same length
+ * line up, over the years under them.
+ */
+function RenewalsFigure({ figure, locale }: { figure: Extract<Figure, { figure: "renewals" }>; locale: Locale }) {
+  const years = Math.ceil(Math.max(...figure.rows.map((r) => r.stickers.reduce((sum, s) => sum + s.months, 0))) / 12);
+  const ticks = Array.from({ length: years + 1 }, (_, y) => y);
+
+  return (
+    <div className="rounded-2xl border border-line-200 bg-white px-4 py-6 sm:px-7 sm:py-7">
+      <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-700">
+        <li className="flex items-center gap-2">
+          <span className="h-2.5 w-5 rounded-full bg-navy-900" />
+          {figure.legend.visa}
+        </li>
+        <li className="flex items-center gap-2">
+          <RenewalBadge className="size-4" />
+          {figure.legend.renewal}
+        </li>
+        <li className="flex items-center gap-2">
+          <EndStar className="size-4" />
+          {figure.legend.end}
+        </li>
+      </ul>
+
+      <div className="mt-6 space-y-5">
+        {figure.rows.map((row, i) => (
+          <div key={i}>
+            <p className="flex items-baseline justify-between gap-3 text-[15px] leading-6">
+              <span className="font-semibold text-navy-900">{row.name}</span>
+              <span className="text-sm text-slate-500">{row.total}</span>
+            </p>
+            <div className="mt-2 flex items-center">
+              {row.stickers.map((sticker, j) => [
+                // The badge overlaps both stickers equally, so it takes no width, and rows stay aligned.
+                j > 0 && (
+                  <span key={`renewal-${j}`} className="relative z-10 -mx-2.5 flex shrink-0">
+                    <RenewalBadge className="size-5" />
+                  </span>
+                ),
+                <span
+                  key={j}
+                  className="relative flex h-9 min-w-0 items-center justify-center overflow-hidden rounded-md bg-linear-to-b from-navy-800 to-navy-900 px-2 sm:h-10"
+                  style={{ flex: `${sticker.months} 1 0%` }}
+                >
+                  <span aria-hidden="true" className="absolute inset-x-0 top-0 h-2 bg-white/10" />
+                  <span className="truncate text-[12px] font-semibold text-white tabular-nums sm:text-[13px]">{sticker.label}</span>
+                </span>,
+              ])}
+              <span className="flex w-8 shrink-0 justify-end">
+                <EndStar className="size-7" />
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* The years, under the bars: the star's room at the end isn't part of the axis. */}
+      <div aria-hidden="true" className="pointer-events-none relative me-8 mt-2 h-5 text-xs text-slate-500 tabular-nums select-none">
+        {ticks.map((y) => (
+          <span
+            key={y}
+            className={`absolute top-0 ${y === 0 ? "" : y === years ? "-translate-x-full rtl:translate-x-full" : "-translate-x-1/2 rtl:translate-x-1/2"}`}
+            style={{ insetInlineStart: `${(y / years) * 100}%` }}
+          >
+            {y.toLocaleString(locale)}
+          </span>
+        ))}
       </div>
     </div>
   );

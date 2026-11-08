@@ -76,6 +76,13 @@ export type GuideFigure =
       caption: GuideText;
     }
   | {
+      /** One visa's years as its stickers, a row per way it's renewed; `months` is each sticker's length. */
+      figure: "renewals";
+      legend: { visa: string; renewal: string; end: string };
+      rows: { name: string; total: string; stickers: { months: number; label: string }[] }[];
+      caption: GuideText;
+    }
+  | {
       /** The guide's sections as tiles, each jumping to its section (a section id). */
       figure: "map";
       items: { icon: FigureIcon; title: string; section: string }[];

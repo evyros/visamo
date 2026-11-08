@@ -24,7 +24,14 @@ export const guideSources: Record<GuideSlug, string[]> = {
     "interview.md",
     "certification.md",
   ],
-  "a5-visa": ["process.md", "interview.md", "documents/foreignHealthInsurance.md"],
+  "a5-visa": [
+    "process.md",
+    "interview.md",
+    "documents/foreignHealthInsurance.md",
+    "former-ussr.md",
+    "children.md",
+    "deposit.md",
+  ],
   "b1-visa": ["process.md", "first-appointment.md", "entry-permit.md", "documents/foreignHealthInsurance.md"],
   "partner-visa-timeline": [
     "process.md",
@@ -107,6 +114,12 @@ export function blockTexts(block: GuideBlock): string[] {
       ];
     case "loop":
       return [...block.stages.map((s) => s.title), block.cost, block.caption];
+    case "renewals":
+      return [
+        ...Object.values(block.legend),
+        ...block.rows.flatMap((r) => [r.name, r.total, ...r.stickers.map((s) => s.label)]),
+        block.caption,
+      ];
     case "map":
       return [...block.items.map((item) => item.title), block.caption];
   }
@@ -130,6 +143,8 @@ export function blockShape(block: GuideBlock): string {
       return `routes:${block.routes.map((r) => `${r.icon}/${r.steps.length}`).join(",")}>${block.end.icon}/${block.end.text ? 1 : 0}`;
     case "loop":
       return `loop:${block.stages.map((s) => s.icon).join(",")}`;
+    case "renewals":
+      return `renewals:${block.rows.map((r) => r.stickers.map((s) => s.months).join("+")).join(",")}`;
     case "map":
       return `map:${block.items.map((item) => `${item.icon}@${item.section}`).join(",")}`;
   }

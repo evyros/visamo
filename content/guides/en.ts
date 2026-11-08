@@ -202,28 +202,45 @@ export const guidesEn: Guides = {
     },
 
     "a5-visa": {
-      metaTitle: "A/5 Visa in Israel for Partners: Rights and Timeline",
+      metaTitle: "A/5 Visa in Israel for Partners: Timeline and What to Expect",
       description:
-        "A/5 (A5, א/5) is temporary residency in Israel. When partners of Israelis get it on each track, what it gives you, how you move up from B/1, and what comes after.",
-      facts: ["4 years", "Israeli ID", "Public health insurance"],
-      title: "The A/5 visa: temporary residency for partners of Israelis",
+        "A/5 (A5, א/5) is temporary residency in Israel. When partners of Israelis get it on each track, the interview before it, the Teudat Zehut and health insurance, the renewals, and what comes after.",
+      facts: ["4 years", "Teudat Zehut", "Public health insurance"],
+      title: "The A/5 visa for partners of Israelis: timeline and what to expect",
       answer:
-        "**A/5** (א/5, often written A5) is temporary residency in Israel. For the foreign partner of an Israeli, it's the second stage of the gradual process, after B/1: an Israeli ID number, and the social rights of a resident, including public health insurance. Married couples get it after up to 6 months on B/1, common-law couples after 3 years, and it lasts 4 years before permanent status.",
-      updated: "2026-10-05",
+        "**A/5** (א/5, often written A5) is temporary residency in Israel. For the foreign partner of an Israeli, it's the second stage of the gradual process, after B/1: a **Teudat Zehut** with an Israeli ID number, and the social rights of a resident, including **public health insurance** once you've lived in Israel long enough. Married couples get it after up to 6 months on B/1, common-law couples after 3 years. It lasts **4 years**, renewed along the way, before permanent status.",
+      updated: "2026-11-08",
       sections: [
+        {
+          id: "where",
+          heading: "Where A/5 fits",
+          body: [
+            {
+              figure: "path",
+              stages: [
+                { title: "B/1", text: "Live and work in Israel" },
+                { title: "A/5", text: "A Teudat Zehut and health insurance" },
+                { title: "Permanent status", text: "Citizenship or permanent residency" },
+              ],
+              current: 1,
+              caption: "A/5 is the second stage, between the B/1 and permanent status.",
+            },
+            "A/5 makes the foreign partner a temporary resident (תושב ארעי). **For married couples, the gradual process itself starts with the A/5:** the months on B/1 before it are a status in between, and aren't counted (procedure 5.2.0008). For common-law couples, the 3 years on B/1 are part of the process, and the 4 years on A/5 come after them.",
+          ],
+        },
         {
           id: "what-it-gives",
           heading: "What A/5 gives you",
           body: [
-            "A/5 makes the foreign partner a temporary resident (תושב ארעי). Compared with the B/1 before it:",
+            "Compared with the B/1 before it:",
             {
               table: {
                 head: ["", "B/1 (ב/1 כללי)", "A/5 (א/5)"],
                 rows: [
                   ["Status", "A work visa, marked \"partner\"", "Temporary resident"],
-                  ["Israeli ID number", "No", "Yes"],
+                  ["Teudat Zehut and Israeli ID number", "No", "Yes"],
                   ["Resident for National Insurance", "No", "Yes"],
-                  ["Public health insurance", "No: private insurance is needed", "Yes"],
+                  ["Public health insurance", "No: private insurance is needed", "Yes, once you've lived in Israel long enough ([below](#health))"],
                 ],
               },
             },
@@ -234,13 +251,23 @@ export const guidesEn: Guides = {
           heading: "When you get it",
           body: [
             {
+              figure: "years",
+              legend: { b1: "B/1", a5: "A/5", end: "Permanent status" },
+              tracks: [
+                { name: "Married", total: "Up to 4½ years", b1: 6, a5: 48 },
+                { name: "Common-law", total: "7 years", b1: 36, a5: 48 },
+              ],
+              caption: "Years on each visa: the A/5 is the longer part on both tracks.",
+            },
+            {
               list: [
                 "**Married, a man and a woman:** after up to 6 months on B/1, the time the office has to interview you and decide on the A/5.",
                 "**Married, same sex:** after up to 6 months on B/1.",
                 "**Common-law:** after 3 years on B/1.",
               ],
             },
-            "If you marry while on B/1, you move to the married track: you can move up to A/5 once your file is converted and you're interviewed.",
+            "**If you marry while on B/1,** you move to the married track: you can move up to A/5 once your file is converted and you're interviewed.",
+            "**From the former USSR:** married couples get the B/1 first, but have to complete the Nativ check before they can move up to A/5.",
           ],
         },
         {
@@ -249,35 +276,81 @@ export const guidesEn: Guides = {
           body: [
             "For married couples, the first interview comes before the A/5. It's the office's main way to check that your relationship is genuine.",
             {
+              steps: [
+                "**On B/1,** for up to 6 months: the time the office has to check your file and interview you.",
+                "**The interview,** about your daily life and your relationship. Your answers are compared.",
+                "**The decision.** Some offices decide on the spot, others take a few days to a few weeks.",
+                "**The A/5,** once it's approved.",
+              ],
+            },
+            {
               list: [
                 "**Separately.** Even when it's called a shared interview, you're usually questioned one at a time, while the other waits outside.",
-                "**The questions** are about your daily life: how you met, your families, your friends, your work and money, your home, your last holiday together, and your plans. Your answers are compared.",
+                "**The questions** are about how you met, your families, your friends, your work and money, your home, your last holiday together, and your plans.",
                 "**The language** is usually English for the foreign partner and Hebrew for the Israeli partner. If either of you isn't fluent, tell the office as early as you can: it arranges a translator. You can't bring your own.",
                 "**The record** is typed in Hebrew, and you're asked to sign it. If you don't read Hebrew, ask the clerk to translate it before you sign.",
               ],
             },
             "Tell the truth, and if you don't remember something, say so rather than guess. Bring the documents about your life together and the evidence of your relationship you've gathered since you last sent documents.",
-            "Some offices decide on the spot, others take weeks or months. Ask the clerk when to expect the decision, and write to the office if you've heard nothing after 3 weeks.",
+            "Ask the clerk when to expect the decision, and write to the office if you've heard nothing after 3 weeks. When answers didn't match, the office may approve on condition of a deposit (ערבות) rather than refuse. If the application is refused, ask for the interview record: the office gives it only to those who ask.",
           ],
         },
         {
           id: "health",
-          heading: "Health insurance starts with A/5",
+          heading: "Health insurance with A/5",
           body: [
-            "With A/5, the foreign partner becomes a resident for National Insurance, and gets public health insurance. Until then, on B/1, they need private health insurance: [how couples arrange it](guide:b1-visa).",
+            "With A/5, the foreign partner becomes a resident for National Insurance, and gets public health insurance if they've lived in Israel **at least 183 days in the year that starts 6 months before the A/5**. Days on B/1 count (National Insurance Law §2A).",
+            "Until then, on B/1, the foreign partner needs private health insurance: [how couples arrange it](guide:b1-visa).",
+          ],
+        },
+        {
+          id: "renewals",
+          heading: "Renewing the A/5",
+          body: [
+            "The first A/5 is given for a year. After that, the procedure lets your branch extend it for **up to 2 years at a time**, but some branches still renew it **every year**. Either way, it's 4 years on A/5 in all.",
+            {
+              figure: "renewals",
+              legend: { visa: "An A/5 visa", renewal: "A renewal", end: "Permanent status" },
+              rows: [
+                {
+                  name: "Up to 2 years at a time",
+                  total: "2 renewals",
+                  stickers: [
+                    { months: 12, label: "1 year" },
+                    { months: 24, label: "2 years" },
+                    { months: 12, label: "1 year" },
+                  ],
+                },
+                {
+                  name: "Every year",
+                  total: "3 renewals",
+                  stickers: [
+                    { months: 12, label: "1 year" },
+                    { months: 12, label: "1 year" },
+                    { months: 12, label: "1 year" },
+                    { months: 12, label: "1 year" },
+                  ],
+                },
+              ],
+              caption: "The same 4 years on A/5: how often you renew depends on your branch.",
+            },
+            "At every renewal, you bring updated documents, and show again that your relationship is genuine and that you live together in Israel. There's an interview at the renewals too.",
           ],
         },
         {
           id: "after",
           heading: "After A/5",
           body: [
-            "After 4 years on A/5:",
+            "After 4 years on A/5, the foreign partner gets permanent status. Which one depends on the Israeli partner and your track:",
             {
-              list: [
-                "**Married to an Israeli citizen of a different sex:** a choice between citizenship and permanent residency.",
-                "**Common-law, or married to an Israeli citizen of the same sex:** permanent residency, and then you can apply for citizenship.",
-                "**Sponsored by a permanent resident:** permanent residency, not citizenship.",
-              ],
+              table: {
+                head: ["The Israeli partner", "After 4 years on A/5"],
+                rows: [
+                  ["A citizen, married to a partner of a different sex", "A choice between citizenship and permanent residency"],
+                  ["A citizen, common-law or married to a partner of the same sex", "Permanent residency, and then you can apply for citizenship"],
+                  ["A permanent resident", "Permanent residency, not citizenship"],
+                ],
+              },
             },
           ],
         },
@@ -289,6 +362,8 @@ export const guidesEn: Guides = {
               list: [
                 "**An A/5 holder generally can't sponsor a partner** of their own.",
                 "**Your address is checked throughout the process.** The address in the Israeli partner's Teudat Zehut has to be where you really live.",
+                "**A deposit** (ערבות), if the office asked for one, is returned when the decision says. In practice, that's often after a year, or once the foreign partner moves up to A/5.",
+                "**A child of the foreign partner** isn't upgraded to A/5 if the other parent objects to the move.",
               ],
             },
           ],
@@ -297,7 +372,7 @@ export const guidesEn: Guides = {
       faq: [
         {
           q: "What is the A/5 visa in Israel?",
-          a: "A/5 (א/5) is temporary residency. In the partner process, it comes after the B/1 visa, and gives the foreign partner an Israeli ID number and the social rights of a resident, including public health insurance.",
+          a: "A/5 (א/5) is temporary residency. In the partner process, it comes after the B/1 visa, and gives the foreign partner a Teudat Zehut with an Israeli ID number, and the social rights of a resident, including public health insurance.",
         },
         {
           q: "Is A5 the same as A/5?",
@@ -305,7 +380,11 @@ export const guidesEn: Guides = {
         },
         {
           q: "How long does A/5 last?",
-          a: "4 years on every track, before permanent status.",
+          a: "4 years on every track, before permanent status, renewed along the way.",
+        },
+        {
+          q: "How often do we renew the A/5?",
+          a: "The first A/5 is for a year. After that, the procedure lets the branch extend it for up to 2 years at a time, but some branches still renew it every year. At each renewal, you bring updated documents.",
         },
         {
           q: "When do married couples get A/5?",
@@ -316,11 +395,23 @@ export const guidesEn: Guides = {
           a: "After 3 years on B/1.",
         },
         {
+          q: "Do the months on B/1 count toward the 4 years?",
+          a: "No. For married couples, the 4 years start with the A/5: the B/1 before it is a status in between (procedure 5.2.0008). For common-law couples, the 3 years on B/1 are part of the process, and the 4 years on A/5 come after them.",
+        },
+        {
           q: "Does A/5 include health insurance?",
-          a: "Yes. With A/5, the foreign partner is a resident for National Insurance, and gets public health insurance. On B/1 they need private insurance.",
+          a: "Yes, once the foreign partner has lived in Israel at least 183 days in the year that starts 6 months before the A/5. Days on B/1 count. Until then, on B/1, they need private insurance.",
+        },
+        {
+          q: "Do I get a Teudat Zehut with A/5?",
+          a: "Yes. As a temporary resident, the foreign partner gets an Israeli ID number and a Teudat Zehut.",
+        },
+        {
+          q: "Can an A/5 holder sponsor a partner?",
+          a: "Generally not. A temporary resident can't sponsor a partner of their own.",
         },
       ],
-      related: ["partner-visa-israel", "b1-visa"],
+      related: ["partner-visa-israel", "b1-visa", "partner-visa-timeline"],
       cta: {
         title: "Getting ready for the A/5?",
         body: "Check every document in your file before your appointment, so a small mistake doesn't cost you months.",

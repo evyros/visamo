@@ -40,7 +40,9 @@ what happens while you wait, is in [application.md](application.md).
   insurance.
 - **A/5** (א/5), temporary resident: an Israeli ID number and a Teudat
   Zehut, and the social rights of a resident, including public health
-  insurance.
+  insurance. Public health insurance starts with the A/5 if the foreign
+  partner has lived in Israel at least 183 days in the year that starts 6
+  months before it, days on B/1 included (National Insurance Law §2A).
 
 ## How long it takes
 
@@ -51,8 +53,7 @@ By the procedures, measured in time, not in the number of visas:
   4 years, and then a choice between citizenship and permanent residency.
   By procedure 5.2.0008 (§ג.7–ג.8), this B/1 is a temporary status while the
   file is checked, and isn't counted in the gradual process: the
-  process itself starts with the A/5, given first for a year, then
-  extended every 2 years, 4 years in all.
+  process itself starts with the A/5, 4 years in all.
 - **Married (same sex):** B/1 for up to 6 months, then A/5 for 4 years, then
   permanent residency, with the option to apply for citizenship after it.
 - **Common-law:** B/1 for 3 years, then A/5 for 4 years, then permanent
@@ -61,6 +62,10 @@ By the procedures, measured in time, not in the number of visas:
 The first visa is given for up to a year (for married couples, usually 6
 months). Since July 2026, visas after the first can be given for up to 2
 years at a time; the office doesn't have to.
+
+**The A/5** is given first for a year. After that, the procedure lets the
+branch extend it for up to 2 years at a time, but some branches still renew
+it every year. Either way, it's 4 years on A/5 in all.
 
 Marrying during the process moves you to the married track: on B/1, you can
 move up to A/5 once the file is converted and you're interviewed.
@@ -89,8 +94,8 @@ practice, as of 2026:
      busiest branches it can reach a year. See
      [first-appointment.md](first-appointment.md).
 5. **The interview → the decision:** some offices decide on the spot, others
-   take weeks or months. Write to the office if you've heard nothing after 3
-   weeks. See [interview.md](interview.md).
+   take a few days to a few weeks. Write to the office if you've heard
+   nothing after 3 weeks. See [interview.md](interview.md).
 6. **B/1 → A/5 (married couples):** the B/1 is given for up to 6 months, the
    time the office has to interview you and decide on the A/5.
 

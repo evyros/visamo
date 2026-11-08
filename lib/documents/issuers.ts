@@ -54,6 +54,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     PH: { kind: "document", heading: "Philippines", electronic: true },
     PT: { kind: "document", heading: "Portugal" },
     RU: { kind: "document", heading: "Russia" },
+    SE: { kind: "document", heading: "Sweden" },
     TH: { kind: "document", heading: "Thailand" },
     UA: { kind: "document", heading: "Ukraine" },
     US: { kind: "document", heading: "United States" },

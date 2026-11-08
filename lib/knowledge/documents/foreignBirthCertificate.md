@@ -191,6 +191,13 @@ The full birth certificate (certificación literal), from the civil registry
 (Registro Civil). The multilingual extract (certificado plurilingüe), in
 Spanish and French, still needs a translation and an apostille for Israel.
 
+### Sweden
+
+An extract from the population register (utdrag om folkbokföring), in
+English, "with all relations" (med alla relationer), from the Tax Agency
+(Skatteverket). It serves as this document and the personal status at once.
+Any notary public (notarius publicus) adds the apostille.
+
 ### Thailand
 
 The birth certificate (สูติบัตร), or a certified copy of it from a district

@@ -3,6 +3,26 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v46 — 2026-11-08
+
+**What changed:** Sweden has an issuer for `foreignBirthCertificate`,
+restating its new guide section: the Tax Agency (Skatteverket)'s extract
+from the population register "with all relations", in English, with an
+apostille from any notary public. It's the same extract as the Swedish
+personal status.
+
+**Why:** The Swedish personal status already said the extract serves as the
+birth certificate too, but the birth certificate itself had only the general
+steps.
+
+**Source:** AIC, "Official Documentation from Sweden" (utdrag om
+folkbokföring med alla relationer på engelska, from Skatteverket; apostille
+from any notarius publicus); the Sweden section of the personal status
+guide.
+
+**Lists that changed:** none (steps of Swedish birth certificates: their
+office).
+
 ## v45 — 2026-11-04
 
 **What changed:** Nepal has issuers for `foreignBirthCertificate`,

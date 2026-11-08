@@ -2230,6 +2230,11 @@
             "details": "Many people with an old Soviet certificate get a new copy (повторное свидетельство) from the civil registry office of the place of birth.",
             "apostilleBy": "the regional registry archive"
           },
+          "SE": {
+            "office": "the Tax Agency (Skatteverket)",
+            "details": "An extract from the population register (utdrag om folkbokföring), in English, \"with all relations\" (med alla relationer). The same extract serves as the personal status too.",
+            "apostilleBy": "any notary public (notarius publicus)"
+          },
           "TH": {
             "office": "a district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
             "details": "The birth certificate (สูติบัตร), or a certified copy from a district office: any district office for someone born from 1980 on, the one where the birth was registered for someone born earlier. A lost certificate isn't issued again: get the certified copy instead, which can also be issued in English. A Thai living abroad can authorize a relative in Thailand to get it, by signing the authorization at a Thai embassy. Certify the Thai document together with its English translation, not the translation alone. If the name has changed since birth, the ministry also asks for the name change certificate (ใบสำคัญการเปลี่ยนชื่อ)."

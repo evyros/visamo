@@ -19,13 +19,16 @@ export function Features({ t }: { t: Messages }) {
 
         {/* What couples come back for, shown rather than described; the rest is a list. */}
         <div className="mt-14 space-y-16 lg:mt-20 lg:space-y-24">
-          <Showcase title={f.documents.title} body={f.documents.body}>
-            <CheckMockup mockup={f.documents.mockup} />
+          <Showcase title={f.list.title} body={f.list.body}>
+            <ListMockup mockup={f.list.mockup} />
           </Showcase>
-          <Showcase title={f.assistant.title} body={f.assistant.body} reverse>
+          <Showcase title={f.check.title} body={f.check.body} reverse>
+            <CheckMockup mockup={f.check.mockup} />
+          </Showcase>
+          <Showcase title={f.assistant.title} body={f.assistant.body}>
             <ChatMockup chat={f.assistant.chat} />
           </Showcase>
-          <Showcase title={f.tracker.title} body={f.tracker.body}>
+          <Showcase title={f.tracker.title} body={f.tracker.body} reverse>
             <StageMockup mockup={f.tracker.mockup} />
           </Showcase>
         </div>
@@ -76,10 +79,167 @@ function Showcase({
 }
 
 /**
+ * A couple's document list with one document open: where to get it in their
+ * country, what it must include, its apostille and translation, drawn as a
+ * route of steps, and the way around it when it can't be had.
+ */
+function ListMockup({ mockup }: { mockup: Features["list"]["mockup"] }) {
+  return (
+    // An illustration, not text to copy.
+    <figure aria-label={mockup.label} className="relative mx-auto w-full max-w-[460px] select-none">
+      <div className="rounded-2xl bg-white p-5 shadow-float ring-1 ring-line-200 sm:p-6">
+        <div className="flex items-baseline justify-between gap-3">
+          <p className="font-semibold text-navy-900">{mockup.title}</p>
+          <p className="text-xs text-slate-500">{mockup.count}</p>
+        </div>
+
+        <div className="mt-4 rounded-xl bg-sand-50 p-4 ring-1 ring-line-200">
+          <div className="flex items-center gap-3">
+            <Flag />
+            <p className="min-w-0 flex-1 text-[15px] font-semibold text-navy-900">{mockup.document}</p>
+            <Icon name="chevronDown" className="size-4 shrink-0 rotate-180 text-slate-500" aria-hidden="true" />
+          </div>
+
+          <ol className="mt-4">
+            {mockup.steps.map((step, i) => (
+              <li key={step.label} className="relative flex gap-3 pb-3.5">
+                {i < mockup.steps.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute start-[15px] top-8 bottom-0 border-s-2 border-dotted border-teal-600/35"
+                  />
+                )}
+                <span
+                  aria-hidden="true"
+                  className="relative flex size-8 shrink-0 items-center justify-center rounded-full bg-white text-teal-700 ring-1 ring-teal-600/25"
+                >
+                  <StepGlyph name={step.icon} />
+                </span>
+                <span className="min-w-0 pt-0.5">
+                  <span className="block text-xs font-medium text-slate-500">{step.label}</span>
+                  <span className="block text-sm leading-snug text-navy-900">{step.value}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+
+          {/* The way around it: off the route, so it reads as the other path, not a next step. */}
+          <div className="mt-0.5 flex gap-3 rounded-lg border border-dashed border-slate-300 bg-white p-3">
+            <span
+              aria-hidden="true"
+              className="flex size-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-500"
+            >
+              <StepGlyph name="alternative" />
+            </span>
+            <span className="min-w-0 pt-0.5">
+              <span className="block text-sm font-semibold text-navy-900">{mockup.alternative.label}</span>
+              <span className="mt-0.5 inline-flex items-center gap-1 text-sm font-semibold text-teal-700">
+                {mockup.alternative.value}
+                <Icon name="arrow" className="size-3.5" aria-hidden="true" />
+              </span>
+            </span>
+          </div>
+        </div>
+
+        {/* The rest of the list, closed. */}
+        <ul className="mt-1">
+          {mockup.more.map((name) => (
+            <li key={name} className="flex items-center gap-3 border-b border-line-200 py-3 last:border-0 last:pb-0">
+              <span aria-hidden="true" className="flex size-8 shrink-0 items-center justify-center text-slate-300">
+                <StepGlyph name="document" />
+              </span>
+              <span className="min-w-0 flex-1 text-sm text-slate-700">{name}</span>
+              <Icon name="chevron" className="size-4 shrink-0 text-slate-300" aria-hidden="true" />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </figure>
+  );
+}
+
+/** The list mockup's glyphs, drawn on the same 24px grid and stroke as the site's icons. */
+const stepGlyphs: Record<string, ReactNode> = {
+  // A map pin: where to get it.
+  where: (
+    <>
+      <path d="M12 21s-6.5-5.4-6.5-11a6.5 6.5 0 0 1 13 0c0 5.6-6.5 11-6.5 11Z" />
+      <circle cx="12" cy="10" r="2.3" />
+    </>
+  ),
+  // A page with ticked lines: what it must include.
+  include: (
+    <>
+      <path d="M17.5 21h-11a1.5 1.5 0 0 1-1.5-1.5v-15A1.5 1.5 0 0 1 6.5 3h11A1.5 1.5 0 0 1 19 4.5v15a1.5 1.5 0 0 1-1.5 1.5Z" />
+      <path d="m8 8.5 1.2 1.2L11.5 7.5M13.5 8.5H16M8 14l1.2 1.2 2.3-2.2M13.5 14H16" />
+    </>
+  ),
+  // A seal with ribbons: the apostille.
+  apostille: (
+    <>
+      <circle cx="12" cy="9" r="5.5" />
+      <circle cx="12" cy="9" r="2" />
+      <path d="m8.6 13.3-1.6 7.2 5-2.6 5 2.6-1.6-7.2" />
+    </>
+  ),
+  // A letter becoming another: the translation.
+  translation: (
+    <>
+      <path d="M3.5 5.5h8M7.5 3.5v2M5 5.5c.9 3 2.9 5.4 5.8 6.6M10 5.5c-.9 3.6-3.1 6.2-6.5 7.5" />
+      <path d="m12.5 20.5 4.25-9.5 4.25 9.5M14 17h5.5" />
+    </>
+  ),
+  // A path that forks: the alternative.
+  alternative: (
+    <>
+      <path d="M6 3.5V10a5 5 0 0 0 5 5h7.5" />
+      <path d="M6 10v10.5" />
+      <path d="m15.5 12 3 3-3 3" />
+    </>
+  ),
+  // A sheet of paper, for the closed documents.
+  document: (
+    <>
+      <path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z" />
+      <path d="M14 3v4.5h4.5M9 12.5h6M9 16h4" />
+    </>
+  ),
+};
+
+function StepGlyph({ name }: { name: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`size-[18px] ${name === "alternative" ? "rtl:-scale-x-100" : ""}`}
+    >
+      {stepGlyphs[name]}
+    </svg>
+  );
+}
+
+/** The example document's country, Germany, as a small flag. */
+function Flag() {
+  return (
+    <span aria-hidden="true" className="block h-3.5 w-[23px] shrink-0 overflow-hidden rounded-[3px] ring-1 ring-black/5">
+      <svg viewBox="0 0 5 3" preserveAspectRatio="none" className="block size-full">
+        <path fill="#000" d="M0 0h5v1H0z" />
+        <path fill="#d00" d="M0 1h5v1H0z" />
+        <path fill="#ffce00" d="M0 2h5v1H0z" />
+      </svg>
+    </span>
+  );
+}
+
+/**
  * A check, as an annotated page: the line it found wrong is marked, with a note
  * hanging from it, and what passed gets a quiet chip on the corner.
  */
-function CheckMockup({ mockup }: { mockup: Features["documents"]["mockup"] }) {
+function CheckMockup({ mockup }: { mockup: Features["check"]["mockup"] }) {
   return (
     <figure aria-label={mockup.label} className="relative mx-auto w-full max-w-[460px] pb-6">
       <Paper title={mockup.title} className="w-[84%]">

@@ -190,9 +190,50 @@
     "features": {
       "title": "Everything you need for the process, in one place.",
       "intro": "From your first document to the Ministry's answer.",
-      "documents": {
-        "title": "Every document explained, then checked",
-        "body": "What it is, where to get it, and what it must include. Then upload it, and know right away what needs fixing.",
+      "list": {
+        "title": "Your document list, made for your case",
+        "body": "For each document: how to get it from your country, what it must include, how to translate it, and what to do if you can't get it.",
+        "mockup": {
+          "label": "Example of a document on a couple's list",
+          "title": "Your documents",
+          "count": "21 documents",
+          "document": "Personal status: Germany",
+          "steps": [
+            {
+              "icon": "where",
+              "label": "Where to get it",
+              "value": "Ask the Bürgeramt for an erweiterte Meldebescheinigung"
+            },
+            {
+              "icon": "include",
+              "label": "What it must include",
+              "value": "The marital status, issued in the last 6 months"
+            },
+            {
+              "icon": "apostille",
+              "label": "Apostille",
+              "value": "From Germany: it can't be done in Israel"
+            },
+            {
+              "icon": "translation",
+              "label": "Translation",
+              "value": "Notarized, into Hebrew, in Israel"
+            }
+          ],
+          "alternative": {
+            "label": "Can't get this document?",
+            "value": "See alternatives"
+          },
+          "more": [
+            "Police certificate: Germany",
+            "Birth certificate",
+            "Foreign passport"
+          ]
+        }
+      },
+      "check": {
+        "title": "Upload it, and know right away what to fix",
+        "body": "Each document is checked as soon as it's uploaded. Anything that needs fixing comes with clear steps, before you submit.",
         "mockup": {
           "label": "Example of a document check",
           "title": "Police certificate",
@@ -273,15 +314,15 @@
       "steps": [
         {
           "title": "Tell us about the two of you.",
-          "body": "Where you're each from, and whether you're married or living together. Your answers build your own process, every step and document explained."
+          "body": "Where you're each from, and whether you're married or living together. Your answers build your own process and your document list."
         },
         {
-          "title": "Upload, and get checked on the spot.",
-          "body": "Check each document as soon as it's uploaded. Anything that needs fixing comes with clear steps."
+          "title": "Get each document, the right way.",
+          "body": "For every document on your list: how to get it from your country, what it must include, how to translate it, and what to do if you can't. Then Visamo checks it before you submit."
         },
         {
           "title": "Submit it yourself, ready.",
-          "body": "Every document is checked and kept separate, the way the Ministry asks for them. You submit them yourself through the official channels."
+          "body": "Every document in one place, kept separate the way the Ministry asks for them. You submit them yourself through the official channels."
         }
       ]
     },

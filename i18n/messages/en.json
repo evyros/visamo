@@ -217,7 +217,7 @@
             {
               "icon": "translation",
               "label": "Translation",
-              "value": "Notarized, into Hebrew, in Israel"
+              "value": "Notarized translation into Hebrew, in Israel"
             }
           ],
           "alternative": {
@@ -2105,16 +2105,26 @@
       },
       "steps": {
         "heading": "What it needs",
-        "obtain": "Get the original from {country}",
-        "obtainFrom": "Get it from {office}",
+        "labels": {
+          "obtain": "Where to get it",
+          "apostille": "Apostille",
+          "legalization": "Consular legalization",
+          "certification": "Apostille or legalization",
+          "send": "Sending to Israel",
+          "translate": "Translation",
+          "sign": "Must be signed",
+          "affidavit": "Affidavit"
+        },
+        "obtain": "The original, from {country}",
+        "obtainFrom": "{office}",
         "obtainDetails": "Ask for the original on paper, with a handwritten signature or an official stamp, and say it's for use abroad. Many Misrad Hapnim branches reject a document printed at home or downloaded online, and many countries won't put an apostille on one.",
         "utah": "Utah",
-        "apostille": "An apostille, from {country}",
-        "apostilleFrom": "An apostille from {authority}",
-        "utahApostille": "An apostille from the Utah Lieutenant Governor",
+        "apostille": "From {country}",
+        "apostilleFrom": "From {authority}",
+        "utahApostille": "From the Utah Lieutenant Governor",
         "apostilleDetails": "Only the country that issued it can put an apostille on it: it can't be done in Israel. It's usually attached to the document: don't separate them, that voids it.",
-        "legalization": "Consular legalization in {country}",
-        "legalizationVia": "Consular legalization in {country}, through {via}",
+        "legalization": "In {country}",
+        "legalizationVia": "In {country}, through {via}",
         "legalizationLead": "A chain of signatures (שרשרת חתימות), in this order:",
         "legalizationUsualLead": "A chain of signatures (שרשרת חתימות), usually in this order:",
         "issuingOffice": "the office that issued it",
@@ -2130,21 +2140,28 @@
           "viaIsraeliConsulate": "the Israeli embassy in {via}"
         },
         "chainJoin": ", then ",
-        "dependsOnCountry": "If it was issued abroad: an apostille or consular legalization, from that country",
+        "dependsOnCountry": "If it was issued abroad, from that country",
         "dependsOnCountryDetails": "An apostille if the country is in the Hague Apostille Convention, consular legalization if it isn't. Only the country that issued it can do it, not Israel.",
         "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
-        "send": "Have the original sent to Israel by courier",
+        "send": "The original, by courier",
         "sendDetails": "Misrad Hapnim asks for the original at the first appointment, and it's needed in Israel for the translation too. Have it sent in time from the country that issued it. If you already have it in Israel, there's nothing to do.",
-        "translateNotarized": "A notarized translation might be needed",
+        "translateNotarized": "Notarized translation, if it's needed",
         "translateNotarizedFull": "A notarized translation into Hebrew, made in Israel, if it isn't in Hebrew, Arabic or English",
         "translateEnglish": "English is usually accepted, but a clerk may still ask for a translation.",
         "translateArabic": "Not needed if it's in Arabic.",
         "translateHebrewArabic": "Not needed if it's in Hebrew or Arabic.",
         "translateNotarizedDetails": "Have it translated in Israel, by a notary who knows both languages and translates it themselves.\nThe apostille or legalization is translated too, unless it's in English or includes English.\nUpload the translation with the document.",
-        "translateSelf": "You might need to translate it",
+        "translateSelf": "Your own translation, if it's needed",
         "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
         "translateSelfDetails": "Needed if it isn't in Hebrew, Arabic or English.\nNo notary is needed: translate it yourselves, or mark the important parts and explain them.\nUpload the translation with the document.",
         "signing": {
+          "clerk": "At the appointment, in front of the clerk",
+          "lawyer": "In front of an Israeli lawyer",
+          "lawyerCourtOrNotary": "In front of a lawyer or notary",
+          "notary": "In front of a notary",
+          "consul": "In front of a consul"
+        },
+        "signingSentence": {
           "clerk": "Must be signed at the appointment, in front of the clerk",
           "lawyer": "Must be signed in front of an Israeli lawyer",
           "lawyerCourtOrNotary": "Must be signed in front of a lawyer or notary",
@@ -2153,24 +2170,29 @@
         },
         "signingFor": {
           "statusApplicationMarried": {
-            "text": "Your declarations must be signed in front of an Israeli lawyer",
-            "details": "Each of you signs your own. Fill them in, but don't sign them before: the lawyer checks who you are, and signs and stamps them."
+            "text": "Your declarations, in front of an Israeli lawyer",
+            "details": "Each of you signs your own. Fill them in, but don't sign them before: the lawyer checks who you are, and signs and stamps them.",
+            "sentence": "Your declarations must be signed in front of an Israeli lawyer"
           },
           "statusApplicationMarriedIsraeliOnly": {
-            "text": "{israeli}'s declaration (הצהרת בן הזוג המזמין) must be signed in front of an Israeli lawyer",
-            "details": "Page 4 of the form. Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it."
+            "text": "{israeli}'s declaration (הצהרת בן הזוג המזמין), in front of an Israeli lawyer",
+            "details": "Page 4 of the form. Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it.",
+            "sentence": "{israeli}'s declaration (הצהרת בן הזוג המזמין) must be signed in front of an Israeli lawyer"
           },
           "previousChildrenAffidavit": {
-            "text": "Only {foreign} signs it, in front of a lawyer or notary",
-            "details": "An Israeli lawyer, the magistrate's court, or a notary can confirm it. Fill it in, but don't sign it before: whoever confirms it checks {foreign}'s identity, and signs and stamps it. {israeli} doesn't sign it."
+            "text": "Only by {foreign}, in front of a lawyer or notary",
+            "details": "An Israeli lawyer, the magistrate's court, or a notary can confirm it. Fill it in, but don't sign it before: whoever confirms it checks {foreign}'s identity, and signs and stamps it. {israeli} doesn't sign it.",
+            "sentence": "Only {foreign} signs it, in front of a lawyer or notary"
           },
           "foreignDeclarationMarried": {
-            "text": "Must be signed in front of an Israeli lawyer",
-            "details": "Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it."
+            "text": "In front of an Israeli lawyer",
+            "details": "Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it.",
+            "sentence": "Must be signed in front of an Israeli lawyer"
           },
           "landlordAffidavit": {
-            "text": "If you rent: the landlord's affidavit must be signed in front of a lawyer",
-            "details": "Your landlord signs it, in front of a lawyer, and you attach a copy of their Teudat Zehut. If they won't, ask them for a letter confirming you live in their home, with their contact details and signature."
+            "text": "If you rent: the landlord's affidavit, in front of a lawyer",
+            "details": "Your landlord signs it, in front of a lawyer, and you attach a copy of their Teudat Zehut. If they won't, ask them for a letter confirming you live in their home, with their contact details and signature.",
+            "sentence": "If you rent: the landlord's affidavit must be signed in front of a lawyer"
           }
         },
         "signingDetails": {
@@ -2181,10 +2203,11 @@
           "consul": "Fill it in, but don't sign it before: the consul checks who you are, and signs and stamps it."
         },
         "signByEmail": {
-          "text": "{name} signs the applicants' declaration (הצהרת המבקשים)",
-          "details": "Only page 3 of the form. No original signature is needed at this stage: {name} can send it by email, so {israeli} can file the application. {name}'s own declaration is signed once they're in Israel."
+          "text": "By {name}, on the applicants' declaration (הצהרת המבקשים)",
+          "details": "Only page 3 of the form. No original signature is needed at this stage: {name} can send it by email, so {israeli} can file the application. {name}'s own declaration is signed once they're in Israel.",
+          "sentence": "{name} signs the applicants' declaration (הצהרת המבקשים)"
         },
-        "affidavit": "An affidavit of civil status",
+        "affidavit": "About the civil status",
         "affidavitDetails": "Signed in front of a notary in Israel, an Israeli consul abroad, that country's consul in Israel, or a notary in that country, with its apostille or legalization."
       },
       "affidavitInstead": "If you can't get this document, sign an affidavit about civil status instead. Sign it in front of a notary in Israel.",

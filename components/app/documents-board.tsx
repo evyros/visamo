@@ -80,7 +80,7 @@ export type DocumentItem = {
 };
 
 /** One step; `details`, the full text, opens under the short one. */
-type StepItem = { kind: StepKind; text: string; details?: StepDetails };
+type StepItem = { kind: StepKind; label: string; text: string; details?: StepDetails };
 
 /** What the case's purchases allow for document checks. */
 export type CheckSettings = {
@@ -1673,14 +1673,16 @@ const stepGlyph: Record<StepKind, StepGlyphName> = {
 
 /**
  * A step on the card, as a stop on a route: a glyph in a circle, joined to the
- * next by a dotted line. It only explains: nothing on it is ever done or ticked.
- * With more to say, the line opens its full text under it, and closes it again.
+ * next by a dotted line, with what the step is over its line. It only explains:
+ * nothing on it is ever done or ticked. With more to say, the line opens its
+ * full text under it, and closes it again.
  */
 function StepRow({ step, last }: { step: StepItem; last: boolean }) {
   const [open, setOpen] = useState(false);
   const detailsId = useId();
   // The chevron stays with the last word, so it never wraps onto a line of its own.
   const cut = step.text.lastIndexOf(" ") + 1;
+  const label = <span className="block text-xs font-medium text-slate-500">{step.label}</span>;
   return (
     <li className={`relative flex items-start gap-3 text-[15px] text-slate-700 ${last ? "" : "pb-3"}`}>
       {/* The line runs on to the next stop, however tall this one's open text makes it. */}
@@ -1700,8 +1702,9 @@ function StepRow({ step, last }: { step: StepItem; last: boolean }) {
             aria-expanded={open}
             aria-controls={detailsId}
             onClick={() => setOpen((o) => !o)}
-            className="text-start hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+            className="block text-start hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
           >
+            {label}
             {step.text.slice(0, cut)}
             <span className="whitespace-nowrap">
               {step.text.slice(cut)}
@@ -1714,7 +1717,10 @@ function StepRow({ step, last }: { step: StepItem; last: boolean }) {
           <StepDetailsText id={detailsId} hidden={!open} details={step.details} />
         </div>
       ) : (
-        <span className="min-w-0 flex-1 pt-0.5">{step.text}</span>
+        <span className="min-w-0 flex-1 pt-0.5">
+          {label}
+          {step.text}
+        </span>
       )}
     </li>
   );

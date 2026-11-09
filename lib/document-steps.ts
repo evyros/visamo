@@ -40,7 +40,8 @@ function placeName(from: Exclude<Issuer, null>, t: Labels, locale: Locale) {
   return from === "utah" ? t.steps.utah : regionName(from, locale);
 }
 
-type Said = { text: string; details: string };
+/** A signature in words: the line under its title, its full text, and the whole requirement as one sentence. */
+type Said = { text: string; details: string; sentence: string };
 
 /**
  * The document's own signing line and full text, where it has them: the
@@ -56,7 +57,13 @@ function signingFor(step: Extract<Step, { kind: "sign" }>, id: DocumentId, point
 
 /** A signature's line and its full text: the document's own, or who confirms it. */
 function signingText(step: Extract<Step, { kind: "sign" }>, id: DocumentId, points: readonly Point[], t: Labels): Said {
-  return signingFor(step, id, points, t) ?? { text: t.steps.signing[step.before], details: t.steps.signingDetails[step.before] };
+  return (
+    signingFor(step, id, points, t) ?? {
+      text: t.steps.signing[step.before],
+      details: t.steps.signingDetails[step.before],
+      sentence: t.steps.signingSentence[step.before],
+    }
+  );
 }
 
 /**
@@ -65,13 +72,46 @@ function signingText(step: Extract<Step, { kind: "sign" }>, id: DocumentId, poin
  */
 export type StepCase = { points?: readonly Point[]; foreign?: string; israeli?: string };
 
-/** The step's line, and the full text behind it. */
+/** What a step is, as the short title over its line: "Where to get it", "Apostille". */
+export type StepLabel = keyof Labels["steps"]["labels"];
+
+function labelOf(step: Step): StepLabel {
+  switch (step.kind) {
+    case "authenticate":
+      switch (step.certification.authentication) {
+        case "apostille":
+        case "utahApostille":
+          return "apostille";
+        case "legalization":
+          return "legalization";
+        default:
+          return "certification";
+      }
+    case "signByEmail":
+      return "sign";
+    default:
+      return step.kind;
+  }
+}
+
+/** The step's title, its line under it, and the full text behind the line. */
 export function stepText(
   step: Step,
   id: DocumentId,
   t: Labels,
   locale: Locale,
-  { points = [], foreign = "", israeli = "" }: StepCase = {},
+  c: StepCase = {},
+): { label: string; text: string; details?: StepDetails } {
+  return { label: t.steps.labels[labelOf(step)], ...stepLine(step, id, t, locale, c) };
+}
+
+/** The line goes on from the title, so it says only what the title doesn't: "From Germany" under "Apostille". */
+function stepLine(
+  step: Step,
+  id: DocumentId,
+  t: Labels,
+  locale: Locale,
+  { points = [], foreign = "", israeli = "" }: StepCase,
 ): { text: string; details?: StepDetails } {
   const s = t.steps;
   switch (step.kind) {
@@ -80,7 +120,7 @@ export function stepText(
       const c = countryTexts(t, id, step.from);
       return {
         text: c?.office
-          ? format(s.obtainFrom, { office: c.office })
+          ? capitalize(format(s.obtainFrom, { office: c.office }), locale)
           : format(s.obtain, { country: placeName(step.from, t, locale) }),
         // A file has no paper original: the general advice about one doesn't apply.
         details: step.electronic && c?.details ? prose(c.details) : withCountry(c?.details, s.obtainDetails),
@@ -108,7 +148,7 @@ export function stepText(
               text: via ? format(s.legalizationVia, { country, via }) : format(s.legalization, { country }),
               details: {
                 lead: step.chain ? s.legalizationLead : s.legalizationUsualLead,
-                points: offices.map((office) => office.charAt(0).toLocaleUpperCase(locale) + office.slice(1)),
+                points: offices.map((office) => capitalize(office, locale)),
                 numbered: true,
                 end: via ? format(s.legalizationViaEnd, { country, via }) : format(s.legalizationEnd, { country }),
               },
@@ -144,6 +184,9 @@ export function stepText(
   }
 }
 
+/** An office's name as the start of a line: "the registry office" → "The registry office". */
+const capitalize = (text: string, locale: Locale) => text.charAt(0).toLocaleUpperCase(locale) + text.slice(1);
+
 /**
  * When an official document needs no translation, by the country that issued
  * it: English usually doesn't, and Arabic doesn't by law. Hebrew only when the
@@ -166,17 +209,27 @@ function chainOffices(step: Extract<Step, { kind: "authenticate" }>, t: Labels, 
   return (step.chain ?? USUAL_CHAIN).map((link) => format(t.steps.chain[link], { country, via }));
 }
 
-/** The steps as one line, in English, for the chat's and the check's view of a document: the full sentence where the line is short. */
+/**
+ * The steps as one line, in English, for the chat's and the check's view of a
+ * document: each as its title and line ("Apostille: From Germany"), with the
+ * full sentence where the line is short.
+ */
 export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels, c: StepCase = {}): string {
   const say = (step: Step) => {
-    if (step.kind === "translate") return step.level === "notarized" ? t.steps.translateNotarizedFull : t.steps.translateSelfFull;
-    const { text, details } = stepText(step, id, t, "en", c);
-    if (step.kind === "authenticate" && step.chain) return `${text}: ${chainOffices(step, t, "en").join(t.steps.chainJoin)}`;
-    // The line names the signer in short, or not at all (an affidavit): its full text says who and how.
-    if (step.kind === "affidavit" || step.kind === "sign" || step.kind === "signByEmail") {
-      return `${text}: ${[details?.lead, ...(details?.points ?? []), details?.end].filter(Boolean).join(" ")}`;
+    const { label, text, details } = stepText(step, id, t, "en", c);
+    if (step.kind === "translate") return `${label}: ${step.level === "notarized" ? t.steps.translateNotarizedFull : t.steps.translateSelfFull}`;
+    if (step.kind === "authenticate" && step.chain) return `${label}: ${text}, in this order: ${chainOffices(step, t, "en").join(t.steps.chainJoin)}`;
+    const full = [details?.lead, ...(details?.points ?? []), details?.end].filter(Boolean).join(" ");
+    // A signature as the whole requirement in one sentence, then how: split into a title and a line
+    // ("Must be signed: In front of an Israeli lawyer."), the check took a lawyer's stamp for a flaw.
+    if (step.kind === "sign") {
+      const { sentence } = signingText(step, id, c.points ?? [], t);
+      return `${format(sentence, { israeli: c.israeli ?? "", foreign: c.foreign ?? "" })}: ${full}`;
     }
-    return text;
+    if (step.kind === "signByEmail") return `${format(t.steps.signByEmail.sentence, { name: c.foreign ?? "" })}: ${full}`;
+    // An affidavit's line doesn't say who confirms it: its full text does.
+    if (step.kind === "affidavit") return `${label}: ${text}. ${full}`;
+    return `${label}: ${text}`;
   };
   return steps.map((step, i) => `${i + 1}. ${say(step)}`).join(" ");
 }

@@ -35,8 +35,9 @@ describe("a legalization's full text", () => {
     );
 
   it("numbers the country's own offices, after the issuing office", () => {
-    const { text, details } = legalization("TH", ["englishTranslation", "foreignMinistry", "israeliConsulate"]);
-    expect(text).toBe("Consular legalization in Thailand");
+    const { label, text, details } = legalization("TH", ["englishTranslation", "foreignMinistry", "israeliConsulate"]);
+    expect(label).toBe("Consular legalization");
+    expect(text).toBe("In Thailand");
     expect(details).toMatchObject({ lead: t.steps.legalizationLead, numbered: true });
     expect(details?.points).toEqual([
       "A district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
@@ -56,7 +57,7 @@ describe("a legalization's full text", () => {
       via: "CA",
     };
     const { text, details } = stepText(step, "foreignBirthCertificate", t, "en");
-    expect(text).toBe("Consular legalization in Cuba, through Canada");
+    expect(text).toBe("In Cuba, through Canada");
     expect(details?.points).toEqual([
       "The civil registry (Registro Civil)",
       "The ministry of justice",
@@ -66,7 +67,7 @@ describe("a legalization's full text", () => {
     ]);
     expect(details?.end).toBe("Israel has no embassy in Cuba, so the chain goes on through Canada. None of it can be done in Israel.");
     expect(stepsInWords([step], "foreignBirthCertificate", t)).toBe(
-      "1. Consular legalization in Cuba, through Canada: the ministry of justice, then the embassy of Canada in Cuba, then the foreign ministry of Canada, then the Israeli embassy in Canada",
+      "1. Consular legalization: In Cuba, through Canada, in this order: the ministry of justice, then the embassy of Canada in Cuba, then the foreign ministry of Canada, then the Israeli embassy in Canada",
     );
   });
 
@@ -94,6 +95,7 @@ describe("AS/6's signing lines", () => {
 
   it("has both declarations signed, when both partners sign now", () => {
     expect(sign(["as6Application", "as6IsraeliDeclaration", "as6ForeignDeclaration"])).toEqual({
+      label: t.steps.labels.sign,
       text: t.steps.signingFor.statusApplicationMarried.text,
       details: { lead: t.steps.signingFor.statusApplicationMarried.details },
     });
@@ -101,13 +103,15 @@ describe("AS/6's signing lines", () => {
 
   it("has only the Israeli partner's signed, by name, when the foreign partner's is a document of its own", () => {
     expect(sign(["as6Application", "as6IsraeliDeclaration"])).toEqual({
-      text: "Evy's declaration (הצהרת בן הזוג המזמין) must be signed in front of an Israeli lawyer",
+      label: t.steps.labels.sign,
+      text: "Evy's declaration (הצהרת בן הזוג המזמין), in front of an Israeli lawyer",
       details: { lead: t.steps.signingFor.statusApplicationMarriedIsraeliOnly.details },
     });
   });
 
   it("has the landlord's affidavit signed on a line of its own", () => {
     expect(stepText({ kind: "sign", before: "lawyer", by: "landlord" }, "statusApplicationMarried", t, "en")).toEqual({
+      label: t.steps.labels.sign,
       text: t.steps.signingFor.landlordAffidavit.text,
       details: { lead: t.steps.signingFor.landlordAffidavit.details },
     });
@@ -122,6 +126,7 @@ describe("a signature", () => {
     }
     for (const before of ["clerk", "lawyer", "lawyerCourtOrNotary", "notary", "consul"] as const) {
       expect(stepText({ kind: "sign", before }, "otherParentConsent", t, "en"), before).toEqual({
+        label: t.steps.labels.sign,
         text: t.steps.signing[before],
         details: { lead: t.steps.signingDetails[before] },
       });
@@ -130,13 +135,13 @@ describe("a signature", () => {
 
   it("gives the chat and the check its full text too", () => {
     expect(stepsInWords([{ kind: "sign", before: "lawyerCourtOrNotary" }], "otherParentConsent", t)).toBe(
-      `1. ${t.steps.signing.lawyerCourtOrNotary}: ${t.steps.signingDetails.lawyerCourtOrNotary}`,
+      `1. ${t.steps.signingSentence.lawyerCourtOrNotary}: ${t.steps.signingDetails.lawyerCourtOrNotary}`,
     );
   });
 
   it("names the foreign partner as the only one who signs the children affidavit", () => {
     const { text, details } = stepText({ kind: "sign", before: "lawyerCourtOrNotary" }, "previousChildrenAffidavit", t, "en", { foreign: "Liz", israeli: "Evy" });
-    expect(text).toBe("Only Liz signs it, in front of a lawyer or notary");
+    expect(text).toBe("Only by Liz, in front of a lawyer or notary");
     expect(details?.lead).toContain("checks Liz's identity");
     expect(details?.lead).toContain("Evy doesn't sign it.");
   });
@@ -144,8 +149,9 @@ describe("a signature", () => {
 
 describe("the foreign partner's signature by email", () => {
   it("names them, on the line and in its full text", () => {
-    const { text, details } = stepText({ kind: "signByEmail" }, "statusApplicationMarried", t, "en", { foreign: "Liz", israeli: "Evy" });
-    expect(text).toBe("Liz signs the applicants' declaration (הצהרת המבקשים)");
+    const { label, text, details } = stepText({ kind: "signByEmail" }, "statusApplicationMarried", t, "en", { foreign: "Liz", israeli: "Evy" });
+    expect(label).toBe(t.steps.labels.sign);
+    expect(text).toBe("By Liz, on the applicants' declaration (הצהרת המבקשים)");
     expect(details?.lead).toMatch(/^Only page 3 of the form\./);
     expect(details?.lead).toContain("Liz can send it by email, so Evy can file the application");
     expect(details?.lead).toContain("Liz's own declaration");
@@ -154,10 +160,56 @@ describe("the foreign partner's signature by email", () => {
 
 describe("an affidavit in the chat's and the check's view", () => {
   it("says who confirms it, which the line alone doesn't", () => {
-    expect(stepsInWords([{ kind: "affidavit" }], "foreignCivilStatus", t)).toBe(`1. ${t.steps.affidavit}: ${t.steps.affidavitDetails}`);
+    expect(stepsInWords([{ kind: "affidavit" }], "foreignCivilStatus", t)).toBe(
+      `1. ${t.steps.labels.affidavit}: ${t.steps.affidavit}. ${t.steps.affidavitDetails}`,
+    );
     // With what the country has first, then who confirms it.
     expect(stepsInWords([{ kind: "affidavit", from: "IN" }], "foreignCivilStatus", t)).toBe(
-      `1. ${t.steps.affidavit}: ${t.issuers.foreignCivilStatus.IN.details} ${t.steps.affidavitDetails}`,
+      `1. ${t.steps.labels.affidavit}: ${t.steps.affidavit}. ${t.issuers.foreignCivilStatus.IN.details} ${t.steps.affidavitDetails}`,
     );
+  });
+});
+
+describe("a signature in the chat's and the check's view", () => {
+  it("is the whole requirement in one sentence, as before the titles, for every signer, in both languages", () => {
+    for (const messages of [en, he]) {
+      const s = messages.app.documentsPage.steps;
+      expect(Object.keys(s.signingSentence).sort()).toEqual(Object.keys(s.signing).sort());
+      for (const own of Object.values(s.signingFor)) expect(own.sentence).toBeTruthy();
+    }
+    expect(stepsInWords([{ kind: "sign", before: "lawyer" }], "foreignDeclarationMarried", t)).toBe(
+      `1. Must be signed in front of an Israeli lawyer: ${t.steps.signingFor.foreignDeclarationMarried.details}`,
+    );
+    expect(stepsInWords([{ kind: "signByEmail" }], "statusApplicationMarried", t, { foreign: "Liz", israeli: "Evy" })).toMatch(
+      /^1\. Liz signs the applicants' declaration \(הצהרת המבקשים\): Only page 3 of the form\./,
+    );
+  });
+});
+
+describe("a step's title", () => {
+  const titleOf = (step: Parameters<typeof stepText>[0]) => stepText(step, "foreignCivilStatus", t, "en").label;
+
+  it("says what the step is, by its kind", () => {
+    expect(titleOf({ kind: "obtain", from: "DE" })).toBe(t.steps.labels.obtain);
+    expect(titleOf({ kind: "send" })).toBe(t.steps.labels.send);
+    expect(titleOf({ kind: "translate", level: "notarized", from: "DE" })).toBe(t.steps.labels.translate);
+    expect(titleOf({ kind: "affidavit" })).toBe(t.steps.labels.affidavit);
+  });
+
+  it("names the certification the country uses, or both when it isn't known", () => {
+    expect(titleOf({ kind: "authenticate", from: "DE", certification: { authentication: "apostille" } })).toBe(t.steps.labels.apostille);
+    expect(titleOf({ kind: "authenticate", from: "utah", certification: { authentication: "utahApostille" } })).toBe(t.steps.labels.apostille);
+    expect(titleOf({ kind: "authenticate", from: "EG", certification: { authentication: "legalization" } })).toBe(t.steps.labels.legalization);
+    expect(titleOf({ kind: "authenticate", from: null, certification: { authentication: "dependsOnCountry" } })).toBe(t.steps.labels.certification);
+  });
+
+  it("starts the line with a capital, where it's the office's name", () => {
+    expect(stepText({ kind: "obtain", from: "DE" }, "foreignCivilStatus", t, "en").text).toBe(
+      "The citizens' office (Bürgeramt) where they're registered",
+    );
+  });
+
+  it("is written in both languages, each of them", () => {
+    expect(Object.keys(he.app.documentsPage.steps.labels).sort()).toEqual(Object.keys(t.steps.labels).sort());
   });
 });

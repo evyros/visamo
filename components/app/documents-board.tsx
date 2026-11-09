@@ -24,6 +24,7 @@ import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/do
 import { Notice } from "@/components/app/auth-ui";
 import { Dialog } from "@/components/app/dialog";
 import { Icon } from "@/components/icons";
+import { StepGlyph, type StepGlyphName } from "@/components/step-glyph";
 import { LogoMark } from "@/components/logo";
 
 // The documents page: the case's list, grouped by whose document it is, each
@@ -673,10 +674,10 @@ function DocumentCard({
           )}
           {item.steps.length > 0 && (
             <div className="mt-4">
-              <h3 className="text-sm font-semibold text-navy-900">{t.steps.heading}</h3>
-              <ol className="mt-2 space-y-2">
+              {/* The route of circles says these are the steps: the heading is only for screen readers. */}
+              <ol aria-label={t.steps.heading}>
                 {item.steps.map((step, i) => (
-                  <StepRow key={`${step.kind}-${i}`} step={step} />
+                  <StepRow key={`${step.kind}-${i}`} step={step} last={i === item.steps.length - 1} />
                 ))}
               </ol>
               {item.notes.map((note) => (
@@ -1660,53 +1661,61 @@ function FileMenu({
   );
 }
 
-const stepIcon: Record<StepKind, "file" | "shield" | "send" | "globe" | "pen"> = {
-  obtain: "file",
-  authenticate: "shield",
+const stepGlyph: Record<StepKind, StepGlyphName> = {
+  obtain: "where",
+  authenticate: "apostille",
   send: "send",
-  translate: "globe",
-  sign: "pen",
+  translate: "translation",
+  sign: "sign",
   signByEmail: "send",
-  affidavit: "pen",
+  affidavit: "sign",
 };
 
-/** A step on the card. With more to say, the line opens its full text under it, and closes it again. */
-function StepRow({ step }: { step: StepItem }) {
+/**
+ * A step on the card, as a stop on a route: a glyph in a circle, joined to the
+ * next by a dotted line. It only explains: nothing on it is ever done or ticked.
+ * With more to say, the line opens its full text under it, and closes it again.
+ */
+function StepRow({ step, last }: { step: StepItem; last: boolean }) {
   const [open, setOpen] = useState(false);
   const detailsId = useId();
-  const icon = <Icon name={stepIcon[step.kind]} className="mt-1 size-4 shrink-0 text-teal-700" />;
   // The chevron stays with the last word, so it never wraps onto a line of its own.
   const cut = step.text.lastIndexOf(" ") + 1;
-  if (!step.details) {
-    return (
-      <li className="flex items-start gap-2 text-[15px] text-slate-700">
-        {icon}
-        <span>{step.text}</span>
-      </li>
-    );
-  }
   return (
-    <li className="flex items-start gap-2 text-[15px] text-slate-700">
-      {icon}
-      <div className="min-w-0 flex-1">
-        <button
-          type="button"
-          aria-expanded={open}
-          aria-controls={detailsId}
-          onClick={() => setOpen((o) => !o)}
-          className="text-start hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-        >
-          {step.text.slice(0, cut)}
-          <span className="whitespace-nowrap">
-            {step.text.slice(cut)}
-            <Icon
-              name="chevronDown"
-              className={`ms-1 inline-block size-4 -translate-y-px align-middle text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
-            />
-          </span>
-        </button>
-        <StepDetailsText id={detailsId} hidden={!open} details={step.details} />
-      </div>
+    <li className={`relative flex items-start gap-3 text-[15px] text-slate-700 ${last ? "" : "pb-3"}`}>
+      {/* The line runs on to the next stop, however tall this one's open text makes it. */}
+      {!last && (
+        <span
+          aria-hidden="true"
+          className="absolute start-[13px] top-7 bottom-0 border-s-2 border-dotted border-teal-600/35"
+        />
+      )}
+      <span className="relative flex size-7 shrink-0 items-center justify-center rounded-full bg-white text-teal-700 ring-1 ring-teal-600/25">
+        <StepGlyph name={stepGlyph[step.kind]} className="size-4" />
+      </span>
+      {step.details ? (
+        <div className="min-w-0 flex-1 pt-0.5">
+          <button
+            type="button"
+            aria-expanded={open}
+            aria-controls={detailsId}
+            onClick={() => setOpen((o) => !o)}
+            className="text-start hover:text-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+          >
+            {step.text.slice(0, cut)}
+            <span className="whitespace-nowrap">
+              {step.text.slice(cut)}
+              <Icon
+                name="chevronDown"
+                className={`ms-1 inline-block size-4 -translate-y-px align-middle text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+              />
+            </span>
+          </button>
+          <StepDetailsText id={detailsId} hidden={!open} details={step.details} />
+        </div>
+      ) : (
+        <span className="min-w-0 flex-1 pt-0.5">{step.text}</span>
+      )}
     </li>
   );
 }

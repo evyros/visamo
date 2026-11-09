@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Messages } from "@/i18n/dictionaries";
 import { Icon, isIconName } from "../icons";
 import { LogoMark } from "../logo";
+import { StepGlyph, isStepGlyphName } from "../step-glyph";
 import { Container, IconTile, SectionTitle, mobileCenter } from "../ui";
 import { FixMark, Line, MockupCard, Paper, Stamp, StatusChip } from "./mockup";
 
@@ -113,7 +114,7 @@ function ListMockup({ mockup }: { mockup: Features["list"]["mockup"] }) {
                   aria-hidden="true"
                   className="relative flex size-8 shrink-0 items-center justify-center rounded-full bg-white text-teal-700 ring-1 ring-teal-600/25"
                 >
-                  <StepGlyph name={step.icon} />
+                  {isStepGlyphName(step.icon) && <StepGlyph name={step.icon} />}
                 </span>
                 <span className="min-w-0 pt-0.5">
                   <span className="block text-xs font-medium text-slate-500">{step.label}</span>
@@ -155,70 +156,6 @@ function ListMockup({ mockup }: { mockup: Features["list"]["mockup"] }) {
         </ul>
       </div>
     </figure>
-  );
-}
-
-/** The list mockup's glyphs, drawn on the same 24px grid and stroke as the site's icons. */
-const stepGlyphs: Record<string, ReactNode> = {
-  // A map pin: where to get it.
-  where: (
-    <>
-      <path d="M12 21s-6.5-5.4-6.5-11a6.5 6.5 0 0 1 13 0c0 5.6-6.5 11-6.5 11Z" />
-      <circle cx="12" cy="10" r="2.3" />
-    </>
-  ),
-  // A page with ticked lines: what it must include.
-  include: (
-    <>
-      <path d="M17.5 21h-11a1.5 1.5 0 0 1-1.5-1.5v-15A1.5 1.5 0 0 1 6.5 3h11A1.5 1.5 0 0 1 19 4.5v15a1.5 1.5 0 0 1-1.5 1.5Z" />
-      <path d="m8 8.5 1.2 1.2L11.5 7.5M13.5 8.5H16M8 14l1.2 1.2 2.3-2.2M13.5 14H16" />
-    </>
-  ),
-  // A seal with ribbons: the apostille.
-  apostille: (
-    <>
-      <circle cx="12" cy="9" r="5.5" />
-      <circle cx="12" cy="9" r="2" />
-      <path d="m8.6 13.3-1.6 7.2 5-2.6 5 2.6-1.6-7.2" />
-    </>
-  ),
-  // A letter becoming another: the translation.
-  translation: (
-    <>
-      <path d="M3.5 5.5h8M7.5 3.5v2M5 5.5c.9 3 2.9 5.4 5.8 6.6M10 5.5c-.9 3.6-3.1 6.2-6.5 7.5" />
-      <path d="m12.5 20.5 4.25-9.5 4.25 9.5M14 17h5.5" />
-    </>
-  ),
-  // A path that forks: the alternative.
-  alternative: (
-    <>
-      <path d="M6 3.5V10a5 5 0 0 0 5 5h7.5" />
-      <path d="M6 10v10.5" />
-      <path d="m15.5 12 3 3-3 3" />
-    </>
-  ),
-  // A sheet of paper, for the closed documents.
-  document: (
-    <>
-      <path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Z" />
-      <path d="M14 3v4.5h4.5M9 12.5h6M9 16h4" />
-    </>
-  ),
-};
-
-function StepGlyph({ name }: { name: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.8}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={`size-[18px] ${name === "alternative" ? "rtl:-scale-x-100" : ""}`}
-    >
-      {stepGlyphs[name]}
-    </svg>
   );
 }
 

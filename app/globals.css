@@ -154,6 +154,32 @@ body {
   animation: pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
+/* The overview's documents button (components/app/overview-cards.tsx): its
+   arrow nudges forward five times, then rests, so it reads as something to tap. It moves
+   with `translate`, not `transform`, which .flip-rtl uses to mirror it. */
+@keyframes nudge {
+  0%,
+  50%,
+  100% {
+    translate: 0;
+  }
+  15%,
+  35% {
+    translate: var(--nudge, 8px);
+  }
+  25% {
+    translate: 0;
+  }
+}
+
+.animate-nudge {
+  animation: nudge 2.2s ease-in-out 5;
+}
+
+[dir="rtl"] .animate-nudge {
+  --nudge: -8px;
+}
+
 /* The branches survey's satisfaction faces (components/branch-survey.tsx): a
    little bounce when one is chosen. */
 @keyframes cheer {

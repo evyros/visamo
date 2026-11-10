@@ -2787,8 +2787,7 @@
         "summary": "{done} of {total} uploaded",
         "allDone": "Every document on your list is uploaded.",
         "readySummary": "{done} of {total} ready",
-        "allReady": "Every document on your list is ready.",
-        "open": "Go to documents"
+        "allReady": "Every document on your list is ready."
       },
       "details": {
         "title": "Your details",
@@ -2825,6 +2824,10 @@
         "saving": "Saving…",
         "close": "Close",
         "error": "Something went wrong. Please try again."
+      },
+      "documentsButton": {
+        "title": "Your documents",
+        "subtitle": "See the documents you need and how to get them"
       },
       "activity": {
         "title": "Activity",

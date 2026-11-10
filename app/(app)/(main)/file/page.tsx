@@ -27,6 +27,7 @@ import {
   ActivityCard,
   DetailsAction,
   DetailsCard,
+  DocumentsButton,
   ProgressCard,
   type DetailsSection,
 } from "@/components/app/overview-cards";
@@ -122,7 +123,7 @@ export default async function FileOverviewPage() {
         />
       )}
 
-      <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <StageCard
           t={t.stage}
           answers={messages.app.stages}
@@ -131,10 +132,13 @@ export default async function FileOverviewPage() {
           dates={row.stageDates}
           shown={shown}
         />
+        {/* On a phone, after where they are; from `lg` up, above the cards. */}
+        <div className="lg:order-first lg:col-span-2">
+          <DocumentsButton title={t.documentsButton.title} subtitle={t.documentsButton.subtitle} />
+        </div>
         <div className="grid grid-cols-1 gap-6">
           <ProgressCard
             title={t.progress.title}
-            open={t.progress.open}
             value={documents.value}
             summary={documents.summary}
             counts={documents.counts}

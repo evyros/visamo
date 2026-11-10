@@ -6,6 +6,7 @@ import {
   type ProgressValue,
   type StandingCount,
 } from "@/components/app/document-progress";
+import { Icon } from "@/components/icons";
 
 // The overview's cards. The page works out every text; these only lay it out.
 
@@ -23,9 +24,30 @@ export function OverviewCard({ title, action, children }: { title: string; actio
 
 const linkClass = "text-[15px] font-semibold text-teal-700 underline-offset-4 hover:underline";
 
+/**
+ * A big button to the documents page, at the top of the overview. The
+ * documents page is where the work is, and people kept missing it.
+ */
+export function DocumentsButton({ title, subtitle }: { title: string; subtitle: string }) {
+  return (
+    <Link
+      href="/file/documents"
+      className="group flex items-center gap-4 rounded-card bg-teal-600 p-5 text-white shadow-soft transition-colors hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 sm:gap-5 sm:p-6"
+    >
+      <span aria-hidden className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-white/15 sm:size-14">
+        <Icon name="file" className="size-6 sm:size-7" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-display text-xl font-semibold sm:text-2xl">{title}</span>
+        <span className="mt-1 block text-[15px] text-white/90">{subtitle}</span>
+      </span>
+      <Icon name="arrow" className="animate-nudge size-9 shrink-0 sm:size-11" />
+    </Link>
+  );
+}
+
 export function ProgressCard({
   title,
-  open,
   value,
   summary,
   counts,
@@ -33,7 +55,6 @@ export function ProgressCard({
   groups,
 }: {
   title: string;
-  open: string;
   value: ProgressValue;
   /** The line above the bar, and its label; with counts, the label only. */
   summary: string;
@@ -45,14 +66,7 @@ export function ProgressCard({
   groups: { href: string; title: string; summary: string; value: ProgressValue }[];
 }) {
   return (
-    <OverviewCard
-      title={title}
-      action={
-        <Link href="/file/documents" className={linkClass}>
-          {open}
-        </Link>
-      }
-    >
+    <OverviewCard title={title}>
       {counts ? (
         <StandingCounts counts={counts} />
       ) : (

@@ -88,6 +88,26 @@ shown to users (`lib/knowledge/`).
   Recheck if Cuba joins the Apostille Convention (not on the HCCH table of
   30 June 2026).
 
+- **Turkmenistan** (researched November 2026, from Turkmen official pages;
+  `TM` in the issuers, no `LEGALIZATION` entry). Unknown:
+  - Decided (product owner, November 2026): the guides and steps don't
+    mention legalizing a notarized copy. Turkmenistan's MFA says documents
+    are legalized "as a rule" as notarized copies (notary, Ministry of
+    Adalat, MFA Consular Service Department, then the foreign mission), but
+    the originals can all be had, so the guides only say it's legalized,
+    ending at the Israeli embassy in Ashgabat. Searched November 2026: no
+    Turkmen case in the Facebook group or on AIC, and no case of a
+    legalized notarized copy from any country. Revisit if a clerk rejects
+    a legalized copy, or a couple can't get the original legalized.
+  - Whether the Israeli embassy in Ashgabat currently legalizes (Israeli
+    missions suspended some consular services in 2025), its fee and
+    whether it needs an appointment.
+  - Who issues the certificate of marital status inside Turkmenistan (the
+    official pages only cover asking for it through an embassy).
+  - The police certificate inside Turkmenistan (MVD order No. 91 of
+    26 July 2025) is from a law firm's summary, not the order's text.
+  If the chain is confirmed, add `TM` to `LEGALIZATION`.
+
 - **Nepal** (researched November 2026, quickly; `NP` in the issuers).
   Answered (November 2026): the Israeli embassy in Kathmandu takes
   legalizations only through VFS Kathmandu, with no visit to the embassy

@@ -349,6 +349,19 @@ the Apostille Convention, so it's translated and certified by the Consular
 Affairs Department of the Thai Ministry of Foreign Affairs, then by the
 Israeli embassy.
 
+### Turkmenistan
+
+A certificate of marital status (справка о семейном положении), on whether
+a marriage was registered while living in Turkmenistan. From abroad, it's
+asked for through a Turkmen embassy or consulate, in person or with a
+notarized power of attorney, with the birth certificate and any marriage or
+divorce certificate. It takes 2 to 3 months, and until it's issued, the
+person it's for mustn't travel to Turkmenistan.
+
+Turkmenistan isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)), ending at the Israeli embassy in
+Ashgabat.
+
 ### Ukraine
 
 An extract from the State Register of Civil Status Acts (витяг з Державного

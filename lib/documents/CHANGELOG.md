@@ -3,6 +3,31 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v47 — 2026-11-10
+
+**What changed:** Turkmenistan has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating their new
+guide sections: the civil registry office (ЗАГС) for a new copy of the
+birth certificate, the certificate of marital status (справка о семейном
+положении) through a Turkmen embassy or consulate (no office named inside
+Turkmenistan), and the Ministry of Internal Affairs (МВД) for the
+certificate of no criminal liability. Its legalization is unchanged: not
+in the Apostille Convention, the general description, through the Israeli
+embassy in Ashgabat.
+
+**Why:** Turkmen documents had the right certification (legalization,
+Israel has an embassy there), but no issuing office.
+
+**Source:** MFA of Turkmenistan, Consular Service (mfa.gov.tm/en/articles/57,
+legalization for use abroad); Embassy of Turkmenistan in Moscow
+(russia.tmembassy.gov.tm: duplicate certificates, marital status, no
+criminal liability, legalization); Embassy of Turkmenistan in Ankara
+(non-marriage registration, criminal record); MVD order No. 91 of
+26 July 2025 (via Schmidt & Schmidt).
+
+**Lists that changed:** none (steps of Turkmen birth certificates, civil
+status and police certificates: their office and details).
+
 ## v46 — 2026-11-08
 
 **What changed:** Sweden has an issuer for `foreignBirthCertificate`,

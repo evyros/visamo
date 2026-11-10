@@ -2302,6 +2302,10 @@
             "office": "a district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
             "details": "The birth certificate (สูติบัตร), or a certified copy from a district office: any district office for someone born from 1980 on, the one where the birth was registered for someone born earlier. A lost certificate isn't issued again: get the certified copy instead, which can also be issued in English. A Thai living abroad can authorize a relative in Thailand to get it, by signing the authorization at a Thai embassy. Certify the Thai document together with its English translation, not the translation alone. If the name has changed since birth, the ministry also asks for the name change certificate (ใบสำคัญการเปลี่ยนชื่อ)."
           },
+          "TM": {
+            "office": "the civil registry office (ЗАГС) that keeps the birth record",
+            "details": "A new copy of the birth certificate (повторное свидетельство о рождении). From abroad, a Turkmen embassy or consulate asks for it from Turkmenistan: apply in person or with a notarized power of attorney. It can take up to 4 months, and the fee isn't returned if the record isn't found."
+          },
           "UA": {
             "office": "any civil registry office (ДРАЦС) in Ukraine",
             "details": "If the certificate was issued after 1998, or is lost or worn, get a new copy (повторне свідоцтво про народження). Any civil registry office issues it, not only the one where the birth was registered, usually the same day. Someone in Ukraine can apply for you with a notarized power of attorney, and Ukrainian citizens can order it through Diia. From Israel, it goes through the consular department of the Ukrainian embassy in Tel Aviv, by appointment, and can take months; Ukrainian men aged 18 to 60 need a valid military registration document for consular services. If the birth was registered in an occupied area and the record isn't in Ukraine's registry, it has to be restored first: up to 3 months in Ukraine, or 6 through a consulate.",
@@ -2490,6 +2494,9 @@
             "office": "the district office (สำนักงานเขต or ที่ว่าการอำเภอ)",
             "details": "A certificate of marital status (หนังสือรับรองสถานภาพการสมรส, also called ใบรับรองโสด). It's issued only in Thailand: a Thai living abroad can authorize someone there to get it, by signing the authorization at a Thai embassy."
           },
+          "TM": {
+            "details": "A certificate of marital status (справка о семейном положении), on whether a marriage was registered while living in Turkmenistan. From abroad, ask for it through a Turkmen embassy or consulate, in person or with a notarized power of attorney, with the birth certificate and any marriage or divorce certificate. It takes 2 to 3 months, and until it's issued, the person it's for mustn't travel to Turkmenistan."
+          },
           "UA": {
             "office": "any civil registry office or a Ukrainian consulate",
             "details": "An extract from the State Register of Civil Status Acts (витяг з Державного реєстру актів цивільного стану громадян) showing that no marriage record exists. Any civil registry office issues it, wherever they live."
@@ -2677,6 +2684,10 @@
           "TH": {
             "office": "the Royal Thai Police",
             "details": "A police clearance certificate (หนังสือรับรองความประพฤติ), from the Police Clearance Service Center at the Royal Thai Police headquarters in Bangkok. It takes a few days. It can also be issued in English, which takes a bit longer."
+          },
+          "TM": {
+            "office": "Turkmenistan's Ministry of Internal Affairs (МВД)",
+            "details": "A certificate of no criminal liability (справка о непривлечении к уголовной ответственности), from an information unit of the ministry. From abroad, ask for it through a Turkmen embassy or consulate, in person or with a notarized power of attorney; it takes up to 3 months."
           },
           "UA": {
             "office": "Ukraine's Ministry of Internal Affairs (МВС)",

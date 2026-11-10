@@ -279,6 +279,18 @@ a bit longer. Thailand isn't in the Apostille Convention, so it's
 translated and certified by the Consular Affairs Department of the Thai
 Ministry of Foreign Affairs, then by the Israeli embassy.
 
+### Turkmenistan
+
+A certificate of no criminal liability (справка о непривлечении к уголовной
+ответственности), from an information unit of the Ministry of Internal
+Affairs (МВД). From abroad, it's asked for through a Turkmen embassy or
+consulate, in person or with a notarized power of attorney, and takes up to
+3 months.
+
+Turkmenistan isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)), ending at the Israeli embassy in
+Ashgabat.
+
 ### Ukraine
 
 A certificate of no criminal record (довідка про несудимість), from the

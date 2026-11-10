@@ -216,6 +216,18 @@ translation alone. If the name has changed since birth, the ministry also
 asks for the name change certificate (ใบสำคัญการเปลี่ยนชื่อ). The Thai
 embassy in Israel can't do any of these steps.
 
+### Turkmenistan
+
+A new copy of the birth certificate (повторное свидетельство о рождении),
+from the civil registry office (ЗАГС) that keeps the birth record. From
+abroad, a Turkmen embassy or consulate asks for it from Turkmenistan: apply
+in person or with a notarized power of attorney. It can take up to 4
+months, and the fee isn't returned if the record isn't found.
+
+Turkmenistan isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)), ending at the Israeli embassy in
+Ashgabat.
+
 ### Ukraine
 
 If the certificate was issued after 1998, or is lost or worn, get a new

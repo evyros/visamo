@@ -71,6 +71,29 @@ describe("a legalization's full text", () => {
     );
   });
 
+  it("ends at the Israeli embassy in another country, where it serves the issuing one", () => {
+    const step = {
+      kind: "authenticate" as const,
+      from: "TZ",
+      certification: { authentication: "legalization" as const },
+      chain: ["foreignMinistry", "israeliConsulate"] as const,
+      mission: "KE",
+    };
+    const { text, details } = stepText(step, "foreignPoliceCertificate", t, "en");
+    expect(text).toBe("In Tanzania, then in Kenya");
+    expect(details?.points).toEqual([
+      "The Forensic Bureau of the police's Criminal Investigation Department",
+      "The foreign ministry",
+      "The Israeli embassy in Kenya",
+    ]);
+    expect(details?.end).toBe("Israel has no embassy in Tanzania: its embassy in Kenya serves Tanzania. None of it can be done in Israel.");
+    expect(stepsInWords([step], "foreignPoliceCertificate", t)).toBe(
+      "1. Consular legalization: In Tanzania, then in Kenya, in this order: the foreign ministry, then the Israeli embassy in Kenya",
+    );
+    const hebrew = stepText(step, "foreignPoliceCertificate", he.app.documentsPage, "he");
+    expect(hebrew.details?.points?.at(-1)).toBe("שגרירות ישראל בקניה");
+  });
+
   it("numbers the usual offices for a country whose own aren't known", () => {
     const { details } = legalization("EG");
     expect(details?.lead).toBe(t.steps.legalizationUsualLead);

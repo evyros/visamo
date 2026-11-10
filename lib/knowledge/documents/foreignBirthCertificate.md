@@ -198,6 +198,24 @@ English, "with all relations" (med alla relationer), from the Tax Agency
 (Skatteverket). It serves as this document and the personal status at once.
 Any notary public (notarius publicus) adds the apostille.
 
+### Tanzania
+
+A birth certificate from the Registration, Insolvency and Trusteeship Agency
+(RITA), for a birth in mainland Tanzania, or from the Zanzibar Civil Status
+Registration Agency (ZCSRA), for a birth in Zanzibar. RITA's services are
+online, through eRITA, including a new copy of a lost certificate, and a late
+registration for a birth that was never registered. A Tanzanian living abroad
+can ask a Tanzanian embassy or high commission for help.
+
+Tanzania isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)): Tanzania's Ministry of Foreign
+Affairs and East African Cooperation, then the Israeli embassy. Before the
+ministry, the office that issued the document verifies it (RITA or ZCSRA): the ministry
+certifies a document only after that. Israel has no embassy in Tanzania: its
+embassy in Nairobi, Kenya, also serves Tanzania, and the chain ends there.
+Hand in the original at the embassy in Nairobi, by appointment; someone else
+can hand it in for you.
+
 ### Thailand
 
 The birth certificate (สูติบัตร), or a certified copy of it from a district

@@ -2124,11 +2124,14 @@
         "apostilleDetails": "Only the country that issued it can put an apostille on it: it can't be done in Israel. It's usually attached to the document: don't separate them, that voids it.",
         "legalization": "In {country}",
         "legalizationVia": "In {country}, through {via}",
+        "legalizationMission": "In {country}, then in {mission}",
         "legalizationLead": "A chain of signatures (שרשרת חתימות), in this order:",
         "legalizationUsualLead": "A chain of signatures (שרשרת חתימות), usually in this order:",
         "issuingOffice": "the office that issued it",
         "legalizationEnd": "It can only be done in {country}, not in Israel.",
         "legalizationViaEnd": "Israel has no embassy in {country}, so the chain goes on through {via}. None of it can be done in Israel.",
+        "legalizationMissionEnd": "Israel has no embassy in {country}: its embassy in {mission} serves {country}. None of it can be done in Israel.",
+        "israeliConsulateIn": "the Israeli embassy in {mission}",
         "chain": {
           "englishTranslation": "a certified translation into English (unless it's in English already)",
           "ministryOfJustice": "the ministry of justice",
@@ -2305,6 +2308,10 @@
           "TM": {
             "office": "the civil registry office (ЗАГС) that keeps the birth record",
             "details": "A new copy of the birth certificate (повторное свидетельство о рождении). From abroad, a Turkmen embassy or consulate asks for it from Turkmenistan: apply in person or with a notarized power of attorney. It can take up to 4 months, and the fee isn't returned if the record isn't found."
+          },
+          "TZ": {
+            "office": "RITA (the Registration, Insolvency and Trusteeship Agency), or ZCSRA for a birth in Zanzibar",
+            "details": "A birth certificate from RITA, for a birth in mainland Tanzania, or from the Zanzibar Civil Status Registration Agency (ZCSRA), for a birth in Zanzibar. RITA's services are online, through eRITA, including a new copy of a lost certificate. Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
           },
           "UA": {
             "office": "any civil registry office (ДРАЦС) in Ukraine",
@@ -2497,6 +2504,10 @@
           "TM": {
             "details": "A certificate of marital status (справка о семейном положении), on whether a marriage was registered while living in Turkmenistan. From abroad, ask for it through a Turkmen embassy or consulate, in person or with a notarized power of attorney, with the birth certificate and any marriage or divorce certificate. It takes 2 to 3 months, and until it's issued, the person it's for mustn't travel to Turkmenistan."
           },
+          "TZ": {
+            "office": "RITA's Registrar General of Marriages, or ZCSRA for Zanzibar",
+            "details": "A certificate of single status (also called a letter of no marriage), from the Registrar General of Marriages at RITA (the Registration, Insolvency and Trusteeship Agency). Apply online, through eRITA; it costs 200,000 shillings. For someone from Zanzibar, ask the Zanzibar Civil Status Registration Agency (ZCSRA). Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
+          },
           "UA": {
             "office": "any civil registry office or a Ukrainian consulate",
             "details": "An extract from the State Register of Civil Status Acts (витяг з Державного реєстру актів цивільного стану громадян) showing that no marriage record exists. Any civil registry office issues it, wherever they live."
@@ -2688,6 +2699,10 @@
           "TM": {
             "office": "Turkmenistan's Ministry of Internal Affairs (МВД)",
             "details": "A certificate of no criminal liability (справка о непривлечении к уголовной ответственности), from an information unit of the ministry. From abroad, ask for it through a Turkmen embassy or consulate, in person or with a notarized power of attorney; it takes up to 3 months."
+          },
+          "TZ": {
+            "office": "the Forensic Bureau of the police's Criminal Investigation Department",
+            "details": "A police clearance certificate (also called a certificate of good conduct), from the Forensic Bureau of the Criminal Investigation Department in Dar es Salaam. In Tanzania, apply there in person, and your fingerprints are taken. From abroad, have the police where you live take your fingerprints, and send them there with a letter giving the last place you lived in Tanzania, a copy of your passport, two passport photos and proof of the 25-dollar fee. Zanzibar's records are kept apart: ask the Criminal Investigation Department at the police headquarters in Zanzibar. Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
           },
           "UA": {
             "office": "Ukraine's Ministry of Internal Affairs (МВС)",

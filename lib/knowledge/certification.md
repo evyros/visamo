@@ -25,6 +25,9 @@ the country that issued it can certify it: it can't be done in Israel.
   §3.1.3). After the country's own signatures, that third country's embassy
   in the issuing country certifies them, then its foreign ministry, and
   last the Israeli embassy in that third country.
+- From a country where Israel has relations but no embassy, the last
+  signature is from the Israeli embassy in a nearby country that serves it:
+  for Tanzania, the Israeli embassy in Nairobi, Kenya.
 
 Foreign documents follow the population authority's procedure 1.3.0001
 (referenced by 5.2.0008 §ד.2.ה).

@@ -339,6 +339,23 @@ origin (Heimatort); for a foreign national, of the place of residence. It's in
 5 languages, English included. The office can add the apostille; otherwise the
 cantonal chancellery (Staatskanzlei) or the Federal Chancellery does.
 
+### Tanzania
+
+A certificate of single status (also called a letter of no marriage), from
+the Registrar General of Marriages at RITA, the Registration, Insolvency and
+Trusteeship Agency. A Tanzanian citizen applies for it online, through eRITA,
+and it costs 200,000 shillings. For someone from Zanzibar, the registrar of
+marriages is the Zanzibar Civil Status Registration Agency (ZCSRA).
+
+Tanzania isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)): Tanzania's Ministry of Foreign
+Affairs and East African Cooperation, then the Israeli embassy. Before the
+ministry, the office that issued the document verifies it (RITA or ZCSRA): the ministry
+certifies a document only after that. Israel has no embassy in Tanzania: its
+embassy in Nairobi, Kenya, also serves Tanzania, and the chain ends there.
+Hand in the original at the embassy in Nairobi, by appointment; someone else
+can hand it in for you.
+
 ### Thailand
 
 A certificate of marital status (หนังสือรับรองสถานภาพการสมรส, also called

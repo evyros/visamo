@@ -140,17 +140,27 @@ function stepLine(
           case "utahApostille":
             return { text: s.utahApostille, details: prose(s.apostilleDetails) };
           case "legalization": {
-            // The line names the country, and the third country it goes through if there's one; the
-            // full text, its offices in order: the country's own where they're known, the usual ones otherwise.
+            // The line names the country, and the third country it goes through, or the one whose
+            // Israeli embassy serves it, if there's one; the full text, its offices in order: the
+            // country's own where they're known, the usual ones otherwise.
             const via = step.via ? regionName(step.via, locale) : "";
+            const mission = step.mission ? regionName(step.mission, locale) : "";
             const offices = [c?.office ?? s.issuingOffice, ...chainOffices(step, t, locale)];
             return {
-              text: via ? format(s.legalizationVia, { country, via }) : format(s.legalization, { country }),
+              text: via
+                ? format(s.legalizationVia, { country, via })
+                : mission
+                  ? format(s.legalizationMission, { country, mission })
+                  : format(s.legalization, { country }),
               details: {
                 lead: step.chain ? s.legalizationLead : s.legalizationUsualLead,
                 points: offices.map((office) => capitalize(office, locale)),
                 numbered: true,
-                end: via ? format(s.legalizationViaEnd, { country, via }) : format(s.legalizationEnd, { country }),
+                end: via
+                  ? format(s.legalizationViaEnd, { country, via })
+                  : mission
+                    ? format(s.legalizationMissionEnd, { country, mission })
+                    : format(s.legalizationEnd, { country }),
               },
             };
           }
@@ -201,12 +211,18 @@ function translationWhen(from: Issuer | undefined, t: Labels) {
 
 /**
  * A legalization's offices after the issuing one, in order ("the foreign ministry", "the Israeli
- * embassy"), naming the country and the third country (`via`) where an office is theirs.
+ * embassy"), naming the country and the third country (`via`) where an office is theirs, and where
+ * the Israeli embassy is when it's in another country (`mission`).
  */
 function chainOffices(step: Extract<Step, { kind: "authenticate" }>, t: Labels, locale: Locale) {
   const country = step.from ? placeName(step.from, t, locale) : "";
   const via = step.via ? regionName(step.via, locale) : "";
-  return (step.chain ?? USUAL_CHAIN).map((link) => format(t.steps.chain[link], { country, via }));
+  const mission = step.mission ? regionName(step.mission, locale) : "";
+  return (step.chain ?? USUAL_CHAIN).map((link) =>
+    link === "israeliConsulate" && mission
+      ? format(t.steps.israeliConsulateIn, { mission })
+      : format(t.steps.chain[link], { country, via }),
+  );
 }
 
 /**

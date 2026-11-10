@@ -25,8 +25,10 @@ export type Step =
    * not known, "if it's from abroad"). `chain`: the offices of a legalization,
    * in order, where they're known for the country. `via`: the third country
    * the chain goes through, where Israel has no embassy in the issuing one.
+   * `mission`: where the Israeli embassy accredited to the issuing country is,
+   * when it has none of its own.
    */
-  | { kind: "authenticate"; from: Issuer; certification: Certification; chain?: readonly ChainLink[]; via?: string }
+  | { kind: "authenticate"; from: Issuer; certification: Certification; chain?: readonly ChainLink[]; via?: string; mission?: string }
   /** The original sent to Israel from the country that issued it, for the translation and the appointment. */
   | { kind: "send" }
   /** `from`: the country that issued it, when it's issued by one; null when that isn't known. */

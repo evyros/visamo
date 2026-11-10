@@ -3,6 +3,64 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v49 — 2026-11-10
+
+**What changed:** A legalization can end at the Israeli embassy in another
+country, where Israel has relations with the issuing one but no embassy in
+it (`mission` in `LEGALIZATION`; `via` stays for countries without
+relations). The step's line names both countries ("In Tanzania, then in
+Kenya"), the last office is "the Israeli embassy in Kenya", and the closing
+sentence says the embassy there serves the country, in place of "It can
+only be done in Tanzania". Tanzania is the first: the foreign ministry, then
+the Israeli embassy in Kenya (Nairobi), where it had the general
+description (the ministry of justice, the foreign ministry, the Israeli
+embassy). The Tanzanian issuer texts no longer explain the embassy's place,
+only how to hand the original in there.
+
+**Why:** Tanzanian documents' steps said the legalization ends at an
+Israeli embassy in Tanzania, which doesn't exist; the embassy in Nairobi
+serves Tanzania.
+
+**Source:** MFA and East African Cooperation of Tanzania, public
+announcement on certification of documents (7 Nov 2018); NetherlandsWorldwide,
+"Legalisation of documents from Tanzania"; Embassy of Denmark in Dar es
+Salaam, legalisation; Embassy of Israel in Nairobi, consular services
+(accredited to Tanzania) and authentication of public documents (updated
+3 Jun 2024).
+
+**Lists that changed:** none (steps of every Tanzanian document that's
+legalized: their line, offices and closing sentence).
+
+## v48 — 2026-11-10
+
+**What changed:** Tanzania has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating their new
+guide sections: RITA for the birth certificate (ZCSRA for a birth in
+Zanzibar), RITA's Registrar General of Marriages for the certificate of
+single status (ZCSRA for Zanzibar), and the Forensic Bureau of the CID in
+Dar es Salaam for the police clearance certificate (the CID in Zanzibar for
+Zanzibar's records). Its legalization is unchanged: not in the Apostille
+Convention, the general description, no `LEGALIZATION` entry. The texts say
+the issuing office verifies the document before the foreign ministry, and
+that the chain ends at the Israeli embassy in Nairobi, accredited to
+Tanzania.
+
+**Why:** Tanzanian documents had the right certification (legalization),
+but no issuing office, and nothing said Israel's embassy for Tanzania is in
+Kenya.
+
+**Source:** RITA, marriages and divorce services and fees (rita.go.tz);
+eRITA portal; MFA and East African Cooperation of Tanzania, public
+announcement on certification of documents (7 Nov 2018); Embassy of Tanzania
+in Tel Aviv, police clearance certificate and marriage pages; IRCC, "How to
+get a police certificate – Mainland Tanzania and Zanzibar" (7 Sep 2023);
+NetherlandsWorldwide, "Legalisation of documents from Tanzania"; Embassy of
+Israel in Nairobi, consular services (accredited to Tanzania) and
+authentication of public documents (updated 3 Jun 2024).
+
+**Lists that changed:** none (steps of Tanzanian birth certificates, civil
+status and police certificates: their office and details).
+
 ## v47 — 2026-11-10
 
 **What changed:** Turkmenistan has issuers for `foreignBirthCertificate`,

@@ -270,6 +270,29 @@ judiciaire), from the Federal Office of Justice, online or at a Swiss Post
 branch. The apostille comes from the cantonal chancellery or the Federal
 Chancellery.
 
+### Tanzania
+
+A police clearance certificate (also called a certificate of good conduct),
+from the Forensic Bureau of the police's Criminal Investigation Department,
+at its headquarters in Dar es Salaam. In Tanzania, apply there in person, with
+a passport or national ID card: your fingerprints and palm prints are taken
+there. From abroad, have the police where you live take your fingerprints,
+and send them to the Forensic Bureau with a letter asking for the
+certificate, giving the last place you lived in Tanzania (district, town,
+street and house number), a copy of your passport's details page, two
+passport photos, and proof that you paid the 25-dollar fee. Police records
+for Zanzibar are kept apart: ask the Criminal Investigation Department at
+the police headquarters in Zanzibar, the same way.
+
+Tanzania isn't in the Apostille Convention, so it's legalized (see
+[certification.md](../certification.md)): Tanzania's Ministry of Foreign
+Affairs and East African Cooperation, then the Israeli embassy. Before the
+ministry, the office that issued the document verifies it: the ministry
+certifies a document only after that. Israel has no embassy in Tanzania: its
+embassy in Nairobi, Kenya, also serves Tanzania, and the chain ends there.
+Hand in the original at the embassy in Nairobi, by appointment; someone else
+can hand it in for you.
+
 ### Thailand
 
 A police clearance certificate (หนังสือรับรองความประพฤติ), from the Police

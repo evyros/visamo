@@ -88,6 +88,32 @@ shown to users (`lib/knowledge/`).
   Recheck if Cuba joins the Apostille Convention (not on the HCCH table of
   30 June 2026).
 
+- **Tanzania** (researched November 2026, from official pages; `TZ` in the
+  issuers; `TZ` in `LEGALIZATION`, with `mission: "KE"`, unverified).
+  Unknown:
+  - Whether the procedure (1.3.0001) names the consul "in the country" or
+    the one accredited to it; the chain follows the Israeli embassy in
+    Nairobi's own pages. Other countries an Israeli embassy serves from
+    elsewhere (Nairobi also serves Uganda, Malawi and the Seychelles) still
+    get the general description, ending at "the Israeli embassy".
+  - Whether the Nairobi embassy legalizes Tanzanian documents in practice
+    (its authentication page doesn't name countries), and whether Misrad
+    Hapnim accepts that. No Tanzanian case found yet.
+  - Where the foreign ministry certifies: its 2018 announcement says Dodoma
+    (Tuesdays and Thursdays, 15,000 shillings a copy); Belgium's embassy
+    page (Feb 2025) says Dar es Salaam. The guides name neither.
+  - Whether a married partner can still get a certificate of single status,
+    and what shows the status before the marriage; whether RITA's
+    certificate of no impediment (for marrying abroad, 300,000 shillings) is
+    accepted in its place. Whether either can be had from abroad other than
+    online (RITA's FAQ mentions sending the RGM form through an embassy).
+  - Whether ZCSRA issues Zanzibar's single status certificate itself (the
+    Tanzanian embassy names it as Zanzibar's registrar of marriages), and
+    how Zanzibar documents are verified before the foreign ministry (the
+    ministry's announcement names only RITA).
+  - Denmark's embassy asks for supporting evidence for a newly re-issued
+    Tanzanian birth certificate; whether Israeli offices do too.
+
 - **Turkmenistan** (researched November 2026, from Turkmen official pages;
   `TM` in the issuers, no `LEGALIZATION` entry). Unknown:
   - Decided (product owner, November 2026): the guides and steps don't

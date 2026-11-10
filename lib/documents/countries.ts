@@ -86,6 +86,11 @@ type Legalization = {
   chain: readonly ChainLink[];
   /** The third country the chain goes through, where Israel has no embassy in the country (the "via" links). */
   via?: string;
+  /**
+   * Where Israel has relations with the country but no embassy in it: the country whose Israeli
+   * embassy is accredited to it, and so where the "israeliConsulate" link is. Not with `via`.
+   */
+  mission?: string;
   /** Where the chain comes from: the country's or the Israeli mission's official page. */
   source: string;
   /** Checked against the source by a person. */
@@ -128,10 +133,25 @@ export const LEGALIZATION: Readonly<Partial<Record<string, Legalization>>> = {
       "Procedure 1.3.0001 §3.1.3; MINREX, legalization transferred to MINJUS (3 Feb 2025); MINREX Resolution 37/2026 (consular fees)",
     verified: false,
   },
+  // No Israeli embassy in Tanzania: the one in Nairobi is accredited to it. Civil documents are first
+  // verified by the office that issued them (RITA), which is in the obtain step's text, not a link.
+  TZ: {
+    chain: ["foreignMinistry", "israeliConsulate"],
+    mission: "KE",
+    source:
+      "MFA and East African Cooperation of Tanzania, public announcement on certification of documents (7 Nov 2018); NetherlandsWorldwide and the Embassy of Denmark in Dar es Salaam, legalisation of Tanzanian documents; Embassy of Israel in Nairobi, consular services (accredited to Tanzania) and authentication of public documents (3 Jun 2024)",
+    verified: false,
+  },
 };
 
-/** The legalization's offices, and the third country it goes through if there's one. */
-export function legalizationOf(country: string): Pick<Legalization, "chain" | "via"> | undefined {
+/** The legalization's offices, the third country it goes through if there's one, and where the Israeli embassy is if it's elsewhere. */
+export function legalizationOf(country: string): Pick<Legalization, "chain" | "via" | "mission"> | undefined {
   const legalization = LEGALIZATION[country];
-  return legalization && { chain: legalization.chain, ...(legalization.via && { via: legalization.via }) };
+  return (
+    legalization && {
+      chain: legalization.chain,
+      ...(legalization.via && { via: legalization.via }),
+      ...(legalization.mission && { mission: legalization.mission }),
+    }
+  );
 }

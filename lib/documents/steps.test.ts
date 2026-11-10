@@ -26,6 +26,14 @@ describe("stepsFor", () => {
     expect(thai[1]).not.toHaveProperty("via");
   });
 
+  it("names where the Israeli embassy is, for a country it serves from another", () => {
+    const steps = stepsFor({ issuer: "TZ", certification: { authentication: "legalization" }, translation: "notarized" }, true);
+    expect(steps[1]).toMatchObject({ kind: "authenticate", chain: ["foreignMinistry", "israeliConsulate"], mission: "KE" });
+    expect(steps[1]).not.toHaveProperty("via");
+    const thai = stepsFor({ issuer: "TH", certification: { authentication: "legalization" }, translation: "notarized" }, true);
+    expect(thai[1]).not.toHaveProperty("mission");
+  });
+
   it("gets a Utah marriage's original from Utah", () => {
     const steps = stepsFor({ issuer: "utah", certification: { authentication: "utahApostille" }, translation: "notarized" }, false);
     expect(steps[0]).toEqual({ kind: "obtain", from: "utah" });

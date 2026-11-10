@@ -57,6 +57,15 @@ describe("the catalog", () => {
       expect(!!l!.via, country).toBe(l!.chain.some((link) => link.startsWith("via")));
     }
   });
+
+  it("puts the Israeli embassy in another country only for a chain that ends at it, and not through a third country", () => {
+    for (const [country, l] of Object.entries(LEGALIZATION)) {
+      if (!l!.mission) continue;
+      expect(l!.via, country).toBeUndefined();
+      expect(l!.mission, country).not.toBe(country);
+      expect(l!.chain.at(-1), country).toBe("israeliConsulate");
+    }
+  });
 });
 
 describe("the messages", () => {
@@ -121,7 +130,7 @@ const countries = {
   apostille: sorted(APOSTILLE),
   formerUssr: sorted(FORMER_USSR),
   securityCheck: sorted(SECURITY_CHECK),
-  legalization: Object.fromEntries(Object.entries(LEGALIZATION).map(([country, l]) => [country, { chain: l!.chain, via: l!.via }])),
+  legalization: Object.fromEntries(Object.entries(LEGALIZATION).map(([country, l]) => [country, { chain: l!.chain, via: l!.via, mission: l!.mission }])),
   issuers: ISSUERS,
 };
 const fingerprint = createHash("sha256").update(JSON.stringify({ rules, countries, lists })).digest("hex");

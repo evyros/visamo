@@ -31,7 +31,7 @@ country calls it something else, and some have no national document at
 all. Below, what the common countries issue.
 
 **Get it before the wedding.** In several countries (Japan, Singapore, the
-Czech Republic, the United Kingdom), the document that shows someone is single
+Czech Republic, Cyprus, the United Kingdom), the document that shows someone is single
 can only be had before the marriage is registered, or can't get an apostille
 after it. If you plan to marry, get it, with its apostille, first: you also
 need it to register the marriage in Israel. If you're already married and
@@ -143,6 +143,20 @@ so the legalization goes on through Canada (see
 and last the Israeli embassy in Canada. It's filed through an international
 law firm in Cuba, such as the CJI, or through a Cuban consulate abroad.
 
+### Cyprus
+
+There's no general certificate of civil status. The only Cypriot document
+about it is the certificate of no impediment to marriage (πιστοποιητικό μη
+τέλεσης γάμου), from the Civil Registry and Migration Department of the
+Ministry of Interior. It confirms that no civil marriage, religious
+marriage or civil union is registered for you in Cyprus. It's issued only
+for a planned marriage: you apply with an affidavit about your status that
+names the person you're marrying, and it costs 34.17 euros. A Cypriot
+living abroad applies through a Cypriot embassy or consulate; a foreigner
+living in Cyprus needs a valid residence permit. If you plan to marry, get
+it first, with its apostille from the Ministry of Justice and Public Order.
+Otherwise, use the affidavit (below).
+
 ### Czech Republic
 
 There's no civil-status certificate. Bring one of these:
@@ -192,6 +206,26 @@ for it to include the date they moved out and the address abroad. Germany
 keeps no register of Germans living abroad, so it shows their marital status
 only as of the day they left. Order it now, with a new apostille, and add an
 affidavit about their status since then (see "If you don't have it", below).
+
+### Greece
+
+A certificate of family status (πιστοποιητικό οικογενειακής κατάστασης),
+for Greek citizens, from the municipality (δήμος) where their family record
+(οικογενειακή μερίδα) is kept: at the municipality, a Citizen Service Centre
+(KEP), or through gov.gr with TAXISnet codes. It's free. Greece now issues
+it only for a few uses, so say it's for use abroad (χρήση στην αλλοδαπή). A
+marriage abroad shows on it only once it's registered at the Special
+Registry (Ειδικό Ληξιαρχείο) in Athens.
+
+It shows only the status now: for the status before the marriage, bring one
+issued before the wedding, or the affidavit (below).
+
+The apostille comes from the Decentralized Administration (Αποκεντρωμένη
+Διοίκηση) of the region, free, on a paper certificate signed by hand by the
+municipality's official. A certificate issued on gov.gr can get an
+electronic apostille (e-Apostille) online instead, but it's a file, and
+Misrad Hapnim usually asks for the original on paper. It's in Greek: find a
+notary in Israel who translates from Greek.
 
 ### Hungary
 

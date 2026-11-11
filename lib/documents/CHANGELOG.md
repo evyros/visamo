@@ -3,6 +3,38 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v50 — 2026-11-11
+
+**What changed:** Greece and Cyprus have issuers for
+`foreignPoliceCertificate` and `foreignCivilStatus`, restating their new
+guide sections. Police certificate: for Greece, the public prosecutor's
+office at the court of first instance (born in Greece) or the Ministry of
+Justice's Criminal Records Department (born abroad), apostilled by the
+court of first instance or the Decentralized Administration; for Cyprus,
+the police's Previous Convictions Registry, apostilled by the Ministry of
+Justice and Public Order. Civil status: for Greece, the certificate of
+family status from the municipality, apostilled by the Decentralized
+Administration (`document`); for Cyprus, the certificate of no impediment
+from the Civil Registry and Migration Department, issued only for a
+planned marriage (`documentOrAffidavit`, like the United Kingdom). Both
+countries' certification is unchanged: apostille.
+
+**Why:** Greek and Cypriot police certificates and civil-status documents
+had only the general steps, with no issuing office or apostille authority.
+
+**Source:** Greece: mitos.gov.gr (copy of criminal record; certificate of
+family status; Hague apostille, e-apostille); Decentralized Administration
+of Attica, Hague apostille page; Greek embassy in Ukraine, copy of criminal
+record; Ministry of Interior, marriage registrations. Cyprus: Cyprus
+Police, Previous Convictions Registry, and gov.cy Criminal Certificate
+Issuance (DIGIPOL); Ministry of Justice and Public Order, Apostille;
+Ministry of Interior, Non-Impediment Certificate (20 June 2025); Embassy of
+Cyprus in Berlin, certificate of clear criminal record.
+
+**Lists that changed:** none (steps of Greek and Cypriot police
+certificates and civil-status documents: their office, details and
+apostille authority).
+
 ## v49 — 2026-11-10
 
 **What changed:** A legalization can end at the Israeli embassy in another

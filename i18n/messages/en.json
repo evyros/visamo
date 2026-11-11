@@ -2388,6 +2388,11 @@
             "office": "the civil registry (Registro Civil)",
             "details": "A certificate of single status (certificación de soltería), from any civil registry office, or a Cuban consulate for a Cuban living abroad. Divorced, a divorce certificate (certificación de divorcio); widowed, a certificate of widowhood (certificación de viudez). In Cuba it's valid for a year, but Misrad Hapnim asks for one issued in the last 6 months. The legalization is filed through an international law firm in Cuba, such as the CJI, or through a Cuban consulate abroad."
           },
+          "CY": {
+            "office": "the Civil Registry and Migration Department",
+            "details": "There's no general certificate of civil status. The only Cypriot document is the certificate of no impediment to marriage (πιστοποιητικό μη τέλεσης γάμου), confirming that no marriage or civil union is registered in Cyprus. It's issued only for a planned marriage, with an affidavit naming the person you're marrying, for 34.17 euros; a Cypriot living abroad applies through a Cypriot embassy. If you plan to marry, get it first.",
+            "apostilleBy": "the Cypriot Ministry of Justice and Public Order"
+          },
           "CZ": {
             "office": "a city hall's registry (matrika)",
             "details": "There's no civil-status certificate. Ask for an extract from the population register (výpis z registru obyvatel) showing the civil status (osobní stav), with a stamp that can be apostilled: say it's for use abroad. Before marrying, the certificate of legal capacity to marry (vysvědčení o právní způsobilosti k uzavření manželství), in 4 languages including English, also works.",
@@ -2416,6 +2421,12 @@
           "GB": {
             "office": "the local register office",
             "details": "There's no national certificate of civil status. The only UK document saying someone is free to marry is a certificate of no impediment (CNI), issued only for a marriage planned abroad: give notice at the local register office, the notice is posted for a month, then it's issued. If you plan to marry abroad, get it first."
+          },
+          "GR": {
+            "office": "the municipality (δήμος) where the family record is kept",
+            "details": "A certificate of family status (πιστοποιητικό οικογενειακής κατάστασης), free, at the municipality, a Citizen Service Centre (KEP) or on gov.gr. Say it's for use abroad (χρήση στην αλλοδαπή): it's issued only for a few uses. Get it on paper, signed by hand: that's the one that gets a paper apostille. A marriage abroad shows on it only once it's registered at the Special Registry (Ειδικό Ληξιαρχείο) in Athens. It's in Greek, so the notarized translation needs a notary who translates from Greek.",
+            "apostilleBy": "the Decentralized Administration (Αποκεντρωμένη Διοίκηση) of the region",
+            "apostilleDetails": "Free, on the paper certificate. One issued on gov.gr can get an electronic apostille instead, but it's a file, and Misrad Hapnim usually asks for the original on paper."
           },
           "HR": {
             "office": "any registry office (matični ured)",
@@ -2579,6 +2590,12 @@
             "office": "the Central Register of Convicted Persons (Registro Central de Sancionados)",
             "details": "A criminal record certificate (certificación de antecedentes penales) from the Ministry of Justice's Central Register of Convicted Persons (Registro Central de Sancionados), of the kind for use abroad (\"Exterior Personal\"). It's obtained and legalized only through the international law firms; a Cuban living abroad asks for it through a Cuban consulate, which can take months. Get it on paper, not the digital one from the online service: Israel accepts a digital police certificate only with an electronic apostille, and Cuba issues none."
           },
+          "CY": {
+            "office": "the Cyprus Police's Previous Convictions Registry",
+            "details": "A clean criminal record certificate (πιστοποιητικό λευκού ποινικού μητρώου). It's issued to Cypriot citizens, and to foreigners who lived legally in Cyprus for at least 6 months. Apply at police headquarters in Nicosia or a divisional police headquarters, in person or through someone you authorize in writing; a foreigner brings their passport and residence permit. It costs 20 euros and usually takes 3 working days. Don't order it online through DIGIPOL: it doesn't issue a certificate that needs an apostille. From abroad, send the application form to police headquarters in Nicosia, with the fee paid at a Cypriot embassy or by bank transfer.",
+            "apostilleBy": "the Cypriot Ministry of Justice and Public Order",
+            "apostilleDetails": "In Nicosia or Limassol. A Cypriot embassy can forward the certificate there for you."
+          },
           "CZ": {
             "office": "the Criminal Register (Rejstřík trestů) in Prague",
             "details": "An extract from the criminal register (výpis z rejstříku trestů). Best get it at the register in Prague, saying it's for an apostille so they use the right stamp. One from a CzechPOINT office can be harder to apostille. Czech embassies issue it too.",
@@ -2612,6 +2629,12 @@
             "details": "A police certificate, with their address history for the last 10 years. It isn't a DBS check.",
             "apostilleBy": "the Foreign, Commonwealth and Development Office (FCDO)",
             "apostilleDetails": "ACRO doesn't add it."
+          },
+          "GR": {
+            "office": "the public prosecutor's office (Εισαγγελία Πρωτοδικών), or the Ministry of Justice if born abroad",
+            "details": "A copy of the criminal record (αντίγραφο ποινικού μητρώου), free. Born in Greece: from the criminal records department of the public prosecutor's office at the court of first instance, or a Citizen Service Centre (KEP). Born abroad, Greek or not: from the Criminal Records Department of the Ministry of Justice (Αυτοτελές Τμήμα Ποινικού Μητρώου) in Athens. Get a paper copy signed by the office, not the gov.gr download: only it gets an apostille. Greek consulates don't issue it: apply in Greece, yourself or through someone you authorize there. It's in Greek, and few notaries in Israel translate from Greek, so find one early.",
+            "apostilleBy": "the court of first instance (Πρωτοδικείο), or the Decentralized Administration (Αποκεντρωμένη Διοίκηση) if born abroad",
+            "apostilleDetails": "For a copy from the Ministry of Justice, only while it's less than 3 months old."
           },
           "HR": {
             "office": "the Croatian Ministry of Justice",

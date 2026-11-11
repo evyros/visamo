@@ -109,6 +109,24 @@ so the legalization goes on through Canada (see
 and last the Israeli embassy in Canada. It's filed through an international
 law firm in Cuba, such as the CJI, or through a Cuban consulate abroad.
 
+### Cyprus
+
+A clean criminal record certificate (πιστοποιητικό λευκού ποινικού
+μητρώου), from the Cyprus Police's Previous Convictions Registry. It's
+issued to Cypriot citizens, and to foreigners who lived legally in Cyprus
+for at least 6 months. Apply at the registry at police headquarters in
+Nicosia, or at a divisional police headquarters, in person or through
+someone you authorize in writing. Bring a copy of your ID card or passport;
+a foreigner brings their passport and residence permit (the pink or yellow
+slip, or the alien book). It costs 20 euros and usually takes 3 working
+days, longer for citizens of other EU countries. The police's online
+service (DIGIPOL) doesn't issue a certificate that needs an apostille, so
+don't order it there. From abroad, send the application form to the police
+headquarters in Nicosia, with the fee paid at a Cypriot embassy or by bank
+transfer. The apostille comes from the Ministry of Justice and Public
+Order, in Nicosia or Limassol; a Cypriot embassy can forward the
+certificate there for you.
+
 ### Czech Republic
 
 An extract from the criminal register (výpis z rejstříku trestů), best from the
@@ -140,6 +158,26 @@ Justice (Bundesamt für Justiz). For an apostille, first apply for it online
 with the Federal Foreign Affairs Office (Bundesamt für Auswärtige
 Angelegenheiten), then request the certificate with the number it gives
 you.
+
+### Greece
+
+A copy of the criminal record (αντίγραφο ποινικού μητρώου). It's free, and
+the office that issues it depends on where you were born, whether or not
+you're Greek:
+
+- **Born in Greece:** the criminal records department of the public
+  prosecutor's office at the court of first instance (Εισαγγελία
+  Πρωτοδικών), or a Citizen Service Centre (KEP). The apostille comes from
+  the court of first instance (Πρωτοδικείο) of that area.
+- **Born abroad:** the Criminal Records Department of the Ministry of
+  Justice (Αυτοτελές Τμήμα Ποινικού Μητρώου), in Athens. The apostille comes
+  from the Decentralized Administration (Αποκεντρωμένη Διοίκηση), and only
+  while the copy is less than 3 months old.
+
+It can also be downloaded from gov.gr, but only a paper copy signed by the
+office gets an apostille. Greek consulates don't issue it: apply in Greece,
+yourself or through someone you authorize there. It's in Greek, and few
+notaries in Israel translate from Greek, so find one early.
 
 ### Hungary
 

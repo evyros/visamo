@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type ComponentProps, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import {
   previewDetails,
@@ -11,6 +11,8 @@ import {
 import type { Messages } from "@/i18n/messages";
 import type { CaseDetails, PersonInput, RelationshipInput } from "@/lib/case-options";
 import { stagesOnceStarted, type Stage } from "@/lib/stages";
+import { CrispLink } from "@/components/crisp";
+import { Icon } from "@/components/icons";
 import { Notice, SubmitButton } from "./auth-ui";
 import {
   PersonFields,
@@ -75,6 +77,7 @@ export function DetailsForm({
   selfIsIsraeli,
   sections,
   locked,
+  contact,
   countries,
   birthCountries,
   stages,
@@ -90,6 +93,8 @@ export function DetailsForm({
   sections: Record<Section, string>;
   /** Who each person is, shown and not editable. */
   locked: Record<"israeli" | "foreign", string[]>;
+  /** The contact link, for changing what's locked: the Crisp chat where it runs. */
+  contact: Omit<ComponentProps<typeof CrispLink>, "children" | "className">;
   countries: Option[];
   birthCountries: Option[];
   /** The stages as answers to where they are now, as onboarding words them. */
@@ -227,6 +232,7 @@ export function DetailsForm({
 
   const tabs: Section[] = ["couple", "israeli", "foreign"];
   const role = section === "couple" ? null : section;
+  const [lockedBefore, lockedAfter] = t.locked.split("{contact}");
 
   return (
     <form ref={formRef} noValidate onSubmit={onReview} className="mt-8 space-y-6">
@@ -253,7 +259,19 @@ export function DetailsForm({
         {role && (
           <div className="rounded-[10px] bg-sand-50 px-4 py-3">
             <p className="font-semibold text-navy-900">{locked[role].join(" · ")}</p>
-            <p className="mt-1 text-sm text-slate-600">{t.locked}</p>
+            <p className="mt-1 text-sm text-slate-600">
+              {lockedBefore}
+              <CrispLink
+                {...contact}
+                className="font-semibold whitespace-nowrap text-teal-700"
+              >
+                {/* Inline, not flex: a flex link sits on the icon's bottom edge, off the sentence's baseline. */}
+                <Icon name="chat" className="me-1 inline-block size-4 align-[-0.15em]" />
+                {/* Underlined on its own, so the line runs under the words and not the icon. */}
+                <span className="underline decoration-current underline-offset-4">{t.lockedContact}</span>
+              </CrispLink>
+              {lockedAfter}
+            </p>
           </div>
         )}
         {role ? (

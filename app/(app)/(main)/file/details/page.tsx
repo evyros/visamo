@@ -5,11 +5,12 @@ import { regionName } from "@/i18n/format";
 import { caseOptions } from "@/i18n/options";
 import { caseDetails } from "@/lib/case-documents";
 import { countedEdits } from "@/lib/events";
-import { contactUrl, newTab } from "@/lib/site";
-import { requireCase } from "@/lib/session";
+import { contactUrl } from "@/lib/site";
+import { getSession, requireCase } from "@/lib/session";
 import { trackOf } from "@/lib/stages";
 import { DetailsForm } from "@/components/app/details-form";
-import { TextLink } from "@/components/ui";
+import { CrispLink } from "@/components/crisp";
+import { Icon } from "@/components/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.details };
@@ -29,6 +30,13 @@ export default async function DetailsPage() {
   const o = messages.app.onboarding;
   const editsLeft = row.detailEditsAllowed - edits;
   const { israeli, foreign } = details;
+  // "Contact us" opens the Crisp chat as this user, except for an admin signed in as them.
+  const impersonating = !!(await getSession())?.session.impersonationId;
+  const contact = {
+    href: contactUrl(locale),
+    locale,
+    user: impersonating ? null : { id: user.id, email: user.email, name: user.name, caseId },
+  };
   const country = (code: string | null) => (code ? regionName(code, locale) : "");
 
   return (
@@ -54,6 +62,7 @@ export default async function DetailsPage() {
                 ...(foreign.birthCountry !== foreign.nationality ? [country(foreign.birthCountry)] : []),
               ],
             }}
+            contact={contact}
             {...caseOptions(locale, o)}
             stages={messages.app.stages}
             started={row.stage !== trackOf(details)[0]}
@@ -62,9 +71,13 @@ export default async function DetailsPage() {
       ) : (
         <div className="mt-6 rounded-card border border-line-200 bg-white p-5 sm:p-6">
           <p className="text-slate-700">{t.limit}</p>
-          <TextLink href={contactUrl(locale)} {...newTab} className="mt-3">
+          <CrispLink
+            {...contact}
+            className="mt-3 inline-flex items-center gap-1.5 font-semibold text-teal-700 underline-offset-4 hover:underline"
+          >
             {t.contact}
-          </TextLink>
+            <Icon name="arrow" className="size-4" />
+          </CrispLink>
         </div>
       )}
     </div>

@@ -287,11 +287,14 @@ export async function sendWelcomeEmail({
   }
 
   const { dir } = locales[locale];
-  // Typography only: no background, logo or button.
+  // Typography only: no background, logo or button. The styles and direction
+  // are on the full-width div, not <body>: Gmail drops <html> and <body> with
+  // their attributes, and a narrower box would sit on the left of its
+  // left-to-right page, so Hebrew lines would end mid-screen.
   const html = `<!doctype html>
 <html lang="${locale}" dir="${dir}">
-  <body style="margin:0;padding:16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#222222">
-    <div dir="${dir}" style="max-width:560px">${paragraphs
+  <body style="margin:0">
+    <div dir="${dir}" style="direction:${dir};text-align:${dir === "rtl" ? "right" : "left"};font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#222222">${paragraphs
       .map((p) => `\n      <p style="margin:0 0 16px">${p.html}</p>`)
       .join("")}
       <p style="margin:0"><a href="${escape(site.url)}" dir="ltr" style="color:#2f7f76">${escape(siteLabel)}</a></p>

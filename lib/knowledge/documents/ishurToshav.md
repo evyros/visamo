@@ -6,8 +6,8 @@ The municipality or local council's confirmation that your center of life
 is in their locality. It's asked for in two cases:
 
 - **Married couples:** it's on the AS/6 checklist, the married couples'
-  application, so it's asked for when at least one of you lives in Israel.
-  Many offices don't ask for it at the first application.
+  application, so it's required when at least one of you lives in Israel,
+  from the first application on.
 - **Every couple's visa renewal:** married and common-law couples alike.
   This is **only when renewing the visa**, not with the first documents,
   before you get the visa: common-law couples (procedure 5.2.0009) aren't
@@ -39,6 +39,11 @@ a confirmation from the landlord that the arnona for the home is in their
 name.
 
 ## Questions
+
+**Is it really required? Can we file without it?**
+Yes, it's required. For married couples, it's part of the AS/6 application
+when at least one of you lives in Israel. If you can't get it because
+neither of you is registered for arnona, see "If you don't have it" above.
 
 **Can I just bring an arnona (ארנונה) bill instead?**
 No, an arnona bill doesn't replace this document. Arnona shows you pay for

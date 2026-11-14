@@ -124,7 +124,7 @@ function civilStatusCheck(points: readonly Point[]): DocumentCheck {
       "One affidavit that declares several of the points above covers each of them: they don't need a document each.",
       "If the country can show the status only up to a past date (the foreign partner deregistered or moved away, and the document says so or shows that date), that document, issued in the last 6 months, together with an affidavit of their status from that date until now, covers their status now. Either one alone doesn't.",
       "Each document from abroad carries the certification the file says it needs (an apostille or consular legalization), in the same file. An affidavit signed abroad carries that country's apostille or legalization.",
-      "If a document isn't in Hebrew, Arabic or English, a certified translation is uploaded with it, and the translation matches the original. It's made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If a document isn't in Hebrew, Arabic or English, a certified translation is uploaded with it, and the translation matches the original. It's made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
       "If a translation was made abroad, it carries its own apostille or legalization from that country (for a country outside the Apostille Convention, the same chain of signatures as a document from there): a translation made in Israel needs none.",
     ],
     recommended: [
@@ -363,7 +363,7 @@ export const checks = {
       "The sex on it fits the foreign partner's gender in the file.",
       "The date and place of birth are on it and readable.",
       "It carries the certification the file says it needs (an apostille or consular legalization), in the same file. An original from the former USSR issued up to 1998 needs none; one issued later, including a new copy of an old record, does.",
-      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
       "If the translation was made abroad, it carries its own apostille or legalization from that country (for a country outside the Apostille Convention, the same chain of signatures as a document from there): a translation made in Israel needs none.",
     ],
     recommended: [
@@ -376,7 +376,7 @@ export const checks = {
     required: [
       "It is an official public document that shows a change of name: a marriage certificate, a divorce decree that restores a former name, a court order, a deed poll, or a civil registry's name-change certificate. It shows the name before the change and the name after it.",
       "It carries an apostille or consular legalization from the country that issued it, in the same file.",
-      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
     ],
     recommended: [
       "If the name changed more than once, there's a document for each change, so together they link the name at birth to today's name.",
@@ -394,7 +394,7 @@ export const checks = {
     required: [
       "It is an official marriage certificate from the civil authority that registered the marriage abroad, or, for an online marriage, from a Utah county, naming the two spouses.",
       "It carries the certification the file says it needs, in the same file: an apostille or consular legalization from the country of the marriage, or, for a Utah marriage, an apostille from the Utah Lieutenant Governor's office.",
-      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
       "If the translation was made abroad, it carries its own apostille or legalization from that country (for a country outside the Apostille Convention, the same chain of signatures as a document from there): a translation made in Israel needs none.",
     ],
     recommended: [
@@ -445,7 +445,7 @@ export const checks = {
   jointLivingEvidence: {
     required: [
       "It shows that both partners live, or lived, at the same address: for example, a lease or property in both names, bills in both names, statements of a joint bank account, or official mail addressed to each of them at that address.",
-      "If it isn't in Hebrew, Arabic or English (from a home abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
+      "If it isn't in Hebrew, Arabic or English (from a home abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "Together, the documents cover at least the last 12 months.",
@@ -458,7 +458,7 @@ export const checks = {
     required: [
       "It is an official birth certificate of a child, listing two parents: from the Israeli Population and Immigration Authority (digitally or manually signed), or from a civil registry abroad.",
       "From abroad: it carries an apostille or consular legalization from the country of birth, in the same file. An Israeli one needs no certification.",
-      "From abroad: if it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "From abroad: if it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
     ],
     recommended: [
       "Each child has their own certificate: one upload can hold several, one per child.",
@@ -474,7 +474,7 @@ export const checks = {
       "It is an official proof of divorce: a court's divorce decree or judgment, or a divorce certificate from a civil registry.",
       "It is final: the document that ends the marriage, not an interim step. A conditional order or decree nisi (UK), or a decision without the note that it's final where the country adds one (Germany's Rechtskraftvermerk, France's certificate of non-appeal), is an issue. A Philippine annulment or declaration of nullity comes with its certificate of finality.",
       "It carries an apostille or consular legalization from the country where the divorce was granted, in the same file. That country can differ from the foreign partner's nationality.",
-      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
     ],
     recommended: [
       "Every page of the decree is included, not only the first and the last.",
@@ -486,7 +486,7 @@ export const checks = {
     required: [
       "It is an official death certificate, or a certified copy of the death entry, from a civil registry or vital records office.",
       "It carries an apostille or consular legalization from the country that issued it, in the same file. That country can differ from the foreign partner's nationality.",
-      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
     ],
     recommended: [
       "If the foreign partner was widowed more than once, there's a death certificate for each of those marriages.",
@@ -498,7 +498,7 @@ export const checks = {
       "It is an official criminal record certificate (a police certificate, or a certificate of no criminal record) from the national authority of the country this item is for, as in the document's details.",
       "It was issued in the last 6 months, counted from today.",
       "It carries an apostille or consular legalization from that country, in the same file.",
-      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
+      "If it isn't in Hebrew, Arabic or English, a certified translation is uploaded with it: made by a notary, or, from a country outside the Apostille Convention, certified by that country's foreign ministry and the Israeli consulate there, like the document. It translates the document's apostille or legalization too, unless that's in English or includes English. A translation agency's own stamp alone doesn't certify it. An English document needs no translation: offices accept English in practice, and ask for one if they don't.",
       "If the translation was made abroad, it carries its own apostille or legalization from that country (for a country outside the Apostille Convention, the same chain of signatures as a document from there): a translation made in Israel needs none.",
     ],
     recommended: [
@@ -513,7 +513,7 @@ export const checks = {
       "It is a lease of a home, or a purchase contract of a home. A lease names both partners as the tenants; a purchase contract is for a home in Israel.",
       "It is the whole contract, with all its appendices, not only the first or the signature page.",
       "It is signed by the parties.",
-      "If it isn't in Hebrew, Arabic or English (a lease from abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
+      "If it isn't in Hebrew, Arabic or English (a lease from abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "A lease is current, or covers the last 12 months, the period the center of life is proven for.",
@@ -538,7 +538,7 @@ export const checks = {
       "They are household bills of a home, from the provider: electricity, water, arnona (municipal tax), phone, or any other bill of the home, such as gas, internet, TV or vaad bayit (building committee).",
       "Each shows the home's address and the billing period.",
       "They're in the landlord's name, or in one or both partners' names.",
-      "If they aren't in Hebrew, Arabic or English (bills from abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
+      "If they aren't in Hebrew, Arabic or English (bills from abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. The originals are uploaded too: translations alone, without the originals, are an issue. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
     ],
     recommended: [
       "There are at least 3 types of household bills.",
@@ -576,7 +576,7 @@ export const checks = {
       "It is a health insurance policy, or an insurer's confirmation of coverage, for one person: from an Israeli health fund or insurance company (a plan for non-residents, a partner's plan, or a foreign worker's policy through an employer), or a policy from abroad.",
       "It covers medical treatment in Israel.",
       "It names the insurer and the coverage period, and the period hasn't ended: it's valid today, or starts in the future.",
-      "If it isn't in Hebrew, Arabic or English (a policy from abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
+      "If it isn't in Hebrew, Arabic or English (a policy from abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "It's a health plan, not only emergency or accident cover.",
@@ -599,7 +599,7 @@ export const checks = {
     required: [
       "It is a bank's confirmation of a joint account, naming two account holders, or a statement of a joint account. If the couple has no joint account: other proof that they share their money, such as transfers to each other, card statements with household purchases or deliveries to the same address, or receipts for large shared expenses.",
       "A bank confirmation or statement shows the bank's name and the account number, readably.",
-      "If it isn't in Hebrew, Arabic or English (an account abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
+      "If it isn't in Hebrew, Arabic or English (an account abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "It was issued recently, in the last few months.",
@@ -612,7 +612,7 @@ export const checks = {
       "They are bank statements: of a shared account, or of each partner's personal account.",
       "They show the balance and all the incoming and outgoing transactions, not a summary.",
       "Proof of account ownership is uploaded with them: a bank confirmation of who holds each account.",
-      "If they aren't in Hebrew, Arabic or English (an account abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
+      "If they aren't in Hebrew, Arabic or English (an account abroad), a translation is uploaded with them, or their important parts are translated or explained alongside them. The originals are uploaded too: translations alone, without the originals, are an issue. It can be the couple's own: a notarized translation isn't needed. English documents need no translation.",
     ],
     recommended: [
       "They cover the full last 12 months, ending recently: the period differs between branches, and 12 months covers them all.",
@@ -627,7 +627,7 @@ export const checks = {
       "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
       "A confirmation of other income: it is from whoever pays it (for example a university or National Insurance), signed or stamped, and shows the amounts and the months paid. The income is current: the latest payment shown is from one of the last 3 months, counted from today, or it states the payments continue. Income that ended earlier is an issue.",
       "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the foreign partner financially supports their shared life in Israel.",
-      "If it isn't in Hebrew, Arabic or English (an Israeli partner working for a business abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
+      "If it isn't in Hebrew, Arabic or English (an Israeli partner working for a business abroad), a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",
@@ -644,7 +644,7 @@ export const checks = {
       "An accountant's confirmation: it is signed by the accountant, and states the income reported for the last year. A confirmation of current or expected income only is an issue.",
       "A confirmation of other income: it is from whoever pays it (for example a university or National Insurance), signed or stamped, and shows the amounts and the months paid. The income is current: the latest payment shown is from one of the last 3 months, counted from today, or it states the payments continue. Income that ended earlier is an issue.",
       "A letter for someone not working and with no income: it is signed, explains their situation (for example, a student, between jobs, or a homemaker), and states that the Israeli partner financially supports their shared life in Israel.",
-      "If it isn't in Hebrew, Arabic or English, a translation is uploaded with it, or its important parts are translated or explained alongside it. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
+      "If it isn't in Hebrew, Arabic or English, a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
       "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",

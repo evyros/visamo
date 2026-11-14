@@ -82,7 +82,8 @@ Documents are translated in one of two ways, depending on what they are:
   documents. If they aren't in Hebrew, Arabic or English, translate them
   yourselves, or mark the important parts and explain them, so the clerk
   can follow. A notarized translation is needed only if the office
-  asks for one.
+  asks for one. The translation goes with the original documents, never
+  instead of them: a translation alone isn't enough.
 
 For official documents and formal forms, unlike personal/unofficial
 documents such as bills, letters or bank statements:

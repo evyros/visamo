@@ -19,6 +19,11 @@
   --color-sand-50: #f8f6f1;
   --color-amber-500: #c98a2b;
   --color-amber-100: #f7ecd9;
+  --color-blue-50: #eaf1f8;
+  --color-blue-200: #c9d9ea;
+  --color-blue-300: #9fb6cf;
+  /* Only for the free-check drawing on the overview: never a status. */
+  --color-coral-400: #e08a6d;
   --color-terracotta-600: #a84b36;
   --color-terracotta-100: #f6e5e0;
   /* White on it: 6.7:1. */

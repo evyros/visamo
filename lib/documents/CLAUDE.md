@@ -63,6 +63,9 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
 - `checks.ts`: how the document checker (`lib/checks/`) checks each
   document: `required` (the minimum; each one not met is an issue) and
   `recommended` (what makes it stronger). See "Document checks" below.
+- `check-priority.ts`: the order to check documents in, most likely to
+  need fixing first. The overview recommends where to spend the free check
+  from it. Every document with a check written is ranked (the tests check).
 
 ## Rules
 

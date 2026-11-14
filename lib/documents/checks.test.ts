@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { checkFirst, checkPriority } from "./check-priority";
 import { checkFor, checks, type DocumentCheck } from "./checks";
 import { points } from "./points";
 
@@ -93,5 +94,29 @@ describe("the checks", () => {
   it("ask for the security screening CV in its bilingual form", () => {
     expect(checks.securityCv).not.toBe("notYet");
     expect((checks.securityCv as { required: readonly string[] }).required.join(" ")).toMatch(/Hebrew and Arabic/);
+  });
+});
+
+describe("checkPriority", () => {
+  it("ranks every document with a check written, and only those, once each", () => {
+    const written = Object.entries(checks)
+      .filter(([, check]) => check !== "notYet")
+      .map(([id]) => id);
+    expect([...checkPriority].sort()).toEqual(written.sort());
+  });
+
+  it("recommends the uploaded documents most likely to need fixing first", () => {
+    const items = [
+      { id: "foreignPhotos", key: "foreignPhotos" },
+      { id: "foreignPoliceCertificate", key: "foreignPoliceCertificate:US" },
+      { id: "childPassport", key: "childPassport" },
+      { id: "foreignBirthCertificate", key: "foreignBirthCertificate" },
+      { id: "foreignCivilStatus", key: "foreignCivilStatus:US" },
+    ];
+    const uploaded = new Set(["foreignPhotos", "foreignPoliceCertificate:US", "childPassport", "foreignBirthCertificate"]);
+    expect(checkFirst(items, uploaded, 2).map((i) => i.key)).toEqual(["foreignPoliceCertificate:US", "foreignBirthCertificate"]);
+    // A document with no check written is never recommended.
+    expect(checkFirst(items, new Set(["childPassport"]), 2)).toEqual([]);
+    expect(checkFirst(items, new Set(), 2)).toEqual([]);
   });
 });

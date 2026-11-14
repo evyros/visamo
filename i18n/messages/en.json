@@ -2805,6 +2805,12 @@
         "action": "Invite {name}",
         "dismiss": "Dismiss"
       },
+      "freeCheck": {
+        "title": "You have a free document check",
+        "body": "Check one of your documents for free, and see what to fix before you submit it.",
+        "startWith": "I recommend starting with:",
+        "dismiss": "Dismiss"
+      },
       "stage": {
         "title": "Where you are",
         "steps": {

@@ -8,8 +8,9 @@ import { caseOptions } from "@/i18n/options";
 import type { BranchCode, CaseDetails } from "@/lib/case-options";
 import { otherMembers, pendingInvite } from "@/lib/case";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
-import { INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
+import { FREE_CHECK_DISMISSED_COOKIE, INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
 import { caseChecks } from "@/lib/checks/store";
+import { checkFirst } from "@/lib/documents/check-priority";
 import {
   checkedProgressByGroup,
   checkedProgressOf,
@@ -20,6 +21,7 @@ import {
   type CheckedProgress,
   type Group,
 } from "@/lib/documents/progress";
+import { documentTitle } from "@/lib/documents/titles";
 import { countedEdits, recentEvents } from "@/lib/events";
 import { requireCase } from "@/lib/session";
 import { awaitingDecision, awaitingEntryPermit, dateKind, trackOf, type DatedStage, type Stage } from "@/lib/stages";
@@ -33,6 +35,7 @@ import {
 } from "@/components/app/overview-cards";
 import { standingCounts, type ProgressValue } from "@/components/app/document-progress";
 import { InviteBanner } from "@/components/app/invite-banner";
+import { FreeCheckBanner } from "@/components/app/free-check-banner";
 import { BranchChange } from "@/components/app/branch-change";
 import { StageCard } from "@/components/app/stage-card";
 import { activityItem } from "./activity-items";
@@ -44,12 +47,15 @@ export async function generateMetadata(): Promise<Metadata> {
 /** How many events the activity card shows; the rest are on the activity page. */
 const ACTIVITY_LIMIT = 2;
 
+/** How many documents the free-check box recommends starting with. */
+const START_WITH_LIMIT = 2;
+
 // The file at a glance: where the couple is in the process, how far along
 // their documents are, the details their list is built from, and what
 // either of them did lately.
 export default async function FileOverviewPage() {
   const { user, caseId } = await requireCase();
-  const [{ row, people, details }, files, events, edits, messages, locale, invite] = await Promise.all([
+  const [{ row, people, details }, files, events, edits, messages, locale, invite, cookieJar] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
     // One more than shown, to know whether there are older ones to link to.
@@ -58,6 +64,7 @@ export default async function FileOverviewPage() {
     getAppDictionary(),
     getAppLocale(),
     askToInvite(caseId, user.id),
+    cookies(),
   ]);
   const t = messages.app.overview;
   const o = messages.app.onboarding;
@@ -107,6 +114,18 @@ export default async function FileOverviewPage() {
   // The partner the invite banner is about: the other person in the case.
   const partnerName = people.find((p) => p.userId !== user.id)?.name ?? "";
 
+  // The free-check box, in the invite banner's place when that one isn't shown: without Full
+  // file check, while the free check is left, and unless it was dismissed on this device. It
+  // recommends the uploaded documents most likely to need fixing; before any upload, none.
+  const freeCheck = !invite && !row.fileCheck && row.checksLeft > 0 && !cookieJar.has(FREE_CHECK_DISMISSED_COOKIE);
+  const names = { israeli: details.israeli.name, foreign: details.foreign.name };
+  const startWith = freeCheck
+    ? checkFirst(list, uploaded, START_WITH_LIMIT).map((d) => ({
+        title: documentTitle(d.key, messages.app.documents, locale, names) ?? d.key,
+        href: `/file/documents#doc-${encodeURIComponent(d.key)}`,
+      }))
+    : [];
+
   // Details.
   const editsLeft = Math.max(0, row.detailEditsAllowed - edits);
 
@@ -120,6 +139,15 @@ export default async function FileOverviewPage() {
           body={format(t.invite.body, { name: partnerName })}
           action={format(t.invite.action, { name: partnerName })}
           dismiss={t.invite.dismiss}
+        />
+      )}
+      {freeCheck && (
+        <FreeCheckBanner
+          title={t.freeCheck.title}
+          body={t.freeCheck.body}
+          startWith={t.freeCheck.startWith}
+          documents={startWith}
+          dismiss={t.freeCheck.dismiss}
         />
       )}
 

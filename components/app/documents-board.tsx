@@ -630,14 +630,28 @@ function DocumentCard({
 } & FileHandlers) {
   const [open, setOpen] = useState(false);
   const bodyId = useId();
+  const anchor = `doc-${item.key}`;
+  const cardRef = useRef<HTMLDivElement>(null);
   const uploaded = files.length > 0;
   const fresh = !!freshResult(check, files);
+
+  // A link to the card (#doc-…, like the overview's free-check box) opens it and brings it into view.
+  useEffect(() => {
+    const openIfLinked = () => {
+      if (decodeURIComponent(window.location.hash.slice(1)) !== anchor) return;
+      setOpen(true);
+      cardRef.current?.scrollIntoView();
+    };
+    openIfLinked();
+    window.addEventListener("hashchange", openIfLinked);
+    return () => window.removeEventListener("hashchange", openIfLinked);
+  }, [anchor]);
   // The tool's pill shows on the closed card until something's uploaded,
   // then moves inside it.
   const toolOnTop = item.tool && !uploaded && pending.length === 0 ? item.tool : null;
 
   return (
-    <div className="rounded-card border border-line-200 bg-white">
+    <div id={anchor} ref={cardRef} className="scroll-mt-24 rounded-card border border-line-200 bg-white">
       {/* The header opens and closes the card: its button's ::after covers the
           whole row, arrow included. The tool's pill sits above that layer, so
           clicking it only opens the tool. The pill shares the title's row and

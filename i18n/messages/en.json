@@ -161,25 +161,22 @@
       }
     },
     "problem": {
-      "title": "One small mistake can cost you months.",
-      "lead": "If the Ministry finds a problem in your file, it sends it back, and the wait starts over.",
-      "without": {
-        "label": "Without Visamo",
-        "submit": "Submit your file",
-        "wait": "Months of waiting",
-        "sentBack": "Sent back: one document isn't right",
-        "resubmit": "Fix it and submit again",
-        "waitAgain": "Months of waiting, again",
-        "answer": "Answer"
-      },
-      "with": {
+      "title": "Why Visamo?",
+      "problemsLabel": "Without Visamo",
+      "problems": [
+        "Not sure which documents to get",
+        "Mistakes delay your file",
+        "A lawyer costs thousands, or more"
+      ],
+      "solution": {
         "label": "With Visamo",
-        "check": "All documents are checked",
-        "submit": "Submit your file",
-        "wait": "Months of waiting",
-        "answer": "Answer"
-      },
-      "caption": "Illustration only. Waiting times are set by the Ministry."
+        "title": "Do it yourself, and do it right.",
+        "points": [
+          "Know what each document needs",
+          "Every document checked before you submit",
+          "No lawyer needed"
+        ]
+      }
     },
     "howBuilt": {
       "eyebrow": "How we built Visamo",

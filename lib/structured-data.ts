@@ -5,10 +5,29 @@ const name = "Visamo";
 /**
  * JSON-LD for the homepage. WebSite gives Google the site name for search
  * results; Organization ties both spellings of the brand, and its social
- * profiles, to one entity.
+ * profiles, to one entity. WebApplication says what Visamo is, for search
+ * engines and AI tools: what it does (the "Why Visamo?" section's points, in
+ * the page's language), where, and what it costs. FAQPage carries the
+ * homepage's questions and answers.
  */
-export function homeStructuredData() {
+export function homeStructuredData({
+  url,
+  inLanguage,
+  description,
+  featureList,
+  offers,
+  faq,
+}: {
+  /** The homepage's absolute URL in this language. */
+  url: string;
+  inLanguage: string;
+  description: string;
+  featureList: string[];
+  offers: { name: string; description: string; price: number }[];
+  faq: { q: string; a: string }[];
+}) {
   const alternateName = [site.nameHe];
+  const organizationId = `${site.url}/#organization`;
   return [
     {
       "@context": "https://schema.org",
@@ -20,12 +39,44 @@ export function homeStructuredData() {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": organizationId,
       name,
       alternateName,
       url: site.url,
       logo: `${site.url}/logo.svg`,
       email: site.supportEmail,
       sameAs: Object.values(site.social),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name,
+      alternateName,
+      url,
+      description,
+      inLanguage,
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Web",
+      areaServed: { "@type": "Country", name: "Israel" },
+      featureList,
+      offers: offers.map((offer) => ({
+        "@type": "Offer",
+        name: offer.name,
+        description: offer.description,
+        price: offer.price,
+        priceCurrency: "ILS",
+      })),
+      provider: { "@id": organizationId },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage,
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: plain(item.a) },
+      })),
     },
   ];
 }

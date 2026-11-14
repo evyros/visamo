@@ -77,11 +77,14 @@ export const mobileCenter = "text-center lg:text-start";
 export function SectionTitle({
   children,
   className = "",
+  id,
   as: Tag = "h2",
   align = "responsive",
 }: {
   children: ReactNode;
   className?: string;
+  /** For a section's aria-labelledby. */
+  id?: string;
   as?: "h1" | "h2";
   /** `responsive`: centered on mobile, start-aligned on desktop. */
   align?: "responsive" | "center";
@@ -90,6 +93,7 @@ export function SectionTitle({
   const alignment = align === "center" ? "mx-auto text-center" : `mx-auto lg:mx-0 ${mobileCenter}`;
   return (
     <Tag
+      id={id}
       className={`font-display font-semibold leading-[1.12] text-balance text-navy-900 ${size} ${alignment} ${className}`}
     >
       {children}

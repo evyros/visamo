@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
-import { localePath, signupUrl } from "@/lib/site";
+import { localePath, prices, signupUrl, site } from "@/lib/site";
 import { homeStructuredData, jsonLd } from "@/lib/structured-data";
 import { FaqList } from "@/components/faq-list";
 import { FinalCta } from "@/components/final-cta";
@@ -31,7 +31,24 @@ export default async function HomePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(homeStructuredData()) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(
+            homeStructuredData({
+              url: site.url + localePath(locale, "/"),
+              inLanguage: locale,
+              description: t.meta.home.description,
+              featureList: t.home.problem.solution.points,
+              offers: [
+                { name: t.pricing.free.name, description: t.pricing.free.tagline, price: 0 },
+                { name: t.pricing.fileCheck.name, description: t.pricing.fileCheck.tagline, price: prices.fileCheck },
+              ],
+              faq: t.home.faq.items,
+            }),
+          ),
+        }}
+      />
       <Hero t={t} locale={locale} />
       <Problem t={t} />
       <HowItWorks t={t} locale={locale} />

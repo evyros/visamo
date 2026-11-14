@@ -921,7 +921,7 @@ function CheckFooter({
         onClick={onCheck}
         disabled={!uploaded || uploading || settings.busy}
         aria-describedby={uploaded ? undefined : tipId}
-        className={`${button} bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
+        className={`${button} shine bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
       >
         <Icon name="visamo" className="-me-0.5 size-5" />
         {last ? c.again : c.check}

@@ -201,6 +201,54 @@ body {
   animation: cheer 0.45s ease-out;
 }
 
+/* The documents page's "Check the document" button (components/app/documents-board.tsx):
+   a soft band of light sweeps across it every few seconds, so it invites a click. It sits
+   behind the label (z-index -1 inside the button's own stacking context), runs the reading
+   direction, and stops while the button is disabled or motion is reduced. */
+@keyframes shine {
+  0% {
+    translate: calc(-100% * var(--shine-dir)) 0;
+  }
+  35%,
+  100% {
+    translate: calc(100% * var(--shine-dir)) 0;
+  }
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.shine::after {
+  --shine-dir: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 20%, rgb(255 255 255 / 0.13) 50%, transparent 80%);
+  translate: -100% 0;
+  animation: shine 4.5s ease-in-out 1.5s infinite;
+}
+
+[dir="rtl"] .shine::after {
+  --shine-dir: -1;
+  translate: 100% 0;
+  background: linear-gradient(-110deg, transparent 20%, rgb(255 255 255 / 0.13) 50%, transparent 80%);
+}
+
+.shine:disabled::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shine::after {
+    display: none;
+  }
+}
+
 /* Hero texture. The dot grid fades out from the corner where the glow sits
    (inline-end, so it mirrors in RTL); the grain is inline SVG noise. */
 .texture-dots {

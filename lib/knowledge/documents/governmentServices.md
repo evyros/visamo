@@ -1,6 +1,6 @@
 # Proof of government services (אישורים על שירותים ממשלתיים)
 
-Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi - ביטוח לאומי), health and education.
+Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi - ביטוח לאומי), health, education, or a vehicle license.
 
 Confirmations of the services you receive from government institutions in
 Israel (5.2.0008 §ד.2.ח), such as National Insurance (Bituach Leumi),

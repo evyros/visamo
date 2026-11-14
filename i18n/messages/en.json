@@ -1844,7 +1844,7 @@
         "governmentServices": {
           "title": "Proof of government services",
           "shortTitle": "Proof of government services",
-          "description": "Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi - ביטוח לאומי), health and education."
+          "description": "Confirmations of services you receive in Israel, such as National Insurance (Bituach Leumi - ביטוח לאומי), health, education, or a vehicle license."
         },
         "foreignHealthInsurance": {
           "title": "Health insurance of the foreign partner",

@@ -1,0 +1,28 @@
+{
+  "scenario": "commonLawLivingTogether",
+  "today": "2026-11-14",
+  "foreign": {
+    "name": "Anne-Mai Heinala",
+    "gender": "female",
+    "nationality": "EE",
+    "birthCountry": "EE"
+  },
+  "cases": [
+    {
+      "name": "Estonia: payslips Aug-Oct 2026, only their English translations, no Estonian originals (today 2026-11-14)",
+      "files": [
+        "estonia-2026-08-base.pdf",
+        "estonia-2026-08-full.pdf",
+        "estonia-2026-09.pdf",
+        "estonia-2026-10.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "a translation alone, without the original",
+          "the last 12 months, with no month missing"
+        ]
+      }
+    }
+  ]
+}

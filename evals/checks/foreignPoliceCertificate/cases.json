@@ -1,0 +1,60 @@
+{
+  "scenario": "commonLawLivingTogether",
+  "today": "2026-11-14",
+  "foreign": {
+    "name": "Anne-Mai Heinala",
+    "gender": "female",
+    "nationality": "EE",
+    "birthCountry": "EE"
+  },
+  "cases": [
+    {
+      "name": "Estonia: real file, apostilled, sworn translation into English made in Estonia (today 2026-11-14, issued 3 months before)",
+      "files": [
+        "estonia-real.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "certified translation is uploaded"
+        ],
+        "mayFlag": [
+          "If the translation was made abroad"
+        ]
+      }
+    },
+    {
+      "name": "Spain: apostille in Spanish, Hebrew notary translation covers it",
+      "foreign": {
+        "name": "Lucía Fernández Ortega",
+        "gender": "female",
+        "nationality": "ES",
+        "birthCountry": "ES"
+      },
+      "files": [
+        "spain-translated.pdf"
+      ],
+      "expect": {
+        "rating": "looksGood"
+      }
+    },
+    {
+      "name": "Spain: apostille in Spanish, Hebrew notary translation leaves it out",
+      "foreign": {
+        "name": "Lucía Fernández Ortega",
+        "gender": "female",
+        "nationality": "ES",
+        "birthCountry": "ES"
+      },
+      "files": [
+        "spain-apostille-not-translated.pdf"
+      ],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": [
+          "certified translation is uploaded"
+        ]
+      }
+    }
+  ]
+}

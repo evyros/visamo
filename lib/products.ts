@@ -1,8 +1,9 @@
 // What Visamo sells. Every case is free to start; on top of that there are
 // two one-time purchases: a message pack, bought as often as needed, and
-// Full file check, bought once for the whole process. The numbers match the
-// pricing page (pricing in the messages). They're granted into the case's
-// balances (lib/credits.ts).
+// Full file check, bought once for the whole process. A free case has one
+// document check to try; Full file check is what checks the whole file. The
+// numbers match the pricing page (pricing in the messages). They're granted
+// into the case's balances (lib/credits.ts).
 
 /** A one-time purchase. */
 export type ProductId = "messagePack" | "fileCheck";
@@ -26,6 +27,9 @@ export const BUY_COOKIE = "buy";
 /** The messages a new case is granted. */
 export const FREE_MESSAGES = 5;
 
+/** Document checks a new case is granted: one, for any document. Full file check adds 300 more. */
+export const FREE_CHECKS = 1;
+
 /** Messages each purchase adds: a message pack, and Full file check includes one. */
 export const PACK_MESSAGES = 50;
 
@@ -47,7 +51,7 @@ export const PRODUCT_GRANTS: Record<ProductId, { messages: number; checks: numbe
 export type Access = {
   /** Bought anything. */
   paid: boolean;
-  /** Bought Full file check: the case can check documents. */
+  /** Bought Full file check: the case checks every document. A free case has its one free check (cases.checksLeft). */
   fileCheck: boolean;
 };
 

@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { parseOnboarding } from "@/lib/case-options";
-import { FREE_MESSAGES } from "@/lib/products";
+import { FREE_CHECKS, FREE_MESSAGES } from "@/lib/products";
 import { grantQueries } from "@/lib/credits";
 import { db } from "@/lib/db";
 import { caseMember, casePerson, cases } from "@/lib/db/schema";
@@ -33,7 +33,7 @@ export async function createCase(input: unknown): Promise<CreateCaseResult> {
     // second case for the same user (a double submit, two tabs), and then
     // none of the rows are written. The partner has no user yet; an invite
     // will link one to their row later. The case starts with the free
-    // messages, and its checks come with File Preparation.
+    // messages and its one free document check; the rest come with Full file check.
     await db.batch([
       db.insert(cases).values({ id: caseId, branch, stage, ...relationship }),
       db.insert(caseMember).values({ userId, caseId, role: "owner" }),
@@ -43,6 +43,7 @@ export async function createCase(input: unknown): Promise<CreateCaseResult> {
       ]),
       recordEvent(caseId, userId, { type: "case.created", data: {} }),
       ...grantQueries(caseId, "messages", FREE_MESSAGES, "free", { userId }),
+      ...grantQueries(caseId, "checks", FREE_CHECKS, "free", { userId }),
     ]);
   } catch (error) {
     // If the user has a case now, another submit won the race: carry on.

@@ -361,7 +361,7 @@
     },
     "pricingTeaser": {
       "title": "Start free. Pay only if you need more.",
-      "body": "Your document list, the step-by-step guidance and 5 chat messages are free. Want more messages, or every document checked? Pay once. No subscription.",
+      "body": "Your document list, the step-by-step guidance, 5 chat messages and 1 document check are free. Want more messages, or every document checked? Pay once. No subscription.",
       "microcopy": "No credit card needed."
     },
     "faq": {
@@ -377,7 +377,7 @@
         },
         {
           "q": "What can we get for free?",
-          "a": "We've been through this process ourselves, and we know how heavy it can feel. That's why we built Visamo: to give couples the smoother process we didn't have, not only the ones who pay. So for free, you get your personal document list, all the organizational features and 5 messages to the assistant."
+          "a": "We've been through this process ourselves, and we know how heavy it can feel. That's why we built Visamo: to give couples the smoother process we didn't have, not only the ones who pay. So for free, you get your personal document list, all the organizational features, 5 messages to the assistant and 1 document check."
         },
         {
           "q": "Can Visamo tell me if my file will be rejected?",
@@ -446,6 +446,7 @@
         "File and document organization: upload and keep everything in one place",
         "Process guide",
         "5 chat messages",
+        "1 document check",
         "One shared file for both partners"
       ],
       "cta": "Start free",
@@ -532,14 +533,14 @@
         {
           "feature": "Instant document checks",
           "values": [
-            "no",
+            "1",
             "Up to 300 (fair use)"
           ]
         },
         {
           "feature": "How-to-fix steps for each flag",
           "values": [
-            "no",
+            "yes",
             "yes"
           ]
         },
@@ -565,7 +566,7 @@
         },
         {
           "q": "Can I upload documents for free?",
-          "a": "Yes. You can upload and organize all your documents for free. Checking them against the published requirements comes with Full file check."
+          "a": "Yes. You can upload and organize all your documents for free, and check one of them. Checking every document against the published requirements comes with Full file check."
         },
         {
           "q": "Is there a limit on document checks?",
@@ -1595,6 +1596,7 @@
         "addPack": "Add 50 messages · {price}",
         "checksTitle": "Document checks",
         "checksLockedBody": "Check every file instantly, with a one-time purchase for your whole process.",
+        "checksFreeBody": "1 free check left, for any document. Check them all with a one-time purchase for your whole process.",
         "checksIncluded": "Included with your Full file check.",
         "checksHint": "Check any document from the documents page.",
         "buyFileCheck": "Get Full file check · {price}",
@@ -2049,12 +2051,11 @@
           "tooManyPages": "Up to {max} pages can be checked at once. Remove extra pages and try again.",
           "tooLarge": "These files are too large to check together. Try smaller scans.",
           "noChecks": "You've used all your document checks. Contact support for more.",
-          "notIncluded": "Document checks come with Full file check.",
           "failed": "Something went wrong with the check, and it wasn't counted. Please try again.",
           "generic": "Something went wrong. Please try again."
         },
         "upgrade": "Get Full file check",
-        "upgradeHint": "Don't let a wrong detail delay your case.",
+        "freeUsed": "You've used your free check. Don't let a wrong detail delay your case.",
         "cantOpenTitle": "Couldn't open a file",
         "counts": {
           "fix": {

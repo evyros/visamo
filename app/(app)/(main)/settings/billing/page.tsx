@@ -64,7 +64,8 @@ export default async function BillingPage() {
           ) : (
             <div className="flex flex-col rounded-[10px] border-[1.5px] border-dashed border-line-200 px-4 py-3">
               <p className="text-sm text-slate-500">{t.checksTitle}</p>
-              <p className="mt-1 mb-4 text-sm text-slate-700">{t.checksLockedBody}</p>
+              {/* Without Full file check: the free check, until it's used. */}
+              <p className="mt-1 mb-4 text-sm text-slate-700">{checks.left > 0 ? t.checksFreeBody : t.checksLockedBody}</p>
               <Link href={buyUrl("/settings/billing")} className={tileButton}>
                 {format(t.buyFileCheck, { price: formatPrice(prices.fileCheck, locale) })}
               </Link>

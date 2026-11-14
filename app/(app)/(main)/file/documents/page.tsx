@@ -144,7 +144,8 @@ export default async function DocumentsPage() {
         locale={locale}
         intlLocale={locales[locale].intlLocale}
         checks={{
-          allowed: balance.fileCheck,
+          bought: balance.fileCheck,
+          left: balance.left,
           notice: checksRunningLow(balance)
             ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
             : null,

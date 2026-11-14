@@ -40,8 +40,9 @@ import { LogoMark } from "@/components/logo";
 // worked out again without it, and it stays folded under the others, to undo.
 //
 // Uploaded isn't done: a document is ready only once a check passed it (looks
-// good, or tips only). Without Full file check, uploaded is as far as it goes,
-// and the progress counts uploads; with it, the progress counts ready documents.
+// good, or tips only). Without Full file check, the progress counts uploads
+// (the one free check shows its result on its card); with it, the progress
+// counts ready documents.
 //
 // Each card lists what to do to its document before uploading it (the
 // apostille, the translation). It only explains: nothing there is tracked.
@@ -82,14 +83,28 @@ export type DocumentItem = {
 /** One step; `details`, the full text, opens under the short one. */
 type StepItem = { kind: StepKind; label: string; text: string; details?: StepDetails };
 
-/** What the case's purchases allow for document checks. */
+/** What the case has for document checks. */
 export type CheckSettings = {
-  /** The case bought Full file check. */
-  allowed: boolean;
+  /** The case bought Full file check: every document can be checked. */
+  bought: boolean;
+  /** The checks left. Without Full file check, its one free check, until it's used. */
+  left: number;
   /** Shown near the fair-use limit. */
   notice: string | null;
   supportUrl: string;
 };
+
+/**
+ * What a card's check can do now: check (Full file check), use the case's
+ * free check, or, once that's used, lead to the buy page.
+ */
+type CheckAccess = "bought" | "free" | "used";
+
+/**
+ * What a card's check footer needs from the settings. `busy`: a free case's
+ * one check is running on a card, so another card's can't start.
+ */
+type FooterSettings = Pick<CheckSettings, "notice" | "supportUrl"> & { access: CheckAccess; busy: boolean };
 
 /** `waiting`: this page started the check and waits on its answer, which brings the result. */
 type ItemCheck = { running: boolean; last: CheckView | null; error?: string; waiting?: boolean };
@@ -172,8 +187,10 @@ const CHECK_POLL_MS = 10_000;
 async function currentChecks() {
   const response = await fetch("/api/documents/check").catch(() => null);
   if (!response?.ok) return null;
-  const body = (await response.json().catch(() => null)) as { checks: Record<string, Omit<ItemCheck, "error">> } | null;
-  return body?.checks ?? null;
+  return (await response.json().catch(() => null)) as {
+    checks: Record<string, Omit<ItemCheck, "error">>;
+    checksLeft: number;
+  } | null;
 }
 
 export function DocumentsBoard({
@@ -199,6 +216,12 @@ export function DocumentsBoard({
       groups.flatMap((g) => g.items).map((item) => [item.key, { running: item.check.running, last: item.check.last }]),
     ),
   );
+  // Shared by both partners: a check either of them runs spends from it.
+  const [checksLeft, setChecksLeft] = useState(settings.left);
+  const access: CheckAccess = settings.bought ? "bought" : checksLeft > 0 ? "free" : "used";
+  // A free check running, this page's or the partner's (the polling sees it).
+  const busy = access === "free" && Object.values(checks).some((c) => c.running);
+  const footer: FooterSettings = { access, busy, notice: settings.notice, supportUrl: settings.supportUrl };
   const [pending, setPending] = useState<Pending[]>([]);
   // Per document: an error about files that weren't added.
   const [addErrors, setAddErrors] = useState<Record<string, string>>({});
@@ -336,8 +359,19 @@ export function DocumentsBoard({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ documentKey }),
       });
-      const body = (await response.json().catch(() => ({}))) as { check?: CheckView; error?: string; maxPages?: number };
+      const body = (await response.json().catch(() => ({}))) as {
+        check?: CheckView;
+        checksLeft?: number;
+        error?: string;
+        maxPages?: number;
+      };
+      if (typeof body.checksLeft === "number") setChecksLeft(body.checksLeft);
       if (response.ok && body.check) return setCheck(documentKey, { running: false, waiting: false, last: body.check });
+      // The free check was used (by the partner, maybe): the card leads to the buy page, which says so.
+      if (body.error === "notIncluded") {
+        setChecksLeft(0);
+        return setCheck(documentKey, { running: false, waiting: false });
+      }
       const error = format(errors[body.error as keyof typeof errors] ?? errors.generic, { max: body.maxPages ?? "" });
       setCheck(documentKey, { running: false, waiting: false, error });
     } catch (error) {
@@ -366,22 +400,22 @@ export function DocumentsBoard({
 
   // The checks as they are now, for items this page isn't waiting on itself.
   const refreshChecks = useCallback(() => {
-    void currentChecks().then((now) =>
+    void currentChecks().then((now) => {
+      if (now) setChecksLeft(now.checksLeft);
       setChecks((all) => {
         const next = { ...all };
-        for (const [key, state] of Object.entries(now ?? {})) {
+        for (const [key, state] of Object.entries(now?.checks ?? {})) {
           if (key in next && !next[key].waiting) next[key] = { ...next[key], ...state };
         }
         return next;
-      }),
-    );
+      });
+    });
   }, []);
 
   // Once on arriving: the browser's Back button shows the page as it was first loaded.
-  // Without Full file check no check can run, so there's nothing to ask.
   useEffect(() => {
-    if (settings.allowed) refreshChecks();
-  }, [settings.allowed, refreshChecks]);
+    refreshChecks();
+  }, [refreshChecks]);
 
   // While a check runs that this page didn't start, until it ends.
   const waitingOnOthers = Object.values(checks).some((c) => c.running && !c.waiting);
@@ -411,7 +445,7 @@ export function DocumentsBoard({
   return (
     <>
       <section className="mt-6 rounded-card border border-line-200 bg-white p-5">
-        {settings.allowed ? (
+        {settings.bought ? (
           <>
             <StandingCounts counts={counts} />
             <div className="mt-3">
@@ -455,7 +489,7 @@ export function DocumentsBoard({
                   intlLocale={intlLocale}
                   check={checks[item.key]}
                   state={states[item.key]}
-                  settings={settings}
+                  settings={footer}
                   onCheck={() => check(item.key)}
                   dismissals={{
                     onDismiss: (runId, kind, index, reason, note) =>
@@ -587,7 +621,7 @@ function DocumentCard({
   intlLocale: string;
   check: ItemCheck;
   state: DocState;
-  settings: CheckSettings;
+  settings: FooterSettings;
   onCheck: () => void;
   dismissals: Dismissals;
   files: FileView[];
@@ -814,7 +848,7 @@ function CheckFooter({
   documentKey: string;
   check: ItemCheck;
   fresh: boolean;
-  settings: CheckSettings;
+  settings: FooterSettings;
   uploaded: boolean;
   uploading: boolean;
   onCheck: () => void;
@@ -868,9 +902,9 @@ function CheckFooter({
         {c.checking}
       </span>
     );
-  } else if (!settings.allowed) {
-    // Not bought: the button leads to the buy page.
-    state = c.upgradeHint;
+  } else if (settings.access === "used") {
+    // The free check is used: the button leads to the buy page.
+    state = c.freeUsed;
     action = (
       <Link href={buyUrl("/file/documents")} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
         <Icon name="visamo" className="size-4" />
@@ -878,13 +912,14 @@ function CheckFooter({
       </Link>
     );
   } else {
-    // The button alone: its label says whether it was checked before, and when
-    // nothing's uploaded, it says why it can't be pressed on hover.
+    // The button alone, with Full file check or the free check left: its label says whether
+    // it was checked before, and when nothing's uploaded, it says why it can't be pressed on hover.
+    // While the free check runs on another card, it waits: the result decides whether it's used.
     const checkButton = (
       <button
         type="button"
         onClick={onCheck}
-        disabled={!uploaded || uploading}
+        disabled={!uploaded || uploading || settings.busy}
         aria-describedby={uploaded ? undefined : tipId}
         className={`${button} bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
       >
@@ -958,7 +993,7 @@ function CheckFooter({
           {check.error}
         </p>
       )}
-      {settings.allowed && settings.notice && (
+      {settings.access === "bought" && settings.notice && (
         <p className="mt-2 text-sm text-slate-600">
           {settings.notice}{" "}
           <a href={settings.supportUrl} {...newTab} className="font-semibold text-teal-700 hover:underline">

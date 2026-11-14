@@ -6,8 +6,7 @@ The municipality or local council's confirmation that your center of life
 is in their locality. It's asked for in two cases:
 
 - **Married couples:** it's on the AS/6 checklist, the married couples'
-  application, so it's required when at least one of you lives in Israel,
-  from the first application on.
+  application, so it's required when at least one of you lives in Israel.
 - **Every couple's visa renewal:** married and common-law couples alike.
   This is **only when renewing the visa**, not with the first documents,
   before you get the visa: common-law couples (procedure 5.2.0009) aren't

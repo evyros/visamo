@@ -31,12 +31,12 @@ export const site = {
 /** One-time prices in ILS, VAT included. */
 export const prices: Record<ProductId, number> = {
   messagePack: 49,
-  fileCheck: 369,
+  fileCheck: 349,
 };
 
 /**
- * The price a product goes up to after its launch price, shown struck through
- * next to `prices`. Remove a product's entry when its launch price ends.
+ * The price a product will go up to, shown under `prices` with what buying now
+ * saves. Remove a product's entry when its price goes up.
  */
 export const afterLaunchPrices: Partial<Record<ProductId, number>> = {
   fileCheck: 549,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { formatPrice } from "@/i18n/format";
+import { format } from "@/i18n/messages";
 import { pageMetadata } from "@/lib/metadata";
 import { prices } from "@/lib/site";
 import { FaqList } from "@/components/faq-list";
@@ -10,12 +11,12 @@ import { PricingCards } from "@/components/pricing-cards";
 import { Container, SectionTitle } from "@/components/ui";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getDictionary();
+  const [t, locale] = await Promise.all([getDictionary(), getLocale()]);
   return pageMetadata({
-    locale: await getLocale(),
+    locale,
     path: "/pricing",
     title: t.meta.pricing.title,
-    description: t.meta.pricing.description,
+    description: format(t.meta.pricing.description, { price: formatPrice(prices.fileCheck, locale) }),
   });
 }
 
@@ -64,7 +65,9 @@ export default async function PricingPage() {
             role="region"
             aria-label={p.compare.title}
             tabIndex={0}
-            className="mt-10 overflow-x-auto rounded-2xl border border-line-200"
+            // relative: the sr-only labels in the cells are absolutely positioned, and
+            // without it they escape the scroller and widen the page on phones.
+            className="relative mt-10 overflow-x-auto rounded-2xl border border-line-200"
           >
             <table className="w-full min-w-[480px] border-collapse text-start text-[15px]">
               <thead className="bg-sand-50">

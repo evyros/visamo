@@ -12,7 +12,7 @@
     },
     "pricing": {
       "title": "Partner Visa Document Check: Pricing, One-Time Payment",
-      "description": "Visamo has one-time prices, no subscription. Start free, or check every document in your file for ₪369, once, for the whole gradual process."
+      "description": "Visamo has one-time prices, no subscription. Start free, or check every document in your file for {price}, once, for the whole gradual process."
     },
     "security": {
       "title": "How We Protect Your Documents",
@@ -434,8 +434,8 @@
   },
   "pricing": {
     "title": "Simple, one-time pricing",
-    "subtitle": "No subscriptions and no hidden fees. Pay only for what you need.",
-    "anchorLead": "One sent-back file can cost months.",
+    "subtitle": "No subscriptions and no hidden fees.",
+    "anchorLead": "A sent-back file can cost you months. A lawyer to handle it costs thousands.",
     "anchor": "Full file check costs {price}, once.",
     "free": {
       "name": "Free",
@@ -454,12 +454,13 @@
     "fileCheck": {
       "name": "Full file check",
       "priceNote": "once, for the whole process",
-      "tagline": "Check your documents instantly, for your whole process",
+      "tagline": "Prepare and submit your file yourselves, with peace of mind",
       "includes": [
         "Everything in Free, plus a message pack (50 messages)",
-        "Instant AI document checks, built on the experience of many couples",
-        "What's wrong and how to fix it, for each flag",
-        "Cross-document checks (names, dates, details)"
+        "Every document checked instantly by AI, built on the experience of many couples",
+        "What's wrong and exactly how to fix it, before you submit",
+        "Names, dates and details cross-checked across your documents",
+        "No need to hire a lawyer"
       ],
       "cta": "Check my file",
       "footnote": "Not a legal review."
@@ -583,6 +584,10 @@
           "a": "No one can promise that; decisions are made only by the authorities. Full file check checks every document against the published requirements and flags the issues that commonly get files sent back, so you can fix them before you submit."
         },
         {
+          "q": "Will we still need a lawyer?",
+          "a": "Usually only to sign: some forms and affidavits must be signed in front of a lawyer or notary. That's a short appointment, not paying a lawyer to handle your file. Full file check helps you prepare and check the file yourselves. If your case involves a previous refusal, a hearing or an unusual status, we recommend speaking with a licensed Israeli lawyer."
+        },
+        {
           "q": "Can I get a refund?",
           "a": "Yes. We have a 14-day refund policy, because we don't want anyone to pay for something that didn't help. Within 14 days of purchase, send us a request through the contact form with the email you signed up with and the reason, and you'll get a full refund within 10 business days.",
           "link": {
@@ -605,9 +610,8 @@
     },
     "recommended": "Recommended",
     "launch": {
-      "badge": "Launch price",
-      "after": "{price} after launch",
-      "save": "Save {amount}"
+      "save": "Save {amount}",
+      "later": "Price will go up to {price}"
     }
   },
   "security": {

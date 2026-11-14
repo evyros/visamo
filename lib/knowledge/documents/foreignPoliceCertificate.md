@@ -154,7 +154,8 @@ to two more weeks. With an Estonian ID card, Mobile-ID or Smart-ID, e-File
 (e-toimik) gives a digitally stamped extract at once, but it's a file, and
 Misrad Hapnim usually asks for the original on paper. It's issued only in
 Estonian. The apostille comes from any notary in Estonia, on the original
-only.
+only, for €27.71, within 5 working days; the notice can be sent to the
+notary by post.
 
 ### France
 

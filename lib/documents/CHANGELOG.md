@@ -3,6 +3,33 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v51 — 2026-11-14
+
+**What changed:** Estonia has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating its new guide
+sections, all `document`. Birth certificate: a repeat birth certificate in
+English, from the local government of a county centre or an Estonian
+embassy. Civil status: an extract from the population register in English,
+with the marital status and spouses, from the same offices or a notary.
+Police certificate: a notice from the Criminal Records Database, on paper,
+by post or email. Every apostille is by any notary in Estonia. Estonia's
+certification is unchanged: apostille.
+
+**Why:** Estonian documents had only the general steps, with no issuing
+office or apostille authority.
+
+**Source:** Centre of Registers and Information Systems (rik.ee), Criminal
+Records Database: FAQ, Issuing a notice from database, State fee; Ministry
+of the Interior (siseministeerium.ee): Release of data from the population
+register, Vital statistics procedures; CIEC practical guide, Estonia
+(languages of certificates and extracts); Chamber of Notaries (notar.ee),
+Apostille; Tallinn, Extractions from the Population Register; Estonian
+embassies in Washington, Seoul, Rome and Ottawa (ordering documents, state
+fees); Ministry of Foreign Affairs (vm.ee), Estonian representations (Tel
+Aviv).
+
+**Lists that changed:** none (steps only).
+
 ## v50 — 2026-11-11
 
 **What changed:** Greece and Cyprus have issuers for

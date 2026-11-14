@@ -197,7 +197,8 @@ embassy, including the one in Tel Aviv, for €30. With an Estonian ID card,
 Mobile-ID or Smart-ID, it can be ordered through the e-population register
 (rahvastikuregister.ee). Ask for it on paper, signed by the official: a PDF
 printed at home has no signature or seal. The apostille comes from any
-notary in Estonia, but not the notary who issued the extract.
+notary in Estonia, but not the notary who issued the extract, for €27.71,
+within 5 working days; the extract can be sent to the notary by post.
 
 ### France
 

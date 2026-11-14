@@ -181,6 +181,24 @@ a residence certificate (bopælsattest) that shows the civil status
 signer's name: a digitally signed one can't get a physical apostille. The
 apostille comes from the Ministry of Foreign Affairs in Copenhagen.
 
+### Estonia
+
+An extract from the population register (rahvastikuregistri väljavõte), for
+anyone in the register: Estonian citizens, and foreigners who lived in
+Estonia. Order it in English, and ask for the marital status (perekonnaseis)
+and the spouses, former ones too, to be included: by default it shows only
+the name, personal code, birth and citizenship. It lists each spouse with
+the dates. A marriage abroad shows on it only once it's registered in
+Estonia.
+
+It's issued by the local government of a county centre (in Tallinn, the
+Vital Statistics Department) for €20, by a notary, or by an Estonian
+embassy, including the one in Tel Aviv, for €30. With an Estonian ID card,
+Mobile-ID or Smart-ID, it can be ordered through the e-population register
+(rahvastikuregister.ee). Ask for it on paper, signed by the official: a PDF
+printed at home has no signature or seal. The apostille comes from any
+notary in Estonia, but not the notary who issued the extract.
+
 ### France
 
 A certificate of civil status (certificat de célibat), from the town hall

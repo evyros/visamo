@@ -2242,6 +2242,12 @@
             "office": "the parish office",
             "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized, or a certificate of personal data (personattest) if not. Get it in English, with a handwritten signature."
           },
+          "EE": {
+            "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department) or an Estonian embassy",
+            "details": "Ask for a repeat birth certificate (korduv sünnitõend) in English: it's also issued in Estonian, German or French. It costs 20 euros, or 30 euros at an Estonian embassy, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper.",
+            "apostilleBy": "any notary in Estonia",
+            "apostilleDetails": "27.71 euros, up to 5 working days. You can send the document to the notary by post."
+          },
           "ES": {
             "office": "the civil registry (Registro Civil)",
             "details": "Ask for the full birth certificate (certificación literal). The multilingual extract (certificado plurilingüe), in Spanish and French, doesn't save anything for Israel: it still needs a translation and an apostille."
@@ -2406,6 +2412,12 @@
           "DK": {
             "details": "A certificate of personal data (personattest), which says unwed or married, or a residence certificate (bopælsattest) that shows the civil status (civilstand). Order it in English, with a handwritten signature and the signer's name: a digitally signed one can't get a physical apostille.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
+          },
+          "EE": {
+            "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department), a notary or an Estonian embassy",
+            "details": "An extract from the population register (rahvastikuregistri väljavõte), in English. Ask for the marital status (perekonnaseis) and the spouses, former ones too, to be included: by default it shows only the name, personal code, birth and citizenship. A marriage abroad shows on it only once it's registered in Estonia. It costs 20 euros at a local government, or 30 euros at an Estonian embassy, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper, signed by the official: a PDF printed at home has no signature or seal.",
+            "apostilleBy": "any notary in Estonia",
+            "apostilleDetails": "Not the notary who issued the extract. 27.71 euros, up to 5 working days. You can send the document to the notary by post."
           },
           "ES": {
             "office": "the civil registry (Registro Civil)",
@@ -2611,6 +2623,12 @@
             "office": "any police station",
             "details": "A criminal record certificate (straffeattest). Ask for it in English, with a handwritten signature and the signer's name. A digital one from borger.dk can't get a physical apostille.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
+          },
+          "EE": {
+            "office": "the Criminal Records Database (Registrite ja Infosüsteemide Keskus), by post or email",
+            "details": "A notice from the Criminal Records Database (karistusregistri teatis), free for your own record. There's no office to apply at in person: send the signed application by post to Lubja 4, 19081 Tallinn, or by email with an Estonian digital signature, and ask for the notice on paper. It's issued within 2 working days, and the post can take up to two more weeks. The digitally stamped extract from e-File (e-toimik) is a file, and Misrad Hapnim usually asks for the original on paper. It's issued only in Estonian.",
+            "apostilleBy": "any notary in Estonia",
+            "apostilleDetails": "On the original only. 27.71 euros, up to 5 working days. You can send the document to the notary by post."
           },
           "ES": {
             "office": "the Spanish Ministry of Justice or a government sub-delegation",

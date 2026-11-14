@@ -142,6 +142,20 @@ station, with a handwritten signature and the signer's name. A digital one
 from borger.dk can't get a physical apostille. The apostille comes from the
 Ministry of Foreign Affairs in Copenhagen.
 
+### Estonia
+
+A notice from the Criminal Records Database (karistusregistri teatis), from
+the Centre of Registers and Information Systems (Registrite ja
+Infosüsteemide Keskus). It's free for your own record. There's no office to
+apply at in person: send the signed application by post to Lubja 4, 19081
+Tallinn, or by email with an Estonian digital signature, and ask for the
+notice on paper. It's issued within 2 working days, and the post can take up
+to two more weeks. With an Estonian ID card, Mobile-ID or Smart-ID, e-File
+(e-toimik) gives a digitally stamped extract at once, but it's a file, and
+Misrad Hapnim usually asks for the original on paper. It's issued only in
+Estonian. The apostille comes from any notary in Estonia, on the original
+only.
+
 ### France
 
 An extract of the criminal record, bulletin no. 3 (extrait de casier

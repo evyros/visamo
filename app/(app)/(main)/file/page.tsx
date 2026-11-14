@@ -47,9 +47,6 @@ export async function generateMetadata(): Promise<Metadata> {
 /** How many events the activity card shows; the rest are on the activity page. */
 const ACTIVITY_LIMIT = 2;
 
-/** How many documents the free-check box recommends starting with. */
-const START_WITH_LIMIT = 2;
-
 // The file at a glance: where the couple is in the process, how far along
 // their documents are, the details their list is built from, and what
 // either of them did lately.
@@ -116,15 +113,16 @@ export default async function FileOverviewPage() {
 
   // The free-check box, in the invite banner's place when that one isn't shown: without Full
   // file check, while the free check is left, and unless it was dismissed on this device. It
-  // recommends the uploaded documents most likely to need fixing; before any upload, none.
+  // recommends the uploaded document most likely to need fixing; before any upload, none.
   const freeCheck = !invite && !row.fileCheck && row.checksLeft > 0 && !cookieJar.has(FREE_CHECK_DISMISSED_COOKIE);
   const names = { israeli: details.israeli.name, foreign: details.foreign.name };
-  const startWith = freeCheck
-    ? checkFirst(list, uploaded, START_WITH_LIMIT).map((d) => ({
-        title: documentTitle(d.key, messages.app.documents, locale, names) ?? d.key,
-        href: `/file/documents#doc-${encodeURIComponent(d.key)}`,
-      }))
-    : [];
+  const [first] = freeCheck ? checkFirst(list, uploaded, 1) : [];
+  const recommended = first
+    ? {
+        title: documentTitle(first.key, messages.app.documents, locale, names) ?? first.key,
+        href: `/file/documents#doc-${encodeURIComponent(first.key)}`,
+      }
+    : null;
 
   // Details.
   const editsLeft = Math.max(0, row.detailEditsAllowed - edits);
@@ -146,7 +144,7 @@ export default async function FileOverviewPage() {
           title={t.freeCheck.title}
           body={t.freeCheck.body}
           startWith={t.freeCheck.startWith}
-          documents={startWith}
+          recommended={recommended}
           dismiss={t.freeCheck.dismiss}
         />
       )}

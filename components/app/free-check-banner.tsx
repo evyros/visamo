@@ -7,7 +7,7 @@ import { Icon } from "@/components/icons";
 
 /**
  * Tells a couple without Full file check that their free check is still there,
- * and where to start: the uploaded documents most likely to need fixing, each
+ * and where to start: the uploaded document most likely to need fixing,
  * linking to its card. Shown in the invite banner's place, when that one
  * isn't. Dismissing it is remembered on this device (a cookie the overview
  * reads), not on the account.
@@ -16,15 +16,15 @@ export function FreeCheckBanner({
   title,
   body,
   startWith,
-  documents,
+  recommended,
   dismiss,
 }: {
   title: string;
   body: string;
-  /** The line above the recommended documents. */
+  /** The line above the recommended document. */
   startWith: string;
-  /** The recommended documents; none before anything's uploaded, and then the list isn't shown. */
-  documents: { title: string; href: string }[];
+  /** The document to check first; none before anything's uploaded, and then the recommendation isn't shown. */
+  recommended: { title: string; href: string } | null;
   dismiss: string;
 }) {
   const [shown, setShown] = useState(true);
@@ -43,22 +43,19 @@ export function FreeCheckBanner({
       <h2 className="pe-8 font-semibold text-navy-900 sm:pe-0">{title}</h2>
       <div className="col-span-2 sm:col-span-1 sm:col-start-2">
         <p className="text-[15px] text-slate-700">{body}</p>
-        {documents.length > 0 && (
+        {recommended && (
           <>
             <p className="mt-3 text-[15px] font-semibold text-navy-900">{startWith}</p>
-            <ul className="mt-2 flex flex-wrap gap-2">
-              {documents.map((d) => (
-                <li key={d.href}>
-                  <Link
-                    href={d.href}
-                    className="inline-flex min-h-10 items-center gap-2 rounded-[10px] border border-blue-300 bg-white px-4 py-2 text-start text-[15px] font-semibold text-navy-800 transition-colors hover:border-navy-800 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                  >
-                    <Icon name="file" className="size-4 shrink-0" />
-                    {d.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Link
+              href={recommended.href}
+              className="mt-2 inline-flex min-h-10 items-start gap-2 rounded-[10px] border border-blue-300 bg-white px-4 py-2 text-start text-[15px] font-semibold text-navy-800 transition-colors hover:border-navy-800 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+            >
+              {/* On the title's first line, when a long title wraps. */}
+              <span aria-hidden="true" className="flex h-[1lh] shrink-0 items-center">
+                <Icon name="file" className="size-4" />
+              </span>
+              <span>{recommended.title}</span>
+            </Link>
           </>
         )}
       </div>

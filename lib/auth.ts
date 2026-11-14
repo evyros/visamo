@@ -11,6 +11,7 @@ import * as schema from "./db/schema";
 import { sendAuthEmail, sendLoginCode } from "./email";
 import { impersonationPlugin } from "./impersonation";
 import { loginUrl, site } from "./site";
+import { queueWelcomeEmail } from "./welcome-email";
 
 // Sign-in methods:
 // - Google.
@@ -111,6 +112,10 @@ export const auth = betterAuth({
     user: {
       create: {
         before: async (user, ctx) => ({ data: { ...user, locale: localeOf(ctx), twoFactorEnabled: true } }),
+        // Evy's welcome email, a few minutes from now (lib/welcome-email.ts).
+        after: async (user) => {
+          await queueWelcomeEmail(user.id);
+        },
       },
     },
   },

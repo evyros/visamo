@@ -41,6 +41,8 @@ export const user = pgTable("user", {
   locale: text("locale"),
   /** Logging in with a password also asks for a code sent by email. True for every user (lib/auth.ts). */
   twoFactorEnabled: boolean("two_factor_enabled").notNull().default(true),
+  /** When Evy's welcome email went out (lib/welcome-email.ts). Null: not sent, which every user from before it has. */
+  welcomeEmailAt: timestamp("welcome_email_at"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()

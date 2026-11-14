@@ -245,6 +245,75 @@ export async function sendLetterEmail({
 }
 
 /**
+ * Evy's welcome email, a few minutes after signing up (lib/welcome-email.ts).
+ * Plain paragraphs and no branding, so it reads like a personal note. It's
+ * sent from the support inbox, so a reply reaches Evy. `freeMessages`: the
+ * free reminder's message count, or null to leave that line out (a paid
+ * case, or one whose free check is used). `idempotencyKey`: Resend sends an
+ * email with the same key only once (for 24 hours), so a retry after a send
+ * that went through but whose reply was lost doesn't send it twice.
+ */
+export async function sendWelcomeEmail({
+  to,
+  locale,
+  name,
+  freeMessages,
+  idempotencyKey,
+}: {
+  to: string;
+  locale: Locale;
+  name: string | null;
+  freeMessages: number | null;
+  idempotencyKey?: string;
+}) {
+  const t = (await loadMessages(locale)).app.email.welcome;
+  const subject = name ? format(t.subject, { name }) : t.subjectNoName;
+  // Each paragraph as plain text and as HTML: the reply time is in bold.
+  const paragraphs = [
+    name ? format(t.greeting, { name }) : t.greetingNoName,
+    t.intro,
+    t.here,
+    { text: `${t.reply} ${t.replyTime}`, html: `${escape(t.reply)} <strong>${escape(t.replyTime)}</strong>` },
+    t.signature,
+    ...(freeMessages === null ? [] : [format(t.free, { messages: freeMessages })]),
+  ].map((p) => (typeof p === "string" ? { text: p, html: escape(p) } : p));
+  // The site's address closes the email, as "visamo.co.il".
+  const siteLabel = site.url.replace(/^https?:\/\//, "");
+  const text = [...paragraphs.map((p) => p.text), siteLabel].join("\n\n");
+
+  if (!resend) {
+    console.info(`\n[email] ${subject} → ${to}\n\n${text}\n`);
+    return;
+  }
+
+  const { dir } = locales[locale];
+  // Typography only: no background, logo or button.
+  const html = `<!doctype html>
+<html lang="${locale}" dir="${dir}">
+  <body style="margin:0;padding:16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#222222">
+    <div dir="${dir}" style="max-width:560px">${paragraphs
+      .map((p) => `\n      <p style="margin:0 0 16px">${p.html}</p>`)
+      .join("")}
+      <p style="margin:0"><a href="${escape(site.url)}" dir="ltr" style="color:#2f7f76">${escape(siteLabel)}</a></p>
+    </div>
+  </body>
+</html>`;
+
+  const { error } = await resend.emails.send(
+    {
+      from: `${t.from} <${site.supportEmail}>`,
+      to,
+      replyTo: site.supportEmail,
+      subject,
+      html,
+      text,
+    },
+    { idempotencyKey },
+  );
+  if (error) throw new Error(`Resend: ${error.message}`);
+}
+
+/**
  * Asks a friend to write a recommendation letter, with the link to write it.
  * In Hebrew: the writers are Israelis. Replies go to the couple. Its text is
  * fixed, with only the couple's names (checked to be names) and the link, so

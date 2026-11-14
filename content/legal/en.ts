@@ -4,7 +4,7 @@ import type { LegalContent } from "./types";
 // lawyer review these texts before launch.
 
 export const legalEn: LegalContent = {
-  updated: "2026-10-04",
+  updated: "2026-11-14",
   updatedLabel: "Last updated",
   docs: {
     privacy: {
@@ -47,6 +47,7 @@ export const legalEn: LegalContent = {
                 "To let you and your partner share one file.",
                 "To process payments and refunds.",
                 "To answer your messages and give support.",
+                "To send you emails about your account and the service, such as a welcome email when you sign up, login codes and password resets.",
                 "To keep the service secure, prevent fraud and abuse, and fix problems.",
                 "To meet our legal obligations.",
               ],
@@ -71,7 +72,7 @@ export const legalEn: LegalContent = {
                 "Payments: [payment provider].",
                 "Contact form: Cloudflare Turnstile, which checks that the form is sent by a person and not a bot. Messages and attachments sent through the form are emailed to our support inbox (Google Workspace) and are not stored in our systems.",
                 "Live chat: Crisp, the chat window on the website. It stores the messages you send in the chat, and any details you choose to give there, such as your email address, so that we can answer you.",
-                "Email delivery: [email provider].",
+                "Email delivery: Resend.",
                 "Usage analytics: PostHog, which records the actions you take on the screen in the website and the app. When you're signed in, we also give it your name and email address, and nothing more. Your files are never sent to PostHog.",
               ],
             },

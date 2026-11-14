@@ -1682,6 +1682,19 @@
         "body": "They're applying for the Israel partner visa and need recommendation letters from friends and family who know them as a couple. It takes about 10 minutes: write a few paragraphs, photograph your ID card and sign, and the letter is sent to them.",
         "button": "Write the letter",
         "ignore": "If you got this email by mistake, you can ignore it."
+      },
+      "welcome": {
+        "from": "Evy from Visamo",
+        "subject": "Hi {name}, it's Evy",
+        "subjectNoName": "Hi, it's Evy",
+        "greeting": "Hi {name},",
+        "greetingNoName": "Hi,",
+        "intro": "Evy from Visamo here 👋",
+        "here": "This process can be stressful, so I just wanted you to know I'm here.",
+        "reply": "Got a question? Just reply to this email.",
+        "replyTime": "I usually answer within 5 minutes.",
+        "signature": "Evy",
+        "free": "P.S. You've got 1 free document check and {messages} chat messages on us."
       }
     },
     "documents": {

@@ -6,22 +6,28 @@ import { stepsInWords, stepText } from "./document-steps";
 import type { Issuer } from "./documents/certification";
 
 const t = en.app.documentsPage;
-const firstPoint = (from?: Issuer) =>
+const points = (from?: Issuer) =>
   stepText({ kind: "translate", level: "notarized", ...(from !== undefined && { from }) }, "foreignBirthCertificate", t, "en")
-    .details?.points?.[0];
+    .details?.points;
+// After the warning against translating abroad, when it's needed.
+const whenPoint = (from?: Issuer) => points(from)?.[1];
 
 describe("a notarized translation's full text", () => {
+  it("warns against a translation made abroad first, wherever the document is from", () => {
+    for (const from of ["TH", "JO", null] as const) expect(points(from)?.[0]).toBe(t.steps.translateNotarizedAbroad);
+  });
+
   it("says only that English is usually accepted, for a country that doesn't issue in Arabic", () => {
-    expect(firstPoint("TH")).toBe(t.steps.translateEnglish);
-    expect(firstPoint("utah")).toBe(t.steps.translateEnglish);
+    expect(whenPoint("TH")).toBe(t.steps.translateEnglish);
+    expect(whenPoint("utah")).toBe(t.steps.translateEnglish);
   });
 
   it("adds that Arabic needs none, for an Arabic-speaking country", () => {
-    expect(firstPoint("JO")).toBe(`${t.steps.translateArabic} ${t.steps.translateEnglish}`);
+    expect(whenPoint("JO")).toBe(`${t.steps.translateArabic} ${t.steps.translateEnglish}`);
   });
 
   it("adds Hebrew and Arabic when the country isn't known", () => {
-    expect(firstPoint(null)).toBe(`${t.steps.translateHebrewArabic} ${t.steps.translateEnglish}`);
+    expect(whenPoint(null)).toBe(`${t.steps.translateHebrewArabic} ${t.steps.translateEnglish}`);
   });
 });
 

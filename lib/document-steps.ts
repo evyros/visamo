@@ -175,9 +175,9 @@ function stepLine(
     case "send":
       return { text: s.send, details: prose(s.sendDetails) };
     case "translate":
-      // The line only says it might be needed; its full text, when and how.
+      // The line only says it might be needed, and where; its full text, not abroad, when and how.
       return step.level === "notarized"
-        ? { text: s.translateNotarized, details: pointsOf(`${translationWhen(step.from, t)}\n${s.translateNotarizedDetails}`) }
+        ? { text: s.translateNotarized, details: pointsOf(`${s.translateNotarizedAbroad}\n${translationWhen(step.from, t)}\n${s.translateNotarizedDetails}`) }
         : { text: s.translateSelf, details: pointsOf(s.translateSelfDetails) };
     case "sign": {
       const { text, details } = signingText(step, id, points, t);

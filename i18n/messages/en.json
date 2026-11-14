@@ -454,13 +454,13 @@
     "fileCheck": {
       "name": "Full file check",
       "priceNote": "once, for the whole process",
-      "tagline": "Prepare and submit your file yourselves, with peace of mind",
+      "tagline": "Submit on your own, with peace of mind",
       "includes": [
-        "Everything in Free, plus a message pack (50 messages)",
-        "Every document checked instantly by AI, built on the experience of many couples",
-        "What's wrong and exactly how to fix it, before you submit",
-        "Names, dates and details cross-checked across your documents",
-        "No need to hire a lawyer"
+        "Everything in Free + 50 messages",
+        "Every document checked instantly",
+        "Exactly what to fix, and how",
+        "Names and dates cross-checked",
+        "No lawyer to hire"
       ],
       "cta": "Check my file",
       "footnote": "Not a legal review."

@@ -2,9 +2,9 @@ import type { BranchesTexts } from "./types";
 
 export const branchesEn: BranchesTexts = {
   labels: { branches: "Misrad Hapnim branches" },
-  metaTitle: "Misrad Hapnim Branches: How Busy, How Long, What Couples Felt",
+  metaTitle: "Partner Visa Wait Times at Misrad Hapnim, Branch by Branch",
   description:
-    "How busy each Misrad Hapnim branch is for partner visas, how couples felt about dealing with it, and how long each stage took, from couples' reports.",
+    "How long each stage of the partner visa takes at Misrad Hapnim, how busy each branch is, and what couples felt dealing with it, from couples' reports.",
   title: "Misrad Hapnim branches, in numbers",
   intro:
     "How busy each branch is, how couples felt about dealing with it, and how long the stages of the process took. Everything here is counted from couples' reports: no names or stories.",

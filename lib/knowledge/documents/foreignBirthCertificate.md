@@ -242,7 +242,9 @@ Thailand isn't in the Apostille Convention, so it's translated into English
 and certified by the Consular Affairs Department of the Thai Ministry of
 Foreign Affairs, then by the Israeli embassy in Bangkok, by appointment.
 Certify the Thai document together with its English translation, not the
-translation alone. If the name has changed since birth, the ministry also
+translation alone. In practice, the ministry's English translation is
+accepted like a document in English (see
+[certification.md](../certification.md)). If the name has changed since birth, the ministry also
 asks for the name change certificate (ใบสำคัญการเปลี่ยนชื่อ). The Thai
 embassy in Israel can't do any of these steps.
 
@@ -342,6 +344,9 @@ countries that signed the convention on them, and Israel didn't: translate
 it, and get the apostille, like any other certificate.
 
 **Does the translation also need an apostille?**
-Not if a notary in Israel translates it: only the original certificate is
-certified. A notarized translation made abroad needs an apostille of its
-own (see [certification.md](../certification.md)).
+No. A notary in Israel translates it, and only the original certificate is
+certified. A translation made abroad will probably be rejected, even with an
+apostille of its own. It's used only when no notary in Israel knows the
+language: then a local notary translates the certificate into English, and
+that translation does need its own apostille or legalization (see
+[certification.md](../certification.md)).

@@ -102,7 +102,7 @@ export const glossaryGroups: { id: GlossaryGroupId; terms: GlossaryTerm[] }[] = 
       { id: "hatzhara-notaryonit", english: "Notarized statement", said: "hatzhara notaryonit", hebrew: "הצהרה נוטריונית" },
       {
         id: "tirgum-notaryoni",
-        english: "Certified translation",
+        english: "Notarized translation",
         said: "tirgum notaryoni",
         hebrew: "תרגום נוטריוני",
         guide: "apostille-and-translation",

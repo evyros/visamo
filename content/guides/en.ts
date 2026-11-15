@@ -1100,7 +1100,7 @@ export const guidesEn: Guides = {
       title: "Apostille and translation for the Israel partner visa",
       answer:
         "A document from abroad needs an **apostille** (or, from countries outside the Hague Convention, **consular legalization**) from the country that issued it: it can't be done in Israel. [Misrad Hapnim](/guide/glossary#misrad-hapnim) accepts only Hebrew and Arabic without a translation, so other documents need a **notarized translation**, though in practice English is often accepted. Bring the originals: copies aren't accepted.",
-      updated: "2026-10-07",
+      updated: "2026-11-15",
       sections: [
         {
           id: "apostille",
@@ -1166,7 +1166,7 @@ export const guidesEn: Guides = {
                 "**What's translated:** the document, and the apostille or legalization on it too. An apostille in English, or that includes English, usually needs no translation.",
                 "**Who translates:** a notary who knows both languages and translates it themselves. A translation someone else made, which a notary only approved, isn't accepted. Translate from the document's own language straight into Hebrew.",
                 "**Translate into Hebrew, not English.** A translation into English is a risk: the clerk handling your file may not read English well enough to accept it. Hebrew is the safest choice, and makes for a smoother process.",
-                "**If no notary in Israel knows the language,** a double translation is allowed: first into a third language abroad (English, say), then into Hebrew in Israel.",
+                "**If no notary in Israel knows the language,** a local notary abroad translates it into English, and the translation gets an apostille of its own (or consular legalization). In practice, that English translation is usually enough. If the clerk doesn't accept English, a notary in Israel translates it into Hebrew.",
                 "**Your own evidence** (chats, emails, letters from friends) doesn't need a notary. If it isn't in Hebrew or English, translate it yourselves, or mark the important parts and explain them.",
               ],
             },
@@ -1176,7 +1176,7 @@ export const guidesEn: Guides = {
           id: "in-israel",
           heading: "Translate in Israel",
           body: [
-            "A translation done in Israel needs no apostille: only the original document does. A notarized translation done abroad needs an apostille of its own, from the country where it was made, and is sometimes not accepted for other reasons. So a document translated abroad ends up with two apostilles.",
+            "[Misrad Hapnim](/guide/glossary#misrad-hapnim) requires a notarized translation by a notary in Israel. A translation made abroad will probably be rejected, even by a notary there and with an apostille of its own. A notary abroad is used only when no notary in Israel knows the language. A translation done in Israel needs no apostille: only the original document does.",
           ],
         },
         {
@@ -1221,7 +1221,7 @@ export const guidesEn: Guides = {
         },
         {
           q: "Should we translate in Israel or abroad?",
-          a: "In Israel. A translation done in Israel needs no apostille of its own. One done abroad does, and is sometimes not accepted.",
+          a: "In Israel, by a notary. A translation made abroad will probably be rejected, even with an apostille of its own, unless no notary in Israel knows the language. A translation done in Israel needs no apostille of its own.",
         },
         {
           q: "Are copies accepted?",

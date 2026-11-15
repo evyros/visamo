@@ -30,7 +30,7 @@ export const processPath = "/guide/partner-visa-process";
 export const processPublished = "2026-10-11";
 
 /** When the facts were last checked against lib/knowledge, as YYYY-MM-DD. */
-export const processUpdated = "2026-10-11";
+export const processUpdated = "2026-11-15";
 
 /**
  * The knowledge-base files (lib/knowledge) the guide's facts come from. When

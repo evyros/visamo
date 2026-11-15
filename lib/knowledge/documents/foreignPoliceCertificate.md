@@ -353,7 +353,9 @@ Clearance Service Center of the Royal Thai Police, at its headquarters in
 Bangkok. It takes a few days. It can also be issued in English, which takes
 a bit longer. Thailand isn't in the Apostille Convention, so it's
 translated and certified by the Consular Affairs Department of the Thai
-Ministry of Foreign Affairs, then by the Israeli embassy.
+Ministry of Foreign Affairs, then by the Israeli embassy. The ministry
+translates it into English, and in practice that translation is accepted
+like a document in English (see [certification.md](../certification.md)).
 
 ### Turkmenistan
 

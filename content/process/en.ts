@@ -269,7 +269,7 @@ export const processEn: ProcessTexts = {
         },
         {
           q: "Can we translate the documents abroad?",
-          a: "You can, but translating in Israel is simpler. A notarized translation made abroad needs an apostille of its own, and is sometimes not accepted. A translation made in Israel needs no apostille: only the original document does.",
+          a: "No. The notarized translation is made by a notary in Israel, and needs no apostille. A translation made abroad will probably be rejected, even with an apostille of its own. Unless there's no notary in Israel who knows the language: then a notary abroad translates the document into English, and that translation gets an apostille of its own. In practice, it's usually enough; if the clerk doesn't accept English, a notary in Israel translates it into Hebrew.",
         },
       ],
     }),

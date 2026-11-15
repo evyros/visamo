@@ -417,7 +417,9 @@ issued only in Thailand: a Thai living abroad can authorize someone there to
 get it, by signing the authorization at a Thai embassy. Thailand isn't in
 the Apostille Convention, so it's translated and certified by the Consular
 Affairs Department of the Thai Ministry of Foreign Affairs, then by the
-Israeli embassy.
+Israeli embassy. The ministry translates it into English, and in practice
+that translation is accepted like a document in English (see
+[certification.md](../certification.md)).
 
 ### Turkmenistan
 

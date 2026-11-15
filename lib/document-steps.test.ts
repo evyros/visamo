@@ -50,6 +50,13 @@ describe("a notarized translation, by the language the country's documents are a
     expect(translation("TM").details?.otherwise?.points).toContain(t.steps.translateOtherNotary);
   });
 
+  it("names no language for the other languages, which would read as the country's own", () => {
+    for (const locale of ["en", "he"] as const) {
+      const words = JSON.stringify(translation("TH", undefined, locale));
+      expect(words).not.toMatch(/Russian|רוסית/);
+    }
+  });
+
   it("certifies a translation made abroad like the document, or in the legalization, where the chain has one", () => {
     expect(translation("TH").details?.points).toEqual([t.steps.translateAbroadBeforeLegalization, t.steps.translateUpload]);
     expect(translation("KH").details?.points).toContain(t.steps.translateAbroadOwnLegalization);

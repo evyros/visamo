@@ -22,6 +22,10 @@
   --color-blue-50: #eaf1f8;
   --color-blue-200: #c9d9ea;
   --color-blue-300: #9fb6cf;
+  /* A document check's "can be improved" and its tips: information, not a
+     warning. For icons, edges and dots, not body text: 4.5:1 on white,
+     3.9:1 on blue-50. */
+  --color-blue-600: #4a7bab;
   /* Only for the free-check drawing on the overview: never a status. */
   --color-coral-400: #e08a6d;
   --color-terracotta-600: #a84b36;

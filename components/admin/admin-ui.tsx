@@ -64,6 +64,8 @@ const pillTones = {
   neutral: "bg-sand-50 text-slate-700 ring-1 ring-line-200",
   teal: "bg-teal-100 text-teal-700",
   amber: "bg-amber-100 text-amber-500",
+  /** A check's "can be improved", as in the app. */
+  blue: "bg-blue-50 text-blue-600",
   terracotta: "bg-terracotta-100 text-terracotta-600",
   /** Only for a check's "needs fixing", as in the app. */
   crimson: "bg-crimson-100 text-crimson-600",

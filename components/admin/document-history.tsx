@@ -68,7 +68,7 @@ function changesSince(run: AdminCheckRun, previous: AdminCheckRun | undefined) {
 
 const markerStyle: Record<CheckRating, { icon: IconName; color: string }> = {
   looksGood: { icon: "checkCircle", color: "bg-teal-600 text-white" },
-  canImprove: { icon: "info", color: "bg-amber-500 text-white" },
+  canImprove: { icon: "info", color: "bg-blue-600 text-white" },
   needsFixing: { icon: "alertCircle", color: "bg-crimson-600 text-white" },
   unreadable: { icon: "eyeOff", color: "bg-slate-500 text-white" },
 };

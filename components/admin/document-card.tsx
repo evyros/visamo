@@ -12,7 +12,7 @@ import { formatBytes, formatDateTime, Pill, type PillTone } from "./admin-ui";
 
 export const ratingTone: Record<CheckRating, PillTone> = {
   looksGood: "teal",
-  canImprove: "amber",
+  canImprove: "blue",
   needsFixing: "crimson",
   unreadable: "slate",
 };
@@ -176,7 +176,7 @@ export function CheckStatus({
 /** Each kind's box and icon, as the app's documents page has them (components/app/documents-board.tsx). */
 const findingStyle = {
   issue: { icon: "alertCircle", box: "border-s-crimson-600 bg-crimson-100", color: "text-crimson-600", label: "Issues" },
-  recommendation: { icon: "info", box: "border-s-amber-500 bg-amber-100", color: "text-amber-500", label: "Recommendations" },
+  recommendation: { icon: "info", box: "border-s-blue-600 bg-blue-50", color: "text-blue-600", label: "Recommendations" },
   // What the checker couldn't read: the rating's grey, not an issue's red.
   unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500", label: "Couldn’t read" },
 } as const;

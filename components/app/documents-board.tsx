@@ -814,7 +814,7 @@ const ratingStyle: Record<
   { icon: "checkCircle" | "info" | "alertCircle" | "eyeOff"; color: string; tint: string; text: string }
 > = {
   looksGood: { icon: "checkCircle", color: "bg-teal-600", tint: "bg-teal-100", text: "text-teal-700" },
-  canImprove: { icon: "info", color: "bg-amber-500", tint: "bg-amber-100", text: "text-amber-500" },
+  canImprove: { icon: "info", color: "bg-blue-600", tint: "bg-blue-50", text: "text-blue-600" },
   needsFixing: { icon: "alertCircle", color: "bg-crimson-600", tint: "bg-crimson-100", text: "text-crimson-600" },
   unreadable: { icon: "eyeOff", color: "bg-slate-500", tint: "bg-slate-300/30", text: "text-slate-500" },
 };
@@ -1021,7 +1021,8 @@ function CheckFooter({
 
 const findingStyle = {
   issue: { icon: "alertCircle", box: "border-s-crimson-600 bg-crimson-100", color: "text-crimson-600" },
-  tip: { icon: "info", box: "border-s-amber-500 bg-amber-100", color: "text-amber-500" },
+  // Tips are information, not a warning: blue, not amber.
+  tip: { icon: "info", box: "border-s-blue-600 bg-blue-50", color: "text-blue-600" },
   // What the checker couldn't read: the rating's grey, not an issue's red.
   unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500" },
 } as const;
@@ -1298,7 +1299,7 @@ function Status({ t, state, optional }: { t: Labels; state: DocState; optional: 
         <span className={`${pill} bg-teal-100 text-teal-700`}>
           <Icon name="visamo" className="size-3.5" />
           {t.status[state]}
-          {state === "readyTips" && <span aria-hidden className="ms-0.5 size-1.5 rounded-full bg-amber-500" />}
+          {state === "readyTips" && <span aria-hidden className="ms-0.5 size-1.5 rounded-full bg-blue-600" />}
         </span>
       );
     default: {

@@ -2162,13 +2162,40 @@
         "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
         "send": "The original, by courier",
         "sendDetails": "Misrad Hapnim asks for the original at the first appointment, and it's needed in Israel for the translation too. Have it sent in time from the country that issued it. If you already have it in Israel, there's nothing to do.",
-        "translateNotarized": "By a notary in Israel, if needed",
-        "translateNotarizedFull": "A notarized translation into Hebrew, made in Israel, if it isn't in Hebrew, Arabic or English",
-        "translateEnglish": "English is usually accepted, but a clerk may still ask for a translation.",
-        "translateArabic": "Not needed if it's in Arabic.",
-        "translateHebrewArabic": "Not needed if it's in Hebrew or Arabic.",
-        "translateNotarizedAbroad": "Not abroad: a translation made abroad may be rejected.",
-        "translateNotarizedDetails": "Have it translated in Israel, by a notary who knows both languages and translates it themselves.\nThe apostille or legalization is translated too, unless it's in English or includes English.\nUpload the translation with the document.",
+        "translateNotarizedLine": "By a notary in Israel, if it's in {languages}",
+        "translateAbroadLine": "Abroad, into English, if it's in {languages}",
+        "translateEnglishLine": "Usually not needed: it's in English",
+        "translateInEnglishLine": "Not needed if you get it in English",
+        "translateArabicLine": "Not needed if it's in Arabic",
+        "translateByLanguageLine": "Depends on its language",
+        "translateUnknownLine": "If needed, depending on its language",
+        "translateInEnglishAsk": "Ask for it in English: then it usually needs none, though a clerk may still ask for a translation.",
+        "translateEnglishSingle": "If a clerk asks for a translation, a notary in Israel translates it into Hebrew.",
+        "translateEnglishIn": "In English: usually needs none.",
+        "translateNotarySingle": "Done in Israel, by a notary who knows {languages}:",
+        "translateNotaryIn": "In {languages}, by a notary in Israel:",
+        "translateNotaryTranslate": "The notary translates it into Hebrew themselves, and the {certification} too, unless that's in English.",
+        "translateNotaryEnd": "A translation made abroad, or by a translator, may be rejected.",
+        "translateAbroadSingle": "No notary in Israel translates {languages}, so it's done abroad:",
+        "translateAbroadIn": "In {languages}, it's done abroad, since no notary in Israel translates it:",
+        "translateAbroadTranslate": "A notary or a certified or sworn translator there translates it into English, and the {certification} too, unless that's in English.",
+        "translateAbroadOwnApostille": "The translation gets an apostille of its own: the one on the document doesn't cover it.",
+        "translateAbroadOwnLegalization": "The translation gets a legalization of its own: the one on the document doesn't cover it.",
+        "translateAbroadBeforeLegalization": "Have it translated into English before the legalization: the foreign ministry certifies the document together with its translation, not the translation alone.",
+        "translateUpload": "Upload the translation with the document.",
+        "translateAbroadEnd": "That English translation is usually enough. If a clerk asks for Hebrew, a notary in Israel translates it.",
+        "translateCertification": {
+          "apostille": "apostille",
+          "legalization": "legalization"
+        },
+        "translateOtherHeading": "In another language",
+        "translateByLanguageHeading": "By its language",
+        "translateOtherEnglish": "English: usually needs none.",
+        "translateOtherNotary": "Russian, or another language a notary in Israel knows: a notary in Israel translates it instead.",
+        "translateOtherAbroad": "A language no notary in Israel knows: translated abroad, into English, with an apostille or legalization of its own.",
+        "translateHebrewArabic": "Hebrew or Arabic: not needed.",
+        "translateAnyNotary": "Russian, German, French, Spanish, or another language a notary in Israel knows: a notary in Israel translates it into Hebrew. A translation made abroad may be rejected.",
+        "translateAnyFull": "Depends on its language: none in Hebrew or Arabic, and usually none in English; in a language a notary in Israel knows, a notarized translation into Hebrew, made in Israel; in any other, a translation into English, made abroad, with an apostille or legalization of its own.",
         "translateSelf": "Your own, if needed",
         "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
         "translateSelfDetails": "Needed if it isn't in Hebrew, Arabic or English.\nNo notary is needed: translate it yourselves, or mark the important parts and explain them.\nUpload the translation with the document.",
@@ -2266,7 +2293,7 @@
           },
           "ES": {
             "office": "the civil registry (Registro Civil)",
-            "details": "Ask for the full birth certificate (certificación literal). The multilingual extract (certificado plurilingüe), in Spanish and French, doesn't save anything for Israel: it still needs a translation and an apostille."
+            "details": "Ask for the full birth certificate (certificación literal). The multilingual extract (certificado plurilingüe), whose headings are in Spanish and French, doesn't save anything for Israel: it still needs a translation and an apostille."
           },
           "FR": {
             "office": "the town hall (mairie) of the place of birth",
@@ -2311,7 +2338,7 @@
             "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
           },
           "PT": {
-            "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. It's issued only in Portuguese."
+            "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. The usual one is in Portuguese; a multilingual one (certidão em modelo internacional) also exists, on paper only, asked for in person or by post."
           },
           "RU": {
             "office": "the civil registry office (ЗАГС) of the place of birth",
@@ -2360,7 +2387,7 @@
           },
           "AT": {
             "office": "the registry office (Standesamt)",
-            "details": "A partial extract on the existence of a marriage or registered partnership (Teilauszug gemäß §58 PStG), or a civil-status certificate (Personenstandsurkunde). It can be issued as an international, multilingual certificate.",
+            "details": "A partial extract on the existence of a marriage or registered partnership (Teilauszug gemäß §58 PStG), or a civil-status certificate (Personenstandsurkunde). The partial extract is issued in German only.",
             "apostilleBy": "the town hall (Rathaus) in Vienna, or the authority of their region"
           },
           "AU": {
@@ -2392,7 +2419,7 @@
           },
           "CH": {
             "office": "the civil registry office (Zivilstandsamt) of their place of origin (Heimatort)",
-            "details": "A certificate of civil status (Personenstandsausweis, certificat individuel d'état civil), in 5 languages, English included. For a foreign national, it comes from the office of the place of residence.",
+            "details": "A certificate of civil status (Personenstandsausweis, certificat individuel d'état civil), in Switzerland's four national languages, with an English and a Spanish translation. For a foreign national, it comes from the office of the place of residence.",
             "apostilleBy": "the cantonal chancellery (Staatskanzlei) or the Federal Chancellery",
             "apostilleDetails": "The issuing office can add it itself."
           },
@@ -2493,7 +2520,7 @@
           },
           "NL": {
             "office": "the municipality where they're registered",
-            "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat). Someone who has left the Netherlands gets an extract from the non-residents' register (RNI) instead.",
+            "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat): ask for the international extract, in Dutch, French, German and English. Someone who has left the Netherlands gets an extract from the non-residents' register (RNI) instead.",
             "apostilleBy": "any court (rechtbank)",
             "apostilleDetails": "Without an appointment."
           },
@@ -2571,7 +2598,7 @@
           },
           "AT": {
             "office": "the state police headquarters (Landespolizeidirektion)",
-            "details": "A criminal record certificate (Strafregisterbescheinigung).",
+            "details": "A criminal record certificate (Strafregisterbescheinigung). If it shows no convictions, it's issued in German and English; otherwise in German only.",
             "apostilleBy": "the Austrian Ministry of the Interior (Innenministerium)"
           },
           "AU": {
@@ -2601,7 +2628,7 @@
           },
           "CH": {
             "office": "the Federal Office of Justice",
-            "details": "An extract from the criminal record (Strafregisterauszug, extrait du casier judiciaire), online or at a Swiss Post branch.",
+            "details": "An extract from the criminal record (Strafregisterauszug, extrait du casier judiciaire), online or at a Swiss Post branch. When ordering, choose English as the additional language.",
             "apostilleBy": "the cantonal chancellery or the Federal Chancellery"
           },
           "CL": {
@@ -2631,13 +2658,13 @@
           },
           "DE": {
             "office": "the Federal Office of Justice (Bundesamt für Justiz)",
-            "details": "A certificate of good conduct (Führungszeugnis). Apply for the apostille first, online: you then request the certificate with the number it gives you.",
+            "details": "A certificate of good conduct (Führungszeugnis). Apply for the apostille first, online: you then request the certificate with the number it gives you. If it shows no convictions, it's in German, English and French; convictions are shown only in German.",
             "apostilleBy": "the Federal Foreign Affairs Office (Bundesamt für Auswärtige Angelegenheiten)",
             "apostilleDetails": "Apply online before requesting the certificate, then request it with the number you get."
           },
           "DK": {
             "office": "any police station",
-            "details": "A criminal record certificate (straffeattest). Ask for it in English, with a handwritten signature and the signer's name. A digital one from borger.dk can't get a physical apostille.",
+            "details": "A criminal record certificate (straffeattest). Ask for it in English (possible only if it shows no convictions), with a handwritten signature and the signer's name. A digital one from borger.dk can't get a physical apostille.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
           },
           "EE": {
@@ -2686,7 +2713,7 @@
           },
           "IS": {
             "office": "the district commissioner (sýslumaður)",
-            "details": "A criminal record certificate (sakavottorð). From abroad, request it by email.",
+            "details": "A criminal record certificate (sakavottorð). From abroad, request it by email, in English.",
             "apostilleBy": "Iceland's Ministry for Foreign Affairs"
           },
           "IT": {
@@ -2697,7 +2724,7 @@
           },
           "JP": {
             "office": "the Japanese embassy in Israel",
-            "details": "A certificate of criminal record (犯罪経歴証明書). They apply in person at the embassy, with their fingerprints, and collect it about a month later."
+            "details": "A certificate of criminal record (犯罪経歴証明書). They apply in person at the embassy, with their fingerprints, and collect it about a month later. It's written in five languages, English among them. It comes in a sealed envelope addressed to the authority it's for: don't open it, since opening it makes the certificate invalid."
           },
           "MX": {
             "office": "the federal authorities in Mexico City",
@@ -2736,7 +2763,7 @@
           },
           "SE": {
             "office": "the Swedish Police (Polisen)",
-            "details": "An extract from the criminal register (utdrag ur belastningsregistret), applied for online.",
+            "details": "An extract from the criminal register (utdrag ur belastningsregistret), applied for online. Ask for the extract for use abroad (utdrag för utlandsvistelse): it comes in five languages, English among them. Any convictions on it are shown only in Swedish.",
             "apostilleBy": "any notary public (notarius publicus)"
           },
           "SG": {

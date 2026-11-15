@@ -16,7 +16,7 @@ import type { CheckRating } from "@/lib/checks/result";
 import type { CheckView, DismissedView, FindingView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
-import type { StepDetails } from "@/lib/document-steps";
+import type { StepDetails, StepDetailsPart } from "@/lib/document-steps";
 import type { StepKind } from "@/lib/documents/steps";
 import { ACCEPTED_TYPES, MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUMENT, isAcceptedType } from "@/lib/files/rules";
 import type { FileView } from "@/lib/files/view";
@@ -1776,12 +1776,40 @@ function StepRow({ step, last }: { step: StepItem; last: boolean }) {
   );
 }
 
-/** A step's full text: its lead, its points (numbered when their order matters), and its closing sentence. */
+/**
+ * A step's full text: its parts, each a lead, points (numbered when their order matters) and a
+ * closing sentence, then what to do otherwise, set apart under a small heading.
+ */
 function StepDetailsText({ id, hidden, details }: { id: string; hidden: boolean; details: StepDetails }) {
-  const { lead, points, numbered, end } = details;
+  const { parts = [], otherwise } = details;
+  const hasSteps = [details, ...parts].some((part) => part.lead || part.points?.length || part.end);
+  return (
+    <div id={id} hidden={hidden} className="mt-1 space-y-2 text-sm text-slate-600">
+      {[details, ...parts].map((part, i) => (
+        <StepDetailsPartText key={i} part={part} />
+      ))}
+      {otherwise && otherwise.points.length > 0 && (
+        // Set apart from the steps above it, when there are any.
+        <div className={hasSteps ? "border-t border-slate-100 pt-2 text-slate-500" : ""}>
+          <p className="text-xs font-semibold text-slate-500">{otherwise.heading}</p>
+          <ul className="mt-1 list-disc space-y-1 ps-5">
+            {otherwise.points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+          {otherwise.end && <p className="mt-1">{otherwise.end}</p>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StepDetailsPartText({ part }: { part: StepDetailsPart }) {
+  const { lead, points, numbered, end } = part;
+  if (!lead && !points?.length && !end) return null;
   const List = numbered ? "ol" : "ul";
   return (
-    <div id={id} hidden={hidden} className="mt-1 space-y-1 text-sm text-slate-600">
+    <div className="space-y-1">
       {lead && <p>{lead}</p>}
       {points && points.length > 0 && (
         <List className={`${numbered ? "list-decimal" : "list-disc"} space-y-1 ps-5`}>

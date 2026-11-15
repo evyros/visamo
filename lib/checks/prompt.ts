@@ -84,10 +84,13 @@ const SIGNING: Record<Signing, string> = {
   consul: "in front of a consul, who confirms the signature",
 };
 
-/** The translation it needs, for the check. English is accepted in practice either way. */
+/**
+ * The translation it needs, for the check. English is accepted in practice either way. A notarized
+ * one depends on the document's language, not its country: the steps say which the card assumes.
+ */
 const TRANSLATION: Record<Translation, string> = {
   notarized:
-    "a notarized translation into Hebrew, uploaded with it, unless it's in Hebrew, Arabic or English (English is accepted in practice; don't ask for its translation)",
+    "by the document's language, uploaded with it, unless it's in Hebrew, Arabic or English (English is accepted in practice; don't ask for its translation): in a language notaries in Israel translate, a notarized translation into Hebrew, made in Israel; in any other, a translation into English, made abroad, with an apostille or legalization of its own. The steps say what the document's country's language calls for",
   self: "the couple's own translation or explanation, uploaded with it, unless it's in Hebrew, Arabic or English; no notary needed (English is accepted in practice; don't ask for its translation)",
   none: "none needed",
 };

@@ -1,7 +1,7 @@
 import type { Signing, Translation } from "./catalog";
 import type { Certification, Issuer } from "./certification";
 import { legalizationOf, type ChainLink } from "./countries";
-import type { IssuerKind } from "./issuers";
+import type { English, IssuerKind } from "./issuers";
 
 // What a couple does to a document before it's ready, in the order it's done:
 // get the original from the country that issued it, certify it there, send
@@ -31,8 +31,11 @@ export type Step =
   | { kind: "authenticate"; from: Issuer; certification: Certification; chain?: readonly ChainLink[]; via?: string; mission?: string }
   /** The original sent to Israel from the country that issued it, for the translation and the appointment. */
   | { kind: "send" }
-  /** `from`: the country that issued it, when it's issued by one; null when that isn't known. */
-  | { kind: "translate"; level: Exclude<Translation, "none">; from?: Issuer }
+  /**
+   * `from`: the country that issued it, when it's issued by one; null when that isn't known.
+   * `english`: the country can issue it in English, or always does (issuers.ts), so it needs no translation then.
+   */
+  | { kind: "translate"; level: Exclude<Translation, "none">; from?: Issuer; english?: English }
   /** `by`: someone other than the partners signs this part (form AS/6's landlord's affidavit). */
   | { kind: "sign"; before: Signing; by?: "landlord" }
   /** A foreign partner abroad signs only the applicants' declaration of form AS/6 now, on a scan sent by email. */
@@ -85,6 +88,8 @@ export type StepsItem = {
   issuerKind?: IssuerKind;
   /** The issuing country issues it only as a file, with an electronic apostille (issuers.ts). */
   electronic?: boolean;
+  /** The issuing country can issue it in English (issuers.ts). */
+  english?: English;
   /** An affidavit can replace it, where a country issues none (the catalog's `orAffidavit`). */
   orAffidavit?: boolean;
   /** The foreign partner, abroad, signs their part by email first (form AS/6's applicants' declaration). */
@@ -107,7 +112,7 @@ export const statusByAffidavit = (item: StepsItem): boolean => kindOf(item) !== 
 
 /** `sendOriginals`: originals from abroad are sent to Israel; not when both partners are abroad, and bring them. */
 export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
-  const { issuer, certification, translation, signing, signByEmail, landlord, electronic } = item;
+  const { issuer, certification, translation, signing, signByEmail, landlord, electronic, english } = item;
   const steps: Step[] = [];
   // No such document in the country: an affidavit about the civil status in its place.
   const noDocument = kindOf(item) === "affidavit";
@@ -123,7 +128,14 @@ export function stepsFor(item: StepsItem, sendOriginals: boolean): Step[] {
   // A file has no original to send: it comes by email.
   if (fromAbroad && issuer && sendOriginals && !electronic) steps.push({ kind: "send" });
   if (translation !== "none") {
-    steps.push({ kind: "translate", level: translation, ...(issuer !== undefined && { from: issuer }) });
+    // An affidavit in place of the document isn't in the country's language: it's written where
+    // it's signed, so its translation isn't told by the country.
+    steps.push({
+      kind: "translate",
+      level: translation,
+      ...(issuer !== undefined && !noDocument && { from: issuer }),
+      ...(english && translation === "notarized" && !noDocument && { english }),
+    });
   }
   if (signByEmail) steps.push({ kind: "signByEmail" });
   if (signing) steps.push({ kind: "sign", before: signing });

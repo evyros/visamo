@@ -47,9 +47,12 @@ describe("affidavits", () => {
     const steps = stepsFor({ ...civilStatus, issuerKind: "affidavit", orAffidavit: true }, true);
     expect(steps).toEqual([
       { kind: "affidavit", from: "IN" },
-      { kind: "translate", level: "notarized", from: "IN" },
+      // Written where it's signed, not in the country's language: its translation isn't told by the country.
+      { kind: "translate", level: "notarized" },
     ]);
     expect(affidavitInsteadOf({ ...civilStatus, issuerKind: "affidavit", orAffidavit: true })).toBe(false);
+    // Nor the country's English: it's written where it's signed.
+    expect(stepsFor({ ...civilStatus, issuerKind: "affidavit", english: "always" }, true).at(-1)).toEqual({ kind: "translate", level: "notarized" });
   });
 
   it("says whether the civil status may be an affidavit: in its place, or where the country issues none", () => {

@@ -38,8 +38,9 @@ the Australian embassy in Tel Aviv by appointment.
 ### Austria
 
 A criminal record certificate (Strafregisterbescheinigung), from the state
-police headquarters (Landespolizeidirektion). Its apostille comes from the
-Ministry of the Interior (Innenministerium).
+police headquarters (Landespolizeidirektion). If it shows no convictions,
+it's issued in German and English, so it usually needs no translation. Its
+apostille comes from the Ministry of the Interior (Innenministerium).
 
 ### Belgium
 
@@ -136,8 +137,8 @@ Ministry of Foreign Affairs.
 
 ### Denmark
 
-A criminal record certificate (straffeattest), in English, from any police
-station, with a handwritten signature and the signer's name. A digital one
+A criminal record certificate (straffeattest), in English (possible only if
+it shows no convictions; otherwise it's in Danish), from any police station, with a handwritten signature and the signer's name. A digital one
 from borger.dk can't get a physical apostille. The apostille comes from the
 Ministry of Foreign Affairs in Copenhagen.
 
@@ -171,7 +172,9 @@ A certificate of good conduct (Führungszeugnis), from the Federal Office of
 Justice (Bundesamt für Justiz). For an apostille, first apply for it online
 with the Federal Foreign Affairs Office (Bundesamt für Auswärtige
 Angelegenheiten), then request the certificate with the number it gives
-you.
+you. If it shows no convictions, its details are in German, English and
+French, so it usually needs no translation; convictions are shown only in
+German.
 
 ### Greece
 
@@ -203,7 +206,9 @@ embassy.
 ### Iceland
 
 A criminal record certificate (sakavottorð), from the district commissioner
-(sýslumaður), on request by email from abroad. The apostille comes from the
+(sýslumaður), on request by email from abroad. Ask for it in English: it then
+usually needs no translation, though any convictions on it are shown only in
+Icelandic. The apostille comes from the
 Ministry for Foreign Affairs.
 
 ### India
@@ -223,7 +228,10 @@ prefecture that apostilles other Italian documents.
 
 A certificate of criminal record (犯罪経歴証明書), through the Japanese embassy
 in Israel: you apply in person, with your fingerprints, and collect it about a
-month later.
+month later. It's written in five languages, English among them (Japanese,
+English, French, German and Spanish), so it needs no translation. It comes in
+a sealed envelope addressed to the authority it's for: don't open it, since
+opening it makes the certificate invalid.
 
 ### Mexico
 
@@ -273,7 +281,8 @@ is put only on the original, printed on the NBI's security paper.
 
 A criminal record certificate (certificado do registo criminal), at any
 citizen's office (Loja do Cidadão) or court. Choose a wide purpose, such as
-work abroad (exercício de profissão/atividade no estrangeiro). The apostille
+work abroad (exercício de profissão/atividade no estrangeiro). It's issued in
+Portuguese and English, so it usually needs no translation. The apostille
 comes from the regional prosecutor's office (Procuradoria-Geral Regional).
 
 ### Russia
@@ -312,15 +321,19 @@ you, and they apostille those too.
 ### Sweden
 
 An extract from the criminal register (utdrag ur belastningsregistret), from
-the Police (Polisen), online. Any notary public (notarius publicus) adds the
-apostille.
+the Police (Polisen), online. Ask for the extract for use abroad (utdrag för
+utlandsvistelse): it always comes in five languages, English among them, so
+it usually needs no translation; any convictions on it are shown only in
+Swedish. Any notary public (notarius publicus) adds the apostille.
 
 ### Switzerland
 
 An extract from the criminal record (Strafregisterauszug, extrait du casier
 judiciaire), from the Federal Office of Justice, online or at a Swiss Post
-branch. The apostille comes from the cantonal chancellery or the Federal
-Chancellery.
+branch. When ordering, choose English as the additional language: if it shows
+no convictions, it then usually needs no translation (convictions are shown
+only in the main language). The apostille comes from the cantonal
+chancellery or the Federal Chancellery.
 
 ### Tanzania
 

@@ -22,6 +22,12 @@ describe("the countries' issuers", () => {
       for (const [country, entry] of entries) expect(headings, country).toContain(entry!.heading);
     });
 
+    it(`${id}: says it in English only where the guide's section says it's issued in English`, () => {
+      // A country's section: from its heading to the next one.
+      const section = (heading: string) => guide(id).split(`### ${heading}\n`)[1]!.split(/\n#{2,3} /)[0]!;
+      for (const [country, entry] of entries) if (entry!.english) expect(section(entry!.heading), country).toMatch(/English/);
+    });
+
     for (const [locale, messages] of [
       ["en", en],
       ["he", he],

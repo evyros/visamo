@@ -28,6 +28,14 @@ export function regionName(region: string, locale: Locale) {
   );
 }
 
+/** A language's name, e.g. "Estonian" (from a BCP 47 code: "et"). */
+export function languageName(language: string, locale: Locale) {
+  return (
+    new Intl.DisplayNames([locales[locale].intlLocale], { type: "language" }).of(language) ??
+    language
+  );
+}
+
 /** A calendar date, e.g. "27 Sept 2026". */
 export function formatDate(date: Date, locale: Locale) {
   return new Intl.DateTimeFormat(locales[locale].intlLocale, { dateStyle: "medium" }).format(date);

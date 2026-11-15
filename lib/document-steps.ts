@@ -1,10 +1,12 @@
 import type { Locale } from "@/i18n/config";
-import { regionName } from "@/i18n/format";
+import { locales } from "@/i18n/config";
+import { languageName, regionName } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import type { DocumentId } from "./documents/catalog";
-import type { Issuer } from "./documents/certification";
+import { certificationFor, type Issuer } from "./documents/certification";
 import type { Point } from "./documents/points";
-import { ARABIC, USUAL_CHAIN } from "./documents/countries";
+import { ARABIC, legalizationOf, USUAL_CHAIN } from "./documents/countries";
+import { languagesOf, routeOf, type TranslationRoute } from "./documents/languages";
 import type { Step } from "./documents/steps";
 
 // A document's steps (lib/documents/steps.ts) in words: the documents page
@@ -17,7 +19,14 @@ type Labels = Messages["app"]["documentsPage"];
  * matters, like a chain of signatures), and a closing sentence. Any can be
  * left out.
  */
-export type StepDetails = { lead?: string; points?: string[]; numbered?: boolean; end?: string };
+export type StepDetailsPart = { lead?: string; points?: string[]; numbered?: boolean; end?: string };
+
+/**
+ * A step's full text: one part, or several in a row (`parts`, after it), and
+ * what to do otherwise (`otherwise`), set apart under a heading: a
+ * translation's, in a language other than the one assumed.
+ */
+export type StepDetails = StepDetailsPart & { parts?: StepDetailsPart[]; otherwise?: { heading: string; points: string[]; end?: string } };
 
 const prose = (text: string): StepDetails => ({ lead: text });
 /** A text written as lines, one point each. */
@@ -175,10 +184,9 @@ function stepLine(
     case "send":
       return { text: s.send, details: prose(s.sendDetails) };
     case "translate":
-      // The line only says it might be needed, and where; its full text, not abroad, when and how.
-      return step.level === "notarized"
-        ? { text: s.translateNotarized, details: pointsOf(`${s.translateNotarizedAbroad}\n${translationWhen(step.from, t)}\n${s.translateNotarizedDetails}`) }
-        : { text: s.translateSelf, details: pointsOf(s.translateSelfDetails) };
+      return step.level === "self"
+        ? { text: s.translateSelf, details: pointsOf(s.translateSelfDetails) }
+        : translationText(step, t, locale);
     case "sign": {
       const { text, details } = signingText(step, id, points, t);
       return { text: format(text, { israeli, foreign }), details: prose(format(details, { israeli, foreign })) };
@@ -197,16 +205,126 @@ function stepLine(
 /** An office's name as the start of a line: "the registry office" → "The registry office". */
 const capitalize = (text: string, locale: Locale) => text.charAt(0).toLocaleUpperCase(locale) + text.slice(1);
 
+type Translate = Extract<Step, { kind: "translate" }>;
+
+/** The document's assumed languages, by how each is translated, in that order: English, a notary in Israel, abroad. */
+function byRoute(step: Translate): Map<TranslationRoute, string[]> {
+  const routes = new Map<TranslationRoute, string[]>([["english", []], ["notary", []], ["abroad", []]]);
+  for (const language of languagesOf(step.from, step.english)) routes.get(routeOf(language))!.push(language);
+  for (const [route, languages] of routes) if (languages.length === 0) routes.delete(route);
+  return routes;
+}
+
+/** Languages by name, as alternatives: "German, French or Italian". */
+function languageList(languages: readonly string[], locale: Locale) {
+  return new Intl.ListFormat(locales[locale].intlLocale, { type: "disjunction" }).format(
+    languages.map((language) => languageName(language, locale)),
+  );
+}
+
 /**
- * When an official document needs no translation, by the country that issued
- * it: English usually doesn't, and Arabic doesn't by law. Hebrew only when the
- * country isn't known (it may be Israel).
+ * What to do for a document in one of the assumed languages, as a part of the
+ * full text: in order, with the reason first. `single`: the only route the
+ * card has, whose line already names it.
  */
-function translationWhen(from: Issuer | undefined, t: Labels) {
+function routePart(
+  route: TranslationRoute,
+  languages: readonly string[],
+  step: Translate,
+  single: boolean,
+  t: Labels,
+  locale: Locale,
+): StepDetailsPart {
   const s = t.steps;
-  if (from === null || from === undefined) return `${s.translateHebrewArabic} ${s.translateEnglish}`;
-  if (from !== "utah" && ARABIC.has(from)) return `${s.translateArabic} ${s.translateEnglish}`;
-  return s.translateEnglish;
+  if (route === "english") return { lead: single ? s.translateEnglishSingle : s.translateEnglishIn };
+  const values = { languages: languageList(languages, locale), certification: s.translateCertification[certificationOf(step.from)] };
+  if (route === "notary") {
+    return {
+      lead: format(single ? s.translateNotarySingle : s.translateNotaryIn, values),
+      points: [format(s.translateNotaryTranslate, values), s.translateUpload],
+      numbered: true,
+      end: s.translateNotaryEnd,
+    };
+  }
+  // Where the legalization certifies an English translation with the document (Thailand), it's
+  // made before it, and isn't certified on its own.
+  const beforeLegalization = !!step.from && step.from !== "utah" && !!legalizationOf(step.from)?.chain.includes("englishTranslation");
+  return {
+    lead: format(single ? s.translateAbroadSingle : s.translateAbroadIn, values),
+    points: beforeLegalization
+      ? [s.translateAbroadBeforeLegalization, s.translateUpload]
+      : [format(s.translateAbroadTranslate, values), ownCertification(step.from, t), s.translateUpload],
+    numbered: true,
+    end: s.translateAbroadEnd,
+  };
+}
+
+/** How the document itself is certified, by its country (certification.ts): what its translation includes. */
+const certificationOf = (from: Issuer | undefined): "apostille" | "legalization" =>
+  from !== undefined && certificationFor(from).authentication === "legalization" ? "legalization" : "apostille";
+
+/**
+ * A notarized translation's line and full text. The app can't see the
+ * document's language, so it assumes the issuing country's (languages.ts) and
+ * names it: the line says what to do in it, the full text how, step by step,
+ * then, set apart, what to do in any other. Where the country can issue it in
+ * English, asking for that comes first. Where the country isn't known, or
+ * speaks Arabic, each language gets a line instead.
+ */
+function translationText(step: Translate, t: Labels, locale: Locale): { text: string; details: StepDetails } {
+  const s = t.steps;
+  const routes = byRoute(step);
+  if (routes.size === 0) {
+    // No language assumed: the line says what's known (Arabic needs none), the rest is by language.
+    const arabic = !!step.from && step.from !== "utah" && ARABIC.has(step.from);
+    const points = [s.translateOtherEnglish, s.translateAnyNotary, s.translateOtherAbroad];
+    return {
+      text: arabic ? s.translateArabicLine : s.translateUnknownLine,
+      details: {
+        otherwise: arabic
+          ? { heading: s.translateOtherHeading, points, end: s.translateUpload }
+          : { heading: s.translateByLanguageHeading, points: [s.translateHebrewArabic, ...points], end: s.translateUpload },
+      },
+    };
+  }
+  const others = [
+    !routes.has("english") && s.translateOtherEnglish,
+    !routes.has("notary") && s.translateOtherNotary,
+    !routes.has("abroad") && s.translateOtherAbroad,
+  ].filter((point): point is string => !!point);
+  const otherwise = { heading: s.translateOtherHeading, points: others };
+  const part = (route: TranslationRoute, single: boolean) => routePart(route, routes.get(route)!, step, single, t, locale);
+  if (step.english === "onRequest") {
+    const rest = [...routes.keys()].filter((route) => route !== "english");
+    return { text: s.translateInEnglishLine, details: { lead: s.translateInEnglishAsk, parts: rest.map((route) => part(route, false)), otherwise } };
+  }
+  if (routes.size === 1) {
+    const [[route, languages]] = [...routes];
+    const text =
+      route === "english"
+        ? s.translateEnglishLine
+        : format(route === "notary" ? s.translateNotarizedLine : s.translateAbroadLine, { languages: languageList(languages, locale) });
+    return { text, details: { ...part(route, true), otherwise } };
+  }
+  return { text: s.translateByLanguageLine, details: { parts: [...routes.keys()].map((route) => part(route, false)), otherwise } };
+}
+
+/** A translation made abroad is certified on its own, like the document. */
+const ownCertification = (from: Issuer | undefined, t: Labels) =>
+  certificationOf(from) === "apostille" ? t.steps.translateAbroadOwnApostille : t.steps.translateAbroadOwnLegalization;
+
+/** A part of a step's full text as one run of sentences. */
+const partInWords = (part: StepDetailsPart) => [part.lead, ...(part.points ?? []), part.end].filter(Boolean).join(" ");
+
+/**
+ * A notarized translation in words, for the chat's and the check's view of a
+ * document: what to do in each assumed language, without the other languages
+ * (the check knows the rule for those).
+ */
+function translationInWords(step: Translate, t: Labels) {
+  if (byRoute(step).size === 0) return t.steps.translateAnyFull;
+  const { text, details } = translationText(step, t, "en");
+  return [`${text}.`, partInWords(details), ...(details.parts ?? []).map(partInWords)].filter(Boolean).join(" ");
 }
 
 /**
@@ -233,7 +351,7 @@ function chainOffices(step: Extract<Step, { kind: "authenticate" }>, t: Labels, 
 export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels, c: StepCase = {}): string {
   const say = (step: Step) => {
     const { label, text, details } = stepText(step, id, t, "en", c);
-    if (step.kind === "translate") return `${label}: ${step.level === "notarized" ? t.steps.translateNotarizedFull : t.steps.translateSelfFull}`;
+    if (step.kind === "translate") return `${label}: ${step.level === "notarized" ? translationInWords(step, t) : t.steps.translateSelfFull}`;
     if (step.kind === "authenticate" && step.chain) return `${label}: ${text}, in this order: ${chainOffices(step, t, "en").join(t.steps.chainJoin)}`;
     const full = [details?.lead, ...(details?.points ?? []), details?.end].filter(Boolean).join(" ");
     // A signature as the whole requirement in one sentence, then how: split into a title and a line

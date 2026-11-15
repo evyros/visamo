@@ -35,6 +35,55 @@ shown to users (`lib/knowledge/`).
   base and the documents page say "custody or guardianship" until it's
   settled.
 
+- **Japan's police certificate is sealed.** It comes in an envelope
+  addressed to the authority it's for, and opening it voids it (Osaka
+  Prefectural Police, criminal record certificate FAQ). Unknown: how the
+  apostille is added to a sealed certificate, whether Misrad Hapnim takes it
+  sealed, and how the couple uploads it for the check without opening it.
+- **The language of some countries' documents** isn't in their guides, so the
+  translation step assumes the country's likely language (languages.ts):
+  Turkmenistan's certificates (Turkmen assumed; the guide names them in
+  Russian; a legalization agency says that since a 2004 presidential
+  resolution, No. 6931, civil-status certificates are filled in Turkmen on a
+  form whose labels are also in English, nothing official found), Nepal's
+  police certificate (Nepali assumed; unofficial sources say it's in Nepali
+  and English, nothing official found), and India's police certificate
+  (English or Hindi assumed; nothing found).
+- **Document languages still unconfirmed** (checked against official sources
+  in November 2026; only unofficial or conflicting evidence found):
+  - Kyrgyzstan: the marriage certificate is in Russian and Kyrgyz, and civil
+    registry offices work in both; whether every birth certificate is
+    bilingual, which would make the Russian route enough.
+  - The police certificates of Belarus, Kazakhstan, Kyrgyzstan and Kosovo.
+  - Peru's police certificate: a consulate says it issues it in Spanish and
+    English under an agreement with the judiciary; whether every consulate
+    does, and how it's apostilled for Israel.
+  - Pakistan: whether NADRA and police character certificates always include
+    English.
+  - Tanzania: the birth certificate, civil status and police certificate.
+  - Cameroon: whether bilingual forms are filled in English or French only.
+  - Seychelles: whether certificates are in English, and whether Creole
+    appears.
+  - Malta: the certificates' headings are in Maltese and English; the entries
+    may be in Maltese.
+- **Multilingual certificates and convictions.** Germany's, Austria's,
+  Denmark's, Sweden's, Switzerland's and Iceland's police certificates are in
+  English (among other languages) only when they show no convictions;
+  convictions are shown in the country's language. Unknown: whether Misrad
+  Hapnim accepts these multilingual forms, and Switzerland's multilingual
+  civil-status certificate, without a translation in practice.
+- **Chile's civil status:** the civil registry lists an "informe de no
+  matrimonio" (ChileAtiende), which may contradict the guide's line that it
+  issues nothing to say so. Not checked.
+- **China's notarial certificates come with an English translation.** For use
+  abroad, a Chinese notary office binds an English translation into the
+  certificate (公证书), with a certificate that it conforms to the Chinese
+  original (US State Department guidance, as quoted by several sources).
+  Chinese is a language notaries in Israel translate, so by the rule a
+  translation made abroad will probably be rejected. Unknown: whether Misrad
+  Hapnim accepts the notary office's English, like Thailand's foreign-ministry
+  translation, or asks for a notarized translation from Israel.
+
 - A foreign partner who is self-employed abroad: what replaces the Israeli
   accountant's confirmation, tax assessment and business-file confirmation.
 

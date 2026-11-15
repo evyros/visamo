@@ -1,33 +1,158 @@
 import { describe, expect, it } from "vitest";
 import en from "../i18n/messages/en.json";
 import he from "../i18n/messages/he.json";
+import { readFileSync } from "node:fs";
 import { chainLinks } from "./documents/countries";
+import { COUNTRY_LANGUAGES, NOTARY_LANGUAGES } from "./documents/languages";
 import { stepsInWords, stepText } from "./document-steps";
 import type { Issuer } from "./documents/certification";
+import type { English } from "./documents/issuers";
+import type { Step } from "./documents/steps";
 
 const t = en.app.documentsPage;
-const points = (from?: Issuer) =>
-  stepText({ kind: "translate", level: "notarized", ...(from !== undefined && { from }) }, "foreignBirthCertificate", t, "en")
-    .details?.points;
-// After the warning against translating abroad, when it's needed.
-const whenPoint = (from?: Issuer) => points(from)?.[1];
+type Translate = Extract<Step, { kind: "translate" }>;
+const translation = (from: Issuer, english?: English, locale: "en" | "he" = "en") =>
+  stepText(
+    { kind: "translate", level: "notarized", from, ...(english && { english }) } as Translate,
+    "foreignPoliceCertificate",
+    (locale === "en" ? t : he.app.documentsPage) as typeof t,
+    locale,
+  );
+const inWords = (from: Issuer, english?: English) =>
+  stepsInWords([{ kind: "translate", level: "notarized", from, ...(english && { english }) } as Translate], "foreignPoliceCertificate", t);
 
-describe("a notarized translation's full text", () => {
-  it("warns against a translation made abroad first, wherever the document is from", () => {
-    for (const from of ["TH", "JO", null] as const) expect(points(from)?.[0]).toBe(t.steps.translateNotarizedAbroad);
+describe("a notarized translation, by the language the country's documents are assumed to be in", () => {
+  it("names a language a notary in Israel knows, with its steps, then what to do in any other", () => {
+    const { text, details } = translation("DE");
+    expect(text).toBe("By a notary in Israel, if it's in German");
+    expect(details?.lead).toBe("Done in Israel, by a notary who knows German:");
+    expect(details?.numbered).toBe(true);
+    expect(details?.points).toEqual([
+      "The notary translates it into Hebrew themselves, and the apostille too, unless that's in English.",
+      t.steps.translateUpload,
+    ]);
+    expect(details?.otherwise?.points).toEqual([t.steps.translateOtherEnglish, t.steps.translateOtherAbroad]);
   });
 
-  it("says only that English is usually accepted, for a country that doesn't issue in Arabic", () => {
-    expect(whenPoint("TH")).toBe(t.steps.translateEnglish);
-    expect(whenPoint("utah")).toBe(t.steps.translateEnglish);
+  it("is made abroad, into English, with an apostille of its own, for a language none knows", () => {
+    const { text, details } = translation("EE");
+    expect(text).toBe("Abroad, into English, if it's in Estonian");
+    expect(details?.lead).toBe("No notary in Israel translates Estonian, so it's done abroad:");
+    expect(details?.points).toEqual([expect.stringContaining("into English"), t.steps.translateAbroadOwnApostille, t.steps.translateUpload]);
+    expect(details?.end).toBe(t.steps.translateAbroadEnd);
+    expect(details?.otherwise?.points).toEqual([t.steps.translateOtherEnglish, t.steps.translateOtherNotary]);
+    expect(inWords("EE")).toContain("No notary in Israel translates Estonian");
+    expect(inWords("EE")).not.toContain(t.steps.translateOtherNotary);
   });
 
-  it("adds that Arabic needs none, for an Arabic-speaking country", () => {
-    expect(whenPoint("JO")).toBe(`${t.steps.translateArabic} ${t.steps.translateEnglish}`);
+  it("assumes the likely language of a country with no languages of its own listed", () => {
+    expect(translation("TM").text).toBe("Abroad, into English, if it's in Turkmen");
+    expect(translation("TM").details?.otherwise?.points).toContain(t.steps.translateOtherNotary);
   });
 
-  it("adds Hebrew and Arabic when the country isn't known", () => {
-    expect(whenPoint(null)).toBe(`${t.steps.translateHebrewArabic} ${t.steps.translateEnglish}`);
+  it("certifies a translation made abroad like the document, or in the legalization, where the chain has one", () => {
+    expect(translation("TH").details?.points).toEqual([t.steps.translateAbroadBeforeLegalization, t.steps.translateUpload]);
+    expect(translation("KH").details?.points).toContain(t.steps.translateAbroadOwnLegalization);
+    expect(translation("KH").details?.points?.[0]).toContain("the legalization too");
+  });
+
+  it("names all of a country's languages, when they're translated the same way", () => {
+    expect(translation("CH").text).toBe("By a notary in Israel, if it's in German, French or Italian");
+  });
+
+  it("gives each language its part, when a country's languages are translated differently", () => {
+    const { text, details } = translation("CA");
+    expect(text).toBe(t.steps.translateByLanguageLine);
+    expect(details?.parts?.map((part) => part.lead)).toEqual([t.steps.translateEnglishIn, "In French, by a notary in Israel:"]);
+    expect(details?.otherwise?.points).toEqual([t.steps.translateOtherAbroad]);
+    expect(translation("KG").details?.parts?.map((part) => part.lead)).toEqual([
+      "In Russian, by a notary in Israel:",
+      "In Kyrgyz, it's done abroad, since no notary in Israel translates it:",
+    ]);
+  });
+
+  it("follows the notaries' list for the language the locale data calls otherwise (Norwegian)", () => {
+    expect(translation("NO").text).toBe("By a notary in Israel, if it's in Norwegian");
+  });
+
+  it("assumes the language documents are issued in, not a spoken one", () => {
+    expect(translation("PY").text).toBe(t.steps.translateByLanguageLine);
+    expect(translation("PY").details?.parts?.[0]?.lead).toBe("In Spanish, by a notary in Israel:");
+    expect(translation("SN").text).toBe("By a notary in Israel, if it's in French");
+  });
+
+  it("assumes no language for Hebrew or Arabic, which need none", () => {
+    expect(translation("IL").text).toBe(t.steps.translateUnknownLine);
+  });
+
+  it("is usually not needed for a document in English", () => {
+    for (const from of ["US", "utah", "GH"] as const) expect(translation(from).text).toBe(t.steps.translateEnglishLine);
+    expect(translation("US").details).toEqual({
+      lead: t.steps.translateEnglishSingle,
+      otherwise: { heading: t.steps.translateOtherHeading, points: [t.steps.translateOtherNotary, t.steps.translateOtherAbroad] },
+    });
+  });
+
+  it("asks for it in English first, where the country issues it in English, then by its language", () => {
+    const { text, details } = translation("EE", "onRequest");
+    expect(text).toBe(t.steps.translateInEnglishLine);
+    expect(details?.lead).toBe(t.steps.translateInEnglishAsk);
+    expect(details?.parts?.map((part) => part.lead)).toEqual(["In Estonian, it's done abroad, since no notary in Israel translates it:"]);
+    expect(details?.otherwise?.points).toEqual([t.steps.translateOtherNotary]);
+    expect(inWords("EE", "onRequest")).toContain(t.steps.translateInEnglishAsk);
+    expect(inWords("DK", "onRequest")).toContain("In Danish, by a notary in Israel:");
+  });
+
+  it("is usually not needed for a document that's always in English, whatever the country's language", () => {
+    expect(translation("JP", "always").text).toBe(t.steps.translateEnglishLine);
+    expect(inWords("JP", "always")).toContain(t.steps.translateEnglishLine);
+    expect(inWords("JP", "always")).not.toContain("Japanese");
+  });
+
+  it("gives each language a line where the country isn't known, or speaks Arabic", () => {
+    const routes = [t.steps.translateOtherEnglish, t.steps.translateAnyNotary, t.steps.translateOtherAbroad];
+    expect(translation(null).text).toBe(t.steps.translateUnknownLine);
+    expect(translation(null).details).toEqual({
+      otherwise: { heading: t.steps.translateByLanguageHeading, points: [t.steps.translateHebrewArabic, ...routes], end: t.steps.translateUpload },
+    });
+    expect(translation("JO").text).toBe(t.steps.translateArabicLine);
+    expect(translation("JO").details).toEqual({
+      otherwise: { heading: t.steps.translateOtherHeading, points: routes, end: t.steps.translateUpload },
+    });
+    for (const from of [null, "JO"] as const) expect(inWords(from)).toContain(t.steps.translateAnyFull);
+  });
+
+  it("names the languages in Hebrew too", () => {
+    expect(translation("CH", undefined, "he").text).toBe("אצל נוטריון בישראל, אם המסמך בגרמנית, צרפתית או איטלקית");
+  });
+});
+
+describe("the languages notaries in Israel translate", () => {
+  const knowledge = readFileSync(new URL("./knowledge/translation-languages.md", import.meta.url), "utf8");
+  const names = new Intl.DisplayNames(["en"], { type: "language" });
+  // A group's bullet in the knowledge: its languages, after the label, without the notes in brackets.
+  const group = (label: string) => {
+    const bullet = knowledge.split(`- **${label}`)[1]!.split(/\n- |\n\n/)[0]!;
+    return bullet
+      .replace(/\([^)]*\)/g, "")
+      .split(":")
+      .at(-1)!
+      .split(",")
+      .map((name) => name.replace(/[.*\s]+/g, " ").trim())
+      .filter(Boolean)
+      .sort();
+  };
+
+  it("are the knowledge's list, group by group", () => {
+    const named = (codes: readonly string[]) => codes.map((code) => names.of(code)).sort();
+    expect(named(NOTARY_LANGUAGES.many)).toEqual(group("Many notaries:"));
+    expect(named(NOTARY_LANGUAGES.few)).toEqual(group("A few notaries,"));
+    expect(named(NOTARY_LANGUAGES.oneOrTwo)).toEqual(group("Only one or two notaries"));
+  });
+
+  it("give every country's language a name", () => {
+    for (const [country, languages] of Object.entries(COUNTRY_LANGUAGES))
+      for (const language of languages!) expect(names.of(language), country).not.toBe(language);
   });
 });
 

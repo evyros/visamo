@@ -102,6 +102,7 @@ export function buildDocumentList(snapshot: CaseSnapshot): RequiredDocument[] {
         signing,
         ...(issuerKind && { issuerKind }),
         ...(issued?.electronic && { electronic: true }),
+        ...(issued?.english && { english: issued.english }),
         orAffidavit: "orAffidavit" in doc && !!doc.orAffidavit,
         // AS/6 filed without the foreign partner's declaration: they sign the applicants' declaration by email.
         signByEmail: doc.id === "statusApplicationMarried" && !points.includes("as6ForeignDeclaration"),

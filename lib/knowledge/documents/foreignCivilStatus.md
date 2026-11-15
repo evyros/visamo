@@ -59,8 +59,8 @@ the Australian embassy in Tel Aviv by appointment.
 
 A partial extract on the existence of a marriage or registered partnership
 (Teilauszug gemäß §58 PStG), or a civil-status certificate
-(Personenstandsurkunde), from the registry office (Standesamt). It can be
-issued as an international, multilingual certificate. The apostille comes from
+(Personenstandsurkunde), from the registry office (Standesamt). The partial
+extract is issued in German only. The apostille comes from
 the town hall (Rathaus) in Vienna, or the authority of your region.
 
 ### Belgium
@@ -307,7 +307,8 @@ the embassy.
 
 An extract from the population register (uittreksel BRP) that includes the
 marital status (burgerlijke staat), from the municipality where they're
-registered. Someone who has left the Netherlands gets an extract from the
+registered. Ask for the international extract, in Dutch, French, German and
+English: it shows the marital status and usually needs no translation. Someone who has left the Netherlands gets an extract from the
 non-residents' register (RNI) instead. Any court (rechtbank) adds the
 apostille, without an appointment.
 
@@ -389,7 +390,9 @@ Any notary public (notarius publicus) adds the apostille.
 A certificate of civil status (Personenstandsausweis, certificat individuel
 d'état civil), from the civil registry office (Zivilstandsamt) of the place of
 origin (Heimatort); for a foreign national, of the place of residence. It's in
-5 languages, English included. The office can add the apostille; otherwise the
+Switzerland's four national languages, with an English and a Spanish
+translation, so it usually needs no translation. The office can add the
+apostille; otherwise the
 cantonal chancellery (Staatskanzlei) or the Federal Chancellery does.
 
 ### Tanzania

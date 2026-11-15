@@ -3,6 +3,38 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v52 — 2026-11-15
+
+**What changed:** Issuers can say a document can be issued in English
+(`english: "onRequest"`): Denmark, Estonia, Sweden and Thailand for
+`foreignBirthCertificate`; Denmark, Estonia, Iceland, the Netherlands and
+Sweden for `foreignCivilStatus`; Denmark, Iceland, Switzerland and Thailand
+for `foreignPoliceCertificate`. Or that it's always in English, among other
+languages (`english: "always"`): Germany's `foreignBirthCertificate`;
+Switzerland's `foreignCivilStatus`; Austria's, Germany's, Japan's, Portugal's
+and Sweden's `foreignPoliceCertificate`. Each restates its guide section,
+updated from official sources (Japan's police certificate also comes sealed;
+Austria's partial extract is German only; Portugal's birth certificate also
+has a multilingual model). The translation step carries it, and its
+words now follow the language the document is assumed to be in
+(`languages.ts`): the issuing country's likely language, or its languages
+where it has several or issues in English (`COUNTRY_LANGUAGES`). The step names
+the language and says what to do in it (usually nothing for English, a notary
+in Israel for a language one knows, abroad into English with its own
+certification for any other), then in any other language. Where the country
+isn't known, or speaks Arabic, it explains every language. An affidavit in
+place of a document the country doesn't issue (India's civil status) has its
+translation step without the country, since it's written where it's signed.
+
+**Why:** Every translation step said "By a notary in Israel", which
+contradicted the knowledge and the checker for a language no notary in Israel
+translates, like Estonian.
+
+**Source:** lib/knowledge/translation-languages.md and certification.md
+(procedure 1.3.0001 §5); the document guides' country sections.
+
+**Lists that changed:** none (no scenario's list changed; the issuers table did).
+
 ## v51 — 2026-11-14
 
 **What changed:** Estonia has issuers for `foreignBirthCertificate`,

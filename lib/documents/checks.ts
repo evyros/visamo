@@ -389,7 +389,7 @@ export const checks = {
     ],
     recommended: [
       "The apostille or legalization pages are scanned together with the certificate, in order.",
-      "Every side or page with print or a stamp on it is included, not only the front.",
+      "Every side or page with print or a stamp on it is included, not only the front. Recommend it only when the files show there's more: a page number, a cut-off seal or text, or a reference to the back.",
       "It is scanned straight and in color, readable in full, with nothing cut off at the edges.",
     ],
   },

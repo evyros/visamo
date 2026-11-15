@@ -101,7 +101,8 @@ signature, since Misrad Hapnim asks for the original.
 The international birth certificate (internationale Geburtsurkunde), from
 the registry office (Standesamt) of the place of birth, not the residents'
 registration office. You can order it online or by post from abroad; it
-usually takes up to 2 weeks, plus shipping.
+usually takes up to 2 weeks, plus shipping. It's printed on a multilingual
+form, English included, so it usually needs no translation.
 
 The apostille comes from an authority of the German state where it was
 issued, and which one differs by state (in North Rhine-Westphalia, the
@@ -182,8 +183,9 @@ needs a court.
 
 ### Portugal
 
-A birth certificate (certidão de nascimento), on paper rather than online. It's
-issued only in Portuguese.
+A birth certificate (certidão de nascimento), on paper rather than online. The
+usual certificate is in Portuguese. A multilingual one (certidão em modelo
+internacional) also exists, on paper only, asked for in person or by post.
 
 ### Russia
 
@@ -200,8 +202,10 @@ several years: order it first.
 ### Spain
 
 The full birth certificate (certificación literal), from the civil registry
-(Registro Civil). The multilingual extract (certificado plurilingüe), in
-Spanish and French, still needs a translation and an apostille for Israel.
+(Registro Civil). The multilingual extract (certificado plurilingüe), whose
+headings are in Spanish and French, with its codes explained in other
+languages, English among them, still needs a translation and an apostille for
+Israel.
 
 ### Sweden
 

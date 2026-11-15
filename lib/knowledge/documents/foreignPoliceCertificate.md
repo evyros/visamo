@@ -224,6 +224,15 @@ pendenti). You ask for each in writing at a public prosecutor's office
 at the court (Procura della Repubblica presso il Tribunale), not from the
 prefecture that apostilles other Italian documents.
 
+The Italian embassy in Israel doesn't issue them. From abroad, apply by
+post, online with an Italian digital identity (SPID, CIE or CNS), or through
+someone in Italy with a written delegation (delega). The criminal record
+certificate can come from any prosecutor's office. The certificate of
+pending charges should come from the one for the place of residence (for
+those living abroad, the last residence in Italy): another office's
+certificate shows only the cases pending there. Ask for the apostille in the
+request.
+
 ### Japan
 
 A certificate of criminal record (犯罪経歴証明書), through the Japanese embassy

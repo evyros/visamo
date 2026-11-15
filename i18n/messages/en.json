@@ -2504,8 +2504,8 @@
           },
           "IT": {
             "office": "the town hall (comune) where they're registered",
-            "details": "A certificate of free status (certificato di stato libero). Italians registered abroad (AIRE) get it from the Italian consulate.",
-            "apostilleBy": "the prefecture (prefettura) of the province that issued it"
+            "details": "A certificate of free status (certificato di stato libero). One downloaded from the national registry (ANPR) can't get an apostille. Italians registered abroad (AIRE) get it from the comune of their AIRE registration: Italian consulates don't issue it, and some comuni certify the status only as of the date they left Italy.",
+            "apostilleBy": "the prefecture (prefettura) of the province the comune is in"
           },
           "JP": {
             "office": "the municipality where the family register (戸籍) is kept",
@@ -2718,7 +2718,7 @@
           },
           "IT": {
             "office": "a public prosecutor's office (Procura della Repubblica)",
-            "details": "Two certificates: the criminal record certificate (certificato del casellario giudiziale) and the certificate of pending charges (certificato dei carichi pendenti). Ask for each in writing at the prosecutor's office.",
+            "details": "Two certificates: the criminal record certificate (certificato del casellario giudiziale) and the certificate of pending charges (certificato dei carichi pendenti). The Italian embassy in Israel doesn't issue them. From abroad, apply by post, online with an Italian digital identity (SPID, CIE or CNS), or through someone in Italy with a written delegation (delega). The criminal record certificate can come from any prosecutor's office; the certificate of pending charges from the one for the place of residence (for those living abroad, the last one in Italy), since another office's shows only the cases pending there. Ask for the apostille in the request.",
             "apostilleBy": "the prosecutor's office at the court (Procura della Repubblica presso il Tribunale)",
             "apostilleDetails": "Not the prefecture that apostilles other Italian documents."
           },

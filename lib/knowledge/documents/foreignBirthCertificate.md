@@ -121,7 +121,10 @@ email with a digital signature, can't get an apostille. The Italian embassy
 in Israel doesn't issue birth certificates, even for Italians registered
 abroad (AIRE): ask the comune, which can post it to you. The apostille comes
 from the prefecture (prefettura) of the province the comune is in, and many
-accept it by post, with a prepaid return envelope.
+accept it by post, with a prepaid return envelope. The multilingual extract
+(estratto plurilingue), with headings in Italian and French, is exempt from
+translation and apostille only between the countries of its convention,
+which don't include Israel: for Israel it still needs both.
 
 ### Japan
 

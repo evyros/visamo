@@ -209,6 +209,15 @@ shown to users (`lib/knowledge/`).
   whether RENIEC's copy printed at home can be apostilled; what a
   divorced or widowed Peruvian shows for their status.
 
+- **Italy** (researched November 2026, from official pages; `IT` in the
+  issuers). Unknown: whether ANPR issues the certificate of free status to
+  Italians registered abroad (AIRE) today (an ANPR GitHub issue from 2019
+  says it doesn't); whether Misrad Hapnim accepts a free-status certificate
+  that certifies the status only as of the date the person left Italy;
+  whether the multilingual birth extract's code legend includes English;
+  whether a criminal record certificate issued digitally can get an
+  apostille.
+
 - **Thailand joins the Apostille Convention on 28 February 2027** (accession
   lodged 30 June 2026; Thai MFA notices of 1 and 6 July 2026), unless a
   member state objects before then. Not in the guides yet: they hold no

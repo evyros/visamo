@@ -268,9 +268,12 @@ There's no national certificate. Use the affidavit (below).
 ### Italy
 
 A certificate of free status (certificato di stato libero), from the town
-hall (comune) where they're registered, or from the Italian consulate for
-Italians registered abroad (AIRE). The apostille comes from the prefecture
-(prefettura) of the province that issued it.
+hall (comune) where they're registered. Italians registered abroad (AIRE) get
+it from the comune of their AIRE registration, not the consulate; some
+comuni certify the status only as of the date they left Italy. Ask for it on
+paper, signed by hand: one downloaded from the national registry (ANPR)
+can't get an apostille. The apostille comes from the prefecture (prefettura)
+of the province the comune is in.
 
 ### Japan
 

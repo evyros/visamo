@@ -74,12 +74,12 @@ in English, with a handwritten signature.
 A repeat birth certificate (korduv sünnitõend), in English: Estonia issues
 it in Estonian, English, German or French, for any birth registered since 1
 July 1926. It's issued by the local government of a county centre (in
-Tallinn, the Vital Statistics Department) for €20, or by an Estonian
-embassy, including the one in Tel Aviv, for €30. With an Estonian ID card,
-Mobile-ID or Smart-ID, it can be ordered through the e-population register
+Tallinn, the Vital Statistics Department) or by an Estonian embassy,
+including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or
+Smart-ID, it can be ordered through the e-population register
 (rahvastikuregister.ee). Ask for it on paper. The apostille comes from any
-notary in Estonia, for €27.71, within 5 working days; the certificate can
-be sent to the notary by post.
+notary in Estonia, within 5 working days; the certificate can be sent to
+the notary by post.
 
 ### France
 

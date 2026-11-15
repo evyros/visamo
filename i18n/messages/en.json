@@ -2260,9 +2260,9 @@
           },
           "EE": {
             "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department) or an Estonian embassy",
-            "details": "Ask for a repeat birth certificate (korduv sünnitõend) in English: it's also issued in Estonian, German or French. It costs 20 euros, or 30 euros at an Estonian embassy, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper.",
+            "details": "Ask for a repeat birth certificate (korduv sünnitõend) in English: it's also issued in Estonian, German or French. It's also issued at Estonian embassies, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper.",
             "apostilleBy": "any notary in Estonia",
-            "apostilleDetails": "27.71 euros, up to 5 working days. You can send the document to the notary by post."
+            "apostilleDetails": "Up to 5 working days. You can send the document to the notary by post."
           },
           "ES": {
             "office": "the civil registry (Registro Civil)",
@@ -2412,7 +2412,7 @@
           },
           "CY": {
             "office": "the Civil Registry and Migration Department",
-            "details": "There's no general certificate of civil status. The only Cypriot document is the certificate of no impediment to marriage (πιστοποιητικό μη τέλεσης γάμου), confirming that no marriage or civil union is registered in Cyprus. It's issued only for a planned marriage, with an affidavit naming the person you're marrying, for 34.17 euros; a Cypriot living abroad applies through a Cypriot embassy. If you plan to marry, get it first.",
+            "details": "There's no general certificate of civil status. The only Cypriot document is the certificate of no impediment to marriage (πιστοποιητικό μη τέλεσης γάμου), confirming that no marriage or civil union is registered in Cyprus. It's issued only for a planned marriage, with an affidavit naming the person you're marrying; a Cypriot living abroad applies through a Cypriot embassy. If you plan to marry, get it first.",
             "apostilleBy": "the Cypriot Ministry of Justice and Public Order"
           },
           "CZ": {
@@ -2431,9 +2431,9 @@
           },
           "EE": {
             "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department), a notary or an Estonian embassy",
-            "details": "An extract from the population register (rahvastikuregistri väljavõte), in English. Ask for the marital status (perekonnaseis) and the spouses, former ones too, to be included: by default it shows only the name, personal code, birth and citizenship. A marriage abroad shows on it only once it's registered in Estonia. It costs 20 euros at a local government, or 30 euros at an Estonian embassy, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper, signed by the official: a PDF printed at home has no signature or seal.",
+            "details": "An extract from the population register (rahvastikuregistri väljavõte), in English. Ask for the marital status (perekonnaseis) and the spouses, former ones too, to be included: by default it shows only the name, personal code, birth and citizenship. A marriage abroad shows on it only once it's registered in Estonia. It's also issued at Estonian embassies, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper, signed by the official: a PDF printed at home has no signature or seal.",
             "apostilleBy": "any notary in Estonia",
-            "apostilleDetails": "Not the notary who issued the extract. 27.71 euros, up to 5 working days. You can send the document to the notary by post."
+            "apostilleDetails": "Not the notary who issued the extract. Up to 5 working days. You can send the document to the notary by post."
           },
           "ES": {
             "office": "the civil registry (Registro Civil)",
@@ -2545,7 +2545,7 @@
           },
           "TZ": {
             "office": "RITA's Registrar General of Marriages, or ZCSRA for Zanzibar",
-            "details": "A certificate of single status (also called a letter of no marriage), from the Registrar General of Marriages at RITA (the Registration, Insolvency and Trusteeship Agency). Apply online, through eRITA; it costs 200,000 shillings. For someone from Zanzibar, ask the Zanzibar Civil Status Registration Agency (ZCSRA). Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
+            "details": "A certificate of single status (also called a letter of no marriage), from the Registrar General of Marriages at RITA (the Registration, Insolvency and Trusteeship Agency). Apply online, through eRITA. For someone from Zanzibar, ask the Zanzibar Civil Status Registration Agency (ZCSRA). Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
           },
           "UA": {
             "office": "any civil registry office or a Ukrainian consulate",
@@ -2620,7 +2620,7 @@
           },
           "CY": {
             "office": "the Cyprus Police's Previous Convictions Registry",
-            "details": "A clean criminal record certificate (πιστοποιητικό λευκού ποινικού μητρώου). It's issued to Cypriot citizens, and to foreigners who lived legally in Cyprus for at least 6 months. Apply at police headquarters in Nicosia or a divisional police headquarters, in person or through someone you authorize in writing; a foreigner brings their passport and residence permit. It costs 20 euros and usually takes 3 working days. Don't order it online through DIGIPOL: it doesn't issue a certificate that needs an apostille. From abroad, send the application form to police headquarters in Nicosia, with the fee paid at a Cypriot embassy or by bank transfer.",
+            "details": "A clean criminal record certificate (πιστοποιητικό λευκού ποινικού μητρώου). It's issued to Cypriot citizens, and to foreigners who lived legally in Cyprus for at least 6 months. Apply at police headquarters in Nicosia or a divisional police headquarters, in person or through someone you authorize in writing; a foreigner brings their passport and residence permit. It usually takes 3 working days. Don't order it online through DIGIPOL: it doesn't issue a certificate that needs an apostille. From abroad, send the application form to police headquarters in Nicosia, with the fee paid at a Cypriot embassy or by bank transfer.",
             "apostilleBy": "the Cypriot Ministry of Justice and Public Order",
             "apostilleDetails": "In Nicosia or Limassol. A Cypriot embassy can forward the certificate there for you."
           },
@@ -2759,7 +2759,7 @@
           },
           "TZ": {
             "office": "the Forensic Bureau of the police's Criminal Investigation Department",
-            "details": "A police clearance certificate (also called a certificate of good conduct), from the Forensic Bureau of the Criminal Investigation Department in Dar es Salaam. In Tanzania, apply there in person, and your fingerprints are taken. From abroad, have the police where you live take your fingerprints, and send them there with a letter giving the last place you lived in Tanzania, a copy of your passport, two passport photos and proof of the 25-dollar fee. Zanzibar's records are kept apart: ask the Criminal Investigation Department at the police headquarters in Zanzibar. Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
+            "details": "A police clearance certificate (also called a certificate of good conduct), from the Forensic Bureau of the Criminal Investigation Department in Dar es Salaam. In Tanzania, apply there in person, and your fingerprints are taken. From abroad, have the police where you live take your fingerprints, and send them there with a letter giving the last place you lived in Tanzania, a copy of your passport, two passport photos and proof that the fee was paid. Zanzibar's records are kept apart: ask the Criminal Investigation Department at the police headquarters in Zanzibar. Before the foreign ministry, the office that issued it verifies it: the ministry certifies a document only after that. At the Israeli embassy in Nairobi, hand in the original by appointment; someone else can hand it in for you."
           },
           "UA": {
             "office": "Ukraine's Ministry of Internal Affairs (МВС)",

@@ -118,8 +118,7 @@ for at least 6 months. Apply at the registry at police headquarters in
 Nicosia, or at a divisional police headquarters, in person or through
 someone you authorize in writing. Bring a copy of your ID card or passport;
 a foreigner brings their passport and residence permit (the pink or yellow
-slip, or the alien book). It costs 20 euros and usually takes 3 working
-days, longer for citizens of other EU countries. The police's online
+slip, or the alien book). It usually takes 3 working days, longer for citizens of other EU countries. The police's online
 service (DIGIPOL) doesn't issue a certificate that needs an apostille, so
 don't order it there. From abroad, send the application form to the police
 headquarters in Nicosia, with the fee paid at a Cypriot embassy or by bank
@@ -333,7 +332,7 @@ there. From abroad, have the police where you live take your fingerprints,
 and send them to the Forensic Bureau with a letter asking for the
 certificate, giving the last place you lived in Tanzania (district, town,
 street and house number), a copy of your passport's details page, two
-passport photos, and proof that you paid the 25-dollar fee. Police records
+passport photos, and proof that you paid the fee. Police records
 for Zanzibar are kept apart: ask the Criminal Investigation Department at
 the police headquarters in Zanzibar, the same way.
 

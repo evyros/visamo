@@ -151,7 +151,7 @@ about it is the certificate of no impediment to marriage (πιστοποιητι
 Ministry of Interior. It confirms that no civil marriage, religious
 marriage or civil union is registered for you in Cyprus. It's issued only
 for a planned marriage: you apply with an affidavit about your status that
-names the person you're marrying, and it costs 34.17 euros. A Cypriot
+names the person you're marrying. A Cypriot
 living abroad applies through a Cypriot embassy or consulate; a foreigner
 living in Cyprus needs a valid residence permit. If you plan to marry, get
 it first, with its apostille from the Ministry of Justice and Public Order.
@@ -192,13 +192,13 @@ the dates. A marriage abroad shows on it only once it's registered in
 Estonia.
 
 It's issued by the local government of a county centre (in Tallinn, the
-Vital Statistics Department) for €20, by a notary, or by an Estonian
-embassy, including the one in Tel Aviv, for €30. With an Estonian ID card,
-Mobile-ID or Smart-ID, it can be ordered through the e-population register
+Vital Statistics Department), by a notary, or by an Estonian embassy,
+including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or
+Smart-ID, it can be ordered through the e-population register
 (rahvastikuregister.ee). Ask for it on paper, signed by the official: a PDF
 printed at home has no signature or seal. The apostille comes from any
-notary in Estonia, but not the notary who issued the extract, for €27.71,
-within 5 working days; the extract can be sent to the notary by post.
+notary in Estonia, but not the notary who issued the extract, within 5
+working days; the extract can be sent to the notary by post.
 
 ### France
 
@@ -396,8 +396,8 @@ cantonal chancellery (Staatskanzlei) or the Federal Chancellery does.
 
 A certificate of single status (also called a letter of no marriage), from
 the Registrar General of Marriages at RITA, the Registration, Insolvency and
-Trusteeship Agency. A Tanzanian citizen applies for it online, through eRITA,
-and it costs 200,000 shillings. For someone from Zanzibar, the registrar of
+Trusteeship Agency. A Tanzanian citizen applies for it online, through
+eRITA. For someone from Zanzibar, the registrar of
 marriages is the Zanzibar Civil Status Registration Agency (ZCSRA).
 
 Tanzania isn't in the Apostille Convention, so it's legalized (see

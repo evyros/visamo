@@ -673,7 +673,6 @@ export const checks = {
       "If it isn't in Hebrew, Arabic or English, a translation is uploaded with it, or its important parts are translated or explained alongside it. The original is uploaded too: a translation alone, without the original, is an issue. It can be the couple's own: a notarized translation isn't needed. An English document needs no translation.",
     ],
     recommended: [
-      "Payslips: the last 12 months, with no month missing. Offices ask for 12 in most cases, though the official requirement is 3.",
       "Bank statements: they cover several recent months, and the deposits are easy to see.",
       "A no-income letter comes with proof that one of them can support their life in Israel: a savings account, bank statements, or similar. The other partner's own income documents can show it instead.",
       "It is scanned straight and readable in full, with nothing cut off at the edges.",

@@ -8,8 +8,8 @@ depending on their situation (below).
 
 ## What it should include
 
-- **The last 12 payslips.** The official requirement is 3 months, but in
-  practice the ministry asks for 12 in most cases.
+- **The last 3 payslips,** the latest from the last month or two. If you
+  can, it's best to bring 6 to 12 months. It isn't a requirement, though.
 - **A translation**, if they aren't in Hebrew, Arabic or English. Make it
   yourselves: no notary is needed, unless the office asks (see
   [certification.md](../certification.md)).
@@ -35,11 +35,6 @@ depending on their situation (below).
   account, bank statements, or anything else that shows it.
 
 ## Questions
-
-**Why 12 payslips, if we were told 3?**
-The official requirement is 3 months of payslips. In practice, the ministry
-asks for 12 months in most cases, so bringing 12 from the start saves you
-being sent back for the rest.
 
 **My partner is employed. Can we bring a tax assessment (shuma) instead of payslips?**
 No. A shuma is only for the self-employed, never for employees: an employee

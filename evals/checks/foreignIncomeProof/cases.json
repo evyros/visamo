@@ -19,8 +19,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "a translation alone, without the original",
-          "the last 12 months, with no month missing"
+          "a translation alone, without the original"
         ]
       }
     }

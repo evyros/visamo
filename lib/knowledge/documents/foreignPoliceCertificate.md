@@ -146,16 +146,15 @@ Ministry of Foreign Affairs in Copenhagen.
 
 A notice from the Criminal Records Database (karistusregistri teatis), from
 the Centre of Registers and Information Systems (Registrite ja
-Infosüsteemide Keskus). It's free for your own record. There's no office to
-apply at in person: send the signed application by post to Lubja 4, 19081
-Tallinn, or by email with an Estonian digital signature, and ask for the
-notice on paper. It's issued within 2 working days, and the post can take up
-to two more weeks. With an Estonian ID card, Mobile-ID or Smart-ID, e-File
-(e-toimik) gives a digitally stamped extract at once, but it's a file, and
-Misrad Hapnim usually asks for the original on paper. It's issued only in
-Estonian. The apostille comes from any notary in Estonia, on the original
-only, for €27.71, within 5 working days; the notice can be sent to the
-notary by post.
+Infosüsteemide Keskus). There's no office to apply at in person: send the
+signed application by post to Lubja 4, 19081 Tallinn, or by email with an
+Estonian digital signature. Ask for the notice on paper, not the digital
+extract from e-File (e-toimik), and with the archived data
+(karistusregistri arhiiviandmed): Misrad Hapnim asks for the whole criminal
+past, including offenses that have expired or been deleted, and a notice
+without it can be rejected at the appointment. It's issued only in
+Estonian. Any notary in Estonia adds the apostille, on the original only;
+the notice can be sent to the notary by post.
 
 ### France
 
@@ -406,7 +405,8 @@ authentication services.
   (see [certification.md](../certification.md)).
 - **A notarized translation (תרגום נוטריוני) into Hebrew**, by a notary in
   Israel, unless it's in Hebrew or Arabic: a translator's translation, even a
-  certified one, will be rejected. It's an official document, unlike bills, letters or bank
+  certified one, will be rejected (for a language no notary in Israel
+  knows, see [certification.md](../certification.md)). It's an official document, unlike bills, letters or bank
   statements, which you can translate yourselves. In practice,
   an English document is usually accepted without one, but the clerk can
   still ask you to translate it.

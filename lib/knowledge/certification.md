@@ -143,9 +143,12 @@ landlord's affidavit. What they need depends on their language:
   - **Finding a notary:** the Israel Bar Association's list of notaries
     shows the languages each one translates.
 - **A language no notary in Israel knows:** the translation is made abroad.
-  A local notary there translates the document into English, and that
-  translation gets its own apostille, or, from a country outside the
-  Apostille Convention, its own consular legalization (1.3.0001 §5.3–5.4).
+  A local notary there, or a certified or sworn translator, translates the
+  document into English, and that translation gets its own apostille, or,
+  from a country outside the Apostille Convention, its own consular
+  legalization (1.3.0001 §5.3–5.4). So the file has two certifications: one
+  on the original document, and a second one on the translation. A
+  translation without its own certification will be rejected.
   By the procedure, a notary in Israel then translates the English version
   into Hebrew: a double translation (תרגום על תרגום). In practice, the
   notarized English translation is enough, like a document written in

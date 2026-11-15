@@ -313,7 +313,8 @@ state's apostille authority adds the apostille.
   and the apostille can be placed there too.
 - **A notarized translation (תרגום נוטריוני) into Hebrew**, by a notary in
   Israel, unless it's in Hebrew or Arabic: a translator's translation, even a
-  certified one, will be rejected. It's an official document, unlike bills, letters or bank
+  certified one, will be rejected (for a language no notary in Israel
+  knows, see [certification.md](../certification.md)). It's an official document, unlike bills, letters or bank
   statements, which you can translate yourselves. In practice,
   an English certificate is usually accepted without one, but the clerk can
   still ask you to translate it.
@@ -347,6 +348,7 @@ it, and get the apostille, like any other certificate.
 No. A notary in Israel translates it, and only the original certificate is
 certified. A translation made abroad will probably be rejected, even with an
 apostille of its own. It's used only when no notary in Israel knows the
-language: then a local notary translates the certificate into English, and
-that translation does need its own apostille or legalization (see
+language: then a local notary, or a certified or sworn translator, translates
+the certificate into English, and that translation does need its own
+apostille or legalization (see
 [certification.md](../certification.md)).

@@ -177,9 +177,10 @@ function stepLine(
             return { text: s.dependsOnCountry, details: prose(s.dependsOnCountryDetails) };
         }
       })();
-      return exemptIfIssuedUntil
-        ? { ...said, text: format(s.unlessIssuedUntil, { what: said.text, year: exemptIfIssuedUntil }) }
-        : said;
+      // The exemption goes in the full text, after the rest, so the line stays short.
+      if (!exemptIfIssuedUntil) return said;
+      const exemption = { lead: format(s.exemptIfIssuedUntil, { year: exemptIfIssuedUntil }) };
+      return { ...said, details: { ...said.details, parts: [...(said.details.parts ?? []), exemption] } };
     }
     case "send":
       return { text: s.send, details: prose(s.sendDetails) };
@@ -363,7 +364,9 @@ export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels, 
     if (step.kind === "signByEmail") return `${format(t.steps.signByEmail.sentence, { name: c.foreign ?? "" })}: ${full}`;
     // An affidavit's line doesn't say who confirms it: its full text does.
     if (step.kind === "affidavit") return `${label}: ${text}. ${full}`;
-    return `${label}: ${text}`;
+    // The former-USSR exemption is in the full text, not the line: say it here too.
+    const year = step.kind === "authenticate" ? step.certification.exemptIfIssuedUntil : undefined;
+    return year ? `${label}: ${text}. ${format(t.steps.exemptIfIssuedUntil, { year })}` : `${label}: ${text}`;
   };
   return steps.map((step, i) => `${i + 1}. ${say(step)}`).join(" ");
 }

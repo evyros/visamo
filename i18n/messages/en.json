@@ -2159,7 +2159,7 @@
         "chainJoin": ", then ",
         "dependsOnCountry": "If it was issued abroad, from that country",
         "dependsOnCountryDetails": "An apostille if the country is in the Hague Apostille Convention, consular legalization if it isn't. Only the country that issued it can do it, not Israel.",
-        "unlessIssuedUntil": "{what}, unless it was issued up to {year}",
+        "exemptIfIssuedUntil": "Not needed for an original issued up to {year}.",
         "send": "The original, by courier",
         "sendDetails": "Misrad Hapnim asks for the original at the first appointment, and it's needed in Israel for the translation too. Have it sent in time from the country that issued it. If you already have it in Israel, there's nothing to do.",
         "translateNotarizedLine": "By a notary in Israel, if it's in {languages}",
@@ -2289,7 +2289,7 @@
             "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department) or an Estonian embassy",
             "details": "Ask for a repeat birth certificate (korduv sünnitõend) in English: it's also issued in Estonian, German or French. It's also issued at Estonian embassies, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper.",
             "apostilleBy": "any notary in Estonia",
-            "apostilleDetails": "Up to 5 working days. You can send the document to the notary by post."
+            "apostilleDetails": "The notary adds it within 5 working days. You can send the document to them by post."
           },
           "ES": {
             "office": "the civil registry (Registro Civil)",
@@ -2460,7 +2460,7 @@
             "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department), a notary or an Estonian embassy",
             "details": "An extract from the population register (rahvastikuregistri väljavõte), in English. Ask for the marital status (perekonnaseis) and the spouses, former ones too, to be included: by default it shows only the name, personal code, birth and citizenship. A marriage abroad shows on it only once it's registered in Estonia. It's also issued at Estonian embassies, including the one in Tel Aviv. With an Estonian ID card, Mobile-ID or Smart-ID, it can be ordered through the e-population register (rahvastikuregister.ee). Get it on paper, signed by the official: a PDF printed at home has no signature or seal.",
             "apostilleBy": "any notary in Estonia",
-            "apostilleDetails": "Not the notary who issued the extract. Up to 5 working days. You can send the document to the notary by post."
+            "apostilleDetails": "Not the notary who issued the extract. The notary adds it within 5 working days. You can send the document to them by post."
           },
           "ES": {
             "office": "the civil registry (Registro Civil)",

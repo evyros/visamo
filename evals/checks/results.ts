@@ -50,8 +50,9 @@ export type CaseOutcome = { evalCase: EvalCase; runs: RunOutcome[]; passRate: nu
  *   review      the judge says it's right, and no one approved it yet
  *   wrong       the judge says it's wrong
  *   unreadable  what an unreadable result couldn't read: not graded
+ *   mustNotSay  gives advice the case says no finding may give, whatever its line
  */
-export type FindingStatus = "expected" | "optional" | "wrongList" | "allowed" | "review" | "wrong" | "unreadable";
+export type FindingStatus = "expected" | "optional" | "wrongList" | "allowed" | "review" | "wrong" | "unreadable" | "mustNotSay";
 
 export type LineRef = { id: string; kind: CheckLine["kind"]; text: string; part?: Part };
 
@@ -75,6 +76,8 @@ export type RunRecord = Money & {
   rating?: CheckRating;
   ratingOk?: boolean;
   missed: LineRef[];
+  /** Advice the case says a finding must give that none did (mustSay), with the judge's reason. */
+  unsaid?: { advice: string; reason: string }[];
   findings: FindingRecord[];
 };
 
@@ -92,7 +95,7 @@ export type CaseRecord = {
   scenario: string;
   today: string;
   files: FileRecord[];
-  expect: { ratings: CheckRating[] | null; flagged: LineRef[]; mayFlag: LineRef[]; allowedExtra: string[] };
+  expect: { ratings: CheckRating[] | null; flagged: LineRef[]; mayFlag: LineRef[]; allowedExtra: string[]; mustNotSay?: string[]; mustSay?: string[] };
   /** Every line of the check, for the report's line table. */
   lines: LineRef[];
   /** Files it needs that aren't there: the case was skipped. */
@@ -142,6 +145,8 @@ function findingRecords(run: Extract<RunOutcome, { grade: RunGrade }>, evalCase:
       he: finding.he,
     };
     if (grade.rating === "unreadable") return { ...base, status: "unreadable" };
+    const said = grade.said.find((s) => s.finding === finding);
+    if (said) return { ...base, status: "mustNotSay", reason: `${said.reason} (mustn't say: ${said.advice})` };
     if (grade.wrongKind.some((w) => w.finding === finding)) return { ...base, status: "wrongList" };
     const unexpected = grade.unexpected.find((u) => u.finding === finding);
     if (!unexpected) return { ...base, status: line && flagged.has(line.id) ? "expected" : "optional" };
@@ -181,6 +186,8 @@ function caseRecord(evalCase: EvalCase, outcome: CaseOutcome | null): CaseRecord
       flagged: expect.flagged.map(lineRef),
       mayFlag: expect.mayFlag.map(lineRef),
       allowedExtra: expect.allowedExtra,
+      mustNotSay: expect.mustNotSay,
+      mustSay: expect.mustSay,
     },
     lines: evalCase.lines.map(lineRef),
     missing: evalCase.missing,
@@ -203,6 +210,7 @@ function caseRecord(evalCase: EvalCase, outcome: CaseOutcome | null): CaseRecord
         rating: run.grade.rating,
         ratingOk: run.grade.ratingOk,
         missed: run.grade.missed.map(lineRef),
+        unsaid: run.grade.unsaid,
         findings: findingRecords(run, evalCase),
         ...money,
       };

@@ -58,7 +58,8 @@
         ],
         "mayFlag": [
           "apostille or legalization pages are scanned",
-          "paper original issued for use abroad"
+          "paper original issued for use abroad",
+          "certifies the original document it's for"
         ]
       }
     },
@@ -77,7 +78,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ]
       }
     },
@@ -119,7 +120,8 @@
         ],
         "mayFlag": [
           "apostille or legalization pages are scanned",
-          "paper original issued for use abroad"
+          "paper original issued for use abroad",
+          "certifies the original document it's for"
         ]
       }
     },

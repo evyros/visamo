@@ -32,6 +32,7 @@ const statusLabel: Record<FindingStatus, string> = {
   review: "To review",
   wrong: "Wrong",
   unreadable: "Unreadable",
+  mustNotSay: "Mustn't say",
 };
 const statusTone: Record<FindingStatus, "ok" | "warn" | "bad" | "muted"> = {
   expected: "ok",
@@ -41,6 +42,7 @@ const statusTone: Record<FindingStatus, "ok" | "warn" | "bad" | "muted"> = {
   wrongList: "bad",
   wrong: "bad",
   unreadable: "muted",
+  mustNotSay: "bad",
 };
 
 const ratingLabel: Record<string, string> = {
@@ -77,7 +79,10 @@ function run(r: RunRecord) {
   const missed = r.missed.map(
     (l) => `<li class="finding bad"><div class="finding-head">${chip("Missed", "bad")} ${lineId(l)}</div><div class="text">${esc(l.text)}</div></li>`,
   );
-  const items = [...missed, ...r.findings.map(finding)];
+  const unsaid = (r.unsaid ?? []).map(
+    (u) => `<li class="finding bad"><div class="finding-head">${chip("Not said", "bad")}</div><div class="text">${esc(u.advice)}</div><div class="judge">Judge: ${esc(u.reason)}</div></li>`,
+  );
+  const items = [...missed, ...unsaid, ...r.findings.map(finding)];
   return `<div class="run">${head}${items.length ? `<ul class="findings">${items.join("")}</ul>` : `<p class="muted">No findings.</p>`}</div>`;
 }
 

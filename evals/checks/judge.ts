@@ -2,7 +2,7 @@ import type { ContentPart, ModelMessage } from "@/lib/chat/openrouter";
 import type { Complete } from "@/lib/checks/ask";
 import type { CheckLine } from "@/lib/checks/lines";
 import type { EvalCase } from "./cases";
-import type { Unexpected, Verdict } from "./grade";
+import type { Finding, Said, Unexpected, Unsaid, Verdict } from "./grade";
 
 // The judge: a stronger model than the checker, shown the same files, for
 // the findings a case didn't expect. It decides whether each one is a
@@ -86,4 +86,71 @@ export async function judge(
     if (v.verdict === "allowed" && !allowed) return { verdict: "valid", reason: v.reason };
     return { verdict: v.verdict, ...(allowed && { allowed }), reason: v.reason };
   });
+}
+
+const ADVICE_RULES = `You review the findings of Visamo's document checker, a model that checks one document of a couple's file for the Israeli partner-visa process and tells the couple what to fix or improve.
+
+You get the findings of one check, and up to two lists of advice: advice the checker must never give for this document, and advice it must give. A finding gives a piece of advice when it tells the couple to do it, or offers it as a way to fix something, in any words, including as one of several options. A finding that only says something is wrong, without suggesting that advice, doesn't give it.
+
+- "forbidden": one entry for every finding. "gives" is true only if it gives advice from the list it must never give, with that advice's number in "advice"; otherwise "gives" is false and "advice" is 0.
+- "required": one entry for every piece of advice it must give. "given" is true if at least one finding gives it, with that finding's number in "finding"; otherwise "given" is false and "finding" is 0.
+
+Each reason is one short sentence, quoting the words of the finding it rests on, or saying what the findings say instead.`;
+
+const verdictsOf = (properties: Record<string, object>) => ({
+  type: "array",
+  items: { type: "object", additionalProperties: false, required: [...Object.keys(properties), "reason"], properties: { ...properties, reason: { type: "string" } } },
+});
+
+const adviceSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["forbidden", "required"],
+  properties: {
+    forbidden: verdictsOf({ finding: { type: "integer" }, gives: { type: "boolean" }, advice: { type: "integer" } }),
+    required: verdictsOf({ advice: { type: "integer" }, given: { type: "boolean" }, finding: { type: "integer" } }),
+  },
+};
+
+/**
+ * What a run's findings tell the couple, which grading by line can't see: the
+ * findings that give advice the case says they mustn't (mustNotSay), expected
+ * ones too, and the advice the case says some finding must give (mustSay) that
+ * none does. Text only, no files.
+ */
+export async function judgeAdvice(
+  evalCase: EvalCase,
+  findings: Finding[],
+  complete: Complete,
+): Promise<{ said: Said[]; unsaid: Unsaid[] }> {
+  const { mustNotSay, mustSay } = evalCase.expect;
+  if (!findings.length) return { said: [], unsaid: mustSay.map((advice) => ({ advice, reason: "There are no findings." })) };
+  const numbered = (list: string[]) => list.map((a, i) => `${i + 1}. ${a}`).join("\n");
+  const listed = findings.map((f, i) => `${i + 1}. ${f.kind === "issue" ? "Issue" : "Recommendation"}\n   Title: ${f.en.title}\n   Detail: ${f.en.detail}`);
+  const text = [
+    `The document: ${evalCase.title}`,
+    `Advice the checker must never give\n${mustNotSay.length ? numbered(mustNotSay) : "(none)"}`,
+    `Advice the checker must give\n${mustSay.length ? numbered(mustSay) : "(none)"}`,
+    `The findings\n${listed.join("\n")}`,
+  ].join("\n\n");
+  const messages: ModelMessage[] = [
+    { role: "system", content: ADVICE_RULES },
+    { role: "user", content: text },
+  ];
+  const call = await complete(messages, { model: JUDGE_MODEL, maxTokens: 4000, name: "finding_advice", schema: adviceSchema });
+  const answer = JSON.parse(call.answer) as {
+    forbidden: { finding: number; gives: boolean; advice: number; reason: string }[];
+    required: { advice: number; given: boolean; finding: number; reason: string }[];
+  };
+  const said = answer.forbidden.flatMap((v) => {
+    const finding = findings[v.finding - 1];
+    const advice = mustNotSay[v.advice - 1];
+    return v.gives && finding && advice ? [{ finding, advice, reason: v.reason }] : [];
+  });
+  // Advice the judge gave no verdict on counts as not given.
+  const unsaid = mustSay.flatMap((advice, i) => {
+    const v = answer.required.find((r) => r.advice === i + 1);
+    return v?.given ? [] : [{ advice, reason: v?.reason ?? "The judge gave no verdict on it." }];
+  });
+  return { said, unsaid };
 }

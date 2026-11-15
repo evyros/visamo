@@ -149,12 +149,13 @@ the Centre of Registers and Information Systems (Registrite ja
 Infosüsteemide Keskus). There's no office to apply at in person: send the
 signed application by post to Lubja 4, 19081 Tallinn, or by email with an
 Estonian digital signature. Ask for the notice on paper, not the digital
-extract from e-File (e-toimik), and with the archived data
-(karistusregistri arhiiviandmed): Misrad Hapnim asks for the whole criminal
-past, including offenses that have expired or been deleted, and a notice
-without it can be rejected at the appointment. It's issued only in
-Estonian. Any notary in Estonia adds the apostille, on the original only;
-the notice can be sent to the notary by post.
+extract from e-File (e-toimik). It isn't a requirement, but Misrad Hapnim
+sometimes asks for the full extract, with the archived data
+(karistusregistri arhiiviandmed): the whole criminal past, including
+offenses that have expired or been deleted. So it's recommended to ask for
+the notice with it. It's issued only in Estonian. Any notary in
+Estonia adds the apostille, on the original only; the notice can be sent to
+the notary by post.
 
 ### France
 

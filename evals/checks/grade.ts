@@ -10,7 +10,10 @@ import type { Expectation } from "./cases";
 // recommended line, or the other way), and the judge found nothing wrong
 // with the findings the case didn't expect. A finding the judge says is
 // right but nobody reviewed yet doesn't fail the run: it's listed for review,
-// to approve into allowedExtra or to fix the case.
+// to approve into allowedExtra or to fix the case. A run also fails when a
+// finding, even an expected one, gives advice the case says it mustn't
+// (mustNotSay), or when no finding gives advice the case says one must
+// (mustSay): the judge reads them for it afterwards too (said, unsaid).
 
 export type Finding = CheckFinding & { kind: "issue" | "recommendation" };
 
@@ -23,6 +26,12 @@ export type Verdict = {
 
 export type Unexpected = { finding: Finding; line: CheckLine | null; verdict?: Verdict };
 
+/** A finding that gives advice the case says it mustn't (mustNotSay). */
+export type Said = { finding: Finding; advice: string; reason: string };
+
+/** Advice the case says a finding must give (mustSay), that none does. */
+export type Unsaid = { advice: string; reason: string };
+
 export type RunGrade = {
   rating: CheckResult["rating"];
   /** Every finding, issues then recommendations: the ones the lists below point to. */
@@ -34,6 +43,10 @@ export type RunGrade = {
   wrongKind: { finding: Finding; line: CheckLine }[];
   /** Findings the case didn't expect: for the judge. */
   unexpected: Unexpected[];
+  /** Findings that give advice the case says they mustn't: the judge's, filled in after grading. */
+  said: Said[];
+  /** Advice the case says a finding must give that none does: the judge's, filled in after grading. */
+  unsaid: Unsaid[];
 };
 
 export const findingsOf = (result: CheckResult): Finding[] => [
@@ -49,7 +62,7 @@ export function gradeRun(result: CheckResult, expect: Expectation, lines: readon
 
   // An unreadable result's findings say what couldn't be read: no line to grade.
   if (result.rating === "unreadable") {
-    return { rating: result.rating, findings: findingsOf(result), ratingOk, missed: ratingOk ? [] : expect.flagged, wrongKind: [], unexpected: [] };
+    return { rating: result.rating, findings: findingsOf(result), ratingOk, missed: ratingOk ? [] : expect.flagged, wrongKind: [], unexpected: [], said: [], unsaid: [] };
   }
 
   const findings = findingsOf(result);
@@ -75,6 +88,8 @@ export function gradeRun(result: CheckResult, expect: Expectation, lines: readon
     missed: expect.flagged.filter((l) => !reported.has(l.id)),
     wrongKind,
     unexpected,
+    said: [],
+    unsaid: [],
   };
 }
 
@@ -83,7 +98,9 @@ export const passes = (grade: RunGrade) =>
   grade.ratingOk &&
   grade.missed.length === 0 &&
   grade.wrongKind.length === 0 &&
-  grade.unexpected.every((u) => u.verdict && u.verdict.verdict !== "invalid");
+  grade.unexpected.every((u) => u.verdict && u.verdict.verdict !== "invalid") &&
+  grade.said.length === 0 &&
+  grade.unsaid.length === 0;
 
 /** Findings the judge says are right but no one approved yet. */
 export const toReview = (grade: RunGrade) => grade.unexpected.filter((u) => u.verdict?.verdict === "valid");

@@ -17,6 +17,8 @@ const expectation = (over: Partial<Parameters<typeof gradeRun>[1]> = {}) => ({
   flagged: [],
   mayFlag: [],
   allowedExtra: [],
+  mustNotSay: [],
+  mustSay: [],
   ...over,
 });
 
@@ -58,6 +60,20 @@ describe("gradeRun", () => {
   it("points its lists to its own findings, so a report can tell each one's status", () => {
     const grade = gradeRun(result("canImprove", [], ["S1"]), expectation(), lines);
     expect(grade.findings).toContain(grade.unexpected[0].finding);
+  });
+
+  it("fails an expected finding that gives advice the case says it mustn't", () => {
+    const grade = gradeRun(result("needsFixing", ["R2"]), expectation({ flagged: [color], mustNotSay: ["scan it in black and white"] }), lines);
+    expect(passes(grade)).toBe(true);
+    grade.said = [{ finding: grade.findings[0], advice: "scan it in black and white", reason: "r" }];
+    expect(passes(grade)).toBe(false);
+  });
+
+  it("fails a run where no finding gives advice the case says one must", () => {
+    const grade = gradeRun(result("needsFixing", ["R2"]), expectation({ flagged: [color], mustSay: ["scan it in color"] }), lines);
+    expect(passes(grade)).toBe(true);
+    grade.unsaid = [{ advice: "scan it in color", reason: "r" }];
+    expect(passes(grade)).toBe(false);
   });
 
   it("accepts a line that may or may not be reported", () => {

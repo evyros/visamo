@@ -126,7 +126,9 @@ landlord's affidavit. What they need depends on their language:
   need a notarized translation into Hebrew "except from Arabic and English"
   (מלבד מהשפות ערבית ואנגלית), which you can point a clerk to.
 - **Another language, which a notary in Israel knows** (German, Russian,
-  Spanish and most others): a notarized translation (תרגום נוטריוני) into
+  Spanish and most others; the full list is in
+  [translation-languages.md](translation-languages.md)): a notarized
+  translation (תרגום נוטריוני) into
   Hebrew, by a notary in Israel, is required (1.3.0001 §5). That's the
   requirement, not just the safest way, and it doesn't depend on the clerk.
   - **The notary (נוטריון) translates it themselves,** from the document's
@@ -140,9 +142,12 @@ landlord's affidavit. What they need depends on their language:
   - **Into Hebrew, not English.** A translation into English isn't what's
     asked for, and the clerk handling your file can refuse it.
   - **The translation needs no apostille.** Only the original document does.
-  - **Finding a notary:** the Israel Bar Association's list of notaries
-    shows the languages each one translates.
-- **A language no notary in Israel knows:** the translation is made abroad.
+  - **Finding a notary:** the Ministry of Justice's notary register
+    (מאגר נוטריונים, on gov.il) can be searched by language, and shows each
+    notary's city and the languages they know.
+- **A language no notary in Israel knows** (any language not on the list in
+  [translation-languages.md](translation-languages.md)): the translation is
+  made abroad.
   A local notary there, or a certified or sworn translator, translates the
   document into English, and that translation gets its own apostille, or,
   from a country outside the Apostille Convention, its own consular

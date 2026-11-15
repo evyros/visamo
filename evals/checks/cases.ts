@@ -36,6 +36,12 @@ import { scenarios, type ScenarioName } from "@/lib/documents/scenarios";
 //   allowedExtra  findings for no expected check that a person reviewed and
 //                 approved, in a few words each: the judge matches new ones
 //                 against them
+//   mustNotSay    advice no finding may give, in plain words ("a notarized
+//                 Hebrew translation made in Israel"): the judge reads every
+//                 finding, expected ones too, and a run that gives it fails
+//   mustSay       advice some finding has to give, in plain words: a run
+//                 where none does fails. It catches advice that's missing or
+//                 vague; mustNotSay catches wrong advice next to the right one
 //
 // A check is named by a piece of its text (any case), unique in the
 // document, with "part: " in front for a document of parts
@@ -67,6 +73,8 @@ type CaseSpec = {
     flagged?: string[];
     mayFlag?: string[];
     allowedExtra?: string[];
+    mustNotSay?: string[];
+    mustSay?: string[];
   };
 };
 
@@ -83,6 +91,10 @@ export type Expectation = {
   flagged: CheckLine[];
   mayFlag: CheckLine[];
   allowedExtra: string[];
+  /** Advice no finding may give, expected findings included (judge.ts judgeAdvice). */
+  mustNotSay: string[];
+  /** Advice some finding has to give (judge.ts judgeAdvice). */
+  mustSay: string[];
 };
 
 export type CaseFile = { name: string; path: string; contentType: string };
@@ -189,6 +201,8 @@ function loadSuite(folder: string): EvalCase[] {
         flagged: resolve(spec.expect.flagged),
         mayFlag: resolve(spec.expect.mayFlag),
         allowedExtra: spec.expect.allowedExtra ?? [],
+        mustNotSay: spec.expect.mustNotSay ?? [],
+        mustSay: spec.expect.mustSay ?? [],
       },
     });
   }

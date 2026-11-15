@@ -39,7 +39,8 @@
           "carries the certification"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned"
+          "apostille or legalization pages are scanned",
+          "certifies the original document it's for"
         ]
       }
     },
@@ -104,8 +105,8 @@
         ],
         "mayFlag": [
           "carries the certification",
-          "translation was made abroad",
-          "apostille or legalization pages are scanned"
+          "apostille or legalization pages are scanned",
+          "Which translation it needs depends on the document's language"
         ]
       }
     },
@@ -123,7 +124,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
           "Every side or page"
@@ -160,10 +161,11 @@
         "rating": "needsFixing",
         "flagged": [
           "carries the certification",
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned"
+          "apostille or legalization pages are scanned",
+          "certifies the original document it's for"
         ]
       }
     },
@@ -183,12 +185,18 @@
         "rating": "needsFixing",
         "flagged": [
           "carries the certification",
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
-          "translation was made abroad",
           "apostille or legalization pages are scanned",
-          "scanned straight and in color"
+          "scanned straight and in color",
+          "certifies the original document it's for"
+        ],
+        "mustNotSay": [
+          "A translation by a notary in Israel (Thai is a language no notary in Israel translates)"
+        ],
+        "mustSay": [
+          "An English translation, certified together with the Thai certificate by Thailand's foreign ministry (and then the Israeli embassy)"
         ]
       }
     },
@@ -207,11 +215,18 @@
         "rating": "needsFixing",
         "flagged": [
           "carries the certification",
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
           "apostille or legalization pages are scanned",
-          "scanned straight and in color"
+          "scanned straight and in color",
+          "certifies the original document it's for"
+        ],
+        "mustNotSay": [
+          "A translation by a notary in Israel (Thai is a language no notary in Israel translates)"
+        ],
+        "mustSay": [
+          "An English translation, certified together with the Thai certificate by Thailand's foreign ministry (and then the Israeli embassy)"
         ]
       }
     }

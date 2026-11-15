@@ -16,10 +16,11 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ],
-        "mayFlag": [
-          "If the translation was made abroad"
+        "mayFlag": [],
+        "mustSay": [
+          "The translation needs its own apostille, separate from the one on the Estonian original"
         ]
       }
     },
@@ -52,7 +53,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": [
-          "certified translation is uploaded"
+          "Which translation it needs depends on the document's language"
         ]
       }
     }

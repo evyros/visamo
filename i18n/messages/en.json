@@ -2642,9 +2642,9 @@
           },
           "EE": {
             "office": "the Criminal Records Database (Registrite ja Infosüsteemide Keskus), by post or email",
-            "details": "A notice from the Criminal Records Database (karistusregistri teatis), free for your own record. There's no office to apply at in person: send the signed application by post to Lubja 4, 19081 Tallinn, or by email with an Estonian digital signature, and ask for the notice on paper. It's issued within 2 working days, and the post can take up to two more weeks. The digitally stamped extract from e-File (e-toimik) is a file, and Misrad Hapnim usually asks for the original on paper. It's issued only in Estonian.",
+            "details": "A notice from the Criminal Records Database (karistusregistri teatis). There's no office to apply at in person: send the signed application by post to Lubja 4, 19081 Tallinn, or by email with an Estonian digital signature. Ask for the notice on paper, not the digital extract from e-File (e-toimik). It isn't a requirement, but Misrad Hapnim sometimes asks for the full extract, with the archived data (karistusregistri arhiiviandmed): the whole criminal past, including offenses that have expired or been deleted. So it's recommended to ask for the notice with it. It's issued only in Estonian.",
             "apostilleBy": "any notary in Estonia",
-            "apostilleDetails": "On the original only. 27.71 euros, up to 5 working days. You can send the document to the notary by post."
+            "apostilleDetails": "On the original only. You can send the notice to the notary by post."
           },
           "ES": {
             "office": "the Spanish Ministry of Justice or a government sub-delegation",

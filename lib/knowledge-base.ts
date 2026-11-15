@@ -13,7 +13,7 @@ import { documents, type Category, type DocumentId } from "@/lib/documents/catal
  * version: lib/prompts.test.ts fails until it's raised and recorded
  * (npm run prompts:lock).
  */
-export const KNOWLEDGE_VERSION = 160;
+export const KNOWLEDGE_VERSION = 163;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [
@@ -28,6 +28,7 @@ const KNOWLEDGE_FILES = [
   "both-abroad.md",
   "documents.md",
   "certification.md",
+  "translation-languages.md",
   "affidavits.md",
   "children.md",
   "pregnancy.md",
@@ -92,8 +93,8 @@ export function loadKnowledge() {
   return knowledge;
 }
 
-/** What every check reads: what documents need in general, certification and translation, and the Hebrew terms. */
-const CHECK_FILES = ["documents.md", "certification.md", "glossary.md"];
+/** What every check reads: what documents need in general, certification and translation, which languages notaries in Israel translate, and the Hebrew terms. */
+const CHECK_FILES = ["documents.md", "certification.md", "translation-languages.md", "glossary.md"];
 
 const checkKnowledge = new Map<string, Promise<string>>();
 

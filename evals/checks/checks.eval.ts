@@ -11,7 +11,7 @@ import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { cachedCompleteJson, type EvalCompletion } from "../cache";
 import { loadCases, type EvalCase } from "./cases";
 import { gradeRun, passes, toReview } from "./grade";
-import { JUDGE_MODEL, judge } from "./judge";
+import { JUDGE_MODEL, judge, judgeAdvice } from "./judge";
 import { saveRun } from "./report";
 import { sum, type CaseOutcome, type Money, type RunOutcome } from "./results";
 
@@ -93,6 +93,18 @@ async function runOnce(
     });
     verdicts.forEach((verdict, i) => (grade.unexpected[i].verdict = verdict));
   }
+  const { mustNotSay, mustSay } = evalCase.expect;
+  if ((mustNotSay.length || mustSay.length) && result.rating !== "unreadable" && prepared.ok) {
+    const complete = cachedCompleteJson(`advice:${run}`);
+    Object.assign(
+      grade,
+      await judgeAdvice(evalCase, grade.findings, async (...args) => {
+        const call = await complete(...args);
+        judgeCalls.push(call);
+        return call;
+      }),
+    );
+  }
   return { run, result, grade, passed: passes(grade), ...money(checkCalls, judgeCalls) };
 }
 
@@ -145,6 +157,8 @@ function describeFailure(run: RunOutcome) {
     ...grade.unexpected
       .filter((u) => u.verdict?.verdict === "invalid")
       .map((u) => `wrong finding "${u.finding.en.title}" (${u.verdict!.reason})`),
+    ...grade.said.map((s) => `"${s.finding.en.title}" says what it mustn't: ${s.advice} (${s.reason})`),
+    ...grade.unsaid.map((u) => `no finding says: ${u.advice} (${u.reason})`),
   ].filter(Boolean);
   const review = toReview(grade).length;
   return `  run ${run.run + 1}: ${why.join("; ")}${review ? ` (+${review} to review)` : ""}`;

@@ -53,7 +53,8 @@
           "no children from a previous relationship"
         ],
         "mayFlag": [
-          "affidavit is dated"
+          "affidavit is dated",
+          "local notary abroad confirmed it"
         ]
       }
     },

@@ -334,8 +334,9 @@ export const checks = {
       "Nothing in it contradicts the couple's details in the file, such as whether and where they married, or since when they've been together.",
     ],
     recommended: [
-      "It's written in Hebrew.",
+      "It's written in Hebrew: Misrad Hapnim strongly prefers the letter in Hebrew.",
       "It's about 3–4 paragraphs long.",
+      "It's no longer than 3 pages full of text. A longer letter is better cut down to the main steps and moments.",
       "It includes anecdotes and major life events the couple shared, not only a summary.",
       "Concrete dates and places for the main steps (meeting, visits, moving in, the wedding), rather than general statements.",
       "If the relationship is relatively short, or they spent long periods apart, the letter explains it openly.",

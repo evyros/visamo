@@ -2,11 +2,10 @@
 
 The foreign partner's affidavit (תצהיר) about children from before your relationship. It must show:
 
-A foreign partner married to an Israeli brings it, with children or without
-(5.2.0008 §ד.2.ה): it lists their children from before the marriage or from
-a previous marriage, and who has guardianship of them, or states that they
-have none. Children who stay behind are listed too. Common-law couples
-(ידועים בציבור) don't bring it.
+The foreign partner brings it, with children or without: it lists their
+children from before your relationship or from a previous marriage, and who
+has guardianship of them, or states that they have none. Children who stay
+behind are listed too.
 
 By the procedure, it's part of the file. In practice, a foreign partner who
 is abroad signs it once they're in Israel with the entry permit: the online

@@ -19,3 +19,9 @@ thailand-2026.jpg and thailand-2026-translation.jpg are a real file,
 photographed: a Thai birth certificate (ท.ร.1 ตอน 2), an
 extract certified by the district registrar, and its English translation by
 a translation agency in Thailand. Neither is legalized.
+
+estonia-real.pdf is a real file, photographed, shared by the app's owner: an
+Estonian birth certificate (certified extract), issued in English by the
+Tallinn Vital Statistics Office on 24.08.2026, and a notary's apostille
+(3.09.2026) bound to it, lying over it on the first page. The same person as foreignCivilStatus's Estonian
+extract.

@@ -39,7 +39,7 @@
           "carries the certification"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "certifies the original document it's for"
         ]
       }
@@ -105,7 +105,7 @@
         ],
         "mayFlag": [
           "carries the certification",
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "Which translation it needs depends on the document's language"
         ]
       }
@@ -164,7 +164,7 @@
           "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "certifies the original document it's for"
         ]
       }
@@ -188,7 +188,7 @@
           "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "scanned straight and in color",
           "certifies the original document it's for"
         ],
@@ -218,7 +218,7 @@
           "Which translation it needs depends on the document's language"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "scanned straight and in color",
           "certifies the original document it's for"
         ],
@@ -227,6 +227,34 @@
         ],
         "mustSay": [
           "An English translation, certified together with the Thai certificate by Thailand's foreign ministry (and then the Israeli embassy)"
+        ]
+      }
+    },
+    {
+      "name": "Estonia: real file, birth certificate issued in English, with its apostille (today 2026-11-16)",
+      "scenario": "commonLawLivingTogether",
+      "today": "2026-11-16",
+      "foreign": {
+        "name": "Anne-Mai Heinala",
+        "gender": "female",
+        "nationality": "EE",
+        "birthCountry": "EE"
+      },
+      "files": [
+        "estonia-real.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "scanned straight and in color"
+        ],
+        "mustNotSay": [
+          "The certificate is a translation, or needs a translation made in Estonia with an apostille of its own",
+          "The apostille doesn't certify the certificate, or the certificate needs another apostille",
+          "Reorder the pages so the document comes before its apostille, or merge the files into one"
         ]
       }
     }

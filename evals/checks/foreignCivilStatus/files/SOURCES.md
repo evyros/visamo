@@ -26,3 +26,9 @@ since the move and of no children.
 
 The made-up documents are dated August–September 2026, within 6 months of
 the cases' fixed date (2026-10-01). The real file's are older, as they are.
+
+estonia-real-extract.pdf is a real file, shared by the app's owner: photos of
+an extract from the Estonian population register, issued in English by the
+Tallinn Vital Statistics Office on 24.08.2026, and a notary's apostille
+(3.09.2026) bound to it, lying over its first page. The same person as
+foreignPoliceCertificate's estonia-real.pdf.

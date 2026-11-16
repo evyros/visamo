@@ -71,11 +71,15 @@ const INCOME_PAGES = 30;
  * check reads: the line points to it rather than copying it. Any language not on it has none.
  */
 const TRANSLATION_REQUIRED =
-  "If it isn't in Hebrew, Arabic or English, a translation is uploaded with it, it matches the original, and it translates the document's apostille or legalization too, unless that's in English or includes English. Which translation it needs depends on the document's language, by the knowledge's list of the languages notaries in Israel translate (\"Which languages notaries in Israel translate\"). A language on that list: a notarized translation (תרגום נוטריוני) into Hebrew, made by a notary in Israel, which needs no apostille of its own; a translation made abroad is an issue, even by a notary and with its own apostille. Any other language: no notary in Israel translates it, so the translation is made abroad, into English, by a notary or a certified or sworn translator, and carries its own apostille or, from a country outside the Apostille Convention, its own consular legalization. The apostille or legalization on the original document doesn't cover the translation, even in the same file: one on the document only isn't enough. If a translation made abroad has none of its own, say that in the finding: the document's apostille is there, but it certifies only the original, so the translation needs a second one. For such a language, never suggest a translation by a notary in Israel, not even as one option: there's none who can make it. Anything else is an issue: a translation by a translator or a translation agency in Israel, or one a notary only approved; a translation made abroad without its own apostille or legalization, or into any language but English. From Thailand, the foreign ministry's English translation, certified together with the document in its legalization, counts as an English document. An English document needs no translation: offices accept English in practice, and ask for one if they don't.";
+  "If it isn't in Hebrew, Arabic or English, a translation is uploaded with it, it matches the original, and it translates the document's apostille or legalization too, unless that's in English or includes English. Which translation it needs depends on the document's language, by the knowledge's list of the languages notaries in Israel translate (\"Which languages notaries in Israel translate\"). A language on that list: a notarized translation (תרגום נוטריוני) into Hebrew, made by a notary in Israel, which needs no apostille of its own; a translation made abroad is an issue, even by a notary and with its own apostille. Any other language: no notary in Israel translates it, so the translation is made abroad, into English, by a notary or a certified or sworn translator, and carries its own apostille or, from a country outside the Apostille Convention, its own consular legalization. The apostille or legalization on the original document doesn't cover the translation, even in the same file: one on the document only isn't enough. If a translation made abroad has none of its own, say that in the finding: the document's apostille is there, but it certifies only the original, so the translation needs a second one. A translation's missing certification is a finding of this line, of its own, even when the document's certification is missing too. For such a language, never suggest a translation by a notary in Israel, not even as one option: there's none who can make it. Anything else is an issue: a translation by a translator or a translation agency in Israel, or one a notary only approved; a translation made abroad without its own apostille or legalization, or into any language but English. From Thailand, the foreign ministry's English translation, certified together with the document in its legalization, counts as an English document. An English document needs no translation: offices accept English in practice, and ask for one if they don't.";
 
 /** What an apostille or legalization certifies (lib/knowledge/certification.md, "What's certified"). */
 const CERTIFIES_ORIGINAL =
   "Each apostille or legalization certifies the original document it's for, as issued in its own language: it's attached to that document, and certifies the signature of the official or office that issued it. One that certifies only a translation of the document, or a notary's copy of it, isn't enough: the original needs its own. An apostille on a translation made abroad is fine as well, as long as the document has its own.";
+
+/** Where the apostille sits doesn't matter, only that it's with its document (lib/knowledge/certification.md, "Keep them together"). */
+const CERTIFICATION_WITH_DOCUMENT =
+  "Each apostille or legalization is uploaded with the document it certifies, so it's clear which document each one is for. Whether it comes before or after the document, on top of it or on its back, and whether it's in the same file or a separate photo, doesn't matter: never suggest reordering the pages or merging files.";
 
 /** Passport photos, the same for both partners. */
 const passportPhoto: DocumentCheck = {
@@ -149,7 +153,7 @@ function civilStatusCheck(points: readonly Point[]): DocumentCheck {
       TRANSLATION_REQUIRED,
     ],
     recommended: [
-      "The apostille or legalization pages are scanned together with each document, in order.",
+      CERTIFICATION_WITH_DOCUMENT,
       "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service. The Philippine CENOMAR is the exception: for Israel it's issued only as a file, with the DFA's electronic apostille.",
     ],
   };
@@ -389,7 +393,7 @@ export const checks = {
       TRANSLATION_REQUIRED,
     ],
     recommended: [
-      "The apostille or legalization pages are scanned together with the certificate, in order.",
+      CERTIFICATION_WITH_DOCUMENT,
       "Every side or page with print or a stamp on it is included, not only the front. Recommend it only when the files show there's more: a page number, a cut-off seal or text, or a reference to the back.",
       "It is scanned straight and in color, readable in full, with nothing cut off at the edges.",
     ],
@@ -421,7 +425,7 @@ export const checks = {
       TRANSLATION_REQUIRED,
     ],
     recommended: [
-      "The apostille or legalization pages are scanned together with the certificate, in order.",
+      CERTIFICATION_WITH_DOCUMENT,
       "It is readable in full, with the issuing authority's seal or signature visible.",
     ],
   },
@@ -503,7 +507,7 @@ export const checks = {
     ],
     recommended: [
       "Every page of the decree is included, not only the first and the last.",
-      "The apostille or legalization pages are scanned together with the decree, in order.",
+      CERTIFICATION_WITH_DOCUMENT,
       "It is scanned straight and in color, readable in full, with the court's seal or the clerk's signature visible.",
     ],
   },

@@ -23,7 +23,7 @@
         ],
         "mayFlag": [
           "paper original issued for use abroad",
-          "apostille or legalization pages are scanned"
+          "uploaded with the document it certifies"
         ]
       }
     },
@@ -57,7 +57,7 @@
           "civil status now, from the country this item is for, issued in the last 6 months. It may show them as married"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "paper original issued for use abroad",
           "certifies the original document it's for"
         ]
@@ -119,7 +119,7 @@
           "carries the certification"
         ],
         "mayFlag": [
-          "apostille or legalization pages are scanned",
+          "uploaded with the document it certifies",
           "paper original issued for use abroad",
           "certifies the original document it's for"
         ]
@@ -185,7 +185,7 @@
         ],
         "mayFlag": [
           "paper original issued for use abroad",
-          "apostille or legalization pages are scanned"
+          "uploaded with the document it certifies"
         ]
       }
     },
@@ -209,7 +209,35 @@
         "mayFlag": [
           "shows they're single",
           "paper original issued for use abroad",
-          "apostille or legalization pages are scanned"
+          "uploaded with the document it certifies"
+        ]
+      }
+    },
+    {
+      "name": "Estonia: real file, population register extract issued in English, with its apostille (today 2026-11-16, issued 3 months before)",
+      "scenario": "commonLawLivingTogether",
+      "today": "2026-11-16",
+      "foreign": {
+        "name": "Anne-Mai Heinala",
+        "gender": "female",
+        "nationality": "EE",
+        "birthCountry": "EE"
+      },
+      "files": [
+        "estonia-real-extract.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "paper original issued for use abroad"
+        ],
+        "mustNotSay": [
+          "The extract is a translation, or needs a translation made in Estonia with an apostille of its own",
+          "The apostille doesn't certify the extract, or the extract needs another apostille",
+          "Reorder the pages so the document comes before its apostille, or merge the files into one"
         ]
       }
     }

@@ -298,7 +298,10 @@ comes from the regional prosecutor's office (Procuradoria-Geral Regional).
 
 A certificate of no criminal record (справка об отсутствии судимости), from
 the Ministry of Internal Affairs (МВД), or through Gosuslugi. Order it on
-paper with the apostille: an electronic certificate can't get one.
+paper with the apostille, an option on the same application: an electronic
+certificate can't get one. It takes up to 30 days, and the apostille up to 5
+working days more. Only the МВД information centre that issued it (ИЦ МВД),
+or the central one in Moscow (ГИАЦ МВД), puts the apostille.
 
 ### Singapore
 

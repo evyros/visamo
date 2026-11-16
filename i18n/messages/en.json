@@ -2385,9 +2385,10 @@
             "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. The usual one is in Portuguese; a multilingual one (certidão em modelo internacional) also exists, on paper only, asked for in person or by post."
           },
           "RU": {
-            "office": "the civil registry office (ЗАГС) of the place of birth",
-            "details": "Many people with an old Soviet certificate get a new copy (повторное свидетельство) from the civil registry office of the place of birth.",
-            "apostilleBy": "the regional registry archive"
+            "office": "any civil registry office (ЗАГС)",
+            "details": "Many people with an old Soviet certificate get a new copy (повторное свидетельство). Any registry office in Russia issues it, not only the one of the place of birth: in person, usually the same day. It can also be ordered through Gosuslugi, and is picked up on paper.",
+            "apostilleBy": "the civil registry authority (управление ЗАГС) of the region where it was issued",
+            "apostilleDetails": "Not a city or district registry office: only the region's authority puts it. A new copy issued in Moscow gets its apostille in Moscow, whatever the place of birth."
           },
           "SE": {
             "office": "the Tax Agency (Skatteverket)",
@@ -2589,8 +2590,9 @@
           },
           "RU": {
             "office": "any civil registry office (ЗАГС)",
-            "details": "A certificate of no registered marriage (справка об отсутствии факта государственной регистрации заключения брака, form 15). It's also available through Gosuslugi, or at a Russian consulate. In person at the registry office, it's usually issued the same day.",
-            "apostilleBy": "the civil registry office (ЗАГС)"
+            "details": "A certificate of no registered marriage (справка об отсутствии факта государственной регистрации заключения брака, form 15). In person at a registry office, it's usually issued the same day. It can also be ordered through Gosuslugi and picked up on paper, or requested from abroad through a Russian consulate, which orders it from Russia and takes longer. For someone who was married before, it covers only the time they weren't married.",
+            "apostilleBy": "the civil registry authority (управление ЗАГС) of the region where it was issued",
+            "apostilleDetails": "Not a city or district registry office: only the region's authority puts it."
           },
           "SE": {
             "office": "the Tax Agency (Skatteverket)",
@@ -2803,7 +2805,8 @@
           "RU": {
             "office": "Russia's Ministry of Internal Affairs (МВД)",
             "details": "A certificate of no criminal record (справка об отсутствии судимости), from the ministry or through Gosuslugi. Order it on paper: an electronic certificate can't get an apostille.",
-            "apostilleDetails": "Order it together with the paper certificate."
+            "apostilleBy": "the МВД information centre that issued it (ИЦ МВД)",
+            "apostilleDetails": "Order it together with the paper certificate: it's an option on the same application. It adds up to 5 working days. The central centre in Moscow (ГИАЦ МВД) can put it too."
           },
           "SE": {
             "office": "the Swedish Police (Polisen)",

@@ -193,8 +193,16 @@ internacional) also exists, on paper only, asked for in person or by post.
 ### Russia
 
 Many people with an old Soviet certificate get a new copy (повторное
-свидетельство) from the civil registry office (ЗАГС) of the place of birth,
-with its apostille from the regional registry archive.
+свидетельство). Any civil registry office (ЗАГС) in Russia issues it, not
+only the one of the place of birth: in person, usually the same day. Only an
+old record that isn't in the unified register yet has to be asked for where
+it's kept. It can also be ordered through Gosuslugi, and is picked up on
+paper.
+
+The apostille is put by the civil registry authority (управление ЗАГС) of
+the region where the certificate was issued, not by a city or district
+office. A new copy issued in Moscow gets its apostille in Moscow, whatever
+the place of birth.
 
 ### South Africa
 
@@ -337,8 +345,8 @@ Not if it's the original and it was issued up to 1998 (§ד.2.ה). A
 certificate issued after 1998, including a new copy of an old record, needs
 the certification like any other document from abroad. Many people with an
 old Soviet certificate (the green booklet) get a new copy (повторное
-свидетельство) from the civil registry office (ЗАГС) of the place of birth
-anyway, with its apostille: then it's certified like any other document.
+свидетельство) from a civil registry office (ЗАГС) anyway, with its
+apostille: then it's certified like any other document.
 
 **My partner's birth certificate is in English. Do we need to translate it?**
 By law, yes: only Hebrew and Arabic are accepted without a translation. In

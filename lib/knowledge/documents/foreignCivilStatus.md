@@ -347,10 +347,19 @@ the regional prosecutor's office (Procuradoria-Geral Regional).
 ### Russia
 
 A certificate of no registered marriage (справка об отсутствии факта
-государственной регистрации заключения брака, form 15), from any civil
-registry office (ЗАГС) in Russia, through Gosuslugi, or at a Russian
-consulate. At the registry office in person, it's usually issued the same
-day. The apostille is put on it at the civil registry office.
+государственной регистрации заключения брака, form 15). Any civil registry
+office (ЗАГС) in Russia issues it: in person, usually the same day. It can
+also be ordered through Gosuslugi, and is picked up on paper at the registry
+office. From abroad, a Russian consulate can request it from a registry
+office in Russia, which takes longer.
+
+For someone who was married before, it covers only the time they weren't
+married: the past marriage's end is shown by the divorce certificate, or the
+spouse's death certificate.
+
+The apostille is put by the civil registry authority (управление ЗАГС) of
+the region where the certificate was issued, not by a city or district
+office.
 
 ### Singapore
 

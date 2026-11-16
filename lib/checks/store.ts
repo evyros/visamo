@@ -1,5 +1,5 @@
 import "server-only";
-import { and, desc, eq, inArray, isNotNull, isNull, lt, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, isNotNull, isNull, lt, or, sql } from "drizzle-orm";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { callTotals, type Completion } from "@/lib/chat/openrouter";
 import { db } from "@/lib/db";
@@ -7,14 +7,16 @@ import { casePerson, cases, documentCheck, findingDismissal, user } from "@/lib/
 import { checkFor, type DocumentCheck } from "@/lib/documents/checks";
 import { caseCreditTotals } from "@/lib/credits";
 import { recordEvent } from "@/lib/events";
+import { sameSet } from "@/lib/same-set";
 import { activeResult, type ActiveResult, type DismissReason, type FindingKind } from "./dismissals";
 import { detailsHash } from "./prompt";
 import type { CheckFinding, CheckResult } from "./result";
 
 // Document checks in the database: every run of every item's check (the
-// latest finished one is the item's result), the findings the couple
-// dismissed from it (lib/checks/dismissals.ts), and the case's balance, which
-// lib/credits.ts spends and refunds.
+// latest finished one the couple sees is the item's result), the findings the
+// couple dismissed from it (lib/checks/dismissals.ts), and the case's balance,
+// which lib/credits.ts spends and refunds. A free check the admin runs
+// (lib/checks/free.ts) is the couple's only once approved.
 
 /**
  * A check running longer than this was cut off (the route's maxDuration is
@@ -22,6 +24,11 @@ import type { CheckFinding, CheckResult } from "./result";
  * enough to leave to support.
  */
 const RUNNING_EXPIRES_SECONDS = 330;
+
+/** Whether a run marked running, started then, still is: past its time, it was cut off. */
+export function stillRunning(startedAt: Date) {
+  return startedAt.getTime() > Date.now() - RUNNING_EXPIRES_SECONDS * 1000;
+}
 
 /** Whether the case bought Full file check, the checks it has left, and how many it was granted and used (lib/credits.ts). */
 export async function checkBalance(caseId: string) {
@@ -48,7 +55,28 @@ export type CheckRun = {
   knowledgeVersion: number;
   /** An admin's rerun of the item's latest run (lib/checks/rerun.ts). */
   rerun?: boolean;
+  /** A free check the admin runs starts pending (lib/checks/free.ts); a rerun keeps its run's. Null for the couple's own. */
+  approval?: Approval | null;
 };
+
+/** Where a free check the admin ran stands (lib/checks/free.ts). */
+export type Approval = "pending" | "approved" | "discarded";
+
+/** The runs the couple sees: their own, and the admin's once approved. */
+export const visibleToCouple = or(isNull(documentCheck.approval), eq(documentCheck.approval, "approved"));
+
+/**
+ * Whether the couple sees only the rating of a result: a free check the
+ * admin approved, for a document other than the one shown in full, while
+ * the case hasn't bought Full file check.
+ */
+export function isLocked(
+  approval: Approval | null,
+  documentKey: string,
+  row: { fileCheck: boolean; freeFullKey: string | null },
+) {
+  return approval === "approved" && !row.fileCheck && row.freeFullKey !== documentKey;
+}
 
 /** What a run took, recorded when it ends; a failed run has what it got to. */
 export type CheckMetrics = {
@@ -103,6 +131,7 @@ export async function claimCheck(run: CheckRun) {
         rulesVersion: run.rulesVersion,
         knowledgeVersion: run.knowledgeVersion,
         rerunAt: run.rerun ? new Date() : null,
+        approval: run.approval ?? null,
       })
       .onConflictDoNothing()
       .returning({ id: documentCheck.id }),
@@ -118,20 +147,28 @@ export async function failCheck(id: string, error: string, metrics: CheckMetrics
     .where(and(eq(documentCheck.id, id), eq(documentCheck.state, "running")));
 }
 
-/** Ends a run with its result, and its event. */
+/**
+ * Ends a run with its result, and its event. A free check the admin ran
+ * (pending) gets its event when it's approved, once the couple sees it.
+ */
 export async function saveCheck(id: string, run: CheckRun, result: CheckResult, metrics: CheckMetrics) {
+  const done = db
+    .update(documentCheck)
+    .set({
+      state: "done",
+      rating: result.rating,
+      issues: result.issues,
+      recommendations: result.recommendations,
+      finishedAt: new Date(),
+      ...metricColumns(metrics),
+    })
+    .where(eq(documentCheck.id, id));
+  if (run.approval === "pending") {
+    await done;
+    return;
+  }
   await db.batch([
-    db
-      .update(documentCheck)
-      .set({
-        state: "done",
-        rating: result.rating,
-        issues: result.issues,
-        recommendations: result.recommendations,
-        finishedAt: new Date(),
-        ...metricColumns(metrics),
-      })
-      .where(eq(documentCheck.id, id)),
+    done,
     recordEvent(run.caseId, run.userId, {
       type: "document.checked",
       data: { documentKey: run.documentKey, rating: result.rating },
@@ -141,12 +178,12 @@ export async function saveCheck(id: string, run: CheckRun, result: CheckResult, 
 
 /**
  * Ends an admin's rerun with its result, in the place of the run it reran:
- * it takes that run's who and when, and that run is marked replaced. No
- * event: to the couple, it's the same check.
+ * it takes that run's who and when (and a free check's approval), and that
+ * run is marked replaced. No event: to the couple, it's the same check.
  */
 export async function saveRerun(
   id: string,
-  replaced: { id: string; startedAt: Date; finishedAt: Date | null },
+  replaced: { id: string; startedAt: Date; finishedAt: Date | null; approvedAt: Date | null; emailedAt: Date | null },
   result: CheckResult,
   metrics: CheckMetrics,
 ) {
@@ -160,15 +197,15 @@ export async function saveRerun(
         recommendations: result.recommendations,
         startedAt: replaced.startedAt,
         finishedAt: replaced.finishedAt,
+        // A free check's approval and email stay its: the couple isn't emailed again.
+        approvedAt: replaced.approvedAt,
+        emailedAt: replaced.emailedAt,
         ...metricColumns(metrics),
       })
       .where(eq(documentCheck.id, id)),
     db.update(documentCheck).set({ replacedBy: id }).where(eq(documentCheck.id, replaced.id)),
   ]);
 }
-
-const sameSet = (a: readonly string[], b: readonly string[]) =>
-  a.length === b.length && [...a].sort().every((id, i) => id === [...b].sort()[i]);
 
 /**
  * A finding the couple dismissed, as the app shows it: who and why, never
@@ -187,6 +224,14 @@ export type DismissedFinding = {
 
 /** An item's check, as the page and the chat see it. */
 export type ItemCheck = {
+  /** The result is a free check the admin approved (lib/checks/free.ts). */
+  free: boolean;
+  /**
+   * The couple sees only the result's rating, and how many findings it has
+   * (isLocked). Then the result's findings are left out, unless asked for
+   * the admin.
+   */
+  locked: { issues: number; recommendations: number } | null;
   /** Whether the document has a check written (lib/documents/checks.ts). */
   checkable: boolean;
   running: boolean;
@@ -206,9 +251,12 @@ export type ItemCheck = {
   checkedByName: string | null;
 };
 
-/** Every list item's check, by item key. */
-export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>> {
-  const [{ details, branch }, files, rows] = await Promise.all([
+/**
+ * Every list item's check, by item key. A locked result comes without its
+ * findings: only the admin panel asks for them (`admin`).
+ */
+export async function caseChecks(caseId: string, { admin = false } = {}): Promise<Map<string, ItemCheck>> {
+  const [{ row: caseRow, details, branch }, files, rows] = await Promise.all([
     caseDetails(caseId),
     caseFiles(caseId),
     // Newest first, so an item's first finished run is its result. Failed and replaced runs are history only.
@@ -222,6 +270,7 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
           eq(documentCheck.caseId, caseId),
           inArray(documentCheck.state, ["done", "running"]),
           isNull(documentCheck.replacedBy),
+          visibleToCouple,
         ),
       )
       .orderBy(desc(documentCheck.startedAt)),
@@ -237,15 +286,28 @@ export async function caseChecks(caseId: string): Promise<Map<string, ItemCheck>
     const check = checkFor(item.key, item.points);
     const row = found?.check;
     const gone = (row && dismissed.get(row.id)) || [];
-    const result = row?.rating
-      ? activeResult({ rating: row.rating, issues: row.issues ?? [], recommendations: row.recommendations ?? [] }, gone)
+    // What the admin hid before approving is out too, but never listed as dismissed: to the couple it doesn't exist.
+    const active = row?.rating
+      ? activeResult(
+          { rating: row.rating, issues: row.issues ?? [], recommendations: row.recommendations ?? [] },
+          [...(row.hidden ?? []), ...gone],
+        )
       : null;
+    // What couldn't be read says only that, and why: never locked.
+    const locked =
+      active && row && active.rating !== "unreadable" && isLocked(row.approval, item.key, caseRow)
+        ? { issues: active.issues.length, recommendations: active.recommendations.length }
+        : null;
+    // What the couple can't see never leaves here: not to the page, and not to the chat.
+    const result = active && locked && !admin ? { ...active, issues: [], recommendations: [] } : active;
     const fileIds = row?.fileIds ?? [];
     const current = files.filter((f) => f.documentKey === item.key).map((f) => f.id);
     // A result stays while its files and the couple's details do. A change to the checks or their
     // texts never retires one: a new check uses them. A run from before the details were kept stays.
     const detailsFresh = !!check && (!row?.detailsHash || row.detailsHash === detailsHash(details, branch));
     checks.set(item.key, {
+      free: row?.approval === "approved",
+      locked,
       checkable: !!check,
       // An admin's rerun isn't shown running: the couple sees the result it replaces until it's done.
       running: mine.some(
@@ -292,7 +354,7 @@ async function dismissedFrom(checkIds: string[]) {
 }
 
 /**
- * The latest finished run of an item: the one its result is, and whose
+ * The latest finished run of an item that the couple sees: the one its result is, and whose
  * findings can be dismissed. With `before`, the one before that time: what
  * was the result then.
  */
@@ -307,6 +369,10 @@ export async function latestRun(caseId: string, documentKey: string, before?: Da
       checkedBy: documentCheck.checkedBy,
       startedAt: documentCheck.startedAt,
       finishedAt: documentCheck.finishedAt,
+      approval: documentCheck.approval,
+      approvedAt: documentCheck.approvedAt,
+      emailedAt: documentCheck.emailedAt,
+      hidden: documentCheck.hidden,
     })
     .from(documentCheck)
     .where(
@@ -316,6 +382,7 @@ export async function latestRun(caseId: string, documentKey: string, before?: Da
         eq(documentCheck.state, "done"),
         isNotNull(documentCheck.rating),
         isNull(documentCheck.replacedBy),
+        visibleToCouple,
         before && lt(documentCheck.startedAt, before),
       ),
     )
@@ -327,15 +394,21 @@ export async function latestRun(caseId: string, documentKey: string, before?: Da
 /**
  * Dismisses one finding of an item's latest result, with the couple's reason,
  * and its event. False when there's no such finding to dismiss: an older run's,
- * one already dismissed, or a result that couldn't be read.
+ * one already dismissed, a result that couldn't be read, or a locked one.
  */
 export async function dismissFinding(
   caseId: string,
   userId: string,
   input: { documentKey: string; checkId: string; kind: FindingKind; index: number; reason: DismissReason; note: string | null },
 ) {
-  const run = await latestRun(caseId, input.documentKey);
+  const [run, [caseRow]] = await Promise.all([
+    latestRun(caseId, input.documentKey),
+    db.select({ fileCheck: cases.fileCheck, freeFullKey: cases.freeFullKey }).from(cases).where(eq(cases.id, caseId)),
+  ]);
   if (!run || run.id !== input.checkId || run.rating === "unreadable") return false;
+  // A locked result's findings aren't shown, so none can be dismissed; nor one the admin hid.
+  if (!caseRow || isLocked(run.approval, input.documentKey, caseRow)) return false;
+  if (run.hidden?.some((h) => h.kind === input.kind && h.index === input.index)) return false;
   const finding = (input.kind === "issue" ? run.issues : run.recommendations)?.[input.index];
   if (!finding) return false;
   const [inserted] = await db.batch([

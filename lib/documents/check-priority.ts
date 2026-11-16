@@ -5,7 +5,8 @@ import type { DocumentId } from "./catalog";
 // translation, a recent issue date, names that have to match), then the
 // forms and affidavits, then what the couple gathers themselves, and last the
 // IDs and photos, which rarely go wrong. The overview recommends where to
-// spend the free check from this order.
+// spend the free check from this order, and the admin's "To check" list
+// where to start checking a case (lib/checks/free.ts).
 //
 // Every document with a check written (checks.ts) is here, and only those:
 // checks.test.ts fails otherwise.

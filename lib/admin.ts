@@ -41,8 +41,8 @@ function secret() {
   return value;
 }
 
-/** The one email that can sign in, or null when unset (then nobody can). */
-function adminEmail() {
+/** The one email that can sign in, or null when unset (then nobody can). Also where notices to the admin go (lib/admin-notices.ts). */
+export function adminEmail() {
   return process.env.ADMIN_EMAIL?.trim().toLowerCase() || null;
 }
 

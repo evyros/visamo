@@ -6,32 +6,36 @@ import { DISMISS_MAX_AGE, FREE_CHECK_DISMISSED_COOKIE } from "@/lib/device-flags
 import { Icon } from "@/components/icons";
 
 /**
- * Tells a couple without Full file check that their free check is still there,
- * and where to start: the uploaded document most likely to need fixing,
- * linking to its card. Shown in the invite banner's place, when that one
- * isn't. Dismissing it is remembered on this device (a cookie the overview
- * reads), not on the account.
+ * Tells a couple without Full file check about their free check. While it's
+ * left, where to start: the uploaded document most likely to need fixing,
+ * linking to its card. Once the admin's first approved result is shown in
+ * full (lib/checks/free.ts), a link to it. Shown in the invite banner's
+ * place, when that one isn't. Dismissing it is remembered on this device (a
+ * cookie the overview reads), not on the account, for this `state` only: a
+ * result that's ready still shows.
  */
 export function FreeCheckBanner({
+  state,
   title,
   body,
-  startWith,
-  recommended,
+  linkLabel,
+  link,
   dismiss,
 }: {
+  state: "waiting" | "ready";
   title: string;
   body: string;
-  /** The line above the recommended document. */
-  startWith: string;
-  /** The document to check first; none before anything's uploaded, and then the recommendation isn't shown. */
-  recommended: { title: string; href: string } | null;
+  /** The line above the link: "I recommend starting with:"; none for a result that's ready. */
+  linkLabel: string | null;
+  /** The document to check first, or whose result is ready; none before anything's uploaded. */
+  link: { title: string; href: string } | null;
   dismiss: string;
 }) {
   const [shown, setShown] = useState(true);
   if (!shown) return null;
 
   function onDismiss() {
-    document.cookie = `${FREE_CHECK_DISMISSED_COOKIE}=1; path=/; max-age=${DISMISS_MAX_AGE}; samesite=lax`;
+    document.cookie = `${FREE_CHECK_DISMISSED_COOKIE}=${state}; path=/; max-age=${DISMISS_MAX_AGE}; samesite=lax`;
     setShown(false);
   }
 
@@ -43,18 +47,18 @@ export function FreeCheckBanner({
       <h2 className="pe-8 font-semibold text-navy-900 sm:pe-0">{title}</h2>
       <div className="col-span-2 sm:col-span-1 sm:col-start-2">
         <p className="text-[15px] text-slate-700">{body}</p>
-        {recommended && (
+        {link && (
           <>
-            <p className="mt-3 text-[15px] font-semibold text-navy-900">{startWith}</p>
+            {linkLabel && <p className="mt-3 text-[15px] font-semibold text-navy-900">{linkLabel}</p>}
             <Link
-              href={recommended.href}
+              href={link.href}
               className="mt-2 inline-flex min-h-10 items-start gap-2 rounded-[10px] border border-blue-300 bg-white px-4 py-2 text-start text-[15px] font-semibold text-navy-800 transition-colors hover:border-navy-800 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
             >
               {/* On the title's first line, when a long title wraps. */}
               <span aria-hidden="true" className="flex h-[1lh] shrink-0 items-center">
                 <Icon name="file" className="size-4" />
               </span>
-              <span>{recommended.title}</span>
+              <span>{link.title}</span>
             </Link>
           </>
         )}

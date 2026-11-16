@@ -26,6 +26,8 @@ const columns = {
   fileCheck: cases.fileCheck,
   messagesLeft: cases.messagesLeft,
   checksLeft: cases.checksLeft,
+  /** The document the free check shows in full (lib/checks/free.ts). */
+  freeFullKey: cases.freeFullKey,
 };
 
 /** What a case's model calls cost, in USD: its checks (failed ones too, they cost as much) and its chat answers. */

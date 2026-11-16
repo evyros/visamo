@@ -12,7 +12,7 @@ import type { Owner } from "@/lib/documents/catalog";
 import { ownerOrder } from "@/lib/documents/progress";
 import { documentTitle } from "@/lib/documents/titles";
 import { BalanceFigure, PageHeading, purchasesLabel, Stat } from "@/components/admin/admin-ui";
-import { DocumentCard, historyHref } from "@/components/admin/document-card";
+import { DocumentCard, historyHref, type FreeCheck } from "@/components/admin/document-card";
 import { OpenLinkedCard } from "@/components/admin/open-linked-card";
 import { historyEntries } from "@/components/admin/document-history";
 
@@ -21,8 +21,13 @@ export async function generateMetadata({ params }: PageProps<"/admin/users/[id]/
   return { title: user ? `${user.name}: documents` : "Documents" };
 }
 
+// For the free check's action (./actions.ts): a check can take minutes, as in app/api/documents/check.
+export const maxDuration = 300;
+
 // The user's case's document list, as the couple sees it, plus what they
-// don't: removed files, failed checks, and what each check cost.
+// don't: removed files, failed checks, what each check cost, and, for a case
+// without Full file check, the free check (lib/checks/free.ts): checking a
+// document and approving its result for the couple.
 export default async function AdminUserDocumentsPage({ params }: PageProps<"/admin/users/[id]/documents">) {
   await requireAdmin();
   const user = await findUser((await params).id);
@@ -44,7 +49,8 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
     allCaseFiles(caseId),
     allCaseChecks(caseId),
     caseListChanges(caseId),
-    caseChecks(caseId),
+    // With the findings of results the couple sees locked.
+    caseChecks(caseId, { admin: true }),
     caseMembers(caseId),
     loadMessages("en"),
   ]);
@@ -61,6 +67,16 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
 
   const filesOf = (key: string) => files.filter((f) => f.documentKey === key);
   const runsOf = (key: string) => runs.filter((r) => r.documentKey === key);
+  // The free check, without Full file check: the document's runs the admin started.
+  const freeOf = (key: string): FreeCheck | undefined =>
+    user.fileCheck
+      ? undefined
+      : {
+          userId: user.id,
+          fullKey: user.freeFullKey ?? null,
+          checksLeft: user.checksLeft ?? 0,
+          runs: runsOf(key).filter((r) => r.approval),
+        };
   /** Entries on the document's history page. */
   const historyOf = (key: string) => historyEntries(filesOf(key), runsOf(key), listChangesFor(changes, key)).length;
 
@@ -136,6 +152,7 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
                     historyHref={historyHref(user.id, d.key)}
                     check={current.get(d.key)}
                     ratings={ratings}
+                    free={freeOf(d.key)}
                   />
                 );
               })}

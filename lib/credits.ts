@@ -29,9 +29,10 @@ const columnName = { messages: "messages_left", checks: "checks_left" } as const
 /**
  * Spends one, when there's one left: the balance and its entry change in one
  * statement, so two tabs can't both spend the last one, and a refused spend
- * leaves no entry. The balance left, or null when there was none.
+ * leaves no entry. The balance left, or null when there was none. `userId`
+ * is null for the admin's free check, which uses the couple's (lib/checks/free.ts).
  */
-export async function spend(caseId: string, kind: CreditKind, userId: string, refId: string) {
+export async function spend(caseId: string, kind: CreditKind, userId: string | null, refId: string) {
   return spendWith(caseId, kind, userId, refId, []);
 }
 
@@ -60,7 +61,7 @@ export async function spendOnMessage(
  * so they happen only when the spend did. A data-modifying WITH runs whether
  * or not the final select reads it, and one statement is one transaction.
  */
-async function spendWith(caseId: string, kind: CreditKind, userId: string, refId: string, writes: SQL[]) {
+async function spendWith(caseId: string, kind: CreditKind, userId: string | null, refId: string, writes: SQL[]) {
   const left = sql.raw(`"${columnName[kind]}"`);
   const more = writes.map((write, i) => sql`, ${sql.raw(`write${i}`)} as (${write})`);
   const { rows } = await db.execute<{ balance: number }>(sql`

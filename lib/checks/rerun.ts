@@ -59,6 +59,8 @@ export async function rerunCheck(caseId: string, documentKey: string, checkId: s
     rulesVersion: RULES_VERSION,
     knowledgeVersion: KNOWLEDGE_VERSION,
     rerun: true,
+    // An approved free check stays approved (lib/checks/free.ts).
+    approval: replaced.approval,
   });
   if (!runId) return "A check of this document is running. Try again when it ends.";
 

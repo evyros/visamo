@@ -10,6 +10,7 @@ import { formatAgo } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
 import { buyUrl } from "@/lib/buy-paths";
+import { sameSet } from "@/lib/same-set";
 import { newTab } from "@/lib/site";
 import { dismissReasons, MAX_DISMISS_NOTE, type DismissReason, type FindingKind } from "@/lib/checks/dismissals";
 import type { CheckRating } from "@/lib/checks/result";
@@ -41,8 +42,9 @@ import { LogoMark } from "@/components/logo";
 //
 // Uploaded isn't done: a document is ready only once a check passed it (looks
 // good, or tips only). Without Full file check, the progress counts uploads
-// (the one free check shows its result on its card); with it, the progress
-// counts ready documents.
+// (the free check shows its result on its card, and so do the ones the admin
+// approved, all but the case's first locked: lib/checks/free.ts); with it,
+// the progress counts ready documents.
 //
 // Each card lists what to do to its document before uploading it (the
 // apostille, the translation). It only explains: nothing there is tracked.
@@ -87,7 +89,7 @@ type StepItem = { kind: StepKind; label: string; text: string; details?: StepDet
 export type CheckSettings = {
   /** The case bought Full file check: every document can be checked. */
   bought: boolean;
-  /** The checks left. Without Full file check, its one free check, until it's used. */
+  /** The checks left. Without Full file check, its one free check, until it's used (or the admin's first approved result uses it). */
   left: number;
   /** Shown near the fair-use limit. */
   notice: string | null;
@@ -108,11 +110,6 @@ type FooterSettings = Pick<CheckSettings, "notice" | "supportUrl"> & { access: C
 
 /** `waiting`: this page started the check and waits on its answer, which brings the result. */
 type ItemCheck = { running: boolean; last: CheckView | null; error?: string; waiting?: boolean };
-
-const sameSet = (a: readonly string[], b: readonly string[]) => {
-  const sorted = [...b].sort();
-  return a.length === b.length && [...a].sort().every((id, i) => id === sorted[i]);
-};
 
 /** The result, while it was checked against these very files and the current details. */
 function freshResult(check: ItemCheck, files: readonly FileView[]) {
@@ -878,12 +875,21 @@ function CheckFooter({
   const plural = new Intl.PluralRules(locale);
   const count = (forms: { one: string; other: string }, n: number) =>
     n > 0 && format(plural.select(n) === "one" ? forms.one : forms.other, { count: n });
-  const counts = result && [count(c.counts.fix, result.issues.length), count(c.counts.tip, result.recommendations.length)];
+  // A locked result (lib/checks/free.ts) has no findings here, only how many there are.
+  // Its findings come with Full file check: placeholders stand in for them. One with none has nothing to hide.
+  const locked =
+    result?.locked && settings.access !== "bought" && result.locked.issues + result.locked.recommendations > 0
+      ? result.locked
+      : null;
+  const found = result && (locked ?? { issues: result.issues.length, recommendations: result.recommendations.length });
+  const counts = found && [count(c.counts.fix, found.issues), count(c.counts.tip, found.recommendations)];
   // Anything to list under the result. A result without it keeps the other states' row:
   // the result leads it, and the way to ask sits at its end.
   const listed =
     !!result &&
-    (result.issues.length + result.recommendations.length + result.dismissed.length > 0 || result.rating === "unreadable");
+    (!!locked ||
+      result.issues.length + result.recommendations.length + result.dismissed.length > 0 ||
+      result.rating === "unreadable");
   const inRow = !listed;
 
   let state: ReactNode = null;
@@ -897,6 +903,9 @@ function CheckFooter({
           <CheckIcon rating={result.rating} label={c.ratings[result.rating]} />
         </span>
         <span className="font-semibold text-navy-900">{c.ratings[result.rating]}</span>
+        {result.free && !locked && settings.access !== "bought" && (
+          <span className="self-center rounded-full bg-teal-100 px-2 py-0.5 text-xs font-semibold text-teal-700">{c.free}</span>
+        )}
         {counts?.some(Boolean) && (
           <span className="text-slate-700">· {counts.filter(Boolean).join(", ")}</span>
         )}
@@ -917,7 +926,7 @@ function CheckFooter({
       </span>
     );
   } else if (settings.access === "used") {
-    // The free check is used: the button leads to the buy page.
+    // The free check is used (by them, or by the admin's first approved result): the button leads to the buy page.
     state = c.freeUsed;
     action = (
       <Link href={buyUrl("/file/documents")} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
@@ -973,7 +982,15 @@ function CheckFooter({
         {inRow && result && <p className="basis-full text-xs text-slate-500 sm:mt-1">{c.disclaimer}</p>}
       </div>
 
-      {result && listed && (
+      {result && locked && (
+        <div className="mt-2.5">
+          <LockedFindings t={t} locked={locked} />
+          <div className="mt-3">
+            <AskLink documentKey={documentKey}>{t.ask.label}</AskLink>
+          </div>
+        </div>
+      )}
+      {result && listed && !locked && (
         <div aria-live="polite">
           {/* One gap between every box, across the issues and the tips. */}
           <div className="mt-2.5 space-y-1.5">
@@ -1026,6 +1043,64 @@ const findingStyle = {
   // What the checker couldn't read: the rating's grey, not an issue's red.
   unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500" },
 } as const;
+
+/**
+ * Filler for the locked placeholders: blurred, and never a real finding's
+ * text (the server doesn't send those). It wraps like real text: an issue's
+ * detail is about one and a half lines on a wide card, more on a phone, and
+ * always longer than a tip's.
+ */
+const LOCKED_ISSUE_DETAIL =
+  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.";
+const LOCKED_FILLER = [
+  { title: "Lorem ipsum dolor sit amet", detail: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+  { title: "Ut enim ad minim veniam", detail: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute." },
+  { title: "Duis aute irure dolor", detail: "In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint." },
+];
+
+/**
+ * A locked result's findings (lib/checks/free.ts): a box for each, red for
+ * an issue and blue for a tip, with blurred filler where its text would be,
+ * and over them the lock and the way to Full file check. The real findings
+ * never reach the page: only how many there are.
+ */
+function LockedFindings({ t, locked }: { t: Labels; locked: { issues: number; recommendations: number } }) {
+  const boxes = [
+    ...Array.from({ length: locked.issues }, () => "issue" as const),
+    ...Array.from({ length: locked.recommendations }, () => "tip" as const),
+  ];
+  return (
+    <div className="relative min-h-36 sm:min-h-0">
+      <ul aria-hidden="true" className="space-y-1.5 select-none">
+        {boxes.map((kind, i) => {
+          const style = findingStyle[kind];
+          const filler = LOCKED_FILLER[i % LOCKED_FILLER.length];
+          return (
+            <li key={i} className={`flex gap-2 rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
+              <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
+              <div dir="ltr" className="min-w-0 flex-1 blur-[5px]">
+                <p className="text-[15px] font-semibold text-navy-900">{filler.title}</p>
+                <p className="mt-0.5 text-sm text-slate-700">{kind === "issue" ? LOCKED_ISSUE_DETAIL : filler.detail}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-lg bg-white/40 p-3 text-center sm:flex-row sm:gap-4">
+        <span className="flex items-center gap-2 text-[15px] font-semibold text-navy-900">
+          <Icon name="lock" className="size-5 shrink-0" />
+          {t.check.locked}
+        </span>
+        <Link
+          href={buyUrl("/file/documents")}
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-navy-900 px-4 py-2 text-[15px] font-semibold text-white hover:bg-navy-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+        >
+          {t.check.upgrade}
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 /** Dismissing a finding of the item's latest check, or undoing it: true once done. */
 type Dismissals = {

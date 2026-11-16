@@ -3,6 +3,9 @@
   "functions": {
     "app/api/queues/welcome-email/route.ts": {
       "experimentalTriggers": [{ "type": "queue/v2beta", "topic": "welcome-email" }]
+    },
+    "app/api/queues/check-results-email/route.ts": {
+      "experimentalTriggers": [{ "type": "queue/v2beta", "topic": "check-results-email" }]
     }
   }
 }

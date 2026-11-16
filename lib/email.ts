@@ -150,6 +150,49 @@ export async function sendAdminLoginEmail({ to, url }: { to: string; url: string
 }
 
 /**
+ * The couple's check results the admin approved within an hour, rendered by
+ * lib/checks/results-email-html.ts. `idempotencyKey`: a retry after a send
+ * that went through isn't sent twice.
+ */
+export async function sendCheckResultsEmail({
+  to,
+  email,
+  idempotencyKey,
+}: {
+  to: string;
+  email: { subject: string; html: string; text: string };
+  idempotencyKey: string;
+}) {
+  if (!resend) {
+    console.info(`\n[email] ${email.subject} → ${to}\n\n${email.text}\n`);
+    return;
+  }
+  const { error } = await resend.emails.send({ from, to, ...email }, { idempotencyKey });
+  if (error) throw new Error(`Resend: ${error.message}`);
+}
+
+/**
+ * A note to the admin about something to do in the admin panel, with a link
+ * to it. Plain, in English, like a support ticket.
+ */
+export async function sendAdminNotice({ to, subject, lines, url }: { to: string; subject: string; lines: string[]; url: string }) {
+  const text = `${lines.join("\n")}\n\n${url}`;
+  if (!resend) {
+    console.info(`\n[email] ${subject} → ${to}\n${text}\n`);
+    return;
+  }
+  const html = `<!doctype html>
+<html>
+  <body style="margin:0;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#0f2a44;font-size:15px;line-height:1.6">
+    ${lines.map((line) => `<p style="margin:0 0 8px" dir="auto">${escape(line)}</p>`).join("\n    ")}
+    <p style="margin:16px 0 0"><a href="${escape(url)}" style="color:#2f7f76;font-weight:bold">${escape(url)}</a></p>
+  </body>
+</html>`;
+  const { error } = await resend.emails.send({ from, to, subject, html, text });
+  if (error) throw new Error(`Resend: ${error.message}`);
+}
+
+/**
  * A contact-form message (app/[lang]/contact/actions.ts), to the support
  * inbox. Replying goes to the sender. English only: it goes to the team. Not
  * stored anywhere else, so this email is the ticket.

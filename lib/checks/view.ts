@@ -43,6 +43,13 @@ export type CheckView = {
   fileIds: string[];
   /** False once the couple's details it was checked against changed. A change to the checks never retires it. */
   detailsFresh: boolean;
+  /** A free check the admin approved (lib/checks/free.ts). */
+  free: boolean;
+  /**
+   * Only the rating is shown, and how many findings there are: they come
+   * with Full file check. `issues` and `recommendations` are empty then.
+   */
+  locked: { issues: number; recommendations: number } | null;
 };
 
 export function checkView(
@@ -61,17 +68,23 @@ export function checkView(
     checkedByName: string | null;
     fileIds: string[];
     detailsFresh: boolean;
+    free: boolean;
+    locked: { issues: number; recommendations: number } | null;
   },
   locale: Locale,
 ): CheckView | null {
   if (!check.result || !check.checkedAt || !check.runId) return null;
+  // Never a locked result's findings, even if the check came with them.
+  const shown: { issues: IndexedFinding[]; recommendations: IndexedFinding[] } = check.locked
+    ? { issues: [], recommendations: [] }
+    : check.result;
   const text = (f: CheckFinding) => ({ ...findingText(f, locale), ...(f.part && { part: f.part }) });
   const view = (f: IndexedFinding): FindingView => ({ ...text(f), index: f.index });
   return {
     runId: check.runId,
     rating: check.result.rating,
-    issues: check.result.issues.map(view),
-    recommendations: check.result.recommendations.map(view),
+    issues: shown.issues.map(view),
+    recommendations: shown.recommendations.map(view),
     dismissed: check.dismissed.map((d) => ({
       ...text(d.finding),
       id: d.id,
@@ -84,5 +97,7 @@ export function checkView(
     checkedByName: check.checkedByName,
     fileIds: check.fileIds,
     detailsFresh: check.detailsFresh,
+    free: check.free,
+    locked: check.locked,
   };
 }

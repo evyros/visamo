@@ -51,6 +51,12 @@ const runColumns = {
   finishedAt: documentCheck.finishedAt,
   rerunAt: documentCheck.rerunAt,
   replacedBy: documentCheck.replacedBy,
+  /** A free check the admin ran (lib/checks/free.ts); null for the couple's own. */
+  approval: documentCheck.approval,
+  approvedAt: documentCheck.approvedAt,
+  emailedAt: documentCheck.emailedAt,
+  /** Findings the admin took out before approving it. */
+  hidden: documentCheck.hidden,
   checkedByName: user.name,
 };
 

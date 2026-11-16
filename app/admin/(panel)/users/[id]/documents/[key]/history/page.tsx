@@ -55,7 +55,7 @@ export default async function AdminDocumentHistoryPage({ params }: Props) {
     allCaseFiles(user.caseId),
     documentChecks(user.caseId, key),
     caseListChanges(user.caseId),
-    caseChecks(user.caseId),
+    caseChecks(user.caseId, { admin: true }),
     loadMessages("en"),
   ]);
   const item = list.find((d) => d.key === key);

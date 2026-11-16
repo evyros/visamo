@@ -9,7 +9,7 @@ import type { BranchCode, CaseDetails } from "@/lib/case-options";
 import { otherMembers, pendingInvite } from "@/lib/case";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { FREE_CHECK_DISMISSED_COOKIE, INVITE_DISMISSED_COOKIE } from "@/lib/device-flags";
-import { caseChecks } from "@/lib/checks/store";
+import { caseChecks, latestRun } from "@/lib/checks/store";
 import { checkFirst } from "@/lib/documents/check-priority";
 import {
   checkedProgressByGroup,
@@ -111,18 +111,25 @@ export default async function FileOverviewPage() {
   // The partner the invite banner is about: the other person in the case.
   const partnerName = people.find((p) => p.userId !== user.id)?.name ?? "";
 
-  // The free-check box, in the invite banner's place when that one isn't shown: without Full
-  // file check, while the free check is left, and unless it was dismissed on this device. It
-  // recommends the uploaded document most likely to need fixing; before any upload, none.
-  const freeCheck = !invite && !row.fileCheck && row.checksLeft > 0 && !cookieJar.has(FREE_CHECK_DISMISSED_COOKIE);
+  // The free-check box, in the invite banner's place when that one isn't shown, without Full
+  // file check. While the free check is left ("waiting"), it recommends the uploaded document
+  // most likely to need fixing (none before any upload). Once the admin's first approved result
+  // is shown in full ("ready", lib/checks/free.ts), it links to it. Dismissing it on this device
+  // hides that state only, so a result that's ready still shows.
   const names = { israeli: details.israeli.name, foreign: details.foreign.name };
-  const [first] = freeCheck ? checkFirst(list, uploaded, 1) : [];
-  const recommended = first
-    ? {
-        title: documentTitle(first.key, messages.app.documents, locale, names) ?? first.key,
-        href: `/file/documents#doc-${encodeURIComponent(first.key)}`,
-      }
-    : null;
+  const fullKey = row.freeFullKey;
+  // Only when the box can show, and only that document's latest result.
+  const fullByAdmin =
+    !invite && !row.fileCheck && !!fullKey && (await latestRun(caseId, fullKey))?.approval === "approved";
+  const freeState =
+    invite || row.fileCheck ? null : !fullKey && row.checksLeft > 0 ? "waiting" : fullByAdmin ? "ready" : null;
+  const freeCheck = freeState && cookieJar.get(FREE_CHECK_DISMISSED_COOKIE)?.value !== freeState ? freeState : null;
+  const linkTo = (key: string) => ({
+    title: documentTitle(key, messages.app.documents, locale, names) ?? key,
+    href: `/file/documents#doc-${encodeURIComponent(key)}`,
+  });
+  const [first] = freeCheck === "waiting" ? checkFirst(list, uploaded, 1) : [];
+  const freeLink = freeCheck === "ready" && fullKey ? linkTo(fullKey) : first ? linkTo(first.key) : null;
 
   // Details.
   const editsLeft = Math.max(0, row.detailEditsAllowed - edits);
@@ -141,10 +148,11 @@ export default async function FileOverviewPage() {
       )}
       {freeCheck && (
         <FreeCheckBanner
-          title={t.freeCheck.title}
-          body={t.freeCheck.body}
-          startWith={t.freeCheck.startWith}
-          recommended={recommended}
+          state={freeCheck}
+          title={freeCheck === "ready" ? t.freeCheck.readyTitle : t.freeCheck.title}
+          body={freeCheck === "ready" ? t.freeCheck.readyBody : t.freeCheck.body}
+          linkLabel={freeCheck === "ready" ? null : t.freeCheck.startWith}
+          link={freeLink}
           dismiss={t.freeCheck.dismiss}
         />
       )}

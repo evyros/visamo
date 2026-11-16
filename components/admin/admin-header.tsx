@@ -6,6 +6,7 @@ import { Logo } from "@/components/logo";
 /** The admin panel's main screens: tabs in the top bar, a bottom tab bar on phones. */
 export const adminSections: NavItem[] = [
   { href: "/users", label: "Users", icon: "people" },
+  { href: "/to-check", label: "To check", icon: "clock" },
   { href: "/dismissals", label: "Dismissed", icon: "alertCircle" },
   { href: "/letters", label: "Letters", icon: "mail" },
   { href: "/survey", label: "Survey", icon: "checkCircle" },

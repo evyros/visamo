@@ -127,6 +127,20 @@
       "when": 1794678206124,
       "tag": "0017_welcome_email",
       "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1794822748763,
+      "tag": "0018_free_check_by_admin",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1794824579945,
+      "tag": "0019_hidden_findings",
+      "breakpoints": true
     }
   ]
 }

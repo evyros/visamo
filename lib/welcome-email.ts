@@ -66,6 +66,7 @@ export async function deliverWelcomeEmail(userId: string) {
       .select({
         paid: cases.paid,
         checksLeft: cases.checksLeft,
+        freeFullKey: cases.freeFullKey,
         messagesLeft: cases.messagesLeft,
         personName: casePerson.name,
       })
@@ -89,11 +90,17 @@ export async function deliverWelcomeEmail(userId: string) {
 
 /**
  * The messages count for the free reminder, or null to leave it out: a case
- * that bought anything, or has used its free check. With no case yet (still
- * in onboarding), the reminder shows what the case will start with.
+ * that bought anything, or has used its free check (or got a result in full
+ * from the admin's, lib/checks/free.ts). With no case yet (still in
+ * onboarding), the reminder shows what the case will start with.
  */
-export function freeMessagesLeft(file: { paid: boolean; checksLeft: number; messagesLeft: number }) {
-  if (file.paid || file.checksLeft < 1) return null;
+export function freeMessagesLeft(file: {
+  paid: boolean;
+  checksLeft: number;
+  freeFullKey: string | null;
+  messagesLeft: number;
+}) {
+  if (file.paid || file.checksLeft < 1 || file.freeFullKey !== null) return null;
   // "1 free document check and 1 chat messages" doesn't read; with 1 or 0
   // messages left, the reminder isn't worth it either.
   return file.messagesLeft >= 2 ? file.messagesLeft : null;

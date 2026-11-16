@@ -214,6 +214,15 @@ export const cases = pgTable("case", {
   messagesLeft: integer("messages_left").notNull().default(0),
   /** Document checks left. Full file check grants them; files the checker couldn't read aren't counted. */
   checksLeft: integer("checks_left").notNull().default(0),
+  // The free check (lib/checks/free.ts): without Full file check, the admin
+  // checks the case's documents and approves each result. The first document
+  // approved is shown in full; every other approved one shows its rating only.
+  /** The list key of the document shown in full; null until one is approved. */
+  freeFullKey: text("free_full_key"),
+  /** When the case's first file was uploaded: the admin is emailed then. */
+  firstUploadAt: timestamp("first_upload_at"),
+  /** Set while results approved for the couple wait to be emailed together (lib/checks/results-email.ts). */
+  resultsEmailDueAt: timestamp("results_email_due_at"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
@@ -368,6 +377,19 @@ export const documentCheck = pgTable(
     rerunAt: timestamp("rerun_at"),
     /** The rerun that took this run's place; the app leaves this run out. */
     replacedBy: text("replaced_by"),
+
+    // A free check the admin ran (lib/checks/free.ts): the couple sees it only
+    // once it's approved. Null for the couple's own runs, which they see.
+    approval: text("approval").$type<"pending" | "approved" | "discarded">(),
+    approvedAt: timestamp("approved_at"),
+    /**
+     * Findings the admin took out before approving it, by kind and place in
+     * its lists: to the couple they don't exist, and the rating is worked out
+     * again without them (lib/checks/dismissals.ts activeResult).
+     */
+    hidden: jsonb("hidden").$type<{ kind: FindingKind; index: number }[]>(),
+    /** When the couple was emailed about it (lib/checks/results-email.ts). */
+    emailedAt: timestamp("emailed_at"),
 
     // What it was checked against, as sent, so an old check can be reviewed
     // after the guidance or the rules change. The knowledge base is too big

@@ -2,6 +2,8 @@
 
 import { del, get, put } from "@vercel/blob";
 import { and, count, eq, isNull, sum } from "drizzle-orm";
+import { after } from "next/server";
+import { markFirstUpload, notifyFirstUpload } from "@/lib/admin-notices";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
 import { db } from "@/lib/db";
 import { caseFile } from "@/lib/db/schema";
@@ -125,6 +127,13 @@ export async function finishUpload(input: {
   } catch (error) {
     console.error("finishUpload failed", error);
     return { error: "generic" };
+  }
+  // The case's first file: the admin is told, after this answers. The file is saved either way,
+  // so this can't fail the upload.
+  try {
+    if (await markFirstUpload(caseId)) after(() => notifyFirstUpload(user, documentKey));
+  } catch (error) {
+    console.error("markFirstUpload failed", caseId, error);
   }
   const file = await viewOf(caseId, fileId);
   return file ? { file } : { error: "generic" };

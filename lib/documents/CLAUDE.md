@@ -65,7 +65,8 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   `recommended` (what makes it stronger). See "Document checks" below.
 - `check-priority.ts`: the order to check documents in, most likely to
   need fixing first. The overview recommends where to spend the free check
-  from it. Every document with a check written is ranked (the tests check).
+  from it, and the admin's "To check" list where to start checking a case.
+  Every document with a check written is ranked (the tests check).
 
 ## Rules
 

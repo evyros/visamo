@@ -51,7 +51,7 @@ export const PRODUCT_GRANTS: Record<ProductId, { messages: number; checks: numbe
 export type Access = {
   /** Bought anything. */
   paid: boolean;
-  /** Bought Full file check: the case checks every document. A free case has its one free check (cases.checksLeft). */
+  /** Bought Full file check: the case checks every document. A free case has its one free check (cases.checksLeft), and the admin's (lib/checks/free.ts). */
   fileCheck: boolean;
 };
 

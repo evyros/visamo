@@ -235,6 +235,7 @@ function RunCard({
           <span className="font-semibold text-navy-900">{formatDateTime(run.startedAt)}</span>
           <RunResult run={run} ratings={ratings} />
           {current && <Pill tone="teal">Shown to the couple</Pill>}
+          {run.approval && <ApprovalPill run={run} />}
           {run.checkedByName && <span className="text-sm text-slate-500">run by {run.checkedByName}</span>}
           {run.rerunAt && (
             <span className="text-sm text-slate-500">· rerun by the admin {formatDateTime(run.rerunAt)}</span>
@@ -271,8 +272,12 @@ function RunCard({
         )}
         {run.state === "done" && (
           <div>
-            <Findings kind={run.rating === "unreadable" ? "unreadable" : "issue"} findings={run.issues ?? []} />
-            <Findings kind="recommendation" findings={run.recommendations ?? []} />
+            <Findings
+              kind={run.rating === "unreadable" ? "unreadable" : "issue"}
+              findings={run.issues ?? []}
+              hidden={run.hidden ?? []}
+            />
+            <Findings kind="recommendation" findings={run.recommendations ?? []} hidden={run.hidden ?? []} />
             {!run.issues?.length && !run.recommendations?.length && (
               <p className="text-sm text-slate-500">No issues or recommendations.</p>
             )}
@@ -283,6 +288,19 @@ function RunCard({
       </div>
     </article>
   );
+}
+
+/** Where a free check the admin ran stands (lib/checks/free.ts). */
+function ApprovalPill({ run }: { run: AdminCheckRun }) {
+  if (run.approval === "approved")
+    return (
+      <Pill tone="neutral">
+        Free check, approved {run.approvedAt && formatDateTime(run.approvedAt)}
+        {run.emailedAt ? ` · emailed ${formatDateTime(run.emailedAt)}` : " · not emailed yet"}
+      </Pill>
+    );
+  if (run.approval === "pending") return <Pill tone="amber">Free check, waiting for approval</Pill>;
+  return <Pill tone="slate">Free check, discarded</Pill>;
 }
 
 /**

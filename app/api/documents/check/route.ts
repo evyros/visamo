@@ -6,6 +6,7 @@ import { checkModel } from "@/lib/checks/ask";
 import { RULES_VERSION, checkContext, contextHash, detailsHash } from "@/lib/checks/prompt";
 import { performCheck } from "@/lib/checks/run";
 import { caseChecks, checkBalance, claimCheck, dismissedForNextCheck, saveCheck } from "@/lib/checks/store";
+import { takeFullPlace } from "@/lib/checks/free";
 import { checkView } from "@/lib/checks/view";
 import { checkFor } from "@/lib/documents/checks";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
@@ -118,6 +119,10 @@ export async function POST(request: Request) {
 
   const [checks, balance, locale] = await Promise.all([caseChecks(caseId), checkBalance(caseId), getAppLocale()]);
   const itemCheck = checks.get(documentKey);
+  // A free case's own check is its one result in full (lib/checks/free.ts): what the admin approves after it is locked.
+  if (!fileCheck && itemCheck?.result && itemCheck.result.rating !== "unreadable") {
+    await takeFullPlace(caseId, documentKey);
+  }
   return Response.json({
     check: itemCheck && checkView(itemCheck, locale),
     checksLeft: balance.left,

@@ -1692,6 +1692,32 @@
         "replyTime": "I usually answer within 5 minutes.",
         "signature": "Evy",
         "free": "P.S. You've got 1 free document check and {messages} chat messages on us."
+      },
+      "checkResults": {
+        "subject": {
+          "needsFixing": "Your document check: something needs fixing",
+          "unreadable": "Your document check: we couldn't read a file",
+          "canImprove": "Your document check: looks good, with tips",
+          "looksGood": "Your document check: looks good"
+        },
+        "heading": {
+          "needsFixing": "We found something to fix",
+          "unreadable": "We couldn't read a file",
+          "canImprove": "Looks good, with a few tips",
+          "looksGood": "Good news: it looks good"
+        },
+        "intro": {
+          "one": "We checked one of your documents. Here's what we found:",
+          "other": "We checked {count} of your documents. Here's what we found:"
+        },
+        "more": {
+          "one": "and 1 more",
+          "other": "and {count} more"
+        },
+        "nothingToFix": "Nothing to fix.",
+        "unreadable": "We couldn't read the files. Upload a clearer scan, or a PDF without a password.",
+        "button": "See the results",
+        "ignore": "You're getting this email because you have a file on Visamo."
       }
     },
     "documents": {
@@ -2066,6 +2092,8 @@
         },
         "upgrade": "Get Full file check",
         "freeUsed": "You've used your free check. Don't let a wrong detail delay your case.",
+        "free": "Free check",
+        "locked": "See what to fix with Full file check",
         "cantOpenTitle": "Couldn't open a file",
         "counts": {
           "fix": {
@@ -2836,6 +2864,8 @@
         "title": "You have a free document check",
         "body": "Check one of your documents for free, and see what to fix before you submit it.",
         "startWith": "I recommend starting with:",
+        "readyTitle": "Your document check is ready",
+        "readyBody": "See what we found:",
         "dismiss": "Dismiss"
       },
       "stage": {
@@ -2998,6 +3028,10 @@
           "document.checked": {
             "male": "{name} checked {document}",
             "female": "{name} checked {document}"
+          },
+          "document.freeChecked": {
+            "male": "Visamo checked {document}",
+            "female": "Visamo checked {document}"
           },
           "finding.dismissed": {
             "male": "{name} dismissed a finding on {document}",

@@ -114,13 +114,18 @@ export default async function FileOverviewPage() {
   // The free-check box, in the invite banner's place when that one isn't shown, without Full
   // file check. While the free check is left ("waiting"), it recommends the uploaded document
   // most likely to need fixing (none before any upload). Once the admin's first approved result
-  // is shown in full ("ready", lib/checks/free.ts), it links to it. Dismissing it on this device
-  // hides that state only, so a result that's ready still shows.
+  // is shown in full ("ready", lib/checks/free.ts), it links to it, while that result still
+  // applies: once its files or the couple's details change, there's nothing ready to see. Dismissing
+  // it on this device hides that state only, so a result that's ready still shows.
   const names = { israeli: details.israeli.name, foreign: details.foreign.name };
   const fullKey = row.freeFullKey;
   // Only when the box can show, and only that document's latest result.
   const fullByAdmin =
-    !invite && !row.fileCheck && !!fullKey && (await latestRun(caseId, fullKey))?.approval === "approved";
+    !invite &&
+    !row.fileCheck &&
+    !!fullKey &&
+    (await latestRun(caseId, fullKey))?.approval === "approved" &&
+    !!(await caseChecks(caseId)).get(fullKey)?.fresh;
   const freeState =
     invite || row.fileCheck ? null : !fullKey && row.checksLeft > 0 ? "waiting" : fullByAdmin ? "ready" : null;
   const freeCheck = freeState && cookieJar.get(FREE_CHECK_DISMISSED_COOKIE)?.value !== freeState ? freeState : null;

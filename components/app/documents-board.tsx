@@ -471,7 +471,7 @@ export function DocumentsBoard({
   const checked = checkedProgressOf(items, standing);
   const counts = standingCounts(checked, t.progressChecked, locale);
   // Without Full file check: what the free check found, so it isn't missed on the cards below.
-  const found = settings.bought ? null : freeFindingsOf(items, states, results);
+  const found = settings.bought ? null : freeFindingsOf(items, states, results, checks);
   // A retired document's files can only be removed; once they all are, it goes.
   const retiredLeft = retired.filter((r) => files.some((f) => f.documentKey === r.key));
 
@@ -497,16 +497,10 @@ export function DocumentsBoard({
             {found ? (
               <FreeFindings t={t} found={found} locale={locale} />
             ) : (
-              <p className="mt-3 text-sm text-slate-600">
-                {t.progressHint}{" "}
-                <Link
-                  href={buyUrl("/file/documents")}
-                  className="whitespace-nowrap font-semibold text-teal-700 hover:underline"
-                >
-                  <Icon name="visamo" className="me-1 inline-block size-4 align-[-0.2em]" />
-                  {t.check.upgrade}
-                </Link>
-              </p>
+              // Nothing found: the same box, in green, with what Full file check does.
+              <FullCheckBox t={t} tone="good" icon="visamo" centered>
+                <p className="text-[15px] leading-6 text-slate-700">{t.progressHint}</p>
+              </FullCheckBox>
             )}
           </>
         )}
@@ -942,13 +936,14 @@ function CheckFooter({
     state = (
       // The texts share a baseline (they're different sizes); the icon is centered on them.
       <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-        <span className="self-center">
+        {/* Flex, so the icons sit on no text line: its room for descenders would lift them off center. */}
+        <span className="flex self-center">
           <CheckIcon rating={result.rating} label={c.ratings[result.rating]} />
         </span>
         <span className="font-semibold text-navy-900">{c.ratings[result.rating]}</span>
         {/* What Visamo checks. Not for files it couldn't read: the check got no further. */}
         {result.rating !== "unreadable" && (
-          <span className="-ms-1 self-center">
+          <span className="-ms-1 flex self-center">
             <CheckCoverage t={c.covered} procedure={settings.procedure} sourcesUrl={settings.sourcesUrl} />
           </span>
         )}
@@ -1128,9 +1123,15 @@ type FoundDocument = { key: string; title: string; rating: CheckRating; fix: num
  * What a free case's checks found, by document: the ones that need fixing
  * and the ones that can be improved, each with how many findings (a locked
  * one's counts too), and how many uploaded documents with a check written
- * have no result yet. Null when nothing needs fixing or improving.
+ * have no result yet. With none of those, whether a check found something to
+ * fix before the files changed (`earlier`). Null when there's nothing to say.
  */
-function freeFindingsOf(items: DocumentItem[], states: Record<string, DocState>, results: Record<string, CheckView | null>) {
+function freeFindingsOf(
+  items: DocumentItem[],
+  states: Record<string, DocState>,
+  results: Record<string, CheckView | null>,
+  checks: Record<string, ItemCheck>,
+) {
   const found = (state: DocState) =>
     items.flatMap((i): FoundDocument[] => {
       const result = results[i.key];
@@ -1141,7 +1142,11 @@ function freeFindingsOf(items: DocumentItem[], states: Record<string, DocState>,
   const fix = found("needsFixing");
   const improve = found("readyTips");
   const unchecked = items.filter((i) => i.check.checkable && states[i.key] === "uploaded").length;
-  return fix.length + improve.length > 0 ? { fix, improve, unchecked } : null;
+  if (fix.length + improve.length > 0) return { fix, improve, unchecked, earlier: false };
+  // Nothing found now, but a check found something to fix before the files or details changed:
+  // new files weren't checked, so it doesn't go away. Tips only aren't issues.
+  const earlier = items.some((i) => !results[i.key] && checks[i.key]?.last?.rating === "needsFixing");
+  return earlier ? { fix, improve, unchecked, earlier } : null;
 }
 
 /**
@@ -1173,86 +1178,126 @@ function FreeFindings({
     { n: found.improve.length, text: forms(f.improve, found.improve.length), dot: "bg-blue-600" },
   ].filter((count) => count.n > 0);
   const documents = [...found.fix, ...found.improve];
-  const tone = fixing ? "fix" : "improve";
+  const tone = fixing || found.earlier ? "fix" : "improve";
+  return (
+    <FullCheckBox
+      t={t}
+      tone={tone}
+      icon="lock"
+      below={
+        // Only what's found now: what was found before was about other files.
+        <ul id={listId} hidden={!open || found.earlier} className="relative space-y-1.5 px-4 pb-4 sm:px-5 sm:pb-5">
+          {documents.map((d) => (
+            <li key={d.key} className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 text-sm ring-1 ring-line-200">
+              <span className="flex h-[1lh] shrink-0 items-center">
+                <CheckIcon rating={d.rating} label={c.ratings[d.rating]} />
+              </span>
+              <span className="min-w-0 flex-1">
+                {/* To its card: the card opens (DocumentCard listens for its hash). */}
+                <a href={`#doc-${encodeURIComponent(d.key)}`} className="font-semibold text-navy-900 hover:underline">
+                  {d.title}
+                </a>
+                <span className="text-slate-600">
+                  {" · "}
+                  {[d.fix > 0 && forms(c.counts.fix, d.fix), d.tips > 0 && forms(c.counts.tip, d.tips)]
+                    .filter(Boolean)
+                    .join(", ")}
+                </span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      }
+    >
+      <p className="font-semibold text-navy-900">{found.earlier ? f.titleEarlier : fixing ? f.titleFix : f.titleImprove}</p>
+      {/* Found before the files changed: no counts or list, the new files weren't checked. */}
+      {found.earlier ? (
+        <p className="mt-1.5 text-sm text-slate-600">{f.earlier}</p>
+      ) : (
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls={listId}
+          onClick={() => setOpen((o) => !o)}
+          className="mt-1.5 flex items-start gap-1.5 rounded-md text-start text-sm font-semibold text-navy-900 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+        >
+          {/* At the line's start, like a disclosure arrow: left in English, right in Hebrew. On
+              the first line, when the counts wrap on a phone. */}
+          <span className="flex h-[1lh] shrink-0 items-center">
+            <Icon
+              name="chevronDown"
+              className={`size-4 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+            />
+          </span>
+          {/* Close to the arrow; the counts keep their own room between them. */}
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            {counts.map((count) => (
+              <span key={count.dot} className="inline-flex items-start gap-2">
+                {/* On the first line too, when the count wraps. */}
+                <span aria-hidden className="flex h-[1lh] shrink-0 items-center">
+                  <span className={`size-2.5 rounded-full ${count.dot}`} />
+                </span>
+                {count.text}
+              </span>
+            ))}
+          </span>
+        </button>
+      )}
+      {!found.earlier && found.unchecked > 0 && (
+        <p className="mt-1 text-sm text-slate-600">{forms(f.unchecked, found.unchecked)}</p>
+      )}
+    </FullCheckBox>
+  );
+}
+
+/**
+ * The box at the top of the progress, without Full file check: its drawing and
+ * backdrop in its tone, what it says (`children`), and the way to Full file
+ * check at its end. `below` goes under it all, the box's width: the findings'
+ * list. `centered` lines a lone sentence up with the drawing's middle.
+ */
+function FullCheckBox({
+  t,
+  tone,
+  icon,
+  centered = false,
+  below,
+  children,
+}: {
+  t: Labels;
+  tone: keyof typeof findingsTone;
+  icon: "lock" | "visamo";
+  centered?: boolean;
+  below?: ReactNode;
+  children: ReactNode;
+}) {
   return (
     <div className="relative mt-4 overflow-hidden rounded-[12px] border border-line-200 bg-sand-50">
       <FindingsBackdrop tone={tone} />
       <div className="relative flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-5 sm:p-5">
-        <div className="flex min-w-0 flex-1 items-start gap-3.5">
+        <div className={`flex min-w-0 flex-1 gap-3.5 ${centered ? "items-center" : "items-start"}`}>
           <DocumentScan tone={tone} className="size-12 shrink-0 sm:size-14" />
-          <div className="min-w-0">
-            <p className="font-semibold text-navy-900">{fixing ? f.titleFix : f.titleImprove}</p>
-            <button
-              type="button"
-              aria-expanded={open}
-              aria-controls={listId}
-              onClick={() => setOpen((o) => !o)}
-              className="mt-1.5 flex items-start gap-1.5 rounded-md text-start text-sm font-semibold text-navy-900 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-            >
-              {/* At the line's start, like a disclosure arrow: left in English, right in Hebrew. On
-                  the first line, when the counts wrap on a phone. */}
-              <span className="flex h-[1lh] shrink-0 items-center">
-                <Icon
-                  name="chevronDown"
-                  className={`size-4 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
-                />
-              </span>
-              {/* Close to the arrow; the counts keep their own room between them. */}
-              <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                {counts.map((count) => (
-                  <span key={count.dot} className="inline-flex items-start gap-2">
-                    {/* On the first line too, when the count wraps. */}
-                    <span aria-hidden className="flex h-[1lh] shrink-0 items-center">
-                      <span className={`size-2.5 rounded-full ${count.dot}`} />
-                    </span>
-                    {count.text}
-                  </span>
-                ))}
-              </span>
-            </button>
-            {found.unchecked > 0 && (
-              <p className="mt-1 text-sm text-slate-600">{forms(f.unchecked, found.unchecked)}</p>
-            )}
-          </div>
+          <div className="min-w-0">{children}</div>
         </div>
         {/* Beside the text from sm up; on a phone, under it, the box's width. */}
         <Link
           href={buyUrl("/file/documents")}
           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy-900 px-4 py-2.5 text-[15px] font-semibold text-white shadow-soft hover:bg-navy-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
         >
-          <Icon name="lock" className="size-4" />
-          {c.upgrade}
+          <Icon name={icon} className="size-4" />
+          {t.check.upgrade}
         </Link>
       </div>
-      <ul id={listId} hidden={!open} className="relative space-y-1.5 px-4 pb-4 sm:px-5 sm:pb-5">
-        {documents.map((d) => (
-          <li key={d.key} className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 text-sm ring-1 ring-line-200">
-            <span className="flex h-[1lh] shrink-0 items-center">
-              <CheckIcon rating={d.rating} label={c.ratings[d.rating]} />
-            </span>
-            <span className="min-w-0 flex-1">
-              {/* To its card: the card opens (DocumentCard listens for its hash). */}
-              <a href={`#doc-${encodeURIComponent(d.key)}`} className="font-semibold text-navy-900 hover:underline">
-                {d.title}
-              </a>
-              <span className="text-slate-600">
-                {" · "}
-                {[d.fix > 0 && forms(c.counts.fix, d.fix), d.tips > 0 && forms(c.counts.tip, d.tips)]
-                  .filter(Boolean)
-                  .join(", ")}
-              </span>
-            </span>
-          </li>
-        ))}
-      </ul>
+      {below}
     </div>
   );
 }
 
-/** The free findings box's accent: red when something needs fixing, blue for tips only. */
+/** The box's accent: red when something needs fixing, blue for tips only, green when nothing was found. */
 const findingsTone = {
   fix: { fill: "fill-crimson-600", stroke: "stroke-crimson-600", soft: "fill-crimson-100" },
   improve: { fill: "fill-blue-600", stroke: "stroke-blue-600", soft: "fill-blue-50" },
+  good: { fill: "fill-teal-600", stroke: "stroke-teal-600", soft: "fill-teal-100" },
 } as const;
 
 /**
@@ -1277,7 +1322,8 @@ function FindingsBackdrop({ tone }: { tone: keyof typeof findingsTone }) {
 
 /**
  * A document under a magnifying glass, one of its lines marked in the
- * accent's color, and a badge: "!" when something needs fixing, "i" for tips.
+ * accent's color, and a badge: "!" when something needs fixing, "i" for tips,
+ * a check mark when nothing was found.
  * One outlined style, like the app's other drawings: navy strokes on flat
  * fills. Decorative.
  */
@@ -1301,7 +1347,15 @@ function DocumentScan({ tone, className }: { tone: keyof typeof findingsTone; cl
       <path d="M43.5 39.5 50 46" className="stroke-navy-900" strokeWidth="4" strokeLinecap="round" />
       {/* The badge. */}
       <circle cx="43" cy="11" r="7.5" className={`${accent.fill} stroke-white`} strokeWidth="2" />
-      {tone === "fix" ? (
+      {tone === "good" ? (
+        <path
+          d="m39.6 11.2 2.3 2.3 4.5-4.6"
+          className="fill-none stroke-white"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      ) : tone === "fix" ? (
         <>
           <path d="M43 7.5v4.5" className="stroke-white" strokeWidth="2.2" strokeLinecap="round" />
           <circle cx="43" cy="15" r="1.3" className="fill-white" />

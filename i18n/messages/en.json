@@ -2067,10 +2067,12 @@
     "documentsPage": {
       "intro": "Everything to bring to Misrad Hapnim for your first application, for your situation.",
       "progress": "{done} of {total} uploaded",
-      "progressHint": "Uploaded isn't the same as accepted. With Full file check, every document is checked against what Misrad Hapnim asks for.",
+      "progressHint": "Uploaded document doesn't mean it's valid. Check every document against what Misrad Hapnim requires.",
       "freeFindings": {
         "titleFix": "Issues found in your documents",
         "titleImprove": "Some of your documents can be improved",
+        "titleEarlier": "Issues found earlier",
+        "earlier": "Your documents changed after we found issues. Upgrade to check the new ones and the rest of your file.",
         "fix": {
           "one": "1 document needs fixing",
           "other": "{count} documents need fixing"

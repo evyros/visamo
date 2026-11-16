@@ -264,7 +264,7 @@ export type FindingHistory = {
 
 /** An item's check, as the page and the chat see it. */
 export type ItemCheck = {
-  /** The result is a free check the admin approved (lib/checks/free.ts). */
+  /** The result is a free check: the admin approved it, or it's the couple's own that used their free check (lib/checks/free.ts). */
   free: boolean;
   /**
    * The couple sees only the result's rating, and how many findings it has
@@ -349,7 +349,9 @@ export async function caseChecks(caseId: string, { admin = false } = {}): Promis
     // texts never retires one: a new check uses them. A run from before the details were kept stays.
     const detailsFresh = !!check && (!row?.detailsHash || row.detailsHash === detailsHash(details, branch));
     checks.set(item.key, {
-      free: row?.approval === "approved",
+      // A free check: one the admin approved, or the couple's own that used their free check, the
+      // case's one result in full (lib/checks/free.ts takeFullPlace). Full file check's aren't.
+      free: !!row && (row.approval === "approved" || (!caseRow.fileCheck && caseRow.freeFullKey === item.key)),
       locked,
       checkable: !!check,
       // An admin's rerun isn't shown running: the couple sees the result it replaces until it's done.

@@ -58,7 +58,7 @@ export type CheckView = {
   fileIds: string[];
   /** False once the couple's details it was checked against changed. A change to the checks never retires it. */
   detailsFresh: boolean;
-  /** A free check the admin approved (lib/checks/free.ts). */
+  /** A free check: the admin approved it, or it's the couple's own that used their free check (lib/checks/free.ts). */
   free: boolean;
   /**
    * Only the rating is shown, and how many findings there are: they come

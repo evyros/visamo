@@ -120,8 +120,9 @@ export async function POST(request: Request) {
   const [checks, balance, locale] = await Promise.all([caseChecks(caseId), checkBalance(caseId), getAppLocale()]);
   const itemCheck = checks.get(documentKey);
   // A free case's own check is its one result in full (lib/checks/free.ts): what the admin approves after it is locked.
+  // Taking it marks it as the free check, which it wasn't when read just before: the badge shows right away.
   if (!fileCheck && itemCheck?.result && itemCheck.result.rating !== "unreadable") {
-    await takeFullPlace(caseId, documentKey);
+    if (await takeFullPlace(caseId, documentKey)) itemCheck.free = true;
   }
   return Response.json({
     check: itemCheck && checkView(itemCheck, locale),

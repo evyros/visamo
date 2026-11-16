@@ -8,7 +8,8 @@ import { caseEvent, cases, creditEntry, documentCheck } from "@/lib/db/schema";
 import { checkFor } from "@/lib/documents/checks";
 import { KNOWLEDGE_VERSION } from "@/lib/knowledge-base";
 import { checkModel } from "./ask";
-import type { FindingKind } from "./dismissals";
+import { settledRating, type FindingKind } from "./dismissals";
+import { MAX_DETAIL_LENGTH, MAX_TITLE_LENGTH, type CheckFinding, type FindingText } from "./result";
 import { RULES_VERSION, checkContext, contextHash, detailsHash } from "./prompt";
 import { queueResultsEmail } from "./results-email";
 import { performCheck } from "./run";
@@ -238,4 +239,105 @@ export async function setFindingHidden(
     )
     .returning({ id: documentCheck.id });
   return updated ? null : "This result is no longer waiting for approval, or has no such finding. Reload the page.";
+}
+
+/** What the admin can change in a finding: whether it's an issue or a tip, and its text in both languages. */
+export type FindingEdit = {
+  kind: FindingKind;
+  en: FindingText;
+  he: FindingText;
+};
+
+/**
+ * Rewrites a finding in place: its text in both languages, in any result
+ * the couple sees or will see (the couple's own checks, and the admin's,
+ * pending or approved). Not recorded anywhere, and no time changes: to the
+ * couple it's what the check said. Only while the result waits for
+ * approval can it also move between issue (needs fixing) and tip (can be
+ * improved): once the couple sees it, their dismissals point at findings by
+ * place, and a move would shift them. Moving it puts it at the other list's
+ * end, keeps what the admin hid pointing at the same findings, and works the
+ * rating out again. A hidden finding is put back before it's edited. An
+ * error to show the admin, or null.
+ */
+export async function editFinding(
+  caseId: string,
+  runId: string,
+  finding: { kind: FindingKind; index: number },
+  edit: FindingEdit,
+): Promise<string | null> {
+  const clean = (text: FindingText) => ({
+    title: text.title.trim().slice(0, MAX_TITLE_LENGTH),
+    detail: text.detail.trim().slice(0, MAX_DETAIL_LENGTH),
+  });
+  const en = clean(edit.en);
+  const he = clean(edit.he);
+  if (!en.detail || !he.detail) return "Write the content in both languages.";
+
+  const [run] = await db
+    .select({
+      approval: documentCheck.approval,
+      rating: documentCheck.rating,
+      issues: documentCheck.issues,
+      recommendations: documentCheck.recommendations,
+      hidden: documentCheck.hidden,
+    })
+    .from(documentCheck)
+    .where(and(eq(documentCheck.id, runId), eq(documentCheck.caseId, caseId), eq(documentCheck.state, "done")));
+  if (!run?.rating || run.rating === "unreadable" || run.approval === "discarded") {
+    return "This result can’t be edited anymore. Reload the page.";
+  }
+  if (edit.kind !== finding.kind && run.approval !== "pending") {
+    return "Only a result waiting for approval can change a finding’s severity.";
+  }
+  const lists = {
+    issue: [...(run.issues ?? [])],
+    recommendation: [...(run.recommendations ?? [])],
+  };
+  const old = lists[finding.kind][finding.index];
+  if (!old) return "There’s no such finding.";
+  const hidden = run.hidden ?? [];
+  if (hidden.some((h) => h.kind === finding.kind && h.index === finding.index)) {
+    return "Undo dismissing this finding before editing it.";
+  }
+
+  const updated: CheckFinding = { ...old, en, he };
+  let nextHidden = hidden;
+  if (edit.kind === finding.kind) {
+    lists[finding.kind][finding.index] = updated;
+  } else {
+    // Out of its list and onto the end of the other: what was hidden after it in its list moves up one.
+    lists[finding.kind].splice(finding.index, 1);
+    lists[edit.kind].push(updated);
+    nextHidden = hidden.map((h) =>
+      h.kind === finding.kind && h.index > finding.index ? { ...h, index: h.index - 1 } : h,
+    );
+  }
+  const rating =
+    edit.kind === finding.kind
+      ? run.rating
+      : settledRating(run.rating, lists.issue.length, lists.recommendation.length);
+
+  // Only if nothing changed it since it was read (a hide, or another edit): otherwise one would undo the other.
+  const json = (value: unknown) => sql`${JSON.stringify(value)}::jsonb`;
+  const [saved] = await db
+    .update(documentCheck)
+    .set({
+      issues: lists.issue,
+      recommendations: lists.recommendation,
+      hidden: nextHidden.length ? nextHidden : null,
+      rating,
+    })
+    .where(
+      and(
+        eq(documentCheck.id, runId),
+        // Approved or discarded since it was read: the severity rule above may not hold.
+        sql`${documentCheck.approval} is not distinct from ${run.approval}`,
+        sql`${documentCheck.issues} is not distinct from ${run.issues === null ? sql`null` : json(run.issues)}`,
+        sql`${documentCheck.recommendations} is not distinct from ${run.recommendations === null ? sql`null` : json(run.recommendations)}`,
+        sql`${documentCheck.hidden} is not distinct from ${run.hidden === null ? sql`null` : json(run.hidden)}`,
+      ),
+    )
+    .returning({ id: documentCheck.id });
+  return saved ? null : "This result changed since the page loaded. Reload it and try again.";
 }

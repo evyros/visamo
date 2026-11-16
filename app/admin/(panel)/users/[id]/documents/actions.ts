@@ -4,7 +4,7 @@ import { refresh } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { findUser } from "@/lib/admin-users";
 import { findingKinds, type FindingKind } from "@/lib/checks/dismissals";
-import { approveFreeCheck, discardFreeCheck, runFreeCheck, setFindingHidden } from "@/lib/checks/free";
+import { approveFreeCheck, discardFreeCheck, editFinding, runFreeCheck, setFindingHidden } from "@/lib/checks/free";
 
 // The free check (lib/checks/free.ts), from a document's card on the user's
 // documents page: check it, then approve the result for the couple or discard it.
@@ -50,4 +50,26 @@ export async function hideFinding(_: FreeCheckState, formData: FormData): Promis
   if (!findingKinds.includes(kind)) return { error: "There’s no such finding." };
   const finding = { kind, index: Number(formData.get("index")) };
   return answer(await setFindingHidden(caseId, String(formData.get("runId")), finding, formData.get("hide") === "1"));
+}
+
+/** Rewrites a finding: its title and content in both languages, and while the result waits for approval, its kind. */
+export async function saveFinding(_: FreeCheckState, formData: FormData): Promise<FreeCheckState> {
+  const caseId = await caseOf(formData);
+  if (!caseId) return { error: "This user has no case." };
+  const field = (name: string) => String(formData.get(name) ?? "");
+  const kind = field("kind") as FindingKind;
+  const newKind = field("newKind") as FindingKind;
+  if (!findingKinds.includes(kind) || !findingKinds.includes(newKind)) return { error: "There’s no such finding." };
+  return answer(
+    await editFinding(
+      caseId,
+      field("runId"),
+      { kind, index: Number(field("index")) },
+      {
+        kind: newKind,
+        en: { title: field("enTitle"), detail: field("enDetail") },
+        he: { title: field("heTitle"), detail: field("heDetail") },
+      },
+    ),
+  );
 }

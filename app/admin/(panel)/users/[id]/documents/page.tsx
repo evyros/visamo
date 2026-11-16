@@ -153,6 +153,7 @@ export default async function AdminUserDocumentsPage({ params }: PageProps<"/adm
                     check={current.get(d.key)}
                     ratings={ratings}
                     free={freeOf(d.key)}
+                    userId={user.id}
                   />
                 );
               })}

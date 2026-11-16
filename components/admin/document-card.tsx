@@ -7,7 +7,7 @@ import { formatBytes, formatDateTime, Pill, type PillTone } from "./admin-ui";
 import { activeResult, type FindingKind } from "@/lib/checks/dismissals";
 import { stillRunning, type ItemCheck } from "@/lib/checks/store";
 import { sameSet } from "@/lib/same-set";
-import { FreeCheckForm, HideFindingButton } from "./free-check-form";
+import { AdminFindingMenu, FreeCheckForm } from "./free-check-form";
 
 // One document on a case's list, as the admin sees it: its files as they are
 // now, its latest result, and a link to everything that happened to it,
@@ -47,6 +47,7 @@ export function DocumentCard({
   check,
   ratings,
   free,
+  userId,
 }: {
   title: string;
   docKey: string;
@@ -62,8 +63,12 @@ export function DocumentCard({
   ratings: Record<CheckRating, string>;
   /** The free check (lib/checks/free.ts), for a case without Full file check; none for a document that left the list. */
   free?: FreeCheck;
+  /** The user whose case it is, to edit the result's findings; none for a document that left the list. */
+  userId?: string;
 }) {
   const result = check?.result;
+  // Its findings' text can be edited (lib/checks/free.ts editFinding); not their severity, the couple sees them.
+  const editable = userId && check?.runId ? { userId, runId: check.runId, pending: false } : undefined;
   const checked = new Set(check?.fileIds);
   const uploaded = files.filter((f) => !f.deletedAt);
 
@@ -105,8 +110,12 @@ export function DocumentCard({
               {!check.fresh &&
                 ` · ${check.detailsFresh ? "files" : "details"} changed since, so the couple sees it as uploaded`}
             </p>
-            <Findings kind={result.rating === "unreadable" ? "unreadable" : "issue"} findings={result.issues} />
-            <Findings kind="recommendation" findings={result.recommendations} />
+            <Findings
+              kind={result.rating === "unreadable" ? "unreadable" : "issue"}
+              findings={result.issues}
+              menu={editable}
+            />
+            <Findings kind="recommendation" findings={result.recommendations} menu={editable} />
           </div>
         )}
 
@@ -185,7 +194,7 @@ function FreeCheckSection({
       { rating: ready.rating!, issues: ready.issues ?? [], recommendations: ready.recommendations ?? [] },
       ready.hidden ?? [],
     );
-  const hide = ready ? { userId: free.userId, runId: ready.id } : undefined;
+  const menu = ready ? { userId: free.userId, runId: ready.id, pending: true } : undefined;
   return (
     <div className="space-y-3 rounded-lg border border-dashed border-line-200 bg-sand-50 px-3 py-3">
       <p className="text-sm font-semibold text-navy-900">Free check</p>
@@ -212,9 +221,9 @@ function FreeCheckSection({
             kind={ready.rating === "unreadable" ? "unreadable" : "issue"}
             findings={ready.issues ?? []}
             hidden={ready.hidden ?? []}
-            hide={hide}
+            menu={menu}
           />
-          <Findings kind="recommendation" findings={ready.recommendations ?? []} hidden={ready.hidden ?? []} hide={hide} />
+          <Findings kind="recommendation" findings={ready.recommendations ?? []} hidden={ready.hidden ?? []} menu={menu} />
           <p className="mt-2 text-sm text-slate-700">{approveNote(shown!.rating, docKey, free.fullKey, free.checksLeft)}</p>
         </div>
       )}
@@ -296,19 +305,21 @@ const findingKindOf = { issue: "issue", recommendation: "recommendation", unread
 /**
  * A check's issues or recommendations, like the app shows them: a tinted box
  * each, its part and title over its detail. Findings the admin hid from the
- * couple (`hidden`, by kind and place) are crossed out; with `hide`, in a
- * result waiting for approval, each one can be hidden or put back.
+ * couple (`hidden`, by kind and place) are crossed out. With `menu`, each
+ * one has a menu to edit it, and in a result waiting for approval
+ * (`pending`), to dismiss it. A finding's place is its `index` when it has
+ * one (a result with findings left out), else its place in the list.
  */
 export function Findings({
   kind,
   findings,
   hidden = [],
-  hide,
+  menu,
 }: {
   kind: keyof typeof findingStyle;
-  findings: CheckFinding[];
+  findings: (CheckFinding & { index?: number })[];
   hidden?: readonly { kind: FindingKind; index: number }[];
-  hide?: { userId: string; runId: string };
+  menu?: { userId: string; runId: string; pending: boolean };
 }) {
   if (!findings.length) return null;
   const style = findingStyle[kind];
@@ -317,7 +328,8 @@ export function Findings({
     <ul aria-label={style.label} className="mt-2 space-y-1.5">
       {findings.map((finding, i) => {
         const { title, detail } = findingText(finding, "en");
-        const out = !!findingKind && hidden.some((h) => h.kind === findingKind && h.index === i);
+        const index = finding.index ?? i;
+        const out = !!findingKind && hidden.some((h) => h.kind === findingKind && h.index === index);
         return (
           <li
             key={i}
@@ -331,12 +343,14 @@ export function Findings({
               {title && <p className="text-[15px] font-semibold text-navy-900">{title}</p>}
               <p className="mt-0.5 text-sm text-slate-700">{detail}</p>
             </div>
-            {out && !hide && (
+            {out && !menu && (
               <span className="shrink-0 self-start">
                 <Pill tone="slate">Hidden from the couple</Pill>
               </span>
             )}
-            {hide && findingKind && <HideFindingButton {...hide} kind={findingKind} index={i} hidden={out} />}
+            {menu && findingKind && (
+              <AdminFindingMenu {...menu} kind={findingKind} index={index} hidden={out} finding={finding} />
+            )}
           </li>
         );
       })}

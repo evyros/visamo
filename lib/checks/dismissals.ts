@@ -39,11 +39,16 @@ export function activeResult(result: CheckResult, dismissed: readonly { kind: Fi
   const issues = keep(result.issues, "issue");
   const recommendations = keep(result.recommendations, "recommendation");
   if (result.rating === "unreadable" || dismissed.length === 0) return { rating: result.rating, issues, recommendations };
-  const rating: CheckRating =
-    issues.length > 0
-      ? "needsFixing"
-      : result.rating === "looksGood" || recommendations.length === 0
-        ? "looksGood"
-        : "canImprove";
-  return { rating, issues, recommendations };
+  return { rating: settledRating(result.rating, issues.length, recommendations.length), issues, recommendations };
+}
+
+/**
+ * A rating worked out again once the findings changed (dismissed, or edited
+ * by the admin, lib/checks/free.ts): an issue left means it needs fixing;
+ * otherwise it's ready, with tips if any are left (a "looks good" with minor
+ * tips stays as it was).
+ */
+export function settledRating(rating: CheckRating, issues: number, recommendations: number): CheckRating {
+  if (rating === "unreadable") return rating;
+  return issues > 0 ? "needsFixing" : rating === "looksGood" || recommendations === 0 ? "looksGood" : "canImprove";
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sourcesPath } from "@/content/sources";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { pageMetadata } from "@/lib/metadata";
 import { localePath } from "@/lib/site";
@@ -67,6 +68,15 @@ export default async function HowWeBuiltPage() {
               </li>
             ))}
           </ol>
+          {/* Under the steps, so it's what "how we built it" leads to: an icon makes it hard to miss. */}
+          <div className={`mt-10 ${mobileCenter}`}>
+            <span className="inline-flex items-center gap-3">
+              <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-sage-200 text-navy-900">
+                <Icon name="guide" className="size-5" />
+              </span>
+              <TextLink href={localePath(locale, sourcesPath)}>{h.steps.sourcesLink}</TextLink>
+            </span>
+          </div>
         </Container>
       </section>
 

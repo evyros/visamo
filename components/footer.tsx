@@ -3,6 +3,7 @@ import { format, getDictionary, getLocale } from "@/i18n/dictionaries";
 import { branchesPath } from "@/content/branches";
 import { glossaryPath } from "@/content/glossary";
 import { processPath } from "@/content/process";
+import { sourcesPath } from "@/content/sources";
 import { localePath, site } from "@/lib/site";
 import { Icon } from "./icons";
 import { Logo } from "./logo";
@@ -32,6 +33,7 @@ export async function Footer() {
       links: [
         { href: p("/security"), label: f.trust.security },
         { href: p("/data-privacy"), label: f.trust.dataPrivacy },
+        { href: p(sourcesPath), label: f.trust.sources },
         { href: p("/legal/privacy"), label: f.trust.privacy },
         { href: p("/legal/terms"), label: f.trust.terms },
         { href: p("/legal/accessibility"), label: f.trust.accessibility },

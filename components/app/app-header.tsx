@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import type { Messages } from "@/i18n/messages";
-import { contactUrl } from "@/lib/site";
+import { sourcesPath } from "@/content/sources";
+import { contactUrl, localePath, site } from "@/lib/site";
 import { requireUser } from "@/lib/session";
 import { Logo } from "@/components/logo";
 import { AccountMenu } from "./account-menu";
@@ -27,6 +28,8 @@ export async function AppHeader({ sections = true }: { sections?: boolean }) {
   const menuLinks: NavItem[] = sections
     ? [
         { href: "/settings", label: t.app.shell.settings, icon: "gear" },
+        // The website's page, in the app's language: the app has none in its URLs, the website does.
+        { href: site.url + localePath(locale, sourcesPath), label: t.app.shell.sources, icon: "guide", newTab: true },
         { href: contactUrl(locale), label: t.app.shell.support, icon: "help", newTab: true },
       ]
     : [];

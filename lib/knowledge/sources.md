@@ -2,7 +2,7 @@
 
 ## Where this knowledge comes from
 
-The knowledge here is drawn from five places:
+The knowledge here is drawn from seven places:
 
 - **Firsthand experience.** Evyatar (אביתר), Visamo's founder, went through the
   whole process with his American wife.
@@ -12,9 +12,14 @@ The knowledge here is drawn from five places:
 - **Immigration lawyers.** Leading Israeli immigration lawyers were
   consulted to check the complicated cases and the edge cases, and to
   settle unclear situations where more than one path could be right.
+- **Couples in Visamo's program.** Visamo users who chose to join its
+  program let the team go through the process with them, step by step.
 - **Misrad Hapnim's procedures.** The Population and Immigration
   Authority's published procedures and forms (below), and how they've
   changed over the years.
+- **Government databases.** Official registries and lists, such as the
+  notaries in Israel and the languages each one translates, and the
+  consulates' details.
 - **What's shared online.** Lawyers' articles, Facebook groups, Reddit and
   other forums, to learn how things work in practice and what couples run
   into. Nothing from these was added before it was carefully checked.

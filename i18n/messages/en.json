@@ -22,6 +22,10 @@
       "title": "How We Built Visamo: Couples' Experience, Powered by AI",
       "description": "Visamo's AI is built on the experience of many couples who went through Israel's gradual process. How we built it, what the AI does, and what it doesn't."
     },
+    "sources": {
+      "title": "Our Sources: Where Visamo's Answers and Checks Come From",
+      "description": "Visamo's chat and document checks work from one knowledge base, built from seven sources, from Misrad Hapnim's procedures to immigration lawyers."
+    },
     "dataPrivacy": {
       "title": "How we handle your data",
       "description": "Everything Visamo does with your documents, and everything you can do with them: encryption, access, deletion and your controls."
@@ -96,6 +100,7 @@
       "title": "Trust",
       "security": "Security & privacy",
       "dataPrivacy": "How we handle your data",
+      "sources": "Our sources",
       "privacy": "Privacy policy",
       "terms": "Terms of use",
       "accessibility": "Accessibility statement"
@@ -706,7 +711,8 @@
           "title": "We built it into Visamo's AI",
           "body": "The assistant and the document check both work from this knowledge, so every answer and every check reflects what couples learned, not only what's published."
         }
-      ]
+      ],
+      "sourcesLink": "Where Visamo's knowledge comes from"
     },
     "ai": {
       "title": "What the AI does, and what it doesn't",
@@ -735,6 +741,67 @@
       "title": "Your documents stay yours",
       "body": "The knowledge behind Visamo comes from couples' accounts of the process, never from the documents you upload. When the AI checks a document, it's processed only to give you that result, and it's never used to train AI models.",
       "link": "How we protect your documents"
+    }
+  },
+  "sources": {
+    "hero": {
+      "eyebrow": "Our sources",
+      "title": "Where Visamo's answers come from",
+      "subtitle": "Every answer in the chat and every document check works from one knowledge base, built from seven sources.",
+      "figure": "Seven sources flow into one knowledge base, which both the chat and the document check work from.",
+      "chat": "Chat",
+      "check": "Document check"
+    },
+    "list": {
+      "title": "Seven sources, one knowledge base",
+      "items": [
+        {
+          "title": "Firsthand experience",
+          "body": "Evyatar, Visamo's founder, went through the whole process with his American wife."
+        },
+        {
+          "title": "Misrad Hapnim's procedures",
+          "body": "The Population and Immigration Authority's published procedures and forms, and how they've changed over the years."
+        },
+        {
+          "title": "Immigration lawyers",
+          "body": "Leading Israeli immigration lawyers were consulted on the complicated cases and the edge cases, and to settle situations where more than one path could be right."
+        },
+        {
+          "title": "Interviews with couples",
+          "body": "Couples who finished the process were interviewed about every step: what they were asked for, where they got stuck, and how they got past it."
+        },
+        {
+          "title": "Couples in Visamo's program",
+          "body": "Visamo users who chose to join our program let us go through the process with them, step by step."
+        },
+        {
+          "title": "Government databases",
+          "body": "Official registries and lists, such as the notaries in Israel and the languages each one translates, and the consulates' details."
+        },
+        {
+          "title": "What's shared online",
+          "body": "Lawyers' articles, Facebook groups, Reddit and other forums, to learn how things work in practice. Nothing from them was added before it was carefully checked."
+        }
+      ],
+      "founderLink": "The story behind Visamo",
+      "closing": "Together, they make the most complete and reliable knowledge base about the Israeli partner visa."
+    },
+    "use": {
+      "title": "How Visamo uses it",
+      "chat": {
+        "title": "The chat",
+        "body": "The assistant answers your questions from this knowledge base: the procedures, every document, and how each step works in practice. When your case needs a lawyer, it tells you."
+      },
+      "check": {
+        "title": "The document check",
+        "body": "Each document has its own list: the minimum requirements it has to meet, and what makes it stronger. Both are written from the same knowledge, including what branches ask for beyond the published lists. Your file is read against that list."
+      },
+      "privacy": "The knowledge comes from these sources, not from the documents you upload."
+    },
+    "limits": {
+      "body": "Visamo's AI can still get things wrong, and it isn't legal advice. If your case involves a previous refusal, a hearing or an unusual status, speak with a licensed Israeli lawyer.",
+      "link": "What the AI does, and what it doesn't"
     }
   },
   "about": {
@@ -1141,6 +1208,7 @@
       "file": "My file",
       "chat": "Chat",
       "settings": "Settings",
+      "sources": "Our sources",
       "support": "Support",
       "accountMenu": "Account menu",
       "sectionMenu": "Menu",

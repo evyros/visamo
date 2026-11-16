@@ -400,3 +400,51 @@ export function glossaryStructuredData({
     },
   ];
 }
+
+/**
+ * JSON-LD for the sources page: an AboutPage about Visamo itself (the
+ * Organization the homepage defines, by its @id), whose main content is the
+ * list of sources its knowledge comes from, as the page shows them. Search
+ * engines and AI tools read it to answer "where does Visamo's information
+ * come from?". The URL is absolute.
+ */
+export function sourcesStructuredData({
+  title,
+  description,
+  url,
+  listName,
+  sources,
+  inLanguage,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  listName: string;
+  sources: { title: string; body: string }[];
+  inLanguage: string;
+}) {
+  const organization = { "@id": `${site.url}/#organization` };
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": url,
+    name: title,
+    description,
+    url,
+    inLanguage,
+    isPartOf: { "@type": "WebSite", name, url: site.url },
+    about: organization,
+    publisher: organization,
+    mainEntity: {
+      "@type": "ItemList",
+      name: listName,
+      numberOfItems: sources.length,
+      itemListElement: sources.map((source, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: source.title,
+        description: plain(source.body),
+      })),
+    },
+  };
+}

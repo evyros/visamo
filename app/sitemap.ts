@@ -3,6 +3,7 @@ import { branchesPath, surveyPath } from "@/content/branches";
 import { glossaryPath, glossaryUpdated } from "@/content/glossary";
 import { getGuides, guideSlugs } from "@/content/guides";
 import { allAnswers, processPath, processUpdated, trackPath } from "@/content/process";
+import { sourcesPath } from "@/content/sources";
 import { defaultLocale, liveLocales } from "@/i18n/config";
 import { localePath, site } from "@/lib/site";
 
@@ -25,6 +26,7 @@ const pages: { path: string; updated?: string }[] = [
     "/security",
     "/about",
     "/how-we-built",
+    sourcesPath,
     "/data-privacy",
     "/contact",
     "/legal/privacy",

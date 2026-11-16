@@ -38,6 +38,7 @@ import { ACCEPTED_TYPES, MAX_DOCUMENT_BYTES, MAX_FILE_BYTES, MAX_FILES_PER_DOCUM
 import type { FileView } from "@/lib/files/view";
 import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/document-progress";
 import { Notice } from "@/components/app/auth-ui";
+import { CheckCoverage } from "@/components/app/check-coverage";
 import { Dialog } from "@/components/app/dialog";
 import { Icon } from "@/components/icons";
 import { StepGlyph, type StepGlyphName } from "@/components/step-glyph";
@@ -111,6 +112,10 @@ export type CheckSettings = {
   /** Shown near the fair-use limit. */
   notice: string | null;
   supportUrl: string;
+  /** With what a check covered: the couple's procedure (5.2.0008 or 5.2.0009). */
+  procedure: string;
+  /** The website's sources page, where the knowledge comes from. */
+  sourcesUrl: string;
 };
 
 /**
@@ -123,7 +128,10 @@ type CheckAccess = "bought" | "free" | "used";
  * What a card's check footer needs from the settings. `busy`: a free case's
  * one check is running on a card, so another card's can't start.
  */
-type FooterSettings = Pick<CheckSettings, "notice" | "supportUrl"> & { access: CheckAccess; busy: boolean };
+type FooterSettings = Pick<CheckSettings, "notice" | "supportUrl" | "procedure" | "sourcesUrl"> & {
+  access: CheckAccess;
+  busy: boolean;
+};
 
 /** `waiting`: this page started the check and waits on its answer, which brings the result. */
 type ItemCheck = { running: boolean; last: CheckView | null; error?: string; waiting?: boolean };
@@ -235,7 +243,14 @@ export function DocumentsBoard({
   const access: CheckAccess = settings.bought ? "bought" : checksLeft > 0 ? "free" : "used";
   // A free check running, this page's or the partner's (the polling sees it).
   const busy = access === "free" && Object.values(checks).some((c) => c.running);
-  const footer: FooterSettings = { access, busy, notice: settings.notice, supportUrl: settings.supportUrl };
+  const footer: FooterSettings = {
+    access,
+    busy,
+    notice: settings.notice,
+    supportUrl: settings.supportUrl,
+    procedure: settings.procedure,
+    sourcesUrl: settings.sourcesUrl,
+  };
   const [pending, setPending] = useState<Pending[]>([]);
   // Per document: an error about files that weren't added.
   const [addErrors, setAddErrors] = useState<Record<string, string>>({});
@@ -819,9 +834,10 @@ function AskLink({ documentKey, children }: { documentKey: string; children: Rea
   return (
     <Link
       href={`/chat?about=${encodeURIComponent(documentKey)}`}
-      className="inline-flex shrink-0 items-center gap-1.5 text-[15px] font-semibold text-teal-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+      // Its baseline is its text's (the icon is centered on it), so a row can line it up with other text.
+      className="inline-flex shrink-0 items-baseline gap-1.5 text-[15px] font-semibold text-teal-700 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
     >
-      <Icon name="chat" className="size-4" />
+      <Icon name="chat" className="size-4 self-center" />
       {children}
     </Link>
   );
@@ -930,6 +946,12 @@ function CheckFooter({
           <CheckIcon rating={result.rating} label={c.ratings[result.rating]} />
         </span>
         <span className="font-semibold text-navy-900">{c.ratings[result.rating]}</span>
+        {/* What Visamo checks. Not for files it couldn't read: the check got no further. */}
+        {result.rating !== "unreadable" && (
+          <span className="-ms-1 self-center">
+            <CheckCoverage t={c.covered} procedure={settings.procedure} sourcesUrl={settings.sourcesUrl} />
+          </span>
+        )}
         {result.free && !locked && settings.access !== "bought" && (
           <span className="self-center rounded-full bg-teal-100 px-2 py-0.5 text-xs font-semibold text-teal-700">{c.free}</span>
         )}
@@ -954,7 +976,8 @@ function CheckFooter({
     );
   } else if (settings.access === "used") {
     // The free check is used (by them, or by the admin's first approved result): the button leads to the buy page.
-    state = c.freeUsed;
+    // With files uploaded, it says first that they weren't checked: no result here isn't a pass.
+    state = uploaded ? c.freeUsedUnchecked : c.freeUsed;
     action = (
       <Link href={buyUrl("/file/documents")} className={`${button} bg-navy-900 text-white hover:bg-navy-800`}>
         <Icon name="visamo" className="size-4" />
@@ -985,12 +1008,37 @@ function CheckFooter({
       </Tooltip>
     );
   }
+  // Before a result: what Visamo checks. By the Check button, which leads its row. Once the free
+  // check is used, at the end of its sentence, so the row still ends with the way to Full file check.
+  if (action) {
+    const coverage = <CheckCoverage t={c.covered} procedure={settings.procedure} sourcesUrl={settings.sourcesUrl} />;
+    if (settings.access === "used") {
+      state = (
+        <>
+          {/* Its margins take it out of the line's height: the sentence stays centered on the button. */}
+          {state} <span className="-my-1 inline-block align-middle">{coverage}</span>
+        </>
+      );
+    } else {
+      action = (
+        <span className="flex shrink-0 items-center gap-1.5">
+          {action}
+          {coverage}
+        </span>
+      );
+    }
+  }
 
   return (
-    <section aria-label={c.check} className={footerClass}>
+    // A result's icon is a solid disc at the row's top: a little more room above it, so it
+    // doesn't crowd the card's edge.
+    <section aria-label={c.check} className={`${footerClass} ${result ? "pt-4" : ""}`}>
       {/* As tall as the button until there's a result, so starting a check doesn't make the
-          card jump. A result has no button: its row is as tall as its text. */}
-      <div className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-2 ${result ? "" : "min-h-10"}`}>
+          card jump. A result has no button: its row is as tall as its text, and the way to ask
+          shares its baseline (centered, the result's taller icon would push it down). */}
+      <div
+        className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-2 ${result ? "sm:items-baseline" : "min-h-10"}`}
+      >
         {/* The check leads the row, its state by its button, and the way to ask sits at the
             end; on a phone, all at the start, the state a line of its own above them. A
             result's disclaimer is a line of its own under it: on a phone, before the way to
@@ -1139,18 +1187,24 @@ function FreeFindings({
               aria-expanded={open}
               aria-controls={listId}
               onClick={() => setOpen((o) => !o)}
-              className="mt-1.5 flex items-center gap-1.5 rounded-md text-start text-sm font-semibold text-navy-900 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+              className="mt-1.5 flex items-start gap-1.5 rounded-md text-start text-sm font-semibold text-navy-900 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
             >
-              {/* At the line's start, like a disclosure arrow: left in English, right in Hebrew. */}
-              <Icon
-                name="chevronDown"
-                className={`size-4 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
-              />
+              {/* At the line's start, like a disclosure arrow: left in English, right in Hebrew. On
+                  the first line, when the counts wrap on a phone. */}
+              <span className="flex h-[1lh] shrink-0 items-center">
+                <Icon
+                  name="chevronDown"
+                  className={`size-4 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+                />
+              </span>
               {/* Close to the arrow; the counts keep their own room between them. */}
               <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
                 {counts.map((count) => (
-                  <span key={count.dot} className="inline-flex items-center gap-2">
-                    <span aria-hidden className={`size-2.5 rounded-full ${count.dot}`} />
+                  <span key={count.dot} className="inline-flex items-start gap-2">
+                    {/* On the first line too, when the count wraps. */}
+                    <span aria-hidden className="flex h-[1lh] shrink-0 items-center">
+                      <span className={`size-2.5 rounded-full ${count.dot}`} />
+                    </span>
                     {count.text}
                   </span>
                 ))}

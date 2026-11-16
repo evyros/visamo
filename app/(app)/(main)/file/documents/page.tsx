@@ -14,6 +14,7 @@ import { fileView } from "@/lib/files/view";
 import { checksRunningLow } from "@/lib/products";
 import { requireCase } from "@/lib/session";
 import { contactUrl, localePath, site } from "@/lib/site";
+import { procedures, sourcesPath } from "@/content/sources";
 import {
   DocumentsBoard,
   type BoardLabels,
@@ -152,6 +153,9 @@ export default async function DocumentsPage() {
             ? format(t.check.checksLow, { used: balance.used, allowed: balance.granted })
             : null,
           supportUrl: contactUrl(locale),
+          // With what a check covered: the couple's own procedure.
+          procedure: format(t.check.covered.procedure, { number: procedures[details.relationship.relationship] }),
+          sourcesUrl: new URL(localePath(locale, sourcesPath), site.url).toString(),
         }}
       />
     </div>

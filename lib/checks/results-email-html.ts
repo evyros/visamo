@@ -31,6 +31,8 @@ export type ResultsEmailCopy = {
   /** "and {count} more", for each list cut short. */
   more: (count: number) => string;
   nothingToFix: string;
+  /** "2 other uploaded documents are unchecked.", under the results; empty to leave it out. */
+  unchecked: string;
   unreadable: string;
   locked: string;
   unlock: string;
@@ -178,7 +180,12 @@ export function renderResultsEmail({
           <tr><td style="padding:0 28px">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${documents.map(card).join("")}
             </table>
-          </td></tr>
+          </td></tr>${
+            copy.unchecked
+              ? `
+          <tr><td dir="${dir}" style="padding:0 28px 14px;font-family:${FONT};font-size:15px;line-height:1.5;color:${color.text};text-align:${start}">${escape(copy.unchecked)}</td></tr>`
+              : ""
+          }
           <tr><td style="padding:10px 28px 8px">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate">
               <tr><td align="center" bgcolor="${color.teal}" style="border-radius:12px;background:${color.teal}">
@@ -210,6 +217,7 @@ export function renderResultsEmail({
             : [...d.issues.map((t) => `- ${t}`), ...d.tips.map((t) => `- ${t}`)]),
       ].join("\n"),
     ),
+    ...(copy.unchecked ? [copy.unchecked] : []),
     `${copy.button}: ${resultsUrl}`,
     copy.disclaimer,
     copy.ignore,

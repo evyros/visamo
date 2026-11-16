@@ -121,6 +121,16 @@ describe("resultsEmail", () => {
     expect(email.text.indexOf("Apostille")).toBeLessThan(email.text.indexOf("See what to fix"));
   });
 
+  it("says how many uploaded documents weren't checked, and nothing when none are", async () => {
+    const email = await resultsEmail(runs, "en", names, caseRow, 3);
+    expect(email.html).toContain("3 other uploaded documents are unchecked.");
+    expect(email.text).toContain("3 other uploaded documents are unchecked.");
+    expect((await resultsEmail(runs, "en", names, caseRow, 1)).text).toContain("1 other uploaded document is unchecked.");
+    expect((await resultsEmail(runs, "en", names, caseRow)).text).not.toContain("unchecked");
+    // With Full file check, they check those themselves.
+    expect((await resultsEmail(runs, "en", names, { ...caseRow, fileCheck: true }, 3)).text).not.toContain("unchecked");
+  });
+
   it("titles the email by the worst result, in the couple's language", async () => {
     const good = [{ ...runs[1], rating: "looksGood" as const, issues: [], recommendations: [], hidden: null }];
     expect((await resultsEmail(good, "en", names, caseRow)).subject).toBe("Your document check: looks good");

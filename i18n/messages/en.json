@@ -1782,6 +1782,10 @@
           "one": "and 1 more",
           "other": "and {count} more"
         },
+        "unchecked": {
+          "one": "1 other uploaded document is unchecked.",
+          "other": "{count} other uploaded documents are unchecked."
+        },
         "nothingToFix": "Nothing to fix.",
         "unreadable": "We couldn't read the files. Upload a clearer scan, or a PDF without a password.",
         "button": "See the results",
@@ -2076,8 +2080,8 @@
           "other": "{count} documents can be improved"
         },
         "unchecked": {
-          "one": "1 more uploaded document hasn't been checked yet.",
-          "other": "{count} more uploaded documents haven't been checked yet."
+          "one": "1 uploaded document is unchecked – upgrade to check it",
+          "other": "{count} uploaded documents are unchecked – upgrade to check them"
         }
       },
       "progressChecked": {
@@ -2163,6 +2167,24 @@
         "checkedBy": "Checked {when} by {name}",
         "checkedOn": "Checked {when}",
         "disclaimer": "This check does not constitute legal advice.",
+        "covered": {
+          "title": "What Visamo checks",
+          "list": [
+            "Right document",
+            "Every page and part is there",
+            "Fits your details",
+            "Recent, according to procedures",
+            "Expiration & validity",
+            "Filled & signed correctly",
+            "Apostille or legalization",
+            "Translation, in every legal aspect",
+            "Meets the language rules",
+            "Enough evidence",
+            "Known and common rejects"
+          ],
+          "procedure": "Up to date with procedure {number}",
+          "sources": "See our sources"
+        },
         "checksLow": "You've used {used} of your {allowed} document checks. Need more?",
         "contactSupport": "Contact support",
         "cantOpen": "We couldn't open \"{name}\". It may be damaged or protected by a password.",
@@ -2176,6 +2198,7 @@
         },
         "upgrade": "Get Full file check",
         "freeUsed": "You've used your free check. Don't let a wrong detail delay your case.",
+        "freeUsedUnchecked": "Not checked. You've used your free check.",
         "free": "Free check",
         "locked": "See what to fix with Full file check",
         "cantOpenTitle": "Couldn't open a file",

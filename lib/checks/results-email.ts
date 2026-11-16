@@ -5,6 +5,7 @@ import { defaultLocale, isLocale, locales, type Locale } from "@/i18n/config";
 import { format, loadMessages } from "@/i18n/messages";
 import { db } from "@/lib/db";
 import { caseMember, casePerson, cases, documentCheck, user } from "@/lib/db/schema";
+import { caseFiles } from "@/lib/case-documents";
 import { documentTitle } from "@/lib/documents/titles";
 import { sendCheckResultsEmail } from "@/lib/email";
 import { buyUrl } from "@/lib/buy-paths";
@@ -12,7 +13,7 @@ import { site } from "@/lib/site";
 import { activeResult, type FindingKind } from "./dismissals";
 import { findingText, type CheckFinding, type CheckRating } from "./result";
 import { renderResultsEmail, severity, worstRating, type EmailDocument } from "./results-email-html";
-import { isLocked } from "./store";
+import { caseChecks, isLocked } from "./store";
 
 // The couple's email about free check results the admin approved
 // (lib/checks/free.ts). An approval opens an hour (cases.results_email_due_at)
@@ -30,7 +31,9 @@ import { isLocked } from "./store";
 // its rating, how many findings, and for the one shown in full, their titles
 // in their colors. A locked one has only its rating and counts, never its
 // findings' text: it must not reach the couple, and an email can't be taken
-// back. The subject and heading follow the worst result in it.
+// back. Under the cards, how many other uploaded documents weren't checked, so
+// the ones it lists don't read as the only ones with something to fix. The
+// subject and heading follow the worst result in it.
 
 export const CHECK_RESULTS_EMAIL_TOPIC = "check-results-email";
 
@@ -126,7 +129,7 @@ export async function deliverResultsEmail(caseId: string) {
     // Checked again and approved again within the hour: the latest says it.
     const latest = runs.filter((run, i) => runs.findIndex((r) => r.documentKey === run.documentKey) === i);
 
-    const [members, people, [caseRow]] = await Promise.all([
+    const [members, people, [caseRow], files, checks] = await Promise.all([
       db
         .select({ id: user.id, email: user.email, locale: user.locale })
         .from(caseMember)
@@ -134,12 +137,20 @@ export async function deliverResultsEmail(caseId: string) {
         .where(eq(caseMember.caseId, caseId)),
       db.select({ name: casePerson.name, isIsraeli: casePerson.isIsraeli }).from(casePerson).where(eq(casePerson.caseId, caseId)),
       db.select({ fileCheck: cases.fileCheck, freeFullKey: cases.freeFullKey }).from(cases).where(eq(cases.id, caseId)),
+      caseFiles(caseId),
+      caseChecks(caseId),
     ]);
     if (!caseRow) return;
     const names = {
       israeli: people.find((p) => p.isIsraeli)?.name ?? "",
       foreign: people.find((p) => !p.isIsraeli)?.name ?? "",
     };
+    // The uploaded documents the couple has no current result for, as on their page: the email says
+    // they weren't checked, so the ones it lists don't read as the only ones with something to fix.
+    const uploaded = new Set(files.map((f) => f.documentKey));
+    const unchecked = [...checks].filter(
+      ([key, check]) => check.checkable && uploaded.has(key) && !(check.result && check.fresh),
+    ).length;
     const key = latest
       .map((r) => r.id)
       .sort()
@@ -148,7 +159,7 @@ export async function deliverResultsEmail(caseId: string) {
       const locale = isLocale(member.locale) ? member.locale : defaultLocale;
       await sendCheckResultsEmail({
         to: member.email,
-        email: await resultsEmail(latest, locale, names, caseRow),
+        email: await resultsEmail(latest, locale, names, caseRow, unchecked),
         // A retry after a send that went through doesn't send it twice.
         idempotencyKey: `check-results/${member.id}/${hash(key)}`,
       });
@@ -189,6 +200,8 @@ export async function resultsEmail(
   locale: Locale,
   names: { israeli: string; foreign: string },
   caseRow: { fileCheck: boolean; freeFullKey: string | null },
+  /** How many uploaded documents have no current result: a line under the results says so. */
+  unchecked = 0,
 ) {
   const t = await loadMessages(locale);
   const c = t.app.documentsPage.check;
@@ -249,6 +262,8 @@ export async function resultsEmail(
       ratings: c.ratings,
       more: (n) => forms(e.more, n),
       nothingToFix: e.nothingToFix,
+      // Not with Full file check: they can check those themselves.
+      unchecked: unchecked > 0 && !caseRow.fileCheck ? forms(e.unchecked, unchecked) : "",
       unreadable: e.unreadable,
       locked: c.locked,
       unlock: c.upgrade,

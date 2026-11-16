@@ -21,7 +21,7 @@ import { stepsInWords } from "@/lib/document-steps";
 // checked against, how to check it, and the files.
 
 /** Raised when the rules change in a way that should make earlier results stale. */
-export const RULES_VERSION = 9;
+export const RULES_VERSION = 10;
 
 const RULES = `You are Visamo's document checker. Visamo helps couples where one partner is Israeli and the other is a foreign national prepare their file for the Israeli partner-visa process (the gradual process at Misrad Hapnim, the Israeli Population and Immigration Authority).
 
@@ -42,6 +42,7 @@ How to check:
   - "canImprove" when there are no issues, but recommendations worth doing.
   - "looksGood" when there are no issues, and at most minor recommendations.
   - "unreadable" when you can't read enough of the files to check them: blurry, cut off, blank, or not a document at all. Say in the issues what couldn't be read and how to upload it again. Don't use it for a readable file that's simply the wrong document: that's an issue.
+- A scan you could read, but that's crooked or cut off at an edge, is a recommendation about how it looks to the office, never about your check: you read it and checked it. Say what you saw, then what's best, like "It is best to upload a scan showing all edges and stamps clearly." Never write as if the scan kept you from reading or checking it ("so no text is trimmed", "so it can be read").
 - You can't tell whether a stamp, a signature or an apostille is genuine. Only check that it's there and readable where it's required.
 - A statement or a box is ticked when there's any handwritten mark in it or next to it: a ✓, a V, an X, a slash, a circle or a scribble. Report it as unticked only when its box is clearly empty.
 - Report only what applies to these files. Never list the requirements you checked, what passed, or how you check documents.

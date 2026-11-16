@@ -254,7 +254,8 @@
         "mustNotSay": [
           "The certificate is a translation, or needs a translation made in Estonia with an apostille of its own",
           "The apostille doesn't certify the certificate, or the certificate needs another apostille",
-          "Reorder the pages so the document comes before its apostille, or merge the files into one"
+          "Reorder the pages so the document comes before its apostille, or merge the files into one",
+          "The certificate couldn't be read or checked because of the scan (saying it was read, but a better scan is best, is fine)"
         ]
       }
     }

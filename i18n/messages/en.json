@@ -1996,6 +1996,22 @@
       "intro": "Everything to bring to Misrad Hapnim for your first application, for your situation.",
       "progress": "{done} of {total} uploaded",
       "progressHint": "Uploaded isn't the same as accepted. With Full file check, every document is checked against what Misrad Hapnim asks for.",
+      "freeFindings": {
+        "titleFix": "Issues found in your documents",
+        "titleImprove": "Some of your documents can be improved",
+        "fix": {
+          "one": "1 document needs fixing",
+          "other": "{count} documents need fixing"
+        },
+        "improve": {
+          "one": "1 document can be improved",
+          "other": "{count} documents can be improved"
+        },
+        "unchecked": {
+          "one": "1 more uploaded document hasn't been checked yet.",
+          "other": "{count} more uploaded documents haven't been checked yet."
+        }
+      },
       "progressChecked": {
         "ready": {
           "one": "1 ready",

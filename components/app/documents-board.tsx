@@ -61,6 +61,8 @@ type Labels = BoardLabels;
 export type DocumentItem = {
   key: string;
   title: string;
+  /** The title with the partner's name for one of theirs ("Passport (John)"), for lists outside the groups. */
+  namedTitle: string;
   description: string;
   /** What it has to show, by the couple's case, right under the description; empty for most documents. */
   points: string[];
@@ -426,16 +428,20 @@ export function DocumentsBoard({
   const filesOf = (key: string) => files.filter((f) => f.documentKey === key);
   // Each card's status pill, and where it stands in the progress.
   const states: Record<string, DocState> = {};
+  const results: Record<string, CheckView | null> = {};
   const standing = new Map<string, Standing>();
   for (const item of items) {
     const here = filesOf(item.key);
     const result = freshResult(checks[item.key], here);
+    results[item.key] = result;
     states[item.key] = docState(here.length > 0, result);
     standing.set(item.key, standingOf(here.length > 0, item.check.checkable, result?.rating ?? null));
   }
   const uploads = progressOf(items, uploadedKeys(files));
   const checked = checkedProgressOf(items, standing);
   const counts = standingCounts(checked, t.progressChecked, locale);
+  // Without Full file check: what the free check found, so it isn't missed on the cards below.
+  const found = settings.bought ? null : freeFindingsOf(items, states, results);
   // A retired document's files can only be removed; once they all are, it goes.
   const retiredLeft = retired.filter((r) => files.some((f) => f.documentKey === r.key));
 
@@ -458,16 +464,20 @@ export function DocumentsBoard({
             <div className="mt-3">
               <ProgressBar value={{ kind: "uploads", progress: uploads }} label={format(t.progress, uploads)} />
             </div>
-            <p className="mt-3 text-sm text-slate-600">
-              {t.progressHint}{" "}
-              <Link
-                href={buyUrl("/file/documents")}
-                className="whitespace-nowrap font-semibold text-teal-700 hover:underline"
-              >
-                <Icon name="visamo" className="me-1 inline-block size-4 align-[-0.2em]" />
-                {t.check.upgrade}
-              </Link>
-            </p>
+            {found ? (
+              <FreeFindings t={t} found={found} locale={locale} />
+            ) : (
+              <p className="mt-3 text-sm text-slate-600">
+                {t.progressHint}{" "}
+                <Link
+                  href={buyUrl("/file/documents")}
+                  className="whitespace-nowrap font-semibold text-teal-700 hover:underline"
+                >
+                  <Icon name="visamo" className="me-1 inline-block size-4 align-[-0.2em]" />
+                  {t.check.upgrade}
+                </Link>
+              </p>
+            )}
           </>
         )}
       </section>
@@ -1043,6 +1053,195 @@ const findingStyle = {
   // What the checker couldn't read: the rating's grey, not an issue's red.
   unreadable: { icon: "eyeOff", box: "border-s-slate-500 bg-slate-300/30", color: "text-slate-500" },
 } as const;
+
+/** A document the free check found something in, for the list under the counts. */
+type FoundDocument = { key: string; title: string; rating: CheckRating; fix: number; tips: number };
+
+/**
+ * What a free case's checks found, by document: the ones that need fixing
+ * and the ones that can be improved, each with how many findings (a locked
+ * one's counts too), and how many uploaded documents with a check written
+ * have no result yet. Null when nothing needs fixing or improving.
+ */
+function freeFindingsOf(items: DocumentItem[], states: Record<string, DocState>, results: Record<string, CheckView | null>) {
+  const found = (state: DocState) =>
+    items.flatMap((i): FoundDocument[] => {
+      const result = results[i.key];
+      if (states[i.key] !== state || !result) return [];
+      const counts = result.locked ?? { issues: result.issues.length, recommendations: result.recommendations.length };
+      return [{ key: i.key, title: i.namedTitle, rating: result.rating, fix: counts.issues, tips: counts.recommendations }];
+    });
+  const fix = found("needsFixing");
+  const improve = found("readyTips");
+  const unchecked = items.filter((i) => i.check.checkable && states[i.key] === "uploaded").length;
+  return fix.length + improve.length > 0 ? { fix, improve, unchecked } : null;
+}
+
+/**
+ * In the progress box, without Full file check, once a check found something:
+ * how many documents need fixing and can be improved, opening to the list of
+ * them with each one's findings counted, how many uploaded documents weren't
+ * checked, and the way to Full file check. It takes the place of the general
+ * line about Full file check.
+ */
+function FreeFindings({
+  t,
+  found,
+  locale,
+}: {
+  t: Labels;
+  found: NonNullable<ReturnType<typeof freeFindingsOf>>;
+  locale: Locale;
+}) {
+  const f = t.freeFindings;
+  const c = t.check;
+  const [open, setOpen] = useState(false);
+  const listId = useId();
+  const plural = new Intl.PluralRules(locale);
+  const forms = (text: { one: string; other: string }, n: number) =>
+    format(plural.select(n) === "one" ? text.one : text.other, { count: n });
+  const fixing = found.fix.length > 0;
+  const counts = [
+    { n: found.fix.length, text: forms(f.fix, found.fix.length), dot: "bg-crimson-600" },
+    { n: found.improve.length, text: forms(f.improve, found.improve.length), dot: "bg-blue-600" },
+  ].filter((count) => count.n > 0);
+  const documents = [...found.fix, ...found.improve];
+  const tone = fixing ? "fix" : "improve";
+  return (
+    <div className="relative mt-4 overflow-hidden rounded-[12px] border border-line-200 bg-sand-50">
+      <FindingsBackdrop tone={tone} />
+      <div className="relative flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-5 sm:p-5">
+        <div className="flex min-w-0 flex-1 items-start gap-3.5">
+          <DocumentScan tone={tone} className="size-12 shrink-0 sm:size-14" />
+          <div className="min-w-0">
+            <p className="font-semibold text-navy-900">{fixing ? f.titleFix : f.titleImprove}</p>
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls={listId}
+              onClick={() => setOpen((o) => !o)}
+              className="mt-1.5 flex items-center gap-1.5 rounded-md text-start text-sm font-semibold text-navy-900 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+            >
+              {/* At the line's start, like a disclosure arrow: left in English, right in Hebrew. */}
+              <Icon
+                name="chevronDown"
+                className={`size-4 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+              />
+              {/* Close to the arrow; the counts keep their own room between them. */}
+              <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                {counts.map((count) => (
+                  <span key={count.dot} className="inline-flex items-center gap-2">
+                    <span aria-hidden className={`size-2.5 rounded-full ${count.dot}`} />
+                    {count.text}
+                  </span>
+                ))}
+              </span>
+            </button>
+            {found.unchecked > 0 && (
+              <p className="mt-1 text-sm text-slate-600">{forms(f.unchecked, found.unchecked)}</p>
+            )}
+          </div>
+        </div>
+        {/* Beside the text from sm up; on a phone, under it, the box's width. */}
+        <Link
+          href={buyUrl("/file/documents")}
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy-900 px-4 py-2.5 text-[15px] font-semibold text-white shadow-soft hover:bg-navy-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+        >
+          <Icon name="lock" className="size-4" />
+          {c.upgrade}
+        </Link>
+      </div>
+      <ul id={listId} hidden={!open} className="relative space-y-1.5 px-4 pb-4 sm:px-5 sm:pb-5">
+        {documents.map((d) => (
+          <li key={d.key} className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 text-sm ring-1 ring-line-200">
+            <span className="flex h-[1lh] shrink-0 items-center">
+              <CheckIcon rating={d.rating} label={c.ratings[d.rating]} />
+            </span>
+            <span className="min-w-0 flex-1">
+              {/* To its card: the card opens (DocumentCard listens for its hash). */}
+              <a href={`#doc-${encodeURIComponent(d.key)}`} className="font-semibold text-navy-900 hover:underline">
+                {d.title}
+              </a>
+              <span className="text-slate-600">
+                {" · "}
+                {[d.fix > 0 && forms(c.counts.fix, d.fix), d.tips > 0 && forms(c.counts.tip, d.tips)]
+                  .filter(Boolean)
+                  .join(", ")}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** The free findings box's accent: red when something needs fixing, blue for tips only. */
+const findingsTone = {
+  fix: { fill: "fill-crimson-600", stroke: "stroke-crimson-600", soft: "fill-crimson-100" },
+  improve: { fill: "fill-blue-600", stroke: "stroke-blue-600", soft: "fill-blue-50" },
+} as const;
+
+/**
+ * Two soft circles in the far corner of the free findings box, in its
+ * accent's light tint, behind the content. Decorative. Mirrored in Hebrew,
+ * so they stay at the end.
+ */
+function FindingsBackdrop({ tone }: { tone: keyof typeof findingsTone }) {
+  const soft = findingsTone[tone].soft;
+  return (
+    <svg
+      viewBox="0 0 200 160"
+      aria-hidden="true"
+      focusable="false"
+      className="pointer-events-none absolute -end-10 -top-12 h-48 w-60 rtl:-scale-x-100"
+    >
+      <circle cx="140" cy="60" r="70" className={soft} />
+      <circle cx="70" cy="40" r="38" className={`${soft} opacity-60`} />
+    </svg>
+  );
+}
+
+/**
+ * A document under a magnifying glass, one of its lines marked in the
+ * accent's color, and a badge: "!" when something needs fixing, "i" for tips.
+ * One outlined style, like the app's other drawings: navy strokes on flat
+ * fills. Decorative.
+ */
+function DocumentScan({ tone, className }: { tone: keyof typeof findingsTone; className?: string }) {
+  const accent = findingsTone[tone];
+  const outline = { strokeWidth: 2, strokeLinejoin: "round" as const };
+  return (
+    <svg viewBox="0 0 56 56" aria-hidden="true" focusable="false" className={className}>
+      {/* The document, its corner folded. */}
+      <path
+        d="M11 5h17l9 9v32a4 4 0 0 1-4 4H11a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Z"
+        className="fill-white stroke-navy-900"
+        {...outline}
+      />
+      <path d="M28 5v6a3 3 0 0 0 3 3h6" className="fill-teal-100 stroke-navy-900" {...outline} />
+      {/* Its lines: one marked, where the check found something. */}
+      <path d="M13 20h12M13 33h10M13 39h14" className="stroke-slate-300" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M13 26.5h17" className={accent.stroke} strokeWidth="3" strokeLinecap="round" />
+      {/* The magnifying glass over the marked line. */}
+      <circle cx="37" cy="33" r="9" className="fill-white/70 stroke-navy-900" strokeWidth="2.5" />
+      <path d="M43.5 39.5 50 46" className="stroke-navy-900" strokeWidth="4" strokeLinecap="round" />
+      {/* The badge. */}
+      <circle cx="43" cy="11" r="7.5" className={`${accent.fill} stroke-white`} strokeWidth="2" />
+      {tone === "fix" ? (
+        <>
+          <path d="M43 7.5v4.5" className="stroke-white" strokeWidth="2.2" strokeLinecap="round" />
+          <circle cx="43" cy="15" r="1.3" className="fill-white" />
+        </>
+      ) : (
+        <>
+          <circle cx="43" cy="7.6" r="1.3" className="fill-white" />
+          <path d="M43 10.5v4.5" className="stroke-white" strokeWidth="2.2" strokeLinecap="round" />
+        </>
+      )}
+    </svg>
+  );
+}
 
 /**
  * Filler for the locked placeholders: blurred, and never a real finding's

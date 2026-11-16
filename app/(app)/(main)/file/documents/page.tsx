@@ -75,6 +75,8 @@ export default async function DocumentsPage() {
       // The short title: the page groups the documents under each partner's name. Outside those
       // groups, with the partner's name for one of theirs.
       title: whose ? (documentTitle(d.key, catalog, locale, { israeli, foreign }) ?? title) : title,
+      // Outside the groups (the free findings' list): with the partner's name for one of theirs.
+      namedTitle: documentTitle(d.key, catalog, locale, { israeli, foreign }) ?? title,
       description: format(text.description, { country }),
       points: d.points.map((point) => catalog.points[point]),
       ...(d.form && { form: { name: t.formNames[d.form], url: formUrls[d.form] } }),

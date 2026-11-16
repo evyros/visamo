@@ -2397,7 +2397,8 @@
           "PE": {
             "office": "RENIEC, Peru's national registry",
             "details": "A certified copy of the birth record (copia certificada del acta de nacimiento). An older record RENIEC hasn't digitized comes from the municipality where the birth was registered, and a birth registered at a Peruvian consulate from the foreign ministry. For use abroad, get it at a RENIEC office, on paper, with the registrar's signature, not the copy printed at home from its website.",
-            "apostilleBy": "Peru's foreign ministry (Cancillería)"
+            "apostilleBy": "Peru's foreign ministry (Cancillería)",
+            "apostilleDetails": "A record from a municipality gets one only if the municipal registrar's signature is registered with the foreign ministry: if it isn't, RENIEC certifies the signature first, which takes about 15 working days."
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
@@ -2814,7 +2815,8 @@
           "PE": {
             "office": "the judiciary's National Register of Convictions (Registro Nacional de Condenas)",
             "details": "A certificate of criminal record (certificado de antecedentes penales), on paper, from a Poder Judicial office. A Peruvian living abroad can ask for it through a Peruvian consulate, or have someone in Peru apply with their written authorization or a power of attorney. The police's certificate of police record (antecedentes policiales) is a separate document.",
-            "apostilleBy": "Peru's foreign ministry (Cancillería)"
+            "apostilleBy": "Peru's foreign ministry (Cancillería)",
+            "apostilleDetails": "Only in Peru, at its offices or a MAC center: a Peruvian consulate can't add it. A certificate got through a consulate still has to go to Peru for its apostille."
           },
           "PH": {
             "office": "the National Bureau of Investigation (NBI)",

@@ -165,7 +165,10 @@ issued by the municipality where the birth was registered, and a birth
 registered at a Peruvian consulate abroad by the foreign ministry. RENIEC
 also lets you print a copy at home from its website: for use abroad, get it
 at a RENIEC office, on paper, with the registrar's signature. The apostille
-comes from the foreign ministry (Cancillería).
+comes from the foreign ministry (Cancillería). A record from a municipality
+gets one only if the municipal registrar's signature is registered with the
+foreign ministry: if it isn't, RENIEC certifies the signature first, which
+takes about 15 working days.
 
 ### Philippines
 

@@ -279,7 +279,10 @@ Peruvian living abroad can ask for it through a Peruvian consulate, or have
 someone in Peru apply for it with their written authorization or a power of
 attorney. The police (PNP) issue a separate certificate of police record
 (certificado de antecedentes policiales), about police records rather than
-convictions. The apostille comes from the foreign ministry (Cancillería).
+convictions. The apostille comes from the foreign ministry (Cancillería),
+only in Peru, at its offices or a MAC center: a Peruvian consulate can't add
+it. A certificate got through a consulate still has to go to Peru for its
+apostille.
 
 ### Philippines
 

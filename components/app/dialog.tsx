@@ -9,6 +9,7 @@ export function Dialog({
   title,
   closeLabel,
   onClose,
+  wide = false,
   children,
 }: {
   ref: RefObject<HTMLDialogElement | null>;
@@ -16,6 +17,8 @@ export function Dialog({
   closeLabel: string;
   /** Called once it's closed, whichever way. */
   onClose?: () => void;
+  /** A bit wider on larger screens, for longer reading. */
+  wide?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -24,7 +27,7 @@ export function Dialog({
       aria-label={title}
       onClose={onClose}
       onClick={(event) => event.target === event.currentTarget && event.currentTarget.close()}
-      className="m-auto w-[min(92vw,480px)] rounded-card bg-white p-0 shadow-soft backdrop:bg-navy-900/50"
+      className={`m-auto w-[min(92vw,480px)] ${wide ? "sm:w-[min(92vw,560px)]" : ""} rounded-card bg-white p-0 shadow-soft backdrop:bg-navy-900/50`}
     >
       <div className="flex items-center gap-3 border-b border-line-200 px-5 py-3">
         <h3 className="min-w-0 flex-1 text-lg font-semibold text-navy-900">{title}</h3>

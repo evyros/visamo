@@ -2130,11 +2130,13 @@
         "dismiss": {
           "menu": "אפשרויות נוספות",
           "action": "סימון כשגוי",
+          "actionAgain": "סימון כשגוי בכל זאת",
           "title": "למה זה שגוי?",
           "reasons": {
             "alreadyThere": "זה כבר מופיע בקבצים",
             "notApplicable": "זה לא רלוונטי אלינו",
             "checkMistake": "טעות בתוצאת הבדיקה",
+            "ignore": "עדיף לי להתעלם מזה",
             "other": "משהו אחר"
           },
           "note": "הערה (לא חובה)",
@@ -2151,6 +2153,28 @@
           "by": "סומן כשגוי על ידי {name} · {reason}",
           "undo": "ביטול הסימון",
           "error": "לא הצלחנו לשנות את זה. טענו מחדש את העמוד ונסו שוב."
+        },
+        "history": {
+          "badge": {
+            "checkerRight": "אומת על ידי הצוות שלנו",
+            "checkerWrong": "הצוות שלנו מסכים"
+          },
+          "details": "פרטים",
+          "new": "חדש",
+          "title": "היסטוריית הממצא",
+          "visamo": "Visamo",
+          "someone": "מישהו",
+          "found": "הבדיקה מצאה את זה",
+          "dismissed": "סומן כשגוי:",
+          "restored": "הוחזר",
+          "reviewed": {
+            "checkerRight": "עברנו על זה שוב, והבדיקה צדקה.",
+            "checkerWrong": "עברנו על זה שוב ואנחנו מסכימים שהוא שגוי. תודה, זה עוזר לנו לשפר את הבדיקה."
+          },
+          "signature": "אביתר",
+          "stillDismiss": "אם אתם עדיין חושבים שהממצא שגוי, אפשר לסמן אותו כשגוי.",
+          "stillUndo": "שיניתם את דעתכם? אפשר להחזיר את הממצא לתוצאה.",
+          "close": "סגירה"
         }
       },
       "drop": "או לגרור לכאן",
@@ -3059,6 +3083,10 @@
           "finding.restored": {
             "male": "{name} ביטל סימון של ממצא ב{document}",
             "female": "{name} ביטלה סימון של ממצא ב{document}"
+          },
+          "finding.reviewed": {
+            "male": "Visamo עברה שוב על ממצא ב{document}",
+            "female": "Visamo עברה שוב על ממצא ב{document}"
           },
           "purchase.made": {
             "male": "{name} רכש {product}",

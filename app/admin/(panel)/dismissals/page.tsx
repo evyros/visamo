@@ -40,6 +40,7 @@ export default async function AdminDismissalsPage({ searchParams }: PageProps<"/
         <PageHeading title="Dismissed findings">
           Findings couples dismissed from a document check as wrong, newest first. Each one is out of the couple’s
           result, and their next check of that document is asked to look at it again. Undone ones are here too.
+          “Checker was right” brings the finding back; a right or wrong review is shown to the couple with its note.
         </PageHeading>
 
         {counts.length > 0 && (
@@ -123,7 +124,11 @@ function DismissalCard({ row, title, messages }: { row: AdminDismissal; title: s
         {row.reviewedAt ? (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-line-200 pt-3 text-sm text-slate-600">
             <Pill tone="teal">{row.reviewOutcome ? reviewOutcomeLabels[row.reviewOutcome] : "Reviewed"}</Pill>
-            {row.reviewNote && <span>{row.reviewNote}</span>}
+            {row.reviewNote && (
+              <span dir="auto" className="order-last basis-full whitespace-pre-line text-slate-700">
+                {row.reviewNote}
+              </span>
+            )}
             <span className="text-slate-500">
               {row.reviewedBy} · {formatDateTime(row.reviewedAt)}
             </span>

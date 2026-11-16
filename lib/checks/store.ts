@@ -3,6 +3,7 @@ import { and, desc, eq, inArray, isNotNull, isNull, lt, or, sql } from "drizzle-
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import { callTotals, type Completion } from "@/lib/chat/openrouter";
 import { db } from "@/lib/db";
+import { alias } from "drizzle-orm/pg-core";
 import { casePerson, cases, documentCheck, findingDismissal, user } from "@/lib/db/schema";
 import { checkFor, type DocumentCheck } from "@/lib/documents/checks";
 import { caseCreditTotals } from "@/lib/credits";
@@ -208,6 +209,14 @@ export async function saveRerun(
 }
 
 /**
+ * What the app calls a partner: their name in the case, their account's, or
+ * their email when both are blank; null when the account is gone.
+ */
+function displayName(personName: string | null, userName: string | null, email: string | null) {
+  return [personName, userName, email].map((n) => n?.trim()).find(Boolean) ?? null;
+}
+
+/**
  * A finding the couple dismissed, as the app shows it: who and why, never
  * their note or the admin's review.
  */
@@ -220,6 +229,37 @@ export type DismissedFinding = {
   dismissedAt: Date;
   /** Null when the account is gone. */
   dismissedByName: string | null;
+};
+
+/** A review the couple sees: never an "unclear" one. */
+export type SharedOutcome = "checkerRight" | "checkerWrong";
+
+/**
+ * One step of a reviewed finding's history: the couple dismissed it, undid
+ * that, or the admin reviewed it. Bringing it back by a "checker was right"
+ * review is part of the review's step, not one of its own.
+ */
+export type FindingHistoryEntry =
+  | { type: "dismissed"; at: Date; name: string | null; reason: DismissReason; note: string | null }
+  | { type: "restored"; at: Date; name: string | null }
+  | { type: "reviewed"; at: Date; outcome: SharedOutcome; note: string | null };
+
+/**
+ * The history of a finding the admin reviewed, as the app shows it: each
+ * dismissal (who, the reason and what they wrote), each time the couple undid
+ * one, and each right or wrong
+ * review (the outcome and the note to the couple, never who reviewed it),
+ * oldest first. `outcome` is the latest review's.
+ */
+export type FindingHistory = {
+  kind: FindingKind;
+  index: number;
+  outcome: SharedOutcome;
+  entries: FindingHistoryEntry[];
+  /** The dismissal the latest review is on, to mark it seen. */
+  reviewId: string;
+  /** Neither partner has opened the latest review yet: its badge pulses. */
+  isNew: boolean;
 };
 
 /** An item's check, as the page and the chat see it. */
@@ -241,6 +281,8 @@ export type ItemCheck = {
   result: ActiveResult | null;
   /** The findings dismissed from the latest result. */
   dismissed: DismissedFinding[];
+  /** The histories of the latest result's findings the admin reviewed, dismissed now or not. */
+  histories: FindingHistory[];
   /** The result was checked against the item's current files and the case's current details. */
   fresh: boolean;
   /** It was checked against the couple's current details (files aside). */
@@ -261,7 +303,7 @@ export async function caseChecks(caseId: string, { admin = false } = {}): Promis
     caseFiles(caseId),
     // Newest first, so an item's first finished run is its result. Failed and replaced runs are history only.
     db
-      .select({ check: documentCheck, userName: user.name, personName: casePerson.name })
+      .select({ check: documentCheck, userName: user.name, userEmail: user.email, personName: casePerson.name })
       .from(documentCheck)
       .leftJoin(user, eq(user.id, documentCheck.checkedBy))
       .leftJoin(casePerson, eq(casePerson.userId, documentCheck.checkedBy))
@@ -280,7 +322,8 @@ export async function caseChecks(caseId: string, { admin = false } = {}): Promis
     const mine = rows.filter((r) => r.check.documentKey === item.key);
     return { item, mine, found: mine.find((r) => r.check.state === "done" && r.check.rating) };
   });
-  const dismissed = await dismissedFrom(items.flatMap(({ found }) => (found ? [found.check.id] : [])));
+  const runIds = items.flatMap(({ found }) => (found ? [found.check.id] : []));
+  const [dismissed, histories] = await Promise.all([dismissedFrom(runIds), historiesFrom(runIds)]);
   const checks = new Map<string, ItemCheck>();
   for (const { item, mine, found } of items) {
     const check = checkFor(item.key, item.points);
@@ -315,12 +358,14 @@ export async function caseChecks(caseId: string, { admin = false } = {}): Promis
       ),
       runId: row?.id ?? null,
       result,
-      dismissed: gone,
+      // Nor what was dismissed from it, or its history: the findings' text and the notes.
+      dismissed: locked && !admin ? [] : gone,
+      histories: (locked && !admin) || !row ? [] : (histories.get(row.id) ?? []),
       fresh: !!result && detailsFresh && sameSet(fileIds, current),
       detailsFresh,
       fileIds,
       checkedAt: row?.finishedAt ?? null,
-      checkedByName: found ? (found.personName ?? found.userName) : null,
+      checkedByName: found ? displayName(found.personName, found.userName, found.userEmail) : null,
     });
   }
   return checks;
@@ -340,6 +385,7 @@ async function dismissedFrom(checkIds: string[]) {
       reason: findingDismissal.reason,
       dismissedAt: findingDismissal.createdAt,
       userName: user.name,
+      userEmail: user.email,
       personName: casePerson.name,
     })
     .from(findingDismissal)
@@ -347,8 +393,91 @@ async function dismissedFrom(checkIds: string[]) {
     .leftJoin(casePerson, eq(casePerson.userId, findingDismissal.dismissedBy))
     .where(and(inArray(findingDismissal.checkId, checkIds), isNull(findingDismissal.undoneAt)))
     .orderBy(findingDismissal.createdAt);
-  for (const { checkId, userName, personName, ...d } of rows) {
-    byRun.set(checkId, [...(byRun.get(checkId) ?? []), { ...d, dismissedByName: personName ?? userName }]);
+  for (const { checkId, userName, userEmail, personName, ...d } of rows) {
+    byRun.set(checkId, [
+      ...(byRun.get(checkId) ?? []),
+      { ...d, dismissedByName: displayName(personName, userName, userEmail) },
+    ]);
+  }
+  return byRun;
+}
+
+/**
+ * The histories of these runs' findings the admin reviewed right or wrong, by
+ * run: every dismissal of each, undone ones too, since a finding brought back
+ * can be dismissed and reviewed again.
+ */
+async function historiesFrom(checkIds: string[]) {
+  const byRun = new Map<string, FindingHistory[]>();
+  if (checkIds.length === 0) return byRun;
+  const undoer = alias(user, "undoer");
+  const undoerPerson = alias(casePerson, "undoer_person");
+  const rows = await db
+    .select({
+      id: findingDismissal.id,
+      checkId: findingDismissal.checkId,
+      kind: findingDismissal.kind,
+      index: findingDismissal.index,
+      opened: findingDismissal.reviewOpened,
+      reason: findingDismissal.reason,
+      dismissNote: findingDismissal.note,
+      createdAt: findingDismissal.createdAt,
+      undoneAt: findingDismissal.undoneAt,
+      undoneBy: findingDismissal.undoneBy,
+      undoerName: undoer.name,
+      undoerEmail: undoer.email,
+      undoerPersonName: undoerPerson.name,
+      reviewedAt: findingDismissal.reviewedAt,
+      outcome: findingDismissal.reviewOutcome,
+      note: findingDismissal.reviewNote,
+      userName: user.name,
+      userEmail: user.email,
+      personName: casePerson.name,
+    })
+    .from(findingDismissal)
+    .leftJoin(user, eq(user.id, findingDismissal.dismissedBy))
+    .leftJoin(casePerson, eq(casePerson.userId, findingDismissal.dismissedBy))
+    .leftJoin(undoer, eq(undoer.id, findingDismissal.undoneBy))
+    .leftJoin(undoerPerson, eq(undoerPerson.userId, findingDismissal.undoneBy))
+    .where(inArray(findingDismissal.checkId, checkIds))
+    .orderBy(findingDismissal.createdAt);
+  type Review = { at: Date; outcome: SharedOutcome; id: string; opened: boolean };
+  const byFinding = new Map<
+    string,
+    { checkId: string; kind: FindingKind; index: number; entries: FindingHistoryEntry[]; reviews: Review[] }
+  >();
+  for (const r of rows) {
+    const key = `${r.checkId}:${r.kind}:${r.index}`;
+    const finding = byFinding.get(key) ?? { checkId: r.checkId, kind: r.kind, index: r.index, entries: [], reviews: [] };
+    byFinding.set(key, finding);
+    finding.entries.push({
+      type: "dismissed",
+      at: r.createdAt,
+      name: displayName(r.personName, r.userName, r.userEmail),
+      reason: r.reason,
+      note: r.dismissNote,
+    });
+    // Undone by a partner. One undone by no one was brought back by the review (or the account is gone).
+    if (r.undoneAt && r.undoneBy) {
+      finding.entries.push({
+        type: "restored",
+        at: r.undoneAt,
+        name: displayName(r.undoerPersonName, r.undoerName, r.undoerEmail),
+      });
+    }
+    if (r.reviewedAt && (r.outcome === "checkerRight" || r.outcome === "checkerWrong")) {
+      finding.entries.push({ type: "reviewed", at: r.reviewedAt, outcome: r.outcome, note: r.note });
+      finding.reviews.push({ at: r.reviewedAt, outcome: r.outcome, id: r.id, opened: r.opened });
+    }
+  }
+  for (const { checkId, kind, index, entries, reviews } of byFinding.values()) {
+    if (reviews.length === 0) continue;
+    entries.sort((a, b) => a.at.getTime() - b.at.getTime());
+    const latest = reviews.reduce((a, b) => (b.at > a.at ? b : a));
+    byRun.set(checkId, [
+      ...(byRun.get(checkId) ?? []),
+      { kind, index, outcome: latest.outcome, entries, reviewId: latest.id, isNew: !latest.opened },
+    ]);
   }
   return byRun;
 }
@@ -432,6 +561,23 @@ export async function dismissFinding(
     recordEvent(caseId, userId, { type: "finding.dismissed", data: { documentKey: input.documentKey, kind: input.kind } }),
   ]);
   return inserted.length > 0;
+}
+
+/**
+ * Marks the review on this dismissal of the case's as opened: its badge stops
+ * pulsing, for both partners. A no-op if it isn't a review the couple sees.
+ */
+export async function markReviewOpened(caseId: string, dismissalId: string) {
+  await db
+    .update(findingDismissal)
+    .set({ reviewOpened: true })
+    .where(
+      and(
+        eq(findingDismissal.id, dismissalId),
+        eq(findingDismissal.caseId, caseId),
+        inArray(findingDismissal.reviewOutcome, ["checkerRight", "checkerWrong"]),
+      ),
+    );
 }
 
 /** Undoes a dismissal of the case's: the finding counts again. The row stays, for the admin. False if there's none in effect. */

@@ -1,0 +1,1 @@
+ALTER TABLE "finding_dismissal" ADD COLUMN "review_opened" boolean DEFAULT false NOT NULL;

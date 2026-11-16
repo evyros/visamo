@@ -21,6 +21,7 @@ export const reviewOutcomeLabels: Record<ReviewOutcome, string> = {
   checkerWrong: "Checker was wrong",
   checkerRight: "Checker was right",
   unclear: "Unclear",
+  ignore: "Ignore",
 };
 
 export const productLabels: Record<ProductId, string> = { messagePack: "Message pack", fileCheck: "Full file check" };

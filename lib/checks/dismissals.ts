@@ -11,12 +11,19 @@ import type { CheckFinding, CheckRating, CheckResult } from "./result";
 export const findingKinds = ["issue", "recommendation"] as const;
 export type FindingKind = (typeof findingKinds)[number];
 
-/** Why the couple says a finding is wrong: a closed list, the only part the next check is told. */
-export const dismissReasons = ["alreadyThere", "notApplicable", "checkMistake", "other"] as const;
+/**
+ * Why the couple dismissed a finding: a closed list, the only part the next
+ * check is told. "ignore" doesn't say it's wrong, only that they'd rather not
+ * act on it; it's dismissed all the same.
+ */
+export const dismissReasons = ["alreadyThere", "notApplicable", "checkMistake", "ignore", "other"] as const;
 export type DismissReason = (typeof dismissReasons)[number];
 
 /** Longest note kept with a dismissal. */
 export const MAX_DISMISS_NOTE = 500;
+
+/** Longest note the admin writes to the couple with a review of a dismissal (lib/admin-dismissals.ts). */
+export const MAX_REVIEW_NOTE = 1000;
 
 /** A finding with its place in the run's list, which a dismissal points to. */
 export type IndexedFinding = CheckFinding & { index: number };

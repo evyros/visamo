@@ -438,8 +438,10 @@ export const documentCheck = pgTable(
  * row (undoneAt), so the admin sees it too. At most one is in effect per
  * finding.
  *
- * The review columns are the admin's (the dismissed findings page): never
- * read for the app.
+ * The review columns are the admin's (the dismissed findings page,
+ * lib/admin-dismissals.ts). A right or wrong outcome and its note are shown to
+ * the couple in the finding's history (lib/checks/store.ts historiesFrom), so
+ * the note is written to them; who reviewed it never is.
  */
 export const findingDismissal = pgTable(
   "finding_dismissal",
@@ -466,12 +468,19 @@ export const findingDismissal = pgTable(
     undoneAt: timestamp("undone_at"),
     undoneBy: text("undone_by").references(() => user.id, { onDelete: "set null" }),
 
-    // The admin's review. Admin only: never in what the app reads or sends.
+    // The admin's review (lib/admin-dismissals.ts). A right or wrong outcome and
+    // its note are shown to the couple on the finding; "unclear" and who reviewed never are.
     reviewedAt: timestamp("reviewed_at"),
     /** The admin panel's signed-in email, since the admin isn't a user. */
     reviewedBy: text("reviewed_by"),
     reviewOutcome: text("review_outcome").$type<ReviewOutcome>(),
+    /** Written to the couple, shown to them as it is. */
     reviewNote: text("review_note"),
+    /**
+     * Either partner opened the review's history in the app: until then, its
+     * badge pulses. Unset when the review changes, so a new one pulses again.
+     */
+    reviewOpened: boolean("review_opened").notNull().default(false),
   },
   (table) => [
     index("finding_dismissal_check_idx").on(table.checkId),

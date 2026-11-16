@@ -2130,11 +2130,13 @@
         "dismiss": {
           "menu": "More options",
           "action": "Dismiss…",
+          "actionAgain": "Dismiss anyway…",
           "title": "Why is it wrong?",
           "reasons": {
             "alreadyThere": "It's already in the file",
             "notApplicable": "It doesn't apply to us",
             "checkMistake": "The check made a mistake",
+            "ignore": "I'd rather ignore it",
             "other": "Something else"
           },
           "note": "Note (optional)",
@@ -2151,6 +2153,28 @@
           "by": "Dismissed by {name} · {reason}",
           "undo": "Undo",
           "error": "It couldn't be changed. Reload the page and try again."
+        },
+        "history": {
+          "badge": {
+            "checkerRight": "Verified by our team",
+            "checkerWrong": "Our team agrees"
+          },
+          "details": "Details",
+          "new": "New",
+          "title": "Finding history",
+          "visamo": "Visamo",
+          "someone": "Someone",
+          "found": "The check found this",
+          "dismissed": "Marked as wrong:",
+          "restored": "Brought it back into the result",
+          "reviewed": {
+            "checkerRight": "We looked at it again, and the check was right.",
+            "checkerWrong": "We looked at it again and agree it was wrong. Thanks, it helps us improve the check."
+          },
+          "signature": "Evy",
+          "stillDismiss": "If you still think it's wrong, you can dismiss it.",
+          "stillUndo": "Changed your mind? You can bring it back into the result.",
+          "close": "Close"
         }
       },
       "drop": "or drop them here",
@@ -3059,6 +3083,10 @@
           "finding.restored": {
             "male": "{name} restored a finding on {document}",
             "female": "{name} restored a finding on {document}"
+          },
+          "finding.reviewed": {
+            "male": "Visamo reviewed a finding on {document}",
+            "female": "Visamo reviewed a finding on {document}"
           },
           "purchase.made": {
             "male": "{name} bought {product}",

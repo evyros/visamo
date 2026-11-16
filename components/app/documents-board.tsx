@@ -2,11 +2,26 @@
 
 import Link from "next/link";
 import { upload } from "@vercel/blob/client";
-import { useCallback, useEffect, useId, useRef, useState, type DragEvent, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useImperativeHandle,
+  useRef,
+  useState,
+  type DragEvent,
+  type ReactNode,
+  type Ref,
+} from "react";
 import { deleteFile, finishUpload, startUpload, type UploadError } from "@/app/(app)/(main)/file/documents/actions";
-import { dismiss as dismissAction, undoDismiss, type DismissResult } from "@/app/(app)/(main)/file/documents/check-actions";
+import {
+  dismiss as dismissAction,
+  reviewOpened,
+  undoDismiss,
+  type DismissResult,
+} from "@/app/(app)/(main)/file/documents/check-actions";
 import type { Locale } from "@/i18n/config";
-import { formatAgo } from "@/i18n/format";
+import { formatAgo, formatDate } from "@/i18n/format";
 import type { Messages } from "@/i18n/messages";
 import { format } from "@/i18n/messages";
 import { buyUrl } from "@/lib/buy-paths";
@@ -14,7 +29,7 @@ import { sameSet } from "@/lib/same-set";
 import { newTab } from "@/lib/site";
 import { dismissReasons, MAX_DISMISS_NOTE, type DismissReason, type FindingKind } from "@/lib/checks/dismissals";
 import type { CheckRating } from "@/lib/checks/result";
-import type { CheckView, DismissedView, FindingView } from "@/lib/checks/view";
+import type { CheckView, DismissedView, FindingView, HistoryView } from "@/lib/checks/view";
 import type { Owner } from "@/lib/documents/catalog";
 import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
 import type { StepDetails, StepDetailsPart } from "@/lib/document-steps";
@@ -901,6 +916,8 @@ function CheckFooter({
       result.issues.length + result.recommendations.length + result.dismissed.length > 0 ||
       result.rating === "unreadable");
   const inRow = !listed;
+  // For a reviewed finding's history: the check found it then.
+  const when: HistoryDates = { locale, checkedAt: result?.checkedAt ?? "" };
 
   let state: ReactNode = null;
   let action: ReactNode = null;
@@ -1006,6 +1023,7 @@ function CheckFooter({
           <div className="mt-2.5 space-y-1.5">
             <Findings
               t={t}
+              when={when}
               kind={result.rating === "unreadable" ? "unreadable" : "issue"}
               label={c.issues}
               list={result.issues}
@@ -1014,12 +1032,13 @@ function CheckFooter({
             {result.rating === "unreadable" && <p className="text-[15px] text-slate-700">{c.unreadableHint}</p>}
             <Findings
               t={t}
+              when={when}
               kind="tip"
               label={c.recommendations}
               list={result.recommendations}
               onDismiss={(...args) => dismissals.onDismiss(result.runId, ...args)}
             />
-            <Dismissed t={t} list={result.dismissed} onUndo={dismissals.onUndo} />
+            <Dismissed t={t} when={when} list={result.dismissed} onUndo={dismissals.onUndo} />
           </div>
           <div className="mt-3">
             <AskLink documentKey={documentKey}>
@@ -1301,6 +1320,9 @@ function LockedFindings({ t, locked }: { t: Labels; locked: { issues: number; re
   );
 }
 
+/** Opens a finding's dismiss dialog, from its history. */
+type FindingMenuHandle = { openDismiss: () => void };
+
 /** Dismissing a finding of the item's latest check, or undoing it: true once done. */
 type Dismissals = {
   onDismiss: (runId: string, kind: FindingKind, index: number, reason: DismissReason, note: string) => Promise<boolean>;
@@ -1314,42 +1336,86 @@ const findingKindOf = { issue: "issue", tip: "recommendation", unreadable: null 
  * A check's issues or recommendations, each in its own box, tinted and
  * edged by its kind, so there are no headings. `label` names the list for
  * screen readers. For a document made of parts, each box names its part
- * above its title. Each box has a quiet menu to dismiss it as wrong.
+ * above its title. Each box has a quiet menu to dismiss it as wrong, and
+ * under its text, a badge if the team reviewed it, which opens its history.
  */
 function Findings({
   t,
+  when,
   kind,
   label,
   list,
   onDismiss,
 }: {
   t: Labels;
+  when: HistoryDates;
   kind: keyof typeof findingStyle;
   label: string;
   list: FindingView[];
   onDismiss: (kind: FindingKind, index: number, reason: DismissReason, note: string) => Promise<boolean>;
 }) {
   if (list.length === 0) return null;
-  const style = findingStyle[kind];
   const findingKind = findingKindOf[kind];
   return (
     <ul aria-label={label} className="space-y-1.5">
       {list.map((finding) => (
-        <li key={finding.index} className={`rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
-          <div className="flex gap-2">
-            <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
-            <FindingText parts={t.check.parts} finding={finding} />
-            {findingKind && (
-              <FindingMenu
-                t={t}
-                finding={finding}
-                onDismiss={(reason, note) => onDismiss(findingKind, finding.index, reason, note)}
-              />
-            )}
-          </div>
-        </li>
+        <FindingItem
+          key={finding.index}
+          t={t}
+          when={when}
+          kind={kind}
+          finding={finding}
+          onDismiss={findingKind && ((reason, note) => onDismiss(findingKind, finding.index, reason, note))}
+        />
       ))}
     </ul>
+  );
+}
+
+/** One finding's box: its text, its history's badge if the team reviewed it, and its menu. */
+function FindingItem({
+  t,
+  when,
+  kind,
+  finding,
+  onDismiss,
+}: {
+  t: Labels;
+  when: HistoryDates;
+  kind: keyof typeof findingStyle;
+  finding: FindingView;
+  /** None for what couldn't be read: it can't be dismissed. */
+  onDismiss: ((reason: DismissReason, note: string) => Promise<boolean>) | null;
+}) {
+  const style = findingStyle[kind];
+  const menu = useRef<FindingMenuHandle>(null);
+  const again = finding.history?.outcome === "checkerRight";
+  return (
+    <li className={`rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
+      <div className="flex gap-2">
+        <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
+        <div className="min-w-0 flex-1">
+          <FindingText parts={t.check.parts} finding={finding} />
+          {finding.history && (
+            <HistoryBadge
+              t={t}
+              when={when}
+              kind={kind}
+              finding={finding}
+              history={finding.history}
+              footer={
+                onDismiss && {
+                  hint: t.check.history.stillDismiss,
+                  label: again ? t.check.dismiss.actionAgain : t.check.dismiss.action,
+                  onClick: () => menu.current?.openDismiss(),
+                }
+              }
+            />
+          )}
+        </div>
+        {onDismiss && <FindingMenu handle={menu} t={t} finding={finding} again={again} onDismiss={onDismiss} />}
+      </div>
+    </li>
   );
 }
 
@@ -1364,19 +1430,219 @@ function FindingText({ parts, finding }: { parts: Labels["check"]["parts"]; find
   );
 }
 
+/** What a finding's history needs for its dates: the viewer's locale, and when the check found it (ISO). */
+type HistoryDates = { locale: Locale; checkedAt: string };
+
+/**
+ * The badge of a finding the team reviewed (lib/admin-dismissals.ts), under
+ * its text: "Verified by Visamo" when the check was right (the finding is
+ * back in the result), "Visamo agrees" when the couple was. It opens the
+ * finding's history, which reads top to bottom: the finding in its own
+ * colors, so it stands apart from the notes; then each step, with who took
+ * it (Visamo's logo, or the partner's initial), when, and what happened
+ * (found, dismissed, brought back, reviewed);
+ * and at the bottom, what the couple can still do about it (`footer`).
+ * Until either partner first opens it, the badge is filled teal, with a ring
+ * pulsing out of it (per case: lib/checks/store.ts markReviewOpened).
+ *
+ * The couple's note is quoted; Visamo's is a card, signed. Visamo's note is
+ * about the requirement, never the couple's files. Both are shown as
+ * written, in whichever language they were written in.
+ */
+function HistoryBadge({
+  t,
+  when,
+  kind,
+  finding,
+  history,
+  footer,
+  onOpened,
+}: {
+  t: Labels;
+  when: HistoryDates;
+  kind: keyof typeof findingStyle;
+  finding: FindingView | DismissedView;
+  history: HistoryView;
+  /** What the couple can still do: dismiss it, or bring it back. Closes the history first. */
+  footer: { hint: string; label: string; onClick: () => void } | null;
+  /** Called the first time it's opened while new. */
+  onOpened?: () => void;
+}) {
+  const h = t.check.history;
+  const d = t.check.dismiss;
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [isNew, setIsNew] = useState(history.isNew);
+
+  function open() {
+    dialog.current?.showModal();
+    if (!isNew) return;
+    setIsNew(false);
+    onOpened?.();
+    // If it fails, it pulses again next visit: nothing to tell them.
+    reviewOpened(history.reviewId).catch((error) => console.error("reviewOpened failed", error));
+  }
+  const style = findingStyle[kind];
+  const day = (iso: string) => formatDate(new Date(iso), when.locale);
+  const steps = [
+    { key: "found", visamo: true, name: h.visamo, at: when.checkedAt, body: <p>{h.found}</p> },
+    ...history.entries.map((entry, i) =>
+      entry.type === "restored"
+        ? { key: `u${i}`, visamo: false, name: entry.name ?? h.someone, at: entry.at, body: <p>{h.restored}</p> }
+        : entry.type === "dismissed"
+        ? {
+            key: `d${i}`,
+            visamo: false,
+            name: entry.name ?? h.someone,
+            at: entry.at,
+            body: (
+              <>
+                <p>
+                  {h.dismissed} <span className="font-semibold text-navy-900">{d.reasons[entry.reason]}</span>
+                </p>
+                {entry.note && (
+                  <blockquote
+                    dir="auto"
+                    className="mt-2 border-s-2 border-line-200 ps-3 whitespace-pre-line text-slate-700"
+                  >
+                    {entry.note}
+                  </blockquote>
+                )}
+              </>
+            ),
+          }
+        : {
+            key: `r${i}`,
+            visamo: true,
+            name: h.visamo,
+            at: entry.at,
+            body: (
+              <>
+                <p>{h.reviewed[entry.outcome]}</p>
+                {entry.note && (
+                  <div className="mt-2 rounded-lg bg-teal-100 px-3.5 py-3 text-navy-900">
+                    <p dir="auto" className="whitespace-pre-line">
+                      {entry.note}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-teal-700">— {h.signature}</p>
+                  </div>
+                )}
+              </>
+            ),
+          },
+    ),
+  ];
+  return (
+    <>
+      <button
+        type="button"
+        aria-haspopup="dialog"
+        onClick={open}
+        className={`mt-2.5 inline-flex items-center gap-1 rounded-lg px-3.5 py-1.5 text-[13px] font-semibold ${
+          isNew
+            ? "animate-badge-pulse bg-teal-600 text-white hover:bg-teal-700"
+            : "bg-white text-teal-700 ring-1 ring-teal-600/30 ring-inset hover:bg-teal-100"
+        }`}
+      >
+        <Icon name={history.outcome === "checkerRight" ? "visamo" : "check"} className="size-4 shrink-0" />
+        {h.badge[history.outcome]}
+        {isNew && <span className="sr-only">{h.new}</span>}
+        <span className={`font-normal ${isNew ? "text-white/85" : "text-slate-500"}`}>
+          · <span className="underline underline-offset-2">{h.details}</span>
+        </span>
+      </button>
+      <Dialog ref={dialog} title={h.title} closeLabel={h.close} wide>
+        {/* The finding as it looks on the card: its kind's tint and icon. */}
+        <div className={`flex gap-2 rounded-lg border-s-4 px-3 py-2.5 leading-normal ${style.box}`}>
+          <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
+          <FindingText parts={t.check.parts} finding={finding} />
+        </div>
+        <ol className="mt-6">
+          {steps.map(({ key, ...step }, i) => (
+            <HistoryStep key={key} {...step} when={day(step.at)} last={i === steps.length - 1} />
+          ))}
+        </ol>
+        {footer && (
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-t border-line-200 pt-4">
+            <p className="text-sm text-slate-600">{footer.hint}</p>
+            <button
+              type="button"
+              onClick={() => {
+                dialog.current?.close();
+                footer.onClick();
+              }}
+              className="shrink-0 rounded-lg border border-line-200 px-3.5 py-1.5 text-[15px] font-semibold text-navy-900 hover:bg-navy-900/5"
+            >
+              {footer.label}
+            </button>
+          </div>
+        )}
+      </Dialog>
+    </>
+  );
+}
+
+/**
+ * One step of a finding's history: who took it, beside a line down to the
+ * next step (Visamo's logo, or the partner's initial), when, and what happened.
+ */
+function HistoryStep({
+  visamo,
+  name,
+  when,
+  last,
+  body,
+}: {
+  visamo: boolean;
+  name: string;
+  when: string;
+  last: boolean;
+  body: ReactNode;
+}) {
+  return (
+    <li className="relative flex gap-3 pb-6 last:pb-0">
+      {!last && <span aria-hidden className="absolute start-4 top-9 bottom-1 w-px -translate-x-1/2 bg-line-200 rtl:translate-x-1/2" />}
+      {visamo ? (
+        <span aria-hidden className="flex size-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-700">
+          <Icon name="visamo" className="size-[18px]" />
+        </span>
+      ) : (
+        <span
+          aria-hidden
+          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-sand-50 text-sm font-semibold text-navy-900 ring-1 ring-line-200 ring-inset"
+        >
+          {Array.from(name)[0]?.toUpperCase()}
+        </span>
+      )}
+      <div className="min-w-0 flex-1 pt-1">
+        <p className="flex flex-wrap items-baseline justify-between gap-x-3">
+          <span className="font-semibold text-navy-900">{name}</span>
+          <span className="text-xs text-slate-500">{when}</span>
+        </p>
+        <div className="mt-1 text-[15px] leading-relaxed text-slate-700">{body}</div>
+      </div>
+    </li>
+  );
+}
+
 /**
  * A finding's menu, at its box's end: "Dismiss…" opens a dialog asking why,
  * from a closed list, with the finding quoted at its top. Two steps on
  * purpose: dismissing is for the rare finding that's wrong, not a way to
- * clear the list.
+ * clear the list. After the team brought it back (`again`), it reads
+ * "Dismiss anyway…": the couple still decides. Its handle opens the dialog
+ * from the finding's history.
  */
 function FindingMenu({
+  handle,
   t,
   finding,
+  again = false,
   onDismiss,
 }: {
+  handle?: Ref<FindingMenuHandle>;
   t: Labels;
   finding: FindingView;
+  again?: boolean;
   onDismiss: (reason: DismissReason, note: string) => Promise<boolean>;
 }) {
   const d = t.check.dismiss;
@@ -1404,6 +1670,15 @@ function FindingMenu({
   // "Something else" says what.
   const ready = reason !== null && (reason !== "other" || note.trim() !== "");
 
+  function openDismiss() {
+    setOpen(false);
+    setReason(null);
+    setNote("");
+    setFailed(false);
+    dialog.current?.showModal();
+  }
+  useImperativeHandle(handle, () => ({ openDismiss }));
+
   return (
     <div ref={ref} className="relative -me-1.5 -mt-1 flex shrink-0 self-start">
       <button
@@ -1419,16 +1694,10 @@ function FindingMenu({
         <div className="absolute end-0 top-8 z-20 w-48 overflow-hidden rounded-[10px] border border-line-200 bg-white py-1 shadow-soft">
           <button
             type="button"
-            onClick={() => {
-              setOpen(false);
-              setReason(null);
-              setNote("");
-              setFailed(false);
-              dialog.current?.showModal();
-            }}
+            onClick={openDismiss}
             className="flex w-full items-center px-3 py-2 text-start text-[15px] text-navy-900 hover:bg-navy-900/5"
           >
-            {d.action}
+            {again ? d.actionAgain : d.action}
           </button>
         </div>
       )}
@@ -1501,14 +1770,33 @@ function FindingMenu({
 
 /**
  * The findings dismissed from the latest check, folded under the others:
- * greyed, with who dismissed each and why, and a way to undo it.
+ * greyed, with who dismissed each and why, a way to undo it, and the badge
+ * if the team reviewed it (not greyed: it's news).
  */
-function Dismissed({ t, list, onUndo }: { t: Labels; list: DismissedView[]; onUndo: (id: string) => Promise<boolean> }) {
+function Dismissed({
+  t,
+  when,
+  list,
+  onUndo,
+}: {
+  t: Labels;
+  when: HistoryDates;
+  list: DismissedView[];
+  onUndo: (id: string) => Promise<boolean>;
+}) {
   const d = t.check.dismiss;
   const [open, setOpen] = useState(false);
   const [undoing, setUndoing] = useState<string | null>(null);
+  // Reviews opened here since the page loaded: the toggle's dot goes once none is left.
+  const [opened, setOpened] = useState<ReadonlySet<string>>(new Set());
   const listId = useId();
   if (list.length === 0) return null;
+  const unopened = list.some((f) => f.history?.isNew && !opened.has(f.history.reviewId));
+  async function undo(id: string) {
+    setUndoing(id);
+    await onUndo(id);
+    setUndoing(null);
+  }
   return (
     <div>
       <button
@@ -1520,28 +1808,46 @@ function Dismissed({ t, list, onUndo }: { t: Labels; list: DismissedView[]; onUn
       >
         {list.length === 1 ? d.count.one : format(d.count.other, { count: list.length })} ·{" "}
         <span className="font-semibold underline-offset-2 hover:underline">{open ? d.hide : d.show}</span>
+        {/* Folded, a new review inside would go unseen. */}
+        {!open && unopened && (
+          <span className="animate-badge-pulse ms-2 inline-flex rounded-md bg-teal-600 px-2 py-0.5 align-middle text-xs font-semibold text-white">
+            {t.check.history.new}
+          </span>
+        )}
       </button>
       <ul id={listId} hidden={!open} className="mt-1.5 space-y-1.5">
         {list.map((finding) => (
-          <li key={finding.id} className="rounded-lg border-s-4 border-s-line-200 bg-sand-50 px-3 py-2.5 leading-normal opacity-80">
-            <FindingText parts={t.check.parts} finding={finding} />
-            <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
-              <span>
-                {format(d.by, { name: finding.dismissedByName ?? "", reason: d.reasons[finding.reason] })}
-              </span>
-              <button
-                type="button"
-                disabled={undoing === finding.id}
-                onClick={async () => {
-                  setUndoing(finding.id);
-                  await onUndo(finding.id);
-                  setUndoing(null);
-                }}
-                className="font-semibold text-teal-700 hover:underline"
-              >
-                {d.undo}
-              </button>
+          <li key={finding.id} className="rounded-lg border-s-4 border-s-line-200 bg-sand-50 px-3 py-2.5 leading-normal">
+            <div className="opacity-80">
+              <FindingText parts={t.check.parts} finding={finding} />
+              <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
+                <span>
+                  {format(d.by, {
+                    name: finding.dismissedByName ?? t.check.history.someone,
+                    reason: d.reasons[finding.reason],
+                  })}
+                </span>
+                <button
+                  type="button"
+                  disabled={undoing === finding.id}
+                  onClick={() => undo(finding.id)}
+                  className="font-semibold text-teal-700 hover:underline"
+                >
+                  {d.undo}
+                </button>
+              </div>
             </div>
+            {finding.history && (
+              <HistoryBadge
+                t={t}
+                when={when}
+                kind={finding.kind === "issue" ? "issue" : "tip"}
+                finding={finding}
+                history={finding.history}
+                footer={{ hint: t.check.history.stillUndo, label: d.undo, onClick: () => undo(finding.id) }}
+                onOpened={() => setOpened((s) => new Set(s).add(finding.history!.reviewId))}
+              />
+            )}
           </li>
         ))}
       </ul>

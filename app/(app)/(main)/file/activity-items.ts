@@ -29,6 +29,7 @@ export function activityItem(e: RecentEvent, messages: Messages, locale: Locale,
       case "document.freeChecked":
       case "finding.dismissed":
       case "finding.restored":
+      case "finding.reviewed":
         return { text: say(event.type, { document: document(event.data.documentKey) }) };
       case "partner.invited":
       case "invite.resent":

@@ -19,6 +19,8 @@ export type CaseEvent =
   /** A finding dismissed from a document's check, or the dismissal undone. `kind` is a FindingKind from lib/checks/dismissals.ts. */
   | { type: "finding.dismissed"; data: { documentKey: string; kind: string } }
   | { type: "finding.restored"; data: { documentKey: string; kind: string } }
+  /** The admin's review of a dismissed finding, with no actor (lib/admin-dismissals.ts). `outcome` is checkerRight or checkerWrong. */
+  | { type: "finding.reviewed"; data: { documentKey: string; kind: string; outcome: string } }
   | { type: "partner.invited"; data: { email: string } }
   | { type: "invite.resent"; data: { email: string } }
   | { type: "invite.cancelled"; data: { email: string } }

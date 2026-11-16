@@ -2,7 +2,7 @@
 
 import { getAppLocale } from "@/i18n/app-locale";
 import { dismissReasons, findingKinds, MAX_DISMISS_NOTE, type DismissReason, type FindingKind } from "@/lib/checks/dismissals";
-import { caseChecks, dismissFinding, undoDismissal } from "@/lib/checks/store";
+import { caseChecks, dismissFinding, markReviewOpened, undoDismissal } from "@/lib/checks/store";
 import { checkView, type CheckView } from "@/lib/checks/view";
 import { requireCase } from "@/lib/session";
 
@@ -58,4 +58,11 @@ export async function undoDismiss(input: { documentKey: string; dismissalId: str
   if (typeof input.documentKey !== "string" || typeof input.dismissalId !== "string") return { error: "invalid" };
   if (!(await undoDismissal(caseId, user.id, input.dismissalId))) return { error: "notFound" };
   return itemView(caseId, input.documentKey);
+}
+
+/** A partner opened a reviewed finding's history: its badge stops pulsing, for both. */
+export async function reviewOpened(reviewId: string): Promise<void> {
+  const { caseId } = await requireCase();
+  if (typeof reviewId !== "string") return;
+  await markReviewOpened(caseId, reviewId);
 }

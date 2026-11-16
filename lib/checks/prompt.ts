@@ -171,6 +171,7 @@ const reasonText: Record<DismissReason, string> = {
   alreadyThere: "it's already in the files",
   notApplicable: "it doesn't apply to them",
   checkMistake: "the check made a mistake",
+  ignore: "they'd rather ignore it",
   other: "another reason",
 };
 
@@ -184,7 +185,9 @@ function dismissedText(dismissed: readonly { kind: FindingKind; finding: CheckFi
   const lines = dismissed.map(({ kind, finding, reason }) => {
     const where = [finding.line && `line ${finding.line}`, finding.part && `part "${finding.part}"`].filter(Boolean);
     const part = where.length ? ` (${where.join(", ")})` : "";
-    return `- ${kind === "issue" ? "Issue" : "Recommendation"}${part}: "${finding.en.title}": ${finding.en.detail} The couple says it's wrong: ${reasonText[reason]}.`;
+    // Ignoring it doesn't say it's wrong.
+    const said = reason === "ignore" ? "The couple chose to ignore it" : `The couple says it's wrong: ${reasonText[reason]}`;
+    return `- ${kind === "issue" ? "Issue" : "Recommendation"}${part}: "${finding.en.title}": ${finding.en.detail} ${said}.`;
   });
   return `\n\nIn the last check of this document, the couple dismissed these findings as wrong:\n${lines.join("\n")}\nLook at each one again, carefully, in these files. Report it only if the files clearly show it, and never mention that it was dismissed. Check everything else as usual.`;
 }

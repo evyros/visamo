@@ -34,7 +34,29 @@ describe("checkView of a locked result", () => {
   const check = {
     runId: "run-1",
     result: { rating: "needsFixing" as const, issues: [finding("Apostille missing", 0)], recommendations: [finding("Add a translation", 1)] },
-    dismissed: [],
+    dismissed: [
+      {
+        id: "d-1",
+        kind: "issue" as const,
+        index: 2,
+        finding: finding("Apostille on the copy", 2),
+        reason: "alreadyThere" as const,
+        dismissedAt: new Date("2026-11-16T11:00:00Z"),
+        dismissedByName: "Dana",
+      },
+    ],
+    histories: [
+      {
+        kind: "issue" as const,
+        index: 0,
+        outcome: "checkerRight" as const,
+        reviewId: "d-1",
+        isNew: true,
+        entries: [
+          { type: "reviewed" as const, at: new Date("2026-11-16T12:00:00Z"), outcome: "checkerRight" as const, note: "The apostille goes on the original" },
+        ],
+      },
+    ],
     checkedAt: new Date("2026-11-16T10:00:00Z"),
     checkedByName: null,
     fileIds: ["file-1"],
@@ -49,6 +71,9 @@ describe("checkView of a locked result", () => {
     expect(view.issues).toEqual([]);
     expect(view.recommendations).toEqual([]);
     expect(JSON.stringify(view)).not.toContain("Apostille");
+    expect(JSON.stringify(view)).not.toContain("apostille");
+    // Nor what was dismissed from it, or the notes in its history.
+    expect(view.dismissed).toEqual([]);
   });
 
   it("shows the findings of the one shown in full", () => {

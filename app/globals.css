@@ -130,6 +130,31 @@ body {
   animation: halo 2.4s ease-out infinite;
 }
 
+/* A ring pulsing out of a reviewed finding's badge until the couple opens it
+   (components/app/documents-board.tsx). Still, with reduced motion: the
+   badge's fill is enough. */
+@keyframes badge-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-teal-600) 50%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 9px color-mix(in srgb, var(--color-teal-600) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.animate-badge-pulse {
+  animation: badge-pulse 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-badge-pulse {
+    animation: none;
+  }
+}
+
 @keyframes pop {
   0% {
     transform: scale(0.4);

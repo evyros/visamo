@@ -1307,7 +1307,7 @@
       "questions": {
         "self": {
           "name": "שם מלא",
-          "nationality": "אזרחות",
+          "nationality": "האזרחות שלך",
           "bornInNationality": "נולדת ב{country}?",
           "birthCountry": "ארץ לידה",
           "countriesLived": "חוץ ממדינת האזרחות שלך, גרת במדינה אחרת חצי שנה ברציפות או יותר, מגיל 14?",
@@ -1334,10 +1334,15 @@
       },
       "israeliStatuses": {
         "citizen": "אזרחות",
-        "permanentResident": "תושבות קבע",
-        "neither": "אף אחת מהן"
+        "permanentResident": "תושבות קבע"
       },
-      "israeliHint": "השאלות על בן/בת הזוג בשלב הבא תלויות בתשובה.",
+      "roleQuestion": "מי מכם ישראלי/ת?",
+      "roleHint": "בשלב הבא נשאל על בן/בת הזוג שלך",
+      "roles": {
+        "self": "אני ישראלי/ת",
+        "selfNote": "אזרחות או תושבות קבע",
+        "partner": "בן/בת הזוג שלי ישראלי/ת"
+      },
       "yes": "כן",
       "no": "לא",
       "countryPlaceholder": "בחירת מדינה",

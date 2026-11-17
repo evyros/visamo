@@ -21,7 +21,6 @@ import {
   residences,
   type BranchCode,
   type CaseDetails,
-  type IsraeliStatus,
   type OtherParent,
 } from "@/lib/case-options";
 import { onboardingTrack, stagesOnceStarted, type Stage } from "@/lib/stages";
@@ -75,11 +74,11 @@ export function personErrors(person: PersonAnswers, t: Labels): Errors {
   const name = nameError(person.name, t);
   if (name) e.name = name;
   if (!person.gender) e.gender = t.errors.choose;
-  if (person.isIsraeli === null) e.israeliStatus = t.errors.choose;
-  else if (person.isIsraeli) {
+  if (person.isIsraeli === null) e.isIsraeli = t.errors.choose;
+  if (person.isIsraeli) {
     if (!person.israeliStatus) e.israeliStatus = t.errors.choose;
     if (!person.residence) e.residence = t.errors.choose;
-  } else {
+  } else if (person.isIsraeli === false) {
     if (!person.nationality) e.nationality = t.errors.required;
     if (person.nationality && person.bornInNationality === null) e.bornInNationality = t.errors.choose;
     else if (person.bornInNationality === false && !person.birthCountry) e.birthCountry = t.errors.required;
@@ -204,12 +203,11 @@ export function OnboardingWizard({
   // Moving the user to the other side swaps the roles, so both people's role
   // questions start over, and the partner step has to be answered again
   // before the steps after it. Citizen to resident is no swap.
-  function setOwnStatus(status: IsraeliStatus | "neither") {
-    const isIsraeli = status !== "neither";
+  function setOwnRole(isIsraeli: boolean) {
     const swap = answers.self.isIsraeli !== null && answers.self.isIsraeli !== isIsraeli;
     setAnswers((a) => ({
       ...a,
-      self: { ...a.self, ...(swap ? emptyRole : {}), isIsraeli, israeliStatus: isIsraeli ? status : null },
+      self: { ...a.self, ...(swap ? emptyRole : {}), isIsraeli },
       partner: { ...a.partner, ...(swap ? emptyRole : {}), isIsraeli: !isIsraeli },
     }));
     if (swap) setReached(0);
@@ -316,7 +314,7 @@ export function OnboardingWizard({
             birthCountries={birthCountries}
             person={answers.self}
             onChange={(key, value) => setPerson("self", key, value)}
-            onOwnStatus={setOwnStatus}
+            onOwnRole={setOwnRole}
             errors={errors}
             setErrors={setErrors}
             autoComplete="name"
@@ -433,6 +431,7 @@ export function OnboardingWizard({
  * in the second. Which ones show depends on whether the person is the
  * Israeli or the foreign partner. Editing an existing case (lockIdentity)
  * leaves out who the person is: name, gender, status, nationality and birth.
+ * The role question is the user's own, in onboarding only (onOwnRole).
  */
 export function PersonFields({
   t,
@@ -441,7 +440,7 @@ export function PersonFields({
   birthCountries,
   person,
   onChange,
-  onOwnStatus,
+  onOwnRole,
   errors,
   setErrors,
   autoComplete,
@@ -455,8 +454,8 @@ export function PersonFields({
   birthCountries: Option[];
   person: PersonAnswers;
   onChange: <K extends keyof PersonAnswers>(key: K, value: PersonAnswers[K]) => void;
-  /** Given for the user only, who answers for both sides. The partner is asked only their status. */
-  onOwnStatus?: (status: IsraeliStatus | "neither") => void;
+  /** Given for the user only, who says which side they are. The partner is asked only their status. */
+  onOwnRole?: (isIsraeli: boolean) => void;
   errors: Errors;
   setErrors: SetErrors;
   autoComplete: string;
@@ -501,29 +500,20 @@ export function PersonFields({
             onChange={(v) => onChange("gender", v)}
             inline
           />
-          {onOwnStatus ? (
+          {onOwnRole && (
+            <RoleQuestion t={t} value={person.isIsraeli} error={errors.isIsraeli} onChange={onOwnRole} />
+          )}
+          {/* The user's after "I'm Israeli"; the partner's after "My partner is Israeli". */}
+          {person.isIsraeli && (
             <Choices
               id="israeliStatus"
               legend={q.israeliStatus}
-              hint={t.israeliHint}
               error={errors.israeliStatus}
-              options={[...israeliStatuses, "neither" as const].map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
-              value={person.isIsraeli === null ? null : (person.israeliStatus ?? "neither")}
-              onChange={onOwnStatus}
+              options={israeliStatuses.map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
+              value={person.israeliStatus}
+              onChange={(v) => onChange("israeliStatus", v)}
               inline
             />
-          ) : (
-            person.isIsraeli && (
-              <Choices
-                id="israeliStatus"
-                legend={q.israeliStatus}
-                error={errors.israeliStatus}
-                options={israeliStatuses.map((s) => ({ value: s, label: t.israeliStatuses[s] }))}
-                value={person.israeliStatus}
-                onChange={(v) => onChange("israeliStatus", v)}
-                inline
-              />
-            )
           )}
         </>
       )}
@@ -923,8 +913,9 @@ function YesNo({
   );
 }
 
-const cardClass =
-  "flex cursor-pointer items-center gap-3 rounded-[10px] border border-line-200 bg-white px-3.5 py-3 text-[16px] text-navy-900 transition has-checked:border-teal-600 has-checked:bg-teal-100/50 has-focus-visible:ring-2 has-focus-visible:ring-teal-600/40";
+const cardBase =
+  "flex cursor-pointer gap-3 rounded-[10px] border border-line-200 bg-white px-3.5 py-3 text-[16px] text-navy-900 transition has-checked:border-teal-600 has-checked:bg-teal-100/50 has-focus-visible:ring-2 has-focus-visible:ring-teal-600/40";
+const cardClass = `${cardBase} items-center`;
 
 // Spelled out so Tailwind finds the class names.
 const gridColumns = { 1: "", 2: "grid-cols-2", 3: "grid-cols-3" };
@@ -1051,6 +1042,91 @@ export function Choices<T extends string>({
         </label>
       ))}
     </CardGroup>
+  );
+}
+
+/**
+ * The first question: which of the two is the Israeli. Asked as who is
+ * Israeli, not "are you a citizen, a resident or neither", so the foreign
+ * partner picks a plain answer instead of "Neither".
+ */
+function RoleQuestion({
+  t,
+  value,
+  error,
+  onChange,
+}: {
+  t: Labels;
+  value: boolean | null;
+  error?: string;
+  onChange: (isIsraeli: boolean) => void;
+}) {
+  const options = [
+    { isIsraeli: true, icon: <IsraeliFlag />, label: t.roles.self, note: t.roles.selfNote },
+    {
+      isIsraeli: false,
+      icon: (
+        <span className="flex items-center gap-1">
+          <Person />
+          <IsraeliFlag />
+        </span>
+      ),
+      label: t.roles.partner,
+    },
+  ];
+  return (
+    <CardGroup id="isIsraeli" legend={t.roleQuestion} hint={t.roleHint} error={error} columns={2}>
+      {options.map((option, i) => (
+        <label key={option.label} className={`${cardBase} items-start`}>
+          <input
+            type="radio"
+            name="isIsraeli"
+            value={String(option.isIsraeli)}
+            checked={value === option.isIsraeli}
+            onChange={() => onChange(option.isIsraeli)}
+            data-field={i === 0 ? "isIsraeli" : undefined}
+            className="mt-1 size-4 shrink-0 accent-teal-600"
+          />
+          <span className="flex flex-col gap-1.5">
+            {/* One height for both icons, so the labels line up. */}
+            <span className="flex h-6 items-center">{option.icon}</span>
+            <span className="font-semibold">{option.label}</span>
+            {"note" in option && <span className="text-sm text-slate-600">{option.note}</span>}
+          </span>
+        </label>
+      ))}
+    </CardGroup>
+  );
+}
+
+/** Drawn, not an emoji: Windows shows flag emoji as letters. */
+function IsraeliFlag() {
+  return (
+    <svg viewBox="0 0 22 16" aria-hidden="true" focusable="false" className="h-[18px] w-[25px] shrink-0">
+      <rect x="0.25" y="0.25" width="21.5" height="15.5" rx="1.5" fill="#fff" stroke="#cbd5e1" strokeWidth="0.5" />
+      <path d="M0.5 2h21v2.2h-21zM0.5 11.8h21V14h-21z" fill="#0038b8" />
+      <g fill="none" stroke="#0038b8" strokeWidth="0.6" strokeLinejoin="round">
+        <path d="M11 4.7l2.86 4.95H8.14z" />
+        <path d="M11 11.3l2.86-4.95H8.14z" />
+      </g>
+    </svg>
+  );
+}
+
+/**
+ * A person, the partner: Microsoft's Fluent Emoji 👤 (flat style), recolored
+ * from its dark purple, which looked black at this size, to a neutral grey.
+ * https://github.com/microsoft/fluentui-emoji, MIT License,
+ * Copyright (c) Microsoft Corporation.
+ */
+function Person() {
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" className="size-6 shrink-0">
+      <path d="M23.8095 28.93L24.5 26L23.8095 22.93C21.4177 20.7003 18.2694 19.4604 14.9995 19.4604C11.7295 19.4604 8.58125 20.7003 6.18945 22.93L5.5 26L6.18945 28.93H23.8095Z" fill="#7B8BA3" />
+      <path d="M16.3395 3.07001H13.6495C12.9377 3.0709 12.2343 3.22377 11.5863 3.51839C10.9383 3.81301 10.3607 4.2426 9.89205 4.77842C9.42345 5.31424 9.07465 5.94394 8.86899 6.62541C8.66333 7.30688 8.60555 8.02441 8.69951 8.73001L8.7776 9.93427C7.82134 10.0842 7.08984 10.9117 7.08984 11.91C7.08984 12.9964 7.95597 13.8804 9.03535 13.9093L9.14951 15.67C9.30217 16.8108 9.86387 17.8574 10.7302 18.6152C11.3366 19.1457 12.0635 19.5094 12.8398 19.6797V20.78C12.8398 21.3423 13.0632 21.8815 13.4608 22.2791C13.8584 22.6767 14.3976 22.9 14.9598 22.9C15.5221 22.9 16.0613 22.6767 16.4589 22.2791C16.8565 21.8815 17.0798 21.3423 17.0798 20.78V19.6984C17.8897 19.537 18.6492 19.166 19.2788 18.6152C20.1452 17.8574 20.7069 16.8108 20.8595 15.67L20.9688 13.9059C22.0133 13.8395 22.8398 12.9713 22.8398 11.91C22.8398 10.9334 22.1399 10.1203 21.2142 9.94502L21.2895 8.73001C21.3835 8.02441 21.3257 7.30688 21.12 6.62541C20.9144 5.94394 20.5656 5.31424 20.097 4.77842C19.6284 4.2426 19.0508 3.81301 18.4028 3.51839C17.7548 3.22377 17.0513 3.0709 16.3395 3.07001Z" fill="#94A3B8" />
+      <path d="M6.18961 22.92V28.92L2.59961 28.88C2.62367 28.7717 2.65372 28.6649 2.68961 28.56V28.45C3.36193 26.3366 4.56733 24.4321 6.18961 22.92Z" fill="#94A3B8" />
+      <path d="M23.8096 22.92V28.92L27.3996 28.88C27.3925 28.8604 27.385 28.8408 27.3776 28.8213C27.3434 28.7312 27.3096 28.6422 27.3096 28.56V28.45C26.6336 26.3383 25.4287 24.4347 23.8096 22.92Z" fill="#94A3B8" />
+    </svg>
   );
 }
 

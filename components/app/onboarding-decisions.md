@@ -12,13 +12,31 @@ Nothing is saved until the last step.
 The steps stay "you" and "your partner", not "the Israeli" and "the foreign
 partner", so each login keeps its own person.
 
-- **Name, gender.**
-- **"Are you an Israeli citizen or a permanent resident?"** Three radio cards
-  side by side, like gender: Citizen / Permanent resident / Neither. Only the
-  user is asked. The partner is the other side, so two Israelis or two
-  foreigners can't be entered. If the user is "Neither", the partner step
-  asks "Is your partner a citizen or a permanent resident?" (two cards).
-- **Changing sides after going back** (to or from "Neither") swaps the roles.
+- **"Which of you is Israeli?"** After name and gender, as before. Two
+  cards: "I'm Israeli" (Israeli flag, "Citizen or permanent resident") / "My
+  partner is Israeli" (a person 👤 next to the flag). These replaced "Are you an Israeli citizen or
+  a permanent resident?" with Citizen / Permanent resident / Neither cards,
+  which didn't work: users mixed up which
+  step was which partner, didn't see the steps follow their answer, and
+  "Neither" was hard for non-English speakers. The hint: "We will ask about your partner in the
+  next step." The icons are SVGs, not emoji: Windows shows flag emoji as
+  letters. The person is Fluent's 👤, recolored grey (its dark purple looked
+  black). Tried and dropped for the partner card: a globe (reads as "I'm from
+  abroad", not "my partner is Israeli") and two people holding hands
+  (Twemoji, needs a visible credit).
+  Only the user is asked. The partner is the other side, so two Israelis or two
+  foreigners can't be entered. "I'm Israeli" then asks "Are you a citizen or
+  permanent resident?" (two cards; no "Israeli", it was just answered). "My
+  partner is Israeli" makes the partner step ask "Is your partner an Israeli
+  citizen or a permanent resident?" (two cards). Dropping
+  this question was tried and reverted: no document depends on it, but the
+  outcome does (a permanent resident's partner ends with permanent residency,
+  not citizenship, and the center-of-life check is usually stricter), and the
+  chat needs it to answer that.
+- **No role tags.** "Israeli partner" / "Foreign partner" tags by the step
+  headings were tried and dropped: the role cards and the questions that
+  follow already show which side each person is.
+- **Changing sides after going back** swaps the roles.
   It clears both people's role questions and makes the user go through the
   partner step again. Name, gender, previous marriages and the relationship
   answers are kept. Citizen ↔ permanent resident is not a swap.

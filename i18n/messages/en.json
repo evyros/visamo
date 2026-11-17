@@ -1307,7 +1307,7 @@
       "questions": {
         "self": {
           "name": "Your full name",
-          "nationality": "Nationality",
+          "nationality": "Your nationality",
           "bornInNationality": "Were you born in {country}?",
           "birthCountry": "Country of birth",
           "countriesLived": "Besides your country of citizenship, have you lived in another country for 6 months or more in a row, from age 14?",
@@ -1316,7 +1316,7 @@
           "previousMarriages": "Were you married to someone else before?",
           "hasChildren": "Do you have children from a previous relationship?",
           "residence": "Where do you live now?",
-          "israeliStatus": "Are you an Israeli citizen or a permanent resident?"
+          "israeliStatus": "Are you a citizen or permanent resident?"
         },
         "partner": {
           "name": "Your partner's full name",
@@ -1334,10 +1334,15 @@
       },
       "israeliStatuses": {
         "citizen": "Citizen",
-        "permanentResident": "Permanent resident",
-        "neither": "Neither"
+        "permanentResident": "Permanent resident"
       },
-      "israeliHint": "Your partner's questions on the next step depend on this.",
+      "roleQuestion": "Which of you is Israeli?",
+      "roleHint": "We will ask about your partner in the next step.",
+      "roles": {
+        "self": "I'm Israeli",
+        "selfNote": "Citizen or permanent resident",
+        "partner": "My partner is Israeli"
+      },
       "yes": "Yes",
       "no": "No",
       "countryPlaceholder": "Choose a country",

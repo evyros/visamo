@@ -310,10 +310,25 @@ the embassy.
 
 An extract from the population register (uittreksel BRP) that includes the
 marital status (burgerlijke staat), from the municipality where they're
-registered. Ask for the international extract, in Dutch, French, German and
-English: it shows the marital status and usually needs no translation. Someone who has left the Netherlands gets an extract from the
-non-residents' register (RNI) instead. Any court (rechtbank) adds the
-apostille, without an appointment.
+registered, on paper. Ask for the international extract, in Dutch, French,
+German and English: it shows the marital status and usually needs no
+translation. Say it's for an apostille, so it's signed by an official whose
+signature the court can apostille. Someone who has left the Netherlands gets
+the international extract from the non-residents' register (RNI) instead,
+from one of the municipalities with an RNI counter, posted only to the
+address abroad registered in the RNI. It shows the marital status on the
+date they left, and the register doesn't follow it after that: add an
+affidavit about the status since then (see above). The Dutch embassy in Tel
+Aviv issues a civil-status declaration to Dutch citizens living in Israel,
+but it rests on the same RNI extract, and offices have refused declarations
+from a foreign embassy in Israel.
+
+The apostille comes from a district court (rechtbank): any court location
+that issues apostilles, wherever the extract was issued. It goes only on the
+paper original, never on a file. At the counter, some locations need an
+appointment; by post, you send the original with a letter or the court's
+form. Ask for the apostille in English. Anyone can file it for you, without
+a power of attorney.
 
 ### Peru
 

@@ -266,9 +266,19 @@ embassy.
 
 ### Netherlands
 
-A certificate of conduct (verklaring omtrent gedrag, VOG), from Justis. You
-request it yourself, attaching a printout of the Israeli government's page
-that shows you need it. Any court (rechtbank) adds the apostille.
+A certificate of conduct (verklaring omtrent gedrag, VOG), from Justis.
+Someone registered in a Dutch municipality applies in writing through that
+municipality; someone who isn't, such as a Dutch partner who has moved
+abroad, applies to Justis directly, by email. You fill in the form yourself,
+naming Israel as the country that requires it, and attach a printout of the
+Israeli government's page that shows you need it. Get it on paper: a VOG
+issued digitally can't get an apostille. It's issued only in Dutch.
+
+The apostille comes from a district court (rechtbank): any court location
+that issues apostilles. At the counter, some locations need an appointment;
+by post, you send the original with a letter or the court's form. Ask for
+the apostille in English. Anyone can file it for you, without a power of
+attorney.
 
 ### Peru
 

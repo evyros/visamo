@@ -3,6 +3,46 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v54 — 2026-11-17
+
+**What changed:** The Netherlands has an issuer for `foreignBirthCertificate`,
+restating its new guide section: `document`, `english: "onRequest"`. The
+international extract of the birth record (internationaal uittreksel
+geboorteakte), from the municipality where the birth was registered, with
+its headings explained in ten languages, English among them; the full copy
+(afschrift) is Dutch only. Its `foreignCivilStatus` and
+`foreignPoliceCertificate` texts are corrected: the apostille comes from a
+district court location that issues apostilles, on the paper original only,
+and some locations need an appointment (the old text said none did); it can
+be asked for in English, and anyone can file it. The RNI extract shows the
+status on the date of leaving, isn't updated after it (an affidavit covers
+the time since), and is posted only to the RNI address abroad.
+The VOG is applied for through the municipality by someone registered in the
+Netherlands, and to Justis by email only by someone who isn't; it has to be
+on paper, since a digital VOG can't get an apostille. The Netherlands'
+certification is unchanged: apostille.
+
+**Why:** Dutch birth certificates had only the general steps, and the
+civil-status and police-certificate steps said every court takes apostilles
+without an appointment and sent every VOG applicant to Justis.
+
+**Source:** rechtspraak.nl, Apostille en legalisatie (paper only, designated
+locations, any court regardless of issuer) and the court pages for Amsterdam
+(no appointment) and Middelburg (appointment by email; languages Dutch,
+English, German, French, Spanish, Italian); denhaag.nl, Geboorteakte
+aanvragen and Meertalig modelformulier aanvragen (afschrift Dutch only;
+international extract explained in 10 languages, with the parents);
+government.nl, extract or official copy of a civil status record;
+denhaag.nl, Rotterdam and Groningen, uittreksel BRP and uittreksel RNI
+(international versions; RNI status on the date of deregistration, posted to
+the RNI address); NetherlandsWorldwide, changing your RNI data (civil status
+not updated after deregistration); Justis, VOG FAQ (visa or emigration: municipality in
+writing, or Justis by email if not registered; proof it's needed, such as a
+web page) and NetherlandsWorldwide, VOG outside the Netherlands (paper only;
+Dutch only; name the requiring country).
+
+**Lists that changed:** none (no scenario's list changed; the issuers table did).
+
 ## v53 — 2026-11-17
 
 **What changed:** Poland has issuers for `foreignBirthCertificate`,

@@ -237,6 +237,46 @@ shown to users (`lib/knowledge/`).
   about to expire (facebook-28924963180489301; the civil-status
   certificate is valid 6 months).
 
+- **Netherlands** (researched November 2026, from rechtspraak.nl, the
+  municipalities of The Hague, Rotterdam and Groningen, Justis and
+  NetherlandsWorldwide; `NL` in the issuers; deeper pass the same day).
+  - **English on the extracts:** answered (product owner, November 2026):
+    in practice the English on them is accepted; if not, the clerk asks for
+    a translation. Matches the translation step. One Dutch partner was asked
+    in September 2026 (facebook-28549274534724836).
+  - **Courts posting abroad:** unknown (the product owner doesn't know
+    either); not stated outright. Every location
+    takes requests by post and returns them to "your own address";
+    Amsterdam's English form asks for the applicant's country and offers an
+    emailed invoice, and Haarlem's and Alkmaar's English pages address
+    foreign applicants. Payment by post is a payment request, payable from
+    abroad. The guides say anyone can file it, which covers family in the
+    Netherlands either way.
+  - **Appointments:** Middelburg needs one (by email). No appointment:
+    Amsterdam, Utrecht, Arnhem, Nijmegen, Roermond, Assen. Oost-Brabant
+    takes them only in 's-Hertogenbosch, not Eindhoven. The rest don't say
+    (rechtspraak.nl location pages, read November 2026).
+  - **RNI status:** answered. The civil status registered at deregistration
+    is copied into the RNI and not updated after (NetherlandsWorldwide, "Hoe
+    verander ik mijn gegevens in de RNI?"). The product owner confirmed
+    (November 2026) that the RNI extract plus an affidavit for the time
+    since is enough, as the guide's general rule says.
+  - **Dutch embassy declaration:** unknown. The embassy in Tel Aviv issues a
+    civil-status declaration ("tamtsiet tishoem") by email to Dutch citizens
+    living in Israel and not in the BRP, as a multilingual form (Dutch,
+    English, French, German), from the RNI extract plus local documents.
+    Not offered as the document, since offices have refused foreign-embassy
+    declarations made in Israel (certification.md); whether Misrad Hapnim
+    takes it for the Netherlands is unknown to the product owner too.
+  - **AIC's Netherlands page** (volunteer post, 2022–23) says no
+    civil-status certificate exists and suggests an affidavit at the Israeli
+    embassy in The Hague; a 2025 comment there points to the BRP extract
+    with burgerlijke staat, which is what the guide asks for.
+  - **The apostille signature:** Leeuwarden's court page says to ask the
+    municipality for a signature by an official authorized for apostilles;
+    Eindhoven says its international BRP extracts are always signed by a
+    registrar (ABS), other extracts often not.
+
 - **Thailand joins the Apostille Convention on 28 February 2027** (accession
   lodged 30 June 2026; Thai MFA notices of 1 and 6 July 2026), unless a
   member state objects before then. Not in the guides yet: they hold no

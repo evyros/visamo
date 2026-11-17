@@ -55,6 +55,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     IT: { kind: "document", heading: "Italy" },
     JP: { kind: "document", heading: "Japan" },
     MX: { kind: "document", heading: "Mexico" },
+    NL: { kind: "document", heading: "Netherlands", english: "onRequest" },
     NP: { kind: "document", heading: "Nepal" },
     PE: { kind: "document", heading: "Peru" },
     PH: { kind: "document", heading: "Philippines", electronic: true },

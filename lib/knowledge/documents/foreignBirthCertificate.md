@@ -156,6 +156,24 @@ document only then. The Israeli embassy's legalization is filed through VFS
 in Kathmandu: you hand in the original there, with the fee, and don't visit
 the embassy.
 
+### Netherlands
+
+An extract of the birth record (uittreksel geboorteakte), from the
+municipality (gemeente) where the birth was registered, on paper. Ask for the
+international extract (internationaal uittreksel): it names the parents, and
+its headings are explained in ten languages, English among them, so it
+usually needs no translation. The full copy (afschrift) is in Dutch only.
+Municipalities take the request online, by post or at the counter, and send
+the extract by post, abroad too; someone with a power of attorney can ask
+for it.
+
+The apostille comes from a district court (rechtbank): any court location
+that issues apostilles, wherever the extract was issued. It goes only on the
+paper original, never on a file. At the counter, some locations need an
+appointment; by post, you send the original with a letter or the court's
+form. Ask for the apostille in English. Anyone can file it for you, without
+a power of attorney.
+
 ### Peru
 
 A certified copy of the birth record (copia certificada del acta de

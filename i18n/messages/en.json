@@ -2488,6 +2488,12 @@
             "details": "Ask for a birth certificate \"for apostille\" (acta de nacimiento para apostilla), with a handwritten signature: one printed from a machine or online can't be apostilled.",
             "apostilleBy": "the same state that issued it"
           },
+          "NL": {
+            "office": "the municipality where the birth was registered",
+            "details": "Ask for the international extract of the birth record (internationaal uittreksel geboorteakte): it names the parents, and its headings are explained in ten languages, English among them. The full copy (afschrift) is in Dutch only. It can be requested online, by post or at the counter, and is sent by post, abroad too.",
+            "apostilleBy": "a district court (rechtbank)",
+            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
+          },
           "NP": {
             "office": "the ward office where the birth was registered",
             "details": "A birth registration certificate (जन्म दर्ता प्रमाणपत्र, janma darta pramanpatra), from the ward office of the municipality or rural municipality where the birth was registered. Someone born before 1977, when birth registration began, first asks there for a late registration. Before the foreign ministry, the local government's chief administrative officer, or the head of its registration section, verifies the signature: the foreign ministry certifies a local document only then. The Israeli embassy's legalization is filed through VFS in Kathmandu: hand in the original there, with the fee; there's no visit to the embassy."
@@ -2694,9 +2700,9 @@
           },
           "NL": {
             "office": "the municipality where they're registered",
-            "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat): ask for the international extract, in Dutch, French, German and English. Someone who has left the Netherlands gets an extract from the non-residents' register (RNI) instead.",
-            "apostilleBy": "any court (rechtbank)",
-            "apostilleDetails": "Without an appointment."
+            "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat), on paper: ask for the international extract, in Dutch, French, German and English. Someone who has left the Netherlands gets the international extract from the non-residents' register (RNI) instead, from a municipality with an RNI counter, posted only to the address abroad registered in the RNI. It shows the marital status on the date they left and isn't updated after that: add an affidavit about the status since then.",
+            "apostilleBy": "a district court (rechtbank)",
+            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
           },
           "NP": {
             "office": "the ward office",
@@ -2914,9 +2920,10 @@
             "apostilleDetails": "It's a federal apostille, unlike other Mexican documents."
           },
           "NL": {
-            "office": "Justis",
-            "details": "A certificate of conduct (verklaring omtrent gedrag, VOG). Request it yourselves, attaching a printout of the Israeli government's page that shows it's needed.",
-            "apostilleBy": "any court (rechtbank)"
+            "office": "the municipality where they're registered, or Justis for someone not registered in the Netherlands",
+            "details": "A certificate of conduct (verklaring omtrent gedrag, VOG), applied for in writing: through the municipality, or by email to Justis. Fill in the form yourselves, naming Israel as the country that requires it, and attach a printout of the Israeli government's page that shows it's needed. Get it on paper: a VOG issued digitally can't get an apostille. It's issued only in Dutch.",
+            "apostilleBy": "a district court (rechtbank)",
+            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
           },
           "NP": {
             "office": "the Nepal Police headquarters",

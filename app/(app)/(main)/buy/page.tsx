@@ -45,10 +45,13 @@ export default async function BuyPage({ searchParams }: PageProps<"/buy">) {
           {t.back}
         </Link>
       )}
-      <h1 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">{t.title}</h1>
-      <p className="mt-3 text-slate-700">{t.intro}</p>
+      <h1 className="text-center font-display text-2xl font-semibold text-balance text-navy-900 sm:text-start sm:text-3xl">
+        {/* Once Full file check is on the file, only messages are left to buy. */}
+        {checks.fileCheck ? t.titleMessages : t.title}
+      </h1>
+      <p className="mt-3 text-center text-slate-700 sm:text-start">{t.intro}</p>
 
-      <div className="mt-6 grid items-stretch gap-6 md:grid-cols-2">
+      <div className="mt-10 grid items-stretch gap-6 sm:mt-6 md:grid-cols-2">
         <ProductCard
           featured={featured === "messagePack"}
           badge={null}

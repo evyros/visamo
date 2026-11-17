@@ -23,7 +23,7 @@
       "description": "Visamo's AI is built on the experience of many couples who went through Israel's gradual process. How we built it, what the AI does, and what it doesn't."
     },
     "sources": {
-      "title": "Our Sources: Where Visamo's Answers and Checks Come From",
+      "title": "Our Sources: Where Visamo's Knowledge Comes From",
       "description": "Visamo's chat and document checks work from one knowledge base, built from seven sources, from Misrad Hapnim's procedures to immigration lawyers."
     },
     "dataPrivacy": {
@@ -746,7 +746,7 @@
   "sources": {
     "hero": {
       "eyebrow": "Our sources",
-      "title": "Where Visamo's answers come from",
+      "title": "Where Visamo's knowledge comes from",
       "subtitle": "Every answer in the chat and every document check works from one knowledge base, built from seven sources.",
       "figure": "Seven sources flow into one knowledge base, which both the chat and the document check work from.",
       "chat": "Chat",
@@ -1566,7 +1566,8 @@
       "close": "Close"
     },
     "buy": {
-      "title": "Add to your file",
+      "title": "Get your file right, with no delays",
+      "titleMessages": "More messages for your chat",
       "intro": "One-time purchases. No subscription.",
       "back": "Back",
       "active": "On your file",

@@ -8,8 +8,8 @@ and your life together.
 
 ## How to get it
 
-You write it yourselves, together, preferably in Hebrew. Both of you sign
-it.
+You write it yourselves, together, in Hebrew: Misrad Hapnim strongly
+requests the letter to be in Hebrew. Both of you sign it.
 
 ## What it should include
 
@@ -25,7 +25,10 @@ it.
 ## Questions
 
 **Does the letter have to be in Hebrew?**
-Preferably, yes.
+Yes. Misrad Hapnim strongly requests the letter to be in Hebrew. If you
+both don't know Hebrew, use someone you trust to help you (no need for a
+licensed translator). Only if you don't have anyone to use, apply in
+English.
 
 **Do we write a new letter when we renew the visa?**
 Yes. When you renew, the letter explains what happened since you received

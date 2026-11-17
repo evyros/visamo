@@ -8,8 +8,8 @@
       "files": ["ours.pdf"],
       "expect": {
         "rating": "needsFixing",
-        "flagged": ["It describes their life together", "signed by both partners"],
-        "mayFlag": ["It describes their relationship", "3–4 paragraphs", "anecdotes", "Concrete dates", "It is dated"]
+        "flagged": ["It describes their life together"],
+        "mayFlag": ["ready to submit", "signed by both partners", "It describes their relationship", "3–4 paragraphs", "anecdotes", "Concrete dates", "It is dated"]
       }
     },
     {
@@ -20,7 +20,7 @@
     {
       "name": "not signed",
       "files": ["not-signed.pdf"],
-      "expect": { "rating": "needsFixing", "flagged": ["signed by both partners"], "mayFlag": ["It is dated"] }
+      "expect": { "rating": "needsFixing", "flagged": ["ready to submit"] }
     },
     {
       "name": "doesn't say how they met",
@@ -47,7 +47,7 @@
     {
       "name": "in English",
       "files": ["english.pdf"],
-      "expect": { "rating": ["canImprove", "looksGood"], "flagged": ["written in Hebrew"] }
+      "expect": { "rating": "needsFixing", "flagged": ["written in Hebrew"] }
     },
     {
       "name": "one short paragraph",
@@ -74,6 +74,60 @@
       "expect": { "rating": ["canImprove", "looksGood"], "flagged": ["relatively short"], "mayFlag": ["anecdotes"] }
     },
     {
+      "name": "Estonia: real file, joint statement in English, 3 pages and a closing page, not signed or dated yet, (ADDRESS) placeholders left (today 2026-11-17)",
+      "scenario": "commonLawApart",
+      "today": "2026-11-17",
+      "israeli": { "name": "Matanel Peretz", "gender": "male" },
+      "foreign": { "name": "Anne-Mai Heinala", "gender": "female", "nationality": "EE", "birthCountry": "EE" },
+      "files": ["estonia-real-draft.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["written in Hebrew", "ready to submit", "legal or official document"],
+        "mayFlag": ["no longer than 3 pages"],
+        "mustSay": [
+          "Misrad Hapnim strongly requests the letter to be in Hebrew",
+          "Someone they trust can help them write it in Hebrew, with no licensed translator needed",
+          "Fill in the addresses left as (ADDRESS)",
+          "Print the letter, both sign and date it, and upload the signed copy",
+          "A letter like this is usually 1–2 pages",
+          "Cut it down to at most 3 pages"
+        ],
+        "mustNotSay": [
+          "Shorten the letter to about 3–4 paragraphs, or to anything shorter than 3 pages",
+          "Get the letter translated by a notary or a licensed translator",
+          "A finding of its own only about the missing signatures or the missing date",
+          "The letter doesn't describe their life together",
+          "The letter doesn't explain the long-distance relationship or the time apart",
+          "Cut the explanation of the long-distance relationship or their plans for the future"
+        ]
+      }
+    },
+    {
+      "name": "Estonia: the real draft fixed: in Hebrew, signed and dated, no placeholders, no legal wording, still 4 pages (today 2026-11-17)",
+      "scenario": "commonLawApart",
+      "today": "2026-11-17",
+      "israeli": { "name": "Matanel Peretz", "gender": "male" },
+      "foreign": { "name": "Anne-Mai Heinala", "gender": "female", "nationality": "EE", "birthCountry": "EE" },
+      "files": ["estonia-hebrew-signed.pdf"],
+      "expect": {
+        "rating": "canImprove",
+        "flagged": ["no longer than 3 pages"],
+        "mustSay": [
+          "A letter like this is usually 1–2 pages",
+          "Cut it down to at most 3 pages"
+        ],
+        "mustNotSay": [
+          "Shorten the letter to about 3–4 paragraphs, or to anything shorter than 3 pages",
+          "Write the letter in Hebrew",
+          "The letter isn't finished, signed or dated",
+          "Remove legal or formal language",
+          "The letter doesn't describe their life together",
+          "The letter doesn't explain the long-distance relationship or the time apart",
+          "Cut the explanation of the long-distance relationship or their plans for the future"
+        ]
+      }
+    },
+    {
       "name": "not a letter",
       "files": ["rent-receipt.png"],
       "expect": {
@@ -83,6 +137,7 @@
           "tells how and when",
           "It describes their relationship",
           "It describes their life together",
+          "ready to submit",
           "signed by both partners",
           "Nothing in it contradicts",
           "written in Hebrew",

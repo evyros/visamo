@@ -335,6 +335,30 @@ Misrad Hapnim usually asks for the original on paper, so the clerk may push
 back on the files. Explain that for Israel, the Philippines issues it only
 this way: there's no paper option.
 
+### Poland
+
+A certificate of civil status (zaświadczenie o stanie cywilnym), from any
+civil registry office (urząd stanu cywilnego, USC) in Poland, issued only to
+the person it's about. Ask for it on paper: the electronic one is a file and
+can't get an apostille. When applying, you declare that nothing affecting
+your status is missing from the Polish register, so a marriage abroad has to
+be registered in Poland first (transkrypcja), at a USC or through the Polish
+embassy in Tel Aviv.
+
+For the status before the marriage: the full copy of the Polish marriage
+record (odpis zupełny aktu małżeństwa) shows each spouse's civil status at
+the wedding. For a marriage abroad, it shows it only if the foreign
+certificate did, or once the record is supplemented (uzupełnienie) at a
+civil registry office. Otherwise, bring a certificate of civil status or a
+certificate of capacity to marry (zaświadczenie stwierdzające, że zgodnie z
+prawem polskim można zawrzeć małżeństwo) issued before the wedding, or the
+affidavit (below).
+
+The apostille comes from the Ministry of Foreign Affairs (MSZ) in Warsaw, in
+person or by post. It mails documents back only to an address in Poland, the
+EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone
+in Poland to receive it.
+
 ### Portugal
 
 Portugal issues no civil-status certificate. Go to a notary for a certificate

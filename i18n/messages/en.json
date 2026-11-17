@@ -2499,6 +2499,12 @@
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
             "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
           },
+          "PL": {
+            "office": "any civil registry office (urząd stanu cywilnego) in Poland",
+            "details": "Ask for the full copy of the birth record (odpis zupełny aktu urodzenia). Polish consulates can't get it; relatives in Poland, or someone with a power of attorney, can.",
+            "apostilleBy": "the Ministry of Foreign Affairs (MSZ) in Warsaw",
+            "apostilleDetails": "The ministry mails documents back only to an address in Poland, the EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone in Poland in the request to receive them."
+          },
           "PT": {
             "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. The usual one is in Portuguese; a multilingual one (certidão em modelo internacional) also exists, on paper only, asked for in person or by post."
           },
@@ -2700,6 +2706,12 @@
             "office": "the Philippine Statistics Authority (PSA)",
             "details": "A certificate of no marriage (CENOMAR). For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)"
+          },
+          "PL": {
+            "office": "any civil registry office (urząd stanu cywilnego) in Poland",
+            "details": "A certificate of civil status (zaświadczenie o stanie cywilnym), issued only to the person it's about. Any marriage abroad has to be registered in Poland first (transkrypcja), at a civil registry office or through the Polish embassy in Tel Aviv: when applying, you declare that nothing affecting your status is missing from the Polish register. For the status before the marriage: the full copy of the Polish marriage record (odpis zupełny aktu małżeństwa) shows it, if the foreign marriage certificate did or the record is supplemented (uzupełnienie) at a civil registry office; otherwise, a certificate of civil status or of capacity to marry issued before the wedding, or an affidavit.",
+            "apostilleBy": "the Ministry of Foreign Affairs (MSZ) in Warsaw",
+            "apostilleDetails": "The ministry mails documents back only to an address in Poland, the EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone in Poland in the request to receive them."
           },
           "PT": {
             "office": "a notary",
@@ -2915,6 +2927,12 @@
             "office": "the National Bureau of Investigation (NBI)",
             "details": "An NBI clearance.",
             "apostilleDetails": "It goes only on the original, printed on the NBI's security paper."
+          },
+          "PL": {
+            "office": "any National Criminal Register information point (Punkt Informacyjny KRK), at a court",
+            "details": "A certificate from the National Criminal Register (zaświadczenie z Krajowego Rejestru Karnego), in person or by post from abroad. It's issued only in Polish.",
+            "apostilleBy": "the Ministry of Foreign Affairs (MSZ) in Warsaw",
+            "apostilleDetails": "The ministry mails documents back only to an address in Poland, the EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone in Poland in the request to receive them."
           },
           "PT": {
             "office": "any citizen's office (Loja do Cidadão) or court",

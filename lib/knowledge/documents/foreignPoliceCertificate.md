@@ -289,6 +289,18 @@ apostille.
 An NBI clearance, from the National Bureau of Investigation. The apostille
 is put only on the original, printed on the NBI's security paper.
 
+### Poland
+
+A certificate from the National Criminal Register (zaświadczenie z Krajowego
+Rejestru Karnego, KRK), from any KRK information point at a court, in person
+or by post from abroad. It's issued only in Polish. Ask for the paper one:
+the one from e-KRK online is a file and can't get an apostille.
+
+The apostille comes from the Ministry of Foreign Affairs (MSZ) in Warsaw, in
+person or by post. It mails documents back only to an address in Poland, the
+EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone
+in Poland to receive it.
+
 ### Portugal
 
 A criminal record certificate (certificado do registo criminal), at any

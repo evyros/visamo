@@ -187,6 +187,20 @@ birth, is corrected by a petition to the local civil registrar, or to a
 Philippine consulate when the person lives abroad. A wrong year of birth
 needs a court.
 
+### Poland
+
+The full copy of the birth record (odpis zupełny aktu urodzenia), from any
+civil registry office (urząd stanu cywilnego, USC) in Poland. Ask for it on
+paper: the electronic copy is a file and can't get an apostille. Polish
+consulates can't get it; relatives in Poland, or someone with a power of
+attorney, can. The multilingual copy (odpis wielojęzyczny) still needs a
+translation and an apostille for Israel.
+
+The apostille comes from the Ministry of Foreign Affairs (MSZ) in Warsaw, in
+person or by post. It mails documents back only to an address in Poland, the
+EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone
+in Poland to receive it.
+
 ### Portugal
 
 A birth certificate (certidão de nascimento), on paper rather than online. The

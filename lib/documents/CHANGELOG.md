@@ -3,6 +3,35 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v53 — 2026-11-17
+
+**What changed:** Poland has issuers for `foreignBirthCertificate`,
+`foreignCivilStatus` and `foreignPoliceCertificate`, restating its new guide
+sections, all `document`. Birth certificate: the full copy of the birth
+record (odpis zupełny), on paper, from any civil registry office (USC).
+Civil status: a certificate of civil status (zaświadczenie o stanie
+cywilnym), on paper, from any USC, after a marriage abroad is transcribed.
+Police certificate: information from the National Criminal Register (KRK),
+on paper, from any KRK information point, in person or by post from abroad.
+Every apostille is by the Ministry of Foreign Affairs (MSZ) in Warsaw,
+directly, and it mails documents back only within the EU/EEA and
+Switzerland. Poland's certification is unchanged: apostille. No `english`:
+all three are issued in Polish.
+
+**Why:** Polish documents had only the general steps, with no issuing
+office or apostille authority.
+
+**Source:** gov.pl: Uzyskaj odpis aktu stanu cywilnego; Odpis aktu stanu
+cywilnego – informacje o dokumencie; Uzyskaj zaświadczenie o stanie
+cywilnym; Polska w Grecji, Uzyskanie odpisów akt stanu cywilnego (consuls
+can't obtain them; certificates valid 6 months); Polska w Izraelu and
+Polska w USA, transkrypcja; Ministry of Foreign Affairs (gov.pl/web/dyplomacja),
+Apostille; Ministry of Justice (arch-bip.ms.gov.pl), Krajowy Rejestr Karny,
+Pytania i odpowiedzi; biznes.gov.pl, Zaświadczenie z KRK; Prawo o aktach
+stanu cywilnego (art. 49 on the certificate's contents).
+
+**Lists that changed:** none (no scenario's list changed; the issuers table did).
+
 ## v52 — 2026-11-15
 
 **What changed:** Issuers can say a document can be issued in English

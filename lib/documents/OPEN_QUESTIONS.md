@@ -218,6 +218,25 @@ shown to users (`lib/knowledge/`).
   whether a criminal record certificate issued digitally can get an
   apostille.
 
+- **Poland** (researched November 2026, from gov.pl, the MSZ apostille
+  page and the Ministry of Justice's KRK FAQ; `PL` in the issuers).
+  Unknown: whether Misrad Hapnim accepts the abridged birth copy (odpis
+  skrócony), not only the full one the guide asks for; for the status
+  before the marriage (researched: the full marriage copy has a civil
+  status field, art. 88; a transcription copies only what the foreign
+  certificate states, art. 37 supplementation can add it), whether a Cyprus
+  marriage certificate states each spouse's prior status, whether Misrad
+  Hapnim counts a Polish record made by transcription as a marriage
+  certificate "from the partner's country" (§ד.2.ה), and how readily USCs
+  supplement the status field; whether a USC posts a paper copy or certificate to Israel (gov.pl
+  says "to the address in the request", free, without naming abroad);
+  whether a Polish apostille needs a translation (its fields may already
+  be in English). Community posts: one Polish partner was asked to show
+  the marriage was registered in Poland, others weren't
+  (facebook-28992865190365766); one was told her Polish documents were
+  about to expire (facebook-28924963180489301; the civil-status
+  certificate is valid 6 months).
+
 - **Thailand joins the Apostille Convention on 28 February 2027** (accession
   lodged 30 June 2026; Thai MFA notices of 1 and 6 July 2026), unless a
   member state objects before then. Not in the guides yet: they hold no

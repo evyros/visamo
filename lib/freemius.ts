@@ -63,7 +63,9 @@ const sandbox = process.env.FREEMIUS_SANDBOX === "1";
  * What the browser opens the checkout with, for this user: their email,
  * which they can't change there, since it's how a purchase finds its case;
  * the app's language; shekels; and no license choice, which a one-time
- * purchase doesn't have. The plan is picked when it opens.
+ * purchase doesn't have. The plan is picked when it opens. No abandoned-cart
+ * recovery: a cart Freemius remembers in the browser can bring back another
+ * person's email, unlocked, which would leave the purchase with no case.
  */
 export async function checkoutOptions(user: { email: string; name: string }, locale: Locale) {
   const checkout = await freemius().checkout.create({
@@ -78,7 +80,7 @@ export async function checkoutOptions(user: { email: string; name: string }, loc
     .setCurrency("ils")
     .setBillingCycle("lifetime")
     .setAppearance({ layout: "vertical" });
-  return { ...checkout.getOptions(), hide_licenses: true };
+  return { ...checkout.getOptions(), hide_licenses: true, cart: false };
 }
 
 export type CheckoutOptions = Awaited<ReturnType<typeof checkoutOptions>>;

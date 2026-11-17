@@ -6,7 +6,6 @@ import { locales } from "@/i18n/config";
 import { format, type Messages } from "@/i18n/messages";
 import { returnPath } from "@/lib/buy-paths";
 import { chatBalance } from "@/lib/chat/store";
-import { checkBalance } from "@/lib/checks/store";
 import type { ProductId } from "@/lib/products";
 import { purchaseOfLicense, recordPurchase } from "@/lib/purchases";
 import { contactUrl, newTab } from "@/lib/site";
@@ -44,7 +43,7 @@ export default async function PurchasedPage({ searchParams }: PageProps<"/buy/su
       (await recordPurchase(license, { id: user.id, email: user.email, caseId })))(),
   ]);
   // After the purchase is recorded, so they include it.
-  const [chat, checks] = await Promise.all([chatBalance(caseId), checkBalance(caseId)]);
+  const chat = await chatBalance(caseId);
   const t = messages.app.purchased;
   const count = (n: number) => new Intl.NumberFormat(locales[locale].intlLocale).format(n);
 
@@ -75,9 +74,7 @@ export default async function PurchasedPage({ searchParams }: PageProps<"/buy/su
       {product && (
         <p className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-2 rounded-full bg-teal-100 px-4 py-2 text-[15px] text-navy-900">
           <Icon name="checkCircle" className="size-5 text-teal-700" />
-          {checks.fileCheck
-            ? format(t.hasFileCheck, { messages: count(chat.messagesLeft), checks: count(checks.left) })
-            : format(t.hasMessages, { messages: count(chat.messagesLeft) })}
+          {format(t.hasMessages, { messages: count(chat.messagesLeft) })}
         </p>
       )}
 

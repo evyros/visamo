@@ -1591,7 +1591,6 @@
         "body": "Thank you! If you don't see it in your file, contact support."
       },
       "hasMessages": "Your file now has {messages} chat messages",
-      "hasFileCheck": "Your file now has {messages} chat messages and {checks} document checks",
       "use": {
         "messagePack": "Go to the chat",
         "fileCheck": "Check your documents"

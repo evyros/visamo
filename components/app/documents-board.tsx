@@ -498,7 +498,7 @@ export function DocumentsBoard({
               <FreeFindings t={t} found={found} locale={locale} />
             ) : (
               // Nothing found: the same box, in green, with what Full file check does.
-              <FullCheckBox t={t} tone="good" icon="visamo" centered>
+              <FullCheckBox t={t} tone="good" centered>
                 <p className="text-[15px] leading-6 text-slate-700">{t.progressHint}</p>
               </FullCheckBox>
             )}
@@ -1183,7 +1183,6 @@ function FreeFindings({
     <FullCheckBox
       t={t}
       tone={tone}
-      icon="lock"
       below={
         // Only what's found now: what was found before was about other files.
         <ul id={listId} hidden={!open || found.earlier} className="relative space-y-1.5 px-4 pb-4 sm:px-5 sm:pb-5">
@@ -1259,14 +1258,12 @@ function FreeFindings({
 function FullCheckBox({
   t,
   tone,
-  icon,
   centered = false,
   below,
   children,
 }: {
   t: Labels;
   tone: keyof typeof findingsTone;
-  icon: "lock" | "visamo";
   centered?: boolean;
   below?: ReactNode;
   children: ReactNode;
@@ -1284,7 +1281,7 @@ function FullCheckBox({
           href={buyUrl("/file/documents")}
           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy-900 px-4 py-2.5 text-[15px] font-semibold text-white shadow-soft hover:bg-navy-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
         >
-          <Icon name={icon} className="size-4" />
+          <Icon name="visamo" className="size-4" />
           {t.check.upgrade}
         </Link>
       </div>

@@ -383,7 +383,7 @@
         },
         {
           "q": "Can Visamo tell me if my file will be rejected?",
-          "a": "No one outside the Ministry can predict its decision. Visamo's AI checks each document against the published requirements and couples' real experience, and flags the issues that commonly get files sent back, so you can fix them before you submit instead of after months of waiting."
+          "a": "No one outside the Ministry can predict its decision. However, Visamo is experienced with many cases, and we know what Misrad Hapnim requires and what usually gets rejected. Visamo's AI checks each document against that and flags the issues, so you can fix them before you submit instead of after months of waiting."
         },
         {
           "q": "Does a person review our documents?",
@@ -399,15 +399,11 @@
         },
         {
           "q": "What if our case is complicated?",
-          "a": "Then we recommend speaking with a licensed Israeli lawyer. Visamo isn't a lawyer and can't advise on your specific situation, such as a previous refusal, a hearing or an unusual status. You can still use Visamo alongside your lawyer to organize and check your documents."
+          "a": "Most cases aren't, even when they feel that way. Not being married, a previous marriage, children from a past relationship, living in different countries, documents that are hard to get, or even a refusal at the border are all part of the regular process, and Visamo covers them. You need a licensed Israeli lawyer if you applied in the past and got a refusal, if you have a criminal record, or if you face a hearing, a deportation order or a custody dispute. You can still use Visamo alongside your lawyer to organize and check your documents."
         },
         {
           "q": "Are you connected to Misrad Hapnim?",
           "a": "No. Visamo is independent and isn't affiliated with or endorsed by the Ministry of Interior or the Population and Immigration Authority. You submit your application yourself, through the official channels."
-        },
-        {
-          "q": "We got a letter from the Ministry. Should we worry?",
-          "a": "Many letters are routine requests. Visamo's assistant can explain what a letter is usually asking for and what the common next step is. If it involves a refusal or a hearing, we'll tell you it's time to speak with a lawyer."
         },
         {
           "q": "Who can see our documents?",
@@ -588,7 +584,7 @@
         },
         {
           "q": "Will we still need a lawyer?",
-          "a": "Usually only to sign: some forms and affidavits must be signed in front of a lawyer or notary. That's a short appointment, not paying a lawyer to handle your file. Full file check helps you prepare and check the file yourselves. If your case involves a previous refusal, a hearing or an unusual status, we recommend speaking with a licensed Israeli lawyer."
+          "a": "Usually only to sign: some forms and affidavits must be signed in front of a lawyer or notary. That's a short appointment, not paying a lawyer to handle your file. Full file check helps you prepare and check the file yourselves. If you applied in the past and got a refusal, if you have a criminal record, or if you face a hearing, a deportation order or a custody dispute, we recommend speaking with a licensed Israeli lawyer."
         },
         {
           "q": "Can I get a refund?",

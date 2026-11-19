@@ -3,8 +3,18 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
+import { LastUsedBadge } from "./auth-ui";
 
-export function GoogleButton({ label, errorCallbackURL }: { label: string; errorCallbackURL: string }) {
+export function GoogleButton({
+  label,
+  errorCallbackURL,
+  lastUsed,
+}: {
+  label: string;
+  errorCallbackURL: string;
+  /** The login page's "you used this last time" tag, when Google was the last login. */
+  lastUsed?: string;
+}) {
   const router = useRouter();
   const [pending, setPending] = useState(false);
 
@@ -24,10 +34,11 @@ export function GoogleButton({ label, errorCallbackURL }: { label: string; error
       type="button"
       onClick={signIn}
       disabled={pending}
-      className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-[10px] border-[1.5px] border-line-200 bg-white px-6 text-base font-semibold text-navy-900 transition-colors hover:bg-sand-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:opacity-70"
+      className="relative inline-flex h-12 w-full items-center justify-center gap-3 rounded-[10px] border-[1.5px] border-line-200 bg-white px-6 text-base font-semibold text-navy-900 transition-colors hover:bg-sand-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:opacity-70"
     >
       <GoogleMark />
       {label}
+      {lastUsed && <LastUsedBadge label={lastUsed} className="absolute -top-2.5 end-3" />}
     </button>
   );
 }

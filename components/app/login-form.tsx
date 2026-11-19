@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { authClient } from "@/lib/auth-client";
-import { Field, Notice, SubmitButton, describe, inputClass, isEmail } from "./auth-ui";
+import { Field, LastUsedBadge, Notice, SubmitButton, describe, inputClass, isEmail } from "./auth-ui";
 import { authErrorMessage, type AuthLabels } from "./auth-errors";
 import { LoginCodeForm } from "./login-code-form";
 import { PasswordInput } from "./password-input";
@@ -12,10 +12,13 @@ import { PasswordInput } from "./password-input";
 export function LoginForm({
   t,
   lead,
+  lastUsed,
 }: {
   t: AuthLabels;
   /** Shown above the form and hidden at the code step: "Continue with Google". */
   lead?: ReactNode;
+  /** The "you used this last time" tag, when email was the last login. */
+  lastUsed?: string;
 }) {
   const router = useRouter();
   const [errors, setErrors] = useState<{ email?: string; password?: string; form?: string }>({});
@@ -77,7 +80,12 @@ export function LoginForm({
     <form noValidate onSubmit={onSubmit} className="space-y-5">
       {lead}
       {errors.form && <Notice>{errors.form}</Notice>}
-      <Field id="email" label={t.email} error={errors.email}>
+      <Field
+        id="email"
+        label={t.email}
+        error={errors.email}
+        badge={lastUsed && <LastUsedBadge label={lastUsed} />}
+      >
         <input
           id="email"
           name="email"

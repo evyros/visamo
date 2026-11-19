@@ -3,6 +3,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { eq } from "drizzle-orm";
 import { nextCookies } from "better-auth/next-js";
+import { lastLoginMethod } from "better-auth/plugins";
 import { magicLink } from "better-auth/plugins/magic-link";
 import { twoFactor } from "better-auth/plugins/two-factor";
 import { localeFromHeaders } from "@/i18n/negotiate";
@@ -29,6 +30,9 @@ import { queueWelcomeEmail } from "./welcome-email";
 // code would go to the same Google account. So does the sign-up link, since
 // opening it already proves the email. Sessions last 30 days, so users rarely
 // see the code.
+
+/** The cookie holding how the user last logged in: "google" or "email". */
+export const LAST_LOGIN_COOKIE = "visamo.last_login_method";
 
 type RequestContext = { headers?: Headers; request?: Request } | null | undefined;
 
@@ -141,6 +145,22 @@ export const auth = betterAuth({
       },
     }),
     impersonationPlugin(),
+    // Remembers in a cookie how the user last logged in, "google" or
+    // "email", so the login page can point to it (LAST_LOGIN_COOKIE).
+    lastLoginMethod({
+      cookieName: LAST_LOGIN_COOKIE,
+      // Sessions renew while people use the app (session.updateAge), but this
+      // cookie is only set at login. A year keeps it around for whenever the
+      // session finally runs out.
+      maxAge: 60 * 60 * 24 * 365,
+      // The plugin's own rules give "/callback/google" → "google" and
+      // "/sign-in/email" → "email" (already saved once the password is
+      // right, since two-step login clears the session cookie there). The
+      // code step, where the session really starts, counts as "email" too, and
+      // so does the sign-up link, which leads to a password.
+      customResolveMethod: (ctx) =>
+        ctx.path === "/two-factor/verify-otp" || ctx.path?.startsWith("/magic-link/verify") ? "email" : null,
+    }),
     // Must stay last: lets server actions set auth cookies.
     nextCookies(),
   ],

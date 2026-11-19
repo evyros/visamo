@@ -28,18 +28,25 @@ export function Field({
   label,
   error,
   hint,
+  badge,
   children,
 }: {
   id: string;
   label: string;
   error?: string;
   hint?: string;
+  /** A tag at the end of the label row, read as part of the label. */
+  badge?: ReactNode;
   children: ReactNode;
 }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-[15px] font-semibold text-navy-900">
+      <label
+        htmlFor={id}
+        className={`text-[15px] font-semibold text-navy-900 ${badge ? "flex flex-wrap items-center justify-between gap-x-3 gap-y-1" : "block"}`}
+      >
         {label}
+        {badge}
       </label>
       {children}
       {error ? (
@@ -109,3 +116,17 @@ export function Divider({ label }: { label: string }) {
 }
 
 export const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+/**
+ * On the login page: tags the way the user logged in last time. Neutral, so it
+ * reads as a reminder rather than a success.
+ */
+export function LastUsedBadge({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <span
+      className={`rounded-full border border-line-200 bg-sand-50 px-2.5 py-0.5 text-xs font-semibold whitespace-nowrap text-slate-600 ${className}`}
+    >
+      {label}
+    </span>
+  );
+}

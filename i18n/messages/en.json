@@ -1226,7 +1226,8 @@
         "forgot": "Forgot your password?",
         "noAccount": "New to Visamo?",
         "signupLink": "Create an account",
-        "passwordUpdated": "Your password was updated. Log in with your new password."
+        "passwordUpdated": "Your password was updated. Log in with your new password.",
+        "lastUsed": "You used this last time"
       },
       "signup": {
         "title": "Create your account",

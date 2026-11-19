@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { LAST_LOGIN_COOKIE } from "@/lib/auth";
 import { getAppDictionary } from "@/i18n/app-locale";
 import { getSession } from "@/lib/session";
 import { AuthHeading } from "@/components/app/auth-heading";
@@ -16,6 +18,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   if (await getSession()) redirect("/");
   const { error, reset } = await searchParams;
   const t = (await getAppDictionary()).app.auth;
+  // How this browser last logged in (lib/auth.ts): tags the Google button or the email form.
+  const lastMethod = (await cookies()).get(LAST_LOGIN_COOKIE)?.value;
 
   return (
     <>
@@ -25,9 +29,14 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         {error && <Notice>{t.errors.generic}</Notice>}
         <LoginForm
           t={t}
+          lastUsed={lastMethod === "email" ? t.login.lastUsed : undefined}
           lead={
             <>
-              <GoogleButton label={t.google} errorCallbackURL="/login" />
+              <GoogleButton
+                label={t.google}
+                errorCallbackURL="/login"
+                lastUsed={lastMethod === "google" ? t.login.lastUsed : undefined}
+              />
               <Divider label={t.or} />
             </>
           }

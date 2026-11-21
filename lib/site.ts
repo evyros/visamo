@@ -34,6 +34,9 @@ export const prices: Record<ProductId, number> = {
   fileCheck: 349,
 };
 
+/** Full file check's price for couples in the Contributor program (/legal/contributor-program). */
+export const contributorProgramPrice = 99;
+
 /**
  * The price a product will go up to, shown under `prices` with what buying now
  * saves. Remove a product's entry when its price goes up.

@@ -1,10 +1,15 @@
+import { formatPrice } from "@/i18n/format";
+import { contributorProgramPrice, prices } from "@/lib/site";
 import type { LegalContent } from "./types";
+
+const saving = prices.fileCheck - contributorProgramPrice;
+const price = (amount: number) => formatPrice(amount, "en");
 
 // Items in [brackets] must be filled in before publishing. Have an Israeli
 // lawyer review these texts before launch.
 
 export const legalEn: LegalContent = {
-  updated: "2026-11-14",
+  updated: "2026-11-21",
   updatedLabel: "Last updated",
   docs: {
     privacy: {
@@ -35,7 +40,7 @@ export const legalEn: LegalContent = {
                 "Technical information: IP address, browser and device type, pages visited, and logs needed to keep the service secure and working.",
               ],
             },
-            "Some of the documents you upload may contain information of special sensitivity under Israeli law, such as details about your family life, personal status, or a police certificate. We process it only to provide the service you asked for, at your direction.",
+            "Some of the documents you upload may contain information of special sensitivity under Israeli law, such as details about your family life, personal status, or a police certificate. We process it only to provide the service you asked for, at your direction, and, if you join the Contributor program, as described in its terms.",
           ],
         },
         {
@@ -77,7 +82,7 @@ export const legalEn: LegalContent = {
               ],
             },
             "We may also disclose information when the law requires it, for example under a court order, and in that case we will share only what is required.",
-            "Our team can access the documents in your file only if you ask for support and grant access, for a limited time, and every access is logged.",
+            "Our team can access the documents in your file only in two cases: if you ask for support and grant access, for a limited time, and every access is logged; or if you join the Contributor program, as described in its terms.",
           ],
         },
         {
@@ -325,6 +330,159 @@ export const legalEn: LegalContent = {
           heading: "About this statement",
           body: [
             "This statement was last updated on the date shown above. The site's accessibility was last reviewed on [date] by [name of reviewer or company].",
+          ],
+        },
+      ],
+    },
+
+    "contributor-program": {
+      title: "Contributor program terms",
+      intro: [
+        "These are the terms of Visamo's Contributor program. They explain what you agree to when you join, what we do with your documents, and what we never do.",
+        "Joining is optional, and you're in the program only if you ask to join it. Signing up to Visamo, or buying Full file check, doesn't add you to it. Without it, everything in Visamo works as before: your documents are kept encrypted, and our team doesn't look at them.",
+      ],
+      sections: [
+        {
+          heading: "1. What the program is",
+          body: [
+            `In the Contributor program, you and your partner give Visamo's team your consent to look at the documents in your file. In return, you can buy Full file check for ${price(contributorProgramPrice)} instead of ${price(prices.fileCheck)}.`,
+            "What we learn from your documents helps us improve Visamo's document checks, for you and for every couple after you.",
+          ],
+        },
+        {
+          heading: "2. Who can join",
+          body: [
+            "No one is added to the program automatically. Signing up to Visamo, buying Full file check, or asking for support doesn't make you part of it. You're in the program only after both of you ask to join and confirm (section 3).",
+            {
+              list: [
+                "Couples with a Visamo account and a file.",
+                "Both partners have to agree, each one for themselves, including a partner who doesn't have a Visamo account. One partner can't agree for the other.",
+              ],
+            },
+            "We may close the program to new couples at any time. Couples already in it keep their price.",
+          ],
+        },
+        {
+          heading: "3. How to join",
+          body: [
+            "Send us a message through the contact form, from the email address you registered with on Visamo, and choose \"Joining the Contributor program\" as the topic.",
+            "Our team will reply, explain the program, and ask each of you to confirm that you agree. You join once both of you have confirmed. After that, you can buy Full file check at the program price.",
+          ],
+        },
+        {
+          heading: "4. What you agree to",
+          body: [
+            "By joining, each of you agrees that Visamo's team may look at every document in your file: the documents already in it, and those you upload later in the process, until you leave the program.",
+            "This includes personal documents such as passports, birth and marriage certificates, divorce decrees, police certificates, bank statements, affidavits, photos and other relationship evidence, and your children's documents if they're part of your file.",
+            "Some of these documents include information of special sensitivity under Israeli law, such as details of your family life, personal status or criminal record. By joining, you give your explicit consent for our team to see this information, for the purposes in these terms only.",
+          ],
+        },
+        {
+          heading: "5. Why we look at your documents",
+          body: [
+            "We look at your documents to learn how documents are issued, certified and translated in each country, so Visamo's checks can catch more mistakes. In particular:",
+            {
+              list: [
+                "Issuers: which office issues each document in each country, such as civil registries, courts and police, and how their documents look.",
+                "Certification: which clerks, notaries and officials certify documents abroad, and the stamps, seals and signatures they use, including apostilles.",
+                "Translation: which translators translate documents abroad, and how their translations and stamps look.",
+                "Correct documents: what a document needs to show, so the check can tell a correct one from one with a mistake.",
+              ],
+            },
+            "We use what we learn only to improve Visamo's document checks and the guidance we give couples, for example to name the right office, or a translator, in a country.",
+          ],
+        },
+        {
+          heading: "6. What we write down",
+          body: [
+            "What we write down is about the document, never about you. For example:",
+            {
+              list: [
+                "The type of document, the country and the office that issued it.",
+                "Its layout, and where its stamps, seals and signatures are.",
+                "The details of the professionals who issued, certified or translated it, as they appear on the document: their name, title, office and stamp.",
+              ],
+            },
+            "We never write down your names, ID or passport numbers, dates of birth, addresses, or any other detail about you, your partner or your family.",
+          ],
+        },
+        {
+          heading: "7. What we never do",
+          body: [
+            {
+              list: [
+                "We look at each document once.",
+                "We don't copy your documents, download them or save them anywhere outside your file. They stay in your file, under your control, as before.",
+                "We don't use your documents to train AI models, and we don't let anyone else do so.",
+                "We don't show your documents to anyone outside Visamo's team, and we don't sell them or use them for advertising.",
+                "Joining doesn't change how Visamo checks your documents, or the results you get.",
+              ],
+            },
+          ],
+        },
+        {
+          heading: "8. Other people in your documents",
+          body: [
+            "Some documents include details of other people, like your children, your parents or a former spouse. We see those details only as part of the document, and we don't write them down.",
+            "The exception is the professionals who issued, certified or translated a document. We write down their professional details, as described in section 6, and never link them to you or your file.",
+          ],
+        },
+        {
+          heading: "9. How we protect your documents",
+          body: [
+            "Your documents stay encrypted in your file, as they are for every couple. Only members of Visamo's team look at them, only for the purposes in these terms, and every access is logged.",
+            "What we write down is kept apart from your file, and holds nothing that links it to you.",
+          ],
+        },
+        {
+          heading: "10. Price and payment",
+          body: [
+            `In the program, Full file check costs ${price(contributorProgramPrice)} instead of ${price(prices.fileCheck)}. It's a one-time payment, VAT included, and it covers your whole process, like Full file check at its regular price.`,
+            "Full file check works the same in the program as outside it. Everything else about the purchase is in the terms of use, and like any purchase on Visamo, it comes with the 14-day refund.",
+          ],
+        },
+        {
+          heading: "11. What you share in return",
+          body: [
+            "The program price is for couples who share their documents. Within 3 months of joining, at least 2 documents from your document list that were issued abroad need to be in your file. If you leave the program before that, the 3 months end the day you leave.",
+            "If that doesn't happen, whether you're still in the program or left it, you choose one of these:",
+            {
+              list: [
+                `Pay the difference, ${price(saving)}, and keep Full file check.`,
+                `Get your ${price(contributorProgramPrice)} back, and Full file check closes.`,
+              ],
+            },
+            `If you don't reply to our message, we refund the ${price(contributorProgramPrice)} and Full file check closes. Either way, the check results you already got stay in your file.`,
+            "Once those 2 documents are in your file, the program price is yours to keep, whatever you do next.",
+          ],
+        },
+        {
+          heading: "12. Leaving the program",
+          body: [
+            "You can leave at any time by sending us a message through the contact form. Either partner can leave, and that ends the program for both of you.",
+            "From then on, our team stops looking at your documents, including the ones you upload later. What we already wrote down stays, since it holds nothing about you.",
+            "Once the 2 documents in section 11 are in your file, leaving doesn't affect the Full file check you bought, or its price. If you leave before that, section 11 applies.",
+            "You can also delete any document, or your whole account, at any time, in the program or out of it. A deleted document is out of our reach.",
+          ],
+        },
+        {
+          heading: "13. Your rights",
+          body: [
+            "Your consent is voluntary, and you can withdraw it at any time by leaving the program (section 12).",
+            "Under the Privacy Protection Law, 1981, and, where it applies, the GDPR, you also have the rights described in the privacy policy, including access to the information we hold about you, and the right to complain to the Privacy Protection Authority or, in the EU or UK, to your local data protection authority.",
+            "To use any of these rights, contact us through the contact form or at support@visamo.co.il.",
+          ],
+        },
+        {
+          heading: "14. Changes to the program",
+          body: [
+            "We may change these terms, or end the program. If a change widens what we do with your documents, we'll ask for your consent again before it applies to you. If we end the program, we stop looking at documents, and Full file checks already bought stay yours.",
+          ],
+        },
+        {
+          heading: "15. Everything else",
+          body: [
+            "The privacy policy and the terms of use apply to everything these terms don't cover. Where they differ on something about the program, these terms apply.",
           ],
         },
       ],

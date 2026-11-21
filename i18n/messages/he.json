@@ -42,6 +42,10 @@
       "accessibility": {
         "title": "הצהרת נגישות",
         "description": "הצהרת הנגישות של Visamo."
+      },
+      "contributor-program": {
+        "title": "תנאי תוכנית המסייעים",
+        "description": "התנאים המלאים של תוכנית המסייעים של Visamo."
       }
     },
     "contact": {
@@ -103,7 +107,8 @@
       "sources": "המקורות שלנו",
       "privacy": "מדיניות פרטיות",
       "terms": "תנאי שימוש",
-      "accessibility": "הצהרת נגישות"
+      "accessibility": "הצהרת נגישות",
+      "contributorProgram": "תוכנית המסייעים"
     },
     "company": {
       "title": "החברה",
@@ -923,8 +928,10 @@
         "חיוב או תשלום",
         "בקשת החזר",
         "בקשה בנושא פרטיות ומידע",
+        "הצטרפות לתוכנית המסייעים",
         "אחר"
       ],
+      "contributorReason": "הצטרפות לתוכנית המסייעים",
       "message": "הודעה",
       "attachments": "קבצים מצורפים (לא חובה)",
       "attachmentsHint": "תמונות בלבד (JPG, PNG, WebP או HEIC), עד 3 קבצים ועד 4MB בסך הכול.",

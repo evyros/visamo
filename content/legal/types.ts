@@ -12,7 +12,7 @@ export type LegalDoc = {
   sections: LegalSection[];
 };
 
-export type LegalSlug = "privacy" | "terms" | "accessibility";
+export type LegalSlug = "privacy" | "terms" | "accessibility" | "contributor-program";
 
 export type LegalContent = {
   /** ISO date the texts were last changed. */

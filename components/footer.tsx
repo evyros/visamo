@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { format, getDictionary, getLocale } from "@/i18n/dictionaries";
 import { branchesPath } from "@/content/branches";
+import { contributorPath } from "@/content/contributor-program";
 import { glossaryPath } from "@/content/glossary";
 import { processPath } from "@/content/process";
 import { sourcesPath } from "@/content/sources";
@@ -37,6 +38,7 @@ export async function Footer() {
         { href: p("/legal/privacy"), label: f.trust.privacy },
         { href: p("/legal/terms"), label: f.trust.terms },
         { href: p("/legal/accessibility"), label: f.trust.accessibility },
+        { href: p(contributorPath), label: f.trust.contributorProgram },
       ],
     },
     {

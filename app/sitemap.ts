@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { branchesPath, surveyPath } from "@/content/branches";
+import { contributorPath } from "@/content/contributor-program";
 import { glossaryPath, glossaryUpdated } from "@/content/glossary";
 import { getGuides, guideSlugs } from "@/content/guides";
 import { lawyerPath, lawyerUpdated } from "@/content/lawyer";
@@ -34,6 +35,8 @@ const pages: { path: string; updated?: string }[] = [
     "/legal/privacy",
     "/legal/terms",
     "/legal/accessibility",
+    contributorPath,
+    "/legal/contributor-program",
   ].map((path) => ({ path })),
 ];
 

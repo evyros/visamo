@@ -6,7 +6,7 @@ import { getLegal, type LegalBlock, type LegalSlug } from "@/content/legal";
 import { pageMetadata } from "@/lib/metadata";
 import { Container, SectionTitle } from "@/components/ui";
 
-const slugs: LegalSlug[] = ["privacy", "terms", "accessibility"];
+const slugs: LegalSlug[] = ["privacy", "terms", "accessibility", "contributor-program"];
 const isSlug = (value: string): value is LegalSlug => (slugs as string[]).includes(value);
 
 export const dynamicParams = false;
@@ -65,12 +65,28 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/legal/[sl
 }
 
 function Block({ block }: { block: LegalBlock }) {
-  if (typeof block === "string") return <p>{block}</p>;
+  if (typeof block === "string") return <p>{withEmailLinks(block)}</p>;
   return (
     <ul className="list-disc space-y-2 ps-6 marker:text-teal-600">
       {block.list.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item}>{withEmailLinks(item)}</li>
       ))}
     </ul>
+  );
+}
+
+// Starts at a letter or digit, so the "ל-" in "ל-support@…" stays out of the link.
+const email = /([A-Za-z0-9][\w.+-]*@[\w-]+(?:\.[\w-]+)+)/;
+
+/** The text, with each email address in it made a mailto link. */
+function withEmailLinks(text: string) {
+  return text.split(email).map((part, i) =>
+    i % 2 ? (
+      <a key={i} href={`mailto:${part}`} className="font-medium text-teal-700 underline underline-offset-2" dir="ltr">
+        {part}
+      </a>
+    ) : (
+      part
+    ),
   );
 }

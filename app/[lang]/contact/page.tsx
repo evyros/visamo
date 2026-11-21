@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { locales } from "@/i18n/config";
+import { contributorTopic } from "@/content/contributor-program";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 import { ContactForm } from "@/components/contact-form";
@@ -17,10 +18,13 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default async function ContactPage() {
+export default async function ContactPage({ searchParams }: PageProps<"/[lang]/contact">) {
+  const { topic } = await searchParams;
   const locale = await getLocale();
   const t = await getDictionary();
   const c = t.contact;
+  // A link can choose the topic: the Contributor program's page does.
+  const defaultReason = topic === contributorTopic ? c.form.contributorReason : undefined;
 
   return (
     <section className="py-16 sm:py-20">
@@ -32,7 +36,7 @@ export default async function ContactPage() {
 
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="rounded-2xl border border-line-200 bg-white p-6 shadow-soft sm:p-10">
-            <ContactForm labels={c.form} lang={locale} locale={locales[locale].intlLocale} supportEmail={site.supportEmail} />
+            <ContactForm labels={c.form} lang={locale} locale={locales[locale].intlLocale} supportEmail={site.supportEmail} defaultReason={defaultReason} />
             <p className="mt-6 text-xs text-slate-500">{c.form.privacy}</p>
           </div>
 

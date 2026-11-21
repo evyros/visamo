@@ -42,6 +42,10 @@
       "accessibility": {
         "title": "Accessibility statement",
         "description": "Visamo's accessibility statement."
+      },
+      "contributor-program": {
+        "title": "Contributor program terms",
+        "description": "The full terms of Visamo's Contributor program."
       }
     },
     "contact": {
@@ -103,7 +107,8 @@
       "sources": "Our sources",
       "privacy": "Privacy policy",
       "terms": "Terms of use",
-      "accessibility": "Accessibility statement"
+      "accessibility": "Accessibility statement",
+      "contributorProgram": "Contributor program"
     },
     "company": {
       "title": "Company",
@@ -923,8 +928,10 @@
         "Billing or payment",
         "Refund request",
         "Privacy or data request",
+        "Joining the Contributor program",
         "Other"
       ],
+      "contributorReason": "Joining the Contributor program",
       "message": "Message",
       "attachments": "Attachments (optional)",
       "attachmentsHint": "Images only (JPG, PNG, WebP or HEIC), up to 3 files and 4MB in total.",

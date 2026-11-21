@@ -58,12 +58,15 @@ export function ContactForm({
   lang,
   locale,
   supportEmail,
+  defaultReason,
 }: {
   labels: Labels;
   lang: Locale;
   /** For number formatting, e.g. "he-IL". */
   locale: string;
   supportEmail: string;
+  /** A reason chosen in advance, from the link that led here. */
+  defaultReason?: string;
 }) {
   const [files, setFiles] = useState<File[]>([]);
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
@@ -208,7 +211,7 @@ export function ContactForm({
         </FieldBlock>
 
         <FieldBlock id="reason" label={labels.reason} error={errors.reason}>
-          <select id="reason" name="reason" defaultValue="" className={inputClass} {...fieldProps("reason")}>
+          <select id="reason" name="reason" defaultValue={defaultReason ?? ""} className={inputClass} {...fieldProps("reason")}>
             <option value="" disabled>
               {labels.reasonPlaceholder}
             </option>

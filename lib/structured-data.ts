@@ -141,6 +141,51 @@ export function guideStructuredData({
 }
 
 /**
+ * JSON-LD for a page that answers one question, like the lawyer page: the
+ * article and its questions and answers. `url` is absolute.
+ */
+export function articleStructuredData({
+  title,
+  description,
+  updated,
+  faq,
+  url,
+  inLanguage,
+}: {
+  title: string;
+  description: string;
+  updated: string;
+  faq: { q: string; a: string }[];
+  url: string;
+  inLanguage: string;
+}) {
+  const publisher = { "@type": "Organization", name, url: site.url, logo: `${site.url}/logo.svg` };
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description,
+      dateModified: updated,
+      inLanguage,
+      mainEntityOfPage: url,
+      author: publisher,
+      publisher,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage,
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: plain(item.a) },
+      })),
+    },
+  ];
+}
+
+/**
  * JSON-LD for one version of the process guide (content/process): its steps,
  * the steps' questions and answers, and where it sits on the site. The URLs
  * are absolute.

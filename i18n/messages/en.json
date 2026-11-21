@@ -399,7 +399,11 @@
         },
         {
           "q": "What if our case is complicated?",
-          "a": "Most cases aren't, even when they feel that way. Not being married, a previous marriage, children from a past relationship, living in different countries, documents that are hard to get, or even a refusal at the border are all part of the regular process, and Visamo covers them. You need a licensed Israeli lawyer if you applied in the past and got a refusal, if you have a criminal record, or if you face a hearing, a deportation order or a custody dispute. You can still use Visamo alongside your lawyer to organize and check your documents."
+          "a": "Most cases aren't, even when they feel that way. Not being married, a previous marriage, children from a past relationship, living in different countries, documents that are hard to get, or even a refusal at the border are all part of the regular process, and Visamo covers them. You need a licensed Israeli lawyer if you applied in the past and got a refusal, if you have a criminal record, or if you face a hearing, a deportation order or a custody dispute. You can still use Visamo alongside your lawyer to organize and check your documents.",
+          "link": {
+            "label": "Do we need a lawyer?",
+            "path": "/do-we-need-a-lawyer"
+          }
         },
         {
           "q": "Are you connected to Misrad Hapnim?",
@@ -584,7 +588,11 @@
         },
         {
           "q": "Will we still need a lawyer?",
-          "a": "Usually only to sign: some forms and affidavits must be signed in front of a lawyer or notary. That's a short appointment, not paying a lawyer to handle your file. Full file check helps you prepare and check the file yourselves. If you applied in the past and got a refusal, if you have a criminal record, or if you face a hearing, a deportation order or a custody dispute, we recommend speaking with a licensed Israeli lawyer."
+          "a": "Usually only to sign: some forms and affidavits must be signed in front of a lawyer or notary. That's a short appointment, not paying a lawyer to handle your file. Full file check helps you prepare and check the file yourselves. If you applied in the past and got a refusal, if you have a criminal record, or if you face a hearing, a deportation order or a custody dispute, we recommend speaking with a licensed Israeli lawyer.",
+          "link": {
+            "label": "Do we need a lawyer?",
+            "path": "/do-we-need-a-lawyer"
+          }
         },
         {
           "q": "Can I get a refund?",

@@ -120,6 +120,16 @@ export function blockTexts(block: GuideBlock): string[] {
         ...block.rows.flatMap((r) => [r.name, r.total, ...r.stickers.map((s) => s.label)]),
         block.caption,
       ];
+    case "split":
+      return [
+        block.yours.title,
+        ...block.yours.items.flatMap((item) => [item.title, item.text]),
+        block.theirs.title,
+        ...block.theirs.items.flatMap((item) => [item.title, item.text]),
+        block.caption,
+      ];
+    case "triage":
+      return [block.regular.title, ...block.regular.items, block.lawyer.title, ...block.lawyer.items, block.caption];
     case "map":
       return [...block.items.map((item) => item.title), block.caption];
   }
@@ -145,6 +155,10 @@ export function blockShape(block: GuideBlock): string {
       return `loop:${block.stages.map((s) => s.icon).join(",")}`;
     case "renewals":
       return `renewals:${block.rows.map((r) => r.stickers.map((s) => s.months).join("+")).join(",")}`;
+    case "split":
+      return `split:${block.yours.items.map((item) => item.icon).join(",")}|${block.theirs.items.map((item) => item.icon).join(",")}`;
+    case "triage":
+      return `triage:${block.regular.items.length}|${block.lawyer.items.length}`;
     case "map":
       return `map:${block.items.map((item) => `${item.icon}@${item.section}`).join(",")}`;
   }

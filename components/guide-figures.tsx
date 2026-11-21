@@ -47,6 +47,10 @@ export function GuideFigure({ figure, locale }: { figure: Figure; locale: Locale
         <LoopFigure figure={figure} />
       ) : figure.figure === "renewals" ? (
         <RenewalsFigure figure={figure} locale={locale} />
+      ) : figure.figure === "split" ? (
+        <SplitFigure figure={figure} />
+      ) : figure.figure === "triage" ? (
+        <TriageFigure figure={figure} locale={locale} />
       ) : (
         <MapFigure figure={figure} />
       )}
@@ -841,12 +845,99 @@ function MapFigure({ figure }: { figure: Extract<Figure, { figure: "map" }> }) {
   );
 }
 
+// ── Who does the work ────────────────────────────────────────────────────────
+
+/** What's yours either way, large and solid, above the smaller, dashed part someone else adds. */
+function SplitFigure({ figure }: { figure: Extract<Figure, { figure: "split" }> }) {
+  return (
+    <div className="rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 p-3 sm:p-5">
+      <div className="rounded-xl border border-line-200 bg-white p-4 shadow-soft sm:p-6">
+        <p className="inline-flex rounded-full bg-navy-900 px-3 py-1 text-[13px] leading-5 font-semibold text-white">
+          {figure.yours.title}
+        </p>
+        <ul className="mt-5 grid gap-x-6 gap-y-5 sm:grid-cols-2">
+          {figure.yours.items.map((item, i) => (
+            <SplitItem key={i} {...item} />
+          ))}
+        </ul>
+      </div>
+      <div className="mt-3 rounded-xl border-2 border-dashed border-slate-300 p-4 sm:mt-4 sm:p-5">
+        <p className="inline-flex rounded-full border border-line-200 bg-white px-3 py-1 text-[13px] leading-5 font-semibold text-slate-700">
+          {figure.theirs.title}
+        </p>
+        <ul className="mt-4 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+          {figure.theirs.items.map((item, i) => (
+            <SplitItem key={i} {...item} />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function SplitItem({ icon, title, text }: { icon: FigureIcon; title: string; text: string }) {
+  return (
+    <li className="flex items-start gap-3">
+      <IconTile name={icon} className="size-10" />
+      <div className="min-w-0">
+        <p className="text-[15px] leading-6 font-semibold text-navy-900">{title}</p>
+        <p className="mt-0.5 text-[14px] leading-5 text-slate-500">{text}</p>
+      </div>
+    </li>
+  );
+}
+
+// ── Sorting situations: the regular process, or a lawyer ────────────────────
+
+function TriageFigure({ figure, locale }: { figure: Extract<Figure, { figure: "triage" }>; locale: Locale }) {
+  const groups = [
+    {
+      ...figure.regular,
+      icon: "check" as const,
+      box: "border-teal-600/20 bg-teal-100/70",
+      badge: "bg-teal-600",
+      mark: <Icon name="check" className="mt-1 size-4 text-teal-600" strokeWidth={2.4} />,
+    },
+    {
+      ...figure.lawyer,
+      icon: "scale" as const,
+      box: "border-terracotta-600/20 bg-terracotta-100/70",
+      badge: "bg-terracotta-600",
+      mark: <span aria-hidden="true" className="mt-[9px] me-1.5 ms-1 size-1.5 shrink-0 rounded-full bg-terracotta-600" />,
+    },
+  ];
+  return (
+    <div className="grid gap-3 sm:grid-cols-2 sm:items-start sm:gap-4">
+      {groups.map((group, i) => (
+        <div key={i} className={`rounded-2xl border p-5 sm:p-6 ${group.box}`}>
+          <div className="flex items-center gap-3">
+            <span className={`inline-flex size-10 shrink-0 items-center justify-center rounded-full text-white ${group.badge}`}>
+              <Icon name={group.icon} className="size-5" strokeWidth={2.2} />
+            </span>
+            <p className="text-[16px] leading-6 font-semibold text-balance text-navy-900">{group.title}</p>
+          </div>
+          <ul className="mt-4 space-y-2.5">
+            {group.items.map((item, j) => (
+              <li key={j} className="flex gap-2.5 text-[15px] leading-6 text-slate-700">
+                {group.mark}
+                <span className="min-w-0">
+                  <GuideText text={item} locale={locale} />
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 // ── The small drawings ───────────────────────────────────────────────────────
 
 /** The ones that point somewhere, mirrored in RTL. */
 const directional = new Set<FigureIcon>(["plane", "send"]);
 
-function IconTile({ name, className }: { name: FigureIcon; className: string }) {
+export function IconTile({ name, className }: { name: FigureIcon; className: string }) {
   return (
     <svg
       viewBox="0 0 48 48"
@@ -1003,6 +1094,25 @@ const icons: Record<FigureIcon, ReactNode> = {
       <path d="M8 22.5 40 9 22.5 29Z" fill={C.teal} />
       <path d="M22.5 29 40 9 30 38.5Z" fill={C.teal700} />
       <path d="M22.5 29 23 37.5 26.8 33.4Z" fill={C.navy} />
+    </>
+  ),
+  talk: (
+    <>
+      <path d="M9 13.5a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6.5a4 4 0 0 1-4 4h-7.5l-5.2 4.2v-4.4A4 4 0 0 1 9 20Z" fill={C.navy} />
+      <g fill="#fff" fillOpacity="0.55">
+        <circle cx="14.5" cy="16.8" r="1.5" />
+        <circle cx="19" cy="16.8" r="1.5" />
+        <circle cx="23.5" cy="16.8" r="1.5" />
+      </g>
+      <path
+        d="M39 23.5a4 4 0 0 0-4-4H24a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6.5l5 4v-4.2a4 4 0 0 0 3.5-4Z"
+        fill="#fff"
+        stroke={C.teal}
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <rect x="24.5" y="24.6" width="10" height="2" rx="1" fill={C.amber} />
+      <rect x="24.5" y="28.6" width="6.5" height="2" rx="1" fill={C.slate300} />
     </>
   ),
   hourglass: (

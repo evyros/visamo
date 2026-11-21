@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { branchesPath, surveyPath } from "@/content/branches";
 import { glossaryPath, glossaryUpdated } from "@/content/glossary";
 import { getGuides, guideSlugs } from "@/content/guides";
+import { lawyerPath, lawyerUpdated } from "@/content/lawyer";
 import { allAnswers, processPath, processUpdated, trackPath } from "@/content/process";
 import { sourcesPath } from "@/content/sources";
 import { defaultLocale, liveLocales } from "@/i18n/config";
@@ -17,6 +18,7 @@ const pages: { path: string; updated?: string }[] = [
   // The versions for couples who haven't lived together point to these (canonicalAnswers).
   ...allAnswers.filter((a) => a.livedTogether).map((a) => ({ path: trackPath(a), updated: processUpdated })),
   { path: glossaryPath, updated: glossaryUpdated },
+  { path: lawyerPath, updated: lawyerUpdated },
   // Their numbers change with every vote: no fixed date.
   { path: branchesPath },
   { path: surveyPath },

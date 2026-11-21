@@ -83,6 +83,20 @@ export type GuideFigure =
       caption: GuideText;
     }
   | {
+      /** Who does the work: what's `yours` either way, beside what `theirs` adds. */
+      figure: "split";
+      yours: { title: string; items: { icon: FigureIcon; title: string; text: string }[] };
+      theirs: { title: string; items: { icon: FigureIcon; title: string; text: string }[] };
+      caption: GuideText;
+    }
+  | {
+      /** Situations sorted in two: the `regular` process, and the ones that need a `lawyer`. */
+      figure: "triage";
+      regular: { title: string; items: GuideText[] };
+      lawyer: { title: string; items: GuideText[] };
+      caption: GuideText;
+    }
+  | {
       /** The guide's sections as tiles, each jumping to its section (a section id). */
       figure: "map";
       items: { icon: FigureIcon; title: string; section: string }[];
@@ -105,6 +119,7 @@ export const figureIcons = [
   "rejected",
   "send",
   "hourglass",
+  "talk",
 ] as const;
 export type FigureIcon = (typeof figureIcons)[number];
 

@@ -31,16 +31,16 @@ export const site = {
 /** One-time prices in ILS, VAT included. */
 export const prices: Record<ProductId, number> = {
   messagePack: 49,
-  fileCheck: 349,
+  fileCheck: 249,
 };
 
 /**
- * The price a product will go up to, shown under `prices` with what buying now
- * saves. Remove a product's entry when its price goes up.
+ * Products whose price was just lowered: under the price, a "New price, until
+ * EOY" badge. Lowered on 2026-11-21 (Full file check ₪349 → ₪249) until the
+ * end of 2026: on Jan 1, remove the entry and set the price (here and in
+ * Freemius), or the badge's "until EOY" is no longer true.
  */
-export const afterLaunchPrices: Partial<Record<ProductId, number>> = {
-  fileCheck: 549,
-};
+export const newPrices: ReadonlySet<ProductId> = new Set(["fileCheck"]);
 
 /** Signup, and with `product`, what the person chose to buy on the pricing page. */
 export function signupUrl(locale: Locale, product?: ProductId) {

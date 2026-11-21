@@ -616,9 +616,8 @@
       "footnote": "One-time payment. Messages don't expire."
     },
     "recommended": "Recommended",
-    "launch": {
-      "save": "Save {amount}",
-      "later": "Price will go up to {price}"
+    "newPrice": {
+      "badge": "New price, until EOY"
     }
   },
   "security": {

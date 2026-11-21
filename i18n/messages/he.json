@@ -616,9 +616,8 @@
       "footnote": "תשלום חד-פעמי. ההודעות לא פגות."
     },
     "recommended": "מומלץ",
-    "launch": {
-      "save": "חוסכים {amount}",
-      "later": "המחיר יעלה ל-{price}"
+    "newPrice": {
+      "badge": "מחיר חדש, עד סוף השנה"
     }
   },
   "security": {

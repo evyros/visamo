@@ -86,6 +86,7 @@ describe("the guides", () => {
       expect(he.facts.length).toBe(en.facts.length);
       expect(he.related).toEqual(en.related);
       expect(he.updated).toBe(en.updated);
+      expect(!!he.closing).toBe(!!en.closing);
     });
 
     it(`${slug} links only to guides that exist, and not to itself`, () => {

@@ -827,10 +827,10 @@ function MapFigure({ figure }: { figure: Extract<Figure, { figure: "map" }> }) {
     <div className="rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 p-3 sm:p-4">
       <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
         {figure.items.map((item) => (
-          <li key={item.section}>
+          <li key={item.section} className={item.wide ? "col-span-full" : undefined}>
             <a
               href={`#${item.section}`}
-              className="group flex h-full items-center gap-3 rounded-xl border border-line-200 bg-white p-2.5 transition-colors hover:border-teal-600 sm:p-3"
+              className={`group flex h-full items-center gap-3 rounded-xl border bg-white p-2.5 transition-colors hover:border-teal-600 sm:p-3 ${item.wide ? "border-[1.5px] border-dashed border-teal-600/40" : "border-line-200"}`}
             >
               <IconTile name={item.icon} className="size-10 sm:size-11" />
               <span className="min-w-0 flex-1 text-[14px] leading-5 font-semibold text-navy-900 group-hover:text-teal-700 sm:text-[15px]">
@@ -1094,6 +1094,19 @@ const icons: Record<FigureIcon, ReactNode> = {
       <path d="M8 22.5 40 9 22.5 29Z" fill={C.teal} />
       <path d="M22.5 29 40 9 30 38.5Z" fill={C.teal700} />
       <path d="M22.5 29 23 37.5 26.8 33.4Z" fill={C.navy} />
+    </>
+  ),
+  // A document, and a "+" for the ones a couple's own case adds.
+  more: (
+    <>
+      <rect x="11" y="9" width="23" height="29" rx="3" fill="#fff" stroke={C.line} strokeWidth="1.2" />
+      <rect x="15" y="14" width="15" height="2.4" rx="1.2" fill={C.navy} />
+      <g fill={C.slate300}>
+        <rect x="15" y="19.5" width="12" height="1.8" rx="0.9" />
+        <rect x="15" y="24" width="9" height="1.8" rx="0.9" />
+      </g>
+      <circle cx="33.5" cy="33" r="7" fill={C.teal} />
+      <path d="M33.5 29.5v7M30 33h7" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
     </>
   ),
   talk: (

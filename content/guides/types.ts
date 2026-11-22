@@ -32,6 +32,8 @@ export type GuideBlock =
   | { steps: GuideText[] }
   | { table: { head: GuideText[]; rows: GuideText[][] } }
   | { note: GuideText }
+  /** A sign-up button, with this label: for where the guide runs out and the couple's own case begins. */
+  | { signup: string }
   | GuideFigure;
 
 /**
@@ -99,7 +101,8 @@ export type GuideFigure =
   | {
       /** The guide's sections as tiles, each jumping to its section (a section id). */
       figure: "map";
-      items: { icon: FigureIcon; title: string; section: string }[];
+      /** `wide`: a tile that isn't a subject like the others, on a row of its own, dashed. */
+      items: { icon: FigureIcon; title: string; section: string; wide?: boolean }[];
       caption: GuideText;
     };
 
@@ -120,6 +123,7 @@ export const figureIcons = [
   "send",
   "hourglass",
   "talk",
+  "more",
 ] as const;
 export type FigureIcon = (typeof figureIcons)[number];
 
@@ -136,7 +140,10 @@ export type Guide = {
   /** When the facts were last checked, as YYYY-MM-DD. */
   updated: string;
   sections: { id: string; heading: string; body: GuideBlock[] }[];
-  faq: { q: string; a: GuideText }[];
+  /** `signup`: a sign-up link under the answer, with this label. */
+  faq: { q: string; a: GuideText; signup?: string }[];
+  /** A few words to close the guide: after its sections, before the questions. */
+  closing?: GuideText;
   related: GuideSlug[];
   cta: { title: string; body: string };
 };

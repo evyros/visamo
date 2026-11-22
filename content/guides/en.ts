@@ -1243,7 +1243,7 @@ export const guidesEn: Guides = {
       title: "The documents for the Israel partner visa",
       answer:
         "To open a partner visa file, [Misrad Hapnim](/guide/glossary#misrad-hapnim) asks for **forms**, **identity documents**, **proof of your relationship**, the foreign partner's **civil status** and **police certificate**, and proof that you **share a life**. Which ones you need depends on your situation: married or common-law, where each of you lives, previous marriages, and children. Documents from abroad need an apostille, and often a translation.",
-      updated: "2026-10-08",
+      updated: "2026-11-22",
       sections: [
         {
           id: "first",
@@ -1266,6 +1266,7 @@ export const guidesEn: Guides = {
                 { icon: "certificate", title: "Civil status", section: "civil-status" },
                 { icon: "shield", title: "Police certificate", section: "police" },
                 { icon: "home", title: "Your life together", section: "life-together" },
+                { icon: "more", title: "Depends on your case", section: "your-case", wide: true },
               ],
               caption: "The documents by subject: each one jumps to its list.",
             },
@@ -1281,7 +1282,6 @@ export const guidesEn: Guides = {
                 "[Joint affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf): common-law couples. You sign it at the appointment, not before.",
                 "[Entry permit application (form AS/1)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf): when the foreign partner is abroad and the Israeli partner lives in Israel.",
                 "[Visa change application (form AS/3)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf): when the foreign partner is already in Israel.",
-                "**A letter about your relationship:** every couple, signed by both of you.",
               ],
             },
           ],
@@ -1308,6 +1308,7 @@ export const guidesEn: Guides = {
             {
               list: [
                 "**Your marriage certificate:** married couples. A marriage in Israel needs no certification.",
+                "**A letter about your relationship:** every couple, signed by both of you.",
                 "**Photos of you together.**",
                 "**Your message and call history.**",
                 "**Letters of recommendation** from family and friends in Israel.",
@@ -1366,6 +1367,24 @@ export const guidesEn: Guides = {
             },
           ],
         },
+        {
+          id: "your-case",
+          heading: "Depends on your case",
+          body: [
+            "Every couple needs more documents or more proof, depending on their case, and this guide can't know the details of yours, examples:",
+            {
+              list: [
+                "A name change",
+                "Previous marriages or children",
+                "Other countries the foreign partner lived in",
+                "Extra evidence of your life together",
+                "More proof of income",
+                "…and more",
+              ],
+            },
+            { signup: "Get your exact list, free" },
+          ],
+        },
       ],
       faq: [
         {
@@ -1388,7 +1407,19 @@ export const guidesEn: Guides = {
           q: "Do documents in English need a translation?",
           a: "By law, yes: only Hebrew and Arabic are accepted without one. In practice, clerks often accept English. When you do translate, translate into Hebrew.",
         },
+        {
+          q: "My partner is abroad. How do they sign the documents?",
+          a: "It depends on the document, where each of you is, and whether you're married. Some forms you both sign before you file, some the foreign partner signs only once they're in Israel, and some you sign together at the appointment. Visamo shows you who signs each document in your file, and when.",
+          signup: "See who signs what, free",
+        },
+        {
+          q: "How are documents from abroad translated?",
+          a: "It depends on the document and its language. Some need no translation, some you translate yourselves, and others need an official translation, made in Israel or abroad depending on the language. Visamo knows the rules for every country and language, and shows you what each of your documents needs.",
+          signup: "See what each document needs, free",
+        },
       ],
+      closing:
+        "Gathering documents from two countries is hard, and it takes time. If it feels like a lot, that's because it is: for many couples, it's the longest part of the process. It's best to start with the documents from abroad, since they take the longest to get and to bring to Israel.",
       related: ["apostille-and-translation", "partner-visa-timeline"],
       cta: {
         title: "Get your personal document list",

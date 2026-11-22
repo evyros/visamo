@@ -114,6 +114,12 @@ export default async function GuidePage({ params }: PageProps<"/[lang]/guide/[sl
             </section>
           ))}
 
+          {guide.closing && (
+            <p>
+              <GuideText text={guide.closing} locale={locale} />
+            </p>
+          )}
+
           <section id="faq" className="scroll-mt-24">
             <h2 className="font-display text-2xl leading-tight font-semibold text-navy-900 sm:text-[28px]">{labels.faq}</h2>
             <div className="mt-6">

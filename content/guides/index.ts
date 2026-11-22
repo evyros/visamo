@@ -98,6 +98,7 @@ export function blockTexts(block: GuideBlock): string[] {
   if ("steps" in block) return block.steps;
   if ("table" in block) return [...block.table.head, ...block.table.rows.flat()];
   if ("note" in block) return [block.note];
+  if ("signup" in block) return [block.signup];
   switch (block.figure) {
     case "path":
       return [...block.stages.flatMap((s) => [s.title, s.text]), block.caption];
@@ -142,6 +143,7 @@ export function blockShape(block: GuideBlock): string {
   if ("steps" in block) return `steps:${block.steps.length}`;
   if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
   if ("note" in block) return "note";
+  if ("signup" in block) return "signup";
   switch (block.figure) {
     case "path":
       return `path:${block.stages.length}${block.current === undefined ? "" : `@${block.current}`}`;
@@ -160,14 +162,19 @@ export function blockShape(block: GuideBlock): string {
     case "triage":
       return `triage:${block.regular.items.length}|${block.lawyer.items.length}`;
     case "map":
-      return `map:${block.items.map((item) => `${item.icon}@${item.section}`).join(",")}`;
+      return `map:${block.items.map((item) => `${item.icon}@${item.section}${item.wide ? "/wide" : ""}`).join(",")}`;
   }
 }
 
 /** Every piece of a guide's body text, in reading order: its answer, sections and questions. */
 export function guideTexts(guide: Guide): string[] {
   const blocks = guide.sections.flatMap((section) => [section.heading, ...section.body]);
-  return [guide.answer, ...blocks.flatMap(blockTexts), ...guide.faq.flatMap((item) => [item.q, item.a])];
+  return [
+    guide.answer,
+    ...blocks.flatMap(blockTexts),
+    ...guide.faq.flatMap((item) => [item.q, item.a]),
+    ...(guide.closing ? [guide.closing] : []),
+  ];
 }
 
 /** Minutes to read a guide, at 200 words a minute. */

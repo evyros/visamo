@@ -1,9 +1,10 @@
 import type { Locale } from "@/i18n/config";
-import { localePath } from "@/lib/site";
+import { localePath, signupUrl } from "@/lib/site";
 import { Icon } from "./icons";
 import { TextLink } from "./ui";
 
-type FaqItem = { q: string; a: string; link?: { label: string; path: string } };
+// `signup`: a link to sign up under the answer, with this label.
+type FaqItem = { q: string; a: string; link?: { label: string; path: string }; signup?: string };
 
 export function FaqList({ items, locale }: { items: FaqItem[]; locale: Locale }) {
   return (
@@ -19,6 +20,11 @@ export function FaqList({ items, locale }: { items: FaqItem[]; locale: Locale })
             {item.link && (
               <TextLink href={localePath(locale, item.link.path)} className="mt-3">
                 {item.link.label}
+              </TextLink>
+            )}
+            {item.signup && (
+              <TextLink href={signupUrl(locale)} className="mt-3">
+                {item.signup}
               </TextLink>
             )}
           </div>

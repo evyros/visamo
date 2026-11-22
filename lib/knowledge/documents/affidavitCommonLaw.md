@@ -15,14 +15,26 @@ The form is on the Population and Immigration Authority's site
 (https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf).
 It's in Hebrew, so it needs no translation.
 
-1. Print it, and fill in your details: each partner's full name, the Israeli
-   partner's ID number and the foreign partner's passport number. Write the
-   reason for any statement you can't declare in the lines under the list.
-2. **Don't sign it yet, and don't send it with the online application.** Bring
-   it to your appointment at the Population and Immigration Authority office
-   (לשכת רשות האוכלוסין וההגירה).
-3. At the appointment, both of you sign it in front of the clerk, who
-   confirms your signatures on the form.
+1. Fill in your details: each partner's full name, the Israeli partner's ID
+   number and the foreign partner's passport number. Write the reason for any
+   statement you can't declare in the lines under the list.
+2. Both of you sign it and date it, each on your own line. No lawyer or
+   notary is needed: it's a declaration on the ministry's form, signed by the
+   two of you.
+3. Send it with the online application.
+4. Leave the office's section (מאשר החתימה בלשכת רשות האוכלוסין וההגירה)
+   empty. The clerk fills it in at your appointment at the Population and
+   Immigration Authority office (לשכת רשות האוכלוסין וההגירה), when you bring
+   your documents in person.
+
+**If the foreign partner is abroad:** they sign it where they are, like the
+rest of the application. A signature drawn by hand on the PDF, or a printout
+they sign and scan, is fine. The Israeli partner goes to the first
+appointment alone, and the clerk confirms the form then.
+
+By the form, the clerk confirms the signatures. In practice, offices accept
+it signed in advance, and the clerk may ask either of you to sign it again
+in person at the office.
 
 ## What it should include
 
@@ -61,22 +73,28 @@ It's in Hebrew, so it needs no translation.
       does against the law.
 - **An explanation for any statement you can't declare**, in the lines under
   the list ("אם אינך יכול/ה להצהיר…").
-- **The Israeli partner's full name and ID number (תעודת זהות)**, and at
-  the appointment, their signature and the date.
-- **The foreign partner's full name and passport number**, and at the
-  appointment, their signature and the date.
-- **The office's confirmation of your signatures**, filled in by the clerk at
-  the appointment: their name, role, the date and their signature.
+- **The Israeli partner's full name and ID number (תעודת זהות)**, their
+  signature and the date.
+- **The foreign partner's full name and passport number**, their signature
+  and the date.
+- **The office's confirmation of your signatures**, left empty: the clerk
+  fills it in at the appointment, with their name, role, the date and their
+  signature.
 
 ## Questions
 
 **Do we send it with the online application?**
-No. It isn't sent with the online application. Bring it with you, filled in but
-unsigned, to your appointment.
+Yes. Fill it in, both sign it, and send it with the online application. Keep
+a copy to bring to your appointment.
+
+**My partner is abroad. How do they sign it?**
+Where they are. They sign their line and date it, by hand on the PDF or on a
+printout they scan, and you send it with the application. They don't need
+to be in Israel, or to sign in front of anyone.
 
 **Can we sign it at home before the appointment?**
-No. You sign it at the appointment, in front of the clerk, who confirms your
-signatures. If you already signed it, print a new copy and fill it in again.
+Yes. Only the office's section waits for the appointment. The clerk may ask
+either of you to sign it again in person at the office.
 
 **Do we also need the AS/6 affidavits?**
 No. The affidavits in form AS/6 are for married couples. Common-law couples
@@ -85,9 +103,10 @@ sign this declaration instead.
 **What if one of us can't declare one of the statements?**
 Write the details or the reason in the lines under the list.
 
-**Can a lawyer confirm our signatures instead?**
-The form has a place only for a clerk (פקיד) at a Population and Immigration
-Authority office to confirm the signatures.
+**Do we need a lawyer or a notary for it?**
+No. It isn't an affidavit signed in front of a lawyer. The only confirmation
+on the form is the clerk's (פקיד) at a Population and Immigration Authority
+office, at your appointment.
 
 **What happens if something in it isn't true?**
 False or incomplete details, hiding details, or not reporting a change can

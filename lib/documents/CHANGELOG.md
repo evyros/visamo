@@ -3,6 +3,30 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v55 — 2026-11-22
+
+**What changed:** The joint affidavit (`affidavitCommonLaw`) is `later` only
+when both partners are abroad (`{ all: ["foreignAbroad", "israeliAbroad"] }`,
+like `statusApplicationMarried`), no longer whenever the foreign partner is
+abroad. With the Israeli partner in Israel, it's listed with the documents
+for the online application. The `"clerk"` signing's step texts say so: both
+partners sign it and send it with the online application, digitally if one
+of them is abroad, and the clerk fills in the office's section at the
+appointment and may ask them to sign it again. New scenario
+`commonLawBothAbroad`.
+
+**Why:** Couples send it signed by both with the online application, a
+foreign partner abroad signing it digitally, so listing it after arrival
+contradicted the card, the group's intro ("the online application is filed
+without them") and the chat. With both abroad, the online application is
+filed only once they're in Israel, so it stays in the after-arrival group.
+
+**Source:** Form 5.2.0009_a; practice (product owner; Facebook group threads,
+June and September 2026).
+
+**Lists that changed:** commonLawBothAbroad: new scenario. commonLawApart:
+same keys; affidavitCommonLaw moves out of the after-arrival group.
+
 ## v54 — 2026-11-17
 
 **What changed:** The Netherlands has an issuer for `foreignBirthCertificate`,

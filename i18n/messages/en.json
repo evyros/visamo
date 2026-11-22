@@ -2371,14 +2371,14 @@
         "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
         "translateSelfDetails": "Needed if it isn't in Hebrew, Arabic or English.\nNo notary is needed: translate it yourselves, or mark the important parts and explain them.\nUpload the translation with the document.",
         "signing": {
-          "clerk": "At the appointment, in front of the clerk",
+          "clerk": "By both of you, with the online application",
           "lawyer": "In front of an Israeli lawyer",
           "lawyerCourtOrNotary": "In front of a lawyer or notary",
           "notary": "In front of a notary",
           "consul": "In front of a consul"
         },
         "signingSentence": {
-          "clerk": "Must be signed at the appointment, in front of the clerk",
+          "clerk": "Must be signed by both of you and sent with the online application",
           "lawyer": "Must be signed in front of an Israeli lawyer",
           "lawyerCourtOrNotary": "Must be signed in front of a lawyer or notary",
           "notary": "Must be signed in front of a notary",
@@ -2412,7 +2412,7 @@
           }
         },
         "signingDetails": {
-          "clerk": "Print it and fill in the details, but don't sign it before, and don't send it with the online application.",
+          "clerk": "Both of you sign it and send it with the online application, digitally if one of you is abroad. At the appointment, the clerk fills in the office's section, and may ask you to sign it again in front of them.",
           "lawyer": "Fill it in, but don't sign it before: the lawyer checks who you are, and signs and stamps it.",
           "lawyerCourtOrNotary": "An Israeli lawyer, the magistrate's court, or a notary can confirm it. Fill it in, but don't sign it before: whoever confirms it checks who you are, and signs and stamps it.",
           "notary": "Fill it in, but don't sign it before: the notary checks who you are, and signs and stamps it.",

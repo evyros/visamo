@@ -79,6 +79,11 @@ export const scenarios = {
     relationship: commonLaw({ livingTogether: false, togetherSince: null }),
     people: [israeli(), foreign({ location: "abroad" })],
   },
+  // Common-law, both living abroad: they file the online application once they're both in Israel.
+  commonLawBothAbroad: {
+    relationship: commonLaw(),
+    people: [israeli({ residence: "abroad" }), foreign({ location: "abroad" })],
+  },
   // The foreign partner is the user, listed first.
   foreignFirst: { relationship: married(), people: [foreign(), israeli()] },
   bornInUSSRWithGermanNationality: {

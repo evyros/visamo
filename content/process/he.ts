@@ -690,7 +690,7 @@ export const processHe: ProcessTexts = {
     },
     items: {
       statusApplication: { name: "בקשה למעמד", note: () => "יחד עם ההצהרות שמצורפות אליה.", form: "טופס אש/6" },
-      jointAffidavit: { name: "תצהיר משותף", note: () => "שניכם חותמים עליו מול הפקיד בפגישה, לא לפני.", form: "טופס התצהיר" },
+      jointAffidavit: { name: "תצהיר משותף", note: () => "שניכם חותמים עליו ושולחים אותו עם הבקשה אונליין. בפגישה הפקיד יכול לבקש שתחתמו עליו שוב.", form: "טופס התצהיר" },
       entryPermitApplication: {
         name: "בקשה להיתר כניסה",
         note: () => "כדי שהצד הזר יוכל להיכנס לישראל לצורך ההליך.",

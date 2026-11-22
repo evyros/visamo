@@ -6,5 +6,10 @@ https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf, at
 affidavit-handwritten.jpg is the same, written by hand and photographed (a
 handwriting font, turned and shaded as a phone photo of the paper).
 
+affidavit-no-id.pdf, affidavit-no-passport.pdf, affidavit-explanation.pdf and
+affidavit-explanation-no-reason.pdf carry both signatures and dates of
+affidavit-signed.pdf: those pixels copied onto each page, rendered at 200 dpi,
+so each file has only the defect it's named for.
+
 as6-declaration.pdf is the AS/6 declaration from statusApplicationMarried,
 for a couple that uploads the married couples' form by mistake.

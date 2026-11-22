@@ -11,7 +11,7 @@ import type { Condition } from "./conditions";
 // (raise CATALOG_VERSION, add a CHANGELOG.md entry, run npm run catalog:lock).
 
 /** Raised by one on every change to what any couple's list contains. See CHANGELOG.md. */
-export const CATALOG_VERSION = 54;
+export const CATALOG_VERSION = 55;
 
 /** Whose document it is, for grouping on the page. */
 export type Owner = "israeli" | "foreign" | "couple" | "children";
@@ -31,9 +31,9 @@ export type Translation = "none" | "self" | "notarized";
 
 /**
  * Who a document is signed in front of, who confirms the signature:
- * - "clerk": the Misrad Hapnim clerk, at the appointment. The couple prints
- *   it and fills in the details, but doesn't sign it before, and doesn't send
- *   it with the online application.
+ * - "clerk": the Misrad Hapnim clerk confirms it at the appointment. Both
+ *   partners sign it and send it with the online application (digitally from
+ *   abroad); the clerk may ask them to sign it again in front of them.
  * - "lawyer": an Israeli lawyer.
  * - "lawyerCourtOrNotary": an Israeli lawyer, the magistrate's court, or a notary.
  * - "notary": a notary only (a notarial affidavit).
@@ -177,8 +177,10 @@ export const documents = [
     owner: "couple",
     category: "forms",
     when: "commonLaw",
-    // Both partners sign it in front of the clerk: only once the foreign partner is in Israel.
-    later: "foreignAbroad",
+    // Signed by both and sent with the online application (digitally by a foreign partner abroad); the
+    // clerk confirms it at the appointment, and may ask them to sign again. With both of them abroad, the
+    // consulate doesn't ask for it: it's for the online application, filed once they're in Israel.
+    later: { all: ["foreignAbroad", "israeliAbroad"] },
     form: "5.2.0009_a",
     signing: "clerk",
     source: `${P9}, the affidavit form (5.2.0009_a)`,

@@ -2,22 +2,26 @@
   "scenario": "commonLawLivingTogether",
   "today": "2026-10-01",
   "cases": [
-    { "name": "clean, typed", "files": ["affidavit.pdf"], "expect": { "rating": "looksGood" } },
-    { "name": "clean, handwritten, photographed", "files": ["affidavit-handwritten.jpg"], "expect": { "rating": "looksGood" } },
+    { "name": "clean, typed", "files": ["affidavit-signed.pdf"], "expect": { "rating": "looksGood" } },
     {
-      "name": "signed by both",
-      "files": ["affidavit-signed.pdf"],
-      "expect": { "rating": "needsFixing", "flagged": ["It is not signed yet"] }
+      "name": "handwritten, photographed, not signed yet",
+      "files": ["affidavit-handwritten.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["Both partners have signed it"] }
     },
     {
-      "name": "signed by the Israeli partner",
+      "name": "not signed yet",
+      "files": ["affidavit.pdf"],
+      "expect": { "rating": "needsFixing", "flagged": ["Both partners have signed it"] }
+    },
+    {
+      "name": "signed by the Israeli partner only",
       "files": ["affidavit-signed-by-israeli.pdf"],
-      "expect": { "rating": "needsFixing", "flagged": ["It is not signed yet"] }
+      "expect": { "rating": "needsFixing", "flagged": ["Both partners have signed it"] }
     },
     {
       "name": "the copy signed at the office",
       "files": ["affidavit-signed-at-office.pdf"],
-      "expect": { "rating": "needsFixing", "flagged": ["It is not signed yet", "office's confirmation section"] }
+      "expect": { "rating": "needsFixing", "flagged": ["office's confirmation section"] }
     },
     {
       "name": "Israeli partner's ID number missing",
@@ -45,7 +49,7 @@
       "expect": {
         "rating": "needsFixing",
         "flagged": ["It is the common-law affidavit form"],
-        "mayFlag": ["Israeli partner's full name and ID number", "foreign partner's full name and passport number", "It is not signed yet", "office's confirmation section"]
+        "mayFlag": ["Israeli partner's full name and ID number", "foreign partner's full name and passport number", "Both partners have signed it", "office's confirmation section"]
       }
     },
     {

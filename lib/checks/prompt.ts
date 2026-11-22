@@ -78,7 +78,7 @@ const AUTHENTICATION: Record<Exclude<Certification["authentication"], "none">, s
 
 /** Who the document is signed in front of, for the check. */
 const SIGNING: Record<Signing, string> = {
-  clerk: "only in front of the clerk at the appointment: it must not be signed yet",
+  clerk: "by both partners on the copy sent with the online application, digitally or by hand; the clerk confirms the signatures at the appointment (and may ask them to sign again), so the office's section is still empty",
   lawyer: "in front of an Israeli lawyer, who confirms the signature",
   lawyerCourtOrNotary: "in front of an Israeli lawyer, the magistrate's court or a notary, who confirms the signature",
   notary: "in front of a notary, who confirms the signature",

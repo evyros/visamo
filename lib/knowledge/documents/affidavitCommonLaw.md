@@ -23,18 +23,21 @@ It's in Hebrew, so it needs no translation.
    two of you.
 3. Send it with the online application.
 4. Leave the office's section (מאשר החתימה בלשכת רשות האוכלוסין וההגירה)
-   empty. The clerk fills it in at your appointment at the Population and
-   Immigration Authority office (לשכת רשות האוכלוסין וההגירה), when you bring
-   your documents in person.
+   empty. If you're both in Israel, you sign it on paper. At your appointment
+   at the Population and Immigration Authority office
+   (לשכת רשות האוכלוסין וההגירה), the clerk fills in the office's section,
+   and may ask you to sign it again in front of them.
 
-**If the foreign partner is abroad:** they sign it where they are, like the
-rest of the application. A signature drawn by hand on the PDF, or a printout
-they sign and scan, is fine. The Israeli partner goes to the first
-appointment alone, and the clerk confirms the form then.
+**If the foreign partner is abroad and the Israeli partner files from Israel:**
+the foreign partner signs it where they are, like the rest of the
+application. A signature drawn by hand on the PDF, or a printout they sign
+and scan, is fine. Once they're in Israel, at the appointment, the clerk
+fills in the office's section, and may ask you to sign it again in front of
+them.
 
-By the form, the clerk confirms the signatures. In practice, offices accept
-it signed in advance, and the clerk may ask either of you to sign it again
-in person at the office.
+**If you both live abroad:** the consulate doesn't ask for it. You sign it
+once you're both in Israel, with the online application you file then (see
+[both-abroad.md](../both-abroad.md)).
 
 ## What it should include
 
@@ -88,13 +91,15 @@ Yes. Fill it in, both sign it, and send it with the online application. Keep
 a copy to bring to your appointment.
 
 **My partner is abroad. How do they sign it?**
-Where they are. They sign their line and date it, by hand on the PDF or on a
-printout they scan, and you send it with the application. They don't need
-to be in Israel, or to sign in front of anyone.
+Where they are, if you file from Israel. They sign their line and date it,
+by hand on the PDF or on a printout they scan, and you send it with the
+application. Once they're in Israel, the clerk may ask you to sign it again
+in front of them. If you both live abroad, you sign it once you're both in
+Israel, with the online application.
 
 **Can we sign it at home before the appointment?**
-Yes. Only the office's section waits for the appointment. The clerk may ask
-either of you to sign it again in person at the office.
+Yes. At the appointment, the clerk fills in the office's section, and may
+ask you to sign it again in front of them.
 
 **Do we also need the AS/6 affidavits?**
 No. The affidavits in form AS/6 are for married couples. Common-law couples

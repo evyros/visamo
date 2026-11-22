@@ -290,8 +290,11 @@ describe("buildDocumentList", () => {
     expect(find("marriedInCyprus", "statusApplicationMarried")?.steps).toEqual([{ kind: "sign", before: "lawyer" }, landlord]);
     // No lease asked for, no landlord.
     expect(find("neverLivedTogetherBothAbroad", "statusApplicationMarried")?.steps).toEqual([{ kind: "sign", before: "lawyer" }]);
-    // Common-law: the joint affidavit, signed in front of the clerk.
-    expect(later("commonLawApart")).toEqual(["affidavitCommonLaw", "previousChildrenAffidavit", "foreignHealthInsurance"]);
+    // Common-law, the Israeli partner filing from Israel: the joint affidavit goes with the online application.
+    expect(later("commonLawApart")).toEqual(["previousChildrenAffidavit", "foreignHealthInsurance"]);
+    expect(keys("commonLawApart")).toContain("affidavitCommonLaw");
+    // Common-law, both abroad: it's for the online application, filed once they're both in Israel.
+    expect(later("commonLawBothAbroad")).toEqual(["affidavitCommonLaw", "previousChildrenAffidavit"]);
     // Both abroad: the whole of AS/6, with the foreign partner's declaration; the health insurance with the rest.
     expect(later("bothAbroad")).toEqual(["statusApplicationMarried", "previousChildrenAffidavit"]);
     expect(find("bothAbroad", "statusApplicationMarried")?.points).toContain("as6ForeignDeclaration");

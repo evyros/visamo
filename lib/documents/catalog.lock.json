@@ -1,6 +1,6 @@
 {
-  "version": 54,
-  "fingerprint": "4278b07a4670cdd0353c408365c6bb9f2c9c8ea3570afedd46f1161c547fa6b8",
+  "version": 55,
+  "fingerprint": "e433a24fe6631d92bab99efdb481d7ccbb01b5b9f9766b1d5caaa91dc04d764e",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",
@@ -148,6 +148,28 @@
       "israeliHousingContract",
       "israeliUtilityBills",
       "governmentServices",
+      "foreignHealthInsurance",
+      "bankStatements",
+      "israeliIncomeProof",
+      "foreignIncomeProof"
+    ],
+    "commonLawBothAbroad": [
+      "affidavitCommonLaw",
+      "relationshipStory",
+      "israeliId",
+      "israeliPhotos",
+      "foreignPassport",
+      "foreignPhotos",
+      "foreignBirthCertificate",
+      "relationshipEvidence",
+      "messageHistory",
+      "recommendationLetters",
+      "jointLivingEvidence",
+      "foreignCivilStatus:US",
+      "previousChildrenAffidavit",
+      "foreignPoliceCertificate:US",
+      "housingContract",
+      "utilityBills",
       "foreignHealthInsurance",
       "bankStatements",
       "israeliIncomeProof",

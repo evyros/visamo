@@ -712,7 +712,7 @@ export const processEn: ProcessTexts = {
       },
       jointAffidavit: {
         name: "Joint affidavit",
-        note: () => "Signed by both of you, in front of the clerk at the appointment, not before.",
+        note: () => "Signed by both of you and sent with the online application. At the appointment, the clerk may ask you to sign it again.",
         form: "The affidavit form",
       },
       entryPermitApplication: {

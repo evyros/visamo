@@ -809,9 +809,9 @@ export const guidesEn: Guides = {
             "Instead of the affidavits in form AS/6, which are for married couples, you both sign one declaration: [the common-law affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf) (form 5.2.0009_a). It's in Hebrew, so it needs no translation.",
             {
               steps: [
-                "Print it, and fill in your full names, the Israeli partner's ID number and the foreign partner's passport number.",
-                "**Don't sign it, and don't send it with the online application.** Bring it to your appointment.",
-                "At the appointment, you both sign it in front of the clerk, who confirms your signatures.",
+                "Fill in your full names, the Israeli partner's ID number and the foreign partner's passport number.",
+                "Both of you sign it and send it with the online application. If the foreign partner is abroad, they sign it digitally where they are.",
+                "At the appointment, the clerk fills in the office's section, and may ask you to sign it again in front of them.",
               ],
             },
           ],
@@ -1304,7 +1304,7 @@ export const guidesEn: Guides = {
             {
               list: [
                 "[Status application (form AS/6)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf): married couples.",
-                "[Joint affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf): common-law couples. You sign it at the appointment, not before.",
+                "[Joint affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf): common-law couples. You both sign it and send it with the online application. At the appointment, the clerk may ask you to sign it again.",
                 "[Entry permit application (form AS/1)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf): when the foreign partner is abroad and the Israeli partner lives in Israel.",
                 "[Visa change application (form AS/3)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf): when the foreign partner is already in Israel.",
               ],

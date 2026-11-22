@@ -314,13 +314,14 @@ export const checks = {
       "The details are typed, or handwritten clearly enough to read without guessing.",
     ],
   },
-  // From the form (5.2.0009_a) and how it's signed: at the appointment, in front of the clerk.
+  // From the form (5.2.0009_a). The copy checked is the one sent with the online application, signed by
+  // both partners; the clerk may ask them to sign it again at the appointment.
   affidavitCommonLaw: {
     required: [
       "It is the common-law affidavit form, titled \"בקשתי בהתאם לנוהל בני זוג על סמך חיים משותפים - תצהיר\", with the whole page: all 13 statements and the signature section.",
       "The Israeli partner's full name and ID number (תעודת זהות) are filled in.",
       "The foreign partner's full name and passport number are filled in.",
-      "It is not signed yet: both signature lines are empty. It's signed only in front of the clerk at the appointment. If it's signed, they print a new copy, fill in the details again, and leave it unsigned.",
+      "Both partners have signed it, each on their own line, with the date: digitally (a signature drawn on the PDF) or by hand on a printout that was scanned. This is the copy sent with the online application.",
       "The office's confirmation section (מאשר החתימה בלשכת רשות האוכלוסין וההגירה) is empty: the clerk fills it in at the appointment.",
       "If the lines for statements they can't declare are filled in, they say which statement and why.",
     ],

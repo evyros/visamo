@@ -1,6 +1,6 @@
 import "server-only";
 import { createHash } from "node:crypto";
-import { regionName } from "@/i18n/format";
+import { regionInSentence, regionName } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import type { BranchCode, CaseDetails, PersonInput } from "@/lib/case-options";
 import { lines, personLines, relationshipLines } from "@/lib/case-prompt";
@@ -112,7 +112,7 @@ export function checkContext(details: CaseDetails, branch: BranchCode | null, it
   const page = t.app.documentsPage;
   const document = lines([
     ["Name", format(text.title, { country: where })],
-    ["What it is", format(text.description, { country: where })],
+    ["What it is", format(text.description, { country: item.country ? regionInSentence(item.country, "en") : "" })],
     ["What it has to show", item.points.length ? item.points.map((p) => t.app.documents.points[p]).join(" ") : null],
     ["Whose", { israeli: "the Israeli partner", foreign: "the foreign partner", couple: "the couple", children: "the children" }[item.owner]],
     ["For the country", item.country && where],

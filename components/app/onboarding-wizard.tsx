@@ -42,7 +42,8 @@ import {
 type Labels = Messages["app"]["onboarding"];
 /** Each stage as the couple says where they are: "We sent our file and haven't heard back". */
 export type StageAnswers = Messages["app"]["stages"];
-export type Option<T extends string = string> = { value: T; label: string };
+/** `inSentence`: a country's name inside a sentence, with "the" where English needs it ("born in the Philippines"). */
+export type Option<T extends string = string> = { value: T; label: string; inSentence?: string };
 
 type FieldName =
   | keyof PersonAnswers
@@ -464,6 +465,8 @@ export function PersonFields({
   startHint?: string;
 }) {
   const foreign = person.isIsraeli === false;
+  // In the question "born in the Philippines?": the name as it reads in a sentence.
+  const nationality = countries.find((c) => c.value === person.nationality);
   const identity = !lockIdentity;
   return (
     <>
@@ -554,7 +557,7 @@ export function PersonFields({
               id="bornInNationality"
               t={t}
               legend={format(q.bornInNationality, {
-                country: countries.find((c) => c.value === person.nationality)?.label ?? "",
+                country: nationality?.inSentence ?? nationality?.label ?? "",
               })}
               hint={t.bornInNationalityHint}
               error={errors.bornInNationality}

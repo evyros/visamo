@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
-import { languageName, regionName } from "@/i18n/format";
+import { languageName, regionInSentence } from "@/i18n/format";
 import { format, type Messages } from "@/i18n/messages";
 import type { DocumentId } from "./documents/catalog";
 import { certificationFor, type Issuer } from "./documents/certification";
@@ -32,8 +32,12 @@ const prose = (text: string): StepDetails => ({ lead: text });
 /** A text written as lines, one point each. */
 const pointsOf = (text: string): StepDetails => ({ points: text.split("\n") });
 
-/** What a country's entry in issuers.ts says, in words (app.documentsPage.issuers.<document>.<country>). */
-type CountryTexts = { office?: string; details?: string; apostilleBy?: string; apostilleDetails?: string };
+/**
+ * What a country's entry in issuers.ts says, in words (app.documentsPage.issuers.<document>.<country>).
+ * `detailsEverMarried`: in place of `details`, for a foreign partner who was ever married, where the
+ * country issues another document then (the Philippines: an Advisory on Marriages, not a CENOMAR).
+ */
+type CountryTexts = { office?: string; details?: string; detailsEverMarried?: string; apostilleBy?: string; apostilleDetails?: string };
 
 function countryTexts(t: Labels, id: DocumentId, from: Issuer | undefined): CountryTexts | undefined {
   if (!from) return undefined;
@@ -44,9 +48,9 @@ function countryTexts(t: Labels, id: DocumentId, from: Issuer | undefined): Coun
 const withCountry = (particular: string | undefined, general: string): StepDetails =>
   particular ? { lead: particular, end: general } : prose(general);
 
-/** The issuing country's name: a region, or Utah for an online marriage. */
+/** The issuing country's name, as it reads in a sentence: a region, or Utah for an online marriage. */
 function placeName(from: Exclude<Issuer, null>, t: Labels, locale: Locale) {
-  return from === "utah" ? t.steps.utah : regionName(from, locale);
+  return from === "utah" ? t.steps.utah : regionInSentence(from, locale);
 }
 
 /** A signature in words: the line under its title, its full text, and the whole requirement as one sentence. */
@@ -127,12 +131,15 @@ function stepLine(
     case "obtain": {
       // Named after the office that issues it, where the country's is known.
       const c = countryTexts(t, id, step.from);
+      // The civil status's points say whether they were ever married: anything but single now.
+      const everMarried = points.length > 0 && !points.includes("statusNowSingle");
+      const details = (everMarried && c?.detailsEverMarried) || c?.details;
       return {
         text: c?.office
           ? capitalize(format(s.obtainFrom, { office: c.office }), locale)
           : format(s.obtain, { country: placeName(step.from, t, locale) }),
         // A file has no paper original: the general advice about one doesn't apply.
-        details: step.electronic && c?.details ? prose(c.details) : withCountry(c?.details, s.obtainDetails),
+        details: step.electronic && details ? prose(details) : withCountry(details, s.obtainDetails),
       };
     }
     case "authenticate": {
@@ -152,8 +159,8 @@ function stepLine(
             // The line names the country, and the third country it goes through, or the one whose
             // Israeli embassy serves it, if there's one; the full text, its offices in order: the
             // country's own where they're known, the usual ones otherwise.
-            const via = step.via ? regionName(step.via, locale) : "";
-            const mission = step.mission ? regionName(step.mission, locale) : "";
+            const via = step.via ? regionInSentence(step.via, locale) : "";
+            const mission = step.mission ? regionInSentence(step.mission, locale) : "";
             const offices = [c?.office ?? s.issuingOffice, ...chainOffices(step, t, locale)];
             return {
               text: via
@@ -335,8 +342,8 @@ function translationInWords(step: Translate, t: Labels) {
  */
 function chainOffices(step: Extract<Step, { kind: "authenticate" }>, t: Labels, locale: Locale) {
   const country = step.from ? placeName(step.from, t, locale) : "";
-  const via = step.via ? regionName(step.via, locale) : "";
-  const mission = step.mission ? regionName(step.mission, locale) : "";
+  const via = step.via ? regionInSentence(step.via, locale) : "";
+  const mission = step.mission ? regionInSentence(step.mission, locale) : "";
   return (step.chain ?? USUAL_CHAIN).map((link) =>
     link === "israeliConsulate" && mission
       ? format(t.steps.israeliConsulateIn, { mission })
@@ -362,6 +369,8 @@ export function stepsInWords(steps: readonly Step[], id: DocumentId, t: Labels, 
       return `${format(sentence, { israeli: c.israeli ?? "", foreign: c.foreign ?? "" })}: ${full}`;
     }
     if (step.kind === "signByEmail") return `${format(t.steps.signByEmail.sentence, { name: c.foreign ?? "" })}: ${full}`;
+    // Issued only as a file: the line names only the office, so say it, or the check takes the file for a printout.
+    if (step.kind === "obtain" && step.electronic) return `${label}: ${text}. ${t.steps.obtainElectronicFull}`;
     // An affidavit's line doesn't say who confirms it: its full text does.
     if (step.kind === "affidavit") return `${label}: ${text}. ${full}`;
     // The former-USSR exemption is in the full text, not the line: say it here too.

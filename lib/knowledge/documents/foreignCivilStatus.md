@@ -342,13 +342,28 @@ it comes by email. The apostille comes from the foreign ministry
 
 ### Philippines
 
-A certificate of no marriage (CENOMAR), from the Philippine Statistics
-Authority (PSA). The apostille comes from the Department of Foreign Affairs.
-For Israel, it now issues only an electronic one: the certificate and its
-apostille come as files by email, and printing them makes them invalid.
-Misrad Hapnim usually asks for the original on paper, so the clerk may push
-back on the files. Explain that for Israel, the Philippines issues it only
-this way: there's no paper option.
+From the Philippine Statistics Authority (PSA), depending on what it has on
+record for them:
+
+- **Never married:** a certificate of no marriage (CENOMAR).
+- **Married, now or before:** an Advisory on Marriages. Once a marriage is on
+  record, the PSA issues it instead of a CENOMAR: it lists each marriage
+  registered for them, with the spouse, the date and the place, and any
+  annotation on it, like an annulment. A marriage in the Philippines is on
+  record; a marriage abroad only once it's reported to a Philippine embassy.
+  Until then, the PSA still issues a CENOMAR.
+
+The Philippine embassy in Tel Aviv doesn't issue it: only the PSA does. A
+statement of civil status from the embassy doesn't replace it (see
+[certification.md](../certification.md)).
+
+The apostille comes from the Department of Foreign Affairs. For Israel, it
+now issues only an electronic one: the document and its apostille come as
+files by email, and printing them makes them invalid. The foreign partner
+can order both online from Israel, with an ID check. Misrad Hapnim usually
+asks for the original on paper, so the clerk may push back on the files.
+Explain that for Israel, the Philippines issues it only this way: there's no
+paper option.
 
 ### Poland
 

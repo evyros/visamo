@@ -1,5 +1,5 @@
 import { locales, type Locale } from "./config";
-import { regionName } from "./format";
+import { regionInSentence, regionName } from "./format";
 import type { Messages } from "./messages";
 import { branches, nationalities } from "@/lib/case-options";
 
@@ -9,7 +9,7 @@ import { branches, nationalities } from "@/lib/case-options";
 export function caseOptions(locale: Locale, t: Messages["app"]["onboarding"]) {
   const { compare } = new Intl.Collator(locales[locale].intlLocale);
   const byLabel = (a: { label: string }, b: { label: string }) => compare(a.label, b.label);
-  const country = (code: string) => ({ value: code, label: regionName(code, locale) });
+  const country = (code: string) => ({ value: code, label: regionName(code, locale), inSentence: regionInSentence(code, locale) });
   return {
     countries: nationalities.map(country).sort(byLabel),
     // A foreign partner can be born in Israel.

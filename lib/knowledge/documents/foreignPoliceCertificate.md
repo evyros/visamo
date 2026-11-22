@@ -296,8 +296,13 @@ apostille.
 
 ### Philippines
 
-An NBI clearance, from the National Bureau of Investigation. The apostille
-is put only on the original, printed on the NBI's security paper.
+An NBI clearance, from the National Bureau of Investigation. From Israel,
+the foreign partner fills in the NBI's application form at the Philippine
+embassy in Tel Aviv, which notarizes it. The form then goes to the NBI in the
+Philippines, usually through someone they authorize there, who collects the
+clearance. The apostille comes from the Department of Foreign Affairs (DFA),
+and is put only on the original, printed on the NBI's security paper with
+its dry seal: not on a copy.
 
 ### Poland
 

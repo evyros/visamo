@@ -103,9 +103,9 @@ const civilStatusPoints: Record<Exclude<Point, `as6${string}` | ChildrenPoint>, 
   statusNowMarried:
     "A document of the foreign partner's civil status now, from the country this item is for, issued in the last 6 months. It may show them as married, or still as single if the marriage isn't registered in that country: both are fine.",
   statusBeforeSingle:
-    "A document of the foreign partner's civil status before the marriage, showing they were single: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+    "A document of the foreign partner's civil status before the marriage, showing they were single: a civil-status document from before the wedding; a marriage certificate from the foreign partner's country that states their status before the marriage; or a record of the marriages registered for them, issued at any time, that lists no marriage before this one, or none at all. It doesn't have to be from the last 6 months. One document can show both this and their status now.",
   statusBeforeDivorced:
-    "A document of the foreign partner's civil status before the marriage, showing they were divorced: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
+    "A document of the foreign partner's civil status before the marriage, showing they were divorced: a civil-status document from before the wedding; a marriage certificate from the foreign partner's country that states their status before the marriage; or a record of the marriages registered for them, issued at any time, that lists each earlier marriage with a note that it ended in a divorce or an annulment, or was declared void. It doesn't have to be from the last 6 months. One document can show both this and their status now.",
   statusBeforeWidowed:
     "A document of the foreign partner's civil status before the marriage, showing they were widowed: a civil-status document from before the wedding, or a marriage certificate from the foreign partner's country that states their status before the marriage. It doesn't have to be from the last 6 months.",
   statusBeforeDivorcedOrWidowed:
@@ -154,7 +154,7 @@ function civilStatusCheck(points: readonly Point[]): DocumentCheck {
     ],
     recommended: [
       CERTIFICATION_WITH_DOCUMENT,
-      "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service. The Philippine CENOMAR is the exception: for Israel it's issued only as a file, with the DFA's electronic apostille.",
+      "Each certificate is a paper original issued for use abroad, not a document printed at home from an online service, unless the document's steps say it's issued only as a file, with an electronic apostille: then the file is the original.",
     ],
   };
 }

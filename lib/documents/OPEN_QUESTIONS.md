@@ -296,6 +296,28 @@ shown to users (`lib/knowledge/`).
   a family-court paternity ruling takes; whether Tipat Halav funds tests for
   women without insurance; a father's paternity leave on a B/1;
   second-parent recognition for same-sex couples.
+- **Philippines** (2026-11-22). Verified: since 16 March 2026, PSA
+  e-certificates for Apostille Convention countries get only an electronic
+  apostille (Philippine embassy in Cairo advisory; paper only for
+  non-members), and a CENOMAR request returns an Advisory on Marriages when a
+  marriage is on record (PSA citizen's charter). Open, from practice:
+  - Whether the Advisory on Marriages itself comes with the e-apostille: the
+    sources list birth, marriage, death and CENOMAR only. `foreignCivilStatus`
+    `PH` stays `electronic`.
+  - Married abroad, marriage not reported to the PSA: whether a CENOMAR that
+    still says single is accepted (the guide's general rule), or the office
+    asks for proof of the change in the Philippines (the embassy's Report of
+    Marriage), as a 2022 AIC comment says.
+  - A divorce granted abroad: whether the office asks for the Philippine
+    court's recognition and the annotated PSA marriage certificate, or the
+    foreign decree is enough. The guide says only how the Philippines treats
+    it.
+  - At the appointment: how couples show the e-certificate and e-apostille,
+    which can't be printed (phone, USB, the online application).
+  - The NBI clearance from Israel: written from the Tel Aviv embassy's pages
+    as quoted in search results (it gives out the form and notarizes it) and
+    AIC; the embassy's site blocks automated reading, so the current steps
+    and fee weren't read directly.
 
 ## Not modelled yet
 

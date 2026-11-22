@@ -31,8 +31,9 @@ one is lost.
 
 ### Philippines
 
-There's no divorce in Philippine law. A marriage ends there by annulment or
-a declaration of nullity: the court decision, with its certificate of
+Philippine law has no divorce, except between Muslims, who can divorce under
+the Code of Muslim Personal Laws. Any other marriage ends there by annulment
+or a declaration of nullity: the court decision, with its certificate of
 finality, and the marriage certificate from the Philippine Statistics
 Authority (PSA), annotated with it. In the Philippines, a divorce granted
 abroad counts only once a Philippine court recognizes it and the marriage

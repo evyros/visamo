@@ -1,6 +1,6 @@
 import "server-only";
 import { loadMessages } from "@/i18n/messages";
-import { regionName, todayInIsrael } from "@/i18n/format";
+import { regionInSentence, regionName, todayInIsrael } from "@/i18n/format";
 import { caseDetails, caseFiles, listOf } from "@/lib/case-documents";
 import type { Owner } from "@/lib/documents/catalog";
 import { awaitingDecision, awaitingEntryPermit, stageDefinitions, trackOf, type DatedStage, type Stage } from "@/lib/stages";
@@ -144,7 +144,7 @@ export async function casePrompt(caseId: string, userId: string) {
       const text = t.app.documents.items[d.id];
       const where = d.country ? regionName(d.country, "en") : "";
       const title = text.title.replace("{country}", where);
-      const description = [text.description.replace("{country}", where), ...d.points.map((p) => t.app.documents.points[p])].join(" ");
+      const description = [text.description.replace("{country}", d.country ? regionInSentence(d.country, "en") : ""), ...d.points.map((p) => t.app.documents.points[p])].join(" ");
       const flags = [
         d.optional && "optional",
         d.copies && `bring ${d.copies} copies`,

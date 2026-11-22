@@ -28,6 +28,22 @@ export function regionName(region: string, locale: Locale) {
   );
 }
 
+/**
+ * Countries whose English name takes "the" inside a sentence ("for the
+ * Philippines"), by the name Intl gives them. A label or title keeps the bare
+ * name ("Personal status: Philippines"). Hebrew names carry their own article.
+ */
+const ENGLISH_WITH_THE = new Set([
+  "AE", "BS", "CF", "CK", "DO", "FK", "FO", "GB", "GM", "KM", "KY", "MH", "MP", "MV", "NL", "PH", "PS", "SB",
+  "TC", "US", "VG", "VI",
+]);
+
+/** A country's name as it reads inside a sentence: with "the" where English needs it ("from the Netherlands"). */
+export function regionInSentence(region: string, locale: Locale) {
+  const name = regionName(region, locale);
+  return locale === "en" && ENGLISH_WITH_THE.has(region) ? `the ${name}` : name;
+}
+
 /** A language's name, e.g. "Estonian" (from a BCP 47 code: "et"). */
 export function languageName(language: string, locale: Locale) {
   return (

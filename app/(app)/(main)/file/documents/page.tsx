@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { locales } from "@/i18n/config";
-import { regionName } from "@/i18n/format";
+import { regionInSentence, regionName } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import { caseDocuments, caseFiles } from "@/lib/case-documents";
 import { stepText } from "@/lib/document-steps";
@@ -78,7 +78,8 @@ export default async function DocumentsPage() {
       title: whose ? (documentTitle(d.key, catalog, locale, { israeli, foreign }) ?? title) : title,
       // Outside the groups (the free findings' list): with the partner's name for one of theirs.
       namedTitle: documentTitle(d.key, catalog, locale, { israeli, foreign }) ?? title,
-      description: format(text.description, { country }),
+      // In a sentence: "for the Philippines", where the title says "Philippines".
+      description: format(text.description, { country: d.country ? regionInSentence(d.country, locale) : "" }),
       points: d.points.map((point) => catalog.points[point]),
       ...(d.form && { form: { name: t.formNames[d.form], url: formUrls[d.form] } }),
       ...(d.id === "recommendationLetters" && { tool: { label: t.askFriends, url: letterTool.toString() } }),

@@ -7,6 +7,7 @@ import { COUNTRY_LANGUAGES, NOTARY_LANGUAGES } from "./documents/languages";
 import { stepsInWords, stepText } from "./document-steps";
 import type { Issuer } from "./documents/certification";
 import type { English } from "./documents/issuers";
+import type { Point } from "./documents/points";
 import type { Step } from "./documents/steps";
 
 const t = en.app.documentsPage;
@@ -372,5 +373,50 @@ describe("a step's title", () => {
 
   it("is written in both languages, each of them", () => {
     expect(Object.keys(he.app.documentsPage.steps.labels).sort()).toEqual(Object.keys(t.steps.labels).sort());
+  });
+});
+
+describe("a country's text that depends on the case", () => {
+  const obtain = { kind: "obtain", from: "PH", electronic: true } as Step;
+  const ph = t.issuers.foreignCivilStatus.PH;
+  const lead = (points: Point[]) =>
+    stepText(obtain, "foreignCivilStatus", t, "en", { points }).details?.lead;
+
+  it("gives a Philippine partner who was never married the CENOMAR", () => {
+    expect(lead(["statusNowSingle"])).toBe(ph.details);
+  });
+
+  it("gives one who was ever married the Advisory on Marriages: married now, or divorced or widowed", () => {
+    expect(lead(["statusNowMarried", "statusBeforeSingle"])).toBe(ph.detailsEverMarried);
+    expect(lead(["statusNowDivorced"])).toBe(ph.detailsEverMarried);
+    expect(lead(["statusNowWidowed"])).toBe(ph.detailsEverMarried);
+  });
+
+  it("has the same texts in Hebrew", () => {
+    const heText = stepText(obtain, "foreignCivilStatus", he.app.documentsPage as typeof t, "he", { points: ["statusNowMarried"] });
+    expect(heText.details?.lead).toBe(he.app.documentsPage.issuers.foreignCivilStatus.PH.detailsEverMarried);
+  });
+});
+
+describe("a country's name inside a sentence", () => {
+  const obtain = (from: Issuer, locale: "en" | "he" = "en") =>
+    stepText({ kind: "obtain", from } as Step, "foreignDivorceDecree", (locale === "en" ? t : he.app.documentsPage) as typeof t, locale).text;
+
+  it("takes \"the\" where English needs it, and not elsewhere", () => {
+    expect(obtain("US")).toBe("The original, from the United States");
+    expect(obtain("IN")).toBe("The original, from India");
+  });
+
+  it("keeps the Hebrew name as it is", () => {
+    expect(obtain("US", "he")).toContain(new Intl.DisplayNames(["he"], { type: "region" }).of("US"));
+    expect(obtain("US", "he")).not.toContain("the ");
+  });
+});
+
+describe("the steps in words, for the chat and the check", () => {
+  it("say when a document is issued only as a file, so a file isn't taken for a printout", () => {
+    const words = stepsInWords([{ kind: "obtain", from: "PH", electronic: true } as Step], "foreignCivilStatus", t, { points: ["statusNowSingle"] });
+    expect(words).toContain(t.steps.obtainElectronicFull);
+    expect(stepsInWords([{ kind: "obtain", from: "PH" } as Step], "foreignPoliceCertificate", t)).not.toContain(t.steps.obtainElectronicFull);
   });
 });

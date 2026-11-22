@@ -2306,7 +2306,7 @@
         "apostille": "From {country}",
         "apostilleFrom": "From {authority}",
         "utahApostille": "From the Utah Lieutenant Governor",
-        "apostilleDetails": "Only the country that issued it can put an apostille on it: it can't be done in Israel. It's usually attached to the document: don't separate them, that voids it.",
+        "apostilleDetails": "Only the country that issued the document can give it an apostille: no office in Israel can. Keep the apostille with its document, as you received it: separating them voids it.",
         "legalization": "In {country}",
         "legalizationVia": "In {country}, through {via}",
         "legalizationMission": "In {country}, then in {mission}",
@@ -2365,6 +2365,7 @@
         "translateOtherAbroad": "A language no notary in Israel knows: translated abroad, into English, with an apostille or legalization of its own.",
         "translateHebrewArabic": "Hebrew or Arabic: not needed.",
         "translateAnyNotary": "Russian, German, French, Spanish, or another language a notary in Israel knows: a notary in Israel translates it into Hebrew. A translation made abroad may be rejected.",
+        "obtainElectronicFull": "It's issued only as a file, with an electronic apostille: the file is the original, and there's no paper one.",
         "translateAnyFull": "Depends on its language: none in Hebrew or Arabic, and usually none in English; in a language a notary in Israel knows, a notarized translation into Hebrew, made in Israel; in any other, a translation into English, made abroad, with an apostille or legalization of its own.",
         "translateSelf": "Your own, if needed",
         "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
@@ -2719,8 +2720,10 @@
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
-            "details": "A certificate of no marriage (CENOMAR). For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
-            "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)"
+            "details": "A certificate of no marriage (CENOMAR). For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
+            "detailsEverMarried": "An Advisory on Marriages. Once a marriage is on record for them, the PSA issues it instead of a certificate of no marriage (CENOMAR): it lists each marriage, with any annotation on it, like an annulment. A marriage abroad is on record only once it's reported to a Philippine embassy: until then, the PSA still issues a CENOMAR. For Israel, it now comes only as a file: the document and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
+            "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
+            "apostilleDetails": "Only the electronic apostille, ordered online together with the document."
           },
           "PL": {
             "office": "any civil registry office (urząd stanu cywilnego) in Poland",
@@ -2941,8 +2944,9 @@
           },
           "PH": {
             "office": "the National Bureau of Investigation (NBI)",
-            "details": "An NBI clearance.",
-            "apostilleDetails": "It goes only on the original, printed on the NBI's security paper."
+            "details": "An NBI clearance. From Israel, the foreign partner fills in the NBI's application form at the Philippine embassy in Tel Aviv, which notarizes it. The form then goes to the NBI in the Philippines, usually through someone they authorize there, who collects the clearance.",
+            "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
+            "apostilleDetails": "It goes only on the original, printed on the NBI's security paper with its dry seal: not on a copy."
           },
           "PL": {
             "office": "any National Criminal Register information point (Punkt Informacyjny KRK), at a court",
@@ -3009,7 +3013,7 @@
         "marriageCertificateAbroad": {
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
-            "details": "The PSA marriage certificate. For Israel, it comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
+            "details": "The PSA marriage certificate. For Israel, it comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
             "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
           }

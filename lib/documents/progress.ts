@@ -1,5 +1,5 @@
 import type { CheckRating } from "@/lib/checks/result";
-import type { Owner } from "./catalog";
+import type { Category, Owner } from "./catalog";
 
 // How far along a case's list is, in one of two ways. Without Full file check,
 // a document is done once it has a file uploaded. With it, an upload isn't
@@ -20,6 +20,36 @@ export const ownerOrder: readonly Owner[] = ["couple", "israeli", "foreign", "ch
 export type Group = Owner | "afterArrival";
 export const groupOrder: readonly Group[] = [...ownerOrder, "afterArrival"];
 export const groupOf = (item: { owner: Owner; later: boolean }): Group => (item.later ? "afterArrival" : item.owner);
+
+/**
+ * The documents page's other grouping, by type: the catalog's categories, with
+ * the police certificate under the civil status and the letter about the
+ * relationship under the relationship (the catalog keeps it with the forms, for
+ * the checker). The salary slips and the bank documents have a group of their
+ * own, the finances: what they prove (a center of life, income, shared money)
+ * depends on the couple, so they're grouped by what they are. The ones done
+ * once the foreign partner is in Israel stay apart, last, as when grouped by
+ * person.
+ */
+export type TypeGroup = Exclude<Category, "criminalRecord"> | "finances" | "afterArrival";
+export const typeOrder: readonly TypeGroup[] = [
+  "identity",
+  "relationship",
+  "civilStatus",
+  "centerOfLife",
+  "finances",
+  "forms",
+  "children",
+  "afterArrival",
+];
+const FINANCES: readonly string[] = ["israeliIncomeProof", "foreignIncomeProof", "sharedBankAccount", "bankStatements"];
+export function typeGroupOf(item: { id: string; category: Category; later: boolean }): TypeGroup {
+  if (item.later) return "afterArrival";
+  if (item.category === "criminalRecord") return "civilStatus";
+  if (item.id === "relationshipStory") return "relationship";
+  if (FINANCES.includes(item.id)) return "finances";
+  return item.category;
+}
 
 type Item = { key: string; optional: boolean };
 type Grouped = Item & { owner: Owner; later: boolean };

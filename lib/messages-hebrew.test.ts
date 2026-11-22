@@ -20,7 +20,7 @@ describe("the documents' messages", () => {
     });
   }
 
-  it("never say whose a document is in its short title: the page groups them by person", () => {
+  it("never say whose a document is in its short title: the page shows it by the title, or groups them by person", () => {
     for (const [id, item] of Object.entries(en.app.documents.items)) {
       expect(item.shortTitle, id).not.toMatch(/\bpartners?\b/i);
     }

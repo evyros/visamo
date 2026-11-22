@@ -2074,7 +2074,7 @@
       }
     },
     "documentsPage": {
-      "intro": "Everything to bring to Misrad Hapnim for your first application, for your situation.",
+      "intro": "Everything Misrad Hapnim needs for your first application, for your case.",
       "progress": "{done} of {total} uploaded",
       "progressHint": "Uploaded document doesn't mean it's valid. Check every document against what Misrad Hapnim requires.",
       "freeFindings": {
@@ -2123,6 +2123,27 @@
         "afterArrivalIntro": "These are done once {name} is in Israel with the entry permit. The online application is filed without them.",
         "afterArrivalBothIntro": "These are done in Israel, once you've both arrived with the entry permit.",
         "retired": "No longer needed"
+      },
+      "types": {
+        "identity": "Identity",
+        "relationship": "Relationship",
+        "civilStatus": "Civil status",
+        "centerOfLife": "Center of life",
+        "finances": "Finances",
+        "forms": "Forms",
+        "children": "Children"
+      },
+      "view": {
+        "label": "Group the documents",
+        "type": "By type",
+        "person": "By person"
+      },
+      "newLook": {
+        "title": "Documents page got a new look!",
+        "body": "Your documents are now grouped by type: the way Misrad Hapnim looks at your file.",
+        "hint": "Prefer to see them by person? Switch to “{person}” at the top.",
+        "ok": "Got it",
+        "close": "Close"
       },
       "status": {
         "todo": "Not uploaded",

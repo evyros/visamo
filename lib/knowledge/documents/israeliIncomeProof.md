@@ -7,7 +7,8 @@ The Israeli partner's payslips (tlushim, תלושי שכר), if they're employed
 depending on their situation (below).
 
 The Israeli partner has to show they can support the household: recent
-payslips and bank statements, and the shuma if they're self-employed.
+payslips and bank statements, and the shuma if they're self-employed. The
+payslips also show your center of life.
 
 ## What it should include
 

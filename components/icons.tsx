@@ -233,6 +233,55 @@ const paths = {
       <path d="M4.5 20.5a7.5 7.5 0 0 1 15 0" />
     </>
   ),
+  // The documents page's groups by type (`plane`, below, for the ones done after arriving).
+  idCard: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <circle cx="9" cy="10.5" r="2" />
+      <path d="M6 15.5a3 3 0 0 1 6 0M14.5 10h3.5M14.5 13.5h3.5" />
+    </>
+  ),
+  heart: (
+    <path d="M12 20.5S3.5 15.5 3.5 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8.5 2.5c0 6-8.5 11-8.5 11Z" />
+  ),
+  /** A certificate with its seal. */
+  certificate: (
+    <>
+      <path d="M13 20H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6" />
+      <path d="M8 8h8M8 12h4" />
+      <circle cx="17" cy="15" r="2.5" />
+      <path d="m15.6 17.1-.6 3.9 2-1 2 1-.6-3.9" />
+    </>
+  ),
+  home: (
+    <>
+      <path d="M3.5 11 12 4l8.5 7" />
+      <path d="M6 9.5V20h12V9.5M10 20v-5.5h4V20" />
+    </>
+  ),
+  /** A wallet, its clasp at the side. */
+  wallet: (
+    <>
+      <path d="M19 8V6.5A1.5 1.5 0 0 0 17.5 5H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H5.5A1.5 1.5 0 0 1 4 6.5" />
+      <path d="M20 12h-3.5a1.5 1.5 0 0 0 0 3H20" />
+      <path d="M16.5 13.5h.01" />
+    </>
+  ),
+  /** A form on a clipboard. */
+  form: (
+    <>
+      <rect x="9" y="2.5" width="6" height="3.5" rx="1" />
+      <path d="M9 4.5H7a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6.5a2 2 0 0 0-2-2h-2" />
+      <path d="M8.5 11h7M8.5 14.5h7M8.5 18h4" />
+    </>
+  ),
+  /** A baby's face, with a curl. */
+  child: (
+    <>
+      <circle cx="12" cy="13" r="8" />
+      <path d="M12 5c0 1.6 1 2.5 2.4 2.5M9.5 12.5h.01M14.5 12.5h.01M9.8 16a3 3 0 0 0 4.4 0" />
+    </>
+  ),
   gear: (
     <>
       <path d="M10.4 4.9 10.7 2.6 13.3 2.6 13.6 4.9 15.9 5.8 17.7 4.4 19.6 6.3 18.2 8.1 19.1 10.4 21.4 10.7 21.4 13.3 19.1 13.6 18.2 15.9 19.6 17.7 17.7 19.6 15.9 18.2 13.6 19.1 13.3 21.4 10.7 21.4 10.4 19.1 8.1 18.2 6.3 19.6 4.4 17.7 5.8 15.9 4.9 13.6 2.6 13.3 2.6 10.7 4.9 10.4 5.8 8.1 4.4 6.3 6.3 4.4 8.1 5.8Z" />
@@ -251,6 +300,10 @@ const directional = {
   arrow: <path d="M5 12h14m0 0-5-5m5 5-5 5" />,
   chevron: <path d="m9 6 6 6-6 6" />,
   logout: <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M16 16l4-4-4-4M20 12H10" />,
+  /** Flying forward: arriving. */
+  plane: (
+    <path d="M17.8 4.8 14 8.6 5.5 6.5 4 8l7 4-3 3-2.5-.5L4 16l3.5 1.5L9 21l1.5-1.5L10 17l3-3 4 7 1.5-1.5-2.1-8.5 3.8-3.8a1.6 1.6 0 0 0-2.4-2.4Z" />
+  ),
 } as const;
 
 export type IconName = keyof typeof paths | keyof typeof directional;

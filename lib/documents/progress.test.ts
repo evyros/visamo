@@ -5,6 +5,8 @@ import {
   progressByGroup,
   progressOf,
   standingOf,
+  typeGroupOf,
+  typeOrder,
   uploadedKeys,
   type Standing,
 } from "./progress";
@@ -39,6 +41,30 @@ describe("progressByGroup", () => {
       { group: "foreign", progress: { done: 0, total: 1 } },
       { group: "afterArrival", progress: { done: 1, total: 1 } },
     ]);
+  });
+});
+
+describe("typeGroupOf", () => {
+  it("groups by category, with the police certificate under the civil status", () => {
+    expect(typeGroupOf({ id: "foreignPassport", category: "identity", later: false })).toBe("identity");
+    expect(typeGroupOf({ id: "foreignPoliceCertificate", category: "criminalRecord", later: false })).toBe("civilStatus");
+  });
+
+  it("puts the salary slips and the bank documents under the finances, whatever they prove", () => {
+    for (const id of ["israeliIncomeProof", "foreignIncomeProof", "sharedBankAccount", "bankStatements"]) {
+      expect(typeGroupOf({ id, category: "centerOfLife", later: false }), id).toBe("finances");
+    }
+    expect(typeGroupOf({ id: "housingContract", category: "centerOfLife", later: false })).toBe("centerOfLife");
+  });
+
+  it("puts the letter about the relationship under the relationship, not the forms", () => {
+    expect(typeGroupOf({ id: "relationshipStory", category: "forms", later: false })).toBe("relationship");
+    expect(typeGroupOf({ id: "statusApplicationMarried", category: "forms", later: false })).toBe("forms");
+  });
+
+  it("keeps what's done once the foreign partner is in Israel apart, last", () => {
+    expect(typeGroupOf({ id: "foreignDeclarationMarried", category: "forms", later: true })).toBe("afterArrival");
+    expect(typeOrder.at(-1)).toBe("afterArrival");
   });
 });
 

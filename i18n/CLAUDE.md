@@ -13,12 +13,13 @@ Every document (`app.documents.items.<id>`) has two titles:
   passports". It's the name everywhere outside the documents page: the
   knowledge base's guide openings (synced from it, `npm run guides:sync`),
   the chat's document list, the check, the admin pages.
-- **`shortTitle`: the label on the documents page**, which groups the
-  documents under each partner's name, so it never says whose it is:
-  "Salary slips" (תלושי שכר), "Passports" (דרכונים). Two documents can share
-  one. Where a short title is shown outside those groups, the partner's name
-  goes with it: `documentTitle(key, texts, locale, names)` gives "Salary slips
-  (John)" (`app.documents.whose`), as in the activity feed.
+- **`shortTitle`: the label on the documents page**, which never says whose
+  it is: "Salary slips" (תלושי שכר), "Passports" (דרכונים). The page groups
+  the documents by type or under each partner's name; outside a partner's
+  own group, a tab with their first name sits on the card's top edge. Two documents can
+  share one. Elsewhere, the partner's name goes with it:
+  `documentTitle(key, texts, locale, names)` gives "Salary slips (John)"
+  (`app.documents.whose`), as in the activity feed.
 
 When the two would be the same ("Birth certificate"), write it in both.
 

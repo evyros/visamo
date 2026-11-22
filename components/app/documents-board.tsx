@@ -30,7 +30,6 @@ import { newTab } from "@/lib/site";
 import { dismissReasons, MAX_DISMISS_NOTE, type DismissReason, type FindingKind } from "@/lib/checks/dismissals";
 import type { CheckRating } from "@/lib/checks/result";
 import type { CheckView, DismissedView, FindingView, HistoryView } from "@/lib/checks/view";
-import type { Owner } from "@/lib/documents/catalog";
 import { checkedProgressOf, progressOf, standingOf, uploadedKeys, type Standing } from "@/lib/documents/progress";
 import type { StepDetails, StepDetailsPart } from "@/lib/document-steps";
 import type { StepKind } from "@/lib/documents/steps";
@@ -40,12 +39,16 @@ import { ProgressBar, StandingCounts, standingCounts } from "@/components/app/do
 import { Notice } from "@/components/app/auth-ui";
 import { CheckCoverage } from "@/components/app/check-coverage";
 import { Dialog } from "@/components/app/dialog";
-import { Icon } from "@/components/icons";
+import { Icon, type IconName } from "@/components/icons";
 import { StepGlyph, type StepGlyphName } from "@/components/step-glyph";
 import { LogoMark } from "@/components/logo";
+import { DEVICE_CHOICE_MAX_AGE, DOCUMENTS_VIEW_COOKIE } from "@/lib/device-flags";
+import { DocumentsNewLook } from "@/components/app/documents-new-look";
 
-// The documents page: the case's list, grouped by whose document it is, each
-// document a card that opens to its uploads. A file goes through two phases:
+// The documents page: the case's list, grouped by type or by whose document
+// it is (the couple's choice, remembered on the device), each document a card
+// that opens to its uploads. Outside a partner's own group, a tab with their name
+// on the card's top edge says whose it is. A file goes through two phases:
 // uploading (straight to the Blob store, with progress) and processing
 // (finishUpload checks it, records it and makes its thumbnail). Then the
 // server's thumbnail replaces the local preview.
@@ -69,14 +72,20 @@ import { LogoMark } from "@/components/logo";
  * The page's labels, without the texts the server already turned into each card's strings (the
  * steps, the countries' texts, what can replace a document): they'd only add weight to the page.
  */
-export type BoardLabels = Omit<Messages["app"]["documentsPage"], "steps" | "issuers" | "affidavitInstead" | "oneAffidavit"> & {
+export type BoardLabels = Omit<
+  Messages["app"]["documentsPage"],
+  "steps" | "issuers" | "affidavitInstead" | "oneAffidavit" | "types"
+> & {
   steps: Pick<Messages["app"]["documentsPage"]["steps"], "heading">;
 };
 type Labels = BoardLabels;
 
 export type DocumentItem = {
   key: string;
+  /** The short title, which never says whose it is. */
   title: string;
+  /** The partner, for one of theirs: their name up to the first space, on the badge on the card's top edge, outside their own group. */
+  whose?: Whose;
   /** The title with the partner's name for one of theirs ("Passport (John)"), for lists outside the groups. */
   namedTitle: string;
   description: string;
@@ -99,6 +108,16 @@ export type DocumentItem = {
     last: CheckView | null;
   };
 };
+
+/** A partner: their name up to the first space, and which partner they are, for their badge's tint. */
+type Whose = { name: string; partner: "israeli" | "foreign" };
+
+/**
+ * Each partner's badge tint: both neutral, warm for the Israeli partner (the card's own border
+ * color, so its line runs into the badge) and a cool grey for the foreign partner. Never a status
+ * color: those mean ready or needs attention.
+ */
+const whoseTint: Record<Whose["partner"], string> = { israeli: "bg-line-200", foreign: "bg-slate-200" };
 
 /** One step; `details`, the full text, opens under the short one. */
 type StepItem = { kind: StepKind; label: string; text: string; details?: StepDetails };
@@ -154,10 +173,39 @@ function docState(uploaded: boolean, result: CheckView | null): DocState {
 }
 
 /**
- * A group of cards: whose documents they are, or "afterArrival", the ones done once the foreign
- * partner is in Israel, which `intro` explains.
+ * A group of cards: a type of document or whose they are, or "afterArrival", the ones done once
+ * the foreign partner is in Israel, which `intro` explains. `id` is its anchor (the overview links
+ * to the groups by person). `showWhose`: the tag with the partner's name by their documents' titles.
  */
-export type DocumentGroup = { id: Owner | "afterArrival"; title: string; intro?: string; items: DocumentItem[] };
+export type DocumentGroup = {
+  id: string;
+  title: string;
+  intro?: string;
+  icon: IconName;
+  keys: string[];
+  showWhose: boolean;
+};
+
+/** The page's two groupings. */
+export type GroupingView = "type" | "person";
+const groupingViews: readonly GroupingView[] = ["type", "person"];
+
+/**
+ * Remembers the grouping on this device, in a cookie the page reads (DOCUMENTS_VIEW_COOKIE), so the
+ * server draws the list in it from the start, never reordering it once it shows.
+ */
+function saveView(view: GroupingView) {
+  document.cookie = `${DOCUMENTS_VIEW_COOKIE}=${view}; path=/; max-age=${DEVICE_CHOICE_MAX_AGE}; samesite=lax`;
+}
+
+/** What the address points to (#…), decoded; empty if nothing, or if it can't be decoded. */
+function linkTarget() {
+  try {
+    return decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return "";
+  }
+}
 
 /** Files for a document no longer on the list: kept, shown, and only removable. */
 export type RetiredDocument = { key: string; title: string };
@@ -216,16 +264,27 @@ async function currentChecks() {
 }
 
 export function DocumentsBoard({
+  title,
+  newLook,
+  savedView,
   t,
-  groups,
+  items,
+  views,
   retired,
   files: initialFiles,
   locale,
   intlLocale,
   checks: settings,
 }: {
+  /** The page's title: drawn here, so the grouping toggle can share its row. */
+  title: string;
+  /** The user used the page before it was grouped by type: tell them once, on this device. */
+  newLook: boolean;
+  /** The grouping chosen on this device, from its cookie: by type unless the couple chose by person. */
+  savedView: GroupingView;
   t: Labels;
-  groups: DocumentGroup[];
+  items: DocumentItem[];
+  views: Record<GroupingView, DocumentGroup[]>;
   retired: RetiredDocument[];
   files: FileView[];
   locale: Locale;
@@ -233,9 +292,71 @@ export function DocumentsBoard({
   checks: CheckSettings;
 }) {
   const [files, setFiles] = useState(initialFiles);
+
+  // The grouping: the one chosen on this device (read by the page from its cookie); or, arriving by
+  // a link to a group only the other grouping has (the overview links to the groups by person), that
+  // one, until the couple chooses.
+  const [view, setView] = useState<GroupingView>(savedView);
+  // Once the couple has used the toggle, a link no longer changes the grouping.
+  const toggled = useRef(false);
+  const latestViews = useRef(views);
+  useEffect(() => {
+    latestViews.current = views;
+  }, [views]);
+
+  // What a link points to (#…), followed on arriving and when the link changes, never again after:
+  // - a card (#doc-…, like the overview's free-check box): it opens and comes into view once, not
+  //   each time it's drawn anew, as when the grouping changes;
+  // - a group (#israeli): its grouping shows if only the other one has it, and it comes into view.
+  const [linkedCard, setLinkedCard] = useState<string | null>(null);
+  const clearLinkedCard = useCallback(() => setLinkedCard(null), []);
+  const linkedGroup = useRef<string | null>(null);
+  const [followed, setFollowed] = useState(0);
+  useEffect(() => {
+    const follow = () => {
+      const id = linkTarget();
+      if (id.startsWith("doc-")) {
+        setLinkedCard(id.slice("doc-".length));
+        return;
+      }
+      const has = (v: GroupingView) => latestViews.current[v].some((g) => g.id === id);
+      if (!id || (!has("type") && !has("person"))) return;
+      const only = has("type") && !has("person") ? "type" : has("person") && !has("type") ? "person" : null;
+      if (only && !toggled.current) setView(only);
+      linkedGroup.current = id;
+      setFollowed((n) => n + 1);
+    };
+    follow();
+    window.addEventListener("hashchange", follow);
+    return () => window.removeEventListener("hashchange", follow);
+  }, []);
+  // The linked group, as soon as it's on the page: now if its grouping already shows, or once the
+  // grouping the link switched to is drawn. Kept until then: on arriving, this first runs before the
+  // switch is drawn. The toggle forgets it, so it never brings the page back to it later.
+  useEffect(() => {
+    const group = linkedGroup.current && document.getElementById(linkedGroup.current);
+    if (!group) return;
+    group.scrollIntoView();
+    linkedGroup.current = null;
+  }, [followed, view]);
+
+  const choose = (v: GroupingView) => {
+    toggled.current = true;
+    linkedGroup.current = null;
+    setView(v);
+    saveView(v);
+    // A link's target (#israeli, #doc-…) belongs to how the page was before: drop it, so the address
+    // is the page itself and a reload doesn't follow it again. Replacing it neither scrolls nor
+    // counts as following a link.
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  };
+  const itemOf = new Map(items.map((item) => [item.key, item]));
+
   const [checks, setChecks] = useState<Record<string, ItemCheck>>(() =>
     Object.fromEntries(
-      groups.flatMap((g) => g.items).map((item) => [item.key, { running: item.check.running, last: item.check.last }]),
+      items.map((item) => [item.key, { running: item.check.running, last: item.check.last }]),
     ),
   );
   // Shared by both partners: a check either of them runs spends from it.
@@ -454,7 +575,6 @@ export function DocumentsBoard({
     return () => clearInterval(timer);
   }, [waitingOnOthers, refreshChecks]);
 
-  const items = groups.flatMap((g) => g.items);
   const filesOf = (key: string) => files.filter((f) => f.documentKey === key);
   // Each card's status pill, and where it stands in the progress.
   const states: Record<string, DocState> = {};
@@ -471,12 +591,43 @@ export function DocumentsBoard({
   const checked = checkedProgressOf(items, standing);
   const counts = standingCounts(checked, t.progressChecked, locale);
   // Without Full file check: what the free check found, so it isn't missed on the cards below.
-  const found = settings.bought ? null : freeFindingsOf(items, states, results, checks);
+  const found = settings.bought
+    ? null
+    : freeFindingsOf(
+        // In the order the cards are shown.
+        views[view].flatMap((g) => g.keys).flatMap((key) => itemOf.get(key) ?? []),
+        states,
+        results,
+        checks,
+      );
   // A retired document's files can only be removed; once they all are, it goes.
   const retiredLeft = retired.filter((r) => files.some((f) => f.documentKey === r.key));
 
   return (
     <>
+      {/* The grouping toggle sits by the title, where there's room anyway, so it costs the list no
+          height. Compact, so it fits beside the title on phones too; it wraps under it only if it can't. */}
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+        <h1 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">{title}</h1>
+        <div role="group" aria-label={t.view.label} className="inline-flex shrink-0 rounded-full border border-line-200 bg-white p-1">
+          {groupingViews.map((v) => (
+            <button
+              key={v}
+              type="button"
+              aria-pressed={view === v}
+              onClick={() => choose(v)}
+              className={`h-7 rounded-full px-3 text-[13px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 ${
+                view === v ? "bg-navy-900 text-white" : "text-navy-900 hover:bg-navy-900/5"
+              }`}
+            >
+              {t.view[v]}
+            </button>
+          ))}
+        </div>
+      </div>
+      <p className="mt-3 text-slate-700">{t.intro}</p>
+      {newLook && <DocumentsNewLook t={t.newLook} personLabel={t.view.person} />}
+
       <section className="mt-6 rounded-card border border-line-200 bg-white p-5">
         {settings.bought ? (
           <>
@@ -506,16 +657,24 @@ export function DocumentsBoard({
         )}
       </section>
 
-      {groups.map((group) => (
-        <section key={group.id} id={group.id} className="mt-8 scroll-mt-24">
-          <h2 className="text-lg font-semibold text-navy-900">{group.title}</h2>
+      {views[view].map((group) => (
+        <section key={`${view}-${group.id}`} id={group.id} className="mt-8 scroll-mt-24">
+          <h2 className="flex items-center gap-2.5 text-lg font-semibold text-navy-900">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-navy-900/5">
+              <Icon name={group.icon} className="size-[18px]" />
+            </span>
+            {group.title}
+          </h2>
           {group.intro && <p className="mt-1 text-[15px] text-slate-600">{group.intro}</p>}
-          <ul className="mt-3 space-y-3">
-            {group.items.map((item) => (
+          <ul className="mt-4 space-y-4">
+            {group.keys.map((key) => itemOf.get(key)!).map((item) => (
               <li key={item.key}>
                 <DocumentCard
                   t={t}
                   item={item}
+                  whose={group.showWhose ? item.whose : undefined}
+                  linked={linkedCard === item.key}
+                  onLinked={clearLinkedCard}
                   locale={locale}
                   intlLocale={intlLocale}
                   check={checks[item.key]}
@@ -634,6 +793,9 @@ type FileHandlers = {
 function DocumentCard({
   t,
   item,
+  whose,
+  linked,
+  onLinked,
   locale,
   intlLocale,
   check,
@@ -648,6 +810,11 @@ function DocumentCard({
 }: {
   t: Labels;
   item: DocumentItem;
+  /** The partner, on the badge on the card's top edge: left out in their own group. */
+  whose?: Whose;
+  /** A link points to this card: open it and bring it into view, then tell the board (`onLinked`). */
+  linked: boolean;
+  onLinked: () => void;
   locale: Locale;
   intlLocale: string;
   check: ItemCheck;
@@ -666,23 +833,34 @@ function DocumentCard({
   const uploaded = files.length > 0;
   const fresh = !!freshResult(check, files);
 
-  // A link to the card (#doc-…, like the overview's free-check box) opens it and brings it into view.
+  // A link to the card (#doc-…, followed by the board): it opens and comes into view, once.
   useEffect(() => {
-    const openIfLinked = () => {
-      if (decodeURIComponent(window.location.hash.slice(1)) !== anchor) return;
+    if (!linked) return;
+    const show = () => {
       setOpen(true);
       cardRef.current?.scrollIntoView();
+      onLinked();
     };
-    openIfLinked();
-    window.addEventListener("hashchange", openIfLinked);
-    return () => window.removeEventListener("hashchange", openIfLinked);
-  }, [anchor]);
+    show();
+  }, [linked, onLinked]);
   // The tool's pill shows on the closed card until something's uploaded,
   // then moves inside it.
   const toolOnTop = item.tool && !uploaded && pending.length === 0 ? item.tool : null;
 
   return (
-    <div id={anchor} ref={cardRef} className="scroll-mt-24 rounded-card border border-line-200 bg-white">
+    <div id={anchor} ref={cardRef} className="relative scroll-mt-24 rounded-card border border-line-200 bg-white">
+      {/* Whose it is: a badge on the top edge, at the start corner, so it takes no room in the row and
+          every title lines up. Filled, with no outline, so the card's line runs into it instead of
+          crossing another line; each partner's tint tells them apart. Clicks go through it to the
+          card; the button says the name to screen readers. */}
+      {whose && (
+        <span
+          aria-hidden="true"
+          className={`pointer-events-none absolute -top-2.5 start-4 z-10 max-w-40 truncate rounded-full px-2 text-xs leading-5 font-medium text-slate-700 ${whoseTint[whose.partner]}`}
+        >
+          {whose.name}
+        </span>
+      )}
       {/* The header opens and closes the card: its button's ::after covers the
           whole row, arrow included. The tool's pill sits above that layer, so
           clicking it only opens the tool. The pill shares the title's row and
@@ -696,7 +874,10 @@ function DocumentCard({
             onClick={() => setOpen((o) => !o)}
             className="flex flex-wrap items-center gap-x-3 gap-y-1 text-start after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-teal-600"
           >
-            <span className="font-semibold text-navy-900">{item.title}</span>
+            <span className="font-semibold text-navy-900">
+              {item.title}
+              {whose && <span className="sr-only">, {whose.name}</span>}
+            </span>
             <Status t={t} state={state} optional={item.optional} />
           </button>
           {toolOnTop && (

@@ -4,7 +4,7 @@ import type { LegalContent } from "./types";
 // lawyer review these texts before launch.
 
 export const legalEn: LegalContent = {
-  updated: "2026-11-14",
+  updated: "2026-11-22",
   updatedLabel: "Last updated",
   docs: {
     privacy: {
@@ -30,12 +30,13 @@ export const legalEn: LegalContent = {
                 "Onboarding details: the countries you and your partner come from, your relationship status and your stage in the process, which we use to build your document list.",
                 "Your file: the documents you upload (for example passports, certificates, affidavits, bank statements, photos and other relationship evidence) and the information in them.",
                 "Assistant conversations: the messages you send the information assistant and its answers.",
-                "Payment details: handled by our payment provider, [payment provider]. We never see or store your full card number; we keep only a payment token, what you bought and the receipt.",
+                "Payment details: handled by our payment provider, Freemius. We never see or store your full card number; we keep only a payment token, what you bought and the receipt.",
                 "Messages you send us: the content of contact-form messages and emails, including any attachments.",
                 "Technical information: IP address, browser and device type, pages visited, and logs needed to keep the service secure and working.",
               ],
             },
             "Some of the documents you upload may contain information of special sensitivity under Israeli law, such as details about your family life, personal status, or a police certificate. We process it only to provide the service you asked for, at your direction.",
+            "You choose which documents to upload. By uploading a document, you consent to our storing and processing it, including the sensitive information in it, as described in this policy, and you confirm that you have the right to share the details it contains about other people.",
           ],
         },
         {
@@ -68,8 +69,9 @@ export const legalEn: LegalContent = {
             {
               list: [
                 "Hosting: Vercel, with data centers in Frankfurt, Germany.",
-                "Document processing and the information assistant: AI and document-processing providers, bound by contractual terms that prohibit keeping your data or using it to train their models.",
-                "Payments: [payment provider].",
+                "Document checks: AI providers that process your documents with zero data retention: they don't keep them after the check and don't use them to train their models.",
+                "Information assistant: an AI provider receives your messages and the details of your file, such as your onboarding answers and your documents' check results, in order to answer you. The documents themselves are not sent to the assistant.",
+                "Payments: Freemius.",
                 "Contact form: Cloudflare Turnstile, which checks that the form is sent by a person and not a bot. Messages and attachments sent through the form are emailed to our support inbox (Google Workspace) and are not stored in our systems.",
                 "Live chat: Crisp, the chat window on the website. It stores the messages you send in the chat, and any details you choose to give there, such as your email address, so that we can answer you.",
                 "Email delivery: Resend.",
@@ -173,13 +175,13 @@ export const legalEn: LegalContent = {
           heading: "3. No guarantee of results",
           body: [
             "All decisions on your application are made solely by the authorities. We do not promise or guarantee any result: not approval of a visa or status, not that your file won't be sent back, and not any timeline.",
-            "Document checks compare your documents with published requirements and common issues. They reduce the risk of missing something, but they cannot catch every problem, and requirements can change without notice. The assistant's answers are general information based on published sources; they may be incomplete or out of date and are not legal advice. Always check important details against official sources.",
+            "Document checks and the assistant's answers are produced with the help of AI. Checks compare your documents with published requirements and common issues, and they can be wrong or miss problems. A check that finds no issues is not a confirmation that the authority will accept the document, and a result reflects the requirements we knew of on the day of the check; requirements can change without notice. The assistant's answers are general information based on published sources; they may be incomplete or out of date and are not legal advice. You decide what to submit, so always check important details against official sources.",
           ],
         },
         {
           heading: "4. Your account",
           body: [
-            "You must be at least 18 to use Visamo. Keep your login details secure and tell us if you suspect unauthorized access. If you invite your partner to a shared file, both of you can see and manage its contents, and you confirm you have the right to share the information you add.",
+            "You must be at least 18 to use Visamo. Keep your login details secure and tell us if you suspect unauthorized access.",
           ],
         },
         {
@@ -196,61 +198,74 @@ export const legalEn: LegalContent = {
           ],
         },
         {
-          heading: "6. Purchases and payments",
+          heading: "6. Uploading documents",
+          body: [
+            "You decide which documents to upload, and you upload them by your own free choice, with your full consent to their storage and processing as described in these terms and in the privacy policy. You confirm that every document you upload is genuine and that you have the right to upload it, including the details it contains about other people, such as your partner, children, former spouse or parents, and to share it with your partner in your shared file. You are responsible for any claim another person makes against Visamo over a document you uploaded, unless the claim results from our own breach of these terms or of the law.",
+            "Visamo is not a storage service for your originals. Keep your own copies of every document you upload.",
+          ],
+        },
+        {
+          heading: "7. Shared files",
+          body: [
+            "If you invite your partner to a shared file, both of you can see, download and manage everything in it, including documents and chats the other added. You confirm that you have the right to share the information you add. We don't settle disputes between partners, including after a separation, and we are not responsible for what your partner does with documents they could access in the shared file.",
+          ],
+        },
+        {
+          heading: "8. Purchases and payments",
           body: [
             "Visamo is free to start, and offers one-time purchases as described on the pricing page: message packs and Full file check. Prices are in Israeli shekels and include VAT. Assistant messages don't expire. Full file check covers every stage of the gradual process. We may change prices for future purchases; changes never affect something you already bought.",
           ],
         },
         {
-          heading: "7. Refunds and cancellation",
+          heading: "9. Refunds and cancellation",
           body: [
             "If Visamo didn't give you value, you can ask for a full refund within 14 days of purchase. Send a request through the contact form with the email you signed up with and the reason, and you'll get the refund within 10 business days. This doesn't limit any right you have under the Consumer Protection Law, 1981.",
           ],
         },
         {
-          heading: "8. Your content",
+          heading: "10. Your content",
           body: [
             "You keep all rights to the documents and information you upload. You give us permission to store and process them only as needed to provide the service to you. When you delete them, that permission ends, subject to our backup and legal retention periods described in the privacy policy.",
           ],
         },
         {
-          heading: "9. Our content",
+          heading: "11. Our content",
           body: [
             "The Visamo software, design, text and brand belong to us. You may use them only to use the service, and may not copy, resell or reverse-engineer them.",
           ],
         },
         {
-          heading: "10. Availability",
+          heading: "12. Availability",
           body: [
             "We work to keep Visamo available and accurate, but the service is provided \"as is\" and \"as available\". We may change, suspend or stop features, and we'll give reasonable notice of significant changes where we can.",
           ],
         },
         {
-          heading: "11. Limitation of liability",
+          heading: "13. Limitation of liability",
           body: [
             "To the extent the law allows, Visamo is not liable for the outcome of your application, for decisions of any authority, for delays or rejections, or for indirect or consequential damages. In any case, our total liability to you is limited to the amount you paid Visamo in the 12 months before the claim. Nothing in these terms limits liability that cannot be limited by law.",
           ],
         },
         {
-          heading: "12. Ending your use",
+          heading: "14. Ending your use",
           body: [
-            "You can stop using Visamo and delete your account at any time. We may suspend or close accounts that break these terms, and will tell you why unless the law prevents it.",
+            "You can stop using Visamo and delete your account at any time. We may suspend or close accounts that break these terms, including accounts that upload forged or altered documents, and will tell you why unless the law prevents it.",
           ],
         },
         {
-          heading: "13. Governing law",
+          heading: "15. Governing law",
           body: [
             "These terms are governed by the laws of the State of Israel. The competent courts in Tel Aviv have exclusive jurisdiction. These terms are available in Hebrew and English; if they differ, the Hebrew version prevails.",
           ],
         },
         {
-          heading: "14. Changes to these terms",
+          heading: "16. Changes to these terms",
           body: [
             "We may update these terms. If we make significant changes, we'll let you know by email or in Visamo before they take effect. Continuing to use Visamo after that means you accept the updated terms.",
           ],
         },
         {
-          heading: "15. Contact",
+          heading: "17. Contact",
           body: ["Questions about these terms? Contact us through the contact form or at support@visamo.co.il."],
         },
       ],

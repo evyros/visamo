@@ -5,25 +5,12 @@ import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { getSession } from "@/lib/session";
 import { localePath, site } from "@/lib/site";
 import { AuthHeading } from "@/components/app/auth-heading";
-import { Divider, Notice } from "@/components/app/auth-ui";
+import { ConsentNote, Divider, Notice } from "@/components/app/auth-ui";
 import { EmailLinkForm } from "@/components/app/email-link-form";
 import { GoogleButton } from "@/components/app/google-button";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: (await getAppDictionary()).app.meta.signup };
-}
-
-/** Renders "[Terms of use]" style brackets in a message as links, in order. */
-function withLinks(message: string, hrefs: string[]) {
-  return message.split(/\[(.+?)\]/g).map((part, i) =>
-    i % 2 === 1 ? (
-      <a key={i} href={hrefs[(i - 1) / 2]} className="font-medium text-teal-700 underline underline-offset-2">
-        {part}
-      </a>
-    ) : (
-      part
-    ),
-  );
 }
 
 export default async function SignupPage({
@@ -57,9 +44,7 @@ export default async function SignupPage({
             </div>
           }
         >
-          <p className="text-center text-sm text-slate-600">
-            {withLinks(t.signup.consent, [legal("terms"), legal("privacy")])}
-          </p>
+          <ConsentNote message={t.signup.consent} hrefs={[legal("terms"), legal("privacy")]} />
         </EmailLinkForm>
       </div>
       <p className="mt-8 text-center text-[15px]">

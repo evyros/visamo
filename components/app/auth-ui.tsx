@@ -130,3 +130,23 @@ export function LastUsedBadge({ label, className = "" }: { label: string; classN
     </span>
   );
 }
+
+/**
+ * "By continuing, you agree to the [Terms of use] and the [Privacy policy]."
+ * The bracketed parts become links to the given pages, in order.
+ */
+export function ConsentNote({ message, hrefs }: { message: string; hrefs: string[] }) {
+  return (
+    <p className="text-center text-sm text-slate-600">
+      {message.split(/\[(.+?)\]/g).map((part, i) =>
+        i % 2 === 1 ? (
+          <a key={i} href={hrefs[(i - 1) / 2]} className="font-medium text-teal-700 underline underline-offset-2">
+            {part}
+          </a>
+        ) : (
+          part
+        ),
+      )}
+    </p>
+  );
+}

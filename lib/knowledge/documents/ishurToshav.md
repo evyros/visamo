@@ -3,14 +3,13 @@
 Also called Ishur Toshav (אישור תושב): your municipality or local council's official confirmation that your center of life is in their locality.
 
 The municipality or local council's confirmation that your center of life
-is in their locality. It's asked for in two cases:
+is in their locality.
 
-- **Married couples:** it's on the AS/6 checklist, the married couples'
-  application, so it's required when at least one of you lives in Israel.
-- **Every couple's visa renewal:** married and common-law couples alike.
-  This is **only when renewing the visa**, not with the first documents,
-  before you get the visa: common-law couples (procedure 5.2.0009) aren't
-  asked for it until then.
+- **Married couples:** always bring it when at least one of you lives in
+  Israel. It's on the AS/6 checklist, the married couples' application.
+- **Common-law couples:** it isn't part of your application (procedure
+  5.2.0009), and in practice you're rarely asked for it. Bring it only if
+  the clerk asks for it.
 
 The municipality issues it only to someone registered with it as the payer
 of arnona (municipal tax) for the home. Usually the arnona department issues
@@ -40,9 +39,10 @@ name.
 ## Questions
 
 **Is it really required? Can we file without it?**
-Yes, it's required. For married couples, it's part of the AS/6 application
-when at least one of you lives in Israel. If you can't get it because
-neither of you is registered for arnona, see "If you don't have it" above.
+For married couples, yes: it's part of the AS/6 application when at least
+one of you lives in Israel. Common-law couples rarely need it: only if the
+clerk asks for it. If you can't get it because neither of you is registered
+for arnona, see "If you don't have it" above.
 
 **Can I just bring an arnona (ארנונה) bill instead?**
 No, an arnona bill doesn't replace this document. Arnona shows you pay for

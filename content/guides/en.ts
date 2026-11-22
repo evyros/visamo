@@ -209,7 +209,7 @@ export const guidesEn: Guides = {
       title: "The A/5 visa for partners of Israelis: timeline and what to expect",
       answer:
         "**A/5** (א/5, often written A5) is temporary residency in Israel. For the foreign partner of an Israeli, it's the second stage of the gradual process, after B/1: a **Teudat Zehut** with an Israeli ID number, and the social rights of a resident, including **public health insurance** once you've lived in Israel long enough. Married couples get it after up to 6 months on B/1, common-law couples after 3 years. It lasts **4 years**, renewed along the way, before permanent status.",
-      updated: "2026-11-08",
+      updated: "2026-11-21",
       sections: [
         {
           id: "where",
@@ -268,6 +268,13 @@ export const guidesEn: Guides = {
             },
             "**If you marry while on B/1,** you move to the married track: you can move up to A/5 once your file is converted and you're interviewed.",
             "**From the former USSR:** married couples get the B/1 first, but have to complete the Nativ check before they can move up to A/5.",
+            {
+              process: {
+                title: "Haven't started yet?",
+                text: "Your way to the A/5 depends mainly on 3 questions. Answer them, and see every step to the A/5.",
+                button: "See your steps to the A/5",
+              },
+            },
           ],
         },
         {
@@ -370,6 +377,11 @@ export const guidesEn: Guides = {
         },
       ],
       faq: [
+        {
+          q: "Where do we start?",
+          a: "By collecting your documents, before you submit the online form, starting with the ones from abroad, since they take the longest to get. Which documents you need depends on your case. Visamo's free guide shows you which ones your file needs, and how to get each one.",
+          signup: "See which documents you need, free",
+        },
         {
           q: "What is the A/5 visa in Israel?",
           a: "A/5 (א/5) is temporary residency. In the partner process, it comes after the B/1 visa, and gives the foreign partner a Teudat Zehut with an Israeli ID number, and the social rights of a resident, including public health insurance.",

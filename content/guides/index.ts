@@ -100,7 +100,7 @@ export function blockTexts(block: GuideBlock): string[] {
   if ("note" in block) return [block.note];
   if ("button" in block) return [block.button];
   if ("process" in block) {
-    const { title, text, questions, button } = block.process;
+    const { title, text, questions = [], button } = block.process;
     return [title, text, ...questions, button];
   }
   switch (block.figure) {
@@ -148,7 +148,7 @@ export function blockShape(block: GuideBlock): string {
   if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
   if ("note" in block) return "note";
   if ("button" in block) return `button>${block.to}`;
-  if ("process" in block) return `process:${block.process.questions.length}`;
+  if ("process" in block) return `process:${block.process.questions?.length ?? 0}`;
   switch (block.figure) {
     case "path":
       return `path:${block.stages.length}${block.current === undefined ? "" : `@${block.current}`}`;

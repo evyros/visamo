@@ -40,9 +40,9 @@ export type GuideBlock =
   | { button: string; to: string }
   /**
    * A card into the interactive guide (/guide/partner-visa-process), with a
-   * drawing (components/guide-process-card): its questions, and a button.
+   * drawing (components/guide-process-card): its questions, if listed, and a button.
    */
-  | { process: { title: string; text: string; questions: string[]; button: string } }
+  | { process: { title: string; text: string; questions?: string[]; button: string } }
   | GuideFigure;
 
 /**

@@ -9,7 +9,7 @@ import { ButtonLink } from "./ui";
 // of them theirs, ending in the visa. The drawing has no words, and mirrors in
 // RTL like the guides' other drawings.
 
-export type ProcessCardTexts = { title: string; text: string; questions: string[]; button: string };
+export type ProcessCardTexts = { title: string; text: string; questions?: string[]; button: string };
 
 export function GuideProcessCard({ texts, locale }: { texts: ProcessCardTexts; locale: Locale }) {
   return (
@@ -24,16 +24,18 @@ export function GuideProcessCard({ texts, locale }: { texts: ProcessCardTexts; l
           </h3>
           <p className="mt-2 text-[15.5px] leading-7 text-slate-700">{texts.text}</p>
 
-          <ol className="mt-4 space-y-2">
-            {texts.questions.map((question, i) => (
-              <li key={question} className="flex items-center gap-2.5 text-[15px] leading-6 font-medium text-navy-900">
-                <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-[13px] font-semibold text-teal-700 tabular-nums ring-1 ring-teal-600/25">
-                  {(i + 1).toLocaleString(locale)}
-                </span>
-                {question}
-              </li>
-            ))}
-          </ol>
+          {texts.questions && (
+            <ol className="mt-4 space-y-2">
+              {texts.questions.map((question, i) => (
+                <li key={question} className="flex items-center gap-2.5 text-[15px] leading-6 font-medium text-navy-900">
+                  <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-[13px] font-semibold text-teal-700 tabular-nums ring-1 ring-teal-600/25">
+                    {(i + 1).toLocaleString(locale)}
+                  </span>
+                  {question}
+                </li>
+              ))}
+            </ol>
+          )}
 
           <ButtonLink href={localePath(locale, processPath)} size="sm" className="mt-5 w-full sm:w-auto">
             {texts.button}

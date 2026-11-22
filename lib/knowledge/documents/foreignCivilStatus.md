@@ -446,10 +446,15 @@ apostille can be done on the spot when you collect the police certificate
 
 ### Sweden
 
-An extract from the population register (utdrag om folkbokföring), in
-English, "with all relations" (med alla relationer), from the Tax Agency
-(Skatteverket). It serves as the birth certificate and this document at once.
-Any notary public (notarius publicus) adds the apostille.
+An extract from the population register "with all relations" (Utdrag om
+folkbokföringsuppgifter – 120 med alla relationer), in English, from the Tax
+Agency (Skatteverket). The plain extract, without "120 med alla relationer",
+leaves out the parents. Order it on paper, with Skatteverket's stamp and
+signature: it's sent by post to the address registered in Sweden, or to a
+special postal address (särskild postadress). One you download yourself has
+neither, so it can't get the apostille. It serves as the birth certificate
+and this document at once. Any notary public (notarius publicus) adds the
+apostille.
 
 ### Switzerland
 

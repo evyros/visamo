@@ -2532,7 +2532,7 @@
           },
           "SE": {
             "office": "רשות המסים (Skatteverket)",
-            "details": "תמצית ממרשם האוכלוסין (utdrag om folkbokföring), באנגלית, \"עם כל הקשרים\" (med alla relationer). אותה תמצית משמשת גם כמסמך המצב האישי.",
+            "details": "תמצית ממרשם האוכלוסין \"עם כל הקשרים\" (Utdrag om folkbokföringsuppgifter – 120 med alla relationer), באנגלית: התמצית הרגילה, בלי \"120 med alla relationer\", לא כוללת את ההורים. הזמינו אותה על נייר, עם החותמת והחתימה של Skatteverket, בדואר: תמצית שמורידים לבד אין עליה אף אחת מהן, ולכן אי אפשר להוסיף לה אפוסטיל. אותה תמצית משמשת גם כמסמך המצב האישי.",
             "apostilleBy": "כל נוטריון (notarius publicus)"
           },
           "TH": {
@@ -2744,7 +2744,7 @@
           },
           "SE": {
             "office": "רשות המסים (Skatteverket)",
-            "details": "תמצית ממרשם האוכלוסין (utdrag om folkbokföring), באנגלית, \"עם כל הקשרים\" (med alla relationer). היא משמשת גם כתעודת הלידה וגם כמסמך הזה.",
+            "details": "תמצית ממרשם האוכלוסין \"עם כל הקשרים\" (Utdrag om folkbokföringsuppgifter – 120 med alla relationer), באנגלית: התמצית הרגילה, בלי \"120 med alla relationer\", לא כוללת את ההורים. הזמינו אותה על נייר, עם החותמת והחתימה של Skatteverket, בדואר: תמצית שמורידים לבד אין עליה אף אחת מהן, ולכן אי אפשר להוסיף לה אפוסטיל. היא משמשת גם כתעודת הלידה וגם כמסמך הזה.",
             "apostilleBy": "כל נוטריון (notarius publicus)"
           },
           "SG": {
@@ -2967,8 +2967,8 @@
           },
           "SE": {
             "office": "משטרת שוודיה (Polisen)",
-            "details": "תמצית מהמרשם הפלילי (utdrag ur belastningsregistret), בבקשה אונליין. בקשו את התמצית לשימוש בחו״ל (utdrag för utlandsvistelse): היא מגיעה בחמש שפות, ביניהן אנגלית. הרשעות, אם יש, מופיעות בשוודית בלבד.",
-            "apostilleBy": "כל נוטריון ציבורי (notarius publicus)"
+            "details": "תמצית מהמרשם הפלילי (utdrag ur belastningsregistret), בבקשה אונליין עם הזדהות אלקטרונית שוודית (e-legitimation, כמו BankID), או בלי הזדהות כזו בטופס נייר, בדואר. בקשו את התמצית לשימוש בחו״ל (utdrag för utlandsvistelse): היא מגיעה בחמש שפות, ביניהן אנגלית. הרשעות, אם יש, מופיעות בשוודית בלבד.",
+            "apostilleBy": "כל נוטריון (notarius publicus)"
           },
           "SG": {
             "office": "משטרת סינגפור",

@@ -2532,7 +2532,7 @@
           },
           "SE": {
             "office": "the Tax Agency (Skatteverket)",
-            "details": "An extract from the population register (utdrag om folkbokföring), in English, \"with all relations\" (med alla relationer). The same extract serves as the personal status too.",
+            "details": "An extract from the population register \"with all relations\" (Utdrag om folkbokföringsuppgifter – 120 med alla relationer), in English: the plain extract, without \"120 med alla relationer\", leaves out the parents. Order it on paper, with Skatteverket's stamp and signature, sent by post: one you download yourself has neither, so it can't get the apostille. The same extract serves as the personal status too.",
             "apostilleBy": "any notary public (notarius publicus)"
           },
           "TH": {
@@ -2744,7 +2744,7 @@
           },
           "SE": {
             "office": "the Tax Agency (Skatteverket)",
-            "details": "An extract from the population register (utdrag om folkbokföring), in English, \"with all relations\" (med alla relationer). It serves as both the birth certificate and this document.",
+            "details": "An extract from the population register \"with all relations\" (Utdrag om folkbokföringsuppgifter – 120 med alla relationer), in English: the plain extract, without \"120 med alla relationer\", leaves out the parents. Order it on paper, with Skatteverket's stamp and signature, sent by post: one you download yourself has neither, so it can't get the apostille. It serves as both the birth certificate and this document.",
             "apostilleBy": "any notary public (notarius publicus)"
           },
           "SG": {
@@ -2967,7 +2967,7 @@
           },
           "SE": {
             "office": "the Swedish Police (Polisen)",
-            "details": "An extract from the criminal register (utdrag ur belastningsregistret), applied for online. Ask for the extract for use abroad (utdrag för utlandsvistelse): it comes in five languages, English among them. Any convictions on it are shown only in Swedish.",
+            "details": "An extract from the criminal register (utdrag ur belastningsregistret), applied for online with a Swedish e-ID (e-legitimation, like BankID), or without one by the paper form, by post. Ask for the extract for use abroad (utdrag för utlandsvistelse): it comes in five languages, English among them. Any convictions on it are shown only in Swedish.",
             "apostilleBy": "any notary public (notarius publicus)"
           },
           "SG": {

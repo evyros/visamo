@@ -363,10 +363,12 @@ you, and they apostille those too.
 ### Sweden
 
 An extract from the criminal register (utdrag ur belastningsregistret), from
-the Police (Polisen), online. Ask for the extract for use abroad (utdrag för
-utlandsvistelse): it always comes in five languages, English among them, so
-it usually needs no translation; any convictions on it are shown only in
-Swedish. Any notary public (notarius publicus) adds the apostille.
+the Police (Polisen): online with a Swedish e-ID (e-legitimation, like
+BankID), or without one by the paper form, by post. Ask for the extract for
+use abroad (utdrag för utlandsvistelse): it always comes in five languages,
+English among them, so it usually needs no translation; any convictions on it
+are shown only in Swedish. Any notary public (notarius publicus) adds the
+apostille.
 
 ### Switzerland
 

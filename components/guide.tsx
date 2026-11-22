@@ -4,6 +4,7 @@ import type { GuideBlock } from "@/content/guides";
 import type { Locale } from "@/i18n/config";
 import { localePath, newTab, signupUrl } from "@/lib/site";
 import { GuideFigure } from "./guide-figures";
+import { GuideProcessCard } from "./guide-process-card";
 import { Icon } from "./icons";
 import { ButtonLink } from "./ui";
 
@@ -134,10 +135,18 @@ export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: 
         if ("figure" in block) {
           return <GuideFigure key={i} figure={block} locale={locale} />;
         }
-        if ("signup" in block) {
+        if ("process" in block) {
+          return <GuideProcessCard key={i} texts={block.process} locale={locale} />;
+        }
+        if ("button" in block) {
           return (
-            <ButtonLink key={i} href={signupUrl(locale)} size="sm" className="w-full sm:w-auto">
-              {block.signup}
+            <ButtonLink
+              key={i}
+              href={block.to === "signup" ? signupUrl(locale) : localePath(locale, block.to)}
+              size="sm"
+              className="w-full sm:w-auto"
+            >
+              {block.button}
               <Icon name="arrow" className="size-4" />
             </ButtonLink>
           );

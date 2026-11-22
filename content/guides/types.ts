@@ -32,8 +32,17 @@ export type GuideBlock =
   | { steps: GuideText[] }
   | { table: { head: GuideText[]; rows: GuideText[][] } }
   | { note: GuideText }
-  /** A sign-up button, with this label: for where the guide runs out and the couple's own case begins. */
-  | { signup: string }
+  /**
+   * A button, for where the guide runs out and the couple's own case begins:
+   * `to` is "signup", or a page's path (/guide/partner-visa-process), kept in
+   * the reader's language.
+   */
+  | { button: string; to: string }
+  /**
+   * A card into the interactive guide (/guide/partner-visa-process), with a
+   * drawing (components/guide-process-card): its questions, and a button.
+   */
+  | { process: { title: string; text: string; questions: string[]; button: string } }
   | GuideFigure;
 
 /**

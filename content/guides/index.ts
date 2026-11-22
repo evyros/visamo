@@ -98,7 +98,11 @@ export function blockTexts(block: GuideBlock): string[] {
   if ("steps" in block) return block.steps;
   if ("table" in block) return [...block.table.head, ...block.table.rows.flat()];
   if ("note" in block) return [block.note];
-  if ("signup" in block) return [block.signup];
+  if ("button" in block) return [block.button];
+  if ("process" in block) {
+    const { title, text, questions, button } = block.process;
+    return [title, text, ...questions, button];
+  }
   switch (block.figure) {
     case "path":
       return [...block.stages.flatMap((s) => [s.title, s.text]), block.caption];
@@ -143,7 +147,8 @@ export function blockShape(block: GuideBlock): string {
   if ("steps" in block) return `steps:${block.steps.length}`;
   if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
   if ("note" in block) return "note";
-  if ("signup" in block) return "signup";
+  if ("button" in block) return `button>${block.to}`;
+  if ("process" in block) return `process:${block.process.questions.length}`;
   switch (block.figure) {
     case "path":
       return `path:${block.stages.length}${block.current === undefined ? "" : `@${block.current}`}`;

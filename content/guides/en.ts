@@ -425,8 +425,8 @@ export const guidesEn: Guides = {
       facts: ["Work in any field", "Up to 6 months or 3 years"],
       title: "The B/1 visa for partners of Israelis",
       answer:
-        "B/1 (ב/1, often written B1) is Israel's work visa. **Partners of Israelis get it in its general form, B/1 general** (ב/1 כללי), marked \"partner\": the foreign partner can live in Israel with you and work in any field, as an employee or self-employed. Foreign workers get a restricted B/1, for one employer or field. Married couples are on B/1 for up to 6 months, common-law couples for 3 years, before moving up to A/5. It costs 205 NIS (2026), doesn't come with public health insurance, and needs a second sticker, the inter-visa, to stay valid when the foreign partner travels abroad.",
-      updated: "2026-10-26",
+        "B/1 (ב/1, often written B1) is Israel's work visa. **Partners of Israelis get it in its general form, B/1 general** (ב/1 כללי), marked \"partner\": the foreign partner can live in Israel with you and work in any field, as an employee or self-employed. Foreign workers get a restricted B/1, for one employer or field. Married couples are on B/1 for up to 6 months, common-law couples for 3 years, before moving up to A/5. It doesn't come with public health insurance.",
+      updated: "2026-11-22",
       sections: [
         {
           id: "two-b1",
@@ -499,13 +499,21 @@ export const guidesEn: Guides = {
             },
             "**If the foreign partner is abroad,** they come to Israel with [the entry permit](guide:entry-permit) and enter on a B/2 visa. Tell your branch as soon as they arrive: the office then calls you in to get the B/1, or sets a date for an interview.",
             "The B/1 is a sticker in the passport, issued and signed by your branch. In 2026 it costs 205 NIS, by credit card only.",
+            {
+              process: {
+                title: "Your case",
+                text: "Your steps to the B/1 depend mainly on 3 questions. Answer them, and see your whole process, step by step.",
+                questions: ["Married or not?", "Where do you each live?", "Have you lived together?"],
+                button: "See your steps to the B/1",
+              },
+            },
           ],
         },
         {
           id: "inter-visa",
           heading: "Ask for the inter-visa too",
           body: [
-            "Without the inter-visa (אינטר ויזה), leaving Israel ends the B/1. It's a second sticker that keeps the main visa valid when the foreign partner travels abroad. Partners in the gradual process get it without trouble, with the same validity as the main visa, for another 205 NIS (2026).",
+            "Without the inter-visa (אינטר ויזה), leaving Israel ends the B/1. It's a re-entry visa: a second sticker that keeps the main visa valid when the foreign partner travels abroad, so they can come back on the same B/1. Partners in the gradual process get it without trouble, with the same validity as the main visa, for another 205 NIS (2026).",
             {
               figure: "trip",
               kept: { title: "With the inter-visa", text: "Travel abroad, and come back on the same B/1" },
@@ -569,6 +577,11 @@ export const guidesEn: Guides = {
       ],
       faq: [
         {
+          q: "Where do we start?",
+          a: "By collecting your documents, before you submit the online form, starting with the ones from abroad, since they take the longest to get. Which documents you need depends on your case. Visamo's free guide shows you which ones your file needs, and how to get each one.",
+          signup: "See which documents you need, free",
+        },
+        {
           q: "Can I work on a B/1 partner visa?",
           a: "Yes. The partner B/1 (ב/1 כללי) is an unrestricted work visa: any field, as an employee or self-employed.",
         },
@@ -598,7 +611,7 @@ export const guidesEn: Guides = {
         },
         {
           q: "What is the inter-visa?",
-          a: "A second sticker that keeps the main visa valid when the foreign partner travels abroad. Without it, leaving Israel ends the B/1. Get it with the visa.",
+          a: "A re-entry visa: a second sticker that keeps the main visa valid when the foreign partner travels abroad. Without it, leaving Israel ends the B/1. Get it with the visa.",
         },
         {
           q: "I'm on a worker's B/1 and have an Israeli partner. Can I switch?",
@@ -1382,7 +1395,7 @@ export const guidesEn: Guides = {
                 "…and more",
               ],
             },
-            { signup: "Get your exact list, free" },
+            { button: "Get your exact list, free", to: "signup" },
           ],
         },
       ],

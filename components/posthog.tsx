@@ -24,6 +24,11 @@ import { withoutShareTokens } from "@/lib/app-paths";
 //
 // A shared chat's link (app/(app)/shared/[token]) is the key to the chat, so
 // its token is taken out of every event's URLs before they're sent.
+//
+// Each PostHog session sends one `visitor_session_started` event, from the tab
+// that starts it: on arrival, after 30 idle minutes, after 24 hours, or after
+// sign-out resets it. Reloads, new tabs and the move from the website to the
+// app carry on the same session and don't send it again.
 
 export type PostHogUser = { id: string; email: string; name: string };
 
@@ -49,6 +54,33 @@ function maskInput(text: string, element?: HTMLElement) {
   return sensitive ? "*".repeat(text.length) : text;
 }
 
+/** The last session that sent `visitor_session_started` in this browser. */
+const SESSION_STARTED_KEY = "visamo:ph-session-started";
+
+function sendSessionStarts() {
+  posthog.onSessionId((sessionId, _windowId, reason) => {
+    // PostHog gives a reason only when this tab starts a new session. A session
+    // picked up from another tab or subdomain (or already running when the
+    // listener is added) has none of these set.
+    const started = reason?.noSessionId || reason?.activityTimeout || reason?.sessionPastMaximumLength;
+    if (!started) return;
+    try {
+      if (localStorage.getItem(SESSION_STARTED_KEY) === sessionId) return;
+      localStorage.setItem(SESSION_STARTED_KEY, sessionId);
+    } catch {
+      // Storage can be blocked; PostHog's reason alone still sends it once.
+    }
+    // This runs inside the capture that started the session, so send it after.
+    setTimeout(() =>
+      posthog.capture("visitor_session_started", {
+        $session_id: sessionId,
+        $current_url: window.location.href,
+        $referrer: document.referrer,
+      }),
+    );
+  });
+}
+
 export function PostHog({ user }: { user?: PostHogUser | null }) {
   const identified = useRef(false);
   const pathname = usePathname();
@@ -65,6 +97,8 @@ export function PostHog({ user }: { user?: PostHogUser | null }) {
         person_profiles: "identified_only",
         // Every field goes through maskInput, which decides what to hide.
         session_recording: { maskAllInputs: true, maskInputFn: maskInput },
+        // Runs before the first page view, which starts the first session.
+        loaded: sendSessionStarts,
         // The page view as the visitor arrives on a letter page fires before
         // this component sees the new path, so drop it here too.
         before_send: (event) => {

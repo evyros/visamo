@@ -2469,7 +2469,7 @@
           },
           "DE": {
             "office": "the registry office (Standesamt) of the place of birth",
-            "details": "Ask for the international birth certificate (internationale Geburtsurkunde). It comes from the registry office, not the residents' registration office, and can be ordered online or by post from abroad. Mail to Israel is slow, so many have it sent to family in Germany, who get the apostille and send it on.",
+            "details": "Ask for the international birth certificate (internationale Geburtsurkunde). It comes from the registry office, not the residents' registration office, and can be ordered online or by post from abroad. If the office lets you choose the form's languages, choose English. Mail to Israel is slow, so many have it sent to family in Germany, who get the apostille and send it on.",
             "apostilleBy": "the authority of the German state where it was issued (ask the registry office which one)",
             "apostilleDetails": "No other certification is needed first."
           },
@@ -2656,7 +2656,8 @@
           },
           "DE": {
             "office": "the citizens' office (Bürgeramt) where they're registered",
-            "details": "An extended registration certificate (erweiterte Meldebescheinigung) that includes the marital status (Familienstand). If they're no longer registered in Germany, get it by post from the office of the last town they were registered in: it shows the marital status only as of the day they left, so add an affidavit about their status since then. It's issued in German only."
+            "details": "An extended registration certificate (erweiterte Meldebescheinigung) that includes the marital status (Familienstand). If they're no longer registered in Germany, get it by post from the office of the last town they were registered in: it shows the marital status only as of the day they left, so add an affidavit about their status since then. It's issued in German only. Ask for it signed and stamped, for use abroad: one made by machine, valid without a signature, can't be apostilled.",
+            "apostilleBy": "the authority of the German state where it was issued (ask the citizens' office which one)"
           },
           "DK": {
             "details": "A certificate of personal data (personattest), which says unwed or married, or a residence certificate (bopælsattest) that shows the civil status (civilstand). Order it in English, with a handwritten signature and the signer's name: a digitally signed one can't get a physical apostille.",
@@ -2873,9 +2874,9 @@
           },
           "DE": {
             "office": "the Federal Office of Justice (Bundesamt für Justiz)",
-            "details": "A certificate of good conduct (Führungszeugnis). Apply for the apostille first, online: you then request the certificate with the number it gives you. If it shows no convictions, it's in German, English and French; convictions are shown only in German.",
+            "details": "A certificate of good conduct (Führungszeugnis), on paper: the digital one, a PDF in the BundID account, can't be apostilled. If it shows no convictions, its labels and the line saying so are also in English and French; convictions are shown only in German.",
             "apostilleBy": "the Federal Foreign Affairs Office (Bundesamt für Auswärtige Angelegenheiten)",
-            "apostilleDetails": "Apply online before requesting the certificate, then request it with the number you get."
+            "apostilleDetails": "It sends the certificate only to an address in Germany: have it sent to family or friends there. From abroad, apply for the apostille online first, then request the certificate with the number you get. From Germany, request the certificate for an apostille, then send it to the office."
           },
           "DK": {
             "office": "any police station",

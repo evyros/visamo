@@ -223,7 +223,10 @@ An extended registration certificate (erweiterte Meldebescheinigung) that
 includes the marital status (Familienstand), from the citizens' office
 (Bürgeramt) of the town where they're registered. The basic certificate
 doesn't show the marital status: ask for it to be included. It's issued in
-German only.
+German only. Ask for it signed and stamped, for use abroad: one made by
+machine, valid without a signature, can't be apostilled. The apostille comes
+from an authority of the German state where it was issued, and which one
+differs by state: ask the citizens' office.
 
 **After deregistering (Abmeldung):** a German who no longer lives in Germany
 gets it by post from the office of the last town they were registered in. Ask

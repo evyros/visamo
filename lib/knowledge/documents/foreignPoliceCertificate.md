@@ -172,12 +172,18 @@ signature, since Misrad Hapnim asks for the original.
 ### Germany
 
 A certificate of good conduct (Führungszeugnis), from the Federal Office of
-Justice (Bundesamt für Justiz). For an apostille, first apply for it online
-with the Federal Foreign Affairs Office (Bundesamt für Auswärtige
-Angelegenheiten), then request the certificate with the number it gives
-you. If it shows no convictions, its details are in German, English and
-French, so it usually needs no translation; convictions are shown only in
-German.
+Justice (Bundesamt für Justiz). Get the paper one: the digital one, a PDF
+sent to the BundID account, can't be apostilled. If it shows no convictions,
+its labels and the line saying so are also in English and French, so it
+usually needs no translation; convictions are shown only in German.
+
+The apostille comes from the Federal Foreign Affairs Office (Bundesamt für
+Auswärtige Angelegenheiten), which sends it only to an address in Germany:
+have it sent to family or friends there. From abroad, first apply online for
+the apostille, then request the certificate with the number it gives you:
+the Federal Office of Justice passes it on for the apostille. From Germany,
+request the certificate for an apostille, then send it to the Federal
+Foreign Affairs Office.
 
 ### Greece
 

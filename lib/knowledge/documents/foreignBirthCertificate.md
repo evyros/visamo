@@ -100,9 +100,9 @@ for the original.
 
 The international birth certificate (internationale Geburtsurkunde), from
 the registry office (Standesamt) of the place of birth, not the residents'
-registration office. You can order it online or by post from abroad; it
-usually takes up to 2 weeks, plus shipping. It's printed on a multilingual
-form, English included, so it usually needs no translation.
+registration office. You can order it online or by post from abroad. It's
+printed on a multilingual form, so it usually needs no translation. Some
+offices let you choose the form's languages: choose English.
 
 The apostille comes from an authority of the German state where it was
 issued, and which one differs by state (in North Rhine-Westphalia, the

@@ -161,10 +161,13 @@ the notary by post.
 
 An extract of the criminal record, bulletin no. 3 (extrait de casier
 judiciaire, bulletin n° 3), from the national criminal record office
-(Casier judiciaire national). It's free, online. Since May 2025, the
-apostille comes from the notaries' apostille centres, not the Rennes Court
-of Appeal: apply online, or at one of the centres. The extract has to be
-less than 3 months old.
+(Casier judiciaire national), for any nationality. It's free, online.
+
+Since May 2025, the apostille comes from the notaries' apostille centres,
+not the Rennes Court of Appeal: apply online, or at one of the centres. They
+apostille only an extract less than 3 months old. The apostille is
+electronic: ask for a paper printout of it with a stamp and handwritten
+signature, since Misrad Hapnim asks for the original.
 
 ### Germany
 

@@ -2489,9 +2489,9 @@
           },
           "FR": {
             "office": "the town hall (mairie) of the place of birth",
-            "details": "Ask for the full copy of the birth certificate (copie intégrale d'acte de naissance): it names the parents and shows any marriage or divorce in its margin. Order a new one for the apostille. A French citizen born abroad gets it from the Central Civil Status Service (Service central d'état civil) in Nantes, online or by post, in about a month.",
+            "details": "Ask for the full copy of the birth certificate (copie intégrale d'acte de naissance): it names the parents and shows any marriage or divorce in its margin. Order a new one for the apostille. A French citizen born abroad gets it from the Central Civil Status Service (Service central d'état civil) in Nantes, online or by post.",
             "apostilleBy": "the notaries' apostille centres",
-            "apostilleDetails": "Apply online and send the paper certificate by post, or go to a centre in person. It takes about 3 working days. The apostille is electronic: ask for it on paper, with a stamp and handwritten signature, since Misrad Hapnim asks for the original."
+            "apostilleDetails": "Apply online and send the paper certificate by post, or go to a centre in person. The apostille is electronic: ask for it on paper, with a stamp and handwritten signature, since Misrad Hapnim asks for the original."
           },
           "GB": {
             "office": "the General Register Office (GRO) for England and Wales, National Records of Scotland, or GRONI for Northern Ireland",
@@ -2675,9 +2675,9 @@
           },
           "FR": {
             "office": "the town hall (mairie) of the place of birth",
-            "details": "A certificate of civil status (certificat de célibat), issued against a full copy of the birth certificate from the last 3 months. Few town halls still issue it, so ask for it together with the birth certificate. The full copy of the birth certificate (copie intégrale) also shows any marriage or divorce in its margin.",
+            "details": "A certificate of single status (certificat de célibat), or for someone married before, of non-remarriage (certificat de non-remariage), issued against a full copy of the birth certificate from the last 3 months. Many town halls don't issue it, so ask for it together with the birth certificate. The full copy of the birth certificate (copie intégrale) also shows any marriage or divorce in its margin. Someone with no French birth record can't get it.",
             "apostilleBy": "the notaries' apostille centres",
-            "apostilleDetails": "Apply online and send the paper certificate by post, or go to a centre in person."
+            "apostilleDetails": "Apply online and send the paper certificate by post, or go to a centre in person. The apostille is electronic: ask for a paper printout of it with a stamp and handwritten signature, since Misrad Hapnim asks for the original."
           },
           "GB": {
             "office": "the local register office",
@@ -2896,9 +2896,9 @@
           },
           "FR": {
             "office": "the national criminal record office (Casier judiciaire national)",
-            "details": "An extract of the criminal record, bulletin no. 3 (extrait de casier judiciaire, bulletin n° 3). It's free, online.",
+            "details": "An extract of the criminal record, bulletin no. 3 (extrait de casier judiciaire, bulletin n° 3), for any nationality. It's free, online.",
             "apostilleBy": "the notaries' apostille centres",
-            "apostilleDetails": "Apply online, or at one of the centres. The extract has to be less than 3 months old."
+            "apostilleDetails": "Apply online, or at one of the centres. They apostille only an extract less than 3 months old. The apostille is electronic: ask for a paper printout of it with a stamp and handwritten signature, since Misrad Hapnim asks for the original."
           },
           "GB": {
             "office": "ACRO, the UK's criminal records office",

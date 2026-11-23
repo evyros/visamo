@@ -267,10 +267,13 @@ describe("buildDocumentList", () => {
     // The US: a letter that may not be had, so an affidavit in its place.
     expect(find("marriedInCyprus", "foreignCivilStatus:US")?.oneAffidavit).toBe(true);
     expect(find("marriedInCyprus", "previousChildrenAffidavit")?.oneAffidavit).toBe(true);
-    // France issues a document; the other countries lived in have no children's point.
-    expect(find("livedInThreeCountries", "foreignCivilStatus:FR")?.oneAffidavit).toBe(false);
+    // France: a certificate many town halls don't issue. Only the nationality's item shares it.
+    expect(find("livedInThreeCountries", "foreignCivilStatus:FR")?.oneAffidavit).toBe(true);
     expect(find("livedInThreeCountries", "foreignCivilStatus:IN")?.oneAffidavit).toBe(false);
-    expect(find("livedInThreeCountries", "previousChildrenAffidavit")?.oneAffidavit).toBe(false);
+    expect(find("livedInThreeCountries", "previousChildrenAffidavit")?.oneAffidavit).toBe(true);
+    // Ukraine issues a document: no shared affidavit.
+    expect(find("fromUkraine", "foreignCivilStatus:UA")?.oneAffidavit).toBe(false);
+    expect(find("fromUkraine", "previousChildrenAffidavit")?.oneAffidavit).toBe(false);
   });
 
   it("lists apart what's done once the foreign partner is in Israel, by where the partners are", () => {

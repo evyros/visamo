@@ -202,14 +202,20 @@ working days; the extract can be sent to the notary by post.
 
 ### France
 
-A certificate of civil status (certificat de célibat), from the town hall
-(mairie) of the place of birth, against a full copy of the birth certificate
-issued in the last 3 months. Few town halls issue it today, so ask for it
-together with the birth certificate. The full copy of the birth certificate
-(copie intégrale) also shows any marriage or divorce in its margin. Since
-May 2025, the apostille comes from the notaries' apostille centres, not the
-court of appeal: apply online and send the paper certificate by post, or go
-to a centre in person.
+A certificate of single status (certificat de célibat), or for someone
+married before, of non-remarriage (certificat de non-remariage), from the
+town hall (mairie) of the place of birth, against a full copy of the birth
+certificate issued in the last 3 months. Many town halls don't issue it, so
+ask for it together with the birth certificate. The full copy of the birth
+certificate (copie intégrale) also shows any marriage or divorce in its
+margin. Someone with no French birth record, who only lived in France,
+can't get it: use the affidavit (below).
+
+Since May 2025, the apostille comes from the notaries' apostille centres,
+not the court of appeal: apply online and send the paper certificate by
+post, or go to a centre in person. The apostille is electronic: ask for a
+paper printout of it with a stamp and handwritten signature, since Misrad
+Hapnim asks for the original.
 
 ### Germany
 

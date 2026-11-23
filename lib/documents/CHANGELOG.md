@@ -3,6 +3,37 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v56 — 2026-11-23
+
+**What changed:** France's civil status (`foreignCivilStatus`, `FR` in
+`issuers.ts`) is `documentOrAffidavit`, no longer `document`: the card offers
+the affidavit in its place, and with France as the nationality, one
+affidavit can cover the civil status and the children
+(`oneAffidavit`). France's guide sections and messages: the civil status
+names the certificate of non-remarriage and says someone with no French
+birth record can't get it; the civil status and the police certificate say
+the notaries' apostille is electronic, so ask for a paper printout with a
+stamp and handwritten signature; the police certificate's 3 months is the
+notaries' condition for the apostille; the birth certificate loses its
+durations.
+
+**Why:** Many town halls don't issue the certificat de célibat (Paris
+issues it only at a foreign authority's request), and the French consulate
+in Switzerland says it doesn't issue it either. Someone who
+only lived in France has no French birth record to get it against, and the
+civil status is asked for each country lived in. Couples report both: a
+town hall's certificate accepted, and an affidavit used for France.
+
+**Source:** service-public.fr F1400 (apostille, electronic, paper printout)
+and F1420 (bulletin n° 3); notaires.fr FAQ on apostilling the bulletin n° 3
+(less than 3 months); paris.fr, certificats et attestations (célibat,
+non-remariage); French consulate general in Switzerland, déclaration sur
+l'honneur de célibat; Facebook group threads, June and July 2026.
+
+**Lists that changed:** none by key; livedInThreeCountries:
+foreignCivilStatus:FR offers the affidavit, and it and
+previousChildrenAffidavit are `oneAffidavit`.
+
 ## v55 — 2026-11-22
 
 **What changed:** The joint affidavit (`affidavitCommonLaw`) is `later` only

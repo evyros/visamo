@@ -88,13 +88,13 @@ naissance): it names the parents and shows any marriage or divorce in its
 margin. It comes from the town hall (mairie) of the place of birth: online,
 by post, or on the spot. A French citizen born abroad gets it from the
 Central Civil Status Service (Service central d'état civil) in Nantes,
-online or by post, in about a month. Order a new one for the apostille.
+online or by post. Order a new one for the apostille.
 
 Since May 2025, the apostille comes from the notaries' apostille centres,
 not the court of appeal. You apply online and send the paper certificate by
-post, or go to a centre in person. It takes about 3 working days. The
-apostille is electronic: ask for it on paper, with a stamp and handwritten
-signature, since Misrad Hapnim asks for the original.
+post, or go to a centre in person. The apostille is electronic: ask for it
+on paper, with a stamp and handwritten signature, since Misrad Hapnim asks
+for the original.
 
 ### Germany
 

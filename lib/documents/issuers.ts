@@ -88,7 +88,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     DK: { kind: "document", heading: "Denmark", english: "onRequest" },
     EE: { kind: "document", heading: "Estonia", english: "onRequest" },
     ES: { kind: "document", heading: "Spain" },
-    FR: { kind: "document", heading: "France" },
+    FR: { kind: "documentOrAffidavit", heading: "France" },
     GB: { kind: "documentOrAffidavit", heading: "United Kingdom" },
     GR: { kind: "document", heading: "Greece" },
     HR: { kind: "document", heading: "Croatia" },

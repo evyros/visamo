@@ -42,6 +42,7 @@ export type IssuedDocument = (typeof issuedDocuments)[number];
 
 export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<string, IssuerEntry>>>>> = {
   foreignBirthCertificate: {
+    AR: { kind: "document", heading: "Argentina", electronic: true },
     BR: { kind: "document", heading: "Brazil" },
     CN: { kind: "document", heading: "China" },
     CU: { kind: "document", heading: "Cuba" },
@@ -116,7 +117,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     ZA: { kind: "documentOrAffidavit", heading: "South Africa" },
   },
   foreignPoliceCertificate: {
-    AR: { kind: "document", heading: "Argentina" },
+    AR: { kind: "document", heading: "Argentina", electronic: true },
     AT: { kind: "document", heading: "Austria", english: "always" },
     AU: { kind: "document", heading: "Australia" },
     BE: { kind: "document", heading: "Belgium" },

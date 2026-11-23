@@ -2450,6 +2450,12 @@
       "affidavitInstead": "If you can't get this document, sign an affidavit about civil status instead. Sign it in front of a notary in Israel.",
       "issuers": {
         "foreignBirthCertificate": {
+          "AR": {
+            "office": "the civil registry of the province where the birth was registered",
+            "details": "The birth certificate (partida de nacimiento). Most provinces issue it online, as a file with a digital signature. For the apostille, upload the file as you received it: a printed and scanned copy loses its digital signature. An old certificate on paper has to be digitised by the civil registry, or legalized by the Ministry of the Interior, first. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that Argentina issues them only this way.",
+            "apostilleBy": "Argentina's foreign ministry (Cancillería), or the province's notaries' association (Colegio de Escribanos)",
+            "apostilleDetails": "Online. The apostille is a file too, with a QR code to check it."
+          },
           "BR": {
             "office": "the registry office (cartório)",
             "details": "Ask for the full birth certificate (certidão de nascimento de inteiro teor), on paper: the online version may not be accepted."
@@ -2587,9 +2593,9 @@
         "foreignCivilStatus": {
           "AR": {
             "office": "the civil registry of the province",
-            "details": "A certificate of single status (certificado de soltería, or constancia negativa de matrimonio). Apply in person, by appointment.",
+            "details": "A certificate of single status (certificado de soltería, or constancia negativa de matrimonio). Apply in person, by appointment. It covers only marriages registered in that province.",
             "apostilleBy": "Argentina's foreign ministry (Cancillería)",
-            "apostilleDetails": "Online, or in Buenos Aires from the notaries' association (Colegio de Escribanos)."
+            "apostilleDetails": "Online, or from the province's notaries' association (Colegio de Escribanos). The apostille is a file, with a QR code to check it; for a certificate on paper, it's attached to a scan of it. Bring the paper certificate too."
           },
           "AT": {
             "office": "the registry office (Standesamt)",
@@ -2809,8 +2815,9 @@
         "foreignPoliceCertificate": {
           "AR": {
             "office": "the National Recidivism Registry (Registro Nacional de Reincidencia)",
-            "details": "A certificate of criminal record (certificado de antecedentes penales). Apply online.",
-            "apostilleBy": "Argentina's foreign ministry (Cancillería)"
+            "details": "A certificate of criminal record (certificado de antecedentes penales). Apply online. It's issued only as a file, with a digital signature, and Misrad Hapnim accepts a digital police certificate with an electronic apostille.",
+            "apostilleBy": "Argentina's foreign ministry (Cancillería)",
+            "apostilleDetails": "Online, within 90 days of the certificate's issue: upload the file as you received it."
           },
           "AT": {
             "office": "the state police headquarters (Landespolizeidirektion)",

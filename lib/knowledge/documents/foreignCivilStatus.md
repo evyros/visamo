@@ -41,9 +41,13 @@ can't get one, use the affidavit (below).
 
 A certificate of single status (certificado de soltería, or constancia
 negativa de matrimonio), from the civil registry of the province, in person
-by appointment. The apostille comes from the foreign ministry (Cancillería),
-online, or in Buenos Aires from the notaries' association (Colegio de
-Escribanos).
+by appointment. It covers only marriages registered in that province.
+
+The apostille comes from the foreign ministry (Cancillería), online, or from
+the province's notaries' association (Colegio de Escribanos). Every
+Argentine apostille is a file, with a digital signature and a QR code to
+check it; for a certificate on paper, it's attached to a scan of the
+certificate. Bring the paper certificate too.
 
 ### Australia
 

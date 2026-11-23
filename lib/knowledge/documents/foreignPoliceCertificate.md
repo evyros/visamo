@@ -26,7 +26,12 @@ common countries issue.
 
 A certificate of criminal record (certificado de antecedentes penales), from
 the National Recidivism Registry (Registro Nacional de Reincidencia), online.
-The apostille comes from the foreign ministry (Cancillería).
+It's issued only as a file, with a digital signature, and the apostille from
+the foreign ministry (Cancillería) is a file too: there's no paper original.
+Israel accepts a digital police certificate with an electronic apostille
+(1.3.0001 §4.3.3). The foreign ministry apostilles it only within 90 days of
+its issue: apply for the apostille soon after, uploading the file as you
+received it.
 
 ### Australia
 

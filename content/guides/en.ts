@@ -718,7 +718,7 @@ export const guidesEn: Guides = {
             {
               list: [
                 "It was issued more than 6 months before you filed.",
-                "It's a digital certificate printed at home, not the paper original.",
+                "It's a digital certificate printed at home, when the country issues a paper original.",
                 "It's missing the apostille, or a translation the clerk asks for.",
                 "It doesn't cover every name the foreign partner has had.",
                 "The foreign partner traveled abroad after it was issued, before getting the B/1. Misrad Hapnim knows every exit and entry, and the certificate doesn't cover the time abroad: they need a new one from their country of origin, and the loop starts again.",

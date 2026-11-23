@@ -23,6 +23,22 @@ Spain's, still needs a translation and an apostille:
 Israel isn't one of the countries that accept these extracts without them.
 Below, the countries where getting it has a catch.
 
+### Argentina
+
+The birth certificate (partida de nacimiento), from the civil registry of
+the province where the birth was registered. Most provinces issue it online,
+as a file with a digital signature. The apostille comes from the foreign
+ministry (Cancillería), online, or from the province's notaries' association
+(Colegio de Escribanos), and it's a file too, with a QR code to check it. So
+the certificate and its apostille are files: there's no paper original. For
+the apostille, upload the file as you received it: a printed and scanned
+copy loses its digital signature. An old certificate on paper has to be
+digitised by the civil registry, or legalized by the Ministry of the
+Interior, before the apostille.
+
+Misrad Hapnim usually asks for the original on paper, so the clerk may push
+back on the files. Explain that Argentina issues them only this way.
+
 ### Brazil
 
 A full birth certificate (certidão de nascimento de inteiro teor), from the

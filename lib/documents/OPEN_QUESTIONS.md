@@ -199,6 +199,18 @@ shown to users (`lib/knowledge/`).
   status. The local verification before the foreign ministry is in the
   obtain step's text, not a link of the chain.
 
+- **Argentina** (researched November 2026, from the foreign ministry's and
+  the Colegio de Escribanos' pages; `AR` in the issuers). Every Argentine
+  apostille has been a file with a digital signature since 2019, so the
+  civil status (certificado de soltería), even on paper, comes with an
+  apostille that's a file attached to a scan. Unknown: how Misrad Hapnim
+  treats that (the guide says to bring the paper certificate too); whether
+  the certificate of single status from one province is enough for someone
+  who lived in several. The marriage certificate (no `AR` entry): one couple
+  (August 2026) says the office refused their Argentine marriage documents,
+  asking for the judge's name on the apostille and the "original" marriage
+  certificate; not understood yet.
+
 - **Peru** (researched November 2026, quickly; `PE` in the issuers).
   Unknown: whether Misrad Hapnim asks only for the Poder Judicial's
   criminal record, or also for the police's (antecedentes policiales) or

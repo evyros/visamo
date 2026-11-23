@@ -2450,6 +2450,12 @@
       "affidavitInstead": "אם אין לכם אפשרות להשיג את המסמך הזה, חתמו במקומו על תצהיר על מצב אישי. חותמים עליו בפני נוטריון בישראל.",
       "issuers": {
         "foreignBirthCertificate": {
+          "AR": {
+            "office": "המרשם האזרחי של המחוז שבו נרשמה הלידה",
+            "details": "תעודת הלידה (partida de nacimiento). רוב המחוזות מנפיקים אותה אונליין, כקובץ עם חתימה דיגיטלית. לאפוסטיל, העלו את הקובץ כפי שקיבלתם אותו: עותק מודפס שנסרק מחדש מאבד את החתימה הדיגיטלית. תעודה ישנה על נייר צריך קודם להעביר לגרסה דיגיטלית במרשם האזרחי, או לאמת במשרד הפנים הארגנטינאי. משרד הפנים מבקש בדרך כלל את המקור על נייר, אז הפקיד עלול להתנגד לקבצים: הסבירו שארגנטינה מנפיקה אותם רק כך.",
+            "apostilleBy": "משרד החוץ הארגנטינאי (Cancillería), או לשכת הנוטריונים של המחוז (Colegio de Escribanos)",
+            "apostilleDetails": "אונליין. גם האפוסטיל הוא קובץ, עם קוד QR לאימות."
+          },
           "BR": {
             "office": "משרד הרישום (cartório)",
             "details": "בקשו את תעודת הלידה המלאה (certidão de nascimento de inteiro teor), על נייר: ייתכן שהגרסה המקוונת לא תתקבל."
@@ -2587,9 +2593,9 @@
         "foreignCivilStatus": {
           "AR": {
             "office": "המרשם האזרחי של המחוז",
-            "details": "תעודת רווקות (certificado de soltería, או constancia negativa de matrimonio). הגישו בקשה באופן אישי, בתיאום תור מראש.",
+            "details": "תעודת רווקות (certificado de soltería, או constancia negativa de matrimonio). הגישו בקשה באופן אישי, בתיאום תור מראש. היא חלה רק על נישואין שנרשמו באותו מחוז.",
             "apostilleBy": "משרד החוץ הארגנטינאי (Cancillería)",
-            "apostilleDetails": "באופן מקוון, או בבואנוס איירס דרך לשכת הנוטריונים (Colegio de Escribanos)."
+            "apostilleDetails": "באופן מקוון, או דרך לשכת הנוטריונים של המחוז (Colegio de Escribanos). האפוסטיל הוא קובץ, עם קוד QR לאימות; לתעודה על נייר הוא מצורף לסריקה שלה. הביאו גם את התעודה המקורית על נייר."
           },
           "AT": {
             "office": "משרד רישום האוכלוסין (Standesamt)",
@@ -2809,8 +2815,9 @@
         "foreignPoliceCertificate": {
           "AR": {
             "office": "המרשם הלאומי לעבריינות חוזרת (Registro Nacional de Reincidencia)",
-            "details": "תעודת רישום פלילי (certificado de antecedentes penales). הגישו בקשה אונליין.",
-            "apostilleBy": "משרד החוץ הארגנטינאי (Cancillería)"
+            "details": "תעודת רישום פלילי (certificado de antecedentes penales). הגישו בקשה אונליין. היא מונפקת רק כקובץ, עם חתימה דיגיטלית, ומשרד הפנים מקבל תעודת יושר דיגיטלית עם אפוסטיל אלקטרוני.",
+            "apostilleBy": "משרד החוץ הארגנטינאי (Cancillería)",
+            "apostilleDetails": "אונליין, תוך 90 יום מהנפקת התעודה: העלו את הקובץ כפי שקיבלתם אותו."
           },
           "AT": {
             "office": "מפקדת המשטרה המחוזית (Landespolizeidirektion)",

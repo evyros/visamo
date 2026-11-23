@@ -84,7 +84,9 @@ by 5.2.0008 §ד.2.ה).
   apostille, sent by email. Printing them makes them invalid, so there's no
   paper original to ask for or send. Misrad Hapnim usually asks for
   originals on paper, so the clerk may push back on the files: explain that
-  for Israel, the Philippines issues them only this way.
+  for Israel, the Philippines issues them only this way. Argentina issues
+  its birth certificates and criminal record certificates as files with a
+  digital signature, and every Argentine apostille is a file too.
 - **The originals have to be in Israel** for the first appointment, even if
   the foreign partner is still abroad: send them by courier to the Israeli
   partner in time. They're also needed for the translation.

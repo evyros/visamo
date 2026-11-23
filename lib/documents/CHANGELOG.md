@@ -3,6 +3,33 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v57 — 2026-11-23
+
+**What changed:** Argentina (`AR` in `issuers.ts`): a new
+`foreignBirthCertificate` entry, `electronic`; the `foreignPoliceCertificate`
+entry is now `electronic`, so neither has a send step. The civil status
+stays a paper `document`. Their guide sections and messages: the birth
+certificate (partida de nacimiento) and the criminal record certificate come
+only as files with a digital signature, with an electronic apostille; the
+criminal record is apostilled only within 90 days of its issue; the
+certificate of single status covers only marriages registered in that
+province, and its apostille is a file attached to a scan; the province's
+notaries' association apostilles too, not only in Buenos Aires.
+
+**Why:** The Registro Nacional de Reincidencia issues every certificate
+electronically, and every Argentine apostille has been a digitally signed
+file since 2019, so the steps sent a paper original that doesn't exist.
+1.3.0001 §4.3.3 accepts a digital police certificate with an electronic
+apostille. The birth certificate had no entry.
+
+**Source:** cancilleria.gob.ar, Apostilla / Legalización con validez
+internacional – TAD; colegio-escribanos.org.ar, Apostillas (FAQ);
+argentina.gob.ar, Legalizar o apostillar un documento a través de TAD;
+portal.gba.gob.ar, Constancia negativa de matrimonio; Facebook group
+threads, May 2026 (Argentine birth certificates).
+
+**Lists that changed:** none by key (no scenario has Argentina).
+
 ## v56 — 2026-11-23
 
 **What changed:** France's civil status (`foreignCivilStatus`, `FR` in

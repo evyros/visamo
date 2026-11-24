@@ -1371,7 +1371,7 @@
         "none": "No",
         "divorced": "Yes, divorced",
         "widowed": "Yes, widowed",
-        "divorcedAndWidowed": "Yes, both divorced and widowed"
+        "divorcedAndWidowed": "Yes, divorced once and widowed once"
       },
       "childrenMoving": "Are any of them under 18 and moving to Israel?",
       "otherParents": "About the other parent of the children who are moving",

@@ -143,9 +143,12 @@ Ministry of Foreign Affairs.
 ### Denmark
 
 A criminal record certificate (straffeattest), in English (possible only if
-it shows no convictions; otherwise it's in Danish), from any police station, with a handwritten signature and the signer's name. A digital one
-from borger.dk can't get a physical apostille. The apostille comes from the
-Ministry of Foreign Affairs in Copenhagen.
+it shows no convictions; otherwise it's in Danish), on paper, with a
+handwritten signature and the signer's name: one ordered online with MitID
+comes as a file with a digital signature. Get it at any police station, or
+from abroad, order it from the police by post. The apostille comes from the
+Ministry of Foreign Affairs in Copenhagen, and the police can send the
+certificate there directly.
 
 ### Estonia
 

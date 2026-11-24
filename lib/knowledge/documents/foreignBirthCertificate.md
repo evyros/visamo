@@ -81,9 +81,13 @@ ověření) from the regional office before the apostille.
 
 ### Denmark
 
-A birth and baptism certificate (fødsels- og dåbsattest) if baptized, or a
-certificate of personal data (personattest) if not, from the parish office,
-in English, with a handwritten signature.
+From the parish office: a birth and baptism certificate (fødsels- og
+dåbsattest) if baptized in the Church of Denmark (folkekirken), or a
+certificate of personal data (personattest) if not. For a birth registered in
+Southern Jutland, a personattest from that municipality. Ask for the
+Danish/English version on paper, with a stamp and handwritten signature: it
+can be ordered online with MitID and sent by post. A digital one is valid
+only as a file.
 
 ### Estonia
 

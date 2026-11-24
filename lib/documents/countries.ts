@@ -45,13 +45,14 @@ export const APOSTILLE: ReadonlySet<string> = new Set([
   "ME", "MH", "MK", "MN", "MT", "MU", "MW", "MX", "NA", "NI", "NL", "NO", "NU", "NZ", "OM", "PA", "PE", "PH",
   "PK", "PL", "PT", "PW", "PY", "RO", "RS", "RU", "RW", "SA", "SC", "SE", "SG", "SI", "SK", "SM", "SN", "SR",
   "ST", "SV", "SZ", "TJ", "TN", "TO", "TR", "TT", "UA", "US", "UY", "UZ", "VC", "VE", "VU", "WS", "ZA",
-  // Territories: China's special regions, and the ones France, the Netherlands, the UK, the US and Finland extended it to.
+  // Territories: China's special regions, and the ones France, the Netherlands, the UK, the US, Finland and Denmark extended it to.
   "HK", "MO",
   "BL", "GF", "GP", "MF", "MQ", "NC", "PF", "PM", "RE", "WF", "YT",
   "AW", "BQ", "CW", "SX",
   "AI", "BM", "FK", "GG", "GI", "IM", "JE", "KY", "MS", "SH", "TC", "VG",
   "AS", "GU", "MP", "PR", "VI",
   "AX",
+  "FO",
 ]);
 
 /**

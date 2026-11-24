@@ -3,6 +3,36 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v58 — 2026-11-24
+
+**What changed:** The Faroe Islands (`FO`) are in `APOSTILLE`: their
+documents get an apostille, no longer consular legalization. Denmark's guide
+sections and messages (no entry changed in `issuers.ts`): the claim that a
+digitally signed document can't get a physical apostille is gone (the
+ministry prints one forwarded from Digital Post and apostilles it on paper,
+or gives a digitally signed one an e-Apostille); the paper advice now rests
+on the parish's digital certificates being valid only as files. The birth
+and baptism certificate is only for a baptism in the Church of Denmark, and
+a birth registered in Southern Jutland gets a personattest from that
+municipality. The civil status's personattest shows the current status and
+its date, from the parish office; the residence certificate with the civil
+status is the municipality's civilstandsattest. The police certificate can
+be ordered at a police station or by post from abroad, and the police can
+send it straight to the ministry.
+
+**Why:** Denmark withdrew its territorial declaration for the Faroe Islands
+on 14 October 2021 (in force 13 December 2021); Greenland is still excluded.
+A review of Denmark's sections against the issuing authorities' pages.
+
+**Source:** Dutch treaty database (depositary), Apostille Convention,
+Denmark's declarations; um.dk, Legalisering af danske dokumenter, Generelt
+and Straffeattester; personregistrering.dk, Personattest and Fødsels- og
+dåbsattest; borger.dk, Attester and Bestil Fødsels- og dåbsattest;
+politi.dk, Bestil privat straffeattest and Straffeattest, når du bor i
+udlandet; kk.dk and aarhus.dk, Bestil bopælsattest og civilstandsattest.
+
+**Lists that changed:** none by key (no scenario has the Faroe Islands).
+
 ## v57 — 2026-11-23
 
 **What changed:** Argentina (`AR` in `issuers.ts`): a new

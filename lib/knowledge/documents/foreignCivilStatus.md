@@ -181,10 +181,11 @@ office (krajský úřad) before the apostille, which the foreign ministry gives.
 
 ### Denmark
 
-A certificate of personal data (personattest), which says unwed or married, or
-a residence certificate (bopælsattest) that shows the civil status
-(civilstand). Order it in English, with a handwritten signature and the
-signer's name: a digitally signed one can't get a physical apostille. The
+A certificate of personal data (personattest), from the parish office, which
+shows the current civil status and its date. Ask for the Danish/English
+version on paper, with a stamp, a handwritten signature and the signer's
+name: a digital one is valid only as a file. Or a residence certificate with
+the civil status (civilstandsattest), from the municipality, in English. The
 apostille comes from the Ministry of Foreign Affairs in Copenhagen.
 
 ### Estonia

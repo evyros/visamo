@@ -2480,8 +2480,8 @@
             "apostilleDetails": "No other certification is needed first."
           },
           "DK": {
-            "office": "the parish office",
-            "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized, or a certificate of personal data (personattest) if not. Get it in English, with a handwritten signature."
+            "office": "the parish office, or for a birth registered in Southern Jutland, that municipality",
+            "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized in the Church of Denmark (folkekirken), or a certificate of personal data (personattest) if not; for a birth registered in Southern Jutland, a personattest. Ask for the Danish/English version on paper, with a stamp and handwritten signature: it can be ordered online with MitID and sent by post. A digital one is valid only as a file."
           },
           "EE": {
             "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department) or an Estonian embassy",
@@ -2666,7 +2666,7 @@
             "apostilleBy": "the authority of the German state where it was issued (ask the citizens' office which one)"
           },
           "DK": {
-            "details": "A certificate of personal data (personattest), which says unwed or married, or a residence certificate (bopælsattest) that shows the civil status (civilstand). Order it in English, with a handwritten signature and the signer's name: a digitally signed one can't get a physical apostille.",
+            "details": "A certificate of personal data (personattest), from the parish office, which shows the current civil status and its date. Ask for the Danish/English version on paper, with a stamp, a handwritten signature and the signer's name: a digital one is valid only as a file. Or a residence certificate with the civil status (civilstandsattest), from the municipality, in English.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
           },
           "EE": {
@@ -2886,8 +2886,8 @@
             "apostilleDetails": "It sends the certificate only to an address in Germany: have it sent to family or friends there. From abroad, apply for the apostille online first, then request the certificate with the number you get. From Germany, request the certificate for an apostille, then send it to the office."
           },
           "DK": {
-            "office": "any police station",
-            "details": "A criminal record certificate (straffeattest). Ask for it in English (possible only if it shows no convictions), with a handwritten signature and the signer's name. A digital one from borger.dk can't get a physical apostille.",
+            "office": "any police station, or from abroad, the police by post",
+            "details": "A criminal record certificate (straffeattest). Ask for it in English (possible only if it shows no convictions), on paper, with a handwritten signature and the signer's name: one ordered online with MitID comes as a file with a digital signature. The police can send it straight to the Ministry of Foreign Affairs for the apostille.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
           },
           "EE": {

@@ -16,3 +16,6 @@ are under the same license):
 
 Made for these evals: busy-background.jpg (the app's own portrait, from
 public/images), rent-receipt.png and blank.jpg.
+
+passport-photo-cropped.jpg: a phone photo of the photo in a real passport,
+cropped to the face (sent by Evy).

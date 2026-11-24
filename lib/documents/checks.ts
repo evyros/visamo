@@ -81,11 +81,18 @@ const CERTIFIES_ORIGINAL =
 const CERTIFICATION_WITH_DOCUMENT =
   "Each apostille or legalization is uploaded with the document it certifies, so it's clear which document each one is for. Whether it comes before or after the document, on top of it or on its back, and whether it's in the same file or a separate photo, doesn't matter: never suggest reordering the pages or merging files.";
 
+/**
+ * What to do about a photo that isn't right, whatever it is (lib/knowledge/documents/foreignPhotos.md):
+ * new photos from a photo shop or booth, not another try at home or a crop of another photo.
+ */
+const PHOTO_FIX =
+  'When it isn\'t, end the finding with these words: "Misrad Hapnim requires physical passport-format photos taken at a photo shop or photo booth. Upload a scan of the printed photo, or the digital file the shop gives you."';
+
 /** Passport photos, the same for both partners. */
 const passportPhoto: DocumentCheck = {
   required: [
-    "It is a passport-format photo of one person: the face straight to the camera, head upright, eyes open, with nothing covering the face. A scan of the printed photo and the digital file are both fine. A passport's page, even with its photo, is not this document: say that it's the passport, and that what's asked for is passport-size photos of the face.",
-    "It is in color, on a light, plain background.",
+    `It is a passport-format photo of one person: the face straight to the camera, head upright, eyes open, with nothing covering the face. A scan of the printed photo and the digital file are both fine. A passport's page, or a photo cropped from one, is not this document: say that it's from the passport. ${PHOTO_FIX}`,
+    `It is in color, on a light, plain background. ${PHOTO_FIX}`,
   ],
   recommended: [],
 };

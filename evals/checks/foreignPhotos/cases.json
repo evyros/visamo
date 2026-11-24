@@ -6,57 +6,62 @@
     {
       "name": "black and white",
       "files": ["passport-photo-bw.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["in color"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["in color"] }
     },
     {
       "name": "black and white headshot",
       "files": ["bw-headshot.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["in color"], "mayFlag": ["passport-format photo of one person"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["in color"], "mayFlag": ["passport-format photo of one person"] }
     },
     {
       "name": "dark background",
       "files": ["dark-background.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["light, plain background"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["light, plain background"] }
     },
     {
       "name": "busy background",
       "files": ["busy-background.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["light, plain background"], "mayFlag": ["passport-format photo of one person"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["light, plain background"], "mayFlag": ["passport-format photo of one person"] }
     },
     {
       "name": "head tilted",
       "files": ["tilted.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"] }
     },
     {
       "name": "two people",
       "files": ["two-people.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"] }
     },
     {
       "name": "looking away",
       "files": ["looking-away.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
     },
     {
       "name": "half body",
       "files": ["half-body.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
     },
     {
       "name": "sunglasses, head turned",
       "files": ["sunglasses-dark-background.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
     },
     {
       "name": "not a photo",
       "files": ["rent-receipt.png"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"], "mayFlag": ["light, plain background"] }
     },
     {
       "name": "a passport's data page",
       "files": ["passport-data-page.jpg"],
-      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["in color", "light, plain background"] }
+      "expect": { "rating": "needsFixing", "mustSay": ["Have passport photos taken at a photo shop or photo booth"], "flagged": ["passport-format photo of one person"], "mayFlag": ["in color", "light, plain background"] }
+    },
+    {
+      "name": "cropped from a passport",
+      "files": ["passport-photo-cropped.jpg"],
+      "expect": { "rating": "needsFixing", "flagged": ["passport-format photo of one person"], "mayFlag": ["in color", "light, plain background"], "mustSay": ["Have passport photos taken at a photo shop or photo booth"] }
     },
     { "name": "blank", "files": ["blank.jpg"], "expect": { "rating": "unreadable" } }
   ]

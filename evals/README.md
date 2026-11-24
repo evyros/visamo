@@ -24,8 +24,9 @@ document per type, and a file for each defect worth testing. Many cases can
 share a file: a case can set its own couple (`scenario`, from
 lib/documents/scenarios.ts), `today` or `branch`, so "issued too long ago"
 is the clean file with a later `today`, and "no apostille" is the clean file
-without its apostille file. Only fake people, on real templates: these files
-are in the repo.
+without its apostille file. Real documents, with the real people's details,
+are fine: the repo is private. Each folder's `files/SOURCES.md` says where
+its files come from.
 
 Each case runs `EVAL_RUNS` times (3), as the app checks it. A run passes when:
 

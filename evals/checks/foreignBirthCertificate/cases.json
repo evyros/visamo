@@ -258,6 +258,35 @@
           "The certificate couldn't be read or checked because of the scan (saying it was read, but a better scan is best, is fine)"
         ]
       }
+    },
+    {
+      "name": "Philippines: real file, PSA birth certificate with its DFA e-Apostille (today 2026-11-24)",
+      "today": "2026-11-24",
+      "foreign": {
+        "name": "Cristal Jane Dela Cruz Huyo-A",
+        "gender": "female",
+        "nationality": "PH",
+        "birthCountry": "PH"
+      },
+      "files": [
+        "philippines-real.pdf"
+      ],
+      "expect": {
+        "rating": [
+          "looksGood",
+          "canImprove"
+        ],
+        "mayFlag": [
+          "scanned straight and in color"
+        ],
+        "mustNotSay": [
+          "The certificate needs a paper original, or an apostille on paper",
+          "The certificate is a translation, or needs a translation made in the Philippines with an apostille of its own",
+          "The apostille doesn't certify the certificate, or the certificate needs another apostille",
+          "Reorder the pages so the document comes before its apostille, or merge the files into one",
+          "The certificate couldn't be read or checked because of the scan (saying it was read, but a better scan is best, is fine)"
+        ]
+      }
     }
   ]
 }

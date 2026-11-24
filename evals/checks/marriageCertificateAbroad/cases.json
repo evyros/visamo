@@ -1,0 +1,29 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-11-24",
+  "relationship": {
+    "marriageCountry": "PH"
+  },
+  "israeli": {
+    "name": "Elad Danino",
+    "gender": "male"
+  },
+  "foreign": {
+    "name": "Cristal Jane Dela Cruz Huyo-A",
+    "gender": "female",
+    "nationality": "PH",
+    "birthCountry": "PH"
+  },
+  "cases": [
+    {
+      "name": "real file (Philippines, checked 2026-11-24): PSA certificate and its e-apostille",
+      "files": [
+        "philippines-real-apostille.jpg",
+        "philippines-real-certificate.jpg"
+      ],
+      "expect": {
+        "rating": "looksGood"
+      }
+    }
+  ]
+}

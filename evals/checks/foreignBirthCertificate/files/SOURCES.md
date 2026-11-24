@@ -25,3 +25,9 @@ Estonian birth certificate (certified extract), issued in English by the
 Tallinn Vital Statistics Office on 24.08.2026, and a notary's apostille
 (3.09.2026) bound to it, lying over it on the first page. The same person as foreignCivilStatus's Estonian
 extract.
+
+philippines-real.pdf is a real file, shared by the app's owner: a Philippine
+birth certificate (Certificate of Live Birth, 1993) issued by the PSA on its
+security paper, with the DFA e-Apostille it's attached to (26 August 2026).
+The two pages were images, joined into one PDF, the apostille first, as the
+e-Apostille file comes. Not anonymized.

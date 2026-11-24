@@ -3,7 +3,7 @@ import path from "node:path";
 import { regionName } from "@/i18n/format";
 import { format } from "@/i18n/messages";
 import en from "@/i18n/messages/en.json";
-import type { BranchCode, CaseDetails, PersonInput } from "@/lib/case-options";
+import type { BranchCode, CaseDetails, PersonInput, RelationshipInput } from "@/lib/case-options";
 import { checkLines, type CheckLine } from "@/lib/checks/lines";
 import { checkRatings, type CheckRating } from "@/lib/checks/result";
 import { buildDocumentList, type RequiredDocument } from "@/lib/documents/build";
@@ -27,7 +27,8 @@ import { scenarios, type ScenarioName } from "@/lib/documents/scenarios";
 //
 // A case can set its own "scenario", "today" and "branch", and change the
 // couple's details with "israeli" and "foreign" (their names, say, to match
-// the files, or where they were born), over the scenario's: their list of
+// the files, or where they were born) and "relationship" (where they
+// married, say), over the scenario's: their list of
 // documents is built from the changed couple. What it expects:
 //
 //   rating        the rating, or the ratings that are all fine
@@ -68,6 +69,7 @@ type CaseSpec = {
   branch?: BranchCode;
   israeli?: Partial<PersonInput>;
   foreign?: Partial<PersonInput>;
+  relationship?: Partial<RelationshipInput>;
   expect: {
     rating?: CheckRating | CheckRating[];
     flagged?: string[];
@@ -150,7 +152,8 @@ function loadSuite(folder: string): EvalCase[] {
     // so a change that matters to it (born in another country, say) changes it too.
     const israeli = { ...snapshot.people.find((p) => p.isIsraeli)!, ...suite.israeli, ...spec.israeli };
     const foreign = { ...snapshot.people.find((p) => !p.isIsraeli)!, ...suite.foreign, ...spec.foreign };
-    const list = buildDocumentList({ relationship: snapshot.relationship, people: [israeli, foreign] });
+    const relationship = { ...snapshot.relationship, ...suite.relationship, ...spec.relationship };
+    const list = buildDocumentList({ relationship, people: [israeli, foreign] });
     const item = list.find((d) => d.key === documentKey) ?? list.find((d) => d.id === documentKey);
     if (!item) {
       errors.push(`${id}: "${documentKey}" isn't on ${scenarioName}'s list (${list.map((d) => d.key).join(", ")})`);
@@ -188,7 +191,7 @@ function loadSuite(folder: string): EvalCase[] {
       title: format(en.app.documents.items[item.id].title, { country: item.country ? regionName(item.country, "en") : "" }),
       documentKey: item.key,
       scenario: scenarioName,
-      details: { relationship: snapshot.relationship, israeli, foreign },
+      details: { relationship, israeli, foreign },
       branch: spec.branch ?? suite.branch ?? null,
       today: spec.today ?? suite.today,
       item,

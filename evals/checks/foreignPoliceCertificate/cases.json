@@ -80,7 +80,10 @@
         "philippines-real-clearance-personal-copy.jpg"
       ],
       "expect": {
-        "rating": "looksGood"
+        "rating": ["canImprove", "looksGood"],
+        "flagged": [
+          "run out within 3 weeks of today"
+        ]
       }
     }
   ]

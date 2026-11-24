@@ -543,6 +543,7 @@ export const checks = {
     ],
     recommended: [
       "It is a paper original, not a certificate printed at home from an online service.",
+      "If its 6 months, counted from the date it was issued, run out within 3 weeks of today, tell the couple to hurry and submit the application before that date: after it, the certificate is too old, and they'll have to get a new one, with a new apostille and translation.",
       "If the file says the foreign partner's name changed, it covers their former names too.",
       "If it lists a conviction, the court's sentence is uploaded with it: the office asks for it.",
       "It is readable in full: its text, seals and signature.",

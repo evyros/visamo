@@ -25,7 +25,13 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/guide/[slu
   if (!isSlug(slug)) notFound();
   const locale = await getLocale();
   const guide = getGuides(locale).docs[slug];
-  return pageMetadata({ locale, path: `/guide/${slug}`, title: guide.metaTitle, description: guide.description });
+  return pageMetadata({
+    locale,
+    path: `/guide/${slug}`,
+    title: guide.metaTitle,
+    description: guide.description,
+    article: { modified: guide.updated },
+  });
 }
 
 export default async function GuidePage({ params }: PageProps<"/[lang]/guide/[slug]">) {

@@ -20,8 +20,8 @@ export async function pageMetadata({
   absoluteTitle?: boolean;
   /** The page's own share image (a path on the site), instead of the site's default. */
   image?: { path: string; alt: string };
-  /** A guide, shared as an article: when it was published and last changed, as YYYY-MM-DD. */
-  article?: { published: string; modified: string };
+  /** A guide, shared as an article: when it was published (if known) and last changed, as YYYY-MM-DD. */
+  article?: { published?: string; modified: string };
 }): Promise<Metadata> {
   const t = await loadMessages(locale);
   const languages: Record<string, string> = Object.fromEntries(

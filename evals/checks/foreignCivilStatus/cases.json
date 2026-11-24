@@ -240,6 +240,41 @@
           "Reorder the pages so the document comes before its apostille, or merge the files into one"
         ]
       }
+    },
+    {
+      "name": "Philippines: real files, Advisory on Marriages and the first husband's death certificate, each with its e-Apostille; widowed, married again (today 2026-11-24, issued 3 months before)",
+      "scenario": "marriedInCyprus",
+      "today": "2026-11-24",
+      "relationship": {
+        "marriageCountry": "PH"
+      },
+      "israeli": {
+        "name": "Elad Danino",
+        "gender": "male"
+      },
+      "foreign": {
+        "name": "Cristal Jane Dela Cruz Huyo-A",
+        "gender": "female",
+        "nationality": "PH",
+        "birthCountry": "PH",
+        "previousMarriages": "widowed"
+      },
+      "files": [
+        "philippines-real-advisory-apostille.jpg",
+        "philippines-real-advisory.jpg",
+        "philippines-real-death-apostille.jpg",
+        "philippines-real-death-certificate.jpg"
+      ],
+      "expect": {
+        "rating": "looksGood",
+        "mustNotSay": [
+          "Her status before the marriage is missing, or a marriage certificate is needed to show it",
+          "The Advisory on Marriages is the wrong document, or a CENOMAR is needed instead",
+          "The advisory is more than 6 months old, or too old",
+          "The documents need a paper original, or an apostille on paper",
+          "An apostille doesn't certify its document, or a document needs another apostille"
+        ]
+      }
     }
   ]
 }

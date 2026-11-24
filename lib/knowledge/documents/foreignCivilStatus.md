@@ -15,7 +15,9 @@ Israel. What it has to show depends on your case:
 - **Married to each other: their status before the marriage** (single,
   divorced or widowed), which shows they were free to marry you. From their
   country. A marriage certificate from their own country that shows their
-  status before the marriage covers it.
+  status before the marriage covers it. So does a record of the marriages
+  registered for them that lists each earlier marriage, with the divorce
+  decree or the previous spouse's death certificate for each.
 
 A divorce decree, or a previous spouse's death certificate, is a document of
 its own, for each previous marriage. So is a married foreign partner's

@@ -32,3 +32,13 @@ an extract from the Estonian population register, issued in English by the
 Tallinn Vital Statistics Office on 24.08.2026, and a notary's apostille
 (3.09.2026) bound to it, lying over its first page. The same person as
 foreignPoliceCertificate's estonia-real.pdf.
+
+philippines-real-advisory-apostille.jpg, philippines-real-advisory.jpg,
+philippines-real-death-apostille.jpg and philippines-real-death-certificate.jpg
+are a real file, shared by the app's owner, as screenshots: a PSA Advisory on
+Marriages (CRS Form No. 5, 25 August 2026) listing two marriages, in 2020 and
+on 3 June 2026, with the Department of Foreign Affairs' electronic apostille
+(27 August 2026); and the PSA death certificate of the first husband (died 5
+May 2024), with its electronic apostille (3 September 2026). The same woman
+as marriageCertificateAbroad's and foreignBirthCertificate's Philippine
+files. For Israel, the Philippines issues all of them only as files.

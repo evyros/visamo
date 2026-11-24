@@ -1684,7 +1684,7 @@
         "paidPaypal": "PayPal",
         "vatIncluded": "incl. {vat} VAT",
         "invoice": "Invoice",
-        "secure": "Payment is handled by Freemius, our payment provider, who emails the receipt to whoever paid. We never see your card details.",
+        "secure": "Payment is handled by Freemius, our payment provider, who emails the receipt.\nWe never see your card details.",
         "needHelp": "Need help?",
         "contactSupport": "Contact support"
       }

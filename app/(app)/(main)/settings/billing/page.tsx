@@ -70,7 +70,7 @@ export default async function BillingPage() {
             footnote={
               <>
                 <Icon name="lock" className="mt-0.5 size-4 shrink-0 text-slate-500" />
-                <p>{t.secure}</p>
+                <p className="whitespace-pre-line">{t.secure}</p>
               </>
             }
           >

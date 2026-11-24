@@ -1,0 +1,30 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-11-24",
+  "cases": [
+    {
+      "name": "Philippines: real file, the first husband's PSA death certificate with its e-Apostille (today 2026-11-24, apostille 3 September 2026)",
+      "relationship": {
+        "marriageCountry": "PH"
+      },
+      "israeli": {
+        "name": "Elad Danino",
+        "gender": "male"
+      },
+      "foreign": {
+        "name": "Cristal Jane Dela Cruz Huyo-A",
+        "gender": "female",
+        "nationality": "PH",
+        "birthCountry": "PH",
+        "previousMarriages": "widowed"
+      },
+      "files": [
+        "philippines-real-death-apostille.jpg",
+        "philippines-real-death-certificate.jpg"
+      ],
+      "expect": {
+        "rating": "looksGood"
+      }
+    }
+  ]
+}

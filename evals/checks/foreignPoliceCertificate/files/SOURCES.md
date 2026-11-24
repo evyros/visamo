@@ -11,3 +11,10 @@ translation certified by a made-up notary in Israel. In
 spain-translated.pdf the translation covers the apostille too; in
 spain-apostille-not-translated.pdf it covers only the certificate. Dated
 September 2026, within 6 months of the cases' date (2026-11-14).
+
+philippines-real-apostille.jpg, philippines-real-clearance.jpg and
+philippines-real-clearance-personal-copy.jpg are a real file, shared by the
+app's owner, as phone photos (downsized to 2400px, the rotation kept): an NBI
+clearance (multi-purpose, no derogatory record) printed 11 June 2026, the
+Department of Foreign Affairs' apostille for it (2 September 2026, attached
+with an eyelet), and the copy of the same clearance stamped "PERSONAL COPY".

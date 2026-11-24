@@ -538,7 +538,7 @@ export const checks = {
       "It is a paper original, not a certificate printed at home from an online service.",
       "If the file says the foreign partner's name changed, it covers their former names too.",
       "If it lists a conviction, the court's sentence is uploaded with it: the office asks for it.",
-      "It is the original document scanned in full, readable, with the issuing authority's seal or signature visible.",
+      "It is readable in full: its text, seals and signature.",
     ],
   },
   housingContract: {

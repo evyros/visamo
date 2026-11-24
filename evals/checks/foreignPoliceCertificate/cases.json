@@ -56,6 +56,32 @@
           "Which translation it needs depends on the document's language"
         ]
       }
+    },
+    {
+      "name": "Philippines: real file, NBI clearance with its DFA apostille and the personal copy (today 2026-11-24, issued 11 June 2026)",
+      "scenario": "marriedInCyprus",
+      "relationship": {
+        "marriageCountry": "PH"
+      },
+      "israeli": {
+        "name": "Elad Danino",
+        "gender": "male"
+      },
+      "foreign": {
+        "name": "Cristal Jane Dela Cruz Huyo-A",
+        "gender": "female",
+        "nationality": "PH",
+        "birthCountry": "PH"
+      },
+      "today": "2026-11-24",
+      "files": [
+        "philippines-real-apostille.jpg",
+        "philippines-real-clearance.jpg",
+        "philippines-real-clearance-personal-copy.jpg"
+      ],
+      "expect": {
+        "rating": "looksGood"
+      }
     }
   ]
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { locales } from "@/i18n/config";
 import { getAppDictionary, getAppLocale } from "@/i18n/app-locale";
 import { formatAmount, formatDate, formatPrice } from "@/i18n/format";
@@ -12,7 +11,24 @@ import { casePurchases } from "@/lib/purchases";
 import { requireCase } from "@/lib/session";
 import { checksRunningLow } from "@/lib/products";
 import { contactUrl, newTab, prices } from "@/lib/site";
-import { SettingsCard, SettingsPage } from "@/components/app/settings-ui";
+import { SettingsPage } from "@/components/app/settings-ui";
+import {
+  BalanceCard,
+  BalanceMeter,
+  BalanceNumber,
+  BalanceTile,
+  BillingSection,
+  FileCheckGlyph,
+  MessagesGlyph,
+  PurchaseBadge,
+  PurchaseList,
+  PurchaseRow,
+  PurchasesEmpty,
+  invoiceButton,
+  tileLink,
+  tilePrimaryButton,
+  tileSecondaryButton,
+} from "@/components/app/billing-ui";
 import { Icon } from "@/components/icons";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -33,64 +49,100 @@ export default async function BillingPage() {
   const t = messages.app.settings.billingPage;
   const products = messages.pricing;
   const count = (n: number) => new Intl.NumberFormat(locales[locale].intlLocale).format(n);
+  const back = buyUrl("/settings/billing");
+
+  const toDocuments = (
+    <Link href="/file/documents" className={tileLink}>
+      {t.checksHint}
+      <Icon
+        name="arrow"
+        className="ms-1.5 inline-block size-4 align-[-0.15em] transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+      />
+    </Link>
+  );
 
   return (
     <SettingsPage title={messages.app.settings.billing} intro={t.intro}>
-      <SettingsCard title={t.fileTitle}>
-        {/* Each balance with the purchase that adds to it. */}
-        <div className="grid gap-3 sm:grid-cols-2">
-          <Balance label={t.messagesLeft} value={count(chat.messagesLeft)}>
-            <Link href={buyUrl("/settings/billing")} className={tileButton}>
-              {format(t.addPack, { price: formatPrice(prices.messagePack, locale) })}
-            </Link>
-          </Balance>
-          {checks.fileCheck ? (
-            // The count shows only once it runs low.
-            checksRunningLow(checks) ? (
-              <Balance label={t.checksLeft} value={count(checks.left)}>
-                <Link href="/file/documents" className={tileLink}>
-                  {t.checksHint}
+      <div className="space-y-10">
+        <BillingSection title={t.fileTitle}>
+          {/* Each balance with the purchase that adds to it. */}
+          <BalanceCard
+            footnote={
+              <>
+                <Icon name="lock" className="mt-0.5 size-4 shrink-0 text-slate-500" />
+                <p>{t.secure}</p>
+              </>
+            }
+          >
+            <BalanceTile
+              glyph={<MessagesGlyph />}
+              label={t.messagesLeft}
+              action={
+                <Link href={back} className={tileSecondaryButton}>
+                  {format(t.addPack, { price: formatPrice(prices.messagePack, locale) })}
                 </Link>
-              </Balance>
-            ) : (
-              <div className="flex flex-col rounded-[10px] bg-sand-50 px-4 py-3">
-                <p className="text-sm text-slate-500">{t.checksTitle}</p>
-                <p className="mt-1 mb-3 text-slate-700">{t.checksIncluded}</p>
-                <Link href="/file/documents" className={tileLink}>
-                  {t.checksHint}
-                </Link>
-              </div>
-            )
-          ) : (
-            <div className="flex flex-col rounded-[10px] border-[1.5px] border-dashed border-line-200 px-4 py-3">
-              <p className="text-sm text-slate-500">{t.checksTitle}</p>
-              {/* Without Full file check: the free check, until it's used. */}
-              <p className="mt-1 mb-4 text-sm text-slate-700">{checks.left > 0 ? t.checksFreeBody : t.checksLockedBody}</p>
-              <Link href={buyUrl("/settings/billing")} className={tileButton}>
-                {format(t.buyFileCheck, { price: formatPrice(prices.fileCheck, locale) })}
-              </Link>
-            </div>
-          )}
-        </div>
-        <p className="mt-4 text-sm text-slate-500">{t.secure}</p>
-      </SettingsCard>
+              }
+            >
+              <BalanceNumber>{count(chat.messagesLeft)}</BalanceNumber>
+            </BalanceTile>
 
-      <SettingsCard title={t.historyTitle}>
-        {purchases.length ? (
-          <ul className="divide-y divide-line-200">
-            {purchases.map((p) => (
-              <li key={p.id} className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 py-3 first:pt-0 last:pb-0">
-                <div>
-                  <p className="flex flex-wrap items-center gap-x-2 font-semibold text-navy-900">
-                    {products[p.product].name}
-                    {p.refundedAt && (
-                      <span className="rounded-full bg-sand-50 px-2 py-0.5 text-xs font-semibold text-slate-500 ring-1 ring-line-200">
-                        {p.given ? t.cancelled : t.refunded}
-                      </span>
-                    )}
+            {checks.fileCheck ? (
+              // The count shows only once it runs low.
+              checksRunningLow(checks) ? (
+                <BalanceTile glyph={<FileCheckGlyph />} label={t.checksLeft} action={toDocuments}>
+                  <BalanceNumber>{count(checks.left)}</BalanceNumber>
+                  <BalanceMeter left={checks.left} granted={checks.granted} />
+                </BalanceTile>
+              ) : (
+                <BalanceTile glyph={<FileCheckGlyph />} label={t.checksTitle} action={toDocuments}>
+                  <p className="flex items-start gap-2 font-display text-xl leading-snug font-semibold text-navy-900">
+                    <Icon name="checkCircle" className="mt-0.5 size-6 shrink-0 text-teal-600" />
+                    {t.checksIncluded}
                   </p>
-                  <p className="text-sm text-slate-500">
-                    {[
+                </BalanceTile>
+              )
+            ) : (
+              // Without Full file check: the free check, until it's used.
+              <BalanceTile
+                offer
+                glyph={<FileCheckGlyph open />}
+                label={t.checksTitle}
+                action={
+                  <Link href={back} className={tilePrimaryButton}>
+                    {format(t.buyFileCheck, { price: formatPrice(prices.fileCheck, locale) })}
+                  </Link>
+                }
+              >
+                <p className="text-[15px] leading-relaxed text-slate-700">
+                  {checks.left > 0 ? t.checksFreeBody : t.checksLockedBody}
+                </p>
+              </BalanceTile>
+            )}
+          </BalanceCard>
+        </BillingSection>
+
+        <BillingSection title={t.historyTitle}>
+          <div className="overflow-hidden rounded-card border border-line-200 bg-white shadow-soft">
+            {purchases.length ? (
+              <PurchaseList>
+                {purchases.map((p) => (
+                  <PurchaseRow
+                    key={p.id}
+                    faded={!!p.refundedAt}
+                    glyph={
+                      p.product === "messagePack" ? (
+                        <MessagesGlyph className="size-10" />
+                      ) : (
+                        <FileCheckGlyph className="size-10" />
+                      )
+                    }
+                    title={
+                      <>
+                        {products[p.product].name}
+                        {p.refundedAt && <PurchaseBadge>{p.given ? t.cancelled : t.refunded}</PurchaseBadge>}
+                      </>
+                    }
+                    details={[
                       formatDate(p.createdAt, locale),
                       p.given && t.given,
                       p.paymentMethod && (p.paymentMethod === "paypal" ? t.paidPaypal : t.paidCard),
@@ -98,61 +150,48 @@ export default async function BillingPage() {
                     ]
                       .filter(Boolean)
                       .join(" · ")}
-                  </p>
-                </div>
-                <div className="text-end">
-                  {p.amount !== null && (
-                    <p className="text-[15px] font-semibold text-navy-900 tabular-nums">
-                      <bdi>{formatAmount(p.amount, p.currency, locale)}</bdi>
-                    </p>
-                  )}
-                  {!!p.vat && (
-                    <p className="text-sm text-slate-500">
-                      {format(t.vatIncluded, { vat: formatAmount(p.vat, p.currency, locale) })}
-                    </p>
-                  )}
-                  {p.hasInvoice && (
-                    <a
-                      href={`/api/purchases/${p.id}/invoice`}
-                      target="_blank"
-                      rel="noopener"
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-teal-700 underline-offset-4 hover:underline"
-                    >
-                      <Icon name="receipt" className="size-4" />
-                      {t.invoice}
-                    </a>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-slate-700">{t.historyEmpty}</p>
-        )}
-        <p className="mt-5 text-sm text-slate-700">
-          {t.needHelp}{" "}
-          <a href={contactUrl(locale)} {...newTab} className="font-semibold text-teal-700 underline-offset-4 hover:underline">
-            {t.contactSupport}
-          </a>
-        </p>
-      </SettingsCard>
+                    amount={
+                      <>
+                        {p.amount !== null && (
+                          <p
+                            className={`text-[15px] font-semibold tabular-nums ${p.refundedAt ? "text-slate-500 line-through decoration-slate-300" : "text-navy-900"}`}
+                          >
+                            <bdi>{formatAmount(p.amount, p.currency, locale)}</bdi>
+                          </p>
+                        )}
+                        {!!p.vat && (
+                          <p className="text-xs text-slate-500">
+                            {format(t.vatIncluded, { vat: formatAmount(p.vat, p.currency, locale) })}
+                          </p>
+                        )}
+                      </>
+                    }
+                    invoice={
+                      p.hasInvoice && (
+                        <a href={`/api/purchases/${p.id}/invoice`} target="_blank" rel="noopener" className={invoiceButton}>
+                          <Icon name="receipt" className="size-4" />
+                          {t.invoice}
+                        </a>
+                      )
+                    }
+                  />
+                ))}
+              </PurchaseList>
+            ) : (
+              <PurchasesEmpty>{t.historyEmpty}</PurchasesEmpty>
+            )}
+          </div>
+          <p className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+            <Icon name="help" className="size-4 shrink-0" />
+            <span>
+              {t.needHelp}{" "}
+              <a href={contactUrl(locale)} {...newTab} className="font-semibold text-teal-700 underline-offset-4 hover:underline">
+                {t.contactSupport}
+              </a>
+            </span>
+          </p>
+        </BillingSection>
+      </div>
     </SettingsPage>
-  );
-}
-
-const tileLink = "self-start text-sm font-semibold text-teal-700 underline-offset-4 hover:underline";
-
-// A tile's purchase: the same compact button in each, at the tile's foot, so
-// side by side they line up.
-const tileButton =
-  "mt-auto inline-flex h-9 items-center justify-center self-start rounded-[10px] border-[1.5px] border-navy-900 px-4 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900";
-
-function Balance({ label, value, children }: { label: string; value: string; children?: ReactNode }) {
-  return (
-    <div className="flex flex-col rounded-[10px] bg-sand-50 px-4 py-3">
-      <p className="text-sm text-slate-500">{label}</p>
-      <p className="mb-4 font-display text-2xl font-semibold text-navy-900 tabular-nums">{value}</p>
-      {children}
-    </div>
   );
 }

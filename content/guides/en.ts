@@ -1413,10 +1413,6 @@ export const guidesEn: Guides = {
       ],
       faq: [
         {
-          q: "Which documents do we need for the partner visa?",
-          a: "Forms, identity documents, proof of your relationship, the foreign partner's civil status and police certificate, and proof of your life together. The exact list depends on whether you're married, where each of you lives, previous marriages and children.",
-        },
-        {
           q: "Do married and common-law couples need the same documents?",
           a: "Mostly. Married couples bring form AS/6, the marriage certificate and a shared bank account. Common-law couples sign a joint affidavit instead, and bring bank statements and more proof that they live together.",
         },

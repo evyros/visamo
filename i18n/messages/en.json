@@ -2077,6 +2077,8 @@
       "intro": "Everything Misrad Hapnim needs for your first application, for your case.",
       "progress": "{done} of {total} uploaded",
       "progressHint": "Uploaded document doesn't mean it's valid. Check every document against what Misrad Hapnim requires.",
+      "progressHintDelay": "One missing detail can delay your file by months. Check every document against what Misrad Hapnim requires.",
+      "progressHintSmooth": "Get it right the first time and skip the return visits. Check every document against what Misrad Hapnim requires.",
       "freeFindings": {
         "titleFix": "Issues found in your documents",
         "titleImprove": "Some of your documents can be improved",

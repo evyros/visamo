@@ -49,6 +49,11 @@ function without<T extends object, K extends keyof T>(object: T, keys: readonly 
   return Object.fromEntries(Object.entries(object).filter(([key]) => !keys.includes(key as K))) as Omit<T, K>;
 }
 
+/** One of the options, each as likely. Once per request: the page is drawn on the server. */
+function oneOf<T>(options: readonly T[]): T {
+  return options[Math.floor(Math.random() * options.length)];
+}
+
 /**
  * When the page started grouping documents by type (midnight in Israel). Users who signed up
  * before it get a one-time note about the new look (components/app/documents-new-look.tsx).
@@ -180,7 +185,10 @@ export default async function DocumentsPage() {
 
   // Only what the board shows itself: every step's text is worked out above.
   const boardLabels: BoardLabels = {
-    ...without(t, ["steps", "issuers", "affidavitInstead", "oneAffidavit", "types"]),
+    ...without(t, ["steps", "issuers", "affidavitInstead", "oneAffidavit", "types", "progressHintDelay", "progressHintSmooth"]),
+    // Under the uploads' progress, when no check found anything: one of three lines, a third of the
+    // time each, picked here so it doesn't change once the page is in the browser.
+    progressHint: oneOf([t.progressHint, t.progressHintDelay, t.progressHintSmooth]),
     steps: { heading: t.steps.heading },
   };
 

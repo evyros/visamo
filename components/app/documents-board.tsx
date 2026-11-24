@@ -74,7 +74,7 @@ import { DocumentsNewLook } from "@/components/app/documents-new-look";
  */
 export type BoardLabels = Omit<
   Messages["app"]["documentsPage"],
-  "steps" | "issuers" | "affidavitInstead" | "oneAffidavit" | "types"
+  "steps" | "issuers" | "affidavitInstead" | "oneAffidavit" | "types" | "progressHintDelay" | "progressHintSmooth"
 > & {
   steps: Pick<Messages["app"]["documentsPage"]["steps"], "heading">;
 };

@@ -162,7 +162,9 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
     ZA: { kind: "document", heading: "South Africa" },
   },
   marriageCertificateAbroad: {
+    DK: { kind: "document", heading: "Denmark", english: "onRequest" },
     PH: { kind: "document", heading: "Philippines", electronic: true },
+    SE: { kind: "document", heading: "Sweden", english: "onRequest" },
   },
 };
 

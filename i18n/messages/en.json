@@ -3040,11 +3040,21 @@
           }
         },
         "marriageCertificateAbroad": {
+          "DK": {
+            "office": "the municipality where you married, or after a wedding in the Church of Denmark, the parish office",
+            "details": "The marriage certificate (vielsesattest). After a civil wedding, or one in a recognized faith community, the municipality issues it in an international version, in Danish, English, German, French and Spanish. After a wedding in the Church of Denmark (folkekirken), ask the parish office for the Danish/English version.",
+            "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
+          },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
             "details": "The PSA marriage certificate. For Israel, it comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
             "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
+          },
+          "SE": {
+            "office": "the Tax Agency (Skatteverket)",
+            "details": "Sweden issues no marriage certificate. In its place: the extract from the population register \"with all relations\" (Utdrag om folkbokföringsuppgifter – 120 med alla relationer), in English, which shows the spouse. Order it on paper, with Skatteverket's stamp and signature, sent by post: one you download yourself has neither, so it can't get the apostille.",
+            "apostilleBy": "any notary public (notarius publicus)"
           }
         }
       },

@@ -21,12 +21,31 @@ registered as married in Israel before you apply (below).
   Not every country recognizes them: check that the foreign partner's country
   does.
 
+### Denmark
+
+After a civil wedding, or one in a recognized faith community, the marriage
+certificate (vielsesattest) comes from the municipality where you married,
+in an international version in Danish, English, German, French and Spanish.
+After a wedding in the Church of Denmark (folkekirken), it comes from the
+parish office, in Danish or Danish/English. The apostille comes from the
+Ministry of Foreign Affairs in Copenhagen.
+
 ### Philippines
 
 The marriage certificate from the Philippine Statistics Authority (PSA).
 For Israel, it comes only as a file, with the electronic apostille of the
 Department of Foreign Affairs (see [certification.md](../certification.md)).
 The foreign partner can order both online from Israel, with an ID check.
+
+### Sweden
+
+Sweden issues no marriage certificate. In its place: the extract from the
+population register "with all relations" (Utdrag om folkbokföringsuppgifter –
+120 med alla relationer), in English, from the Tax Agency (Skatteverket),
+which shows the spouse. Order it on paper, with Skatteverket's stamp and
+signature: it's sent by post to the address registered in Sweden, or to a
+special postal address (särskild postadress). Any notary public (notarius
+publicus) adds the apostille.
 
 ## What it should include
 

@@ -3,6 +3,28 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v59 — 2026-11-24
+
+**What changed:** New `marriageCertificateAbroad` entries in `issuers.ts`,
+with guide sections and messages: Denmark (`DK`, `english: "onRequest"`),
+the municipality's international certificate in five languages, or the
+parish's Danish/English one after a wedding in the Church of Denmark; Sweden
+(`SE`, `english: "onRequest"`), which issues no marriage certificate: the
+extract from the population register "120 med alla relationer", in English,
+from Skatteverket, with a notary public's apostille.
+
+**Why:** Marriage certificates from Denmark and Sweden got the general
+steps: "the original, from Sweden", which doesn't exist, and a Danish or
+Swedish translation, without saying either can be had in English.
+
+**Source:** kk.dk, Få en ny vielsesattest; aabenraa.dk, Marriage Registry
+Office; personregistrering.dk, Vielsesattest ved kirkelig vielse;
+skatteverket.se, Information om personbevis för utländska myndigheter,
+Information to foreign authorities and Personbevis.
+
+**Lists that changed:** none by key (no scenario married in Denmark or
+Sweden).
+
 ## v58 — 2026-11-24
 
 **What changed:** The Faroe Islands (`FO`) are in `APOSTILLE`: their

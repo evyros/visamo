@@ -2172,7 +2172,11 @@
         "uploadedBy": "הועלה על ידי {name} · {date}",
         "uploadedOn": "הועלה ב-{date}",
         "close": "סגירה",
-        "openFull": "פתיחת הקובץ המלא"
+        "openFull": "פתיחת הקובץ המלא",
+        "pages": {
+          "one": "עמוד אחד",
+          "other": "{count} עמודים"
+        }
       },
       "errors": {
         "type": "אפשר להעלות רק קבצי PDF‏, JPG או PNG.",

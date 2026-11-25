@@ -2372,6 +2372,17 @@ function uploadedLine(t: Labels, file: FileView, intlLocale: string) {
     : format(t.file.uploadedOn, { date });
 }
 
+/**
+ * "3 pages", for a PDF. Null for an image, which is always one page, and when
+ * the count is unknown: a PDF that couldn't be opened, or one uploaded before
+ * it was kept.
+ */
+function pagesLabel(t: Labels, file: FileView, intlLocale: string) {
+  if (file.contentType !== "application/pdf" || file.pages === null) return null;
+  const form = new Intl.PluralRules(intlLocale).select(file.pages) === "one" ? t.file.pages.one : t.file.pages.other;
+  return format(form, { count: file.pages });
+}
+
 function FileTile({
   t,
   file,
@@ -2388,6 +2399,7 @@ function FileTile({
 }) {
   const url = `/api/files/${file.id}`;
   const isPdf = file.contentType === "application/pdf";
+  const pages = pagesLabel(t, file, intlLocale);
   const dialogRef = useRef<HTMLDialogElement>(null);
   // The full file loads the first time the preview opens: it can be several MB.
   const [opened, setOpened] = useState(false);
@@ -2403,7 +2415,9 @@ function FileTile({
         }}
         className="block w-full rounded-[10px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
       >
-        <Thumb src={file.hasThumbnail ? `${url}?thumbnail` : null} isPdf={isPdf} />
+        <Thumb src={file.hasThumbnail ? `${url}?thumbnail` : null} isPdf={isPdf}>
+          {pages && <PagesPill label={pages} />}
+        </Thumb>
       </button>
       <div className="mt-1.5 flex items-center gap-1">
         <p className="min-w-0 flex-1 truncate text-sm text-slate-700" title={file.name}>
@@ -2437,7 +2451,11 @@ function FileTile({
           </button>
         </div>
         <div className="max-h-[70vh] overflow-auto bg-sand-50 p-4">
-          {opened && <PreviewImage src={isPdf ? (file.hasThumbnail ? `${url}?thumbnail` : null) : url} />}
+          {opened && (
+            <PreviewImage src={isPdf ? (file.hasThumbnail ? `${url}?thumbnail` : null) : url}>
+              {pages && <PagesPill label={pages} />}
+            </PreviewImage>
+          )}
         </div>
         <div className="flex flex-wrap items-center gap-3 px-4 py-3">
           <p className="min-w-0 flex-1 text-sm text-slate-600">{uploadedLine(t, file, intlLocale)}</p>
@@ -2455,17 +2473,32 @@ function FileTile({
   );
 }
 
-/** The preview's image: the file itself, or a PDF's first page. */
-function PreviewImage({ src }: { src: string | null }) {
+/** A PDF's page count, in the corner of its thumbnail and of its preview. */
+function PagesPill({ label }: { label: string }) {
+  return (
+    <span className="absolute bottom-1.5 end-1.5 rounded-full bg-navy-900/75 px-2 py-0.5 text-xs font-normal text-white">
+      {label}
+    </span>
+  );
+}
+
+/** The preview's image: the file itself, or a PDF's first page. `children` sit on it, like the page count. */
+function PreviewImage({ src, children }: { src: string | null; children?: ReactNode }) {
   if (!src) {
     return (
-      <div className="flex justify-center py-10 text-slate-500">
+      <div className="relative flex justify-center py-10 text-slate-500">
         <Icon name="file" className="size-12" />
+        {children}
       </div>
     );
   }
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt="" className="mx-auto max-w-full rounded-[6px] bg-white shadow-soft" />;
+  return (
+    <div className="relative mx-auto w-fit max-w-full">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt="" className="block max-w-full rounded-[6px] bg-white shadow-soft" />
+      {children}
+    </div>
+  );
 }
 
 function FileMenu({

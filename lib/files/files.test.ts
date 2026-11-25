@@ -1,3 +1,4 @@
+import { PDFDocument } from "pdf-lib";
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import { sniffType } from "./rules";
@@ -63,7 +64,8 @@ describe("storage paths", () => {
 
 describe("makeThumbnail", () => {
   it("makes a small JPEG of a PDF's first page", async () => {
-    const thumbnail = await makeThumbnail(tinyPdf(), "application/pdf");
+    const { thumbnail, pages } = await makeThumbnail(tinyPdf(), "application/pdf");
+    expect(pages).toBe(1);
     expect(thumbnail && sniffType(thumbnail)).toBe("image/jpeg");
     const { width, height } = await sharp(thumbnail!).metadata();
     expect(width).toBe(320);
@@ -79,6 +81,12 @@ describe("makeThumbnail", () => {
     expect(data[2]).toBeGreaterThan(100);
   });
 
+  it("counts every page of a PDF", async () => {
+    const pdf = await PDFDocument.create();
+    for (let i = 0; i < 3; i++) pdf.addPage([300, 400]);
+    expect((await makeThumbnail(await pdf.save(), "application/pdf")).pages).toBe(3);
+  });
+
   it("shrinks a large photo, and never enlarges a small one", async () => {
     const big = await sharp({ create: { width: 3000, height: 4000, channels: 3, background: "#123" } })
       .jpeg()
@@ -86,13 +94,18 @@ describe("makeThumbnail", () => {
     const small = await sharp({ create: { width: 100, height: 80, channels: 3, background: "#123" } })
       .png()
       .toBuffer();
-    expect((await sharp((await makeThumbnail(big, "image/jpeg"))!).metadata()).width).toBe(320);
-    expect((await sharp((await makeThumbnail(small, "image/png"))!).metadata()).width).toBe(100);
+    const fromBig = await makeThumbnail(big, "image/jpeg");
+    expect((await sharp(fromBig.thumbnail!).metadata()).width).toBe(320);
+    expect(fromBig.pages).toBe(1);
+    expect((await sharp((await makeThumbnail(small, "image/png")).thumbnail!).metadata()).width).toBe(100);
   });
 
   it("gives null for a file it can't read, instead of failing the upload", async () => {
     const broken = new TextEncoder().encode("%PDF-1.4 this is not really a pdf");
-    expect(await makeThumbnail(broken, "application/pdf")).toBeNull();
-    expect(await makeThumbnail(new Uint8Array([0xff, 0xd8, 0xff, 0x00]), "image/jpeg")).toBeNull();
+    expect(await makeThumbnail(broken, "application/pdf")).toEqual({ thumbnail: null, pages: null });
+    expect(await makeThumbnail(new Uint8Array([0xff, 0xd8, 0xff, 0x00]), "image/jpeg")).toEqual({
+      thumbnail: null,
+      pages: null,
+    });
   });
 });

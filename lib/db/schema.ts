@@ -316,6 +316,11 @@ export const caseFile = pgTable(
     name: text("name").notNull(),
     /** Whether a thumbnail was made; it's at the same folder in the Blob store. */
     hasThumbnail: boolean("has_thumbnail").notNull(),
+    /**
+     * A PDF's page count, 1 for an image, read at upload. Null when the file
+     * couldn't be opened, and on files uploaded before it was kept.
+     */
+    pages: integer("pages"),
     uploadedBy: text("uploaded_by").references(() => user.id, { onDelete: "set null" }),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     /**

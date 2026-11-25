@@ -2172,7 +2172,11 @@
         "uploadedBy": "Uploaded by {name} · {date}",
         "uploadedOn": "Uploaded {date}",
         "close": "Close",
-        "openFull": "Open the full file"
+        "openFull": "Open the full file",
+        "pages": {
+          "one": "1 page",
+          "other": "{count} pages"
+        }
       },
       "errors": {
         "type": "Only PDF, JPG or PNG files can be uploaded.",

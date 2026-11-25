@@ -1,0 +1,1 @@
+ALTER TABLE "case_file" ADD COLUMN "pages" integer;

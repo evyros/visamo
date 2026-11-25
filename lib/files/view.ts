@@ -5,6 +5,8 @@ export type FileView = {
   contentType: string;
   name: string;
   hasThumbnail: boolean;
+  /** Page count; null when unknown (a file that couldn't be opened, or one uploaded before it was kept). */
+  pages: number | null;
   /** Bytes, as uploaded. */
   size: number;
   /** Null when the uploader's account is gone. */
@@ -19,6 +21,7 @@ export function fileView(row: {
   contentType: string;
   name: string;
   hasThumbnail: boolean;
+  pages: number | null;
   size: number;
   uploaderName: string | null;
   createdAt: Date;
@@ -29,6 +32,7 @@ export function fileView(row: {
     contentType: row.contentType,
     name: row.name,
     hasThumbnail: row.hasThumbnail,
+    pages: row.pages,
     size: row.size,
     uploaderName: row.uploaderName,
     createdAt: row.createdAt.toISOString(),

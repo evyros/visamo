@@ -97,7 +97,7 @@ export async function finishUpload(input: {
       return { error: "total" };
     }
 
-    const thumbnail = await makeThumbnail(bytes, type);
+    const { thumbnail, pages } = await makeThumbnail(bytes, type);
     if (thumbnail) {
       await put(thumbnailPath(caseId, fileId), thumbnail, {
         access: "private",
@@ -119,6 +119,7 @@ export async function finishUpload(input: {
           size: bytes.length,
           name,
           hasThumbnail: !!thumbnail,
+          pages,
           uploadedBy: user.id,
         })
         .onConflictDoNothing(),

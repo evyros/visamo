@@ -16,7 +16,7 @@ import { findUserCase } from "@/lib/session";
 // apostille or translation if they're there) go to the model together, which rates them and says what to
 // fix or improve. The findings the couple dismissed from the last run go with
 // them, for the model to look at again. One check spends one of the case's
-// checks (a free case has one; Full file check adds the fair-use 300), given
+// checks (a free case has one; Full file check adds the fair-use 200), given
 // back if it fails or the files can't be read. One check runs per item at a
 // time; the item's last result stays until the new one replaces it. Every
 // run is kept, failed ones too, for reviewing how checks work. GET gives

@@ -23,7 +23,7 @@ describe("freeMessagesLeft", () => {
   });
 
   it("leaves the reminder out for a paid case, a used check, or almost no messages", () => {
-    expect(freeMessagesLeft({ paid: true, checksLeft: 300, freeFullKey: null, messagesLeft: 55 })).toBeNull();
+    expect(freeMessagesLeft({ paid: true, checksLeft: 200, freeFullKey: null, messagesLeft: 55 })).toBeNull();
     expect(freeMessagesLeft({ paid: false, checksLeft: 0, freeFullKey: null, messagesLeft: 5 })).toBeNull();
     expect(freeMessagesLeft({ paid: false, checksLeft: 1, freeFullKey: "passport", messagesLeft: 5 })).toBeNull();
     expect(freeMessagesLeft({ paid: false, checksLeft: 1, freeFullKey: null, messagesLeft: 1 })).toBeNull();

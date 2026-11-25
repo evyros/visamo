@@ -27,14 +27,14 @@ export const BUY_COOKIE = "buy";
 /** The messages a new case is granted. */
 export const FREE_MESSAGES = 5;
 
-/** Document checks a new case is granted: one, for any document. Full file check adds 300 more. */
+/** Document checks a new case is granted: one, for any document. Full file check adds 200 more. */
 export const FREE_CHECKS = 1;
 
 /** Messages each purchase adds: a message pack, and Full file check includes one. */
 export const PACK_MESSAGES = 50;
 
 /** Document checks Full file check grants: the fair-use amount. Support tops up from the admin panel. */
-export const DOCUMENT_CHECKS = 300;
+export const DOCUMENT_CHECKS = 200;
 
 /** At 80% of the checks granted, the couple sees how many are left and is asked to contact support. */
 export function checksRunningLow(totals: { granted: number; used: number }) {

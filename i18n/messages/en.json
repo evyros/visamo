@@ -536,7 +536,7 @@
           "feature": "Instant document checks",
           "values": [
             "1",
-            "Up to 300 (fair use)"
+            "Up to 200 (fair use)"
           ]
         },
         {
@@ -572,7 +572,7 @@
         },
         {
           "q": "Is there a limit on document checks?",
-          "a": "Only a fair-use one, and you're very unlikely to reach it. Full file check includes 300 document checks for your shared file, far more than you'll need for the whole process, every stage. That's enough to check every document on your list, fix it and check it again, many times over. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. And if you ever get close, contact us."
+          "a": "Only a fair-use one, and you're very unlikely to reach it. Full file check includes 200 document checks for your shared file, far more than you'll need for the whole process, every stage. That's enough to check every document on your list, fix it and check it again, many times over. Each time you check a document counts as one check, including a recheck after you change its files. Files we couldn't read don't count. And if you ever get close, contact us."
         },
         {
           "q": "What counts as one message?",

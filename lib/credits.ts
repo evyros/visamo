@@ -106,7 +106,7 @@ export function grantQueries(caseId: string, kind: CreditKind, amount: number, r
 
 /**
  * Records a purchase with what it adds: 50 messages, and with Full file check
- * 300 checks (lib/products.ts), and what it unlocks on the case. One batch is
+ * 200 checks (lib/products.ts), and what it unlocks on the case. One batch is
  * one transaction, and the purchase's Freemius license is unique, so a
  * purchase reported twice throws on the second time and grants nothing more.
  * For the purchase flow (lib/purchases.ts), and the admin panel's

@@ -1663,7 +1663,7 @@
         }
       },
       "billingPage": {
-        "intro": "What your file has, and what you've bought. Purchases are for the whole file, shared by both of you.",
+        "intro": "Purchases are for the whole file, shared by both of you.",
         "fileTitle": "Your file",
         "messagesLeft": "Chat messages left",
         "checksLeft": "Document checks left",

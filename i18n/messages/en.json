@@ -2197,6 +2197,14 @@
         },
         "check": "Check the document",
         "again": "Check again",
+        "checkFiles": {
+          "two": "Check both files",
+          "other": "Check all {count} files"
+        },
+        "againFiles": {
+          "two": "Check both files again",
+          "other": "Check all {count} files again"
+        },
         "checking": "Checking… this can take up to a minute.",
         "needsOriginal": "Upload the document to check it.",
         "issues": "What needs fixing",

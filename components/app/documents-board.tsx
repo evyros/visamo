@@ -967,6 +967,7 @@ function DocumentCard({
             fresh={fresh}
             settings={settings}
             uploaded={uploaded}
+            fileCount={files.length}
             uploading={pending.length > 0}
             onCheck={onCheck}
             dismissals={dismissals}
@@ -1066,6 +1067,7 @@ function CheckFooter({
   fresh,
   settings,
   uploaded,
+  fileCount,
   uploading,
   onCheck,
   dismissals,
@@ -1077,6 +1079,8 @@ function CheckFooter({
   fresh: boolean;
   settings: FooterSettings;
   uploaded: boolean;
+  /** The item's uploaded files: the check reads them all, and the button says so once there's more than one. */
+  fileCount: number;
   uploading: boolean;
   onCheck: () => void;
   dismissals: Dismissals;
@@ -1173,7 +1177,7 @@ function CheckFooter({
         className={`${button} shine bg-teal-600 text-white hover:bg-teal-700 disabled:cursor-not-allowed disabled:bg-line-200 disabled:text-slate-500`}
       >
         <Icon name="visamo" className="-me-0.5 size-5" />
-        {last ? c.again : c.check}
+        {checkLabel(c, fileCount, !!last)}
       </button>
     );
     action = uploaded ? (
@@ -2370,6 +2374,16 @@ function uploadedLine(t: Labels, file: FileView, intlLocale: string) {
   return file.uploaderName
     ? format(t.file.uploadedBy, { name: file.uploaderName, date })
     : format(t.file.uploadedOn, { date });
+}
+
+/**
+ * The Check button's label. With more than one file it names them all ("Check
+ * all 3 files"), so it's clear the check reads every file, not only the first.
+ */
+function checkLabel(c: Labels["check"], fileCount: number, again: boolean) {
+  if (fileCount <= 1) return again ? c.again : c.check;
+  const forms = again ? c.againFiles : c.checkFiles;
+  return fileCount === 2 ? forms.two : format(forms.other, { count: fileCount });
 }
 
 /**

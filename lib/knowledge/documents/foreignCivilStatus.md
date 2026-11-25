@@ -6,10 +6,11 @@ What the foreign partner shows about their civil status (single, divorced,
 widowed or married). Every couple needs it, including those married in
 Israel. What it has to show depends on your case:
 
-- **Their status now,** issued in the last 6 months (§ד.2.ה). From their
-  country, and in practice also from each other country they're a citizen
-  of, and each country they lived in for 6 months or more in a row, like the
-  police certificate. Married to each other, it's needed even if the marriage
+- **Their status now,** issued in the last 6 months (§ד.2.ה). The procedure
+  asks for it only from their country. In practice, offices almost always
+  ask for it also from each other country they're a citizen of, and each
+  country they lived in for 6 months or more in a row, like the police
+  certificate: bring those too. Married to each other, it's needed even if the marriage
   isn't registered in their country: then it may still say single (see the
   marriage certificate).
 - **Married to each other: their status before the marriage** (single,
@@ -639,6 +640,12 @@ foreign partner signs a notarized or consular affidavit about their status.
 One shows the foreign partner was free to marry you; the other shows their
 status now. If they can't get one of them, a single affidavit can declare
 both, and their children too.
+
+**My partner lived in another country too. Do we need their status from there?**
+If they lived there for 6 months or more in a row, bring it. The procedure
+asks for it only from their country, but offices almost always ask for it
+from the same countries as the police certificate: each country of
+citizenship, and each country lived in for 6 months or more in a row.
 
 **Can the embassy of my partner's country in Israel issue it?**
 Some do, but offices have refused documents issued by a foreign embassy in

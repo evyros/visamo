@@ -7,11 +7,19 @@ shown to users (`lib/knowledge/`).
 
 - The common-law documents: the evidence of living together (procedure
   5.2.0009 not checked).
-- Police certificates from **other countries lived in**: the rule (6 months in
-  a row, not before 14) is from AIC's reading of the January 2024 procedures,
-  not checked against the procedure text. Also from AIC, not the procedures:
-  a police certificate from every country of citizenship, and a civil-status
-  document from every country on the police list.
+- Police certificates from **other countries lived in**: the 6-months-in-a-row
+  rule is in 5.2.0008 §ד.2.ה (edition 14, 5 February 2026): "שהה תקופות
+  ממושכות ומעל חצי שנה ברצף במדינה זרה אחרת שאינה מדינת המוצא". Not found
+  yet in 5.2.0009 (edition 17, 16 July 2026): its §ד.2 only says every
+  applicant over 14 shows a police certificate. Still from AIC only, not the
+  procedures: "not before 14" (a country lived in only as a child), and a
+  police certificate from every country of citizenship.
+- The civil status from **each country on the police list** (settled
+  November 2026, as practice): both procedures ask for it only "ממדינתו"
+  (5.2.0008 and 5.2.0009 §ד.2.ה). AIC: "not an official requirement in the
+  protocols, but almost always required by PIBA". Taken as fact; the
+  knowledge base says both the procedure and the practice. No other source
+  found either way.
 - The couple's children together: their birth certificates.
 - The Israeli partner's previous spouse's death certificate.
 - School records: whose children (current reading in `lib/knowledge/children.md`).

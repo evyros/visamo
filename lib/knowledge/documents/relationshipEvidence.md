@@ -1,6 +1,9 @@
 # Shared photos of you (תמונות משותפות שלכם)
 
-Photos of you together, from different places and times, some with family and friends. At least 10 for the online application; bring more, arranged 6, 9 or 12 to a page.
+Photos of you together, from different places and times, some with family and friends.
+
+- At least 10 photos, and more are strongly recommended.
+- Ideally, arrange 4 to 9 photos per page.
 
 Photos of the two of you together. They're part of the evidence of your
 relationship: how you met and how long you've been together.
@@ -12,6 +15,8 @@ relationship: how you met and how long you've been together.
 - **In color,** not black and white.
 - **Some with more people:** it's highly recommended to include photos with
   family and friends.
-- **At least 10 photos** for the online application.
-- **More photos for the appointment:** prepare more, arranged in a grid of 6,
-  9 or 12 photos to a page, and attach them.
+- **Arranged 4 to 9 photos per page:** the online application accepts only a
+  limited number of files, so put several photos on each page, not one photo
+  per file.
+- **More photos for the appointment:** prepare more, arranged the same way,
+  4 to 9 photos per page, and attach them.

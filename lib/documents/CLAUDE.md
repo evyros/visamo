@@ -84,6 +84,11 @@ its CLAUDE.md). What's unverified or not modelled yet goes in
   document with `each` has `{country}` in its titles. The tests check this.
   `title` is the full name, `shortTitle` the documents page's label, which
   never says whose it is; the points are impersonal: see `i18n/CLAUDE.md`.
+  A document can also have `bullets`: a few short lines under the
+  description, the same for every couple ("At least 10 photos…"), in every
+  language (the tests check). The card lists them before the points; the
+  chat, the checker and the guide's opening get them after the description
+  (`documentBullets`, `titles.ts`). Most documents have none.
 - **Every document has a guide** in `lib/knowledge/documents/<id>.md`: the
   full picture for the chat and the checker, beyond the page's short
   description. `npm run guides:sync` creates it with its title and

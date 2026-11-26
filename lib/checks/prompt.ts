@@ -9,6 +9,7 @@ import type { RequiredDocument } from "@/lib/documents/build";
 import type { Signing, Translation } from "@/lib/documents/catalog";
 import type { Certification } from "@/lib/documents/certification";
 import type { DocumentCheck } from "@/lib/documents/checks";
+import { documentBullets } from "@/lib/documents/titles";
 import type { DismissReason, FindingKind } from "./dismissals";
 import { checkLines, type CheckLine } from "./lines";
 import type { CheckFinding } from "./result";
@@ -112,7 +113,7 @@ export function checkContext(details: CaseDetails, branch: BranchCode | null, it
   const page = t.app.documentsPage;
   const document = lines([
     ["Name", format(text.title, { country: where })],
-    ["What it is", format(text.description, { country: item.country ? regionInSentence(item.country, "en") : "" })],
+    ["What it is", [format(text.description, { country: item.country ? regionInSentence(item.country, "en") : "" }), ...documentBullets(text)].join(" ")],
     ["What it has to show", item.points.length ? item.points.map((p) => t.app.documents.points[p]).join(" ") : null],
     ["Whose", { israeli: "the Israeli partner", foreign: "the foreign partner", couple: "the couple", children: "the children" }[item.owner]],
     ["For the country", item.country && where],

@@ -1,0 +1,46 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-10-01",
+  "cases": [
+    {
+      "name": "grid, 6 photos per page",
+      "files": ["grid.pdf"],
+      "expect": { "rating": ["looksGood", "canImprove"], "mayFlag": ["different places and different times"] }
+    },
+    {
+      "name": "one photo per file, 10 files",
+      "files": [
+        "photo-01.jpg",
+        "photo-02.jpg",
+        "photo-03.jpg",
+        "photo-04.jpg",
+        "photo-05.jpg",
+        "photo-06.jpg",
+        "photo-07.jpg",
+        "photo-08.jpg",
+        "photo-09.jpg",
+        "photo-10.jpg"
+      ],
+      "expect": {
+        "rating": "canImprove",
+        "flagged": ["aren't each in a file of their own"],
+        "mayFlag": ["different places and different times"],
+        "mustSay": [
+          "put several photos in each file",
+          "the online application of Misrad Hapnim accepts only a limited number of files"
+        ],
+        "mustNotSay": ["put all the photos in one file"]
+      }
+    },
+    {
+      "name": "one photo per page, in one file",
+      "files": ["one-per-page.pdf"],
+      "expect": { "rating": ["looksGood", "canImprove"], "mayFlag": ["different places and different times"] }
+    },
+    {
+      "name": "mix: 2 single photos and 8 in a grid",
+      "files": ["photo-01.jpg", "photo-02.jpg", "grid-8.pdf"],
+      "expect": { "rating": ["looksGood", "canImprove"], "mayFlag": ["different places and different times"] }
+    }
+  ]
+}

@@ -450,6 +450,7 @@ export const checks = {
       "They're from different places and different times, not one event.",
       "At least 2 photos show other people, such as family or friends, not only the couple.",
       "Each photo is clear enough to recognize the people in it.",
+      "The photos aren't each in a file of their own: most are in files that hold several, as pages of one PDF or several to a page. Judged as a whole set: a few files of a single photo are fine. When most photos are one to a file, say to put several photos in each file, ideally 4 to 9 photos per page, and say why, in these words: \"the online application of Misrad Hapnim accepts only a limited number of files\". Never say to put them all in one file: each file has a size limit too.",
     ],
     maxPages: EVIDENCE_PAGES,
   },

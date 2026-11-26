@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { format, type Messages } from "@/i18n/messages";
 import { documents, type Category, type DocumentId } from "@/lib/documents/catalog";
+import { documentBullets } from "@/lib/documents/titles";
 
 // The knowledge base (lib/knowledge), as the models read it: the chat reads
 // all of it, the document checker the part a document needs.
@@ -13,7 +14,7 @@ import { documents, type Category, type DocumentId } from "@/lib/documents/catal
  * version: lib/prompts.test.ts fails until it's raised and recorded
  * (npm run prompts:lock).
  */
-export const KNOWLEDGE_VERSION = 203;
+export const KNOWLEDGE_VERSION = 204;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [
@@ -59,7 +60,8 @@ const general = (text: string) => format(text.replace(/:\s*\{country\}/, ""), { 
  */
 export function guideOpening(id: DocumentId, en: Messages, he: Messages) {
   const text = en.app.documents.items[id];
-  return `# ${general(text.title)} (${general(he.app.documents.items[id].title)})\n\n${general(text.description)}\n`;
+  const bullets = documentBullets(text).map((b) => `- ${b}\n`).join("");
+  return `# ${general(text.title)} (${general(he.app.documents.items[id].title)})\n\n${general(text.description)}\n${bullets && `\n${bullets}`}`;
 }
 
 /**

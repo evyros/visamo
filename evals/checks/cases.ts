@@ -10,6 +10,7 @@ import { buildDocumentList, type RequiredDocument } from "@/lib/documents/build"
 import { checkFor, type DocumentCheck } from "@/lib/documents/checks";
 import { parts as allParts } from "@/lib/documents/points";
 import { scenarios, type ScenarioName } from "@/lib/documents/scenarios";
+import { MAX_FILES_PER_DOCUMENT } from "@/lib/files/rules";
 
 // The document check's cases: a folder per document, named by its catalog id
 // (or with "documentKey" in cases.json, for a key with a country), holding
@@ -183,6 +184,7 @@ function loadSuite(folder: string): EvalCase[] {
       return { name, path: path.join(dir, "files", name), contentType: contentTypes[ext] };
     });
     if (!files.length) errors.push(`${id}: no files`);
+    if (files.length > MAX_FILES_PER_DOCUMENT) errors.push(`${id}: ${files.length} files, but the app takes at most ${MAX_FILES_PER_DOCUMENT} a document`);
 
     cases.push({
       id,

@@ -1881,7 +1881,8 @@
         "relationshipEvidence": {
           "title": "Shared photos of you",
           "shortTitle": "Photos together",
-          "description": "Photos of you together, from different places and times, some with family and friends. At least 10 for the online application; bring more, arranged 6, 9 or 12 to a page."
+          "description": "Photos of you together, from different places and times, some with family and friends.",
+          "bullets": ["At least 10 photos, and more are strongly recommended.", "Ideally, arrange 4 to 9 photos per page."]
         },
         "messageHistory": {
           "title": "Message and call history",

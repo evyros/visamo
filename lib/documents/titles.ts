@@ -29,6 +29,15 @@ export function documentTitle(key: string, texts: Texts, locale: Locale, names?:
   return owner === "israeli" || owner === "foreign" ? format(texts.whose, { document: short, name: names[owner] }) : short;
 }
 
+/**
+ * The bullets under a document's description (`app.documents.items.<id>.bullets`):
+ * what to know about it beyond the one-line description, the same for every
+ * couple. Most documents have none.
+ */
+export function documentBullets(text: Texts["items"][keyof Texts["items"]]): readonly string[] {
+  return "bullets" in text ? text.bullets : [];
+}
+
 /** Whose the document for a key is, following renames; null for an id the catalog no longer has. */
 export function documentOwner(key: string): Owner | null {
   const [saved] = key.split(":");

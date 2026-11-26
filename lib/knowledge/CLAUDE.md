@@ -33,8 +33,8 @@ and the rules for children, the former USSR and the security check.
 Each document on the documents page has a guide in `documents/<id>.md`, named
 after its catalog id: what it is, how to get it, what it should include, and
 the questions couples ask about it, with their answers. Every guide opens
-with what the messages already have: the title in English and Hebrew, and
-the page's English description:
+with what the messages already have: the title in English and Hebrew, the
+page's English description, and its bullets, for a document that has them:
 
 ```md
 # Birth certificate (תעודת לידה)
@@ -48,9 +48,11 @@ The loader (`lib/knowledge-base.ts`) adds the guides after `documents.md`,
 grouped like the page, moving each one's headings under its group. So:
 
 - **The opening comes from the messages.** Never edit it by hand: change the
-  title or description in `i18n/messages/`, then run `npm run guides:sync`.
-  The tests fail while an opening doesn't match. Write the guide as what
-  comes after the description: don't repeat it.
+  title, description or bullets in `i18n/messages/`, then run
+  `npm run guides:sync`. The tests fail while an opening doesn't match.
+  Write the guide as what comes after the opening: don't repeat it. Start
+  it with a paragraph, never a list: the sync takes a list right after the
+  description as the opening's bullets, and replaces it.
 - **Every guide follows the same skeleton**, in this order. Leave out a
   section with nothing to say in it; never add an empty one, and never add
   other `##` sections.

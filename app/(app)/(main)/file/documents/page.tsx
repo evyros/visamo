@@ -10,7 +10,7 @@ import { caseChecks, checkBalance } from "@/lib/checks/store";
 import { checkView } from "@/lib/checks/view";
 import { formUrls, type Owner } from "@/lib/documents/catalog";
 import { groupOf, ownerOrder, typeGroupOf, typeOrder, type Group, type TypeGroup } from "@/lib/documents/progress";
-import { documentTitle } from "@/lib/documents/titles";
+import { documentBullets, documentTitle } from "@/lib/documents/titles";
 import { fileView } from "@/lib/files/view";
 import { checksRunningLow } from "@/lib/products";
 import { requireCase } from "@/lib/session";
@@ -123,7 +123,8 @@ export default async function DocumentsPage() {
       namedTitle: documentTitle(d.key, catalog, locale, { israeli, foreign }) ?? title,
       // In a sentence: "for the Philippines", where the title says "Philippines".
       description: format(text.description, { country: d.country ? regionInSentence(d.country, locale) : "" }),
-      points: d.points.map((point) => catalog.points[point]),
+      // The document's own bullets, then what it has to show by the couple's case.
+      points: [...documentBullets(text), ...d.points.map((point) => catalog.points[point])],
       ...(d.form && { form: { name: t.formNames[d.form], url: formUrls[d.form] } }),
       ...(d.id === "recommendationLetters" && { tool: { label: t.askFriends, url: letterTool.toString() } }),
       // What to do to it, in the order it takes time: certification, sending, translation, signing.

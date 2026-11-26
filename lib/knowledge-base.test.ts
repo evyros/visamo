@@ -6,8 +6,8 @@ import { documents } from "./documents/catalog";
 import { guideOpening } from "./knowledge-base";
 
 // Every catalog document has a guide in lib/knowledge/documents/<id>.md. It
-// opens with its title in English and Hebrew and the page's description,
-// from the messages; the rest is empty until it's written.
+// opens with its title in English and Hebrew, the page's description and its
+// bullets, from the messages; the rest is empty until it's written.
 // `npm run guides:sync` rewrites the openings after a message change.
 
 const DIR = fileURLToPath(new URL("./knowledge/documents", import.meta.url));
@@ -15,8 +15,14 @@ const guides = readdirSync(DIR).filter((file) => file.endsWith(".md"));
 const ids: readonly string[] = documents.map((d) => d.id);
 const [en, he] = await Promise.all([loadMessages("en"), loadMessages("he")]);
 
-/** A guide without its opening: the title line and the paragraph under it. */
-const bodyOf = (text: string) => (text.startsWith("# ") ? text.replace(/^# .*\n+(?:.+\n)*\n*/, "") : text.trimStart());
+/**
+ * A guide without its opening: the title line, the description under it, and
+ * the description's bullets, if it has any. A guide's own text starts with a
+ * paragraph (lib/knowledge/CLAUDE.md), so a list right after the description
+ * is always the opening's.
+ */
+const bodyOf = (text: string) =>
+  text.startsWith("# ") ? text.replace(/^# .*\n+(?:.+\n)*\n*(?:(?:- .*\n)+\n*)?/, "") : text.trimStart();
 
 describe("the document guides", () => {
   if (process.env.SYNC_GUIDES) {

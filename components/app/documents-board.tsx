@@ -89,7 +89,7 @@ export type DocumentItem = {
   /** The title with the partner's name for one of theirs ("Passport (John)"), for lists outside the groups. */
   namedTitle: string;
   description: string;
-  /** What it has to show, by the couple's case, right under the description; empty for most documents. */
+  /** Bullets right under the description: the document's own (the same for every couple), then what it has to show by the couple's case; empty for most documents. */
   points: string[];
   /** The Misrad Hapnim form to fill in, for the forms themselves. */
   form?: { name: string; url: string };

@@ -17,6 +17,7 @@ import { APOSTILLE, FORMER_USSR, LEGALIZATION, SECURITY_CHECK } from "./countrie
 import { ISSUERS } from "./issuers";
 import { facts } from "./facts";
 import { scenarios } from "./scenarios";
+import { documentBullets } from "./titles";
 
 const documents: readonly DocumentDefinition[] = catalog;
 const ids = documents.map((d) => d.id);
@@ -104,6 +105,18 @@ describe("the messages", () => {
       const b = he.app.documents.items[id as keyof typeof he.app.documents.items];
       expect(placeholders(b.title), id).toEqual(placeholders(a.title));
       expect(placeholders(b.description), id).toEqual(placeholders(a.description));
+    }
+  });
+
+  it("has the same bullets in every language, none empty and none with a placeholder", () => {
+    for (const id of ids) {
+      const a = documentBullets(en.app.documents.items[id as keyof typeof en.app.documents.items]);
+      const b = documentBullets(he.app.documents.items[id as keyof typeof he.app.documents.items]);
+      expect(b.length, id).toBe(a.length);
+      for (const bullet of [...a, ...b]) {
+        expect(bullet.trim(), id).not.toBe("");
+        expect(placeholders(bullet), id).toEqual([]);
+      }
     }
   });
 });

@@ -44,6 +44,17 @@ as long as the clerk can check them online.
 A full birth certificate (certidão de nascimento de inteiro teor), from the
 registry office (cartório), on paper: the online one may not be accepted.
 
+### Canada
+
+The long-form birth certificate, with the parents' names, not the short one.
+Each province names it differently (in Ontario, a birth certificate with
+parental information). It comes from the vital statistics office of the
+province or territory of birth.
+
+The apostille comes from the province if the birth was in Alberta, British
+Columbia, Ontario, Quebec or Saskatchewan, and from Global Affairs Canada
+for any other province or territory.
+
 ### China
 
 Someone born before about 1996 usually has no birth (medical) certificate

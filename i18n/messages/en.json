@@ -1882,7 +1882,10 @@
           "title": "Shared photos of you",
           "shortTitle": "Photos together",
           "description": "Photos of you together, from different places and times, some with family and friends.",
-          "bullets": ["At least 10 photos, and more are strongly recommended.", "Ideally, arrange 4 to 9 photos per page."]
+          "bullets": [
+            "At least 10 photos, and more are strongly recommended.",
+            "Ideally, arrange 4 to 9 photos per page."
+          ]
         },
         "messageHistory": {
           "title": "Message and call history",
@@ -2475,6 +2478,12 @@
             "office": "the registry office (cartório)",
             "details": "Ask for the full birth certificate (certidão de nascimento de inteiro teor), on paper: the online version may not be accepted."
           },
+          "CA": {
+            "office": "the vital statistics office of the province or territory of birth",
+            "details": "Ask for the long-form birth certificate, with the parents' names, not the short one. Each province names it differently (in Ontario, a birth certificate with parental information).",
+            "apostilleBy": "the province's apostille office, or Global Affairs Canada",
+            "apostilleDetails": "From the province if the birth was in Alberta, British Columbia, Ontario, Quebec or Saskatchewan; from Global Affairs Canada for any other province or territory."
+          },
           "CN": {
             "office": "a notary office",
             "details": "Someone born before about 1996 usually has no birth (medical) certificate (出生医学证明). Instead, a notary office issues a notarized birth certificate (出生公证), based on the household register (户口本) and the parents' documents. The apostille comes after that."
@@ -2649,8 +2658,10 @@
             "apostilleBy": "any registry office (cartório)"
           },
           "CA": {
-            "office": "the province's vital statistics office",
-            "details": "There's no national certificate: each province and territory registers marriages. Ask for a marriage search letter, which says whether a marriage is registered there. It covers only that province."
+            "office": "the vital statistics office of the province or territory",
+            "details": "There's no national certificate: each province and territory registers marriages. Ask for a marriage search letter, which says whether a marriage is registered there. It covers only that province or territory.",
+            "apostilleBy": "the province's apostille office, or Global Affairs Canada",
+            "apostilleDetails": "From the province if the letter is from Alberta, British Columbia, Ontario, Quebec or Saskatchewan; from Global Affairs Canada for any other province or territory."
           },
           "CH": {
             "office": "the civil registry office (Zivilstandsamt) of their place of origin (Heimatort)",
@@ -2876,7 +2887,9 @@
           },
           "CA": {
             "office": "the Royal Canadian Mounted Police (RCMP)",
-            "details": "A certified criminal record check, based on fingerprints. Apply through a company the RCMP accredits. From abroad, the fingerprints are taken on paper and sent to one."
+            "details": "A certified criminal record check, based on fingerprints. Apply through a company the RCMP accredits; there are none outside Canada. From abroad, the fingerprints are taken on paper, by the local police or a notary, not at a Canadian embassy, and sent to one in Canada.",
+            "apostilleBy": "Global Affairs Canada",
+            "apostilleDetails": "Never a province: the check is a federal document."
           },
           "CH": {
             "office": "the Federal Office of Justice",

@@ -99,9 +99,13 @@ the apostille on Brazilian documents.
 ### Canada
 
 There's no national certificate: marriages are registered by each
-province and territory. The province's vital statistics office issues a
-marriage search letter, which says whether a marriage is registered there.
-It covers only that province.
+province and territory. The vital statistics office of the province or
+territory issues a marriage search letter, which says whether a marriage is
+registered there. It covers only that province or territory.
+
+The apostille comes from the province if the letter is from Alberta, British
+Columbia, Ontario, Quebec or Saskatchewan, and from Global Affairs Canada
+for any other province or territory.
 
 ### Chile
 

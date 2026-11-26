@@ -3,6 +3,32 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v62 — 2026-11-27
+
+**What changed:** New `CA` (Canada) entry for the birth certificate in
+`issuers.ts`, with its guide section and messages: the long-form
+certificate, with the parents' names, from the vital statistics office of
+the province or territory of birth; the apostille from the province
+(Alberta, British Columbia, Ontario, Quebec, Saskatchewan) or Global Affairs
+Canada. The police certificate's messages and guide section (no change to
+its entry) now name Global Affairs Canada for the apostille, and say who
+takes the fingerprints abroad. The civil status's messages and guide section
+(no change to its entry either) name the apostille office the same way as
+the birth certificate's.
+
+**Why:** Canadian birth certificates got the general steps, which don't say
+that provinces issue a short form without the parents' names. The police
+certificate's apostille said only "from Canada", though a provincial office
+can't apostille the RCMP's federal check.
+
+**Source:** international.canada.ca, Authentication of documents:
+Requirements; Global Affairs Canada, Five tips for authenticating Canadian
+documents (January 2025); CIC News, Long-form birth certificates (June
+2026: provincial names, Ontario's birth certificate with parental
+information); rcmp.ca, Where to go (outside Canada).
+
+**Lists that changed:** none by key (no scenario has a Canadian partner).
+
 ## v61 — 2026-11-26
 
 **What changed:** Colombia's birth certificate and civil status (`CO` in

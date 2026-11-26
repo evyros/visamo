@@ -44,6 +44,7 @@ export const ISSUERS: Readonly<Record<IssuedDocument, Readonly<Partial<Record<st
   foreignBirthCertificate: {
     AR: { kind: "document", heading: "Argentina", electronic: true },
     BR: { kind: "document", heading: "Brazil" },
+    CA: { kind: "document", heading: "Canada" },
     CN: { kind: "document", heading: "China" },
     CO: { kind: "document", heading: "Colombia" },
     CU: { kind: "document", heading: "Cuba" },

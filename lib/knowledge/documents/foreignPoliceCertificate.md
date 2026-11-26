@@ -71,8 +71,12 @@ apostille.
 
 A certified criminal record check from the Royal Canadian Mounted Police
 (RCMP), based on fingerprints. It's applied for through a company the RCMP
-accredits: from abroad, the fingerprints are taken on paper and sent to
-one.
+accredits, and there are none outside Canada: from abroad, the fingerprints
+are taken on paper, by the local police or a notary, not at a Canadian
+embassy, and sent to one in Canada.
+
+The apostille comes from Global Affairs Canada, never from a province: the
+check is a federal document.
 
 ### Chile
 

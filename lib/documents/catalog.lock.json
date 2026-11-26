@@ -1,6 +1,6 @@
 {
-  "version": 61,
-  "fingerprint": "de3c40d2bc3f2300c6123d05799421de6b36019173cbf0d51c7c53939bb97ce6",
+  "version": 62,
+  "fingerprint": "b8eeed4a23543e1b84e565255ce4ccb893e8e74d4d1f8784c40062713a2d55d7",
   "scenarios": {
     "marriedInCyprus": [
       "statusApplicationMarried",

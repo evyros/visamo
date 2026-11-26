@@ -241,9 +241,13 @@ in Poland to receive it.
 
 ### Portugal
 
-A birth certificate (certidão de nascimento), on paper rather than online. The
-usual certificate is in Portuguese. A multilingual one (certidão em modelo
-internacional) also exists, on paper only, asked for in person or by post.
+A birth certificate (certidão de nascimento), on paper rather than online,
+from any civil registry office (Conservatória do Registo Civil) or a
+Portuguese consulate. The usual certificate is in Portuguese. A multilingual
+one (certidão em modelo internacional) also exists, on paper only, asked for
+in person or by post. The apostille comes from the Prosecutor General's
+Office (Procuradoria-Geral da República) in Lisbon, or one of its regional
+offices.
 
 ### Russia
 

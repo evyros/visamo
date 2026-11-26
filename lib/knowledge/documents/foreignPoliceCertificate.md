@@ -335,11 +335,19 @@ in Poland to receive it.
 
 ### Portugal
 
-A criminal record certificate (certificado do registo criminal), at any
-citizen's office (Loja do Cidadão) or court. Choose a wide purpose, such as
-work abroad (exercício de profissão/atividade no estrangeiro). It's issued in
-Portuguese and English, so it usually needs no translation. The apostille
-comes from the regional prosecutor's office (Procuradoria-Geral Regional).
+A criminal record certificate (certificado do registo criminal): online with
+a Portuguese citizen card or digital mobile key (Chave Móvel Digital), or in
+person at a citizen's counter (Espaço Cidadão), a criminal records office or a
+court. From abroad, apply with the online form for residents abroad, or by
+post, and it's sent by email or by post. For the purpose, choose settling
+abroad (fixação de residência no estrangeiro). It's issued in Portuguese and
+English, so it usually needs no translation.
+
+One issued online or by email is a file with a digital signature, and gets
+an electronic apostille: Israel accepts a digital police certificate with an
+electronic apostille (1.3.0001 §4.3.3). The apostille comes from the
+Prosecutor General's Office (Procuradoria-Geral da República) in Lisbon, or
+one of its regional offices.
 
 ### Russia
 

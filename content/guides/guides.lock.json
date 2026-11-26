@@ -5,17 +5,17 @@
     "he": "98877117d863840400a5502c55102ecb913ce1caba500b0766350645159622ef"
   },
   "partner-visa-timeline": {
-    "sources": "62ee97b9293550c996c2878c19701c248c0fffdac5627285794b2ed06ff0bb66",
+    "sources": "59c4be5cb2ea4ebaf61dcd19186f904b4fa89f8ffd13aca21ab8cb5115d7aff8",
     "en": "76b5c4341c941937167cbfd3d86597a2853ee10d5960541707a56c86beeb8c84",
     "he": "1e0ab4db7e2a850c3aad1e4595313440988cb37e1e190bab1ed30f1624ceecf8"
   },
   "partner-visa-documents": {
-    "sources": "50497f563a7f6a8be166ff2dfc328d55f24ede4be8c8db75d3f516278d59da18",
+    "sources": "7c4e862a323404d014c0c7575118cc3f571e564ddb3ac00832f7bbc8eb981849",
     "en": "a74cf9c517405f84be2864472a21c40da26f367c87f99a9ce6e57ea9a164f858",
     "he": "b583484d1e47542b69e3368747e39edc4425633f535e45f2e85bf74811bad505"
   },
   "common-law-couples": {
-    "sources": "baf51ba7582b31ad4447cb3560ab7b72aa0397c38c34874ac4cdc89a073a0d9b",
+    "sources": "4dbfaeb47d6aea948632d7a98f51c0a2529e46735a1c5efc244447370cd412fc",
     "en": "f95510af7c14bf035a6f776a03fe409ce9e71b4b97d1a873d1f7b50efb4191a0",
     "he": "a65975de507d3aee5c28f6faaa957e3df59e2df4a9d9eb54f42960b57fbc888d"
   },

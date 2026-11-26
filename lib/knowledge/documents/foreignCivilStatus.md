@@ -408,12 +408,17 @@ in Poland to receive it.
 
 ### Portugal
 
-Portugal issues no civil-status certificate. Go to a notary for a certificate
-of life and identity (certificado de vida e identidade), and make sure it says
-single (solteiro/a). A narrative birth certificate (certidão de nascimento
-narrativa) records any marriage or divorce, but doesn't say "single" in words,
-and Misrad Hapnim (משרד הפנים) may not accept it as proof of status. The apostille comes from
-the regional prosecutor's office (Procuradoria-Geral Regional).
+Portugal has no standard civil-status certificate: status is proved by the
+birth certificate, which records any marriage or divorce but doesn't say
+"single" in words, so Misrad Hapnim (משרד הפנים) may not accept it as proof of
+status. Go to a notary for a certificate of life and identity (certificado de
+vida e de identidade), and make sure it says single (solteiro/a). A civil
+registry office (Conservatória do Registo Civil) can also say it in writing:
+a declaration from its records, or a negative certificate (certidão negativa)
+showing no marriage is registered.
+
+The apostille comes from the Prosecutor General's Office (Procuradoria-Geral
+da República) in Lisbon, or one of its regional offices.
 
 ### Russia
 

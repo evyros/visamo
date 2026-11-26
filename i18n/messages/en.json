@@ -2563,7 +2563,9 @@
             "apostilleDetails": "The ministry mails documents back only to an address in Poland, the EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone in Poland in the request to receive them."
           },
           "PT": {
-            "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. The usual one is in Portuguese; a multilingual one (certidão em modelo internacional) also exists, on paper only, asked for in person or by post."
+            "office": "any civil registry office (Conservatória do Registo Civil) or a Portuguese consulate",
+            "details": "Ask for the birth certificate (certidão de nascimento) on paper, not online. The usual one is in Portuguese; a multilingual one (certidão em modelo internacional) also exists, on paper only, asked for in person or by post.",
+            "apostilleBy": "the Prosecutor General's Office (Procuradoria-Geral da República) in Lisbon, or one of its regional offices"
           },
           "RU": {
             "office": "any civil registry office (ЗАГС)",
@@ -2775,8 +2777,8 @@
           },
           "PT": {
             "office": "a notary",
-            "details": "Portugal issues no civil-status certificate. Ask a notary for a certificate of life and identity (certificado de vida e identidade), and make sure it says single (solteiro/a). A narrative birth certificate (certidão de nascimento narrativa) records any marriage or divorce, but doesn't say \"single\" in words, and Misrad Hapnim may not accept it as proof of status.",
-            "apostilleBy": "the regional prosecutor's office (Procuradoria-Geral Regional)"
+            "details": "Portugal has no standard civil-status certificate: status is proved by the birth certificate, which records any marriage or divorce but doesn't say \"single\" in words, so Misrad Hapnim may not accept it as proof of status. Ask a notary for a certificate of life and identity (certificado de vida e de identidade), and make sure it says single (solteiro/a). A civil registry office (Conservatória do Registo Civil) can also say it in writing: a declaration from its records, or a negative certificate (certidão negativa) showing no marriage is registered.",
+            "apostilleBy": "the Prosecutor General's Office (Procuradoria-Geral da República) in Lisbon, or one of its regional offices"
           },
           "RU": {
             "office": "any civil registry office (ЗАГС)",
@@ -2998,9 +3000,10 @@
             "apostilleDetails": "The ministry mails documents back only to an address in Poland, the EU, Iceland, Liechtenstein, Norway or Switzerland: from Israel, name someone in Poland in the request to receive them."
           },
           "PT": {
-            "office": "any citizen's office (Loja do Cidadão) or court",
-            "details": "A criminal record certificate (certificado do registo criminal). Choose a wide purpose, such as work abroad (exercício de profissão/atividade no estrangeiro).",
-            "apostilleBy": "the regional prosecutor's office (Procuradoria-Geral Regional)"
+            "office": "Portugal's criminal records service, online or at a citizen's counter (Espaço Cidadão) or court",
+            "details": "A criminal record certificate (certificado do registo criminal). Apply online with a Portuguese citizen card or digital mobile key (Chave Móvel Digital), or in person. From abroad, apply with the online form for residents abroad, or by post: it's sent by email or by post. For the purpose, choose settling abroad (fixação de residência no estrangeiro).",
+            "apostilleBy": "the Prosecutor General's Office (Procuradoria-Geral da República) in Lisbon, or one of its regional offices",
+            "apostilleDetails": "One issued online or by email is a file with a digital signature, and gets an electronic apostille: Misrad Hapnim accepts a digital police certificate with an electronic apostille."
           },
           "RU": {
             "office": "Russia's Ministry of Internal Affairs (МВД)",

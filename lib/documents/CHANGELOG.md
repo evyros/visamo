@@ -3,6 +3,34 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v60 — 2026-11-26
+
+**What changed:** New `CO` (Colombia) entries in `issuers.ts`, with guide
+sections and messages, all three `electronic`: the birth certificate (a
+certified copy of the registro civil de nacimiento from the notaría or
+Registraduría where the birth was registered), the civil status (Colombia
+issues no certificate of single status: the birth record with its notes,
+valid for marriage, issued in the last 3 months, or a consulate's
+declaración de estado civil), and the police certificate (the certificado de
+antecedentes judiciales, issued with its apostille only online by the
+Cancillería). Colombia is also in `VISA_EXEMPT` again (not part of the
+lists).
+
+**Why:** Colombian documents got the general steps, which say to get the
+original on paper and send it by courier. Colombia apostilles only online,
+as a file, a notary's copy of a civil record is never handed over, and the
+police certificate isn't issued on paper at all. Israel restored Colombia's
+visa exemption on 1 September 2026.
+
+**Source:** cancilleria.gov.co, Guía Apostilla y Legalización de Registros
+Civiles; registraduria.gov.co, Apostilla del registro civil;
+antecedentes.policia.gov.co, Preguntas frecuentes (Decree 19 of 2012,
+art. 93); Colombian consulates in Quito, Milan and Bilbao (civil status);
+embassies.gov.il/colombia, Israel and Colombia Agree on Mutual Visa
+Exemption.
+
+**Lists that changed:** none by key (no scenario has a Colombian partner).
+
 ## v59 — 2026-11-24
 
 **What changed:** New `marriageCertificateAbroad` entries in `issuers.ts`,

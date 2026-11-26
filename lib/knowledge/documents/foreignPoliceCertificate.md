@@ -87,6 +87,16 @@ Security Bureau, often through its WeChat service. Ask for the paper
 certificate by post, not the online one. It's notarized, then apostilled by the
 foreign ministry or a local foreign affairs office.
 
+### Colombia
+
+A certificate of criminal record (certificado de antecedentes judiciales),
+from the National Police (Policía Nacional). Colombia doesn't issue it on
+paper: for use abroad, ask the foreign ministry (Cancillería) for it online,
+with its apostille, for migration purposes (con fines migratorios). The
+certificate and the apostille come by email, as files: there's no paper
+original. Israel accepts a digital police certificate with an electronic
+apostille (1.3.0001 §4.3.3).
+
 ### Croatia
 
 A certificate from the criminal record (potvrda iz kaznene evidencije), not

@@ -219,6 +219,28 @@ shown to users (`lib/knowledge/`).
   asking for the judge's name on the apostille and the "original" marriage
   certificate; not understood yet.
 
+- **Colombia** (researched 2026-11-26, from the Cancillería's guide to
+  apostilling civil records, the Registraduría's apostille page, the
+  police's FAQ and Colombian consulates' pages; `CO` in the issuers, all
+  three `electronic`). Every Colombian apostille is issued online as a file;
+  a notary's copy of a civil record is never handed over, so there's no
+  paper original. Unknown, from practice:
+  - Whether Misrad Hapnim accepts an e-apostilled birth record or civil
+    status (1.3.0001 §4.3.3 covers only a digital police certificate); how
+    couples show the files at the appointment, and how the notary in Israel
+    translates them.
+  - The civil status: whether a birth record with blank notes is accepted
+    as proof of single status, or the office asks for something that says
+    "single" in words (a consulate's declaración de estado civil, or a
+    sworn statement before a notary, declaración extrajuicio). What a
+    divorced Colombian shows beyond the notes (the divorce decree is its
+    own document).
+  - Which consular services Colombia's embassy in Israel (reopened in
+    Jerusalem, 14 October 2026) offers, so a partner already in Israel
+    could get the declaration there.
+  - The marriage certificate (no `CO` entry): a registro civil de
+    matrimonio, apostilled the same way; not written up.
+
 - **Peru** (researched November 2026, quickly; `PE` in the issuers).
   Unknown: whether Misrad Hapnim asks only for the Poder Judicial's
   criminal record, or also for the police's (antecedentes policiales) or

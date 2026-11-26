@@ -122,6 +122,23 @@ embassy in Israel has been refused. China joined the Apostille Convention in
 November 2023: the document is notarized, then apostilled by the foreign
 ministry or a local foreign affairs office.
 
+### Colombia
+
+Colombia issues no certificate of single status. A marriage, and its
+divorce, are written in the notes (notas) of the birth record (registro civil
+de nacimiento), and that's how Colombia proves status: ask for a copy that
+shows the notes, valid for marriage (válido para matrimonio), issued in the
+last 3 months, from the notary's office (notaría) or registry office
+(Registraduría) where the birth was registered. Blank notes mean never
+married, but the copy doesn't say "single" in words. A Colombian consulate
+can also state the status in writing, from that copy (declaración de estado
+civil).
+
+The apostille comes from the foreign ministry (Cancillería), only online, and
+it's a file, not paper. Misrad Hapnim usually asks for the original on paper,
+so the clerk may push back on the file. Explain that Colombia apostilles
+documents only this way.
+
 ### Croatia
 
 A certificate of free marital status (potvrda o slobodnom bračnom stanju),

@@ -51,6 +51,23 @@ Someone born before about 1996 usually has no birth (medical) certificate
 based on the household register (户口本) and the parents' documents. Then the
 apostille.
 
+### Colombia
+
+A certified copy of the birth record (registro civil de nacimiento), from the
+notary's office (notaría) or registry office (Registraduría) where the birth
+was registered. A birth registered at a Colombian consulate comes from that
+consulate; a consulate can't issue a copy of a birth registered in Colombia.
+Say it's for an apostille: the Registraduría's online digital certificate
+can't get one.
+
+The apostille comes from the foreign ministry (Cancillería), only online, and
+it's a file. A notary's office sends its copy for the apostille directly,
+without handing it over; a registry office's paper copy, issued in the last
+90 days, is scanned and uploaded. So the apostilled birth record is a file,
+not paper. Misrad Hapnim usually asks for the original on paper, so the clerk
+may push back on the file. Explain that Colombia apostilles documents only
+this way.
+
 ### Cuba
 
 A birth certificate (certificación de nacimiento), from the civil registry

@@ -2478,6 +2478,12 @@
             "office": "a notary office",
             "details": "Someone born before about 1996 usually has no birth (medical) certificate (出生医学证明). Instead, a notary office issues a notarized birth certificate (出生公证), based on the household register (户口本) and the parents' documents. The apostille comes after that."
           },
+          "CO": {
+            "office": "the notary's office (notaría) or registry office (Registraduría) where the birth was registered",
+            "details": "A certified copy of the birth record (registro civil de nacimiento). A birth registered at a Colombian consulate comes from that consulate. Say it's for an apostille: the Registraduría's online digital certificate can't get one. A notary's office sends its copy for the apostille directly, without handing it over; a registry office's paper copy, issued in the last 90 days, is scanned and uploaded. Either way, the apostilled birth record is a file, not paper. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the file: explain that Colombia apostilles documents only this way.",
+            "apostilleBy": "Colombia's foreign ministry (Cancillería)",
+            "apostilleDetails": "Only online, and the apostille is a file, with the birth record in it."
+          },
           "CU": {
             "office": "the civil registry (Registro Civil)",
             "details": "A birth certificate (certificación de nacimiento), from any civil registry office, not only the one where the birth was registered. Ask for the full copy (certificación literal), not the short extract the registry issues otherwise. It has no expiry date. A Cuban living abroad asks for it through a Cuban consulate. The legalization is filed through an international law firm in Cuba, such as the Consultoría Jurídica Internacional (CJI), or through a Cuban consulate abroad."
@@ -2660,6 +2666,12 @@
             "details": "A notarized certificate of unmarried status (未婚公证, or 单身证明), based on the household register (户口本), which shows the marital status. It has to be issued in China: a declaration from the Chinese embassy in Israel has been refused.",
             "apostilleBy": "China's foreign ministry or a local foreign affairs office",
             "apostilleDetails": "China joined the Apostille Convention in November 2023: the document is apostilled after it's notarized."
+          },
+          "CO": {
+            "office": "the notary's office (notaría) or registry office (Registraduría) where the birth was registered",
+            "details": "Colombia issues no certificate of single status: a marriage, and its divorce, are written in the notes (notas) of the birth record (registro civil de nacimiento). Ask for a copy of the birth record that shows the notes, valid for marriage (válido para matrimonio), issued in the last 3 months. Blank notes mean never married, but the copy doesn't say \"single\" in words: a Colombian consulate can also state the status in writing, from that copy (declaración de estado civil). Colombia apostilles documents only online, as a file, so the apostilled document is a file, not paper. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the file: explain that Colombia apostilles documents only this way.",
+            "apostilleBy": "Colombia's foreign ministry (Cancillería)",
+            "apostilleDetails": "Only online, and the apostille is a file, with the document in it."
           },
           "CU": {
             "office": "the civil registry (Registro Civil)",
@@ -2879,6 +2891,12 @@
             "office": "the local Public Security Bureau",
             "details": "A certificate of no criminal record (无犯罪记录证明), often requested through the bureau's WeChat service. Ask for the paper certificate by post, not the online one. It's notarized before the apostille.",
             "apostilleBy": "China's foreign ministry or a local foreign affairs office"
+          },
+          "CO": {
+            "office": "Colombia's National Police (Policía Nacional), through the foreign ministry (Cancillería)",
+            "details": "A certificate of criminal record (certificado de antecedentes judiciales). Colombia doesn't issue it on paper: for use abroad, ask the foreign ministry for it online, with its apostille, for migration purposes (con fines migratorios). Both come by email, as files, and Misrad Hapnim accepts a digital police certificate with an electronic apostille.",
+            "apostilleBy": "Colombia's foreign ministry (Cancillería)",
+            "apostilleDetails": "Online, together with the certificate."
           },
           "CU": {
             "office": "the Central Register of Convicted Persons (Registro Central de Sancionados)",

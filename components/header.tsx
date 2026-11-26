@@ -24,6 +24,7 @@ export async function Header() {
       current={locale}
       label={t.nav.language}
       cookieName={LOCALE_COOKIE}
+      smallOnPhones
       options={liveLocales.map((code) => ({
         code,
         nativeName: locales[code].nativeName,
@@ -35,7 +36,7 @@ export async function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
-      <Container className="flex h-[60px] items-center gap-8 lg:h-[72px]">
+      <Container className="flex h-[60px] items-center gap-3 min-[360px]:gap-4 lg:h-[72px] lg:gap-8">
         <Link href={localePath(locale)} className="flex shrink-0 items-center" aria-label="Visamo">
           <Logo />
         </Link>
@@ -53,7 +54,7 @@ export async function Header() {
         </nav>
 
         <div className="ms-auto flex items-center gap-3">
-          <div className="hidden sm:block">{languageSwitch}</div>
+          {languageSwitch}
           <Link
             href={loginUrl(locale)}
             className="hidden px-2 text-[15px] font-semibold text-navy-900 hover:underline lg:inline"
@@ -70,7 +71,6 @@ export async function Header() {
             cta={{ href: signupUrl(locale), label: t.common.ctaPrimary }}
             login={{ href: loginUrl(locale), label: t.nav.login }}
             labels={{ open: t.nav.openMenu, close: t.nav.closeMenu, nav: t.nav.label }}
-            languageSwitch={<div className="sm:hidden">{languageSwitch}</div>}
           />
         </div>
       </Container>

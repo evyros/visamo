@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "./icons";
 
@@ -13,13 +13,11 @@ export function MobileNav({
   cta,
   login,
   labels,
-  languageSwitch,
 }: {
   links: NavLink[];
   cta: NavLink;
   login: NavLink;
   labels: { open: string; close: string; nav: string };
-  languageSwitch: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -94,7 +92,6 @@ export function MobileNav({
                   {link.label}
                 </Link>
               ))}
-              <div className="my-2 px-3">{languageSwitch}</div>
               <Link
                 href={cta.href}
                 className="mt-2 inline-flex h-12 items-center justify-center rounded-[10px] bg-teal-600 font-semibold text-white"

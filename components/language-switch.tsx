@@ -28,6 +28,7 @@ export function LanguageSwitch({
   cookieName,
   saveLocale,
   variant = "auto",
+  smallOnPhones = false,
 }: {
   current: string;
   options: Option[];
@@ -35,6 +36,8 @@ export function LanguageSwitch({
   cookieName: string;
   saveLocale?: (code: string) => Promise<void>;
   variant?: "auto" | "menu";
+  /** A smaller pill below `sm`, for the website header next to the menu button. */
+  smallOnPhones?: boolean;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -58,6 +61,13 @@ export function LanguageSwitch({
     };
   }, [open]);
 
+  // The same page in another language: the language is the first URL segment.
+  function pathFor(code: string) {
+    const segments = pathname.split("/");
+    segments[1] = code;
+    return segments.join("/");
+  }
+
   async function switchTo(code: string) {
     setOpen(false);
     if (code === current) return;
@@ -66,11 +76,9 @@ export function LanguageSwitch({
       window.location.reload();
       return;
     }
-    const segments = pathname.split("/");
-    segments[1] = code;
     // Same page, from the top. A #section left in the URL by an earlier click
     // is dropped on purpose, so the switch never jumps into the page.
-    goToLocale(cookieName, segments.join("/") + window.location.search, code);
+    goToLocale(cookieName, pathFor(code) + window.location.search, code);
   }
 
   if (variant === "auto" && options.length <= 2) {
@@ -78,10 +86,38 @@ export function LanguageSwitch({
       <div
         role="group"
         aria-label={label}
-        className="inline-flex rounded-full border border-line-200 bg-white p-0.5 text-sm"
+        className={`inline-flex rounded-full border border-line-200 bg-white p-0.5 ${
+          smallOnPhones ? "text-[13px] sm:text-sm" : "text-sm"
+        }`}
       >
         {options.map((option) => {
           const active = option.code === current;
+          const className = `rounded-full font-medium transition-colors ${
+            smallOnPhones ? "px-2.5 py-0.5 sm:px-3 sm:py-1" : "px-3 py-1"
+          } ${active ? "bg-navy-900 text-white" : "text-slate-700 hover:text-navy-900"}`;
+          // On the website each language is a real link, so crawlers find the
+          // other language's page. A plain click still saves the cookie first;
+          // a modified click (new tab) is left to the browser.
+          if (!saveLocale) {
+            return (
+              <a
+                key={option.code}
+                href={pathFor(option.code)}
+                hrefLang={option.code}
+                lang={option.code}
+                dir={option.dir}
+                aria-current={active ? "true" : undefined}
+                onClick={(event) => {
+                  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                  event.preventDefault();
+                  switchTo(option.code);
+                }}
+                className={className}
+              >
+                {option.nativeName}
+              </a>
+            );
+          }
           return (
             <button
               key={option.code}
@@ -90,9 +126,7 @@ export function LanguageSwitch({
               dir={option.dir}
               aria-pressed={active}
               onClick={() => switchTo(option.code)}
-              className={`rounded-full px-3 py-1 font-medium transition-colors ${
-                active ? "bg-navy-900 text-white" : "text-slate-700 hover:text-navy-900"
-              }`}
+              className={className}
             >
               {option.nativeName}
             </button>

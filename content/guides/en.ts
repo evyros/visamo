@@ -1125,7 +1125,7 @@ export const guidesEn: Guides = {
       title: "Apostille and translation for the Israel partner visa",
       answer:
         "A document from abroad needs an **apostille** (or, from countries outside the Hague Convention, **consular legalization**) from the country that issued it: it can't be done in Israel. [Misrad Hapnim](/guide/glossary#misrad-hapnim) accepts only Hebrew and Arabic without a translation, so other documents need a **notarized translation**, though in practice English is often accepted. Bring the originals: copies aren't accepted.",
-      updated: "2026-11-15",
+      updated: "2026-11-26",
       sections: [
         {
           id: "apostille",
@@ -1171,9 +1171,11 @@ export const guidesEn: Guides = {
           body: [
             {
               list: [
-                "**Bring the originals.** Misrad Hapnim accepts only the originals with their certification. A copy is accepted only when the original can't be had, like an old birth certificate.",
+                "**Bring the originals.** Misrad Hapnim accepts only the originals with their certification. A copy is accepted only when the original can't be had from the issuing country, like an old birth certificate.",
                 "**The originals have to be in Israel for the first appointment,** even if the foreign partner is still abroad: send them by courier to the Israeli partner in time.",
-                "**Ask for a paper document \"for use abroad\".** Many offices reject a document printed at home or downloaded online, and many countries won't put an apostille on one. Ask for the printed original, with a handwritten signature or official stamp.",
+                "**Ask for a paper document \"for use abroad\".** Where a country issues a document on paper, Misrad Hapnim wants the paper: a printout of a digital version is almost always refused, and many countries won't put an apostille on one. Ask for the printed original, with a handwritten signature or official stamp.",
+                "**Some countries issue a document only as a digital file.** Then the digital file is the original, and it's accepted, as long as the clerk can check it online: by its QR code, serial number or digital signature.",
+                "**Electronic apostilles are accepted too.** Where a country offers both, ask for the paper apostille: it avoids delays. Where it offers only an electronic one, keep its digital file with its code, so the clerk can check it online.",
                 "**Don't separate the apostille from the document.** It's usually attached to it, and separating them voids it.",
                 "**Order a few copies of each document.** You may need another one later.",
               ],
@@ -1190,6 +1192,7 @@ export const guidesEn: Guides = {
               list: [
                 "**What's translated:** the document, and the apostille or legalization on it too. An apostille in English, or that includes English, usually needs no translation.",
                 "**Who translates:** a notary who knows both languages and translates it themselves. A translation someone else made, which a notary only approved, isn't accepted. Translate from the document's own language straight into Hebrew.",
+                "**The notary has to see the original.** The notary marks on their certificate what they translated from. For a paper original, it must be \"the original document\". \"A true copy of the original document\" is accepted only where the country itself issues certified copies, and \"computerized information\" is used for a document that exists only as a digital file. A translation made from a scan or photocopy has \"a copy of the original document\" marked, and is never accepted.",
                 "**Translate into Hebrew, not English.** A translation into English is a risk: the clerk handling your file may not read English well enough to accept it. Hebrew is the safest choice, and makes for a smoother process.",
                 "**If no notary in Israel knows the language,** a local notary abroad translates it into English, and the translation gets an apostille of its own (or consular legalization). In practice, that English translation is usually enough. If the clerk doesn't accept English, a notary in Israel translates it into Hebrew.",
                 "**Your own evidence** (chats, emails, letters from friends) doesn't need a notary. If it isn't in Hebrew or English, translate it yourselves, or mark the important parts and explain them.",
@@ -1250,7 +1253,15 @@ export const guidesEn: Guides = {
         },
         {
           q: "Are copies accepted?",
-          a: "No, only the originals with their certification. A copy is accepted only when the original can't be had.",
+          a: "No, only the originals with their certification. A copy is accepted only when the original can't be had from the issuing country.",
+        },
+        {
+          q: "Is a digital document, or an electronic apostille, accepted?",
+          a: "Yes, when the country issues it only that way and the clerk can check it online. Where the country issues the document on paper, bring the paper.",
+        },
+        {
+          q: "Can the notary translate from a scan?",
+          a: "No. A translation made from a scan has \"a copy of the original document\" marked, which Misrad Hapnim doesn't accept. Bring the notary the original.",
         },
       ],
       related: ["partner-visa-israel", "partner-visa-timeline"],
@@ -1418,7 +1429,7 @@ export const guidesEn: Guides = {
         },
         {
           q: "Do the documents have to be originals?",
-          a: "Yes, with their apostille or legalization. A copy is accepted only when the original can't be had.",
+          a: "Yes, with their apostille or legalization. A copy is accepted only when the original can't be had from the issuing country.",
         },
         {
           q: "How recent do the documents have to be?",

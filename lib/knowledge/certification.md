@@ -71,8 +71,8 @@ by 5.2.0008 §ד.2.ה).
 
 - **Bring the originals.** Misrad Hapnim doesn't accept copies of official
   documents, only the originals with their certification. A copy is
-  accepted only when the original can't be had, like an old birth
-  certificate.
+  accepted only when the original can't be had from the issuing country,
+  like an old birth certificate.
 - **Ask for a paper document "for use abroad".** Where a country issues a
   document on paper, Misrad Hapnim wants the paper: a printout of a digital
   version is almost always refused, and many countries won't put an
@@ -172,20 +172,23 @@ landlord's affidavit. What they need depends on their language:
 
 ### What the notary saw
 
-The notary's certificate on the translation says what the notary translated
-from, and Misrad Hapnim accepts only some of the options:
+The notary's certificate on the translation is in Hebrew and English, and
+the notary marks a box for what they translated from. Misrad Hapnim accepts
+only some of the boxes:
 
-- **"The original document"**: what's required for a document issued on
-  paper. The notary has to see the paper original itself, not a scan:
-  bring it to them.
-- **"A true copy of the original document"**: accepted only where the
-  country itself issues a certified copy, signed and apostilled, and keeps
-  the original in its archive.
-- **"Computerized information from a database"**: for a document issued
-  only as a digital file, which has no paper original.
-- **"A copy of the original document"**: never accepted. A translation made
-  from a scan or a photocopy says this: have the document translated again
-  from the original.
+- **"The original document" (מסמך המקור)**: what's required for a document
+  issued on paper. The notary has to see the paper original itself, not a
+  scan: bring it to them.
+- **"A true copy of the original document" (העתק מאושר של מסמך המקור)**:
+  accepted only where the country itself issues a certified copy, signed
+  and apostilled, and keeps the original in its archive.
+- **"Computerized information from the database of…" (מידע ממוחשב ממאגר
+  המידע של…)**: for a document issued only as a digital file, which has no
+  paper original. The notary names the information and the database it
+  comes from.
+- **"A copy of the original document" (העתק של מסמך המקור)**: never
+  accepted. A translation made from a scan or a photocopy has this box
+  marked: have the document translated again from the original.
 
 A paper document whose apostille is only a digital file is translated as both: the
 document as the original or a true copy, and the apostille as computerized

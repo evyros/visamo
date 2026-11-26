@@ -1556,7 +1556,8 @@ function DocumentScan({ tone, className }: { tone: keyof typeof findingsTone; cl
  * Filler for the locked placeholders: blurred, and never a real finding's
  * text (the server doesn't send those). It wraps like real text: an issue's
  * detail is about one and a half lines on a wide card, more on a phone, and
- * always longer than a tip's.
+ * always longer than a tip's. A lone tip gets an issue's detail, so on a
+ * phone its box is tall enough for the lock and the button stacked over it.
  */
 const LOCKED_ISSUE_DETAIL =
   "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.";
@@ -1588,7 +1589,9 @@ function LockedFindings({ t, locked }: { t: Labels; locked: { issues: number; re
               <Icon name={style.icon} className={`mt-px size-[18px] shrink-0 ${style.color}`} />
               <div dir="ltr" className="min-w-0 flex-1 blur-[5px]">
                 <p className="text-[15px] font-semibold text-navy-900">{filler.title}</p>
-                <p className="mt-0.5 text-sm text-slate-700">{kind === "issue" ? LOCKED_ISSUE_DETAIL : filler.detail}</p>
+                <p className="mt-0.5 text-sm text-slate-700">
+                  {kind === "issue" || boxes.length === 1 ? LOCKED_ISSUE_DETAIL : filler.detail}
+                </p>
               </div>
             </li>
           );

@@ -372,7 +372,7 @@ export const checks = {
       "It is an Israeli Teudat Zehut (identity card), both sides of the card, readable.",
       "The appendix (ספח) is included, as a paper appendix or a printed or downloaded one.",
       "A driver's license or a passport instead of the Teudat Zehut is an issue: it isn't accepted.",
-      "If the file says the couple married abroad or online, the appendix shows the Israeli partner as married. If it doesn't, that's an issue: the marriage has to be registered at Misrad Hapnim before applying.",
+      "If the couple is married and the appendix is uploaded, the appendix shows the Israeli partner as married. If it shows another civil status, that's an issue. If they married abroad or online: the Israeli partner has to register as married at Misrad Hapnim before submitting the online application; say in the finding that it's an easy and short process. If they married in Israel: the marriage is already registered, so the appendix is out of date; a current one shows it.",
     ],
     recommended: [
       "The appendix is recent, so the address and civil status on it.",

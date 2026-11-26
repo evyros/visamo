@@ -1,0 +1,75 @@
+{
+  "scenario": "marriedInCyprus",
+  "today": "2026-10-01",
+  "cases": [
+    {
+      "name": "married abroad, appendix says married",
+      "files": ["id-card.pdf", "appendix-married.pdf"],
+      "expect": {
+        "rating": ["looksGood", "canImprove"],
+        "mayFlag": ["The appendix is recent", "Each side is scanned straight"]
+      }
+    },
+    {
+      "name": "married abroad, appendix says single",
+      "files": ["id-card.pdf", "appendix-single.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["shows the Israeli partner as married"],
+        "mayFlag": ["The appendix is recent", "Each side is scanned straight"],
+        "mustSay": [
+          "The Israeli partner registers as married at Misrad Hapnim before submitting the online application",
+          "Registering is an easy and short process"
+        ],
+        "mustNotSay": ["The marriage is already registered, so only a current appendix is needed"]
+      }
+    },
+    {
+      "name": "married online, appendix says single",
+      "scenario": "marriedOnline",
+      "files": ["id-card.pdf", "appendix-single.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["shows the Israeli partner as married"],
+        "mayFlag": ["The appendix is recent", "Each side is scanned straight"],
+        "mustSay": [
+          "The Israeli partner registers as married at Misrad Hapnim before submitting the online application",
+          "Registering is an easy and short process"
+        ],
+        "mustNotSay": ["The marriage is already registered, so only a current appendix is needed"]
+      }
+    },
+    {
+      "name": "married in Israel, appendix says single",
+      "scenario": "marriedInIsrael",
+      "files": ["id-card.pdf", "appendix-single.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["shows the Israeli partner as married"],
+        "mayFlag": ["The appendix is recent", "Each side is scanned straight"],
+        "mustSay": ["Get a current appendix, which shows the marriage"],
+        "mustNotSay": ["Register the marriage at Misrad Hapnim"]
+      }
+    },
+    {
+      "name": "common-law, appendix says single",
+      "scenario": "commonLawLivingTogether",
+      "files": ["id-card.pdf", "appendix-single.pdf"],
+      "expect": {
+        "rating": ["looksGood", "canImprove"],
+        "mayFlag": ["The appendix is recent", "Each side is scanned straight"],
+        "mustNotSay": ["Register as married at Misrad Hapnim"]
+      }
+    },
+    {
+      "name": "married abroad, card without the appendix",
+      "files": ["id-card.pdf"],
+      "expect": {
+        "rating": "needsFixing",
+        "flagged": ["The appendix (ספח) is included"],
+        "mayFlag": ["The appendix is recent", "Each side is scanned straight"],
+        "mustNotSay": ["Register as married at Misrad Hapnim"]
+      }
+    }
+  ]
+}

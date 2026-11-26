@@ -33,7 +33,7 @@ Ministry of Foreign Affairs in Copenhagen.
 ### Philippines
 
 The marriage certificate from the Philippine Statistics Authority (PSA).
-For Israel, it comes only as a file, with the electronic apostille of the
+For Israel, it comes only as a digital file, with the electronic apostille of the
 Department of Foreign Affairs (see [certification.md](../certification.md)).
 The foreign partner can order both online from Israel, with an ID check.
 

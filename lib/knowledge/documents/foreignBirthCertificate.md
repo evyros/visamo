@@ -27,17 +27,17 @@ Below, the countries where getting it has a catch.
 
 The birth certificate (partida de nacimiento), from the civil registry of
 the province where the birth was registered. Most provinces issue it online,
-as a file with a digital signature. The apostille comes from the foreign
+as a digital file with a digital signature. The apostille comes from the foreign
 ministry (Cancillería), online, or from the province's notaries' association
-(Colegio de Escribanos), and it's a file too, with a QR code to check it. So
-the certificate and its apostille are files: there's no paper original. For
+(Colegio de Escribanos), and it's a digital file too, with a QR code to check it. So
+the certificate and its apostille are digital files: there's no paper original. For
 the apostille, upload the file as you received it: a printed and scanned
 copy loses its digital signature. An old certificate on paper has to be
 digitised by the civil registry, or legalized by the Ministry of the
 Interior, before the apostille.
 
-Misrad Hapnim usually asks for the original on paper, so the clerk may push
-back on the files. Explain that Argentina issues them only this way.
+Since Argentina issues them only this way, Misrad Hapnim accepts the digital files,
+as long as the clerk can check them online.
 
 ### Brazil
 
@@ -53,20 +53,21 @@ apostille.
 
 ### Colombia
 
-A certified copy of the birth record (registro civil de nacimiento), from the
-notary's office (notaría) or registry office (Registraduría) where the birth
-was registered. A birth registered at a Colombian consulate comes from that
-consulate; a consulate can't issue a copy of a birth registered in Colombia.
-Say it's for an apostille: the Registraduría's online digital certificate
-can't get one.
+A certified copy of the birth record (registro civil de nacimiento), on
+paper, from the notary's office (notaría) or registry office (Registraduría)
+where the birth was registered. A birth registered at a Colombian consulate
+comes from that consulate; a consulate can't issue a copy of a birth
+registered in Colombia. The Registraduría's online digital certificate can't
+get an apostille.
 
-The apostille comes from the foreign ministry (Cancillería), only online, and
-it's a file. A notary's office sends its copy for the apostille directly,
-without handing it over; a registry office's paper copy, issued in the last
-90 days, is scanned and uploaded. So the apostilled birth record is a file,
-not paper. Misrad Hapnim usually asks for the original on paper, so the clerk
-may push back on the file. Explain that Colombia apostilles documents only
-this way.
+The apostille comes from the foreign ministry (Cancillería), only online:
+Colombia has no paper apostille. It's a digital file, with a code to check it on the
+foreign ministry's website. A notary's office sends its own copy for the
+apostille; a registry office's paper copy, issued in the last 90 days, is
+scanned and uploaded. Bring the paper copy and the apostille's digital file together:
+Misrad Hapnim accepts them, and the notary in Israel translates the copy as a
+true copy of the original and the apostille as computerized information (see
+[certification.md](../certification.md)).
 
 ### Cuba
 
@@ -104,7 +105,7 @@ certificate of personal data (personattest) if not. For a birth registered in
 Southern Jutland, a personattest from that municipality. Ask for the
 Danish/English version on paper, with a stamp and handwritten signature: it
 can be ordered online with MitID and sent by post. A digital one is valid
-only as a file.
+only in its digital form, not printed.
 
 ### Estonia
 
@@ -206,7 +207,7 @@ for it.
 
 The apostille comes from a district court (rechtbank): any court location
 that issues apostilles, wherever the extract was issued. It goes only on the
-paper original, never on a file. At the counter, some locations need an
+paper original, never on a digital file. At the counter, some locations need an
 appointment; by post, you send the original with a letter or the court's
 form. Ask for the apostille in English. Anyone can file it for you, without
 a power of attorney.
@@ -230,11 +231,10 @@ takes about 15 working days.
 The birth certificate from the Philippine Statistics Authority (PSA). It's
 in English. The apostille comes from the Department of Foreign Affairs
 (DFA). For Israel, it now issues only an electronic one: the certificate and
-its apostille come as files by email, and printing them makes them invalid.
+its apostille come as digital files by email, and printing them makes them invalid.
 The foreign partner can order both online from Israel, with an ID check.
-Misrad Hapnim usually asks for the original on paper, so the clerk may push
-back on the files. Explain that for Israel, the Philippines issues it only
-this way: there's no paper option.
+Since, for Israel, the Philippines issues it only this way, Misrad Hapnim
+accepts the digital files, as long as the clerk can check them online.
 
 If some entries are blurred or unreadable, add a copy from the local civil
 registrar to the request. A misspelled name, or a wrong day or month of
@@ -246,7 +246,7 @@ needs a court.
 
 The full copy of the birth record (odpis zupełny aktu urodzenia), from any
 civil registry office (urząd stanu cywilnego, USC) in Poland. Ask for it on
-paper: the electronic copy is a file and can't get an apostille. Polish
+paper: the electronic copy is a digital file and can't get an apostille. Polish
 consulates can't get it; relatives in Poland, or someone with a power of
 attorney, can. The multilingual copy (odpis wielojęzyczny) still needs a
 translation and an apostille for Israel.

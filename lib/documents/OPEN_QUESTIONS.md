@@ -211,33 +211,30 @@ shown to users (`lib/knowledge/`).
   the Colegio de Escribanos' pages; `AR` in the issuers). Every Argentine
   apostille has been a file with a digital signature since 2019, so the
   civil status (certificado de soltería), even on paper, comes with an
-  apostille that's a file attached to a scan. Unknown: how Misrad Hapnim
-  treats that (the guide says to bring the paper certificate too); whether
-  the certificate of single status from one province is enough for someone
-  who lived in several. The marriage certificate (no `AR` entry): one couple
+  apostille that's a file attached to a scan. Answered (2026-11-26, the
+  product owner): a paper document with an apostille that's only a file is
+  accepted, and digital-only documents are accepted when the clerk can check
+  them online (in `certification.md`). Unknown: whether the certificate of
+  single status from one province is enough for someone who lived in
+  several. The marriage certificate (no `AR` entry): one couple
   (August 2026) says the office refused their Argentine marriage documents,
   asking for the judge's name on the apostille and the "original" marriage
   certificate; not understood yet.
 
 - **Colombia** (researched 2026-11-26, from the Cancillería's guide to
   apostilling civil records, the Registraduría's apostille page, the
-  police's FAQ and Colombian consulates' pages; `CO` in the issuers, all
-  three `electronic`). Every Colombian apostille is issued online as a file;
-  a notary's copy of a civil record is never handed over, so there's no
-  paper original. Unknown, from practice:
-  - Whether Misrad Hapnim accepts an e-apostilled birth record or civil
-    status (1.3.0001 §4.3.3 covers only a digital police certificate); how
-    couples show the files at the appointment, and how the notary in Israel
-    translates them.
-  - The civil status: whether a birth record with blank notes is accepted
-    as proof of single status, or the office asks for something that says
-    "single" in words (a consulate's declaración de estado civil, or a
-    sworn statement before a notary, declaración extrajuicio). What a
-    divorced Colombian shows beyond the notes (the divorce decree is its
-    own document).
-  - Which consular services Colombia's embassy in Israel (reopened in
-    Jerusalem, 14 October 2026) offers, so a partner already in Israel
-    could get the declaration there.
+  police's FAQ and Colombian consulates' pages; `CO` in the issuers, the
+  police certificate `electronic`). Every Colombian apostille is issued
+  online as a file. Answered (2026-11-26, the product owner): a paper
+  certified copy with the electronic apostille is the accepted route, and
+  the notary in Israel translates the copy as a true copy and the apostille
+  as computerized information (in `certification.md`). Unknown, from
+  practice:
+  - Answered (2026-11-26, the product owner): Misrad Hapnim generally
+    accepts a recent birth record with blank notes as proof of single
+    status, and the Colombian consulate in Israel is active for consular
+    services. Still unknown: what a divorced Colombian shows beyond the
+    notes (the divorce decree is its own document).
   - The marriage certificate (no `CO` entry): a registro civil de
     matrimonio, apostilled the same way; not written up.
 
@@ -355,7 +352,9 @@ shown to users (`lib/knowledge/`).
     foreign decree is enough. The guide says only how the Philippines treats
     it.
   - At the appointment: how couples show the e-certificate and e-apostille,
-    which can't be printed (phone, USB, the online application).
+    which can't be printed (phone, USB, the online application). Answered in
+    part (2026-11-26, the product owner): Misrad Hapnim accepts digital-only
+    documents and electronic apostilles that the clerk can check online.
   - The NBI clearance from Israel: written from the Tel Aviv embassy's pages
     as quoted in search results (it gives out the form and notarizes it) and
     AIC; the embassy's site blocks automated reading, so the current steps

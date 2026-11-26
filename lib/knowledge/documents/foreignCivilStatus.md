@@ -48,7 +48,7 @@ by appointment. It covers only marriages registered in that province.
 
 The apostille comes from the foreign ministry (Cancillería), online, or from
 the province's notaries' association (Colegio de Escribanos). Every
-Argentine apostille is a file, with a digital signature and a QR code to
+Argentine apostille is a digital file, with a digital signature and a QR code to
 check it; for a certificate on paper, it's attached to a scan of the
 certificate. Bring the paper certificate too.
 
@@ -127,17 +127,19 @@ ministry or a local foreign affairs office.
 Colombia issues no certificate of single status. A marriage, and its
 divorce, are written in the notes (notas) of the birth record (registro civil
 de nacimiento), and that's how Colombia proves status: ask for a copy that
-shows the notes, valid for marriage (válido para matrimonio), issued in the
-last 3 months, from the notary's office (notaría) or registry office
-(Registraduría) where the birth was registered. Blank notes mean never
-married, but the copy doesn't say "single" in words. A Colombian consulate
-can also state the status in writing, from that copy (declaración de estado
-civil).
+shows the notes, valid for marriage (válido para matrimonio), on paper,
+issued in the last 3 months, from the notary's office (notaría) or registry
+office (Registraduría) where the birth was registered. Blank notes mean never
+married: Misrad Hapnim accepts a recent copy with blank notes as proof of
+single status, though it doesn't say "single" in words. A Colombian
+consulate, including the one in Israel, can also state the status in
+writing, from that copy (declaración de estado civil).
 
-The apostille comes from the foreign ministry (Cancillería), only online, and
-it's a file, not paper. Misrad Hapnim usually asks for the original on paper,
-so the clerk may push back on the file. Explain that Colombia apostilles
-documents only this way.
+The apostille comes from the foreign ministry (Cancillería), only online:
+Colombia has no paper apostille. It's a digital file, with a code to check it on the
+foreign ministry's website. Bring the paper copy and the apostille's digital file
+together: Misrad Hapnim accepts them (see
+[certification.md](../certification.md)).
 
 ### Croatia
 
@@ -202,7 +204,7 @@ office (krajský úřad) before the apostille, which the foreign ministry gives.
 A certificate of personal data (personattest), from the parish office, which
 shows the current civil status and its date. Ask for the Danish/English
 version on paper, with a stamp, a handwritten signature and the signer's
-name: a digital one is valid only as a file. Or a residence certificate with
+name: a digital one is valid only in its digital form, not printed. Or a residence certificate with
 the civil status (civilstandsattest), from the municipality, in English. The
 apostille comes from the Ministry of Foreign Affairs in Copenhagen.
 
@@ -276,7 +278,7 @@ issued before the wedding, or the affidavit (below).
 The apostille comes from the Decentralized Administration (Αποκεντρωμένη
 Διοίκηση) of the region, free, on a paper certificate signed by hand by the
 municipality's official. A certificate issued on gov.gr can get an
-electronic apostille (e-Apostille) online instead, but it's a file, and
+electronic apostille (e-Apostille) online instead, but it's a digital file, and
 Misrad Hapnim usually asks for the original on paper. It's in Greek: find a
 notary in Israel who translates from Greek.
 
@@ -359,7 +361,7 @@ from a foreign embassy in Israel.
 
 The apostille comes from a district court (rechtbank): any court location
 that issues apostilles, wherever the extract was issued. It goes only on the
-paper original, never on a file. At the counter, some locations need an
+paper original, never on a digital file. At the counter, some locations need an
 appointment; by post, you send the original with a letter or the court's
 form. Ask for the apostille in English. Anyone can file it for you, without
 a power of attorney.
@@ -393,17 +395,16 @@ statement of civil status from the embassy doesn't replace it (see
 
 The apostille comes from the Department of Foreign Affairs. For Israel, it
 now issues only an electronic one: the document and its apostille come as
-files by email, and printing them makes them invalid. The foreign partner
-can order both online from Israel, with an ID check. Misrad Hapnim usually
-asks for the original on paper, so the clerk may push back on the files.
-Explain that for Israel, the Philippines issues it only this way: there's no
-paper option.
+digital files by email, and printing them makes them invalid. The foreign partner
+can order both online from Israel, with an ID check. Since, for Israel, the
+Philippines issues it only this way, Misrad Hapnim accepts the digital files, as
+long as the clerk can check them online.
 
 ### Poland
 
 A certificate of civil status (zaświadczenie o stanie cywilnym), from any
 civil registry office (urząd stanu cywilnego, USC) in Poland, issued only to
-the person it's about. Ask for it on paper: the electronic one is a file and
+the person it's about. Ask for it on paper: the electronic one is a digital file and
 can't get an apostille. When applying, you declare that nothing affecting
 your status is missing from the Polish register, so a marriage abroad has to
 be registered in Poland first (transkrypcja), at a USC or through the Polish

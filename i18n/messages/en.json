@@ -2400,7 +2400,7 @@
         "translateOtherAbroad": "A language no notary in Israel knows: translated abroad, into English, with an apostille or legalization of its own.",
         "translateHebrewArabic": "Hebrew or Arabic: not needed.",
         "translateAnyNotary": "Russian, German, French, Spanish, or another language a notary in Israel knows: a notary in Israel translates it into Hebrew. A translation made abroad may be rejected.",
-        "obtainElectronicFull": "It's issued only as a file, with an electronic apostille: the file is the original, and there's no paper one.",
+        "obtainElectronicFull": "It's issued only as a digital file, with an electronic apostille: the file is the original, and there's no paper one.",
         "translateAnyFull": "Depends on its language: none in Hebrew or Arabic, and usually none in English; in a language a notary in Israel knows, a notarized translation into Hebrew, made in Israel; in any other, a translation into English, made abroad, with an apostille or legalization of its own.",
         "translateSelf": "Your own, if needed",
         "translateSelfFull": "If it isn't in Hebrew, Arabic or English, translate it yourselves",
@@ -2466,9 +2466,9 @@
         "foreignBirthCertificate": {
           "AR": {
             "office": "the civil registry of the province where the birth was registered",
-            "details": "The birth certificate (partida de nacimiento). Most provinces issue it online, as a file with a digital signature. For the apostille, upload the file as you received it: a printed and scanned copy loses its digital signature. An old certificate on paper has to be digitised by the civil registry, or legalized by the Ministry of the Interior, first. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that Argentina issues them only this way.",
+            "details": "The birth certificate (partida de nacimiento). Most provinces issue it online, as a digital file with a digital signature. For the apostille, upload the file as you received it: a printed and scanned copy loses its digital signature. An old certificate on paper has to be digitised by the civil registry, or legalized by the Ministry of the Interior, first. Since Argentina issues them only this way, Misrad Hapnim accepts the digital files, as long as the clerk can check them online.",
             "apostilleBy": "Argentina's foreign ministry (Cancillería), or the province's notaries' association (Colegio de Escribanos)",
-            "apostilleDetails": "Online. The apostille is a file too, with a QR code to check it."
+            "apostilleDetails": "Online. The apostille is a digital file too, with a QR code to check it."
           },
           "BR": {
             "office": "the registry office (cartório)",
@@ -2480,9 +2480,9 @@
           },
           "CO": {
             "office": "the notary's office (notaría) or registry office (Registraduría) where the birth was registered",
-            "details": "A certified copy of the birth record (registro civil de nacimiento). A birth registered at a Colombian consulate comes from that consulate. Say it's for an apostille: the Registraduría's online digital certificate can't get one. A notary's office sends its copy for the apostille directly, without handing it over; a registry office's paper copy, issued in the last 90 days, is scanned and uploaded. Either way, the apostilled birth record is a file, not paper. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the file: explain that Colombia apostilles documents only this way.",
+            "details": "A certified copy of the birth record (registro civil de nacimiento), on paper. A birth registered at a Colombian consulate comes from that consulate. Say it's for an apostille: the Registraduría's online digital certificate can't get one.",
             "apostilleBy": "Colombia's foreign ministry (Cancillería)",
-            "apostilleDetails": "Only online, and the apostille is a file, with the birth record in it."
+            "apostilleDetails": "Only online: Colombia has no paper apostille. It's a digital file, with a code to check it on the foreign ministry's website. A notary's office sends its own copy for the apostille; a registry office's paper copy, issued in the last 90 days, is scanned and uploaded. Bring the paper copy and the apostille's digital file together: Misrad Hapnim accepts them."
           },
           "CU": {
             "office": "the civil registry (Registro Civil)",
@@ -2501,7 +2501,7 @@
           },
           "DK": {
             "office": "the parish office, or for a birth registered in Southern Jutland, that municipality",
-            "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized in the Church of Denmark (folkekirken), or a certificate of personal data (personattest) if not; for a birth registered in Southern Jutland, a personattest. Ask for the Danish/English version on paper, with a stamp and handwritten signature: it can be ordered online with MitID and sent by post. A digital one is valid only as a file."
+            "details": "Ask for a birth and baptism certificate (fødsels- og dåbsattest) if they were baptized in the Church of Denmark (folkekirken), or a certificate of personal data (personattest) if not; for a birth registered in Southern Jutland, a personattest. Ask for the Danish/English version on paper, with a stamp and handwritten signature: it can be ordered online with MitID and sent by post. A digital one is valid only in its digital form, not printed."
           },
           "EE": {
             "office": "the local government of a county centre (in Tallinn, the Vital Statistics Department) or an Estonian embassy",
@@ -2544,7 +2544,7 @@
             "office": "the municipality where the birth was registered",
             "details": "Ask for the international extract of the birth record (internationaal uittreksel geboorteakte): it names the parents, and its headings are explained in ten languages, English among them. The full copy (afschrift) is in Dutch only. It can be requested online, by post or at the counter, and is sent by post, abroad too.",
             "apostilleBy": "a district court (rechtbank)",
-            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
+            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a digital file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
           },
           "NP": {
             "office": "the ward office where the birth was registered",
@@ -2558,7 +2558,7 @@
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
-            "details": "The PSA birth certificate, in English. For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way. If some entries are blurred or unreadable, add a copy from the local civil registrar to the request.",
+            "details": "The PSA birth certificate, in English. For Israel, it now comes only as a digital file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Since, for Israel, the Philippines issues it only this way, Misrad Hapnim accepts the digital files, as long as the clerk can check them online. If some entries are blurred or unreadable, add a copy from the local civil registrar to the request.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
             "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
           },
@@ -2617,7 +2617,7 @@
             "office": "the civil registry of the province",
             "details": "A certificate of single status (certificado de soltería, or constancia negativa de matrimonio). Apply in person, by appointment. It covers only marriages registered in that province.",
             "apostilleBy": "Argentina's foreign ministry (Cancillería)",
-            "apostilleDetails": "Online, or from the province's notaries' association (Colegio de Escribanos). The apostille is a file, with a QR code to check it; for a certificate on paper, it's attached to a scan of it. Bring the paper certificate too."
+            "apostilleDetails": "Online, or from the province's notaries' association (Colegio de Escribanos). The apostille is a digital file, with a QR code to check it; for a certificate on paper, it's attached to a scan of it. Bring the paper certificate too."
           },
           "AT": {
             "office": "the registry office (Standesamt)",
@@ -2669,9 +2669,9 @@
           },
           "CO": {
             "office": "the notary's office (notaría) or registry office (Registraduría) where the birth was registered",
-            "details": "Colombia issues no certificate of single status: a marriage, and its divorce, are written in the notes (notas) of the birth record (registro civil de nacimiento). Ask for a copy of the birth record that shows the notes, valid for marriage (válido para matrimonio), issued in the last 3 months. Blank notes mean never married, but the copy doesn't say \"single\" in words: a Colombian consulate can also state the status in writing, from that copy (declaración de estado civil). Colombia apostilles documents only online, as a file, so the apostilled document is a file, not paper. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the file: explain that Colombia apostilles documents only this way.",
+            "details": "Colombia issues no certificate of single status: a marriage, and its divorce, are written in the notes (notas) of the birth record (registro civil de nacimiento). Ask for a copy of the birth record that shows the notes, valid for marriage (válido para matrimonio), on paper, issued in the last 3 months. Blank notes mean never married: Misrad Hapnim accepts a recent copy with blank notes as proof of single status, though it doesn't say \"single\" in words. A Colombian consulate, including the one in Israel, can also state the status in writing, from that copy (declaración de estado civil).",
             "apostilleBy": "Colombia's foreign ministry (Cancillería)",
-            "apostilleDetails": "Only online, and the apostille is a file, with the document in it."
+            "apostilleDetails": "Only online: Colombia has no paper apostille. It's a digital file, with a code to check it on the foreign ministry's website. Bring the paper copy and the apostille's digital file together: Misrad Hapnim accepts them."
           },
           "CU": {
             "office": "the civil registry (Registro Civil)",
@@ -2694,7 +2694,7 @@
             "apostilleBy": "the authority of the German state where it was issued (ask the citizens' office which one)"
           },
           "DK": {
-            "details": "A certificate of personal data (personattest), from the parish office, which shows the current civil status and its date. Ask for the Danish/English version on paper, with a stamp, a handwritten signature and the signer's name: a digital one is valid only as a file. Or a residence certificate with the civil status (civilstandsattest), from the municipality, in English.",
+            "details": "A certificate of personal data (personattest), from the parish office, which shows the current civil status and its date. Ask for the Danish/English version on paper, with a stamp, a handwritten signature and the signer's name: a digital one is valid only in its digital form, not printed. Or a residence certificate with the civil status (civilstandsattest), from the municipality, in English.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
           },
           "EE": {
@@ -2722,7 +2722,7 @@
             "office": "the municipality (δήμος) where the family record is kept",
             "details": "A certificate of family status (πιστοποιητικό οικογενειακής κατάστασης), free, at the municipality, a Citizen Service Centre (KEP) or on gov.gr. Say it's for use abroad (χρήση στην αλλοδαπή): it's issued only for a few uses. Get it on paper, signed by hand: that's the one that gets a paper apostille. A marriage abroad shows on it only once it's registered at the Special Registry (Ειδικό Ληξιαρχείο) in Athens. It's in Greek, so the notarized translation needs a notary who translates from Greek.",
             "apostilleBy": "the Decentralized Administration (Αποκεντρωμένη Διοίκηση) of the region",
-            "apostilleDetails": "Free, on the paper certificate. One issued on gov.gr can get an electronic apostille instead, but it's a file, and Misrad Hapnim usually asks for the original on paper."
+            "apostilleDetails": "Free, on the paper certificate. One issued on gov.gr can get an electronic apostille instead, but it's a digital file, and Misrad Hapnim usually asks for the original on paper."
           },
           "HR": {
             "office": "any registry office (matični ured)",
@@ -2763,7 +2763,7 @@
             "office": "the municipality where they're registered",
             "details": "An extract from the population register (uittreksel BRP) that includes the marital status (burgerlijke staat), on paper: ask for the international extract, in Dutch, French, German and English. Someone who has left the Netherlands gets the international extract from the non-residents' register (RNI) instead, from a municipality with an RNI counter, posted only to the address abroad registered in the RNI. It shows the marital status on the date they left and isn't updated after that: add an affidavit about the status since then.",
             "apostilleBy": "a district court (rechtbank)",
-            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
+            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a digital file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
           },
           "NP": {
             "office": "the ward office",
@@ -2776,8 +2776,8 @@
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
-            "details": "A certificate of no marriage (CENOMAR). For Israel, it now comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
-            "detailsEverMarried": "An Advisory on Marriages. Once a marriage is on record for them, the PSA issues it instead of a certificate of no marriage (CENOMAR): it lists each marriage, with any annotation on it, like an annulment. A marriage abroad is on record only once it's reported to a Philippine embassy: until then, the PSA still issues a CENOMAR. For Israel, it now comes only as a file: the document and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
+            "details": "A certificate of no marriage (CENOMAR). For Israel, it now comes only as a digital file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Since, for Israel, the Philippines issues it only this way, Misrad Hapnim accepts the digital files, as long as the clerk can check them online.",
+            "detailsEverMarried": "An Advisory on Marriages. Once a marriage is on record for them, the PSA issues it instead of a certificate of no marriage (CENOMAR): it lists each marriage, with any annotation on it, like an annulment. A marriage abroad is on record only once it's reported to a Philippine embassy: until then, the PSA still issues a CENOMAR. For Israel, it now comes only as a digital file: the document and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Since, for Israel, the Philippines issues it only this way, Misrad Hapnim accepts the digital files, as long as the clerk can check them online.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
             "apostilleDetails": "Only the electronic apostille, ordered online together with the document."
           },
@@ -2843,7 +2843,7 @@
         "foreignPoliceCertificate": {
           "AR": {
             "office": "the National Recidivism Registry (Registro Nacional de Reincidencia)",
-            "details": "A certificate of criminal record (certificado de antecedentes penales). Apply online. It's issued only as a file, with a digital signature, and Misrad Hapnim accepts a digital police certificate with an electronic apostille.",
+            "details": "A certificate of criminal record (certificado de antecedentes penales). Apply online. It's issued only as a digital file, with a digital signature, and Misrad Hapnim accepts a digital police certificate with an electronic apostille.",
             "apostilleBy": "Argentina's foreign ministry (Cancillería)",
             "apostilleDetails": "Online, within 90 days of the certificate's issue: upload the file as you received it."
           },
@@ -2894,7 +2894,7 @@
           },
           "CO": {
             "office": "Colombia's National Police (Policía Nacional), through the foreign ministry (Cancillería)",
-            "details": "A certificate of criminal record (certificado de antecedentes judiciales). Colombia doesn't issue it on paper: for use abroad, ask the foreign ministry for it online, with its apostille, for migration purposes (con fines migratorios). Both come by email, as files, and Misrad Hapnim accepts a digital police certificate with an electronic apostille.",
+            "details": "A certificate of criminal record (certificado de antecedentes judiciales). Colombia doesn't issue it on paper: for use abroad, ask the foreign ministry for it online, with its apostille, for migration purposes (con fines migratorios). Both come by email, as digital files, and Misrad Hapnim accepts a digital police certificate with an electronic apostille.",
             "apostilleBy": "Colombia's foreign ministry (Cancillería)",
             "apostilleDetails": "Online, together with the certificate."
           },
@@ -2921,7 +2921,7 @@
           },
           "DK": {
             "office": "any police station, or from abroad, the police by post",
-            "details": "A criminal record certificate (straffeattest). Ask for it in English (possible only if it shows no convictions), on paper, with a handwritten signature and the signer's name: one ordered online with MitID comes as a file with a digital signature. The police can send it straight to the Ministry of Foreign Affairs for the apostille.",
+            "details": "A criminal record certificate (straffeattest). Ask for it in English (possible only if it shows no convictions), on paper, with a handwritten signature and the signer's name: one ordered online with MitID comes as a digital file with a digital signature. The police can send it straight to the Ministry of Foreign Affairs for the apostille.",
             "apostilleBy": "the Danish Ministry of Foreign Affairs in Copenhagen"
           },
           "EE": {
@@ -2993,7 +2993,7 @@
             "office": "the municipality where they're registered, or Justis for someone not registered in the Netherlands",
             "details": "A certificate of conduct (verklaring omtrent gedrag, VOG), applied for in writing: through the municipality, or by email to Justis. Fill in the form yourselves, naming Israel as the country that requires it, and attach a printout of the Israeli government's page that shows it's needed. Get it on paper: a VOG issued digitally can't get an apostille. It's issued only in Dutch.",
             "apostilleBy": "a district court (rechtbank)",
-            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
+            "apostilleDetails": "Any court location that issues apostilles, wherever the document was issued. It goes only on the paper original, never on a digital file. At the counter, some locations need an appointment; by post, send the original with a letter or the court's form. Ask for the apostille in English. Anyone can file it for you, without a power of attorney."
           },
           "NP": {
             "office": "the Nepal Police headquarters",
@@ -3021,7 +3021,7 @@
             "office": "Portugal's criminal records service, online or at a citizen's counter (Espaço Cidadão) or court",
             "details": "A criminal record certificate (certificado do registo criminal). Apply online with a Portuguese citizen card or digital mobile key (Chave Móvel Digital), or in person. From abroad, apply with the online form for residents abroad, or by post: it's sent by email or by post. For the purpose, choose settling abroad (fixação de residência no estrangeiro).",
             "apostilleBy": "the Prosecutor General's Office (Procuradoria-Geral da República) in Lisbon, or one of its regional offices",
-            "apostilleDetails": "One issued online or by email is a file with a digital signature, and gets an electronic apostille: Misrad Hapnim accepts a digital police certificate with an electronic apostille."
+            "apostilleDetails": "One issued online or by email is a digital file with a digital signature, and gets an electronic apostille: Misrad Hapnim accepts a digital police certificate with an electronic apostille."
           },
           "RU": {
             "office": "Russia's Ministry of Internal Affairs (МВД)",
@@ -3082,7 +3082,7 @@
           },
           "PH": {
             "office": "the Philippine Statistics Authority (PSA)",
-            "details": "The PSA marriage certificate. For Israel, it comes only as a file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Misrad Hapnim usually asks for the original on paper, so the clerk may push back on the files: explain that for Israel, the Philippines issues it only this way.",
+            "details": "The PSA marriage certificate. For Israel, it comes only as a digital file: the certificate and its electronic apostille arrive by email, and printing them makes them invalid. The foreign partner can order both online from Israel, with an ID check. Since, for Israel, the Philippines issues it only this way, Misrad Hapnim accepts the digital files, as long as the clerk can check them online.",
             "apostilleBy": "the Philippine Department of Foreign Affairs (DFA)",
             "apostilleDetails": "Only the electronic apostille, ordered online together with the certificate."
           },

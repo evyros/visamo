@@ -27,7 +27,7 @@ foreign partner's own birth certificate. It's certified there: an
 apostille, or consular legalization if that country isn't in the Apostille
 Convention (see [certification.md](../certification.md)). A child born in
 the Philippines: the birth certificate from the Philippine Statistics
-Authority (PSA), which for Israel comes only as a file, with an electronic
+Authority (PSA), which for Israel comes only as a digital file, with an electronic
 apostille.
 
 ## What it should include

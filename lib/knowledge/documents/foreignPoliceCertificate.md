@@ -26,8 +26,8 @@ common countries issue.
 
 A certificate of criminal record (certificado de antecedentes penales), from
 the National Recidivism Registry (Registro Nacional de Reincidencia), online.
-It's issued only as a file, with a digital signature, and the apostille from
-the foreign ministry (Cancillería) is a file too: there's no paper original.
+It's issued only as a digital file, with a digital signature, and the apostille from
+the foreign ministry (Cancillería) is a digital file too: there's no paper original.
 Israel accepts a digital police certificate with an electronic apostille
 (1.3.0001 §4.3.3). The foreign ministry apostilles it only within 90 days of
 its issue: apply for the apostille soon after, uploading the file as you
@@ -93,7 +93,7 @@ A certificate of criminal record (certificado de antecedentes judiciales),
 from the National Police (Policía Nacional). Colombia doesn't issue it on
 paper: for use abroad, ask the foreign ministry (Cancillería) for it online,
 with its apostille, for migration purposes (con fines migratorios). The
-certificate and the apostille come by email, as files: there's no paper
+certificate and the apostille come by email, as digital files: there's no paper
 original. Israel accepts a digital police certificate with an electronic
 apostille (1.3.0001 §4.3.3).
 
@@ -155,7 +155,7 @@ Ministry of Foreign Affairs.
 A criminal record certificate (straffeattest), in English (possible only if
 it shows no convictions; otherwise it's in Danish), on paper, with a
 handwritten signature and the signer's name: one ordered online with MitID
-comes as a file with a digital signature. Get it at any police station, or
+comes as a digital file with a digital signature. Get it at any police station, or
 from abroad, order it from the police by post. The apostille comes from the
 Ministry of Foreign Affairs in Copenhagen, and the police can send the
 certificate there directly.
@@ -336,7 +336,7 @@ its dry seal: not on a copy.
 A certificate from the National Criminal Register (zaświadczenie z Krajowego
 Rejestru Karnego, KRK), from any KRK information point at a court, in person
 or by post from abroad. It's issued only in Polish. Ask for the paper one:
-the one from e-KRK online is a file and can't get an apostille.
+the one from e-KRK online is a digital file and can't get an apostille.
 
 The apostille comes from the Ministry of Foreign Affairs (MSZ) in Warsaw, in
 person or by post. It mails documents back only to an address in Poland, the
@@ -353,7 +353,7 @@ post, and it's sent by email or by post. For the purpose, choose settling
 abroad (fixação de residência no estrangeiro). It's issued in Portuguese and
 English, so it usually needs no translation.
 
-One issued online or by email is a file with a digital signature, and gets
+One issued online or by email is a digital file with a digital signature, and gets
 an electronic apostille: Israel accepts a digital police certificate with an
 electronic apostille (1.3.0001 §4.3.3). The apostille comes from the
 Prosecutor General's Office (Procuradoria-Geral da República) in Lisbon, or

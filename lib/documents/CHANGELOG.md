@@ -3,6 +3,27 @@
 Every change to what any couple's document list contains, newest first. The
 version is `CATALOG_VERSION` in `catalog.ts`; the format is in `CLAUDE.md`.
 
+## v61 — 2026-11-26
+
+**What changed:** Colombia's birth certificate and civil status (`CO` in
+`issuers.ts`) are no longer `electronic`: the couple gets a paper certified
+copy, whose apostille is only a file, so the steps say to send the paper
+copy again. The police certificate stays `electronic`. The general rules on
+digital-only documents, electronic apostilles and what the notary's
+certificate says are in `certification.md`; the Argentina and Philippines
+sections and messages now say the files are accepted when the clerk can
+check them online, not that the clerk may push back.
+
+**Why:** The product owner verified how Misrad Hapnim treats them: paper
+where a country issues paper; a digital-only document or an apostille
+issued only electronically, when the clerk can check it online; for
+Colombia, a paper certified copy with its electronic apostille, translated
+by the notary as a true copy and as computerized information.
+
+**Source:** the product owner's practice (2026-11-26).
+
+**Lists that changed:** none by key (no scenario has a Colombian partner).
+
 ## v60 — 2026-11-26
 
 **What changed:** New `CO` (Colombia) entries in `issuers.ts`, with guide

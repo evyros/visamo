@@ -73,20 +73,28 @@ by 5.2.0008 §ד.2.ה).
   documents, only the originals with their certification. A copy is
   accepted only when the original can't be had, like an old birth
   certificate.
-- **Ask for a paper document "for use abroad".** Many offices reject a
-  document printed at home or downloaded from an online service, and many
-  countries won't put an apostille on one. Ask for the printed original, with
-  a handwritten signature or the official stamp, and say it's for use abroad
-  or for an apostille.
-- **Some documents come only as a file.** For Israel, the Philippines
-  issues its PSA certificates (birth, marriage and death certificates, and
-  the certificate of no marriage, CENOMAR) only as a file with an electronic
-  apostille, sent by email. Printing them makes them invalid, so there's no
-  paper original to ask for or send. Misrad Hapnim usually asks for
-  originals on paper, so the clerk may push back on the files: explain that
-  for Israel, the Philippines issues them only this way. Argentina issues
-  its birth certificates and criminal record certificates as files with a
-  digital signature, and every Argentine apostille is a file too.
+- **Ask for a paper document "for use abroad".** Where a country issues a
+  document on paper, Misrad Hapnim wants the paper: a printout of a digital
+  version is almost always refused, and many countries won't put an
+  apostille on one. Ask for the printed original, with a handwritten
+  signature or the official stamp, and say it's for use abroad or for an
+  apostille.
+- **A document issued only as a digital file is accepted,** where the country no
+  longer issues it on paper, as long as the clerk can check it online: by
+  its QR code, its serial number or its digital signature. For Israel, the
+  Philippines issues its PSA certificates (birth, marriage and death
+  certificates, and the certificate of no marriage, CENOMAR) only as a digital file
+  with an electronic apostille, sent by email; printing them makes them
+  invalid. Argentina issues its birth certificates and criminal record
+  certificates as digital files with a digital signature.
+- **An electronic apostille is accepted too.** Israel is a party to the
+  Apostille Convention, which recognizes electronic apostilles. In practice,
+  clerks are conservative: where a country offers both a paper apostille
+  and an electronic one, the paper one avoids trouble and a possible
+  refusal. Where the country issues only electronic apostilles for that
+  document (Argentina, Colombia and the Philippines do), Misrad Hapnim
+  accepts it, as long as the clerk can check it on the country's official
+  website. Keep its digital file, with its code.
 - **The originals have to be in Israel** for the first appointment, even if
   the foreign partner is still abroad: send them by courier to the Israeli
   partner in time. They're also needed for the translation.
@@ -161,6 +169,28 @@ landlord's affidavit. What they need depends on their language:
   notarized English translation is enough, like a document written in
   English. The Hebrew translation of it is needed only if the clerk handling
   your file asks for it, because they don't read English well enough.
+
+### What the notary saw
+
+The notary's certificate on the translation says what the notary translated
+from, and Misrad Hapnim accepts only some of the options:
+
+- **"The original document"**: what's required for a document issued on
+  paper. The notary has to see the paper original itself, not a scan:
+  bring it to them.
+- **"A true copy of the original document"**: accepted only where the
+  country itself issues a certified copy, signed and apostilled, and keeps
+  the original in its archive.
+- **"Computerized information from a database"**: for a document issued
+  only as a digital file, which has no paper original.
+- **"A copy of the original document"**: never accepted. A translation made
+  from a scan or a photocopy says this: have the document translated again
+  from the original.
+
+A paper document whose apostille is only a digital file is translated as both: the
+document as the original or a true copy, and the apostille as computerized
+information. The notary writes two certificates, or one that marks both,
+and Misrad Hapnim accepts either.
 
 ### The certification is translated too
 

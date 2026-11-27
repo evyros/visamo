@@ -1245,7 +1245,7 @@
       },
       "checkEmail": {
         "title": "Check your email",
-        "body": "We sent a link to **{email}**. Open it to confirm your email and choose a password. The link is valid for 30 minutes.",
+        "body": "We sent a link to **{email}**. Open it to confirm your email and choose a password. The link is valid for 6 hours.",
         "spam": "Can't find it? Check your spam or promotions folder.",
         "resend": "Send the link again",
         "resent": "We sent a new link.",
@@ -1692,7 +1692,7 @@
       "signup": {
         "subject": "Confirm your email for Visamo",
         "heading": "Confirm your email",
-        "body": "Click the button below to confirm your email and choose a password for your Visamo account. The link is valid for 30 minutes and works once.",
+        "body": "Click the button below to confirm your email and choose a password for your Visamo account. The link is valid for 6 hours and works once.",
         "button": "Confirm email"
       },
       "resetPassword": {

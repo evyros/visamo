@@ -387,3 +387,13 @@ details > summary {
 details > summary::-webkit-details-marker {
   display: none;
 }
+
+/* A source glyph drawn on a dark or green ground (components/source-glyphs.tsx):
+   its white paper and teal tint become washes of white, so it reads as a
+   line drawing with no tile behind it. */
+.glyphs-on-dark [fill="#fff"] {
+  fill: rgb(255 255 255 / 0.1);
+}
+.glyphs-on-dark [fill="#e3f0ed"] {
+  fill: rgb(255 255 255 / 0.28);
+}

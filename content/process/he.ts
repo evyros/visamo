@@ -778,7 +778,7 @@ export const processHe: ProcessTexts = {
 
   about: {
     title: "על המדריך הזה",
-    body: "נכתב על ידי Visamo מתוך הנהלים הרשמיים של רשות האוכלוסין וההגירה, ומתוך מה שזוגות עברו בפועל. לא ייעוץ משפטי.",
+    body: "נכתב על ידי Visamo מתוך שבעה מקורות, ביניהם הנהלים הרשמיים של רשות האוכלוסין וההגירה ומה שזוגות עברו בפועל. לא ייעוץ משפטי.",
     sources: (a) => [
       married(a)
         ? { label: "נוהל 5.2.0008: מתן מעמד לזר הנשוי לאזרח ישראלי", url: "https://www.gov.il/BlobFolder/policy/status_foreigner_married_to_israeli_procedure/he/5.2.0008.pdf" }

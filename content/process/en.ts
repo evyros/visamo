@@ -827,7 +827,7 @@ export const processEn: ProcessTexts = {
 
   about: {
     title: "About this guide",
-    body: "Written by Visamo from the official procedures of the Population and Immigration Authority, and from what couples went through in practice. Not legal advice.",
+    body: "Written by Visamo from seven sources, including the Population and Immigration Authority's official procedures and what couples went through in practice. Not legal advice.",
     sources: (a) => [
       married(a)
         ? { label: "Procedure 5.2.0008: status for a foreigner married to an Israeli citizen", url: "https://www.gov.il/BlobFolder/policy/status_foreigner_married_to_israeli_procedure/he/5.2.0008.pdf" }

@@ -16,7 +16,7 @@ export const guidesEn: Guides = {
       "Clear, up-to-date guides to the Israel partner visa: the gradual process, the B/1 and A/5 visas, and what to expect at each step.",
     title: "Guides to the Israel partner visa",
     intro:
-      "Everything about getting status in Israel for the foreign partner of an Israeli, explained step by step, from what couples went through and the official procedures.",
+      "Everything about getting status in Israel for the foreign partner of an Israeli, explained step by step and drawn from seven sources, from the official procedures to couples who went through it.",
     startHere: "Start here",
     groups: {
       steps: { title: "Step by step", intro: "Getting through the process." },

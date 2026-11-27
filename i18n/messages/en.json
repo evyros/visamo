@@ -19,8 +19,8 @@
       "description": "Your passports, bank statements and private photos are encrypted with AES-256, never sold or shared, and can be deleted in one click. Here's how Visamo protects them."
     },
     "howBuilt": {
-      "title": "How We Built Visamo: Couples' Experience, Powered by AI",
-      "description": "Visamo's AI is built on the experience of many couples who went through Israel's gradual process. How we built it, what the AI does, and what it doesn't."
+      "title": "How We Built Visamo: Seven Sources, Powered by AI",
+      "description": "Visamo's AI is built on knowledge from seven sources, from couples' experience to the Ministry of Interior's procedures. What it does, and what it doesn't."
     },
     "sources": {
       "title": "Our Sources: Where Visamo's Knowledge Comes From",
@@ -387,7 +387,7 @@
         },
         {
           "q": "Does a person review our documents?",
-          "a": "No. Visamo's checks and answers are made by AI, built on the published requirements and on the experience of many couples who went through the process. That's what makes them instant, but it isn't a human or legal review. For advice on your own case, speak with a licensed Israeli lawyer.",
+          "a": "No. Visamo's checks and answers are made by AI, which is what makes them instant. It works from knowledge gathered from seven sources, from the Ministry of Interior's procedures to couples who went through the process. But it isn't a human or legal review. For advice on your own case, speak with a licensed Israeli lawyer.",
           "link": {
             "label": "How we built Visamo",
             "path": "/how-we-built"
@@ -671,60 +671,59 @@
   "howBuilt": {
     "hero": {
       "eyebrow": "How we built Visamo",
-      "title": "Built on what couples went through, not only on what's written.",
-      "subtitle": "Visamo's AI answers your questions and checks your documents using the experience of many couples who went through Israel's gradual process. Here's how we built it, and what to expect from it."
+      "title": "Built on what happens in practice, not only on what's written.",
+      "subtitle": "Visamo's AI answers your questions and checks your documents using knowledge from seven sources, from couples who went through Israel's gradual process to the Ministry of Interior's procedures."
     },
     "gap": {
       "title": "Why the rules on paper aren't enough",
-      "intro": "The Ministry publishes its requirements, but anyone who's been through the process knows they're only part of the story.",
+      "intro": "The Ministry of Interior publishes its requirements, but anyone who's been through the process knows they're only part of the story.",
       "items": [
         {
           "icon": "file",
           "title": "Vague on paper",
-          "body": "Many requirements leave room for interpretation: which version of a document, how recent it must be, what exactly it should say."
+          "body": "Which version of a document, how recent it must be, and what exactly it should say."
         },
         {
           "icon": "refresh",
           "title": "Different at the counter",
-          "body": "Clerks often ask for documents that aren't on any published list, and what they ask for can change over time, sometimes between one appointment and the next."
+          "body": "Clerks ask for documents that aren't on any published list, sometimes different ones from one appointment to the next."
         },
         {
           "icon": "building",
           "title": "Different from branch to branch",
-          "body": "One office may accept a document that another sends back, and some local authorities don't even know the documents they're asked to issue."
+          "body": "A document one branch accepts, another may send back."
         }
-      ],
-      "footnote": "Couples usually discover these gaps only after their file is sent back, and each time it can cost months."
+      ]
     },
     "steps": {
       "title": "How we built it",
       "items": [
         {
           "icon": "people",
-          "title": "We gathered what couples went through",
-          "body": "Many couples who went through the process shared their experience: what they were asked for, what got their file sent back, and what finally worked."
+          "title": "Seven sources",
+          "body": "Our experience, interviews with couples, immigration lawyers, couples in our program, the Ministry of Interior's procedures, government databases and what's shared online."
         },
         {
           "icon": "guide",
           "title": "We organized it into knowledge",
-          "body": "We sorted every detail by document, stage and office, set it alongside the published requirements, and marked where practice differs from what's written."
+          "body": "We sorted every detail by document, stage and office, cross-checked the sources against each other, and marked where practice differs from the rules."
         },
         {
           "icon": "sparkle",
           "title": "We built it into Visamo's AI",
-          "body": "The assistant and the document check both work from this knowledge, so every answer and every check reflects what couples learned, not only what's published."
+          "body": "The chat and the document check both work from this knowledge, so every answer and every check reflects both what the procedures say and what happens in practice."
         }
       ],
       "sourcesLink": "Where Visamo's knowledge comes from"
     },
     "ai": {
       "title": "What the AI does, and what it doesn't",
-      "intro": "Every answer and every document check in Visamo is made by AI. That's what makes them instant, and it's worth knowing what that means.",
+      "intro": "Every answer and every document check in Visamo is made by AI, which is what makes them instant.",
       "does": {
         "title": "What it does",
         "items": [
           "Answers your questions in seconds, day or night, in your language",
-          "Checks each document against the requirements and couples' experience",
+          "Checks each document against the requirements and what happens in practice",
           "Explains what's wrong and how to fix it",
           "Checks that names, dates and details match across your documents"
         ]
@@ -733,7 +732,7 @@
         "title": "What it doesn't do",
         "items": [
           "No one on our team reviews your documents or your answers",
-          "It isn't legal advice, and it can't predict the Ministry's decision",
+          "It isn't legal advice, and it can't predict the Ministry of Interior's decision",
           "It can miss things or get something wrong, so read its notes carefully",
           "It doesn't submit anything for you: you submit through the official channels"
         ]
@@ -742,7 +741,7 @@
     },
     "privacy": {
       "title": "Your documents stay yours",
-      "body": "The knowledge behind Visamo comes from couples' accounts of the process, never from the documents you upload. When the AI checks a document, it's processed only to give you that result, and it's never used to train AI models.",
+      "body": "The knowledge behind Visamo never comes from the documents you upload. When the AI checks a document, it's processed only to give you that result, and it's never used to train AI models.",
       "link": "How we protect your documents"
     }
   },

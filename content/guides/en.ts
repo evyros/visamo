@@ -438,7 +438,7 @@ export const guidesEn: Guides = {
       title: "The B/1 visa for partners of Israelis",
       answer:
         "B/1 (ב/1, often written B1) is Israel's work visa. **Partners of Israelis get it in its general form, B/1 general** (ב/1 כללי), marked \"partner\": the foreign partner can live in Israel with you and work in any field, as an employee or self-employed. Foreign workers get a restricted B/1, for one employer or field. Married couples are on B/1 for up to 6 months, common-law couples for 3 years, before moving up to A/5. It doesn't come with public health insurance.",
-      updated: "2026-11-22",
+      updated: "2026-11-27",
       sections: [
         {
           id: "two-b1",
@@ -453,7 +453,7 @@ export const guidesEn: Guides = {
                 ],
               },
             },
-            "**Already in Israel on a worker's B/1, with an Israeli partner?** File the partner application before your visa expires. Your current visa should be extended until the decision, as long as you keep to its terms. A caregiver who's still employed brings a letter from the employer saying they know about the application and agree to keep employing them; without an employer, the visa becomes a B/2 until the decision.",
+            "**Already in Israel on a worker's B/1, with an Israeli partner?** File the partner application before your visa expires. Your current visa should be extended until the decision, as long as you keep to its terms.",
           ],
         },
         {
@@ -628,6 +628,10 @@ export const guidesEn: Guides = {
         {
           q: "I'm on a worker's B/1 and have an Israeli partner. Can I switch?",
           a: "You can apply as a partner from Israel. File before your current visa expires: it should be extended until the decision, as long as you keep to its terms.",
+        },
+        {
+          q: "I'm a caregiver on a B/1. What do I need to apply as a partner?",
+          a: "A caregiver who's still employed brings a letter from the employer saying they know about the application and agree to keep employing them; without an employer, the visa becomes a B/2 until the decision.",
         },
       ],
       related: ["partner-visa-israel", "a5-visa"],

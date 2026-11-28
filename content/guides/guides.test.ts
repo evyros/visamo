@@ -81,6 +81,9 @@ describe("the guides", () => {
 
     it(`${slug} has the same sections, blocks and questions in both languages`, () => {
       expect(he.sections.map((s) => s.id)).toEqual(en.sections.map((s) => s.id));
+      expect(he.sections.map((s) => s.step)).toEqual(en.sections.map((s) => s.step));
+      expect((he.intro ?? []).map(blockShape)).toEqual((en.intro ?? []).map(blockShape));
+      expect(Array.isArray(he.answer) ? he.answer.length : "p").toEqual(Array.isArray(en.answer) ? en.answer.length : "p");
       expect(he.sections.map((s) => s.body.map(blockShape))).toEqual(en.sections.map((s) => s.body.map(blockShape)));
       expect(he.faq.length).toBe(en.faq.length);
       expect(he.facts.length).toBe(en.facts.length);
@@ -101,9 +104,12 @@ describe("the guides", () => {
 
     it(`${slug}'s section maps jump to its own sections`, () => {
       const ids = en.sections.map((s) => s.id);
-      for (const block of en.sections.flatMap((s) => s.body)) {
+      for (const block of [...(en.intro ?? []), ...en.sections.flatMap((s) => s.body)]) {
         if (typeof block === "object" && "figure" in block && block.figure === "map") {
           for (const item of block.items) expect(ids, item.title).toContain(item.section);
+        }
+        if (typeof block === "object" && "figure" in block && block.figure === "journey") {
+          for (const step of block.steps) expect(ids, step.title).toContain(step.section);
         }
       }
     });

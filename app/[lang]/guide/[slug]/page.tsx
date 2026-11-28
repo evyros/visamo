@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { localePath, signupUrl, site } from "@/lib/site";
 import { guideStructuredData, jsonLd } from "@/lib/structured-data";
 import { FaqList } from "@/components/faq-list";
-import { GuideBlocks, GuideText } from "@/components/guide";
+import { GuideAnswer, GuideBlocks, GuideText, Numeral } from "@/components/guide";
 import { Icon } from "@/components/icons";
 import { ButtonLink, Container } from "@/components/ui";
 
@@ -85,9 +85,7 @@ export default async function GuidePage({ params }: PageProps<"/[lang]/guide/[sl
 
           <div className="mt-8 rounded-2xl border border-line-200 bg-sand-50 p-6 sm:p-7">
             <p className="text-sm font-semibold tracking-wide text-teal-700">{labels.shortAnswer}</p>
-            <p className="mt-2 text-[17px] leading-8">
-              <GuideText text={guide.answer} locale={locale} />
-            </p>
+            <GuideAnswer answer={guide.answer} locale={locale} />
           </div>
 
           {/* Open from sm up; on a phone it folds away, so the guide starts right after the short answer. */}
@@ -109,10 +107,17 @@ export default async function GuidePage({ params }: PageProps<"/[lang]/guide/[sl
 
       <Container narrow className="py-12 sm:py-16">
         <div className="space-y-12 text-[17px] leading-8">
+          {/* The intro opens the body, so a drawing in it drops its top margin. */}
+          {guide.intro && (
+            <div className="[&>div>figure:first-child]:mt-0">
+              <GuideBlocks blocks={guide.intro} locale={locale} />
+            </div>
+          )}
           {guide.sections.map((section) => (
             <section key={section.id} id={section.id} className="scroll-mt-24">
-              <h2 className="font-display text-2xl leading-tight font-semibold text-navy-900 sm:text-[28px]">
-                {section.heading}
+              <h2 className="flex items-center gap-3 font-display text-2xl leading-tight font-semibold text-balance text-navy-900 sm:text-[28px]">
+                {section.step && <Numeral n={section.step} className="size-9 rounded-xl bg-navy-900 text-base" />}
+                <span className="min-w-0">{section.heading}</span>
               </h2>
               <div className="mt-5">
                 <GuideBlocks blocks={section.body} locale={locale} />

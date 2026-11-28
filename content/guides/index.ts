@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import { guidesEn } from "./en";
 import { guidesHe } from "./he";
-import type { Guide, GuideBlock, GuideGroupId, GuideSlug, Guides } from "./types";
+import type { Guide, GuideBlock, GuideFigure, GuideGroupId, GuideSlug, Guides } from "./types";
 
 // One entry per locale; adding a language means adding its guides file here.
 const guides: Record<Locale, Guides> = { en: guidesEn, he: guidesHe };
@@ -94,15 +94,7 @@ export const guideIndex: {
 /** A block's text, in reading order. */
 export function blockTexts(block: GuideBlock): string[] {
   if (typeof block === "string") return [block];
-  if ("list" in block) return block.list;
-  if ("steps" in block) return block.steps;
-  if ("table" in block) return [...block.table.head, ...block.table.rows.flat()];
-  if ("note" in block) return [block.note];
-  if ("button" in block) return [block.button];
-  if ("process" in block) {
-    const { title, text, questions = [], button } = block.process;
-    return [title, text, ...questions, button];
-  }
+  if (!("figure" in block)) return plainBlockTexts(block);
   switch (block.figure) {
     case "path":
       return [...block.stages.flatMap((s) => [s.title, s.text]), block.caption];
@@ -112,7 +104,7 @@ export function blockTexts(block: GuideBlock): string[] {
       return [...Object.values(block.legend), ...block.tracks.flatMap((t) => [t.name, t.total]), block.caption];
     case "routes":
       return [
-        ...block.routes.flatMap((r) => [r.title, ...r.steps]),
+        ...block.routes.flatMap((r) => [r.title, ...(r.text ? [r.text] : []), ...r.steps]),
         block.end.title,
         ...(block.end.text ? [block.end.text] : []),
         block.caption,
@@ -137,18 +129,55 @@ export function blockTexts(block: GuideBlock): string[] {
       return [block.regular.title, ...block.regular.items, block.lawyer.title, ...block.lawyer.items, block.caption];
     case "map":
       return [...block.items.map((item) => item.title), block.caption];
+    case "journey":
+      return [
+        ...block.steps.flatMap((step) => [step.title, step.text, ...(step.handoff ? [step.handoff] : [])]),
+        ...caption(block),
+      ];
+    case "fork":
+      return [...block.options.flatMap((option) => [option.when, option.then, option.text]), ...caption(block)];
+    case "languages":
+      return [...block.rows.flatMap((row) => [row.name, row.verdict, ...(row.text ? [row.text] : [])]), ...caption(block)];
+    case "detour":
+      return [...block.steps, ...caption(block)];
   }
+}
+
+const caption = (figure: { caption?: string }) => (figure.caption ? [figure.caption] : []);
+
+function plainBlockTexts(block: Exclude<GuideBlock, string | GuideFigure>): string[] {
+  if ("list" in block) return block.list;
+  if ("steps" in block) return block.steps;
+  if ("table" in block) return [...block.table.head, ...block.table.rows.flat()];
+  if ("note" in block) return [block.note];
+  if ("button" in block) return [block.button];
+  if ("process" in block) {
+    const { title, text, questions = [], button } = block.process;
+    return [title, text, ...questions, button];
+  }
+  if ("signup" in block) return [block.signup.title, block.signup.text, block.signup.button];
+  if ("heading" in block) return [block.heading];
+  if ("checks" in block) return block.checks.flatMap((group) => [group.title, ...group.items]);
+  if ("tips" in block) return block.tips.map((tip) => tip.text);
+  return block.cards.flatMap((card) => [card.title, card.text]);
 }
 
 /** A block's kind and size, and a drawing's numbers: the same in both languages. */
 export function blockShape(block: GuideBlock): string {
   if (typeof block === "string") return "p";
-  if ("list" in block) return `list:${block.list.length}`;
-  if ("steps" in block) return `steps:${block.steps.length}`;
-  if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
-  if ("note" in block) return "note";
-  if ("button" in block) return `button>${block.to}`;
-  if ("process" in block) return `process:${block.process.questions?.length ?? 0}`;
+  if (!("figure" in block)) {
+    if ("list" in block) return `list:${block.list.length}`;
+    if ("steps" in block) return `steps:${block.steps.length}`;
+    if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
+    if ("note" in block) return "note";
+    if ("button" in block) return `button>${block.to}`;
+    if ("process" in block) return `process:${block.process.questions?.length ?? 0}`;
+    if ("signup" in block) return "signup";
+    if ("heading" in block) return "heading";
+    if ("checks" in block) return `checks:${block.checks.map((group) => `${group.verdict}/${group.items.length}`).join(",")}`;
+    if ("tips" in block) return `tips:${block.tips.map((tip) => tip.icon).join(",")}`;
+    return `cards:${block.cards.length}`;
+  }
   switch (block.figure) {
     case "path":
       return `path:${block.stages.length}${block.current === undefined ? "" : `@${block.current}`}`;
@@ -157,7 +186,7 @@ export function blockShape(block: GuideBlock): string {
     case "years":
       return `years:${block.tracks.map((t) => `${t.b1}/${t.a5}`).join(",")}`;
     case "routes":
-      return `routes:${block.routes.map((r) => `${r.icon}/${r.steps.length}`).join(",")}>${block.end.icon}/${block.end.text ? 1 : 0}`;
+      return `routes:${block.routes.map((r) => `${r.icon}/${r.text ? "+" : ""}${r.steps.length}`).join(",")}>${block.end.icon}/${block.end.text ? 1 : 0}`;
     case "loop":
       return `loop:${block.stages.map((s) => s.icon).join(",")}`;
     case "renewals":
@@ -168,14 +197,22 @@ export function blockShape(block: GuideBlock): string {
       return `triage:${block.regular.items.length}|${block.lawyer.items.length}`;
     case "map":
       return `map:${block.items.map((item) => `${item.icon}@${item.section}${item.wide ? "/wide" : ""}`).join(",")}`;
+    case "journey":
+      return `journey:${block.steps.map((step) => `${step.icon}@${step.section}${step.handoff ? "/handoff" : ""}`).join(",")}`;
+    case "fork":
+      return `fork:${block.options.map((option) => option.art ?? "-").join(",")}`;
+    case "languages":
+      return `languages:${block.rows.map((row) => `${row.script}/${row.tone}${row.text ? "+" : ""}`).join(",")}`;
+    case "detour":
+      return `detour:${block.steps.length}`;
   }
 }
 
 /** Every piece of a guide's body text, in reading order: its answer, sections and questions. */
 export function guideTexts(guide: Guide): string[] {
-  const blocks = guide.sections.flatMap((section) => [section.heading, ...section.body]);
+  const blocks = [...(guide.intro ?? []), ...guide.sections.flatMap((section) => [section.heading, ...section.body])];
   return [
-    guide.answer,
+    ...[guide.answer].flat(),
     ...blocks.flatMap(blockTexts),
     ...guide.faq.flatMap((item) => [item.q, item.a]),
     ...(guide.closing ? [guide.closing] : []),

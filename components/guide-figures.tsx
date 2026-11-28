@@ -1,5 +1,6 @@
-import type { ReactNode } from "react";
+import { Fragment, type CSSProperties, type ReactNode } from "react";
 import type { FigureIcon, GuideFigure as Figure } from "@/content/guides";
+import type { ForkArt, LanguageScript } from "@/content/guides/types";
 import type { Locale } from "@/i18n/config";
 import { GuideText } from "./guide";
 import { Icon } from "./icons";
@@ -32,9 +33,12 @@ function star(cx: number, cy: number, r: number) {
   return `M${points.join("L")}Z`;
 }
 
+/** Lists drawn without a frame sit in the text's own spacing; framed drawings get room around them. */
+const unframed = new Set<Figure["figure"]>(["languages", "detour", "fork"]);
+
 export function GuideFigure({ figure, locale }: { figure: Figure; locale: Locale }) {
   return (
-    <figure className="my-8">
+    <figure className={unframed.has(figure.figure) ? undefined : "my-8"}>
       {figure.figure === "path" ? (
         <PathFigure figure={figure} />
       ) : figure.figure === "trip" ? (
@@ -51,12 +55,22 @@ export function GuideFigure({ figure, locale }: { figure: Figure; locale: Locale
         <SplitFigure figure={figure} />
       ) : figure.figure === "triage" ? (
         <TriageFigure figure={figure} locale={locale} />
+      ) : figure.figure === "journey" ? (
+        <JourneyFigure figure={figure} />
+      ) : figure.figure === "fork" ? (
+        <ForkFigure figure={figure} locale={locale} />
+      ) : figure.figure === "languages" ? (
+        <LanguagesFigure figure={figure} locale={locale} />
+      ) : figure.figure === "detour" ? (
+        <DetourFigure figure={figure} locale={locale} />
       ) : (
         <MapFigure figure={figure} />
       )}
-      <figcaption className="mt-3 text-center text-sm leading-6 text-slate-500">
-        <GuideText text={figure.caption} locale={locale} />
-      </figcaption>
+      {figure.caption && (
+        <figcaption className="mt-3 text-center text-sm leading-6 text-slate-500">
+          <GuideText text={figure.caption} locale={locale} />
+        </figcaption>
+      )}
     </figure>
   );
 }
@@ -585,9 +599,13 @@ function RoutesFigure({ figure }: { figure: Extract<Figure, { figure: "routes" }
       <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
         {figure.routes.map((route, i) => (
           <div key={i} className="rounded-xl border border-line-200 bg-white p-4 sm:p-5">
-            <div className="flex items-center gap-3">
+            {/* The icon stays at the top when the title wraps; a lone title line sits at its middle. */}
+            <div className="flex items-start gap-3">
               <IconTile name={route.icon} className="size-11" />
-              <p className="text-[15px] leading-6 font-semibold text-navy-900">{route.title}</p>
+              <div className={`min-w-0 ${route.text ? "" : "pt-2.5"}`}>
+                <p className="text-[15px] leading-6 font-semibold text-navy-900">{route.title}</p>
+                {route.text && <p className="text-[13px] leading-5 text-slate-500">{route.text}</p>}
+              </div>
             </div>
             <ol className="mt-4 space-y-2.5">
               {route.steps.map((step, j) => (
@@ -820,7 +838,299 @@ function RenewalsFigure({ figure, locale }: { figure: Extract<Figure, { figure: 
   );
 }
 
-// ── A map of the guide's sections ────────────────────────────────────────────
+
+// ── The journey: the guide's sections as steps ──────────────────────────────
+
+/**
+ * Numbered steps in a row from sm up, a column on a phone, each a link to its
+ * section. Between two steps, an arrow; where something travels on the way
+ * (`handoff`), a plane with its words.
+ */
+function JourneyFigure({ figure }: { figure: Extract<Figure, { figure: "journey" }> }) {
+  const n = figure.steps.length;
+  // Steps share the width; the links between them take what they need.
+  const columns = { "--journey": Array.from({ length: n }, () => "minmax(0,1fr)").join(" auto ") } as CSSProperties;
+  return (
+    <div className="rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 p-3 sm:p-4">
+      <div className="grid sm:grid-cols-(--journey) sm:items-stretch" style={columns}>
+        {figure.steps.map((step, i) => (
+          <Fragment key={step.section}>
+            <a
+              href={`#${step.section}`}
+              className="group relative flex items-center gap-3 rounded-xl border border-line-200 bg-white p-3 transition-colors hover:border-teal-600 sm:flex-col sm:gap-2.5 sm:px-3 sm:py-4 sm:text-center"
+            >
+              <IconTile name={step.icon} className="size-11 sm:size-12" />
+              <span className="min-w-0 flex-1 sm:flex-none">
+                <span className="flex items-center gap-2 sm:justify-center">
+                  {/* Beside the title on a phone; in the card's corner from sm up, so the title has the width. */}
+                  <span className="grid size-6 shrink-0 place-items-center rounded-full bg-navy-900 text-xs leading-none font-semibold text-white tabular-nums sm:absolute sm:start-2.5 sm:top-2.5">
+                    {i + 1}
+                  </span>
+                  <span className="font-display text-[16px] leading-6 font-semibold text-navy-900 group-hover:text-teal-700">
+                    {step.title}
+                  </span>
+                </span>
+                <span className="mt-0.5 block text-[13.5px] leading-5 text-slate-500">{step.text}</span>
+              </span>
+            </a>
+            {i < n - 1 && <JourneyLink handoff={step.handoff} />}
+          </Fragment>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function JourneyLink({ handoff }: { handoff?: string }) {
+  if (!handoff) {
+    return (
+      <div aria-hidden="true" className="pointer-events-none flex items-center justify-center py-1.5 select-none sm:w-9 sm:py-0">
+        <svg viewBox="0 0 16 28" className="h-6 w-4 sm:hidden" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M8 2v19" stroke={C.slate300} strokeWidth="2" strokeDasharray="0.1 4.4" />
+          <path d="m3.5 19 4.5 4.5 4.5-4.5" stroke={C.navy} strokeWidth="2.2" />
+        </svg>
+        <svg viewBox="0 0 28 16" className="flip-rtl hidden h-4 w-7 sm:block" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 8h19" stroke={C.slate300} strokeWidth="2" strokeDasharray="0.1 4.4" />
+          <path d="m19 3.5 4.5 4.5-4.5 4.5" stroke={C.navy} strokeWidth="2.2" />
+        </svg>
+      </div>
+    );
+  }
+  return (
+    <div className="flex items-center gap-2 py-1.5 ps-3 sm:w-28 sm:flex-col sm:justify-center sm:gap-1 sm:px-1 sm:py-0">
+      {/* Nose down on a phone, along the reading direction from sm up. */}
+      <svg
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+        className="pointer-events-none size-9 shrink-0 rotate-90 select-none sm:size-10 sm:rotate-0 sm:rtl:-scale-x-100"
+      >
+        <path d="M2 24h10" stroke={C.teal} strokeWidth="2" strokeLinecap="round" strokeDasharray="0.1 3.6" />
+        {planeShape}
+      </svg>
+      <span className="text-[12.5px] leading-4 text-slate-500 sm:text-center">{handoff}</span>
+    </div>
+  );
+}
+
+// ── A fork: the cases, one under the other ──────────────────────────────────
+
+/**
+ * A row per case, with no box around it, like the language rows: the case's
+ * drawing in a tile, then when it applies, what to do, and why, at full width.
+ */
+function ForkFigure({ figure, locale }: { figure: Extract<Figure, { figure: "fork" }>; locale: Locale }) {
+  return (
+    <ul className="divide-y divide-line-200">
+      {figure.options.map((option, i) => (
+        <li key={i} className="flex items-start gap-4 py-5 first:pt-1 last:pb-1">
+          {option.art && (
+            <span className="grid size-16 shrink-0 place-items-center rounded-2xl bg-[#e9f4f1] ring-1 ring-teal-600/15 ring-inset">
+              <ForkArtwork art={option.art} />
+            </span>
+          )}
+          <div className="min-w-0 flex-1">
+            <p className="text-sm leading-5 text-slate-500">{option.when}</p>
+            <p className="mt-1 font-display text-lg leading-snug font-semibold text-balance text-navy-900">{option.then}</p>
+            <p className="mt-1.5 text-[16px] leading-7">
+              <GuideText text={option.text} locale={locale} />
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** A paper document, signed and stamped; or a phone showing one, with its QR code. */
+function ForkArtwork({ art }: { art: ForkArt }) {
+  if (art === "paper") {
+    return (
+      <svg viewBox="26 0 72 92" aria-hidden="true" className="pointer-events-none h-12 w-auto select-none">
+        <rect x="35" y="7" width="58" height="80" rx="4" fill={C.line} />
+        <rect x="31" y="4" width="58" height="80" rx="4" fill="#fff" stroke={C.line} strokeWidth="1.2" />
+        <rect x="40" y="14" width="30" height="4" rx="2" fill={C.navy} />
+        <g fill={C.slate300}>
+          <rect x="40" y="24" width="40" height="3" rx="1.5" />
+          <rect x="40" y="31" width="34" height="3" rx="1.5" />
+          <rect x="40" y="38" width="38" height="3" rx="1.5" />
+          <rect x="40" y="45" width="26" height="3" rx="1.5" />
+        </g>
+        {/* A handwritten signature and a round official stamp. */}
+        <path d="M40 70c4-7 6.5 3 10-1s4-5.5 7.5-1 3.5 2.5 6 0" fill="none" stroke={C.navy800} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="76" cy="67" r="10" fill="none" stroke={C.amber} strokeWidth="2.2" />
+        <circle cx="76" cy="67" r="6.2" fill="none" stroke={C.amber} strokeWidth="1.1" strokeDasharray="1.4 1.8" />
+        <path d={star(76, 67.3, 3)} fill={C.amber} />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="34 0 52 96" aria-hidden="true" className="pointer-events-none h-12 w-auto select-none">
+      <rect x="38" y="2" width="44" height="92" rx="8" fill={C.navy} />
+      <rect x="41.5" y="9" width="37" height="76" rx="3.5" fill="#fff" />
+      <rect x="54" y="4.5" width="12" height="2" rx="1" fill={C.navy800} />
+      <rect x="46" y="15" width="20" height="3.2" rx="1.6" fill={C.navy} />
+      <rect x="46" y="22" width="28" height="2.4" rx="1.2" fill={C.slate300} />
+      {/* The QR code a clerk checks it by. */}
+      <g transform="translate(47 31)">
+        <rect width="26" height="26" rx="2" fill="#fff" stroke={C.teal} strokeWidth="1.2" />
+        {[
+          [3, 3],
+          [16, 3],
+          [3, 16],
+        ].map(([x, y]) => (
+          <g key={`${x}-${y}`}>
+            <rect x={x} y={y} width="7" height="7" rx="1" fill={C.navy} />
+            <rect x={x + 1.6} y={y + 1.6} width="3.8" height="3.8" rx="0.5" fill="#fff" />
+            <rect x={x + 2.6} y={y + 2.6} width="1.8" height="1.8" fill={C.navy} />
+          </g>
+        ))}
+        <g fill={C.navy}>
+          {[
+            [12, 4],
+            [12, 8],
+            [12, 12],
+            [16, 12],
+            [20, 13],
+            [4, 12],
+            [8, 12],
+            [12, 17],
+            [16, 17],
+            [21, 18],
+            [12, 21],
+            [17, 21],
+            [21, 22],
+          ].map(([x, y]) => (
+            <rect key={`${x}-${y}`} x={x} y={y} width="2.4" height="2.4" />
+          ))}
+        </g>
+      </g>
+      <rect x="46" y="63" width="28" height="2.4" rx="1.2" fill={C.slate300} />
+      <rect x="46" y="69" width="18" height="2.4" rx="1.2" fill={C.slate300} />
+      <circle cx="60" cy="80" r="2.2" fill={C.teal} />
+    </svg>
+  );
+}
+
+// ── Languages: does a document need translating? ─────────────────────────────
+
+/**
+ * The verdict's line under the language: a small drawing and the words, in the
+ * tile's color. Amber text is darker than the theme's amber-500 so it keeps
+ * 4.5:1 on the page (5.4:1 on sand-50).
+ */
+const toneVerdict = {
+  ok: "text-teal-700",
+  maybe: "text-[#8a5a12]",
+  needed: "text-navy-900",
+} as const;
+
+/** A check for no translation, the clerk's question for "if asked", a stamp for notarized. */
+function VerdictIcon({ tone }: { tone: "ok" | "maybe" | "needed" }) {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true" className="pointer-events-none size-[18px] shrink-0 select-none" fill="none">
+      {tone === "ok" ? (
+        <>
+          <circle cx="10" cy="10" r="9" className="fill-teal-100" />
+          <path d="m6.4 10.3 2.5 2.5 4.8-5.1" className="stroke-teal-600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      ) : tone === "maybe" ? (
+        <>
+          <path
+            d="M3.5 5.5a2.5 2.5 0 0 1 2.5-2.5h8a2.5 2.5 0 0 1 2.5 2.5v6a2.5 2.5 0 0 1-2.5 2.5H9.2l-3.4 2.8V14H6a2.5 2.5 0 0 1-2.5-2.5Z"
+            className="fill-amber-100 stroke-amber-500"
+            strokeWidth="1.4"
+            strokeLinejoin="round"
+          />
+          <path d="M8.4 6.9a1.7 1.7 0 1 1 2.4 1.6c-.5.2-.8.6-.8 1.1v.3" className="stroke-amber-500" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="10" cy="11.6" r="0.9" className="fill-amber-500" />
+        </>
+      ) : (
+        <>
+          <circle cx="10" cy="4.6" r="2.6" className="fill-navy-900" />
+          <path d="M8.7 6.8h2.6l.5 4.2H8.2Z" className="fill-navy-900" />
+          <rect x="4.2" y="10.8" width="11.6" height="3.6" rx="1.2" className="fill-navy-900" />
+          <rect x="3.6" y="15.6" width="12.8" height="1.8" rx="0.9" className="fill-amber-500" />
+        </>
+      )}
+    </svg>
+  );
+}
+
+/** Each row's letters, as a drawing: two glyphs, one over the other. */
+const scriptGlyphs: Record<LanguageScript, { glyphs: [string, string]; latin?: boolean }> = {
+  "he-ar": { glyphs: ["א", "ع"] },
+  en: { glyphs: ["A", "a"], latin: true },
+  other: { glyphs: ["Ж", "文"] },
+};
+
+/** The letters' tile takes the verdict's color, so the row reads at a glance. */
+const toneTile = {
+  ok: { tile: "bg-teal-100 ring-teal-600/15", first: "text-navy-900", second: "text-teal-600" },
+  maybe: { tile: "bg-amber-100 ring-amber-500/25", first: "text-navy-900", second: "text-amber-500" },
+  needed: { tile: "bg-navy-900 ring-navy-900", first: "text-white", second: "text-amber-500" },
+} as const;
+
+/** A row per language, with no box around it: the letters' tile, the name, the verdict, and why. */
+function LanguagesFigure({ figure, locale }: { figure: Extract<Figure, { figure: "languages" }>; locale: Locale }) {
+  return (
+    <ul className="divide-y divide-line-200">
+      {figure.rows.map((row) => {
+        const { glyphs, latin } = scriptGlyphs[row.script];
+        const tone = toneTile[row.tone];
+        return (
+          <li key={row.script} className="flex items-start gap-4 py-4 first:pt-1 last:pb-1">
+            <span
+              aria-hidden="true"
+              dir="ltr"
+              className={`relative size-14 shrink-0 overflow-hidden rounded-[14px] ring-1 select-none ring-inset ${tone.tile} ${latin ? "font-[family-name:var(--font-fraunces)]" : ""}`}
+            >
+              <span className={`absolute top-1 left-2 text-[26px] leading-none font-semibold ${tone.first}`}>{glyphs[0]}</span>
+              <span className={`absolute right-2 bottom-1.5 text-[22px] leading-none font-semibold ${tone.second}`}>{glyphs[1]}</span>
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="font-display text-lg leading-7 font-semibold text-navy-900">{row.name}</p>
+              <p className={`mt-0.5 flex items-center gap-1.5 text-[15px] leading-6 font-semibold ${toneVerdict[row.tone]}`}>
+                <VerdictIcon tone={row.tone} />
+                {row.verdict}
+              </p>
+              {row.text && (
+                <p className="mt-1.5 text-[16px] leading-7">
+                  <GuideText text={row.text} locale={locale} />
+                </p>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+// ── A detour: a way around, step by step ─────────────────────────────────────
+
+function DetourFigure({ figure, locale }: { figure: Extract<Figure, { figure: "detour" }>; locale: Locale }) {
+  const n = figure.steps.length;
+  return (
+    <ol className="pt-1">
+      {figure.steps.map((step, i) => (
+        <li key={i} className="relative flex gap-3.5 pb-5 last:pb-0">
+          {/* A dotted line on to the next step. */}
+          {i < n - 1 && (
+            <span aria-hidden="true" className="absolute start-[13px] top-8 -bottom-0.5 border-s-2 border-dotted border-slate-300" />
+          )}
+          <span className="grid size-7 shrink-0 place-items-center rounded-full bg-navy-900 text-[13px] leading-none font-semibold text-white tabular-nums">
+            {i + 1}
+          </span>
+          <p className="min-w-0 flex-1 pt-px text-[16px] leading-7">
+            <GuideText text={step} locale={locale} />
+          </p>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+// ── The guide's sections as tiles ────────────────────────────────────────────
 
 function MapFigure({ figure }: { figure: Extract<Figure, { figure: "map" }> }) {
   return (
@@ -964,6 +1274,50 @@ const planeShape = (
 const heart = "M22 35.5c-.6-.4-11-6.6-11-14.2A5.9 5.9 0 0 1 22 18.4a5.9 5.9 0 0 1 11 2.9c0 7.6-10.4 13.8-11 14.2Z";
 
 const icons: Record<FigureIcon, ReactNode> = {
+  // A document as issued: signed, with a stamp.
+  document: (
+    <>
+      <rect x="11" y="8" width="26" height="32" rx="3" fill="#fff" stroke={C.line} strokeWidth="1.2" />
+      <rect x="15" y="13" width="17" height="2.4" rx="1.2" fill={C.navy} />
+      <g fill={C.slate300}>
+        <rect x="15" y="18.5" width="14" height="1.8" rx="0.9" />
+        <rect x="15" y="23" width="11" height="1.8" rx="0.9" />
+      </g>
+      <path d="M15.5 33.5c1.8-2.8 3 1.2 4.8-.5s2.3-1.9 3.8.1" fill="none" stroke={C.navy800} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="30.5" cy="32" r="3.8" fill="none" stroke={C.amber} strokeWidth="1.6" />
+    </>
+  ),
+  // A document with its apostille stapled on behind it.
+  attached: (
+    <>
+      <g transform="rotate(9 30 25)">
+        <rect x="19" y="11" width="21" height="28" rx="2.5" fill="#fff" stroke={C.line} strokeWidth="1.2" />
+        <circle cx="29.5" cy="30.5" r="5.2" fill={C.amber} />
+        <path d={star(29.5, 30.8, 2.9)} fill="#fff" />
+      </g>
+      <rect x="8.5" y="9" width="21" height="28.5" rx="2.5" fill="#fff" stroke={C.line} strokeWidth="1.2" />
+      <rect x="12.5" y="14.5" width="11" height="2.2" rx="1.1" fill={C.navy} />
+      <g fill={C.slate300}>
+        <rect x="12.5" y="19.5" width="13" height="1.8" rx="0.9" />
+        <rect x="12.5" y="24" width="9" height="1.8" rx="0.9" />
+        <rect x="12.5" y="28.5" width="11" height="1.8" rx="0.9" />
+      </g>
+      <path d="M22.5 11.2h8.5" stroke={C.teal} strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M22.5 11.2v2.2M31 11.2v2.2" stroke={C.teal700} strokeWidth="1.6" strokeLinecap="round" />
+    </>
+  ),
+  // An apostille on a screen: the electronic kind.
+  screen: (
+    <>
+      <rect x="7" y="10" width="34" height="23.5" rx="3" fill={C.navy} />
+      <rect x="10" y="13" width="28" height="17.5" rx="1.5" fill="#fff" />
+      <circle cx="24" cy="21.8" r="5.8" fill={C.amber} />
+      <circle cx="24" cy="21.8" r="4" fill="none" stroke="#fff" strokeWidth="0.9" strokeDasharray="1.1 1.3" />
+      <path d={star(24, 22, 2.4)} fill="#fff" />
+      <path d="M21 33.5h6l1.2 4h-8.4Z" fill={C.navy} />
+      <rect x="16" y="37.3" width="16" height="2.6" rx="1.3" fill={C.navy} />
+    </>
+  ),
   home: (
     <>
       <path d="M15 24.5 24 17l9 7.5V35a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2Z" fill={C.navy} />

@@ -43,6 +43,20 @@ export type GuideBlock =
    * drawing (components/guide-process-card): its questions, if listed, and a button.
    */
   | { process: { title: string; text: string; questions?: string[]; button: string } }
+  /**
+   * A card into the app, where the guide runs out and the couple's own case
+   * begins (components/guide-list-card): a title, a line, and a sign-up button,
+   * beside a drawing of their own documents list.
+   */
+  | { signup: { title: string; text: GuideText; button: string } }
+  /** A heading inside a section, for a part of it. */
+  | { heading: string }
+  /** Lists of what to do (`yes`) and what isn't accepted (`no`), each with a title. */
+  | { checks: { title: string; verdict: "yes" | "no"; items: GuideText[] }[] }
+  /** Short tips, each beside a drawing. */
+  | { tips: { icon: FigureIcon; text: GuideText }[] }
+  /** A few rules, numbered, each with a short title. The numbers count them; they aren't an order. */
+  | { cards: { title: string; text: GuideText }[] }
   | GuideFigure;
 
 /**
@@ -75,7 +89,8 @@ export type GuideFigure =
   | {
       /** Two ways to the same place, side by side, each a few steps, joining at `end`. */
       figure: "routes";
-      routes: { icon: FigureIcon; title: string; steps: string[] }[];
+      /** `text`: a line under the route's title. */
+      routes: { icon: FigureIcon; title: string; text?: string; steps: string[] }[];
       end: { icon: FigureIcon; title: string; text?: string };
       caption: GuideText;
     }
@@ -108,12 +123,46 @@ export type GuideFigure =
       caption: GuideText;
     }
   | {
+      /**
+       * The guide's sections as numbered steps in a row, each jumping to its
+       * section (a section id). `handoff`: what happens on the way to the next
+       * step, drawn as a plane on the arrow.
+       */
+      figure: "journey";
+      steps: { icon: FigureIcon; title: string; text: string; section: string; handoff?: string }[];
+      caption?: GuideText;
+    }
+  | {
+      /** Two cases side by side: `when` it's this case, `then` what to do, and why. `art` draws the case. */
+      figure: "fork";
+      options: { art?: ForkArt; when: string; then: string; text: GuideText }[];
+      caption?: GuideText;
+    }
+  | {
+      /** Whether a document needs translating, a row per language. */
+      figure: "languages";
+      rows: { script: LanguageScript; name: string; verdict: string; tone: "ok" | "maybe" | "needed"; text?: GuideText }[];
+      caption?: GuideText;
+    }
+  | {
+      /** A way around, step by step. */
+      figure: "detour";
+      steps: GuideText[];
+      caption?: GuideText;
+    }
+  | {
       /** The guide's sections as tiles, each jumping to its section (a section id). */
       figure: "map";
       /** `wide`: a tile that isn't a subject like the others, on a row of its own, dashed. */
       items: { icon: FigureIcon; title: string; section: string; wide?: boolean }[];
       caption: GuideText;
     };
+
+/** What a fork's case looks like: a paper document, or one that's only a file. */
+export type ForkArt = "paper" | "digital";
+
+/** The letters a languages row is drawn with: Hebrew and Arabic, Latin, or other scripts. */
+export type LanguageScript = "he-ar" | "en" | "other";
 
 /** The small drawings the figures are built from (components/guide-figures). */
 export const figureIcons = [
@@ -133,6 +182,9 @@ export const figureIcons = [
   "hourglass",
   "talk",
   "more",
+  "document",
+  "attached",
+  "screen",
 ] as const;
 export type FigureIcon = (typeof figureIcons)[number];
 
@@ -144,11 +196,14 @@ export type Guide = {
   facts: string[];
   /** The H1. */
   title: string;
-  /** The short answer the page opens with. */
-  answer: GuideText;
+  /** The short answer the page opens with: a paragraph, or a few numbered lines. */
+  answer: GuideText | GuideText[];
   /** When the facts were last checked, as YYYY-MM-DD. */
   updated: string;
-  sections: { id: string; heading: string; body: GuideBlock[] }[];
+  /** Blocks before the first section, like a drawing of the whole guide. */
+  intro?: GuideBlock[];
+  /** `step`: the section is a numbered step, shown beside its heading. */
+  sections: { id: string; heading: string; step?: number; body: GuideBlock[] }[];
   /** `signup`: a sign-up link under the answer, with this label. */
   faq: { q: string; a: GuideText; signup?: string }[];
   /** A few words to close the guide: after its sections, before the questions. */

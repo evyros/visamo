@@ -14,7 +14,7 @@ import { documentBullets } from "@/lib/documents/titles";
  * version: lib/prompts.test.ts fails until it's raised and recorded
  * (npm run prompts:lock).
  */
-export const KNOWLEDGE_VERSION = 206;
+export const KNOWLEDGE_VERSION = 208;
 
 /** In reading order. lib/knowledge/CLAUDE.md is for its authors, not the models. */
 const KNOWLEDGE_FILES = [

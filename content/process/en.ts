@@ -211,7 +211,7 @@ export const processEn: ProcessTexts = {
           : "Start with the documents from abroad: they take the longest, and some branches reject an application that's missing them instead of giving you time to complete it. File once your file is complete: [the list of documents](#documents) is in the filing step.",
         {
           list: [
-            "**Certified.** A document from abroad needs an apostille, or consular legalization, from the country that issued it. It can't be done in Israel. [Apostille and translation](guide:apostille-and-translation)",
+            "**Certified.** A document from abroad needs an apostille, or consular legalization, from the country that issued it. An Israeli authority can't do it. [Apostille and translation](guide:apostille-and-translation)",
             "**Translated, if needed.** By law, only Hebrew and Arabic are accepted without a notarized translation. In practice, most clerks accept English. When you do translate, translate into Hebrew.",
             "**Recent.** The foreign partner's civil-status document and police certificate have to be issued in the last 6 months before you file.",
             "**A valid passport.** The foreign partner's passport has to be valid for at least 2 more years.",

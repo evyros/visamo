@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import type { GuideBlock } from "@/content/guides";
 import type { Locale } from "@/i18n/config";
 import { localePath, newTab, signupUrl } from "@/lib/site";
-import { GuideFigure } from "./guide-figures";
+import { GuideFigure, IconTile } from "./guide-figures";
+import { GuideListCard } from "./guide-list-card";
 import { GuideProcessCard } from "./guide-process-card";
 import { Icon } from "./icons";
 import { ButtonLink } from "./ui";
@@ -55,6 +56,59 @@ export function GuideText({ text, locale }: { text: string; locale: Locale }) {
   return <>{parts}</>;
 }
 
+/** A guide's short answer: a paragraph, or numbered lines. */
+export function GuideAnswer({ answer, locale }: { answer: string | string[]; locale: Locale }) {
+  if (typeof answer === "string") {
+    return (
+      <p className="mt-2 text-[17px] leading-8">
+        <GuideText text={answer} locale={locale} />
+      </p>
+    );
+  }
+  return (
+    <ol className="mt-3 space-y-3">
+      {answer.map((line, i) => (
+        <li key={i} className="flex gap-3.5 text-[17px] leading-8">
+          <Numeral n={i + 1} className="mt-0.5 size-7 rounded-full bg-navy-900 text-[13px]" />
+          <span className="min-w-0">
+            <GuideText text={line} locale={locale} />
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/** A number in a circle, for steps and counted rules. */
+export function Numeral({ n, className }: { n: number; className: string }) {
+  return (
+    <span
+      className={`grid shrink-0 place-items-center font-sans leading-none font-semibold text-white tabular-nums ${className}`}
+    >
+      {n}
+    </span>
+  );
+}
+
+/** ✓ for what to do, ✗ for what isn't accepted. */
+function VerdictMark({ verdict }: { verdict: "yes" | "no" }) {
+  return (
+    <svg viewBox="0 0 26 26" aria-hidden="true" className="pointer-events-none mt-0.5 size-[26px] shrink-0 select-none">
+      {verdict === "yes" ? (
+        <>
+          <circle cx="13" cy="13" r="12" className="fill-teal-100" />
+          <path d="m8 13.4 3.4 3.4L18.2 9.6" fill="none" className="stroke-teal-600" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      ) : (
+        <>
+          <circle cx="13" cy="13" r="12" className="fill-terracotta-100" />
+          <path d="m9.2 9.2 7.6 7.6m0-7.6-7.6 7.6" fill="none" className="stroke-terracotta-600" strokeWidth="2.4" strokeLinecap="round" />
+        </>
+      )}
+    </svg>
+  );
+}
+
 export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: Locale }) {
   return (
     <div className="space-y-5">
@@ -64,6 +118,72 @@ export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: 
             <p key={i}>
               <GuideText text={block} locale={locale} />
             </p>
+          );
+        }
+        // Figures first: some have `steps` of their own.
+        if ("figure" in block) {
+          return <GuideFigure key={i} figure={block} locale={locale} />;
+        }
+        if ("signup" in block) {
+          return <GuideListCard key={i} texts={block.signup} locale={locale} />;
+        }
+        if ("heading" in block) {
+          return (
+            <h3 key={i} className="pt-4 font-display text-xl leading-snug font-semibold text-balance text-navy-900 sm:text-[22px]">
+              {block.heading}
+            </h3>
+          );
+        }
+        if ("checks" in block) {
+          return (
+            <div key={i} className="space-y-7 pt-1">
+              {block.checks.map((group, j) => (
+                <div key={j}>
+                  <p className="font-display text-[17px] leading-7 font-semibold text-navy-900">{group.title}</p>
+                  <ul className="mt-3 space-y-4">
+                    {group.items.map((item, k) => (
+                      <li key={k} className="flex gap-3.5">
+                        <VerdictMark verdict={group.verdict} />
+                        <span className="min-w-0">
+                          <GuideText text={item} locale={locale} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          );
+        }
+        if ("tips" in block) {
+          return (
+            <ul key={i} className="space-y-3">
+              {block.tips.map((tip, j) => (
+                <li key={j} className="flex items-start gap-4 rounded-2xl border border-line-200 bg-white p-4 text-[16px] leading-7 sm:p-5">
+                  <IconTile name={tip.icon} className="size-12" />
+                  <span className="min-w-0">
+                    <GuideText text={tip.text} locale={locale} />
+                  </span>
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        if ("cards" in block) {
+          return (
+            <ol key={i} className="space-y-6 pt-1">
+              {block.cards.map((card, j) => (
+                <li key={j} className="flex gap-3.5">
+                  <Numeral n={j + 1} className="mt-0.5 size-7 rounded-full bg-teal-600 text-[13px]" />
+                  <div className="min-w-0">
+                    <p className="font-display text-lg leading-7 font-semibold text-navy-900">{card.title}</p>
+                    <p className="mt-1 text-[16px] leading-7">
+                      <GuideText text={card.text} locale={locale} />
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           );
         }
         if ("list" in block || "steps" in block) {
@@ -131,9 +251,6 @@ export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: 
               </tbody>
             </table>
           );
-        }
-        if ("figure" in block) {
-          return <GuideFigure key={i} figure={block} locale={locale} />;
         }
         if ("process" in block) {
           return <GuideProcessCard key={i} texts={block.process} locale={locale} />;

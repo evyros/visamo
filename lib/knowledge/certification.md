@@ -11,8 +11,9 @@ has the details.
 ## Apostille or consular legalization
 
 An official document from abroad has to be certified by the country that
-issued it before Misrad Hapnim accepts it. It can't be certified in Israel.
-The rules are in the population authority's procedure 1.3.0001 (referenced
+issued it before Misrad Hapnim accepts it. It can't be certified by an
+Israeli authority. A few countries certify through their embassy in Israel
+(each document's guide says where); most only at home. The rules are in the population authority's procedure 1.3.0001 (referenced
 by 5.2.0008 §ד.2.ה).
 
 ### Which certification
@@ -134,7 +135,9 @@ landlord's affidavit. What they need depends on their language:
   they don't accept it, they'll ask you to translate it and give you time to
   do it, so be ready to. The AS/6 checklist itself says public documents
   need a notarized translation into Hebrew "except from Arabic and English"
-  (מלבד מהשפות ערבית ואנגלית), which you can point a clerk to.
+  (מלבד מהשפות ערבית ואנגלית), which you can point a clerk to. So don't
+  translate an English document in advance: translate it only if the clerk
+  handling your file asks for it.
 - **Another language, which a notary in Israel knows** (German, Russian,
   Spanish and most others; the full list is in
   [translation-languages.md](translation-languages.md)): a notarized

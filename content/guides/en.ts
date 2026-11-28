@@ -9,6 +9,11 @@ export const guidesEn: Guides = {
     faq: "Questions couples ask",
     related: "Related guides",
     readingTime: "{minutes} min read",
+    docTags: {
+      married: "Married couples only",
+      commonLaw: "Common-law couples only",
+      abroad: "Apostille required",
+    },
   },
   index: {
     metaTitle: "Guides to the Israel Partner Visa",
@@ -1355,20 +1360,30 @@ export const guidesEn: Guides = {
         "Every document Misrad Hapnim asks for to open a partner visa file, by subject: forms, identity, your relationship, civil status, the police certificate and your life together, and who needs each one.",
       facts: ["Every document, by subject", "Married & common-law", "Who needs what"],
       title: "The documents for the Israel partner visa",
-      answer:
-        "To open a partner visa file, [Misrad Hapnim](/guide/glossary#misrad-hapnim) asks for **forms**, **identity documents**, **proof of your relationship**, the foreign partner's **civil status** and **police certificate**, and proof that you **share a life**. Which ones you need depends on your situation: married or common-law, where each of you lives, previous marriages, and children. Documents from abroad need an apostille, and often a translation.",
-      updated: "2026-11-22",
+      answer: [
+        "Misrad Hapnim asks for **forms**, **identity documents**, **proof of your relationship**, the foreign partner's **personal status** and **police certificate**, and proof that you **share a life**.",
+        "Which ones exactly depends on your situation: married or common-law, where each of you lives, previous marriages, and children.",
+        "Documents from abroad need an apostille, and often a translation.",
+      ],
+      updated: "2026-11-28",
       sections: [
         {
           id: "first",
           heading: "Good to know first",
           body: [
             {
-              list: [
-                "**Originals, certified.** A document from abroad needs an apostille or consular legalization from the country that issued it, and often a translation into Hebrew. [Apostille and translation](guide:apostille-and-translation)",
-                "**Some documents have to be recent.** The foreign partner's civil-status document and police certificate have to be issued in the last 6 months before you file.",
-                "**The passport** has to be valid for at least 2 more years.",
-                "**The clerk can ask for more:** any other document your circumstances call for.",
+              rows: true,
+              tips: [
+                {
+                  icon: "seal",
+                  text: "**Originals, certified.** A document from abroad needs an apostille or consular legalization from the country that issued it, and often a translation into Hebrew. Read: [Apostille and translation](guide:apostille-and-translation)",
+                },
+                {
+                  icon: "hourglass",
+                  text: "**Some documents have to be recent.** The foreign partner's civil-status document and police certificate have to be issued in the last 6 months before you file.",
+                },
+                { icon: "passport", text: "**The passport** has to be valid for at least 2 more years." },
+                { icon: "more", text: "**The clerk usually asks for more:** any other document your circumstances call for." },
               ],
             },
             {
@@ -1380,7 +1395,8 @@ export const guidesEn: Guides = {
                 { icon: "certificate", title: "Civil status", section: "civil-status" },
                 { icon: "shield", title: "Police certificate", section: "police" },
                 { icon: "home", title: "Your life together", section: "life-together" },
-                { icon: "more", title: "Depends on your case", section: "your-case", wide: true },
+                { icon: "family", title: "Children", section: "children" },
+                { icon: "more", title: "Depends on your case", section: "your-case", apart: true },
               ],
               caption: "The documents by subject: each one jumps to its list.",
             },
@@ -1391,11 +1407,25 @@ export const guidesEn: Guides = {
           heading: "Forms",
           body: [
             {
-              list: [
-                "[Status application (form AS/6)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf): married couples.",
-                "[Joint affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf): common-law couples. You both sign it and send it with the online application. At the appointment, the clerk may ask you to sign it again.",
-                "[Entry permit application (form AS/1)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf): when the foreign partner is abroad and the Israeli partner lives in Israel.",
-                "[Visa change application (form AS/3)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf): when the foreign partner is already in Israel.",
+              marker: "page",
+              docs: [
+                {
+                  name: "[Status application (form AS/6)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS6.pdf)",
+                  tags: ["married"],
+                },
+                {
+                  name: "[Joint affidavit](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/5.2.0009_a.pdf)",
+                  tags: ["commonLaw"],
+                  note: "You both sign it and send it with the online application. At the appointment, the clerk may ask you to sign it again.",
+                },
+                {
+                  name: "[Entry permit application (form AS/1)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS1.pdf)",
+                  note: "When the foreign partner is abroad and the Israeli partner lives in Israel.",
+                },
+                {
+                  name: "[Visa change application (form AS/3)](https://www.gov.il/BlobFolder/generalpage/visas_forms/he/AS3.pdf)",
+                  note: "When the foreign partner is already in Israel.",
+                },
               ],
             },
           ],
@@ -1405,12 +1435,12 @@ export const guidesEn: Guides = {
           heading: "Identity",
           body: [
             {
-              list: [
-                "**The Israeli partner's Teudat Zehut,** with its appendix (ספח).",
-                "**The foreign partner's passport.**",
-                "**Passport photos** of each of you.",
-                "**The foreign partner's birth certificate.**",
-                "**Proof of a name change:** if the foreign partner changed their name.",
+              docs: [
+                { name: "Teudat Zehut, with its appendix (ספח)", note: "The Israeli partner's." },
+                { name: "Passport", note: "The foreign partner's." },
+                { name: "Passport photos", note: "Of each of you." },
+                { name: "Birth certificate", tags: ["abroad"], note: "The foreign partner's." },
+                { name: "Proof of a name change", note: "If the foreign partner changed their name." },
               ],
             },
           ],
@@ -1420,14 +1450,14 @@ export const guidesEn: Guides = {
           heading: "Your relationship",
           body: [
             {
-              list: [
-                "**Your marriage certificate:** married couples. A marriage in Israel needs no certification.",
-                "**A letter about your relationship:** every couple, signed by both of you.",
-                "**Photos of you together.**",
-                "**Your message and call history.**",
-                "**Letters of recommendation** from family and friends in Israel.",
-                "**Evidence of living together:** if you live, or lived, together.",
-                "**Birth certificates of your children together:** if you have any.",
+              docs: [
+                { name: "Your marriage certificate", tags: ["married"], note: "A marriage in Israel needs no certification." },
+                { name: "A letter about your relationship", note: "Signed by both of you." },
+                { name: "Photos of you together" },
+                { name: "Your message and call history" },
+                { name: "Letters of recommendation", note: "From family and friends in Israel." },
+                { name: "Evidence of living together", note: "If you live, or lived, together." },
+                { name: "Birth certificates of your children together", note: "If you have any." },
               ],
             },
           ],
@@ -1437,9 +1467,12 @@ export const guidesEn: Guides = {
           heading: "Civil status",
           body: [
             {
-              list: [
-                "**The foreign partner's civil status,** and whether they have children: issued in the last 6 months.",
-                "**Proof of divorce (a divorce certificate or decree), or a previous spouse's death certificate:** for each of the foreign partner's previous marriages.",
+              docs: [
+                { name: "Civil status, and whether they have children", tags: ["abroad"], note: "The foreign partner's. Issued in the last 6 months before you file." },
+                {
+                  name: "Proof of divorce, or a previous spouse's death certificate",
+                  note: "For each of the foreign partner's previous marriages: a divorce certificate or decree.",
+                },
               ],
             },
           ],
@@ -1448,7 +1481,20 @@ export const guidesEn: Guides = {
           id: "police",
           heading: "Police certificate",
           body: [
-            "The foreign partner's police certificate, from their country of citizenship and from each other country they lived in for at least 6 months in a row, issued in the last 6 months. [How a rejected police certificate delays a file](guide:partner-visa-timeline)",
+            {
+              docs: [
+                {
+                  name: "Police certificate",
+                  tags: ["abroad"],
+                  note: "The foreign partner's, from their country of citizenship and from each other country they lived in for at least 6 months in a row.\nIssued in the last 6 months before you file.",
+                },
+              ],
+            },
+            {
+              warning: true,
+              note: "A mistake in a document, a missing detail, or a wrong apostille or translation delays your file, sometimes by weeks or months.",
+              link: { label: "What delays a file", to: "guide:partner-visa-timeline#delays" },
+            },
           ],
         },
         {
@@ -1456,14 +1502,18 @@ export const guidesEn: Guides = {
           heading: "Your life together",
           body: [
             {
-              list: [
-                "**A lease or purchase contract:** of your shared home, or of the Israeli partner's home if you don't live together.",
-                "**Bills for the home:** electricity, water, arnona and the like.",
-                "**A municipality confirmation** (אישור תושב)**:** married couples, if either of you lives in Israel.",
-                "**Proof of government services:** if either of you lives in Israel.",
-                "**Bank documents:** a shared bank account for married couples, bank statements for common-law couples.",
-                "**Salary slips** of each of you.",
-                "**Health insurance** for the foreign partner.",
+              docs: [
+                {
+                  name: "A lease or purchase contract",
+                  note: "Of your shared home, or of the Israeli partner's home if you don't live together.",
+                },
+                { name: "Bills for the home", note: "Electricity, water, arnona and the like." },
+                { name: "A municipality confirmation (אישור תושב)", tags: ["married"], note: "If either of you lives in Israel." },
+                { name: "Proof of government services", note: "If either of you lives in Israel." },
+                { name: "A shared bank account", tags: ["married"] },
+                { name: "Bank statements", tags: ["commonLaw"] },
+                { name: "Salary slips", note: "Of each of you." },
+                { name: "Health insurance", note: "For the foreign partner." },
               ],
             },
           ],
@@ -1473,10 +1523,13 @@ export const guidesEn: Guides = {
           heading: "Children moving to Israel",
           body: [
             {
-              list: [
-                "**Birth certificates and passports** of the children.",
-                "**Police certificates** for children 14 and older.",
-                "**The other parent's consent and address,** or a court ruling on custody, or the other parent's death certificate.",
+              docs: [
+                { name: "Birth certificates and passports of the children" },
+                { name: "Police certificates", note: "For children 14 and older." },
+                {
+                  name: "The other parent's consent and address",
+                  note: "Or a court ruling on custody, or the other parent's death certificate.",
+                },
               ],
             },
           ],
@@ -1485,18 +1538,14 @@ export const guidesEn: Guides = {
           id: "your-case",
           heading: "Depends on your case",
           body: [
-            "Every couple needs more documents or more proof, depending on their case, and this guide can't know the details of yours, examples:",
             {
-              list: [
-                "A name change",
-                "Previous marriages or children",
-                "Other countries the foreign partner lived in",
-                "Extra evidence of your life together",
-                "More proof of income",
-                "…and more",
-              ],
+              signup: {
+                title: "Which documents do you need, exactly?",
+                text: "Every couple needs different documents, depending on their case.",
+                points: ["Your exact list", "How to get each document", "How to certify and translate it correctly"],
+                button: "Get your exact list, free",
+              },
             },
-            { button: "Get your exact list, free", to: "signup" },
           ],
         },
       ],
@@ -1515,7 +1564,7 @@ export const guidesEn: Guides = {
         },
         {
           q: "Do documents in English need a translation?",
-          a: "By law, yes: only Hebrew and Arabic are accepted without one. In practice, clerks often accept English. When you do translate, translate into Hebrew.",
+          a: "Not unless the clerk asks. By law they do: only Hebrew and Arabic are accepted without one. But in practice most clerks accept English documents. When you do translate, translate into Hebrew.",
         },
         {
           q: "My partner is abroad. How do they sign the documents?",
@@ -1526,6 +1575,11 @@ export const guidesEn: Guides = {
           q: "How are documents from abroad translated?",
           a: "It depends on the document and its language. Some need no translation, some you translate yourselves, and others need an official translation, made in Israel or abroad depending on the language. Visamo knows the rules for every country and language, and shows you what each of your documents needs.",
           signup: "See what each document needs, free",
+        },
+        {
+          q: "Can a lawyer get our documents from abroad for us?",
+          a: "Mostly not. Each document comes from the authority in your country that issues it, and it's usually you who has to request it. A lawyer can tell you what to get, but getting it, sending it to Israel and translating it stays with you.",
+          link: { label: "Do we need a lawyer for the partner visa?", path: "/do-we-need-a-lawyer" },
         },
       ],
       closing:

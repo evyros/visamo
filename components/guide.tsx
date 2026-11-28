@@ -1,18 +1,19 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { GuideBlock } from "@/content/guides";
+import { getGuides, type GuideBlock } from "@/content/guides";
+import type { DocTag } from "@/content/guides/types";
 import type { Locale } from "@/i18n/config";
 import { localePath, newTab, signupUrl } from "@/lib/site";
 import { GuideFigure, IconTile } from "./guide-figures";
 import { GuideListCard } from "./guide-list-card";
 import { GuideProcessCard } from "./guide-process-card";
 import { Icon } from "./icons";
-import { ButtonLink } from "./ui";
+import { ButtonLink, TextLink } from "./ui";
 
 // The guides' text (content/guides): **bold**, and [links](guide:<slug>) to
-// another guide or [links](/path) to a page, both kept in the reader's language,
-// [links](#id) to a part of the same page, or [links](https://…) to another
-// site, opened in a new tab.
+// another guide (guide:<slug>#<section> to a part of it) or [links](/path) to
+// a page, both kept in the reader's language, [links](#id) to a part of the
+// same page, or [links](https://…) to another site, opened in a new tab.
 
 const linkStyle = "font-semibold text-teal-700 underline underline-offset-4 hover:text-teal-600";
 
@@ -109,6 +110,114 @@ function VerdictMark({ verdict }: { verdict: "yes" | "no" }) {
   );
 }
 
+/**
+ * A section's documents as a list with big bullets, no box: the name, its tags
+ * right after it (under it on a phone), and a note under both. The tags' words
+ * come from the guides' labels, so a row's tags read the same in every section.
+ */
+function DocRows({
+  docs,
+  marker,
+  locale,
+}: {
+  docs: { name: string; tags?: DocTag[]; note?: string }[];
+  marker?: "page";
+  locale: Locale;
+}) {
+  const words = getGuides(locale).labels.docTags;
+  return (
+    <ul className="space-y-4 pt-1">
+      {docs.map((doc, j) => {
+        const tags = doc.tags ?? [];
+        return (
+          <li key={j} className="flex gap-3.5">
+            {marker === "page" ? (
+              <PageMark />
+            ) : (
+              /* A big bullet, on the name's line: a teal dot in a soft ring. */
+              <span aria-hidden="true" className="mt-[6px] grid size-4 shrink-0 place-items-center rounded-full bg-teal-600/15">
+                <span className="size-2 rounded-full bg-teal-600" />
+              </span>
+            )}
+            <div className="min-w-0 flex-1">
+              {/* The tags follow the name on its line; on a phone they get a line of their own. */}
+              <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+                <p className="min-w-0 text-[16.5px] leading-7 font-semibold text-navy-900">
+                  <GuideText text={doc.name} locale={locale} />
+                </p>
+                {tags.length > 0 && (
+                  <span className="flex w-full flex-wrap gap-1.5 sm:w-auto">
+                    {/* Hidden punctuation, so the row reads as one sentence without its
+                        layout (to search engines, AI crawlers and screen readers):
+                        "Birth certificate (Apostille required)." */}
+                    <span className="sr-only"> (</span>
+                    {tags
+                      .filter((tag) => tag !== "abroad")
+                      .map((tag, k) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center rounded-md bg-white px-2 py-0.5 text-[12.5px] leading-5 font-medium text-slate-700 ring-1 ring-line-200 ring-inset"
+                        >
+                          {k > 0 && <span className="sr-only">, </span>}
+                          {words[tag]}
+                        </span>
+                      ))}
+                    {/* The apostille mark: a small seal and a teal tint. */}
+                    {tags.includes("abroad") && (
+                      <span className="inline-flex items-center gap-1 rounded-md bg-teal-100 px-2 py-0.5 text-[12.5px] leading-5 font-medium text-teal-700 ring-1 ring-teal-600/25 ring-inset">
+                        {tags.length > 1 && <span className="sr-only">, </span>}
+                        <SealMark />
+                        {words.abroad}
+                      </span>
+                    )}
+                    <span className="sr-only">)</span>
+                  </span>
+                )}
+              </div>
+              {doc.note && (
+                <p className="text-[15.5px] leading-7 whitespace-pre-line text-slate-500">
+                  <span className="sr-only">. </span>
+                  <GuideText text={doc.note} locale={locale} />
+                </p>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+/** A form's small page, where its row starts: a sheet with a folded corner, lines, and a field to fill. */
+function PageMark() {
+  return (
+    <svg viewBox="0 0 18 22" aria-hidden="true" className="pointer-events-none mt-[3px] h-[22px] w-[18px] shrink-0 select-none">
+      <path
+        d="M2.5 1h8.8l4.7 4.7V19.5a1.5 1.5 0 0 1-1.5 1.5H2.5A1.5 1.5 0 0 1 1 19.5v-17A1.5 1.5 0 0 1 2.5 1Z"
+        className="fill-white stroke-teal-600"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
+      <path d="M11.2 1.1v3.4a1.2 1.2 0 0 0 1.2 1.2H16" className="fill-teal-100 stroke-teal-600" strokeWidth="1.3" strokeLinejoin="round" />
+      <rect x="4" y="8.2" width="7" height="1.6" rx="0.8" className="fill-navy-900" />
+      <rect x="4" y="11.6" width="9.5" height="1.4" rx="0.7" className="fill-slate-300" />
+      <rect x="4" y="15" width="9.5" height="3" rx="0.8" className="fill-amber-100 stroke-amber-500" strokeWidth="0.9" />
+    </svg>
+  );
+}
+
+/** The apostille mark's small drawing: a seal on its ribbons. */
+function SealMark() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className="pointer-events-none size-3.5 shrink-0 select-none">
+      <path d="M5.4 9.6 4.2 14l1.7-.7 1 1.3.7-4.3Z" className="fill-teal-600" />
+      <path d="M10.6 9.6 11.8 14l-1.7-.7-1 1.3-.7-4.3Z" className="fill-teal-700" />
+      <circle cx="8" cy="6.8" r="4.6" className="fill-amber-500" />
+      <path d="m8 4.6.6 1.5 1.6.1-1.2 1 .4 1.6L8 7.9l-1.4.9.4-1.6-1.2-1 1.6-.1Z" className="fill-white" />
+    </svg>
+  );
+}
+
 export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: Locale }) {
   return (
     <div className="space-y-5">
@@ -154,6 +263,23 @@ export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: 
               ))}
             </div>
           );
+        }
+        if ("tips" in block && block.rows) {
+          return (
+            <ul key={i} className="divide-y divide-line-200">
+              {block.tips.map((tip, j) => (
+                <li key={j} className="flex items-start gap-4 py-4 text-[16px] leading-7 first:pt-1 last:pb-1">
+                  <IconTile name={tip.icon} className="size-12" />
+                  <span className="min-w-0 pt-2.5">
+                    <GuideText text={tip.text} locale={locale} />
+                  </span>
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        if ("docs" in block) {
+          return <DocRows key={i} docs={block.docs} marker={block.marker} locale={locale} />;
         }
         if ("tips" in block) {
           return (
@@ -269,9 +395,19 @@ export function GuideBlocks({ blocks, locale }: { blocks: GuideBlock[]; locale: 
           );
         }
         return (
-          <p key={i} className="rounded-xl border-s-4 border-teal-600 bg-teal-100/60 px-5 py-4">
-            <GuideText text={block.note} locale={locale} />
-          </p>
+          <div
+            key={i}
+            className={`rounded-xl border-s-4 px-5 py-4 ${block.warning ? "border-amber-500 bg-amber-100/70" : "border-teal-600 bg-teal-100/60"}`}
+          >
+            <p>
+              <GuideText text={block.note} locale={locale} />
+            </p>
+            {block.link && (
+              <TextLink href={guideHref(locale, block.link.to)} className="mt-1">
+                {block.link.label}
+              </TextLink>
+            )}
+          </div>
         );
       })}
     </div>

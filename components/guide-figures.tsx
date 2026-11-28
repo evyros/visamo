@@ -1133,20 +1133,28 @@ function DetourFigure({ figure, locale }: { figure: Extract<Figure, { figure: "d
 // ── The guide's sections as tiles ────────────────────────────────────────────
 
 function MapFigure({ figure }: { figure: Extract<Figure, { figure: "map" }> }) {
+  // Four across when that fills every row, three otherwise. Four are too narrow
+  // for an icon, a title and an arrow side by side, so from sm up their icon
+  // stands over a centered title.
+  const four = figure.items.filter((item) => !item.wide).length % 4 === 0;
   return (
     <div className="rounded-2xl border border-line-200 bg-linear-to-b from-white to-sand-50 p-3 sm:p-4">
-      <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3">
+      <ul className={`grid grid-cols-2 gap-2.5 sm:gap-3 ${four ? "sm:grid-cols-4" : "sm:grid-cols-3"}`}>
         {figure.items.map((item) => (
           <li key={item.section} className={item.wide ? "col-span-full" : undefined}>
             <a
               href={`#${item.section}`}
-              className={`group flex h-full items-center gap-3 rounded-xl border bg-white p-2.5 transition-colors hover:border-teal-600 sm:p-3 ${item.wide ? "border-[1.5px] border-dashed border-teal-600/40" : "border-line-200"}`}
+              className={`group flex h-full items-center gap-3 rounded-xl border p-2.5 transition-colors hover:border-teal-600 sm:p-3 ${four ? "sm:flex-col sm:justify-center sm:gap-2 sm:py-4 sm:text-center" : ""} ${item.wide || item.apart ? "border-[1.5px] border-dashed border-teal-600/45" : "border-line-200"} ${item.apart ? "bg-teal-100/50" : "bg-white"}`}
             >
               <IconTile name={item.icon} className="size-10 sm:size-11" />
-              <span className="min-w-0 flex-1 text-[14px] leading-5 font-semibold text-navy-900 group-hover:text-teal-700 sm:text-[15px]">
+              <span
+                className={`min-w-0 flex-1 text-[14px] leading-5 font-semibold text-navy-900 group-hover:text-teal-700 sm:text-[15px] ${four ? "sm:flex-none" : ""}`}
+              >
                 {item.title}
               </span>
-              <Icon name="chevronDown" className="hidden size-4 text-slate-300 group-hover:text-teal-600 sm:block" strokeWidth={2.2} />
+              {!four && (
+                <Icon name="chevronDown" className="hidden size-4 text-slate-300 group-hover:text-teal-600 sm:block" strokeWidth={2.2} />
+              )}
             </a>
           </li>
         ))}
@@ -1304,6 +1312,16 @@ const icons: Record<FigureIcon, ReactNode> = {
       </g>
       <path d="M22.5 11.2h8.5" stroke={C.teal} strokeWidth="2.6" strokeLinecap="round" />
       <path d="M22.5 11.2v2.2M31 11.2v2.2" stroke={C.teal700} strokeWidth="1.6" strokeLinecap="round" />
+    </>
+  ),
+  // A parent and a child, side by side.
+  family: (
+    <>
+      <circle cx="18.5" cy="14.5" r="5.2" fill={C.navy} />
+      <path d="M9.5 38v-7.5a9 9 0 0 1 18 0V38Z" fill={C.navy} />
+      <circle cx="32" cy="21.5" r="4" fill={C.amber} />
+      <path d="M25.2 38v-4.8a6.8 6.8 0 0 1 13.6 0V38Z" fill={C.amber} />
+      <path d="M8 38.5h32" stroke={C.teal} strokeOpacity="0.35" strokeWidth="1.6" strokeLinecap="round" />
     </>
   ),
   // An apostille on a screen: the electronic kind.

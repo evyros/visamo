@@ -96,8 +96,14 @@ describe("the guides", () => {
       for (const docs of [guidesEn.docs, guidesHe.docs]) {
         const links = texts(slug, docs).flatMap((text) => [...text.matchAll(/\]\(guide:([^)]+)\)/g)].map((m) => m[1]));
         for (const link of [...links, ...docs[slug].related]) {
-          expect(guideSlugs, `${slug} links to ${link}`).toContain(link);
-          expect(link).not.toBe(slug);
+          // guide:<slug>, or guide:<slug>#<section> for a part of it.
+          const [target, section] = link.split("#");
+          expect(guideSlugs, `${slug} links to ${link}`).toContain(target);
+          expect(target).not.toBe(slug);
+          if (section) {
+            const ids = docs[target as GuideSlug].sections.map((s) => s.id);
+            expect(ids, `${slug} links to ${link}`).toContain(section);
+          }
         }
       }
     });

@@ -21,8 +21,9 @@ export type GuideGroupId = (typeof guideGroupIds)[number];
 
 /**
  * Text with a little inline markup: **bold**, and links written
- * [text](guide:<slug>) for another guide, [text](/path) for a page, or
- * [text](https://…) for another site, which opens in a new tab.
+ * [text](guide:<slug>) for another guide (guide:<slug>#<section> for a part
+ * of it), [text](/path) for a page, or [text](https://…) for another site,
+ * which opens in a new tab.
  */
 export type GuideText = string;
 
@@ -31,7 +32,11 @@ export type GuideBlock =
   | { list: GuideText[] }
   | { steps: GuideText[] }
   | { table: { head: GuideText[]; rows: GuideText[][] } }
-  | { note: GuideText }
+  /**
+   * A note in a bubble: teal, or amber with `warning`. `link`: a link under its
+   * text, with an arrow; `to` is guide:<slug>(#<section>) or a page's path.
+   */
+  | { note: GuideText; warning?: true; link?: { label: string; to: string } }
   /**
    * A button, for where the guide runs out and the couple's own case begins:
    * `to` is "signup", or a page's path (/guide/partner-visa-process), kept in
@@ -45,16 +50,22 @@ export type GuideBlock =
   | { process: { title: string; text: string; questions?: string[]; button: string } }
   /**
    * A card into the app, where the guide runs out and the couple's own case
-   * begins (components/guide-list-card): a title, a line, and a sign-up button,
-   * beside a drawing of their own documents list.
+   * begins (components/guide-list-card): a title, a line, a few short `points`
+   * if given, and a sign-up button, beside a drawing of their own documents list.
    */
-  | { signup: { title: string; text: GuideText; button: string } }
+  | { signup: { title: string; text: GuideText; points?: string[]; button: string } }
   /** A heading inside a section, for a part of it. */
   | { heading: string }
   /** Lists of what to do (`yes`) and what isn't accepted (`no`), each with a title. */
   | { checks: { title: string; verdict: "yes" | "no"; items: GuideText[] }[] }
-  /** Short tips, each beside a drawing. */
-  | { tips: { icon: FigureIcon; text: GuideText }[] }
+  /** Short tips, each beside a drawing: cards, or with `rows`, rows with no box. */
+  | { tips: { icon: FigureIcon; text: GuideText }[]; rows?: true }
+  /**
+   * Documents as rows: each one's name, its tags (the couples it's only for,
+   * and whether it comes from abroad with an apostille), and a note. Each row
+   * starts with a bullet, or with `marker: "page"`, a small page (for forms).
+   */
+  | { docs: { name: GuideText; tags?: DocTag[]; note?: GuideText }[]; marker?: "page" }
   /** A few rules, numbered, each with a short title. The numbers count them; they aren't an order. */
   | { cards: { title: string; text: GuideText }[] }
   | GuideFigure;
@@ -153,10 +164,21 @@ export type GuideFigure =
   | {
       /** The guide's sections as tiles, each jumping to its section (a section id). */
       figure: "map";
-      /** `wide`: a tile that isn't a subject like the others, on a row of its own, dashed. */
-      items: { icon: FigureIcon; title: string; section: string; wide?: boolean }[];
+      /**
+       * `apart`: a tile that isn't a subject like the others, drawn dashed and
+       * tinted; with `wide` too, on a row of its own.
+       */
+      items: { icon: FigureIcon; title: string; section: string; wide?: boolean; apart?: boolean }[];
       caption: GuideText;
     };
+
+/**
+ * A document's tags: the couples it's only for (married or common-law), and its
+ * mark: from abroad, with an apostille (`abroad`). Which partner a document is
+ * for goes in its note. Their words are in the guides' labels.
+ */
+export const docTags = ["married", "commonLaw", "abroad"] as const;
+export type DocTag = (typeof docTags)[number];
 
 /** What a fork's case looks like: a paper document, or one that's only a file. */
 export type ForkArt = "paper" | "digital";
@@ -185,6 +207,7 @@ export const figureIcons = [
   "document",
   "attached",
   "screen",
+  "family",
 ] as const;
 export type FigureIcon = (typeof figureIcons)[number];
 
@@ -204,8 +227,11 @@ export type Guide = {
   intro?: GuideBlock[];
   /** `step`: the section is a numbered step, shown beside its heading. */
   sections: { id: string; heading: string; step?: number; body: GuideBlock[] }[];
-  /** `signup`: a sign-up link under the answer, with this label. */
-  faq: { q: string; a: GuideText; signup?: string }[];
+  /**
+   * `signup`: a sign-up link under the answer, with this label. `link`: a link
+   * to another page under it.
+   */
+  faq: { q: string; a: GuideText; signup?: string; link?: { label: string; path: string } }[];
   /** A few words to close the guide: after its sections, before the questions. */
   closing?: GuideText;
   related: GuideSlug[];
@@ -222,6 +248,8 @@ export type Guides = {
     related: string;
     /** `{minutes}` is filled in from the guide's length. */
     readingTime: string;
+    /** The words on a document's tags. */
+    docTags: Record<DocTag, string>;
   };
   index: {
     metaTitle: string;

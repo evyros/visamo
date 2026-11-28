@@ -5,12 +5,13 @@ import { Icon } from "./icons";
 import { ButtonLink } from "./ui";
 
 // A guide's way into the app, where the guide runs out and the couple's own
-// case begins: a title, a line, a sign-up button, and a drawing of their own
-// documents list, each row marked with what that document needs. Built like
+// case begins: a title, a line, a few short points if given, a sign-up button,
+// and a drawing of their own documents list, each row marked with what that
+// document needs. Built like
 // the card into the process guide (guide-process-card). The drawing has no
 // words, and mirrors in RTL like the guides' other drawings.
 
-export type ListCardTexts = { title: string; text: string; button: string };
+export type ListCardTexts = { title: string; text: string; points?: string[]; button: string };
 
 export function GuideListCard({ texts, locale }: { texts: ListCardTexts; locale: Locale }) {
   return (
@@ -26,6 +27,20 @@ export function GuideListCard({ texts, locale }: { texts: ListCardTexts; locale:
           <p className="mt-2 text-[15.5px] leading-7 text-slate-700">
             <GuideText text={texts.text} locale={locale} />
           </p>
+
+          {texts.points && (
+            <ul className="mt-4 space-y-2">
+              {texts.points.map((point) => (
+                <li key={point} className="flex items-center gap-2.5 text-[15px] leading-6 font-medium text-navy-900">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="pointer-events-none size-6 shrink-0 select-none">
+                    <circle cx="12" cy="12" r="11" className="fill-white stroke-teal-600/25" strokeWidth="1" />
+                    <path d="m7.6 12.3 3 3 5.8-6.2" fill="none" className="stroke-teal-600" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {point}
+                </li>
+              ))}
+            </ul>
+          )}
           <ButtonLink href={signupUrl(locale)} size="sm" className="mt-5 w-full sm:w-auto">
             {texts.button}
             <Icon name="arrow" className="size-4" />

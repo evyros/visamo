@@ -149,16 +149,18 @@ function plainBlockTexts(block: Exclude<GuideBlock, string | GuideFigure>): stri
   if ("list" in block) return block.list;
   if ("steps" in block) return block.steps;
   if ("table" in block) return [...block.table.head, ...block.table.rows.flat()];
-  if ("note" in block) return [block.note];
+  // A note's link is given as a markdown link, so the link checks see it.
+  if ("note" in block) return [block.note, ...(block.link ? [`[${block.link.label}](${block.link.to})`] : [])];
   if ("button" in block) return [block.button];
   if ("process" in block) {
     const { title, text, questions = [], button } = block.process;
     return [title, text, ...questions, button];
   }
-  if ("signup" in block) return [block.signup.title, block.signup.text, block.signup.button];
+  if ("signup" in block) return [block.signup.title, block.signup.text, ...(block.signup.points ?? []), block.signup.button];
   if ("heading" in block) return [block.heading];
   if ("checks" in block) return block.checks.flatMap((group) => [group.title, ...group.items]);
   if ("tips" in block) return block.tips.map((tip) => tip.text);
+  if ("docs" in block) return block.docs.flatMap((doc) => [doc.name, ...(doc.note ? [doc.note] : [])]);
   return block.cards.flatMap((card) => [card.title, card.text]);
 }
 
@@ -169,13 +171,14 @@ export function blockShape(block: GuideBlock): string {
     if ("list" in block) return `list:${block.list.length}`;
     if ("steps" in block) return `steps:${block.steps.length}`;
     if ("table" in block) return `table:${block.table.head.length}x${block.table.rows.length}`;
-    if ("note" in block) return "note";
+    if ("note" in block) return `note${block.warning ? "/warning" : ""}${block.link ? "+link" : ""}`;
     if ("button" in block) return `button>${block.to}`;
     if ("process" in block) return `process:${block.process.questions?.length ?? 0}`;
-    if ("signup" in block) return "signup";
+    if ("signup" in block) return `signup:${block.signup.points?.length ?? 0}`;
     if ("heading" in block) return "heading";
     if ("checks" in block) return `checks:${block.checks.map((group) => `${group.verdict}/${group.items.length}`).join(",")}`;
-    if ("tips" in block) return `tips:${block.tips.map((tip) => tip.icon).join(",")}`;
+    if ("tips" in block) return `tips${block.rows ? "/rows" : ""}:${block.tips.map((tip) => tip.icon).join(",")}`;
+    if ("docs" in block) return `docs${block.marker ? `/${block.marker}` : ""}:${block.docs.map((doc) => (doc.tags ?? []).join("+") + (doc.note ? "/note" : "")).join(",")}`;
     return `cards:${block.cards.length}`;
   }
   switch (block.figure) {
@@ -196,7 +199,7 @@ export function blockShape(block: GuideBlock): string {
     case "triage":
       return `triage:${block.regular.items.length}|${block.lawyer.items.length}`;
     case "map":
-      return `map:${block.items.map((item) => `${item.icon}@${item.section}${item.wide ? "/wide" : ""}`).join(",")}`;
+      return `map:${block.items.map((item) => `${item.icon}@${item.section}${item.wide ? "/wide" : ""}${item.apart ? "/apart" : ""}`).join(",")}`;
     case "journey":
       return `journey:${block.steps.map((step) => `${step.icon}@${step.section}${step.handoff ? "/handoff" : ""}`).join(",")}`;
     case "fork":

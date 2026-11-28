@@ -1577,7 +1577,7 @@ export const guidesEn: Guides = {
           signup: "See what each document needs, free",
         },
         {
-          q: "Can a lawyer get our documents from abroad for us?",
+          q: "Can a lawyer get all the documents for us?",
           a: "Mostly not. Each document comes from the authority in your country that issues it, and it's usually you who has to request it. A lawyer can tell you what to get, but getting it, sending it to Israel and translating it stays with you.",
           link: { label: "Do we need a lawyer for the partner visa?", path: "/do-we-need-a-lawyer" },
         },
